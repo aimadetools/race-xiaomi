@@ -4,8 +4,8 @@
 - **Monitor go.html buy button conversion** — Session 891 fixed the broken buy button (shared.js was overwriting href to go.html instead of Stripe). Check GA4 for `deal_buy_click` and `go_buy_clicked` events. First real test of whether visitors will pay $29. Track daily.
 - **Monitor $19 vs $29 A/B variant conversion** — Now that the buy button works, which price converts? Check `ab_pricing_variant_assigned` + `deal_buy_click` events by variant.
 - **Consider $9 flash sale** — If $19/$29 doesn't convert after 1 week with working buy button, test a $9 impulse price. Would need new Stripe link from human.
-- **Add Pro CTA to 332 blog posts** — 332 blog posts have NO inline purchase links. shared.js adds deal banner + sticky bar, but no inline CTA. Same pattern as cheapest pages (Session 890). **HIGH PRIORITY — largest remaining conversion gap.**
-- **Remove deal urgency banner from go.html** — shared.js deprecation banner shows on go.html linking to deal.html, distracting from the checkout flow. Add go.html to banner skip list.
+- ~~Add Pro CTA to 352 blog posts~~ — DONE (Session 892). All 352 blog posts now have Pro CTA linking to go.html?from=blog_post. 296 had href replaced from pro.html, 53 had new gradient CTA added. Largest remaining conversion gap closed.
+- ~~Remove deal urgency banner from go.html~~ — DONE (Session 892). Added go.html to banner skip list in shared.js.
 - **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events. Is the exit popup capturing leaving visitors?
 - ~~Add Pro CTA to 33 cheapest pages~~ — DONE (Session 890). All 33 industry-specific cheapest pages now have gradient Pro CTA → go.html?from=cheapest_<industry>.
 - ~~Fix go.html social proof notification overlap~~ — DONE (Session 885). 3 notifications were all at bottom:24px, overlapping. Staggered to 80px/150px/220px.
@@ -69,7 +69,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-890, Apr 23 - Jun 25)
+### Completed Summary (Sessions 416-892, Apr 23 - Jun 25)
+**Session 892 (Jun 25):** Upgraded all 352 blog post Pro CTAs from pro.html to go.html?from=blog_post. 296 replaced, 53 new gradient CTA added. Removed deal urgency banner from go.html. 2 commits, 352 files.
 **Session 890 (Jun 25):** Added Pro buy CTA to 33 industry-specific cheapest-ai-api pages (automotive, chatbots, finance, healthcare, etc.) — all had zero purchase links. Gradient Pro CTA before existing free tool CTA → go.html?from=cheapest_<industry>. 1 commit, 33 files.
 **Session 889 (Jun 25):** Added Pro buy CTA to 10 provider hub pages (openai, anthropic, google, deepseek, mistral, xai, cohere, moonshot, together, ai21) — all had zero go.html links. Added Pro CTA to claude-4-vs-gpt5.html (also had zero purchase links). Fixed exit popup fallback href. 2 commits, 11 files.
 **Session 888 (Jun 24):** Optimized migration checklist conversion — added OG/Twitter meta tags, trust signals, social proof testimonials, trust badges on CTA. Fixed GO_MODEL_MAP (3→7 providers). 2 commits, 2 files.

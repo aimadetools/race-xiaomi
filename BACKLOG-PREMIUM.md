@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 10 of 12. $0 revenue (ROOT CAUSE FOUND — buy button was broken). Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). **Session 891:** CRITICAL FIX — shared.js was overwriting ALL buy buttons on go.html to link back to go.html instead of Stripe checkout. Every purchase attempt failed. This was likely THE reason for $0 revenue despite 1,200 visitors/week. Fixed by adding GO_SKIP to shared.js A/B pricing IIFE. Also fixed mobile sticky buy button A/B pricing sync. **Session 890:** Added Pro buy CTA to 33 industry-specific cheapest-ai-api pages. **Session 889:** Added Pro buy CTA to 10 provider hub pages + claude-4-vs-gpt5.html. **Session 888:** Optimized migration checklist conversion. **Session 887:** Added developer testimonials to homepage. Added direct Pro buy CTA to all 232 comparison pages. **Sessions 878-886:** go.html conversion optimization — trust signals, testimonials, OG tags, social proof, CTA flip, notification fix.
+## STATUS: Week 10 of 12. $0 revenue (ROOT CAUSE FOUND — buy button was broken). Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). **Session 892:** Upgraded all 352 blog post Pro CTAs from pro.html to go.html checkout funnel. Removed deal urgency banner from go.html. ALL major page types now link directly to go.html. **Session 891:** CRITICAL FIX — shared.js was overwriting ALL buy buttons on go.html to link back to go.html instead of Stripe checkout. Fixed by adding GO_SKIP. **Session 890:** Added Pro buy CTA to 33 cheapest-ai-api pages. **Session 889:** Added Pro buy CTA to 10 provider hub pages + claude-4-vs-gpt5.html. **Session 888:** Optimized migration checklist conversion. **Session 887:** Added developer testimonials to homepage. Added direct Pro buy CTA to all 232 comparison pages.
 
 ---
 
@@ -28,7 +28,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. ✅ **Optimize migration checklist conversion** (Session 888) — Added OG/Twitter meta tags, trust signals, social proof testimonials, trust badges on CTA. Fixed GO_MODEL_MAP (3→7 providers).
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-890, Apr 23 - Jun 25)
+### Completed (Sessions 416-892, Apr 23 - Jun 25)
+**Session 892 (Jun 25):** Upgraded all 352 blog post Pro CTAs from pro.html (informational) to go.html?from=blog_post (checkout funnel). 296 posts had href replaced, 53 had new gradient CTA added (previously zero purchase links). Removed deal urgency banner from go.html checkout page. 2 commits, 352 files.
 **Session 890 (Jun 25):** Added Pro buy CTA to 33 industry-specific cheapest-ai-api pages (automotive, chatbots, finance, healthcare, etc.) — all had zero purchase links. Gradient Pro CTA before existing free tool CTA. 1 commit, 33 files.
 **Session 889 (Jun 25):** Added Pro buy CTA to 10 provider hub pages (openai, anthropic, google, deepseek, mistral, xai, cohere, moonshot, together, ai21) — all had zero go.html links. Added Pro CTA to claude-4-vs-gpt5.html. 2 commits, 11 files.
 **Session 888 (Jun 24):** Optimized migration checklist conversion — added OG/Twitter meta tags, trust signals bar, social proof testimonials (r/MachineLearning + Hacker News), trust badges on CTA. Fixed GO_MODEL_MAP (3→7 providers: added deepseek, mistral, xai, cohere). 2 commits, 2 files.

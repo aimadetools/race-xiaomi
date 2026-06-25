@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 892 (Jun 25) — Blog Post Pro CTA + go.html Banner Fix (2 commits)
+**Upgraded 352 blog post Pro CTAs from pro.html to go.html checkout funnel. Removed deal urgency banner from go.html.**
+- **Blog post CTA upgrade** — All 352 blog posts had Pro CTAs linking to pro.html (informational page) instead of go.html (checkout funnel). 296 posts had existing CTA with href replaced. 53 posts had no Pro CTA at all — added gradient Pro CTA block (same pattern as Session 890 cheapest pages). 2 posts already had go.html (skipped). 1 post needed manual fix (blog-claude-4-shutdown-faq.html had non-standard footer).
+- **go.html banner fix** — The shared.js deprecation/deal urgency banner was showing on go.html, linking to deal.html and distracting users from the checkout funnel. On go.html, users are already at the conversion point — sending them to deal.html is a conversion leak. Added go.html to banner skip list.
+- **2 commits, 352 files changed**
+- **Key insight:** Blog posts are the second-largest traffic source after comparison pages. Every blog post was routing visitors to pro.html (informational page about Pro features) instead of go.html (the actual checkout funnel with calculator and buy button). This is the same conversion gap that was fixed on cheapest pages (Session 890) and provider hub pages (Session 889). The banner fix is also important — on go.html, the user is already in the checkout flow. Showing a banner that links to deal.html sends them backwards in the funnel.
+
 ## Session 891 (Jun 25) — CRITICAL: Fixed Broken Buy Button on go.html (1 commit)
 **shared.js was overwriting ALL buy buttons on go.html to link back to go.html instead of Stripe. Every purchase attempt failed.**
 - **The bug** — shared.js registers a DOMContentLoaded listener that rewrites ALL buy.stripe.com links to go.html (for trust-building before checkout). On go.html itself, this created an infinite loop: buy button → go.html → buy button → go.html... The execution order was: (1) go.html inline script sets buy-cta.href = stripeLink, (2) shared.js DOMContentLoaded fires AFTER and overwrites href to go.html?from=go. The `!a.href.includes('go.html')` guard didn't help because at rewrite time the href was still buy.stripe.com.
@@ -134,9 +141,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 890, Jun 25, 2026)
+## Site Status (as of Session 892, Jun 25, 2026)
 **865 web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
+- **Pro CTA coverage: ALL major page types now link directly to go.html checkout funnel** — 232 comparison + 352 blog + 33 cheapest + 10 provider hub + 22 alternatives + 25 use-case + deprecation tracker + migration checklist + cheapest-ai-api-2026 + claude-4-vs-gpt5
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
 - **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants, 3 expired variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary (outlined → calculator). Trust signals: provider bar (10 providers), checklist (8 deliverables), trust badges, social proof 3s. Developer testimonials (3 quotes). OG/Twitter meta + Product + FAQPage schema. Social proof overhaul (realistic activity feed). Before/After comparison. Calculator expanded to 15 models.
@@ -144,6 +152,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **232 comparison pages** — **Session 887: Added direct Pro buy CTA** on all 232 pages. Gradient CTA section before footer → go.html?from=compare_cta. Trust badges. Cuts funnel from 2-step (deal.html → go.html) to 1-step (direct to go.html). All pages also have deal banner from shared.js.
 - **10 provider hub pages** — **Session 889: Added Pro buy CTA** on all 10 pages (openai, anthropic, google, deepseek, mistral, xai, cohere, moonshot, together, ai21). Gradient CTA before calculator section → go.html?from=<provider>_page. These pages previously had zero go.html links — only linked to calculator.
 - **33 cheapest-ai-api pages** — **Session 890: Added Pro buy CTA** on all 33 industry-specific cheapest pages (automotive, chatbots, finance, healthcare, etc.). Gradient CTA before existing free tool CTA → go.html?from=cheapest_<industry>. These pages previously had zero purchase links — only linked to free calculators.
+- **352 blog posts** — **Session 892: Upgraded all Pro CTAs** from pro.html (informational) to go.html?from=blog_post (checkout funnel). 296 posts had href replaced, 53 posts had new gradient CTA added (previously had zero purchase links). Deal urgency banner removed from go.html (was linking away from checkout to deal.html).
 - **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, 693 pages auto-update, deal banners switch to regular pricing, trial CTAs hidden, exit popup updated
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
