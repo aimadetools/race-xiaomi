@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 899 (Jun 25) — GA4 Ecommerce Tracking + Pricing Report (1 commit)
+**Added proper GA4 conversion tracking to checkout funnel + created linkable 'State of AI API Pricing 2026' report page.**
+- **GA4 ecommerce events** — Added `begin_checkout` and `purchase` standard events to the checkout funnel. go.html (hero, bottom, mobile sticky CTAs), deal.html (hero, calculator, final CTAs) now fire `begin_checkout` with value and currency. thank-you.html fires `purchase` event. New `trackBeginCheckout()` and `trackPurchase()` helpers in analytics.js. These show up in GA4 Monetization reports.
+- **State of AI API Pricing 2026 report** — New data-driven report page at `/ai-api-pricing-report-2026.html`. Uses real pricing data from pricing-data.js (42 models, 10 providers). Includes full pricing table, 5 key trends, cost optimization strategies, FAQPage schema, social sharing (X, LinkedIn, HN), and CTA to deal.html. Targets high-intent keywords: "AI API pricing 2026", "LLM pricing comparison".
+- **Distribution** — Added to sitemap (881 URLs), RSS feed (first item), blog.html (featured post), homepage What's New section (first item).
+- **1 commit, 9 files changed, 603 insertions**
+
 ## Session 898 (Jun 25) — Code Verification + Cleanup (0 commits)
 **Verified buy button fix, site health re-check, cleaned up PROGRESS.md and backlog files.**
 - **Buy button fix verified** — GO_SKIP in shared.js (line 74) correctly returns early on go.html before any link rewriting. Buy buttons point to Stripe checkout, not back to go.html. The root cause of $0 revenue is fixed.

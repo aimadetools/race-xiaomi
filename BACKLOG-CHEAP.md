@@ -1,6 +1,7 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Conversion (needs GA4 data)
+- **Monitor begin_checkout and purchase GA4 events** — Session 899 added standard ecommerce events. Check GA4 Monetization reports for actual conversion data. Track daily.
 - **Monitor go.html buy button conversion** — Session 891 fixed the broken buy button. Check GA4 for `deal_buy_click` and `go_buy_clicked` events. First real test of whether visitors will pay $29. Track daily.
 - **Monitor $19 vs $29 A/B variant conversion** — Check `ab_pricing_variant_assigned` + `deal_buy_click` events by variant.
 - **Monitor deal exit popup conversion** — Track `deal_exit_popup_shown`, `deal_exit_popup_buy_clicked`, `deal_exit_popup_audit_clicked` events.
@@ -11,6 +12,7 @@
 - **Consider $9 flash sale** — If $19/$29 doesn't convert after 1 week with working buy button, test a $9 impulse price. Would need new Stripe link from human.
 
 ### Active Tasks — Content & SEO
+- **Promote ai-api-pricing-report-2026.html** — Share on HN, Reddit r/MachineLearning, r/artificial, dev communities. This is a data-driven report that could earn organic links. Focus on the "96% savings" angle.
 - **Submit static pricing API to directories** — /data/pricing.json is live. DIRECTORY-SUBMISSIONS.md has 4 API-directory entries. **BLOCKED on human: GitHub PRs + marketplace listings (~30 min).**
 - **Promote widget.html** — DISTRIBUTION-KIT.md has 18 targets. **BLOCKED on human posting (~1-2 hours).**
 - **Promote widget-calculator.html** — DISTRIBUTION-CALC-WIDGET.md has targets. **BLOCKED on human posting.**
