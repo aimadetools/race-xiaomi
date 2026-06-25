@@ -12,24 +12,8 @@
 - **cheapest-ai-api-chatbots.html** — DeepSeek V3 → DeepSeek V4 Flash in cost example.
 - **1 commit, 7 files changed, 24 insertions, 24 deletions**
 
-## Session 904 (Jun 25) — Fix Outdated Model Counts (1 commit)
-**Updated "32 models" → "42 models" across 4 files (35 lines).**
-- **August/September 2026 pricing blogs** — Both future-dated posts (noindexed) had 11 occurrences each of "32 models" in titles, meta descriptions, OG tags, Twitter cards, structured data, stat cards, and body text. Updated all to 42 (matching pricing.json: 36 active + 6 deprecated).
-- **blog.html** — 3 entries for July/Aug/Sep pricing reports still said "32 models" in titles and summaries. July blog file was already correct (Session 903) but the blog.html card wasn't updated.
-- **tools.html** — Free API Cost Audit card said "28 models across 8 providers" → "42 models across 10 providers."
-- **1 commit, 4 files changed, 35 insertions, 35 deletions**
-
-## Session 903 (Jun 25) — SEO Fixes + July 2026 Pricing Blog Update (1 commit)
-**Un-noindexed 6 comparison pages + updated July 2026 pricing blog from 32→42 models.**
-- **Comparison page SEO fix** — 6 comparison pages with full content had `noindex` tags wasting crawl budget. Removed noindex, fixed 3 broken canonical URLs (were pointing to redirect targets). Pages now indexable by Google.
-- **July 2026 pricing blog update** — Blog said "32 models" but pricing.json has 42 (36 active + 6 deprecated). Added 7 missing models (Gemini 2.5 Flash-Lite, Gemini 3 Flash, Gemini 3.5 Flash, DeepSeek V3.2, Mistral Medium 3.5, Jamba 1.7 Large, Command A). Marked 3 deprecated models. Fixed 5 pricing errors (Llama 4 Scout, Kimi K2.6, Mistral Small 4, Llama 4 Maverick, Llama 4 Scout context). Updated FAQ answers, meta descriptions, structured data. Made page indexable.
-- **1 commit, 7 files changed, 95 insertions, 46 deletions**
-
-## Session 902 (Jun 25) — Sticky Bar Fix + Homepage Cleanup (1 commit)
-**Fixed competing sticky CTA bars + removed duplicate testimonials from homepage.**
-- **Sticky bar stacking fix** — `sticky-bottom-bar` (email capture, 45s timer) and `sticky-pro-cta` (Pro purchase, scroll-triggered) could stack on top of each other on blog/tool pages. Added unified dismiss state (`apipulse_pro_cta_dismissed` + `apipulse_sticky_bar_dismissed`) so dismissing either bar dismisses both. Bottom bar now checks for Pro CTA before showing. Pro CTA removes bottom bar if present.
-- **Duplicate testimonials removed** — Homepage had two identical testimonials sections (Session 883 + Session 887). Removed the redundant second section, reducing page length by ~40 lines.
-- **1 commit, 2 files changed, 12 insertions, 42 deletions**
+## Summary: Sessions 902-904 (Jun 25) — Content Cleanup + SEO Fixes
+3 sessions. Sticky bar stacking fix (unified dismiss state). Duplicate testimonials removed from homepage. SEO fixes — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Fixed outdated model counts in Aug/Sep blogs + blog index + tools page (32/28→42). 3 commits, 13 files.
 
 ## Summary: Sessions 889-901 (Jun 25) — Conversion Optimization + Site Health
 13 sessions. Homepage cleanup (857 lines removed from What's New + comparison table updated with current models). Social proof page (why-apipulse.html). GA4 ecommerce tracking. "State of AI API Pricing 2026" report. Pro CTA coverage 98.2%. CRITICAL buy button fix (GO_SKIP). Site health audit. FAQPage schema + Stripe link routing. 25 commits, 540+ files.
@@ -52,13 +36,13 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 904, Jun 25, 2026)
+## Site Status (as of Session 905, Jun 25, 2026)
 **867 web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (882 URLs), RSS (761 items), blog files (352 posts) — all in sync
 - **Structured data: 852/867 pages (98.3%)** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2% — 849 pages link to go.html** — Only 16 pages without — all non-commercial.
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 867 pages (100%)**
-- **SEO fixes (Session 903-904)** — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Aug/Sep blogs + blog index + tools page model counts corrected (32/28→42).
+- **SEO fixes (Session 903-905)** — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Aug/Sep blogs + blog index + tools page model counts corrected (32/28→42). Deprecated model references (Claude Sonnet 4, Claude 4 Opus, Gemini 2.0 Flash, DeepSeek V3) updated to current versions across 7 files.
 - **deal.html** — Product + FAQPage schema, A/B headline test (3 variants, 3 expired), exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models)
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema. **CRITICAL FIX: GO_SKIP prevents shared.js from overwriting buy buttons.**
 - **Homepage (index.html)** — Developer testimonials (single section), social proof bar, calculator with savings badge → deal.html, pricing → go.html, deal urgency banner → deal.html. Duplicate testimonials removed (Session 902).
