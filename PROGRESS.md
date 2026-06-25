@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 897 (Jun 25) — Site Health Audit (0 commits)
+**Audited site health, sitemap, RSS, A/B test, and post-expiry handling. All systems nominal.**
+- **Sitemap:** 880 URLs (865 HTML pages + 15 non-HTML: data files, llms.txt, robots.txt). All current.
+- **RSS:** 759 items, lastBuildDate Jun 25. In sync with blog count.
+- **Pro CTA coverage:** 849 pages (98.2%) link to go.html. Only 16 non-commercial pages without (404, admin, legal, etc.).
+- **Direct buy.stripe.com links:** 336 pages have direct Stripe links — these are the A/B pricing test managed by shared.js (not broken, working as designed).
+- **Deal expiry:** July 12 countdown active. Post-expiry price → $49 logic verified in shared.js + deal.html. DEAL_DEADLINE, DEAL_EXPIRED, EXPIRED_VARIANTS all correctly wired.
+- **No broken internal links** on homepage or key pages.
+- **No critical issues found.** All monitoring tasks in backlog require GA4 data or human action.
+- **0 commits, 0 files changed**
+
 ## Session 896 (Jun 25) — Pro CTA Coverage: 5 Remaining Indexed Pages (1 commit)
 **Added gradient Pro CTA to 5 indexed pages that were missing go.html links.**
 - **Conversion leak closure** — pipeline.html (multi-model calculator), wall-of-love.html (testimonials), chrome-extension.html, launch.html, and ph.html (Product Hunt) were all indexed but had ZERO purchase links. Added gradient Pro CTA sections linking to go.html with personalized from-parameter tracking.
@@ -14,24 +25,8 @@
 - **Total structured data: 851/865 pages (98.4%)** — 14 pages without are non-commercial (404, admin, privacy, terms, etc.)
 - **1 commit, 8 files changed, 189 insertions**
 
-## Session 894 (Jun 25) — Pro CTA Coverage: 69 Remaining Tool/Calculator Pages (1 commit)
-**Added gradient Pro CTA sections to 69 remaining tool/calculator pages with zero purchase links.**
-- **Conversion leak closure** — 69 tool/calculator pages (calculator, model-selector, tools, use-cases, cheapest-ai-api, budget-planner, 15 Claude pages, 12 cost calculators, 8 model tools, widget pages, etc.) had ZERO links to go.html. Added gradient Pro CTA section linking to go.html with personalized from-parameter tracking.
-- **Total coverage: 844 pages** with go.html links (up from 775). Only 21 pages remain without — all legitimately non-commercial (404, admin, legal, newsletter, post-purchase, API docs).
-- **1 commit, 69 files changed, 487 insertions**
-
-## Session 893 (Jun 25) — Pro CTA Coverage: 32 Tool/Content Pages (1 commit)
-**Added gradient Pro CTA sections to all remaining pages with zero purchase links.**
-- **Conversion leak closure** — 32 tool/calculator/content pages had ZERO links to go.html, buy.stripe.com, or pricing.html. These high-intent pages (GPT-5 cost calculator, model deprecation timeline, cheapest LLM API, cost audit, startup cost planner, pricing charts, etc.) attract users actively comparing costs but had no path to purchase. Added gradient Pro CTA section linking to go.html with personalized from-parameter tracking.
-- **Zero conversion leaks** — Every content page on the site now has at least one purchase CTA. Total pages with go.html links: 775 (up from ~743).
-- **Pages updated:** gpt5-cost-calculator, model-deprecation-timeline, cheapest-llm-api-2026, cheapest-model-finder, cost-audit, startup-cost-planner, ai-api-cost-per-request, ai-api-pricing-comparison-2026, moonshot-cost-calculator, open-source-llm-cost-calculator, together-cost-calculator, rate-limit-calculator, pricing-chart, pricing-map, cost, glossary, cheat-sheet, migration-code, price-alerts, pricing-changelog, providers, model-status, how-it-works, budget-llm-showdown, ai-api-status, claude-4-error-codes-reference, llm-pricing-glossary, llm-pricing-trends-2026, gpt5-vs-claude-pricing-2026, industry-guides, changelog, blog index.
-- **1 commit, 32 files changed**
-
-## Session 892 (Jun 25) — Blog Post Pro CTA + go.html Banner Fix (2 commits)
-**Upgraded 352 blog post Pro CTAs from pro.html to go.html checkout funnel. Removed deal urgency banner from go.html.**
-- **Blog post CTA upgrade** — All 352 blog posts had Pro CTAs linking to pro.html (informational page) instead of go.html (checkout funnel). 296 posts had existing CTA with href replaced. 53 posts had no Pro CTA at all — added gradient Pro CTA block. 2 posts already had go.html (skipped). 1 post needed manual fix (blog-claude-4-shutdown-faq.html had non-standard footer).
-- **go.html banner fix** — The shared.js deprecation/deal urgency banner was showing on go.html, linking to deal.html and distracting users from the checkout funnel. Added go.html to banner skip list.
-- **2 commits, 352 files changed**
+## Summary: Sessions 889-894, 896 (Jun 25) — Pro CTA Coverage Blitz (6 commits)
+6 sessions. Added gradient Pro CTA to 10 provider hub pages (889). Added Pro CTA to 33 cheapest-ai-api pages (890). Upgraded all 352 blog post Pro CTAs from pro.html to go.html + fixed go.html banner (892). Added gradient Pro CTA to 32 tool/content pages — zero conversion leaks (893). Added gradient Pro CTA to 69 remaining tool/calculator pages (894). Added gradient Pro CTA to 5 remaining indexed pages (896). Total: 849 pages (98.2%) link to go.html. 6 commits, 540+ files.
 
 ## Session 891 (Jun 25) — CRITICAL: Fixed Broken Buy Button on go.html (1 commit)
 **shared.js was overwriting ALL buy buttons on go.html to link back to go.html instead of Stripe. Every purchase attempt failed.**
@@ -80,22 +75,16 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 895, Jun 25, 2026)
+## Site Status (as of Session 897, Jun 25, 2026)
 **865 web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
-- Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
-- **Structured data: 851/865 pages (98.4%)** — FAQPage schema added to save-on-ai-apis, claude-4-survival-kit, generate-report, widget-calculator (Session 895). 14 pages without are non-commercial (404, admin, privacy, terms, etc.)
-- **Pro CTA coverage: 98.2% — 849 pages link to go.html** — 232 comparison + 352 blog + 33 cheapest + 10 provider hub + 22 alternatives + 25 use-case + 32 tool/content pages (Session 893) + 69 remaining tool/calculator pages (Session 894) + 5 indexed pages (Session 896: pipeline, wall-of-love, chrome-extension, launch, ph) + deprecation tracker + migration checklist + cheapest-ai-api-2026 + claude-4-vs-gpt5. Only 16 pages without go.html — all legitimately non-commercial (404, admin, legal, newsletter, post-purchase, API docs, noindex pages).
-- **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
-- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants, 3 expired variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
-- **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary (outlined → calculator). Trust signals: provider bar (10 providers), checklist (8 deliverables), trust badges, social proof 3s. Developer testimonials (3 quotes). OG/Twitter meta + Product + FAQPage schema. Social proof overhaul (realistic activity feed). Before/After comparison. Calculator expanded to 15 models.
-- **Homepage (index.html)** — **Session 887: Added developer testimonials** — 3 quotes (r/MachineLearning, Hacker News) between pricing and FAQ. Social proof bar (42 models, 10 providers, 232 reports, $0 free). Calculator with savings badge → deal.html. Pricing section (Free vs Pro) → go.html. Deal urgency banner → deal.html.
-- **232 comparison pages** — **Session 887: Added direct Pro buy CTA** on all 232 pages. Gradient CTA section before footer → go.html?from=compare_cta. Trust badges. Cuts funnel from 2-step (deal.html → go.html) to 1-step (direct to go.html). All pages also have deal banner from shared.js.
-- **10 provider hub pages** — **Session 889: Added Pro buy CTA** on all 10 pages (openai, anthropic, google, deepseek, mistral, xai, cohere, moonshot, together, ai21). Gradient CTA before calculator section → go.html?from=<provider>_page. These pages previously had zero go.html links — only linked to calculator.
-- **33 cheapest-ai-api pages** — **Session 890: Added Pro buy CTA** on all 33 industry-specific cheapest pages (automotive, chatbots, finance, healthcare, etc.). Gradient CTA before existing free tool CTA → go.html?from=cheapest_<industry>. These pages previously had zero purchase links — only linked to free calculators.
-- **352 blog posts** — **Session 892: Upgraded all Pro CTAs** from pro.html (informational) to go.html?from=blog_post (checkout funnel). 296 posts had href replaced, 53 posts had new gradient CTA added (previously had zero purchase links). Deal urgency banner removed from go.html (was linking away from checkout to deal.html).
-- **32 tool/content pages** — **Session 893: Added gradient Pro CTA** to all remaining pages with zero purchase links. High-intent pages (GPT-5 cost calculator, model deprecation timeline, cheapest LLM API, cost audit, pricing charts, etc.). Each links to go.html?from=<page_name>. Zero conversion leaks across entire site.
-- **69 tool/calculator pages** — **Session 894: Added gradient Pro CTA** to 69 remaining tool/calculator pages (calculator, model-selector, tools, use-cases, cheapest-ai-api, budget-planner, 15 Claude pages, 12 cost calculators, 8 model tools, widget pages, etc.). Each links to go.html?from=<page_name>. Brings total to 844 pages with go.html links (97.6%).
-- **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, 693 pages auto-update, deal banners switch to regular pricing, trial CTAs hidden, exit popup updated
+- Sitemap (880 URLs), RSS (759 items), blog files (352 posts) — all in sync
+- **Structured data: 851/865 pages (98.4%)** — FAQPage schema on key pages. 14 pages without are non-commercial (404, admin, privacy, terms, etc.)
+- **Pro CTA coverage: 98.2% — 849 pages link to go.html** — 232 comparison + 352 blog + 33 cheapest + 10 provider hub + 22 alternatives + 25 use-case + 101 tool/calculator/content pages + deprecation tracker + migration checklist. Only 16 pages without go.html — all non-commercial.
+- **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)**
+- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants, 3 expired variants), exit popup, mobile + desktop sticky CTA bars, countdown timer (expires Jul 12 → $49), value stack, savings calculator (15 models)
+- **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary. Trust signals, provider bar, checklist, badges, testimonials, Before/After, social proof, FAQPage schema. Calculator expanded to 15 models.
+- **Homepage (index.html)** — Developer testimonials, social proof bar, calculator with savings badge → deal.html, pricing → go.html, deal urgency banner → deal.html.
+- **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, pages auto-update, deal banners switch to regular pricing.
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
