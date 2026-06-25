@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 889 (Jun 25) — Provider Hub Pages Pro CTA Fix (2 commits)
+**Added Pro buy CTAs to 10 provider hub pages + claude-4-vs-gpt5.html. All had zero purchase links.**
+- **Provider hub pages** — All 10 provider hub pages (openai, anthropic, google, deepseek, mistral, xai, cohere, moonshot, together, ai21) had ZERO links to go.html. Their CTA sections only linked to the calculator, not the checkout funnel. Added gradient Pro CTA section before the existing calculator CTA on each page. Each links to go.html?from=<provider>_page for tracking. Same pattern as Session 887's comparison page CTAs.
+- **claude-4-vs-gpt5.html** — This comparison page had ZERO purchase links (no go.html, no buy.stripe.com, no pricing.html). The exit popup CTA used href="#" as fallback (broken if shared.js A/B test fails). Added gradient Pro CTA before footer. Fixed exit popup CTA to use go.html fallback.
+- **Conversion leak impact** — These 11 pages likely get organic traffic from people searching for specific provider pricing (e.g., "OpenAI API pricing", "DeepSeek cost", "Claude 4 vs GPT-5") but had no path to purchase. The only purchase-adjacent link was the nav CTA (pricing.html → shared.js rewrites to go.html), which is easy to miss.
+- **2 commits, 11 files changed**
+- **Key insight:** The same pattern Session 887 found on comparison pages (no inline Pro CTA, only nav link) existed on all 10 provider hub pages and the claude-4-vs-gpt5 comparison page. Provider pages are high-intent — visitors are actively researching a specific provider's pricing. Sending them to the calculator instead of the checkout funnel is a missed conversion opportunity.
+
 ## Session 888 (Jun 24) — Migration Checklist Conversion Optimization (2 commits)
 **Added OG/Twitter meta tags, social proof testimonials, trust signals to migration-checklist.html. Fixed incomplete GO_MODEL_MAP (3→7 providers).**
 - **OG/Twitter meta tags** — Added og:type (article), og:title, og:description, og:image, og:url, og:site_name, Twitter Card (summary_large_image). Migration checklist had zero social sharing previews despite being a high-intent page for developers actively switching providers.
@@ -110,7 +118,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 888, Jun 24, 2026)
+## Site Status (as of Session 889, Jun 25, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
@@ -118,6 +126,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary (outlined → calculator). Trust signals: provider bar (10 providers), checklist (8 deliverables), trust badges, social proof 3s. Developer testimonials (3 quotes). OG/Twitter meta + Product + FAQPage schema. Social proof overhaul (realistic activity feed). Before/After comparison. Calculator expanded to 15 models.
 - **Homepage (index.html)** — **Session 887: Added developer testimonials** — 3 quotes (r/MachineLearning, Hacker News) between pricing and FAQ. Social proof bar (42 models, 10 providers, 232 reports, $0 free). Calculator with savings badge → deal.html. Pricing section (Free vs Pro) → go.html. Deal urgency banner → deal.html.
 - **232 comparison pages** — **Session 887: Added direct Pro buy CTA** on all 232 pages. Gradient CTA section before footer → go.html?from=compare_cta. Trust badges. Cuts funnel from 2-step (deal.html → go.html) to 1-step (direct to go.html). All pages also have deal banner from shared.js.
+- **10 provider hub pages** — **Session 889: Added Pro buy CTA** on all 10 pages (openai, anthropic, google, deepseek, mistral, xai, cohere, moonshot, together, ai21). Gradient CTA before calculator section → go.html?from=<provider>_page. These pages previously had zero go.html links — only linked to calculator.
 - **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, 693 pages auto-update, deal banners switch to regular pricing, trial CTAs hidden, exit popup updated
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
