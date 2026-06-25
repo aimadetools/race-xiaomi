@@ -22,7 +22,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ **Optimize migration checklist conversion** (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-899, Apr 23 - Jun 25)
+### Completed (Sessions 416-901, Apr 23 - Jun 25)
+- **Session 901:** Homepage cleanup — trimmed What's New from 40+ to 8 items (857 lines removed) + updated comparison table with current models (GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro, etc.). 2 commits, 1 file.
 - **Session 899:** GA4 ecommerce conversion tracking + "State of AI API Pricing 2026" report page. 1 commit, 9 files.
 - **Sessions 889-898:** Pro CTA coverage 98.2% — 849 pages link to go.html. CRITICAL buy button fix. Site health audit. Code verification. 10 commits, 502 files.
 - **Sessions 878-888:** go.html conversion overhaul — flipped CTAs, trust signals, testimonials, social proof, Before/After, GO_MODEL_MAP fix, 232 comparison page CTAs, homepage testimonials, migration checklist optimization. 18 commits, 250+ files.

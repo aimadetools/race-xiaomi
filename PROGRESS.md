@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 901 (Jun 25) — Homepage Cleanup + Comparison Table Update (2 commits)
+**Removed 857 lines (31%) from homepage + updated comparison table with current models.**
+- **What's New section** — Replaced 40+ items (including outdated Claude 4 shutdown pages) with 8 focused, recent items. Added links to blog.html (352 guides) and changelog.html.
+- **Comparison table** — Replaced outdated table (had deprecated Claude 4 Opus, Sonnet 4, Gemini 2.0 Flash) with 19 current models across 10 providers. Added GPT-5.5, Claude Opus 4.8, Sonnet 4.6, Gemini 3.1 Pro, Llama 4 Scout. Highlighted DeepSeek V4 Flash as cheapest.
+- **Impact** — Faster page load, conversion sections visible without scrolling, accurate pricing data, cleaner SEO.
+- **2 commits, 1 file changed, 59 insertions, 965 deletions**
+
 ## Session 900 (Jun 25) — Social Proof Page + Finder Updates (1 commit)
 **Created 'Why Developers Choose APIpulse' conversion page + updated existing cheapest-model-finder.**
 - **why-apipulse.html** — New social proof page addressing "is it worth $29?" objection. Before/after comparison, 4 real cost examples (chatbot, code, content, data extraction), 6 Pro features, FAQPage schema. Links to deal.html and cheapest-model-finder.html.
@@ -49,7 +56,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 900, Jun 25, 2026)
+## Site Status (as of Session 901, Jun 25, 2026)
 **866 web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (882 URLs), RSS (761 items), blog files (352 posts) — all in sync
 - **Structured data: 852/866 pages (98.4%)** — FAQPage schema on key pages. 14 pages without are non-commercial.
