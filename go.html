@@ -953,6 +953,8 @@
             // Update Stripe links
             document.getElementById('buy-cta').href = stripeLink;
             document.getElementById('buy-cta-bottom').href = stripeLink;
+            var stickyBuy = document.getElementById('go-sticky-buy');
+            if (stickyBuy) stickyBuy.href = stripeLink;
 
             // Track checkout page view
             var params = new URLSearchParams(window.location.search);

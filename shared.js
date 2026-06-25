@@ -42,6 +42,7 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
 // Session 877: After July 12 expiry, all prices become $49 regardless of A/B variant.
 (function(){
     var DEAL_SKIP = location.pathname.indexOf('deal.html') !== -1;
+    var GO_SKIP = location.pathname.indexOf('go.html') !== -1;
     var VARIANTS = {A:{price:19,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49}};
     var STRIPE_LINKS = {
         A: 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i', // $19 one-time
@@ -67,8 +68,10 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
         window._abStripeLink = STRIPE_LINKS[variant];
     }
 
-    // Skip price overrides on deal.html — it has its own $29 conversion flow
-    if (DEAL_SKIP) return;
+    // Skip price overrides on deal.html and go.html
+    // deal.html has its own $29 conversion flow
+    // go.html has its own A/B pricing + Stripe link handling (Session 891 fix)
+    if (DEAL_SKIP || GO_SKIP) return;
 
     // Update all CTAs on this page to use variant price and link
     document.addEventListener('DOMContentLoaded', function() {
