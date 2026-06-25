@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 10 of 12. $0 revenue (ROOT CAUSE FOUND — buy button was broken). Product DONE (865 pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). **Session 894:** Added gradient Pro CTA to 69 remaining tool/calculator pages — 844 pages now link to go.html (97.6% coverage). **Session 893:** Added gradient Pro CTA to 32 tool/content pages — ZERO conversion leaks (775 pages with go.html links). **Session 892:** Upgraded all 352 blog post Pro CTAs from pro.html to go.html checkout funnel. Removed deal urgency banner from go.html. **Session 891:** CRITICAL FIX — shared.js was overwriting ALL buy buttons on go.html to link back to go.html instead of Stripe checkout. Fixed by adding GO_SKIP. **Session 890:** Added Pro buy CTA to 33 cheapest-ai-api pages. **Session 889:** Added Pro buy CTA to 10 provider hub pages + claude-4-vs-gpt5.html. **Session 888:** Optimized migration checklist conversion. **Session 887:** Added developer testimonials to homepage. Added direct Pro buy CTA to all 232 comparison pages.
+## STATUS: Week 10 of 12. $0 revenue (ROOT CAUSE FOUND — buy button was broken). Product DONE (865 pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). **Session 896:** Added gradient Pro CTA to 5 remaining indexed pages — 849 pages now link to go.html (98.2% coverage). **Session 895:** Added FAQPage schema to 4 high-value content pages. Routed 2 Stripe links through go.html. **Session 894:** Added gradient Pro CTA to 69 remaining tool/calculator pages. **Session 893:** Added gradient Pro CTA to 32 tool/content pages — ZERO conversion leaks. **Session 892:** Upgraded all 352 blog post Pro CTAs from pro.html to go.html checkout funnel. Removed deal urgency banner from go.html. **Session 891:** CRITICAL FIX — shared.js was overwriting ALL buy buttons on go.html to link back to go.html instead of Stripe checkout. Fixed by adding GO_SKIP.
 
 ---
 
@@ -28,8 +28,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. ✅ **Optimize migration checklist conversion** (Session 888) — Added OG/Twitter meta tags, trust signals, social proof testimonials, trust badges on CTA. Fixed GO_MODEL_MAP (3→7 providers).
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-894, Apr 23 - Jun 25)
-- **Sessions 889-894:** Pro CTA coverage 97.6% — 844 pages link to go.html. 352 blog + 33 cheapest + 10 provider hub + 32 tool/content + 69 remaining tool/calculator pages all upgraded. CRITICAL buy button fix. 9 commits, 497 files.
+### Completed (Sessions 416-896, Apr 23 - Jun 25)
+- **Sessions 889-896:** Pro CTA coverage 98.2% — 849 pages link to go.html. 352 blog + 33 cheapest + 10 provider hub + 32 tool/content + 69 remaining tool/calculator + 5 indexed pages (pipeline, wall-of-love, chrome-extension, launch, ph) all upgraded. CRITICAL buy button fix. 10 commits, 502 files.
 - **Sessions 878-888:** go.html conversion overhaul — flipped CTAs, trust signals, testimonials, social proof, Before/After, GO_MODEL_MAP fix, 232 comparison page CTAs, homepage testimonials, migration checklist optimization. 18 commits, 250+ files.
 - **Sessions 864-877:** Deal page build + UX fixes. 28 commits, 450+ files.
 - **Sessions 859-863:** Content completion + SEO fixes. 6 commits, 42 files.
