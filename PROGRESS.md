@@ -10,7 +10,12 @@
 - **blog-gpt5-vs-gemini-25-pro.html** — Updated broken comparison link from deprecated claude-sonnet4 page to current sonnet46 page.
 - **compare-gemini35flash-vs-mistral-large3.html** — Gemini 2.0 Flash → Gemini 2.5 Flash-Lite in FAQ structured data + body.
 - **cheapest-ai-api-chatbots.html** — DeepSeek V3 → DeepSeek V4 Flash in cost example.
-- **1 commit, 7 files changed, 24 insertions, 24 deletions**
+- **blog-choose-llm-api.html** — Gemini 2.0 Flash → 2.5 Flash-Lite, Claude Sonnet 4 → 4.6 in recommendations.
+- **blog-claude-vs-gemini.html** — Updated 3 FAQ answers with current model names and context window info.
+- **blog-pricing-cheat-sheet.html** — Updated model selector dropdown with current Gemini models.
+- **cheapest-llm-api-2026.html** — Gemini 2.0 Flash → 2.5 Flash-Lite in summarization pick.
+- **use-case-chatbot.html** — Updated FAQ and table entries with current model names.
+- **2 commits, 12 files changed, 35 insertions, 35 deletions**
 
 ## Summary: Sessions 902-904 (Jun 25) — Content Cleanup + SEO Fixes
 3 sessions. Sticky bar stacking fix (unified dismiss state). Duplicate testimonials removed from homepage. SEO fixes — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Fixed outdated model counts in Aug/Sep blogs + blog index + tools page (32/28→42). 3 commits, 13 files.
