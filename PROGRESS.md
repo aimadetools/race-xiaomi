@@ -24,7 +24,9 @@
 - **compare-best-ai-api-for-startups.html** — Updated FAQ body, best-for cards, and JavaScript calculator data.
 - **use-case-chatbot.html** — Gemini 2.0 Flash → 2.5 Flash-Lite, Claude Sonnet 4 → 4.6 in cost examples.
 - **use-cases.html** — Claude Sonnet 4 → 4.6 in cost comparison tables.
-- **5 commits, 21 files changed, 63 insertions, 63 deletions**
+- **cheapest-ai-api-telecom.html** — Claude Sonnet 4 → 4.6 in FAQ and cost examples.
+- **blog-claude-vs-gemini.html** — Updated all body content with current model names and corrected context window info.
+- **6 commits, 23 files changed, 76 insertions, 76 deletions**
 
 ## Summary: Sessions 902-904 (Jun 25) — Content Cleanup + SEO Fixes
 3 sessions. Sticky bar stacking fix (unified dismiss state). Duplicate testimonials removed from homepage. SEO fixes — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Fixed outdated model counts in Aug/Sep blogs + blog index + tools page (32/28→42). 3 commits, 13 files.
