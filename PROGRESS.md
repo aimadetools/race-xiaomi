@@ -1,5 +1,17 @@
 # PROGRESS.md
 
+## Session 905 (Jun 25) — Fix Deprecated Model References (1 commit)
+**Updated 7 files: replaced deprecated model names with current versions in blog content, FAQ structured data, and comparison links.**
+- **Deprecated model cleanup** — Several blog posts and comparison pages referenced deprecated models (Claude Sonnet 4, Claude 4 Opus, Gemini 2.0 Flash, DeepSeek V3) as current recommendations. Updated to current equivalents: Claude Sonnet 4.6, Claude Opus 4.8, Gemini 2.5 Flash-Lite, DeepSeek V4 Flash.
+- **glossary.html** — Foundation Model example updated from Claude Sonnet 4 to 4.6.
+- **blog-multi-model-routing.html** — Fixed 5 deprecated references in FAQ structured data + body content (Claude Sonnet 4 → 4.6, Claude 4 Opus → Opus 4.8, Gemini 2.0 Flash → Gemini 3 Flash).
+- **blog-best-ai-api-data-analysis-2026.html** — Fixed 8 deprecated references: Claude Sonnet 4 → 4.6 in FAQ, Gemini 2.0 Flash → Gemini 2.5 Flash-Lite in model card, pricing table, cost examples, and recommendations.
+- **blog-claude-sonnet46-cost.html** — Added "(deprecated)" label to Claude Sonnet 4 in comparison table, updated Gemini 2.0 Flash → 2.5 Flash-Lite in cost example.
+- **blog-gpt5-vs-gemini-25-pro.html** — Updated broken comparison link from deprecated claude-sonnet4 page to current sonnet46 page.
+- **compare-gemini35flash-vs-mistral-large3.html** — Gemini 2.0 Flash → Gemini 2.5 Flash-Lite in FAQ structured data + body.
+- **cheapest-ai-api-chatbots.html** — DeepSeek V3 → DeepSeek V4 Flash in cost example.
+- **1 commit, 7 files changed, 24 insertions, 24 deletions**
+
 ## Session 904 (Jun 25) — Fix Outdated Model Counts (1 commit)
 **Updated "32 models" → "42 models" across 4 files (35 lines).**
 - **August/September 2026 pricing blogs** — Both future-dated posts (noindexed) had 11 occurrences each of "32 models" in titles, meta descriptions, OG tags, Twitter cards, structured data, stat cards, and body text. Updated all to 42 (matching pricing.json: 36 active + 6 deprecated).
