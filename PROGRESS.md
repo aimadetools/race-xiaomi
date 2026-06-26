@@ -1,5 +1,9 @@
 # PROGRESS.md
 
+## Session 913 (Jun 26) — go.html Exit Popup: Remove Conversion Leaks (1 commit)
+**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
+- **Removed free tool links from exit popup on go.html** — The exit survey's "not sure it's worth it" response linked to generate-report.html (a free tool that competes with the Pro CTA). The "don't trust" response linked to how-it-works.html (sends users off the conversion page). Both replaced with focused Pro value propositions that keep users on the conversion path. The "not sure value" response now shows a feature checklist instead of linking away. The "don't trust" response now emphasizes the 14-day money-back guarantee with a green highlight box. Session 912 removed sample report links from go.html body but missed the exit popup — this completes the conversion leak cleanup.
+
 ## Session 912 (Jun 26) — go.html Conversion: Remove Report Link Leak (1 commit)
 **Week 10 of 12. $0 revenue. Buy button fixed 3 days ago (Session 891). Focused on conversion optimization.**
 - **Removed sample report links from go.html** — The bottom of the checkout page had links to sample-pro-report.html, sample-pro-report-claude-sonnet.html, and generate-report.html. These sent visitors AWAY from the conversion page right after the bottom CTA. The generate-report.html link was especially dangerous — it's a free tool that gives away report value without requiring payment. The inline Pro preview section (Session 911) already shows cost comparison tables and migration code snippets, making these links redundant. Eliminates the last conversion leak on the checkout page.
