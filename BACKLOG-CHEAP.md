@@ -47,7 +47,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-913, Apr 23 - Jun 26)
+### Completed Summary (Sessions 416-914, Apr 23 - Jun 26)
+- **Session 914:** deal.html conversion fixes. Replaced 4 sample report links with inline Pro preview. Softened exit popup threshold (clientY < 5 → <= -10, 500ms delay). Added canonical URLs to go.html + deal.html. 3 commits.
 - **Session 913:** go.html exit popup conversion leak fix. Removed generate-report.html and how-it-works.html links from exit survey responses — both were sending users away from the checkout page. Replaced with focused Pro value propositions. 1 commit.
 - **Session 911:** go.html conversion optimization. Added inline Pro preview section (cost comparison table + migration code snippet). Removed ab-test.js from go.html + 4 other non-essential pages (deal.html, claude-4-last-chance.html, migration-checklist.html, trial-expired.html). 2 commits.
 - **Session 910:** Critical conversion funnel fixes on go.html. Removed noindex (page now indexable). Removed Deal nav link that leaked visitors. Killed A/B pricing test, standardized on $29. Removed trial CTAs that competed with buy button. Replaced fabricated social proof with factual data. Softened exit popup. 1 commit.

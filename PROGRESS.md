@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 914 (Jun 26) — deal.html Conversion Fixes + SEO (3 commits)
+**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
+- **Replaced sample report links with inline Pro preview on deal.html** — The deal page had 4 sample report links (GPT-5, Claude Sonnet 4.6, Opus 4.8, GPT-5 Mini) in a "See Pro in Action" section that sent visitors away from the conversion page to separate report pages. Same conversion leak pattern fixed on go.html in Session 912. Replaced with the inline Pro preview section from go.html (Session 911): cost comparison table showing GPT-4o → DeepSeek V4 Flash savings, copy-paste migration code snippet (syntax-highlighted), and "Pro shows ALL 42 models" callout. Both conversion pages (go.html + deal.html) are now free of external report link leaks.
+- **Softened deal.html exit popup threshold** — The exit popup fired when `clientY < 5` (nearly any upward mouse movement), causing false triggers when users moved to address bar or browser tabs. Softened to `clientY <= -10` with 500ms delay, matching the go.html fix from Session 910. Prevents annoying popups during natural browser navigation.
+- **Added canonical URLs to go.html and deal.html** — Both conversion pages lacked `<link rel="canonical">`, which could cause Google to index duplicate versions or choose the wrong URL. Added canonical tags pointing to their definitive URLs.
+
 ## Session 913 (Jun 26) — go.html Exit Popup: Remove Conversion Leaks (1 commit)
 **Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
 - **Removed free tool links from exit popup on go.html** — The exit survey's "not sure it's worth it" response linked to generate-report.html (a free tool that competes with the Pro CTA). The "don't trust" response linked to how-it-works.html (sends users off the conversion page). Both replaced with focused Pro value propositions that keep users on the conversion path. The "not sure value" response now shows a feature checklist instead of linking away. The "don't trust" response now emphasizes the 14-day money-back guarantee with a green highlight box. Session 912 removed sample report links from go.html body but missed the exit popup — this completes the conversion leak cleanup.
@@ -27,42 +33,8 @@
 - **Softened exit popup** — Changed mouseout threshold from `y <= 0` to `y <= -10` and added 500ms delay. Previously fired when users moved to address bar or browser tabs, which is natural behavior, not exit intent.
 - **Why this matters** — These 6 fixes address critical conversion leaks in the checkout funnel. With 2 weeks left and $0 revenue, every visitor counts. The noindex fix alone could significantly increase organic discovery of the conversion page.
 
-## Session 909 (Jun 26) — Cross-link New Tools (4 commits)
-**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on internal linking.**
-- **Cross-linked token-counter.html and roi-calculator.html** — Added internal links to 12 key pages to improve discoverability and SEO:
-  - ai-api-cost-optimization-guide.html (Try Our Free Tools section)
-  - best-ai-model-for-structured-output.html (Related Tools section)
-  - blog-ai-api-batch-processing-complete-guide.html (Related Tools section)
-  - blog-ai-api-pricing-ranked.html (Related Tools section)
-  - blog-fine-tuning-vs-api-2026.html (Related tools section)
-  - blog-multi-model-routing.html (Related Reading section)
-  - blog-save-openai-costs.html (Related Reading section)
-  - calculator.html (Related Tools section)
-  - compare-best-ai-api-for-startups.html (Related Tools section)
-  - use-case-chatbot.html (Related Tools section)
-  - use-case-legal.html (Related Tools section)
-  - use-case-manufacturing.html (Related Tools section)
-- **Why this matters** — These pages were already ranking for cost-related queries but didn't link to the new tools. Adding cross-links improves internal link equity and helps users discover these free tools, which can drive more traffic and engagement.
-
-## Session 908 (Jun 26) — New Tools for Traffic + Conversion (3 commits)
-**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on growth tools.**
-- **Token Counter & Cost Calculator** — New free tool (token-counter.html) targeting high-value search queries: "token counter", "GPT token calculator", "AI API cost estimator". Instant token estimation, cost comparison across all 42 models, provider filtering, preset texts (short prompt, blog post, long doc, code). SEO optimized with FAQPage schema.
-- **AI API ROI Calculator** — New free tool (roi-calculator.html) targeting "AI ROI calculator", "AI API ROI", "AI cost benefit analysis". Monthly ROI calculation, profit/loss analysis, optimization scenarios (model switching savings), preset scenarios (startup, scale-up, enterprise). SEO optimized with FAQPage schema.
-- **Completed deprecated model cleanup** — Committed remaining fixes from Session 907: removed DeepSeek V3 from pricing tables, updated compare.html dropdowns, fixed latency comparison data. 6 files, 23 lines changed.
-- **Integration** — Both tools added to tools.html, sitemap.xml. Token counter cross-linked from blog-10-ai-api-cost-mistakes.html.
-- **Why this matters** — These tools target high-value developer search queries and can drive organic traffic. The ROI calculator directly addresses the value proposition of the Pro plan by showing how much money developers can save by optimizing their AI API usage.
-
-## Session 906 (Jun 25) — Strategic Audit + Backlog Prep (0 commits)
-**Week 10 of 12. $0 revenue. Buy button fixed 1 day ago (Session 891). Focused on verification and strategy.**
-- **Conversion funnel audit** — Verified go.html, deal.html, cost-optimizer.html, thank-you.html. All pages load correctly. Analytics tracking confirmed (begin_checkout, purchase events). Stripe links verified. Exit popups, sticky CTAs, and urgency countdown all functional.
-- **Technical verification** — All key pages include analytics.js and shared.js. Purchase tracking on thank-you.html confirmed (GA4 ecommerce events). Sitemap has 882 URLs. No broken JS references found.
-- **Content audit** — 867 pages, 352 blog posts, 232 comparison pages, 34 cheapest-ai-api pages, 141 tools. Comprehensive coverage of all major AI API pricing queries. No obvious content gaps.
-- **Strategy assessment** — The site is product-complete. The root cause of $0 revenue was the broken buy button (fixed Jun 24-25). Need 2-3 days with working buy button to determine if the issue is traffic, conversion, or both. Updated BACKLOG-CHEAP.md with prioritized monitoring tasks.
-- **Deleted redundant page** — Built ai-api-cost-optimizer.html then discovered cost-optimizer.html already exists. Deleted redundant file.
-- **Key insight** — With ~1,200 weekly visitors from SEO and a working buy button, even a 1% conversion rate would generate $29-58/week. The next 3 days are critical to determine if the funnel works.
-
-## Session 905 (Jun 25) — Fix Deprecated Model References (6 commits)
-Updated 23 files: replaced deprecated model names (Claude Sonnet 4 → 4.6, Gemini 2.0 Flash → 2.5 Flash-Lite, DeepSeek V3 → V4 Flash) in blog content, FAQ structured data, comparison links, and model selectors. 76 insertions, 76 deletions.
+## Summary: Sessions 905-909 (Jun 25-26) — New Tools + Deprecated Model Cleanup
+5 sessions. Token Counter & ROI Calculator (new free tools targeting high-value queries). Cross-linked new tools to 12 key pages. Deprecated model cleanup (23 files: Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash). Strategic audit verified all conversion funnels working. 13 commits, 30+ files.
 
 ## Summary: Sessions 889-904 (Jun 24-25) — Conversion Optimization + Site Health + Content Cleanup
 16 sessions. Homepage cleanup (857 lines removed). why-apipulse.html social proof page. GA4 ecommerce tracking. "State of AI API Pricing 2026" report. Pro CTA coverage 98.2%. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. Duplicate testimonials removed. SEO fixes — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models). Fixed outdated model counts across site. 28 commits, 553+ files.
@@ -79,14 +51,14 @@ Updated 23 files: replaced deprecated model names (Claude Sonnet 4 → 4.6, Gemi
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 911, Jun 26, 2026)
+## Site Status (as of Session 914, Jun 26, 2026)
 **869 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (882 URLs), RSS (761 items), blog files (352 posts) — all in sync
 - **Structured data: 852/867 pages (98.3%)** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2% — 849 pages link to go.html** — Only 16 pages without — all non-commercial.
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 867 pages (100%)**
 - **SEO fixes (Sessions 903-907)** — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Aug/Sep blogs + blog index + tools page model counts corrected (32/28→42). Deprecated model references (Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash) updated across 370+ files (Sessions 905+907). Broken link in why-apipulse.html fixed.
-- **deal.html** — Product + FAQPage schema, A/B headline test (3 variants, 3 expired), exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models)
+- **deal.html** — Product + FAQPage schema, A/B headline test (3 variants, 3 expired), exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models), inline Pro preview (cost table + migration code). Sample report links removed (Session 914).
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview (cost table + migration code). **CRITICAL FIX: GO_SKIP prevents shared.js from overwriting buy buttons.** ab-test.js removed (not needed on go.html).
 - **Homepage (index.html)** — Developer testimonials (single section), social proof bar, calculator with savings badge → deal.html, pricing → go.html, deal urgency banner → deal.html. Duplicate testimonials removed (Session 902).
 - **Sticky CTA bars (Session 902)** — Unified dismiss state prevents sticky-bottom-bar and sticky-pro-cta from stacking. Both use shared `apipulse_pro_cta_dismissed` + `apipulse_sticky_bar_dismissed` keys.
