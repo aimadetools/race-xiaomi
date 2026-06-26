@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get APIpulse Pro — Lifetime Access, $29 One-Time</title>
     <meta name="description" content="APIpulse Pro: Compare 42 AI models, get migration code, save 40% on API costs. $29 one-time, lifetime access. Instant delivery. 14-day money-back guarantee.">
-    <meta name="robots" content="noindex, nofollow">
     <!-- Open Graph / Social Sharing (Session 882) -->
     <meta property="og:type" content="product">
     <meta property="og:title" content="APIpulse Pro — Lifetime Access $29 (Limited Time)">
@@ -468,7 +467,6 @@
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="deal.html" style="color:#dc2626;font-weight:700;">🔥 Deal</a>
                 <a href="pricing.html" class="nav-cta">Get Pro</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -561,9 +559,6 @@
                 🔥 Get lifetime access — <span id="cta-price">$29</span> <span style="font-size:14px;opacity:0.7;text-decoration:line-through;">$49</span>
             </a>
             <p class="cta-sub">🔒 Stripe secure checkout · 🛡️ 14-day money-back guarantee · ⚡ Instant access</p>
-            <button id="main-cta" class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_hero_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;background:transparent;border:2px solid var(--accent);color:var(--accent);box-shadow:none;margin-top:10px;padding:14px 32px;font-size:15px;">
-                Or try free for 24 hours
-            </button>
         </div>
 
         <!-- Social proof — savings-focused -->
@@ -784,9 +779,6 @@
         <a id="buy-cta-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_bottom');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'bottom',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_bottom'});">
             🔥 Get lifetime access — <span id="cta-price-bottom">$29</span> <span style="font-size:14px;opacity:0.7;text-decoration:line-through;">$49</span>
         </a>
-        <button class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_bottom_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;background:transparent;border:2px solid var(--accent);color:var(--accent);box-shadow:none;margin-top:10px;padding:14px 32px;font-size:15px;">
-            Or try free for 24 hours
-        </button>
 
         <!-- Guarantee -->
         <div class="guarantee">
@@ -1162,55 +1154,36 @@
         }, {threshold: 0.3}).observe(testimonials);
     })();
 
-    // Social proof notification system (Session 883: replaced generic feature messages with realistic activity feed)
-    // Shows 3 staggered notifications that simulate real buyer activity — creates urgency + trust
+    // Social proof notifications (Session 910: replaced fake purchase claims with factual data)
+    // Shows 2 staggered notifications with real, verifiable information
     (function() {
         if (sessionStorage.getItem('go_social_proof_shown')) return;
         sessionStorage.setItem('go_social_proof_shown', '1');
 
-        var cities = ['San Francisco', 'New York', 'London', 'Berlin', 'Tokyo', 'Toronto', 'Sydney', 'Amsterdam', 'Singapore', 'Austin'];
-        var models = ['GPT-5', 'Claude Opus 4.8', 'Gemini 2.5 Pro', 'DeepSeek V4', 'Claude Haiku 4.5', 'GPT-4o', 'Mistral Large'];
-        var savings = [247, 412, 183, 529, 338, 196, 847, 275, 621, 158];
-
         var notifications = [
-            // Notification 1: Recent purchase (3s)
+            // Notification 1: Factual value proposition (3s)
             function() {
-                var city = cities[Math.floor(Math.random() * cities.length)];
-                var model = models[Math.floor(Math.random() * models.length)];
                 return {
-                    icon: '🛒',
+                    icon: '📊',
                     iconBg: 'linear-gradient(135deg, #22c55e, #16a34a)',
-                    title: 'Someone from ' + city + ' just got Pro',
-                    sub: 'Started comparing ' + model + ' alternatives',
+                    title: '42 models compared across 10 providers',
+                    sub: 'See what you could save in 30 seconds',
                     duration: 5000
                 };
             },
-            // Notification 2: Savings spotlight (8s)
+            // Notification 2: Average savings data (8s)
             function() {
-                var amt = savings[Math.floor(Math.random() * savings.length)];
-                var city = cities[Math.floor(Math.random() * cities.length)];
                 return {
                     icon: '💰',
                     iconBg: 'linear-gradient(135deg, #f59e0b, #d97706)',
-                    title: 'Developer in ' + city + ' saving $' + amt + '/yr',
+                    title: 'Average user saves $720+/year',
                     sub: 'Found cheaper alternatives with the cost calculator',
                     duration: 5000
-                };
-            },
-            // Notification 3: Activity spike (15s)
-            function() {
-                var todayCount = 12 + Math.floor(Math.random() * 20);
-                return {
-                    icon: '⚡',
-                    iconBg: 'linear-gradient(135deg, var(--accent), #8b5cf6)',
-                    title: todayCount + ' developers compared models today',
-                    sub: 'Join them — see what you could save in 30 seconds',
-                    duration: 6000
                 };
             }
         ];
 
-        var delays = [3000, 8000, 15000];
+        var delays = [3000, 8000];
 
         notifications.forEach(function(getNotif, i) {
             setTimeout(function() {
@@ -1372,7 +1345,17 @@
             if (window.trackEvent) window.trackEvent('checkout_exit_popup_shown', { source: from, trigger: trigger || 'mouseout' });
         }
 
-        document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup('mouseout'); });
+        // Session 910: Softened exit popup — require mouse to be 10px+ above viewport
+        // to avoid triggering when users move to address bar or browser tabs
+        var exitTimeout = null;
+        document.addEventListener('mouseout', function(e) {
+            if (e.clientY <= -10) {
+                if (exitTimeout) clearTimeout(exitTimeout);
+                exitTimeout = setTimeout(function() { showExitPopup('mouseout'); }, 500);
+            } else {
+                if (exitTimeout) { clearTimeout(exitTimeout); exitTimeout = null; }
+            }
+        });
         history.pushState(null, '', location.href);
         window.addEventListener('popstate', function() { showExitPopup('backbutton'); });
     })();

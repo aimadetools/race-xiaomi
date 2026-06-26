@@ -34,39 +34,23 @@ window.DEAL_DEADLINE = new Date('2026-07-12T23:59:59Z').getTime();
 window.DEAL_EXPIRED = Date.now() > window.DEAL_DEADLINE;
 window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()) / 86400000));
 
-// A/B Pricing Test — $19 vs $29 (one-time payment links)
-// Session 722: Simplified from 3 variants to 2 to reduce decision paralysis.
-// Variant A = $19 (Budget), Variant B = $29 (Control)
+// Pricing — standardized on $29 (Session 910: killed A/B test, $19 variant never converted)
 // NOTE: deal.html is EXCLUDED — it has its own $29-only conversion flow with countdown,
 // value stack, and savings calculator. Overriding the price there breaks the messaging.
-// Session 877: After July 12 expiry, all prices become $49 regardless of A/B variant.
+// Session 877: After July 12 expiry, all prices become $49.
 (function(){
     var DEAL_SKIP = location.pathname.indexOf('deal.html') !== -1;
     var GO_SKIP = location.pathname.indexOf('go.html') !== -1;
-    var VARIANTS = {A:{price:19,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49}};
-    var STRIPE_LINKS = {
-        A: 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i', // $19 one-time
-        B: 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'  // $29 one-time (confirmed)
-    };
-    var KEY = 'ab_pricing_variant';
-    var variant = localStorage.getItem(KEY);
-    // Migrate $39 variant users to $29 control
-    if (variant === 'C') { variant = 'B'; localStorage.setItem(KEY, variant); }
-    if (!variant || !VARIANTS[variant]) {
-        variant = Math.random() < 0.5 ? 'A' : 'B';
-        localStorage.setItem(KEY, variant);
-    }
-    var v = VARIANTS[variant];
-    window._abVariant = variant;
+    var CONFIRMED_STRIPE_LINK = 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'; // $29 one-time
 
-    // Post-expiry: override to $49 regardless of A/B variant
+    // Post-expiry: $49; otherwise $29
     if (window.DEAL_EXPIRED) {
         window._abPrice = 49;
-        window._abStripeLink = STRIPE_LINKS[variant]; // keep same link, Stripe handles price
     } else {
-        window._abPrice = v.price;
-        window._abStripeLink = STRIPE_LINKS[variant];
+        window._abPrice = 29;
     }
+    window._abStripeLink = CONFIRMED_STRIPE_LINK;
+    window._abVariant = 'B'; // standardized
 
     // Skip price overrides on deal.html and go.html
     // deal.html has its own $29 conversion flow
@@ -79,7 +63,7 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
         // comparison CTAs, and direct Stripe links
         document.querySelectorAll('a').forEach(function(a) {
             if (a.textContent.includes('$29')) {
-                a.textContent = a.textContent.replace('$29', '$' + v.price);
+                a.textContent = a.textContent.replace('$29', '$' + window._abPrice);
             }
             // Route ALL Stripe checkout links through go.html for trust-building
             // go.html shows social proof, testimonials, FAQ, and guarantee before Stripe
@@ -133,7 +117,7 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
         while (walker.nextNode()) nodes.push(walker.currentNode);
         nodes.forEach(function(node) {
             if (node.nodeValue.indexOf('$29') !== -1) {
-                node.nodeValue = node.nodeValue.split('$29').join('$' + v.price);
+                node.nodeValue = node.nodeValue.split('$29').join('$' + window._abPrice);
             }
         });
         // Session 877: Post-expiry — replace "price goes up July 12" across 693 pages
@@ -157,13 +141,13 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
             try {
                 var text = s.textContent;
                 if (text.indexOf('"29') !== -1) {
-                    s.textContent = text.split('"price":"29').join('"price":"' + v.price);
-                    s.textContent = s.textContent.split('"price": "29').join('"price": "' + v.price);
+                    s.textContent = text.split('"price":"29').join('"price":"' + window._abPrice);
+                    s.textContent = s.textContent.split('"price": "29').join('"price": "' + window._abPrice);
                 }
             } catch(e) {}
         });
-        // Track variant assignment
-        if (window.trackEvent) window.trackEvent('ab_pricing_variant_assigned', {variant: variant, price: v.price});
+        // Track pricing view (Session 910: A/B test killed, standardized on $29)
+        if (window.trackEvent) window.trackEvent('pricing_view', {price: window._abPrice});
     });
 })();
 
