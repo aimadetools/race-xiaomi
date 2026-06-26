@@ -47,7 +47,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-910, Apr 23 - Jun 26)
+### Completed Summary (Sessions 416-911, Apr 23 - Jun 26)
+- **Session 911:** go.html conversion optimization. Added inline Pro preview section (cost comparison table + migration code snippet). Removed ab-test.js from go.html + 4 other non-essential pages (deal.html, claude-4-last-chance.html, migration-checklist.html, trial-expired.html). 2 commits.
 - **Session 910:** Critical conversion funnel fixes on go.html. Removed noindex (page now indexable). Removed Deal nav link that leaked visitors. Killed A/B pricing test, standardized on $29. Removed trial CTAs that competed with buy button. Replaced fabricated social proof with factual data. Softened exit popup. 1 commit.
 - **Session 909:** Cross-linked token-counter.html and roi-calculator.html to 12 key pages (optimization guide, structured output, batch processing, pricing ranked, fine-tuning, multi-model routing, save costs, calculator, startups, chatbot, legal, manufacturing). 4 commits.
 - **Session 907:** Massive deprecated model cleanup — 363 files, 2,030 lines. Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash across use-case pages, cheapest pages, industry blogs, comparisons, tools. Fixed broken link in why-apipulse.html. 2 commits.

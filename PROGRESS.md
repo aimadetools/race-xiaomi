@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 911 (Jun 26) — go.html Conversion: Inline Pro Preview (2 commits)
+**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
+- **Removed ab-test.js from go.html** — The homepage A/B test script (index vs launch redirect) was still loading on go.html where it does nothing useful. It assigned a variant, fired tracking events, but had no effect since go.html matches neither path. Removed to eliminate the wasted HTTP request and useless GA4 events.
+- **Added "What Pro gives you — preview" section** — New inline section between Before/After and ROI Payback that shows visitors exactly what Pro delivers without requiring them to click away. Two components:
+  - **Cost comparison table** — Shows a concrete example: GPT-4o ($500/mo) → DeepSeek V4 Flash ($34/mo, $466 savings), Gemini 3 Flash ($87/mo, $413 savings), Mistral Small 4 ($107/mo, $393 savings). Includes "Pro shows ALL 42 models ranked" note.
+  - **Migration code snippet** — Syntax-highlighted JavaScript showing the actual switch from OpenAI to DeepSeek. Demonstrates the "copy-paste migration code" promise in action. Dark theme (GitHub-style) for developer appeal.
+- **Why this matters** — With the buy button working for 2 days and organic traffic arriving, the biggest conversion blocker is visitors not understanding what $29 buys them. The calculator shows potential savings, but the preview shows the actual Pro output. Inline preview eliminates the need to click sample report links (which take visitors off the conversion page). This addresses exit survey reason #2 ("Not sure it's worth it") with concrete evidence.
+- **Removed ab-test.js from 4 more pages** — deal.html, claude-4-last-chance.html, migration-checklist.html, trial-expired.html. The script is a homepage A/B test (index vs launch redirect) that does nothing on other pages except waste an HTTP request and fire useless GA4 events. Now only loaded on index.html and launch.html where it's needed.
+
 ## Session 910 (Jun 26) — Critical Conversion Funnel Fixes (1 commit)
 **Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
 - **Removed noindex from go.html** — The conversion page had `<meta name="robots" content="noindex, nofollow">` which prevented Google from indexing it. This is the single highest-impact fix for organic discovery of the checkout page. The page has Product + FAQ schema and was already in the sitemap at priority 1.0.
@@ -62,7 +71,7 @@ Updated 23 files: replaced deprecated model names (Claude Sonnet 4 → 4.6, Gemi
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 909, Jun 26, 2026)
+## Site Status (as of Session 911, Jun 26, 2026)
 **869 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (882 URLs), RSS (761 items), blog files (352 posts) — all in sync
 - **Structured data: 852/867 pages (98.3%)** — FAQPage schema on key pages. 15 pages without are non-commercial.
@@ -70,7 +79,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 867 pages (100%)**
 - **SEO fixes (Sessions 903-907)** — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Aug/Sep blogs + blog index + tools page model counts corrected (32/28→42). Deprecated model references (Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash) updated across 370+ files (Sessions 905+907). Broken link in why-apipulse.html fixed.
 - **deal.html** — Product + FAQPage schema, A/B headline test (3 variants, 3 expired), exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models)
-- **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema. **CRITICAL FIX: GO_SKIP prevents shared.js from overwriting buy buttons.**
+- **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview (cost table + migration code). **CRITICAL FIX: GO_SKIP prevents shared.js from overwriting buy buttons.** ab-test.js removed (not needed on go.html).
 - **Homepage (index.html)** — Developer testimonials (single section), social proof bar, calculator with savings badge → deal.html, pricing → go.html, deal urgency banner → deal.html. Duplicate testimonials removed (Session 902).
 - **Sticky CTA bars (Session 902)** — Unified dismiss state prevents sticky-bottom-bar and sticky-pro-cta from stacking. Both use shared `apipulse_pro_cta_dismissed` + `apipulse_sticky_bar_dismissed` keys.
 - **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, pages auto-update, deal banners switch to regular pricing.
