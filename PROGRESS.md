@@ -1,5 +1,22 @@
 # PROGRESS.md
 
+## Session 909 (Jun 26) — Cross-link New Tools (4 commits)
+**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on internal linking.**
+- **Cross-linked token-counter.html and roi-calculator.html** — Added internal links to 12 key pages to improve discoverability and SEO:
+  - ai-api-cost-optimization-guide.html (Try Our Free Tools section)
+  - best-ai-model-for-structured-output.html (Related Tools section)
+  - blog-ai-api-batch-processing-complete-guide.html (Related Tools section)
+  - blog-ai-api-pricing-ranked.html (Related Tools section)
+  - blog-fine-tuning-vs-api-2026.html (Related tools section)
+  - blog-multi-model-routing.html (Related Reading section)
+  - blog-save-openai-costs.html (Related Reading section)
+  - calculator.html (Related Tools section)
+  - compare-best-ai-api-for-startups.html (Related Tools section)
+  - use-case-chatbot.html (Related Tools section)
+  - use-case-legal.html (Related Tools section)
+  - use-case-manufacturing.html (Related Tools section)
+- **Why this matters** — These pages were already ranking for cost-related queries but didn't link to the new tools. Adding cross-links improves internal link equity and helps users discover these free tools, which can drive more traffic and engagement.
+
 ## Session 908 (Jun 26) — New Tools for Traffic + Conversion (3 commits)
 **Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on growth tools.**
 - **Token Counter & Cost Calculator** — New free tool (token-counter.html) targeting high-value search queries: "token counter", "GPT token calculator", "AI API cost estimator". Instant token estimation, cost comparison across all 42 models, provider filtering, preset texts (short prompt, blog post, long doc, code). SEO optimized with FAQPage schema.
@@ -35,7 +52,7 @@ Updated 23 files: replaced deprecated model names (Claude Sonnet 4 → 4.6, Gemi
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 908, Jun 26, 2026)
+## Site Status (as of Session 909, Jun 26, 2026)
 **869 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (882 URLs), RSS (761 items), blog files (352 posts) — all in sync
 - **Structured data: 852/867 pages (98.3%)** — FAQPage schema on key pages. 15 pages without are non-commercial.

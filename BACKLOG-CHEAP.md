@@ -23,7 +23,6 @@
 - **Update widget pricing data** when model prices change (widget/embed.js).
 - **Promote token-counter.html** — Share in dev communities, add to directory submissions. Targets "token counter", "GPT calculator" queries.
 - **Promote roi-calculator.html** — Share in dev communities, add to directory submissions. Targets "AI ROI calculator", "AI cost benefit" queries.
-- **Cross-link new tools** — Add token-counter.html and roi-calculator.html links to more blog posts and tool pages for better internal linking.
 
 ### Active Tasks — Monitoring (need GA4 data)
 - Monitor pro_trial_started events — trials per day? Which source?
@@ -48,7 +47,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-907, Apr 23 - Jun 26)
+### Completed Summary (Sessions 416-909, Apr 23 - Jun 26)
+- **Session 909:** Cross-linked token-counter.html and roi-calculator.html to 12 key pages (optimization guide, structured output, batch processing, pricing ranked, fine-tuning, multi-model routing, save costs, calculator, startups, chatbot, legal, manufacturing). 4 commits.
 - **Session 907:** Massive deprecated model cleanup — 363 files, 2,030 lines. Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash across use-case pages, cheapest pages, industry blogs, comparisons, tools. Fixed broken link in why-apipulse.html. 2 commits.
 - **Sessions 889-906:** Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. SEO fixes (6 pages un-noindexed, 3 canonical URLs fixed). July 2026 blog updated (32→42 models). First round of deprecated model fixes (23 files). 28 commits, 553+ files.
 - **Sessions 878-888:** go.html conversion overhaul — flipped CTAs, trust signals, testimonials, social proof, Before/After, GO_MODEL_MAP fix, 232 comparison page CTAs. 18 commits, 250+ files.
