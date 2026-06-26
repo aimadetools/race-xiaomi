@@ -1,5 +1,9 @@
 # PROGRESS.md
 
+## Session 912 (Jun 26) — go.html Conversion: Remove Report Link Leak (1 commit)
+**Week 10 of 12. $0 revenue. Buy button fixed 3 days ago (Session 891). Focused on conversion optimization.**
+- **Removed sample report links from go.html** — The bottom of the checkout page had links to sample-pro-report.html, sample-pro-report-claude-sonnet.html, and generate-report.html. These sent visitors AWAY from the conversion page right after the bottom CTA. The generate-report.html link was especially dangerous — it's a free tool that gives away report value without requiring payment. The inline Pro preview section (Session 911) already shows cost comparison tables and migration code snippets, making these links redundant. Eliminates the last conversion leak on the checkout page.
+
 ## Session 911 (Jun 26) — go.html Conversion: Inline Pro Preview (2 commits)
 **Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
 - **Removed ab-test.js from go.html** — The homepage A/B test script (index vs launch redirect) was still loading on go.html where it does nothing useful. It assigned a variant, fired tracking events, but had no effect since go.html matches neither path. Removed to eliminate the wasted HTTP request and useless GA4 events.
