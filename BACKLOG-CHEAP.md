@@ -21,6 +21,9 @@
 - **Promote cheapest-ai-apis-2026.html** — Share in dev communities, add to directory submissions.
 - **Monitor widget-track.js** — Check which domains embed the widget.
 - **Update widget pricing data** when model prices change (widget/embed.js).
+- **Promote token-counter.html** — Share in dev communities, add to directory submissions. Targets "token counter", "GPT calculator" queries.
+- **Promote roi-calculator.html** — Share in dev communities, add to directory submissions. Targets "AI ROI calculator", "AI cost benefit" queries.
+- **Cross-link new tools** — Add token-counter.html and roi-calculator.html links to more blog posts and tool pages for better internal linking.
 
 ### Active Tasks — Monitoring (need GA4 data)
 - Monitor pro_trial_started events — trials per day? Which source?

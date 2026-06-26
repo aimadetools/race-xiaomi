@@ -1,11 +1,12 @@
 # PROGRESS.md
 
-## Session 907 (Jun 26) — Deprecated Model Reference Cleanup (1 commit)
-**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on content quality.**
-- **Deprecated model cleanup** — Replaced deprecated model names across 363 files: Claude Sonnet 4 → 4.6, Gemini 2.0 Flash → 2.5 Flash-Lite, Gemini 2.0 Flash Lite → 2.5 Flash-Lite. Preserved historical references in migration/shutdown pages. Fixed double-replacement artifacts (4.6.6, Flash-Lite-Lite). 2,030 lines changed.
-- **Scope** — 25 use-case pages, 34 cheapest-ai-api pages, 50+ industry cost blogs, 30+ comparison pages, provider pages, hub pages, tools. All changes in recommendation contexts only — migration/shutdown content left intact.
-- **Why this matters** — Deprecated model names hurt trust and SEO. Visitors seeing "Claude Sonnet 4" or "Gemini 2.0 Flash" as current recommendations question the site's accuracy. This cleanup ensures the site presents current, accurate model information.
-- **Conversion status** — Buy button fixed 2 days ago. Monitoring window active (check GA4 by Jun 28). No changes to conversion funnel this session.
+## Session 908 (Jun 26) — New Tools for Traffic + Conversion (3 commits)
+**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on growth tools.**
+- **Token Counter & Cost Calculator** — New free tool (token-counter.html) targeting high-value search queries: "token counter", "GPT token calculator", "AI API cost estimator". Instant token estimation, cost comparison across all 42 models, provider filtering, preset texts (short prompt, blog post, long doc, code). SEO optimized with FAQPage schema.
+- **AI API ROI Calculator** — New free tool (roi-calculator.html) targeting "AI ROI calculator", "AI API ROI", "AI cost benefit analysis". Monthly ROI calculation, profit/loss analysis, optimization scenarios (model switching savings), preset scenarios (startup, scale-up, enterprise). SEO optimized with FAQPage schema.
+- **Completed deprecated model cleanup** — Committed remaining fixes from Session 907: removed DeepSeek V3 from pricing tables, updated compare.html dropdowns, fixed latency comparison data. 6 files, 23 lines changed.
+- **Integration** — Both tools added to tools.html, sitemap.xml. Token counter cross-linked from blog-10-ai-api-cost-mistakes.html.
+- **Why this matters** — These tools target high-value developer search queries and can drive organic traffic. The ROI calculator directly addresses the value proposition of the Pro plan by showing how much money developers can save by optimizing their AI API usage.
 
 ## Session 906 (Jun 25) — Strategic Audit + Backlog Prep (0 commits)
 **Week 10 of 12. $0 revenue. Buy button fixed 1 day ago (Session 891). Focused on verification and strategy.**
@@ -34,8 +35,8 @@ Updated 23 files: replaced deprecated model names (Claude Sonnet 4 → 4.6, Gemi
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 907, Jun 26, 2026)
-**867 web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
+## Site Status (as of Session 908, Jun 26, 2026)
+**869 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (882 URLs), RSS (761 items), blog files (352 posts) — all in sync
 - **Structured data: 852/867 pages (98.3%)** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2% — 849 pages link to go.html** — Only 16 pages without — all non-commercial.
