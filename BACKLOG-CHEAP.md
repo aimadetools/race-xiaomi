@@ -45,15 +45,10 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-905, Apr 23 - Jun 25)
-- **Sessions 889-905:** Homepage cleanup (trimmed What's New from 40+ items to 8, updated comparison table with current models). why-apipulse.html social proof page. Pro CTA coverage 98.2% — 849 pages link to go.html. CRITICAL buy button fix. Site health audit. Sticky bar stacking fix (unified dismiss). Duplicate testimonials removed. SEO fixes — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Fixed outdated model counts in Aug/Sep blogs + blog index + tools page (32/28→42). Fixed deprecated model references (Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash) across 7 files. 17 commits, 530 files.
-- **Sessions 878-888:** go.html conversion overhaul — flipped CTAs, trust signals, testimonials, social proof, Before/After, GO_MODEL_MAP fix, 232 comparison page CTAs, homepage testimonials, migration checklist optimization. 18 commits, 250+ files.
-- **Sessions 864-877:** Deal page build + UX fixes. 28 commits, 450+ files.
-- **Sessions 859-863:** Content completion + SEO fixes. 6 commits, 42 files.
-- **Sessions 854-858:** Deprecation tracker + conversion + content fixes. 6 commits, 56 files.
-- **Sessions 828-853:** Use-case blitz + cheapest pages. 30+ commits, 120+ files.
-- **Sessions 804-827:** Content blitz + conversion optimization. 18+ commits, 60+ files.
-- **Sessions 787-803:** Conversion funnel + distribution tools. 13 commits, 200+ files.
-- **Sessions 715-786:** Conversion optimization + content blitz. 130+ commits, 800+ files.
-- **Sessions 599-714:** Claude 4 shutdown + conversion foundation. 160+ commits, 750+ files.
+### Completed Summary (Sessions 416-907, Apr 23 - Jun 26)
+- **Session 907:** Massive deprecated model cleanup — 363 files, 2,030 lines. Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash across use-case pages, cheapest pages, industry blogs, comparisons, tools. Fixed broken link in why-apipulse.html. 2 commits.
+- **Sessions 889-906:** Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. SEO fixes (6 pages un-noindexed, 3 canonical URLs fixed). July 2026 blog updated (32→42 models). First round of deprecated model fixes (23 files). 28 commits, 553+ files.
+- **Sessions 878-888:** go.html conversion overhaul — flipped CTAs, trust signals, testimonials, social proof, Before/After, GO_MODEL_MAP fix, 232 comparison page CTAs. 18 commits, 250+ files.
+- **Sessions 804-877:** Deal page + content blitz + conversion optimization. 78+ commits, 670+ files.
+- **Sessions 599-803:** Conversion funnel + distribution tools + Claude 4 shutdown. 303+ commits, 1750+ files.
 - **Sessions 1-598:** Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools.
