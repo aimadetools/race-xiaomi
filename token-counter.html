@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Counter & Cost Calculator — Free Online Tool | APIpulse</title>
+    <meta name="description" content="Count tokens and calculate AI API costs instantly. Paste your text to see token count and pricing across 42 models from OpenAI, Anthropic, Google, DeepSeek, and more.">
+    <meta name="keywords" content="token counter, token calculator, GPT token counter, AI token estimator, API cost calculator, token count tool, how many tokens, OpenAI tokenizer, Claude token counter">
+    <meta property="og:title" content="AI Token Counter & Cost Calculator — APIpulse">
+    <meta property="og:description" content="Count tokens and calculate AI API costs instantly. Free tool supporting 42 models.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/token-counter.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Token Counter & Cost Calculator — APIpulse">
+    <meta name="twitter:description" content="Count tokens and calculate AI API costs instantly. Free tool supporting 42 models.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/token-counter.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script>
+    window._resultsCtaConfig = {
+        resultSelector: '.results-section',
+        toolName: 'Token Counter',
+        proFeatures: ['Full token breakdown by model', 'Batch processing for multiple texts', 'Export cost comparison report', 'Price change alerts']
+    };
+    </script>
+    <script src="results-cta.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Token Counter & Cost Calculator",
+        "url": "https://getapipulse.com/token-counter.html",
+        "description": "Count tokens and calculate AI API costs instantly. Free tool supporting 42 models from OpenAI, Anthropic, Google, DeepSeek, and more.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I count tokens for GPT-4o and Claude?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use the free token counter above. Paste your text and see instant token counts plus cost estimates across 42 models. Different models tokenize text differently — GPT-4o uses cl100k_base encoding while Claude uses a similar BPE tokenizer. Our tool estimates tokens using a ~4 characters per token approximation which is accurate for English text."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does it cost to process 1 million tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Costs vary by model. Budget models like Gemini 2.5 Flash-Lite ($0.10/M input) or DeepSeek V4 Flash ($0.14/M) are cheapest. Mid-tier models like Claude Sonnet 4.6 ($3/M) or GPT-5 ($1.25/M) offer better quality. Premium models like Claude Opus 4.8 ($5/M) or GPT-5.5 ($5/M) are most expensive but most capable. Use the calculator above to compare exact costs for your text."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a token and how is it counted?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A token is a chunk of text that AI models process. For English text, 1 token is roughly 4 characters or 0.75 words. 'Hello world' is approximately 2 tokens. Different models use different tokenizers — GPT models use BPE (Byte Pair Encoding) while Claude uses a similar but distinct tokenizer. Numbers, code, and non-English text may tokenize differently."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero { padding: 120px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .calc-hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; }
+        .calc-container { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+        .input-section {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 32px;
+        }
+        .input-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .input-group { margin-bottom: 16px; }
+        .input-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--text-primary); }
+        .input-group .hint { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+        .input-group textarea, .input-group input, .input-group select {
+            width: 100%; padding: 12px 16px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-primary); font-size: 16px; outline: none;
+            transition: border-color 0.2s; font-family: inherit;
+        }
+        .input-group textarea { min-height: 160px; resize: vertical; line-height: 1.6; }
+        .input-group textarea:focus, .input-group input:focus, .input-group select:focus { border-color: var(--accent); }
+        .preset-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .preset-chip {
+            padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 500;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .preset-chip:hover, .preset-chip.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .token-summary {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;
+            margin-bottom: 24px;
+        }
+        .summary-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .summary-card.highlight { border-color: var(--accent); background: var(--accent-glow); }
+        .summary-value { font-size: 28px; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+        .summary-label { font-size: 13px; color: var(--text-muted); }
+        .results-section { margin-top: 32px; }
+        .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .results-header h2 { font-size: 20px; font-weight: 700; margin: 0; }
+        .results-count { font-size: 14px; color: var(--text-muted); }
+        .sort-btns { display: flex; gap: 8px; }
+        .sort-btn {
+            padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .sort-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .model-results { display: flex; flex-direction: column; gap: 12px; }
+        .model-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; display: grid;
+            grid-template-columns: 1fr auto; gap: 16px; align-items: center;
+            transition: all 0.2s;
+        }
+        .model-card:hover { border-color: var(--accent); }
+        .model-card.cheapest { border-left: 3px solid var(--green); }
+        .model-card.expensive { border-left: 3px solid #ef4444; opacity: 0.8; }
+        .model-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .model-provider { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+        .model-meta { display: flex; gap: 16px; flex-wrap: wrap; }
+        .meta-badge {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .meta-badge.tier-budget { background: rgba(34,197,94,0.1); color: var(--green); }
+        .meta-badge.tier-mid { background: rgba(251,191,36,0.1); color: #f59e0b; }
+        .meta-badge.tier-premium { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .model-cost { text-align: right; }
+        .cost-total { font-size: 18px; font-weight: 700; color: var(--accent); }
+        .cost-breakdown { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .cost-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .provider-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .filter-chip {
+            padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 500;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .filter-chip:hover, .filter-chip.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .info-box {
+            background: var(--accent-glow); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin-top: 32px;
+        }
+        .info-box h3 { margin: 0 0 12px; font-size: 18px; color: var(--accent); }
+        .info-box p { margin: 0 0 8px; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .info-box strong { color: var(--text-primary); }
+        .tip-section { margin-top: 32px; }
+        .tip-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+        .tip-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+        }
+        .tip-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+        .tip-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+        .cta-box {
+            text-align: center; padding: 40px 24px; margin-top: 40px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+        }
+        .cta-box h3 { font-size: 22px; margin-bottom: 12px; }
+        .cta-box p { color: var(--text-secondary); margin-bottom: 20px; }
+        .cta-box a { display: inline-block; }
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .input-grid { grid-template-columns: 1fr; }
+            .model-card { grid-template-columns: 1fr; }
+            .model-cost { text-align: left; }
+            .sort-btns { flex-wrap: wrap; }
+            .token-summary { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a> · <a href="api-cost-audit.html">🔍 Cost Audit</a>
+                <a href="industry-guides.html">Industry</a>
+                <a href="tools.html" class="active">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="go.html" class="nav-cta">Get Pro Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="calc-hero">
+            <h1>AI Token Counter & Cost Calculator</h1>
+            <p>Paste your text to count tokens and see how much it costs across 42 AI models. Free, instant, no signup required.</p>
+        </section>
+
+        <div class="calc-container">
+            <section class="input-section">
+                <h2>📝 Enter Your Text</h2>
+                <div class="preset-chips">
+                    <button class="preset-chip active" onclick="loadPreset('custom')">Custom Text</button>
+                    <button class="preset-chip" onclick="loadPreset('short')">Short Prompt (~50 tokens)</button>
+                    <button class="preset-chip" onclick="loadPreset('medium')">Blog Post (~500 tokens)</button>
+                    <button class="preset-chip" onclick="loadPreset('long')">Long Document (~2000 tokens)</button>
+                    <button class="preset-chip" onclick="loadPreset('code')">Code Snippet (~300 tokens)</button>
+                </div>
+                <div class="input-group">
+                    <label for="input-text">Your Text</label>
+                    <div class="hint">Paste any text, prompt, or code. Token count updates instantly.</div>
+                    <textarea id="input-text" placeholder="Paste your text here to count tokens and calculate API costs..."></textarea>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="output-text">Expected Output (optional)</label>
+                        <div class="hint">Estimate output tokens for total cost calculation</div>
+                        <input type="text" id="output-text" placeholder="e.g., 500 tokens or leave blank">
+                    </div>
+                    <div class="input-group">
+                        <label for="request-count">Number of Requests</label>
+                        <div class="hint">Calculate cost for multiple API calls</div>
+                        <input type="number" id="request-count" value="1" min="1" max="1000000">
+                    </div>
+                </div>
+            </section>
+
+            <section class="token-summary" id="token-summary">
+                <div class="summary-card highlight">
+                    <div class="summary-value" id="token-count">0</div>
+                    <div class="summary-label">Input Tokens</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value" id="char-count">0</div>
+                    <div class="summary-label">Characters</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value" id="word-count">0</div>
+                    <div class="summary-label">Words</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-value" id="cheapest-cost">—</div>
+                    <div class="summary-label">Cheapest Model</div>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div class="results-header">
+                    <h2>💰 Cost Comparison Across 42 Models</h2>
+                    <div class="sort-btns">
+                        <button class="sort-btn active" onclick="sortModels('cost')">Sort by Cost</button>
+                        <button class="sort-btn" onclick="sortModels('name')">Sort by Name</button>
+                        <button class="sort-btn" onclick="sortModels('provider')">Sort by Provider</button>
+                    </div>
+                </div>
+
+                <div class="provider-filter" id="provider-filter">
+                    <button class="filter-chip active" data-provider="all" onclick="filterProvider('all')">All Providers</button>
+                </div>
+
+                <div class="model-results" id="model-results">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <div class="info-box">
+                <h3>💡 How Token Counting Works</h3>
+                <p><strong>What is a token?</strong> Tokens are the basic units AI models use to process text. For English, ~4 characters ≈ 1 token. "Hello world" ≈ 2 tokens.</p>
+                <p><strong>Different models, different tokenizers.</strong> GPT models use BPE (Byte Pair Encoding), Claude uses a similar but distinct tokenizer. Exact counts vary by ±5-10%.</p>
+                <p><strong>This tool estimates tokens</strong> using character-based approximation (÷4 for English). For exact counts, use the provider's tokenizer directly. Our estimates are within 10% for most English text.</p>
+            </div>
+
+            <section class="tip-section">
+                <h2>💡 Tips to Reduce Token Costs</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>Use Shorter Prompts</h4>
+                        <p>Remove filler words, be specific, and use bullet points. A concise prompt can save 30-50% of input tokens without losing quality.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Choose the Right Model</h4>
+                        <p>Not every task needs GPT-5.5 or Claude Opus. Classification, extraction, and simple Q&A work great with budget models at 10-50x lower cost.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Set max_tokens</h4>
+                        <p>Always set max_tokens to limit output length. Without it, models may generate longer responses than needed, increasing output costs.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Batch Requests</h4>
+                        <p>Combine multiple items into one prompt when possible. "Analyze these 5 reviews" is cheaper than 5 separate API calls.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cta-box">
+                <h3>Save 30-80% on AI API Costs</h3>
+                <p>Get the full pricing database, migration guides, and cost optimization strategies with APIpulse Pro.</p>
+                <a href="go.html" class="btn-primary" id="token-counter-cta">Get Lifetime Access — $29</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <a href="index.html" class="footer-logo">API<span>pulse</span></a>
+                <p>AI API pricing intelligence for developers. 42 models. Real-time data. Smarter decisions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <a href="calculator.html">Cost Calculator</a>
+                <a href="compare.html">Compare Models</a>
+                <a href="cost-explorer.html">Cost Explorer</a>
+                <a href="token-counter.html">Token Counter</a>
+                <a href="latency-comparison.html">Latency Comparison</a>
+                <a href="rate-limit-calculator.html">Rate Limit Calculator</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing Data</a>
+                <a href="cheapest-ai-api.html">Cheapest AI API</a>
+                <a href="migration-checklist.html">Migration Guide</a>
+                <a href="deprecation-tracker.html">Deprecation Tracker</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="why-apipulse.html">Why APIpulse</a>
+                <a href="go.html">Get Pro Access</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 APIpulse. Built for developers, by developers.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Token estimation: ~4 chars per token for English (industry standard approximation)
+    function estimateTokens(text) {
+        if (!text || text.trim() === '') return 0;
+        // Handle special cases
+        const charCount = text.length;
+        // Base estimate: ~4 chars per token
+        let tokens = Math.ceil(charCount / 4);
+        // Adjust for whitespace-heavy text (spaces are usually 1 token each)
+        const spaces = (text.match(/\s/g) || []).length;
+        // If text has lots of whitespace, adjust upward slightly
+        if (spaces > charCount * 0.3) {
+            tokens = Math.ceil(tokens * 1.1);
+        }
+        // Adjust for code (code tends to tokenize into more tokens)
+        const codeIndicators = /[{}\[\]();=><]/g;
+        const codeMatches = (text.match(codeIndicators) || []).length;
+        if (codeMatches > charCount * 0.02) {
+            tokens = Math.ceil(tokens * 1.15);
+        }
+        return Math.max(1, tokens);
+    }
+
+    function countWords(text) {
+        if (!text || text.trim() === '') return 0;
+        return text.trim().split(/\s+/).filter(w => w.length > 0).length;
+    }
+
+    function formatNumber(num) {
+        if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+        if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+        return num.toLocaleString();
+    }
+
+    function formatCost(cost) {
+        if (cost === 0) return '$0.00';
+        if (cost < 0.000001) return '$<0.000001';
+        if (cost < 0.001) return '$' + cost.toFixed(6);
+        if (cost < 0.01) return '$' + cost.toFixed(4);
+        if (cost < 1) return '$' + cost.toFixed(3);
+        if (cost < 100) return '$' + cost.toFixed(2);
+        return '$' + cost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    }
+
+    // Preset texts
+    const PRESETS = {
+        custom: '',
+        short: 'What is the capital of France? Please provide a brief answer with some context about the city.',
+        medium: `Artificial intelligence has transformed how we build software. Large language models can now write code, analyze data, and even debug complex systems. But with dozens of providers and hundreds of models available, choosing the right API for your project is harder than ever.
+
+The key factors to consider are: cost per token, latency, context window size, and model capabilities. Budget models like GPT-4o mini or Claude Haiku cost 10-50x less than flagship models, but may not handle complex reasoning as well.
+
+For most production workloads, a mid-tier model like Claude Sonnet or GPT-5 offers the best balance of quality and cost. Reserve premium models for tasks that truly require advanced reasoning.
+
+Don't forget to factor in output tokens — they typically cost 3-5x more than input tokens. Setting max_tokens appropriately can save significant costs without sacrificing quality.`,
+        long: `The landscape of AI API pricing in 2026 is more complex and competitive than ever. With over 42 models from 10+ providers, developers face a paradox of choice that directly impacts their bottom line.
+
+OpenAI continues to dominate market share with GPT-5 and its variants, but pricing pressure from Google's Gemini family and Anthropic's Claude models has driven costs down significantly. The emergence of budget-friendly options like DeepSeek V4 Flash and Gemini 2.5 Flash-Lite has made AI accessible to startups and individual developers.
+
+Key pricing trends this year include: tiered pricing based on usage volume, significant discounts for batch processing, and the growing popularity of smaller, specialized models that punch above their weight class.
+
+For enterprise customers, the math is straightforward — choosing the right model for each task can reduce AI spend by 40-70% without noticeable quality degradation. The trick is having accurate, up-to-date pricing data to make informed decisions.
+
+Context windows have expanded dramatically, with most providers now offering 1M+ tokens. This enables new use cases like processing entire codebases or analyzing lengthy documents in a single API call.
+
+Output token pricing remains the biggest variable. While input tokens cost between $0.075 and $30 per million across providers, output tokens range from $0.30 to $180 per million — a 600x spread that makes model selection critical.
+
+The API market is also seeing increased specialization. Code-focused models, vision models, and reasoning-optimized variants each come with their own pricing structures. Understanding these nuances is key to optimizing costs.
+
+Looking ahead, we expect continued price compression, especially in the budget tier. Providers are racing to the bottom on simple tasks while maintaining premium pricing for advanced capabilities. The winners will be developers who can match their workload to the right model at the right price.`,
+        code: `function calculateAPICost(model, inputTokens, outputTokens) {
+    // Get pricing from database
+    const pricing = getModelPricing(model);
+    if (!pricing) {
+        throw new Error(\`Unknown model: \${model}\`);
+    }
+
+    // Calculate costs (prices per million tokens)
+    const inputCost = (inputTokens / 1_000_000) * pricing.input;
+    const outputCost = (outputTokens / 1_000_000) * pricing.output;
+
+    return {
+        inputCost: inputCost.toFixed(6),
+        outputCost: outputCost.toFixed(6),
+        totalCost: (inputCost + outputCost).toFixed(6),
+        model: model,
+        provider: pricing.provider
+    };
+}
+
+// Example usage
+const cost = calculateAPICost('anthropic-sonnet46', 1500, 500);
+console.log(\`Total cost: $\${cost.totalCost}\`);`
+    };
+
+    let currentSort = 'cost';
+    let currentFilter = 'all';
+    let currentTokens = 0;
+    let currentOutputTokens = 0;
+    let currentRequestCount = 1;
+
+    function loadPreset(preset) {
+        const textarea = document.getElementById('input-text');
+        textarea.value = PRESETS[preset];
+        // Update active chip
+        document.querySelectorAll('.preset-chip').forEach(chip => chip.classList.remove('active'));
+        event.target.classList.add('active');
+        updateCounts();
+    }
+
+    function updateCounts() {
+        const text = document.getElementById('input-text').value;
+        const outputText = document.getElementById('output-text').value;
+        const requestCount = parseInt(document.getElementById('request-count').value) || 1;
+
+        currentTokens = estimateTokens(text);
+        currentOutputTokens = outputText ? estimateTokens(outputText) : Math.ceil(currentTokens * 0.3); // Default: 30% of input
+        currentRequestCount = requestCount;
+
+        // Update summary cards
+        document.getElementById('token-count').textContent = formatNumber(currentTokens * requestCount);
+        document.getElementById('char-count').textContent = formatNumber(text.length * requestCount);
+        document.getElementById('word-count').textContent = formatNumber(countWords(text) * requestCount);
+
+        renderModelResults();
+    }
+
+    function calculateModelCost(model) {
+        const inputCost = (currentTokens * currentRequestCount / 1_000_000) * model.input;
+        const outputCost = (currentOutputTokens * currentRequestCount / 1_000_000) * model.output;
+        return { inputCost, outputCost, totalCost: inputCost + outputCost };
+    }
+
+    function renderModelResults() {
+        const container = document.getElementById('model-results');
+        const filterContainer = document.getElementById('provider-filter');
+
+        if (typeof API_MODELS === 'undefined') {
+            container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted)">Loading pricing data...</div>';
+            return;
+        }
+
+        // Get active (non-deprecated) models
+        let models = API_MODELS.filter(m => !m.deprecated);
+
+        // Apply provider filter
+        if (currentFilter !== 'all') {
+            models = models.filter(m => m.providerSlug === currentFilter);
+        }
+
+        // Build provider filter buttons
+        const providers = [...new Set(API_MODELS.filter(m => !m.deprecated).map(m => m.providerSlug))];
+        const providerNames = [...new Set(API_MODELS.filter(m => !m.deprecated).map(m => m.provider))];
+        filterContainer.innerHTML = `<button class="filter-chip ${currentFilter === 'all' ? 'active' : ''}" data-provider="all" onclick="filterProvider('all')">All Providers</button>`;
+        providers.forEach((slug, i) => {
+            const count = API_MODELS.filter(m => !m.deprecated && m.providerSlug === slug).length;
+            filterContainer.innerHTML += `<button class="filter-chip ${currentFilter === slug ? 'active' : ''}" data-provider="${slug}" onclick="filterProvider('${slug}')">${providerNames[i]} (${count})</button>`;
+        });
+
+        // Calculate costs and sort
+        const modelsWithCost = models.map(model => ({
+            ...model,
+            cost: calculateModelCost(model)
+        }));
+
+        if (currentSort === 'cost') {
+            modelsWithCost.sort((a, b) => a.cost.totalCost - b.cost.totalCost);
+        } else if (currentSort === 'name') {
+            modelsWithCost.sort((a, b) => a.name.localeCompare(b.name));
+        } else if (currentSort === 'provider') {
+            modelsWithCost.sort((a, b) => a.provider.localeCompare(b.provider) || a.cost.totalCost - b.cost.totalCost);
+        }
+
+        // Update cheapest cost
+        if (modelsWithCost.length > 0) {
+            document.getElementById('cheapest-cost').textContent = formatCost(modelsWithCost[0].cost.totalCost);
+        }
+
+        // Render cards
+        container.innerHTML = modelsWithCost.map((model, i) => {
+            const tierClass = model.tier === 'Budget' ? 'tier-budget' : model.tier === 'Mid' ? 'tier-mid' : 'tier-premium';
+            const cardClass = i === 0 ? 'cheapest' : (i === modelsWithCost.length - 1 ? 'expensive' : '');
+            return `
+                <div class="model-card ${cardClass}">
+                    <div>
+                        <div class="model-name">${model.name}</div>
+                        <div class="model-provider">${model.provider}</div>
+                        <div class="model-meta">
+                            <span class="meta-badge ${tierClass}">${model.tier}</span>
+                            <span class="meta-badge">Input: $${model.input}/M</span>
+                            <span class="meta-badge">Output: $${model.output}/M</span>
+                            <span class="meta-badge">${model.context} context</span>
+                        </div>
+                    </div>
+                    <div class="model-cost">
+                        <div class="cost-total">${formatCost(model.cost.totalCost)}</div>
+                        <div class="cost-breakdown">In: ${formatCost(model.cost.inputCost)} + Out: ${formatCost(model.cost.outputCost)}</div>
+                        <div class="cost-label">per ${currentRequestCount > 1 ? currentRequestCount + ' requests' : 'request'}</div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function sortModels(sortBy) {
+        currentSort = sortBy;
+        document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        renderModelResults();
+    }
+
+    function filterProvider(provider) {
+        currentFilter = provider;
+        renderModelResults();
+    }
+
+    // Event listeners
+    document.getElementById('input-text').addEventListener('input', updateCounts);
+    document.getElementById('output-text').addEventListener('input', updateCounts);
+    document.getElementById('request-count').addEventListener('input', updateCounts);
+
+    // Wait for pricing data to load
+    if (typeof API_MODELS !== 'undefined') {
+        updateCounts();
+    } else {
+        window.addEventListener('load', () => {
+            setTimeout(updateCounts, 100);
+        });
+    }
+    </script>
+</body>
+</html>
