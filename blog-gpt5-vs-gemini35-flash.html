@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-5 vs Gemini 3.5 Flash: Mid-Tier Showdown (June 2026) — APIpulse</title>
+    <meta name="description" content="GPT-5 ($1.25/$10) vs Gemini 3.5 Flash ($1.50/$9): nearly identical pricing but different strengths. Detailed pricing, context window comparison, and which model to choose.">
+    <meta name="keywords" content="GPT-5 vs Gemini 3.5 Flash, GPT-5 pricing, Gemini 3.5 Flash cost, OpenAI vs Google API, mid-tier LLM comparison 2026">
+    <meta property="og:title" content="GPT-5 vs Gemini 3.5 Flash: Mid-Tier Showdown (June 2026) — APIpulse">
+    <meta property="og:description" content="GPT-5 ($1.25/$10) vs Gemini 3.5 Flash ($1.50/$9): nearly identical pricing, different strengths.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-26">
+    <meta property="article:modified_time" content="2026-06-26">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-gpt5-vs-gemini35-flash.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPT-5 vs Gemini 3.5 Flash: Mid-Tier Showdown (June 2026) — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="GPT-5 ($1.25/$10) vs Gemini 3.5 Flash ($1.50/$9): nearly identical pricing, different strengths.">
+    <link rel="canonical" href="https://getapipulse.com/blog-gpt5-vs-gemini35-flash.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "GPT-5 vs Gemini 3.5 Flash: Mid-Tier Showdown (June 2026)",
+        "description": "GPT-5 ($1.25/$10) vs Gemini 3.5 Flash ($1.50/$9): detailed pricing, context window comparison, and decision framework.",
+        "datePublished": "2026-06-26",
+        "dateModified": "2026-06-26",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-gpt5-vs-gemini35-flash.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does GPT-5 cost per 1M tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5 costs $1.25 per 1M input tokens and $10.00 per 1M output tokens. It has a 272K token context window and is OpenAI's mid-tier model."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does Gemini 3.5 Flash cost per 1M tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 3.5 Flash costs $1.50 per 1M input tokens and $9.00 per 1M output tokens. It has a 1M token context window — 3.7x larger than GPT-5."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is GPT-5 better than Gemini 3.5 Flash?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5 excels at complex reasoning and nuanced tasks. Gemini 3.5 Flash has a much larger context window (1M vs 272K) and is slightly cheaper on output tokens. The choice depends on whether you need reasoning depth (GPT-5) or context capacity (Gemini 3.5 Flash)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which is cheaper: GPT-5 or Gemini 3.5 Flash?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5 is cheaper on input ($1.25 vs $1.50) while Gemini 3.5 Flash is cheaper on output ($9.00 vs $10.00). For output-heavy workloads, Gemini saves ~10%. For input-heavy workloads, GPT-5 saves ~17%."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; font-size: 13px; color: var(--text-muted); }
+        .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tier-mid { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h2 { font-size: 28px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 22px; font-weight: 600; margin: 32px 0 12px; }
+        p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; font-size: 16px; }
+        .highlight-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .highlight-box h3 { margin-top: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table .winner { background: rgba(34,197,94,0.05); }
+        .cost-box { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+        .cost-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+        .cost-card .model-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .cost-card .price { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .cost-card .price-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+        ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; line-height: 1.6; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .related-reading { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-top: 48px; }
+        .related-reading h3 { margin-top: 0; font-size: 18px; }
+        .related-reading ul { list-style: none; padding: 0; }
+        .related-reading li { padding: 8px 0; }
+        .related-reading a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-reading a:hover { text-decoration: underline; }
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; margin: 4px; }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 768px) { .content { padding: 100px 16px 60px; } h1 { font-size: 28px; } .cost-box { grid-template-columns: 1fr; } }
+        @media print { nav, .cta-inline, .share-btn, .share-section, .related-reading, .theme-toggle, .back-to-top { display: none !important; } body { background: white; color: black; } .content { padding: 0; } }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <!-- Deal urgency banner -->
+    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
+        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
+            <strong style="color:#dc2626;">🔥 Limited time:</strong>
+            <a href="deal.html" style="color:#dc2626;font-weight:700;text-decoration:none;">Pro lifetime access $29 — price goes up July 12 →</a>
+        </p>
+    </div>
+
+    <div class="content">
+
+        <div class="breadcrumb"><a href="blog.html">Blog</a> › GPT-5 vs Gemini 3.5 Flash</div>
+
+        <div class="post-meta">
+            <span class="tier-badge tier-mid">Mid-Tier</span>
+            <span>June 26, 2026</span>
+            <span>7 min read</span>
+        </div>
+
+        <h1>GPT-5 vs Gemini 3.5 Flash: Mid-Tier Showdown</h1>
+
+        <div style="padding:16px 20px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;margin-bottom:24px;">
+            <p style="margin:0;font-size:14px;"><strong>💡 Key insight:</strong> These models are priced within 20% of each other, but Gemini 3.5 Flash has a 3.7x larger context window (1M vs 272K tokens). If you're processing long documents, Gemini wins. Use our <a href="calculator.html" style="color:var(--accent);font-weight:600;">free calculator</a> to compare costs for your exact usage.</p>
+        </div>
+
+        <p class="subtitle">GPT-5 is OpenAI's workhorse. Gemini 3.5 Flash is Google's speed demon. Both are mid-tier models with nearly identical pricing — but very different strengths.</p>
+
+        <h2>Pricing Comparison</h2>
+
+        <div class="cost-box">
+            <div class="cost-card">
+                <div class="model-name">GPT-5</div>
+                <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">OpenAI</div>
+                <div class="price">$1.25 / $10.00</div>
+                <div class="price-label">per 1M tokens (input / output)</div>
+            </div>
+            <div class="cost-card">
+                <div class="model-name">Gemini 3.5 Flash</div>
+                <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">Google</div>
+                <div class="price">$1.50 / $9.00</div>
+                <div class="price-label">per 1M tokens (input / output)</div>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>GPT-5</th>
+                    <th>Gemini 3.5 Flash</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Input price (per 1M tokens)</td>
+                    <td class="winner">$1.25 ✅</td>
+                    <td>$1.50</td>
+                </tr>
+                <tr>
+                    <td>Output price (per 1M tokens)</td>
+                    <td>$10.00</td>
+                    <td class="winner">$9.00 ✅</td>
+                </tr>
+                <tr>
+                    <td>Context window</td>
+                    <td>272K tokens</td>
+                    <td class="winner">1M tokens ✅</td>
+                </tr>
+                <tr>
+                    <td>Provider</td>
+                    <td>OpenAI</td>
+                    <td>Google</td>
+                </tr>
+                <tr>
+                    <td>Best for</td>
+                    <td>Complex reasoning, nuanced tasks</td>
+                    <td>High-volume, context-heavy tasks</td>
+                </tr>
+                <tr>
+                    <td>Function calling</td>
+                    <td>Excellent</td>
+                    <td>Excellent</td>
+                </tr>
+                <tr>
+                    <td>Vision</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Speed</td>
+                    <td>Fast</td>
+                    <td class="winner">Faster ✅</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Cost Per Use Case</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Use Case</th>
+                    <th>Tokens (in/out)</th>
+                    <th>GPT-5</th>
+                    <th>Gemini 3.5 Flash</th>
+                    <th>Cheaper</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chatbot response</td>
+                    <td>2K / 500</td>
+                    <td>$0.008</td>
+                    <td>$0.008</td>
+                    <td style="color:var(--text-muted);">Tie</td>
+                </tr>
+                <tr>
+                    <td>Code generation</td>
+                    <td>5K / 2K</td>
+                    <td>$0.026</td>
+                    <td class="winner">$0.026</td>
+                    <td style="color:var(--text-muted);">Tie</td>
+                </tr>
+                <tr>
+                    <td>Document summary</td>
+                    <td>10K / 1K</td>
+                    <td>$0.023</td>
+                    <td class="winner">$0.024</td>
+                    <td style="color:var(--green);">GPT-5</td>
+                </tr>
+                <tr>
+                    <td>Long document analysis</td>
+                    <td>100K / 5K</td>
+                    <td>$0.175</td>
+                    <td class="winner">$0.195</td>
+                    <td style="color:var(--green);">GPT-5</td>
+                </tr>
+                <tr>
+                    <td>RAG pipeline</td>
+                    <td>15K / 3K</td>
+                    <td>$0.049</td>
+                    <td class="winner">$0.050</td>
+                    <td style="color:var(--text-muted);">~Tie</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>The verdict on pricing:</strong> These models are so close in price that the difference is negligible for most workloads. The real differentiator is the context window — Gemini 3.5 Flash's 1M token window is 3.7x larger than GPT-5's 272K.</p>
+
+        <h2>When to Choose GPT-5</h2>
+
+        <div class="highlight-box">
+            <h3>✅ Choose GPT-5 when:</h3>
+            <ul>
+                <li><strong>Complex reasoning matters</strong> — Multi-step logic, mathematical proofs, nuanced analysis</li>
+                <li><strong>You're in the OpenAI ecosystem</strong> — Using OpenAI SDK, Assistants API, etc.</li>
+                <li><strong>Input-heavy workloads</strong> — GPT-5 is 17% cheaper on input tokens</li>
+                <li><strong>You need reliable function calling</strong> — OpenAI's tool use is industry-leading</li>
+                <li><strong>Context window is sufficient</strong> — 272K is enough for your use case</li>
+            </ul>
+        </div>
+
+        <h2>When to Choose Gemini 3.5 Flash</h2>
+
+        <div class="highlight-box">
+            <h3>✅ Choose Gemini 3.5 Flash when:</h3>
+            <ul>
+                <li><strong>You need long context</strong> — 1M tokens handles entire codebases, long documents, multi-page PDFs</li>
+                <li><strong>Speed matters</strong> — Gemini 3.5 Flash is optimized for low latency</li>
+                <li><strong>High-volume processing</strong> — Content generation, data extraction, classification</li>
+                <li><strong>You're in the Google ecosystem</strong> — Using Google Cloud, Vertex AI, etc.</li>
+                <li><strong>Output-heavy workloads</strong> — Gemini is 10% cheaper on output tokens</li>
+            </ul>
+        </div>
+
+        <h2>The Context Window Factor</h2>
+
+        <div class="highlight-box" style="border-color:rgba(99,102,241,0.3);">
+            <h3>📐 Context window comparison</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+                <div style="text-align:center;">
+                    <div style="font-size:14px;color:var(--text-muted);margin-bottom:4px;">GPT-5</div>
+                    <div style="font-size:28px;font-weight:800;color:var(--accent);">272K</div>
+                    <div style="font-size:12px;color:var(--text-muted);">tokens</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="font-size:14px;color:var(--text-muted);margin-bottom:4px;">Gemini 3.5 Flash</div>
+                    <div style="font-size:28px;font-weight:800;color:var(--green);">1M</div>
+                    <div style="font-size:12px;color:var(--text-muted);">tokens</div>
+                </div>
+            </div>
+            <p style="text-align:center;margin-top:16px;font-size:14px;color:var(--text-secondary);">Gemini's context window is <strong>3.7x larger</strong> — enough to process entire codebases or multi-hundred-page documents in a single request.</p>
+        </div>
+
+        <h2>Real-World Cost Comparison</h2>
+
+        <p>For a typical SaaS application processing 100K requests per month:</p>
+
+        <div class="highlight-box">
+            <h3>📊 Monthly cost for 100K requests (avg 3K input + 1K output per request)</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+                <div style="text-align:center;">
+                    <div style="font-size:14px;color:var(--text-muted);margin-bottom:4px;">GPT-5</div>
+                    <div style="font-size:28px;font-weight:800;color:var(--accent);">$1,375/mo</div>
+                    <div style="font-size:12px;color:var(--text-muted);">$16,500/year</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="font-size:14px;color:var(--text-muted);margin-bottom:4px;">Gemini 3.5 Flash</div>
+                    <div style="font-size:28px;font-weight:800;color:var(--green);">$1,350/mo</div>
+                    <div style="font-size:12px;color:var(--text-muted);">$16,200/year</div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
+                <div style="font-size:14px;color:var(--text-muted);">Annual difference</div>
+                <div style="font-size:24px;font-weight:800;color:var(--text-muted);">~$300 (negligible)</div>
+            </div>
+        </div>
+
+        <p><strong>The real question isn't price — it's capability.</strong> Choose based on whether you need GPT-5's reasoning depth or Gemini's context capacity.</p>
+
+        <h2>Verdict</h2>
+
+        <div class="highlight-box" style="border-color:rgba(99,102,241,0.3);">
+            <h3>🏆 Winner: It depends on your needs</h3>
+            <p>These models are so close in price that the choice comes down to capability, not cost.</p>
+            <p><strong>Choose GPT-5</strong> if you need the best reasoning and your context fits in 272K tokens.</p>
+            <p style="margin-bottom:0;"><strong>Choose Gemini 3.5 Flash</strong> if you need 1M context or faster response times.</p>
+        </div>
+
+        <div class="cta-inline">
+            <p><strong>Want to see the full cost comparison across all 42 models?</strong></p>
+            <p>Our free calculator shows you exactly how much you'll save by switching.</p>
+            <a href="calculator.html" class="btn-primary" style="display:inline-block;margin-top:8px;">Compare All Models — Free →</a>
+        </div>
+
+        <div class="related-reading">
+            <h3>📚 Related Reading</h3>
+            <ul>
+                <li><a href="blog-gpt5-vs-gemini31-pro.html">GPT-5 vs Gemini 3.1 Pro</a></li>
+                <li><a href="blog-gemini35flash-vs-gpt55.html">Gemini 3.5 Flash vs GPT-5.5</a></li>
+                <li><a href="blog-gpt5-api-cost.html">GPT-5 API Cost: Complete Guide</a></li>
+                <li><a href="blog-state-of-ai-api-pricing-june-2026.html">State of AI API Pricing — June 2026</a></li>
+            </ul>
+        </div>
+
+        <div class="share-section">
+            <p>Found this comparison useful? Share it with your team:</p>
+            <a href="https://twitter.com/intent/tweet?text=GPT-5+vs+Gemini+3.5+Flash:+Mid-Tier+Showdown&url=https://getapipulse.com/blog-gpt5-vs-gemini35-flash.html" class="share-btn" target="_blank" rel="noopener">𝕏 Twitter</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://getapipulse.com/blog-gpt5-vs-gemini35-flash.html" class="share-btn" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://news.ycombinator.com/submitlink?u=https://getapipulse.com/blog-gpt5-vs-gemini35-flash.html&t=GPT-5+vs+Gemini+3.5+Flash" class="share-btn" target="_blank" rel="noopener">Hacker News</a>
+        </div>
+
+    </div>
+    </main>
+
+    <footer style="padding:40px 24px;text-align:center;border-top:1px solid var(--border);margin-top:40px;">
+        <p style="font-size:13px;color:var(--text-muted);">APIpulse — AI API pricing intelligence. <a href="index.html" style="color:var(--accent);">Home</a> · <a href="blog.html" style="color:var(--accent);">Blog</a> · <a href="pricing.html" style="color:var(--accent);">Pricing</a></p>
+    </footer>
+</body>
+</html>
