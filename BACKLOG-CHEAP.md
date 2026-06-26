@@ -47,7 +47,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-915, Apr 23 - Jun 26)
+### Completed Summary (Sessions 416-916, Apr 23 - Jun 26)
+- **Session 916:** Checkout page nav/footer conversion leak fix. Removed footer links (Home, About, Blog, Pricing) from go.html. Replaced "Get Pro" nav link with "Buy Now" anchor on go.html. Removed "Pricing" nav link from deal.html. Both checkout pages now have minimal nav + no footer links. 1 commit.
 - **Session 915:** deal.html exit popup conversion leak fix. Removed free API audit link from exit popup (same pattern as go.html Session 913). Removed "Back to free tools" link from page bottom. Exit popup now only contains buy CTA + trust signals. 1 commit.
 - **Session 914:** deal.html conversion fixes. Replaced 4 sample report links with inline Pro preview. Softened exit popup threshold (clientY < 5 → <= -10, 500ms delay). Added canonical URLs to go.html + deal.html. 3 commits.
 - **Session 913:** go.html exit popup conversion leak fix. Removed generate-report.html and how-it-works.html links from exit survey responses — both were sending users away from the checkout page. Replaced with focused Pro value propositions. 1 commit.

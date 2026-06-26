@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 916 (Jun 26) — Checkout Pages: Remove Nav/Footer Conversion Leaks (1 commit)
+**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
+- **Removed footer navigation links from go.html** — The checkout page footer had 4 links (Home, About, Blog, Pricing) that sent visitors away from the conversion page. Replaced with a guarantee tagline: "Lifetime access · No subscription · 14-day money-back guarantee". Same pattern fixed on deal.html in Session 915.
+- **Removed "Get Pro" nav link from go.html** — The nav had a "Get Pro" link pointing to pricing.html, which was intercepted by a JS override to scroll to the hero calc. Replaced with a clean `<a href="#main">Buy Now</a>` anchor that scrolls to the CTA without any external leak. Removed the stale nav-cta JS override (no longer needed).
+- **Removed "Pricing" nav link from deal.html** — The nav had a "Pricing" link pointing to pricing.html, sending visitors away from the checkout page. Removed entirely — only "Home" link remains in nav.
+- **Rule: never link away from your checkout page.** Both go.html and deal.html now have minimal nav (logo + Home) and no footer navigation links.
+
 ## Session 915 (Jun 26) — deal.html Exit Popup: Remove Free Tool Leak (1 commit)
 **Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
 - **Removed free API audit link from deal.html exit popup** — The exit popup's "not sure?" secondary link pointed to `api-cost-audit.html?from=deal_exit`, a free tool that competes with the Pro CTA. This is the same conversion leak pattern fixed on go.html in Session 913 (which removed `generate-report.html` and `how-it-works.html` links from the exit survey). Replaced with a guarantee reassurance line. The exit popup now contains only the buy CTA and trust signals — no escape hatches.
@@ -56,15 +63,15 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 915, Jun 26, 2026)
+## Site Status (as of Session 916, Jun 26, 2026)
 **869 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (882 URLs), RSS (761 items), blog files (352 posts) — all in sync
 - **Structured data: 852/867 pages (98.3%)** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2% — 849 pages link to go.html** — Only 16 pages without — all non-commercial.
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 867 pages (100%)**
-- **SEO fixes (Sessions 903-915)** — 6 comparison pages un-noindexed, 5 canonical URLs fixed (3 in Sessions 903-907, 2 on go.html + deal.html in Session 914). July 2026 pricing blog updated (32→42 models) and made indexable. Aug/Sep blogs + blog index + tools page model counts corrected (32/28→42). Deprecated model references (Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash) updated across 370+ files (Sessions 905+907). Broken link in why-apipulse.html fixed.
-- **deal.html** — Product + FAQPage schema, A/B headline test (3 variants, 3 expired), exit popup (softened + free tool leaks removed Session 915), sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models), inline Pro preview (cost table + migration code). Canonical URL added (Session 914).
-- **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview (cost table + migration code), canonical URL (Session 914). **CRITICAL FIX: GO_SKIP prevents shared.js from overwriting buy buttons.** ab-test.js removed (not needed on go.html).
+- **SEO fixes (Sessions 903-916)** — 6 comparison pages un-noindexed, 5 canonical URLs fixed (3 in Sessions 903-907, 2 on go.html + deal.html in Session 914). July 2026 pricing blog updated (32→42 models) and made indexable. Aug/Sep blogs + blog index + tools page model counts corrected (32/28→42). Deprecated model references (Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash) updated across 370+ files (Sessions 905+907). Broken link in why-apipulse.html fixed.
+- **deal.html** — Product + FAQPage schema, A/B headline test (3 variants, 3 expired), exit popup (softened + free tool leaks removed Session 915), sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models), inline Pro preview (cost table + migration code). Canonical URL added (Session 914). Nav footer leaks removed (Session 916).
+- **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview (cost table + migration code), canonical URL (Session 914). **CRITICAL FIX: GO_SKIP prevents shared.js from overwriting buy buttons.** ab-test.js removed (not needed on go.html). Nav/footer conversion leaks removed (Session 916).
 - **Homepage (index.html)** — Developer testimonials (single section), social proof bar, calculator with savings badge → deal.html, pricing → go.html, deal urgency banner → deal.html. Duplicate testimonials removed (Session 902).
 - **Sticky CTA bars (Session 902)** — Unified dismiss state prevents sticky-bottom-bar and sticky-pro-cta from stacking. Both use shared `apipulse_pro_cta_dismissed` + `apipulse_sticky_bar_dismissed` keys.
 - **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, pages auto-update, deal banners switch to regular pricing.
