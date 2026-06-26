@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 907 (Jun 26) — Deprecated Model Reference Cleanup (1 commit)
+**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on content quality.**
+- **Deprecated model cleanup** — Replaced deprecated model names across 363 files: Claude Sonnet 4 → 4.6, Gemini 2.0 Flash → 2.5 Flash-Lite, Gemini 2.0 Flash Lite → 2.5 Flash-Lite. Preserved historical references in migration/shutdown pages. Fixed double-replacement artifacts (4.6.6, Flash-Lite-Lite). 2,030 lines changed.
+- **Scope** — 25 use-case pages, 34 cheapest-ai-api pages, 50+ industry cost blogs, 30+ comparison pages, provider pages, hub pages, tools. All changes in recommendation contexts only — migration/shutdown content left intact.
+- **Why this matters** — Deprecated model names hurt trust and SEO. Visitors seeing "Claude Sonnet 4" or "Gemini 2.0 Flash" as current recommendations question the site's accuracy. This cleanup ensures the site presents current, accurate model information.
+- **Conversion status** — Buy button fixed 2 days ago. Monitoring window active (check GA4 by Jun 28). No changes to conversion funnel this session.
+
 ## Session 906 (Jun 25) — Strategic Audit + Backlog Prep (0 commits)
 **Week 10 of 12. $0 revenue. Buy button fixed 1 day ago (Session 891). Focused on verification and strategy.**
 - **Conversion funnel audit** — Verified go.html, deal.html, cost-optimizer.html, thank-you.html. All pages load correctly. Analytics tracking confirmed (begin_checkout, purchase events). Stripe links verified. Exit popups, sticky CTAs, and urgency countdown all functional.
