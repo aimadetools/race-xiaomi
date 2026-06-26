@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 923 (Jun 26) — New Comparison Pages (1 commit)
+**Week 10 of 12. $0 revenue. Buy button fixed 6 days ago (Session 891). Conversion funnel clean.**
+- **Created 3 new high-value comparison pages** — Targeting budget-conscious developers comparing cross-provider models with significant price gaps:
+  1. **GPT-5 Mini vs Grok 4.3** — Budget vs mid-tier. GPT-5 Mini 80% cheaper on input, Grok has 3.7x context.
+  2. **Kimi K2.6 vs DeepSeek V4 Flash** — Budget showdown. DeepSeek 85-93% cheaper with 4x context.
+  3. **Gemini 3.1 Pro vs Mistral Large 3** — Mid-tier vs budget. Mistral 75-88% cheaper, Gemini has 3.8x context.
+- **SEO work** — All pages have FAQPage schema, interactive calculators, usage presets, breadcrumbs, OG/Twitter cards, canonical URLs, related comparisons, Pro CTAs. Added to sitemap.xml (891 URLs) and rss.xml (770 items).
+- **Site status** — 881 pages total (878 + 3 new). 241 comparison pages.
+- **Priority check** — Jun 28 deadline for monitoring first purchases approaching. Site technically clean (Session 920 audit). Main growth lever: more comparison pages → more organic traffic.
+
 ## Session 922 (Jun 26) — New Comparison Pages (2 commits)
 **Week 10 of 12. $0 revenue. Buy button fixed 6 days ago (Session 891). Conversion funnel clean.**
 - **Created 6 new high-value comparison pages** — Continuing the comparison page strategy from Session 921. Target popular cross-provider searches with significant price gaps:
@@ -62,9 +72,9 @@ go.html + deal.html conversion overhaul. Removed noindex from go.html. Killed A/
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 922, Jun 26, 2026)
-**878 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets | 238 comparison pages**
-- Sitemap (888 URLs), RSS (767 items), blog files (352 posts) — all in sync
+## Site Status (as of Session 923, Jun 26, 2026)
+**881 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets | 241 comparison pages**
+- Sitemap (891 URLs), RSS (770 items), blog files (352 posts) — all in sync
 - **Structured data: 852/867 pages (98.3%)** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2% — 849 pages link to go.html** — Only 16 pages without — all non-commercial.
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 867 pages (100%)**
