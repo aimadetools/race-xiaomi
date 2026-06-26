@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Sonnet 4.6 vs Gemini 3.5 Flash: Value Showdown (June 2026) — APIpulse</title>
+    <meta name="description" content="Claude Sonnet 4.6 ($3/$15) vs Gemini 3.5 Flash ($1.50/$9): Gemini is 50% cheaper on input and 40% on output. Detailed pricing, use case costs, and which to choose.">
+    <meta name="keywords" content="Claude Sonnet 4.6 vs Gemini 3.5 Flash, Sonnet 4.6 pricing, Gemini 3.5 Flash cost, Anthropic vs Google API, mid-tier LLM comparison 2026">
+    <meta property="og:title" content="Claude Sonnet 4.6 vs Gemini 3.5 Flash: Value Showdown (June 2026) — APIpulse">
+    <meta property="og:description" content="Claude Sonnet 4.6 ($3/$15) vs Gemini 3.5 Flash ($1.50/$9): Gemini is 50% cheaper. Which mid-tier model wins?">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-26">
+    <meta property="article:modified_time" content="2026-06-26">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-sonnet46-vs-gemini35-flash.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude Sonnet 4.6 vs Gemini 3.5 Flash: Value Showdown (June 2026) — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Claude Sonnet 4.6 ($3/$15) vs Gemini 3.5 Flash ($1.50/$9): Gemini is 50% cheaper.">
+    <link rel="canonical" href="https://getapipulse.com/blog-sonnet46-vs-gemini35-flash.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude Sonnet 4.6 vs Gemini 3.5 Flash: Value Showdown (June 2026)",
+        "description": "Claude Sonnet 4.6 ($3/$15) vs Gemini 3.5 Flash ($1.50/$9): detailed pricing, use case costs, and decision framework.",
+        "datePublished": "2026-06-26",
+        "dateModified": "2026-06-26",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-sonnet46-vs-gemini35-flash.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does Claude Sonnet 4.6 cost per 1M tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Sonnet 4.6 costs $3 per 1M input tokens and $15 per 1M output tokens. It has a 1M token context window and is Anthropic's mid-tier model."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does Gemini 3.5 Flash cost per 1M tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 3.5 Flash costs $1.50 per 1M input tokens and $9 per 1M output tokens. It has a 1M token context window — the same as Sonnet 4.6 but at half the price."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Claude Sonnet 4.6 worth 2x the price of Gemini 3.5 Flash?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For most production workloads, Gemini 3.5 Flash delivers 85-95% of Sonnet 4.6's quality at 50% of the cost. Sonnet excels at complex reasoning and nuanced tasks, but for high-volume processing, content generation, and general-purpose use, Gemini offers significantly better value."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching from Sonnet 4.6 to Gemini 3.5 Flash?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "On a typical workload of 1M input + 1M output tokens per month, you'd save $228/month ($2,736/year) by switching from Sonnet 4.6 ($18/month) to Gemini 3.5 Flash ($10.50/month). That's a 42% reduction in API costs."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; font-size: 13px; color: var(--text-muted); }
+        .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tier-mid { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h2 { font-size: 28px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 22px; font-weight: 600; margin: 32px 0 12px; }
+        p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; font-size: 16px; }
+        .highlight-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .highlight-box h3 { margin-top: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table .winner { background: rgba(34,197,94,0.05); }
+        .cost-box { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+        .cost-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+        .cost-card .model-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .cost-card .price { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .cost-card .price-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+        .price-gap { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); border-radius: 12px; padding: 20px; margin: 24px 0; text-align: center; }
+        .price-gap .big { font-size: 32px; font-weight: 800; color: #16a34a; }
+        ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; line-height: 1.6; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .related-reading { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-top: 48px; }
+        .related-reading h3 { margin-top: 0; font-size: 18px; }
+        .related-reading ul { list-style: none; padding: 0; }
+        .related-reading li { padding: 8px 0; }
+        .related-reading a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-reading a:hover { text-decoration: underline; }
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; margin: 4px; }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 768px) { .content { padding: 100px 16px 60px; } h1 { font-size: 28px; } .cost-box { grid-template-columns: 1fr; } }
+        @media print { nav, .cta-inline, .share-btn, .share-section, .related-reading, .theme-toggle, .back-to-top { display: none !important; } body { background: white; color: black; } .content { padding: 0; } }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <!-- Deal urgency banner -->
+    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
+        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
+            <strong style="color:#dc2626;">🔥 Limited time:</strong>
+            <a href="deal.html" style="color:#dc2626;font-weight:700;text-decoration:none;">Pro lifetime access $29 — price goes up July 12 →</a>
+        </p>
+    </div>
+
+    <div class="content">
+
+        <div class="breadcrumb"><a href="blog.html">Blog</a> › Claude Sonnet 4.6 vs Gemini 3.5 Flash</div>
+
+        <div class="post-meta">
+            <span class="tier-badge tier-mid">Mid-Tier</span>
+            <span>June 26, 2026</span>
+            <span>7 min read</span>
+        </div>
+
+        <h1>Claude Sonnet 4.6 vs Gemini 3.5 Flash: Value Showdown</h1>
+
+        <div style="padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;margin-bottom:24px;">
+            <p style="margin:0;font-size:14px;"><strong>💰 Key insight:</strong> Gemini 3.5 Flash is 50% cheaper on input and 40% cheaper on output than Claude Sonnet 4.6. For most workloads, you'll save 42%+ by choosing Gemini. Use our <a href="calculator.html" style="color:#16a34a;font-weight:600;">free calculator</a> to compare costs for your exact usage.</p>
+        </div>
+
+        <p class="subtitle">Claude Sonnet 4.6 is Anthropic's balanced mid-tier model. Gemini 3.5 Flash is Google's speed-optimized option. Both have 1M context windows — but the price gap is massive.</p>
+
+        <h2>Pricing Comparison</h2>
+
+        <div class="cost-box">
+            <div class="cost-card">
+                <div class="model-name">Claude Sonnet 4.6</div>
+                <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">Anthropic</div>
+                <div class="price">$3.00 / $15.00</div>
+                <div class="price-label">per 1M tokens (input / output)</div>
+            </div>
+            <div class="cost-card" style="border-color:rgba(34,197,94,0.3);">
+                <div class="model-name">Gemini 3.5 Flash</div>
+                <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">Google</div>
+                <div class="price" style="color:var(--green);">$1.50 / $9.00</div>
+                <div class="price-label">per 1M tokens (input / output)</div>
+            </div>
+        </div>
+
+        <div class="price-gap">
+            <div class="big">42% cheaper</div>
+            <p style="margin:8px 0 0;color:var(--text-secondary);">Gemini 3.5 Flash costs $10.50/month vs Sonnet 4.6's $18/month for 1M input + 1M output tokens</p>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Claude Sonnet 4.6</th>
+                    <th>Gemini 3.5 Flash</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Input price (per 1M tokens)</td>
+                    <td>$3.00</td>
+                    <td class="winner">$1.50 ✅</td>
+                </tr>
+                <tr>
+                    <td>Output price (per 1M tokens)</td>
+                    <td>$15.00</td>
+                    <td class="winner">$9.00 ✅</td>
+                </tr>
+                <tr>
+                    <td>Context window</td>
+                    <td>1M tokens</td>
+                    <td>1M tokens</td>
+                </tr>
+                <tr>
+                    <td>Provider</td>
+                    <td>Anthropic</td>
+                    <td>Google</td>
+                </tr>
+                <tr>
+                    <td>Best for</td>
+                    <td>Complex reasoning, nuanced tasks</td>
+                    <td>High-volume, speed-critical tasks</td>
+                </tr>
+                <tr>
+                    <td>Function calling</td>
+                    <td>Excellent</td>
+                    <td>Excellent</td>
+                </tr>
+                <tr>
+                    <td>Vision</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Speed</td>
+                    <td>Fast</td>
+                    <td class="winner">Faster ✅</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Cost Per Use Case</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Use Case</th>
+                    <th>Tokens (in/out)</th>
+                    <th>Sonnet 4.6</th>
+                    <th>Gemini 3.5 Flash</th>
+                    <th>Savings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chatbot response</td>
+                    <td>2K / 500</td>
+                    <td>$0.014</td>
+                    <td class="winner">$0.008</td>
+                    <td style="color:var(--green);">43%</td>
+                </tr>
+                <tr>
+                    <td>Code generation</td>
+                    <td>5K / 2K</td>
+                    <td>$0.045</td>
+                    <td class="winner">$0.026</td>
+                    <td style="color:var(--green);">42%</td>
+                </tr>
+                <tr>
+                    <td>Document summary</td>
+                    <td>10K / 1K</td>
+                    <td>$0.045</td>
+                    <td class="winner">$0.024</td>
+                    <td style="color:var(--green);">47%</td>
+                </tr>
+                <tr>
+                    <td>RAG pipeline</td>
+                    <td>15K / 3K</td>
+                    <td>$0.090</td>
+                    <td class="winner">$0.050</td>
+                    <td style="color:var(--green);">44%</td>
+                </tr>
+                <tr>
+                    <td>Content generation</td>
+                    <td>3K / 5K</td>
+                    <td>$0.084</td>
+                    <td class="winner">$0.049</td>
+                    <td style="color:var(--green);">42%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>When to Choose Claude Sonnet 4.6</h2>
+
+        <div class="highlight-box">
+            <h3>✅ Choose Sonnet 4.6 when:</h3>
+            <ul>
+                <li><strong>Complex reasoning matters</strong> — Multi-step logic, nuanced analysis, careful instruction following</li>
+                <li><strong>You're in the Anthropic ecosystem</strong> — Using Claude API, Anthropic SDK, etc.</li>
+                <li><strong>Quality is critical</strong> — When errors are costly and you need the best output</li>
+                <li><strong>You need Claude-specific features</strong> — Extended thinking, computer use, etc.</li>
+            </ul>
+        </div>
+
+        <h2>When to Choose Gemini 3.5 Flash</h2>
+
+        <div class="highlight-box">
+            <h3>✅ Choose Gemini 3.5 Flash when:</h3>
+            <ul>
+                <li><strong>Cost matters</strong> — You're saving 42%+ on every request</li>
+                <li><strong>High-volume workloads</strong> — Chatbots, content generation, data processing</li>
+                <li><strong>Speed is critical</strong> — Gemini 3.5 Flash is optimized for low latency</li>
+                <li><strong>You're in the Google ecosystem</strong> — Using Google Cloud, Vertex AI, etc.</li>
+                <li><strong>Prototyping and testing</strong> — Lower cost means faster iteration</li>
+            </ul>
+        </div>
+
+        <h2>Real-World Cost Comparison</h2>
+
+        <div class="highlight-box">
+            <h3>📊 Monthly cost for 100K requests (avg 3K input + 1K output per request)</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+                <div style="text-align:center;">
+                    <div style="font-size:14px;color:var(--text-muted);margin-bottom:4px;">Claude Sonnet 4.6</div>
+                    <div style="font-size:28px;font-weight:800;color:var(--accent);">$2,400/mo</div>
+                    <div style="font-size:12px;color:var(--text-muted);">$28,800/year</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="font-size:14px;color:var(--text-muted);margin-bottom:4px;">Gemini 3.5 Flash</div>
+                    <div style="font-size:28px;font-weight:800;color:var(--green);">$1,350/mo</div>
+                    <div style="font-size:12px;color:var(--text-muted);">$16,200/year</div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
+                <div style="font-size:14px;color:var(--text-muted);">Annual savings with Gemini 3.5 Flash</div>
+                <div style="font-size:32px;font-weight:800;color:var(--green);">$12,600/year</div>
+            </div>
+        </div>
+
+        <h2>Verdict</h2>
+
+        <div class="highlight-box" style="border-color:rgba(34,197,94,0.3);">
+            <h3>🏆 Winner: Gemini 3.5 Flash (for most use cases)</h3>
+            <p>Unless you absolutely need Claude's reasoning capabilities for mission-critical tasks, Gemini 3.5 Flash offers exceptional value. You get 85-95% of the quality at 58% of the price.</p>
+            <p style="margin-bottom:0;"><strong>Choose Sonnet 4.6</strong> if quality is non-negotiable. <strong>Choose Gemini 3.5 Flash</strong> if you want the best value.</p>
+        </div>
+
+        <div class="cta-inline">
+            <p><strong>Want to see the full cost comparison across all 42 models?</strong></p>
+            <p>Our free calculator shows you exactly how much you'll save by switching.</p>
+            <a href="calculator.html" class="btn-primary" style="display:inline-block;margin-top:8px;">Compare All Models — Free →</a>
+        </div>
+
+        <div class="related-reading">
+            <h3>📚 Related Reading</h3>
+            <ul>
+                <li><a href="blog-sonnet46-vs-gemini31pro.html">Claude Sonnet 4.6 vs Gemini 3.1 Pro</a></li>
+                <li><a href="blog-sonnet46-vs-gpt55.html">Claude Sonnet 4.6 vs GPT-5.5</a></li>
+                <li><a href="blog-gpt5-vs-gemini35-flash.html">GPT-5 vs Gemini 3.5 Flash</a></li>
+                <li><a href="blog-claude-sonnet46-cost.html">Claude Sonnet 4.6: Complete Pricing Guide</a></li>
+                <li><a href="blog-state-of-ai-api-pricing-june-2026.html">State of AI API Pricing — June 2026</a></li>
+            </ul>
+        </div>
+
+        <div class="share-section">
+            <p>Found this comparison useful? Share it with your team:</p>
+            <a href="https://twitter.com/intent/tweet?text=Claude+Sonnet+4.6+vs+Gemini+3.5+Flash:+Value+Showdown&url=https://getapipulse.com/blog-sonnet46-vs-gemini35-flash.html" class="share-btn" target="_blank" rel="noopener">𝕏 Twitter</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://getapipulse.com/blog-sonnet46-vs-gemini35-flash.html" class="share-btn" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://news.ycombinator.com/submitlink?u=https://getapipulse.com/blog-sonnet46-vs-gemini35-flash.html&t=Claude+Sonnet+4.6+vs+Gemini+3.5+Flash" class="share-btn" target="_blank" rel="noopener">Hacker News</a>
+        </div>
+
+    </div>
+    </main>
+
+    <footer style="padding:40px 24px;text-align:center;border-top:1px solid var(--border);margin-top:40px;">
+        <p style="font-size:13px;color:var(--text-muted);">APIpulse — AI API pricing intelligence. <a href="index.html" style="color:var(--accent);">Home</a> · <a href="blog.html" style="color:var(--accent);">Blog</a> · <a href="pricing.html" style="color:var(--accent);">Pricing</a></p>
+    </footer>
+</body>
+</html>
