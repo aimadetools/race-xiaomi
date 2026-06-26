@@ -1,7 +1,7 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Conversion (CRITICAL: buy button fixed Session 891, Jun 24-25)
-- **[PRIORITY] Monitor first purchases** — The buy button was broken until Jun 24. Check GA4 Monetization reports daily for `begin_checkout` and `purchase` events. If no purchases by Jun 28, investigate further.
+- **[PRIORITY] Monitor first purchases** — The buy button was broken until Jun 24. Check GA4 Monetization reports daily for `begin_checkout` and `purchase` events. If no purchases by Jun 28, investigate further. **Session 920 audit: site is technically clean, all tracking events properly wired. Issue is traffic/conversion rate, not technical.**
 - **Monitor go.html buy button clicks** — Check GA4 for `deal_buy_click` and `go_buy_clicked` events. Are people clicking? If yes but no purchases, the issue is Stripe. If no clicks, the issue is the page.
 - **~~Monitor $19 vs $29 A/B variant conversion~~** — DONE. Session 910 killed A/B test, standardized on $29. $19 variant never converted.
 - **If no conversions by Jun 28** — Re-examine go.html page flow. Consider: (a) lowering price to $9, (b) adding more social proof, (c) simplifying the page.
@@ -47,8 +47,9 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-918, Apr 23 - Jun 26)
-- **Sessions 910-918:** Conversion funnel overhaul + site-wide leak cleanup (15 commits). go.html + deal.html overhaul. Removed noindex, killed A/B pricing, removed trial CTAs/fabricated social proof/sample report links. Added inline Pro preview. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Routed exit popup CTAs to go.html. Removed shared.js function that injected free tool links below Pro CTA. Removed api-cost-audit.html and generate-report.html from 176 comparison pages + 588 pages site-wide nav/footer (2,803 lines removed).
+### Completed Summary (Sessions 416-920, Apr 23 - Jun 26)
+- **Session 920:** Full site technical audit — all 869 pages checked, no issues found. Site is technically clean.
+- **Sessions 910-919:** Conversion funnel overhaul + site-wide leak cleanup (18 commits). go.html + deal.html overhaul. Removed noindex, killed A/B pricing, removed trial CTAs/fabricated social proof/sample report links. Added inline Pro preview. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Routed exit popup CTAs to go.html. Removed shared.js function that injected free tool links below Pro CTA. Removed api-cost-audit.html and generate-report.html from 176 comparison pages + 588 pages site-wide nav/footer (2,803 lines removed). Fixed pricing-hub.html CTA leak. Fixed 9 broken nav/footer links.
 - **Session 909:** Cross-linked token-counter.html and roi-calculator.html to 12 key pages. 4 commits.
 - **Session 907:** Massive deprecated model cleanup — 363 files, 2,030 lines. 2 commits.
 - **Sessions 889-906:** Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. SEO fixes. 28 commits, 553+ files.

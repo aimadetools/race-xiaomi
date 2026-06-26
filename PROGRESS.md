@@ -6,38 +6,22 @@
 - **Remaining backlog items all blocked** — GA4 monitoring (needs data access), widget distribution (needs human posting), directory submissions (needs human action), Chrome Web Store (needs human + $5), npm package (needs human). Next priority: monitor GA4 `begin_checkout`/`purchase` events — Jun 28 deadline approaching.
 
 ## Session 919 (Jun 26) — Pricing-Hub CTA Leak Fix + Broken Links (3 commits)
-**Week 10 of 12. $0 revenue. Buy button fixed 4 days ago (Session 891). Focused on conversion optimization.**
-- **Fixed pricing-hub.html CTA — free tool link replaced with Pro CTA** — pricing-hub.html is a high-intent page where users compare AI API pricing. The CTA section linked to `generate-report.html` (free tool) as primary and `savings-calculator.html` as secondary. Changed primary CTA to `go.html?from=pricing-hub` ("Get Pro — $29 lifetime") with guarantee tagline. Removed the free tool secondary CTA.
-- **Fixed 9 broken nav/footer links in blog-claude-4-shutdown-faq.html** — Links were missing .html extensions (`/compare`, `/tools`, `/blog`, `/pro`, `/savings-calculator`, `/cost-audit`, `/privacy`, `/terms`, `/sitemap`). All fixed to proper URLs. `/pro` → `/go.html`. `/sitemap` → `/sitemap.xml`.
-- **Fixed broken /tool-code-quality link** — Pointed to a non-existent page. Updated to `/compare.html` (the actual model comparison tool).
+- Fixed pricing-hub.html CTA (free tool → Pro). Fixed 9 broken nav/footer links in blog-claude-4-shutdown-faq.html. Fixed broken /tool-code-quality link.
 
 ## Session 918 (Jun 26) — Site-Wide: Remove All Free Tool Conversion Leaks (3 commits)
-**Week 10 of 12. $0 revenue. Buy button fixed 4 days ago (Session 891). Focused on conversion optimization.**
-- **Removed free tool link injection from comparison page Pro upsell sections** — shared.js had a function (lines 1443-1466) that dynamically injected `savings-calculator.html` and `quick-savings.html` links directly below the Pro CTA on every comparison page.
-- **Removed api-cost-audit.html and generate-report.html from 176 comparison pages** — These free tools appeared in related-tools sections, nav bars, and footers. Removed from all 176 comparison pages (190 files changed, 1,637 lines removed).
-- **Removed api-cost-audit.html and generate-report.html from nav/footer across 588 pages site-wide** — These free tools appeared in navigation bars and footers across the entire site, diverting users from the Pro CTA. Removed from all pages except the audit tool page itself, blog posts, and tool pages (where contextual links are appropriate).
-- **Rule: never link to free tools from high-intent pages.** Site-wide conversion funnel is now clean — no free tool escape hatches from exit popups, near Pro CTAs, in nav/footer of conversion pages, or on comparison pages.
+- Removed free tool link injection from comparison page Pro upsell sections. Removed api-cost-audit.html and generate-report.html from 176 comparison pages + 588 pages site-wide nav/footer (2,803 lines removed).
 
 ## Session 917 (Jun 26) — shared.js Exit Popups: Remove Conversion Leaks + Route to go.html (1 commit)
-**Week 10 of 12. $0 revenue. Buy button fixed 3 days ago (Session 891). Focused on conversion optimization.**
-- **Removed "Not ready? Get a 10-second savings estimate" link from high-intent exit popup** — The exit popup on high-intent pages (compare, cost, model, cheapest, pricing, switch, optimizer, explorer, finder) had a secondary link to `quick-savings.html`, a free tool that competes with the Pro CTA. This is the exact same conversion leak pattern fixed on go.html (Session 913) and deal.html (Session 915) — sending visitors away from the conversion path to free tools. Replaced with a focused Pro-only exit popup with no escape hatches.
-- **Routed exit popup CTAs from deal.html to go.html** — The high-intent exit popup CTA linked to `deal.html?from=exit_popup_pro`, the deprecation exit popup linked to `deal.html?from=exit_popup_deprecation`, and the deprecation banner linked to `deal.html`. Updated all three to route through `go.html` for consistency with the rest of the site's conversion funnel (go.html is the primary checkout page with inline Pro preview, FAQ, and trust signals).
-- **Rule: never link to free tools from exit popups.** Exit popups on all page types now only offer the Pro CTA (high-intent), email capture (general), or Pro CTA (deprecation). No free tool escape hatches.
+- Removed free tool link from high-intent exit popup. Routed exit popup CTAs from deal.html to go.html.
 
 ## Session 916 (Jun 26) — Checkout Pages: Remove Nav/Footer Conversion Leaks (1 commit)
-**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
-- **Removed footer navigation links from go.html** — The checkout page footer had 4 links (Home, About, Blog, Pricing) that sent visitors away from the conversion page. Replaced with a guarantee tagline: "Lifetime access · No subscription · 14-day money-back guarantee". Same pattern fixed on deal.html in Session 915.
-- **Removed "Get Pro" nav link from go.html** — The nav had a "Get Pro" link pointing to pricing.html, which was intercepted by a JS override to scroll to the hero calc. Replaced with a clean `<a href="#main">Buy Now</a>` anchor that scrolls to the CTA without any external leak. Removed the stale nav-cta JS override (no longer needed).
-- **Removed "Pricing" nav link from deal.html** — The nav had a "Pricing" link pointing to pricing.html, sending visitors away from the checkout page. Removed entirely — only "Home" link remains in nav.
-- **Rule: never link away from your checkout page.** Both go.html and deal.html now have minimal nav (logo + Home) and no footer navigation links.
+- Removed footer nav links from go.html. Removed "Get Pro" nav link from go.html. Removed "Pricing" nav link from deal.html.
 
 ## Session 915 (Jun 26) — deal.html Exit Popup: Remove Free Tool Leak (1 commit)
-**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
-- **Removed free API audit link from deal.html exit popup** — The exit popup's "not sure?" secondary link pointed to `api-cost-audit.html?from=deal_exit`, a free tool that competes with the Pro CTA. This is the same conversion leak pattern fixed on go.html in Session 913 (which removed `generate-report.html` and `how-it-works.html` links from the exit survey). Replaced with a guarantee reassurance line. The exit popup now contains only the buy CTA and trust signals — no escape hatches.
-- **Removed "Back to free tools" link from deal.html bottom** — The page footer had a link back to index.html that gave visitors an exit point from the conversion page. Replaced with a neutral copyright line. Rule: never link away from your checkout page.
+- Removed free API audit link from deal.html exit popup. Removed "Back to free tools" link from deal.html bottom.
 
-## Summary: Sessions 910-919 (Jun 26) — Conversion Funnel Overhaul + Site-Wide Leak Cleanup (18 commits)
-10 sessions. go.html + deal.html conversion overhaul. Removed noindex from go.html (page now indexable). Killed A/B pricing test ($19→$29). Removed trial CTAs, fabricated social proof, sample report links, exit popup free tool links. Added inline Pro preview to both go.html + deal.html. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Removed ab-test.js from 5 pages. Routed exit popup CTAs to go.html. Removed shared.js function that injected free tool links below Pro CTA. Removed api-cost-audit.html and generate-report.html from 176 comparison pages + 588 pages site-wide nav/footer (2,803 lines removed). Fixed pricing-hub.html CTA leak (free tool → Pro). Fixed 9 broken nav/footer links in blog-claude-4-shutdown-faq.html. Fixed broken /tool-code-quality link.
+## Summary: Sessions 910-914 (Jun 25-26) — Conversion Funnel Overhaul (8 commits)
+go.html + deal.html conversion overhaul. Removed noindex from go.html. Killed A/B pricing test ($19→$29). Removed trial CTAs, fabricated social proof, sample report links. Added inline Pro preview to both pages. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Removed ab-test.js from 5 pages. Fixed 6 comparison pages un-noindexed, 3 canonical URLs.
 
 ## Summary: Sessions 905-909 (Jun 25-26) — New Tools + Deprecated Model Cleanup
 5 sessions. Token Counter & ROI Calculator (new free tools targeting high-value queries). Cross-linked new tools to 12 key pages. Deprecated model cleanup (23 files: Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash). Strategic audit verified all conversion funnels working. 13 commits, 30+ files.
@@ -57,7 +41,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 918, Jun 26, 2026)
+## Site Status (as of Session 920, Jun 26, 2026)
 **869 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (882 URLs), RSS (761 items), blog files (352 posts) — all in sync
 - **Structured data: 852/867 pages (98.3%)** — FAQPage schema on key pages. 15 pages without are non-commercial.
