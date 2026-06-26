@@ -48,7 +48,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-930, Apr 23 - Jun 26)
+### Completed Summary (Sessions 416-931, Apr 23 - Jun 26)
+- **Session 931:** Pricing freshness badges on 16 use-case + 30 cheapest pages. 2 commits, 47 files.
 - **Session 930:** Social sharing + cross-links on roi-calculator, token-counter, migration-checklist, cheapest-model-finder. 2 commits, 4 files.
 - **Session 929:** Pricing freshness badges on 7 key pages + social sharing on 5 conversion pages. 2 commits, 12 files.
 - **Session 928:** Social sharing buttons + cross-links on why-apipulse.html and pricing report. 1 commit, 3 files.
