@@ -279,9 +279,9 @@
             <div class="label">Agent framework cost per task (5-step research agent)</div>
             <div class="cost-row"><span class="name">OpenAI Assistants API (GPT-4o)</span><span class="value">$0.075/task</span></div>
             <div class="cost-row"><span class="name">OpenAI Assistants API (GPT-4o mini)</span><span class="value">$0.008/task</span></div>
-            <div class="cost-row"><span class="name">Anthropic Tool Use (Claude Sonnet 4)</span><span class="value">$0.068/task</span></div>
+            <div class="cost-row"><span class="name">Anthropic Tool Use (Claude Sonnet 4.6)</span><span class="value">$0.068/task</span></div>
             <div class="cost-row"><span class="name">Anthropic Tool Use (Claude Haiku 4.5)</span><span class="value">$0.012/task</span></div>
-            <div class="cost-row"><span class="name">LangChain + Gemini 2.0 Flash</span><span class="value">$0.004/task</span></div>
+            <div class="cost-row"><span class="name">LangChain + Gemini 2.5 Flash-Lite</span><span class="value">$0.004/task</span></div>
             <div class="cost-row"><span class="name">LangChain + Llama 3.1 8B (Together.ai)</span><span class="value">$0.003/task</span></div>
         </div>
 
@@ -290,7 +290,7 @@
         <h2>Step 1: Pick the Right Model for Each Role</h2>
         <p>Not every agent step needs a premium model. Use a <strong>tiered approach</strong>:</p>
         <ul>
-            <li><strong>Planning/reasoning:</strong> Use a mid-tier model (GPT-4o, Claude Sonnet 4) — reasoning quality matters here</li>
+            <li><strong>Planning/reasoning:</strong> Use a mid-tier model (GPT-4o, Claude Sonnet 4.6) — reasoning quality matters here</li>
             <li><strong>Tool execution:</strong> Use a budget model (GPT-4o mini, Gemini Flash) — the agent is just formatting a function call</li>
             <li><strong>Summarization:</strong> Use a budget model — summarizing is a simpler task than reasoning</li>
         </ul>
@@ -300,7 +300,7 @@
             <div class="cost-row"><span class="name">All GPT-4o (no routing)</span><span class="value">$112.50/mo</span></div>
             <div class="cost-row"><span class="name">GPT-4o for planning + GPT-4o mini for tools</span><span class="value">$38.25/mo</span></div>
             <div class="cost-row"><span class="name">All GPT-4o mini</span><span class="value">$12.00/mo</span></div>
-            <div class="cost-row"><span class="name">All Gemini 2.0 Flash</span><span class="value">$6.00/mo</span></div>
+            <div class="cost-row"><span class="name">All Gemini 2.5 Flash-Lite</span><span class="value">$6.00/mo</span></div>
             <div class="cost-row cost-total"><span class="name">Savings with smart routing</span><span class="value" style="color:var(--green);">66% less</span></div>
         </div>
 
@@ -346,7 +346,7 @@
         <p>Here's a complete agent stack that runs for under $20/month at moderate usage:</p>
         <ol>
             <li><strong>Planning:</strong> Gemini 2.5 Pro ($1.25/$10.00 per 1M tokens, 1M context)</li>
-            <li><strong>Tool execution:</strong> Gemini 2.0 Flash ($0.10/$0.40 per 1M tokens)</li>
+            <li><strong>Tool execution:</strong> Gemini 2.5 Flash-Lite ($0.10/$0.40 per 1M tokens)</li>
             <li><strong>Embeddings:</strong> Llama 3.1 8B via Together.ai ($0.18 per 1M tokens)</li>
             <li><strong>Framework:</strong> LangChain or custom (no API cost)</li>
             <li><strong>Storage:</strong> SQLite or Redis (free)</li>

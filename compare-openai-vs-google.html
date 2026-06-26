@@ -58,7 +58,7 @@
                 "name": "Is Google Gemini cheaper than OpenAI for API usage?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Google's budget models are significantly cheaper. Gemini 2.0 Flash Lite ($0.075/$0.30 per 1M tokens) is 70% cheaper on input than GPT-5 mini ($0.25/$2.00). However, at the mid-tier, Gemini 2.5 Pro ($1.25/$10.00) and GPT-5 ($1.25/$10.00) are identically priced — but Gemini offers 1M context vs GPT-5's 272K, making Google the better value. For premium models, GPT-5.5 ($5.00/$30.00) has no direct Google equivalent, though Gemini 3.1 Pro ($2.00/$12.00) offers strong performance at less than half the price."
+                    "text": "Google's budget models are significantly cheaper. Gemini 2.5 Flash-Lite ($0.075/$0.30 per 1M tokens) is 70% cheaper on input than GPT-5 mini ($0.25/$2.00). However, at the mid-tier, Gemini 2.5 Pro ($1.25/$10.00) and GPT-5 ($1.25/$10.00) are identically priced — but Gemini offers 1M context vs GPT-5's 272K, making Google the better value. For premium models, GPT-5.5 ($5.00/$30.00) has no direct Google equivalent, though Gemini 3.1 Pro ($2.00/$12.00) offers strong performance at less than half the price."
                 }
             },
             {
@@ -398,7 +398,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="model-name">Gemini 2.0 Flash Lite</td>
+                    <td class="model-name">Gemini 2.5 Flash-Lite</td>
                     <td><span class="provider-badge badge-google">Google</span></td>
                     <td><span class="tier-badge tier-budget">Budget</span></td>
                     <td class="cheaper">$0.075</td>
@@ -414,7 +414,7 @@
                     <td>128K</td>
                 </tr>
                 <tr>
-                    <td class="model-name">Gemini 2.0 Flash</td>
+                    <td class="model-name">Gemini 2.5 Flash-Lite</td>
                     <td><span class="provider-badge badge-google">Google</span></td>
                     <td><span class="tier-badge tier-budget">Budget</span></td>
                     <td class="cheaper">$0.10</td>
@@ -539,8 +539,8 @@
                 <select id="googleModel">
                     <option value="gemini-25-pro" selected>Gemini 2.5 Pro ($1.25/$10.00)</option>
                     <option value="gemini-31-pro">Gemini 3.1 Pro ($2.00/$12.00)</option>
-                    <option value="gemini-flash">Gemini 2.0 Flash ($0.10/$0.40)</option>
-                    <option value="gemini-flash-lite">Gemini 2.0 Flash Lite ($0.075/$0.30)</option>
+                    <option value="gemini-flash">Gemini 2.5 Flash-Lite ($0.10/$0.40)</option>
+                    <option value="gemini-flash-lite">Gemini 2.5 Flash-Lite ($0.075/$0.30)</option>
                 </select>
             </div>
         </div>
@@ -667,7 +667,7 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <h3>Is Google Gemini cheaper than OpenAI for API usage?</h3>
-            <p>Google's budget models are significantly cheaper. Gemini 2.0 Flash Lite ($0.075/$0.30 per 1M tokens) is 70% cheaper on input than GPT-5 mini ($0.25/$2.00). However, at the mid-tier, Gemini 2.5 Pro ($1.25/$10.00) and GPT-5 ($1.25/$10.00) are identically priced — but Gemini offers 1M context vs GPT-5's 272K, making Google the better value. For premium models, GPT-5.5 ($5.00/$30.00) has no direct Google equivalent, though Gemini 3.1 Pro ($2.00/$12.00) offers strong performance at less than half the price.</p>
+            <p>Google's budget models are significantly cheaper. Gemini 2.5 Flash-Lite ($0.075/$0.30 per 1M tokens) is 70% cheaper on input than GPT-5 mini ($0.25/$2.00). However, at the mid-tier, Gemini 2.5 Pro ($1.25/$10.00) and GPT-5 ($1.25/$10.00) are identically priced — but Gemini offers 1M context vs GPT-5's 272K, making Google the better value. For premium models, GPT-5.5 ($5.00/$30.00) has no direct Google equivalent, though Gemini 3.1 Pro ($2.00/$12.00) offers strong performance at less than half the price.</p>
         </div>
         <div class="faq-item">
             <h3>What is the cheapest model between OpenAI and Google?</h3>
@@ -853,8 +853,8 @@
         'gpt-oss-20b': { name: 'GPT-oss 20B', provider: 'OpenAI', input: 0.08, output: 0.35 },
         'gemini-25-pro': { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00 },
         'gemini-31-pro': { name: 'Gemini 3.1 Pro', provider: 'Google', input: 2.00, output: 12.00 },
-        'gemini-flash': { name: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40 },
-        'gemini-flash-lite': { name: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30 }
+        'gemini-flash': { name: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40 },
+        'gemini-flash-lite': { name: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30 }
     };
 
     const PRESETS = {

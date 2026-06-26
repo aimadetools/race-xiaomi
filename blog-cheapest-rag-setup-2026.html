@@ -333,9 +333,9 @@
 
         <div class="cost-example">
             <div class="label">Cost per RAG query (2K input + 500 output tokens)</div>
-            <div class="cost-row"><span class="name">Gemini 2.0 Flash Lite</span><span class="value">$0.00030</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.5 Flash-Lite</span><span class="value">$0.00030</span></div>
             <div class="cost-row"><span class="name">DeepSeek V4 Flash</span><span class="value">$0.00042</span></div>
-            <div class="cost-row"><span class="name">Gemini 2.0 Flash</span><span class="value">$0.00045</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.5 Flash-Lite</span><span class="value">$0.00045</span></div>
             <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$0.00060</span></div>
             <div class="cost-row"><span class="name">DeepSeek V4 Pro</span><span class="value">$0.00132</span></div>
             <div class="cost-row"><span class="name">GPT-5 mini</span><span class="value">$0.00150</span></div>
@@ -345,7 +345,7 @@
             <div class="cost-row"><span class="name">GPT-5</span><span class="value">$0.00750</span></div>
         </div>
 
-        <p>The difference is dramatic. Gemini 2.0 Flash Lite costs <strong>45x less</strong> per query than Claude Sonnet 4.6. For RAG workloads where you're processing thousands of queries per day, this adds up fast.</p>
+        <p>The difference is dramatic. Gemini 2.5 Flash-Lite costs <strong>45x less</strong> per query than Claude Sonnet 4.6. For RAG workloads where you're processing thousands of queries per day, this adds up fast.</p>
 
         <h2>Three Budget Tiers</h2>
 
@@ -356,7 +356,7 @@
             <ul>
                 <li><strong>Embedding:</strong> OpenAI text-embedding-3-small ($0.40 for 10K docs)</li>
                 <li><strong>Vector DB:</strong> ChromaDB (local, free) or Pinecone free tier</li>
-                <li><strong>Generation:</strong> Gemini 2.0 Flash ($0.10/$0.40 per 1M tokens)</li>
+                <li><strong>Generation:</strong> Gemini 2.5 Flash-Lite ($0.10/$0.40 per 1M tokens)</li>
                 <li><strong>Query volume:</strong> ~1,000 queries/day for $1.35/mo</li>
             </ul>
             <p><strong>Total monthly cost at 1K queries/day:</strong> ~$1.50</p>
@@ -395,7 +395,7 @@
             <div class="label">Monthly cost at 1,000 queries/day</div>
             <div class="cost-row"><span class="name">Embedding (OpenAI small)</span><span class="value">$0.30/mo</span></div>
             <div class="cost-row"><span class="name">Vector DB (ChromaDB local)</span><span class="value">$0.00/mo</span></div>
-            <div class="cost-row"><span class="name">Generation (Gemini 2.0 Flash)</span><span class="value">$1.35/mo</span></div>
+            <div class="cost-row"><span class="name">Generation (Gemini 2.5 Flash-Lite)</span><span class="value">$1.35/mo</span></div>
             <div class="cost-row cost-total"><span class="name">Total</span><span class="value" style="color:var(--green);">$1.65/mo</span></div>
         </div>
 
@@ -404,7 +404,7 @@
         <h2>Quality vs. Cost Tradeoffs</h2>
         <p>The cheapest models aren't always the best for RAG. Here's the quality spectrum:</p>
         <ul>
-            <li><strong>Gemini 2.0 Flash Lite</strong> — cheapest, but struggles with complex reasoning over retrieved context. Good for simple Q&A and factual lookups.</li>
+            <li><strong>Gemini 2.5 Flash-Lite</strong> — cheapest, but struggles with complex reasoning over retrieved context. Good for simple Q&A and factual lookups.</li>
             <li><strong>DeepSeek V4 Flash</strong> — excellent balance of cost and quality. Handles multi-hop reasoning well. Best value for most RAG use cases.</li>
             <li><strong>GPT-5 mini</strong> — strong instruction following and structured output. Great when you need consistent formatting in answers.</li>
             <li><strong>Claude Haiku 4.5</strong> — best at nuanced answers with citations. Worth the premium for customer-facing applications.</li>

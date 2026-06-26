@@ -211,7 +211,7 @@
         <p>This guide compares the best AI APIs for customer support chatbots with real cost math, quality assessment, and a decision framework based on your volume and budget.</p>
 
         <div class="callout">
-            <p><strong>Bottom line:</strong> For most customer support chatbots, <strong>GPT-5 Mini ($0.25/$2.00)</strong> offers the best balance of cost, quality, and reliability. For high-volume or budget-constrained deployments, <strong>Gemini 2.0 Flash ($0.10/$0.40)</strong> cuts costs by 60% with acceptable quality.</p>
+            <p><strong>Bottom line:</strong> For most customer support chatbots, <strong>GPT-5 Mini ($0.25/$2.00)</strong> offers the best balance of cost, quality, and reliability. For high-volume or budget-constrained deployments, <strong>Gemini 2.5 Flash-Lite ($0.10/$0.40)</strong> cuts costs by 60% with acceptable quality.</p>
         </div>
 
         <h2>Why API Choice Matters for Support Chatbots</h2>
@@ -244,7 +244,7 @@
 
         <p><strong>Limitations:</strong> Output quality drops on very complex multi-step reasoning. No free tier.</p>
 
-        <h3>2. Gemini 2.0 Flash — <span class="tier-budget">Budget</span> Cheapest Option</h3>
+        <h3>2. Gemini 2.5 Flash-Lite — <span class="tier-budget">Budget</span> Cheapest Option</h3>
         <p>Google's Gemini Flash is the cheapest production-grade API for support chatbots. At $0.10/$0.40, it costs 60% less than GPT-5 Mini.</p>
 
         <table class="comparison-table">
@@ -321,7 +321,7 @@
                 <th>1K Conv/Month</th>
             </tr>
             <tr>
-                <td>Gemini 2.0 Flash</td>
+                <td>Gemini 2.5 Flash-Lite</td>
                 <td>$0.00010</td>
                 <td>$0.00008</td>
                 <td class="winner">$0.00018</td>
@@ -511,7 +511,7 @@ async function handleSupportMessage(message) {
         <div class="verdict">
             <h3>Which Model Should You Pick?</h3>
             <ul>
-                <li><strong>Just starting out, need cheapest option:</strong> Gemini 2.0 Flash ($0.18/month for 1K conv)</li>
+                <li><strong>Just starting out, need cheapest option:</strong> Gemini 2.5 Flash-Lite ($0.18/month for 1K conv)</li>
                 <li><strong>Best balance of cost and quality:</strong> GPT-5 Mini ($0.65/month for 1K conv)</li>
                 <li><strong>Quality is everything, budget is flexible:</strong> Claude Haiku 4.5 ($2.00/month for 1K conv)</li>
                 <li><strong>High volume, cost-sensitive:</strong> Gemini Flash with GPT-5 Mini fallback ($4.40/month for 10K conv)</li>
@@ -529,7 +529,7 @@ async function handleSupportMessage(message) {
         <h2>FAQ</h2>
 
         <h3>What's the cheapest AI API for a customer support chatbot?</h3>
-        <p>Gemini 2.0 Flash at $0.10/$0.40 per 1M tokens. At 1,000 conversations/month with typical messages, that's about $0.18/month — essentially free.</p>
+        <p>Gemini 2.5 Flash-Lite at $0.10/$0.40 per 1M tokens. At 1,000 conversations/month with typical messages, that's about $0.18/month — essentially free.</p>
 
         <h3>Can I use a free tier for production support?</h3>
         <p>Some providers offer free tiers, but they come with rate limits, no SLA, and shared infrastructure. For production support where reliability matters, budget at least $5-10/month for a paid API. See our <a href="blog-free-tiers.html">Free Tiers Compared</a> guide.</p>

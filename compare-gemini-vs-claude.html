@@ -58,7 +58,7 @@
                 "name": "Is Gemini cheaper than Claude for API usage?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, Gemini is significantly cheaper than Claude across all tiers. Gemini 2.0 Flash Lite ($0.075/$0.30 per 1M tokens) is 92% cheaper on input and 94% cheaper on output than Claude Haiku 4.5 ($1/$5). Gemini 2.5 Pro ($1.25/$10) is 58% cheaper on input and 33% cheaper on output than Claude Sonnet 4 ($3/$15). For budget-conscious developers, Gemini offers excellent value with 1M context windows on all models."
+                    "text": "Yes, Gemini is significantly cheaper than Claude across all tiers. Gemini 2.5 Flash-Lite ($0.075/$0.30 per 1M tokens) is 92% cheaper on input and 94% cheaper on output than Claude Haiku 4.5 ($1/$5). Gemini 2.5 Pro ($1.25/$10) is 58% cheaper on input and 33% cheaper on output than Claude Sonnet 4.6 ($3/$15). For budget-conscious developers, Gemini offers excellent value with 1M context windows on all models."
                 }
             },
             {
@@ -79,10 +79,10 @@
             },
             {
                 "@type": "Question",
-                "name": "Claude Sonnet 4 vs Gemini 2.5 Pro: which should I choose?",
+                "name": "Claude Sonnet 4.6 vs Gemini 2.5 Pro: which should I choose?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Gemini 2.5 Pro is 58% cheaper on input ($1.25 vs $3) and 33% cheaper on output ($10 vs $15), with a larger 1M context window vs Claude Sonnet 4's 200K. Choose Gemini 2.5 Pro for cost-sensitive workloads, long-context tasks, and startups. Choose Claude Sonnet 4 when you need Anthropic's safety guarantees or specific Claude capabilities."
+                    "text": "Gemini 2.5 Pro is 58% cheaper on input ($1.25 vs $3) and 33% cheaper on output ($10 vs $15), with a larger 1M context window vs Claude Sonnet 4.6's 200K. Choose Gemini 2.5 Pro for cost-sensitive workloads, long-context tasks, and startups. Choose Claude Sonnet 4.6 when you need Anthropic's safety guarantees or specific Claude capabilities."
                 }
             },
             {
@@ -90,7 +90,7 @@
                 "name": "Is Gemini Flash good enough for production use?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, Gemini 2.0 Flash is excellent for production use at $0.10/$0.40 per 1M tokens with 1M context. It handles chatbots, content generation, summarization, and most NLP tasks well. Gemini Flash Lite ($0.075/$0.30) is even cheaper for simpler tasks. For complex reasoning, upgrade to Gemini 2.5 Pro or Claude Sonnet 4."
+                    "text": "Yes, Gemini 2.5 Flash-Lite is excellent for production use at $0.10/$0.40 per 1M tokens with 1M context. It handles chatbots, content generation, summarization, and most NLP tasks well. Gemini Flash Lite ($0.075/$0.30) is even cheaper for simpler tasks. For complex reasoning, upgrade to Gemini 2.5 Pro or Claude Sonnet 4.6."
                 }
             }
         ]
@@ -404,7 +404,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="model-name">Gemini 2.0 Flash Lite</td>
+                    <td class="model-name">Gemini 2.5 Flash-Lite</td>
                     <td><span class="provider-badge badge-google">Google</span></td>
                     <td><span class="tier-badge tier-budget">Budget</span></td>
                     <td class="cheaper">$0.075</td>
@@ -412,7 +412,7 @@
                     <td>1M</td>
                 </tr>
                 <tr>
-                    <td class="model-name">Gemini 2.0 Flash</td>
+                    <td class="model-name">Gemini 2.5 Flash-Lite</td>
                     <td><span class="provider-badge badge-google">Google</span></td>
                     <td><span class="tier-badge tier-budget">Budget</span></td>
                     <td class="cheaper">$0.10</td>
@@ -496,8 +496,8 @@
             <div class="select-group">
                 <label>Gemini Model</label>
                 <select id="geminiModel">
-                    <option value="google-flash-lite">Gemini 2.0 Flash Lite ($0.075/$0.30)</option>
-                    <option value="google-flash" selected>Gemini 2.0 Flash ($0.10/$0.40)</option>
+                    <option value="google-flash-lite">Gemini 2.5 Flash-Lite ($0.075/$0.30)</option>
+                    <option value="google-flash" selected>Gemini 2.5 Flash-Lite ($0.10/$0.40)</option>
                     <option value="google-pro">Gemini 2.5 Pro ($1.25/$10.00)</option>
                     <option value="google-gemini3-pro">Gemini 3.1 Pro ($2.00/$12.00)</option>
                 </select>
@@ -538,7 +538,7 @@
         <div class="results-grid">
             <div class="result-card" id="geminiResult">
                 <div class="provider">Google</div>
-                <div class="model-name" id="geminiModelName">Gemini 2.0 Flash</div>
+                <div class="model-name" id="geminiModelName">Gemini 2.5 Flash-Lite</div>
                 <div class="price-big" id="geminiPrice">$0.00</div>
                 <div class="price-label">per month</div>
                 <div class="breakdown">
@@ -558,7 +558,7 @@
             </div>
             <div class="result-card" id="claudeResult">
                 <div class="provider">Anthropic</div>
-                <div class="model-name" id="claudeModelName">Claude Sonnet 4</div>
+                <div class="model-name" id="claudeModelName">Claude Sonnet 4.6</div>
                 <div class="price-big" id="claudePrice">$0.00</div>
                 <div class="price-label">per month</div>
                 <div class="breakdown">
@@ -596,7 +596,7 @@
             <div class="use-case-card">
                 <h3>Code Generation</h3>
                 <p>Complex reasoning, longer outputs. Quality and accuracy matter. Both providers excel here.</p>
-                <div class="recommendation"><span class="pick-gemini">Pick Gemini:</span> 2.5 Pro at $1.25/$10 is 58% cheaper on input than Claude Sonnet 4, with 1M context for large codebases.</div>
+                <div class="recommendation"><span class="pick-gemini">Pick Gemini:</span> 2.5 Pro at $1.25/$10 is 58% cheaper on input than Claude Sonnet 4.6, with 1M context for large codebases.</div>
             </div>
             <div class="use-case-card">
                 <h3>Long Document Analysis</h3>
@@ -638,7 +638,7 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <h3>Is Gemini cheaper than Claude for API usage?</h3>
-            <p>Yes, Gemini is significantly cheaper than Claude across all tiers. Gemini 2.0 Flash Lite ($0.075/$0.30 per 1M tokens) is 92% cheaper on input and 94% cheaper on output than Claude Haiku 4.5 ($1/$5). Gemini 2.5 Pro ($1.25/$10) is 58% cheaper on input and 33% cheaper on output than Claude Sonnet 4 ($3/$15). For budget-conscious developers, Gemini offers excellent value with 1M context windows on all models.</p>
+            <p>Yes, Gemini is significantly cheaper than Claude across all tiers. Gemini 2.5 Flash-Lite ($0.075/$0.30 per 1M tokens) is 92% cheaper on input and 94% cheaper on output than Claude Haiku 4.5 ($1/$5). Gemini 2.5 Pro ($1.25/$10) is 58% cheaper on input and 33% cheaper on output than Claude Sonnet 4.6 ($3/$15). For budget-conscious developers, Gemini offers excellent value with 1M context windows on all models.</p>
         </div>
         <div class="faq-item">
             <h3>What is the cheapest Gemini model vs the cheapest Claude model?</h3>
@@ -649,12 +649,12 @@
             <p>Both offer 1M token context windows. All four Gemini models (Flash Lite, Flash, 2.5 Pro, 3.1 Pro) support 1M tokens. Claude Sonnet 4.6 and Opus 4.7 also support 1M tokens. However, Gemini's budget models (Flash Lite at $0.075/M) include 1M context, while Claude's budget model (Haiku 4.5 at $1/M) only has 200K context.</p>
         </div>
         <div class="faq-item">
-            <h3>Claude Sonnet 4 vs Gemini 2.5 Pro: which should I choose?</h3>
-            <p>Gemini 2.5 Pro is 58% cheaper on input ($1.25 vs $3) and 33% cheaper on output ($10 vs $15), with a larger 1M context window vs Claude Sonnet 4's 200K. Choose Gemini 2.5 Pro for cost-sensitive workloads, long-context tasks, and startups. Choose Claude Sonnet 4 when you need Anthropic's safety guarantees or specific Claude capabilities.</p>
+            <h3>Claude Sonnet 4.6 vs Gemini 2.5 Pro: which should I choose?</h3>
+            <p>Gemini 2.5 Pro is 58% cheaper on input ($1.25 vs $3) and 33% cheaper on output ($10 vs $15), with a larger 1M context window vs Claude Sonnet 4.6's 200K. Choose Gemini 2.5 Pro for cost-sensitive workloads, long-context tasks, and startups. Choose Claude Sonnet 4.6 when you need Anthropic's safety guarantees or specific Claude capabilities.</p>
         </div>
         <div class="faq-item">
             <h3>Is Gemini Flash good enough for production use?</h3>
-            <p>Yes, Gemini 2.0 Flash is excellent for production use at $0.10/$0.40 per 1M tokens with 1M context. It handles chatbots, content generation, summarization, and most NLP tasks well. Gemini Flash Lite ($0.075/$0.30) is even cheaper for simpler tasks. For complex reasoning, upgrade to Gemini 2.5 Pro or Claude Sonnet 4.</p>
+            <p>Yes, Gemini 2.5 Flash-Lite is excellent for production use at $0.10/$0.40 per 1M tokens with 1M context. It handles chatbots, content generation, summarization, and most NLP tasks well. Gemini Flash Lite ($0.075/$0.30) is even cheaper for simpler tasks. For complex reasoning, upgrade to Gemini 2.5 Pro or Claude Sonnet 4.6.</p>
         </div>
     </div>
 
@@ -810,12 +810,12 @@
     <script>
     // Model data
     const MODELS = {
-        'google-flash-lite': { name: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30 },
-        'google-flash': { name: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40 },
+        'google-flash-lite': { name: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30 },
+        'google-flash': { name: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40 },
         'google-pro': { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00 },
         'google-gemini3-pro': { name: 'Gemini 3.1 Pro', provider: 'Google', input: 2.00, output: 12.00 },
         'anthropic-haiku': { name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00 },
-        'anthropic-sonnet': { name: 'Claude Sonnet 4', provider: 'Anthropic', input: 3.00, output: 15.00 },
+        'anthropic-sonnet': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00 },
         'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00 },
         'anthropic-opus48': { name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00 },
         'anthropic-opus47': { name: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00 },

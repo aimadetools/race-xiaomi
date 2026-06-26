@@ -76,7 +76,7 @@
                 "name": "What is the cheapest AI API for SaaS applications?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For most SaaS workloads, GPT-4o mini ($0.15/$0.60 per 1M tokens) or Gemini 2.0 Flash ($0.075/$0.30) are the cheapest options that still deliver good quality. For code-heavy SaaS, DeepSeek V4 Pro offers near-GPT-5 quality at 10% of the cost. Use model routing to send simple queries to budget models and complex ones to premium models."
+                    "text": "For most SaaS workloads, GPT-4o mini ($0.15/$0.60 per 1M tokens) or Gemini 2.5 Flash-Lite ($0.075/$0.30) are the cheapest options that still deliver good quality. For code-heavy SaaS, DeepSeek V4 Pro offers near-GPT-5 quality at 10% of the cost. Use model routing to send simple queries to budget models and complex ones to premium models."
                 }
             },
             {
@@ -281,7 +281,7 @@
 
                 <div class="step-card">
                     <h4><span class="step-num">1</span> Multi-Model Routing</h4>
-                    <p>Don't send every request to GPT-4o. Route simple queries (FAQ, formatting, basic extraction) to budget models like GPT-4o mini ($0.15/$0.60) or Gemini 2.0 Flash ($0.075/$0.30). Reserve premium models for complex reasoning. A typical SaaS can route 60-70% of requests to budget models, cutting costs by 50-70%.</p>
+                    <p>Don't send every request to GPT-4o. Route simple queries (FAQ, formatting, basic extraction) to budget models like GPT-4o mini ($0.15/$0.60) or Gemini 2.5 Flash-Lite ($0.075/$0.30). Reserve premium models for complex reasoning. A typical SaaS can route 60-70% of requests to budget models, cutting costs by 50-70%.</p>
                     <p>Example: An AI search feature sends 10,000 queries/day. 7,000 are simple keyword lookups (GPT-4o mini: $0.63/day). 3,000 need complex reasoning (GPT-4o: $10.50/day). Total: $11.13/day vs $35/day if all went to GPT-4o. <strong>68% savings.</strong></p>
                 </div>
 
@@ -329,7 +329,7 @@
                     <div class="label">After Optimization</div>
                     <div class="cost-row"><span class="name">Classification → GPT-4o mini (70% of tickets)</span><span class="value">-$2,450/mo</span></div>
                     <div class="cost-row"><span class="name">Response suggestions → cached (35% hit rate)</span><span class="value">-$1,470/mo</span></div>
-                    <div class="cost-row"><span class="name">Sentiment → Gemini 2.0 Flash (simple task)</span><span class="value">-$1,660/mo</span></div>
+                    <div class="cost-row"><span class="name">Sentiment → Gemini 2.5 Flash-Lite (simple task)</span><span class="value">-$1,660/mo</span></div>
                     <div class="cost-row"><span class="name">Output limits (max_tokens: 500)</span><span class="value">-$840/mo</span></div>
                     <div class="cost-row"><span class="name">Optimized total</span><span class="value">$3,030/mo</span></div>
                     <div class="cost-row"><span class="name">Monthly savings</span><span class="value">$6,420/mo (68%)</span></div>
@@ -457,7 +457,7 @@
                     <tbody>
                         <tr>
                             <td><strong>FAQ / Simple Q&A</strong></td>
-                            <td>Gemini 2.0 Flash ($0.075)</td>
+                            <td>Gemini 2.5 Flash-Lite ($0.075)</td>
                             <td>GPT-4o mini ($0.15)</td>
                             <td>Claude Haiku 4.5 ($0.25)</td>
                         </tr>
@@ -475,7 +475,7 @@
                         </tr>
                         <tr>
                             <td><strong>Data extraction</strong></td>
-                            <td>Gemini 2.0 Flash ($0.075)</td>
+                            <td>Gemini 2.5 Flash-Lite ($0.075)</td>
                             <td>GPT-4o mini ($0.15)</td>
                             <td>GPT-4o ($2.50)</td>
                         </tr>
@@ -496,7 +496,7 @@
                 <p>Most SaaS companies spend 5-15% of revenue on AI API costs during the growth phase. A SaaS with $50K MRR typically budgets $2,500-$7,500/month for AI APIs. The key is keeping AI costs proportional to the value it adds — if AI features drive $10/month in extra revenue per user, spending $1-2/month per user on AI API calls is healthy. Use our <a href="cost.html">Cost Calculator</a> to model your specific scenario.</p>
 
                 <h3>What is the cheapest AI API for SaaS applications?</h3>
-                <p>For most SaaS workloads, GPT-4o mini ($0.15/$0.60 per 1M tokens) or Gemini 2.0 Flash ($0.075/$0.30) are the cheapest options that still deliver good quality. For code-heavy SaaS, DeepSeek V4 Pro offers near-GPT-5 quality at 10% of the cost. Use model routing to send simple queries to budget models and complex ones to premium models. See our full <a href="pricing.html">pricing comparison</a> for all 42 models.</p>
+                <p>For most SaaS workloads, GPT-4o mini ($0.15/$0.60 per 1M tokens) or Gemini 2.5 Flash-Lite ($0.075/$0.30) are the cheapest options that still deliver good quality. For code-heavy SaaS, DeepSeek V4 Pro offers near-GPT-5 quality at 10% of the cost. Use model routing to send simple queries to budget models and complex ones to premium models. See our full <a href="pricing.html">pricing comparison</a> for all 42 models.</p>
 
                 <h3>How do SaaS companies reduce AI API costs?</h3>
                 <p>The biggest wins are: (1) Multi-model routing — send 60-70% of requests to budget models, saving 50-70%. (2) Response caching — store common AI responses, reducing duplicate API calls by 20-40%. (3) Prompt optimization — shorter prompts mean fewer input tokens. (4) Output limits — set max_tokens to prevent runaway generation. (5) User-level rate limiting — cap per-user usage to prevent cost spikes. See our <a href="blog-how-to-reduce-ai-api-costs-50-percent.html">full cost reduction guide</a> for step-by-step instructions.</p>

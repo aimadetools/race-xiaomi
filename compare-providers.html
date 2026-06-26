@@ -73,7 +73,7 @@
                 "name": "Which AI provider has the largest context window?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Meta's Llama 4 models via Together.ai offer the largest context window at 1M tokens. Among proprietary API providers, Google Gemini 2.5 Pro and Gemini 2.0 Flash both offer 1M token context windows. OpenAI's GPT-5.5 and GPT-5 offer 1M and 272K respectively. Anthropic's Claude Opus 4.7 offers 1M tokens. Larger context windows allow processing longer documents and maintaining extended conversations."
+                    "text": "Meta's Llama 4 models via Together.ai offer the largest context window at 1M tokens. Among proprietary API providers, Google Gemini 2.5 Pro and Gemini 2.5 Flash-Lite both offer 1M token context windows. OpenAI's GPT-5.5 and GPT-5 offer 1M and 272K respectively. Anthropic's Claude Opus 4.7 offers 1M tokens. Larger context windows allow processing longer documents and maintaining extended conversations."
                 }
             },
             {
@@ -81,7 +81,7 @@
                 "name": "Should I use multiple AI providers?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, using multiple AI providers is a smart cost optimization strategy. Route simple tasks (classification, summarization) to budget models like DeepSeek V4 Flash or Gemini 2.0 Flash, and reserve premium models (GPT-5, Claude Opus 4.7) for complex reasoning tasks. This 'model routing' approach can cut costs by 60-80% while maintaining quality where it matters. Use the pipeline calculator to model your exact savings."
+                    "text": "Yes, using multiple AI providers is a smart cost optimization strategy. Route simple tasks (classification, summarization) to budget models like DeepSeek V4 Flash or Gemini 2.5 Flash-Lite, and reserve premium models (GPT-5, Claude Opus 4.7) for complex reasoning tasks. This 'model routing' approach can cut costs by 60-80% while maintaining quality where it matters. Use the pipeline calculator to model your exact savings."
                 }
             },
             {
@@ -451,7 +451,7 @@
                 <h3>Customer Support Chatbot</h3>
                 <p>High volume, low cost per message. Needs fast responses and good instruction following.</p>
                 <div class="recommendation">
-                    <span style="color:var(--green)">Best Value:</span> DeepSeek V4 Flash ($0.14/$0.28) or Gemini 2.0 Flash ($0.10/$0.40)
+                    <span style="color:var(--green)">Best Value:</span> DeepSeek V4 Flash ($0.14/$0.28) or Gemini 2.5 Flash-Lite ($0.10/$0.40)
                 </div>
             </div>
             <div class="use-case-card">
@@ -513,11 +513,11 @@
         </div>
         <div class="faq-item">
             <h3>Which AI provider has the largest context window?</h3>
-            <p>Meta's Llama 4 models via Together.ai offer the largest context window at 1M tokens. Among proprietary API providers, Google Gemini 2.5 Pro and Gemini 2.0 Flash both offer 1M token context windows. OpenAI's GPT-5.5 and GPT-5 offer 1M and 272K respectively. Anthropic's Claude Opus 4.7 offers 1M tokens. Larger context windows allow processing longer documents and maintaining extended conversations.</p>
+            <p>Meta's Llama 4 models via Together.ai offer the largest context window at 1M tokens. Among proprietary API providers, Google Gemini 2.5 Pro and Gemini 2.5 Flash-Lite both offer 1M token context windows. OpenAI's GPT-5.5 and GPT-5 offer 1M and 272K respectively. Anthropic's Claude Opus 4.7 offers 1M tokens. Larger context windows allow processing longer documents and maintaining extended conversations.</p>
         </div>
         <div class="faq-item">
             <h3>Should I use multiple AI providers?</h3>
-            <p>Yes, using multiple AI providers is a smart cost optimization strategy. Route simple tasks (classification, summarization) to budget models like DeepSeek V4 Flash or Gemini 2.0 Flash, and reserve premium models (GPT-5, Claude Opus 4.7) for complex reasoning tasks. This "model routing" approach can cut costs by 60-80% while maintaining quality where it matters. Use the pipeline calculator to model your exact savings.</p>
+            <p>Yes, using multiple AI providers is a smart cost optimization strategy. Route simple tasks (classification, summarization) to budget models like DeepSeek V4 Flash or Gemini 2.5 Flash-Lite, and reserve premium models (GPT-5, Claude Opus 4.7) for complex reasoning tasks. This "model routing" approach can cut costs by 60-80% while maintaining quality where it matters. Use the pipeline calculator to model your exact savings.</p>
         </div>
         <div class="faq-item">
             <h3>Which AI provider is best for coding?</h3>
@@ -613,8 +613,8 @@
     // Provider data
     const PROVIDER_INFO = {
         openai: { name: 'OpenAI', models: 'GPT-5.5, GPT-5, GPT-5 mini, GPT-oss, GPT-4o, GPT-4o mini', features: ['Function calling', 'Vision', 'Fine-tuning', 'Batch API', 'Assistants API'], strengths: 'Largest model selection, strongest ecosystem' },
-        anthropic: { name: 'Anthropic', models: 'Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 4.6.6, Claude Haiku 4.5', features: ['Tool use', 'Vision', '1M context', 'Artifacts', 'Projects'], strengths: 'Best instruction following, coding excellence' },
-        google: { name: 'Google', models: 'Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite', features: ['1M context', 'Vision', 'Code execution', 'Grounding', 'Multimodal'], strengths: 'Largest context window, fastest models' },
+        anthropic: { name: 'Anthropic', models: 'Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 4.6, Claude Haiku 4.5', features: ['Tool use', 'Vision', '1M context', 'Artifacts', 'Projects'], strengths: 'Best instruction following, coding excellence' },
+        google: { name: 'Google', models: 'Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.5 Flash-Lite, Gemini 2.5 Flash-Lite', features: ['1M context', 'Vision', 'Code execution', 'Grounding', 'Multimodal'], strengths: 'Largest context window, fastest models' },
         deepseek: { name: 'DeepSeek', models: 'DeepSeek V4 Pro, DeepSeek V4 Flash, DeepSeek V3', features: ['1M context', 'Code generation', 'Reasoning', 'Open weights'], strengths: 'Cheapest API, open source models' },
         mistral: { name: 'Mistral', models: 'Mistral Large 3, Mistral Small 4', features: ['Function calling', 'Vision', '128K context', 'EU data sovereignty'], strengths: 'European provider, competitive pricing' },
         cohere: { name: 'Cohere', models: 'Command R+, Command R', features: ['RAG native', 'Grounding', 'Citations', '128K context'], strengths: 'Built for enterprise RAG workflows' },

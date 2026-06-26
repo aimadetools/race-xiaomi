@@ -454,9 +454,9 @@
         var stacks = {
             chatbot: {
                 cheap: [
-                    { task: 'Classify Intent', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 20, reason: 'Lightweight classification at lowest cost' },
+                    { task: 'Classify Intent', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 20, reason: 'Lightweight classification at lowest cost' },
                     { task: 'Generate Response', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 800, tokensOut: 300, reason: 'Best quality-to-cost ratio for chat' },
-                    { task: 'Handle Complex Queries', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1200, tokensOut: 500, reason: 'Good reasoning at budget price' }
+                    { task: 'Handle Complex Queries', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1200, tokensOut: 500, reason: 'Good reasoning at budget price' }
                 ],
                 quality: [
                     { task: 'Classify Intent', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 400, tokensOut: 20, reason: 'Excellent instruction following' },
@@ -464,13 +464,13 @@
                     { task: 'Handle Complex Queries', model: 'GPT-5.5', provider: 'OpenAI', input: 5.00, output: 30.00, tokensIn: 1200, tokensOut: 500, reason: 'Top-tier reasoning for edge cases' }
                 ],
                 balanced: [
-                    { task: 'Classify Intent', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 400, tokensOut: 20, reason: 'Fast, cheap, accurate enough' },
+                    { task: 'Classify Intent', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 400, tokensOut: 20, reason: 'Fast, cheap, accurate enough' },
                     { task: 'Generate Response', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 800, tokensOut: 300, reason: 'Solid quality at low cost' },
                     { task: 'Handle Complex Queries', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 1200, tokensOut: 500, reason: 'Good reasoning for hard cases' }
                 ],
                 speed: [
-                    { task: 'Classify Intent', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 20, reason: 'Fastest inference, lowest latency' },
-                    { task: 'Generate Response', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 800, tokensOut: 300, reason: 'Fast streaming, good quality' },
+                    { task: 'Classify Intent', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 20, reason: 'Fastest inference, lowest latency' },
+                    { task: 'Generate Response', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 800, tokensOut: 300, reason: 'Fast streaming, good quality' },
                     { task: 'Handle Complex Queries', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1200, tokensOut: 500, reason: 'Fast with decent reasoning' }
                 ]
             },
@@ -491,7 +491,7 @@
                     { task: 'Code Review / Debug', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 1500, tokensOut: 400, reason: 'Good reasoning at moderate cost' }
                 ],
                 speed: [
-                    { task: 'Code Completion', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 500, tokensOut: 200, reason: 'Fast completions' },
+                    { task: 'Code Completion', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 500, tokensOut: 200, reason: 'Fast completions' },
                     { task: 'Code Generation', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1000, tokensOut: 500, reason: 'Fast, decent code quality' },
                     { task: 'Code Review / Debug', model: 'GPT-4o', provider: 'OpenAI', input: 2.50, output: 10.00, tokensIn: 1500, tokensOut: 400, reason: 'Fast with good analysis' }
                 ]
@@ -500,7 +500,7 @@
                 cheap: [
                     { task: 'Outline / Research', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 600, tokensOut: 300, reason: 'Good planning at lowest cost' },
                     { task: 'Draft Content', model: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60, tokensIn: 1000, tokensOut: 800, reason: 'Good writing quality at budget' },
-                    { task: 'Edit / Polish', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1500, tokensOut: 600, reason: 'Fast editing pass' }
+                    { task: 'Edit / Polish', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1500, tokensOut: 600, reason: 'Fast editing pass' }
                 ],
                 quality: [
                     { task: 'Outline / Research', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 600, tokensOut: 300, reason: 'Excellent planning' },
@@ -508,19 +508,19 @@
                     { task: 'Edit / Polish', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 1500, tokensOut: 600, reason: 'Nuanced editing' }
                 ],
                 balanced: [
-                    { task: 'Outline / Research', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 600, tokensOut: 300, reason: 'Good research at low cost' },
+                    { task: 'Outline / Research', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 600, tokensOut: 300, reason: 'Good research at low cost' },
                     { task: 'Draft Content', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 1000, tokensOut: 800, reason: 'Good writing for the price' },
                     { task: 'Edit / Polish', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1500, tokensOut: 600, reason: 'Solid editing at low cost' }
                 ],
                 speed: [
-                    { task: 'Outline / Research', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 600, tokensOut: 300, reason: 'Fastest outline generation' },
-                    { task: 'Draft Content', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 800, reason: 'Fast streaming content' },
+                    { task: 'Outline / Research', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 600, tokensOut: 300, reason: 'Fastest outline generation' },
+                    { task: 'Draft Content', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 800, reason: 'Fast streaming content' },
                     { task: 'Edit / Polish', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1500, tokensOut: 600, reason: 'Quick edit pass' }
                 ]
             },
             rag: {
                 cheap: [
-                    { task: 'Embed Documents', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.0, tokensIn: 500, tokensOut: 0, reason: 'Cheapest embedding path' },
+                    { task: 'Embed Documents', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.0, tokensIn: 500, tokensOut: 0, reason: 'Cheapest embedding path' },
                     { task: 'Retrieve & Rank', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 2000, tokensOut: 100, reason: 'Good retrieval at low cost' },
                     { task: 'Generate Answer', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 3000, tokensOut: 500, reason: 'Best value for RAG answers' }
                 ],
@@ -530,20 +530,20 @@
                     { task: 'Generate Answer', model: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00, tokensIn: 3000, tokensOut: 500, reason: 'Best answer quality' }
                 ],
                 balanced: [
-                    { task: 'Embed Documents', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 500, tokensOut: 0, reason: 'Good embeddings, cheap' },
+                    { task: 'Embed Documents', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 500, tokensOut: 0, reason: 'Good embeddings, cheap' },
                     { task: 'Retrieve & Rank', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 100, reason: 'Solid retrieval' },
                     { task: 'Generate Answer', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 3000, tokensOut: 500, reason: 'Good answers at moderate cost' }
                 ],
                 speed: [
-                    { task: 'Embed Documents', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.0, tokensIn: 500, tokensOut: 0, reason: 'Fastest embedding' },
-                    { task: 'Retrieve & Rank', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 2000, tokensOut: 100, reason: 'Fast retrieval' },
-                    { task: 'Generate Answer', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 3000, tokensOut: 500, reason: 'Fast streaming answers' }
+                    { task: 'Embed Documents', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.0, tokensIn: 500, tokensOut: 0, reason: 'Fastest embedding' },
+                    { task: 'Retrieve & Rank', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 2000, tokensOut: 100, reason: 'Fast retrieval' },
+                    { task: 'Generate Answer', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 3000, tokensOut: 500, reason: 'Fast streaming answers' }
                 ]
             },
             data: {
                 cheap: [
                     { task: 'Extract Data', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 1000, tokensOut: 300, reason: 'Good extraction at lowest cost' },
-                    { task: 'Classify / Label', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 50, reason: 'Cheapest classification' },
+                    { task: 'Classify / Label', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 50, reason: 'Cheapest classification' },
                     { task: 'Summarize', model: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 300, reason: 'Good summaries at budget price' }
                 ],
                 quality: [
@@ -553,13 +553,13 @@
                 ],
                 balanced: [
                     { task: 'Extract Data', model: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.44, output: 0.87, tokensIn: 1000, tokensOut: 300, reason: 'Good accuracy at low cost' },
-                    { task: 'Classify / Label', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 400, tokensOut: 50, reason: 'Fast, accurate classification' },
+                    { task: 'Classify / Label', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 400, tokensOut: 50, reason: 'Fast, accurate classification' },
                     { task: 'Summarize', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 300, reason: 'Good summaries at low cost' }
                 ],
                 speed: [
-                    { task: 'Extract Data', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 300, reason: 'Fast extraction' },
-                    { task: 'Classify / Label', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 50, reason: 'Fastest classification' },
-                    { task: 'Summarize', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 2000, tokensOut: 300, reason: 'Fast summarization' }
+                    { task: 'Extract Data', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 300, reason: 'Fast extraction' },
+                    { task: 'Classify / Label', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 50, reason: 'Fastest classification' },
+                    { task: 'Summarize', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 2000, tokensOut: 300, reason: 'Fast summarization' }
                 ]
             },
             agent: {
@@ -579,16 +579,16 @@
                     { task: 'Synthesize Results', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1000, tokensOut: 400, reason: 'Solid output at low cost' }
                 ],
                 speed: [
-                    { task: 'Plan / Reason', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1500, tokensOut: 500, reason: 'Fast planning' },
-                    { task: 'Execute Tools', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 800, tokensOut: 200, reason: 'Fastest tool execution' },
-                    { task: 'Synthesize Results', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 400, reason: 'Fast synthesis' }
+                    { task: 'Plan / Reason', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1500, tokensOut: 500, reason: 'Fast planning' },
+                    { task: 'Execute Tools', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 800, tokensOut: 200, reason: 'Fastest tool execution' },
+                    { task: 'Synthesize Results', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 400, reason: 'Fast synthesis' }
                 ]
             },
             saas: {
                 cheap: [
-                    { task: 'User Input Processing', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 100, reason: 'Cheapest input handling' },
+                    { task: 'User Input Processing', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 100, reason: 'Cheapest input handling' },
                     { task: 'Core AI Feature', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 1000, tokensOut: 500, reason: 'Best value for core features' },
-                    { task: 'Output Formatting', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 500, tokensOut: 200, reason: 'Cheap formatting layer' }
+                    { task: 'Output Formatting', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 500, tokensOut: 200, reason: 'Cheap formatting layer' }
                 ],
                 quality: [
                     { task: 'User Input Processing', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 400, tokensOut: 100, reason: 'Accurate input parsing' },
@@ -596,14 +596,14 @@
                     { task: 'Output Formatting', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 500, tokensOut: 200, reason: 'Reliable formatting' }
                 ],
                 balanced: [
-                    { task: 'User Input Processing', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 400, tokensOut: 100, reason: 'Fast, cheap parsing' },
+                    { task: 'User Input Processing', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 400, tokensOut: 100, reason: 'Fast, cheap parsing' },
                     { task: 'Core AI Feature', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1000, tokensOut: 500, reason: 'Good quality, low cost' },
-                    { task: 'Output Formatting', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 500, tokensOut: 200, reason: 'Cheap output layer' }
+                    { task: 'Output Formatting', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 500, tokensOut: 200, reason: 'Cheap output layer' }
                 ],
                 speed: [
-                    { task: 'User Input Processing', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 100, reason: 'Fastest parsing' },
-                    { task: 'Core AI Feature', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 500, reason: 'Fast core feature' },
-                    { task: 'Output Formatting', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 500, tokensOut: 200, reason: 'Fastest formatting' }
+                    { task: 'User Input Processing', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 100, reason: 'Fastest parsing' },
+                    { task: 'Core AI Feature', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 500, reason: 'Fast core feature' },
+                    { task: 'Output Formatting', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 500, tokensOut: 200, reason: 'Fastest formatting' }
                 ]
             },
             research: {
@@ -623,8 +623,8 @@
                     { task: 'Report Generation', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 1500, reason: 'Good reports at low cost' }
                 ],
                 speed: [
-                    { task: 'Document Analysis', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 5000, tokensOut: 500, reason: 'Fast analysis with 1M context' },
-                    { task: 'Synthesis / Reasoning', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 3000, tokensOut: 1000, reason: 'Fast synthesis' },
+                    { task: 'Document Analysis', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 5000, tokensOut: 500, reason: 'Fast analysis with 1M context' },
+                    { task: 'Synthesis / Reasoning', model: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 3000, tokensOut: 1000, reason: 'Fast synthesis' },
                     { task: 'Report Generation', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 1500, reason: 'Fast report generation' }
                 ]
             }

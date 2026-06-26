@@ -68,7 +68,7 @@
                 "name": "How much does a RAG pipeline cost per month?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "RAG pipeline costs vary by volume and model choice. For 10K queries/month: using Gemini 2.0 Flash ($0.10/$0.40) costs about $2-5/month. Using GPT-5 mini ($0.25/$2) costs $10-25/month. Using GPT-5 ($1.25/$10) costs $50-125/month. For 100K queries/month, costs scale linearly. Embedding costs add $1-5/month for most workloads."
+                    "text": "RAG pipeline costs vary by volume and model choice. For 10K queries/month: using Gemini 2.5 Flash-Lite ($0.10/$0.40) costs about $2-5/month. Using GPT-5 mini ($0.25/$2) costs $10-25/month. Using GPT-5 ($1.25/$10) costs $50-125/month. For 100K queries/month, costs scale linearly. Embedding costs add $1-5/month for most workloads."
                 }
             },
             {
@@ -76,7 +76,7 @@
                 "name": "What is the cheapest way to build a RAG system?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The cheapest RAG setup uses Gemini 2.0 Flash for generation ($0.10/$0.40) and Gemini Embedding for vectorization. Total cost for 10K queries/month: approximately $2-5. For even cheaper, use DeepSeek V4 Flash ($0.14/$0.28) or GPT-oss 120B ($0.15/$0.60). Self-hosted embedding models like all-MiniLM-L6-v2 eliminate embedding API costs entirely."
+                    "text": "The cheapest RAG setup uses Gemini 2.5 Flash-Lite for generation ($0.10/$0.40) and Gemini Embedding for vectorization. Total cost for 10K queries/month: approximately $2-5. For even cheaper, use DeepSeek V4 Flash ($0.14/$0.28) or GPT-oss 120B ($0.15/$0.60). Self-hosted embedding models like all-MiniLM-L6-v2 eliminate embedding API costs entirely."
                 }
             },
             {
@@ -303,7 +303,7 @@
                 <span>$0.00</span>
             </div>
             <div class="cost-row">
-                <span>Generation — Gemini 2.0 Flash</span>
+                <span>Generation — Gemini 2.5 Flash-Lite</span>
                 <span class="cost-total">$1.08/mo</span>
             </div>
             <div class="cost-row">
@@ -332,7 +332,7 @@
                 <span>$40.50/mo</span>
             </div>
             <div class="cost-row">
-                <span>Generation — Claude Sonnet 4</span>
+                <span>Generation — Claude Sonnet 4.6</span>
                 <span>$67.50/mo</span>
             </div>
         </div>
@@ -397,7 +397,7 @@
         <ul>
             <li><strong>Embedding:</strong> OpenAI text-embedding-3-small ($0.02/1M)</li>
             <li><strong>Vector DB:</strong> Pinecone free tier or pgvector</li>
-            <li><strong>Generation:</strong> Gemini 2.0 Flash ($0.10/$0.40)</li>
+            <li><strong>Generation:</strong> Gemini 2.5 Flash-Lite ($0.10/$0.40)</li>
         </ul>
 
         <h3>Growth ($50-200/month)</h3>
@@ -411,7 +411,7 @@
         <ul>
             <li><strong>Embedding:</strong> Custom fine-tuned embeddings</li>
             <li><strong>Vector DB:</strong> Dedicated cluster with replication</li>
-            <li><strong>Generation:</strong> Claude Sonnet 4 for complex queries, Flash for simple ones</li>
+            <li><strong>Generation:</strong> Claude Sonnet 4.6 for complex queries, Flash for simple ones</li>
             <li><strong>Caching:</strong> Redis cache for common queries</li>
         </ul>
 
@@ -436,7 +436,7 @@
             <p>Rate your API setup — get a letter grade in 30 seconds</p>
         </a>
             <a href="blog-pricing-cheat-sheet.html">LLM API Pricing Cheat Sheet: Every Model, Every Provider</a>
-            <a href="blog-haiku-vs-flash.html">Claude Haiku 4.5 vs Gemini 2.0 Flash: The Budget Battle</a>
+            <a href="blog-haiku-vs-flash.html">Claude Haiku 4.5 vs Gemini 2.5 Flash-Lite: The Budget Battle</a>
                 <a href="agent-cost-calculator.html">AI Agent Cost Calculator — Estimate Your Agent's Spend →</a>
 </div>
         <div class="cta-box" style="background:linear-gradient(135deg,var(--accent-bg),rgba(99,102,241,0.02));border-color:rgba(99,102,241,0.3);">

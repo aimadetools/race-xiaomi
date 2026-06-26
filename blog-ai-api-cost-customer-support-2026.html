@@ -76,7 +76,7 @@
                 "name": "What is the cheapest AI API for a customer support chatbot?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Gemini 2.0 Flash ($0.10/$0.40 per million tokens) and DeepSeek V4 Flash ($0.14/$0.28 per million tokens) are the cheapest quality options. Gemini has lower input costs while DeepSeek has lower output costs. For a typical support conversation with 750 input tokens and 2,000 output tokens, DeepSeek V4 Flash costs about $0.00084 per conversation versus $0.00085 for Gemini Flash — effectively the same. Both are recommended for budget-conscious support bots."
+                    "text": "Gemini 2.5 Flash-Lite ($0.10/$0.40 per million tokens) and DeepSeek V4 Flash ($0.14/$0.28 per million tokens) are the cheapest quality options. Gemini has lower input costs while DeepSeek has lower output costs. For a typical support conversation with 750 input tokens and 2,000 output tokens, DeepSeek V4 Flash costs about $0.00084 per conversation versus $0.00085 for Gemini Flash — effectively the same. Both are recommended for budget-conscious support bots."
                 }
             },
             {
@@ -263,7 +263,7 @@ Example: DeepSeek V4 Flash, 750 input tokens, 2,000 output tokens
             </thead>
             <tbody>
                 <tr><td class="winner">DeepSeek V4 Flash</td><td>$0.14</td><td>$0.28</td><td class="winner">$0.000665</td><td>Budget support, high volume</td></tr>
-                <tr><td class="winner">Gemini 2.0 Flash</td><td>$0.10</td><td>$0.40</td><td class="winner">$0.000875</td><td>FAQ-heavy, fast responses</td></tr>
+                <tr><td class="winner">Gemini 2.5 Flash-Lite</td><td>$0.10</td><td>$0.40</td><td class="winner">$0.000875</td><td>FAQ-heavy, fast responses</td></tr>
                 <tr><td>GPT-5 mini</td><td>$0.25</td><td>$2.00</td><td>$0.004188</td><td>Balanced quality and cost</td></tr>
                 <tr><td>DeepSeek V4 Pro</td><td>$0.435</td><td>$0.87</td><td>$0.002076</td><td>Near-premium at budget price</td></tr>
                 <tr><td>Claude Haiku 4.5</td><td>$1.00</td><td>$5.00</td><td>$0.010750</td><td>Complex support, best quality</td></tr>
@@ -281,7 +281,7 @@ Example: DeepSeek V4 Flash, 750 input tokens, 2,000 output tokens
         <div class="cost-box">
             <h3>Monthly cost at 500 conversations</h3>
             <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$1.28/mo</span></div>
-            <div class="cost-row"><span>Gemini 2.0 Flash</span><span>$1.75/mo</span></div>
+            <div class="cost-row"><span>Gemini 2.5 Flash-Lite</span><span>$1.75/mo</span></div>
             <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$4.15/mo</span></div>
             <div class="cost-row"><span>GPT-5 mini</span><span>$8.38/mo</span></div>
             <div class="cost-row"><span>Claude Haiku 4.5</span><span>$21.50/mo</span></div>
@@ -296,7 +296,7 @@ Example: DeepSeek V4 Flash, 750 input tokens, 2,000 output tokens
         <div class="cost-box">
             <h3>Monthly cost at 5,000 conversations</h3>
             <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$12.80/mo</span></div>
-            <div class="cost-row"><span>Gemini 2.0 Flash</span><span>$17.50/mo</span></div>
+            <div class="cost-row"><span>Gemini 2.5 Flash-Lite</span><span>$17.50/mo</span></div>
             <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$41.50/mo</span></div>
             <div class="cost-row"><span>GPT-5 mini</span><span>$83.75/mo</span></div>
             <div class="cost-row"><span>Claude Haiku 4.5</span><span>$215.00/mo</span></div>
@@ -311,7 +311,7 @@ Example: DeepSeek V4 Flash, 750 input tokens, 2,000 output tokens
         <div class="cost-box">
             <h3>Monthly cost at 50,000 conversations</h3>
             <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$128/mo</span></div>
-            <div class="cost-row"><span>Gemini 2.0 Flash</span><span>$175/mo</span></div>
+            <div class="cost-row"><span>Gemini 2.5 Flash-Lite</span><span>$175/mo</span></div>
             <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$415/mo</span></div>
             <div class="cost-row"><span>GPT-5 mini</span><span>$838/mo</span></div>
             <div class="cost-row"><span>Claude Haiku 4.5</span><span>$2,150/mo</span></div>
@@ -381,7 +381,7 @@ Example: DeepSeek V4 Flash, 750 input tokens, 2,000 output tokens
                 <label for="calc-model">Model:</label>
                 <select id="calc-model">
                     <option value="0.000665">DeepSeek V4 Flash ($0.00067/conv)</option>
-                    <option value="0.000875">Gemini 2.0 Flash ($0.00088/conv)</option>
+                    <option value="0.000875">Gemini 2.5 Flash-Lite ($0.00088/conv)</option>
                     <option value="0.002076">DeepSeek V4 Pro ($0.00208/conv)</option>
                     <option value="0.004188">GPT-5 mini ($0.00419/conv)</option>
                     <option value="0.010750">Claude Haiku 4.5 ($0.01075/conv)</option>
@@ -470,7 +470,7 @@ Example: DeepSeek V4 Flash, 750 input tokens, 2,000 output tokens
 
         <ol>
             <li><strong>DeepSeek V4 Flash ($0.14/$0.28)</strong> — Best overall value. Excellent instruction following, handles multi-turn conversations, and costs under $13/month for 5K conversations. Our top pick for 80% of support bots.</li>
-            <li><strong>Gemini 2.0 Flash ($0.10/$0.40)</strong> — Slightly cheaper on input, slightly more expensive on output. Best for FAQ-heavy bots where responses are short. Blazing fast response times.</li>
+            <li><strong>Gemini 2.5 Flash-Lite ($0.10/$0.40)</strong> — Slightly cheaper on input, slightly more expensive on output. Best for FAQ-heavy bots where responses are short. Blazing fast response times.</li>
             <li><strong>DeepSeek V4 Pro ($0.435/$0.87)</strong> — The sweet spot for tier 2 routing. Near-premium quality at budget pricing. Handles complex support scenarios that Flash struggles with.</li>
             <li><strong>GPT-5 mini ($0.25/$2.00)</strong> — Good middle ground if you're already in the OpenAI ecosystem. Higher output costs make it 6x more expensive than DeepSeek Flash per conversation.</li>
             <li><strong>Claude Haiku 4.5 ($1.00/$5.00)</strong> — Best conversation quality among the budget-premium tier. Worth it for complex support that requires careful handling. Ideal for tier 3 routing.</li>
@@ -493,7 +493,7 @@ Example: DeepSeek V4 Flash, 750 input tokens, 2,000 output tokens
 
         <div class="faq-item">
             <h3>What is the cheapest AI API for a customer support chatbot?</h3>
-            <p>Gemini 2.0 Flash ($0.10/$0.40 per million tokens) and DeepSeek V4 Flash ($0.14/$0.28 per million tokens) are the cheapest quality options. Gemini has lower input costs while DeepSeek has lower output costs. For a typical support conversation with 750 input tokens and 2,000 output tokens, DeepSeek V4 Flash costs about $0.00084 per conversation versus $0.00085 for Gemini Flash — effectively the same. Both are recommended for budget-conscious support bots.</p>
+            <p>Gemini 2.5 Flash-Lite ($0.10/$0.40 per million tokens) and DeepSeek V4 Flash ($0.14/$0.28 per million tokens) are the cheapest quality options. Gemini has lower input costs while DeepSeek has lower output costs. For a typical support conversation with 750 input tokens and 2,000 output tokens, DeepSeek V4 Flash costs about $0.00084 per conversation versus $0.00085 for Gemini Flash — effectively the same. Both are recommended for budget-conscious support bots.</p>
         </div>
 
         <div class="faq-item">

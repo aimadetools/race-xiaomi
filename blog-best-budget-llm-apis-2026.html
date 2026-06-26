@@ -84,7 +84,7 @@
                 "name": "How much can I save by switching to a budget LLM API?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Savings depend on your current model. Switching from GPT-5 ($1.25/$10) to Gemini Flash ($0.10/$0.40) saves 92-96%. Switching from Claude Sonnet 4 ($3/$15) to DeepSeek V4 Flash ($0.14/$0.28) saves 95%. Even switching from GPT-5 mini ($0.25/$2) to Gemini Flash saves 60-80%. For a team making 100K requests/month, this can mean hundreds of dollars in monthly savings."
+                    "text": "Savings depend on your current model. Switching from GPT-5 ($1.25/$10) to Gemini Flash ($0.10/$0.40) saves 92-96%. Switching from Claude Sonnet 4.6 ($3/$15) to DeepSeek V4 Flash ($0.14/$0.28) saves 95%. Even switching from GPT-5 mini ($0.25/$2) to Gemini Flash saves 60-80%. For a team making 100K requests/month, this can mean hundreds of dollars in monthly savings."
                 }
             },
             {
@@ -92,7 +92,7 @@
                 "name": "Which budget LLM API has the largest context window?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Gemini 2.0 Flash and Flash Lite both support 1M token context windows — the largest available at budget prices ($0.10/$0.40 and $0.075/$0.30 respectively). DeepSeek V4 Flash and V4 Pro also support 1M context at $0.14/$0.28 and $0.44/$0.87. For even larger context, Llama 4 Scout supports 1M tokens at $0.18/$0.59 via dedicated inference on Together.ai."
+                    "text": "Gemini 2.5 Flash-Lite and Flash Lite both support 1M token context windows — the largest available at budget prices ($0.10/$0.40 and $0.075/$0.30 respectively). DeepSeek V4 Flash and V4 Pro also support 1M context at $0.14/$0.28 and $0.44/$0.87. For even larger context, Llama 4 Scout supports 1M tokens at $0.18/$0.59 via dedicated inference on Together.ai."
                 }
             }
         ]
@@ -238,8 +238,8 @@
                 <option value="10">Claude Haiku 4.5 — $1.00/$5.00</option>
                 <option value="11">Gemini 3.1 Pro — $2.00/$12.00</option>
                 <option value="12">Gemini 2.5 Pro — $1.25/$10.00</option>
-                <option value="13">Gemini 2.0 Flash — $0.10/$0.40</option>
-                <option value="14">Gemini 2.0 Flash Lite — $0.075/$0.30</option>
+                <option value="13">Gemini 2.5 Flash-Lite — $0.10/$0.40</option>
+                <option value="14">Gemini 2.5 Flash-Lite — $0.075/$0.30</option>
                 <option value="15">DeepSeek V4 Pro — $0.435/$0.87</option>
                 <option value="16">DeepSeek V4 Flash — $0.14/$0.28</option>
                 <option value="17">Mistral Large 3 — $0.50/$1.50</option>
@@ -304,8 +304,8 @@
             <thead><tr><th>#</th><th>Model</th><th>Input/1M</th><th>Output/1M</th><th>Context</th><th>Tier</th></tr></thead>
             <tbody>
                 <tr class="cheapest"><td>1</td><td>GPT-oss 20B</td><td>$0.08</td><td>$0.35</td><td>128K</td><td>Budget</td></tr>
-                <tr class="cheapest"><td>2</td><td>Gemini 2.0 Flash Lite</td><td>$0.075</td><td>$0.30</td><td>1M</td><td>Budget</td></tr>
-                <tr><td>3</td><td>Gemini 2.0 Flash</td><td>$0.10</td><td>$0.40</td><td>1M</td><td>Budget</td></tr>
+                <tr class="cheapest"><td>2</td><td>Gemini 2.5 Flash-Lite</td><td>$0.075</td><td>$0.30</td><td>1M</td><td>Budget</td></tr>
+                <tr><td>3</td><td>Gemini 2.5 Flash-Lite</td><td>$0.10</td><td>$0.40</td><td>1M</td><td>Budget</td></tr>
                 <tr><td>4</td><td>Llama 3.1 8B</td><td>$0.10</td><td>$0.10</td><td>128K</td><td>Budget</td></tr>
                 <tr><td>5</td><td>Llama 4 Scout</td><td>$0.18</td><td>$0.34</td><td>10M</td><td>Budget</td></tr>
                 <tr><td>6</td><td>GPT-oss 120B</td><td>$0.15</td><td>$0.60</td><td>128K</td><td>Budget</td></tr>
@@ -337,7 +337,7 @@
                 <tr><td>25</td><td>GPT-5.3 Codex</td><td>$1.75</td><td>$14.00</td><td>400K</td><td>Mid</td></tr>
                 <tr><td>26</td><td>GPT-4o</td><td>$2.50</td><td>$10.00</td><td>128K</td><td>Mid</td></tr>
                 <tr><td>27</td><td>Cohere Command R+</td><td>$2.50</td><td>$10.00</td><td>128K</td><td>Mid</td></tr>
-                <tr><td>28</td><td>Claude Sonnet 4</td><td>$3.00</td><td>$15.00</td><td>200K</td><td>Mid</td></tr>
+                <tr><td>28</td><td>Claude Sonnet 4.6</td><td>$3.00</td><td>$15.00</td><td>200K</td><td>Mid</td></tr>
                 <tr><td>29</td><td>Claude Sonnet 4.6</td><td>$3.00</td><td>$15.00</td><td>1M</td><td>Mid</td></tr>
             </tbody>
         </table>
@@ -355,7 +355,7 @@
 
         <div class="highlight-box">
             <h3>The price spread is staggering</h3>
-            <p>The cheapest model (Gemini 2.0 Flash Lite at $0.075 input) costs <strong>400x less</strong> than the most expensive (GPT-5.5 Pro at $30.00 input). On the output side, Llama 3.1 8B at $0.10 is <strong>1,800x cheaper</strong> than GPT-5.5 Pro at $180.00. Choosing the right model for your workload isn't just smart — it's essential.</p>
+            <p>The cheapest model (Gemini 2.5 Flash-Lite at $0.075 input) costs <strong>400x less</strong> than the most expensive (GPT-5.5 Pro at $30.00 input). On the output side, Llama 3.1 8B at $0.10 is <strong>1,800x cheaper</strong> than GPT-5.5 Pro at $180.00. Choosing the right model for your workload isn't just smart — it's essential.</p>
         </div>
 
         <h2>Top 5 Cheapest for Every Use Case</h2>
@@ -367,8 +367,8 @@
             <tbody>
                 <tr class="cheapest"><td>1</td><td>Llama 3.1 8B</td><td>$0.10</td><td>$0.10</td><td>Lowest output cost, perfect for high-volume chat</td></tr>
                 <tr class="winner"><td>2</td><td>DeepSeek V4 Flash</td><td>$0.14</td><td>$0.28</td><td>Strong quality-to-cost ratio, 1M context</td></tr>
-                <tr><td>3</td><td>Gemini 2.0 Flash Lite</td><td>$0.075</td><td>$0.30</td><td>Cheapest input, 1M context window</td></tr>
-                <tr><td>4</td><td>Gemini 2.0 Flash</td><td>$0.10</td><td>$0.40</td><td>Balanced pricing, Google reliability</td></tr>
+                <tr><td>3</td><td>Gemini 2.5 Flash-Lite</td><td>$0.075</td><td>$0.30</td><td>Cheapest input, 1M context window</td></tr>
+                <tr><td>4</td><td>Gemini 2.5 Flash-Lite</td><td>$0.10</td><td>$0.40</td><td>Balanced pricing, Google reliability</td></tr>
                 <tr><td>5</td><td>Llama 4 Scout (1M context), great for long conversations</td></tr>
             </tbody>
         </table>
@@ -392,7 +392,7 @@
             <thead><tr><th>#</th><th>Model</th><th>Input/1M</th><th>Output/1M</th><th>Why</th></tr></thead>
             <tbody>
                 <tr class="cheapest"><td>1</td><td>DeepSeek V4 Flash</td><td>$0.14</td><td>$0.28</td><td>Surprisingly good prose at budget pricing</td></tr>
-                <tr class="winner"><td>2</td><td>Gemini 2.0 Flash</td><td>$0.10</td><td>$0.40</td><td>Google-trained, natural language quality</td></tr>
+                <tr class="winner"><td>2</td><td>Gemini 2.5 Flash-Lite</td><td>$0.10</td><td>$0.40</td><td>Google-trained, natural language quality</td></tr>
                 <tr><td>3</td><td>GPT-4o mini</td><td>$0.15</td><td>$0.60</td><td>OpenAI quality at fraction of GPT-4o price</td></tr>
                 <tr><td>4</td><td>Claude Haiku 4.5</td><td>$1.00</td><td>$5.00</td><td>Best writing quality in sub-$5 tier</td></tr>
                 <tr><td>5</td><td>Llama 4 Maverick</td><td>$0.20</td><td>$0.60</td><td>Strong multilingual content generation</td></tr>
@@ -404,9 +404,9 @@
         <table class="comparison-table">
             <thead><tr><th>#</th><th>Model</th><th>Input/1M</th><th>Output/1M</th><th>Why</th></tr></thead>
             <tbody>
-                <tr class="cheapest"><td>1</td><td>Gemini 2.0 Flash Lite</td><td>$0.075</td><td>$0.30</td><td>Cheapest input, huge 1M context for long docs</td></tr>
+                <tr class="cheapest"><td>1</td><td>Gemini 2.5 Flash-Lite</td><td>$0.075</td><td>$0.30</td><td>Cheapest input, huge 1M context for long docs</td></tr>
                 <tr class="winner"><td>2</td><td>GPT-oss 20B</td><td>$0.08</td><td>$0.35</td><td>Lowest input price, good structured output</td></tr>
-                <tr><td>3</td><td>Gemini 2.0 Flash</td><td>$0.10</td><td>$0.40</td><td>Balanced cost, strong instruction following</td></tr>
+                <tr><td>3</td><td>Gemini 2.5 Flash-Lite</td><td>$0.10</td><td>$0.40</td><td>Balanced cost, strong instruction following</td></tr>
                 <tr><td>4</td><td>Llama 4 Scout (1M context) for massive documents</td></tr>
                 <tr><td>5</td><td>DeepSeek V4 Flash</td><td>$0.14</td><td>$0.28</td><td>Low output cost for structured extraction</td></tr>
             </tbody>
@@ -432,7 +432,7 @@
             <div class="cost-card">
                 <div class="model-name">Data Extract</div>
                 <div class="price">~300K tokens/day</div>
-                <div class="price-label">Gemini 2.0 Flash Lite</div>
+                <div class="price-label">Gemini 2.5 Flash-Lite</div>
                 <p style="font-size:14px;margin-top:12px;margin-bottom:0;">~200 document extractions/day</p>
             </div>
         </div>
@@ -454,7 +454,7 @@
             <div class="cost-card">
                 <div class="model-name">Content</div>
                 <div class="price">~400K tokens/day</div>
-                <div class="price-label">Gemini 2.0 Flash</div>
+                <div class="price-label">Gemini 2.5 Flash-Lite</div>
                 <p style="font-size:14px;margin-top:12px;margin-bottom:0;">~20 long articles/day</p>
             </div>
         </div>
@@ -490,7 +490,7 @@
         <p>The sticker price per 1M tokens is just the beginning. Here are the costs that catch teams off guard:</p>
 
         <ul>
-            <li><strong>Context window limits:</strong> Cheaper models often have smaller context windows. Llama 3.1 8B ($0.10) caps at 128K tokens, while Gemini 2.0 Flash Lite ($0.075) offers 1M. If your use case requires large context, the "cheapest" model may not be cheapest after accounting for chunking and reassembly overhead.</li>
+            <li><strong>Context window limits:</strong> Cheaper models often have smaller context windows. Llama 3.1 8B ($0.10) caps at 128K tokens, while Gemini 2.5 Flash-Lite ($0.075) offers 1M. If your use case requires large context, the "cheapest" model may not be cheapest after accounting for chunking and reassembly overhead.</li>
             <li><strong>Rate limits:</strong> Budget models from providers like DeepSeek and open-source hosts often have aggressive rate limits. A chatbot that works fine at 100 requests/minute may hit walls at 1,000. Check requests-per-minute (RPM) and tokens-per-minute (TPM) limits before committing.</li>
             <li><strong>Data residency:</strong> Not all providers process data in the same jurisdiction. DeepSeek processes data in China; Cohere offers EU hosting. If you're subject to GDPR, HIPAA, or SOC 2 requirements, a "cheap" API may cost you in compliance overhead.</li>
             <li><strong>Prompt caching availability:</strong> Models that support prompt caching (like DeepSeek and Anthropic) can reduce effective input costs by 50-90% for repetitive workloads. A model without caching that costs 2x more on paper may actually be cheaper in practice.</li>

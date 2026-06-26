@@ -252,7 +252,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Gemini 2.0 Flash Lite</strong></td>
+                        <td><strong>Gemini 2.5 Flash-Lite</strong></td>
                         <td>Google</td>
                         <td class="highlight">$0.00013</td>
                         <td class="highlight">$0.13</td>
@@ -270,7 +270,7 @@
                         <td class="highlight">$0.11</td>
                     </tr>
                     <tr>
-                        <td><strong>Gemini 2.0 Flash</strong></td>
+                        <td><strong>Gemini 2.5 Flash-Lite</strong></td>
                         <td>Google</td>
                         <td>$0.00017</td>
                         <td>$0.17</td>
@@ -318,7 +318,7 @@
                         <td>$3.63</td>
                     </tr>
                     <tr>
-                        <td><strong>Claude Sonnet 4</strong></td>
+                        <td><strong>Claude Sonnet 4.6</strong></td>
                         <td>Anthropic</td>
                         <td>$0.00600</td>
                         <td>$6.00</td>
@@ -371,7 +371,7 @@
                         <th>Input Tokens</th>
                         <th>Output Tokens</th>
                         <th>GPT-4o mini</th>
-                        <th>Claude Sonnet 4</th>
+                        <th>Claude Sonnet 4.6</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -430,7 +430,7 @@
             <h2>Cost Optimization Strategies (In Request Terms)</h2>
 
             <h3>Reduce input tokens per request</h3>
-            <p>Shorter system prompts, smarter context selection, and prompt compression all reduce the input side. Cutting input from 3,000 to 1,500 tokens on Claude Sonnet 4 saves $0.0045 per request — that's $4.50 per 1,000 requests.</p>
+            <p>Shorter system prompts, smarter context selection, and prompt compression all reduce the input side. Cutting input from 3,000 to 1,500 tokens on Claude Sonnet 4.6 saves $0.0045 per request — that's $4.50 per 1,000 requests.</p>
 
             <h3>Limit output tokens per request</h3>
             <p>Set <code>max_tokens</code> appropriately. If your chatbot typically needs 200 tokens, don't leave the default at 4,096. The model stops generating when it's done, but a lower limit prevents runaway responses.</p>
@@ -457,7 +457,7 @@
 
             <p>Token-based pricing is how providers charge. But <strong>request-based thinking is how engineers budget.</strong></p>
 
-            <p>When you know that each API call costs $0.00026 on GPT-4o mini or $0.006 on Claude Sonnet 4, you can make real architectural decisions: which model to use, how many calls to make per user interaction, whether to cache responses, and when to batch requests.</p>
+            <p>When you know that each API call costs $0.00026 on GPT-4o mini or $0.006 on Claude Sonnet 4.6, you can make real architectural decisions: which model to use, how many calls to make per user interaction, whether to cache responses, and when to batch requests.</p>
 
             <p>The 270x cost difference between the cheapest and most expensive model isn't visible in token pricing tables. It's crystal clear when you see it as cost per request.</p>
 

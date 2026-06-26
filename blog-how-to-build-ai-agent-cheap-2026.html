@@ -67,7 +67,7 @@
                 "name": "How much does it cost to build an AI agent?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "A basic AI agent costs $5-20/month using budget models like DeepSeek V4 Flash ($0.14/$0.28 per million tokens) or Gemini 2.0 Flash ($0.10/$0.40). A production multi-step agent with tool use costs $20-100/month. The key cost driver is how many API calls your agent makes per task — simple agents make 1-3 calls, complex ones make 10-20."
+                    "text": "A basic AI agent costs $5-20/month using budget models like DeepSeek V4 Flash ($0.14/$0.28 per million tokens) or Gemini 2.5 Flash-Lite ($0.10/$0.40). A production multi-step agent with tool use costs $20-100/month. The key cost driver is how many API calls your agent makes per task — simple agents make 1-3 calls, complex ones make 10-20."
                 }
             },
             {
@@ -75,7 +75,7 @@
                 "name": "What is the cheapest AI model for building agents?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "DeepSeek V4 Flash at $0.14 input / $0.28 output per million tokens is the cheapest quality model for agents. Gemini 2.0 Flash ($0.10/$0.40) is close behind. Both handle tool-calling, multi-step reasoning, and function calling well enough for most agent tasks at under $5/month for low-to-moderate volume."
+                    "text": "DeepSeek V4 Flash at $0.14 input / $0.28 output per million tokens is the cheapest quality model for agents. Gemini 2.5 Flash-Lite ($0.10/$0.40) is close behind. Both handle tool-calling, multi-step reasoning, and function calling well enough for most agent tasks at under $5/month for low-to-moderate volume."
                 }
             },
             {
@@ -228,7 +228,7 @@
 
         <h2>The Short Answer: $5-50/month for a Real Agent</h2>
         <p>Building an AI agent in 2026 costs <strong>$5-20/month</strong> for a basic single-purpose agent and <strong>$20-100/month</strong> for a multi-step agent with tool use. That's dramatically cheaper than most developers expect — if you pick the right models and avoid common cost traps.</p>
-        <p>The cheapest capable models for agents are <strong>DeepSeek V4 Flash</strong> ($0.14/$0.28 per million tokens) and <strong>Gemini 2.0 Flash</strong> ($0.10/$0.40). Both support function calling, handle multi-step reasoning, and cost under $5/month at moderate volume.</p>
+        <p>The cheapest capable models for agents are <strong>DeepSeek V4 Flash</strong> ($0.14/$0.28 per million tokens) and <strong>Gemini 2.5 Flash-Lite</strong> ($0.10/$0.40). Both support function calling, handle multi-step reasoning, and cost under $5/month at moderate volume.</p>
 
         <h2>What Makes AI Agents Expensive</h2>
         <p>Unlike a simple chatbot (1 API call per request), an AI agent makes <strong>multiple API calls per task</strong>. A research agent might search, read, summarize, and verify — that's 4-8 LLM calls. A coding agent might read files, plan, write code, run tests, and fix errors — 10-20 calls.</p>
@@ -244,7 +244,7 @@
             </thead>
             <tbody>
                 <tr><td class="winner">DeepSeek V4 Flash</td><td>$0.14</td><td>$0.28</td><td>Good</td><td>Budget agents, classification, routing</td></tr>
-                <tr><td class="winner">Gemini 2.0 Flash</td><td>$0.10</td><td>$0.40</td><td>Good</td><td>Fast agents, large context tasks</td></tr>
+                <tr><td class="winner">Gemini 2.5 Flash-Lite</td><td>$0.10</td><td>$0.40</td><td>Good</td><td>Fast agents, large context tasks</td></tr>
                 <tr><td>DeepSeek V4 Pro</td><td>$0.44</td><td>$0.87</td><td>Great</td><td>Multi-step agents, tool-heavy workflows</td></tr>
                 <tr><td>GPT-4o mini</td><td>$0.15</td><td>$0.60</td><td>Good</td><td>OpenAI ecosystem, reliable tool-calling</td></tr>
                 <tr><td>Claude Haiku 4.5</td><td>$1.00</td><td>$5.00</td><td>Great</td><td>Complex instructions, nuanced reasoning</td></tr>
@@ -262,7 +262,7 @@
         <div class="cost-box">
             <h3>500 tasks/day, 2 steps/task, 1K input, 400 output tokens</h3>
             <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$3.60/mo</span></div>
-            <div class="cost-row"><span>Gemini 2.0 Flash</span><span>$4.20/mo</span></div>
+            <div class="cost-row"><span>Gemini 2.5 Flash-Lite</span><span>$4.20/mo</span></div>
             <div class="cost-row"><span>GPT-4o mini</span><span>$6.30/mo</span></div>
             <div class="cost-row"><span>Claude Haiku 4.5</span><span>$45/mo</span></div>
         </div>
@@ -272,7 +272,7 @@
         <div class="cost-box">
             <h3>200 tasks/day, 6 steps/task, 2K input, 600 output tokens</h3>
             <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$8.60/mo</span></div>
-            <div class="cost-row"><span>Gemini 2.0 Flash</span><span>$10.20/mo</span></div>
+            <div class="cost-row"><span>Gemini 2.5 Flash-Lite</span><span>$10.20/mo</span></div>
             <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$23/mo</span></div>
             <div class="cost-row"><span>Claude Haiku 4.5</span><span>$108/mo</span></div>
         </div>
@@ -428,7 +428,7 @@ print(result)</code></pre>
         <div class="cost-box">
             <h3>100 tasks/day — Side project</h3>
             <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$0.86/mo</span></div>
-            <div class="cost-row"><span>Gemini 2.0 Flash</span><span>$1.02/mo</span></div>
+            <div class="cost-row"><span>Gemini 2.5 Flash-Lite</span><span>$1.02/mo</span></div>
             <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$2.30/mo</span></div>
             <div class="cost-row"><span>Claude Haiku 4.5</span><span>$10.80/mo</span></div>
         </div>
@@ -436,7 +436,7 @@ print(result)</code></pre>
         <div class="cost-box">
             <h3>500 tasks/day — Growing startup</h3>
             <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$4.30/mo</span></div>
-            <div class="cost-row"><span>Gemini 2.0 Flash</span><span>$5.10/mo</span></div>
+            <div class="cost-row"><span>Gemini 2.5 Flash-Lite</span><span>$5.10/mo</span></div>
             <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$11.50/mo</span></div>
             <div class="cost-row"><span>Claude Haiku 4.5</span><span>$54/mo</span></div>
         </div>
@@ -444,7 +444,7 @@ print(result)</code></pre>
         <div class="cost-box">
             <h3>5,000 tasks/day — Production app</h3>
             <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$43/mo</span></div>
-            <div class="cost-row"><span>Gemini 2.0 Flash</span><span>$51/mo</span></div>
+            <div class="cost-row"><span>Gemini 2.5 Flash-Lite</span><span>$51/mo</span></div>
             <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$115/mo</span></div>
             <div class="cost-row"><span>Claude Haiku 4.5</span><span>$540/mo</span></div>
         </div>
@@ -466,7 +466,7 @@ print(result)</code></pre>
             </thead>
             <tbody>
                 <tr><td>Data classification</td><td class="winner">DeepSeek V4 Flash</td><td>Not needed</td></tr>
-                <tr><td>FAQ answering</td><td class="winner">Gemini 2.0 Flash</td><td>Not needed</td></tr>
+                <tr><td>FAQ answering</td><td class="winner">Gemini 2.5 Flash-Lite</td><td>Not needed</td></tr>
                 <tr><td>Web research</td><td>DeepSeek V4 Pro</td><td class="winner">Claude Haiku 4.5</td></tr>
                 <tr><td>Code generation</td><td>DeepSeek V4 Pro</td><td class="winner">Claude Sonnet 4.6</td></tr>
                 <tr><td>Data analysis</td><td>DeepSeek V4 Flash</td><td class="winner">GPT-5 mini</td></tr>
@@ -487,7 +487,7 @@ print(result)</code></pre>
         <h2>The Bottom Line</h2>
         <div class="verdict">
             <h3>AI Agents Are Cheaper Than You Think</h3>
-            <p>Start with <strong>DeepSeek V4 Flash</strong> ($0.86/month for 100 tasks/day) or <strong>Gemini 2.0 Flash</strong> ($1.02/month). Add multi-model routing and context compression to cut costs by 60%. Only upgrade to premium models for tasks that genuinely need complex reasoning or code generation.</p>
+            <p>Start with <strong>DeepSeek V4 Flash</strong> ($0.86/month for 100 tasks/day) or <strong>Gemini 2.5 Flash-Lite</strong> ($1.02/month). Add multi-model routing and context compression to cut costs by 60%. Only upgrade to premium models for tasks that genuinely need complex reasoning or code generation.</p>
             <p>At $5-50/month for a capable agent, the cost barrier to building AI agents is effectively zero. The real competitive advantage isn't which model you use — it's how efficiently you architect your agent's workflow.</p>
         </div>
 

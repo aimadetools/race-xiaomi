@@ -68,7 +68,7 @@
                         "name": "Which LLM API is the fastest?",
                         "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "Gemini 2.0 Flash and DeepSeek V4 Flash are among the fastest LLM APIs. GPT-4o Mini also offers excellent speed. Premium models like Claude Opus are slower due to more complex processing."
+                                "text": "Gemini 2.5 Flash-Lite and DeepSeek V4 Flash are among the fastest LLM APIs. GPT-4o Mini also offers excellent speed. Premium models like Claude Opus are slower due to more complex processing."
                         }
                 },
                 {
@@ -265,11 +265,11 @@
 
         <div class="cost-example">
             <div class="label">TTFT by model (lower is better)</div>
-            <div class="cost-row"><span class="name">Gemini 2.0 Flash</span><span class="value">~180ms</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.5 Flash-Lite</span><span class="value">~180ms</span></div>
             <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">~220ms</span></div>
             <div class="cost-row"><span class="name">GPT-4o</span><span class="value">~350ms</span></div>
             <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">~250ms</span></div>
-            <div class="cost-row"><span class="name">Claude Sonnet 4</span><span class="value">~450ms</span></div>
+            <div class="cost-row"><span class="name">Claude Sonnet 4.6</span><span class="value">~450ms</span></div>
             <div class="cost-row"><span class="name">Claude 4 Opus</span><span class="value">~800ms</span></div>
             <div class="cost-row"><span class="name">Gemini 2.5 Pro</span><span class="value">~500ms</span></div>
             <div class="cost-row"><span class="name">Mistral Large 3</span><span class="value">~400ms</span></div>
@@ -279,20 +279,20 @@
             <div class="cost-row"><span class="name">Llama 3.1 8B (Together.ai)</span><span class="value">~150ms</span></div>
         </div>
 
-        <p><strong>Fastest TTFT:</strong> Llama 3.1 8B on Together.ai (~150ms) and Gemini 2.0 Flash (~180ms). Budget models consistently win on speed because they have fewer parameters to process.</p>
+        <p><strong>Fastest TTFT:</strong> Llama 3.1 8B on Together.ai (~150ms) and Gemini 2.5 Flash-Lite (~180ms). Budget models consistently win on speed because they have fewer parameters to process.</p>
 
         <h2>Output Speed (Tokens per Second)</h2>
         <p>How fast each model generates tokens after the first one:</p>
 
         <div class="cost-example">
             <div class="label">Output speed in tok/s (higher is better)</div>
-            <div class="cost-row"><span class="name">Gemini 2.0 Flash</span><span class="value">~120 tok/s</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.5 Flash-Lite</span><span class="value">~120 tok/s</span></div>
             <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">~100 tok/s</span></div>
             <div class="cost-row"><span class="name">Llama 3.1 8B (Together.ai)</span><span class="value">~150 tok/s</span></div>
             <div class="cost-row"><span class="name">Mistral Small 4</span><span class="value">~110 tok/s</span></div>
             <div class="cost-row"><span class="name">GPT-4o</span><span class="value">~80 tok/s</span></div>
             <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">~90 tok/s</span></div>
-            <div class="cost-row"><span class="name">Claude Sonnet 4</span><span class="value">~65 tok/s</span></div>
+            <div class="cost-row"><span class="name">Claude Sonnet 4.6</span><span class="value">~65 tok/s</span></div>
             <div class="cost-row"><span class="name">Gemini 2.5 Pro</span><span class="value">~70 tok/s</span></div>
             <div class="cost-row"><span class="name">Mistral Large 3</span><span class="value">~75 tok/s</span></div>
             <div class="cost-row"><span class="name">GPT-5</span><span class="value">~55 tok/s</span></div>
@@ -308,10 +308,10 @@
         <div class="cost-example">
             <div class="label">Speed vs cost: input + output per 1M tokens</div>
             <div class="cost-row"><span class="name">Llama 3.1 8B — 150 tok/s — $0.18/$0.18</span><span class="value" style="color:var(--green);">Best value</span></div>
-            <div class="cost-row"><span class="name">Gemini 2.0 Flash — 120 tok/s — $0.10/$0.40</span><span class="value" style="color:var(--green);">Cheapest</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.5 Flash-Lite — 120 tok/s — $0.10/$0.40</span><span class="value" style="color:var(--green);">Cheapest</span></div>
             <div class="cost-row"><span class="name">GPT-4o mini — 100 tok/s — $0.15/$0.60</span><span class="value">Good balance</span></div>
             <div class="cost-row"><span class="name">GPT-4o — 80 tok/s — $2.50/$10.00</span><span class="value">Premium speed</span></div>
-            <div class="cost-row"><span class="name">Claude Sonnet 4 — 65 tok/s — $3.00/$15.00</span><span class="value">Quality focus</span></div>
+            <div class="cost-row"><span class="name">Claude Sonnet 4.6 — 65 tok/s — $3.00/$15.00</span><span class="value">Quality focus</span></div>
             <div class="cost-row"><span class="name">Claude 4 Opus — 40 tok/s — $15.00/$75.00</span><span class="value">Slowest, most expensive</span></div>
         </div>
 
@@ -323,7 +323,7 @@
         <h3>Real-Time Chatbots (TTFT < 500ms needed)</h3>
         <p>Users expect near-instant responses. Recommended models:</p>
         <ul>
-            <li><strong>Gemini 2.0 Flash</strong> — 180ms TTFT, $0.10/$0.40 per 1M tokens</li>
+            <li><strong>Gemini 2.5 Flash-Lite</strong> — 180ms TTFT, $0.10/$0.40 per 1M tokens</li>
             <li><strong>GPT-4o mini</strong> — 220ms TTFT, $0.15/$0.60 per 1M tokens</li>
             <li><strong>Mistral Small 4</strong> — 200ms TTFT, $0.10/$0.30 per 1M tokens</li>
         </ul>
@@ -331,7 +331,7 @@
         <h3>Code Generation (TTFT < 1s acceptable)</h3>
         <p>Developers tolerate longer waits for better code. Recommended models:</p>
         <ul>
-            <li><strong>Claude Sonnet 4</strong> — 450ms TTFT, excellent code quality</li>
+            <li><strong>Claude Sonnet 4.6</strong> — 450ms TTFT, excellent code quality</li>
             <li><strong>GPT-4o</strong> — 350ms TTFT, strong all-around</li>
             <li><strong>Gemini 2.5 Pro</strong> — 500ms TTFT, huge context window</li>
         </ul>
@@ -339,7 +339,7 @@
         <h3>Background Processing (Speed Less Critical)</h3>
         <p>Batch jobs, ETL pipelines, scheduled tasks — TTFT doesn't matter. Optimize for cost:</p>
         <ul>
-            <li><strong>Gemini 2.0 Flash</strong> — $0.10/$0.40 per 1M tokens</li>
+            <li><strong>Gemini 2.5 Flash-Lite</strong> — $0.10/$0.40 per 1M tokens</li>
             <li><strong>Llama 3.1 8B</strong> — $0.18/$0.18 per 1M tokens</li>
             <li><strong>DeepSeek V4 Flash</strong> — $0.14/$0.28 per 1M tokens</li>
         </ul>
@@ -365,9 +365,9 @@
         </ul>
 
         <h2>The Bottom Line</h2>
-        <p>For most applications, <strong>Gemini 2.0 Flash or GPT-4o mini</strong> offer the best speed-to-cost ratio. They're fast enough for real-time chat, cheap enough for high volume, and capable enough for most tasks.</p>
+        <p>For most applications, <strong>Gemini 2.5 Flash-Lite or GPT-4o mini</strong> offer the best speed-to-cost ratio. They're fast enough for real-time chat, cheap enough for high volume, and capable enough for most tasks.</p>
 
-        <p>Reserve premium models (Claude Sonnet 4, GPT-4o) for tasks where quality justifies the speed and cost tradeoff. And for background processing, always use the cheapest model — speed doesn't matter when no one is waiting.</p>
+        <p>Reserve premium models (Claude Sonnet 4.6, GPT-4o) for tasks where quality justifies the speed and cost tradeoff. And for background processing, always use the cheapest model — speed doesn't matter when no one is waiting.</p>
 
         <div class="cta-inline">
             <p><strong>Calculate your API cost at any speed tier.</strong></p>

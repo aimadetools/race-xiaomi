@@ -446,7 +446,7 @@
             <ul>
                 <li><strong>Retrieve fewer chunks:</strong> Most RAG systems retrieve too many chunks. 3-5 high-quality chunks outperform 10 mediocre ones — and cost 50-70% less in generation tokens.</li>
                 <li><strong>Compress context:</strong> Summarize or compress retrieved chunks before passing them to the generation model. This can cut context tokens by 40-60% without significant quality loss.</li>
-                <li><strong>Use smaller models for simple queries:</strong> Route simple FAQ-style questions to GPT-5 Mini or Gemini 2.0 Flash, and only use GPT-5 for complex multi-chunk questions.</li>
+                <li><strong>Use smaller models for simple queries:</strong> Route simple FAQ-style questions to GPT-5 Mini or Gemini 2.5 Flash-Lite, and only use GPT-5 for complex multi-chunk questions.</li>
                 <li><strong>Cache embeddings:</strong> Pre-embed your entire document corpus once. Only embed new queries at runtime — not the documents.</li>
                 <li><strong>Hybrid search:</strong> Combine vector search with keyword search (BM25) for better retrieval without needing more chunks.</li>
                 <li><strong>Rerank before generating:</strong> Use a reranker (Cohere Rerank, cross-encoder) to select the best 3 chunks from a larger candidate set. This improves quality without increasing generation cost.</li>

@@ -514,7 +514,7 @@
         if (inputRatio >= 0.7) {
             insightsHtml += `<div class="insight-item">Your usage is <strong>input-heavy</strong> (${(inputRatio*100).toFixed(0)}% input). Models with low input pricing (like DeepSeek V4 Flash at $0.14/1M) will save you the most.</div>`;
         } else if (inputRatio <= 0.3) {
-            insightsHtml += `<div class="insight-item">Your usage is <strong>output-heavy</strong> (${((1-inputRatio)*100).toFixed(0)}% output). Models with low output pricing (like Gemini 2.0 Flash Lite at $0.30/1M) will save you the most.</div>`;
+            insightsHtml += `<div class="insight-item">Your usage is <strong>output-heavy</strong> (${((1-inputRatio)*100).toFixed(0)}% output). Models with low output pricing (like Gemini 2.5 Flash-Lite at $0.30/1M) will save you the most.</div>`;
         }
 
         const annualSavings = bestAlt ? bestAlt.savings * 12 : 0;
