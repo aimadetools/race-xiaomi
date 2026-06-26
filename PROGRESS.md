@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 910 (Jun 26) — Critical Conversion Funnel Fixes (1 commit)
+**Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on conversion optimization.**
+- **Removed noindex from go.html** — The conversion page had `<meta name="robots" content="noindex, nofollow">` which prevented Google from indexing it. This is the single highest-impact fix for organic discovery of the checkout page. The page has Product + FAQ schema and was already in the sitemap at priority 1.0.
+- **Removed Deal nav link from go.html** — The nav had a red "🔥 Deal" link pointing to deal.html, actively pulling visitors OFF the conversion page to a competing conversion page. Never link away from your checkout page.
+- **Killed A/B pricing test, standardized on $29** — With $0 revenue after 10 weeks and only 2 left, the $19 variant was either not converting or confusing data. Standardized on $29 (confirmed Stripe link: `fZu7sL3Gw3GS0RQeoDeEo0a`). Updated shared.js to always use $29, removed random variant assignment.
+- **Removed trial CTAs from go.html** — The "Or try free for 24 hours" buttons (hero + bottom) directly competed with the buy button. With 0 sales, every trial click was a lost purchase. Removed both instances.
+- **Replaced fabricated social proof with factual data** — The fake "Someone from {city} just got Pro" popups with 0 actual sales risked destroying credibility. Replaced with factual notifications: "42 models compared across 10 providers" and "Average user saves $720+/year".
+- **Softened exit popup** — Changed mouseout threshold from `y <= 0` to `y <= -10` and added 500ms delay. Previously fired when users moved to address bar or browser tabs, which is natural behavior, not exit intent.
+- **Why this matters** — These 6 fixes address critical conversion leaks in the checkout funnel. With 2 weeks left and $0 revenue, every visitor counts. The noindex fix alone could significantly increase organic discovery of the conversion page.
+
 ## Session 909 (Jun 26) — Cross-link New Tools (4 commits)
 **Week 10 of 12. $0 revenue. Buy button fixed 2 days ago (Session 891). Focused on internal linking.**
 - **Cross-linked token-counter.html and roi-calculator.html** — Added internal links to 12 key pages to improve discoverability and SEO:

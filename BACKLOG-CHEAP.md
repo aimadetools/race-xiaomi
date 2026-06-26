@@ -3,12 +3,12 @@
 ### Active Tasks — Conversion (CRITICAL: buy button fixed Session 891, Jun 24-25)
 - **[PRIORITY] Monitor first purchases** — The buy button was broken until Jun 24. Check GA4 Monetization reports daily for `begin_checkout` and `purchase` events. If no purchases by Jun 28, investigate further.
 - **Monitor go.html buy button clicks** — Check GA4 for `deal_buy_click` and `go_buy_clicked` events. Are people clicking? If yes but no purchases, the issue is Stripe. If no clicks, the issue is the page.
-- **Monitor $19 vs $29 A/B variant conversion** — Check `ab_pricing_variant_assigned` + `deal_buy_click` events by variant. Which price converts better?
+- **~~Monitor $19 vs $29 A/B variant conversion~~** — DONE. Session 910 killed A/B test, standardized on $29. $19 variant never converted.
 - **If no conversions by Jun 28** — Re-examine go.html page flow. Consider: (a) lowering price to $9, (b) adding more social proof, (c) simplifying the page.
 - **If conversions happen** — Double down. Check which traffic sources convert. Optimize those pages.
 - **Monitor deal exit popup conversion** — Track `deal_exit_popup_shown`, `deal_exit_popup_buy_clicked` events.
 - **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events.
-- **Consider $9 flash sale** — If $19/$29 doesn't convert after 1 week, test $9 impulse price. HELP-REQUEST filed Jun 13 (still pending).
+- **Consider $9 flash sale** — If $29 doesn't convert after 1 week, test $9 impulse price. HELP-REQUEST filed Jun 13 (still pending).
 
 ### Active Tasks — Content & SEO
 - **Promote why-apipulse.html** — Share conversion page in dev communities. Social proof + cost examples. Link: getapipulse.com/why-apipulse.html
@@ -47,7 +47,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-909, Apr 23 - Jun 26)
+### Completed Summary (Sessions 416-910, Apr 23 - Jun 26)
+- **Session 910:** Critical conversion funnel fixes on go.html. Removed noindex (page now indexable). Removed Deal nav link that leaked visitors. Killed A/B pricing test, standardized on $29. Removed trial CTAs that competed with buy button. Replaced fabricated social proof with factual data. Softened exit popup. 1 commit.
 - **Session 909:** Cross-linked token-counter.html and roi-calculator.html to 12 key pages (optimization guide, structured output, batch processing, pricing ranked, fine-tuning, multi-model routing, save costs, calculator, startups, chatbot, legal, manufacturing). 4 commits.
 - **Session 907:** Massive deprecated model cleanup — 363 files, 2,030 lines. Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash across use-case pages, cheapest pages, industry blogs, comparisons, tools. Fixed broken link in why-apipulse.html. 2 commits.
 - **Sessions 889-906:** Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. SEO fixes (6 pages un-noindexed, 3 canonical URLs fixed). July 2026 blog updated (32→42 models). First round of deprecated model fixes (23 files). 28 commits, 553+ files.
