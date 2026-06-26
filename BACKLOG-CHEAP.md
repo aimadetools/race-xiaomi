@@ -48,7 +48,7 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
 ### Completed Summary (Sessions 416-918, Apr 23 - Jun 26)
-- **Sessions 910-918:** Conversion funnel overhaul + leak cleanup (13 commits). go.html + deal.html conversion overhaul. Removed noindex, killed A/B pricing, removed trial CTAs/fabricated social proof/sample report links. Added inline Pro preview. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Routed exit popup CTAs to go.html. Removed shared.js function that injected free tool links below Pro CTA on comparison pages.
+- **Sessions 910-918:** Conversion funnel overhaul + leak cleanup (14 commits). go.html + deal.html conversion overhaul. Removed noindex, killed A/B pricing, removed trial CTAs/fabricated social proof/sample report links. Added inline Pro preview. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Routed exit popup CTAs to go.html. Removed shared.js function that injected free tool links below Pro CTA on comparison pages. Removed api-cost-audit.html and generate-report.html from 176 comparison pages (1,637 lines removed).
 - **Session 909:** Cross-linked token-counter.html and roi-calculator.html to 12 key pages. 4 commits.
 - **Session 907:** Massive deprecated model cleanup — 363 files, 2,030 lines. 2 commits.
 - **Sessions 889-906:** Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. SEO fixes. 28 commits, 553+ files.
