@@ -1440,30 +1440,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 })();
 
-// Add "See your full savings" CTA to comparison page Pro upsell sections
-// Auto-detects comparison pages and adds a savings calculator link after the Pro CTA
-(function(){
-    document.addEventListener('DOMContentLoaded', function(){
-        // Only on comparison pages
-        if (!location.pathname.match(/compare-/)) return;
-
-        // Find the Pro upsell section
-        var upsell = document.querySelector('.pro-upsell');
-        if (!upsell) return;
-
-        // Check if already has savings link
-        if (upsell.querySelector('a[href*="savings-calculator"]')) return;
-
-        // Add savings calculator link below the Pro CTA
-        var cta = upsell.querySelector('a[href*="buy.stripe.com"], a[href*="pricing.html"], a[href*="go.html"]');
-        if (!cta) return;
-
-        var savingsLink = document.createElement('p');
-        savingsLink.style.cssText = 'margin-top:12px;font-size:13px;color:var(--text-muted);';
-        savingsLink.innerHTML = 'Want to see your full savings report? <a href="savings-calculator.html" style="color:var(--accent);font-weight:600;">Calculate exact savings →</a> or <a href="quick-savings.html" style="color:var(--accent);font-weight:600;">get a 10-second estimate</a>';
-        cta.insertAdjacentElement('afterend', savingsLink);
-    });
-})();
 
 // Map comparison page model IDs → go.html model IDs
 // go.html supports 15 models (Session 875); map all comparison variants to the closest match
