@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 930 (Jun 26) — Social Sharing + Cross-links on Tool Pages
+- **Social sharing buttons** — Added X, LinkedIn, and HN share buttons to roi-calculator.html, token-counter.html, migration-checklist.html, and cheapest-model-finder.html. These were the 4 remaining high-value tool pages without share functionality.
+- **Cross-linking** — Added Related Resources sections to all 4 pages, linking to calculator, compare, cheapest finder, ROI calculator, migration checklist, and pricing report.
+- **2 commits, 4 files, 112 insertions.**
+
 ## Session 929 (Jun 26) — Pricing Freshness Badges + Social Sharing
 - **Pricing freshness badges** — Added `renderPricingFreshness` badge (from shared.js) to 7 key pages: deal.html, go.html, why-apipulse.html, ai-api-pricing-report-2026.html, live-pricing.html, best-ai-api-by-budget.html, cheapest-ai-apis-2026.html. Added pricing-data.js where missing (deal, go, cheapest). Shows "Pricing updated Jun 24, 2026" green trust badge. Addresses community feedback on visible pricing freshness indicators.
 - **Social sharing buttons** — Added X, LinkedIn, and HN share buttons to deal.html, go.html, best-ai-api-by-budget.html, cheapest-ai-apis-2026.html, and live-pricing.html. Same pattern as why-apipulse.html (Session 928). Each has tailored share text.
@@ -30,14 +35,14 @@
 ## Summary: Sessions 1-803 (Apr 5 - Jun 21)
 Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Claude 4 shutdown. go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, pricing hub, llms.txt, 4 alternatives, 36 comparisons, migration checklist (9 routes). 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 929, Jun 26, 2026)
+## Site Status (as of Session 930, Jun 26, 2026)
 **885 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets | 244 comparison pages**
 - Sitemap (899 URLs), RSS (776 items), blog files (352 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **Pricing freshness badges** — 44 pages now show "Pricing updated Jun 24, 2026" green badge (37 existing + 7 added Session 929).
-- **Social sharing** — 6 key conversion pages have X/LinkedIn/HN share buttons (why-apipulse Session 928, 5 more Session 929).
+- **Social sharing** — 10 key pages now have X/LinkedIn/HN share buttons: why-apipulse, deal, go, best-ai-api-by-budget, cheapest-ai-apis-2026, live-pricing, roi-calculator, token-counter, migration-checklist, cheapest-model-finder.
 - **SEO fixes (Sessions 903-916)** — 6 comparison pages un-noindexed, 5 canonical URLs fixed. July 2026 pricing blog updated (32→42 models). Deprecated model references updated across 370+ files.
 - **deal.html** — Product + FAQPage schema, exit popup (softened, leaks removed), sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models), inline Pro preview. Canonical URL. Nav/footer leaks removed.
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview. **GO_SKIP prevents shared.js overwriting buy buttons.** Nav/footer leaks removed.

@@ -21,7 +21,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-929, Apr 23 - Jun 26)
+### Completed (Sessions 416-930, Apr 23 - Jun 26)
+- **Session 930:** Social sharing + cross-links on roi-calculator, token-counter, migration-checklist, cheapest-model-finder. 2 commits, 4 files.
 - **Session 929:** Pricing freshness badges on 7 key pages + social sharing on 5 conversion pages. 2 commits, 12 files.
 - **Session 928:** Social sharing buttons + cross-links on why-apipulse.html and pricing report. 1 commit, 3 files.
 - **Session 927:** $9 flash sale variant on deal.html (?flash=9 param). 1 commit, 189 insertions. Needs $9 Stripe link.
