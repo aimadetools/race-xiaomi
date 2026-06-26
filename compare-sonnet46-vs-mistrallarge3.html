@@ -238,15 +238,15 @@
                     <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-sonnet"></span></div>
                 </div>
             </div>
-            <div class="result-card" id="card-grok">
+            <div class="result-card" id="card-mistral">
                 <div class="provider">Mistral</div><div class="model-name">Mistral Large 3</div>
-                <div id="winner-badge-grok" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-grok">$0.00</div><div class="price-label">per month</div>
+                <div id="winner-badge-mistral" class="winner-badge" style="display:none;">Cheaper Choice</div>
+                <div class="price-big" id="total-mistral">$0.00</div><div class="price-label">per month</div>
                 <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-grok"></span></div>
+                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-mistral"></span></div>
+                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-mistral"></span></div>
+                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-mistral"></span></div>
+                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-mistral"></span></div>
                 </div>
             </div>
         </div>
@@ -316,7 +316,7 @@
     </footer>
     <script>
         const SONNET={name:'Claude Sonnet 4.6',provider:'Anthropic',input:3.00,output:15.00,context:'262K'};
-        const GROK={name:'Mistral Large 3',provider:'Mistral',input:0.50,output:1.50,context:'262K'};
+        const MISTRAL={name:'Mistral Large 3',provider:'Mistral',input:0.50,output:1.50,context:'262K'};
         const PRESETS={chatbot:{input:2000,output:800,rpd:500,label:'Chatbot'},'code-assist':{input:5000,output:3000,rpd:100,label:'Code Assistant'},summarization:{input:50000,output:1000,rpd:20,label:'Summarization'},agent:{input:5000,output:3000,rpd:300,label:'AI Agent'},enterprise:{input:8000,output:2500,rpd:1000,label:'Enterprise'}};
         function applyPreset(key){const p=PRESETS[key];document.getElementById('input-tokens').value=p.input;document.getElementById('output-tokens').value=p.output;document.getElementById('requests-day').value=p.rpd;document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');calculate();}
         function calculate(){
@@ -329,31 +329,31 @@
             const sonnetOutput=(outputTokens*rpm/1e6)*SONNET.output;
             const sonnetTotal=sonnetInput+sonnetOutput;
             const sonnetCPR=SONNET.input*(inputTokens/1e6)+SONNET.output*(outputTokens/1e6);
-            const grokInput=(inputTokens*rpm/1e6)*GROK.input;
-            const grokOutput=(outputTokens*rpm/1e6)*GROK.output;
-            const grokTotal=grokInput+grokOutput;
-            const grokCPR=GROK.input*(inputTokens/1e6)+GROK.output*(outputTokens/1e6);
+            const mistralInput=(inputTokens*rpm/1e6)*MISTRAL.input;
+            const mistralOutput=(outputTokens*rpm/1e6)*MISTRAL.output;
+            const mistralTotal=mistralInput+mistralOutput;
+            const mistralCPR=MISTRAL.input*(inputTokens/1e6)+MISTRAL.output*(outputTokens/1e6);
             document.getElementById('total-sonnet').textContent='$'+sonnetTotal.toFixed(2);
             document.getElementById('input-cost-sonnet').textContent='$'+sonnetInput.toFixed(2);
             document.getElementById('output-cost-sonnet').textContent='$'+sonnetOutput.toFixed(2);
             document.getElementById('cpr-sonnet').textContent='$'+sonnetCPR.toFixed(4);
             document.getElementById('rpm-sonnet').textContent=rpm.toLocaleString();
-            document.getElementById('total-grok').textContent='$'+grokTotal.toFixed(2);
-            document.getElementById('input-cost-grok').textContent='$'+grokInput.toFixed(2);
-            document.getElementById('output-cost-grok').textContent='$'+grokOutput.toFixed(2);
-            document.getElementById('cpr-grok').textContent='$'+grokCPR.toFixed(4);
-            document.getElementById('rpm-grok').textContent=rpm.toLocaleString();
+            document.getElementById('total-mistral').textContent='$'+mistralTotal.toFixed(2);
+            document.getElementById('input-cost-mistral').textContent='$'+mistralInput.toFixed(2);
+            document.getElementById('output-cost-mistral').textContent='$'+mistralOutput.toFixed(2);
+            document.getElementById('cpr-mistral').textContent='$'+mistralCPR.toFixed(4);
+            document.getElementById('rpm-mistral').textContent=rpm.toLocaleString();
             const cardSonnet=document.getElementById('card-sonnet');
-            const cardMistral=document.getElementById('card-grok');
+            const cardMistral=document.getElementById('card-mistral');
             const badgeSonnet=document.getElementById('winner-badge-sonnet');
-            const badgeMistral=document.getElementById('winner-badge-grok');
+            const badgeMistral=document.getElementById('winner-badge-mistral');
             cardSonnet.classList.remove('winner');cardMistral.classList.remove('winner');
             badgeSonnet.style.display='none';badgeMistral.style.display='none';
-            if(sonnetTotal<grokTotal){cardSonnet.classList.add('winner');badgeSonnet.style.display='inline-block';}
-            else if(grokTotal<sonnetTotal){cardMistral.classList.add('winner');badgeMistral.style.display='inline-block';}
+            if(sonnetTotal<mistralTotal){cardSonnet.classList.add('winner');badgeSonnet.style.display='inline-block';}
+            else if(mistralTotal<sonnetTotal){cardMistral.classList.add('winner');badgeMistral.style.display='inline-block';}
             const banner=document.getElementById('savings-banner');
-            if(sonnetTotal!==grokTotal){const savings=Math.abs(sonnetTotal-grokTotal);const pct=((savings/Math.max(sonnetTotal,grokTotal))*100).toFixed(0);const winner=sonnetTotal<grokTotal?'Claude Sonnet 4.6':'Mistral Large 3';document.getElementById('savings-amount').textContent='$'+savings.toFixed(2)+'/mo savings with '+winner;document.getElementById('savings-detail').textContent=winner+' is '+pct+'% cheaper for your usage pattern.';banner.style.display='block';}else{banner.style.display='none';}
-            if(window.trackEvent){window.trackEvent('model_comparison_calculated',{model_a:'Claude Sonnet 4.6',model_b:'Mistral Large 3',monthly_cost_a:sonnetTotal.toFixed(2),monthly_cost_b:grokTotal.toFixed(2),requests_per_day:rpd});}
+            if(sonnetTotal!==mistralTotal){const savings=Math.abs(sonnetTotal-mistralTotal);const pct=((savings/Math.max(sonnetTotal,mistralTotal))*100).toFixed(0);const winner=sonnetTotal<mistralTotal?'Claude Sonnet 4.6':'Mistral Large 3';document.getElementById('savings-amount').textContent='$'+savings.toFixed(2)+'/mo savings with '+winner;document.getElementById('savings-detail').textContent=winner+' is '+pct+'% cheaper for your usage pattern.';banner.style.display='block';}else{banner.style.display='none';}
+            if(window.trackEvent){window.trackEvent('model_comparison_calculated',{model_a:'Claude Sonnet 4.6',model_b:'Mistral Large 3',monthly_cost_a:sonnetTotal.toFixed(2),monthly_cost_b:mistralTotal.toFixed(2),requests_per_day:rpd});}
         }
         document.addEventListener('DOMContentLoaded',()=>{calculate();});
     </script>
