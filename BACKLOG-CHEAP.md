@@ -47,7 +47,9 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-920, Apr 23 - Jun 26)
+### Completed Summary (Sessions 416-922, Apr 23 - Jun 26)
+- **Session 922:** Created 6 new high-value comparison pages (Sonnet 4.6 vs Grok 4.3, Haiku 4.5 vs Gemini 3.1 Pro, GPT-5 vs DeepSeek V4 Flash, GPT-5.5 vs DeepSeek V4 Flash, Sonnet 4.6 vs Mistral Large 3, Gemini 3.1 Pro vs Grok 4.3). 2 commits, 10 files.
+- **Session 921:** Created 3 new comparison pages (Opus 4.8 vs Gemini 3.1 Pro, GPT-5 vs Gemini 3.5 Flash, Sonnet 4.6 vs Gemini 3.5 Flash). 3 commits.
 - **Session 920:** Full site technical audit — all 869 pages checked, no issues found. Site is technically clean.
 - **Sessions 910-919:** Conversion funnel overhaul + site-wide leak cleanup (18 commits). go.html + deal.html overhaul. Removed noindex, killed A/B pricing, removed trial CTAs/fabricated social proof/sample report links. Added inline Pro preview. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Routed exit popup CTAs to go.html. Removed shared.js function that injected free tool links below Pro CTA. Removed api-cost-audit.html and generate-report.html from 176 comparison pages + 588 pages site-wide nav/footer (2,803 lines removed). Fixed pricing-hub.html CTA leak. Fixed 9 broken nav/footer links.
 - **Session 909:** Cross-linked token-counter.html and roi-calculator.html to 12 key pages. 4 commits.
