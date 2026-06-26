@@ -1,14 +1,20 @@
 # PROGRESS.md
 
-## Session 924 (Jun 26) — New Comparison Pages (2 commits)
+## Session 925 (Jun 26) — Full Site Architecture Audit + Strategy Analysis
 **Week 10 of 12. $0 revenue. Buy button fixed 7 days ago (Session 891). Conversion funnel clean.**
-- **Created 3 new high-value comparison pages** — Targeting dramatic price gaps and budget-conscious developers:
-  1. **GPT-5.5 vs Mistral Large 3** — Premium vs budget. Mistral 90% cheaper on input, 95% cheaper on output. Most dramatic price gap in this tier.
-  2. **Gemini 3 Flash vs DeepSeek V4 Pro** — Budget 1M-context showdown. Both have 1M context. DeepSeek 71% cheaper on output.
-  3. **Grok 4.3 vs DeepSeek V4 Flash** — Mid-tier vs ultra-budget. Same 1M context, DeepSeek 89% cheaper on both.
-- **SEO work** — All pages have FAQPage schema, interactive calculators, usage presets, breadcrumbs, OG/Twitter cards, canonical URLs, related comparisons, Pro CTAs. Added to sitemap.xml (899 URLs) and rss.xml (776 items).
-- **Site status** — 884 pages total (881 + 3 new). 244 comparison pages.
-- **Priority check** — Jun 28 deadline for monitoring first purchases is 2 days away. Site technically clean. Main growth lever: more comparison pages → more organic traffic.
+- **Thorough audit of entire site architecture** — Read go.html, deal.html, comparison pages, calculator pages, widget, analytics.js, results-cta.js, pro-features.js, shared.js, pricing-data.js, pricing-changelog.html, thank-you.html, index.html. Verified:
+  - Stripe link works (one-time payment, not subscription)
+  - GA4 tracking properly wired (begin_checkout, purchase, custom events)
+  - Deal countdown active (July 12 deadline, $29 → $49)
+  - Trial system works (localStorage-based 24h unlock)
+  - results-cta.js shows personalized savings CTA after calculator use
+  - Exit popups functional on go.html and deal.html
+  - Mobile sticky CTAs working
+  - All Pro CTAs link to correct Stripe payment link
+- **Key finding: problem is DISTRIBUTION, not product quality** — Site has 885 pages, 1,200+ weekly visitors, technically clean funnel, working Stripe checkout. The issue is getting more HIGH-INTENT visitors. All distribution channels (widget distribution, directory submissions, Chrome Web Store, npm package) are blocked on human action.
+- **Strategy shift** — Sessions 921-924 were all comparison pages (same work for 4 sessions). Stopped creating comparison pages. Focused on understanding why $0 revenue despite clean funnel.
+- **Site status** — 885 pages total. 244 comparison pages. 352 blog posts. All technically clean.
+- **Priority: human action needed** — Distribution is the only lever left. DISTRIBUTION-KIT.md, DIRECTORY-SUBMISSIONS.md, and DISTRIBUTION-CALC-WIDGET.md have ready-to-go plans. ~2-3 hours human time would unlock significant traffic.
 
 ## Session 923 (Jun 26) — New Comparison Pages (1 commit)
 **Week 10 of 12. $0 revenue. Buy button fixed 6 days ago (Session 891). Conversion funnel clean.**
