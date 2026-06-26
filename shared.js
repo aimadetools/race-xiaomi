@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
             banner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
             var urgencyText = window.DEAL_DAYS_LEFT <= 1 ? 'FINAL DAY' : window.DEAL_DAYS_LEFT + ' days left';
             banner.innerHTML = '<span>🔥 Limited time: Pro lifetime access $29 — <strong>' + urgencyText + '</strong></span>' +
-                '<a href="deal.html" style="color:white;text-decoration:underline;font-weight:700;">Get the deal →</a>' +
+                '<a href="go.html" style="color:white;text-decoration:underline;font-weight:700;">Get the deal →</a>' +
                 '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
         }
         document.body.insertBefore(banner, document.body.firstChild);
@@ -927,7 +927,7 @@ async function saveEmail(e) {
                 '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">' + popupDesc + '</p>' +
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings with Pro.</div>' +
                 '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:12px;margin-bottom:16px;font-size:14px;color:var(--green);font-weight:600;">' + popupHighlight + '</div>' +
-                '<a href="deal.html?from=exit_popup_deprecation" id="deprecation-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
+                '<a href="go.html?from=exit_popup_deprecation" id="deprecation-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' on July 12 · 14-day money-back guarantee</p>' +
                 '</div>';
             overlay.appendChild(popup);
@@ -1046,9 +1046,8 @@ async function saveEmail(e) {
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
                 '<div style="font-size:20px;font-weight:800;color:var(--green);">40%</div>' +
                 '<div style="font-size:11px;color:var(--text-muted);">avg. savings</div></div></div>' +
-                '<a href="deal.html?from=exit_popup_pro" id="pro-exit-cta" style="display:inline-block;background:' + btnColor.bg + ';color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px ' + btnColor.shadow + ';" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">' + cc.cta + '</a>' +
+                '<a href="go.html?from=exit_popup_pro" id="pro-exit-cta" style="display:inline-block;background:' + btnColor.bg + ';color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px ' + btnColor.shadow + ';" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">' + cc.cta + '</a>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' on July 12 · 14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Not ready? <a href="quick-savings.html" style="color:var(--accent);font-weight:600;">Get a 10-second savings estimate →</a></p>' +
                 '</div>';
 
             overlay.appendChild(popup);
