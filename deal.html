@@ -32,6 +32,7 @@
       gtag('config', 'G-0CEP7S9Y3J');
     </script>
     <script src="analytics.js" defer></script>
+    <script src="pricing-data.js" defer></script>
     <script src="shared.js" defer></script>
     <!-- ab-test.js removed Session 911 — homepage A/B test (index vs launch), not needed on deal.html -->
     <script type="application/ld+json">
@@ -787,6 +788,7 @@
         <div class="deal-hero">
             <h1 id="deal-headline">Stop overpaying for AI APIs.<br><span>Save $600–$2,400/year.</span></h1>
             <p class="sub" id="deal-subline">Compare 42 models across 10 providers. Get personalized migration code. One-time payment, lifetime access.</p>
+            <div id="pricing-freshness" style="margin-top:12px;"></div>
         </div>
 
         <!-- Price card -->
@@ -1769,5 +1771,6 @@
         }, 60000);
     })();
     </script>
+    <script>document.addEventListener('DOMContentLoaded', function() { renderPricingFreshness('pricing-freshness'); });</script>
 </body>
 </html>

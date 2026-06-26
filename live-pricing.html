@@ -182,6 +182,7 @@
             <h1><span class="live-dot"></span>Live AI API Pricing</h1>
             <p class="subtitle">Every model. Every provider. Sort by cost and find the cheapest option for your workload.</p>
             <p class="last-updated">Last verified: <span id="last-updated"></span> · <span id="model-count">42</span> models · <span id="provider-count">10</span> providers</p>
+            <div id="pricing-freshness" style="margin-top:12px;"></div>
         </div>
 
         <div class="stats-bar">
@@ -494,5 +495,6 @@
         if (priceEl && window._abPrice) priceEl.textContent = window._abPrice;
     });
     </script>
+    <script>document.addEventListener('DOMContentLoaded', function() { renderPricingFreshness('pricing-freshness'); });</script>
 </body>
 </html>

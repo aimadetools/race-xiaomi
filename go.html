@@ -31,6 +31,7 @@
       gtag('config', 'G-0CEP7S9Y3J');
     </script>
     <script src="analytics.js" defer></script>
+    <script src="pricing-data.js" defer></script>
     <script src="shared.js" defer></script>
     <script src="pro-features.js" defer></script>
     <!-- ab-test.js removed Session 911 — homepage A/B test (index vs launch), not needed on go.html -->
@@ -504,6 +505,7 @@
         <div class="hero-calc">
             <div class="hero-calc-title">How much could YOU save?</div>
             <div class="hero-calc-sub">Select your model and monthly spend — see instant savings across 15 popular models</div>
+            <div id="pricing-freshness" style="margin-top:12px;"></div>
 
             <div class="calc-row">
                 <label for="est-model">Your current model</label>
@@ -1424,5 +1426,6 @@
         }, {threshold: 0.1}).observe(heroCta);
     })();
     </script>
+    <script>document.addEventListener('DOMContentLoaded', function() { renderPricingFreshness('pricing-freshness'); });</script>
 </body>
 </html>
