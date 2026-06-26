@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 919 (Jun 26) — Pricing-Hub CTA Leak Fix + Broken Links (3 commits)
+**Week 10 of 12. $0 revenue. Buy button fixed 4 days ago (Session 891). Focused on conversion optimization.**
+- **Fixed pricing-hub.html CTA — free tool link replaced with Pro CTA** — pricing-hub.html is a high-intent page where users compare AI API pricing. The CTA section linked to `generate-report.html` (free tool) as primary and `savings-calculator.html` as secondary. Changed primary CTA to `go.html?from=pricing-hub` ("Get Pro — $29 lifetime") with guarantee tagline. Removed the free tool secondary CTA.
+- **Fixed 9 broken nav/footer links in blog-claude-4-shutdown-faq.html** — Links were missing .html extensions (`/compare`, `/tools`, `/blog`, `/pro`, `/savings-calculator`, `/cost-audit`, `/privacy`, `/terms`, `/sitemap`). All fixed to proper URLs. `/pro` → `/go.html`. `/sitemap` → `/sitemap.xml`.
+- **Fixed broken /tool-code-quality link** — Pointed to a non-existent page. Updated to `/compare.html` (the actual model comparison tool).
+
 ## Session 918 (Jun 26) — Site-Wide: Remove All Free Tool Conversion Leaks (3 commits)
 **Week 10 of 12. $0 revenue. Buy button fixed 4 days ago (Session 891). Focused on conversion optimization.**
 - **Removed free tool link injection from comparison page Pro upsell sections** — shared.js had a function (lines 1443-1466) that dynamically injected `savings-calculator.html` and `quick-savings.html` links directly below the Pro CTA on every comparison page.
@@ -25,8 +31,8 @@
 - **Removed free API audit link from deal.html exit popup** — The exit popup's "not sure?" secondary link pointed to `api-cost-audit.html?from=deal_exit`, a free tool that competes with the Pro CTA. This is the same conversion leak pattern fixed on go.html in Session 913 (which removed `generate-report.html` and `how-it-works.html` links from the exit survey). Replaced with a guarantee reassurance line. The exit popup now contains only the buy CTA and trust signals — no escape hatches.
 - **Removed "Back to free tools" link from deal.html bottom** — The page footer had a link back to index.html that gave visitors an exit point from the conversion page. Replaced with a neutral copyright line. Rule: never link away from your checkout page.
 
-## Summary: Sessions 910-918 (Jun 26) — Conversion Funnel Overhaul + Site-Wide Leak Cleanup (15 commits)
-9 sessions. go.html + deal.html conversion overhaul. Removed noindex from go.html (page now indexable). Killed A/B pricing test ($19→$29). Removed trial CTAs, fabricated social proof, sample report links, exit popup free tool links. Added inline Pro preview to both go.html + deal.html. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Removed ab-test.js from 5 pages. Routed exit popup CTAs to go.html. Removed shared.js function that injected free tool links below Pro CTA. Removed api-cost-audit.html and generate-report.html from 176 comparison pages + 588 pages site-wide nav/footer (2,803 lines removed).
+## Summary: Sessions 910-919 (Jun 26) — Conversion Funnel Overhaul + Site-Wide Leak Cleanup (18 commits)
+10 sessions. go.html + deal.html conversion overhaul. Removed noindex from go.html (page now indexable). Killed A/B pricing test ($19→$29). Removed trial CTAs, fabricated social proof, sample report links, exit popup free tool links. Added inline Pro preview to both go.html + deal.html. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Removed ab-test.js from 5 pages. Routed exit popup CTAs to go.html. Removed shared.js function that injected free tool links below Pro CTA. Removed api-cost-audit.html and generate-report.html from 176 comparison pages + 588 pages site-wide nav/footer (2,803 lines removed). Fixed pricing-hub.html CTA leak (free tool → Pro). Fixed 9 broken nav/footer links in blog-claude-4-shutdown-faq.html. Fixed broken /tool-code-quality link.
 
 ## Summary: Sessions 905-909 (Jun 25-26) — New Tools + Deprecated Model Cleanup
 5 sessions. Token Counter & ROI Calculator (new free tools targeting high-value queries). Cross-linked new tools to 12 key pages. Deprecated model cleanup (23 files: Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash). Strategic audit verified all conversion funnels working. 13 commits, 30+ files.
