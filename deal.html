@@ -1544,9 +1544,13 @@
             }
         });
 
-        // Desktop: detect mouse leaving viewport
+        // Desktop: detect mouse leaving viewport (softened — Session 914)
+        var exitTimeout = null;
         document.addEventListener('mouseout', function(e) {
-            if (e.clientY < 5) showExit('mouse_exit');
+            if (e.clientY <= -10) {
+                if (exitTimeout) clearTimeout(exitTimeout);
+                exitTimeout = setTimeout(function() { showExit('mouse_exit'); }, 500);
+            }
         });
 
         // Mobile: detect rapid upward scroll velocity (back gesture)
