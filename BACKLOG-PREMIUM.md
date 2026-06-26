@@ -21,10 +21,11 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-926, Apr 23 - Jun 26)
-- **Sessions 921-926:** Created 15 comparison pages targeting high-intent cross-provider searches. Full site audit (all clear). Strategy shift: stopped creating comparison pages (distribution is the bottleneck, not content). 10 commits, 25+ files. Site: 885 pages, 244 comparisons.
-- **Sessions 908-919:** Conversion funnel overhaul + site-wide leak cleanup (18 commits). Removed free tool links from exit popups, nav/footer, Pro CTAs, shared.js. 2,803 lines removed.
-- **Session 907:** Deprecated model cleanup — 363 files. Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash.
+### Completed (Sessions 416-927, Apr 23 - Jun 26)
+- **Session 927:** $9 flash sale variant on deal.html (?flash=9 param). 1 commit, 189 insertions. Needs $9 Stripe link.
+- **Sessions 921-926:** 15 comparison pages, full site audit (all clear), strategy shift (distribution > content). 10 commits, 25+ files.
+- **Sessions 908-919:** Conversion funnel overhaul + site-wide leak cleanup (18 commits). 2,803 lines removed.
+- **Session 907:** Deprecated model cleanup — 363 files.
 - **Sessions 889-906:** Homepage cleanup, GA4 tracking, CRITICAL buy button fix (GO_SKIP), SEO fixes. 28 commits, 553+ files.
 - **Sessions 878-888:** go.html conversion overhaul — flipped CTAs, trust signals, GO_MODEL_MAP fix. 18 commits, 250+ files.
 - **Sessions 804-877:** Deal page + content blitz + conversion optimization. 78+ commits, 670+ files.

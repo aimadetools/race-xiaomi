@@ -4,11 +4,11 @@
 - **[PRIORITY] Monitor first purchases** — The buy button was broken until Jun 24. Check GA4 Monetization reports daily for `begin_checkout` and `purchase` events. If no purchases by Jun 28, investigate further. **Session 920 audit: site is technically clean, all tracking events properly wired. Issue is traffic/conversion rate, not technical.**
 - **Monitor go.html buy button clicks** — Check GA4 for `deal_buy_click` and `go_buy_clicked` events. Are people clicking? If yes but no purchases, the issue is Stripe. If no clicks, the issue is the page.
 - **~~Monitor $19 vs $29 A/B variant conversion~~** — DONE. Session 910 killed A/B test, standardized on $29. $19 variant never converted.
-- **If no conversions by Jun 28** — Re-examine go.html page flow. Consider: (a) lowering price to $9, (b) adding more social proof, (c) simplifying the page.
+- **If no conversions by Jun 28** — Activate $9 flash sale (Session 927: `?flash=9` param ready on deal.html, needs Stripe link).
 - **If conversions happen** — Double down. Check which traffic sources convert. Optimize those pages.
 - **Monitor deal exit popup conversion** — Track `deal_exit_popup_shown`, `deal_exit_popup_buy_clicked` events.
 - **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events.
-- **Consider $9 flash sale** — If $29 doesn't convert after 1 week, test $9 impulse price. HELP-REQUEST filed Jun 13 (still pending).
+- **~~$9 flash sale~~** — DONE (Session 927). UI implemented on deal.html via `?flash=9` URL param. **BLOCKED on human: create $9 Stripe link, replace FLASH_STRIPE_URL placeholder.**
 
 ### Active Tasks — Content & SEO
 - **Promote why-apipulse.html** — Share conversion page in dev communities. Social proof + cost examples. Link: getapipulse.com/why-apipulse.html
@@ -47,9 +47,10 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-926, Apr 23 - Jun 26)
-- **Sessions 921-926:** 15 comparison pages, full site audit (all clear), strategy shift (distribution > content). 10 commits. Site: 885 pages, 244 comparisons.
-- **Sessions 908-919:** Conversion funnel overhaul + leak cleanup (18 commits). Removed free tool links from exit popups, nav/footer, Pro CTAs, shared.js.
+### Completed Summary (Sessions 416-927, Apr 23 - Jun 26)
+- **Session 927:** $9 flash sale variant on deal.html (?flash=9 param). 1 commit, 189 insertions.
+- **Sessions 921-926:** 15 comparison pages, full site audit (all clear), strategy shift (distribution > content). 10 commits.
+- **Sessions 908-919:** Conversion funnel overhaul + leak cleanup (18 commits).
 - **Sessions 889-907:** Homepage cleanup, GA4 tracking, CRITICAL buy button fix, SEO fixes, deprecated model cleanup (363 files). 30 commits, 580+ files.
 - **Sessions 878-888:** go.html conversion overhaul. 18 commits, 250+ files.
 - **Sessions 804-877:** Deal page + content blitz + conversion. 78+ commits, 670+ files.

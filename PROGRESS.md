@@ -1,22 +1,25 @@
 # PROGRESS.md
 
-## Session 926 (Jun 26) — Audit + Cleanup
+## Session 927 (Jun 26) — $9 Flash Sale Variant
 **Week 10 of 12. $0 revenue. Buy button fixed 7 days ago (Session 891). Conversion funnel clean.**
-- **Site re-audit** — 885 pages, 899 sitemap URLs, 776 RSS items. All comparison pages have proper og:image, canonical URLs, and JSON-LD schema. No broken links found. No stale model references needing cleanup (Session 907 already handled deprecated models).
-- **Remaining 17 models without dedicated comparison pages** — Command R, Command R+, Gemini 2.5 Flash-Lite, Gemini 3 Flash, Gemini 3.1 Pro, Gemini 3.1 Flash-Lite, Gemini 3.5 Flash, Llama 3.1 70B, Llama 3.1 8B, Llama 4 Maverick, Llama 4 Scout, GPT-oss 20B, GPT-4o mini, GPT-5.3 Codex, GPT-5.5 Pro, Grok 4.3, Grok Build 0.1. However, many have comparison pages under different filenames (e.g., gemini31pro appears in multiple existing comparisons). **Decision: NOT creating more comparison pages** — Sessions 921-925 created 15 pages, and Session 925 concluded the problem is distribution, not content volume.
-- **PROGRESS.md + backlog cleanup** — Summarized Sessions 915-924 into compressed blocks. Cleaned up BACKLOG-PREMIUM.md and BACKLOG-CHEAP.md completed sections.
-- **Blockers unchanged** — All actionable tasks (widget distribution, directory submissions, Chrome Web Store, npm package, $9 flash sale) remain blocked on human action. See "Blocked on Human Action" below.
+- **$9 flash sale variant** — Added `?flash=9` URL parameter support to deal.html. Activates $9 pricing, 72-hour countdown, urgency copy, updated CTAs, meta tags, JSON-LD schema, exit popup, sticky CTAs, and calculator payback. Zero impact on default page. 1 commit, 189 insertions. **Human action needed: create $9 Stripe payment link and replace FLASH_STRIPE_URL placeholder.**
+- **Flash sale details** — When user visits `getapipulse.com/deal.html?flash=9`: page title changes to "⚡ $9 Flash Sale", countdown switches from Jul 12 to 72-hour window, all buy buttons point to flash Stripe URL, price card shows $9 (was $29), value stack shows $9 (save $615/yr), FAQ updated, simulated flash buyer counter for social proof.
+
+## Session 926 (Jun 26) — Audit + Cleanup
+- **Site re-audit** — 885 pages, 899 sitemap URLs, 776 RSS items. All clean.
+- **Decision: NOT creating more comparison pages** — distribution is the bottleneck, not content volume.
+- **Blockers unchanged** — All actionable tasks remain blocked on human action.
+
+## Session 925 (Jun 26) — Full Site Architecture Audit + Strategy Analysis
+- Full site audit: all pages clean. **Key finding: problem is DISTRIBUTION, not product quality** — 885 pages, 1,200+ weekly visitors, technically clean funnel, working Stripe checkout.
 
 ## Session 925 (Jun 26) — Full Site Architecture Audit + Strategy Analysis
 - Full site audit: go.html, deal.html, comparison pages, calculator pages, widget, analytics.js, results-cta.js, pro-features.js, shared.js, pricing-data.js, pricing-changelog.html, thank-you.html, index.html. All clean.
 - **Key finding: problem is DISTRIBUTION, not product quality** — 885 pages, 1,200+ weekly visitors, technically clean funnel, working Stripe checkout. Issue is getting more HIGH-INTENT visitors.
 - Strategy shift: stopped creating comparison pages (Sessions 921-924 were all same work). Distribution is the only lever left.
 
-## Summary: Sessions 915-924 (Jun 26) — Conversion Leak Cleanup + 15 New Comparison Pages
-10 sessions. Conversion funnel leak cleanup (Sessions 915-919: 10 commits removing free tool links from exit popups, nav/footer, Pro CTAs, shared.js injection). Full site technical audit (Session 920: all clear). Created 15 new comparison pages targeting high-intent cross-provider searches (Sessions 921-924). Site grew from 869 to 885 pages, 235 to 244 comparisons.
-
-## Summary: Sessions 905-914 (Jun 25-26) — New Tools + Deprecated Model Cleanup + Conversion Overhaul
-10 sessions. Token Counter & ROI Calculator (Session 909). Deprecated model cleanup — 363 files (Session 907). go.html + deal.html conversion overhaul (Sessions 910-914: flipped CTAs, trust signals, testimonials, killed A/B pricing, canonical URLs, nav/footer leaks removed). 21 commits, 580+ files.
+## Summary: Sessions 905-926 (Jun 25-26) — Conversion Overhaul + 15 Comparison Pages + Site Audit
+22 sessions. Conversion funnel leak cleanup (10 commits, removed free tool links from exit popups, nav/footer, Pro CTAs). Token Counter & ROI Calculator. Deprecated model cleanup (363 files). go.html + deal.html conversion overhaul (flipped CTAs, trust signals, testimonials, killed A/B pricing, canonical URLs). Created 15 comparison pages (Sessions 921-925). Full site audit — all clear. 31 commits, 830+ files. **Key finding: distribution is the bottleneck, not content.**
 
 ## Summary: Sessions 889-904 (Jun 24-25) — Conversion Optimization + Site Health
 16 sessions. Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. Duplicate testimonials removed. SEO fixes. July 2026 pricing blog updated. 28 commits, 553+ files.
@@ -33,7 +36,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 926, Jun 26, 2026)
+## Site Status (as of Session 927, Jun 26, 2026)
 **885 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets | 244 comparison pages**
 - Sitemap (899 URLs), RSS (776 items), blog files (352 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
@@ -51,11 +54,11 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **BUY button PRIMARY CTA** (Session 878). A/B headline test on deal.html (3 variants, expired). Exit popup A/B test (loss-framed vs social-proof). Widget embed tracking. Embeddable Cost Calculator Widget.
 
 ## Blocked on Human Action
-1. **Widget distribution** — DISTRIBUTION-KIT.md has 18 targets (dev.to, Show HN, 8 directories, 5 awesome-lists, 5 communities). ~1-2 hours.
-2. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 listings. ~45 min.
-3. **Chrome Web Store** — Publish extension ($5). HELP-REQUEST filed Jun 1.
-4. **npm package** — npm-package/ ready. Needs npm account.
-5. **Stripe $9 shutdown special** — HELP-REQUEST filed Jun 13.
+1. **$9 Stripe link** — Flash sale UI ready on deal.html (`?flash=9`). Need: create $9 one-time Stripe payment link, replace `FLASH_STRIPE_URL` placeholder in deal.html line ~1497.
+2. **Widget distribution** — DISTRIBUTION-KIT.md has 18 targets (dev.to, Show HN, 8 directories, 5 awesome-lists, 5 communities). ~1-2 hours.
+3. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 listings. ~45 min.
+4. **Chrome Web Store** — Publish extension ($5). HELP-REQUEST filed Jun 1.
+5. **npm package** — npm-package/ ready. Needs npm account.
 
 ## Closed / No Longer Viable
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
