@@ -47,17 +47,13 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-916, Apr 23 - Jun 26)
-- **Session 916:** Checkout page nav/footer conversion leak fix. Removed footer links (Home, About, Blog, Pricing) from go.html. Replaced "Get Pro" nav link with "Buy Now" anchor on go.html. Removed "Pricing" nav link from deal.html. Both checkout pages now have minimal nav + no footer links. 1 commit.
-- **Session 915:** deal.html exit popup conversion leak fix. Removed free API audit link from exit popup (same pattern as go.html Session 913). Removed "Back to free tools" link from page bottom. Exit popup now only contains buy CTA + trust signals. 1 commit.
-- **Session 914:** deal.html conversion fixes. Replaced 4 sample report links with inline Pro preview. Softened exit popup threshold (clientY < 5 → <= -10, 500ms delay). Added canonical URLs to go.html + deal.html. 3 commits.
-- **Session 913:** go.html exit popup conversion leak fix. Removed generate-report.html and how-it-works.html links from exit survey responses — both were sending users away from the checkout page. Replaced with focused Pro value propositions. 1 commit.
-- **Session 911:** go.html conversion optimization. Added inline Pro preview section (cost comparison table + migration code snippet). Removed ab-test.js from go.html + 4 other non-essential pages (deal.html, claude-4-last-chance.html, migration-checklist.html, trial-expired.html). 2 commits.
-- **Session 910:** Critical conversion funnel fixes on go.html. Removed noindex (page now indexable). Removed Deal nav link that leaked visitors. Killed A/B pricing test, standardized on $29. Removed trial CTAs that competed with buy button. Replaced fabricated social proof with factual data. Softened exit popup. 1 commit.
-- **Session 909:** Cross-linked token-counter.html and roi-calculator.html to 12 key pages (optimization guide, structured output, batch processing, pricing ranked, fine-tuning, multi-model routing, save costs, calculator, startups, chatbot, legal, manufacturing). 4 commits.
-- **Session 907:** Massive deprecated model cleanup — 363 files, 2,030 lines. Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash across use-case pages, cheapest pages, industry blogs, comparisons, tools. Fixed broken link in why-apipulse.html. 2 commits.
-- **Sessions 889-906:** Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. SEO fixes (6 pages un-noindexed, 3 canonical URLs fixed). July 2026 blog updated (32→42 models). First round of deprecated model fixes (23 files). 28 commits, 553+ files.
-- **Sessions 878-888:** go.html conversion overhaul — flipped CTAs, trust signals, testimonials, social proof, Before/After, GO_MODEL_MAP fix, 232 comparison page CTAs. 18 commits, 250+ files.
+### Completed Summary (Sessions 416-917, Apr 23 - Jun 26)
+- **Session 917:** shared.js exit popup conversion leak fix. Removed "Not ready? Get a 10-second savings estimate" link from high-intent exit popup (sent users to free tool). Routed exit popup CTAs + deprecation banner from deal.html to go.html for consistency. 1 commit.
+- **Sessions 910-916:** Conversion funnel overhaul — go.html + deal.html (11 commits). Removed noindex, killed A/B pricing, removed trial CTAs/fabricated social proof/sample report links/exit popup free tool links. Added inline Pro preview. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Removed ab-test.js from 5 pages.
+- **Session 909:** Cross-linked token-counter.html and roi-calculator.html to 12 key pages. 4 commits.
+- **Session 907:** Massive deprecated model cleanup — 363 files, 2,030 lines. 2 commits.
+- **Sessions 889-906:** Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. SEO fixes. 28 commits, 553+ files.
+- **Sessions 878-888:** go.html conversion overhaul. 18 commits, 250+ files.
 - **Sessions 804-877:** Deal page + content blitz + conversion optimization. 78+ commits, 670+ files.
 - **Sessions 599-803:** Conversion funnel + distribution tools + Claude 4 shutdown. 303+ commits, 1750+ files.
 - **Sessions 1-598:** Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools.
