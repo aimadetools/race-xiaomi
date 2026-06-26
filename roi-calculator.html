@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API ROI Calculator — Is Your AI Spend Worth It? | APIpulse</title>
+    <meta name="description" content="Calculate the ROI of your AI API spend. Enter your usage, costs, and revenue impact to see if your AI investment is paying off. Free calculator.">
+    <meta name="keywords" content>AI ROI calculator, AI API ROI, AI investment return, AI cost benefit analysis, AI API spend calculator, is AI worth it">
+    <meta property="og:title" content="AI API ROI Calculator — APIpulse">
+    <meta property="og:description" content="Calculate the ROI of your AI API spend. See if your AI investment is paying off.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/roi-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API ROI Calculator — APIpulse">
+    <meta name="twitter:description" content="Calculate the ROI of your AI API spend. See if your AI investment is paying off.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/roi-calculator.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script>
+    window._resultsCtaConfig = {
+        resultSelector: '.roi-results',
+        toolName: 'ROI Calculator',
+        proFeatures: ['Full cost breakdown by model', 'Migration code for cheaper alternatives', 'PDF export for reports', 'Price change alerts']
+    };
+    </script>
+    <script src="results-cta.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse AI API ROI Calculator",
+        "url": "https://getapipulse.com/roi-calculator.html",
+        "description": "Calculate the ROI of your AI API spend. Enter your usage, costs, and revenue impact to see if your AI investment is paying off.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I calculate AI API ROI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI API ROI = (Revenue Generated - API Costs) / API Costs × 100%. Track your monthly API spend, then measure the revenue or cost savings your AI features generate. A positive ROI means your AI investment is profitable. Use the calculator above to model different scenarios."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a good ROI for AI API usage?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A good AI API ROI depends on your use case. For customer-facing features, aim for 3-5x ROI (300-500%). For internal tools, 2x ROI (200%) is often acceptable. For experimental projects, breaking even (100% ROI) may be acceptable while you validate the use case."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I improve my AI API ROI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Three main strategies: 1) Use cheaper models for simple tasks (budget models cost 10-50x less). 2) Optimize prompts to reduce token usage. 3) Cache responses to avoid redundant API calls. Switching from GPT-5.5 to GPT-4o mini for classification tasks alone can improve ROI by 50x."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero { padding: 120px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .calc-hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; }
+        .calc-container { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+        .input-section {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 32px;
+        }
+        .input-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .input-group { margin-bottom: 16px; }
+        .input-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--text-primary); }
+        .input-group .hint { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px 16px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-primary); font-size: 16px; outline: none;
+            transition: border-color 0.2s;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--accent); }
+        .preset-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .preset-chip {
+            padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 500;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .preset-chip:hover, .preset-chip.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .roi-results {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;
+            margin-bottom: 32px;
+        }
+        .roi-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; text-align: center;
+        }
+        .roi-card.positive { border-color: var(--green); background: rgba(34,197,94,0.05); }
+        .roi-card.negative { border-color: #ef4444; background: rgba(239,68,68,0.05); }
+        .roi-card.highlight { border-color: var(--accent); background: var(--accent-glow); }
+        .roi-value { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
+        .roi-value.positive { color: var(--green); }
+        .roi-value.negative { color: #ef4444; }
+        .roi-value.highlight { color: var(--accent); }
+        .roi-label { font-size: 13px; color: var(--text-muted); }
+        .roi-detail { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .scenario-section { margin-top: 32px; }
+        .scenario-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+        .scenario-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+        }
+        .scenario-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+        .scenario-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 12px; }
+        .scenario-card .scenario-roi { font-size: 18px; font-weight: 700; }
+        .scenario-card .scenario-roi.positive { color: var(--green); }
+        .scenario-card .scenario-roi.negative { color: #ef4444; }
+        .info-box {
+            background: var(--accent-glow); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin-top: 32px;
+        }
+        .info-box h3 { margin: 0 0 12px; font-size: 18px; color: var(--accent); }
+        .info-box p { margin: 0 0 8px; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .info-box strong { color: var(--text-primary); }
+        .cta-box {
+            text-align: center; padding: 40px 24px; margin-top: 40px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+        }
+        .cta-box h3 { font-size: 22px; margin-bottom: 12px; }
+        .cta-box p { color: var(--text-secondary); margin-bottom: 20px; }
+        .cta-box a { display: inline-block; }
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .input-grid { grid-template-columns: 1fr; }
+            .roi-results { grid-template-columns: 1fr 1fr; }
+            .scenario-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a> · <a href="api-cost-audit.html">🔍 Cost Audit</a>
+                <a href="industry-guides.html">Industry</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="go.html" class="nav-cta">Get Pro Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="calc-hero">
+            <h1>AI API ROI Calculator</h1>
+            <p>Is your AI API spend paying for itself? Enter your numbers to calculate return on investment and find opportunities to improve.</p>
+        </section>
+
+        <div class="calc-container">
+            <section class="input-section">
+                <h2>📊 Your AI API Usage</h2>
+                <div class="preset-chips">
+                    <button class="preset-chip active" onclick="loadPreset('custom')">Custom</button>
+                    <button class="preset-chip" onclick="loadPreset('startup')">Startup (10K req/mo)</button>
+                    <button class="preset-chip" onclick="loadPreset('scaleup')">Scale-up (100K req/mo)</button>
+                    <button class="preset-chip" onclick="loadPreset('enterprise')">Enterprise (1M req/mo)</button>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="monthly-requests">Monthly API Requests</label>
+                        <div class="hint">How many API calls do you make per month?</div>
+                        <input type="number" id="monthly-requests" value="10000" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="avg-tokens">Avg Tokens per Request</label>
+                        <div class="hint">Input + output tokens combined</div>
+                        <input type="number" id="avg-tokens" value="2000" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="model-select">Current Model</label>
+                        <div class="hint">Select your primary model</div>
+                        <select id="model-select">
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="revenue-per-request">Revenue per Request ($)</label>
+                        <div class="hint">Revenue generated per API call (or $0 for internal tools)</div>
+                        <input type="number" id="revenue-per-request" value="0.05" min="0" step="0.01">
+                    </div>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="dev-cost">Developer Hourly Rate ($)</label>
+                        <div class="hint">Your time or team's time spent on AI integration</div>
+                        <input type="number" id="dev-cost" value="100" min="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="dev-hours">Hours/Month on AI Integration</label>
+                        <div class="hint">Time spent on prompts, debugging, optimization</div>
+                        <input type="number" id="dev-hours" value="20" min="0">
+                    </div>
+                </div>
+            </section>
+
+            <section class="roi-results" id="roi-results">
+                <div class="roi-card highlight">
+                    <div class="roi-value highlight" id="roi-percent">—</div>
+                    <div class="roi-label">Monthly ROI</div>
+                    <div class="roi-detail" id="roi-status">Enter your numbers above</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-value" id="monthly-profit">—</div>
+                    <div class="roi-label">Monthly Profit/Loss</div>
+                    <div class="roi-detail" id="profit-detail">Revenue minus all costs</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-value" id="monthly-api-cost">—</div>
+                    <div class="roi-label">Monthly API Cost</div>
+                    <div class="roi-detail" id="cost-detail">Based on your usage</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-value" id="annual-savings">—</div>
+                    <div class="roi-label">Annual Savings Potential</div>
+                    <div class="roi-detail" id="savings-detail">By switching to cheaper models</div>
+                </div>
+            </section>
+
+            <section class="scenario-section">
+                <h2>💡 Optimization Scenarios</h2>
+                <div class="scenario-grid" id="scenario-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <div class="info-box">
+                <h3>💡 How to Improve AI API ROI</h3>
+                <p><strong>1. Use cheaper models for simple tasks.</strong> Classification, extraction, and simple Q&A work great with budget models (10-50x cheaper than flagship models).</p>
+                <p><strong>2. Optimize prompts.</strong> Shorter prompts = fewer input tokens = lower costs. Remove filler words, be specific, use bullet points.</p>
+                <p><strong>3. Cache responses.</strong> If you're making the same request multiple times, cache the result. This can reduce API calls by 50-80% for many use cases.</p>
+                <p><strong>4. Set max_tokens.</strong> Always limit output length to what you need. Unbounded outputs can surprise you with costs.</p>
+            </div>
+
+            <div class="cta-box">
+                <h3>Optimize Your AI API Costs</h3>
+                <p>Get the full pricing database, migration guides, and cost optimization strategies with APIpulse Pro.</p>
+                <a href="go.html" class="btn-primary">Get Lifetime Access — $29</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <a href="index.html" class="footer-logo">API<span>pulse</span></a>
+                <p>AI API pricing intelligence for developers. 42 models. Real-time data. Smarter decisions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <a href="calculator.html">Cost Calculator</a>
+                <a href="compare.html">Compare Models</a>
+                <a href="cost-explorer.html">Cost Explorer</a>
+                <a href="token-counter.html">Token Counter</a>
+                <a href="roi-calculator.html">ROI Calculator</a>
+                <a href="latency-comparison.html">Latency Comparison</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing Data</a>
+                <a href="cheapest-ai-api.html">Cheapest AI API</a>
+                <a href="migration-checklist.html">Migration Guide</a>
+                <a href="deprecation-tracker.html">Deprecation Tracker</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="why-apipulse.html">Why APIpulse</a>
+                <a href="go.html">Get Pro Access</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 APIpulse. Built for developers, by developers.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Preset scenarios
+    const PRESETS = {
+        custom: { requests: 10000, tokens: 2000, revenue: 0.05, devCost: 100, devHours: 20 },
+        startup: { requests: 10000, tokens: 1500, revenue: 0.03, devCost: 80, devHours: 10 },
+        scaleup: { requests: 100000, tokens: 2500, revenue: 0.04, devCost: 120, devHours: 40 },
+        enterprise: { requests: 1000000, tokens: 3000, revenue: 0.02, devCost: 150, devHours: 80 }
+    };
+
+    function loadPreset(preset) {
+        const p = PRESETS[preset];
+        document.getElementById('monthly-requests').value = p.requests;
+        document.getElementById('avg-tokens').value = p.tokens;
+        document.getElementById('revenue-per-request').value = p.revenue;
+        document.getElementById('dev-cost').value = p.devCost;
+        document.getElementById('dev-hours').value = p.devHours;
+        // Update active chip
+        document.querySelectorAll('.preset-chip').forEach(chip => chip.classList.remove('active'));
+        event.target.classList.add('active');
+        calculateROI();
+    }
+
+    function formatMoney(amount) {
+        if (Math.abs(amount) >= 1000000) return '$' + (amount / 1000000).toFixed(1) + 'M';
+        if (Math.abs(amount) >= 1000) return '$' + (amount / 1000).toFixed(1) + 'K';
+        return '$' + amount.toFixed(2);
+    }
+
+    function calculateROI() {
+        const requests = parseInt(document.getElementById('monthly-requests').value) || 0;
+        const avgTokens = parseInt(document.getElementById('avg-tokens').value) || 0;
+        const revenuePerRequest = parseFloat(document.getElementById('revenue-per-request').value) || 0;
+        const devCost = parseFloat(document.getElementById('dev-cost').value) || 0;
+        const devHours = parseInt(document.getElementById('dev-hours').value) || 0;
+        const modelId = document.getElementById('model-select').value;
+
+        if (typeof API_MODELS === 'undefined' || !requests || !avgTokens) return;
+
+        const model = API_MODELS.find(m => m.id === modelId);
+        if (!model) return;
+
+        // Calculate costs
+        // Assume 70% input, 30% output tokens
+        const inputTokens = Math.round(avgTokens * 0.7);
+        const outputTokens = Math.round(avgTokens * 0.3);
+        const totalInputTokens = requests * inputTokens;
+        const totalOutputTokens = requests * outputTokens;
+
+        const apiCost = (totalInputTokens / 1000000) * model.input + (totalOutputTokens / 1000000) * model.output;
+        const laborCost = devCost * devHours;
+        const totalCost = apiCost + laborCost;
+
+        // Calculate revenue
+        const revenue = requests * revenuePerRequest;
+
+        // Calculate ROI
+        const profit = revenue - totalCost;
+        const roi = totalCost > 0 ? ((profit / totalCost) * 100) : 0;
+
+        // Update results
+        const roiEl = document.getElementById('roi-percent');
+        roiEl.textContent = roi.toFixed(0) + '%';
+        roiEl.className = 'roi-value ' + (roi >= 0 ? 'positive' : 'negative');
+
+        const statusEl = document.getElementById('roi-status');
+        if (roi >= 300) statusEl.textContent = 'Excellent ROI — keep optimizing!';
+        else if (roi >= 100) statusEl.textContent = 'Good ROI — room to optimize';
+        else if (roi >= 0) statusEl.textContent = 'Break-even — consider cheaper models';
+        else statusEl.textContent = 'Negative ROI — action needed';
+
+        document.getElementById('monthly-profit').textContent = formatMoney(profit);
+        document.getElementById('monthly-profit').className = 'roi-value ' + (profit >= 0 ? 'positive' : 'negative');
+        document.getElementById('profit-detail').textContent = profit >= 0 ? 'Monthly profit' : 'Monthly loss';
+
+        document.getElementById('monthly-api-cost').textContent = formatMoney(apiCost);
+        document.getElementById('cost-detail').textContent = formatMoney(apiCost / requests) + ' per request';
+
+        // Calculate savings by switching to cheapest model
+        const cheapestModel = API_MODELS.filter(m => !m.deprecated).sort((a, b) => {
+            const costA = (totalInputTokens / 1000000) * a.input + (totalOutputTokens / 1000000) * a.output;
+            const costB = (totalInputTokens / 1000000) * b.input + (totalOutputTokens / 1000000) * b.output;
+            return costA - costB;
+        })[0];
+
+        if (cheapestModel && cheapestModel.id !== modelId) {
+            const cheapestCost = (totalInputTokens / 1000000) * cheapestModel.input + (totalOutputTokens / 1000000) * cheapestModel.output;
+            const annualSavings = (apiCost - cheapestCost) * 12;
+            document.getElementById('annual-savings').textContent = formatMoney(annualSavings);
+            document.getElementById('savings-detail').textContent = 'Switch to ' + cheapestModel.name;
+        } else {
+            document.getElementById('annual-savings').textContent = '—';
+            document.getElementById('savings-detail').textContent = 'Already using cheapest model';
+        }
+
+        // Generate scenarios
+        renderScenarios(requests, inputTokens, outputTokens, revenue, laborCost, modelId);
+    }
+
+    function renderScenarios(requests, inputTokens, outputTokens, revenue, laborCost, currentModelId) {
+        const container = document.getElementById('scenario-grid');
+        const totalInput = requests * inputTokens;
+        const totalOutput = requests * outputTokens;
+
+        // Get a few interesting model alternatives
+        const currentModel = API_MODELS.find(m => m.id === currentModelId);
+        const alternatives = API_MODELS.filter(m => !m.deprecated && m.id !== currentModelId)
+            .sort((a, b) => {
+                const costA = (totalInput / 1000000) * a.input + (totalOutput / 1000000) * a.output;
+                const costB = (totalInput / 1000000) * b.input + (totalOutput / 1000000) * b.output;
+                return costA - costB;
+            })
+            .slice(0, 3);
+
+        const scenarios = alternatives.map(alt => {
+            const altCost = (totalInput / 1000000) * alt.input + (totalOutput / 1000000) * alt.output;
+            const currentCost = (totalInput / 1000000) * currentModel.input + (totalOutput / 1000000) * currentModel.output;
+            const savings = currentCost - altCost;
+            const profit = revenue - altCost - laborCost;
+            const roi = (altCost + laborCost) > 0 ? ((profit / (altCost + laborCost)) * 100) : 0;
+
+            return `
+                <div class="scenario-card">
+                    <h4>Switch to ${alt.name}</h4>
+                    <p>API cost: ${formatMoney(altCost)}/mo (${savings >= 0 ? 'save ' + formatMoney(savings) : 'costs ' + formatMoney(-savings)} more)</p>
+                    <div class="scenario-roi ${roi >= 0 ? 'positive' : 'negative'}">ROI: ${roi.toFixed(0)}%</div>
+                </div>
+            `;
+        }).join('');
+
+        container.innerHTML = scenarios;
+    }
+
+    // Populate model dropdown
+    function populateModels() {
+        const select = document.getElementById('model-select');
+        if (typeof API_MODELS === 'undefined') return;
+
+        const activeModels = API_MODELS.filter(m => !m.deprecated);
+        const providers = [...new Set(activeModels.map(m => m.provider))];
+
+        providers.forEach(provider => {
+            const group = document.createElement('optgroup');
+            group.label = provider;
+            activeModels.filter(m => m.provider === provider).forEach(model => {
+                const option = document.createElement('option');
+                option.value = model.id;
+                option.textContent = `${model.name} ($${model.input}/$${model.output} per 1M)`;
+                group.appendChild(option);
+            });
+            select.appendChild(group);
+        });
+
+        // Default to GPT-4o mini (popular budget choice)
+        const defaultModel = activeModels.find(m => m.id === 'openai-gpt4o-mini');
+        if (defaultModel) select.value = defaultModel.id;
+
+        calculateROI();
+    }
+
+    // Event listeners
+    ['monthly-requests', 'avg-tokens', 'revenue-per-request', 'dev-cost', 'dev-hours'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calculateROI);
+    });
+    document.getElementById('model-select').addEventListener('change', calculateROI);
+
+    // Wait for pricing data
+    if (typeof API_MODELS !== 'undefined') {
+        populateModels();
+    } else {
+        window.addEventListener('load', () => {
+            setTimeout(populateModels, 100);
+        });
+    }
+    </script>
+</body>
+</html>
