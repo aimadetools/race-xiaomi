@@ -467,8 +467,7 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="pricing.html" class="nav-cta">Get Pro</a>
+                <a href="#main">Buy Now</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
@@ -873,26 +872,11 @@
     </div>
 
     <footer>
-        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a></p>
+        <p>© 2026 APIpulse. Lifetime access · No subscription · 14-day money-back guarantee</p>
     </footer>
 
     <script>
     (function() {
-        // Fix nav CTA on go.html — shared.js rewrites it to go.html?from=nav_cta,
-        // creating a reload loop. Override to scroll to the main CTA instead.
-        document.addEventListener('DOMContentLoaded', function() {
-            var navCta = document.querySelector('.nav-cta');
-            if (navCta) {
-                navCta.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var heroCalc = document.querySelector('.hero-calc');
-                    if (heroCalc) {
-                        heroCalc.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            }
-        });
-
         // Countdown timer — founding member price ends July 12, 2026
         // Session 877: Post-expiry handling — update CTAs, hide trial, show $49
         (function() {
