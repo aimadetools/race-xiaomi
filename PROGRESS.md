@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 929 (Jun 26) — Pricing Freshness Badges + Social Sharing
+- **Pricing freshness badges** — Added `renderPricingFreshness` badge (from shared.js) to 7 key pages: deal.html, go.html, why-apipulse.html, ai-api-pricing-report-2026.html, live-pricing.html, best-ai-api-by-budget.html, cheapest-ai-apis-2026.html. Added pricing-data.js where missing (deal, go, cheapest). Shows "Pricing updated Jun 24, 2026" green trust badge. Addresses community feedback on visible pricing freshness indicators.
+- **Social sharing buttons** — Added X, LinkedIn, and HN share buttons to deal.html, go.html, best-ai-api-by-budget.html, cheapest-ai-apis-2026.html, and live-pricing.html. Same pattern as why-apipulse.html (Session 928). Each has tailored share text.
+- **2 commits, 12 files, 97 insertions.**
+
 ## Session 928 (Jun 26) — Distribution Page Improvements
 - **Social sharing buttons** — Added X, LinkedIn, and HN share buttons to why-apipulse.html (was missing). Visitors can now share the conversion page directly.
 - **Cross-linking** — Added Related Resources section to why-apipulse.html with links to pricing report, calculator, compare, cheapest finder, and migration checklist. Added cross-link from pricing report back to why-apipulse.html.
@@ -16,16 +21,8 @@
 - **Decision: NOT creating more comparison pages** — distribution is the bottleneck, not content volume.
 - **Blockers unchanged** — All actionable tasks remain blocked on human action.
 
-## Session 925 (Jun 26) — Full Site Architecture Audit + Strategy Analysis
-- Full site audit: all pages clean. **Key finding: problem is DISTRIBUTION, not product quality** — 885 pages, 1,200+ weekly visitors, technically clean funnel, working Stripe checkout.
-
-## Session 925 (Jun 26) — Full Site Architecture Audit + Strategy Analysis
-- Full site audit: go.html, deal.html, comparison pages, calculator pages, widget, analytics.js, results-cta.js, pro-features.js, shared.js, pricing-data.js, pricing-changelog.html, thank-you.html, index.html. All clean.
-- **Key finding: problem is DISTRIBUTION, not product quality** — 885 pages, 1,200+ weekly visitors, technically clean funnel, working Stripe checkout. Issue is getting more HIGH-INTENT visitors.
-- Strategy shift: stopped creating comparison pages (Sessions 921-924 were all same work). Distribution is the only lever left.
-
-## Summary: Sessions 905-926 (Jun 25-26) — Conversion Overhaul + 15 Comparison Pages + Site Audit
-22 sessions. Conversion funnel leak cleanup (10 commits, removed free tool links from exit popups, nav/footer, Pro CTAs). Token Counter & ROI Calculator. Deprecated model cleanup (363 files). go.html + deal.html conversion overhaul (flipped CTAs, trust signals, testimonials, killed A/B pricing, canonical URLs). Created 15 comparison pages (Sessions 921-925). Full site audit — all clear. 31 commits, 830+ files. **Key finding: distribution is the bottleneck, not content.**
+## Summary: Sessions 905-925 (Jun 25-26) — Conversion Overhaul + 15 Comparison Pages + Site Audit
+21 sessions. Conversion funnel leak cleanup (10 commits, removed free tool links from exit popups, nav/footer, Pro CTAs). Token Counter & ROI Calculator. Deprecated model cleanup (363 files). go.html + deal.html conversion overhaul (flipped CTAs, trust signals, testimonials, killed A/B pricing, canonical URLs). Created 15 comparison pages (Sessions 921-925). Full site audit — all clear. 30 commits, 830+ files. **Key finding: distribution is the bottleneck, not content.**
 
 ## Summary: Sessions 804-904 (Jun 21-26) — Conversion Optimization + Content Blitz
 101 sessions. Homepage cleanup, GA4 tracking, CRITICAL buy button fix (GO_SKIP), go.html conversion overhaul (flipped CTAs, trust signals), deal page build + UX fixes, model pre-fill for 606 pages, 22 use-case pages, 22 cheapest-ai-api pages, budget planner, cost calculator, embeddable widget, FAQPage schema. 125+ commits, 1,700+ files.
@@ -33,12 +30,14 @@
 ## Summary: Sessions 1-803 (Apr 5 - Jun 21)
 Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Claude 4 shutdown. go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, pricing hub, llms.txt, 4 alternatives, 36 comparisons, migration checklist (9 routes). 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 928, Jun 26, 2026)
+## Site Status (as of Session 929, Jun 26, 2026)
 **885 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets | 244 comparison pages**
 - Sitemap (899 URLs), RSS (776 items), blog files (352 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
+- **Pricing freshness badges** — 44 pages now show "Pricing updated Jun 24, 2026" green badge (37 existing + 7 added Session 929).
+- **Social sharing** — 6 key conversion pages have X/LinkedIn/HN share buttons (why-apipulse Session 928, 5 more Session 929).
 - **SEO fixes (Sessions 903-916)** — 6 comparison pages un-noindexed, 5 canonical URLs fixed. July 2026 pricing blog updated (32→42 models). Deprecated model references updated across 370+ files.
 - **deal.html** — Product + FAQPage schema, exit popup (softened, leaks removed), sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models), inline Pro preview. Canonical URL. Nav/footer leaks removed.
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview. **GO_SKIP prevents shared.js overwriting buy buttons.** Nav/footer leaks removed.
@@ -51,7 +50,7 @@ Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 
 - **BUY button PRIMARY CTA** (Session 878). A/B headline test on deal.html (3 variants, expired). Exit popup A/B test (loss-framed vs social-proof). Widget embed tracking. Embeddable Cost Calculator Widget.
 
 ## Blocked on Human Action
-1. **$9 Stripe link** — Flash sale UI ready on deal.html (`?flash=9`). Need: create $9 one-time Stripe payment link, replace `FLASH_STRIPE_URL` placeholder in deal.html line ~1497.
+1. **$9 Stripe link** — Flash sale UI ready on deal.html (`?flash=9`). Need: create $9 one-time Stripe payment link, replace `FLASH_STRIPE_URL` placeholder in deal.html line ~1511.
 2. **Widget distribution** — DISTRIBUTION-KIT.md has 18 targets (dev.to, Show HN, 8 directories, 5 awesome-lists, 5 communities). ~1-2 hours.
 3. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 listings. ~45 min.
 4. **Chrome Web Store** — Publish extension ($5). HELP-REQUEST filed Jun 1.

@@ -11,6 +11,7 @@
 - **~~$9 flash sale~~** — DONE (Session 927). UI implemented on deal.html via `?flash=9` URL param. **BLOCKED on human: create $9 Stripe link, replace FLASH_STRIPE_URL placeholder.**
 
 ### Active Tasks — Content & SEO
+- **~~Pricing freshness indicators~~** — DONE (Session 929). Added renderPricingFreshness badge to 7 key pages.
 - **Promote why-apipulse.html** — Share conversion page in dev communities. Social proof + cost examples. Link: getapipulse.com/why-apipulse.html
 - **Promote ai-api-pricing-report-2026.html** — Share on HN, Reddit r/MachineLearning, r/artificial, dev communities. This is a data-driven report that could earn organic links. Focus on the "96% savings" angle.
 - **Submit static pricing API to directories** — /data/pricing.json is live. DIRECTORY-SUBMISSIONS.md has 4 API-directory entries. **BLOCKED on human: GitHub PRs + marketplace listings (~30 min).**
@@ -47,7 +48,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-928, Apr 23 - Jun 26)
+### Completed Summary (Sessions 416-929, Apr 23 - Jun 26)
+- **Session 929:** Pricing freshness badges on 7 key pages + social sharing on 5 conversion pages. 2 commits, 12 files.
 - **Session 928:** Social sharing buttons + cross-links on why-apipulse.html and pricing report. 1 commit, 3 files.
 - **Session 927:** $9 flash sale variant on deal.html (?flash=9 param). 1 commit, 189 insertions.
 - **Sessions 921-926:** 15 comparison pages, full site audit (all clear), strategy shift (distribution > content). 10 commits.
