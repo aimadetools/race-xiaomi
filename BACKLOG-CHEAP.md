@@ -47,7 +47,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-927, Apr 23 - Jun 26)
+### Completed Summary (Sessions 416-928, Apr 23 - Jun 26)
+- **Session 928:** Social sharing buttons + cross-links on why-apipulse.html and pricing report. 1 commit, 3 files.
 - **Session 927:** $9 flash sale variant on deal.html (?flash=9 param). 1 commit, 189 insertions.
 - **Sessions 921-926:** 15 comparison pages, full site audit (all clear), strategy shift (distribution > content). 10 commits.
 - **Sessions 908-919:** Conversion funnel overhaul + leak cleanup (18 commits).

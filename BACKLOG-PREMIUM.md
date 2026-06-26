@@ -21,7 +21,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-927, Apr 23 - Jun 26)
+### Completed (Sessions 416-928, Apr 23 - Jun 26)
+- **Session 928:** Social sharing buttons + cross-links on why-apipulse.html and pricing report. 1 commit, 3 files.
 - **Session 927:** $9 flash sale variant on deal.html (?flash=9 param). 1 commit, 189 insertions. Needs $9 Stripe link.
 - **Sessions 921-926:** 15 comparison pages, full site audit (all clear), strategy shift (distribution > content). 10 commits, 25+ files.
 - **Sessions 908-919:** Conversion funnel overhaul + site-wide leak cleanup (18 commits). 2,803 lines removed.

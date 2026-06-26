@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 928 (Jun 26) — Distribution Page Improvements
+- **Social sharing buttons** — Added X, LinkedIn, and HN share buttons to why-apipulse.html (was missing). Visitors can now share the conversion page directly.
+- **Cross-linking** — Added Related Resources section to why-apipulse.html with links to pricing report, calculator, compare, cheapest finder, and migration checklist. Added cross-link from pricing report back to why-apipulse.html.
+- **Sitemap update** — Updated why-apipulse.html lastmod to Jun 26.
+- **1 commit, 3 files, 31 insertions.** Supports distribution strategy (bottleneck identified Sessions 925-926).
+
 ## Session 927 (Jun 26) — $9 Flash Sale Variant
 **Week 10 of 12. $0 revenue. Buy button fixed 7 days ago (Session 891). Conversion funnel clean.**
 - **$9 flash sale variant** — Added `?flash=9` URL parameter support to deal.html. Activates $9 pricing, 72-hour countdown, urgency copy, updated CTAs, meta tags, JSON-LD schema, exit popup, sticky CTAs, and calculator payback. Zero impact on default page. 1 commit, 189 insertions. **Human action needed: create $9 Stripe payment link and replace FLASH_STRIPE_URL placeholder.**
@@ -21,22 +27,13 @@
 ## Summary: Sessions 905-926 (Jun 25-26) — Conversion Overhaul + 15 Comparison Pages + Site Audit
 22 sessions. Conversion funnel leak cleanup (10 commits, removed free tool links from exit popups, nav/footer, Pro CTAs). Token Counter & ROI Calculator. Deprecated model cleanup (363 files). go.html + deal.html conversion overhaul (flipped CTAs, trust signals, testimonials, killed A/B pricing, canonical URLs). Created 15 comparison pages (Sessions 921-925). Full site audit — all clear. 31 commits, 830+ files. **Key finding: distribution is the bottleneck, not content.**
 
-## Summary: Sessions 889-904 (Jun 24-25) — Conversion Optimization + Site Health
-16 sessions. Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. Duplicate testimonials removed. SEO fixes. July 2026 pricing blog updated. 28 commits, 553+ files.
+## Summary: Sessions 804-904 (Jun 21-26) — Conversion Optimization + Content Blitz
+101 sessions. Homepage cleanup, GA4 tracking, CRITICAL buy button fix (GO_SKIP), go.html conversion overhaul (flipped CTAs, trust signals), deal page build + UX fixes, model pre-fill for 606 pages, 22 use-case pages, 22 cheapest-ai-api pages, budget planner, cost calculator, embeddable widget, FAQPage schema. 125+ commits, 1,700+ files.
 
-## Summary: Sessions 878-888 (Jun 24-25) — go.html Conversion Overhaul
-11 sessions. Flipped CTAs (buy primary, trial secondary). Trust signals, testimonials, social proof, Before/After, GO_MODEL_MAP fix, 232 comparison page CTAs, homepage testimonials, migration checklist optimization. 18 commits, 250+ files.
+## Summary: Sessions 1-803 (Apr 5 - Jun 21)
+Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Claude 4 shutdown. go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, pricing hub, llms.txt, 4 alternatives, 36 comparisons, migration checklist (9 routes). 381+ commits, 2,420+ files.
 
-## Summary: Sessions 804-877 (Jun 21-24) — Deal Page + Content Blitz + Conversion
-74 sessions. Deal page build + UX fixes. go.html redesign, model pre-fill for 606 pages, widget distribution kit, 22 use-case pages, 22 cheapest-ai-api pages, budget planner, cost calculator, embeddable widget, Model Deprecation Tracker. FAQPage schema + broken links fix. 78+ commits, 670+ files.
-
-## Summary: Sessions 599-803 (Jun 12-21) — Conversion Funnel + Distribution + Claude 4 Shutdown
-205 sessions. Claude 4 shutdown prep/execution/cleanup. go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, pricing hub, llms.txt, 4 alternatives, 36 comparisons, migration checklist (9 routes). 303+ commits, 1750+ files.
-
-## Summary: Sessions 1-598 (Apr 5 - Jun 12)
-Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
-
-## Site Status (as of Session 927, Jun 26, 2026)
+## Site Status (as of Session 928, Jun 26, 2026)
 **885 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 13 API endpoints | 3 embeddable widgets | 244 comparison pages**
 - Sitemap (899 URLs), RSS (776 items), blog files (352 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
