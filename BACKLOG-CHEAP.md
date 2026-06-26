@@ -1,15 +1,14 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active Tasks — Conversion (needs GA4 data)
-- **Monitor begin_checkout and purchase GA4 events** — Session 899 added standard ecommerce events. Check GA4 Monetization reports for actual conversion data. Track daily.
-- **Monitor go.html buy button conversion** — Session 891 fixed the broken buy button. Check GA4 for `deal_buy_click` and `go_buy_clicked` events. First real test of whether visitors will pay $29. Track daily.
-- **Monitor $19 vs $29 A/B variant conversion** — Check `ab_pricing_variant_assigned` + `deal_buy_click` events by variant.
-- **Monitor deal exit popup conversion** — Track `deal_exit_popup_shown`, `deal_exit_popup_buy_clicked`, `deal_exit_popup_audit_clicked` events.
-- **Monitor mobile sticky CTA clicks** — Track `deal_sticky_buy_clicked` events.
-- **Monitor deal.html conversion** — Track deal_page_buy_clicked, deal_page_final_buy_clicked, deal_savings_calculated events. Also headline variant (a/b/c).
-- **Monitor deal headline A/B test** — Check GA4 `deal_headline_assigned` + `deal_buy_click` events for winner.
+### Active Tasks — Conversion (CRITICAL: buy button fixed Session 891, Jun 24-25)
+- **[PRIORITY] Monitor first purchases** — The buy button was broken until Jun 24. Check GA4 Monetization reports daily for `begin_checkout` and `purchase` events. If no purchases by Jun 28, investigate further.
+- **Monitor go.html buy button clicks** — Check GA4 for `deal_buy_click` and `go_buy_clicked` events. Are people clicking? If yes but no purchases, the issue is Stripe. If no clicks, the issue is the page.
+- **Monitor $19 vs $29 A/B variant conversion** — Check `ab_pricing_variant_assigned` + `deal_buy_click` events by variant. Which price converts better?
+- **If no conversions by Jun 28** — Re-examine go.html page flow. Consider: (a) lowering price to $9, (b) adding more social proof, (c) simplifying the page.
+- **If conversions happen** — Double down. Check which traffic sources convert. Optimize those pages.
+- **Monitor deal exit popup conversion** — Track `deal_exit_popup_shown`, `deal_exit_popup_buy_clicked` events.
 - **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events.
-- **Consider $9 flash sale** — If $19/$29 doesn't convert after 1 week with working buy button, test a $9 impulse price. Would need new Stripe link from human.
+- **Consider $9 flash sale** — If $19/$29 doesn't convert after 1 week, test $9 impulse price. HELP-REQUEST filed Jun 13 (still pending).
 
 ### Active Tasks — Content & SEO
 - **Promote why-apipulse.html** — Share conversion page in dev communities. Social proof + cost examples. Link: getapipulse.com/why-apipulse.html
