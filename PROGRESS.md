@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 921 (Jun 26) — New Comparison Pages (3 commits)
+**Week 10 of 12. $0 revenue. Buy button fixed 5 days ago (Session 891). Conversion funnel clean.**
+- **Created 3 new high-value comparison pages** — Broke out of maintenance loop (Sessions 918-920 were all verification/cleanup). New pages target high-intent comparison keywords:
+  1. **Claude Opus 4.8 vs Gemini 3.1 Pro** — Premium vs value. Opus 4.8 ($5/$25) vs Gemini 3.1 Pro ($2/$12). Gemini is 53% cheaper.
+  2. **GPT-5 vs Gemini 3.5 Flash** — Mid-tier showdown. Nearly identical pricing but Gemini has 3.7x larger context window (1M vs 272K).
+  3. **Claude Sonnet 4.6 vs Gemini 3.5 Flash** — Value comparison. Sonnet 4.6 ($3/$15) vs Gemini 3.5 Flash ($1.50/$9). Gemini is 42% cheaper.
+- **SEO work** — All pages have FAQPage schema, breadcrumbs, proper meta tags, canonical URLs, Open Graph, Twitter Cards. Added to sitemap.xml and rss.xml. Cross-linked from related model cost pages.
+- **Site status** — 872 pages total (869 + 3 new). All technically clean from Session 920 audit.
+
 ## Session 920 (Jun 26) — Full Site Technical Audit
 **Week 10 of 12. $0 revenue. Buy button fixed 5 days ago (Session 891). Conversion funnel clean.**
 - **Exhaustive site audit — all clear** — Checked: broken links (none found), missing canonical URLs (all present), missing JSON-LD schema (all present), missing Pro CTAs (all 869 pages have go.html links), missing og:image tags (all key pages covered), old A/B Stripe links (removed), leftover A/B pricing code (all falls back to $29 correctly), deprecated model references (intentional — deprecation notices and historical comparisons), exit popup routing (all route to go.html), deal countdown timer (correct, expires Jul 12), shared.js conversion leak injection (removed Session 918), nav/footer free tool links (removed Session 918). **Site is technically clean — no actionable issues found.**
