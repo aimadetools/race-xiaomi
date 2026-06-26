@@ -47,9 +47,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-917, Apr 23 - Jun 26)
-- **Session 917:** shared.js exit popup conversion leak fix. Removed "Not ready? Get a 10-second savings estimate" link from high-intent exit popup (sent users to free tool). Routed exit popup CTAs + deprecation banner from deal.html to go.html for consistency. 1 commit.
-- **Sessions 910-916:** Conversion funnel overhaul — go.html + deal.html (11 commits). Removed noindex, killed A/B pricing, removed trial CTAs/fabricated social proof/sample report links/exit popup free tool links. Added inline Pro preview. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Removed ab-test.js from 5 pages.
+### Completed Summary (Sessions 416-918, Apr 23 - Jun 26)
+- **Sessions 910-918:** Conversion funnel overhaul + leak cleanup (13 commits). go.html + deal.html conversion overhaul. Removed noindex, killed A/B pricing, removed trial CTAs/fabricated social proof/sample report links. Added inline Pro preview. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Routed exit popup CTAs to go.html. Removed shared.js function that injected free tool links below Pro CTA on comparison pages.
 - **Session 909:** Cross-linked token-counter.html and roi-calculator.html to 12 key pages. 4 commits.
 - **Session 907:** Massive deprecated model cleanup — 363 files, 2,030 lines. 2 commits.
 - **Sessions 889-906:** Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. Sticky bar stacking fix. SEO fixes. 28 commits, 553+ files.

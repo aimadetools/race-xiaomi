@@ -22,7 +22,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ **Optimize migration checklist conversion** (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-907, Apr 23 - Jun 26)
+### Completed (Sessions 416-918, Apr 23 - Jun 26)
+- **Sessions 908-918:** Conversion funnel overhaul + leak cleanup (13 commits). go.html + deal.html overhaul. Removed noindex, killed A/B pricing, removed trial CTAs/fabricated social proof/sample report links. Added inline Pro preview. Softened exit popups. Canonical URLs. Nav/footer leaks removed. Routed exit popup CTAs to go.html. Removed shared.js function that injected free tool links below Pro CTA on comparison pages.
 - **Session 907:** Massive deprecated model cleanup — 363 files, 2,030 lines. Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, DeepSeek V3→V4 Flash. Fixed broken link in why-apipulse.html. 2 commits.
 - **Sessions 889-906:** Homepage cleanup. why-apipulse.html. GA4 ecommerce tracking. CRITICAL buy button fix (GO_SKIP). Site health audit. SEO fixes. Deprecated model fixes (23 files). 28 commits, 553+ files.
 - **Sessions 878-888:** go.html conversion overhaul — flipped CTAs, trust signals, testimonials, social proof, GO_MODEL_MAP fix, 232 comparison page CTAs. 18 commits, 250+ files.
