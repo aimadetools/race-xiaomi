@@ -2,7 +2,7 @@
 
 > Know your AI API costs before you commit.
 
-Compare LLM API pricing across 42 models from 10 providers. Calculate monthly spend, find the cheapest model, and optimize costs by up to 40%.
+Compare LLM API pricing across 48 models from 10 providers. Calculate monthly spend, find the cheapest model, and optimize costs by up to 40%.
 
 ## Live Site
 
@@ -12,7 +12,7 @@ Compare LLM API pricing across 42 models from 10 providers. Calculate monthly sp
 
 APIpulse helps developers make smart decisions about AI API costs:
 
-- **Compare pricing** across 42 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, and AI21
+- **Compare pricing** across 48 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, and AI21
 - **Calculate costs** based on your specific usage patterns (input/output tokens, requests/day)
 - **Find savings** by identifying the cheapest provider for your workload
 - **Track deprecations** — Claude 4 retired June 15, 2026 with migration guides and alternatives
@@ -41,10 +41,10 @@ APIpulse helps developers make smart decisions about AI API costs:
 - **LLM Pricing Trends 2026** — historical price drops, new models, deprecations
 - **Claude 4 Deprecation Guide** — 39 alternatives, migration code, savings calculator
 - **Cheapest LLM API Finder** — find the lowest-cost model for any use case
-- **API Pricing Index** — sortable table of all 42 models with live pricing data
+- **API Pricing Index** — sortable table of all 48 models with live pricing data
 
 ### API Endpoints (no auth required)
-- `GET /api/pricing` — full pricing data for 42 models
+- `GET /api/pricing` — full pricing data for 48 models
 - `GET /api/calculate` — single-model cost estimation
 - `GET /api/calculate-multi` — multi-model cost comparison
 - `GET /api/cheapest` — find cheapest model for a workload
@@ -103,7 +103,7 @@ APIpulse helps developers make smart decisions about AI API costs:
 │   ├── cheapest.js
 │   ├── recommend.js
 │   └── ...
-├── pricing-data.js         # Centralized pricing data (42 models)
+├── pricing-data.js         # Centralized pricing data (48 models)
 ├── shared.js               # Shared JS (nav, theme, analytics)
 ├── styles.css              # Global stylesheet
 ├── widget.js               # Embeddable pricing widget

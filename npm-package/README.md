@@ -1,6 +1,6 @@
 # apipulse
 
-LLM API pricing data from [APIpulse](https://getapipulse.com). Compare costs across **42 models** from **10 providers**.
+LLM API pricing data from [APIpulse](https://getapipulse.com). Compare costs across **48 models** from **10 providers**.
 
 ## Quick Start
 
@@ -77,7 +77,7 @@ const comparison = await compare({
 This package wraps the [APIpulse API](https://getapipulse.com/api-docs.html). No API key required.
 
 ### `getPricing()`
-Returns all 42 models with pricing data.
+Returns all 48 models with pricing data.
 
 ### `getCheapest({ inputTokens, outputTokens, requestsPerDay })`
 Returns models ranked by monthly cost for your workload.

@@ -1,6 +1,6 @@
 // APIpulse Chrome Extension — Embedded Pricing Data
 // Synced with pricing-data.js from getapipulse.com
-// Last verified: Jun 24, 2026
+// Last verified: Jun 27, 2026
 
 const MODELS = [
   // OpenAI
@@ -13,6 +13,10 @@ const MODELS = [
   { name: 'GPT-oss 20B', provider: 'OpenAI', tier: 'Budget', input: 0.08, output: 0.35, context: '128K' },
   { name: 'GPT-4o', provider: 'OpenAI', tier: 'Mid', input: 2.50, output: 10.00, context: '128K' },
   { name: 'GPT-4o mini', provider: 'OpenAI', tier: 'Budget', input: 0.15, output: 0.60, context: '128K' },
+  { name: 'GPT-5.4', provider: 'OpenAI', tier: 'Mid', input: 2.50, output: 15.00, context: '400K' },
+  { name: 'GPT-5.4 mini', provider: 'OpenAI', tier: 'Budget', input: 0.75, output: 4.50, context: '400K' },
+  { name: 'GPT-5.4 nano', provider: 'OpenAI', tier: 'Budget', input: 0.20, output: 1.25, context: '400K' },
+  { name: 'GPT-5.4 Pro', provider: 'OpenAI', tier: 'Premium', input: 30.00, output: 180.00, context: '400K' },
   // Anthropic
   { name: 'Claude Opus 4.8', provider: 'Anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M' },
   { name: 'Claude Opus 4.7', provider: 'Anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M' },
@@ -20,6 +24,8 @@ const MODELS = [
   { name: 'Claude Sonnet 4.6', provider: 'Anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M' },
   { name: 'Claude Sonnet 4', provider: 'Anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', deprecated: true },
   { name: 'Claude Haiku 4.5', provider: 'Anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K' },
+  { name: 'Claude Fable 5', provider: 'Anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M' },
+  { name: 'Claude Mythos 5', provider: 'Anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M' },
   // Google
   { name: 'Gemini 3.5 Flash', provider: 'Google', tier: 'Mid', input: 1.50, output: 9.00, context: '1M' },
   { name: 'Gemini 3.1 Flash-Lite', provider: 'Google', tier: 'Budget', input: 0.25, output: 1.50, context: '1M' },
