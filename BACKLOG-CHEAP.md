@@ -36,8 +36,10 @@
 - ~~Widget pages SEO~~ — DONE (Session 943). OG tags, share buttons, related tools.
 - ~~Broken link fixes~~ — DONE (Session 943). All comparison links verified.
 - ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
+- ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
-### Completed Summary (Sessions 416-945, Apr 23 - Jun 28)
+### Completed Summary (Sessions 416-946, Apr 23 - Jun 28)
+- **Session 946 (Jun 28):** SEO duplicate cleanup — 7 duplicate comparison pages fixed (canonical+noindex), orphan page resolved, sitemap cleaned (8 empty + 21 dupe entries removed), RSS XML validated (22 unescaped & chars), 2 duplicate page titles fixed, 23 internal links updated. 4 commits, 29 files.
 - **Session 945 (Jun 28):** Documentation cleanup — rewrote PROGRESS.md, FINAL-2-WEEKS.md, BACKLOG-CHEAP.md, BACKLOG-PREMIUM.md. 1 commit, 4 files.
 - **Sessions 941-944 (Jun 27):** OG/Twitter tags (100%), widget page SEO, broken link fix, deprecation checker (45+ links), Chrome extension (42 models), npm package update, API docs corrected. 9 commits, 38 files.
 - **Sessions 927-940 (Jun 26-27):** MCP server (5 tools, rate limiting, live demo, 6 client setups, blog post) + MCP cross-linked from 688+ pages + pricing freshness badges + social sharing + $9 flash sale variant + deprecation checker page + data consistency fixes. 35+ commits, 750+ files.
