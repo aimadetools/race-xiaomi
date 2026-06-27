@@ -324,7 +324,7 @@
                 <code><span class="code-comment">// JavaScript</span>
 <span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/pricing'</span>);
 <span class="code-key">const</span> { models, meta } = <span class="code-key">await</span> res.json();
-console.log(meta.count); <span class="code-comment">// 34</span>
+console.log(meta.count); <span class="code-comment">// 42</span>
 console.log(models[<span class="code-number">0</span>].name); <span class="code-comment">// "GPT-5.5"</span></code>
             </div>
 
@@ -369,7 +369,7 @@ console.log(data.costs.monthly); <span class="code-comment">// e.g. $4875.00</sp
                 <code><span class="code-comment"># Python — compare 3 models for your workload</span>
 <span class="code-key">import</span> requests
 r = requests.get(<span class="code-string">"https://getapipulse.com/api/calculate"</span>, params={
-    <span class="code-string">"models"</span>: <span class="code-string">"openai-gpt5,anthropic-sonnet,deepseek-v4-pro"</span>,
+    <span class="code-string">"models"</span>: <span class="code-string">"openai-gpt5,anthropic-sonnet46,deepseek-v4-pro"</span>,
     <span class="code-string">"requests"</span>: <span class="code-number">5000</span>,
     <span class="code-string">"input_tokens"</span>: <span class="code-number">3000</span>,
     <span class="code-string">"output_tokens"</span>: <span class="code-number">800</span>
@@ -423,7 +423,7 @@ recommendations.forEach(m => {
 
 <span class="code-comment">&lt;!-- Or a side-by-side comparison --&gt;</span>
 &lt;div class="apipulse-widget" data-type="compare"
-     data-models="openai-gpt5,anthropic-sonnet,google-pro"&gt;&lt;/div&gt;</code>
+     data-models="openai-gpt5,anthropic-sonnet46,google-pro"&gt;&lt;/div&gt;</code>
             </div>
 
             <h3>Add a pricing badge to your README</h3>
@@ -432,8 +432,8 @@ recommendations.forEach(m => {
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment">## Markdown — add to any README</span>
 [![GPT-5 Pricing](https://getapipulse.com/api/badge?model=openai-gpt5)](https://getapipulse.com)
-[![Claude Sonnet](https://getapipulse.com/api/badge?model=anthropic-sonnet)](https://getapipulse.com)
-[![Gemini Flash](https://getapipulse.com/api/badge?model=google-flash)](https://getapipulse.com)
+[![Claude Sonnet](https://getapipulse.com/api/badge?model=anthropic-sonnet46)](https://getapipulse.com)
+[![Gemini Flash](https://getapipulse.com/api/badge?model=google-gemini3-flash)](https://getapipulse.com)
 
 <span class="code-comment">## HTML — for docs and blogs</span>
 &lt;a href="https://getapipulse.com"&gt;
@@ -447,8 +447,8 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
             <div style="margin:16px 0;padding:16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
                 <p style="font-size:14px;font-weight:600;margin-bottom:8px;">Live Preview:</p>
                 <img src="/api/badge?model=openai-gpt5" alt="GPT-5 Pricing Badge" style="margin-right:8px;">
-                <img src="/api/badge?model=anthropic-sonnet" alt="Claude Sonnet Pricing Badge" style="margin-right:8px;">
-                <img src="/api/badge?model=google-flash" alt="Gemini Flash Pricing Badge" style="margin-right:8px;">
+                <img src="/api/badge?model=anthropic-sonnet46" alt="Claude Sonnet Pricing Badge" style="margin-right:8px;">
+                <img src="/api/badge?model=google-gemini3-flash" alt="Gemini Flash Pricing Badge" style="margin-right:8px;">
                 <img src="/api/badge?model=deepseek-v4-pro" alt="DeepSeek V4 Pro Pricing Badge">
             </div>
         </div>
@@ -483,10 +483,10 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
                 <code>{
   <span class="code-key">"models"</span>: [ ... ],
   <span class="code-key">"meta"</span>: {
-    <span class="code-key">"count"</span>: <span class="code-number">34</span>,
+    <span class="code-key">"count"</span>: <span class="code-number">42</span>,
     <span class="code-key">"providers"</span>: [<span class="code-string">"OpenAI"</span>, <span class="code-string">"Anthropic"</span>, ...],
     <span class="code-key">"tiers"</span>: [<span class="code-string">"Budget"</span>, <span class="code-string">"Mid"</span>, <span class="code-string">"Premium"</span>],
-    <span class="code-key">"lastUpdated"</span>: <span class="code-string">"2026-06-02"</span>,
+    <span class="code-key">"lastUpdated"</span>: <span class="code-string">"2026-06-24"</span>,
     <span class="code-key">"source"</span>: <span class="code-string">"https://getapipulse.com"</span>,
     <span class="code-key">"docs"</span>: <span class="code-string">"https://getapipulse.com/pricing-index.html"</span>
   }
@@ -520,16 +520,16 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
                     <tr><th>Slug</th><th>Provider</th><th>Models</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><code>openai</code></td><td>OpenAI</td><td>10 models (GPT-5.5, GPT-5, GPT-4o, GPT-oss, etc.)</td></tr>
+                    <tr><td><code>openai</code></td><td>OpenAI</td><td>9 models (GPT-5.5, GPT-5, GPT-4o, GPT-oss, etc.)</td></tr>
                     <tr><td><code>anthropic</code></td><td>Anthropic</td><td>6 models (Claude Opus 4.8, Opus 4.7, Sonnet 4.6, Haiku 4.5, etc.)</td></tr>
-                    <tr><td><code>google</code></td><td>Google</td><td>3 models (Gemini 3.1 Pro, 2.5 Pro, 2.0 Flash)</td></tr>
-                    <tr><td><code>deepseek</code></td><td>DeepSeek</td><td>3 models (V4 Pro, V4 Flash, V3)</td></tr>
-                    <tr><td><code>mistral</code></td><td>Mistral</td><td>2 models (Large, Small)</td></tr>
-                    <tr><td><code>cohere</code></td><td>Cohere</td><td>2 models (Command R+, Command R)</td></tr>
+                    <tr><td><code>google</code></td><td>Google</td><td>8 models (Gemini 3.5 Flash, 3.1 Pro, 3 Flash, 2.5 Pro, etc.)</td></tr>
+                    <tr><td><code>deepseek</code></td><td>DeepSeek</td><td>4 models (V4 Pro, V4 Flash, V3.2, V3)</td></tr>
+                    <tr><td><code>mistral</code></td><td>Mistral</td><td>3 models (Large 3, Medium 3.5, Small 4)</td></tr>
+                    <tr><td><code>cohere</code></td><td>Cohere</td><td>3 models (Command A, Command R+, Command R)</td></tr>
                     <tr><td><code>together</code></td><td>Meta (Together.ai)</td><td>4 models (Llama 4 Scout/Maverick, Llama 3.1 70B/8B)</td></tr>
                     <tr><td><code>moonshot</code></td><td>Moonshot</td><td>1 model (Kimi K2.6)</td></tr>
                     <tr><td><code>xai</code></td><td>xAI</td><td>2 models (Grok 4.3, Grok Build 0.1)</td></tr>
-                    <tr><td><code>ai21</code></td><td>AI21</td><td>1 model (Jamba 1.5 Large)</td></tr>
+                    <tr><td><code>ai21</code></td><td>AI21</td><td>2 models (Jamba 1.7 Large, Jamba 1.5 Large)</td></tr>
                 </tbody>
             </table>
         </div>
@@ -575,7 +575,7 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
                     <option value="openai-gpt4o-mini">GPT-4o mini</option>
                     <option value="anthropic-sonnet46">Claude Sonnet 4.6</option>
                     <option value="anthropic-haiku">Claude Haiku 4.5</option>
-                    <option value="google-flash">Gemini 2.5 Flash</option>
+                    <option value="google-gemini3-flash">Gemini 3 Flash</option>
                     <option value="deepseek-v4-pro">DeepSeek V4 Pro</option>
                     <option value="deepseek-v4-flash">DeepSeek V4 Flash</option>
                     <option value="mistral-large">Mistral Large 3</option>
@@ -632,7 +632,7 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
                     <option value="openai-gpt4o-mini">GPT-4o mini</option>
                     <option value="anthropic-sonnet46">Claude Sonnet 4.6</option>
                     <option value="anthropic-haiku">Claude Haiku 4.5</option>
-                    <option value="google-flash">Gemini 2.5 Flash</option>
+                    <option value="google-gemini3-flash">Gemini 3 Flash</option>
                     <option value="deepseek-v4-pro">DeepSeek V4 Pro</option>
                     <option value="deepseek-v4-flash">DeepSeek V4 Flash</option>
                     <option value="mistral-large">Mistral Large 3</option>
@@ -689,7 +689,7 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
 &lt;div class="apipulse-widget" data-type="badge" data-model="openai-gpt4o-mini"&gt;&lt;/div&gt;
 
 <span class="code-comment">&lt;!-- Side-by-side comparison --&gt;</span>
-&lt;div class="apipulse-widget" data-type="compare" data-models="openai-gpt5,anthropic-sonnet,google-pro"&gt;&lt;/div&gt;</code>
+&lt;div class="apipulse-widget" data-type="compare" data-models="openai-gpt5,anthropic-sonnet46,google-pro"&gt;&lt;/div&gt;</code>
             </div>
             <p style="margin-top:8px;font-size:14px;">See <a href="embed.html" style="color:var(--accent);">full widget documentation</a> for all options, themes, and live previews.</p>
         </div>
