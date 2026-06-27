@@ -21,7 +21,9 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-937, Apr 23 - Jun 27)
+### Completed (Sessions 416-940, Apr 23 - Jun 27)
+- **Session 940:** Massive MCP cross-link expansion — added MCP server link to 631 new pages (26 alternatives, 65 blog-vs, 43 blog-cost, 184 blog pages, 90 + 217 Related Tools pages, 3 high-value pages). MCP now linked from 688/886 pages (77.6%). Server verified working. 7 commits, 634 files.
+- **Session 939:** MCP cross-links on 50 high-traffic SEO pages. 1 commit, 50 files.
 - **Session 937:** MCP landing page conversion optimization — sticky quick-start install bar, clickable example queries (5 pre-built), contextual Pro upsell after demo, Claude Desktop setup instructions, SEO meta updated. 3 commits, 1 file.
 - **Session 936:** MCP client expansion — added Cline (VS Code), Continue (VS Code/JetBrains) setup instructions. Live interactive demo on mcp.html (visitors can try all 5 tools in-browser). Updated SEO meta/keywords. 1 commit, 1 file.
 - **Session 935:** MCP landing page optimization — FAQPage schema (6 Q&As), pricing freshness badge, social sharing (X/LinkedIn/HN), Related Resources (5 cross-links). Added MCP cross-links to 4 high-traffic tool pages (cheapest-finder, compare, calculator, comparison). 2 commits, 5 files.
