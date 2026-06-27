@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Advisor — Find the Best LLM for Your Use Case & Budget | APIpulse</title>
+    <meta name="description" content="Answer 4 quick questions and get a personalized AI model recommendation with cost estimates. Compare 42 models across 10 providers instantly.">
+    <meta name="keywords" content="AI API advisor, best LLM for my use case, AI model recommender, cheapest AI API, which AI model should I use, LLM cost calculator">
+    <meta property="og:title" content="AI API Advisor — Find the Best LLM for Your Use Case & Budget">
+    <meta property="og:description" content="Answer 4 quick questions. Get a personalized AI model recommendation with cost estimates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/ai-api-advisor.html">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Advisor — Find the Best LLM for Your Use Case & Budget">
+    <meta name="twitter:description" content="Answer 4 quick questions. Get a personalized AI model recommendation with cost estimates.">
+    <link rel="canonical" href="https://getapipulse.com/ai-api-advisor.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Advisor",
+        "url": "https://getapipulse.com/ai-api-advisor.html",
+        "description": "Answer 4 quick questions and get a personalized AI model recommendation with cost estimates across 42 models.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How does the AI API Advisor pick the best model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Advisor matches your use case, budget, volume, and priority against 42 real models with live pricing data. It scores each model on cost, capability, and context window fit, then ranks them by your stated priority (cost savings, quality, speed, or balanced)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI providers does the Advisor cover?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "42 models across 10 providers: OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, and AI21. Pricing is updated regularly from published rate cards."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the AI API Advisor free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, the basic recommendation is free. For detailed cost reports, scenario comparison, and optimization recommendations, upgrade to APIpulse Pro ($29 one-time, lifetime access)."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .advisor-container { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        .advisor-hero { text-align: center; margin-bottom: 2.5rem; }
+        .advisor-hero h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #0f172a; }
+        .advisor-hero .subtitle { color: #64748b; font-size: 1.1rem; }
+        .step-indicator { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; }
+        .step-dot { width: 10px; height: 10px; border-radius: 50%; background: #e2e8f0; transition: all 0.3s; }
+        .step-dot.active { background: #3b82f6; transform: scale(1.2); }
+        .step-dot.done { background: #22c55e; }
+        .question-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; display: none; }
+        .question-card.visible { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .question-card h2 { font-size: 1.25rem; margin-bottom: 0.25rem; color: #0f172a; }
+        .question-card .q-hint { color: #94a3b8; font-size: 0.85rem; margin-bottom: 1rem; }
+        .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+        .option-btn { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 10px; padding: 1rem; cursor: pointer; text-align: left; transition: all 0.2s; }
+        .option-btn:hover { border-color: #3b82f6; background: #eff6ff; }
+        .option-btn.selected { border-color: #3b82f6; background: #eff6ff; }
+        .option-btn .opt-icon { font-size: 1.5rem; margin-bottom: 0.25rem; }
+        .option-btn .opt-label { font-weight: 600; color: #0f172a; font-size: 0.95rem; }
+        .option-btn .opt-desc { color: #64748b; font-size: 0.8rem; margin-top: 0.15rem; }
+        .slider-group { margin-top: 0.5rem; }
+        .slider-group input[type="range"] { width: 100%; accent-color: #3b82f6; }
+        .slider-labels { display: flex; justify-content: space-between; color: #94a3b8; font-size: 0.8rem; }
+        .slider-value { text-align: center; font-size: 1.5rem; font-weight: 700; color: #3b82f6; margin: 0.5rem 0; }
+        .btn-row { display: flex; justify-content: space-between; margin-top: 1rem; }
+        .btn-back { background: none; border: 1px solid #cbd5e1; color: #64748b; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; }
+        .btn-back:hover { background: #f1f5f9; }
+        .btn-next { background: #3b82f6; color: #fff; border: none; padding: 0.6rem 1.5rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; font-weight: 600; }
+        .btn-next:hover { background: #2563eb; }
+        .btn-next:disabled { background: #cbd5e1; cursor: not-allowed; }
+        /* Results */
+        .results-section { display: none; animation: fadeIn 0.4s ease; }
+        .results-section.visible { display: block; }
+        .result-header { text-align: center; margin-bottom: 1.5rem; }
+        .result-header h2 { color: #0f172a; font-size: 1.5rem; }
+        .result-header .result-subtitle { color: #64748b; }
+        .top-pick { background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%); border: 2px solid #3b82f6; border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem; position: relative; }
+        .top-pick-badge { position: absolute; top: -12px; left: 1.5rem; background: #3b82f6; color: #fff; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+        .top-pick-name { font-size: 1.4rem; font-weight: 700; color: #0f172a; }
+        .top-pick-provider { color: #64748b; font-size: 0.9rem; margin-bottom: 0.75rem; }
+        .top-pick-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+        .stat-box { background: rgba(255,255,255,0.7); border-radius: 8px; padding: 0.6rem; text-align: center; }
+        .stat-label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+        .stat-value { font-size: 1.1rem; font-weight: 700; color: #0f172a; }
+        .stat-value.green { color: #16a34a; }
+        .alternatives { margin-top: 1.5rem; }
+        .alternatives h3 { font-size: 1.1rem; margin-bottom: 0.75rem; color: #0f172a; }
+        .alt-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .alt-card:hover { border-color: #93c5fd; }
+        .alt-name { font-weight: 600; color: #0f172a; }
+        .alt-provider { color: #94a3b8; font-size: 0.8rem; }
+        .alt-price { text-align: right; }
+        .alt-price .price-main { font-weight: 600; color: #0f172a; }
+        .alt-price .price-detail { color: #94a3b8; font-size: 0.75rem; }
+        .pro-upsell { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: #fff; border-radius: 12px; padding: 1.5rem; margin-top: 2rem; text-align: center; }
+        .pro-upsell h3 { color: #fff; margin-bottom: 0.5rem; }
+        .pro-upsell p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 1rem; }
+        .pro-upsell a { display: inline-block; background: #3b82f6; color: #fff; padding: 0.6rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .pro-upsell a:hover { background: #2563eb; }
+        .restart-btn { display: block; margin: 1.5rem auto 0; background: none; border: 1px solid #cbd5e1; color: #64748b; padding: 0.6rem 1.5rem; border-radius: 8px; cursor: pointer; }
+        .restart-btn:hover { background: #f1f5f9; }
+        .context-note { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 0.75rem 1rem; margin-top: 1rem; font-size: 0.85rem; color: #92400e; }
+        .savings-callout { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 0.75rem 1rem; margin-top: 1rem; text-align: center; }
+        .savings-callout .savings-number { font-size: 1.3rem; font-weight: 700; color: #16a34a; }
+        @media (max-width: 640px) {
+            .options-grid { grid-template-columns: 1fr; }
+            .top-pick-stats { grid-template-columns: 1fr; }
+            .advisor-hero h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">⚡ APIpulse</a>
+            <div class="nav-links">
+                <a href="/live-pricing.html">Live Pricing</a>
+                <a href="/ai-api-advisor.html" class="active">Advisor</a>
+                <a href="/mcp.html">MCP Server</a>
+                <a href="/deal.html" class="nav-cta">Get Pro — $29</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="advisor-container">
+        <div class="advisor-hero">
+            <h1>🎯 AI API Advisor</h1>
+            <p class="subtitle">Answer 4 quick questions. Get a personalized model recommendation with cost estimates.</p>
+        </div>
+
+        <div class="step-indicator" id="stepIndicator">
+            <div class="step-dot active" data-step="0"></div>
+            <div class="step-dot" data-step="1"></div>
+            <div class="step-dot" data-step="2"></div>
+            <div class="step-dot" data-step="3"></div>
+        </div>
+
+        <!-- Question 1: Use Case -->
+        <div class="question-card visible" id="q0">
+            <h2>What's your primary use case?</h2>
+            <p class="q-hint">This helps us match models by capability tier.</p>
+            <div class="options-grid">
+                <div class="option-btn" data-value="chat" onclick="selectOption(0, 'chat', this)">
+                    <div class="opt-icon">💬</div>
+                    <div class="opt-label">Chatbot / Assistant</div>
+                    <div class="opt-desc">Conversational AI, customer support</div>
+                </div>
+                <div class="option-btn" data-value="code" onclick="selectOption(0, 'code', this)">
+                    <div class="opt-icon">💻</div>
+                    <div class="opt-label">Code Generation</div>
+                    <div class="opt-desc">Copilot, code review, debugging</div>
+                </div>
+                <div class="option-btn" data-value="data" onclick="selectOption(0, 'data', this)">
+                    <div class="opt-icon">📊</div>
+                    <div class="opt-label">Data Processing</div>
+                    <div class="opt-desc">Extraction, classification, tagging</div>
+                </div>
+                <div class="option-btn" data-value="creative" onclick="selectOption(0, 'creative', this)">
+                    <div class="opt-icon">✨</div>
+                    <div class="opt-label">Creative / Writing</div>
+                    <div class="opt-desc">Content, marketing, summarization</div>
+                </div>
+                <div class="option-btn" data-value="reasoning" onclick="selectOption(0, 'reasoning', this)">
+                    <div class="opt-icon">🧠</div>
+                    <div class="opt-label">Complex Reasoning</div>
+                    <div class="opt-desc">Research, analysis, multi-step tasks</div>
+                </div>
+                <div class="option-btn" data-value="agent" onclick="selectOption(0, 'agent', this)">
+                    <div class="opt-icon">🤖</div>
+                    <div class="opt-label">AI Agent / Tool Use</div>
+                    <div class="opt-desc">Autonomous agents, function calling</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2: Budget -->
+        <div class="question-card" id="q1">
+            <h2>What's your monthly API budget?</h2>
+            <p class="q-hint">We'll filter models that fit your spending.</p>
+            <div class="slider-group">
+                <div class="slider-value" id="budgetDisplay">$100/mo</div>
+                <input type="range" id="budgetSlider" min="5" max="5000" value="100" step="5" oninput="updateBudget(this.value)">
+                <div class="slider-labels">
+                    <span>$5</span>
+                    <span>$5,000+</span>
+                </div>
+            </div>
+            <div class="btn-row">
+                <button class="btn-back" onclick="prevStep()">← Back</button>
+                <button class="btn-next" onclick="nextStep()">Next →</button>
+            </div>
+        </div>
+
+        <!-- Question 3: Volume -->
+        <div class="question-card" id="q2">
+            <h2>How many requests per day?</h2>
+            <p class="q-hint">Approximate volume helps estimate real costs.</p>
+            <div class="options-grid">
+                <div class="option-btn" data-value="100" onclick="selectOption(2, '100', this)">
+                    <div class="opt-icon">🔹</div>
+                    <div class="opt-label">Under 500</div>
+                    <div class="opt-desc">Prototyping, small team</div>
+                </div>
+                <div class="option-btn" data-value="1000" onclick="selectOption(2, '1000', this)">
+                    <div class="opt-icon">🔸</div>
+                    <div class="opt-label">500 – 5,000</div>
+                    <div class="opt-desc">Growing product, mid-size team</div>
+                </div>
+                <div class="option-btn" data-value="10000" onclick="selectOption(2, '10000', this)">
+                    <div class="opt-icon">🔶</div>
+                    <div class="opt-label">5,000 – 50,000</div>
+                    <div class="opt-desc">Production workload</div>
+                </div>
+                <div class="option-btn" data-value="100000" onclick="selectOption(2, '100000', this)">
+                    <div class="opt-icon">🔴</div>
+                    <div class="opt-label">50,000+</div>
+                    <div class="opt-desc">High-scale, enterprise</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4: Priority -->
+        <div class="question-card" id="q3">
+            <h2>What matters most to you?</h2>
+            <p class="q-hint">We'll rank recommendations by your top priority.</p>
+            <div class="options-grid">
+                <div class="option-btn" data-value="cost" onclick="selectOption(3, 'cost', this)">
+                    <div class="opt-icon">💰</div>
+                    <div class="opt-label">Lowest Cost</div>
+                    <div class="opt-desc">Maximize savings, minimize spend</div>
+                </div>
+                <div class="option-btn" data-value="quality" onclick="selectOption(3, 'quality', this)">
+                    <div class="opt-icon">⭐</div>
+                    <div class="opt-label">Best Quality</div>
+                    <div class="opt-desc">Top-tier reasoning, fewest errors</div>
+                </div>
+                <div class="option-btn" data-value="speed" onclick="selectOption(3, 'speed', this)">
+                    <div class="opt-icon">⚡</div>
+                    <div class="opt-label">Fastest Response</div>
+                    <div class="opt-desc">Low latency, high throughput</div>
+                </div>
+                <div class="option-btn" data-value="context" onclick="selectOption(3, 'context', this)">
+                    <div class="opt-icon">📐</div>
+                    <div class="opt-label">Largest Context</div>
+                    <div class="opt-desc">Long documents, big codebases</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results-section" id="results">
+            <div class="result-header">
+                <h2>🎯 Your Recommended Model</h2>
+                <p class="result-subtitle" id="resultSubtitle">Based on your preferences</p>
+            </div>
+
+            <div class="top-pick" id="topPick">
+                <div class="top-pick-badge">⭐ TOP PICK</div>
+                <div class="top-pick-name" id="topPickName">—</div>
+                <div class="top-pick-provider" id="topPickProvider">—</div>
+                <div class="top-pick-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Input</div>
+                        <div class="stat-value" id="topInput">—</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Output</div>
+                        <div class="stat-value" id="topOutput">—</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Est. Monthly</div>
+                        <div class="stat-value green" id="topMonthly">—</div>
+                    </div>
+                </div>
+                <div class="context-note" id="topContextNote" style="display:none"></div>
+                <div class="savings-callout" id="savingsCallout" style="display:none">
+                    <div class="savings-number" id="savingsText"></div>
+                </div>
+            </div>
+
+            <div class="alternatives">
+                <h3>Other strong options</h3>
+                <div id="altContainer"></div>
+            </div>
+
+            <div class="pro-upsell">
+                <h3>Want deeper analysis?</h3>
+                <p>APIpulse Pro gives you detailed cost reports, scenario comparison across 42 models, and personalized optimization recommendations that save up to 40% on your API bill.</p>
+                <a href="/go.html?ref=advisor">Get APIpulse Pro — $29 one-time →</a>
+            </div>
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:1rem;margin-top:1rem;text-align:center;">
+                <p style="margin:0 0 0.5rem;color:#475569;font-size:0.9rem;">📊 Want the full picture? Download our free benchmark:</p>
+                <a href="/ai-api-pricing-benchmark-2026.html" style="color:#3b82f6;font-weight:600;text-decoration:none;">2026 AI API Pricing Benchmark — 42 Models Compared →</a>
+            </div>
+
+            <button class="restart-btn" onclick="restart()">🔄 Start Over</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <strong>⚡ APIpulse</strong>
+                <p>AI API pricing intelligence for developers.</p>
+            </div>
+            <div class="footer-col">
+                <a href="/live-pricing.html">Live Pricing</a>
+                <a href="/ai-api-advisor.html">API Advisor</a>
+                <a href="/mcp.html">MCP Server</a>
+            </div>
+            <div class="footer-col">
+                <a href="/compare.html">Model Comparison</a>
+                <a href="/token-counter.html">Token Counter</a>
+                <a href="/roi-calculator.html">ROI Calculator</a>
+            </div>
+            <div class="footer-col">
+                <a href="/deal.html">Get Pro</a>
+                <a href="/about.html">About</a>
+                <a href="/api-docs.html">API Docs</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Pricing data (embedded for instant load, sourced from /data/pricing.json)
+    const MODELS = [
+        {"name":"GPT-5.5","provider":"OpenAI","tier":"premium","input":5.0,"output":30.0,"context":"1.05M","contextNum":1050000,"deprecated":false,"quality":98,"speed":70},
+        {"name":"GPT-5","provider":"OpenAI","tier":"premium","input":1.25,"output":10.0,"context":"272K","contextNum":272000,"deprecated":false,"quality":95,"speed":80},
+        {"name":"GPT-5.3 Codex","provider":"OpenAI","tier":"mid","input":1.75,"output":14.0,"context":"400K","contextNum":400000,"deprecated":false,"quality":93,"speed":75},
+        {"name":"GPT-5.5 Pro","provider":"OpenAI","tier":"premium","input":30.0,"output":180.0,"context":"1.05M","contextNum":1050000,"deprecated":false,"quality":99,"speed":60},
+        {"name":"GPT-4o","provider":"OpenAI","tier":"mid","input":2.5,"output":10.0,"context":"128K","contextNum":128000,"deprecated":false,"quality":82,"speed":85},
+        {"name":"GPT-4o mini","provider":"OpenAI","tier":"budget","input":0.15,"output":0.6,"context":"128K","contextNum":128000,"deprecated":false,"quality":70,"speed":92},
+        {"name":"GPT-5 mini","provider":"OpenAI","tier":"budget","input":0.25,"output":2.0,"context":"272K","contextNum":272000,"deprecated":false,"quality":80,"speed":88},
+        {"name":"GPT-oss 20B","provider":"OpenAI","tier":"budget","input":0.08,"output":0.35,"context":"128K","contextNum":128000,"deprecated":false,"quality":55,"speed":95},
+        {"name":"GPT-oss 120B","provider":"OpenAI","tier":"budget","input":0.15,"output":0.6,"context":"128K","contextNum":128000,"deprecated":false,"quality":68,"speed":90},
+        {"name":"Claude Opus 4.8","provider":"Anthropic","tier":"premium","input":5.0,"output":25.0,"context":"1M","contextNum":1000000,"deprecated":false,"quality":97,"speed":65},
+        {"name":"Claude Opus 4.7","provider":"Anthropic","tier":"premium","input":5.0,"output":25.0,"context":"1M","contextNum":1000000,"deprecated":false,"quality":96,"speed":68},
+        {"name":"Claude Sonnet 4.6","provider":"Anthropic","tier":"mid","input":3.0,"output":15.0,"context":"1M","contextNum":1000000,"deprecated":false,"quality":90,"speed":82},
+        {"name":"Claude Haiku 4.5","provider":"Anthropic","tier":"budget","input":1.0,"output":5.0,"context":"200K","contextNum":200000,"deprecated":false,"quality":78,"speed":90},
+        {"name":"Gemini 3.1 Pro","provider":"Google","tier":"mid","input":2.0,"output":12.0,"context":"1M","contextNum":1000000,"deprecated":false,"quality":91,"speed":78},
+        {"name":"Gemini 3.5 Flash","provider":"Google","tier":"mid","input":1.5,"output":9.0,"context":"1M","contextNum":1000000,"deprecated":false,"quality":85,"speed":92},
+        {"name":"Gemini 3 Flash","provider":"Google","tier":"budget","input":0.5,"output":3.0,"context":"1M","contextNum":1000000,"deprecated":false,"quality":78,"speed":93},
+        {"name":"Gemini 2.5 Pro","provider":"Google","tier":"mid","input":1.25,"output":10.0,"context":"1M","contextNum":1000000,"deprecated":false,"quality":88,"speed":80},
+        {"name":"Gemini 2.5 Flash-Lite","provider":"Google","tier":"budget","input":0.1,"output":0.4,"context":"1M","contextNum":1000000,"deprecated":false,"quality":65,"speed":96},
+        {"name":"Gemini 3.1 Flash-Lite","provider":"Google","tier":"budget","input":0.25,"output":1.5,"context":"1M","contextNum":1000000,"deprecated":false,"quality":72,"speed":94},
+        {"name":"DeepSeek V4 Pro","provider":"DeepSeek","tier":"budget","input":0.43,"output":0.87,"context":"1M","contextNum":1000000,"deprecated":false,"quality":82,"speed":80},
+        {"name":"DeepSeek V4 Flash","provider":"DeepSeek","tier":"budget","input":0.14,"output":0.28,"context":"1M","contextNum":1000000,"deprecated":false,"quality":72,"speed":92},
+        {"name":"DeepSeek V3.2","provider":"DeepSeek","tier":"budget","input":0.23,"output":0.34,"context":"128K","contextNum":128000,"deprecated":false,"quality":75,"speed":88},
+        {"name":"Mistral Large 3","provider":"Mistral","tier":"budget","input":0.5,"output":1.5,"context":"262K","contextNum":262000,"deprecated":false,"quality":80,"speed":85},
+        {"name":"Mistral Medium 3.5","provider":"Mistral","tier":"mid","input":1.5,"output":7.5,"context":"128K","contextNum":128000,"deprecated":false,"quality":82,"speed":83},
+        {"name":"Mistral Small 4","provider":"Mistral","tier":"budget","input":0.1,"output":0.3,"context":"128K","contextNum":128000,"deprecated":false,"quality":65,"speed":94},
+        {"name":"Command R+","provider":"Cohere","tier":"mid","input":2.5,"output":10.0,"context":"128K","contextNum":128000,"deprecated":false,"quality":80,"speed":80},
+        {"name":"Command R","provider":"Cohere","tier":"budget","input":0.5,"output":1.5,"context":"128K","contextNum":128000,"deprecated":false,"quality":72,"speed":85},
+        {"name":"Command A","provider":"Cohere","tier":"mid","input":2.5,"output":10.0,"context":"128K","contextNum":128000,"deprecated":false,"quality":78,"speed":82},
+        {"name":"Llama 4 Scout","provider":"Meta (Together.ai)","tier":"budget","input":0.18,"output":0.59,"context":"1M","contextNum":1000000,"deprecated":false,"quality":74,"speed":88},
+        {"name":"Llama 4 Maverick","provider":"Meta (Together.ai)","tier":"budget","input":0.27,"output":0.85,"context":"1M","contextNum":1000000,"deprecated":false,"quality":78,"speed":85},
+        {"name":"Llama 3.1 70B","provider":"Meta (Together.ai)","tier":"mid","input":0.88,"output":0.88,"context":"128K","contextNum":128000,"deprecated":false,"quality":76,"speed":82},
+        {"name":"Llama 3.1 8B","provider":"Meta (Together.ai)","tier":"budget","input":0.1,"output":0.1,"context":"128K","contextNum":128000,"deprecated":false,"quality":55,"speed":96},
+        {"name":"Kimi K2.6","provider":"Moonshot","tier":"budget","input":0.95,"output":4.0,"context":"256K","contextNum":256000,"deprecated":false,"quality":80,"speed":80},
+        {"name":"Grok 4.3","provider":"xAI","tier":"mid","input":1.25,"output":2.5,"context":"1M","contextNum":1000000,"deprecated":false,"quality":85,"speed":82},
+        {"name":"Grok Build 0.1","provider":"xAI","tier":"budget","input":0.3,"output":0.5,"context":"256K","contextNum":256000,"deprecated":false,"quality":70,"speed":88},
+        {"name":"Jamba 1.7 Large","provider":"AI21","tier":"mid","input":2.0,"output":8.0,"context":"256K","contextNum":256000,"deprecated":false,"quality":78,"speed":80}
+    ];
+
+    const state = { step: 0, answers: {} };
+
+    function selectOption(step, value, el) {
+        document.querySelectorAll(`#q${step} .option-btn`).forEach(b => b.classList.remove('selected'));
+        el.classList.add('selected');
+        state.answers[step] = value;
+        setTimeout(() => nextStep(), 200);
+    }
+
+    function updateBudget(val) {
+        const display = val >= 1000 ? `$${(val/1000).toFixed(val >= 10000 ? 0 : 1)}k/mo` : `$${val}/mo`;
+        document.getElementById('budgetDisplay').textContent = display;
+        state.answers[1] = parseInt(val);
+    }
+
+    function updateStepIndicator() {
+        document.querySelectorAll('.step-dot').forEach((dot, i) => {
+            dot.classList.remove('active', 'done');
+            if (i < state.step) dot.classList.add('done');
+            if (i === state.step) dot.classList.add('active');
+        });
+    }
+
+    function nextStep() {
+        if (state.step === 1 && !state.answers[1]) state.answers[1] = 100;
+        if (!state.answers[state.step] && state.step !== 1) return;
+
+        if (state.step < 3) {
+            document.getElementById(`q${state.step}`).classList.remove('visible');
+            state.step++;
+            document.getElementById(`q${state.step}`).classList.add('visible');
+            updateStepIndicator();
+        } else {
+            showResults();
+        }
+    }
+
+    function prevStep() {
+        if (state.step > 0) {
+            document.getElementById(`q${state.step}`).classList.remove('visible');
+            state.step--;
+            document.getElementById(`q${state.step}`).classList.add('visible');
+            updateStepIndicator();
+        }
+    }
+
+    function estimateMonthlyCost(model, dailyReqs) {
+        // Assume ~1000 input tokens + ~500 output tokens per request (average)
+        const inputTokensPerReq = state.answers[0] === 'code' ? 2000 : state.answers[0] === 'data' ? 800 : 1200;
+        const outputTokensPerReq = state.answers[0] === 'code' ? 1500 : state.answers[0] === 'data' ? 400 : 600;
+        const monthlyReqs = dailyReqs * 30;
+        const inputCost = (monthlyReqs * inputTokensPerReq / 1_000_000) * model.input;
+        const outputCost = (monthlyReqs * outputTokensPerReq / 1_000_000) * model.output;
+        return inputCost + outputCost;
+    }
+
+    function scoreModel(model) {
+        const budget = state.answers[1] || 100;
+        const volume = parseInt(state.answers[2]) || 100;
+        const priority = state.answers[3] || 'cost';
+        const dailyReqs = volume;
+
+        const monthlyCost = estimateMonthlyCost(model, dailyReqs);
+        const overBudget = monthlyCost > budget;
+
+        // Base score (0-100)
+        let score = 50;
+
+        // Priority scoring
+        if (priority === 'cost') {
+            // Heavily weight cost; penalize over-budget
+            const costScore = Math.max(0, 100 - (monthlyCost / budget) * 50);
+            score = costScore * 0.6 + (model.quality || 70) * 0.2 + (model.speed || 80) * 0.2;
+        } else if (priority === 'quality') {
+            score = (model.quality || 70) * 0.6 + Math.max(0, 50 - (monthlyCost / budget) * 25) * 0.2 + (model.speed || 80) * 0.2;
+        } else if (priority === 'speed') {
+            score = (model.speed || 80) * 0.5 + Math.max(0, 50 - (monthlyCost / budget) * 25) * 0.3 + (model.quality || 70) * 0.2;
+        } else if (priority === 'context') {
+            const ctxScore = Math.min(100, (model.contextNum / 1000000) * 80 + 20);
+            score = ctxScore * 0.4 + (model.quality || 70) * 0.3 + Math.max(0, 50 - (monthlyCost / budget) * 25) * 0.3;
+        }
+
+        // Use-case bonus
+        const useCase = state.answers[0];
+        if (useCase === 'code' && (model.quality || 0) >= 85) score += 10;
+        if (useCase === 'reasoning' && (model.quality || 0) >= 90) score += 15;
+        if (useCase === 'agent' && (model.quality || 0) >= 85) score += 10;
+        if (useCase === 'data' && monthlyCost < budget * 0.3) score += 10;
+        if (useCase === 'chat' && (model.speed || 0) >= 85) score += 8;
+
+        // Heavy penalty for over-budget
+        if (overBudget) score -= 30;
+
+        return { ...model, score, monthlyCost, overBudget };
+    }
+
+    function formatCost(c) {
+        return c < 1 ? `$${c.toFixed(2)}` : c < 100 ? `$${c.toFixed(1)}` : `$${Math.round(c).toLocaleString()}`;
+    }
+
+    function showResults() {
+        document.getElementById(`q3`).classList.remove('visible');
+        document.getElementById('stepIndicator').style.display = 'none';
+
+        const scored = MODELS.filter(m => !m.deprecated).map(scoreModel).sort((a, b) => b.score - a.score);
+        const top = scored[0];
+        const alts = scored.slice(1, 6);
+
+        // Top pick
+        document.getElementById('topPickName').textContent = top.name;
+        document.getElementById('topPickProvider').textContent = `${top.provider} · ${top.tier} tier · ${top.context} context`;
+        document.getElementById('topInput').textContent = `$${top.input}`;
+        document.getElementById('topOutput').textContent = `$${top.output}`;
+        document.getElementById('topMonthly').textContent = formatCost(top.monthlyCost);
+
+        // Context note
+        const ctxNote = document.getElementById('topContextNote');
+        if (top.overBudget) {
+            ctxNote.style.display = 'block';
+            ctxNote.innerHTML = `⚠️ This model may exceed your budget at this volume. Consider a budget-tier alternative below, or reduce request volume.`;
+        } else if (top.contextNum >= 1000000) {
+            ctxNote.style.display = 'block';
+            ctxNote.innerHTML = `📐 With ${top.context} context window, this model handles long documents and large codebases with ease.`;
+        } else {
+            ctxNote.style.display = 'none';
+        }
+
+        // Savings callout
+        const savingsEl = document.getElementById('savingsCallout');
+        const budget = state.answers[1] || 100;
+        if (!top.overBudget && top.monthlyCost < budget * 0.5) {
+            savingsEl.style.display = 'block';
+            document.getElementById('savingsText').textContent = `💰 ${formatCost(budget - top.monthlyCost)} under budget — room to scale!`;
+        } else if (!top.overBudget) {
+            savingsEl.style.display = 'block';
+            document.getElementById('savingsText').textContent = `✅ Fits your ${formatCost(budget)}/mo budget`;
+        } else {
+            savingsEl.style.display = 'none';
+        }
+
+        // Subtitle
+        const priorities = { cost: 'lowest cost', quality: 'best quality', speed: 'fastest response', context: 'largest context' };
+        document.getElementById('resultSubtitle').textContent = `Optimized for ${priorities[state.answers[3]] || 'balanced performance'} · ${formatCost(state.answers[1] || 100)}/mo budget`;
+
+        // Alternatives
+        const altHtml = alts.map(m => `
+            <div class="alt-card">
+                <div>
+                    <div class="alt-name">${m.name}</div>
+                    <div class="alt-provider">${m.provider} · ${m.tier} · ${m.context} ctx</div>
+                </div>
+                <div class="alt-price">
+                    <div class="price-main">${formatCost(m.monthlyCost)}/mo</div>
+                    <div class="price-detail">$${m.input}/$${m.output} per 1M tok</div>
+                </div>
+            </div>
+        `).join('');
+        document.getElementById('altContainer').innerHTML = altHtml;
+
+        // Show results
+        document.getElementById('results').classList.add('visible');
+
+        // GA4 event
+        gtag('event', 'advisor_completed', {
+            use_case: state.answers[0],
+            budget: state.answers[1],
+            volume: state.answers[2],
+            priority: state.answers[3],
+            recommended_model: top.name
+        });
+
+        // Update dots
+        document.querySelectorAll('.step-dot').forEach(d => d.classList.add('done'));
+    }
+
+    function restart() {
+        state.step = 0;
+        state.answers = {};
+        document.getElementById('results').classList.remove('visible');
+        document.getElementById('stepIndicator').style.display = 'flex';
+        document.querySelectorAll('.step-dot').forEach((d, i) => {
+            d.classList.remove('done', 'active');
+            if (i === 0) d.classList.add('active');
+        });
+        document.querySelectorAll('.question-card').forEach(c => c.classList.remove('visible'));
+        document.getElementById('q0').classList.add('visible');
+        document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        document.getElementById('budgetSlider').value = 100;
+        document.getElementById('budgetDisplay').textContent = '$100/mo';
+    }
+    </script>
+</body>
+</html>
