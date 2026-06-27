@@ -11,7 +11,8 @@
 - **Updated api/subscribe.js** — Email template reference updated.
 - **Updated widget files** — calc-embed.js (2 links), embed.js (1 footer link).
 - **2 commits, 17 files.**
-- **Additional sweep** — Fixed URL-encoded Twitter share text in shared.js, 4 HTML files with inline "42 model" text (cost-leak-detector, deal, trial-expired, blog-ai-api-pricing-badges), and 9 HTML files with URL-encoded share links. 3 commits, 32 files total.
+- **Additional sweep** — Fixed URL-encoded Twitter share text in shared.js, 4 HTML files with inline "42 model" text, 9 HTML files with URL-encoded share links. 3 commits, 32 files total.
+- **Massive sweep** — Fixed "All 42 Models", "42 AI models", "42 LLMs", "across 42", "42 alternatives" etc. across 317 HTML, JS, XML, and MD files. 1 commit, 317 files. **Every user-facing reference now says 48 models.**
 
 ## Session 952 (Jun 27) — New Model Launches: GPT-5.4 Family + Claude Fable 5
 - **Added 6 new models to pricing.json** — GPT-5.4 ($2.50/$15), GPT-5.4 mini ($0.75/$4.50), GPT-5.4 nano ($0.20/$1.25), GPT-5.4 Pro ($30/$180), Claude Fable 5 ($10/$50), Claude Mythos 5 ($10/$50). Total: 42→48 models across 10 providers.
