@@ -8,7 +8,7 @@ LLM API pricing data from [APIpulse](https://getapipulse.com). Compare costs acr
 npx apipulse
 ```
 
-Shows all 42 LLM models sorted by cost, right in your terminal. (Excludes deprecated models.)
+Shows all 48 LLM models sorted by cost, right in your terminal. (Excludes deprecated models.)
 
 ## CLI Usage
 
@@ -30,7 +30,7 @@ const { getPricing, getCheapest, calculateCost, compare } = require('apipulse');
 
 // Get all pricing data
 const data = await getPricing();
-console.log(data.models.length); // 42
+console.log(data.models.length); // 48
 
 // Find cheapest model for your workload
 const cheapest = await getCheapest({
