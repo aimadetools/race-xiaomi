@@ -3,38 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Model Pricing Cheat Sheet — Every Model, Every Provider (2026) | APIpulse</title>
-    <meta name="description" content="Printable one-page pricing reference for all AI API models. Compare GPT-5, Claude, Gemini, DeepSeek, Mistral, and more at a glance.">
-    <meta name="keywords" content="AI pricing cheat sheet, LLM pricing reference, API cost comparison, AI model pricing 2026">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta property="og:title" content="AI Model Pricing Cheat Sheet — Every Model, Every Provider">
-    <meta property="og:description" content="Printable one-page pricing reference for all 42 AI models across 10 providers.">
-    <meta property="og:image" content="og-image.png">
+    <title>AI API Pricing Cheat Sheet 2026 — All 42 Models Compared | APIpulse</title>
+    <meta name="description" content="Complete AI API pricing cheat sheet: 42 models from 10 providers compared. Input/output costs, context windows, cost-per-task breakdowns, and instant recommendations. Updated June 2026.">
+    <meta name="keywords" content="AI API pricing, LLM pricing comparison, cheapest AI API, OpenAI pricing, Anthropic pricing, GPT-5 cost, Claude pricing, Gemini pricing, DeepSeek pricing, AI API cost comparison 2026">
+    <meta property="og:title" content="AI API Pricing Cheat Sheet 2026 — All 42 Models Compared">
+    <meta property="og:description" content="Complete pricing for 42 AI models across 10 providers. Cost-per-task breakdowns, hidden costs, and instant recommendations.">
+    <meta property="og:type" content="article">
     <meta property="og:url" content="https://getapipulse.com/cheat-sheet.html">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Pricing Cheat Sheet 2026 — All 42 Models Compared">
+    <meta name="twitter:description" content="Complete pricing for 42 AI models across 10 providers. Cost-per-task breakdowns, hidden costs, and instant recommendations.">
     <link rel="canonical" href="https://getapipulse.com/cheat-sheet.html">
-    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="rss.xml">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "AI Model Pricing Cheat Sheet",
-        "description": "Printable one-page pricing reference for all AI API models. Compare GPT-5, Claude, Gemini, DeepSeek, Mistral, and more at a glance.",
-        "url": "https://getapipulse.com/cheat-sheet.html",
-        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
-        "image": "https://getapipulse.com/og-image.png"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getapipulse.com" },
-            { "@type": "ListItem", "position": 2, "name": "Cheat Sheet", "item": "https://getapipulse.com/cheat-sheet.html" }
-        ]
-    }
-    </script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
@@ -44,371 +25,742 @@
       gtag('js', new Date());
       gtag('config', 'G-0CEP7S9Y3J');
     </script>
-    <script src="analytics.js" defer></script>
-    <script src="dynamic-date.js" defer></script>
-    <script src="pricing-data.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Pricing Cheat Sheet 2026 — All 42 Models Compared",
+        "description": "Complete AI API pricing comparison for 42 models across 10 providers. Input/output costs, context windows, cost-per-task breakdowns, and recommendations.",
+        "url": "https://getapipulse.com/cheat-sheet.html",
+        "datePublished": "2026-06-27",
+        "dateModified": "2026-06-27",
+        "author": {
+            "@type": "Organization",
+            "name": "APIpulse"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "APIpulse"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The cheapest AI APIs in 2026 are Llama 3.1 8B ($0.10/$0.10 per 1M tokens), GPT-oss 20B ($0.08/$0.35), and Mistral Small 4 ($0.10/$0.30). DeepSeek V4 Flash ($0.14/$0.28) offers the best value for a 1M context window."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does GPT-5 cost per API call?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5 costs $1.25 per 1M input tokens and $10.00 per 1M output tokens. A typical 1,000-token chat interaction costs about $0.011. GPT-5 mini is much cheaper at $0.25/$2.00 per 1M tokens."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI API gives the most value for money?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For budget-conscious developers, DeepSeek V4 Pro ($0.43/$0.87 per 1M tokens with 1M context) and GPT-5 mini ($0.25/$2.00) offer the best value. For premium quality, Claude Sonnet 4.6 ($3.00/$15.00) and GPT-5 ($1.25/$10.00) deliver strong performance per dollar."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are hidden costs of AI APIs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Three hidden costs catch developers off guard: (1) Output token markup — outputs cost 3-20x more than inputs across all providers. (2) Context window waste — sending full conversation history on every call multiplies input costs. (3) Retry and error costs — failed API calls still consume tokens for partial processing."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
-        .cheat-sheet-hero {
-            text-align: center; padding: 100px 24px 40px;
+        :root {
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --bg-secondary: #334155;
+            --text: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --green: #22c55e;
+            --yellow: #eab308;
+            --red: #ef4444;
+            --border: #334155;
         }
-        .cheat-sheet-hero h1 {
-            font-size: 36px; margin-bottom: 12px;
+        [data-theme="light"] {
+            --bg: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-secondary: #f1f5f9;
+            --text: #0f172a;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
         }
-        .cheat-sheet-hero p {
-            color: var(--text-secondary); font-size: 16px; max-width: 600px; margin: 0 auto 24px;
-        }
-        .print-btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--accent); color: white; padding: 10px 24px;
-            border-radius: 8px; font-size: 14px; font-weight: 600;
-            border: none; cursor: pointer; transition: background 0.2s;
-        }
-        .print-btn:hover { background: var(--accent-hover); }
+        .cheatsheet { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+        .cheatsheet-hero { text-align: center; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+        .cheatsheet-hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--text); line-height: 1.2; }
+        .cheatsheet-hero .subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 0.75rem; }
+        .cheatsheet-hero .updated { color: var(--text-secondary); font-size: 0.85rem; }
+        .cheatsheet-hero .updated strong { color: var(--green); }
+        .badge-row { display: flex; justify-content: center; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap; }
+        .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .badge-green { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-blue { background: rgba(99,102,241,0.15); color: var(--accent-light); }
+        .badge-yellow { background: rgba(234,179,8,0.15); color: var(--yellow); }
 
-        .tier-section {
-            max-width: var(--max-width); margin: 0 auto 48px; padding: 0 24px;
-        }
-        .tier-section h2 {
-            font-size: 24px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
-        }
-        .tier-badge {
-            display: inline-block; padding: 3px 10px; border-radius: 20px;
-            font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
-        }
-        .tier-badge.premium { background: rgba(239,68,68,0.15); color: #ef4444; }
-        .tier-badge.mid { background: rgba(245,158,11,0.15); color: #f59e0b; }
-        .tier-badge.budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+        /* Sections */
+        .cs-section { margin-bottom: 2.5rem; }
+        .cs-section h2 { font-size: 1.4rem; color: var(--text); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .cs-section h2 .icon { font-size: 1.2rem; }
+        .cs-section .section-desc { color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.95rem; }
 
-        .cheat-table-wrap {
-            overflow-x: auto; border-radius: var(--radius);
-            border: 1px solid var(--border); background: var(--bg-card);
-        }
-        .cheat-table {
-            width: 100%; border-collapse: collapse; font-size: 14px;
-        }
-        .cheat-table th {
-            text-align: left; padding: 12px 16px; background: var(--bg-secondary);
-            color: var(--text-secondary); font-size: 12px; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 0.5px;
-            border-bottom: 2px solid var(--border);
-        }
-        .cheat-table td {
-            padding: 10px 16px; border-bottom: 1px solid var(--border);
-            color: var(--text-primary);
-        }
-        .cheat-table tr:last-child td { border-bottom: none; }
-        .cheat-table tr:hover td { background: var(--bg-card-hover); }
-        .model-name { font-weight: 600; }
-        .provider-name { color: var(--text-secondary); font-size: 13px; }
-        .price-input { color: var(--green); font-weight: 500; font-variant-numeric: tabular-nums; }
-        .price-output { color: var(--orange); font-weight: 500; font-variant-numeric: tabular-nums; }
-        .context-window { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-        .cheapest-tag {
-            display: inline-block; background: rgba(34,197,94,0.12); color: var(--green);
-            font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
-            margin-left: 6px;
-        }
-        .premium-tag {
-            display: inline-block; background: rgba(239,68,68,0.12); color: #ef4444;
-            font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
-            margin-left: 6px;
-        }
+        /* Quick stats */
+        .quick-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; text-align: center; }
+        .stat-card .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent-light); }
+        .stat-card .stat-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem; }
 
-        .quick-picks {
-            max-width: var(--max-width); margin: 0 auto 48px; padding: 0 24px;
+        /* Pricing table */
+        .table-controls { display: flex; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
+        .table-controls select, .table-controls input {
+            background: var(--bg-card); color: var(--text); border: 1px solid var(--border);
+            padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.9rem;
         }
-        .quick-picks h2 { font-size: 24px; margin-bottom: 16px; }
-        .picks-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }
-        .pick-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 20px;
-        }
-        .pick-card h3 { font-size: 16px; margin-bottom: 6px; }
-        .pick-card .pick-model { color: var(--accent); font-weight: 600; font-size: 15px; }
-        .pick-card .pick-price { color: var(--green); font-size: 13px; margin-top: 4px; }
-        .pick-card .pick-note { color: var(--text-muted); font-size: 13px; margin-top: 8px; }
+        .table-controls input { width: 200px; }
+        .sort-btn { background: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border); padding: 0.5rem 0.75rem; border-radius: 8px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+        .sort-btn:hover, .sort-btn.active { border-color: var(--accent); color: var(--accent); }
+        .pricing-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.9rem; }
+        .pricing-table th { background: var(--bg-secondary); color: var(--text-secondary); padding: 0.65rem 0.75rem; text-align: left; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; position: sticky; top: 0; cursor: pointer; user-select: none; white-space: nowrap; }
+        .pricing-table th:hover { color: var(--accent); }
+        .pricing-table th:first-child { border-radius: 8px 0 0 0; }
+        .pricing-table th:last-child { border-radius: 0 8px 0 0; }
+        .pricing-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); }
+        .pricing-table tr:hover td { background: var(--bg-secondary); }
+        .pricing-table .model-name { font-weight: 600; color: var(--text); }
+        .pricing-table .provider-tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+        .tier-budget { color: var(--green); }
+        .tier-mid { color: var(--yellow); }
+        .tier-premium { color: var(--red); }
+        .deprecated-row { opacity: 0.5; }
+        .deprecated-row td:first-child::after { content: " (deprecated)"; color: var(--red); font-size: 0.75rem; font-weight: 400; }
+        .ctx-badge { font-size: 0.8rem; color: var(--text-secondary); }
+        .price-cell { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.85rem; }
+        .cost-highlight { background: rgba(34,197,94,0.1); padding: 0.15rem 0.4rem; border-radius: 4px; }
 
-        .cost-examples {
-            max-width: var(--max-width); margin: 0 auto 48px; padding: 0 24px;
-        }
-        .cost-examples h2 { font-size: 24px; margin-bottom: 16px; }
-        .examples-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-        }
-        .example-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 20px;
-        }
-        .example-card h3 { font-size: 15px; margin-bottom: 12px; color: var(--text-secondary); }
-        .example-row {
-            display: flex; justify-content: space-between; padding: 6px 0;
-            font-size: 13px; border-bottom: 1px solid var(--border);
-        }
-        .example-row:last-child { border-bottom: none; }
-        .example-row .model { color: var(--text-primary); font-weight: 500; }
-        .example-row .cost { color: var(--green); font-variant-numeric: tabular-nums; }
+        /* Provider comparison */
+        .provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+        .provider-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }
+        .provider-card h3 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--text); }
+        .provider-card .provider-stat { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+        .provider-card .provider-stat strong { color: var(--text); }
+        .provider-card .provider-range { font-size: 0.8rem; color: var(--accent-light); margin-top: 0.5rem; }
 
-        .cta-section {
-            text-align: center; padding: 48px 24px;
-            background: var(--bg-secondary); border-top: 1px solid var(--border);
-        }
-        .cta-section h2 { font-size: 24px; margin-bottom: 12px; }
-        .cta-section p { color: var(--text-secondary); margin-bottom: 20px; }
+        /* Cost per task */
+        .task-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+        .task-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+        .task-card h3 { font-size: 1rem; margin-bottom: 0.25rem; color: var(--text); }
+        .task-card .task-desc { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem; }
+        .task-card .task-prices { display: flex; flex-direction: column; gap: 0.35rem; }
+        .task-price-row { display: flex; justify-content: space-between; font-size: 0.85rem; }
+        .task-price-row .model { color: var(--text-secondary); }
+        .task-price-row .price { font-weight: 700; font-family: 'SF Mono', 'Fira Code', monospace; }
+        .task-price-row .price.cheapest { color: var(--green); }
+        .task-price-row .price.mid { color: var(--yellow); }
+        .task-price-row .price.expensive { color: var(--red); }
 
-        /* Print styles */
-        @media print {
-            * { background: white !important; color: black !important; }
-            nav, footer, .back-to-top, .print-btn, .cta-section, .share-section, .keyboard-hint,
-            .hamburger, .theme-toggle, .skip-link { display: none !important; }
-            .cheat-sheet-hero { padding: 20px 0 10px; }
-            .cheat-sheet-hero h1 { font-size: 24px; }
-            .cheat-sheet-hero p { font-size: 12px; }
-            .tier-section { margin-bottom: 16px; }
-            .cheat-table { font-size: 10px; }
-            .cheat-table th, .cheat-table td { padding: 4px 8px; }
-            .cheat-table tr:nth-child(even) td { background: #f5f5f5 !important; }
-            .cheat-table-wrap { border: 1px solid #ccc; }
-            .tier-section h2 { font-size: 16px; }
-            .quick-picks, .cost-examples { page-break-inside: avoid; }
-            .picks-grid { gap: 8px; }
-            .pick-card, .example-card { border: 1px solid #ddd; padding: 10px; }
-            .pick-card h3, .example-card h3 { font-size: 12px; }
-            .cheapest-tag, .premium-tag { border: 1px solid currentColor; }
-            a { text-decoration: none; }
-            .price-input::before { content: "$"; }
-            .price-output::before { content: "$"; }
-            @page { margin: 1cm; }
-        }
+        /* Recommendations */
+        .rec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+        .rec-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+        .rec-card h3 { font-size: 1rem; margin-bottom: 0.25rem; color: var(--text); }
+        .rec-card .rec-use { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem; }
+        .rec-card .rec-pick { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--bg-secondary); border-radius: 8px; }
+        .rec-card .rec-model { font-weight: 700; color: var(--accent-light); }
+        .rec-card .rec-price { font-size: 0.85rem; color: var(--text-secondary); font-family: 'SF Mono', 'Fira Code', monospace; }
 
+        /* Hidden costs */
+        .hidden-costs { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+        .hidden-cost-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+        .hidden-cost-card h3 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--yellow); }
+        .hidden-cost-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+        .hidden-cost-card .tip { margin-top: 0.75rem; padding: 0.5rem; background: rgba(34,197,94,0.1); border-radius: 6px; font-size: 0.85rem; color: var(--green); }
+
+        /* Pro upsell */
+        .pro-upsell { background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary)); border: 1px solid var(--accent); border-radius: 12px; padding: 1.5rem; text-align: center; margin-top: 2rem; }
+        .pro-upsell h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text); }
+        .pro-upsell p { color: var(--text-secondary); margin-bottom: 1rem; }
+        .pro-upsell .cta-btn { display: inline-block; padding: 0.75rem 2rem; background: linear-gradient(135deg, var(--accent), #8b5cf6); color: white; border-radius: 8px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+        .pro-upsell .cta-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+        /* Related tools */
+        .related-tools { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .related-tools h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--text); }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; }
+        .tool-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-decoration: none; transition: all 0.2s; }
+        .tool-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .tool-card h4 { font-size: 0.9rem; color: var(--text); margin-bottom: 0.25rem; }
+        .tool-card p { font-size: 0.8rem; color: var(--text-secondary); }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .cheat-sheet-hero h1 { font-size: 24px; }
-            .cheat-table { font-size: 13px; }
-            .cheat-table th, .cheat-table td { padding: 8px 10px; }
+            .cheatsheet-hero h1 { font-size: 1.6rem; }
+            .pricing-table { font-size: 0.8rem; }
+            .pricing-table th, .pricing-table td { padding: 0.4rem 0.5rem; }
+            .quick-stats { grid-template-columns: repeat(2, 1fr); }
+            .table-controls input { width: 100%; }
         }
     </style>
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to main content</a>
-
-    <nav>
-        <div class="nav-inner">
-            <a href="index.html" class="logo">API<span>pulse</span></a>
-            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">⚡</span> APIpulse</a>
             <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
-                <a href="cost-explorer.html">Explorer</a>
-                <a href="cost-scenarios.html">Scenarios</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
+                <a href="cheapest-model-finder.html">Model Finder</a>
+                <a href="ai-api-advisor.html">Advisor</a>
                 <a href="blog.html">Blog</a>
-                <a href="quiz.html">Quiz</a>
-                <a href="pricing-index.html">Pricing Index</a>
-                <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html" class="active">Cheat Sheet</a>
-                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+                <a href="api-docs.html">API</a>
+                <a href="go.html" class="nav-cta">Get Pro — $29</a>
             </div>
+            <button class="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><span class="moon">🌙</span><span class="sun" style="display:none">☀️</span></button>
         </div>
     </nav>
 
-    <main id="main">
-        <section class="cheat-sheet-hero">
-            <h1>AI Model Pricing Cheat Sheet</h1>
-            <p>Every model, every provider, one page. Print it, bookmark it, or share it.</p>
-            <button class="print-btn" onclick="window.print()">&#128424; Print This Page</button>
-        </section>
-
-        <section class="tier-section" id="premium">
-            <h2><span class="tier-badge premium">Premium</span> Flagship Models</h2>
-            <div class="cheat-table-wrap">
-                <table class="cheat-table" aria-label="Premium AI model pricing">
-                    <thead>
-                        <tr>
-                            <th>Model</th>
-                            <th>Provider</th>
-                            <th>Input / 1M Tokens</th>
-                            <th>Output / 1M Tokens</th>
-                            <th>Context</th>
-                        </tr>
-                    </thead>
-                    <tbody id="premium-table"></tbody>
-                </table>
+    <main class="cheatsheet">
+        <div class="cheatsheet-hero">
+            <h1>📊 AI API Pricing Cheat Sheet 2026</h1>
+            <p class="subtitle">Every model. Every provider. One page. Updated weekly.</p>
+            <p class="updated">Last updated: <strong>June 27, 2026</strong> · 42 models · 10 providers</p>
+            <div class="badge-row">
+                <span class="badge badge-green">✓ 38 Active Models</span>
+                <span class="badge badge-blue">10 Providers</span>
+                <span class="badge badge-yellow">37× Price Range</span>
             </div>
-        </section>
-
-        <section class="tier-section" id="mid">
-            <h2><span class="tier-badge mid">Mid-Tier</span> Best Value Models</h2>
-            <div class="cheat-table-wrap">
-                <table class="cheat-table" aria-label="Mid-tier AI model pricing">
-                    <thead>
-                        <tr>
-                            <th>Model</th>
-                            <th>Provider</th>
-                            <th>Input / 1M Tokens</th>
-                            <th>Output / 1M Tokens</th>
-                            <th>Context</th>
-                        </tr>
-                    </thead>
-                    <tbody id="mid-table"></tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="tier-section" id="budget">
-            <h2><span class="tier-badge budget">Budget</span> Affordable Models</h2>
-            <div class="cheat-table-wrap">
-                <table class="cheat-table" aria-label="Budget AI model pricing">
-                    <thead>
-                        <tr>
-                            <th>Model</th>
-                            <th>Provider</th>
-                            <th>Input / 1M Tokens</th>
-                            <th>Output / 1M Tokens</th>
-                            <th>Context</th>
-                        </tr>
-                    </thead>
-                    <tbody id="budget-table"></tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="quick-picks">
-            <h2>Quick Picks by Use Case</h2>
-            <div class="picks-grid">
-                <div class="pick-card">
-                    <h3>Chatbot / Customer Support</h3>
-                    <div class="pick-model">Gemini 2.5 Flash-Lite</div>
-                    <div class="pick-price">$0.10 in / $0.40 out</div>
-                    <div class="pick-note">Cheapest option with 1M context. For higher quality: GPT-4o mini.</div>
-                </div>
-                <div class="pick-card">
-                    <h3>Code Generation</h3>
-                    <div class="pick-model">Claude Sonnet 4.6</div>
-                    <div class="pick-price">$3.00 in / $15.00 out</div>
-                    <div class="pick-note">Best code quality/price ratio. For autocomplete: GPT-5 mini.</div>
-                </div>
-                <div class="pick-card">
-                    <h3>Document Analysis</h3>
-                    <div class="pick-model">Gemini 2.5 Pro</div>
-                    <div class="pick-price">$1.25 in / $10.00 out</div>
-                    <div class="pick-note">1M context window handles large docs. Great value for extraction.</div>
-                </div>
-                <div class="pick-card">
-                    <h3>Enterprise / Complex Reasoning</h3>
-                    <div class="pick-model">Claude Opus 4.7</div>
-                    <div class="pick-price">$5.00 in / $25.00 out</div>
-                    <div class="pick-note">Top-tier reasoning at half the cost of GPT-5 or Claude 4 Opus.</div>
-                </div>
-                <div class="pick-card">
-                    <h3>Budget-Conscious Startup</h3>
-                    <div class="pick-model">DeepSeek V4 Flash</div>
-                    <div class="pick-price">$0.14 in / $0.28 out</div>
-                    <div class="pick-note">Cheapest output tokens in the market. Great quality for the price.</div>
-                </div>
-                <div class="pick-card">
-                    <h3>Long-Context (1M tokens)</h3>
-                    <div class="pick-model">Llama 4 Scout</div>
-                    <div class="pick-price">$0.11 in / $0.34 out</div>
-                    <div class="pick-note">Open-source, 1M context, cheapest premium-context model.</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cost-examples">
-            <h2>Monthly Cost Estimates</h2>
-            <div class="examples-grid">
-                <div class="example-card">
-                    <h3>100 requests/day, 1K in / 500 out tokens</h3>
-                    <div class="example-row"><span class="model">Gemini 2.5 Flash-Lite</span><span class="cost">$0.75/mo</span></div>
-                    <div class="example-row"><span class="model">GPT-4o mini</span><span class="cost">$1.50/mo</span></div>
-                    <div class="example-row"><span class="model">Claude Haiku 4.5</span><span class="cost">$8.40/mo</span></div>
-                    <div class="example-row"><span class="model">GPT-4o</span><span class="cost">$22.50/mo</span></div>
-                </div>
-                <div class="example-card">
-                    <h3>1,000 requests/day, 1K in / 500 out tokens</h3>
-                    <div class="example-row"><span class="model">Gemini 2.5 Flash-Lite</span><span class="cost">$7.50/mo</span></div>
-                    <div class="example-row"><span class="model">GPT-4o mini</span><span class="cost">$15.00/mo</span></div>
-                    <div class="example-row"><span class="model">Claude Sonnet 4.6</span><span class="cost">$135/mo</span></div>
-                    <div class="example-row"><span class="model">GPT-5</span><span class="cost">$225/mo</span></div>
-                </div>
-                <div class="example-card">
-                    <h3>10,000 requests/day, 2K in / 1K out tokens</h3>
-                    <div class="example-row"><span class="model">Gemini 2.5 Flash-Lite</span><span class="cost">$150/mo</span></div>
-                    <div class="example-row"><span class="model">GPT-4o mini</span><span class="cost">$300/mo</span></div>
-                    <div class="example-row"><span class="model">Claude Sonnet 4.6</span><span class="cost">$1,350/mo</span></div>
-                    <div class="example-row"><span class="model">GPT-5</span><span class="cost">$2,250/mo</span></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <h2>Need Exact Estimates?</h2>
-            <p>Use the APIpulse calculator for precise cost projections based on your actual usage.</p>
-            <a href="calculator.html" class="btn-primary">Open Calculator</a>
-            &nbsp;&nbsp;
-            <a href="compare.html" class="btn-secondary">Compare Models</a>
-        </section>
-
-        <div id="pricing-freshness" style="margin-top:24px;text-align:center;"></div>
-        <script>document.addEventListener('DOMContentLoaded', function() { renderPricingFreshness('pricing-freshness'); });</script>
-    
-        <!-- Pro CTA section -->
-        <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08));border:2px solid var(--accent);border-radius:16px;padding:32px 24px;margin:32px 0;text-align:center;">
-            <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Stop guessing — get exact costs for every model</h2>
-            <p style="font-size:15px;color:var(--text-secondary);margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto;">Pro gives you 42-model comparison, migration code snippets, PDF reports, and personalized optimization tips.</p>
-            <a href="go.html?from=cheat-sheet" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 4px 20px rgba(99,102,241,0.4);transition:all 0.2s;">Get Pro — $29 lifetime</a>
-            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">✅ 14-day money-back guarantee · ⚡ Instant access · 🔒 One-time payment</p>
         </div>
 
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+            <div class="stat-card">
+                <div class="stat-value">$0.07</div>
+                <div class="stat-label">Cheapest Input (per 1M tok)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$0.10</div>
+                <div class="stat-label">Cheapest Output (per 1M tok)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$180</div>
+                <div class="stat-label">Most Expensive Output</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1.05M</div>
+                <div class="stat-label">Largest Context Window</div>
+            </div>
+        </div>
+
+        <!-- Master Pricing Table -->
+        <section class="cs-section">
+            <h2><span class="icon">📋</span> Full Pricing Table — All 42 Models</h2>
+            <p class="section-desc">Click any column header to sort. Prices are per 1 million tokens. Filter by provider or tier.</p>
+
+            <div class="table-controls">
+                <select id="providerFilter" onchange="filterTable()">
+                    <option value="all">All Providers</option>
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="google">Google</option>
+                    <option value="deepseek">DeepSeek</option>
+                    <option value="mistral">Mistral</option>
+                    <option value="cohere">Cohere</option>
+                    <option value="together">Meta (Together)</option>
+                    <option value="xai">xAI</option>
+                    <option value="moonshot">Moonshot</option>
+                    <option value="ai21">AI21</option>
+                </select>
+                <select id="tierFilter" onchange="filterTable()">
+                    <option value="all">All Tiers</option>
+                    <option value="budget">Budget</option>
+                    <option value="mid">Mid-tier</option>
+                    <option value="premium">Premium</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Search models..." oninput="filterTable()">
+            </div>
+
+            <div style="overflow-x:auto;">
+                <table class="pricing-table" id="pricingTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)">Model</th>
+                            <th onclick="sortTable(1)">Provider</th>
+                            <th onclick="sortTable(2)">Tier</th>
+                            <th onclick="sortTable(3)">Input $/1M</th>
+                            <th onclick="sortTable(4)">Output $/1M</th>
+                            <th onclick="sortTable(5)">Blended*</th>
+                            <th onclick="sortTable(6)">Context</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pricingBody"></tbody>
+                </table>
+            </div>
+            <p style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.5rem;">* Blended = 3:1 output:input ratio (typical for chat). Click column headers to sort. Greyed rows are deprecated.</p>
+        </section>
+
+        <!-- Provider Comparison -->
+        <section class="cs-section">
+            <h2><span class="icon">🏢</span> Provider Comparison</h2>
+            <p class="section-desc">At a glance: what each provider offers and where they shine.</p>
+            <div class="provider-grid">
+                <div class="provider-card">
+                    <h3>OpenAI</h3>
+                    <div class="provider-stat"><strong>9 models</strong> (7 active)</div>
+                    <div class="provider-stat">Range: $0.08 — $180/1M output</div>
+                    <div class="provider-stat">Strength: Broadest lineup</div>
+                    <div class="provider-range">GPT-oss 20B → GPT-5.5 Pro</div>
+                </div>
+                <div class="provider-card">
+                    <h3>Anthropic</h3>
+                    <div class="provider-stat"><strong>6 models</strong> (4 active)</div>
+                    <div class="provider-stat">Range: $5 — $75/1M output</div>
+                    <div class="provider-stat">Strength: Code & reasoning</div>
+                    <div class="provider-range">Haiku 4.5 → Claude 4 Opus</div>
+                </div>
+                <div class="provider-card">
+                    <h3>Google</h3>
+                    <div class="provider-stat"><strong>8 models</strong> (6 active)</div>
+                    <div class="provider-stat">Range: $0.30 — $12/1M output</div>
+                    <div class="provider-stat">Strength: Best value mid-tier</div>
+                    <div class="provider-range">Flash Lite → Gemini 3.1 Pro</div>
+                </div>
+                <div class="provider-card">
+                    <h3>DeepSeek</h3>
+                    <div class="provider-stat"><strong>4 models</strong> (3 active)</div>
+                    <div class="provider-stat">Range: $0.28 — $0.87/1M output</div>
+                    <div class="provider-stat">Strength: Cheapest quality</div>
+                    <div class="provider-range">V4 Flash → V4 Pro</div>
+                </div>
+                <div class="provider-card">
+                    <h3>Mistral</h3>
+                    <div class="provider-stat"><strong>3 models</strong> (3 active)</div>
+                    <div class="provider-stat">Range: $0.30 — $7.50/1M output</div>
+                    <div class="provider-stat">Strength: EU compliance</div>
+                    <div class="provider-range">Small 4 → Large 3</div>
+                </div>
+                <div class="provider-card">
+                    <h3>Meta (via Together)</h3>
+                    <div class="provider-stat"><strong>4 models</strong> (3 active)</div>
+                    <div class="provider-stat">Range: $0.10 — $0.88/1M output</div>
+                    <div class="provider-stat">Strength: Open-source pricing</div>
+                    <div class="provider-range">Llama 3.1 8B → Llama 4</div>
+                </div>
+                <div class="provider-card">
+                    <h3>Cohere</h3>
+                    <div class="provider-stat"><strong>3 models</strong> (3 active)</div>
+                    <div class="provider-stat">Range: $1.50 — $10/1M output</div>
+                    <div class="provider-stat">Strength: Enterprise RAG</div>
+                    <div class="provider-range">Command R → Command A</div>
+                </div>
+                <div class="provider-card">
+                    <h3>xAI</h3>
+                    <div class="provider-stat"><strong>2 models</strong> (2 active)</div>
+                    <div class="provider-stat">Range: $0.50 — $2.50/1M output</div>
+                    <div class="provider-stat">Strength: Large context</div>
+                    <div class="provider-range">Grok Build → Grok 4.3</div>
+                </div>
+                <div class="provider-card">
+                    <h3>Moonshot</h3>
+                    <div class="provider-stat"><strong>1 model</strong></div>
+                    <div class="provider-stat">Range: $4.00/1M output</div>
+                    <div class="provider-stat">Strength: Chinese market</div>
+                    <div class="provider-range">Kimi K2.6</div>
+                </div>
+                <div class="provider-card">
+                    <h3>AI21</h3>
+                    <div class="provider-stat"><strong>2 models</strong> (1 active)</div>
+                    <div class="provider-stat">Range: $8.00/1M output</div>
+                    <div class="provider-stat">Strength: Long-context SSM</div>
+                    <div class="provider-range">Jamba 1.7 Large</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cost Per Task -->
+        <section class="cs-section">
+            <h2><span class="icon">💰</span> Cost Per Task — What You'll Actually Pay</h2>
+            <p class="section-desc">Real-world cost estimates for common AI tasks. Based on typical token counts.</p>
+            <div class="task-grid">
+                <div class="task-card">
+                    <h3>💬 Simple Chat</h3>
+                    <div class="task-desc">~500 input + ~300 output tokens</div>
+                    <div class="task-prices">
+                        <div class="task-price-row"><span class="model">Llama 3.1 8B</span><span class="price cheapest">$0.0001</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5 mini</span><span class="price mid">$0.001</span></div>
+                        <div class="task-price-row"><span class="model">Claude Sonnet 4.6</span><span class="price mid">$0.006</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5</span><span class="price mid">$0.004</span></div>
+                        <div class="task-price-row"><span class="model">Claude Opus 4.8</span><span class="price expensive">$0.010</span></div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <h3>📄 Summarize Document</h3>
+                    <div class="task-desc">~4,000 input + ~500 output tokens</div>
+                    <div class="task-prices">
+                        <div class="task-price-row"><span class="model">Llama 3.1 8B</span><span class="price cheapest">$0.0005</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5 mini</span><span class="price mid">$0.002</span></div>
+                        <div class="task-price-row"><span class="model">Claude Sonnet 4.6</span><span class="price mid">$0.020</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5</span><span class="price mid">$0.010</span></div>
+                        <div class="task-price-row"><span class="model">Claude Opus 4.8</span><span class="price expensive">$0.033</span></div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <h3>🔧 Generate Code</h3>
+                    <div class="task-desc">~1,000 input + ~2,000 output tokens</div>
+                    <div class="task-prices">
+                        <div class="task-price-row"><span class="model">Llama 3.1 8B</span><span class="price cheapest">$0.0003</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5 mini</span><span class="price mid">$0.004</span></div>
+                        <div class="task-price-row"><span class="model">Claude Sonnet 4.6</span><span class="price mid">$0.033</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5</span><span class="price mid">$0.021</span></div>
+                        <div class="task-price-row"><span class="model">Claude Opus 4.8</span><span class="price expensive">$0.055</span></div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <h3>📊 Analyze Data</h3>
+                    <div class="task-desc">~10,000 input + ~1,000 output tokens</div>
+                    <div class="task-prices">
+                        <div class="task-price-row"><span class="model">Llama 3.1 8B</span><span class="price cheapest">$0.001</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5 mini</span><span class="price mid">$0.005</span></div>
+                        <div class="task-price-row"><span class="model">Claude Sonnet 4.6</span><span class="price mid">$0.045</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5</span><span class="price mid">$0.023</span></div>
+                        <div class="task-price-row"><span class="model">Claude Opus 4.8</span><span class="price expensive">$0.075</span></div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <h3>🤖 AI Agent Step</h3>
+                    <div class="task-desc">~2,000 input + ~1,500 output tokens</div>
+                    <div class="task-prices">
+                        <div class="task-price-row"><span class="model">Llama 3.1 8B</span><span class="price cheapest">$0.0004</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5 mini</span><span class="price mid">$0.004</span></div>
+                        <div class="task-price-row"><span class="model">Claude Sonnet 4.6</span><span class="price mid">$0.029</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5</span><span class="price mid">$0.018</span></div>
+                        <div class="task-price-row"><span class="model">Claude Opus 4.8</span><span class="price expensive">$0.048</span></div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <h3>📚 RAG Query</h3>
+                    <div class="task-desc">~15,000 input + ~500 output tokens</div>
+                    <div class="task-prices">
+                        <div class="task-price-row"><span class="model">Llama 3.1 8B</span><span class="price cheapest">$0.002</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5 mini</span><span class="price mid">$0.005</span></div>
+                        <div class="task-price-row"><span class="model">Claude Sonnet 4.6</span><span class="price mid">$0.053</span></div>
+                        <div class="task-price-row"><span class="model">GPT-5</span><span class="price mid">$0.024</span></div>
+                        <div class="task-price-row"><span class="model">Claude Opus 4.8</span><span class="price expensive">$0.088</span></div>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:1rem;">💡 <strong>Key insight:</strong> Output tokens cost 3–20× more than input tokens across all providers. Design your prompts to minimize output length where possible.</p>
+        </section>
+
+        <!-- Quick Recommendations -->
+        <section class="cs-section">
+            <h2><span class="icon">🎯</span> Quick Recommendations by Use Case</h2>
+            <p class="section-desc">Not sure which model to pick? Start here.</p>
+            <div class="rec-grid">
+                <div class="rec-card">
+                    <h3>💸 Lowest Cost</h3>
+                    <div class="rec-use">When budget is everything</div>
+                    <div class="rec-pick">
+                        <div>
+                            <div class="rec-model">Llama 3.1 8B</div>
+                            <div class="rec-price">$0.10 / $0.10 per 1M</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rec-card">
+                    <h3>⚖️ Best Value</h3>
+                    <div class="rec-use">Quality + affordability</div>
+                    <div class="rec-pick">
+                        <div>
+                            <div class="rec-model">DeepSeek V4 Pro</div>
+                            <div class="rec-price">$0.43 / $0.87 per 1M</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rec-card">
+                    <h3>🧠 Best Reasoning</h3>
+                    <div class="rec-use">Complex analysis & coding</div>
+                    <div class="rec-pick">
+                        <div>
+                            <div class="rec-model">Claude Opus 4.8</div>
+                            <div class="rec-price">$5.00 / $25.00 per 1M</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rec-card">
+                    <h3>⚡ Best Speed</h3>
+                    <div class="rec-use">Real-time apps, chatbots</div>
+                    <div class="rec-pick">
+                        <div>
+                            <div class="rec-model">Gemini 3.5 Flash</div>
+                            <div class="rec-price">$1.50 / $9.00 per 1M</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rec-card">
+                    <h3>📝 Long Documents</h3>
+                    <div class="rec-use">Large context window needed</div>
+                    <div class="rec-pick">
+                        <div>
+                            <div class="rec-model">GPT-5.5</div>
+                            <div class="rec-price">$5.00 / $30.00 per 1M (1.05M ctx)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rec-card">
+                    <h3>💻 Code Generation</h3>
+                    <div class="rec-use">Coding copilots & IDE tools</div>
+                    <div class="rec-pick">
+                        <div>
+                            <div class="rec-model">Claude Sonnet 4.6</div>
+                            <div class="rec-price">$3.00 / $15.00 per 1M</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rec-card">
+                    <h3>🏢 Enterprise RAG</h3>
+                    <div class="rec-use">Retrieval-augmented generation</div>
+                    <div class="rec-pick">
+                        <div>
+                            <div class="rec-model">Command R+</div>
+                            <div class="rec-price">$2.50 / $10.00 per 1M</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rec-card">
+                    <h3>🌍 EU Compliance</h3>
+                    <div class="rec-use">GDPR-friendly, EU hosting</div>
+                    <div class="rec-pick">
+                        <div>
+                            <div class="rec-model">Mistral Large 3</div>
+                            <div class="rec-price">$0.50 / $1.50 per 1M</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rec-card">
+                    <h3>🚀 Budget General</h3>
+                    <div class="rec-use">Good enough for most tasks</div>
+                    <div class="rec-pick">
+                        <div>
+                            <div class="rec-model">GPT-5 mini</div>
+                            <div class="rec-price">$0.25 / $2.00 per 1M</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hidden Costs -->
+        <section class="cs-section">
+            <h2><span class="icon">⚠️</span> 3 Hidden Costs Most Developers Miss</h2>
+            <p class="section-desc">The per-token price is just the beginning. Here's what catches teams off guard.</p>
+            <div class="hidden-costs">
+                <div class="hidden-cost-card">
+                    <h3>1. Output Token Markup (3–20×)</h3>
+                    <p>Every provider charges more for output tokens than input. The markup ranges from 3× (DeepSeek) to 20× (GPT-5.5 Pro). For code generation and long-form writing, output tokens dominate your bill.</p>
+                    <div class="tip">💡 Tip: Set max_tokens limits. Use structured output (JSON mode) to reduce verbose responses.</div>
+                </div>
+                <div class="hidden-cost-card">
+                    <h3>2. Context Window Waste</h3>
+                    <p>Sending full conversation history on every API call means your input costs grow linearly with conversation length. A 50-turn chat with GPT-5 at 10K context costs $0.125 per message just for input.</p>
+                    <div class="tip">💡 Tip: Implement conversation summarization. Trim old messages. Use sliding window approaches.</div>
+                </div>
+                <div class="hidden-cost-card">
+                    <h3>3. Retry & Error Costs</h3>
+                    <p>Rate limits, timeouts, and malformed responses all consume tokens. With aggressive retry logic, you can accidentally 3× your costs. Some providers charge for partial completions.</p>
+                    <div class="tip">💡 Tip: Implement exponential backoff. Set retry budgets. Monitor error rates per provider.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pro Upsell -->
+        <div class="pro-upsell">
+            <h3>Want detailed cost reports for your exact usage?</h3>
+            <p>APIpulse Pro includes monthly cost tracking, provider comparison reports, and optimization recommendations tailored to your API usage patterns.</p>
+            <a href="go.html?from=cheatsheet" class="cta-btn">Get APIpulse Pro — $29</a>
+            <p style="font-size:0.8rem;margin-top:0.5rem;color:var(--text-secondary);">One-time payment · Lifetime access · No subscription</p>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="related-tools">
+            <h2>Related Tools</h2>
+            <div class="tools-grid">
+                <a href="calculator.html" class="tool-card">
+                    <h4>🧮 Cost Calculator</h4>
+                    <p>Estimate monthly costs for any model</p>
+                </a>
+                <a href="compare.html" class="tool-card">
+                    <h4>⚖️ Compare Models</h4>
+                    <p>Side-by-side pricing comparison</p>
+                </a>
+                <a href="ai-api-advisor.html" class="tool-card">
+                    <h4>🎯 AI API Advisor</h4>
+                    <p>Find the best model for your use case</p>
+                </a>
+                <a href="ai-api-pricing-benchmark-2026.html" class="tool-card">
+                    <h4>📊 2026 Benchmark</h4>
+                    <p>Downloadable pricing report</p>
+                </a>
+                <a href="cheapest-model-finder.html" class="tool-card">
+                    <h4>🔍 Model Finder</h4>
+                    <p>Find the cheapest model instantly</p>
+                </a>
+                <a href="api-docs.html" class="tool-card">
+                    <h4>📡 Pricing API</h4>
+                    <p>Free JSON API for pricing data</p>
+                </a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>Pricing data last verified: <span class="verified-date"></span></p>
-        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
-<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
-                <a href="api-docs.html" style="color:var(--accent);">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cheapest-model-finder.html">Model Finder</a>
+                <a href="ai-api-advisor.html">Advisor</a>
+                <a href="ai-api-pricing-benchmark-2026.html">Benchmark</a>
+                <a href="badges.html">Badges</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html">API</a>
+                <a href="go.html">Pro</a>
+            </div>
+            <p class="footer-copy">© 2026 APIpulse · <a href="https://getapipulse.com">getapipulse.com</a> · Updated weekly</p>
+        </div>
     </footer>
 
-    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
-
-    <script src="shared.js"></script>
     <script>
-        // Populate tables from pricing-data.js
-        const tables = { premium: document.getElementById('premium-table'), mid: document.getElementById('mid-table'), budget: document.getElementById('budget-table') };
-        const cheapest = {};
-        API_MODELS.forEach(m => { const key = m.tier + '_input'; if (!cheapest[key] || m.input < cheapest[key].input) cheapest[key] = m; });
+    // Full pricing data
+    const MODELS = [
+        {name:"GPT-5.5 Pro",provider:"openai",tier:"premium",input:30.0,output:180.0,context:"1.05M",deprecated:false},
+        {name:"Claude 4 Opus",provider:"anthropic",tier:"premium",input:15.0,output:75.0,context:"200K",deprecated:true},
+        {name:"GPT-5.5",provider:"openai",tier:"premium",input:5.0,output:30.0,context:"1.05M",deprecated:false},
+        {name:"Claude Opus 4.8",provider:"anthropic",tier:"premium",input:5.0,output:25.0,context:"1M",deprecated:false},
+        {name:"Claude Opus 4.7",provider:"anthropic",tier:"premium",input:5.0,output:25.0,context:"1M",deprecated:false},
+        {name:"GPT-5.3 Codex",provider:"openai",tier:"mid",input:1.75,output:14.0,context:"400K",deprecated:false},
+        {name:"Claude Sonnet 4.6",provider:"anthropic",tier:"mid",input:3.0,output:15.0,context:"1M",deprecated:false},
+        {name:"Claude Sonnet 4",provider:"anthropic",tier:"mid",input:3.0,output:15.0,context:"200K",deprecated:true},
+        {name:"Gemini 3.1 Pro",provider:"google",tier:"mid",input:2.0,output:12.0,context:"1M",deprecated:false},
+        {name:"GPT-5",provider:"openai",tier:"premium",input:1.25,output:10.0,context:"272K",deprecated:false},
+        {name:"Gemini 2.5 Pro",provider:"google",tier:"mid",input:1.25,output:10.0,context:"1M",deprecated:false},
+        {name:"GPT-4o",provider:"openai",tier:"mid",input:2.5,output:10.0,context:"128K",deprecated:false},
+        {name:"Command A",provider:"cohere",tier:"mid",input:2.5,output:10.0,context:"128K",deprecated:false},
+        {name:"Command R+",provider:"cohere",tier:"mid",input:2.5,output:10.0,context:"128K",deprecated:false},
+        {name:"Gemini 3.5 Flash",provider:"google",tier:"mid",input:1.5,output:9.0,context:"1M",deprecated:false},
+        {name:"Jamba 1.7 Large",provider:"ai21",tier:"mid",input:2.0,output:8.0,context:"256K",deprecated:false},
+        {name:"Jamba 1.5 Large",provider:"ai21",tier:"mid",input:2.0,output:8.0,context:"256K",deprecated:true},
+        {name:"Mistral Medium 3.5",provider:"mistral",tier:"mid",input:1.5,output:7.5,context:"128K",deprecated:false},
+        {name:"Claude Haiku 4.5",provider:"anthropic",tier:"budget",input:1.0,output:5.0,context:"200K",deprecated:false},
+        {name:"Kimi K2.6",provider:"moonshot",tier:"budget",input:0.95,output:4.0,context:"256K",deprecated:false},
+        {name:"Gemini 3 Flash",provider:"google",tier:"budget",input:0.5,output:3.0,context:"1M",deprecated:false},
+        {name:"GPT-5 mini",provider:"openai",tier:"budget",input:0.25,output:2.0,context:"272K",deprecated:false},
+        {name:"Grok 4.3",provider:"xai",tier:"mid",input:1.25,output:2.5,context:"1M",deprecated:false},
+        {name:"Mistral Large 3",provider:"mistral",tier:"budget",input:0.5,output:1.5,context:"262K",deprecated:false},
+        {name:"Command R",provider:"cohere",tier:"budget",input:0.5,output:1.5,context:"128K",deprecated:false},
+        {name:"Gemini 3.1 Flash-Lite",provider:"google",tier:"budget",input:0.25,output:1.5,context:"1M",deprecated:false},
+        {name:"Llama 3.1 70B",provider:"together",tier:"mid",input:0.88,output:0.88,context:"128K",deprecated:false},
+        {name:"DeepSeek V4 Pro",provider:"deepseek",tier:"budget",input:0.43,output:0.87,context:"1M",deprecated:false},
+        {name:"Llama 4 Maverick",provider:"together",tier:"budget",input:0.27,output:0.85,context:"1M",deprecated:false},
+        {name:"DeepSeek V3",provider:"deepseek",tier:"budget",input:0.27,output:1.1,context:"128K",deprecated:true},
+        {name:"GPT-4o mini",provider:"openai",tier:"budget",input:0.15,output:0.6,context:"128K",deprecated:false},
+        {name:"GPT-oss 120B",provider:"openai",tier:"budget",input:0.15,output:0.6,context:"128K",deprecated:false},
+        {name:"Llama 4 Scout",provider:"together",tier:"budget",input:0.18,output:0.59,context:"1M",deprecated:false},
+        {name:"Grok Build 0.1",provider:"xai",tier:"budget",input:0.3,output:0.5,context:"256K",deprecated:false},
+        {name:"Gemini 2.5 Flash-Lite",provider:"google",tier:"budget",input:0.1,output:0.4,context:"1M",deprecated:false},
+        {name:"Gemini 2.0 Flash",provider:"google",tier:"budget",input:0.1,output:0.4,context:"1M",deprecated:true},
+        {name:"GPT-oss 20B",provider:"openai",tier:"budget",input:0.08,output:0.35,context:"128K",deprecated:false},
+        {name:"DeepSeek V3.2",provider:"deepseek",tier:"budget",input:0.23,output:0.34,context:"128K",deprecated:false},
+        {name:"DeepSeek V4 Flash",provider:"deepseek",tier:"budget",input:0.14,output:0.28,context:"1M",deprecated:false},
+        {name:"Mistral Small 4",provider:"mistral",tier:"budget",input:0.1,output:0.3,context:"128K",deprecated:false},
+        {name:"Gemini 2.0 Flash Lite",provider:"google",tier:"budget",input:0.07,output:0.3,context:"1M",deprecated:true},
+        {name:"Llama 3.1 8B",provider:"together",tier:"budget",input:0.1,output:0.1,context:"128K",deprecated:false}
+    ];
 
-        API_MODELS.forEach(m => {
-            const tr = document.createElement('tr');
-            const isCheapestInTier = cheapest[m.tier + '_input'] && cheapest[m.tier + '_input'].id === m.id;
-            tr.innerHTML = `
-                <td><span class="model-name">${m.name}</span>${isCheapestInTier ? '<span class="cheapest-tag">Cheapest</span>' : ''}${m.tier === 'Premium' && m.input >= 10 ? '<span class="premium-tag">Premium</span>' : ''}</td>
-                <td><span class="provider-name">${m.provider}</span></td>
-                <td><span class="price-input">$${m.input.toFixed(2)}</span></td>
-                <td><span class="price-output">$${m.output.toFixed(2)}</span></td>
-                <td><span class="context-window">${m.context}</span></td>
-            `;
-            tables[m.tier.toLowerCase()].appendChild(tr);
+    const PROVIDER_NAMES = {
+        openai:"OpenAI",anthropic:"Anthropic",google:"Google",deepseek:"DeepSeek",
+        mistral:"Mistral",cohere:"Cohere",together:"Meta (Together)",xai:"xAI",
+        moonshot:"Moonshot",ai21:"AI21"
+    };
+
+    function renderTable(data) {
+        const tbody = document.getElementById('pricingBody');
+        tbody.innerHTML = data.map(m => {
+            const blended = (m.input * 1 + m.output * 3) / 4;
+            const tierClass = m.tier === 'budget' ? 'tier-budget' : m.tier === 'mid' ? 'tier-mid' : 'tier-premium';
+            const rowClass = m.deprecated ? 'deprecated-row' : '';
+            return `<tr class="${rowClass}" data-provider="${m.provider}" data-tier="${m.tier}" data-deprecated="${m.deprecated}">
+                <td class="model-name">${m.name}</td>
+                <td><span class="provider-tag">${PROVIDER_NAMES[m.provider] || m.provider}</span></td>
+                <td class="${tierClass}">${m.tier.charAt(0).toUpperCase() + m.tier.slice(1)}</td>
+                <td class="price-cell">$${m.input.toFixed(2)}</td>
+                <td class="price-cell">$${m.output.toFixed(2)}</td>
+                <td class="price-cell cost-highlight">$${blended.toFixed(2)}</td>
+                <td class="ctx-badge">${m.context}</td>
+            </tr>`;
+        }).join('');
+    }
+
+    function filterTable() {
+        const provider = document.getElementById('providerFilter').value;
+        const tier = document.getElementById('tierFilter').value;
+        const search = document.getElementById('searchInput').value.toLowerCase();
+        const rows = document.querySelectorAll('#pricingBody tr');
+        rows.forEach(row => {
+            const matchProvider = provider === 'all' || row.dataset.provider === provider;
+            const matchTier = tier === 'all' || row.dataset.tier === tier;
+            const matchSearch = !search || row.textContent.toLowerCase().includes(search);
+            row.style.display = matchProvider && matchTier && matchSearch ? '' : 'none';
         });
+    }
 
-        // Dynamic date
-        document.getElementById('last-verified-date').textContent = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-
-        // Back to top
-        window.addEventListener('scroll', () => {
-            document.querySelectorAll('.back-to-top').forEach(btn => {
-                btn.classList.toggle('visible', window.scrollY > 300);
-            });
+    let sortCol = -1, sortAsc = true;
+    function sortTable(col) {
+        if (sortCol === col) { sortAsc = !sortAsc; } else { sortCol = col; sortAsc = true; }
+        const sorted = [...MODELS].sort((a, b) => {
+            let va, vb;
+            switch(col) {
+                case 0: va = a.name; vb = b.name; return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+                case 1: va = a.provider; vb = b.provider; return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+                case 2: const tierOrd = {budget:0,mid:1,premium:2}; va = tierOrd[a.tier]; vb = tierOrd[b.tier]; return sortAsc ? va-vb : vb-va;
+                case 3: return sortAsc ? a.input-b.input : b.input-a.input;
+                case 4: return sortAsc ? a.output-b.output : b.output-a.output;
+                case 5: va = (a.input*1+a.output*3)/4; vb = (b.input*1+b.output*3)/4; return sortAsc ? va-vb : vb-va;
+                case 6: va = parseFloat(a.context); vb = parseFloat(b.context); return sortAsc ? va-vb : vb-va;
+            }
         });
+        renderTable(sorted);
+    }
+
+    // GA4 tracking
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof gtag === 'function') {
+            gtag('event', 'cheatsheet_view', { page: 'ai-api-pricing-cheat-sheet' });
+        }
+    });
+
+    // Initial render
+    renderTable(MODELS);
     </script>
 </body>
 </html>
