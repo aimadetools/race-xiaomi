@@ -501,7 +501,9 @@
                         <span class="limit-badge ${rpmClass}">RPM: ${r.limits.rpm.toLocaleString()} ${r.rpmOk ? (r.rpmRatio > 0.8 ? ' tight' : ' OK') : ' EXCEEDED'}</span>
                         <span class="limit-badge ${tpmClass}">TPM: ${(r.limits.tpm/1000).toFixed(0)}K ${r.tpmOk ? (r.tpmRatio > 0.8 ? ' tight' : ' OK') : ' EXCEEDED'}</span>
                         ${!r.rpmOk || !r.tpmOk ? `<span class="limit-badge fail">Bottleneck: ${r.bottleneck}</span>` : ''}
-                    </div>
+                    
+                    <a href="mcp.html" style="font-size:13px;color:var(--accent);text-decoration:none;padding:6px 12px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;">🔌 Free MCP Server →</a>
+                </div>
                 </div>
                 <div class="model-cost">
                     <div class="cost-label">Cost at ${rpm.toLocaleString()} RPM</div>

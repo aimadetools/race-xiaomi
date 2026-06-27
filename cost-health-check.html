@@ -725,7 +725,9 @@
         var recsHtml = recs.map(function(r) {
             var impactClass = r.impact === 'high' ? 'impact-high' : 'impact-medium';
             var impactLabel = r.impact === 'high' ? 'High Impact' : 'Medium Impact';
-            return '<div class="rec-card"><div class="rec-header"><span class="rec-title">' + r.title + '</span><span class="rec-impact ' + impactClass + '">' + impactLabel + '</span></div><div class="rec-desc">' + r.desc + '</div></div>';
+            return '<div class="rec-card"><div class="rec-header"><span class="rec-title">' + r.title + '</span><span class="rec-impact ' + impactClass + '">' + impactLabel + '</span></div><div class="rec-desc">' + r.desc + '
+                    <a href="mcp.html" style="font-size:13px;color:var(--accent);text-decoration:none;padding:6px 12px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;">🔌 Free MCP Server →</a>
+                </div></div>';
         }).join('');
         document.getElementById('recommendations').innerHTML = recsHtml;
 

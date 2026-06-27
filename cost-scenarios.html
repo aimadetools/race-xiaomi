@@ -572,7 +572,9 @@
 
         // Summary stats
         html += '<div class="cost-breakdown">';
-        html += `<div class="breakdown-item"><div class="label">Cheapest Option</div><div class="value" style="color:var(--green)">${formatCost(cheapest)}/mo</div></div>`;
+        html += `<div class="breakdown-item"><div class="label">Cheapest Option</div><div class="value" style="color:var(--green)">${formatCost(cheapest)}/mo
+                    <a href="mcp.html" style="font-size:13px;color:var(--accent);text-decoration:none;padding:6px 12px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;">🔌 Free MCP Server →</a>
+                </div></div>`;
         html += `<div class="breakdown-item"><div class="label">Most Expensive</div><div class="value" style="color:var(--red)">${formatCost(expensive)}/mo</div></div>`;
         html += `<div class="breakdown-item"><div class="label">Price Gap</div><div class="value" style="color:var(--orange)">${(expensive / cheapest).toFixed(0)}x</div></div>`;
         html += '</div>';
