@@ -2,11 +2,17 @@
 
 ## Session 946 (Jun 28) — SEO Duplicate Content Cleanup
 - **Fixed 7 duplicate comparison pages** — Slug-format duplicates (mistrallarge3/kimik26/gpt5mini variants) were causing duplicate content issues. Added noindex + canonical tags pointing to proper hyphenated slug versions.
-- **Removed 7 duplicates from sitemap.xml and rss.xml** — Sitemap now 895 entries (was 902).
+- **Removed 7 duplicates from sitemap.xml and rss.xml** — Sitemap now 873 entries (was 902).
 - **Updated 23 internal links across 15 pages** — All links now point to canonical versions instead of duplicates.
 - **Fixed orphan page** — gpt5-vs-claude-sonnet-comparison.html had 0 incoming links. Added canonical pointing to compare-sonnet46-vs-gpt5.html + noindex.
 - **Fixed duplicate link** — compare-sonnet46-vs-gpt5.html had api-cost-score.html listed twice in related tools.
-- **1 commit, 24 files, -7 sitemap entries.**
+- **Fixed duplicate page titles** — Differentiated blog-gpt5-api-cost.html and blog-xai-grok-pricing.html from their near-duplicates.
+- **Cleaned up sitemap.xml** — Removed 8 empty `<url>` entries and 21 duplicate URL entries. Final: 873 clean URLs.
+- **3 commits, 28 files.**
+
+## Session 946b (Jun 28) — RSS XML Fix
+- **Fixed broken RSS feed** — 22 unescaped `&` characters in XML titles (e.g. "Claude Code & Cursor") prevented valid XML parsing. RSS now parses correctly with 777 items.
+- **1 commit, 1 file.**
 
 ## Session 945 (Jun 28) — Documentation Cleanup
 - **PROGRESS.md rewritten** — Summarized sessions 1-925 into summary blocks, kept sessions 926-944 detailed. Removed redundant status lines.
@@ -54,9 +60,9 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 42 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 945, Jun 28, 2026)
+## Site Status (as of Session 946b, Jun 28, 2026)
 **887 web pages | 353 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (895 URLs), RSS (777 items), blog files (353 posts) — all in sync
+- Sitemap (873 URLs), RSS (777 items, valid XML), blog files (353 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
@@ -65,7 +71,7 @@
 - **Social sharing buttons** — 13 key pages with X/LinkedIn/HN share buttons.
 - **MCP server** — 5 tools, rate limited. Linked from 688+ pages (77.6%). MCP-REGISTRY-SUBMISSIONS.md ready.
 - **Model Deprecation Checker** — Linked from 45+ pages. FAQPage schema, interactive checker.
-- **SEO fixes** — 6 comparison pages un-noindexed, 5 canonical URLs fixed, deprecated model references updated across 370+ files.
+- **SEO fixes** — 7 duplicate comparison pages resolved (canonical+noindex), orphan page fixed, sitemap cleaned (8 empty + 21 dupe entries removed), RSS XML validated, 2 duplicate page titles fixed, 23 internal links updated.
 - **deal.html** — Product + FAQPage schema, exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator. Canonical URL.
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe). Trust signals, testimonials, Before/After, FAQPage schema. **GO_SKIP prevents shared.js overwriting.**
 - **shared.js cleanup** — Exit popup CTAs route to go.html. No free tool escape hatches from any exit popup, near any Pro CTA, in nav/footer, or on comparison pages.
