@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 948 (Jun 28) — Cross-Link Distribution for New Revenue Tools
+- **Added Pricing Benchmark to global footer** (shared.js) — Now appears alongside Advisor and Badges in footer tools row on all 876 pages.
+- **Added Advisor + Benchmark cross-links to 9 key pages** — mcp.html, why-apipulse.html, roi-calculator.html, token-counter.html, model-deprecation.html, cheapest-ai-apis-2026.html, best-ai-api-by-budget.html, live-pricing.html, api-cost-score.html.
+- **Fixed broken related-tools HTML** in api-cost-score.html — MCP link was incorrectly nested inside Savings Calculator card div.
+- **Added related tools section to live-pricing.html** — New section with Advisor, Benchmark, Calculator, Compare, Cheapest Finder, MCP.
+- **Cross-link coverage** — Advisor: 5 → 14 pages. Benchmark: 4 → 13 pages.
+- **1 commit, 11 files.**
+
 ## Session 947 (Jun 28) — New Revenue Tools: AI API Advisor + Pricing Benchmark
 - **Built AI API Advisor** (ai-api-advisor.html) — Interactive 4-step tool: use case → budget → volume → priority → personalized model recommendation. Scores 42 models in real-time with cost estimates. GA4 tracked (`advisor_completed` event). Pro upsell in results. Links to benchmark.
 - **Built 2026 Pricing Benchmark** (ai-api-pricing-benchmark-2026.html) — Downloadable report with key findings (37× price gap, 67% savings potential), full pricing table, cost-per-task analysis, 3 hidden costs, value champions. Email capture via `/api/subscribe`. CSV auto-download. GA4 tracked (`benchmark_download` event).
@@ -37,9 +45,9 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 42 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 947, Jun 28, 2026)
+## Site Status (as of Session 948, Jun 28, 2026)
 **890 web pages | 356 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (873 URLs), RSS (777 items, valid XML), blog files (353 posts) — all in sync
+- Sitemap (876 URLs), RSS (780 items, valid XML), blog files (356 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
