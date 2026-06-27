@@ -3,8 +3,6 @@
 // Endpoint: /api/mcp
 // Docs: https://getapipulse.com/mcp.html
 
-const crypto = require('crypto');
-
 // ─── Model Data ──────────────────────────────────────────────
 const MODELS = [
     { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', tier: 'premium', input: 5, output: 30, context: '1.05M' },
