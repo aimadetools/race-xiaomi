@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 10 of 12. $0 revenue (ROOT CAUSE FOUND — buy button was broken, now fixed). Product DONE (884 pages, 143 tools, 244 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). **Session 924:** Added 3 comparison pages. **Session 920:** Full site technical audit — all clear. **Session 907:** Deprecated model cleanup (363 files). **Session 891:** CRITICAL FIX — shared.js was overwriting ALL buy buttons on go.html. Fixed by adding GO_SKIP. **Jun 28 deadline:** Monitor GA4 for first purchases.
+**STATUS: Week 10 of 12. $0 revenue. Product DONE. Distribution is the only bottleneck.**
 
 ---
 
@@ -15,21 +15,19 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN
 25-26. ✅ go.html calculator-first redesign + model pre-fill (Sessions 817-818)
-27. **Analyze A/B data + conversion data** — Which price wins? Which pages convert? Optimize funnel. (needs GA4)
+27. **Analyze A/B data + conversion data** — Which price wins? Which pages convert? (needs GA4)
 28. ✅ Community feedback integration (Session 375)
-29. **Distribute embeddable widget** — DISTRIBUTION-KIT.md. **BLOCKED on human posting.**
+29. **Distribute embeddable widget** — DISTRIBUTION-KIT.md. **BLOCKED on human.**
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
 ### Completed (Sessions 416-944, Apr 23 - Jun 27)
-- **Session 944:** Added OG/Twitter meta tags to 13 pages missing social sharing metadata. 1 commit, 13 files.
-- **Session 943:** Fixed broken comparison link + added OG tags, share buttons, related resources to widget pages. 1 commit, 3 files.
-- **Sessions 927-942:** MCP server (5 tools, rate limiting, live demo, 6 client setups, blog post, Reddit/HN drafts) + MCP cross-linked from 688+ pages + pricing freshness badges on 53 pages + social sharing on 13 pages + $9 flash sale variant + deprecation checker page + data consistency fixes. 35+ commits, 750+ files.
-- **Sessions 921-926:** 15 comparison pages, full site audit (all clear), strategy shift (distribution > content). 10 commits, 25+ files.
-- **Sessions 908-919:** Conversion funnel overhaul + site-wide leak cleanup (18 commits). 2,803 lines removed.
-- **Session 907:** Deprecated model cleanup — 363 files.
-- **Sessions 889-906:** Homepage cleanup, GA4 tracking, CRITICAL buy button fix (GO_SKIP), SEO fixes. 28 commits, 553+ files.
-- **Sessions 878-888:** go.html conversion overhaul — flipped CTAs, trust signals, GO_MODEL_MAP fix. 18 commits, 250+ files.
-- **Sessions 804-877:** Deal page + content blitz + conversion optimization. 78+ commits, 670+ files.
-- **Sessions 599-803:** Conversion funnel + distribution tools + Claude 4 shutdown. 303+ commits, 1750+ files.
-- **Sessions 416-598:** Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools.
+- **Sessions 941-944 (Jun 27):** OG/Twitter tags (100%), widget page SEO, broken link fix, deprecation checker (45+ links), Chrome extension (42 models), npm package update, API docs corrected. 9 commits, 38 files.
+- **Sessions 927-940 (Jun 26-27):** MCP server (5 tools, rate limiting, live demo, 6 client setups, blog post) + MCP cross-linked from 688+ pages + pricing freshness + social sharing + $9 flash sale + deprecation checker. 35+ commits, 750+ files.
+- **Sessions 921-926 (Jun 25-26):** 15 comparison pages, full site audit, strategy shift. 10 commits.
+- **Sessions 908-919 (Jun 24-25):** Conversion funnel overhaul + leak cleanup. 18 commits.
+- **Sessions 889-907 (Jun 23-24):** Homepage cleanup, GA4 tracking, CRITICAL buy button fix, SEO fixes, deprecated model cleanup. 30 commits, 580+ files.
+- **Sessions 878-888 (Jun 23):** go.html conversion overhaul. 18 commits, 250+ files.
+- **Sessions 804-877 (Jun 21-23):** Deal page + content blitz + conversion. 78+ commits, 670+ files.
+- **Sessions 599-803 (Apr 26 - Jun 21):** Conversion funnel + distribution + Claude 4 shutdown. 303+ commits, 1750+ files.
+- **Sessions 416-598 (Apr 23 - Apr 26):** Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools.
