@@ -21,38 +21,8 @@
 - **BACKLOG-PREMIUM.md cleaned up** — Collapsed completed section, organized remaining tasks.
 - **1 commit, 4 files, -32 net lines.**
 
-## Session 944 (Jun 27) — OG/Twitter Social Sharing Tags (13 Pages)
-- **Added complete OG/Twitter meta tags to 13 pages** — 10 content pages were missing og:image, twitter:card, or both. Now all indexed content pages have full social sharing metadata for better link previews on X, LinkedIn, and Hacker News.
-  - 2 tool pages (api-cost-audit, api-cost-score) — added og:image + twitter tags
-  - 1 blog post (blog-claude-opus-48-alternatives) — full OG + twitter block
-  - 1 tool page (generate-report) — full OG + twitter block
-  - 6 sample Pro reports — full OG + twitter blocks
-  - 3 utility pages (contact, privacy, terms) — added missing twitter tags
-- **1 commit, 13 files, 89 insertions.**
-
-## Session 943 (Jun 27) — Broken Link Fix + Widget Pages SEO
-- **Fixed broken comparison link** — `compare-sonnet46-vs-mistrallarge3.html` linked to `compare-mistrallarge3-vs-deepseek-v4pro.html` (missing hyphen). Fixed URL and link text to correct file `compare-mistral-large3-vs-deepseek-v4pro.html`.
-- **Widget.html improvements** — Added OG/Twitter meta tags, X/LinkedIn/HN share buttons, Related Tools section (links to calculator widget, cost calculator, compare, MCP server).
-- **Widget-calculator.html improvements** — Added X/LinkedIn/HN share buttons, Related Tools section (links to pricing widget, cost calculator, compare, MCP server).
-- **1 commit, 3 files, 65 insertions.**
-
-## Session 942 (Jun 27) — Deprecation Checker Cross-links (14 new pages)
-- **Deprecation checker cross-links** — Added model-deprecation.html links to 14 pages that were missing them:
-  - 5 migration pages (migration-checklist, alternatives-comparison, best-replacement, migration-advisor, shutdown-checklist)
-  - 9 high-value pages (alternatives-by-use-case, sonnet46-alternatives, grok43-alternatives, 410-fix, error, error-codes, cheapest-llm-api-2026, mcp.html, alternatives-comparison footer)
-- **Coverage: 45+ pages** now link to the deprecation checker.
-- **2 commits, 14 files, 26 insertions.**
-
-## Session 941 (Jun 27) — Data Consistency + Deprecation Checker + Distribution Prep
-- Chrome extension updated: 42 models (was 39), fixed Mistral Small 4 pricing, added deprecated badges for 6 models.
-- API docs corrected: model count 34→42, fixed stale model IDs, updated provider counts.
-- npm package updated: 42 models (was 39).
-- **New page: model-deprecation.html** — Interactive model checker, deprecated models grid with replacement info and cost savings, FAQPage schema. Cross-linked from 45+ pages.
-- MCP Show HN draft + Final 2 Weeks action plan.
-- **5 commits, 8 files.**
-
-## Sessions 926-940 (Jun 26-27) — MCP Server + Distribution Optimization
-15 sessions. **MCP server built** (5 tools, rate limiting, Streamable HTTP), MCP landing page with live demo, sticky install bar, 6 client setups, contextual Pro upsell, blog post, Reddit/HN drafts. **MCP cross-linked from 688+ pages (77.6%)**. Pricing freshness badges on 53 pages. Social sharing on 13 pages. $9 flash sale variant on deal.html. Site audit (all clean). 30+ commits, 700+ files.
+## Sessions 926-944 (Jun 26-27) — MCP Server, Distribution Optimization, SEO Cleanup
+19 sessions. **MCP server built** (5 tools, rate limiting, Streamable HTTP), MCP landing page with live demo, sticky install bar, 6 client setups, contextual Pro upsell, blog post, Reddit/HN drafts. **MCP cross-linked from 688+ pages (77.6%)**. Pricing freshness badges on 53 pages. Social sharing on 13 pages. $9 flash sale variant on deal.html. Site audit (all clean). OG/Twitter tags added to 13 pages. Broken comparison link fixed. Widget pages SEO improvements. Deprecation checker cross-linked from 45+ pages. Chrome extension updated (42 models). API docs corrected. npm package updated. Model Deprecation Checker page created. **40+ commits, 750+ files.**
 
 ## Sessions 905-925 (Jun 25-26) — Conversion Overhaul + Comparison Pages + Site Audit
 21 sessions. Conversion funnel leak cleanup, Token Counter & ROI Calculator, deprecated model cleanup (363 files), go.html + deal.html conversion overhaul, 15 comparison pages, full site audit. 30 commits, 830+ files. **Key finding: distribution is the bottleneck, not content.**
