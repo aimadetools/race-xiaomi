@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCP Server for AI API Pricing — Free | APIpulse</title>
-    <meta name="description" content="Free MCP server for AI API pricing data. Get live costs for GPT-5, Claude, Gemini, DeepSeek, and 42 models directly in Claude Code, Cursor, Cline, Continue, and other AI tools.">
-    <meta name="keywords" content="MCP server, AI API pricing, Claude Code MCP, Cursor MCP, Cline MCP, Continue MCP, LLM pricing tool, AI model cost comparison, Model Context Protocol, GPT pricing MCP">
+    <meta name="description" content="Free MCP server for AI API pricing data. Get live costs for GPT-5, Claude, Gemini, DeepSeek, and 42 models directly in Claude Desktop, Claude Code, Cursor, Cline, Continue, and other AI tools.">
+    <meta name="keywords" content="MCP server, AI API pricing, Claude Desktop MCP, Claude Code MCP, Cursor MCP, Cline MCP, Continue MCP, LLM pricing tool, AI model cost comparison, Model Context Protocol, GPT pricing MCP">
     <meta property="og:title" content="MCP Server for AI API Pricing — Free | APIpulse">
-    <meta property="og:description" content="Get live AI API pricing data in your AI coding tools. 42 models, 10 providers. Works with Claude Code, Cursor, Cline, Continue, and more.">
+    <meta property="og:description" content="Get live AI API pricing data in your AI tools. 42 models, 10 providers. Works with Claude Desktop, Claude Code, Cursor, Cline, Continue, and more.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/mcp.html">
@@ -74,7 +74,7 @@
                 "name": "Which AI tools support the APIpulse MCP server?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Any MCP client that supports the Streamable HTTP transport (2025-03-26) works. This includes Claude Code, Cursor, Cline, Continue, Windsurf, Zed, and many more."
+                    "text": "Any MCP client that supports the Streamable HTTP transport (2025-03-26) works. This includes Claude Desktop, Claude Code, Cursor, Cline, Continue, Windsurf, Zed, and many more."
                 }
             },
             {
@@ -183,7 +183,7 @@
             <div class="mcp-badge">Model Context Protocol</div>
             <div id="pricing-freshness" style="margin-bottom:16px;"></div>
             <h1>AI API Pricing in Your AI Tools</h1>
-            <p>Ask Claude Code, Cursor, Cline, or any MCP client about AI model pricing — and get instant answers from 42 models across 10 providers.</p>
+            <p>Ask Claude Desktop, Claude Code, Cursor, Cline, or any MCP client about AI model pricing — and get instant answers from 42 models across 10 providers.</p>
             <div class="endpoint">https://getapipulse.com/api/mcp</div>
         </div>
 
@@ -236,6 +236,27 @@
   }
 }</pre>
             </div>
+        </div>
+
+        <!-- Claude Desktop -->
+        <div class="setup-section">
+            <h2><span class="tool-logo">🖥️</span> Claude Desktop</h2>
+            <p>Use the APIpulse MCP server in the Claude desktop app (macOS/Windows). Edit your Claude Desktop config:</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>~/.claude_desktop_config.json</span>
+                    <button class="copy-btn" onclick="copyCode(this, 'claude-desktop-json')">Copy</button>
+                </div>
+                <pre id="claude-desktop-json">{
+  "mcpServers": {
+    "apipulse": {
+      "type": "http",
+      "url": "https://getapipulse.com/api/mcp"
+    }
+  }
+}</pre>
+            </div>
+            <p style="font-size:13px;color:var(--text-muted)">Find the config file: Claude Desktop → Settings → Developer → Edit Config. Restart Claude after saving.</p>
         </div>
 
         <!-- Cursor -->
