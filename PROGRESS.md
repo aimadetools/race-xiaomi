@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 934 (Jun 27) — MCP Server Blog Post + Distribution Content
+- **Blog post** — Created `blog-mcp-server-ai-pricing.html` targeting "MCP server AI pricing" keywords. SEO content supporting the new MCP distribution channel. Covers install (one command), 5 tools, 42 models, 10 providers, example prompts, open data API. Article schema, FAQPage schema (6 Q&As), breadcrumbs, social share buttons (X, LinkedIn, HN). Added to blog.html listing, RSS feed, sitemap.
+- **Reddit/HN post drafts** — Created `MCP-REDDIT-DRAFTS.md` with copy-paste posts for r/ClaudeAI, r/cursor, r/LocalLLaMA, and Show HN. Human can post (~5 min).
+- **Widget pricing verified** — Checked widget/embed.js pricing against MCP server data. All prices match. Widget last updated Jun 22, shows 15 curated top models.
+- **2 commits, 5 files, ~500 insertions.**
+
 ## Session 933 (Jun 27) — MCP Server Improvements (Rate Limits + New Tool + Distribution)
 - **Rate limiting** — Added IP-based rate limiting (60 req/min) to `/api/mcp.js` with `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset` headers. Returns 429 with error message when exceeded. Clean window-based tracking (no external deps).
 - **New tool: get_model_details** — 5th MCP tool returns detailed info for a single model: full pricing breakdown, context window size in tokens, tier, deprecation status, and recommended replacement (with pricing comparison) for deprecated models. Replacement map covers 5 deprecated models (Claude 4 Opus → Opus 4.8, Sonnet 4 → Sonnet 4.6, DeepSeek V3 → V4 Flash, Gemini 2.0 Flash → 3 Flash, Flash-Lite → 3.1 Flash-Lite).
@@ -54,9 +60,9 @@
 ## Summary: Sessions 1-803 (Apr 5 - Jun 21)
 Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Claude 4 shutdown. go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, pricing hub, llms.txt, 4 alternatives, 36 comparisons, migration checklist (9 routes). 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 933, Jun 27, 2026)
-**886 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (899 URLs), RSS (776 items), blog files (352 posts) — all in sync
+## Site Status (as of Session 934, Jun 27, 2026)
+**887 web pages | 353 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
+- Sitemap (900 URLs), RSS (777 items), blog files (353 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.

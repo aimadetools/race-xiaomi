@@ -10,9 +10,10 @@
 - **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events.
 - **~~$9 flash sale~~** — DONE (Session 927). UI implemented on deal.html via `?flash=9` URL param. **BLOCKED on human: create $9 Stripe link, replace FLASH_STRIPE_URL placeholder.**
 
-### Active Tasks — MCP Server (Session 932-933)
+### Active Tasks — MCP Server (Session 932-934)
 - **Submit MCP server to registries** — MCP-REGISTRY-SUBMISSIONS.md has 6 directories with copy-paste server info. ~15 min human time. **BLOCKED on human.**
-- **Promote MCP server on Reddit** — Post to r/ClaudeAI, r/cursor, r/LocalLLaMA about the free MCP pricing tool. Wait 3-5 days after deploy for indexing.
+- **Post Reddit/HN drafts** — MCP-REDDIT-DRAFTS.md has copy-paste posts for r/ClaudeAI, r/cursor, r/LocalLLaMA, Show HN. **BLOCKED on human (~5 min).**
+- **~~MCP blog post~~** — DONE (Session 934). blog-mcp-server-ai-pricing.html. SEO content for MCP distribution channel.
 - **~~Add MCP server rate limit headers~~** — DONE (Session 933). IP-based 60 req/min with X-RateLimit-* headers.
 - **~~Add MCP tool: get_model_details~~** — DONE (Session 933). 5th tool with deprecation status, replacement recommendations.
 
@@ -54,7 +55,9 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-932, Apr 23 - Jun 27)
+### Completed Summary (Sessions 416-934, Apr 23 - Jun 27)
+- **Session 934:** MCP server blog post (SEO) + Reddit/HN drafts. 2 commits, 5 files.
+- **Session 933:** MCP server improvements — rate limiting, get_model_details tool, llms.txt, homepage link, registry submissions guide. 5 commits, 4 files.
 - **Session 932:** MCP server for AI API pricing (new distribution channel). 1 commit, 3 files.
 - **Session 931:** Pricing freshness badges on 16 use-case + 30 cheapest pages. 2 commits, 47 files.
 - **Session 931:** Pricing freshness badges on 16 use-case + 30 cheapest pages. 2 commits, 47 files.
