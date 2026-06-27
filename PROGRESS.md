@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 938 (Jun 27) — MCP Demo Conversion Engine
+- **Personalized upsell messages** — Replaced generic "Need migration code?" with context-aware messages per tool. `find_cheapest`: shows cheapest model name, price, savings vs GPT-4o. `compare_models`: shows price ratio between models. `calculate_cost`: shows monthly cost with ROI on $29 Pro. `get_model_details`: warns about deprecation, shows replacement. `get_pricing`: shows model count and savings potential.
+- **Savings highlight box** — Green-accented box appears above JSON results with compelling savings message. Contextual to each query type. Resets on new query.
+- **Visual result cards** — Formatted result cards replace raw JSON for 4 tools: `find_cheapest` (top 3 with medals, provider, pricing), `compare_models` (side-by-side grid with input/output/context), `calculate_cost` (large cost display with usage breakdown), `get_model_details` (model card with deprecation badge, pricing, replacement). Raw JSON in collapsible `<details>`.
+- **Structured data API** — Modified `api/mcp.js` to return structured JSON alongside text content. Backward compatible — existing MCP clients still get text. Demo extracts structured data from second content item. All 4 main tools return structured data.
+- **MCP on conversion pages** — Added subtle MCP server mention to go.html and deal.html: "Free MCP server for Claude Code, Cursor & more →". Positioned to add value without distracting from buy CTAs.
+- **GA4 tracking** — `mcp_upsell_shown`, `mcp_upsell_click`, `mcp_demo_run` events for conversion funnel analysis.
+- **3 commits, 2 files, ~300 insertions.**
+
 ## Session 937 (Jun 27) — MCP Landing Page Conversion Optimization
 - **Sticky quick-start bar** — Fixed-position bar appears after scrolling past hero. Shows `claude mcp add` install command (click-to-copy) + "Get Pro — $29" CTA. Always visible as visitors browse setup instructions. Reduces friction to zero for Claude Code users.
 - **Clickable example queries** — 5 pre-built query pills ("Find cheapest model", "Compare GPT-5 vs Claude", "Calculate 10K req/day cost", "Check deprecated model", "All model pricing"). Auto-fill params and run in the live demo. Zero-friction way to experience the MCP server — visitors see real data with one click.
