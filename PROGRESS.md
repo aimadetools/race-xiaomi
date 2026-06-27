@@ -11,6 +11,7 @@
 - **Updated api/subscribe.js** — Email template reference updated.
 - **Updated widget files** — calc-embed.js (2 links), embed.js (1 footer link).
 - **2 commits, 17 files.**
+- **Additional sweep** — Fixed URL-encoded Twitter share text in shared.js, 4 HTML files with inline "42 model" text (cost-leak-detector, deal, trial-expired, blog-ai-api-pricing-badges), and 9 HTML files with URL-encoded share links. 3 commits, 32 files total.
 
 ## Session 952 (Jun 27) — New Model Launches: GPT-5.4 Family + Claude Fable 5
 - **Added 6 new models to pricing.json** — GPT-5.4 ($2.50/$15), GPT-5.4 mini ($0.75/$4.50), GPT-5.4 nano ($0.20/$1.25), GPT-5.4 Pro ($30/$180), Claude Fable 5 ($10/$50), Claude Mythos 5 ($10/$50). Total: 42→48 models across 10 providers.
@@ -51,7 +52,7 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 952, Jun 27, 2026)
+## Site Status (as of Session 953, Jun 27, 2026)
 **891 web pages | 357 blog posts | 48 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (877 URLs), RSS (781 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
