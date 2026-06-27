@@ -1,5 +1,18 @@
 # PROGRESS.md
 
+## Session 940 (Jun 27) — Massive MCP Cross-link Expansion (57 → 688 pages)
+- **MCP cross-links on 631 new pages** — Added MCP server link to mcp.html across all page types:
+  - 26 alternatives pages (model-specific alternatives + blog alternatives + comparison pages)
+  - 65 blog comparison pages (blog-*vs*.html)
+  - 43 blog cost-analysis pages (blog-ai-api-cost-*.html)
+  - 184 remaining blog pages with widget section
+  - 90 pages with <!-- Related Tools --> comment section
+  - 217 pages with Related Tools heading sections
+  - 3 high-value pages (pricing report, budget planner, live pricing)
+- **MCP server verified working** — Tested initialize + tools/list endpoints. All 5 tools operational.
+- **Coverage: 688/886 pages (77.6%)** — Up from 57 pages at start of session. Remaining 198 pages are non-commercial (about, admin, 404) or lack suitable insertion points.
+- **7 commits, 634 files, 634 insertions.**
+
 ## Session 939 (Jun 27) — MCP Cross-links on 50 High-Traffic SEO Pages
 - **MCP server cross-links** — Added MCP server mention with link to mcp.html on 50 pages: 16 best-ai-model-for-* use-case pages (new Related Tools section with calculator + compare links) and 34 cheapest-ai-api-* industry/use-case pages (added to existing Related Tools section). These pages get organic search traffic but had zero MCP mentions. MCP server is now discoverable from 57 pages (was 7).
 - **1 commit, 50 files, 194 insertions.**
