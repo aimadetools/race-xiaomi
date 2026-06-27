@@ -417,7 +417,12 @@
                     </div>
                     <p id="demo-savings-body" style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.5;"></p>
                 </div>
-                <pre id="demo-result" style="display:none;margin-top:16px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-family:'SF Mono',Monaco,'Cascadia Code',monospace;font-size:12px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;color:var(--text-primary);"></pre>
+                <div id="demo-visual-result" style="display:none;margin-top:16px;"></div>
+                <details style="margin-top:8px;display:none;" id="demo-json-toggle">
+                    <summary style="font-size:12px;color:var(--text-muted);cursor:pointer;font-family:monospace;">Show raw JSON</summary>
+                    <pre id="demo-result" style="margin-top:8px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-family:'SF Mono',Monaco,'Cascadia Code',monospace;font-size:12px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;color:var(--text-primary);"></pre>
+                </details>
+                <pre id="demo-result-fallback" style="display:none;margin-top:16px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-family:'SF Mono',Monaco,'Cascadia Code',monospace;font-size:12px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;color:var(--text-primary);"></pre>
                 <div id="demo-pro-upsell" style="display:none;margin-top:16px;padding:16px 20px;background:linear-gradient(135deg,rgba(var(--accent-rgb,99,102,241),0.08),rgba(var(--accent-rgb,99,102,241),0.03));border:1px solid rgba(var(--accent-rgb,99,102,241),0.2);border-radius:10px;">
                     <p id="demo-upsell-title" style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Need migration code for these models?</p>
                     <p id="demo-upsell-body" style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">APIpulse Pro includes ready-to-use migration templates, cost optimization reports, and provider guides for all 42 models.</p>
@@ -569,7 +574,9 @@
         btn.textContent = 'Running...';
         btn.style.opacity = '0.6';
         status.textContent = 'Sending request...';
-        result.style.display = 'none';
+        document.getElementById('demo-visual-result').style.display = 'none';
+        document.getElementById('demo-json-toggle').style.display = 'none';
+        document.getElementById('demo-result-fallback').style.display = 'none';
         document.getElementById('demo-pro-upsell').style.display = 'none';
         document.getElementById('demo-savings-highlight').style.display = 'none';
 
@@ -616,8 +623,27 @@
                 }
             }
 
-            result.textContent = JSON.stringify(display, null, 2);
-            result.style.display = 'block';
+            // Try to show visual result card, fall back to JSON
+            const visualEl = document.getElementById('demo-visual-result');
+            const jsonToggle = document.getElementById('demo-json-toggle');
+            const jsonPre = document.getElementById('demo-result');
+            const fallbackPre = document.getElementById('demo-result-fallback');
+            const visualHtml = renderVisualResult(tool, args, display);
+
+            if (visualHtml) {
+                visualEl.innerHTML = visualHtml;
+                visualEl.style.display = 'block';
+                jsonPre.textContent = JSON.stringify(display, null, 2);
+                jsonToggle.style.display = 'block';
+                jsonToggle.removeAttribute('open');
+                fallbackPre.style.display = 'none';
+            } else {
+                visualEl.style.display = 'none';
+                jsonToggle.style.display = 'none';
+                fallbackPre.textContent = JSON.stringify(display, null, 2);
+                fallbackPre.style.display = 'block';
+            }
+
             status.textContent = `✓ Response in ${elapsed}ms`;
             status.style.color = 'var(--green, #22c55e)';
             // Personalized Pro upsell based on query results
@@ -626,7 +652,9 @@
         } catch (err) {
             status.textContent = `✗ Error: ${err.message}`;
             status.style.color = '#ef4444';
-            result.style.display = 'none';
+            document.getElementById('demo-visual-result').style.display = 'none';
+            document.getElementById('demo-json-toggle').style.display = 'none';
+            document.getElementById('demo-result-fallback').style.display = 'none';
         }
         btn.disabled = false;
         btn.textContent = 'Run Query';
@@ -635,6 +663,118 @@
 
     // Initialize demo params on load
     updateDemoParams();
+
+    // ─── Visual Result Cards ──────────────────────────────────────
+    function renderVisualResult(tool, args, display) {
+        let data = display;
+        if (typeof data === 'string') {
+            try { data = JSON.parse(data); } catch(e) { return null; }
+        }
+        if (!data || typeof data !== 'object') return null;
+
+        const cardStyle = 'background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:8px;';
+        const nameStyle = 'font-size:14px;font-weight:700;color:var(--text-primary);';
+        const priceStyle = 'font-family:monospace;font-weight:700;font-size:14px;';
+        const labelStyle = 'font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;';
+
+        if (tool === 'find_cheapest') {
+            const models = Array.isArray(data) ? data : (data.models || data.cheapest || []);
+            if (!models.length) return null;
+            const top3 = models.slice(0, 3);
+            let html = `<div style="${labelStyle}margin-bottom:8px;">🏆 Top 3 cheapest models</div>`;
+            top3.forEach((m, i) => {
+                const name = m.model || m.name || 'Unknown';
+                const provider = m.provider || '';
+                const output = m.pricing?.output_per_1m || m.output_per_1m || m.price || '?';
+                const input = m.pricing?.input_per_1m || m.input_per_1m || '';
+                const medal = ['🥇','🥈','🥉'][i];
+                html += `<div style="${cardStyle}display:flex;justify-content:space-between;align-items:center;">
+                    <div>
+                        <div style="${nameStyle}">${medal} ${name}</div>
+                        <div style="font-size:12px;color:var(--text-muted);">${provider}</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="${priceStyle}color:var(--green,#22c55e);">$${output}/1M</div>
+                        <div style="font-size:11px;color:var(--text-muted);">output tokens</div>
+                    </div>
+                </div>`;
+            });
+            return html;
+        }
+
+        if (tool === 'compare_models') {
+            const models = Array.isArray(data) ? data : (data.models || data.comparison || []);
+            if (models.length < 2) return null;
+            let html = `<div style="${labelStyle}margin-bottom:8px;">⚖️ Side-by-side comparison</div>`;
+            html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">`;
+            models.slice(0, 4).forEach(m => {
+                const name = m.model || m.name || 'Unknown';
+                const provider = m.provider || '';
+                const output = m.pricing?.output_per_1m || m.output_per_1m || m.price || '?';
+                const input = m.pricing?.input_per_1m || m.input_per_1m || '';
+                const ctx = m.context_window || m.context || '';
+                html += `<div style="${cardStyle}">
+                    <div style="${nameStyle}margin-bottom:4px;">${name}</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">${provider}</div>
+                    <div style="display:flex;justify-content:space-between;font-size:12px;">
+                        <div><span style="color:var(--text-muted);">In:</span> <span style="${priceStyle}font-size:12px;">$${input}</span></div>
+                        <div><span style="color:var(--text-muted);">Out:</span> <span style="${priceStyle}font-size:12px;">$${output}</span></div>
+                    </div>
+                    ${ctx ? `<div style="font-size:11px;color:var(--text-muted);margin-top:4px;">${(ctx/1000).toFixed(0)}K context</div>` : ''}
+                </div>`;
+            });
+            html += `</div>`;
+            return html;
+        }
+
+        if (tool === 'calculate_cost' && (data.monthly_cost || data.total_monthly || data.cost)) {
+            const monthly = data.monthly_cost || data.total_monthly || data.cost;
+            const model = data.model || args.model || 'Model';
+            const daily = data.daily_requests || args.daily_requests || '?';
+            const inTok = data.input_tokens || args.input_tokens || '?';
+            const outTok = data.output_tokens || args.output_tokens || '?';
+            let html = `<div style="${labelStyle}margin-bottom:8px;">💰 Cost breakdown</div>`;
+            html += `<div style="${cardStyle}text-align:center;">
+                <div style="font-size:32px;font-weight:900;color:var(--text-primary);font-family:monospace;">$${typeof monthly === 'number' ? monthly.toFixed(2) : monthly}</div>
+                <div style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">/month for ${model}</div>
+                <div style="display:flex;justify-content:center;gap:16px;font-size:12px;">
+                    <div><span style="color:var(--text-muted);">Requests:</span> <strong>${daily}/day</strong></div>
+                    <div><span style="color:var(--text-muted);">In:</span> <strong>${inTok} tok</strong></div>
+                    <div><span style="color:var(--text-muted);">Out:</span> <strong>${outTok} tok</strong></div>
+                </div>
+            </div>`;
+            return html;
+        }
+
+        if (tool === 'get_model_details' && (data.model || data.name || args.model)) {
+            const name = data.model || data.name || args.model;
+            const provider = data.provider || '';
+            const deprecated = data.deprecated || data.is_deprecated || data.status === 'deprecated';
+            const input = data.pricing?.input_per_1m || data.input_per_1m || '?';
+            const output = data.pricing?.output_per_1m || data.output_per_1m || '?';
+            const ctx = data.context_window || data.context || '';
+            const replacement = data.replacement || data.recommended_alternative || '';
+            let html = `<div style="${labelStyle}margin-bottom:8px;">📊 Model details</div>`;
+            html += `<div style="${cardStyle}">
+                <div style="display:flex;justify-content:space-between;align-items:start;">
+                    <div>
+                        <div style="${nameStyle}">${name}</div>
+                        <div style="font-size:12px;color:var(--text-muted);">${provider}</div>
+                    </div>
+                    ${deprecated ? '<span style="background:#ef4444;color:white;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;">DEPRECATED</span>' : ''}
+                </div>
+                <div style="display:flex;gap:16px;margin-top:12px;font-size:13px;">
+                    <div><span style="color:var(--text-muted);">Input:</span> <span style="${priceStyle}font-size:13px;">$${input}/1M</span></div>
+                    <div><span style="color:var(--text-muted);">Output:</span> <span style="${priceStyle}font-size:13px;">$${output}/1M</span></div>
+                    ${ctx ? `<div><span style="color:var(--text-muted);">Context:</span> <strong>${(ctx/1000).toFixed(0)}K</strong></div>` : ''}
+                </div>
+                ${replacement ? `<div style="margin-top:8px;font-size:12px;color:var(--text-muted);">↗ Replacement: <strong style="color:var(--text-primary);">${replacement}</strong></div>` : ''}
+            </div>`;
+            return html;
+        }
+
+        return null; // No visual card for this tool
+    }
 
     // ─── Personalized Upsell Engine ──────────────────────────────
     function showPersonalizedUpsell(tool, args, display) {
