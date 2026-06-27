@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 936 (Jun 27) — MCP Client Expansion + Live Interactive Demo
+- **Cline (VS Code) setup** — Added setup instructions for Cline, the most popular VS Code MCP client. Includes `~/.cline/mcp.json` config and UI instructions.
+- **Continue (VS Code/JetBrains) setup** — Added setup instructions for Continue with `~/.continue/config.yaml` config.
+- **Live interactive demo** — Added "Try It Live" section to mcp.html. Visitors can select any of the 5 MCP tools, fill in parameters, and see real JSON responses directly in the browser. No install needed. Lowers the barrier to trying the MCP server dramatically. Includes: tool selector, dynamic parameter inputs, real-time fetch to `/api/mcp`, JSON-RPC 2.0 request formatting, SSE response parsing, response time display.
+- **SEO updates** — Updated meta description, keywords, OG description, hero text, and X share text to mention Cline and Continue. Updated FAQPage schema to list Cline, Continue, Zed as supported clients.
+- **Windsurf section** — Updated to mention Zed and Copilot compatibility.
+- **1 commit, 1 file, 201 insertions.**
+
 ## Session 935 (Jun 27) — MCP Landing Page Optimization + Cross-links
 - **FAQPage schema** — Added FAQPage structured data to mcp.html with 6 Q&As covering: free? data freshness? offline? supported tools? what tools? vs Pro? Improves Google search appearance for MCP-related queries.
 - **Pricing freshness badge** — Added pricing-data.js import + renderPricingFreshness badge to mcp.html hero section. Shows "Pricing updated Jun 24, 2026" green trust badge.
@@ -68,7 +76,7 @@
 ## Summary: Sessions 1-803 (Apr 5 - Jun 21)
 Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Claude 4 shutdown. go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, pricing hub, llms.txt, 4 alternatives, 36 comparisons, migration checklist (9 routes). 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 935, Jun 27, 2026)
+## Site Status (as of Session 936, Jun 27, 2026)
 **887 web pages | 353 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (900 URLs), RSS (777 items), blog files (353 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages including mcp.html (added Session 935). 15 pages without are non-commercial.
@@ -76,7 +84,7 @@ Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **Pricing freshness badges** — 92 pages now show "Pricing updated Jun 24, 2026" green badge (91 existing + mcp.html added Session 935).
 - **Social sharing** — 11 key pages now have X/LinkedIn/HN share buttons: why-apipulse, deal, go, best-ai-api-by-budget, cheapest-ai-apis-2026, live-pricing, roi-calculator, token-counter, migration-checklist, cheapest-model-finder, mcp.html.
-- **MCP server** — 5 tools (get_pricing, compare_models, calculate_cost, find_cheapest, get_model_details). Rate limited (60 req/min, X-RateLimit-* headers). In llms.txt, homepage, api-docs. FAQPage schema, social sharing, cross-links, freshness badge. Linked from 7 pages (homepage, api-docs, blog, cheapest-finder, compare, calculator, comparison). MCP-REGISTRY-SUBMISSIONS.md ready for 6 directories.
+- **MCP server** — 5 tools (get_pricing, compare_models, calculate_cost, find_cheapest, get_model_details). Rate limited (60 req/min, X-RateLimit-* headers). In llms.txt, homepage, api-docs. FAQPage schema, social sharing, cross-links, freshness badge. Setup instructions for 5 clients: Claude Code, Cursor, Cline (VS Code), Continue (VS Code/JetBrains), Windsurf. **Live interactive demo** lets visitors try all 5 tools in-browser. Linked from 7 pages (homepage, api-docs, blog, cheapest-finder, compare, calculator, comparison). MCP-REGISTRY-SUBMISSIONS.md ready for 6 directories.
 - **SEO fixes (Sessions 903-916)** — 6 comparison pages un-noindexed, 5 canonical URLs fixed. July 2026 pricing blog updated (32→42 models). Deprecated model references updated across 370+ files.
 - **deal.html** — Product + FAQPage schema, exit popup (softened, leaks removed), sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models), inline Pro preview. Canonical URL. Nav/footer leaks removed.
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview. **GO_SKIP prevents shared.js overwriting buy buttons.** Nav/footer leaks removed.

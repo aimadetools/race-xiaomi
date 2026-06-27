@@ -10,9 +10,10 @@
 - **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events.
 - **~~$9 flash sale~~** — DONE (Session 927). UI implemented on deal.html via `?flash=9` URL param. **BLOCKED on human: create $9 Stripe link, replace FLASH_STRIPE_URL placeholder.**
 
-### Active Tasks — MCP Server (Session 932-935)
+### Active Tasks — MCP Server (Session 932-936)
 - **Submit MCP server to registries** — MCP-REGISTRY-SUBMISSIONS.md has 6 directories with copy-paste server info. ~15 min human time. **BLOCKED on human.**
 - **Post Reddit/HN drafts** — MCP-REDDIT-DRAFTS.md has copy-paste posts for r/ClaudeAI, r/cursor, r/LocalLLaMA, Show HN. **BLOCKED on human (~5 min).**
+- **~~MCP client expansion + live demo~~** — DONE (Session 936). Added Cline (VS Code), Continue (VS Code/JetBrains) setup instructions. Live interactive demo lets visitors try all 5 tools in-browser. Updated SEO meta/keywords.
 - **~~MCP landing page optimization~~** — DONE (Session 935). FAQPage schema (6 Q&As), pricing freshness badge, social sharing (X/LinkedIn/HN), Related Resources (5 cross-links). Cross-links added to 4 tool pages.
 - **~~MCP blog post~~** — DONE (Session 934). blog-mcp-server-ai-pricing.html. SEO content for MCP distribution channel.
 - **~~Add MCP server rate limit headers~~** — DONE (Session 933). IP-based 60 req/min with X-RateLimit-* headers.
@@ -56,7 +57,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-935, Apr 23 - Jun 27)
+### Completed Summary (Sessions 416-936, Apr 23 - Jun 27)
+- **Session 936:** MCP client expansion — added Cline (VS Code), Continue (VS Code/JetBrains) setup instructions. Live interactive demo on mcp.html. Updated SEO meta. 1 commit, 1 file.
 - **Session 935:** MCP landing page optimization (FAQPage schema, freshness badge, social sharing, cross-links) + 4 tool page cross-links to MCP. 2 commits, 5 files.
 - **Session 934:** MCP server blog post (SEO) + Reddit/HN drafts. 2 commits, 5 files.
 - **Session 933:** MCP server improvements — rate limiting, get_model_details tool, llms.txt, homepage link, registry submissions guide. 5 commits, 4 files.
