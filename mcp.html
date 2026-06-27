@@ -25,6 +25,7 @@
       gtag('config', 'G-0CEP7S9Y3J');
     </script>
     <script src="analytics.js" defer></script>
+    <script src="pricing-data.js" defer></script>
     <script src="shared.js" defer></script>
     <script type="application/ld+json">
     {
@@ -37,6 +38,62 @@
         "operatingSystem": "Any",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "provider": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is the APIpulse MCP server free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, completely free. No API key required. Rate limited to 60 requests/minute."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How current is the MCP server pricing data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Updated regularly. Each response includes a timestamp. Check /data/pricing.json for the raw data."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the MCP server work offline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No — it's a hosted HTTP endpoint. Your AI tool needs internet access."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI tools support the APIpulse MCP server?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Any MCP client that supports the Streamable HTTP transport (2025-03-26) works. This includes Claude Code, Cursor, Windsurf, and many more."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What MCP tools does APIpulse provide?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "5 tools: get_pricing (live costs for 42 models), compare_models (side-by-side comparison), calculate_cost (monthly estimates), find_cheapest (sort by price), and get_model_details (detailed info including deprecation status)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between the MCP server and APIpulse Pro?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The MCP server gives you pricing data in your AI tools. APIpulse Pro ($29 lifetime) adds migration code templates, cost optimization reports, and provider-specific guides for all 42 models."
+                }
+            }
+        ]
     }
     </script>
     <style>
@@ -101,6 +158,7 @@
     <div class="mcp-page">
         <div class="mcp-hero">
             <div class="mcp-badge">Model Context Protocol</div>
+            <div id="pricing-freshness" style="margin-bottom:16px;"></div>
             <h1>AI API Pricing in Your AI Tools</h1>
             <p>Ask Claude Code, Cursor, or any MCP client about AI model pricing — and get instant answers from 42 models across 10 providers.</p>
             <div class="endpoint">https://getapipulse.com/api/mcp</div>
@@ -264,6 +322,37 @@
             </div>
         </div>
 
+        <!-- Social Sharing -->
+        <div style="text-align:center;margin:40px 0 24px;">
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">Share this with other developers</p>
+            <div style="display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+                <a href="https://x.com/intent/tweet?text=Free%20MCP%20server%20for%20AI%20API%20pricing%20%E2%80%94%2042%20models%2C%2010%20providers.%20Works%20in%20Claude%20Code%2C%20Cursor%2C%20Windsurf.%20One%20command%20to%20install.&url=https%3A%2F%2Fgetapipulse.com%2Fmcp.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-secondary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    Share on X
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fmcp.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-secondary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                    Share on LinkedIn
+                </a>
+                <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fgetapipulse.com%2Fmcp.html&t=Free%20MCP%20Server%20for%20AI%20API%20Pricing%20%E2%80%94%2042%20Models%2C%2010%20Providers" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-secondary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M0 0v24h24V0H0zm12.7 13.5v5.3h-1.5v-5.3L7.6 5.2h1.7l3 6.3 3-6.3h1.7l-3.3 8.3z"/></svg>
+                    Submit to HN
+                </a>
+            </div>
+        </div>
+
+        <!-- Related Resources -->
+        <div style="margin:24px 0 40px;">
+            <h2 style="font-size:20px;font-weight:700;text-align:center;margin-bottom:16px;">Related Resources</h2>
+            <ul style="list-style:none;padding:0;max-width:600px;margin:0 auto;">
+                <li style="padding:10px 0;border-bottom:1px solid var(--border);"><a href="cheapest-model-finder.html" style="color:var(--accent);font-weight:600;">Cheapest Model Finder</a> — Find the lowest-cost AI model for your needs across 42 models</li>
+                <li style="padding:10px 0;border-bottom:1px solid var(--border);"><a href="calculator.html" style="color:var(--accent);font-weight:600;">AI API Cost Calculator</a> — Calculate your monthly spend across 42 models</li>
+                <li style="padding:10px 0;border-bottom:1px solid var(--border);"><a href="compare.html" style="color:var(--accent);font-weight:600;">Compare AI Models</a> — Side-by-side pricing comparison</li>
+                <li style="padding:10px 0;border-bottom:1px solid var(--border);"><a href="ai-api-pricing-report-2026.html" style="color:var(--accent);font-weight:600;">State of AI API Pricing 2026</a> — 42 models compared, key trends, 40-96% savings</li>
+                <li style="padding:10px 0;"><a href="api-docs.html" style="color:var(--accent);font-weight:600;">REST API</a> — Access the same pricing data programmatically via our open JSON API</li>
+            </ul>
+        </div>
+
         <!-- CTA -->
         <div class="mcp-cta">
             <h2>Need More Than Pricing Data?</h2>
@@ -283,6 +372,8 @@
         });
         if (typeof trackEvent === 'function') trackEvent('mcp_copy_code', { code_id: id });
     }
+    // Render pricing freshness badge
+    if (typeof renderPricingFreshness === 'function') renderPricingFreshness('pricing-freshness');
     </script>
 </body>
 </html>
