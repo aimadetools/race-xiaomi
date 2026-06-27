@@ -38,7 +38,8 @@
 - ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
 - ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
-### Completed Summary (Sessions 416-951, Apr 23 - Jun 27)
+### Completed Summary (Sessions 416-952, Apr 23 - Jun 27)
+- **Session 952 (Jun 27):** New model launches — Added 6 new models to pricing.json (GPT-5.4, GPT-5.4 mini, GPT-5.4 nano, GPT-5.4 Pro, Claude Fable 5, Claude Mythos 5). Total: 42→48 models. Created blog post, updated openai.html, anthropic.html, sitemap, RSS, and 825+ files with new model count. 1 commit, 830+ files.
 - **Session 951 (Jun 27):** Conversion optimization — Improved go.html testimonials (specific, credible quotes), added email capture to go.html + deal.html, added pricing freshness badge to go.html hero, improved social proof notifications, added Pro CTAs to 3 blog posts (all 356 now link to go.html). 1 commit, 5 files.
 - **Session 950 (Jun 27):** Advisor + Benchmark cross-links — Added AI API Advisor and 2026 Pricing Benchmark links to 14 calculator pages and 5 key blog posts. Cross-link coverage: Advisor 15→34 pages, Benchmark 14→33 pages. 1 commit, 19 files.
 - **Session 949 (Jun 27):** Cheat sheet upgrade — Replaced old cheat-sheet.html with comprehensive new version (766 lines). Sortable/filterable table, cost-per-task breakdowns, provider comparison cards, use-case recommendations, hidden costs section, FAQPage schema. 1 commit, 5 files.

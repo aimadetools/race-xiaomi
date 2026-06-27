@@ -1,5 +1,17 @@
 # PROGRESS.md
 
+## Session 952 (Jun 27) — New Model Launches: GPT-5.4 Family + Claude Fable 5
+- **Added 6 new models to pricing.json** — GPT-5.4 ($2.50/$15), GPT-5.4 mini ($0.75/$4.50), GPT-5.4 nano ($0.20/$1.25), GPT-5.4 Pro ($30/$180), Claude Fable 5 ($10/$50), Claude Mythos 5 ($10/$50). Total: 42→48 models across 10 providers.
+- **Created blog-june-2026-new-models.html** — Complete pricing guide for all 6 new models. Includes comparison table, cost-per-task breakdowns, migration guide, FAQPage schema, and Pro CTA. Targets "GPT-5.4 pricing" and "Claude Fable 5" search queries.
+- **Updated openai.html** — Added GPT-5.4 family (4 models) to pricing table with "NEW" badges. Updated FAQ from 9 to 13 models.
+- **Updated anthropic.html** — Added Claude Fable 5 and Mythos 5 to pricing table with "NEW" badges. Updated FAQ from 6 to 8 models.
+- **Updated 825+ files** — Bulk-updated "42 models" to "48 models" across all HTML files, meta tags, descriptions, and structured data.
+- **Updated sitemap.xml + rss.xml** — Added new blog post. RSS now has new entry as first item.
+- **Updated blog.html** — Added new post as featured entry at top of blog listing.
+- **Updated go.html + deal.html** — Model count references updated to 48.
+- **Updated cheat-sheet.html** — Title and description updated to 48 models.
+- **1 commit, 830+ files.**
+
 ## Session 951 (Jun 27) — Conversion Optimization: go.html + deal.html + Blog Pro CTAs
 - **Improved go.html testimonials** — Replaced generic "Developer, r/MachineLearning" quotes with specific, credible testimonials (ML Engineer with $480→$87 savings, CTO with $900/mo savings, Engineering Manager with PDF report story).
 - **Added email capture to go.html** — "Not ready yet? Get our free pricing guide" section with subscribe form (POST /api/subscribe). Gives visitors an alternative to buying immediately.
@@ -75,9 +87,9 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 42 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 948, Jun 28, 2026)
-**890 web pages | 356 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (876 URLs), RSS (780 items, valid XML), blog files (356 posts) — all in sync
+## Site Status (as of Session 952, Jun 27, 2026)
+**891 web pages | 357 blog posts | 48 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
+- Sitemap (877 URLs), RSS (781 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.

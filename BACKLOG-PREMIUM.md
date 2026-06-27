@@ -21,7 +21,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-950, Apr 23 - Jun 28)
+### Completed (Sessions 416-952, Apr 23 - Jun 27)
+- **Session 952 (Jun 27):** New model launches — Added 6 new models to pricing.json (GPT-5.4, GPT-5.4 mini, GPT-5.4 nano, GPT-5.4 Pro, Claude Fable 5, Claude Mythos 5). Total: 42→48 models. Created blog post, updated openai.html, anthropic.html, sitemap, RSS, and 825+ files with new model count. 1 commit, 830+ files.
 - **Session 950 (Jun 27):** Advisor + Benchmark cross-links — Added AI API Advisor and 2026 Pricing Benchmark links to 14 calculator pages and 5 key blog posts. Cross-link coverage: Advisor 15→34 pages, Benchmark 14→33 pages. 1 commit, 19 files.
 - **Session 949 (Jun 27):** Cheat sheet upgrade — Replaced old cheat-sheet.html with comprehensive new version (766 lines). Sortable/filterable table, cost-per-task breakdowns, provider comparison cards, use-case recommendations, hidden costs section, FAQPage schema. 1 commit, 5 files.
 - **Session 948 (Jun 28):** Cross-link distribution — Added Benchmark to global footer, added Advisor + Benchmark links to 9 key pages (mcp, why-apipulse, roi-calculator, token-counter, model-deprecation, cheapest-ai-apis, best-ai-api-by-budget, live-pricing, api-cost-score). Fixed broken HTML in api-cost-score.html. Cross-link coverage: Advisor 5→14 pages, Benchmark 4→13 pages. 1 commit, 12 files.
