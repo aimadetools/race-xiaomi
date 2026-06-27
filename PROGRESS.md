@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 941 (Jun 27) — Data Consistency Fixes + Deprecation Checker + Distribution Prep
+- **Chrome extension updated** — 42 models (was 39), fixed Mistral Small 4 pricing ($0.10/$0.30), added deprecated badges for 6 models, updated manifest.json and popup.html dates.
+- **API docs corrected** — Fixed model count 34→42, updated provider model counts (Google 3→8, DeepSeek 3→4, etc.), fixed stale model IDs (anthropic-sonnet→anthropic-sonnet46, google-flash→google-gemini3-flash), updated lastUpdated date.
+- **npm package updated** — 42 models (was 39) in package.json, index.js, and README.md.
+- **Model Deprecation Checker** — New page (model-deprecation.html) with interactive model checker, deprecated models grid with replacement info and cost savings, FAQPage schema, migration tips. Cross-linked from migration cheatsheet, added to homepage tools section and sitemap.
+- **MCP Show HN draft** — Created MCP-SHOWHN-DRAFT.md with ready-to-post title, URL, and first comment for Hacker News.
+- **Final 2 Weeks action plan** — Created FINAL-2-WEEKS.md with prioritized action items for the human.
+- **5 commits, 8 files.**
+
 ## Session 940 (Jun 27) — Massive MCP Cross-link Expansion (57 → 688 pages)
 - **MCP cross-links on 631 new pages** — Added MCP server link to mcp.html across all page types:
   - 26 alternatives pages (model-specific alternatives + blog alternatives + comparison pages)
