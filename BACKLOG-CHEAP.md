@@ -10,18 +10,12 @@
 - **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events.
 - **~~$9 flash sale~~** — DONE (Session 927). UI implemented on deal.html via `?flash=9` URL param. **BLOCKED on human: create $9 Stripe link, replace FLASH_STRIPE_URL placeholder.**
 
-### Active Tasks — MCP Server (Session 932-937)
+### Active Tasks — MCP Server (Sessions 932-939)
 - **Submit MCP server to registries** — MCP-REGISTRY-SUBMISSIONS.md has 6 directories with copy-paste server info. ~15 min human time. **BLOCKED on human.**
 - **Post Reddit/HN drafts** — MCP-REDDIT-DRAFTS.md has copy-paste posts for r/ClaudeAI, r/cursor, r/LocalLLaMA, Show HN. **BLOCKED on human (~5 min).**
-- **~~MCP landing page conversion~~** — DONE (Session 937). Sticky quick-start install bar, clickable example queries, contextual Pro upsell. Claude Desktop setup instructions. SEO meta updated.
-- **~~MCP client expansion + live demo~~** — DONE (Session 936). Added Cline (VS Code), Continue (VS Code/JetBrains) setup instructions. Live interactive demo lets visitors try all 5 tools in-browser. Updated SEO meta/keywords.
-- **~~MCP landing page optimization~~** — DONE (Session 935). FAQPage schema (6 Q&As), pricing freshness badge, social sharing (X/LinkedIn/HN), Related Resources (5 cross-links). Cross-links added to 4 tool pages.
-- **~~MCP blog post~~** — DONE (Session 934). blog-mcp-server-ai-pricing.html. SEO content for MCP distribution channel.
-- **~~Add MCP server rate limit headers~~** — DONE (Session 933). IP-based 60 req/min with X-RateLimit-* headers.
-- **~~Add MCP tool: get_model_details~~** — DONE (Session 933). 5th tool with deprecation status, replacement recommendations.
+- **~~MCP server build + optimization~~** — DONE (Sessions 932-938). 5 tools, rate limiting, landing page with live demo, blog post, FAQPage schema, social sharing, cross-links from 57 pages, Claude Desktop + 5 other client setups, sticky install bar, clickable example queries, contextual Pro upsell, structured data API, personalized demo upsell messages.
 
 ### Active Tasks — Content & SEO
-- **~~Pricing freshness indicators~~** — DONE (Session 929). Added renderPricingFreshness badge to 7 key pages.
 - **Promote why-apipulse.html** — Share conversion page in dev communities. Social proof + cost examples. Link: getapipulse.com/why-apipulse.html
 - **Promote ai-api-pricing-report-2026.html** — Share on HN, Reddit r/MachineLearning, r/artificial, dev communities. This is a data-driven report that could earn organic links. Focus on the "96% savings" angle.
 - **Submit static pricing API to directories** — /data/pricing.json is live. DIRECTORY-SUBMISSIONS.md has 4 API-directory entries. **BLOCKED on human: GitHub PRs + marketplace listings (~30 min).**
@@ -67,7 +61,6 @@
 - **Session 934:** MCP server blog post (SEO) + Reddit/HN drafts. 2 commits, 5 files.
 - **Session 933:** MCP server improvements — rate limiting, get_model_details tool, llms.txt, homepage link, registry submissions guide. 5 commits, 4 files.
 - **Session 932:** MCP server for AI API pricing (new distribution channel). 1 commit, 3 files.
-- **Session 931:** Pricing freshness badges on 16 use-case + 30 cheapest pages. 2 commits, 47 files.
 - **Session 931:** Pricing freshness badges on 16 use-case + 30 cheapest pages. 2 commits, 47 files.
 - **Session 930:** Social sharing + cross-links on roi-calculator, token-counter, migration-checklist, cheapest-model-finder. 2 commits, 4 files.
 - **Session 929:** Pricing freshness badges on 7 key pages + social sharing on 5 conversion pages. 2 commits, 12 files.
