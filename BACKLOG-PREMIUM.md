@@ -21,7 +21,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-947, Apr 23 - Jun 28)
+### Completed (Sessions 416-948, Apr 23 - Jun 28)
+- **Session 948 (Jun 28):** Cross-link distribution — Added Benchmark to global footer, added Advisor + Benchmark links to 9 key pages (mcp, why-apipulse, roi-calculator, token-counter, model-deprecation, cheapest-ai-apis, best-ai-api-by-budget, live-pricing, api-cost-score). Fixed broken HTML in api-cost-score.html. Cross-link coverage: Advisor 5→14 pages, Benchmark 4→13 pages. 1 commit, 12 files.
 - **Session 947 (Jun 28):** Revenue tools — AI API Advisor (interactive 4-step recommender, 42 models), 2026 Pricing Benchmark (downloadable report with CSV, email capture), Pricing Badges (embeddable README badges). All cross-linked from homepage, global footer, tools page, sitemap, RSS. 3 commits, 9 files.
 - **Session 946 (Jun 28):** SEO duplicate cleanup — 7 duplicate comparison pages fixed, sitemap cleaned, RSS validated, orphan page resolved. 4 commits, 29 files.
 - **Session 945 (Jun 28):** Documentation cleanup — rewrote PROGRESS.md, FINAL-2-WEEKS.md, BACKLOG files. 1 commit, 4 files.

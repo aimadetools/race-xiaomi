@@ -6,7 +6,7 @@
 - **Fixed broken related-tools HTML** in api-cost-score.html — MCP link was incorrectly nested inside Savings Calculator card div.
 - **Added related tools section to live-pricing.html** — New section with Advisor, Benchmark, Calculator, Compare, Cheapest Finder, MCP.
 - **Cross-link coverage** — Advisor: 5 → 14 pages. Benchmark: 4 → 13 pages.
-- **1 commit, 11 files.**
+- **1 commit, 12 files, +56 lines.**
 
 ## Session 947 (Jun 28) — New Revenue Tools: AI API Advisor + Pricing Benchmark
 - **Built AI API Advisor** (ai-api-advisor.html) — Interactive 4-step tool: use case → budget → volume → priority → personalized model recommendation. Scores 42 models in real-time with cost estimates. GA4 tracked (`advisor_completed` event). Pro upsell in results. Links to benchmark.
