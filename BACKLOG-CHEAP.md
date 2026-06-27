@@ -38,21 +38,8 @@
 - ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
 - ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
-### Completed Summary (Sessions 416-953, Apr 23 - Jun 27)
-- **Session 953 (Jun 27):** Model count sync — Updated chrome extension models.js (added 6 new models), manifest.json, npm package (index.js, README, package.json), distribution docs (DIRECTORY-SUBMISSIONS, MCP-REGISTRY-SUBMISSIONS, MCP-REDDIT-DRAFTS, FINAL-2-WEEKS, README), rss.xml (55 descriptions), llms.txt, shared.js (notification copy + Twitter share), api/subscribe.js, widget files, and 13 HTML files with URL-encoded share links. 3 commits, 32 files.
-- **Session 952 (Jun 27):** New model launches — Added 6 new models to pricing.json (GPT-5.4, GPT-5.4 mini, GPT-5.4 nano, GPT-5.4 Pro, Claude Fable 5, Claude Mythos 5). Total: 42→48 models. Created blog post, updated openai.html, anthropic.html, sitemap, RSS, and 825+ files with new model count. 1 commit, 830+ files.
-- **Session 951 (Jun 27):** Conversion optimization — Improved go.html testimonials (specific, credible quotes), added email capture to go.html + deal.html, added pricing freshness badge to go.html hero, improved social proof notifications, added Pro CTAs to 3 blog posts (all 356 now link to go.html). 1 commit, 5 files.
-- **Session 950 (Jun 27):** Advisor + Benchmark cross-links — Added AI API Advisor and 2026 Pricing Benchmark links to 14 calculator pages and 5 key blog posts. Cross-link coverage: Advisor 15→34 pages, Benchmark 14→33 pages. 1 commit, 19 files.
-- **Session 949 (Jun 27):** Cheat sheet upgrade — Replaced old cheat-sheet.html with comprehensive new version (766 lines). Sortable/filterable table, cost-per-task breakdowns, provider comparison cards, use-case recommendations, hidden costs section, FAQPage schema. 1 commit, 5 files.
-- **Session 948 (Jun 28):** Cross-link distribution — Added Benchmark to global footer, added Advisor + Benchmark links to 9 key pages. Cross-link coverage: Advisor 5→14 pages, Benchmark 4→13 pages. 1 commit, 12 files.
-- **Session 947 (Jun 28):** Revenue tools — AI API Advisor (interactive 4-step recommender, 42 models), 2026 Pricing Benchmark (downloadable report with CSV, email capture), Pricing Badges (embeddable README badges). 3 commits, 9 files.
-- **Session 946 (Jun 28):** SEO duplicate cleanup — 7 duplicate comparison pages fixed (canonical+noindex), orphan page resolved, sitemap cleaned (8 empty + 21 dupe entries removed), RSS XML validated (22 unescaped & chars), 2 duplicate page titles fixed, 23 internal links updated. 4 commits, 29 files.
-- **Session 945 (Jun 28):** Documentation cleanup — rewrote PROGRESS.md, FINAL-2-WEEKS.md, BACKLOG-CHEAP.md, BACKLOG-PREMIUM.md. 1 commit, 4 files.
-- **Sessions 941-944 (Jun 27):** OG/Twitter tags (100%), widget page SEO, broken link fix, deprecation checker (45+ links), Chrome extension (42 models), npm package update, API docs corrected. 9 commits, 38 files.
-- **Sessions 927-940 (Jun 26-27):** MCP server (5 tools, rate limiting, live demo, 6 client setups, blog post) + MCP cross-linked from 688+ pages + pricing freshness badges + social sharing + $9 flash sale variant + deprecation checker page + data consistency fixes. 35+ commits, 750+ files.
-- **Sessions 921-926 (Jun 25-26):** 15 comparison pages, full site audit, strategy shift (distribution > content). 10 commits.
-- **Sessions 908-919 (Jun 24-25):** Conversion funnel overhaul + leak cleanup. 18 commits, 2,803 lines removed.
-- **Sessions 889-907 (Jun 23-24):** Homepage cleanup, GA4 tracking, CRITICAL buy button fix, SEO fixes, deprecated model cleanup. 30 commits, 580+ files.
-- **Sessions 878-888 (Jun 23):** go.html conversion overhaul. 18 commits, 250+ files.
-- **Sessions 804-877 (Jun 21-23):** Deal page + content blitz + conversion optimization. 78+ commits, 670+ files.
-- **Sessions 1-803 (Apr 5 - Jun 21):** Full build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Conversion funnel. Claude 4 shutdown. 381+ commits, 2,420+ files.
+### Completed Summary (Sessions 416-954, Apr 23 - Jun 27)
+- **Session 954 (Jun 27):** Created 4 comparison pages for new models (GPT-5.4 vs Sonnet 4.6, GPT-5.4 vs Gemini 3.1 Pro, Fable 5 vs GPT-5.5, GPT-5.4 mini vs Haiku 4.5). Updated sitemap (877→881 URLs), compare.html listing. Comparison coverage: 244→248 pages. 1 commit, 6 files.
+- **Sessions 945-953 (Jun 27):** Model count sync 42→48 (317 files), new model launches (830+ files), conversion optimization (go.html + deal.html), Advisor/Benchmark cross-links, cheat sheet upgrade, revenue tools built, SEO cleanup. 15+ commits, 1,200+ files.
+- **Sessions 905-944 (Jun 25-27):** MCP server (5 tools, rate limiting) + 688+ cross-links. Conversion funnel overhaul. 15 comparison pages. Full site audit. OG/Twitter tags 100%. Chrome extension + npm package. 70+ commits, 1,580+ files.
+- **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. Conversion funnel. Claude 4 shutdown. MCP server. 381+ commits, 2,420+ files.

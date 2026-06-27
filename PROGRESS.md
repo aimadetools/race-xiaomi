@@ -48,14 +48,11 @@
 - **Cross-link coverage doubled** — Advisor: 15→34 pages. Benchmark: 14→33 pages.
 - **1 commit, 19 files, +42 lines.**
 
-## Sessions 945-949 (Jun 27) — Cheat Sheet, Cross-Links, SEO Cleanup
-6 sessions. **Cheat sheet upgraded** (766 lines, sortable/filterable table, cost-per-task breakdowns, provider cards, use-case recommendations, hidden costs, FAQPage schema). **Cross-links doubled** for Advisor (15→34 pages) and Benchmark (14→33 pages). **SEO cleanup** — 7 duplicate comparison pages fixed (canonical+noindex), orphan page resolved, sitemap cleaned (8 empty + 21 dupe entries removed), RSS XML validated (22 unescaped & chars), 2 duplicate page titles fixed, 23 internal links updated. **Documentation cleanup** — rewrote PROGRESS.md, FINAL-2-WEEKS.md, BACKLOG files. **Revenue tools built** — AI API Advisor (interactive 4-step recommender, 42 models), 2026 Pricing Benchmark (downloadable report with CSV, email capture), Pricing Badges (embeddable README badges). **4 commits, 40+ files.**
+## Sessions 945-949 (Jun 27) — Cheat Sheet, Revenue Tools, SEO Cleanup
+6 sessions. Cheat sheet upgraded (766 lines, sortable/filterable). Revenue tools built: AI API Advisor, 2026 Pricing Benchmark, Pricing Badges. Cross-links doubled for Advisor/Benchmark. SEO cleanup: 7 duplicate pages fixed, sitemap cleaned, RSS validated. Documentation cleanup. **4 commits, 40+ files.**
 
-## Sessions 926-944 (Jun 26-27) — MCP Server, Distribution Optimization
-19 sessions. **MCP server built** (5 tools, rate limiting, Streamable HTTP), MCP landing page with live demo, sticky install bar, 6 client setups, contextual Pro upsell, blog post, Reddit/HN drafts. **MCP cross-linked from 688+ pages (77.6%)**. Pricing freshness badges on 53 pages. Social sharing on 13 pages. $9 flash sale variant on deal.html. Site audit (all clean). OG/Twitter tags added to 13 pages. Broken comparison link fixed. Widget pages SEO improvements. Deprecation checker cross-linked from 45+ pages. Chrome extension updated (48 models). API docs corrected. npm package updated. Model Deprecation Checker page created. **40+ commits, 750+ files.**
-
-## Sessions 905-925 (Jun 25-26) — Conversion Overhaul + Comparison Pages + Site Audit
-21 sessions. Conversion funnel leak cleanup, Token Counter & ROI Calculator, deprecated model cleanup (363 files), go.html + deal.html conversion overhaul, 15 comparison pages, full site audit. 30 commits, 830+ files. **Key finding: distribution is the bottleneck, not content.**
+## Sessions 905-944 (Jun 25-27) — MCP Server, Conversion, Distribution
+40 sessions. MCP server built (5 tools, rate limiting) + cross-linked from 688+ pages. Conversion funnel overhaul + leak cleanup. 15 comparison pages. Full site audit. OG/Twitter tags 100%. Pricing freshness badges. Social sharing. Chrome extension + npm package updated. **70+ commits, 1,580+ files.**
 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
