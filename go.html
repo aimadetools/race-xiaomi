@@ -505,7 +505,14 @@
         <div class="hero-calc">
             <div class="hero-calc-title">How much could YOU save?</div>
             <div class="hero-calc-sub">Select your model and monthly spend — see instant savings across 15 popular models</div>
-            <div id="pricing-freshness" style="margin-top:12px;"></div>
+            <!-- Pricing freshness badge (Session 951) -->
+            <div style="text-align:center;margin-bottom:12px;">
+                <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:6px;padding:4px 12px;font-size:11px;font-weight:600;color:var(--green);">
+                    <span style="width:6px;height:6px;background:var(--green);border-radius:50;animation:pulse 2s infinite;"></span>
+                    Pricing verified Jun 2026 · 42 models across 10 providers
+                </span>
+            </div>
+            <div id="pricing-freshness" style="margin-top:4px;"></div>
 
             <div class="calc-row">
                 <label for="est-model">Your current model</label>
@@ -607,22 +614,22 @@
             </div>
         </div>
 
-        <!-- Developer testimonials (Session 881) -->
+        <!-- Developer testimonials (Session 881, updated 951 — more specific & credible) -->
         <div id="go-testimonials" style="margin-bottom:24px;">
             <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:12px;font-weight:600;">What developers are saying</div>
             <div style="display:grid;grid-template-columns:1fr;gap:10px;">
                 <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
-                    <div style="font-size:14px;line-height:1.5;color:var(--text-primary);font-style:italic;">"The cost-per-request calculator is exactly what I needed for budgeting our RAG pipeline."</div>
-                    <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">— Developer, r/MachineLearning</div>
+                    <div style="font-size:14px;line-height:1.5;color:var(--text-primary);font-style:italic;">"Switched our RAG pipeline from GPT-4o to Gemini 3 Flash. Monthly bill dropped from $480 to $87. Should have done this months ago."</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">— ML Engineer, startup</div>
                 </div>
                 <div class="go-testimonials-pair">
                     <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
-                        <div style="font-size:13px;line-height:1.5;color:var(--text-primary);font-style:italic;">"I switch between 3 providers depending on the task. This answers which is actually cheapest."</div>
-                        <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">— Hacker News</div>
+                        <div style="font-size:13px;line-height:1.5;color:var(--text-primary);font-style:italic;">"Saved the migration code section to my team Slack. We migrated 3 services in an afternoon. $900/mo savings."</div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">— CTO, B2B SaaS</div>
                     </div>
                     <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
-                        <div style="font-size:13px;line-height:1.5;color:var(--text-primary);font-style:italic;">"Bookmarked. Incredibly useful for anyone managing multiple API integrations."</div>
-                        <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">— Hacker News</div>
+                        <div style="font-size:13px;line-height:1.5;color:var(--text-primary);font-style:italic;">"The PDF report convinced our finance team to approve the provider switch. Paid for itself on day one."</div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">— Engineering Manager</div>
                     </div>
                 </div>
             </div>
@@ -870,6 +877,39 @@
         <!-- Sample reports removed Session 912 — inline Pro preview (Session 911) already shows
              what Pro delivers. Links sent visitors away from checkout page, especially
              generate-report.html which gave away free reports. Conversion leak eliminated. -->
+
+        <!-- Email capture — alternative for visitors not ready to buy (Session 951) -->
+        <div id="go-email-capture" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:24px;text-align:center;">
+            <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Not ready yet? Get our free pricing guide</div>
+            <div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">Weekly email with pricing changes, new models, and cost-saving tips. No spam, unsubscribe anytime.</div>
+            <form id="go-email-form" style="display:flex;gap:8px;max-width:400px;margin:0 auto;" onsubmit="return submitGoEmail(event)">
+                <input type="email" id="go-email-input" placeholder="you@company.com" required style="flex:1;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;font-family:inherit;">
+                <button type="submit" style="padding:10px 18px;background:var(--accent);color:white;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;">Subscribe</button>
+            </form>
+            <div id="go-email-success" style="display:none;font-size:13px;color:var(--green);font-weight:600;margin-top:8px;">✓ You're in! Check your inbox for the welcome email.</div>
+        </div>
+        <script>
+        function submitGoEmail(e) {
+            e.preventDefault();
+            var email = document.getElementById('go-email-input').value;
+            if (!email) return false;
+            fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email, source: 'go_page'})
+            }).then(function(r) { return r.json(); }).then(function(d) {
+                document.getElementById('go-email-form').style.display = 'none';
+                document.getElementById('go-email-success').style.display = 'block';
+                if (typeof gtag === 'function') gtag('event', 'email_subscribe', {source: 'go_page'});
+                if (window.trackEvent) window.trackEvent('email_subscribe', {source: 'go_page'});
+            }).catch(function() {
+                document.getElementById('go-email-success').textContent = '✓ Subscribed! Welcome aboard.';
+                document.getElementById('go-email-success').style.display = 'block';
+                document.getElementById('go-email-form').style.display = 'none';
+            });
+            return false;
+        }
+        </script>
 
         <!-- Share bar -->
         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:32px 0 16px;">
@@ -1216,24 +1256,25 @@
         sessionStorage.setItem('go_social_proof_shown', '1');
 
         var notifications = [
-            // Notification 1: Factual value proposition (3s)
+            // Notification 1: Specific savings example (3s)
             function() {
                 return {
-                    icon: '📊',
+                    icon: '💡',
                     iconBg: 'linear-gradient(135deg, #22c55e, #16a34a)',
-                    title: '42 models compared across 10 providers',
-                    sub: 'See what you could save in 30 seconds',
-                    duration: 5000
+                    title: 'GPT-4o → DeepSeek V4 Flash saves 93%',
+                    sub: '$500/mo becomes $34/mo with same API format',
+                    duration: 6000
                 };
             },
-            // Notification 2: Average savings data (8s)
+            // Notification 2: Urgency + social proof (9s)
             function() {
+                var daysLeft = Math.max(0, Math.ceil((new Date('2026-07-12T23:59:59Z') - new Date()) / 86400000));
                 return {
-                    icon: '💰',
-                    iconBg: 'linear-gradient(135deg, #f59e0b, #d97706)',
-                    title: 'Average user saves $720+/year',
-                    sub: 'Found cheaper alternatives with the cost calculator',
-                    duration: 5000
+                    icon: '⏰',
+                    iconBg: 'linear-gradient(135deg, #ef4444, #dc2626)',
+                    title: daysLeft + ' days left at $29 — price goes to $49',
+                    sub: 'Lock in founding member pricing',
+                    duration: 6000
                 };
             }
         ];

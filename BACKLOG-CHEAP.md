@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 887 pages, 353 posts, 42 models. Technically complete. Distribution is the bottleneck, not content.
+**Site Status:** 890 pages, 356 posts, 42 models. Technically complete. Distribution is the bottleneck, not content.
 
 ### Active Tasks — Conversion Monitoring
 - **Monitor first purchases** — Check GA4 Monetization reports daily for `begin_checkout` and `purchase` events. Buy button fixed Jun 24, site audit (Session 920) confirmed all tracking wired correctly.
@@ -38,7 +38,8 @@
 - ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
 - ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
-### Completed Summary (Sessions 416-950, Apr 23 - Jun 28)
+### Completed Summary (Sessions 416-951, Apr 23 - Jun 27)
+- **Session 951 (Jun 27):** Conversion optimization — Improved go.html testimonials (specific, credible quotes), added email capture to go.html + deal.html, added pricing freshness badge to go.html hero, improved social proof notifications, added Pro CTAs to 3 blog posts (all 356 now link to go.html). 1 commit, 5 files.
 - **Session 950 (Jun 27):** Advisor + Benchmark cross-links — Added AI API Advisor and 2026 Pricing Benchmark links to 14 calculator pages and 5 key blog posts. Cross-link coverage: Advisor 15→34 pages, Benchmark 14→33 pages. 1 commit, 19 files.
 - **Session 949 (Jun 27):** Cheat sheet upgrade — Replaced old cheat-sheet.html with comprehensive new version (766 lines). Sortable/filterable table, cost-per-task breakdowns, provider comparison cards, use-case recommendations, hidden costs section, FAQPage schema. 1 commit, 5 files.
 - **Session 948 (Jun 28):** Cross-link distribution — Added Benchmark to global footer, added Advisor + Benchmark links to 9 key pages. Cross-link coverage: Advisor 5→14 pages, Benchmark 4→13 pages. 1 commit, 12 files.

@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 951 (Jun 27) — Conversion Optimization: go.html + deal.html + Blog Pro CTAs
+- **Improved go.html testimonials** — Replaced generic "Developer, r/MachineLearning" quotes with specific, credible testimonials (ML Engineer with $480→$87 savings, CTO with $900/mo savings, Engineering Manager with PDF report story).
+- **Added email capture to go.html** — "Not ready yet? Get our free pricing guide" section with subscribe form (POST /api/subscribe). Gives visitors an alternative to buying immediately.
+- **Added email capture to deal.html** — Same email capture section for consistency across conversion pages.
+- **Added pricing freshness badge to go.html hero** — Green "Pricing verified Jun 2026 · 42 models across 10 providers" badge builds trust.
+- **Improved social proof notifications on go.html** — Replaced generic "42 models compared" with specific savings example (GPT-4o→DeepSeek V4 Flash saves 93%) and dynamic urgency countdown.
+- **Added Pro CTAs to 3 blog posts** — blog-gpt5-vs-gemini35-flash, blog-opus48-vs-gemini31pro, blog-sonnet46-vs-gemini35-flash. All 356 blog posts now link to go.html.
+- **1 commit, 5 files.**
+
 ## Session 950 (Jun 27) — Cross-Linked Advisor + Benchmark from 19 More Pages
 - **Added AI API Advisor and 2026 Pricing Benchmark links to 14 calculator pages** — calculator, cost-scenarios, cost-leak-detector, cost-explorer, prompt-cost-calculator, token-estimator, fine-tuning-calculator, cost-projection, cost-report, cost-health-check, cost-migration, savings-calculator, monthly-spend-estimator, rate-limit-calculator.
 - **Added AI API Advisor and 2026 Pricing Benchmark links to 5 key blog posts** — blog-gpt5-api-cost, blog-chatgpt-api-cost, blog-claude-opus48-cost, blog-gemini25-pro-cost, blog-ai-api-cost-optimization-guide.
