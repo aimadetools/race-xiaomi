@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCP Server for AI API Pricing — Free | APIpulse</title>
-    <meta name="description" content="Free MCP server for AI API pricing data. Get live costs for GPT-5, Claude, Gemini, DeepSeek, and 42 models directly in Claude Code, Cursor, and other AI tools.">
-    <meta name="keywords" content="MCP server, AI API pricing, Claude Code MCP, Cursor MCP, LLM pricing tool, AI model cost comparison, Model Context Protocol, GPT pricing MCP">
+    <meta name="description" content="Free MCP server for AI API pricing data. Get live costs for GPT-5, Claude, Gemini, DeepSeek, and 42 models directly in Claude Code, Cursor, Cline, Continue, and other AI tools.">
+    <meta name="keywords" content="MCP server, AI API pricing, Claude Code MCP, Cursor MCP, Cline MCP, Continue MCP, LLM pricing tool, AI model cost comparison, Model Context Protocol, GPT pricing MCP">
     <meta property="og:title" content="MCP Server for AI API Pricing — Free | APIpulse">
-    <meta property="og:description" content="Get live AI API pricing data in your AI coding tools. 42 models, 10 providers. One config line.">
+    <meta property="og:description" content="Get live AI API pricing data in your AI coding tools. 42 models, 10 providers. Works with Claude Code, Cursor, Cline, Continue, and more.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/mcp.html">
@@ -74,7 +74,7 @@
                 "name": "Which AI tools support the APIpulse MCP server?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Any MCP client that supports the Streamable HTTP transport (2025-03-26) works. This includes Claude Code, Cursor, Windsurf, and many more."
+                    "text": "Any MCP client that supports the Streamable HTTP transport (2025-03-26) works. This includes Claude Code, Cursor, Cline, Continue, Windsurf, Zed, and many more."
                 }
             },
             {
@@ -160,7 +160,7 @@
             <div class="mcp-badge">Model Context Protocol</div>
             <div id="pricing-freshness" style="margin-bottom:16px;"></div>
             <h1>AI API Pricing in Your AI Tools</h1>
-            <p>Ask Claude Code, Cursor, or any MCP client about AI model pricing — and get instant answers from 42 models across 10 providers.</p>
+            <p>Ask Claude Code, Cursor, Cline, or any MCP client about AI model pricing — and get instant answers from 42 models across 10 providers.</p>
             <div class="endpoint">https://getapipulse.com/api/mcp</div>
         </div>
 
@@ -235,10 +235,47 @@
             </div>
         </div>
 
+        <!-- Cline (VS Code) -->
+        <div class="setup-section">
+            <h2><span class="tool-logo">🤖</span> Cline (VS Code)</h2>
+            <p>Cline is the most popular MCP client for VS Code. Add the APIpulse server to your Cline MCP settings:</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>~/.cline/mcp.json</span>
+                    <button class="copy-btn" onclick="copyCode(this, 'cline-json')">Copy</button>
+                </div>
+                <pre id="cline-json">{
+  "mcpServers": {
+    "apipulse": {
+      "type": "streamableHttp",
+      "url": "https://getapipulse.com/api/mcp"
+    }
+  }
+}</pre>
+            </div>
+            <p style="font-size:13px;color:var(--text-muted)">Or use the Cline UI: click the ⚙️ gear icon → MCP Servers → Add Server → paste the URL.</p>
+        </div>
+
+        <!-- Continue -->
+        <div class="setup-section">
+            <h2><span class="tool-logo">🔄</span> Continue (VS Code / JetBrains)</h2>
+            <p>Continue supports MCP servers in both VS Code and JetBrains IDEs. Add to your Continue config:</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>~/.continue/config.yaml</span>
+                    <button class="copy-btn" onclick="copyCode(this, 'continue-yaml')">Copy</button>
+                </div>
+                <pre id="continue-yaml">mcpServers:
+  - name: apipulse
+    transport: http
+    url: https://getapipulse.com/api/mcp</pre>
+            </div>
+        </div>
+
         <!-- Windsurf / Other -->
         <div class="setup-section">
             <h2><span class="tool-logo">🌊</span> Windsurf & Other MCP Clients</h2>
-            <p>Any MCP client that supports the Streamable HTTP transport can connect. Use the endpoint URL:</p>
+            <p>Any MCP client that supports the Streamable HTTP transport can connect. Works with Windsurf, Zed, Copilot, and more. Use the endpoint URL:</p>
             <div class="code-block">
                 <div class="code-header">
                     <span>Endpoint</span>
@@ -304,6 +341,28 @@
             </div>
         </div>
 
+        <!-- Live Demo -->
+        <div class="setup-section">
+            <h2>⚡ Try It Live</h2>
+            <p>No install needed — test the MCP server right here in your browser:</p>
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px;">
+                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+                    <label style="font-size:13px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:4px;">Tool</label>
+                    <select id="demo-tool" style="width:100%;padding:10px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;font-family:inherit;" onchange="updateDemoParams()">
+                        <option value="get_pricing">get_pricing — Get pricing for models</option>
+                        <option value="compare_models">compare_models — Compare 2-5 models</option>
+                        <option value="find_cheapest">find_cheapest — Find cheapest models</option>
+                        <option value="calculate_cost">calculate_cost — Estimate monthly cost</option>
+                        <option value="get_model_details">get_model_details — Model details</option>
+                    </select>
+                </div>
+                <div id="demo-params" style="margin-bottom:16px;"></div>
+                <button onclick="runDemo()" id="demo-run-btn" style="background:var(--accent);color:white;border:none;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all 0.2s;">Run Query</button>
+                <div id="demo-status" style="margin-top:12px;font-size:13px;color:var(--text-muted);"></div>
+                <pre id="demo-result" style="display:none;margin-top:16px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-family:'SF Mono',Monaco,'Cascadia Code',monospace;font-size:12px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;color:var(--text-primary);"></pre>
+            </div>
+        </div>
+
         <!-- FAQ -->
         <div class="setup-section">
             <h2>❓ FAQ</h2>
@@ -326,7 +385,7 @@
         <div style="text-align:center;margin:40px 0 24px;">
             <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">Share this with other developers</p>
             <div style="display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center;">
-                <a href="https://x.com/intent/tweet?text=Free%20MCP%20server%20for%20AI%20API%20pricing%20%E2%80%94%2042%20models%2C%2010%20providers.%20Works%20in%20Claude%20Code%2C%20Cursor%2C%20Windsurf.%20One%20command%20to%20install.&url=https%3A%2F%2Fgetapipulse.com%2Fmcp.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-secondary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;">
+                <a href="https://x.com/intent/tweet?text=Free%20MCP%20server%20for%20AI%20API%20pricing%20%E2%80%94%2042%20models%2C%2010%20providers.%20Works%20in%20Claude%20Code%2C%20Cursor%2C%20Cline%2C%20Continue%2C%20Windsurf.%20One%20command%20to%20install.&url=https%3A%2F%2Fgetapipulse.com%2Fmcp.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-secondary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     Share on X
                 </a>
@@ -374,6 +433,141 @@
     }
     // Render pricing freshness badge
     if (typeof renderPricingFreshness === 'function') renderPricingFreshness('pricing-freshness');
+
+    // ─── Live Demo ──────────────────────────────────────────────
+    const DEMO_CONFIGS = {
+        get_pricing: {
+            params: [
+                { name: 'provider', label: 'Provider (optional)', placeholder: 'e.g. OpenAI, Anthropic, Google', type: 'text' },
+                { name: 'tier', label: 'Tier (optional)', placeholder: 'premium, mid, or budget', type: 'text' }
+            ]
+        },
+        compare_models: {
+            params: [
+                { name: 'models', label: 'Models (comma-separated)', placeholder: 'e.g. openai-gpt5, anthropic-sonnet46, google-gemini3-flash', type: 'text' }
+            ]
+        },
+        find_cheapest: {
+            params: [
+                { name: 'provider', label: 'Provider (optional)', placeholder: 'e.g. DeepSeek, Meta', type: 'text' },
+                { name: 'min_context', label: 'Min context tokens (optional)', placeholder: 'e.g. 128000', type: 'text' }
+            ]
+        },
+        calculate_cost: {
+            params: [
+                { name: 'model', label: 'Model', placeholder: 'e.g. openai-gpt5', type: 'text' },
+                { name: 'daily_requests', label: 'Daily requests', placeholder: '1000', type: 'text' },
+                { name: 'input_tokens', label: 'Input tokens/request', placeholder: '500', type: 'text' },
+                { name: 'output_tokens', label: 'Output tokens/request', placeholder: '200', type: 'text' }
+            ]
+        },
+        get_model_details: {
+            params: [
+                { name: 'model', label: 'Model ID', placeholder: 'e.g. anthropic-opus, openai-gpt5', type: 'text' }
+            ]
+        }
+    };
+
+    function updateDemoParams() {
+        const tool = document.getElementById('demo-tool').value;
+        const cfg = DEMO_CONFIGS[tool];
+        const container = document.getElementById('demo-params');
+        container.innerHTML = cfg.params.map(p =>
+            `<div style="margin-bottom:12px;">
+                <label style="font-size:13px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:4px;">${p.label}</label>
+                <input type="text" data-param="${p.name}" placeholder="${p.placeholder}" style="width:100%;padding:10px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;font-family:'SF Mono',Monaco,monospace;box-sizing:border-box;">
+            </div>`
+        ).join('');
+    }
+
+    async function runDemo() {
+        const tool = document.getElementById('demo-tool').value;
+        const btn = document.getElementById('demo-run-btn');
+        const status = document.getElementById('demo-status');
+        const result = document.getElementById('demo-result');
+
+        // Collect params
+        const args = {};
+        document.querySelectorAll('#demo-params input').forEach(input => {
+            const val = input.value.trim();
+            if (val) {
+                const name = input.dataset.param;
+                if (name === 'models') {
+                    args.models = val.split(',').map(s => s.trim());
+                } else if (['daily_requests', 'input_tokens', 'output_tokens', 'min_context'].includes(name)) {
+                    args[name] = parseInt(val, 10);
+                } else {
+                    args[name] = val;
+                }
+            }
+        });
+
+        btn.disabled = true;
+        btn.textContent = 'Running...';
+        btn.style.opacity = '0.6';
+        status.textContent = 'Sending request...';
+        result.style.display = 'none';
+
+        const startTime = Date.now();
+        try {
+            const resp = await fetch('/api/mcp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream' },
+                body: JSON.stringify({
+                    jsonrpc: '2.0',
+                    id: 1,
+                    method: 'tools/call',
+                    params: { name: tool, arguments: args }
+                })
+            });
+
+            const elapsed = Date.now() - startTime;
+            const contentType = resp.headers.get('content-type') || '';
+
+            if (!resp.ok) {
+                throw new Error(`HTTP ${resp.status}: ${resp.statusText}`);
+            }
+
+            let data;
+            if (contentType.includes('text/event-stream')) {
+                const text = await resp.text();
+                const lines = text.split('\n');
+                for (let i = lines.length - 1; i >= 0; i--) {
+                    if (lines[i].startsWith('data: ')) {
+                        data = JSON.parse(lines[i].slice(6));
+                        break;
+                    }
+                }
+            } else {
+                data = await resp.json();
+            }
+
+            // Extract content from MCP response
+            let display = data;
+            if (data && data.result && data.result.content) {
+                const textContent = data.result.content.find(c => c.type === 'text');
+                if (textContent) {
+                    try { display = JSON.parse(textContent.text); } catch(e) { display = textContent.text; }
+                }
+            }
+
+            result.textContent = JSON.stringify(display, null, 2);
+            result.style.display = 'block';
+            status.textContent = `✓ Response in ${elapsed}ms`;
+            status.style.color = 'var(--green, #22c55e)';
+            if (typeof trackEvent === 'function') trackEvent('mcp_demo_run', { tool: tool });
+        } catch (err) {
+            status.textContent = `✗ Error: ${err.message}`;
+            status.style.color = '#ef4444';
+            result.style.display = 'none';
+        }
+        btn.disabled = false;
+        btn.textContent = 'Run Query';
+        btn.style.opacity = '1';
+    }
+
+    // Initialize demo params on load
+    updateDemoParams();
     </script>
 </body>
 </html>
