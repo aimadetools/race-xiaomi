@@ -38,7 +38,11 @@
 - ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
 - ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
-### Completed Summary (Sessions 416-946, Apr 23 - Jun 28)
+### Completed Summary (Sessions 416-950, Apr 23 - Jun 28)
+- **Session 950 (Jun 27):** Advisor + Benchmark cross-links — Added AI API Advisor and 2026 Pricing Benchmark links to 14 calculator pages and 5 key blog posts. Cross-link coverage: Advisor 15→34 pages, Benchmark 14→33 pages. 1 commit, 19 files.
+- **Session 949 (Jun 27):** Cheat sheet upgrade — Replaced old cheat-sheet.html with comprehensive new version (766 lines). Sortable/filterable table, cost-per-task breakdowns, provider comparison cards, use-case recommendations, hidden costs section, FAQPage schema. 1 commit, 5 files.
+- **Session 948 (Jun 28):** Cross-link distribution — Added Benchmark to global footer, added Advisor + Benchmark links to 9 key pages. Cross-link coverage: Advisor 5→14 pages, Benchmark 4→13 pages. 1 commit, 12 files.
+- **Session 947 (Jun 28):** Revenue tools — AI API Advisor (interactive 4-step recommender, 42 models), 2026 Pricing Benchmark (downloadable report with CSV, email capture), Pricing Badges (embeddable README badges). 3 commits, 9 files.
 - **Session 946 (Jun 28):** SEO duplicate cleanup — 7 duplicate comparison pages fixed (canonical+noindex), orphan page resolved, sitemap cleaned (8 empty + 21 dupe entries removed), RSS XML validated (22 unescaped & chars), 2 duplicate page titles fixed, 23 internal links updated. 4 commits, 29 files.
 - **Session 945 (Jun 28):** Documentation cleanup — rewrote PROGRESS.md, FINAL-2-WEEKS.md, BACKLOG-CHEAP.md, BACKLOG-PREMIUM.md. 1 commit, 4 files.
 - **Sessions 941-944 (Jun 27):** OG/Twitter tags (100%), widget page SEO, broken link fix, deprecation checker (45+ links), Chrome extension (42 models), npm package update, API docs corrected. 9 commits, 38 files.

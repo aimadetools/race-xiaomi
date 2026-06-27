@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 950 (Jun 27) — Cross-Linked Advisor + Benchmark from 19 More Pages
+- **Added AI API Advisor and 2026 Pricing Benchmark links to 14 calculator pages** — calculator, cost-scenarios, cost-leak-detector, cost-explorer, prompt-cost-calculator, token-estimator, fine-tuning-calculator, cost-projection, cost-report, cost-health-check, cost-migration, savings-calculator, monthly-spend-estimator, rate-limit-calculator.
+- **Added AI API Advisor and 2026 Pricing Benchmark links to 5 key blog posts** — blog-gpt5-api-cost, blog-chatgpt-api-cost, blog-claude-opus48-cost, blog-gemini25-pro-cost, blog-ai-api-cost-optimization-guide.
+- **Cross-link coverage doubled** — Advisor: 15→34 pages. Benchmark: 14→33 pages.
+- **These are the newest revenue tools** (Session 947) that convert visitors to Pro. More cross-links = more discovery = more conversions.
+- **1 commit, 19 files, +42 lines.**
+
 ## Session 949 (Jun 27) — Upgraded AI API Pricing Cheat Sheet
 - **Replaced old cheat-sheet.html** (414 lines, simple tables) with comprehensive new version (766 lines).
 - **Added sortable/filterable pricing table** — All 42 models with provider filter, tier filter, search, and column sorting.
@@ -69,8 +76,8 @@
 - **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages.
 - **Social sharing buttons** — 13 key pages with X/LinkedIn/HN share buttons.
 - **MCP server** — 5 tools, rate limited. Linked from 688+ pages (77.6%). MCP-REGISTRY-SUBMISSIONS.md ready.
-- **AI API Advisor** (Session 947) — Interactive 4-step model recommender. Scores 42 models by use case, budget, volume, priority. GA4 tracked. Pro upsell.
-- **2026 Pricing Benchmark** (Session 947) — Downloadable report with key findings, pricing table, cost-per-task analysis, hidden costs. Email capture. CSV download.
+- **AI API Advisor** (Session 947) — Interactive 4-step model recommender. Scores 42 models by use case, budget, volume, priority. GA4 tracked. Pro upsell. Cross-linked from 34 pages.
+- **2026 Pricing Benchmark** (Session 947) — Downloadable report with key findings, pricing table, cost-per-task analysis, hidden costs. Email capture. CSV download. Cross-linked from 33 pages.
 - **Pricing Badges** (Session 947) — Embeddable shields.io badges for 27+ models. Copy Markdown. Filter by tier/provider.
 - **Model Deprecation Checker** — Linked from 45+ pages. FAQPage schema, interactive checker.
 - **SEO fixes** — 7 duplicate comparison pages resolved (canonical+noindex), orphan page fixed, sitemap cleaned (8 empty + 21 dupe entries removed), RSS XML validated, 2 duplicate page titles fixed, 23 internal links updated.
