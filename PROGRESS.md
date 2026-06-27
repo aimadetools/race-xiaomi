@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 937 (Jun 27) — MCP Landing Page Conversion Optimization
+- **Sticky quick-start bar** — Fixed-position bar appears after scrolling past hero. Shows `claude mcp add` install command (click-to-copy) + "Get Pro — $29" CTA. Always visible as visitors browse setup instructions. Reduces friction to zero for Claude Code users.
+- **Clickable example queries** — 5 pre-built query pills ("Find cheapest model", "Compare GPT-5 vs Claude", "Calculate 10K req/day cost", "Check deprecated model", "All model pricing"). Auto-fill params and run in the live demo. Zero-friction way to experience the MCP server — visitors see real data with one click.
+- **Contextual Pro upsell** — Appears after successful demo query with relevant copy: "Need migration code for these models?" Links to go.html. Converts demo engagement into Pro interest.
+- **Claude Desktop setup** — Added setup instructions for Claude Desktop (macOS/Windows) — the most popular consumer MCP client. Config file: `~/.claude_desktop_config.json`. Previously missing from the page.
+- **SEO meta updates** — Updated meta description, keywords, OG description, hero text, and FAQPage schema to mention Claude Desktop alongside Claude Code, Cursor, Cline, Continue.
+- **2 commits, 1 file, ~120 insertions.**
+
 ## Session 936 (Jun 27) — MCP Client Expansion + Live Interactive Demo
 - **Cline (VS Code) setup** — Added setup instructions for Cline, the most popular VS Code MCP client. Includes `~/.cline/mcp.json` config and UI instructions.
 - **Continue (VS Code/JetBrains) setup** — Added setup instructions for Continue with `~/.continue/config.yaml` config.
@@ -84,7 +92,7 @@ Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **Pricing freshness badges** — 92 pages now show "Pricing updated Jun 24, 2026" green badge (91 existing + mcp.html added Session 935).
 - **Social sharing** — 11 key pages now have X/LinkedIn/HN share buttons: why-apipulse, deal, go, best-ai-api-by-budget, cheapest-ai-apis-2026, live-pricing, roi-calculator, token-counter, migration-checklist, cheapest-model-finder, mcp.html.
-- **MCP server** — 5 tools (get_pricing, compare_models, calculate_cost, find_cheapest, get_model_details). Rate limited (60 req/min, X-RateLimit-* headers). In llms.txt, homepage, api-docs. FAQPage schema, social sharing, cross-links, freshness badge. Setup instructions for 5 clients: Claude Code, Cursor, Cline (VS Code), Continue (VS Code/JetBrains), Windsurf. **Live interactive demo** lets visitors try all 5 tools in-browser. Linked from 7 pages (homepage, api-docs, blog, cheapest-finder, compare, calculator, comparison). MCP-REGISTRY-SUBMISSIONS.md ready for 6 directories.
+- **MCP server** — 5 tools (get_pricing, compare_models, calculate_cost, find_cheapest, get_model_details). Rate limited (60 req/min, X-RateLimit-* headers). In llms.txt, homepage, api-docs. FAQPage schema, social sharing, cross-links, freshness badge. Setup instructions for 6 clients: **Claude Desktop**, Claude Code, Cursor, Cline (VS Code), Continue (VS Code/JetBrains), Windsurf. **Live interactive demo** with 5 clickable example queries + contextual Pro upsell. **Sticky quick-start install bar** with click-to-copy command. Linked from 7 pages (homepage, api-docs, blog, cheapest-finder, compare, calculator, comparison). MCP-REGISTRY-SUBMISSIONS.md ready for 6 directories.
 - **SEO fixes (Sessions 903-916)** — 6 comparison pages un-noindexed, 5 canonical URLs fixed. July 2026 pricing blog updated (32→42 models). Deprecated model references updated across 370+ files.
 - **deal.html** — Product + FAQPage schema, exit popup (softened, leaks removed), sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models), inline Pro preview. Canonical URL. Nav/footer leaks removed.
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview. **GO_SKIP prevents shared.js overwriting buy buttons.** Nav/footer leaks removed.
