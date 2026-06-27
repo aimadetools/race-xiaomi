@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free MCP Server for AI API Pricing — 42 Models in Claude Code & Cursor | APIpulse</title>
+    <meta name="description" content="Get live AI API pricing for 42 models from 10 providers directly inside Claude Code, Cursor, and any MCP-compatible tool. Free, no signup, one command to install.">
+    <meta name="keywords" content="MCP server AI pricing, free MCP server, Claude Code MCP pricing, Cursor MCP AI pricing, LLM pricing MCP, AI model cost MCP, Model Context Protocol pricing, GPT Claude Gemini pricing MCP">
+    <meta property="og:title" content="Free MCP Server for AI API Pricing — 42 Models in Claude Code & Cursor">
+    <meta property="og:description" content="Get live AI API pricing data directly in your AI coding tools. 42 models, 10 providers. One command to install.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-27">
+    <meta property="article:modified_time" content="2026-06-27">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-mcp-server-ai-pricing.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free MCP Server for AI API Pricing — 42 Models in Claude Code & Cursor">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Get live AI API pricing data directly in your AI coding tools. 42 models, 10 providers.">
+    <link rel="canonical" href="https://getapipulse.com/blog-mcp-server-ai-pricing.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Free MCP Server for AI API Pricing — 42 Models in Claude Code & Cursor",
+        "description": "Get live AI API pricing for 42 models from 10 providers directly inside Claude Code, Cursor, and any MCP-compatible tool. Free, no signup, one command to install.",
+        "datePublished": "2026-06-27",
+        "dateModified": "2026-06-27",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-mcp-server-ai-pricing.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "MCP Server for AI API Pricing", "item": "https://getapipulse.com/blog-mcp-server-ai-pricing.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the APIpulse MCP server?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The APIpulse MCP server is a free Model Context Protocol server that provides live AI API pricing data for 42 models from 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21). It works in Claude Code, Cursor, Windsurf, and any MCP-compatible tool."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I install the APIpulse MCP server?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Run one command: claude mcp add apipulse --transport http https://getapipulse.com/api/mcp. For Cursor, add the configuration to your MCP settings JSON. No npm install, no API key, no signup required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What tools does the APIpulse MCP server provide?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Five tools: get_pricing (single model pricing), compare_models (side-by-side comparison), calculate_cost (estimate workload cost), find_cheapest (cheapest model for your needs), and get_model_details (detailed info including deprecation status and replacements)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the APIpulse MCP server free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, completely free. No API key required, no signup, no rate limit for normal usage. The server is hosted on Vercel and returns live pricing data for all 42 supported AI models."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI models does the MCP server support?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "42 models from 10 providers: OpenAI (GPT-5.5, GPT-5, GPT-4o, etc.), Anthropic (Claude Opus 4.8, Sonnet 4.6, Haiku 4.5), Google (Gemini 3.5 Flash, 3.1 Pro, etc.), DeepSeek (V4 Pro, V4 Flash), Mistral, Cohere, Meta (Llama 4), Moonshot (Kimi), xAI (Grok), and AI21 (Jamba)."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--text-muted); }
+        .post-tag { background: var(--accent-glow); color: var(--accent); padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+        h2 { font-size: 28px; font-weight: 700; margin: 40px 0 16px; }
+        h3 { font-size: 20px; font-weight: 600; margin: 28px 0 12px; }
+        p { margin-bottom: 16px; line-height: 1.7; color: var(--text-secondary); }
+        ul, ol { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; line-height: 1.6; color: var(--text-secondary); }
+        strong { color: var(--text-primary); }
+        .code-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin: 24px 0; }
+        .code-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); }
+        .code-header span { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .copy-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 4px 12px; color: var(--text-secondary); font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .code-block pre { padding: 16px; overflow-x: auto; font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; font-size: 13px; line-height: 1.6; color: var(--text-primary); white-space: pre; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--text-muted); font-size: 14px; }
+        .back-link:hover { color: var(--accent); }
+        .related { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 40px; }
+        .related h3 { margin-top: 0; font-size: 18px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 14px; }
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; background: var(--bg-card); color: var(--text-primary); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; margin: 0 4px; }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .tool-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 16px 0; }
+        .tool-card h4 { margin: 0 0 6px; font-size: 16px; }
+        .tool-card h4 code { color: var(--accent); }
+        .tool-card p { margin: 0; font-size: 14px; }
+        .provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin: 20px 0; }
+        .provider-chip { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; text-align: center; font-size: 14px; font-weight: 600; }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+            .provider-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="mcp.html">MCP</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="go.html" class="nav-cta">Get Pro →</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <article class="content">
+            <a href="blog.html" class="back-link">← Blog</a>
+            <div class="post-meta">
+                <span class="post-tag">MCP</span>
+                <span>Jun 27, 2026</span>
+                <span>5 min read</span>
+            </div>
+            <h1>Free MCP Server for AI API Pricing — 42 Models in Claude Code & Cursor</h1>
+            <p class="subtitle">Stop switching tabs to check API prices. Get live pricing for GPT-5.5, Claude Opus 4.8, Gemini, DeepSeek, and 38 more models directly inside your AI coding tools.</p>
+
+            <p>If you use Claude Code, Cursor, or Windsurf for development, you've probably asked your AI assistant "which model should I use?" or "how much will this cost?" only to get outdated or hallucinated pricing data.</p>
+
+            <p>That's the problem the <strong>APIpulse MCP server</strong> solves. It's a free <a href="https://modelcontextprotocol.io" rel="noopener" target="_blank">Model Context Protocol</a> server that gives your AI tools live access to real pricing data for <strong>42 models across 10 providers</strong>.</p>
+
+            <h2>Install in 10 Seconds</h2>
+            <p>One command. No npm install. No API key. No signup.</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Claude Code</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText('claude mcp add apipulse --transport http https://getapipulse.com/api/mcp').then(()=>{this.textContent='Copied!';this.classList.add('copied');setTimeout(()=>{this.textContent='Copy';this.classList.remove('copied')},2000)})">Copy</button>
+                </div>
+                <pre>claude mcp add apipulse --transport http https://getapipulse.com/api/mcp</pre>
+            </div>
+
+            <p>For <strong>Cursor</strong>, add this to your MCP settings (<code>.cursor/mcp.json</code>):</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Cursor MCP Settings</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(JSON.stringify({mcpServers:{apipulse:{url:'https://getapipulse.com/api/mcp'}}},null,2)).then(()=>{this.textContent='Copied!';this.classList.add('copied');setTimeout(()=>{this.textContent='Copy';this.classList.remove('copied')},2000)})">Copy</button>
+                </div>
+                <pre>{
+  "mcpServers": {
+    "apipulse": {
+      "url": "https://getapipulse.com/api/mcp"
+    }
+  }
+}</pre>
+            </div>
+
+            <p>For <strong>Windsurf</strong> or any other MCP client, use the endpoint: <code>https://getapipulse.com/api/mcp</code></p>
+
+            <h2>5 Tools, 42 Models, 10 Providers</h2>
+            <p>Once installed, your AI assistant can query live pricing data with these tools:</p>
+
+            <div class="tool-card">
+                <h4><code>get_pricing</code></h4>
+                <p>Get pricing for any supported model. Returns input/output costs per 1M tokens, context window size, tier, and deprecation status.</p>
+            </div>
+
+            <div class="tool-card">
+                <h4><code>compare_models</code></h4>
+                <p>Side-by-side comparison of multiple models. See pricing differences, context windows, and which model is cheapest for your workload.</p>
+            </div>
+
+            <div class="tool-card">
+                <h4><code>calculate_cost</code></h4>
+                <p>Estimate your actual cost given input/output token counts. No more mental math or spreadsheet formulas.</p>
+            </div>
+
+            <div class="tool-card">
+                <h4><code>find_cheapest</code></h4>
+                <p>Find the cheapest model that meets your requirements. Filter by tier, provider, context window, or specific capabilities.</p>
+            </div>
+
+            <div class="tool-card">
+                <h4><code>get_model_details</code></h4>
+                <p>Detailed info for a single model: full pricing breakdown, context window, tier, deprecation status, and recommended replacement with pricing comparison.</p>
+            </div>
+
+            <h2>Supported Providers</h2>
+            <div class="provider-grid">
+                <div class="provider-chip">OpenAI</div>
+                <div class="provider-chip">Anthropic</div>
+                <div class="provider-chip">Google</div>
+                <div class="provider-chip">DeepSeek</div>
+                <div class="provider-chip">Mistral</div>
+                <div class="provider-chip">Cohere</div>
+                <div class="provider-chip">Meta</div>
+                <div class="provider-chip">Moonshot</div>
+                <div class="provider-chip">xAI</div>
+                <div class="provider-chip">AI21</div>
+            </div>
+
+            <h2>Example Prompts</h2>
+            <p>After installing, try asking your AI assistant:</p>
+            <ul>
+                <li><strong>"What's the cheapest model for code generation?"</strong> — Uses <code>find_cheapest</code> to compare budget-tier models</li>
+                <li><strong>"Compare Claude Sonnet 4.6 vs GPT-5 pricing"</strong> — Uses <code>compare_models</code> for side-by-side breakdown</li>
+                <li><strong>"How much would 100K input + 50K output tokens cost on Gemini 3 Flash?"</strong> — Uses <code>calculate_cost</code></li>
+                <li><strong>"Is Claude 4 Opus deprecated? What should I use instead?"</strong> — Uses <code>get_model_details</code> with replacement info</li>
+                <li><strong>"What's the cheapest model with a 1M context window?"</strong> — Uses <code>find_cheapest</code> with context filter</li>
+            </ul>
+
+            <h2>Why an MCP Server for Pricing?</h2>
+            <p>AI model pricing changes fast. In the last 6 months alone:</p>
+            <ul>
+                <li>Claude 4 was shut down and replaced by Claude Opus 4.8 and Sonnet 4.6</li>
+                <li>DeepSeek V4 Flash launched at $0.14/$0.28 per 1M tokens — 97% cheaper than GPT-5.5</li>
+                <li>Google shipped Gemini 3.5 Flash with 1M context at budget pricing</li>
+                <li>OpenAI released GPT-5 mini at $0.25/$2 — making "expensive" models obsolete overnight</li>
+            </ul>
+
+            <p>Hardcoded pricing tables go stale. The APIpulse MCP server always returns <strong>current data</strong> because it reads from a live API, not a static file.</p>
+
+            <div class="cta-inline">
+                <p><strong>Want the full APIpulse experience?</strong> 886 pages of pricing data, cost calculators, model comparisons, and migration tools.</p>
+                <a href="mcp.html" class="btn-primary">See MCP Server Docs →</a>
+            </div>
+
+            <h2>How It Works</h2>
+            <p>The APIpulse MCP server implements the <strong>MCP Streamable HTTP transport</strong> (2025-03-26 spec). It's a standard JSON-RPC endpoint — no special protocol libraries needed.</p>
+
+            <p>When your AI assistant uses one of the 5 tools, the MCP server returns structured JSON with current pricing data. The data covers:</p>
+            <ul>
+                <li><strong>42 models</strong> — from budget ($0.075/1M input) to premium ($30/1M input)</li>
+                <li><strong>10 providers</strong> — OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21</li>
+                <li><strong>3 tiers</strong> — budget, mid, premium</li>
+                <li><strong>Deprecation tracking</strong> — know which models are sunsetting and what replaces them</li>
+            </ul>
+
+            <h2>Open Data, Open Source</h2>
+            <p>The pricing data is also available as a <strong>static JSON API</strong> under a CC-BY-4.0 license:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Static API</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText('curl https://getapipulse.com/data/pricing.json').then(()=>{this.textContent='Copied!';this.classList.add('copied');setTimeout(()=>{this.textContent='Copy';this.classList.remove('copied')},2000)})">Copy</button>
+                </div>
+                <pre>curl https://getapipulse.com/data/pricing.json</pre>
+            </div>
+
+            <p>Use it in your own tools, dashboards, or scripts. An OpenAPI spec is also available at <code>/data/pricing-openapi.json</code>.</p>
+
+            <div class="related">
+                <h3>Related Resources</h3>
+                <a href="mcp.html">MCP Server Documentation & Setup Guide</a>
+                <a href="calculator.html">AI API Cost Calculator</a>
+                <a href="compare.html">Compare AI Models Side-by-Side</a>
+                <a href="cheapest-model-finder.html">Find the Cheapest AI Model</a>
+                <a href="blog-ai-api-cost-mcp-servers.html">The Real Cost of Running MCP Servers</a>
+            </div>
+
+            <div class="share-section">
+                <p>Found this useful? Share it with your team.</p>
+                <a href="https://twitter.com/intent/tweet?text=Free+MCP+server+for+AI+API+pricing+—+42+models+in+Claude+Code+%26+Cursor.+One+command+to+install.%0A%0Ahttps://getapipulse.com/blog-mcp-server-ai-pricing.html" class="share-btn" target="_blank" rel="noopener">Share on X</a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://getapipulse.com/blog-mcp-server-ai-pricing.html" class="share-btn" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://news.ycombinator.com/submitlink?u=https://getapipulse.com/blog-mcp-server-ai-pricing.html&t=Free+MCP+Server+for+AI+API+Pricing" class="share-btn" target="_blank" rel="noopener">Hacker News</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>Real-time AI API pricing. Compare, track, and optimize costs across 42 models.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <a href="calculator.html">Cost Calculator</a>
+                <a href="compare.html">Compare Models</a>
+                <a href="cheapest-model-finder.html">Cheapest Finder</a>
+                <a href="mcp.html">MCP Server</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="api-docs.html">API Docs</a>
+                <a href="llms.txt">llms.txt</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="why-apipulse.html">Why APIpulse</a>
+                <a href="go.html">Get Pro</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 APIpulse. All pricing data sourced from official provider documentation.</p>
+        </div>
+    </footer>
+</body>
+</html>
