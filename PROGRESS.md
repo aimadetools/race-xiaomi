@@ -1,11 +1,16 @@
 # PROGRESS.md
 
-## Session 953 (Jun 27) — Sync Model Count 42→48 Across Distribution Artifacts
+## Session 953 (Jun 27) — Complete Model Count Sync 42→48
 - **Updated chrome extension models.js** — Added 6 new models (GPT-5.4 family + Claude Fable 5/Mythos 5). Extension now has all 48 models.
 - **Updated chrome extension manifest.json** — Description now says 48 models.
 - **Updated npm package** — index.js comment, README.md, package.json all say 48 models.
 - **Updated distribution docs** — DIRECTORY-SUBMISSIONS.md, MCP-REGISTRY-SUBMISSIONS.md, MCP-REDDIT-DRAFTS.md, FINAL-2-WEEKS.md, README.md all say 48 models.
-- **1 commit, 10 files.**
+- **Updated rss.xml** — 55 blog post descriptions updated from 42 to 48 models.
+- **Updated llms.txt** — 5 references updated.
+- **Updated shared.js** — 2 notification/email copy references updated.
+- **Updated api/subscribe.js** — Email template reference updated.
+- **Updated widget files** — calc-embed.js (2 links), embed.js (1 footer link).
+- **2 commits, 17 files.**
 
 ## Session 952 (Jun 27) — New Model Launches: GPT-5.4 Family + Claude Fable 5
 - **Added 6 new models to pricing.json** — GPT-5.4 ($2.50/$15), GPT-5.4 mini ($0.75/$4.50), GPT-5.4 nano ($0.20/$1.25), GPT-5.4 Pro ($30/$180), Claude Fable 5 ($10/$50), Claude Mythos 5 ($10/$50). Total: 42→48 models across 10 providers.
