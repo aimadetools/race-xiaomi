@@ -58,7 +58,9 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-937, Apr 23 - Jun 27)
+### Completed Summary (Sessions 416-939, Apr 23 - Jun 27)
+- **Session 939:** MCP cross-links on 50 high-traffic SEO pages — added MCP server mention to 16 use-case pages + 34 cheapest pages. MCP now linked from 57 pages (was 7). 1 commit, 50 files.
+- **Session 938:** MCP demo conversion engine — personalized upsell messages, savings highlight box, visual result cards, structured data API, MCP on go.html + deal.html. 3 commits, 2 files.
 - **Session 937:** MCP landing page conversion optimization — sticky quick-start install bar, clickable example queries (5 pre-built), contextual Pro upsell after demo, Claude Desktop setup instructions, SEO meta updated. 2 commits, 1 file.
 - **Session 936:** MCP client expansion — added Cline (VS Code), Continue (VS Code/JetBrains) setup instructions. Live interactive demo on mcp.html. Updated SEO meta. 1 commit, 1 file.
 - **Session 935:** MCP landing page optimization (FAQPage schema, freshness badge, social sharing, cross-links) + 4 tool page cross-links to MCP. 2 commits, 5 files.
