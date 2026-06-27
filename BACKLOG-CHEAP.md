@@ -54,23 +54,11 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-942, Apr 23 - Jun 27)
-- **Session 942:** Deprecation checker cross-links — added to 14 pages (5 migration + 9 high-value alternatives, errors, cheapest, MCP). 45+ pages now link to it. 2 commits, 14 files.
-- **Session 941:** Data consistency fixes (Chrome extension 42 models, API docs corrections, npm package 42 models) + new Model Deprecation Checker page (interactive tool, FAQPage schema, cross-links) + MCP Show HN draft + Final 2 Weeks action plan. 5 commits, 8 files.
-- **Session 940:** Massive MCP cross-link expansion — added MCP server link to 631 new pages across all content types. MCP now linked from 688/886 pages (77.6%). Server verified working. 7 commits, 634 files.
-- **Session 939:** MCP cross-links on 50 high-traffic SEO pages — added MCP server mention to 16 use-case pages + 34 cheapest pages. MCP now linked from 57 pages (was 7). 1 commit, 50 files.
-- **Session 938:** MCP demo conversion engine — personalized upsell messages, savings highlight box, visual result cards, structured data API, MCP on go.html + deal.html. 3 commits, 2 files.
-- **Session 937:** MCP landing page conversion optimization — sticky quick-start install bar, clickable example queries (5 pre-built), contextual Pro upsell after demo, Claude Desktop setup instructions, SEO meta updated. 2 commits, 1 file.
-- **Session 936:** MCP client expansion — added Cline (VS Code), Continue (VS Code/JetBrains) setup instructions. Live interactive demo on mcp.html. Updated SEO meta. 1 commit, 1 file.
-- **Session 935:** MCP landing page optimization (FAQPage schema, freshness badge, social sharing, cross-links) + 4 tool page cross-links to MCP. 2 commits, 5 files.
-- **Session 934:** MCP server blog post (SEO) + Reddit/HN drafts. 2 commits, 5 files.
-- **Session 933:** MCP server improvements — rate limiting, get_model_details tool, llms.txt, homepage link, registry submissions guide. 5 commits, 4 files.
-- **Session 932:** MCP server for AI API pricing (new distribution channel). 1 commit, 3 files.
-- **Session 931:** Pricing freshness badges on 16 use-case + 30 cheapest pages. 2 commits, 47 files.
-- **Session 930:** Social sharing + cross-links on roi-calculator, token-counter, migration-checklist, cheapest-model-finder. 2 commits, 4 files.
-- **Session 929:** Pricing freshness badges on 7 key pages + social sharing on 5 conversion pages. 2 commits, 12 files.
-- **Session 928:** Social sharing buttons + cross-links on why-apipulse.html and pricing report. 1 commit, 3 files.
-- **Session 927:** $9 flash sale variant on deal.html (?flash=9 param). 1 commit, 189 insertions.
+### Completed Summary (Sessions 416-943, Apr 23 - Jun 27)
+- **Session 943:** Fixed broken comparison link + added OG tags, share buttons, related resources to widget.html and widget-calculator.html. 1 commit, 3 files.
+- **Session 942:** Deprecation checker cross-links — added to 14 pages. 45+ pages now link to it. 2 commits, 14 files.
+- **Session 941:** Data consistency fixes + Model Deprecation Checker page + MCP Show HN draft + Final 2 Weeks plan. 5 commits, 8 files.
+- **Sessions 927-940:** MCP server (5 tools, rate limiting, live demo, 6 client setups, blog post, Reddit/HN drafts) + MCP cross-linked from 688+ pages + pricing freshness badges on 53 pages + social sharing on 13 pages + $9 flash sale variant. 30+ commits, 700+ files.
 - **Sessions 921-926:** 15 comparison pages, full site audit (all clear), strategy shift (distribution > content). 10 commits.
 - **Sessions 908-919:** Conversion funnel overhaul + leak cleanup (18 commits).
 - **Sessions 889-907:** Homepage cleanup, GA4 tracking, CRITICAL buy button fix, SEO fixes, deprecated model cleanup (363 files). 30 commits, 580+ files.
