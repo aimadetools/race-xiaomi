@@ -54,15 +54,15 @@
 ## Summary: Sessions 1-803 (Apr 5 - Jun 21)
 Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Claude 4 shutdown. go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, pricing hub, llms.txt, 4 alternatives, 36 comparisons, migration checklist (9 routes). 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 932, Jun 27, 2026)
-**886 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server**
+## Site Status (as of Session 933, Jun 27, 2026)
+**886 web pages | 352 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (899 URLs), RSS (776 items), blog files (352 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **Pricing freshness badges** — 91 pages now show "Pricing updated Jun 24, 2026" green badge (44 existing + 47 added Session 931).
 - **Social sharing** — 10 key pages now have X/LinkedIn/HN share buttons: why-apipulse, deal, go, best-ai-api-by-budget, cheapest-ai-apis-2026, live-pricing, roi-calculator, token-counter, migration-checklist, cheapest-model-finder.
-- **MCP server** — New distribution channel. `/api/mcp` exposes 4 tools (get_pricing, compare_models, calculate_cost, find_cheapest) via MCP Streamable HTTP. Setup: `claude mcp add apipulse --transport http https://getapipulse.com/api/mcp`. Landing page at `/mcp.html`.
+- **MCP server** — 5 tools (get_pricing, compare_models, calculate_cost, find_cheapest, get_model_details). Rate limited (60 req/min, X-RateLimit-* headers). In llms.txt, homepage, api-docs. MCP-REGISTRY-SUBMISSIONS.md ready for 6 directories.
 - **SEO fixes (Sessions 903-916)** — 6 comparison pages un-noindexed, 5 canonical URLs fixed. July 2026 pricing blog updated (32→42 models). Deprecated model references updated across 370+ files.
 - **deal.html** — Product + FAQPage schema, exit popup (softened, leaks removed), sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models), inline Pro preview. Canonical URL. Nav/footer leaks removed.
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview. **GO_SKIP prevents shared.js overwriting buy buttons.** Nav/footer leaks removed.
