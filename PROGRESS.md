@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 944 (Jun 27) — OG/Twitter Social Sharing Tags (13 Pages)
+- **Added complete OG/Twitter meta tags to 13 pages** — 10 content pages were missing og:image, twitter:card, or both. Now all indexed content pages have full social sharing metadata for better link previews on X, LinkedIn, and Hacker News.
+  - 2 tool pages (api-cost-audit, api-cost-score) — added og:image + twitter tags
+  - 1 blog post (blog-claude-opus-48-alternatives) — full OG + twitter block
+  - 1 tool page (generate-report) — full OG + twitter block
+  - 6 sample Pro reports — full OG + twitter blocks
+  - 3 utility pages (contact, privacy, terms) — added missing twitter tags
+- **1 commit, 13 files, 89 insertions.**
+
 ## Session 943 (Jun 27) — Broken Link Fix + Widget Pages SEO
 - **Fixed broken comparison link** — `compare-sonnet46-vs-mistrallarge3.html` linked to `compare-mistrallarge3-vs-deepseek-v4pro.html` (missing hyphen). Fixed URL and link text to correct file `compare-mistral-large3-vs-deepseek-v4pro.html`.
 - **Widget.html improvements** — Added OG/Twitter meta tags, X/LinkedIn/HN share buttons, Related Tools section (links to calculator widget, cost calculator, compare, MCP server).
@@ -34,14 +43,15 @@
 ## Summary: Sessions 1-803 (Apr 5 - Jun 21)
 Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Claude 4 shutdown. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 942, Jun 27, 2026)
+## Site Status (as of Session 944, Jun 27, 2026)
 **887 web pages | 353 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (900 URLs), RSS (777 items), blog files (353 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages including mcp.html. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **Pricing freshness badges** — 92 pages show "Pricing updated Jun 24, 2026" green badge.
-- **Social sharing** — 13 key pages with X/LinkedIn/HN share buttons.
+- **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages (Session 944). Previously 13 pages were missing og:image or twitter:card.
+- **Social sharing buttons** — 13 key pages with X/LinkedIn/HN share buttons.
 - **MCP server** — 5 tools, rate limited. Setup for 6 clients. Live demo with contextual upsell. **Linked from 688+ pages (77.6%)**. MCP-REGISTRY-SUBMISSIONS.md ready.
 - **Model Deprecation Checker** — Linked from 45+ pages (migration, alternatives, errors, cheapest, MCP, tools, homepage). FAQPage schema, interactive checker, deprecated models grid.
 - **SEO fixes (Sessions 903-916)** — 6 comparison pages un-noindexed, 5 canonical URLs fixed. July 2026 pricing blog updated (32→42 models). Deprecated model references updated across 370+ files.

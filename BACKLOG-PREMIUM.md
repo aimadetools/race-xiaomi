@@ -21,7 +21,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-943, Apr 23 - Jun 27)
+### Completed (Sessions 416-944, Apr 23 - Jun 27)
+- **Session 944:** Added OG/Twitter meta tags to 13 pages missing social sharing metadata. 1 commit, 13 files.
 - **Session 943:** Fixed broken comparison link + added OG tags, share buttons, related resources to widget pages. 1 commit, 3 files.
 - **Sessions 927-942:** MCP server (5 tools, rate limiting, live demo, 6 client setups, blog post, Reddit/HN drafts) + MCP cross-linked from 688+ pages + pricing freshness badges on 53 pages + social sharing on 13 pages + $9 flash sale variant + deprecation checker page + data consistency fixes. 35+ commits, 750+ files.
 - **Sessions 921-926:** 15 comparison pages, full site audit (all clear), strategy shift (distribution > content). 10 commits, 25+ files.

@@ -54,7 +54,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-943, Apr 23 - Jun 27)
+### Completed Summary (Sessions 416-944, Apr 23 - Jun 27)
+- **Session 944:** Added OG/Twitter meta tags to 13 pages missing social sharing metadata (10 content pages + 3 utility pages). 1 commit, 13 files.
 - **Session 943:** Fixed broken comparison link + added OG tags, share buttons, related resources to widget.html and widget-calculator.html. 1 commit, 3 files.
 - **Session 942:** Deprecation checker cross-links — added to 14 pages. 45+ pages now link to it. 2 commits, 14 files.
 - **Session 941:** Data consistency fixes + Model Deprecation Checker page + MCP Show HN draft + Final 2 Weeks plan. 5 commits, 8 files.
