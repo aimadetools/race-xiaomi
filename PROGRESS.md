@@ -37,8 +37,8 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 42 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 946b, Jun 28, 2026)
-**887 web pages | 353 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 947, Jun 28, 2026)
+**890 web pages | 356 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (873 URLs), RSS (777 items, valid XML), blog files (353 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
@@ -47,6 +47,9 @@
 - **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages.
 - **Social sharing buttons** — 13 key pages with X/LinkedIn/HN share buttons.
 - **MCP server** — 5 tools, rate limited. Linked from 688+ pages (77.6%). MCP-REGISTRY-SUBMISSIONS.md ready.
+- **AI API Advisor** (Session 947) — Interactive 4-step model recommender. Scores 42 models by use case, budget, volume, priority. GA4 tracked. Pro upsell.
+- **2026 Pricing Benchmark** (Session 947) — Downloadable report with key findings, pricing table, cost-per-task analysis, hidden costs. Email capture. CSV download.
+- **Pricing Badges** (Session 947) — Embeddable shields.io badges for 27+ models. Copy Markdown. Filter by tier/provider.
 - **Model Deprecation Checker** — Linked from 45+ pages. FAQPage schema, interactive checker.
 - **SEO fixes** — 7 duplicate comparison pages resolved (canonical+noindex), orphan page fixed, sitemap cleaned (8 empty + 21 dupe entries removed), RSS XML validated, 2 duplicate page titles fixed, 23 internal links updated.
 - **deal.html** — Product + FAQPage schema, exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator. Canonical URL.

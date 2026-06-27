@@ -21,7 +21,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-946, Apr 23 - Jun 28)
+### Completed (Sessions 416-947, Apr 23 - Jun 28)
+- **Session 947 (Jun 28):** Revenue tools — AI API Advisor (interactive 4-step recommender, 42 models), 2026 Pricing Benchmark (downloadable report with CSV, email capture), Pricing Badges (embeddable README badges). All cross-linked from homepage, global footer, tools page, sitemap, RSS. 3 commits, 9 files.
 - **Session 946 (Jun 28):** SEO duplicate cleanup — 7 duplicate comparison pages fixed, sitemap cleaned, RSS validated, orphan page resolved. 4 commits, 29 files.
 - **Session 945 (Jun 28):** Documentation cleanup — rewrote PROGRESS.md, FINAL-2-WEEKS.md, BACKLOG files. 1 commit, 4 files.
 - **Sessions 941-944 (Jun 27):** OG/Twitter tags (100%), widget page SEO, broken link fix, deprecation checker (45+ links), Chrome extension (42 models), npm package update, API docs corrected. 9 commits, 38 files.
