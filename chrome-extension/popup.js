@@ -37,7 +37,7 @@ function renderModels(query = '') {
 
   modelList.innerHTML = filtered.map(m => `
     <div class="model-card" data-name="${m.name}">
-      <div class="model-name">${m.name}<span class="tier-badge tier-${m.tier}">${m.tier}</span></div>
+      <div class="model-name">${m.name}<span class="tier-badge tier-${m.tier}">${m.tier}</span>${m.deprecated ? '<span class="tier-badge tier-deprecated">deprecated</span>' : ''}</div>
       <div class="model-provider">${m.provider} &middot; ${m.context} context</div>
       <div class="model-pricing">
         <span><span class="label">In:</span> <span class="value">$${m.input}/M</span></span>
