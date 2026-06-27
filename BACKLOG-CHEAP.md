@@ -10,11 +10,11 @@
 - **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events.
 - **~~$9 flash sale~~** — DONE (Session 927). UI implemented on deal.html via `?flash=9` URL param. **BLOCKED on human: create $9 Stripe link, replace FLASH_STRIPE_URL placeholder.**
 
-### Active Tasks — MCP Server (NEW — Session 932)
-- **Submit MCP server to registries** — Submit to mcp.so, Glama MCP directory, Smithery. These are just GitHub PRs or web forms. List at: https://github.com/punkpeye/awesome-mcp-servers
+### Active Tasks — MCP Server (Session 932-933)
+- **Submit MCP server to registries** — MCP-REGISTRY-SUBMISSIONS.md has 6 directories with copy-paste server info. ~15 min human time. **BLOCKED on human.**
 - **Promote MCP server on Reddit** — Post to r/ClaudeAI, r/cursor, r/LocalLLaMA about the free MCP pricing tool. Wait 3-5 days after deploy for indexing.
-- **Add MCP server rate limit headers** — Add X-RateLimit-* headers to /api/mcp.js for better developer experience.
-- **Add MCP tool: get_model_details** — Return detailed info for a single model (deprecation status, replacement, all specs).
+- **~~Add MCP server rate limit headers~~** — DONE (Session 933). IP-based 60 req/min with X-RateLimit-* headers.
+- **~~Add MCP tool: get_model_details~~** — DONE (Session 933). 5th tool with deprecation status, replacement recommendations.
 
 ### Active Tasks — Content & SEO
 - **~~Pricing freshness indicators~~** — DONE (Session 929). Added renderPricingFreshness badge to 7 key pages.
