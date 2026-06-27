@@ -11,7 +11,7 @@ Created: Jun 27, 2026 (Session 934)
 **Body:**
 I got tired of my AI assistant hallucinating pricing data when I ask "which model should I use?" or "how much will this cost?"
 
-So I built a free MCP server that gives Claude Code (and any MCP client) live access to real pricing data for 42 AI models across 10 providers.
+So I built a free MCP server that gives Claude Code (and any MCP client) live access to real pricing data for 48 AI models across 10 providers.
 
 **One command to install:**
 ```
@@ -96,7 +96,7 @@ Free, no API key: https://getapipulse.com/mcp.html
 **URL:** https://getapipulse.com/mcp.html
 
 **Comment (first):**
-I built an MCP (Model Context Protocol) server that gives AI coding tools live access to real pricing data for 42 AI models across 10 providers.
+I built an MCP (Model Context Protocol) server that gives AI coding tools live access to real pricing data for 48 AI models across 10 providers.
 
 **The problem:** When you ask Claude Code or Cursor "which model should I use?", they hallucinate prices or give outdated info. Model pricing changes fast — Claude 4 was just shut down, DeepSeek V4 launched at 97% cheaper than GPT-5.5, etc.
 

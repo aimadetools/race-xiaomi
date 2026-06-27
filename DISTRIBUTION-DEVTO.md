@@ -10,7 +10,7 @@ canonical_url: https://getapipulse.com/blog-embed-pricing-widget.html
 
 If you've ever tried to keep track of AI API pricing, you know the pain. OpenAI changes prices. Anthropic launches new models. Google renames everything. Your blog post from 3 months ago is already outdated.
 
-I built [APIpulse](https://getapipulse.com) to solve this for myself — a live pricing dashboard for 42 AI models across 10 providers. But then I thought: what if other developers could embed this data directly on their sites?
+I built [APIpulse](https://getapipulse.com) to solve this for myself — a live pricing dashboard for 48 AI models across 10 providers. But then I thought: what if other developers could embed this data directly on their sites?
 
 So I built a **free, embeddable pricing widget**.
 
