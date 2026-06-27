@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Pricing Badges — Embed Live Pricing in Your README | APIpulse</title>
+    <meta name="description" content="Free embeddable badges showing live AI API pricing. Add to your GitHub README, docs, or blog. Auto-updates with latest prices for 42 models.">
+    <meta name="keywords" content="AI API badge, pricing badge, GitHub README badge, LLM pricing widget, AI cost badge, embed AI pricing">
+    <meta property="og:title" content="AI API Pricing Badges — Embed Live Pricing in Your README">
+    <meta property="og:description" content="Free embeddable badges showing live AI API pricing. Auto-updates with latest prices.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/api-badge.html">
+    <link rel="canonical" href="https://getapipulse.com/api-badge.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="shared.js" defer></script>
+    <style>
+        .badge-page { max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+        .badge-hero { text-align: center; padding: 2rem 0; }
+        .badge-hero h1 { font-size: 2rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; }
+        .badge-hero p { color: #64748b; font-size: 1.05rem; }
+        .badge-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .badge-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem; text-align: center; transition: border-color 0.2s; }
+        .badge-card:hover { border-color: #3b82f6; }
+        .badge-card .badge-name { font-weight: 600; color: #0f172a; font-size: 0.9rem; margin-bottom: 0.25rem; }
+        .badge-card .badge-provider { color: #94a3b8; font-size: 0.75rem; margin-bottom: 0.5rem; }
+        .badge-preview { display: inline-block; margin-bottom: 0.5rem; }
+        .badge-preview img { height: 20px; }
+        .badge-prices { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .badge-prices span { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+        .badge-prices .input-price { background: #eff6ff; color: #2563eb; }
+        .badge-prices .output-price { background: #fef3c7; color: #d97706; }
+        .copy-btn { background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; padding: 4px 10px; font-size: 0.75rem; cursor: pointer; color: #475569; }
+        .copy-btn:hover { background: #e2e8f0; }
+        .copy-btn.copied { background: #dcfce7; color: #16a34a; border-color: #86efac; }
+        .code-block { background: #1e293b; color: #e2e8f0; border-radius: 8px; padding: 1rem; font-family: 'SF Mono', Monaco, monospace; font-size: 0.8rem; overflow-x: auto; margin: 0.75rem 0; position: relative; }
+        .code-block .copy-code { position: absolute; top: 0.5rem; right: 0.5rem; background: #334155; border: none; color: #94a3b8; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; cursor: pointer; }
+        .code-block .copy-code:hover { background: #475569; color: #fff; }
+        .section-title { font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 2rem 0 0.75rem; }
+        .usage-examples { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .usage-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem; }
+        .usage-card h3 { font-size: 0.95rem; margin-bottom: 0.5rem; color: #0f172a; }
+        .usage-card p { font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem; }
+        .filter-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .filter-btn { padding: 4px 12px; border: 1px solid #e2e8f0; border-radius: 20px; font-size: 0.8rem; cursor: pointer; background: #fff; color: #475569; }
+        .filter-btn.active { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+        .pro-badge { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: #fff; border-radius: 10px; padding: 1.5rem; margin: 2rem 0; text-align: center; }
+        .pro-badge h3 { color: #fff; margin-bottom: 0.5rem; }
+        .pro-badge p { color: #94a3b8; margin-bottom: 1rem; }
+        .pro-badge a { display: inline-block; background: #3b82f6; color: #fff; padding: 0.5rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
+        @media (max-width: 640px) {
+            .usage-examples { grid-template-columns: 1fr; }
+            .badge-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">⚡ APIpulse</a>
+            <div class="nav-links">
+                <a href="/ai-api-advisor.html">Advisor</a>
+                <a href="/api-badge.html" class="active">Badges</a>
+                <a href="/mcp.html">MCP Server</a>
+                <a href="/deal.html" class="nav-cta">Get Pro — $29</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="badge-page">
+        <div class="badge-hero">
+            <h1>🏷️ AI API Pricing Badges</h1>
+            <p>Embed live pricing data in your GitHub README, docs, or blog. Auto-updates with the latest prices.</p>
+        </div>
+
+        <div class="usage-examples">
+            <div class="usage-card">
+                <h3>📄 GitHub README</h3>
+                <p>Add a pricing badge to your open-source project to help contributors understand API costs.</p>
+                <img src="https://img.shields.io/badge/GPT--4o_mini-$0.15_in%20%7C%20$0.60_out-blue?style=flat-square&logo=openai" alt="GPT-4o mini pricing badge" style="height:20px;">
+            </div>
+            <div class="usage-card">
+                <h3>📝 Documentation</h3>
+                <p>Show your users the current API costs for models your project uses.</p>
+                <img src="https://img.shields.io/badge/Claude_Sonnet_4.6-$3.00_in%20%7C%20$15.00_out-purple?style=flat-square&logo=anthropic" alt="Claude Sonnet pricing badge" style="height:20px;">
+            </div>
+        </div>
+
+        <h2 class="section-title">📊 All Model Badges</h2>
+        <p style="color:#64748b;font-size:0.9rem;margin-bottom:1rem;">Click any badge to copy the Markdown embed code. Prices in USD per 1M tokens.</p>
+
+        <div class="filter-row">
+            <button class="filter-btn active" onclick="filterBadges('all')">All</button>
+            <button class="filter-btn" onclick="filterBadges('budget')">Budget</button>
+            <button class="filter-btn" onclick="filterBadges('mid')">Mid-tier</button>
+            <button class="filter-btn" onclick="filterBadges('premium')">Premium</button>
+            <button class="filter-btn" onclick="filterBadges('openai')">OpenAI</button>
+            <button class="filter-btn" onclick="filterBadges('anthropic')">Anthropic</button>
+            <button class="filter-btn" onclick="filterBadges('google')">Google</button>
+        </div>
+
+        <div class="badge-grid" id="badgeGrid">
+            <!-- Generated by JS -->
+        </div>
+
+        <h2 class="section-title">🔧 How to Use</h2>
+        <div class="code-block">
+            <button class="copy-code" onclick="copyCode(this, 'readme-example')">Copy</button>
+<pre id="readme-example">## API Costs
+
+This project uses the following AI models:
+
+![GPT-4o mini](https://img.shields.io/badge/GPT--4o_mini-$0.15_in_%7C_$0.60_out-blue?style=flat-square&logo=openai)
+![Claude Haiku](https://img.shields.io/badge/Claude_Haiku_4.5-$1.00_in_%7C_$5.00_out-purple?style=flat-square&logo=anthropic)
+![Gemini Flash](https://img.shields.io/badge/Gemini_3_Flash-$0.50_in_%7C_$3.00_out-green?style=flat-square&logo=google)
+
+Pricing from [APIpulse](https://getapipulse.com) — updated daily.
+</pre>
+        </div>
+
+        <div class="pro-badge">
+            <h3>🎯 Need custom badges for your stack?</h3>
+            <p>APIpulse Pro generates branded pricing badges for your exact model stack, with auto-updating prices and cost tracking.</p>
+            <a href="/go.html?ref=badge">Get APIpulse Pro — $29 →</a>
+        </div>
+
+        <h2 class="section-title">💡 Badge Ideas</h2>
+        <div class="usage-examples" style="margin-top:0.5rem;">
+            <div class="usage-card">
+                <h3>🏷️ Project cost header</h3>
+                <p>Show your project's total estimated monthly API cost:</p>
+                <img src="https://img.shields.io/badge/Est._Monthly-$12.50-green?style=for-the-badge&logo=dollar&logoColor=white" alt="Monthly cost badge" style="height:28px;">
+            </div>
+            <div class="usage-card">
+                <h3>📊 Model comparison</h3>
+                <p>Compare two models side-by-side in docs:</p>
+                <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                    <img src="https://img.shields.io/badge/GPT--5-$1.25_in_%7C_$10_out-blue?style=flat-square" alt="GPT-5" style="height:20px;">
+                    <img src="https://img.shields.io/badge/Claude_Sonnet_4.6-$3_in_%7C_$15_out-purple?style=flat-square" alt="Claude Sonnet" style="height:20px;">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col"><strong>⚡ APIpulse</strong><p>AI API pricing intelligence.</p></div>
+            <div class="footer-col"><a href="/ai-api-advisor.html">Advisor</a><a href="/live-pricing.html">Live Pricing</a><a href="/mcp.html">MCP Server</a></div>
+            <div class="footer-col"><a href="/compare.html">Compare</a><a href="/token-counter.html">Token Counter</a><a href="/deal.html">Get Pro</a></div>
+        </div>
+    </footer>
+
+    <script>
+    const MODELS = [
+        {name:"GPT-5.5 Pro",provider:"openai",input:30,output:180,tier:"premium"},
+        {name:"GPT-5.5",provider:"openai",input:5,output:30,tier:"premium"},
+        {name:"Claude Opus 4.8",provider:"anthropic",input:5,output:25,tier:"premium"},
+        {name:"Claude Opus 4.7",provider:"anthropic",input:5,output:25,tier:"premium"},
+        {name:"GPT-5",provider:"openai",input:1.25,output:10,tier:"mid"},
+        {name:"GPT-5.3 Codex",provider:"openai",input:1.75,output:14,tier:"mid"},
+        {name:"Gemini 3.1 Pro",provider:"google",input:2,output:12,tier:"mid"},
+        {name:"Claude Sonnet 4.6",provider:"anthropic",input:3,output:15,tier:"mid"},
+        {name:"Gemini 2.5 Pro",provider:"google",input:1.25,output:10,tier:"mid"},
+        {name:"Grok 4.3",provider:"xai",input:1.25,output:2.5,tier:"mid"},
+        {name:"Gemini 3.5 Flash",provider:"google",input:1.5,output:9,tier:"mid"},
+        {name:"GPT-4o",provider:"openai",input:2.5,output:10,tier:"mid"},
+        {name:"Mistral Medium 3.5",provider:"mistral",input:1.5,output:7.5,tier:"mid"},
+        {name:"Command R+",provider:"cohere",input:2.5,output:10,tier:"mid"},
+        {name:"Jamba 1.7 Large",provider:"ai21",input:2,output:8,tier:"mid"},
+        {name:"GPT-5 mini",provider:"openai",input:0.25,output:2,tier:"budget"},
+        {name:"Claude Haiku 4.5",provider:"anthropic",input:1,output:5,tier:"budget"},
+        {name:"Gemini 3 Flash",provider:"google",input:0.5,output:3,tier:"budget"},
+        {name:"DeepSeek V4 Pro",provider:"deepseek",input:0.43,output:0.87,tier:"budget"},
+        {name:"DeepSeek V4 Flash",provider:"deepseek",input:0.14,output:0.28,tier:"budget"},
+        {name:"Mistral Large 3",provider:"mistral",input:0.5,output:1.5,tier:"budget"},
+        {name:"GPT-4o mini",provider:"openai",input:0.15,output:0.6,tier:"budget"},
+        {name:"Llama 4 Scout",provider:"meta",input:0.18,output:0.59,tier:"budget"},
+        {name:"Llama 4 Maverick",provider:"meta",input:0.27,output:0.85,tier:"budget"},
+        {name:"Gemini 2.5 Flash-Lite",provider:"google",input:0.1,output:0.4,tier:"budget"},
+        {name:"Mistral Small 4",provider:"mistral",input:0.1,output:0.3,tier:"budget"},
+        {name:"Llama 3.1 8B",provider:"meta",input:0.1,output:0.1,tier:"budget"}
+    ];
+
+    const COLORS = {
+        openai: {bg: '#dbeafe', text: '#1d4ed8', label: 'blue'},
+        anthropic: {bg: '#ede9fe', text: '#7c3aed', label: 'purple'},
+        google: {bg: '#dcfce7', text: '#16a34a', label: 'green'},
+        deepseek: {bg: '#e0f2fe', text: '#0284c7', label: 'blue'},
+        mistral: {bg: '#fef3c7', text: '#d97706', label: 'yellow'},
+        meta: {bg: '#e0f2fe', text: '#0369a1', label: 'blue'},
+        cohere: {bg: '#fce7f3', text: '#db2777', label: 'pink'},
+        xai: {bg: '#f1f5f9', text: '#475569', label: 'lightgrey'},
+        ai21: {bg: '#fef3c7', text: '#b45309', label: 'yellow'}
+    };
+
+    function fmtPrice(v) { return v < 1 ? v.toFixed(2) : v < 10 ? v.toFixed(2) : v.toFixed(2); }
+
+    function badgeUrl(model) {
+        const name = encodeURIComponent(model.name);
+        const inp = fmtPrice(model.input);
+        const out = fmtPrice(model.output);
+        const text = encodeURIComponent(`$${inp} in | $${out} out`);
+        const c = COLORS[model.provider] || COLORS.openai;
+        return `https://img.shields.io/badge/${name}-${text}-${c.label}?style=flat-square&logo=${model.provider === 'meta' ? 'meta' : model.provider}&logoColor=white`;
+    }
+
+    function badgeMarkdown(model) {
+        const name = model.name.replace(/[.\s]/g, '_');
+        return `![${model.name} pricing](${badgeUrl(model)})`;
+    }
+
+    function renderBadges(filter) {
+        const grid = document.getElementById('badgeGrid');
+        const filtered = filter === 'all' ? MODELS :
+            ['budget','mid','premium'].includes(filter) ? MODELS.filter(m => m.tier === filter) :
+            MODELS.filter(m => m.provider === filter);
+
+        grid.innerHTML = filtered.map(m => `
+            <div class="badge-card" data-tier="${m.tier}" data-provider="${m.provider}">
+                <div class="badge-name">${m.name}</div>
+                <div class="badge-provider">${m.provider} · ${m.tier}</div>
+                <div class="badge-preview">
+                    <img src="${badgeUrl(m)}" alt="${m.name} pricing badge">
+                </div>
+                <div class="badge-prices">
+                    <span class="input-price">In: $${fmtPrice(m.input)}</span>
+                    <span class="output-price">Out: $${fmtPrice(m.output)}</span>
+                </div>
+                <button class="copy-btn" onclick="copyBadge(this, '${btoa(badgeMarkdown(m))}')">📋 Copy Markdown</button>
+            </div>
+        `).join('');
+    }
+
+    function filterBadges(filter) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        renderBadges(filter);
+    }
+
+    function copyBadge(btn, encoded) {
+        const md = atob(encoded);
+        navigator.clipboard.writeText(md).then(() => {
+            btn.textContent = '✅ Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => { btn.textContent = '📋 Copy Markdown'; btn.classList.remove('copied'); }, 2000);
+        });
+    }
+
+    function copyCode(btn, id) {
+        const code = document.getElementById(id).textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        });
+    }
+
+    // Initial render
+    renderBadges('all');
+    </script>
+</body>
+</html>

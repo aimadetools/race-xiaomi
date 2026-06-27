@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 947 (Jun 28) — New Revenue Tools: AI API Advisor + Pricing Benchmark
+- **Built AI API Advisor** (ai-api-advisor.html) — Interactive 4-step tool: use case → budget → volume → priority → personalized model recommendation. Scores 42 models in real-time with cost estimates. GA4 tracked (`advisor_completed` event). Pro upsell in results. Links to benchmark.
+- **Built 2026 Pricing Benchmark** (ai-api-pricing-benchmark-2026.html) — Downloadable report with key findings (37× price gap, 67% savings potential), full pricing table, cost-per-task analysis, 3 hidden costs, value champions. Email capture via `/api/subscribe`. CSV auto-download. GA4 tracked (`benchmark_download` event).
+- **Cross-linked everywhere** — Homepage nav + tools grid, global footer (shared.js), sitemap.xml (875 URLs), RSS feed (779 items), advisor ↔ benchmark cross-links.
+- **Revenue strategy** — Advisor converts high-intent visitors to Pro. Benchmark captures emails from visitors not ready to buy. Both funnel to go.html.
+- **1 commit, 6 files, +1,020 lines.**
+
 ## Session 946 (Jun 28) — SEO Duplicate Content Cleanup
 - **Fixed 7 duplicate comparison pages** — Slug-format duplicates (mistrallarge3/kimik26/gpt5mini variants) were causing duplicate content issues. Added noindex + canonical tags pointing to proper hyphenated slug versions.
 - **Removed 7 duplicates from sitemap.xml and rss.xml** — Sitemap now 873 entries (was 902).
