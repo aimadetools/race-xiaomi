@@ -21,7 +21,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-944, Apr 23 - Jun 27)
+### Completed (Sessions 416-945, Apr 23 - Jun 28)
+- **Session 945 (Jun 28):** Documentation cleanup — rewrote PROGRESS.md, FINAL-2-WEEKS.md, BACKLOG files. 1 commit, 4 files.
 - **Sessions 941-944 (Jun 27):** OG/Twitter tags (100%), widget page SEO, broken link fix, deprecation checker (45+ links), Chrome extension (42 models), npm package update, API docs corrected. 9 commits, 38 files.
 - **Sessions 927-940 (Jun 26-27):** MCP server (5 tools, rate limiting, live demo, 6 client setups, blog post) + MCP cross-linked from 688+ pages + pricing freshness + social sharing + $9 flash sale + deprecation checker. 35+ commits, 750+ files.
 - **Sessions 921-926 (Jun 25-26):** 15 comparison pages, full site audit, strategy shift. 10 commits.

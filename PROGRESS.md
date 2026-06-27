@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 945 (Jun 28) — Documentation Cleanup
+- **PROGRESS.md rewritten** — Summarized sessions 1-925 into summary blocks, kept sessions 926-944 detailed. Removed redundant status lines.
+- **FINAL-2-WEEKS.md updated** — Reflects Jun 28 state (14 days remaining), clear priority actions, what's done vs blocked.
+- **BACKLOG-CHEAP.md cleaned up** — Collapsed completed tasks into summary lines, organized active tasks by category (monitoring, distribution, content, GA4).
+- **BACKLOG-PREMIUM.md cleaned up** — Collapsed completed section, organized remaining tasks.
+- **1 commit, 4 files, -32 net lines.**
+
 ## Session 944 (Jun 27) — OG/Twitter Social Sharing Tags (13 Pages)
 - **Added complete OG/Twitter meta tags to 13 pages** — 10 content pages were missing og:image, twitter:card, or both. Now all indexed content pages have full social sharing metadata for better link previews on X, LinkedIn, and Hacker News.
   - 2 tool pages (api-cost-audit, api-cost-score) — added og:image + twitter tags
@@ -39,7 +46,7 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 42 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 944, Jun 27, 2026)
+## Site Status (as of Session 945, Jun 28, 2026)
 **887 web pages | 353 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (900 URLs), RSS (777 items), blog files (353 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
