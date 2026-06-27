@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 942 (Jun 27) — Deprecation Checker Cross-links (14 new pages)
+- **Deprecation checker cross-links** — Added model-deprecation.html links to 14 pages that were missing them:
+  - 5 migration pages (migration-checklist, alternatives-comparison, best-replacement, migration-advisor, shutdown-checklist)
+  - 9 high-value pages (alternatives-by-use-case, sonnet46-alternatives, grok43-alternatives, 410-fix, error, error-codes, cheapest-llm-api-2026, mcp.html, alternatives-comparison footer)
+- **Coverage: 45+ pages** now link to the deprecation checker. All major tool pages, migration pages, alternatives, error pages, and the MCP server cross-link to it.
+- **2 commits, 14 files, 26 insertions.**
+
 ## Session 941 (Jun 27) — Data Consistency Fixes + Deprecation Checker + Distribution Prep
 - **Chrome extension updated** — 42 models (was 39), fixed Mistral Small 4 pricing ($0.10/$0.30), added deprecated badges for 6 models, updated manifest.json and popup.html dates.
 - **API docs corrected** — Fixed model count 34→42, updated provider model counts (Google 3→8, DeepSeek 3→4, etc.), fixed stale model IDs (anthropic-sonnet→anthropic-sonnet46, google-flash→google-gemini3-flash), updated lastUpdated date.
@@ -110,24 +117,25 @@
 - **Decision: NOT creating more comparison pages** — distribution is the bottleneck, not content volume.
 - **Blockers unchanged** — All actionable tasks remain blocked on human action.
 
-## Summary: Sessions 905-925 (Jun 25-26) — Conversion Overhaul + 15 Comparison Pages + Site Audit
-21 sessions. Conversion funnel leak cleanup (10 commits, removed free tool links from exit popups, nav/footer, Pro CTAs). Token Counter & ROI Calculator. Deprecated model cleanup (363 files). go.html + deal.html conversion overhaul (flipped CTAs, trust signals, testimonials, killed A/B pricing, canonical URLs). Created 15 comparison pages (Sessions 921-925). Full site audit — all clear. 30 commits, 830+ files. **Key finding: distribution is the bottleneck, not content.**
+## Summary: Sessions 905-925 (Jun 25-26) — Conversion Overhaul + Comparison Pages + Site Audit
+21 sessions. Conversion funnel leak cleanup, Token Counter & ROI Calculator, deprecated model cleanup (363 files), go.html + deal.html conversion overhaul, 15 comparison pages, full site audit. 30 commits, 830+ files. **Key finding: distribution is the bottleneck, not content.**
 
-## Summary: Sessions 804-904 (Jun 21-26) — Conversion Optimization + Content Blitz
-101 sessions. Homepage cleanup, GA4 tracking, CRITICAL buy button fix (GO_SKIP), go.html conversion overhaul (flipped CTAs, trust signals), deal page build + UX fixes, model pre-fill for 606 pages, 22 use-case pages, 22 cheapest-ai-api pages, budget planner, cost calculator, embeddable widget, FAQPage schema. 125+ commits, 1,700+ files.
+## Summary: Sessions 804-904 (Jun 21-25) — Conversion Optimization + Content Blitz
+101 sessions. Homepage cleanup, GA4 tracking, CRITICAL buy button fix (GO_SKIP), go.html conversion overhaul, deal page build + UX fixes, model pre-fill for 606 pages, 22 use-case pages, 22 cheapest-ai-api pages, budget planner, cost calculator, embeddable widget, FAQPage schema. 125+ commits, 1,700+ files.
 
 ## Summary: Sessions 1-803 (Apr 5 - Jun 21)
-Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Claude 4 shutdown. go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, pricing hub, llms.txt, 4 alternatives, 36 comparisons, migration checklist (9 routes). 381+ commits, 2,420+ files.
+Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Claude 4 shutdown. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 939, Jun 27, 2026)
+## Site Status (as of Session 942, Jun 27, 2026)
 **887 web pages | 353 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (900 URLs), RSS (777 items), blog files (353 posts) — all in sync
-- **Structured data: 98.3%** — FAQPage schema on key pages including mcp.html (added Session 935). 15 pages without are non-commercial.
+- **Structured data: 98.3%** — FAQPage schema on key pages including mcp.html. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
-- **Pricing freshness badges** — 92 pages now show "Pricing updated Jun 24, 2026" green badge (91 existing + mcp.html added Session 935).
-- **Social sharing** — 11 key pages now have X/LinkedIn/HN share buttons: why-apipulse, deal, go, best-ai-api-by-budget, cheapest-ai-apis-2026, live-pricing, roi-calculator, token-counter, migration-checklist, cheapest-model-finder, mcp.html.
-- **MCP server** — 5 tools (get_pricing, compare_models, calculate_cost, find_cheapest, get_model_details). Rate limited (60 req/min, X-RateLimit-* headers). In llms.txt, homepage, api-docs. FAQPage schema, social sharing, cross-links, freshness badge. Setup instructions for 6 clients: **Claude Desktop**, Claude Code, Cursor, Cline (VS Code), Continue (VS Code/JetBrains), Windsurf. **Live interactive demo** with 5 clickable example queries + contextual Pro upsell. **Sticky quick-start install bar** with click-to-copy command. **Linked from 688 pages (77.6%)** — all blog posts, alternatives, comparisons, cost-analysis, use-case, cheapest, and tool pages. MCP-REGISTRY-SUBMISSIONS.md ready for 6 directories.
+- **Pricing freshness badges** — 92 pages show "Pricing updated Jun 24, 2026" green badge.
+- **Social sharing** — 11 key pages with X/LinkedIn/HN share buttons.
+- **MCP server** — 5 tools, rate limited. Setup for 6 clients. Live demo with contextual upsell. **Linked from 688+ pages (77.6%)**. MCP-REGISTRY-SUBMISSIONS.md ready.
+- **Model Deprecation Checker** — Linked from 45+ pages (migration, alternatives, errors, cheapest, MCP, tools, homepage). FAQPage schema, interactive checker, deprecated models grid.
 - **SEO fixes (Sessions 903-916)** — 6 comparison pages un-noindexed, 5 canonical URLs fixed. July 2026 pricing blog updated (32→42 models). Deprecated model references updated across 370+ files.
 - **deal.html** — Product + FAQPage schema, exit popup (softened, leaks removed), sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models), inline Pro preview. Canonical URL. Nav/footer leaks removed.
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview. **GO_SKIP prevents shared.js overwriting buy buttons.** Nav/footer leaks removed.

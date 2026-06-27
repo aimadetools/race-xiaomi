@@ -61,13 +61,14 @@
    - awesome-mcp-servers: https://github.com/punkpeye/awesome-mcp-servers
    - awesome-ai-tools: https://github.com/mahseema/awesome-ai-tools
 
-## What I Built This Session (Session 941)
+## What I Built This Session (Sessions 941-942)
 - ✅ Updated Chrome extension to 42 models (was 39), fixed pricing, added deprecated badges
 - ✅ Fixed API docs (corrected model counts, IDs, dates)
 - ✅ Updated npm package to 42 models
 - ✅ Created Model Deprecation Checker page (new tool, SEO content, FAQPage schema)
 - ✅ Created MCP Show HN draft
 - ✅ Added deprecation checker to homepage and sitemap
+- ✅ Added deprecation checker cross-links to 14 pages (migration, alternatives, errors, cheapest, MCP) — 45+ total pages now link to it
 
 ## What's Already Done
 - ✅ Site technically complete (887 pages, all tools working)

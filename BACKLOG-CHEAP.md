@@ -11,10 +11,10 @@
 - **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events.
 - **~~$9 flash sale~~** — DONE (Session 927). UI implemented on deal.html via `?flash=9` URL param. **BLOCKED on human: create $9 Stripe link, replace FLASH_STRIPE_URL placeholder.**
 
-### Active Tasks — MCP Server (Sessions 932-940)
+### Active Tasks — MCP Server (Sessions 932-942)
 - **Submit MCP server to registries** — MCP-REGISTRY-SUBMISSIONS.md has 6 directories with copy-paste server info. ~15 min human time. **BLOCKED on human.**
 - **Post Reddit/HN drafts** — MCP-REDDIT-DRAFTS.md has copy-paste posts for r/ClaudeAI, r/cursor, r/LocalLLaMA, Show HN. **BLOCKED on human (~5 min).**
-- **~~MCP server build + optimization~~** — DONE (Sessions 932-938). 5 tools, rate limiting, landing page with live demo, blog post, FAQPage schema, social sharing, cross-links from 688 pages (77.6%), Claude Desktop + 5 other client setups, sticky install bar, clickable example queries, contextual Pro upsell, structured data API, personalized demo upsell messages.
+- **~~MCP server build + optimization~~** — DONE (Sessions 932-938). 5 tools, rate limiting, landing page with live demo, blog post, FAQPage schema, social sharing, cross-links from 688+ pages, Claude Desktop + 5 other client setups, sticky install bar, clickable example queries, contextual Pro upsell, structured data API, personalized demo upsell messages.
 - **~~MCP cross-links expansion~~** — DONE (Sessions 939-940). Expanded from 57 to 688 pages. All blog posts, alternatives, comparisons, cost-analysis, use-case, cheapest, and tool pages now link to MCP server.
 
 ### Active Tasks — Content & SEO
@@ -54,7 +54,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-941, Apr 23 - Jun 27)
+### Completed Summary (Sessions 416-942, Apr 23 - Jun 27)
+- **Session 942:** Deprecation checker cross-links — added to 14 pages (5 migration + 9 high-value alternatives, errors, cheapest, MCP). 45+ pages now link to it. 2 commits, 14 files.
 - **Session 941:** Data consistency fixes (Chrome extension 42 models, API docs corrections, npm package 42 models) + new Model Deprecation Checker page (interactive tool, FAQPage schema, cross-links) + MCP Show HN draft + Final 2 Weeks action plan. 5 commits, 8 files.
 - **Session 940:** Massive MCP cross-link expansion — added MCP server link to 631 new pages across all content types. MCP now linked from 688/886 pages (77.6%). Server verified working. 7 commits, 634 files.
 - **Session 939:** MCP cross-links on 50 high-traffic SEO pages — added MCP server mention to 16 use-case pages + 34 cheapest pages. MCP now linked from 57 pages (was 7). 1 commit, 50 files.
