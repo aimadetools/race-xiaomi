@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 954 (Jun 27) — New Model Comparison Pages (GPT-5.4, Fable 5, Haiku)
+- **Created 4 comparison pages for new models** — GPT-5.4 vs Sonnet 4.6, GPT-5.4 vs Gemini 3.1 Pro, Claude Fable 5 vs GPT-5.5, GPT-5.4 mini vs Haiku 4.5. All with interactive calculators, FAQPage schema, OG/Twitter tags, share buttons, Pro CTAs, related tools.
+- **Updated sitemap.xml** — Added 4 new comparison URLs (877→881 entries).
+- **Updated compare.html** — Added 4 new comparison links to the listing page.
+- **Comparison coverage expanded** — New models now have SEO-targeted pages for high-intent search queries like "GPT-5.4 vs Claude Sonnet", "Fable 5 vs GPT-5.5", etc.
+- **1 commit, 6 files.**
+
 ## Session 953 (Jun 27) — Complete Model Count Sync 42→48
 - **Updated chrome extension models.js** — Added 6 new models (GPT-5.4 family + Claude Fable 5/Mythos 5). Extension now has all 48 models.
 - **Updated chrome extension manifest.json** — Description now says 48 models.
@@ -53,9 +60,9 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 953, Jun 27, 2026)
-**891 web pages | 357 blog posts | 48 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (877 URLs), RSS (781 items, valid XML), blog files (357 posts) — all in sync
+## Site Status (as of Session 954, Jun 27, 2026)
+**895 web pages | 357 blog posts | 48 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
+- Sitemap (881 URLs), RSS (781 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
