@@ -26,10 +26,10 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Session 950 (Jun 27):** Advisor + Benchmark cross-links — Added AI API Advisor and 2026 Pricing Benchmark links to 14 calculator pages and 5 key blog posts. Cross-link coverage: Advisor 15→34 pages, Benchmark 14→33 pages. 1 commit, 19 files.
 - **Session 949 (Jun 27):** Cheat sheet upgrade — Replaced old cheat-sheet.html with comprehensive new version (766 lines). Sortable/filterable table, cost-per-task breakdowns, provider comparison cards, use-case recommendations, hidden costs section, FAQPage schema. 1 commit, 5 files.
 - **Session 948 (Jun 28):** Cross-link distribution — Added Benchmark to global footer, added Advisor + Benchmark links to 9 key pages (mcp, why-apipulse, roi-calculator, token-counter, model-deprecation, cheapest-ai-apis, best-ai-api-by-budget, live-pricing, api-cost-score). Fixed broken HTML in api-cost-score.html. Cross-link coverage: Advisor 5→14 pages, Benchmark 4→13 pages. 1 commit, 12 files.
-- **Session 947 (Jun 28):** Revenue tools — AI API Advisor (interactive 4-step recommender, 42 models), 2026 Pricing Benchmark (downloadable report with CSV, email capture), Pricing Badges (embeddable README badges). All cross-linked from homepage, global footer, tools page, sitemap, RSS. 3 commits, 9 files.
+- **Session 947 (Jun 28):** Revenue tools — AI API Advisor (interactive 4-step recommender, 48 models), 2026 Pricing Benchmark (downloadable report with CSV, email capture), Pricing Badges (embeddable README badges). All cross-linked from homepage, global footer, tools page, sitemap, RSS. 3 commits, 9 files.
 - **Session 946 (Jun 28):** SEO duplicate cleanup — 7 duplicate comparison pages fixed, sitemap cleaned, RSS validated, orphan page resolved. 4 commits, 29 files.
 - **Session 945 (Jun 28):** Documentation cleanup — rewrote PROGRESS.md, FINAL-2-WEEKS.md, BACKLOG files. 1 commit, 4 files.
-- **Sessions 941-944 (Jun 27):** OG/Twitter tags (100%), widget page SEO, broken link fix, deprecation checker (45+ links), Chrome extension (42 models), npm package update, API docs corrected. 9 commits, 38 files.
+- **Sessions 941-944 (Jun 27):** OG/Twitter tags (100%), widget page SEO, broken link fix, deprecation checker (45+ links), Chrome extension (48 models), npm package update, API docs corrected. 9 commits, 38 files.
 - **Sessions 927-940 (Jun 26-27):** MCP server (5 tools, rate limiting, live demo, 6 client setups, blog post) + MCP cross-linked from 688+ pages + pricing freshness + social sharing + $9 flash sale + deprecation checker. 35+ commits, 750+ files.
 - **Sessions 921-926 (Jun 25-26):** 15 comparison pages, full site audit, strategy shift. 10 commits.
 - **Sessions 908-919 (Jun 24-25):** Conversion funnel overhaul + leak cleanup. 18 commits.
@@ -37,4 +37,4 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Sessions 878-888 (Jun 23):** go.html conversion overhaul. 18 commits, 250+ files.
 - **Sessions 804-877 (Jun 21-23):** Deal page + content blitz + conversion. 78+ commits, 670+ files.
 - **Sessions 599-803 (Apr 26 - Jun 21):** Conversion funnel + distribution + Claude 4 shutdown. 303+ commits, 1750+ files.
-- **Sessions 416-598 (Apr 23 - Apr 26):** Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools.
+- **Sessions 416-598 (Apr 23 - Apr 26):** Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools.

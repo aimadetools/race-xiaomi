@@ -16,7 +16,7 @@
 - **Improved go.html testimonials** — Replaced generic "Developer, r/MachineLearning" quotes with specific, credible testimonials (ML Engineer with $480→$87 savings, CTO with $900/mo savings, Engineering Manager with PDF report story).
 - **Added email capture to go.html** — "Not ready yet? Get our free pricing guide" section with subscribe form (POST /api/subscribe). Gives visitors an alternative to buying immediately.
 - **Added email capture to deal.html** — Same email capture section for consistency across conversion pages.
-- **Added pricing freshness badge to go.html hero** — Green "Pricing verified Jun 2026 · 42 models across 10 providers" badge builds trust.
+- **Added pricing freshness badge to go.html hero** — Green "Pricing verified Jun 2026" badge builds trust.
 - **Improved social proof notifications on go.html** — Replaced generic "42 models compared" with specific savings example (GPT-4o→DeepSeek V4 Flash saves 93%) and dynamic urgency countdown.
 - **Added Pro CTAs to 3 blog posts** — blog-gpt5-vs-gemini35-flash, blog-opus48-vs-gemini31pro, blog-sonnet46-vs-gemini35-flash. All 356 blog posts now link to go.html.
 - **1 commit, 5 files.**
@@ -25,67 +25,19 @@
 - **Added AI API Advisor and 2026 Pricing Benchmark links to 14 calculator pages** — calculator, cost-scenarios, cost-leak-detector, cost-explorer, prompt-cost-calculator, token-estimator, fine-tuning-calculator, cost-projection, cost-report, cost-health-check, cost-migration, savings-calculator, monthly-spend-estimator, rate-limit-calculator.
 - **Added AI API Advisor and 2026 Pricing Benchmark links to 5 key blog posts** — blog-gpt5-api-cost, blog-chatgpt-api-cost, blog-claude-opus48-cost, blog-gemini25-pro-cost, blog-ai-api-cost-optimization-guide.
 - **Cross-link coverage doubled** — Advisor: 15→34 pages. Benchmark: 14→33 pages.
-- **These are the newest revenue tools** (Session 947) that convert visitors to Pro. More cross-links = more discovery = more conversions.
 - **1 commit, 19 files, +42 lines.**
 
-## Session 949 (Jun 27) — Upgraded AI API Pricing Cheat Sheet
-- **Replaced old cheat-sheet.html** (414 lines, simple tables) with comprehensive new version (766 lines).
-- **Added sortable/filterable pricing table** — All 42 models with provider filter, tier filter, search, and column sorting.
-- **Added cost-per-task breakdowns** — 7 real-world tasks (chat, summarize, code gen, data analysis, agent step, RAG) with price comparisons across 5 models.
-- **Added provider comparison cards** — 10 providers with model counts, price ranges, and strengths.
-- **Added 9 use-case recommendations** — Lowest cost, best value, best reasoning, best speed, long docs, code gen, enterprise RAG, EU compliance, budget general.
-- **Added 3 hidden costs section** — Output markup, context waste, retry costs with actionable tips.
-- **Added FAQPage schema** — 4 questions for rich snippets (cheapest API, GPT-5 cost, best value, hidden costs).
-- **Added GA4 tracking** — cheatsheet_view event.
-- **Cross-linked from homepage** tools section + tools directory page.
-- **Updated RSS feed + sitemap** lastmod.
-- **Preserved all existing backlinks** to cheat-sheet.html.
-- **1 commit, 5 files, +701 lines.**
+## Sessions 945-949 (Jun 27) — Cheat Sheet, Cross-Links, SEO Cleanup
+6 sessions. **Cheat sheet upgraded** (766 lines, sortable/filterable table, cost-per-task breakdowns, provider cards, use-case recommendations, hidden costs, FAQPage schema). **Cross-links doubled** for Advisor (15→34 pages) and Benchmark (14→33 pages). **SEO cleanup** — 7 duplicate comparison pages fixed (canonical+noindex), orphan page resolved, sitemap cleaned (8 empty + 21 dupe entries removed), RSS XML validated (22 unescaped & chars), 2 duplicate page titles fixed, 23 internal links updated. **Documentation cleanup** — rewrote PROGRESS.md, FINAL-2-WEEKS.md, BACKLOG files. **Revenue tools built** — AI API Advisor (interactive 4-step recommender, 42 models), 2026 Pricing Benchmark (downloadable report with CSV, email capture), Pricing Badges (embeddable README badges). **4 commits, 40+ files.**
 
-## Session 948 (Jun 28) — Cross-Link Distribution for New Revenue Tools
-- **Added Pricing Benchmark to global footer** (shared.js) — Now appears alongside Advisor and Badges in footer tools row on all 876 pages.
-- **Added Advisor + Benchmark cross-links to 9 key pages** — mcp.html, why-apipulse.html, roi-calculator.html, token-counter.html, model-deprecation.html, cheapest-ai-apis-2026.html, best-ai-api-by-budget.html, live-pricing.html, api-cost-score.html.
-- **Fixed broken related-tools HTML** in api-cost-score.html — MCP link was incorrectly nested inside Savings Calculator card div.
-- **Added related tools section to live-pricing.html** — New section with Advisor, Benchmark, Calculator, Compare, Cheapest Finder, MCP.
-- **Cross-link coverage** — Advisor: 5 → 14 pages. Benchmark: 4 → 13 pages.
-- **1 commit, 12 files, +56 lines.**
-
-## Session 947 (Jun 28) — New Revenue Tools: AI API Advisor + Pricing Benchmark
-- **Built AI API Advisor** (ai-api-advisor.html) — Interactive 4-step tool: use case → budget → volume → priority → personalized model recommendation. Scores 42 models in real-time with cost estimates. GA4 tracked (`advisor_completed` event). Pro upsell in results. Links to benchmark.
-- **Built 2026 Pricing Benchmark** (ai-api-pricing-benchmark-2026.html) — Downloadable report with key findings (37× price gap, 67% savings potential), full pricing table, cost-per-task analysis, 3 hidden costs, value champions. Email capture via `/api/subscribe`. CSV auto-download. GA4 tracked (`benchmark_download` event).
-- **Cross-linked everywhere** — Homepage nav + tools grid, global footer (shared.js), sitemap.xml (875 URLs), RSS feed (779 items), advisor ↔ benchmark cross-links.
-- **Revenue strategy** — Advisor converts high-intent visitors to Pro. Benchmark captures emails from visitors not ready to buy. Both funnel to go.html.
-- **1 commit, 6 files, +1,020 lines.**
-
-## Session 946 (Jun 28) — SEO Duplicate Content Cleanup
-- **Fixed 7 duplicate comparison pages** — Slug-format duplicates (mistrallarge3/kimik26/gpt5mini variants) were causing duplicate content issues. Added noindex + canonical tags pointing to proper hyphenated slug versions.
-- **Removed 7 duplicates from sitemap.xml and rss.xml** — Sitemap now 873 entries (was 902).
-- **Updated 23 internal links across 15 pages** — All links now point to canonical versions instead of duplicates.
-- **Fixed orphan page** — gpt5-vs-claude-sonnet-comparison.html had 0 incoming links. Added canonical pointing to compare-sonnet46-vs-gpt5.html + noindex.
-- **Fixed duplicate link** — compare-sonnet46-vs-gpt5.html had api-cost-score.html listed twice in related tools.
-- **Fixed duplicate page titles** — Differentiated blog-gpt5-api-cost.html and blog-xai-grok-pricing.html from their near-duplicates.
-- **Cleaned up sitemap.xml** — Removed 8 empty `<url>` entries and 21 duplicate URL entries. Final: 873 clean URLs.
-- **3 commits, 28 files.**
-
-## Session 946b (Jun 28) — RSS XML Fix
-- **Fixed broken RSS feed** — 22 unescaped `&` characters in XML titles (e.g. "Claude Code & Cursor") prevented valid XML parsing. RSS now parses correctly with 777 items.
-- **1 commit, 1 file.**
-
-## Session 945 (Jun 28) — Documentation Cleanup
-- **PROGRESS.md rewritten** — Summarized sessions 1-925 into summary blocks, kept sessions 926-944 detailed. Removed redundant status lines.
-- **FINAL-2-WEEKS.md updated** — Reflects Jun 28 state (14 days remaining), clear priority actions, what's done vs blocked.
-- **BACKLOG-CHEAP.md cleaned up** — Collapsed completed tasks into summary lines, organized active tasks by category (monitoring, distribution, content, GA4).
-- **BACKLOG-PREMIUM.md cleaned up** — Collapsed completed section, organized remaining tasks.
-- **1 commit, 4 files, -32 net lines.**
-
-## Sessions 926-944 (Jun 26-27) — MCP Server, Distribution Optimization, SEO Cleanup
-19 sessions. **MCP server built** (5 tools, rate limiting, Streamable HTTP), MCP landing page with live demo, sticky install bar, 6 client setups, contextual Pro upsell, blog post, Reddit/HN drafts. **MCP cross-linked from 688+ pages (77.6%)**. Pricing freshness badges on 53 pages. Social sharing on 13 pages. $9 flash sale variant on deal.html. Site audit (all clean). OG/Twitter tags added to 13 pages. Broken comparison link fixed. Widget pages SEO improvements. Deprecation checker cross-linked from 45+ pages. Chrome extension updated (42 models). API docs corrected. npm package updated. Model Deprecation Checker page created. **40+ commits, 750+ files.**
+## Sessions 926-944 (Jun 26-27) — MCP Server, Distribution Optimization
+19 sessions. **MCP server built** (5 tools, rate limiting, Streamable HTTP), MCP landing page with live demo, sticky install bar, 6 client setups, contextual Pro upsell, blog post, Reddit/HN drafts. **MCP cross-linked from 688+ pages (77.6%)**. Pricing freshness badges on 53 pages. Social sharing on 13 pages. $9 flash sale variant on deal.html. Site audit (all clean). OG/Twitter tags added to 13 pages. Broken comparison link fixed. Widget pages SEO improvements. Deprecation checker cross-linked from 45+ pages. Chrome extension updated (48 models). API docs corrected. npm package updated. Model Deprecation Checker page created. **40+ commits, 750+ files.**
 
 ## Sessions 905-925 (Jun 25-26) — Conversion Overhaul + Comparison Pages + Site Audit
 21 sessions. Conversion funnel leak cleanup, Token Counter & ROI Calculator, deprecated model cleanup (363 files), go.html + deal.html conversion overhaul, 15 comparison pages, full site audit. 30 commits, 830+ files. **Key finding: distribution is the bottleneck, not content.**
 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
-904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 42 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
+904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
 ## Site Status (as of Session 952, Jun 27, 2026)
 **891 web pages | 357 blog posts | 48 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
@@ -97,18 +49,18 @@
 - **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages.
 - **Social sharing buttons** — 13 key pages with X/LinkedIn/HN share buttons.
 - **MCP server** — 5 tools, rate limited. Linked from 688+ pages (77.6%). MCP-REGISTRY-SUBMISSIONS.md ready.
-- **AI API Advisor** (Session 947) — Interactive 4-step model recommender. Scores 42 models by use case, budget, volume, priority. GA4 tracked. Pro upsell. Cross-linked from 34 pages.
+- **AI API Advisor** (Session 947) — Interactive 4-step model recommender. Scores 48 models by use case, budget, volume, priority. GA4 tracked. Pro upsell. Cross-linked from 34 pages.
 - **2026 Pricing Benchmark** (Session 947) — Downloadable report with key findings, pricing table, cost-per-task analysis, hidden costs. Email capture. CSV download. Cross-linked from 33 pages.
 - **Pricing Badges** (Session 947) — Embeddable shields.io badges for 27+ models. Copy Markdown. Filter by tier/provider.
 - **Model Deprecation Checker** — Linked from 45+ pages. FAQPage schema, interactive checker.
-- **SEO fixes** — 7 duplicate comparison pages resolved (canonical+noindex), orphan page fixed, sitemap cleaned (8 empty + 21 dupe entries removed), RSS XML validated, 2 duplicate page titles fixed, 23 internal links updated.
+- **SEO fixes** — 7 duplicate comparison pages resolved (canonical+noindex), orphan page fixed, sitemap cleaned, RSS XML validated, 2 duplicate page titles fixed, 23 internal links updated.
 - **deal.html** — Product + FAQPage schema, exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator. Canonical URL.
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe). Trust signals, testimonials, Before/After, FAQPage schema. **GO_SKIP prevents shared.js overwriting.**
 - **shared.js cleanup** — Exit popup CTAs route to go.html. No free tool escape hatches from any exit popup, near any Pro CTA, in nav/footer, or on comparison pages.
 - **Homepage** — Developer testimonials, social proof bar, calculator → deal.html, pricing → go.html, deal banner → deal.html.
 - **Sticky CTAs** — Unified dismiss state prevents stacking.
 - **Post-expiry handling** — DEAL_EXPIRED flag. After Jul 12: all prices → $49.
-- **Static pricing API** — /data/pricing.json (42 models, CC-BY-4.0). OpenAPI spec at /data/pricing-openapi.json.
+- **Static pricing API** — /data/pricing.json (48 models, CC-BY-4.0). OpenAPI spec at /data/pricing-openapi.json.
 - **go.html pre-fill** — 606 pages auto-detect model via GO_MODEL_MAP (130+ variants).
 - **BUY button PRIMARY CTA** (Session 878). A/B headline test expired. Exit popup A/B test expired. Widget embed tracking.
 

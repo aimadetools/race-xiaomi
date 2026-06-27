@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 890 pages, 356 posts, 42 models. Technically complete. Distribution is the bottleneck, not content.
+**Site Status:** 891 pages, 357 posts, 48 models. Technically complete. Distribution is the bottleneck, not content.
 
 ### Active Tasks — Conversion Monitoring
 - **Monitor first purchases** — Check GA4 Monetization reports daily for `begin_checkout` and `purchase` events. Buy button fixed Jun 24, site audit (Session 920) confirmed all tracking wired correctly.
