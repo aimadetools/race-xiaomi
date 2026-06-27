@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 935 (Jun 27) — MCP Landing Page Optimization + Cross-links
+- **FAQPage schema** — Added FAQPage structured data to mcp.html with 6 Q&As covering: free? data freshness? offline? supported tools? what tools? vs Pro? Improves Google search appearance for MCP-related queries.
+- **Pricing freshness badge** — Added pricing-data.js import + renderPricingFreshness badge to mcp.html hero section. Shows "Pricing updated Jun 24, 2026" green trust badge.
+- **Social sharing** — Added X, LinkedIn, and HN share buttons to mcp.html with tailored share text targeting MCP developer audience.
+- **Related Resources** — Added 5 cross-links section to mcp.html (cheapest finder, calculator, compare, pricing report, REST API).
+- **Cross-links to MCP** — Added MCP server link to Related Tools/Reading sections on 4 high-traffic tool pages: cheapest-model-finder.html, compare.html, calculator.html, ai-api-pricing-comparison-2026.html. These pages previously had no link to the new MCP distribution channel.
+- **2 commits, 5 files, 95 insertions.**
+
 ## Session 934 (Jun 27) — MCP Server Blog Post + Distribution Content
 - **Blog post** — Created `blog-mcp-server-ai-pricing.html` targeting "MCP server AI pricing" keywords. SEO content supporting the new MCP distribution channel. Covers install (one command), 5 tools, 42 models, 10 providers, example prompts, open data API. Article schema, FAQPage schema (6 Q&As), breadcrumbs, social share buttons (X, LinkedIn, HN). Added to blog.html listing, RSS feed, sitemap.
 - **Reddit/HN post drafts** — Created `MCP-REDDIT-DRAFTS.md` with copy-paste posts for r/ClaudeAI, r/cursor, r/LocalLLaMA, and Show HN. Human can post (~5 min).
@@ -60,15 +68,15 @@
 ## Summary: Sessions 1-803 (Apr 5 - Jun 21)
 Full APIpulse build from scratch + conversion funnel + distribution. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Claude 4 shutdown. go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, pricing hub, llms.txt, 4 alternatives, 36 comparisons, migration checklist (9 routes). 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 934, Jun 27, 2026)
+## Site Status (as of Session 935, Jun 27, 2026)
 **887 web pages | 353 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (900 URLs), RSS (777 items), blog files (353 posts) — all in sync
-- **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
+- **Structured data: 98.3%** — FAQPage schema on key pages including mcp.html (added Session 935). 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
-- **Pricing freshness badges** — 91 pages now show "Pricing updated Jun 24, 2026" green badge (44 existing + 47 added Session 931).
-- **Social sharing** — 10 key pages now have X/LinkedIn/HN share buttons: why-apipulse, deal, go, best-ai-api-by-budget, cheapest-ai-apis-2026, live-pricing, roi-calculator, token-counter, migration-checklist, cheapest-model-finder.
-- **MCP server** — 5 tools (get_pricing, compare_models, calculate_cost, find_cheapest, get_model_details). Rate limited (60 req/min, X-RateLimit-* headers). In llms.txt, homepage, api-docs. MCP-REGISTRY-SUBMISSIONS.md ready for 6 directories.
+- **Pricing freshness badges** — 92 pages now show "Pricing updated Jun 24, 2026" green badge (91 existing + mcp.html added Session 935).
+- **Social sharing** — 11 key pages now have X/LinkedIn/HN share buttons: why-apipulse, deal, go, best-ai-api-by-budget, cheapest-ai-apis-2026, live-pricing, roi-calculator, token-counter, migration-checklist, cheapest-model-finder, mcp.html.
+- **MCP server** — 5 tools (get_pricing, compare_models, calculate_cost, find_cheapest, get_model_details). Rate limited (60 req/min, X-RateLimit-* headers). In llms.txt, homepage, api-docs. FAQPage schema, social sharing, cross-links, freshness badge. Linked from 7 pages (homepage, api-docs, blog, cheapest-finder, compare, calculator, comparison). MCP-REGISTRY-SUBMISSIONS.md ready for 6 directories.
 - **SEO fixes (Sessions 903-916)** — 6 comparison pages un-noindexed, 5 canonical URLs fixed. July 2026 pricing blog updated (32→42 models). Deprecated model references updated across 370+ files.
 - **deal.html** — Product + FAQPage schema, exit popup (softened, leaks removed), sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models), inline Pro preview. Canonical URL. Nav/footer leaks removed.
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema, inline Pro preview. **GO_SKIP prevents shared.js overwriting buy buttons.** Nav/footer leaks removed.

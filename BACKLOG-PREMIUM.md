@@ -21,7 +21,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-934, Apr 23 - Jun 27)
+### Completed (Sessions 416-935, Apr 23 - Jun 27)
+- **Session 935:** MCP landing page optimization — FAQPage schema (6 Q&As), pricing freshness badge, social sharing (X/LinkedIn/HN), Related Resources (5 cross-links). Added MCP cross-links to 4 high-traffic tool pages (cheapest-finder, compare, calculator, comparison). 2 commits, 5 files.
 - **Session 934:** MCP server blog post (SEO for "MCP server AI pricing") + Reddit/HN post drafts + widget pricing verified. 2 commits, 5 files.
 - **Session 933:** MCP server improvements — rate limiting (60 req/min), get_model_details tool (5th tool), llms.txt, homepage link, registry submissions guide. 5 commits, 4 files.
 - **Session 932:** MCP server for AI API pricing — new distribution channel. /api/mcp with 4 tools, /mcp.html landing page. 1 commit, 3 files.
