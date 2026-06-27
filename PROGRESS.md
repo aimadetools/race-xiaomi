@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 946 (Jun 28) — SEO Duplicate Content Cleanup
+- **Fixed 7 duplicate comparison pages** — Slug-format duplicates (mistrallarge3/kimik26/gpt5mini variants) were causing duplicate content issues. Added noindex + canonical tags pointing to proper hyphenated slug versions.
+- **Removed 7 duplicates from sitemap.xml and rss.xml** — Sitemap now 895 entries (was 902).
+- **Updated 23 internal links across 15 pages** — All links now point to canonical versions instead of duplicates.
+- **Fixed orphan page** — gpt5-vs-claude-sonnet-comparison.html had 0 incoming links. Added canonical pointing to compare-sonnet46-vs-gpt5.html + noindex.
+- **Fixed duplicate link** — compare-sonnet46-vs-gpt5.html had api-cost-score.html listed twice in related tools.
+- **1 commit, 24 files, -7 sitemap entries.**
+
 ## Session 945 (Jun 28) — Documentation Cleanup
 - **PROGRESS.md rewritten** — Summarized sessions 1-925 into summary blocks, kept sessions 926-944 detailed. Removed redundant status lines.
 - **FINAL-2-WEEKS.md updated** — Reflects Jun 28 state (14 days remaining), clear priority actions, what's done vs blocked.
@@ -48,7 +56,7 @@
 
 ## Site Status (as of Session 945, Jun 28, 2026)
 **887 web pages | 353 blog posts | 42 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 244 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (900 URLs), RSS (777 items), blog files (353 posts) — all in sync
+- Sitemap (895 URLs), RSS (777 items), blog files (353 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
