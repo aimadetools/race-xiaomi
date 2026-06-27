@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Server for AI API Pricing — Free | APIpulse</title>
+    <meta name="description" content="Free MCP server for AI API pricing data. Get live costs for GPT-5, Claude, Gemini, DeepSeek, and 42 models directly in Claude Code, Cursor, and other AI tools.">
+    <meta name="keywords" content="MCP server, AI API pricing, Claude Code MCP, Cursor MCP, LLM pricing tool, AI model cost comparison, Model Context Protocol, GPT pricing MCP">
+    <meta property="og:title" content="MCP Server for AI API Pricing — Free | APIpulse">
+    <meta property="og:description" content="Get live AI API pricing data in your AI coding tools. 42 models, 10 providers. One config line.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/mcp.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MCP Server for AI API Pricing — Free | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/mcp.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "APIpulse MCP Server",
+        "description": "Free MCP server for AI API pricing data. Get live costs for 42 models from 10 providers in Claude Code, Cursor, and other AI tools.",
+        "url": "https://getapipulse.com/mcp.html",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "provider": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <style>
+        .mcp-page { max-width: 800px; margin: 0 auto; padding: 100px 24px 80px; }
+        .mcp-hero { text-align: center; margin-bottom: 56px; }
+        .mcp-badge { display: inline-block; background: var(--accent); color: white; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .mcp-hero h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+        .mcp-hero p { font-size: 18px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; line-height: 1.6; }
+        .mcp-hero .endpoint { display: inline-block; margin-top: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 20px; font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; font-size: 14px; color: var(--accent); user-select: all; }
+
+        /* Features grid */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 56px; }
+        .feature-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .feature-card .icon { font-size: 28px; margin-bottom: 12px; }
+        .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .feature-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+        /* Setup sections */
+        .setup-section { margin-bottom: 48px; }
+        .setup-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .setup-section h2 .tool-logo { font-size: 28px; }
+        .setup-section > p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+        .code-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 16px; }
+        .code-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); }
+        .code-header span { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .copy-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 4px 12px; color: var(--text-secondary); font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .copy-btn.copied { border-color: var(--green); color: var(--green); }
+        .code-block pre { padding: 16px; overflow-x: auto; font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; font-size: 13px; line-height: 1.6; color: var(--text-primary); white-space: pre; }
+
+        /* Tools table */
+        .tools-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+        .tools-table th { text-align: left; padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--border); font-size: 13px; font-weight: 700; color: var(--text-primary); }
+        .tools-table td { padding: 12px 16px; border: 1px solid var(--border); font-size: 13px; vertical-align: top; }
+        .tools-table td:first-child { font-family: 'SF Mono', Monaco, monospace; font-weight: 600; color: var(--accent); white-space: nowrap; }
+        .tools-table tr:nth-child(even) td { background: rgba(255,255,255,0.015); }
+
+        /* CTA */
+        .mcp-cta { text-align: center; padding: 48px 24px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; margin-top: 56px; }
+        .mcp-cta h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .mcp-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .btn-primary { display: inline-block; background: var(--accent); color: white; padding: 12px 28px; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); color: white; }
+        .btn-secondary { display: inline-block; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); padding: 12px 28px; border-radius: 10px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="/cheapest-model-finder.html">Finder</a>
+                <a href="/ai-api-pricing-comparison-2026.html">Compare</a>
+                <a href="/api-docs.html">API</a>
+                <a href="/mcp.html" style="color:var(--accent)">MCP</a>
+                <a href="/go.html" class="nav-cta">Get Pro — $29</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mcp-page">
+        <div class="mcp-hero">
+            <div class="mcp-badge">Model Context Protocol</div>
+            <h1>AI API Pricing in Your AI Tools</h1>
+            <p>Ask Claude Code, Cursor, or any MCP client about AI model pricing — and get instant answers from 42 models across 10 providers.</p>
+            <div class="endpoint">https://getapipulse.com/api/mcp</div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="icon">💰</div>
+                <h3>Live Pricing</h3>
+                <p>Get current input/output costs per 1M tokens for 42 models from OpenAI, Anthropic, Google, DeepSeek, and more.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⚖️</div>
+                <h3>Compare Models</h3>
+                <p>Side-by-side comparison of any 2-5 models. Instantly see which is cheapest, which has the largest context window.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Cost Calculator</h3>
+                <p>Estimate monthly costs based on your usage. Input daily requests and token counts to get real dollar amounts.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🏆</div>
+                <h3>Find Cheapest</h3>
+                <p>Sort all models by price. Filter by provider, tier, or minimum context window. Always up to date.</p>
+            </div>
+        </div>
+
+        <!-- Claude Code -->
+        <div class="setup-section">
+            <h2><span class="tool-logo">🔮</span> Claude Code</h2>
+            <p>Add this to your Claude Code MCP settings (run <code>claude mcp add</code> or edit <code>~/.claude.json</code>):</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Terminal</span>
+                    <button class="copy-btn" onclick="copyCode(this, 'claude-code')">Copy</button>
+                </div>
+                <pre id="claude-code">claude mcp add apipulse --transport http https://getapipulse.com/api/mcp</pre>
+            </div>
+            <p style="font-size:13px;color:var(--text-muted)">Or manually add to your <code>~/.claude.json</code>:</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>~/.claude.json</span>
+                    <button class="copy-btn" onclick="copyCode(this, 'claude-json')">Copy</button>
+                </div>
+                <pre id="claude-json">{
+  "mcpServers": {
+    "apipulse": {
+      "type": "http",
+      "url": "https://getapipulse.com/api/mcp"
+    }
+  }
+}</pre>
+            </div>
+        </div>
+
+        <!-- Cursor -->
+        <div class="setup-section">
+            <h2><span class="tool-logo">⚡</span> Cursor</h2>
+            <p>Add to your Cursor MCP settings (<code>Settings → MCP → Add Server</code> or edit <code>.cursor/mcp.json</code>):</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>.cursor/mcp.json</span>
+                    <button class="copy-btn" onclick="copyCode(this, 'cursor-json')">Copy</button>
+                </div>
+                <pre id="cursor-json">{
+  "mcpServers": {
+    "apipulse": {
+      "type": "http",
+      "url": "https://getapipulse.com/api/mcp"
+    }
+  }
+}</pre>
+            </div>
+        </div>
+
+        <!-- Windsurf / Other -->
+        <div class="setup-section">
+            <h2><span class="tool-logo">🌊</span> Windsurf & Other MCP Clients</h2>
+            <p>Any MCP client that supports the Streamable HTTP transport can connect. Use the endpoint URL:</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Endpoint</span>
+                    <button class="copy-btn" onclick="copyCode(this, 'endpoint-url')">Copy</button>
+                </div>
+                <pre id="endpoint-url">https://getapipulse.com/api/mcp</pre>
+            </div>
+            <p style="font-size:13px;color:var(--text-muted)">Protocol: MCP Streamable HTTP (2025-03-26). Supports: <code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>, <code>ping</code>.</p>
+        </div>
+
+        <!-- Available Tools -->
+        <div class="setup-section">
+            <h2>🛠 Available Tools</h2>
+            <p>Once connected, your AI assistant can call these tools:</p>
+            <table class="tools-table">
+                <thead>
+                    <tr><th>Tool</th><th>Description</th><th>Parameters</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>get_pricing</td>
+                        <td>Get pricing for all or specific models. Filter by provider or tier.</td>
+                        <td><code>model?</code>, <code>provider?</code>, <code>tier?</code></td>
+                    </tr>
+                    <tr>
+                        <td>compare_models</td>
+                        <td>Compare 2-5 models side by side with cost and context window.</td>
+                        <td><code>models[]</code> (required)</td>
+                    </tr>
+                    <tr>
+                        <td>calculate_cost</td>
+                        <td>Estimate monthly cost based on usage (requests/day, tokens/request).</td>
+                        <td><code>model</code> (required), <code>daily_requests?</code>, <code>input_tokens?</code>, <code>output_tokens?</code></td>
+                    </tr>
+                    <tr>
+                        <td>find_cheapest</td>
+                        <td>Find cheapest models. Filter by provider, min context, sort order.</td>
+                        <td><code>provider?</code>, <code>min_context?</code>, <code>sort_by?</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Example Prompts -->
+        <div class="setup-section">
+            <h2>💬 Example Prompts</h2>
+            <p>Once the MCP server is configured, try asking your AI assistant:</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Prompts</span>
+                </div>
+                <pre>"What's the cheapest AI model with 1M context?"
+"Compare GPT-5 vs Claude Opus 4.8 pricing"
+"How much would 10K daily requests cost on Gemini 3 Flash?"
+"Which provider has the best budget models?"
+"Calculate my monthly cost: 5K requests/day, 800 input + 300 output tokens on Claude Sonnet 4.6"</pre>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="setup-section">
+            <h2>❓ FAQ</h2>
+            <div style="margin-top:16px">
+                <p style="font-weight:700;margin-bottom:4px">Is this free?</p>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px">Yes, completely free. No API key required. Rate limited to 60 requests/minute.</p>
+
+                <p style="font-weight:700;margin-bottom:4px">How current is the pricing data?</p>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px">Updated regularly. Each response includes a timestamp. Check <a href="/data/pricing.json">/data/pricing.json</a> for the raw data.</p>
+
+                <p style="font-weight:700;margin-bottom:4px">Does it work offline?</p>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px">No — it's a hosted HTTP endpoint. Your AI tool needs internet access.</p>
+
+                <p style="font-weight:700;margin-bottom:4px">What about Pro features?</p>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px">The MCP server gives you pricing data. <a href="/go.html">APIpulse Pro ($29)</a> adds migration code, cost optimization reports, and provider-specific guides.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mcp-cta">
+            <h2>Need More Than Pricing Data?</h2>
+            <p>APIpulse Pro includes migration code templates, cost optimization reports, and provider-specific guides for all 42 models.</p>
+            <a href="/go.html" class="btn-primary">Get Pro — $29 Lifetime</a>
+            <a href="/cheapest-model-finder.html" class="btn-secondary" style="margin-left:12px">Try Free Tools</a>
+        </div>
+    </div>
+
+    <script>
+    function copyCode(btn, id) {
+        const text = document.getElementById(id).textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+        });
+        if (typeof trackEvent === 'function') trackEvent('mcp_copy_code', { code_id: id });
+    }
+    </script>
+</body>
+</html>

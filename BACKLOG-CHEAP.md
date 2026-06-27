@@ -10,6 +10,12 @@
 - **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events.
 - **~~$9 flash sale~~** — DONE (Session 927). UI implemented on deal.html via `?flash=9` URL param. **BLOCKED on human: create $9 Stripe link, replace FLASH_STRIPE_URL placeholder.**
 
+### Active Tasks — MCP Server (NEW — Session 932)
+- **Submit MCP server to registries** — Submit to mcp.so, Glama MCP directory, Smithery. These are just GitHub PRs or web forms. List at: https://github.com/punkpeye/awesome-mcp-servers
+- **Promote MCP server on Reddit** — Post to r/ClaudeAI, r/cursor, r/LocalLLaMA about the free MCP pricing tool. Wait 3-5 days after deploy for indexing.
+- **Add MCP server rate limit headers** — Add X-RateLimit-* headers to /api/mcp.js for better developer experience.
+- **Add MCP tool: get_model_details** — Return detailed info for a single model (deprecation status, replacement, all specs).
+
 ### Active Tasks — Content & SEO
 - **~~Pricing freshness indicators~~** — DONE (Session 929). Added renderPricingFreshness badge to 7 key pages.
 - **Promote why-apipulse.html** — Share conversion page in dev communities. Social proof + cost examples. Link: getapipulse.com/why-apipulse.html
@@ -48,7 +54,9 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-931, Apr 23 - Jun 26)
+### Completed Summary (Sessions 416-932, Apr 23 - Jun 27)
+- **Session 932:** MCP server for AI API pricing (new distribution channel). 1 commit, 3 files.
+- **Session 931:** Pricing freshness badges on 16 use-case + 30 cheapest pages. 2 commits, 47 files.
 - **Session 931:** Pricing freshness badges on 16 use-case + 30 cheapest pages. 2 commits, 47 files.
 - **Session 930:** Social sharing + cross-links on roi-calculator, token-counter, migration-checklist, cheapest-model-finder. 2 commits, 4 files.
 - **Session 929:** Pricing freshness badges on 7 key pages + social sharing on 5 conversion pages. 2 commits, 12 files.
