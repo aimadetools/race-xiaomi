@@ -139,9 +139,32 @@
         .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); color: white; }
         .btn-secondary { display: inline-block; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); padding: 12px 28px; border-radius: 10px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
         .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Sticky quick-start bar */
+        .quickstart-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 999; background: var(--bg-primary); border-bottom: 1px solid var(--border); padding: 10px 24px; display: flex; align-items: center; justify-content: center; gap: 16px; transform: translateY(-100%); transition: transform 0.3s ease; }
+        .quickstart-bar.visible { transform: translateY(0); }
+        .quickstart-bar code { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 6px 14px; font-family: 'SF Mono', Monaco, monospace; font-size: 13px; color: var(--accent); cursor: pointer; transition: all 0.2s; user-select: all; }
+        .quickstart-bar code:hover { border-color: var(--accent); }
+        .quickstart-bar .qs-label { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .quickstart-bar .qs-pro { font-size: 12px; font-weight: 700; color: var(--accent); text-decoration: none; white-space: nowrap; padding: 5px 12px; border: 1px solid var(--accent); border-radius: 6px; transition: all 0.2s; }
+        .quickstart-bar .qs-pro:hover { background: var(--accent); color: white; }
+        @media (max-width: 700px) { .quickstart-bar { flex-wrap: wrap; gap: 8px; padding: 8px 16px; } .quickstart-bar code { font-size: 11px; } }
+
+        /* Example query pills */
+        .example-queries { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+        .example-pill { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; font-family: inherit; }
+        .example-pill:hover { border-color: var(--accent); color: var(--accent); background: rgba(var(--accent-rgb, 99,102,241), 0.08); }
+        .example-pill.active { border-color: var(--accent); color: var(--accent); background: rgba(var(--accent-rgb, 99,102,241), 0.12); }
     </style>
 </head>
 <body>
+    <!-- Sticky Quick-Start Bar (appears on scroll) -->
+    <div class="quickstart-bar" id="quickstart-bar">
+        <span class="qs-label">Install:</span>
+        <code id="qs-command" onclick="copyQuickStart()">claude mcp add apipulse --transport http https://getapipulse.com/api/mcp</code>
+        <a href="/go.html" class="qs-pro">Get Pro — $29</a>
+    </div>
+
     <nav>
         <div class="nav-inner">
             <a href="/" class="logo">API<span>pulse</span></a>
@@ -344,7 +367,14 @@
         <!-- Live Demo -->
         <div class="setup-section">
             <h2>⚡ Try It Live</h2>
-            <p>No install needed — test the MCP server right here in your browser:</p>
+            <p>No install needed — test the MCP server right here in your browser. Click an example or build your own query:</p>
+            <div class="example-queries">
+                <button class="example-pill" onclick="runExample('cheapest')">🏆 Find cheapest model</button>
+                <button class="example-pill" onclick="runExample('compare')">⚖️ Compare GPT-5 vs Claude</button>
+                <button class="example-pill" onclick="runExample('cost')">💰 Calculate 10K req/day cost</button>
+                <button class="example-pill" onclick="runExample('details')">🔍 Check deprecated model</button>
+                <button class="example-pill" onclick="runExample('all')">📊 All model pricing</button>
+            </div>
             <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px;">
                 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
                     <label style="font-size:13px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:4px;">Tool</label>
@@ -360,6 +390,11 @@
                 <button onclick="runDemo()" id="demo-run-btn" style="background:var(--accent);color:white;border:none;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all 0.2s;">Run Query</button>
                 <div id="demo-status" style="margin-top:12px;font-size:13px;color:var(--text-muted);"></div>
                 <pre id="demo-result" style="display:none;margin-top:16px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-family:'SF Mono',Monaco,'Cascadia Code',monospace;font-size:12px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;color:var(--text-primary);"></pre>
+                <div id="demo-pro-upsell" style="display:none;margin-top:16px;padding:16px 20px;background:linear-gradient(135deg,rgba(var(--accent-rgb,99,102,241),0.08),rgba(var(--accent-rgb,99,102,241),0.03));border:1px solid rgba(var(--accent-rgb,99,102,241),0.2);border-radius:10px;">
+                    <p style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Need migration code for these models?</p>
+                    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">APIpulse Pro includes ready-to-use migration templates, cost optimization reports, and provider guides for all 42 models.</p>
+                    <a href="/go.html" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:all 0.2s;">Get Pro — $29 Lifetime →</a>
+                </div>
             </div>
         </div>
 
@@ -507,6 +542,7 @@
         btn.style.opacity = '0.6';
         status.textContent = 'Sending request...';
         result.style.display = 'none';
+        document.getElementById('demo-pro-upsell').style.display = 'none';
 
         const startTime = Date.now();
         try {
@@ -555,6 +591,8 @@
             result.style.display = 'block';
             status.textContent = `✓ Response in ${elapsed}ms`;
             status.style.color = 'var(--green, #22c55e)';
+            // Show Pro upsell after successful demo
+            document.getElementById('demo-pro-upsell').style.display = 'block';
             if (typeof trackEvent === 'function') trackEvent('mcp_demo_run', { tool: tool });
         } catch (err) {
             status.textContent = `✗ Error: ${err.message}`;
@@ -568,6 +606,60 @@
 
     // Initialize demo params on load
     updateDemoParams();
+
+    // ─── Sticky Quick-Start Bar ─────────────────────────────────
+    const quickstartBar = document.getElementById('quickstart-bar');
+    const heroSection = document.querySelector('.mcp-hero');
+    function checkScroll() {
+        if (!heroSection) return;
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        quickstartBar.classList.toggle('visible', heroBottom < 0);
+    }
+    window.addEventListener('scroll', checkScroll, { passive: true });
+
+    function copyQuickStart() {
+        const cmd = document.getElementById('qs-command').textContent;
+        navigator.clipboard.writeText(cmd).then(() => {
+            const el = document.getElementById('qs-command');
+            el.style.borderColor = 'var(--green, #22c55e)';
+            el.textContent = '✓ Copied!';
+            setTimeout(() => {
+                el.textContent = cmd;
+                el.style.borderColor = '';
+            }, 2000);
+        });
+        if (typeof trackEvent === 'function') trackEvent('mcp_quickstart_copy');
+    }
+
+    // ─── Example Query Shortcuts ────────────────────────────────
+    const EXAMPLES = {
+        cheapest: { tool: 'find_cheapest', args: {} },
+        compare: { tool: 'compare_models', args: { models: ['openai-gpt5', 'anthropic-sonnet46', 'google-gemini3-flash'] } },
+        cost: { tool: 'calculate_cost', args: { model: 'anthropic-sonnet46', daily_requests: 10000, input_tokens: 500, output_tokens: 200 } },
+        details: { tool: 'get_model_details', args: { model: 'anthropic-opus' } },
+        all: { tool: 'get_pricing', args: {} }
+    };
+
+    function runExample(key) {
+        const ex = EXAMPLES[key];
+        // Set tool selector
+        document.getElementById('demo-tool').value = ex.tool;
+        updateDemoParams();
+        // Fill params
+        setTimeout(() => {
+            document.querySelectorAll('#demo-params input').forEach(input => {
+                const name = input.dataset.param;
+                if (ex.args[name] !== undefined) {
+                    input.value = Array.isArray(ex.args[name]) ? ex.args[name].join(', ') : ex.args[name];
+                }
+            });
+            // Highlight active pill
+            document.querySelectorAll('.example-pill').forEach(p => p.classList.remove('active'));
+            event.target.classList.add('active');
+            // Auto-run
+            runDemo();
+        }, 50);
+    }
     </script>
 </body>
 </html>
