@@ -1,5 +1,19 @@
 # PROGRESS.md
 
+## Session 949 (Jun 27) — Upgraded AI API Pricing Cheat Sheet
+- **Replaced old cheat-sheet.html** (414 lines, simple tables) with comprehensive new version (766 lines).
+- **Added sortable/filterable pricing table** — All 42 models with provider filter, tier filter, search, and column sorting.
+- **Added cost-per-task breakdowns** — 7 real-world tasks (chat, summarize, code gen, data analysis, agent step, RAG) with price comparisons across 5 models.
+- **Added provider comparison cards** — 10 providers with model counts, price ranges, and strengths.
+- **Added 9 use-case recommendations** — Lowest cost, best value, best reasoning, best speed, long docs, code gen, enterprise RAG, EU compliance, budget general.
+- **Added 3 hidden costs section** — Output markup, context waste, retry costs with actionable tips.
+- **Added FAQPage schema** — 4 questions for rich snippets (cheapest API, GPT-5 cost, best value, hidden costs).
+- **Added GA4 tracking** — cheatsheet_view event.
+- **Cross-linked from homepage** tools section + tools directory page.
+- **Updated RSS feed + sitemap** lastmod.
+- **Preserved all existing backlinks** to cheat-sheet.html.
+- **1 commit, 5 files, +701 lines.**
+
 ## Session 948 (Jun 28) — Cross-Link Distribution for New Revenue Tools
 - **Added Pricing Benchmark to global footer** (shared.js) — Now appears alongside Advisor and Badges in footer tools row on all 876 pages.
 - **Added Advisor + Benchmark cross-links to 9 key pages** — mcp.html, why-apipulse.html, roi-calculator.html, token-counter.html, model-deprecation.html, cheapest-ai-apis-2026.html, best-ai-api-by-budget.html, live-pricing.html, api-cost-score.html.
