@@ -108,6 +108,17 @@ const TOOLS = [
                 sort_by: { type: 'string', enum: ['input', 'output', 'average'], description: 'Sort by input price, output price, or average (default: average)' }
             }
         }
+    },
+    {
+        name: 'get_model_details',
+        description: 'Get detailed information for a single AI model: full pricing, context window, tier, deprecation status, recommended replacement, and provider links.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                model: { type: 'string', description: 'Model ID (e.g. "openai-gpt5", "anthropic-opus48")' }
+            },
+            required: ['model']
+        }
     }
 ];
 
@@ -203,6 +214,52 @@ function formatModel(m) {
     return m.name + ' (' + m.provider + ')' + dep + ' — $' + m.input + '/$' + m.output + ' per 1M tokens | ' + m.context + ' context | ' + m.tier + ' tier';
 }
 
+// Deprecation replacement map
+var REPLACEMENTS = {
+    'anthropic-opus': 'anthropic-opus48',
+    'anthropic-sonnet': 'anthropic-sonnet46',
+    'deepseek-v3': 'deepseek-v4-flash',
+    'google-flash': 'google-gemini3-flash',
+    'google-flash-lite': 'google-gemini31-flash-lite'
+};
+
+function handleGetModelDetails(args) {
+    var m = MODELS.find(function(m) { return m.id === args.model; });
+    if (!m) {
+        var available = MODELS.map(function(m) { return m.id; }).join(', ');
+        return textContent('Model "' + args.model + '" not found. Available: ' + available);
+    }
+    var ctx = m.context;
+    var ctxNum = parseFloat(ctx) * (ctx.indexOf('M') >= 0 ? 1000000 : ctx.indexOf('K') >= 0 ? 1000 : 1);
+    var avg = ((m.input + m.output) / 2).toFixed(2);
+    var lines = [
+        'Model Details: ' + m.name + ' (' + m.provider + ')',
+        '',
+        'Pricing (per 1M tokens):',
+        '  Input:  $' + m.input,
+        '  Output: $' + m.output,
+        '  Average: $' + avg,
+        '',
+        'Specifications:',
+        '  Context window: ' + m.context + ' (' + ctxNum.toLocaleString() + ' tokens)',
+        '  Tier: ' + m.tier,
+        '  Provider: ' + m.provider,
+        '  Status: ' + (m.deprecated ? 'DEPRECATED — see replacement below' : 'Active'),
+    ];
+    if (m.deprecated && REPLACEMENTS[m.id]) {
+        var rep = MODELS.find(function(r) { return r.id === REPLACEMENTS[m.id]; });
+        if (rep) {
+            lines.push('');
+            lines.push('Recommended replacement: ' + rep.name + ' (' + rep.id + ')');
+            lines.push('  ' + rep.name + ': $' + rep.input + '/$' + rep.output + ' per 1M tokens | ' + rep.context + ' context');
+        }
+    }
+    lines.push('');
+    lines.push('Full data: https://getapipulse.com/data/pricing.json');
+    lines.push('Source: https://getapipulse.com');
+    return textContent(lines.join('\n'));
+}
+
 // ─── MCP Protocol Handler ────────────────────────────────────
 function handleToolCall(name, args) {
     switch (name) {
@@ -210,6 +267,7 @@ function handleToolCall(name, args) {
         case 'compare_models': return handleCompareModels(args || {});
         case 'calculate_cost': return handleCalculateCost(args || {});
         case 'find_cheapest': return handleFindCheapest(args || {});
+        case 'get_model_details': return handleGetModelDetails(args || {});
         default: return { content: [{ type: 'text', text: `Unknown tool: ${name}` }], isError: true };
     }
 }
@@ -222,19 +280,51 @@ function makeError(id, code, message) {
     return { jsonrpc: '2.0', id, error: { code, message } };
 }
 
+// ─── Rate Limiting (per-IP, 60 req/min) ───────────────────────
+var RATE_LIMIT = 60;
+var RATE_WINDOW = 60 * 1000; // 1 minute
+var rateMap = {}; // ip -> { count, resetAt }
+
+function checkRateLimit(ip) {
+    var now = Date.now();
+    var entry = rateMap[ip];
+    if (!entry || now > entry.resetAt) {
+        rateMap[ip] = { count: 1, resetAt: now + RATE_WINDOW };
+        return { allowed: true, remaining: RATE_LIMIT - 1, reset: Math.ceil((now + RATE_WINDOW) / 1000) };
+    }
+    entry.count++;
+    var remaining = Math.max(0, RATE_LIMIT - entry.count);
+    var reset = Math.ceil(entry.resetAt / 1000);
+    if (entry.count > RATE_LIMIT) {
+        return { allowed: false, remaining: 0, reset: reset };
+    }
+    return { allowed: true, remaining: remaining, reset: reset };
+}
+
 // ─── Vercel Serverless Handler ────────────────────────────────
 module.exports = (req, res) => {
     // CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Mcp-Session-Id, Mcp-Protocol-Version');
-    res.setHeader('Access-Control-Expose-Headers', 'Mcp-Session-Id');
+    res.setHeader('Access-Control-Expose-Headers', 'Mcp-Session-Id, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset');
     if (req.method === 'OPTIONS') return res.status(200).end();
+
+    // Rate limit headers on all responses
+    var ip = req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || 'unknown';
+    if (typeof ip === 'string') ip = ip.split(',')[0].trim();
+    var rl = checkRateLimit(ip);
+    res.setHeader('X-RateLimit-Limit', RATE_LIMIT);
+    res.setHeader('X-RateLimit-Remaining', rl.remaining);
+    res.setHeader('X-RateLimit-Reset', rl.reset);
+    if (!rl.allowed) {
+        return res.status(429).json({ error: 'Rate limit exceeded. Max 60 requests per minute.', reset: rl.reset });
+    }
 
     // GET returns info page
     if (req.method === 'GET') {
         res.setHeader('Content-Type', 'text/plain');
-        return res.status(200).send('APIpulse MCP Server\n\nEndpoint: POST /api/mcp\nDocs: https://getapipulse.com/mcp.html\nTools: get_pricing, compare_models, calculate_cost, find_cheapest\n');
+        return res.status(200).send('APIpulse MCP Server\n\nEndpoint: POST /api/mcp\nDocs: https://getapipulse.com/mcp.html\nTools: get_pricing, compare_models, calculate_cost, find_cheapest, get_model_details\nRate limit: 60 requests/minute\n');
     }
 
     if (req.method !== 'POST') return res.status(405).json({ error: 'Use POST' });

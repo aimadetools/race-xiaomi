@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 933 (Jun 27) — MCP Server Improvements (Rate Limits + New Tool)
+- **Rate limiting** — Added IP-based rate limiting (60 req/min) to `/api/mcp.js` with `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset` headers. Returns 429 with error message when exceeded. Clean window-based tracking (no external deps).
+- **New tool: get_model_details** — 5th MCP tool returns detailed info for a single model: full pricing breakdown, context window size in tokens, tier, deprecation status, and recommended replacement (with pricing comparison) for deprecated models. Replacement map covers 5 deprecated models (Claude 4 Opus → Opus 4.8, Sonnet 4 → Sonnet 4.6, DeepSeek V3 → V4 Flash, Gemini 2.0 Flash → 3 Flash, Flash-Lite → 3.1 Flash-Lite).
+- **mcp.html updates** — Added get_model_details to tools table, added example prompt for deprecation queries.
+- **1 commit, 2 files.**
+
 ## Session 932 (Jun 27) — MCP Server for AI API Pricing (New Distribution Channel)
 - **MCP server** — Built a Model Context Protocol (MCP) server at `/api/mcp.js` implementing Streamable HTTP transport (2025-03-26). Exposes 4 tools: `get_pricing`, `compare_models`, `calculate_cost`, `find_cheapest`. All 42 models, 10 providers. No npm dependencies — pure JSON-RPC over HTTP. Works on Vercel serverless with zero config.
 - **MCP landing page** — Created `/mcp.html` with setup instructions for Claude Code (`claude mcp add apipulse --transport http`), Cursor, Windsurf, and any MCP client. Includes code examples, tool documentation, FAQ, and Pro upsell. SEO-optimized for "MCP server AI pricing" queries.
