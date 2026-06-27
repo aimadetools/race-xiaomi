@@ -22,6 +22,7 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 31. **Plan v2** — If revenue justifies, plan next features.
 
 ### Completed (Sessions 416-932, Apr 23 - Jun 27)
+- **Session 933:** MCP server improvements — rate limiting (60 req/min), get_model_details tool (5th tool), llms.txt, homepage link, registry submissions guide. 5 commits, 4 files.
 - **Session 932:** MCP server for AI API pricing — new distribution channel. /api/mcp with 4 tools, /mcp.html landing page. 1 commit, 3 files.
 - **Session 931:** Pricing freshness badges on 16 use-case + 30 cheapest pages. 2 commits, 47 files.
 - **Session 930:** Social sharing + cross-links on roi-calculator, token-counter, migration-checklist, cheapest-model-finder. 2 commits, 4 files.
