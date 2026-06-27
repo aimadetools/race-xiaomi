@@ -616,10 +616,20 @@
 
             // Extract content from MCP response
             let display = data;
+            let structuredData = null;
             if (data && data.result && data.result.content) {
+                // Extract text content (first item)
                 const textContent = data.result.content.find(c => c.type === 'text');
                 if (textContent) {
                     try { display = JSON.parse(textContent.text); } catch(e) { display = textContent.text; }
+                }
+                // Extract structured data (second item with _structured)
+                const structuredItem = data.result.content.find(c => c.type === 'text' && c.text && c.text.includes('_structured'));
+                if (structuredItem) {
+                    try {
+                        const parsed = JSON.parse(structuredItem.text);
+                        if (parsed._structured) structuredData = parsed._structured;
+                    } catch(e) {}
                 }
             }
 
@@ -628,7 +638,7 @@
             const jsonToggle = document.getElementById('demo-json-toggle');
             const jsonPre = document.getElementById('demo-result');
             const fallbackPre = document.getElementById('demo-result-fallback');
-            const visualHtml = renderVisualResult(tool, args, display);
+            const visualHtml = renderVisualResult(tool, args, structuredData || display);
 
             if (visualHtml) {
                 visualEl.innerHTML = visualHtml;
@@ -647,7 +657,7 @@
             status.textContent = `✓ Response in ${elapsed}ms`;
             status.style.color = 'var(--green, #22c55e)';
             // Personalized Pro upsell based on query results
-            showPersonalizedUpsell(tool, args, display);
+            showPersonalizedUpsell(tool, args, structuredData || display);
             if (typeof trackEvent === 'function') trackEvent('mcp_demo_run', { tool: tool });
         } catch (err) {
             status.textContent = `✗ Error: ${err.message}`;

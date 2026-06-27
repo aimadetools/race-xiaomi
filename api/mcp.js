@@ -121,8 +121,12 @@ const TOOLS = [
 ];
 
 // ─── Helper ──────────────────────────────────────────────────
-function textContent(text) {
-    return { content: [{ type: 'text', text: text }] };
+function textContent(text, structured) {
+    var items = [{ type: 'text', text: text }];
+    if (structured) {
+        items.push({ type: 'text', text: JSON.stringify({ _structured: structured }) });
+    }
+    return { content: items };
 }
 
 // ─── Tool Implementations ────────────────────────────────────
@@ -156,7 +160,10 @@ function handleCompareModels(args) {
         var tag = m.id === cheapest.id ? ' ← CHEAPEST' : '';
         return '• ' + m.name + ' (' + m.provider + ') — $' + m.input + '/$' + m.output + ' per 1M tokens (avg $' + total + ')' + tag + '\n  Context: ' + m.context + ' | Tier: ' + m.tier;
     });
-    return textContent('Model Comparison:\n\n' + lines.join('\n\n') + '\n\nSource: https://getapipulse.com | Prices per 1M tokens in USD');
+    var structured = found.map(function(m) {
+        return { model: m.name, provider: m.provider, pricing: { input_per_1m: m.input, output_per_1m: m.output }, context: m.context, tier: m.tier };
+    });
+    return textContent('Model Comparison:\n\n' + lines.join('\n\n') + '\n\nSource: https://getapipulse.com | Prices per 1M tokens in USD', structured);
 }
 
 function handleCalculateCost(args) {
@@ -179,7 +186,8 @@ function handleCalculateCost(args) {
         'Model pricing: $' + m.input + '/$' + m.output + ' per 1M tokens\n' +
         'Context window: ' + m.context + '\n\n' +
         'Source: https://getapipulse.com';
-    return textContent(text);
+    var structured = { model: m.name, provider: m.provider, daily_requests: daily, input_tokens: inTok, output_tokens: outTok, monthly_cost: Math.round(total * 100) / 100, monthly_input: Math.round(monthlyInput * 100) / 100, monthly_output: Math.round(monthlyOutput * 100) / 100 };
+    return textContent(text, structured);
 }
 
 function handleFindCheapest(args) {
@@ -204,7 +212,10 @@ function handleFindCheapest(args) {
         return (i + 1) + '. ' + m.name + ' (' + m.provider + ') — $' + m.input + '/$' + m.output + ' per 1M tokens | ' + m.context + ' context';
     });
     var header = 'Top 5 Cheapest Models' + (args.provider ? ' (' + args.provider + ')' : '') + ':\n\n';
-    return textContent(header + lines.join('\n') + '\n\nSource: https://getapipulse.com | Prices per 1M tokens in USD');
+    var structured = top5.map(function(m) {
+        return { model: m.name, provider: m.provider, pricing: { input_per_1m: m.input, output_per_1m: m.output }, context: m.context, tier: m.tier };
+    });
+    return textContent(header + lines.join('\n') + '\n\nSource: https://getapipulse.com | Prices per 1M tokens in USD', structured);
 }
 
 function formatModel(m) {
@@ -255,7 +266,12 @@ function handleGetModelDetails(args) {
     lines.push('');
     lines.push('Full data: https://getapipulse.com/data/pricing.json');
     lines.push('Source: https://getapipulse.com');
-    return textContent(lines.join('\n'));
+    var structured = { model: m.name, provider: m.provider, pricing: { input_per_1m: m.input, output_per_1m: m.output }, context: m.context, tier: m.tier, deprecated: !!m.deprecated };
+    if (m.deprecated && REPLACEMENTS[m.id]) {
+        var rep = MODELS.find(function(r) { return r.id === REPLACEMENTS[m.id]; });
+        if (rep) structured.replacement = rep.name;
+    }
+    return textContent(lines.join('\n'), structured);
 }
 
 // ─── MCP Protocol Handler ────────────────────────────────────
