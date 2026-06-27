@@ -410,11 +410,18 @@
                 <div id="demo-params" style="margin-bottom:16px;"></div>
                 <button onclick="runDemo()" id="demo-run-btn" style="background:var(--accent);color:white;border:none;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all 0.2s;">Run Query</button>
                 <div id="demo-status" style="margin-top:12px;font-size:13px;color:var(--text-muted);"></div>
+                <div id="demo-savings-highlight" style="display:none;margin-top:16px;padding:14px 18px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:10px;">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                        <span style="font-size:18px;">💰</span>
+                        <span id="demo-savings-title" style="font-size:14px;font-weight:700;color:var(--green,#22c55e);"></span>
+                    </div>
+                    <p id="demo-savings-body" style="font-size:13px;color:var(--text-secondary);margin:0;line-height:1.5;"></p>
+                </div>
                 <pre id="demo-result" style="display:none;margin-top:16px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-family:'SF Mono',Monaco,'Cascadia Code',monospace;font-size:12px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;color:var(--text-primary);"></pre>
                 <div id="demo-pro-upsell" style="display:none;margin-top:16px;padding:16px 20px;background:linear-gradient(135deg,rgba(var(--accent-rgb,99,102,241),0.08),rgba(var(--accent-rgb,99,102,241),0.03));border:1px solid rgba(var(--accent-rgb,99,102,241),0.2);border-radius:10px;">
-                    <p style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Need migration code for these models?</p>
-                    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">APIpulse Pro includes ready-to-use migration templates, cost optimization reports, and provider guides for all 42 models.</p>
-                    <a href="/go.html" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:all 0.2s;">Get Pro — $29 Lifetime →</a>
+                    <p id="demo-upsell-title" style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Need migration code for these models?</p>
+                    <p id="demo-upsell-body" style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">APIpulse Pro includes ready-to-use migration templates, cost optimization reports, and provider guides for all 42 models.</p>
+                    <a id="demo-upsell-cta" href="/go.html" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:all 0.2s;" onclick="if(typeof gtag==='function')gtag('event','mcp_upsell_click',{tool:document.getElementById('demo-tool').value});">Get Pro — $29 Lifetime →</a>
                 </div>
             </div>
         </div>
@@ -564,6 +571,7 @@
         status.textContent = 'Sending request...';
         result.style.display = 'none';
         document.getElementById('demo-pro-upsell').style.display = 'none';
+        document.getElementById('demo-savings-highlight').style.display = 'none';
 
         const startTime = Date.now();
         try {
@@ -612,8 +620,8 @@
             result.style.display = 'block';
             status.textContent = `✓ Response in ${elapsed}ms`;
             status.style.color = 'var(--green, #22c55e)';
-            // Show Pro upsell after successful demo
-            document.getElementById('demo-pro-upsell').style.display = 'block';
+            // Personalized Pro upsell based on query results
+            showPersonalizedUpsell(tool, args, display);
             if (typeof trackEvent === 'function') trackEvent('mcp_demo_run', { tool: tool });
         } catch (err) {
             status.textContent = `✗ Error: ${err.message}`;
@@ -627,6 +635,124 @@
 
     // Initialize demo params on load
     updateDemoParams();
+
+    // ─── Personalized Upsell Engine ──────────────────────────────
+    function showPersonalizedUpsell(tool, args, display) {
+        const upsell = document.getElementById('demo-pro-upsell');
+        const title = document.getElementById('demo-upsell-title');
+        const body = document.getElementById('demo-upsell-body');
+        const cta = document.getElementById('demo-upsell-cta');
+        const savingsBox = document.getElementById('demo-savings-highlight');
+        const savingsTitle = document.getElementById('demo-savings-title');
+        const savingsBody = document.getElementById('demo-savings-body');
+
+        // Parse display if it's a string
+        let data = display;
+        if (typeof data === 'string') {
+            try { data = JSON.parse(data); } catch(e) { data = null; }
+        }
+
+        let titleText = 'Ready to save on AI API costs?';
+        let bodyText = 'APIpulse Pro includes migration code, savings reports, and cost optimization for all 42 models.';
+        let ctaText = 'Get Pro — $29 Lifetime →';
+        let showSavings = false;
+        let savingsTitleText = '';
+        let savingsBodyText = '';
+
+        if (tool === 'find_cheapest' && data) {
+            const models = Array.isArray(data) ? data : (data.models || data.cheapest || []);
+            if (models.length > 0) {
+                const cheapest = models[0];
+                const name = cheapest.model || cheapest.name || 'the cheapest model';
+                const outputPrice = cheapest.pricing?.output_per_1m || cheapest.output_per_1m || cheapest.price;
+                if (outputPrice) {
+                    titleText = `💡 ${name} costs $${outputPrice}/1M output tokens`;
+                    bodyText = `Switching from GPT-4o ($10/1M) to ${name} could save you 80%+ on your API bill. Pro includes copy-paste migration code to switch in 5 minutes.`;
+                    ctaText = 'Get migration code — $29 →';
+                    showSavings = true;
+                    savingsTitleText = `Save up to 80% on your AI API bill`;
+                    savingsBodyText = `Most developers spending $500+/month on GPT-4o or Claude can cut costs to under $100/month by switching to equivalent budget models. Pro shows you exactly which models match your quality needs.`;
+                }
+            }
+        } else if (tool === 'compare_models' && data) {
+            const models = Array.isArray(data) ? data : (data.models || data.comparison || []);
+            if (models.length >= 2) {
+                const m1 = models[0];
+                const m2 = models[1];
+                const name1 = m1.model || m1.name || 'Model 1';
+                const name2 = m2.model || m2.name || 'Model 2';
+                const price1 = m1.pricing?.output_per_1m || m1.output_per_1m || m1.price;
+                const price2 = m2.pricing?.output_per_1m || m2.output_per_1m || m2.price;
+                if (price1 && price2) {
+                    const cheaper = price1 < price2 ? name1 : name2;
+                    const expensive = price1 < price2 ? name2 : name1;
+                    const ratio = price1 < price2 ? (price2/price1).toFixed(1) : (price1/price2).toFixed(1);
+                    titleText = `⚡ ${cheaper} is ${ratio}× cheaper than ${expensive}`;
+                    bodyText = `Pro gives you migration code to switch providers, plus a full savings report showing all 42 models ranked by cost.`;
+                    ctaText = 'Get full comparison + migration code — $29 →';
+                    showSavings = true;
+                    savingsTitleText = `${ratio}× price difference between models`;
+                    savingsBodyText = `On a $500/month spend, switching to the cheaper model saves you $${Math.round(500 * (1 - 1/ratio))}/month ($${Math.round(500 * (1 - 1/ratio) * 12)}/year). Pro includes the exact migration code.`;
+                }
+            }
+        } else if (tool === 'calculate_cost' && data) {
+            const monthly = data.monthly_cost || data.total_monthly || data.cost;
+            const model = data.model || args.model || 'your model';
+            if (monthly) {
+                const annual = (monthly * 12).toFixed(0);
+                titleText = `💰 ${model} costs $${typeof monthly === 'number' ? monthly.toFixed(2) : monthly}/month`;
+                bodyText = `That's $${annual}/year. Pro shows you every cheaper alternative and includes migration code — most users save $720+/year.`;
+                ctaText = 'See cheaper alternatives — $29 →';
+                showSavings = true;
+                savingsTitleText = `$29 Pro pays for itself in days`;
+                savingsBodyText = `At $${typeof monthly === 'number' ? monthly.toFixed(0) : monthly}/month spend, even a 10% optimization saves you $${Math.round(monthly * 0.1 * 12)}/year. That's ${Math.round(monthly * 0.1 * 12 / 29)}× return on your $29 Pro purchase.`;
+            }
+        } else if (tool === 'get_model_details' && data) {
+            const deprecated = data.deprecated || data.is_deprecated || data.status === 'deprecated';
+            const replacement = data.replacement || data.recommended_alternative;
+            const modelName = data.model || data.name || args.model || 'this model';
+            if (deprecated) {
+                titleText = `⚠️ ${modelName} is deprecated`;
+                bodyText = replacement
+                    ? `The recommended replacement is ${replacement}. Pro includes migration code to switch seamlessly.`
+                    : `This model may be removed soon. Pro helps you find the best replacement with migration code included.`;
+                ctaText = 'Get migration code — $29 →';
+                showSavings = true;
+                savingsTitleText = 'Don\'t get caught by a model shutdown';
+                savingsBodyText = 'Providers deprecate models with short notice. Pro gives you migration code ready to deploy instantly when the time comes.';
+            } else {
+                titleText = `📊 Detailed pricing for ${modelName}`;
+                bodyText = `Pro gives you a complete savings report comparing this model against all 42 alternatives, with migration code for each.`;
+                ctaText = 'Get full savings report — $29 →';
+            }
+        } else if (tool === 'get_pricing' && data) {
+            const models = Array.isArray(data) ? data : (data.models || data.pricing || []);
+            const count = models.length || '42';
+            titleText = `📊 ${count} models compared — find your savings`;
+            bodyText = `Pro ranks all models by cost for your specific use case, with migration code to switch in minutes. Most users save $720+/year.`;
+            ctaText = 'Get personalized savings report — $29 →';
+            showSavings = true;
+            savingsTitleText = '42 models, 10 providers — one place';
+            savingsBodyText = 'The cheapest model for your use case could save you $720-2,400/year. Pro finds it and gives you migration code to switch in minutes.';
+        }
+
+        title.textContent = titleText;
+        body.textContent = bodyText;
+        cta.textContent = ctaText;
+        upsell.style.display = 'block';
+
+        // Show savings highlight if applicable
+        if (showSavings && savingsBox) {
+            savingsTitle.textContent = savingsTitleText;
+            savingsBody.textContent = savingsBodyText;
+            savingsBox.style.display = 'block';
+        } else if (savingsBox) {
+            savingsBox.style.display = 'none';
+        }
+
+        if (typeof trackEvent === 'function') trackEvent('mcp_upsell_shown', { tool: tool, variant: titleText.slice(0, 40) });
+        if (typeof gtag === 'function') gtag('event', 'mcp_upsell_shown', { tool: tool });
+    }
 
     // ─── Sticky Quick-Start Bar ─────────────────────────────────
     const quickstartBar = document.getElementById('quickstart-bar');
