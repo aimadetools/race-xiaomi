@@ -91,7 +91,7 @@ async function sendWelcomeEmail(email) {
               <p style="margin-bottom: 8px;">Here's what you can do right now:</p>
               <ul style="padding-left: 20px; line-height: 1.8;">
                 <li><a href="https://getapipulse.com/claude-4-migration-scanner.html" style="color: #818cf8;">Scan your code for deprecated Claude 4 references</a> — free, instant, private</li>
-                <li><a href="https://getapipulse.com/calculator.html" style="color: #818cf8;">Estimate your AI costs</a> — 42 models across 10 providers</li>
+                <li><a href="https://getapipulse.com/calculator.html" style="color: #818cf8;">Estimate your AI costs</a> — 48 models across 10 providers</li>
                 <li><a href="https://getapipulse.com/compare.html" style="color: #818cf8;">Compare models side-by-side</a> — find the cheapest option</li>
                 <li><a href="https://getapipulse.com/pricing-index.html" style="color: #818cf8;">Browse all pricing</a> — sortable reference table</li>
               </ul>
