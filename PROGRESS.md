@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 977 (Jun 28) — Internal Linking & Cross-Links
+- **Added related-reading sections to 3 buyer-intent blog posts** — blog-ai-api-cost-optimization-2026.html, blog-ai-api-production-pricing-2026.html, blog-best-ai-api-2026.html. Each now links to the other 2 plus top related guides (cost calculator, pricing comparison, provider guide). These posts had zero inbound links from other pages before.
+- **Added cross-links from 5 high-value existing blog posts** — blog-10-ai-api-cost-mistakes.html, blog-ai-api-batch-processing-complete-guide.html, blog-hidden-costs-ai-api.html, blog-claude-opus-48-alternatives.html, blog-gpt55pro-cost-guide.html. Each now has a "Keep Reading" section linking to the 3 buyer-intent guides.
+- **Impact** — Improves internal linking for SEO (Google uses internal links to discover and rank pages), guides users toward higher-value conversion content, and increases time-on-site. The 3 newest buyer-intent posts are the strongest conversion pages on the site.
+- **1 commit, 8 files, 102 lines added.**
+
 ## Session 976 (Jun 28) — Sitemap & Index Cleanup
 - **Added 8 missing comparison pages to sitemap.xml** — DeepSeek V3.2 vs GPT-5 mini, DeepSeek V4 Pro vs Mistral Large 3, GPT-5 mini vs Gemini 3.5 Flash, GPT-5 mini vs Mistral Small 4, Opus 4.8 vs Kimi K2.6, Sonnet 4.6 vs GPT-5 mini, Sonnet 4.6 vs Mistral Large 3, GPT-5 vs Claude Sonnet. Sitemap now has 911 URLs.
 - **Added all 8 pages + GPT-5 vs Claude Sonnet to compare.html index** — These comparison pages existed but weren't linked from the compare index, making them invisible to users and search crawlers.
@@ -93,9 +99,9 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 976, Jun 28, 2026)
+## Site Status (as of Session 977, Jun 28, 2026)
 **916 web pages | 361 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 266 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (911 URLs), RSS (785 items, valid XML), blog files (360 posts) — all in sync
+- Sitemap (911 URLs), RSS (786 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.

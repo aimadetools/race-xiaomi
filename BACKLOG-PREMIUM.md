@@ -21,7 +21,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — $9 flash deal (needs Stripe link), conversion optimization (1,200 visitors/week, $0 revenue — SEO traffic is informational, not buyer-intent). Buyer-intent blog posts (Sessions 971-972) target developers already spending money on APIs.
 - **Remaining: Analytics (needs GA4)** — Analyze A/B data, conversion funnel, plan v2.
 
-### Completed (Sessions 416-976, Apr 5 - Jun 28)
+### Completed (Sessions 416-977, Apr 5 - Jun 28)
+- **Session 977 (Jun 28):** Internal linking — added related-reading sections to 3 buyer-intent blog posts + cross-links from 5 high-value existing posts. Improves SEO and guides users toward conversion. 1 commit, 8 files.
 - **Session 976 (Jun 28):** Sitemap & index cleanup — added 8 missing comparison pages to sitemap.xml, linked all to compare.html index, fixed stale "20 models" in widget structured data. 1 commit, 3 files.
 - **Session 975 (Jun 28):** Fixed conversion leaks — added Pro CTAs to apipulse-vs-artificial-analysis.html and ai-api-pricing-benchmark-2026.html. High-intent pages with buyer-traffic but no path to purchase. GA4 tracked. 1 commit, 2 files.
 - **Session 973 (Jun 28):** Created buyer-intent blog post (Best AI API 2026 Provider Guide) targeting "best AI API 2026" keyword. 5 provider profiles, 3 pricing tier comparisons, 6 use-case recommendations, decision framework, 3 multi-provider stacks. 7 FAQPage Q&As, 3 Pro CTAs. 1 commit, 4 files, 533 lines.

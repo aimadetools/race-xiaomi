@@ -2,15 +2,16 @@
 
 **Site Status:** 916 pages, 361 posts, 48 models, 258 comparison pages, 146 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
 
-### Active Tasks — Teams Page Distribution (Sessions 959-961)
+### ~~Active Tasks — Teams Page Distribution (Sessions 959-961)~~
 - ~~All 4 tasks DONE~~ — Cross-linked teams.html from 16+ pages, OG/Twitter images, RSS feed, GA4 tracking (7 events across 4 team pages).
 
-### Active Tasks — Revenue Infrastructure
+### ~~Active Tasks — Revenue Infrastructure~~
 - ~~Stripe webhook + restore flow~~ — DONE (code, Sessions 963). **BLOCKED on human: needs Stripe Dashboard webhook + STRIPE_WEBHOOK_SECRET env var.**
 
-### Active Tasks — Buyer-Intent Content
+### ~~Active Tasks — Buyer-Intent Content~~
 - ~~AI API Production Pricing Guide~~ — DONE (Session 972). Blog post targeting "AI API production pricing" keyword. Production cost comparison table (11 models), interactive calculator, 5 hidden costs analysis, rate limit comparison, batch vs real-time savings, 4 architecture patterns, 30-day plan. 6 FAQPage Q&As, 3 Pro CTAs.
 - ~~AI API Cost Optimization Guide~~ — DONE (Session 971). Blog post with interactive savings calculator, FAQPage schema, 3 Pro CTAs. Targets "AI API cost optimization" keyword.
+- ~~Internal linking cross-links~~ — DONE (Session 977). Added related-reading sections to 3 buyer-intent posts + cross-links from 5 high-value existing posts.
 
 ### Active Tasks — Conversion Monitoring
 - **Monitor GA4 for conversions** — Check Monetization reports for `begin_checkout` and `purchase` events. All tracking wired correctly since Session 920. Watch for `results_gate_shown` and `results_gate_clicked` events from Session 970 gating.
@@ -36,7 +37,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-976, Apr 23 - Jun 28)
+### Completed Summary (Sessions 416-977, Apr 23 - Jun 28)
+- **Session 977 (Jun 28):** Internal linking — added related-reading sections to 3 buyer-intent blog posts + cross-links from 5 high-value existing posts. Improves SEO and guides users toward conversion. 1 commit, 8 files.
 - **Session 976 (Jun 28):** Sitemap & index cleanup — added 8 missing comparison pages to sitemap.xml (911 URLs now), linked all 8 + GPT-5 vs Claude Sonnet to compare.html index, fixed stale "20 models" in widget.html structured data. 1 commit, 3 files.
 - **Session 975 (Jun 28):** Fixed conversion leaks — added Pro CTAs ($29) to apipulse-vs-artificial-analysis.html (competitor comparison page, high buyer intent) and ai-api-pricing-benchmark-2026.html. Both had buyer-traffic but no path to purchase. GA4 tracked. 1 commit, 2 files.
 - **Session 974 (Jun 28):** Updated embeddable widget from 20→25 models (GPT-5.5, Claude Mythos 5, Gemini 3 Flash, Llama 4 Maverick, Command R, Kimi K2.6, GPT-oss 20B). Updated both embed.js and calc-embed.js. Improved widget.html with GitHub README setup section. Added cross-links from index.html and embed.html. Fixed stale "20 models" references across 4 files. 2 commits, 8 files.
