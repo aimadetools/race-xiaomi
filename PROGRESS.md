@@ -15,6 +15,10 @@
 - **Teams.html now linked from 23+ pages** (was 16). These 7 pages likely represent a large portion of organic traffic (provider pages, interactive tools, reference pages).
 - **1 commit, 7 files, +25 lines.**
 
+## Session 961c (Jun 28) — Fix 454 Pages: Pro CTA Model Count
+- **Fixed stale "42-model comparison" → "48-model comparison" across 454 HTML files** — The standard Pro upsell text ("Pro gives you 42-model comparison, migration code snippets...") was missed during the Session 953 model count sync. Every Pro CTA on the site now correctly says 48 models.
+- **1 commit, 452 files, +469/-453 lines.**
+
 ## Session 960 (Jun 28) — Custom OG Image for teams.html
 - **Created custom OG image for teams.html** — SVG-based (1200x630) with: team icon (3 people), page title, 3 tool cards, savings stat (30-60%), green team branding accent. Converted to PNG (76KB). Replaces generic og-image.png for better social sharing click-through.
 - **Updated teams.html meta tags** — og:image and twitter:image now point to /og-images/teams.png.
@@ -108,30 +112,27 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 960, Jun 28, 2026)
+## Site Status (as of Session 961, Jun 28, 2026)
 **900 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 15 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (884 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
-- **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
+- **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model" (fixed Session 961).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **Pricing freshness badges** — 92 pages show green badge.
 - **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages. Custom OG images for teams.html.
 - **Social sharing buttons** — 13 key pages with X/LinkedIn/HN share buttons.
 - **MCP server** — 5 tools, rate limited. Linked from 688+ pages (77.6%). MCP-REGISTRY-SUBMISSIONS.md ready.
-- **AI API Advisor** (Session 947) — Interactive 4-step model recommender. Scores 48 models by use case, budget, volume, priority. GA4 tracked. Pro upsell. Cross-linked from 34 pages.
-- **2026 Pricing Benchmark** (Session 947) — Downloadable report with key findings, pricing table, cost-per-task analysis, hidden costs. Email capture. CSV download. Cross-linked from 33 pages.
-- **Pricing Badges** (Session 947) — Embeddable shields.io badges for 27+ models. Copy Markdown. Filter by tier/provider.
+- **AI API Advisor** — Interactive 4-step model recommender. 48 models. GA4 tracked. Cross-linked from 34 pages.
+- **2026 Pricing Benchmark** — Downloadable report, email capture, CSV. Cross-linked from 33 pages.
+- **Pricing Badges** — Embeddable shields.io badges for 27+ models.
+- **Team Tools** (Sessions 955-961) — team-cost-planner, team-migration-planner, vendor-evaluation-scorecard, teams.html landing page. All 4 pages have comprehensive GA4 tracking (18 events total). Teams.html cross-linked from 23+ pages.
 - **Model Deprecation Checker** — Linked from 45+ pages. FAQPage schema, interactive checker.
-- **SEO fixes** — 7 duplicate comparison pages resolved (canonical+noindex), orphan page fixed, sitemap cleaned, RSS XML validated, 2 duplicate page titles fixed, 23 internal links updated.
-- **deal.html** — Product + FAQPage schema, exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator. Canonical URL.
-- **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe). Trust signals, testimonials, Before/After, FAQPage schema. **GO_SKIP prevents shared.js overwriting.**
-- **shared.js cleanup** — Exit popup CTAs route to go.html. No free tool escape hatches from any exit popup, near any Pro CTA, in nav/footer, or on comparison pages.
-- **Homepage** — Developer testimonials, social proof bar, calculator → deal.html, pricing → go.html, deal banner → deal.html.
-- **Sticky CTAs** — Unified dismiss state prevents stacking.
+- **deal.html** — Product + FAQPage schema, exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator.
+- **go.html** — Primary conversion funnel. BUY is primary CTA. Trust signals, testimonials, FAQPage schema. **GO_SKIP prevents shared.js overwriting.**
+- **shared.js cleanup** — Exit popup CTAs route to go.html. No free tool escape hatches.
 - **Post-expiry handling** — DEAL_EXPIRED flag. After Jul 12: all prices → $49.
 - **Static pricing API** — /data/pricing.json (48 models, CC-BY-4.0). OpenAPI spec at /data/pricing-openapi.json.
 - **go.html pre-fill** — 606 pages auto-detect model via GO_MODEL_MAP (130+ variants).
-- **BUY button PRIMARY CTA** (Session 878). A/B headline test expired. Exit popup A/B test expired. Widget embed tracking.
 
 ## Blocked on Human Action
 1. **$9 Stripe link** — Flash sale UI ready on deal.html (`?flash=9`). Need: create $9 one-time Stripe payment link, replace `FLASH_STRIPE_URL` placeholder in deal.html line ~1511.

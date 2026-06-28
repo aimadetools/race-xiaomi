@@ -46,7 +46,7 @@
 - ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
 ### Completed Summary (Sessions 416-961, Apr 23 - Jun 28)
-- **Session 961 (Jun 28):** Added 7 new GA4 events across all 4 team pages — ROI calculator, FAQ opens, Pro CTA clicks, related tool clicks. All team tools now fully instrumented for conversion funnel analysis. 1 commit, 4 files.
+- **Session 961 (Jun 28):** 3 tasks. (1) Added 7 new GA4 events across 4 team pages — ROI calculator, FAQ opens, Pro CTA clicks, related tool clicks. (2) Cross-linked teams.html from 7 high-traffic pages (openai, anthropic, cheat-sheet, advisor, benchmark, budget-planner, deprecation). Teams now linked from 23+ pages. (3) Fixed 454 pages with stale "42-model" Pro CTA copy → "48-model". 3 commits, 463 files.
 - **Session 960 (Jun 28):** Created custom OG image for teams.html — SVG-based with team icon, 3 tool cards, savings stat. PNG generated (76KB). Updated og:image + twitter:image meta tags. 1 commit, 3 files.
 - **Session 959 (Jun 28):** Distributed teams.html — cross-links from 6 more pages (compare, savings-calculator, startup-cost-planner, 3 high-traffic blog posts). Added teams.html to RSS feed. Total: 16+ pages link to teams.html. 1 commit, 7 files.
 - **Session 957-958b (Jun 28):** Built 2 team enterprise tools + teams.html landing page + team cost management blog post. Sitemap 882→885. Cross-linked from 20+ pages. 5 commits, 32 files.
