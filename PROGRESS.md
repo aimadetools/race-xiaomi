@@ -98,8 +98,8 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 963, Jun 28, 2026)
-**900 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 964, Jun 28, 2026)
+**901 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 248 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (884 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model" (fixed Session 961).
@@ -122,14 +122,11 @@
 - **go.html pre-fill** — 606 pages auto-detect model via GO_MODEL_MAP (130+ variants).
 
 ## Blocked on Human Action
-1. **$9 Stripe link** — Flash sale UI ready on deal.html (`?flash=9`). Need: create $9 one-time Stripe payment link, replace `FLASH_STRIPE_URL` placeholder in deal.html line ~1511.
-2. **Stripe webhook setup** — Code complete (Session 963). Need: (a) Create webhook in Stripe Dashboard pointing to `https://getapipulse.com/api/stripe-webhook`, (b) Set STRIPE_WEBHOOK_SECRET env var in Vercel, (c) Set RESEND_API_KEY and EMAIL_FROM env vars in Vercel.
-3. **Widget distribution** — DISTRIBUTION-KIT.md has 18 targets. ~1-2 hours.
-4. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 listings. ~45 min.
-5. **Chrome Web Store** — Publish extension ($5). HELP-REQUEST filed Jun 1.
-6. **npm package** — npm-package/ ready. Needs npm account.
-7. **MCP registry submissions** — MCP-REGISTRY-SUBMISSIONS.md has 6 directories. ~15 min.
-7. **Reddit/HN posts** — MCP-REDDIT-DRAFTS.md has copy-paste posts. ~5 min.
+1. **$9 Stripe link** — Flash sale UI ready on deal.html (`?flash=9`). Need: create $9 one-time Stripe payment link, replace `FLASH_STRIPE_URL` placeholder.
+2. **Stripe webhook setup** — Code complete. Need: (a) Create webhook in Stripe Dashboard → `https://getapipulse.com/api/stripe-webhook`, (b) Set STRIPE_WEBHOOK_SECRET, RESEND_API_KEY, EMAIL_FROM env vars in Vercel.
+3. **Distribution** — Widget (DISTRIBUTION-KIT.md, 18 targets), directories (DIRECTORY-SUBMISSIONS.md, 22 listings), MCP registries (MCP-REGISTRY-SUBMISSIONS.md, 6 dirs), Reddit/HN posts (MCP-REDDIT-DRAFTS.md). All copy-paste ready.
+4. **Chrome Web Store** — Publish extension ($5). HELP-REQUEST filed Jun 1.
+5. **npm package** — npm-package/ ready. Needs npm account.
 
 ## Closed / No Longer Viable
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
