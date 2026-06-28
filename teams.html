@@ -851,6 +851,52 @@
                 page_location: window.location.href
             });
         }
+
+        // ROI calculator engagement tracking
+        let roiInteracted = false;
+        function trackROIInteraction() {
+            if (!roiInteracted) {
+                roiInteracted = true;
+                if (window.trackEvent) window.trackEvent('roi_calculator_used', {
+                    devs: parseInt(devsEl.value) || 10,
+                    reqs: parseInt(reqsEl.value) || 100,
+                    tier: modelEl.value
+                });
+            }
+        }
+        devsEl.addEventListener('input', trackROIInteraction);
+        reqsEl.addEventListener('input', trackROIInteraction);
+        modelEl.addEventListener('change', trackROIInteraction);
+
+        // FAQ accordion tracking
+        document.querySelectorAll('.teams-faq details, .faq-section details').forEach(function(el) {
+            el.addEventListener('toggle', function() {
+                if (el.open) {
+                    var question = el.querySelector('summary')?.textContent?.trim().substring(0, 80);
+                    if (window.trackEvent) window.trackEvent('faq_open', { question: question, page: 'teams' });
+                }
+            });
+        });
+
+        // Pro CTA click tracking
+        document.querySelectorAll('a[href*="go.html"]').forEach(function(el) {
+            el.addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('teams_pro_cta_click', {
+                    text: (el.textContent || '').trim().substring(0, 50),
+                    section: el.closest('section')?.className || 'unknown'
+                });
+            });
+        });
+
+        // Related tool click tracking
+        document.querySelectorAll('.related-links a').forEach(function(el) {
+            el.addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('teams_related_tool_click', {
+                    tool: el.getAttribute('href'),
+                    text: el.textContent.trim()
+                });
+            });
+        });
     </script>
 </body>
 </html>

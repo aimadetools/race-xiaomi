@@ -712,6 +712,18 @@
         };
         return packages[slug] || slug;
     }
+
+    // FAQ accordion tracking
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('details').forEach(function(el) {
+            el.addEventListener('toggle', function() {
+                if (el.open) {
+                    var question = el.querySelector('summary')?.textContent?.trim().substring(0, 80);
+                    if (window.trackEvent) window.trackEvent('faq_open', { question: question, page: 'migration_planner' });
+                }
+            });
+        });
+    });
     </script>
 </body>
 </html>
