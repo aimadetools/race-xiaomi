@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 904 pages, 358 posts, 48 models, 251 comparison pages, 146 tools. Technically complete. Distribution is the bottleneck, not content.
+**Site Status:** 909 pages, 358 posts, 48 models, 256 comparison pages, 146 tools. Technically complete. Distribution is the bottleneck, not content.
 
 ### Active Tasks — Teams Page Distribution (Session 959-960)
 - ~~**Cross-link teams.html from more pages**~~ — DONE (Session 959). Added to compare.html, savings-calculator.html, startup-cost-planner.html, and 3 high-traffic blog posts (cost optimization guide, ChatGPT cost, Claude Opus cost). Total: 16+ pages.

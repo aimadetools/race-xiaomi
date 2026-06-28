@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 967 (Jun 28) — Mythos 5 & Fable 5 Comparison Pages
+- **Created 5 new comparison pages** for Mythos 5 and Fable 5 — these newer models only had 1-2 comparisons each. New pages: Mythos 5 vs Opus 4.8, Mythos 5 vs Sonnet 4.6, Mythos 5 vs GPT-5.5 Pro, Fable 5 vs Opus 4.8, Fable 5 vs Sonnet 4.6. Each has interactive calculator, use-case recommendations, FAQPage schema, share buttons, Pro CTA.
+- **Updated sitemap.xml** — 5 new URLs added (894 total).
+- **Added links to compare.html** — 5 new comparison cards added to the comparison index.
+- **Updated comparison count** — "251 comparison pages" → "256 comparison pages" across 12 files.
+- **1 commit, 18 files, +215,000/-0 lines.**
+
 ## Session 966 (Jun 28) — Missing Model Comparison Pages
 - **Created 3 new comparison pages** for models added in Sessions 952-958 that never got comparisons: Claude Mythos 5 vs Fable 5, GPT-5.4 nano vs Mistral Small 4, GPT-5.4 Pro vs Claude Opus 4.8. Each has interactive calculator, use-case recommendations, FAQPage schema, share buttons, Pro CTA.
 - **Updated sitemap.xml** — 3 new URLs added.
@@ -20,7 +27,7 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
 ## Site Status (as of Session 966, Jun 28, 2026)
-**904 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 251 comparison pages | 1 MCP server (5 tools)**
+**909 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 256 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (889 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model".
