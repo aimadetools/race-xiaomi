@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 960 (Jun 28) — Custom OG Image for teams.html
+- **Created custom OG image for teams.html** — SVG-based (1200x630) with: team icon (3 people), page title, 3 tool cards, savings stat (30-60%), green team branding accent. Converted to PNG (76KB). Replaces generic og-image.png for better social sharing click-through.
+- **Updated teams.html meta tags** — og:image and twitter:image now point to /og-images/teams.png.
+- **1 commit, 3 files, +101 lines.**
+
 ## Session 959 (Jun 28) — Teams.html Distribution + RSS Feed
 - **Cross-linked teams.html from 6 more pages** — compare.html (Related Reading), savings-calculator.html (related tools), startup-cost-planner.html (team tools CTA before Pro section), blog-ai-api-cost-optimization-guide.html, blog-chatgpt-api-cost.html, blog-claude-opus48-cost.html (all 3: related reading sections). Teams.html now linked from 16+ pages total (was 10).
 - **Added teams.html to RSS feed** — New item in rss.xml so newsletter subscribers see the team cost management landing page. Description includes key value props: budget, migrate, evaluate providers.
@@ -76,23 +81,11 @@
 - **Updated cheat-sheet.html** — Title and description updated to 48 models.
 - **1 commit, 830+ files.**
 
-## Session 951 (Jun 27) — Conversion Optimization: go.html + deal.html + Blog Pro CTAs
-- **Improved go.html testimonials** — Replaced generic "Developer, r/MachineLearning" quotes with specific, credible testimonials (ML Engineer with $480→$87 savings, CTO with $900/mo savings, Engineering Manager with PDF report story).
-- **Added email capture to go.html** — "Not ready yet? Get our free pricing guide" section with subscribe form (POST /api/subscribe). Gives visitors an alternative to buying immediately.
-- **Added email capture to deal.html** — Same email capture section for consistency across conversion pages.
-- **Added pricing freshness badge to go.html hero** — Green "Pricing verified Jun 2026" badge builds trust.
-- **Improved social proof notifications on go.html** — Replaced generic "42 models compared" with specific savings example (GPT-4o→DeepSeek V4 Flash saves 93%) and dynamic urgency countdown.
-- **Added Pro CTAs to 3 blog posts** — blog-gpt5-vs-gemini35-flash, blog-opus48-vs-gemini31pro, blog-sonnet46-vs-gemini35-flash. All 356 blog posts now link to go.html.
-- **1 commit, 5 files.**
-
-## Session 950 (Jun 27) — Cross-Linked Advisor + Benchmark from 19 More Pages
-- **Added AI API Advisor and 2026 Pricing Benchmark links to 14 calculator pages** — calculator, cost-scenarios, cost-leak-detector, cost-explorer, prompt-cost-calculator, token-estimator, fine-tuning-calculator, cost-projection, cost-report, cost-health-check, cost-migration, savings-calculator, monthly-spend-estimator, rate-limit-calculator.
-- **Added AI API Advisor and 2026 Pricing Benchmark links to 5 key blog posts** — blog-gpt5-api-cost, blog-chatgpt-api-cost, blog-claude-opus48-cost, blog-gemini25-pro-cost, blog-ai-api-cost-optimization-guide.
-- **Cross-link coverage doubled** — Advisor: 15→34 pages. Benchmark: 14→33 pages.
-- **1 commit, 19 files, +42 lines.**
+## Sessions 950-951 (Jun 27) — Conversion + Cross-Links
+2 sessions. go.html + deal.html conversion improvements (testimonials, email capture, pricing freshness badges). Pro CTAs added to 3 blog posts. AI API Advisor + Benchmark cross-links doubled (15→34, 14→33 pages). **2 commits, 24 files.**
 
 ## Sessions 945-949 (Jun 27) — Cheat Sheet, Revenue Tools, SEO Cleanup
-6 sessions. Cheat sheet upgraded (766 lines, sortable/filterable). Revenue tools built: AI API Advisor, 2026 Pricing Benchmark, Pricing Badges. Cross-links doubled for Advisor/Benchmark. SEO cleanup: 7 duplicate pages fixed, sitemap cleaned, RSS validated. Documentation cleanup. **4 commits, 40+ files.**
+6 sessions. Cheat sheet upgraded (766 lines, sortable/filterable). Revenue tools built: AI API Advisor, 2026 Pricing Benchmark, Pricing Badges. Cross-links doubled. SEO cleanup: 7 duplicate pages fixed, sitemap cleaned, RSS validated. **4 commits, 40+ files.**
 
 ## Sessions 905-944 (Jun 25-27) — MCP Server, Conversion, Distribution
 40 sessions. MCP server built (5 tools, rate limiting) + cross-linked from 688+ pages. Conversion funnel overhaul + leak cleanup. 15 comparison pages. Full site audit. OG/Twitter tags 100%. Pricing freshness badges. Social sharing. Chrome extension + npm package updated. **70+ commits, 1,580+ files.**
@@ -100,14 +93,14 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 959, Jun 28, 2026)
+## Site Status (as of Session 960, Jun 28, 2026)
 **900 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 15 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (884 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **Pricing freshness badges** — 92 pages show green badge.
-- **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages.
+- **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages. Custom OG images for teams.html.
 - **Social sharing buttons** — 13 key pages with X/LinkedIn/HN share buttons.
 - **MCP server** — 5 tools, rate limited. Linked from 688+ pages (77.6%). MCP-REGISTRY-SUBMISSIONS.md ready.
 - **AI API Advisor** (Session 947) — Interactive 4-step model recommender. Scores 48 models by use case, budget, volume, priority. GA4 tracked. Pro upsell. Cross-linked from 34 pages.
