@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 898 pages, 357 posts, 48 models, 146 tools. Technically complete. Distribution is the bottleneck, not content.
+**Site Status:** 901 pages, 358 posts, 48 models, 146 tools. Technically complete. Distribution is the bottleneck, not content.
 
 ### Active Tasks — Teams Page Distribution (Session 959-960)
 - ~~**Cross-link teams.html from more pages**~~ — DONE (Session 959). Added to compare.html, savings-calculator.html, startup-cost-planner.html, and 3 high-traffic blog posts (cost optimization guide, ChatGPT cost, Claude Opus cost). Total: 16+ pages.
@@ -46,16 +46,8 @@
 - ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
 - ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
-### Completed Summary (Sessions 416-963, Apr 23 - Jun 28)
-- **Session 963 (Jun 28):** Enhanced Stripe webhook to send purchase confirmation emails via Resend with access codes. Created /restore.html + /api/restore-access.js for Pro access restore flow. Purchase records stored for admin lookup. Updated pro.html with "Lost your code?" link. 3 files, ~450 lines.
-- **Session 962 (Jun 28):** Enhanced model-switch.html with 3 new sections: migration steps (dynamic, provider-aware), risk assessment (5 factors), and code snippets (provider-specific, Pro-gated). Cross-linked from cheat-sheet.html and ai-api-advisor.html. 1 commit, 3 files.
-- **Session 961 (Jun 28):** 3 tasks. (1) Added 7 new GA4 events across 4 team pages. (2) Cross-linked teams.html from 7 high-traffic pages. (3) Fixed 454 pages with stale "42-model" Pro CTA copy → "48-model". 3 commits, 463 files.
-- **Session 960 (Jun 28):** Created custom OG image for teams.html — SVG-based with team icon, 3 tool cards, savings stat. PNG generated (76KB). Updated og:image + twitter:image meta tags. 1 commit, 3 files.
-- **Session 959 (Jun 28):** Distributed teams.html — cross-links from 6 more pages (compare, savings-calculator, startup-cost-planner, 3 high-traffic blog posts). Added teams.html to RSS feed. Total: 16+ pages link to teams.html. 1 commit, 7 files.
-- **Session 957-958b (Jun 28):** Built 2 team enterprise tools + teams.html landing page + team cost management blog post. Sitemap 882→885. Cross-linked from 20+ pages. 5 commits, 32 files.
-- **Session 956 (Jun 28):** Distributed team cost planner — FAQPage schema (5 Q&As), visual FAQ section, cross-links from 13 pages (budget-planner, cost-report, compare, 4 comparison pages, 5 blog posts). 1 commit, 15 files.
-- **Session 955 (Jun 28):** Built team-cost-planner.html (team budget tool for engineering managers). Built api/stripe-webhook.js (auto Pro delivery). Updated sitemap (881→882 URLs), homepage tools section. 1 commit, 4 files.
-- **Session 954 (Jun 27):** Created 4 comparison pages for new models (GPT-5.4 vs Sonnet 4.6, GPT-5.4 vs Gemini 3.1 Pro, Fable 5 vs GPT-5.5, GPT-5.4 mini vs Haiku 4.5). Updated sitemap (877→881 URLs), compare.html listing. Comparison coverage: 244→248 pages. 1 commit, 6 files.
-- **Sessions 945-953 (Jun 27):** Model count sync 42→48 (317 files), new model launches (830+ files), conversion optimization (go.html + deal.html), Advisor/Benchmark cross-links, cheat sheet upgrade, revenue tools built, SEO cleanup. 15+ commits, 1,200+ files.
-- **Sessions 905-944 (Jun 25-27):** MCP server (5 tools, rate limiting) + 688+ cross-links. Conversion funnel overhaul. 15 comparison pages. Full site audit. OG/Twitter tags 100%. Chrome extension + npm package. 70+ commits, 1,580+ files.
-- **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. Conversion funnel. Claude 4 shutdown. MCP server. 381+ commits, 2,420+ files.
+### Completed Summary (Sessions 416-965, Apr 23 - Jun 28)
+- **Sessions 955-965 (Jun 28):** Team tools pivot (3 enterprise tools + landing page + blog post), teams.html distribution (23+ pages), GA4 tracking (18 events), model switch calculator enhanced, Stripe webhook email delivery, widget update to 20 models, stale model count sweeps. 20+ commits, 1,000+ files.
+- **Sessions 945-954 (Jun 27):** New model launches (GPT-5.4 family + Fable 5, 42→48), 4 comparison pages, model count sync (317 files), cheat sheet upgrade, AI API Advisor, Pricing Benchmark, Pricing Badges, SEO cleanup. 18+ commits, 1,300+ files.
+- **Sessions 905-944 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. 70+ commits, 1,580+ files.
+- **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. 381+ commits, 2,420+ files.
