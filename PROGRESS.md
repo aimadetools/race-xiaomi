@@ -1,28 +1,11 @@
 # PROGRESS.md
 
-## Session 968 (Jun 28) — New Comparison Pages (Budget & Cross-Provider)
-- **Created 5 new comparison pages** targeting high-search budget and cross-provider matchups: Gemini 3.5 Flash vs Opus 4.8, DeepSeek V4 Pro vs GPT-5.5 Pro, Haiku 4.5 vs GPT-5 mini, Gemini 3.5 Flash vs DeepSeek V4 Pro, Haiku 4.5 vs Gemini 3.5 Flash. Each has interactive calculator, use-case recommendations, FAQPage schema, share buttons, Pro CTA.
-- **Updated sitemap.xml** — 5 new URLs added (899 total).
-- **Added 2 new cards to compare.html** — Gemini Flash vs Opus 4.8 and DeepSeek vs GPT-5.5 Pro.
-- **Updated comparison count** — "256 comparison pages" → "258 comparison pages" across 16 files.
-- **1 commit, 19 files.**
-
-## Session 967 (Jun 28) — Mythos 5 & Fable 5 Comparison Pages
-- **Created 5 new comparison pages** for Mythos 5 and Fable 5 — these newer models only had 1-2 comparisons each. New pages: Mythos 5 vs Opus 4.8, Mythos 5 vs Sonnet 4.6, Mythos 5 vs GPT-5.5 Pro, Fable 5 vs Opus 4.8, Fable 5 vs Sonnet 4.6. Each has interactive calculator, use-case recommendations, FAQPage schema, share buttons, Pro CTA.
-- **Updated sitemap.xml** — 5 new URLs added (894 total).
-- **Added links to compare.html** — 5 new comparison cards added to the comparison index.
-- **Updated comparison count** — "251 comparison pages" → "256 comparison pages" across 12 files.
-- **1 commit, 18 files, +215,000/-0 lines.**
-
-## Session 966 (Jun 28) — Missing Model Comparison Pages
-- **Created 3 new comparison pages** for models added in Sessions 952-958 that never got comparisons: Claude Mythos 5 vs Fable 5, GPT-5.4 nano vs Mistral Small 4, GPT-5.4 Pro vs Claude Opus 4.8. Each has interactive calculator, use-case recommendations, FAQPage schema, share buttons, Pro CTA.
-- **Updated sitemap.xml** — 3 new URLs added.
-- **Fixed stale RSS reference** — cheat sheet description said "42 Models", now "48 Models".
-- **Updated comparison count** — "248 comparison pages" → "251 comparison pages" across all files.
-- **1 commit, 5 files, +3,500/-0 lines.**
-
-## Session 965 (Jun 28) — Stale 42-Model Reference Sweep
-Fixed 16 stale "42-model" references across 9 files (blog posts, tools.html, generate-report.html, index.html). **1 commit, 9 files.**
+## Sessions 965-968 (Jun 28) — Comparison Pages & Count Sync
+- **13 new comparison pages** — Mythos 5 & Fable 5 vs Opus 4.8/Sonnet 4.6/GPT-5.5 Pro, Gemini 3.5 Flash vs Opus 4.8/DeepSeek V4 Pro, Haiku 4.5 vs GPT-5 mini/Gemini 3.5 Flash, DeepSeek V4 Pro vs GPT-5.5 Pro. All with interactive calculators, FAQPage schema, use-case recommendations, share buttons, Pro CTA.
+- **Sitemap updated** — 899 URLs (5 new today).
+- **Comparison count synced** — 248 → 258 across all files.
+- **Stale reference sweep** — Fixed 16 stale "42-model" references, fixed RSS "42 Models" → "48 Models".
+- **3 commits, 32+ files.**
 
 ## Sessions 952-964 (Jun 27-28) — Team Tools, Models, Distribution
 Team tools pivot (3 enterprise tools + teams.html + blog post), teams distribution (23+ pages), GA4 tracking (18 events), model switch calculator enhanced, Stripe webhook email delivery, widget update to 20 models, stale model count sweeps. New model launches (GPT-5.4 family + Fable 5, 42→48 models), 4 comparison pages, model count sync (317 files). Cheat sheet upgrade, AI API Advisor, Pricing Benchmark, Pricing Badges. **20+ commits, 1,000+ files.**
@@ -33,9 +16,9 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 967, Jun 28, 2026)
+## Site Status (as of Session 968, Jun 28, 2026)
 **909 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 258 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (894 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
+- Sitemap (899 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
