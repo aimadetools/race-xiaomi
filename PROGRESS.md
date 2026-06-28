@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 962 (Jun 28) — Enhanced Model Switch Calculator
+- **Enhanced model-switch.html with 3 new sections** — Added migration steps, risk assessment, and code snippets to the existing Model Switch Calculator. Previously it only showed cost comparison; now it's a complete migration planning tool.
+- **Migration steps** — Dynamic step-by-step guide based on whether switching providers (7-8 steps with time estimates) or within same provider (3-4 steps). Includes API key setup, model ID change, endpoint update, prompt adjustment, testing, staging, and rollout.
+- **Risk assessment** — 5 risk factors evaluated: quality tier change, context window difference, provider change, deprecation status, and cost direction. Each rated low/medium/high with color indicators.
+- **Code snippets** — Provider-specific code examples (OpenAI, Anthropic, Google, DeepSeek, generic) with syntax highlighting. Pro-gated for full snippets.
+- **Updated meta tags** — Title and description now reflect the enhanced features (migration steps, code snippets).
+- **Cross-linked from 2 more pages** — cheat-sheet.html (new tool card), ai-api-advisor.html (new banner). model-switch.html now linked from 300+ pages.
+- **1 commit, 3 files, +180 lines.**
+
 ## Session 961 (Jun 28) — GA4 Event Tracking for Team Tools
 - **Added 7 new GA4 events across 4 team pages** — All team tools now have comprehensive engagement tracking for conversion funnel analysis.
 - **teams.html** (4 new events): `roi_calculator_used` (first interaction with ROI calculator), `faq_open` (FAQ accordion opens), `teams_pro_cta_click` (Pro CTA button clicks), `teams_related_tool_click` (related tool navigation). Total: 8 events.

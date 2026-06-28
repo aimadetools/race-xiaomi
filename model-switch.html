@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LLM Model Switch Calculator — Save by Changing Providers | APIpulse</title>
-    <meta name="description" content="Calculate exactly how much you'd save by switching from one LLM API provider to another. Compare 48 models and see your monthly savings instantly.">
-    <meta name="keywords" content="LLM switch calculator, change AI provider, save on API costs, model migration calculator, switch GPT to Claude">
-    <meta property="og:title" content="LLM Model Switch Calculator — Save by Changing Providers | APIpulse">
-    <meta property="og:description" content="Calculate exactly how much you'd save by switching LLM providers. Compare 48 models side by side.">
+    <title>Model Switch Calculator — Compare Costs, Migration Steps & Code | APIpulse</title>
+    <meta name="description" content="Switching AI models? Compare costs side-by-side, see migration steps, risk assessment, and get code snippets. Free tool covering 48 models.">
+    <meta name="keywords" content="AI model switch calculator, LLM migration, switch GPT to Claude, model cost comparison, AI provider migration guide">
+    <meta property="og:title" content="Model Switch Calculator — Costs, Migration Steps & Code | APIpulse">
+    <meta property="og:description" content="Compare costs, see migration steps, risk assessment, and get code snippets when switching AI models. Free tool.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/model-switch.html">
@@ -199,6 +199,64 @@
         }
         .share-btn:hover { border-color: var(--accent); color: var(--accent); }
 
+        /* Migration Steps */
+        .migration-section { margin-top: 24px; }
+        .migration-section h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+        .migration-steps { counter-reset: step; }
+        .migration-step {
+            display: flex; gap: 12px; padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .migration-step:last-child { border-bottom: none; }
+        .step-num {
+            width: 28px; height: 28px; background: var(--accent); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700; flex-shrink: 0;
+        }
+        .step-content { flex: 1; }
+        .step-title { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+        .step-desc { font-size: 13px; color: var(--text-secondary); }
+        .step-time { font-size: 12px; color: var(--accent); font-weight: 600; }
+
+        /* Risk Assessment */
+        .risk-section { margin-top: 24px; }
+        .risk-section h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+        .risk-row {
+            display: flex; align-items: center; gap: 12px; padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .risk-row:last-child { border-bottom: none; }
+        .risk-indicator { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .risk-low { background: var(--green); }
+        .risk-medium { background: var(--orange); }
+        .risk-high { background: var(--red); }
+        .risk-text { font-size: 14px; flex: 1; }
+        .risk-level { font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        .risk-level.low { color: var(--green); }
+        .risk-level.medium { color: var(--orange); }
+        .risk-level.high { color: var(--red); }
+
+        /* Code Snippets */
+        .code-section { margin-top: 24px; }
+        .code-section h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+        .code-snippet {
+            background: #1e1e2e; border: 1px solid var(--border); border-radius: 10px;
+            padding: 16px; margin-top: 12px; overflow-x: auto;
+        }
+        .code-snippet pre {
+            font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px;
+            color: #a6e3a1; line-height: 1.6; margin: 0;
+        }
+        .code-snippet .comment { color: #6c7086; }
+        .code-snippet .string { color: #a6e3a1; }
+        .code-snippet .keyword { color: #cba6f7; }
+        .code-pro-lock {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; text-align: center; margin-top: 12px;
+        }
+        .code-pro-lock p { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+        .code-pro-lock a { color: var(--accent); font-weight: 600; font-size: 14px; }
+
         .hidden { display: none !important; }
 
         @media (max-width: 768px) {
@@ -246,7 +304,7 @@
     <main id="main">
         <section class="switch-hero">
             <h1>How much could you save by switching LLM providers?</h1>
-            <p>Select your current model, pick a target, enter your usage — see exactly what you'd save (or overspend) each month.</p>
+            <p>Select your current model, pick a target, enter your usage — see exact savings, migration steps, risk assessment, and code snippets.</p>
         </section>
 
         <div class="switch-container">
@@ -333,6 +391,21 @@
                 <div class="switch-tips" id="switchTips">
                     <h3>Before you switch</h3>
                     <div class="tip-list" id="tipList"></div>
+                </div>
+
+                <div class="migration-section" id="migrationSection" style="display:none;">
+                    <h3>📋 Migration Steps</h3>
+                    <div class="migration-steps" id="migrationSteps"></div>
+                </div>
+
+                <div class="risk-section" id="riskSection" style="display:none;">
+                    <h3>⚠️ Risk Assessment</h3>
+                    <div id="riskRows"></div>
+                </div>
+
+                <div class="code-section" id="codeSection" style="display:none;">
+                    <h3>💻 Migration Code</h3>
+                    <div id="codeContent"></div>
                 </div>
             </div>
 
@@ -597,6 +670,164 @@
                 savings: savings.toFixed(2)
             });
         }
+
+        // --- Migration Steps ---
+        renderMigrationSteps(current, target);
+        renderRisks(current, target, savings);
+        renderCodeSnippets(current, target);
+    }
+
+    function renderMigrationSteps(current, target) {
+        const el = document.getElementById('migrationSteps');
+        const section = document.getElementById('migrationSection');
+        if (!el || !section) return;
+        section.style.display = 'block';
+
+        const steps = [];
+        if (current.provider !== target.provider) {
+            steps.push({ title: 'Create new API key', desc: `Sign up for ${target.provider} and generate an API key`, time: '5 min' });
+        }
+        steps.push({ title: 'Update model identifier', desc: `Change model from "${current.name}" to "${target.name}" in your code`, time: '5 min' });
+        if (current.provider !== target.provider) {
+            steps.push({ title: 'Update API endpoint', desc: `Switch base URL to ${target.provider}'s API endpoint`, time: '10 min' });
+            steps.push({ title: 'Update authentication', desc: `Replace API key and adjust auth headers for ${target.provider}`, time: '10 min' });
+        }
+        steps.push({ title: 'Adjust prompt format', desc: 'Some models have different prompt formatting requirements', time: '15 min' });
+        steps.push({ title: 'Test with sample requests', desc: 'Run 10-20 test requests to verify output quality', time: '30 min' });
+        steps.push({ title: 'Monitor in staging', desc: 'Run alongside existing model for 24-48 hours', time: '1-2 days' });
+        steps.push({ title: 'Gradual rollout', desc: 'Shift traffic incrementally: 10% → 50% → 100%', time: '1-3 days' });
+
+        el.innerHTML = steps.map((s, i) => `
+            <div class="migration-step">
+                <div class="step-num">${i + 1}</div>
+                <div class="step-content">
+                    <div class="step-title">${s.title}</div>
+                    <div class="step-desc">${s.desc}</div>
+                    <div class="step-time">~${s.time}</div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function renderRisks(current, target, savings) {
+        const el = document.getElementById('riskRows');
+        const section = document.getElementById('riskSection');
+        if (!el || !section) return;
+        section.style.display = 'block';
+
+        const risks = [];
+
+        // Quality risk
+        if (current.tier === 'Premium' && target.tier === 'Budget') {
+            risks.push({ text: 'Significant quality downgrade — Premium → Budget', level: 'high' });
+        } else if (current.tier === 'Premium' && target.tier === 'Mid') {
+            risks.push({ text: 'Possible quality reduction on complex tasks', level: 'medium' });
+        } else if (current.tier === target.tier) {
+            risks.push({ text: 'Similar quality tier — minimal quality risk', level: 'low' });
+        } else {
+            risks.push({ text: 'Quality may improve — switching to higher tier', level: 'low' });
+        }
+
+        // Context window
+        const fromCtx = parseFloat(current.context);
+        const toCtx = parseFloat(target.context);
+        if (toCtx < fromCtx * 0.5) {
+            risks.push({ text: 'Much smaller context window — may need to split inputs', level: 'high' });
+        } else if (toCtx < fromCtx) {
+            risks.push({ text: 'Reduced context window', level: 'medium' });
+        } else {
+            risks.push({ text: 'Context window equal or larger', level: 'low' });
+        }
+
+        // Provider
+        if (current.provider !== target.provider) {
+            risks.push({ text: 'Different provider — API format and auth may differ', level: 'medium' });
+        } else {
+            risks.push({ text: 'Same provider — API format unchanged', level: 'low' });
+        }
+
+        // Deprecation
+        if (target.deprecated) {
+            risks.push({ text: 'Target model is deprecated — plan another migration soon', level: 'high' });
+        } else {
+            risks.push({ text: 'Target model is actively maintained', level: 'low' });
+        }
+
+        // Cost direction
+        if (savings < 0 && Math.abs(savings) > 10) {
+            risks.push({ text: 'Significantly more expensive — ensure quality justifies cost', level: 'high' });
+        } else if (savings < 0) {
+            risks.push({ text: 'Slightly more expensive — evaluate quality tradeoff', level: 'medium' });
+        } else {
+            risks.push({ text: 'Cost-neutral or cheaper', level: 'low' });
+        }
+
+        el.innerHTML = risks.map(r => `
+            <div class="risk-row">
+                <div class="risk-indicator risk-${r.level}"></div>
+                <div class="risk-text">${r.text}</div>
+                <div class="risk-level ${r.level}">${r.level}</div>
+            </div>
+        `).join('');
+    }
+
+    function renderCodeSnippets(current, target) {
+        const el = document.getElementById('codeContent');
+        const section = document.getElementById('codeSection');
+        if (!el || !section) return;
+        section.style.display = 'block';
+
+        if (typeof isProUser === 'function' && isProUser()) {
+            // Show full code snippets
+            const snippets = getSnippets(target);
+            el.innerHTML = snippets.map(s => `
+                <h4 style="font-size:14px;font-weight:700;margin-top:16px;margin-bottom:8px;">${s.title}</h4>
+                <div class="code-snippet"><pre>${s.code}</pre></div>
+            `).join('');
+        } else {
+            // Pro gate
+            el.innerHTML = `
+                <div class="code-pro-lock">
+                    <p>🔒 Full migration code for <strong>${target.provider}</strong> available with Pro</p>
+                    <a href="go.html?from=model_switch_code">Get Pro — $29 lifetime →</a>
+                </div>
+            `;
+        }
+    }
+
+    function getSnippets(target) {
+        const slug = target.providerSlug;
+        const modelName = target.id.replace(slug + '-', '');
+        const snippets = [];
+
+        if (slug === 'openai') {
+            snippets.push({
+                title: 'OpenAI SDK (Python)',
+                code: `<span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI\n\nclient = OpenAI()  <span class="comment"># uses OPENAI_API_KEY env var</span>\n\nresponse = client.chat.completions.create(\n    model=<span class="string">"${modelName}"</span>,\n    messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello!"</span>}]\n)\n<span class="keyword">print</span>(response.choices[0].message.content)`
+            });
+        } else if (slug === 'anthropic') {
+            snippets.push({
+                title: 'Anthropic SDK (Python)',
+                code: `<span class="keyword">import</span> anthropic\n\nclient = anthropic.Anthropic()  <span class="comment"># uses ANTHROPIC_API_KEY env var</span>\n\nmessage = client.messages.create(\n    model=<span class="string">"${modelName}"</span>,\n    max_tokens=<span class="string">1024</span>,\n    messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello!"</span>}]\n)\n<span class="keyword">print</span>(message.content[0].text)`
+            });
+        } else if (slug === 'google') {
+            snippets.push({
+                title: 'Google AI SDK (Python)',
+                code: `<span class="keyword">import</span> google.generativeai <span class="keyword">as</span> genai\n\ngenai.configure()  <span class="comment"># uses GOOGLE_API_KEY env var</span>\n\nmodel = genai.GenerativeModel(<span class="string">"${modelName}"</span>)\nresponse = model.generate_content(<span class="string">"Hello!"</span>)\n<span class="keyword">print</span>(response.text)`
+            });
+        } else if (slug === 'deepseek') {
+            snippets.push({
+                title: 'DeepSeek (OpenAI-compatible)',
+                code: `<span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI\n\nclient = OpenAI(\n    api_key=<span class="string">"your-deepseek-key"</span>,\n    base_url=<span class="string">"https://api.deepseek.com/v1"</span>\n)\n\nresponse = client.chat.completions.create(\n    model=<span class="string">"${modelName}"</span>,\n    messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello!"</span>}]\n)\n<span class="keyword">print</span>(response.choices[0].message.content)`
+            });
+        } else {
+            snippets.push({
+                title: target.provider + ' (OpenAI-compatible)',
+                code: `<span class="comment"># ${target.provider} — most providers use OpenAI-compatible API</span>\n<span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI\n\nclient = OpenAI(\n    api_key=<span class="string">"your-${slug}-key"</span>,\n    base_url=<span class="string">"https://api.${slug}.com/v1"</span>\n)\n\nresponse = client.chat.completions.create(\n    model=<span class="string">"${target.name}"</span>,\n    messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello!"</span>}]\n)\n<span class="keyword">print</span>(response.choices[0].message.content)`
+            });
+        }
+
+        return snippets;
     }
 
     init();
