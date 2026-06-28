@@ -96,8 +96,8 @@
 ## Sessions 952-964 (Jun 27-28) — Team Tools, Models, Distribution
 Team tools pivot (3 enterprise tools + teams.html + blog post), teams distribution (23+ pages), GA4 tracking (18 events), model switch calculator enhanced, Stripe webhook email delivery, widget update to 20 models, stale model count sweeps. New model launches (GPT-5.4 family + Fable 5, 42→48 models), 4 comparison pages, model count sync (317 files). Cheat sheet upgrade, AI API Advisor, Pricing Benchmark, Pricing Badges. **20+ commits, 1,000+ files.**
 
-## Sessions 905-951 (Jun 25-27) — MCP Server, Conversion, SEO
-MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. **70+ commits, 1,580+ files.**
+## Sessions 905-964 (Jun 25-27) — MCP Server, Conversion, SEO, Team Tools
+MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. Team tools pivot. **90+ commits, 2,580+ files.**
 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
