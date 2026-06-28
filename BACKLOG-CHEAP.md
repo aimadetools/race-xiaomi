@@ -36,7 +36,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-974, Apr 23 - Jun 28)
+### Completed Summary (Sessions 416-975, Apr 23 - Jun 28)
+- **Session 975 (Jun 28):** Fixed conversion leaks — added Pro CTAs ($29) to apipulse-vs-artificial-analysis.html (competitor comparison page, high buyer intent) and ai-api-pricing-benchmark-2026.html. Both had buyer-traffic but no path to purchase. GA4 tracked. 1 commit, 2 files.
 - **Session 974 (Jun 28):** Updated embeddable widget from 20→25 models (GPT-5.5, Claude Mythos 5, Gemini 3 Flash, Llama 4 Maverick, Command R, Kimi K2.6, GPT-oss 20B). Updated both embed.js and calc-embed.js. Improved widget.html with GitHub README setup section. Added cross-links from index.html and embed.html. Fixed stale "20 models" references across 4 files. 2 commits, 8 files.
 - **Session 973 (Jun 28):** Created buyer-intent blog post (Best AI API 2026 Provider Guide) targeting "best AI API 2026" keyword. 5 provider profiles, 3 pricing tier comparisons, 6 use-case recommendations, decision framework, 3 multi-provider stacks. 7 FAQPage Q&As, 3 Pro CTAs. 1 commit, 4 files, 533 lines.
 - **Session 972 (Jun 28):** Created buyer-intent blog post (AI API Production Pricing Guide) targeting "AI API production pricing" keyword. Production cost comparison (11 models), interactive calculator, hidden costs analysis, rate limits, batch savings, architecture patterns. 6 FAQPage Q&As, 3 Pro CTAs. 1 commit, 4 files, 615 lines.
