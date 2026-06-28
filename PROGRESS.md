@@ -8,6 +8,12 @@
 - **Strategic rationale** — $0 revenue after 10 weeks. Core problem: SEO traffic (1,200/week) is researchers, not buyers. Team tools target engineering managers with budgets but had no unified landing page. Teams.html is the bridge between free tools and Pro purchase.
 - **3 commits, 10 files, +890 lines.**
 
+## Session 958b (Jun 28) — Team Cost Management Blog Post
+- **Built blog-managing-ai-api-costs-engineering-teams.html** (290 lines) — SEO blog post targeting engineering managers. Practical framework: visibility → optimization → governance. Includes model right-sizing table (5 task types + recommended models + savings), real team spend ranges by team size, CFO talking points, 5 common mistakes. FAQPage schema (4 Q&As), Article schema. Links to all 3 team tools + teams.html. Pro CTA for PDF reports.
+- **Added to blog.html** — Featured at top of listing with green "TEAM MANAGEMENT" tag.
+- **Added to sitemap.xml** — 885→886 URLs.
+- **1 commit, 3 files, +347 lines.**
+
 ## Session 957 (Jun 28) — Team Enterprise Tools: Migration Planner + Vendor Scorecard
 - **Built team-migration-planner.html** (712 lines) — Interactive tool for teams planning model switches. Select current/target model from all 48 models, enter team usage (devs, requests/day, tokens/req), get: cost comparison, risk assessment (5 factors), migration timeline estimate, step-by-step migration guide (8 steps), and provider-specific quick-start code snippets (6 SDK templates). Pro upsell for detailed migration report.
 - **Built vendor-evaluation-scorecard.html** (523 lines) — Weighted scorecard for comparing AI API providers. Select from 8 providers, adjust 7 priority weights (pricing, quality, latency, reliability, docs, SDK, context), score each provider (1-10, pre-filled), get weighted rankings with category breakdown bar charts. Pro upsell for full evaluation report.
@@ -89,8 +95,8 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 957, Jun 28, 2026)
-**898 web pages | 357 blog posts | 48 models | 10+ providers | 146 tools | 15 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 958b, Jun 28, 2026)
+**900 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 15 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (884 URLs), RSS (781 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
