@@ -2,16 +2,11 @@
 
 **Site Status:** 909 pages, 358 posts, 48 models, 258 comparison pages, 146 tools. Technically complete. Distribution is the bottleneck, not content.
 
-### Active Tasks — Teams Page Distribution (Session 959-960)
-- ~~**Cross-link teams.html from more pages**~~ — DONE (Session 959). Added to compare.html, savings-calculator.html, startup-cost-planner.html, and 3 high-traffic blog posts (cost optimization guide, ChatGPT cost, Claude Opus cost). Total: 16+ pages.
-- ~~**Add OG/Twitter images for teams.html**~~ — DONE (Session 960). Custom SVG OG image with team icon, 3 tool cards, savings stat. PNG generated (76KB). og:image + twitter:image updated.
-- ~~**Add teams.html to RSS feed**~~ — DONE (Session 959). Added to rss.xml as new item.
-- ~~**Track teams.html in GA4**~~ — DONE (Session 961). Added 7 new events across 4 team pages: ROI calculator, FAQ opens, Pro CTA clicks, related tool clicks. All 4 team pages now have 3-8 GA4 events each.
+### Active Tasks — Teams Page Distribution (Sessions 959-961)
+- ~~All 4 tasks DONE~~ — Cross-linked teams.html from 16+ pages, OG/Twitter images, RSS feed, GA4 tracking (7 events across 4 team pages).
 
 ### Active Tasks — Revenue Infrastructure
-- ~~**Configure Stripe webhook**~~ — DONE (code). Webhook sends purchase confirmation email via Resend with access code. **BLOCKED on human: set up webhook in Stripe Dashboard + set STRIPE_WEBHOOK_SECRET env var in Vercel.**
-- ~~**Test Stripe webhook flow**~~ — Webhook code complete (Session 963). **BLOCKED on human: needs Stripe Dashboard webhook configured first.**
-- ~~**Pro access restore**~~ — DONE (Session 963). /restore.html page + /api/restore-access.js endpoint. Users can request their access code by email.
+- ~~Stripe webhook + restore flow~~ — DONE (code, Sessions 963). **BLOCKED on human: needs Stripe Dashboard webhook + STRIPE_WEBHOOK_SECRET env var.**
 
 ### Active Tasks — Conversion Monitoring
 - **Monitor GA4 for conversions** — Check Monetization reports for `begin_checkout` and `purchase` events. All tracking wired correctly since Session 920.
@@ -34,17 +29,7 @@
 ### Closed / No Longer Viable
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
-- ~~Cross-link team-cost-planner~~ — DONE (Session 956).
-- ~~FAQPage schema on team-cost-planner~~ — DONE (Session 956).
-- ~~$9 flash sale UI~~ — DONE (Session 927). Needs Stripe link from human.
-- ~~MCP server build~~ — DONE (Sessions 932-938). 5 tools, rate limiting, live demo.
-- ~~MCP cross-links~~ — DONE (Sessions 939-940). 688+ pages linked.
-- ~~OG/Twitter tags~~ — DONE (Session 944). 100% coverage.
-- ~~Deprecation checker~~ — DONE (Sessions 941-942). 45+ cross-links.
-- ~~Widget pages SEO~~ — DONE (Session 943). OG tags, share buttons, related tools.
-- ~~Broken link fixes~~ — DONE (Session 943). All comparison links verified.
-- ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
-- ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
+- ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
 ### Completed Summary (Sessions 416-968, Apr 23 - Jun 28)
 - **Sessions 955-968 (Jun 28):** Team tools pivot (3 enterprise tools + landing page + blog post), teams.html distribution (23+ pages), GA4 tracking (18 events), model switch calculator enhanced, Stripe webhook email delivery, widget update to 20 models, stale model count sweeps. 13 new comparison pages (Mythos 5 & Fable 5 vs Opus 4.8, Sonnet 4.6, GPT-5.5 Pro; Gemini 3.5 Flash vs Opus 4.8, DeepSeek V4 Pro; Haiku 4.5 vs GPT-5 mini, Gemini 3.5 Flash). 20+ commits, 1,000+ files.

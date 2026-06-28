@@ -14,18 +14,9 @@ All tasks complete. A/B pricing test paused (needs proper one-time $19/$39 Strip
 All tasks complete except items 22-24 (blocked on human/GA4).
 
 ### Week 10-12 (June 22-July 12) — REVENUE FOCUS
-25-26. ✅ go.html calculator-first redesign + model pre-fill (Sessions 817-818)
-27. **Analyze A/B data + conversion data** — Which price wins? Which pages convert? (needs GA4)
-28. ✅ Community feedback integration (Session 375)
-29. **Distribute embeddable widget** — DISTRIBUTION-KIT.md. **BLOCKED on human.**
-30. ✅ Optimize migration checklist conversion (Session 888)
-31. ✅ Team cost planner (Session 955) — Targets decision-makers with budgets
-32. ✅ **Build "AI API Pricing API" page** — DONE (api-docs.html, 875 lines, in sitemap, linked from homepage)
-33. ✅ **Build 2-3 more team/enterprise tools** — DONE (Session 957). team-migration-planner.html (712 lines, model switch planner with risk assessment + code snippets) + vendor-evaluation-scorecard.html (523 lines, weighted provider comparison scorecard). Cross-linked from 12+ pages each.
-34. ✅ **Build team landing page** — DONE (Session 958). teams.html (320 lines) unifies all 3 team tools. Cross-linked from 8 pages + global nav. FAQPage schema, ROI calculator, social proof.
-35. **Submit to AI directories** — DIRECTORY-SUBMISSIONS.md has 22 listings. Top 5 (theresanaiforthat, toolify, aitoolsdirectory, topai, futurepedia) could drive 100-300 monthly visitors. **BLOCKED on human — forms require browser.**
-36. **Analyze conversion funnel** — 1,200 weekly visitors, 0 sales. Need to understand where users drop off. Check GA4 for page views, bounce rate, click-through to go.html/deal.html. (Needs GA4 access.)
-37. **Plan v2** — If revenue justifies, plan next features.
+- ✅ All content/tool tasks DONE (go.html redesign, team tools, API docs, comparison pages, model count sync).
+- **Remaining: Distribution (blocked on human)** — Directory submissions, widget distribution, MCP registries, Chrome Web Store, npm, awesome lists.
+- **Remaining: Analytics (needs GA4)** — Analyze A/B data, conversion funnel, plan v2.
 
 ### Completed (Sessions 416-967, Apr 5 - Jun 28)
 - **Sessions 955-968 (Jun 28):** Team tools pivot (3 enterprise tools + landing page + blog post), teams.html distribution (23+ pages), GA4 tracking (18 events), model switch calculator enhanced, Stripe webhook email delivery, widget update to 20 models, stale model count sweeps. 13 new comparison pages (Mythos 5 & Fable 5 vs Opus 4.8, Sonnet 4.6, GPT-5.5 Pro; Gemini 3.5 Flash vs Opus 4.8, DeepSeek V4 Pro; Haiku 4.5 vs GPT-5 mini, Gemini 3.5 Flash). 20+ commits, 1,000+ files.
