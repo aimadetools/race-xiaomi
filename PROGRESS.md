@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 970 (Jun 28) — Strategic Content Gating
+- **Added ranking table content gate** — Shows top 5 rows free, blurs next 3 as teaser, gates rest behind Pro CTA overlay. Directly addresses Session 969 diagnosis: "Free tier too generous — visitors get what they need without paying." Single shared.js change propagates to all 51 pages with ranking tables.
+- **Gate behavior** — Skips Pro/trial users. Tracks `results_gate_shown` and `results_gate_clicked` GA4 events. Gradient overlay with $29 lifetime CTA, trust signals (Stripe secure, 14-day refund, instant access).
+- **Existing gate coverage** — `usage-gate.js` (3 pages, limits to 3 free calculations/session), `results-cta.js` (74 pages, shows Pro CTA after results), new ranking table gate (51 pages). Total: 74+ pages with conversion gates.
+- **All remaining tasks blocked on human** — $9 Stripe link, directory submissions, MCP registries, Chrome Web Store, npm, widget distribution. No new human responses.
+- **1 commit, 1 file, 92 lines.**
+
 ## Session 969 (Jun 28) — Conversion & Distribution Focus
 - **Diagnosed conversion problem** — 1,200 visitors/week from SEO, $0 revenue. Issue: SEO traffic is informational (researchers comparing prices), not buyer-intent. Free tier too generous — visitors get what they need without paying.
 - **flash-deal.html** — Ultra-focused $9 flash deal landing page. Single CTA, countdown timer, no navigation, maximum urgency. Blocked on: needs $9 Stripe payment link (FLASH_STRIPE_URL placeholder). Ready to deploy instantly when link arrives.
@@ -25,7 +32,7 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 969, Jun 28, 2026)
+## Site Status (as of Session 970, Jun 28, 2026)
 **911 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 258 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (899 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
@@ -45,6 +52,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers,
 - **go.html** — Primary conversion funnel. BUY is primary CTA. Trust signals, testimonials, FAQPage schema.
 - **Static pricing API** — /data/pricing.json (48 models, CC-BY-4.0). OpenAPI spec at /data/pricing-openapi.json.
 - **go.html pre-fill** — 606 pages auto-detect model via GO_MODEL_MAP (130+ variants).
+- **Content gating** — 3 layers: usage-gate.js (3 pages, 3 free calculations/session), results-cta.js (74 pages, Pro CTA after results), ranking table gate (51 pages, top 5 free + blur 3 + Pro CTA). All gates skip Pro/trial users. GA4 tracked.
 
 ## Blocked on Human Action
 1. **$9 Stripe link** — Flash sale UI ready on deal.html (`?flash=9`). Need: create $9 one-time Stripe payment link, replace `FLASH_STRIPE_URL` placeholder.
