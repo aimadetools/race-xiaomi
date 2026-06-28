@@ -8,6 +8,9 @@
 ### Active Tasks — Revenue Infrastructure
 - ~~Stripe webhook + restore flow~~ — DONE (code, Sessions 963). **BLOCKED on human: needs Stripe Dashboard webhook + STRIPE_WEBHOOK_SECRET env var.**
 
+### Active Tasks — Buyer-Intent Content
+- ~~AI API Cost Optimization Guide~~ — DONE (Session 971). Blog post with interactive savings calculator, FAQPage schema, 3 Pro CTAs. Targets "AI API cost optimization" keyword.
+
 ### Active Tasks — Conversion Monitoring
 - **Monitor GA4 for conversions** — Check Monetization reports for `begin_checkout` and `purchase` events. All tracking wired correctly since Session 920. Watch for `results_gate_shown` and `results_gate_clicked` events from Session 970 gating.
 - **$9 flash sale** — UI ready on deal.html (`?flash=9`) AND new flash-deal.html (standalone page). Needs $9 Stripe payment link from human. Replace FLASH_STRIPE_URL placeholder in flash-deal.html.
@@ -32,8 +35,9 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-968, Apr 23 - Jun 28)
-- **Sessions 955-968 (Jun 28):** Team tools pivot (3 enterprise tools + landing page + blog post), teams.html distribution (23+ pages), GA4 tracking (18 events), model switch calculator enhanced, Stripe webhook email delivery, widget update to 20 models, stale model count sweeps. 13 new comparison pages (Mythos 5 & Fable 5 vs Opus 4.8, Sonnet 4.6, GPT-5.5 Pro; Gemini 3.5 Flash vs Opus 4.8, DeepSeek V4 Pro; Haiku 4.5 vs GPT-5 mini, Gemini 3.5 Flash). 20+ commits, 1,000+ files.
+### Completed Summary (Sessions 416-971, Apr 23 - Jun 28)
+- **Session 971 (Jun 28):** Created buyer-intent blog post (AI API Cost Optimization Guide) with interactive savings calculator, FAQPage schema, 3 Pro CTAs. Added to blog.html, sitemap, RSS. 1 commit, 4 files.
+- **Sessions 955-970 (Jun 28):** Team tools pivot (3 enterprise tools + landing page + blog post), teams.html distribution (23+ pages), GA4 tracking (18 events), model switch calculator enhanced, Stripe webhook email delivery, widget update to 20 models, stale model count sweeps. 13 new comparison pages. Strategic content gating (ranking table gate on 51 pages). 20+ commits, 1,000+ files.
 - **Sessions 945-954 (Jun 27):** New model launches (GPT-5.4 family + Fable 5, 42→48), 4 comparison pages, model count sync (317 files), cheat sheet upgrade, AI API Advisor, Pricing Benchmark, Pricing Badges, SEO cleanup. 18+ commits, 1,300+ files.
 - **Sessions 905-944 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. 70+ commits, 1,580+ files.
 - **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. 381+ commits, 2,420+ files.

@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 971 (Jun 28) — Buyer-Intent Content Creation
+- **Created AI API Cost Optimization Guide** — New blog post targeting "AI API cost optimization" keyword with strong buyer intent. Developers searching for this are already spending money on APIs and looking to reduce costs — exactly the audience that converts.
+- **Interactive savings calculator** — Users select their current model, enter monthly token usage, and see exact savings with cheapest alternative. 8 model presets, 3 input/output ratios. GA4 tracked (`savings_calculated` event).
+- **Real pricing comparison table** — 9 popular models with input/output pricing and percentage savings vs GPT-5.5 Pro. Shows the 97% cost difference between premium and budget models.
+- **5-step implementation guide** — Audit spending → identify quality requirements → test alternatives → implement smart routing → optimize tokens → monitor quarterly. Actionable, not theoretical.
+- **SEO optimization** — FAQPage schema (5 Q&As), Article schema, OG/Twitter cards, canonical URL, meta keywords targeting buyer-intent queries. Cross-linked from blog.html, sitemap, RSS feed.
+- **3 Pro CTAs** — Inline (after calculator), mid-page (after comparison table), final (bottom). Each tracks GA4 events with `from=blog_cost_opt_*` parameters.
+- **All remaining tasks still blocked on human** — $9 Stripe link, directory submissions, MCP registries, Chrome Web Store, npm, widget distribution. No new human responses.
+- **1 commit, 4 files, 948 lines.**
+
 ## Session 970 (Jun 28) — Strategic Content Gating
 - **Added ranking table content gate** — Shows top 5 rows free, blurs next 3 as teaser, gates rest behind Pro CTA overlay. Directly addresses Session 969 diagnosis: "Free tier too generous — visitors get what they need without paying." Single shared.js change propagates to all 51 pages with ranking tables.
 - **Gate behavior** — Skips Pro/trial users. Tracks `results_gate_shown` and `results_gate_clicked` GA4 events. Gradient overlay with $29 lifetime CTA, trust signals (Stripe secure, 14-day refund, instant access).
@@ -32,9 +42,9 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 970, Jun 28, 2026)
-**911 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 258 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (899 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
+## Site Status (as of Session 971, Jun 28, 2026)
+**912 web pages | 359 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 258 comparison pages | 1 MCP server (5 tools)**
+- Sitemap (901 URLs), RSS (784 items, valid XML), blog files (359 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.

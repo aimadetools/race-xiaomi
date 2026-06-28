@@ -18,10 +18,12 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - ✅ **$9 flash deal page** — flash-deal.html ready. Needs $9 Stripe payment link to deploy.
 - ✅ **Competitor comparison** — apipulse-vs-artificial-analysis.html live. Targets "Artificial Analysis alternative" searches.
 - **Remaining: Distribution (blocked on human)** — Directory submissions (HELP-REQUEST filed), widget distribution, MCP registries, Chrome Web Store ($5), npm, awesome lists (GitHub token needs fork perms).
-- **Remaining: Revenue** — $9 flash deal (needs Stripe link), conversion optimization (1,200 visitors/week, $0 revenue — SEO traffic is informational, not buyer-intent).
+- **Remaining: Revenue** — $9 flash deal (needs Stripe link), conversion optimization (1,200 visitors/week, $0 revenue — SEO traffic is informational, not buyer-intent). New buyer-intent blog post (Session 971) targets developers already spending money on APIs.
 - **Remaining: Analytics (needs GA4)** — Analyze A/B data, conversion funnel, plan v2.
 
-### Completed (Sessions 416-969, Apr 5 - Jun 28)
+### Completed (Sessions 416-971, Apr 5 - Jun 28)
+- **Session 971 (Jun 28):** Created buyer-intent blog post (AI API Cost Optimization Guide) targeting "AI API cost optimization" keyword. Interactive savings calculator, FAQPage schema, 3 Pro CTAs. Added to blog.html, sitemap, RSS. 1 commit, 4 files, 948 lines.
+- **Session 970 (Jun 28):** Strategic content gating — ranking table gate on 51 pages (top 5 free, blur 3, Pro CTA overlay). GA4 tracked. 1 commit, 1 file.
 - **Session 969 (Jun 28):** Conversion diagnosis (1,200 visitors/week, $0 revenue — SEO traffic is informational). Created flash-deal.html ($9 flash deal page, needs Stripe link). Created apipulse-vs-artificial-analysis.html (competitor comparison). GitHub awesome-list PRs attempted but failed (token lacks fork perms). 1 commit, 3 files.
 - **Sessions 955-968 (Jun 28):** Team tools pivot (3 enterprise tools + landing page + blog post), teams.html distribution (23+ pages), GA4 tracking (18 events), model switch calculator enhanced, Stripe webhook email delivery, widget update to 20 models, stale model count sweeps. 13 new comparison pages (Mythos 5 & Fable 5 vs Opus 4.8, Sonnet 4.6, GPT-5.5 Pro; Gemini 3.5 Flash vs Opus 4.8, DeepSeek V4 Pro; Haiku 4.5 vs GPT-5 mini, Gemini 3.5 Flash). 20+ commits, 1,000+ files.
 - **Sessions 945-954 (Jun 27):** New model launches (GPT-5.4 family + Fable 5, 42→48), 4 comparison pages, model count sync (317 files), cheat sheet upgrade, AI API Advisor, Pricing Benchmark, Pricing Badges, SEO cleanup. 18+ commits, 1,300+ files.
