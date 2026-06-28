@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Vendor Evaluation Scorecard — Compare Providers Side-by-Side | APIpulse</title>
+    <meta name="description" content="Evaluate and compare AI API providers with a weighted scorecard. Score pricing, quality, latency, support, and documentation. Generate a shareable evaluation report for your team.">
+    <meta name="keywords" content="AI API vendor evaluation, compare AI providers, LLM provider scorecard, AI API comparison tool, evaluate OpenAI vs Anthropic vs Google">
+    <meta property="og:title" content="AI API Vendor Evaluation Scorecard — Compare Providers">
+    <meta property="og:description" content="Score AI API providers on pricing, quality, latency, and more. Generate a shareable evaluation report.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/vendor-evaluation-scorecard.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Vendor Evaluation Scorecard">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Score and compare AI API providers with a weighted scorecard for your team.">
+    <link rel="canonical" href="https://getapipulse.com/vendor-evaluation-scorecard.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Vendor Evaluation Scorecard",
+        "description": "Evaluate and compare AI API providers with a weighted scorecard. Score pricing, quality, latency, support, and documentation.",
+        "url": "https://getapipulse.com/vendor-evaluation-scorecard.html",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I evaluate AI API providers for my team?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Score each provider on key dimensions: pricing (cost per token), model quality (benchmark scores), latency (response time), reliability (uptime SLA), documentation quality, SDK support, and ecosystem. Weight each dimension based on your team's priorities, then compare weighted scores."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What criteria should I use to compare AI API vendors?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Key criteria: 1) Pricing — input/output token costs, batch discounts. 2) Quality — benchmark performance for your use case. 3) Latency — P50/P95 response times. 4) Reliability — uptime SLA, rate limits. 5) Documentation — API reference, guides, examples. 6) SDK support — official libraries for your stack. 7) Context window — max tokens per request."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I use multiple AI API providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Many teams use 2-3 providers: a primary for production, a secondary for cost optimization on non-critical tasks, and a fallback for reliability. The scorecard helps identify which provider fits each role. Multi-provider strategies can reduce costs 30-50% while improving uptime."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I re-evaluate my AI API provider?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Every 3-6 months. The AI API market moves fast — new models launch monthly, prices drop quarterly, and features improve constantly. A provider that was best 6 months ago may not be today. Set a calendar reminder to re-run the evaluation scorecard."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the biggest mistake when choosing an AI API provider?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Choosing based on price alone. The cheapest provider may have worse latency, smaller context windows, or less reliable uptime. For production workloads, reliability and latency often matter more than saving a few dollars per million tokens. Use a weighted scorecard to balance all factors."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .scorecard-page { max-width: 900px; margin: 0 auto; padding: 100px 24px 80px; }
+        .scorecard-hero { text-align: center; margin-bottom: 40px; }
+        .scorecard-hero h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 900; line-height: 1.15; margin-bottom: 12px; }
+        .scorecard-hero p { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+        .badge { display: inline-block; background: var(--accent); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Provider selection */
+        .provider-select {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 28px; margin-bottom: 24px;
+        }
+        .provider-select h2 { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+        .provider-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+        .provider-chip {
+            display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+            background: var(--bg-secondary); border: 2px solid var(--border);
+            border-radius: 10px; cursor: pointer; transition: all 0.2s;
+            font-size: 14px; font-weight: 600;
+        }
+        .provider-chip:hover { border-color: var(--accent); }
+        .provider-chip.selected { border-color: var(--accent); background: rgba(99,102,241,0.1); }
+        .provider-chip input { display: none; }
+        .provider-chip .check { width: 18px; height: 18px; border-radius: 4px; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 12px; transition: all 0.2s; flex-shrink: 0; }
+        .provider-chip.selected .check { background: var(--accent); border-color: var(--accent); color: white; }
+
+        /* Weight sliders */
+        .weights-section {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 28px; margin-bottom: 24px;
+        }
+        .weights-section h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .weights-section p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
+        .weight-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+        .weight-label { width: 120px; font-size: 14px; font-weight: 600; flex-shrink: 0; }
+        .weight-slider { flex: 1; -webkit-appearance: none; height: 6px; background: var(--bg-secondary); border-radius: 3px; outline: none; }
+        .weight-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; cursor: pointer; }
+        .weight-val { width: 32px; text-align: right; font-size: 14px; font-weight: 700; color: var(--accent); }
+
+        /* Scoring table */
+        .scoring-section {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 28px; margin-bottom: 24px; overflow-x: auto;
+        }
+        .scoring-section h2 { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+        .score-table { width: 100%; border-collapse: collapse; }
+        .score-table th { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 12px; text-align: center; border-bottom: 2px solid var(--border); }
+        .score-table th:first-child { text-align: left; }
+        .score-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: center; }
+        .score-table td:first-child { text-align: left; font-weight: 600; font-size: 14px; }
+        .score-table td input[type="range"] { width: 80px; }
+        .score-table .score-val { font-weight: 800; font-family: monospace; }
+
+        /* Results */
+        #results { display: none; }
+        #results.visible { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .results-card {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 28px;
+            margin-bottom: 24px;
+        }
+        .results-card h2 { font-size: 22px; font-weight: 900; text-align: center; margin-bottom: 24px; }
+        .ranking-list { list-style: none; padding: 0; }
+        .ranking-item {
+            display: flex; align-items: center; gap: 16px; padding: 16px 20px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+            margin-bottom: 10px; transition: all 0.2s;
+        }
+        .ranking-item:first-child { border-color: var(--accent); background: rgba(99,102,241,0.05); }
+        .rank-num { font-size: 24px; font-weight: 900; width: 40px; text-align: center; }
+        .rank-num.gold { color: #f59e0b; }
+        .rank-num.silver { color: #94a3b8; }
+        .rank-num.bronze { color: #d97706; }
+        .rank-info { flex: 1; }
+        .rank-name { font-size: 16px; font-weight: 800; }
+        .rank-detail { font-size: 12px; color: var(--text-muted); }
+        .rank-score { font-size: 24px; font-weight: 900; font-family: monospace; color: var(--accent); }
+        .rank-score small { font-size: 12px; color: var(--text-muted); font-weight: 400; }
+
+        /* Radar chart placeholder */
+        .chart-container { text-align: center; padding: 20px; }
+        .bar-chart { display: flex; flex-direction: column; gap: 8px; max-width: 500px; margin: 0 auto; }
+        .bar-row { display: flex; align-items: center; gap: 12px; }
+        .bar-label { width: 100px; font-size: 13px; font-weight: 600; text-align: right; flex-shrink: 0; }
+        .bar-track { flex: 1; height: 24px; background: var(--bg-secondary); border-radius: 6px; overflow: hidden; position: relative; }
+        .bar-fill { height: 100%; border-radius: 6px; transition: width 0.6s ease; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-size: 11px; font-weight: 700; color: white; }
+        .bar-score { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 12px; font-weight: 700; }
+
+        /* Pro CTA */
+        .pro-cta {
+            background: var(--bg-card); border: 2px solid var(--accent); border-radius: 12px;
+            padding: 28px; text-align: center; margin-top: 32px;
+        }
+        .pro-cta h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .pro-cta p { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
+
+        /* Category scores */
+        .category-breakdown { margin-top: 20px; }
+        .cat-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+        .cat-row:last-child { border-bottom: none; }
+        .cat-name { width: 100px; font-size: 13px; font-weight: 600; }
+        .cat-bars { flex: 1; display: flex; gap: 4px; }
+        .cat-bar { height: 20px; border-radius: 4px; transition: width 0.6s ease; min-width: 20px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: white; }
+
+        @media (max-width: 768px) {
+            .provider-grid { grid-template-columns: 1fr 1fr; }
+            .weight-row { flex-wrap: wrap; }
+            .score-table { font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="compare.html">Compare</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="go.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="scorecard-page">
+        <div class="scorecard-hero">
+            <div class="badge">Team Evaluation Tool</div>
+            <h1>AI API Vendor Scorecard</h1>
+            <p>Score and compare AI API providers across 7 dimensions. Weight what matters to your team. Generate a shareable evaluation report.</p>
+        </div>
+
+        <!-- Step 1: Select Providers -->
+        <div class="provider-select">
+            <h2>1. Select Providers to Compare</h2>
+            <div class="provider-grid" id="provider-grid"></div>
+        </div>
+
+        <!-- Step 2: Set Weights -->
+        <div class="weights-section">
+            <h2>2. Set Your Priorities</h2>
+            <p>Adjust the weights based on what matters most to your team. Total doesn't need to equal 100 — weights are relative.</p>
+            <div class="weight-row">
+                <span class="weight-label">Pricing</span>
+                <input type="range" class="weight-slider" id="w-price" min="1" max="10" value="8">
+                <span class="weight-val" id="wv-price">8</span>
+            </div>
+            <div class="weight-row">
+                <span class="weight-label">Quality</span>
+                <input type="range" class="weight-slider" id="w-quality" min="1" max="10" value="9">
+                <span class="weight-val" id="wv-quality">9</span>
+            </div>
+            <div class="weight-row">
+                <span class="weight-label">Latency</span>
+                <input type="range" class="weight-slider" id="w-latency" min="1" max="10" value="6">
+                <span class="weight-val" id="wv-latency">6</span>
+            </div>
+            <div class="weight-row">
+                <span class="weight-label">Reliability</span>
+                <input type="range" class="weight-slider" id="w-reliability" min="1" max="10" value="7">
+                <span class="weight-val" id="wv-reliability">7</span>
+            </div>
+            <div class="weight-row">
+                <span class="weight-label">Documentation</span>
+                <input type="range" class="weight-slider" id="w-docs" min="1" max="10" value="5">
+                <span class="weight-val" id="wv-docs">5</span>
+            </div>
+            <div class="weight-row">
+                <span class="weight-label">SDK Support</span>
+                <input type="range" class="weight-slider" id="w-sdk" min="1" max="10" value="5">
+                <span class="weight-val" id="wv-sdk">5</span>
+            </div>
+            <div class="weight-row">
+                <span class="weight-label">Context Window</span>
+                <input type="range" class="weight-slider" id="w-context" min="1" max="10" value="4">
+                <span class="weight-val" id="wv-context">4</span>
+            </div>
+        </div>
+
+        <!-- Step 3: Score -->
+        <div class="scoring-section">
+            <h2>3. Score Each Provider (1-10)</h2>
+            <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px;">We've pre-filled scores based on our analysis of 48 models across 10 providers. Adjust based on your experience.</p>
+            <table class="score-table" id="score-table">
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Pricing</th>
+                        <th>Quality</th>
+                        <th>Latency</th>
+                        <th>Reliability</th>
+                        <th>Docs</th>
+                        <th>SDK</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody id="score-body"></tbody>
+            </table>
+        </div>
+
+        <!-- Analyze Button -->
+        <div style="text-align:center; margin-bottom: 32px;">
+            <button class="btn-primary" style="padding: 14px 48px; font-size: 16px;" onclick="analyzeVendors()">
+                Calculate Scores →
+            </button>
+        </div>
+
+        <!-- Results -->
+        <div id="results">
+            <div class="results-card">
+                <h2>🏆 Vendor Rankings</h2>
+                <ol class="ranking-list" id="ranking-list"></ol>
+            </div>
+
+            <!-- Category breakdown -->
+            <div class="provider-select" id="category-section">
+                <h2>Category Breakdown</h2>
+                <div id="category-charts"></div>
+            </div>
+
+            <!-- Pro CTA -->
+            <div class="pro-cta">
+                <h3>📄 Get the Full Evaluation Report</h3>
+                <p>Includes detailed provider analysis, contract negotiation tips, migration risk assessment, and team communication template — ready to present to stakeholders.</p>
+                <a href="go.html" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('scorecard_pro_click')">Get APIpulse Pro — $29 →</a>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">One-time payment · 14-day money-back guarantee</p>
+            </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div style="margin-top: 48px;">
+            <h3 style="font-size: 16px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Related Tools</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+                <a href="team-cost-planner.html" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-decoration: none;">
+                    <div style="font-size: 20px; margin-bottom: 8px;">👥</div>
+                    <div style="font-weight: 700; font-size: 14px;">Team Cost Planner</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">Model team-wide costs</div>
+                </a>
+                <a href="team-migration-planner.html" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-decoration: none;">
+                    <div style="font-size: 20px; margin-bottom: 8px;">🔄</div>
+                    <div style="font-weight: 700; font-size: 14px;">Migration Planner</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">Plan model switches</div>
+                </a>
+                <a href="compare.html" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-decoration: none;">
+                    <div style="font-size: 20px; margin-bottom: 8px;">⚖️</div>
+                    <div style="font-weight: 700; font-size: 14px;">Compare Models</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">Side-by-side pricing</div>
+                </a>
+                <a href="calculator.html" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-decoration: none;">
+                    <div style="font-size: 20px; margin-bottom: 8px;">🧮</div>
+                    <div style="font-weight: 700; font-size: 14px;">Cost Calculator</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">Individual model costs</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div style="margin-top: 48px;">
+            <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 24px; text-align: center;">Frequently Asked Questions</h2>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <details style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+                    <summary style="font-weight: 700; font-size: 15px; cursor: pointer;">How do I evaluate AI API providers for my team?</summary>
+                    <p style="margin-top: 12px; font-size: 14px; color: var(--text-secondary);">Score each provider on key dimensions: pricing (cost per token), model quality (benchmark scores), latency (response time), reliability (uptime SLA), documentation quality, SDK support, and ecosystem. Weight each dimension based on your team's priorities, then compare weighted scores.</p>
+                </details>
+                <details style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+                    <summary style="font-weight: 700; font-size: 15px; cursor: pointer;">What criteria should I use to compare AI API vendors?</summary>
+                    <p style="margin-top: 12px; font-size: 14px; color: var(--text-secondary);">Key criteria: 1) Pricing — input/output token costs, batch discounts. 2) Quality — benchmark performance for your use case. 3) Latency — P50/P95 response times. 4) Reliability — uptime SLA, rate limits. 5) Documentation — API reference, guides, examples. 6) SDK support — official libraries for your stack. 7) Context window — max tokens per request.</p>
+                </details>
+                <details style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+                    <summary style="font-weight: 700; font-size: 15px; cursor: pointer;">Should I use multiple AI API providers?</summary>
+                    <p style="margin-top: 12px; font-size: 14px; color: var(--text-secondary);">Many teams use 2-3 providers: a primary for production, a secondary for cost optimization on non-critical tasks, and a fallback for reliability. The scorecard helps identify which provider fits each role. Multi-provider strategies can reduce costs 30-50% while improving uptime.</p>
+                </details>
+                <details style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+                    <summary style="font-weight: 700; font-size: 15px; cursor: pointer;">How often should I re-evaluate my AI API provider?</summary>
+                    <p style="margin-top: 12px; font-size: 14px; color: var(--text-secondary);">Every 3-6 months. The AI API market moves fast — new models launch monthly, prices drop quarterly, and features improve constantly. A provider that was best 6 months ago may not be today. Set a calendar reminder to re-run the evaluation scorecard.</p>
+                </details>
+                <details style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px;">
+                    <summary style="font-weight: 700; font-size: 15px; cursor: pointer;">What's the biggest mistake when choosing an AI API provider?</summary>
+                    <p style="margin-top: 12px; font-size: 14px; color: var(--text-secondary);">Choosing based on price alone. The cheapest provider may have worse latency, smaller context windows, or less reliable uptime. For production workloads, reliability and latency often matter more than saving a few dollars per million tokens. Use a weighted scorecard to balance all factors.</p>
+                </details>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    // Provider data with default scores
+    const PROVIDERS = [
+        { id: 'openai', name: 'OpenAI', models: 'GPT-5.5, GPT-5.4, GPT-4o', scores: { price: 5, quality: 9, latency: 8, reliability: 9, docs: 9, sdk: 9, context: 7 } },
+        { id: 'anthropic', name: 'Anthropic', models: 'Claude Opus 4.8, Sonnet 4.6, Haiku 4.5', scores: { price: 6, quality: 9, latency: 8, reliability: 8, docs: 8, sdk: 7, context: 9 } },
+        { id: 'google', name: 'Google', models: 'Gemini 3.5 Flash, 3.1 Pro, 3 Flash', scores: { price: 7, quality: 8, latency: 7, reliability: 8, docs: 7, sdk: 7, context: 10 } },
+        { id: 'deepseek', name: 'DeepSeek', models: 'V4 Pro, V4 Flash, V3.2', scores: { price: 10, quality: 7, latency: 6, reliability: 6, docs: 5, sdk: 4, context: 9 } },
+        { id: 'mistral', name: 'Mistral', models: 'Large 3, Medium 3.5, Small 4', scores: { price: 8, quality: 7, latency: 7, reliability: 7, docs: 7, sdk: 6, context: 6 } },
+        { id: 'cohere', name: 'Cohere', models: 'Command A, R+, R', scores: { price: 6, quality: 7, latency: 7, reliability: 7, docs: 7, sdk: 7, context: 5 } },
+        { id: 'together', name: 'Meta (Together)', models: 'Llama 4 Scout, Maverick', scores: { price: 9, quality: 7, latency: 6, reliability: 6, docs: 6, sdk: 5, context: 9 } },
+        { id: 'xai', name: 'xAI', models: 'Grok 4.3, Grok Build', scores: { price: 7, quality: 7, latency: 7, reliability: 6, docs: 5, sdk: 5, context: 9 } },
+    ];
+
+    const COLORS = ['#6366f1', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#f97316', '#ec4899'];
+    const CATEGORIES = ['price', 'quality', 'latency', 'reliability', 'docs', 'sdk', 'context'];
+    const CAT_LABELS = { price: 'Pricing', quality: 'Quality', latency: 'Latency', reliability: 'Reliability', docs: 'Docs', sdk: 'SDK', context: 'Context' };
+
+    // Init
+    document.addEventListener('DOMContentLoaded', function() {
+        const grid = document.getElementById('provider-grid');
+        PROVIDERS.forEach((p, i) => {
+            const chip = document.createElement('label');
+            chip.className = 'provider-chip' + (i < 4 ? ' selected' : '');
+            chip.innerHTML = `<input type="checkbox" value="${p.id}" ${i < 4 ? 'checked' : ''}><span class="check">${i < 4 ? '✓' : ''}</span>${p.name}`;
+            chip.addEventListener('change', function() {
+                const cb = this.querySelector('input');
+                this.classList.toggle('selected', cb.checked);
+                this.querySelector('.check').textContent = cb.checked ? '✓' : '';
+                updateScoreTable();
+            });
+            grid.appendChild(chip);
+        });
+
+        // Weight slider listeners
+        CATEGORIES.forEach(cat => {
+            const slider = document.getElementById('w-' + cat);
+            const val = document.getElementById('wv-' + cat);
+            slider.addEventListener('input', () => val.textContent = slider.value);
+        });
+
+        updateScoreTable();
+    });
+
+    function getSelectedProviders() {
+        return Array.from(document.querySelectorAll('#provider-grid input:checked')).map(cb =>
+            PROVIDERS.find(p => p.id === cb.value)
+        ).filter(Boolean);
+    }
+
+    function updateScoreTable() {
+        const selected = getSelectedProviders();
+        const tbody = document.getElementById('score-body');
+        tbody.innerHTML = '';
+        selected.forEach((p, i) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${COLORS[i % COLORS.length]};margin-right:8px;"></span>${p.name}</td>` +
+                CATEGORIES.map(cat =>
+                    `<td><input type="range" min="1" max="10" value="${p.scores[cat]}" data-provider="${p.id}" data-cat="${cat}" oninput="this.nextElementSibling.textContent=this.value"><br><span class="score-val">${p.scores[cat]}</span></td>`
+                ).join('');
+            tbody.appendChild(tr);
+        });
+    }
+
+    function analyzeVendors() {
+        const selected = getSelectedProviders();
+        if (selected.length < 2) { alert('Please select at least 2 providers to compare.'); return; }
+
+        // Get weights
+        const weights = {};
+        CATEGORIES.forEach(cat => {
+            weights[cat] = parseInt(document.getElementById('w-' + cat).value);
+        });
+
+        // Get scores from sliders
+        document.querySelectorAll('#score-body input[type="range"]').forEach(input => {
+            const p = PROVIDERS.find(p => p.id === input.dataset.provider);
+            if (p) p.scores[input.dataset.cat] = parseInt(input.value);
+        });
+
+        // Calculate weighted scores
+        const results = selected.map((p, i) => {
+            let total = 0, maxPossible = 0;
+            const catScores = {};
+            CATEGORIES.forEach(cat => {
+                const weighted = p.scores[cat] * weights[cat];
+                total += weighted;
+                maxPossible += 10 * weights[cat];
+                catScores[cat] = p.scores[cat];
+            });
+            return {
+                ...p,
+                totalScore: total,
+                normalizedScore: ((total / maxPossible) * 100).toFixed(1),
+                catScores,
+                color: COLORS[i % COLORS.length]
+            };
+        }).sort((a, b) => b.totalScore - a.totalScore);
+
+        // Show results
+        document.getElementById('results').classList.add('visible');
+
+        // Ranking list
+        const rankEl = document.getElementById('ranking-list');
+        rankEl.innerHTML = results.map((r, i) => {
+            const medal = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+            return `<li class="ranking-item">
+                <span class="rank-num ${medal}">#${i + 1}</span>
+                <div class="rank-info">
+                    <div class="rank-name"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${r.color};margin-right:8px;"></span>${r.name}</div>
+                    <div class="rank-detail">${r.models}</div>
+                </div>
+                <div class="rank-score">${r.normalizedScore}<small>%</small></div>
+            </li>`;
+        }).join('');
+
+        // Category breakdown charts
+        const chartsEl = document.getElementById('category-charts');
+        chartsEl.innerHTML = CATEGORIES.map(cat => {
+            const bars = results.map(r => {
+                const score = r.catScores[cat];
+                const width = score * 10;
+                return `<div class="bar-row">
+                    <span class="bar-label" style="color:${r.color}">${r.name}</span>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width:${width}%;background:${r.color}">${score}</div>
+                    </div>
+                </div>`;
+            }).join('');
+            return `<div style="margin-bottom:20px;">
+                <h4 style="font-size:14px;font-weight:700;margin-bottom:8px;">${CAT_LABELS[cat]}</h4>
+                <div class="bar-chart">${bars}</div>
+            </div>`;
+        }).join('');
+
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        if (window.trackEvent) {
+            window.trackEvent('vendor_scorecard_analyzed', {
+                providers: results.map(r => r.name).join(','),
+                winner: results[0].name,
+                score: results[0].normalizedScore
+            });
+        }
+    }
+    </script>
+</body>
+</html>
