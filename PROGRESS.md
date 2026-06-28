@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 975 (Jun 28) — Conversion Leak Fix
+- **Fixed conversion leaks on 2 high-intent pages** — Pages with buyer-traffic but no path to purchase.
+- **apipulse-vs-artificial-analysis.html** — Added Pro upgrade CTA ($29) after free tool CTA. Competitor comparison page targets developers actively evaluating alternatives — highest buyer intent — but only linked to the free calculator.
+- **ai-api-pricing-benchmark-2026.html** — Added Pro CTA after methodology section. Benchmark readers are cost-conscious developers ready to act on pricing data.
+- **Both CTAs** include GA4 event tracking (`deal_buy_click` with location parameter), Stripe checkout link, trust signals (14-day guarantee, Stripe secure), and gradient styling consistent with go.html.
+- **1 commit, 2 files, 19 lines added.**
+
 ## Session 974 (Jun 28) — Widget Upgrade & Distribution Prep
 - **Updated embeddable widget from 20→25 models** — Added GPT-5.5, Claude Mythos 5, Gemini 3 Flash, Llama 4 Maverick, Command R, Kimi K2.6, GPT-oss 20B. Widget now covers all 10 providers with the latest models.
 - **Updated both widget files** — widget/embed.js (floating pricing badge) and widget/calc-embed.js (cost calculator) both now have 25 models.
@@ -80,11 +87,11 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 974, Jun 28, 2026)
+## Site Status (as of Session 975, Jun 28, 2026)
 **916 web pages | 361 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 258 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (902 URLs), RSS (785 items, valid XML), blog files (360 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
-- **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model".
+- **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **Pricing freshness badges** — 92 pages show green badge.
 - **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages. Custom OG images for teams.html.
