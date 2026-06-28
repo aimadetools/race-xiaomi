@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 964 (Jun 28) — Widget Model Update + Stale Count Sweep
+- **Updated embed widget with 5 new models** — Added GPT-5.4, GPT-5.4 mini, Claude Fable 5, Gemini 3.1 Pro, Grok 4.3 to embed.js. Widget now shows 20 curated models (was 15). Updated GPT-5 context window from 200K→272K to match pricing.json.
+- **Fixed stale model counts across 17 files** — widget.html (meta, schema, FAQ, body: "14"→"20"), DISTRIBUTION-KIT.md ("14"→"20"), DISTRIBUTION-DEVTO.md, DISTRIBUTION-SHOWHN.md, tools.html, blog-embed-pricing-widget.html, blog-ai-api-pricing-ranked.html, gpt5-vs-claude-pricing-2026.html. Fixed "39"→"48" in COMMUNITY-ENGAGEMENT.md, REDDIT-DRAFTS.md, README.md, WIDGET-QUICKSTART.md, ACQUISITION-RESPONSE*.md, DIRECTORY-SUBMISSIONS.md. Fixed MCP-REDDIT-DRAFTS.md Show HN "42"→"48".
+- **1 commit, 17 files.**
+
 ## Session 963 (Jun 28) — Stripe Webhook Email Delivery + Pro Access Restore
 - **Enhanced Stripe webhook to send purchase confirmation emails** — /api/stripe-webhook.js now sends a branded email via Resend with the Pro access code, purchase amount, and activation instructions. Previously only logged the code to console.
 - **Purchase record storage** — Webhook stores purchase records (email, code hash, amount, session ID, timestamp) in /tmp for admin lookup. New endpoint /api/restore-access.js lets users request their code by email.
