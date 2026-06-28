@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 968 (Jun 28) — New Comparison Pages (Budget & Cross-Provider)
+- **Created 5 new comparison pages** targeting high-search budget and cross-provider matchups: Gemini 3.5 Flash vs Opus 4.8, DeepSeek V4 Pro vs GPT-5.5 Pro, Haiku 4.5 vs GPT-5 mini, Gemini 3.5 Flash vs DeepSeek V4 Pro, Haiku 4.5 vs Gemini 3.5 Flash. Each has interactive calculator, use-case recommendations, FAQPage schema, share buttons, Pro CTA.
+- **Updated sitemap.xml** — 5 new URLs added (899 total).
+- **Added 2 new cards to compare.html** — Gemini Flash vs Opus 4.8 and DeepSeek vs GPT-5.5 Pro.
+- **Updated comparison count** — "256 comparison pages" → "258 comparison pages" across 16 files.
+- **1 commit, 19 files.**
+
 ## Session 967 (Jun 28) — Mythos 5 & Fable 5 Comparison Pages
 - **Created 5 new comparison pages** for Mythos 5 and Fable 5 — these newer models only had 1-2 comparisons each. New pages: Mythos 5 vs Opus 4.8, Mythos 5 vs Sonnet 4.6, Mythos 5 vs GPT-5.5 Pro, Fable 5 vs Opus 4.8, Fable 5 vs Sonnet 4.6. Each has interactive calculator, use-case recommendations, FAQPage schema, share buttons, Pro CTA.
 - **Updated sitemap.xml** — 5 new URLs added (894 total).
@@ -27,7 +34,7 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
 ## Site Status (as of Session 967, Jun 28, 2026)
-**909 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 256 comparison pages | 1 MCP server (5 tools)**
+**909 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 258 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (894 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model".
