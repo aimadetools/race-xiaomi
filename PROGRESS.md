@@ -1,10 +1,9 @@
 # PROGRESS.md
 
-## Session 978 (Jun 28) — Stale Reference Cleanup
-- **Fixed stale "20 models" → "25 models" in distribution files** — DISTRIBUTION-KIT.md (short/medium/long descriptions, Twitter/X post, LinkedIn post), DISTRIBUTION-DEVTO.md (frontmatter description + article body). These are the copy-paste ready descriptions for directory submissions and social media. Was using outdated model count from before the GPT-5.5/Kimi K2.6/GPT-oss widget update in Session 974.
-- **Updated model lists in descriptions** — Added GPT-5.5, Kimi K2.6, GPT-oss to description copy. Added Moonshot, Cohere, AI21 to provider list in long description.
-- **Impact** — Distribution descriptions now match actual widget (25 models, 10 providers). Ensures directory submissions and social posts are accurate.
-- **1 commit, 2 files.**
+## Session 978 (Jun 28) — Stale Reference Cleanup & Compare Index
+- **Fixed stale "20 models" → "25 models" in distribution files** — DISTRIBUTION-KIT.md (short/medium/long descriptions, Twitter/X post, LinkedIn post), DISTRIBUTION-DEVTO.md (frontmatter description + article body). Updated model lists and provider counts. Distribution descriptions now match actual widget (25 models, 10 providers).
+- **Added 16 missing comparison pages to compare.html index** — 15 model-vs-model pages (GPT-5.5 vs DeepSeek V4 Flash, GPT-5.5 vs Mistral Large 3, GPT-5.4 Pro vs Opus 4.8, Grok 4.3 vs DeepSeek V4 Flash, GPT-5 vs DeepSeek V4 Flash, GPT-5 mini vs Grok 4.3, Haiku 4.5 vs Gemini 3.1 Pro, Gemini 3.1 Pro vs Grok 4.3, Gemini 3.1 Pro vs Mistral Large 3, GPT-5.4 nano vs Mistral Small 4, Sonnet 4.6 vs Grok 4.3, Kimi K2.6 vs DeepSeek V4 Flash, Mythos 5 vs Fable 5, Claude 4 vs GPT-5, GPT-5 vs Claude Pricing 2026) + 1 product comparison (APIpulse vs Artificial Analysis). These pages existed in sitemap but were invisible to users and crawlers from the compare index.
+- **2 commits, 3 files.**
 
 ## Session 977 (Jun 28) — Internal Linking & Cross-Links
 - **Added related-reading sections to 3 buyer-intent blog posts** — blog-ai-api-cost-optimization-2026.html, blog-ai-api-production-pricing-2026.html, blog-best-ai-api-2026.html. Each now links to the other 2 plus top related guides. Improved SEO internal linking and user flow toward conversion pages.
