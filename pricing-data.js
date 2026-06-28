@@ -1,13 +1,17 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jun 24, 2026 (GPT-5 corrected $1.25, Gemini 2.5 Pro output corrected $10, 14 files updated)
-const PRICING_LAST_UPDATED = 'Jun 24, 2026';
+// Last verified: Jun 27, 2026 (Added GPT-5.4 family + Claude Fable 5/Mythos 5, 48 models total)
+const PRICING_LAST_UPDATED = 'Jun 27, 2026';
 
 const API_MODELS = [
     // OpenAI
     { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 5.00, output: 30.00, context: '1.05M', verified: 'Jun 2026' },
     { id: 'openai-gpt55-pro', name: 'GPT-5.5 Pro', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 30.00, output: 180.00, context: '1.05M', verified: 'Jun 2026' },
     { id: 'openai-gpt53-codex', name: 'GPT-5.3 Codex', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 1.75, output: 14.00, context: '400K', verified: 'May 2026' },
+    { id: 'openai-gpt54', name: 'GPT-5.4', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 15.00, context: '400K', verified: 'Jun 2026' },
+    { id: 'openai-gpt54-mini', name: 'GPT-5.4 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.75, output: 4.50, context: '400K', verified: 'Jun 2026' },
+    { id: 'openai-gpt54-nano', name: 'GPT-5.4 nano', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.20, output: 1.25, context: '400K', verified: 'Jun 2026' },
+    { id: 'openai-gpt54-pro', name: 'GPT-5.4 Pro', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 30.00, output: 180.00, context: '400K', verified: 'Jun 2026' },
     { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 1.25, output: 10.00, context: '272K', verified: 'May 2026' },
     { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.25, output: 2.00, context: '272K', verified: 'May 2026' },
     { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'May 2026' },
@@ -21,6 +25,8 @@ const API_MODELS = [
     { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', verified: 'Jun 2026' },
     { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-sonnet46' },
     { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K', verified: 'Jun 2026' },
+    { id: 'anthropic-fable5', name: 'Claude Fable 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jun 2026' },
+    { id: 'anthropic-mythos5', name: 'Claude Mythos 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jun 2026' },
     // Google
     { id: 'google-gemini35-flash', name: 'Gemini 3.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.50, output: 9.00, context: '1M', verified: 'Jun 2026' },
     { id: 'google-gemini31-flash-lite', name: 'Gemini 3.1 Flash-Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.25, output: 1.50, context: '1M', verified: 'Jun 2026' },
