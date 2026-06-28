@@ -258,6 +258,18 @@ document.addEventListener('DOMContentLoaded', () => {
             blogLink.parentNode.insertBefore(changelogLink, blogLink.nextSibling);
         }
     }
+
+    // Add Teams link after Calculator link
+    var hasTeams = navLinks.querySelector('a[href="teams.html"]');
+    if (!hasTeams) {
+        var calcLink2 = navLinks.querySelector('a[href="calculator.html"]');
+        if (calcLink2) {
+            var teamsLink = document.createElement('a');
+            teamsLink.href = 'teams.html';
+            teamsLink.textContent = 'Teams';
+            calcLink2.parentNode.insertBefore(teamsLink, calcLink2.nextSibling);
+        }
+    }
 });
 
 // Close mobile nav when clicking a link
