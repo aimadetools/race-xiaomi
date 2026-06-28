@@ -1616,3 +1616,95 @@ var GO_MODEL_MAP = {
         }, 300);
     });
 })();
+
+// ============================================================
+// Strategic Content Gate — Session 970
+// Addresses root cause: "Free tier too generous — visitors get
+// what they need without paying." (Session 969 diagnosis)
+//
+// Gates ranking tables: show top N rows free, blur next M rows
+// as a teaser, then gate the rest behind a Pro CTA overlay.
+// ============================================================
+(function() {
+    var FREE_ROWS = 5;
+    var BLUR_ROWS = 3; // blurred preview rows below the free ones
+    var gateShown = false;
+
+    function applyResultsGate() {
+        // Skip if Pro user (trial or paid)
+        if (localStorage.getItem('apipulse_pro') === 'true') return;
+
+        // Find all ranking tables
+        var tables = document.querySelectorAll('.ranking-table');
+        if (!tables.length) return;
+
+        tables.forEach(function(table) {
+            var tbody = table.querySelector('tbody');
+            if (!tbody) return;
+            var rows = Array.from(tbody.querySelectorAll('tr'));
+            if (rows.length <= FREE_ROWS + BLUR_ROWS) return; // not enough rows to gate
+
+            // Already gated? Skip
+            if (table.dataset.gated === '1') return;
+            table.dataset.gated = '1';
+
+            var parent = table.parentElement;
+            // Ensure parent is positioned for overlay
+            var computedPos = getComputedStyle(parent).position;
+            if (computedPos === 'static') parent.style.position = 'relative';
+
+            // Apply blur to teaser rows
+            for (var i = FREE_ROWS; i < FREE_ROWS + BLUR_ROWS && i < rows.length; i++) {
+                rows[i].style.filter = 'blur(4px)';
+                rows[i].style.opacity = '0.5';
+                rows[i].style.userSelect = 'none';
+                rows[i].style.pointerEvents = 'none';
+            }
+
+            // Hide remaining rows
+            for (var j = FREE_ROWS + BLUR_ROWS; j < rows.length; j++) {
+                rows[j].style.display = 'none';
+            }
+
+            // Add the gate overlay after the table
+            var price = window._abPrice || 29;
+            var gateEl = document.createElement('div');
+            gateEl.className = 'results-gate-overlay';
+            gateEl.style.cssText = 'text-align:center;padding:28px 20px;margin-top:-4px;background:linear-gradient(to bottom, transparent, var(--bg-secondary) 30%);position:relative;z-index:2;';
+
+            var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
+            var remaining = rows.length - FREE_ROWS;
+
+            gateEl.innerHTML =
+                '<div style="background:var(--bg-card);border:2px solid var(--accent);border-radius:14px;padding:24px 20px;max-width:480px;margin:0 auto;">' +
+                    '<div style="font-size:13px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🔒 Pro Feature</div>' +
+                    '<div style="font-size:18px;font-weight:800;color:var(--text-primary);margin-bottom:6px;">Unlock ' + remaining + ' more models ranked by cost</div>' +
+                    '<div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.5;">See all 48 models compared, get migration code, PDF exports, and price alerts. One-time payment, lifetime access.</div>' +
+                    '<a href="go.html?from=results_gate_' + encodeURIComponent(pageName) + '" target="_blank" rel="noopener" ' +
+                        'style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border-radius:10px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(99,102,241,0.4);transition:all 0.2s;" ' +
+                        'onclick="if(window.trackEvent)window.trackEvent(\'results_gate_clicked\',{page:\'' + pageName + '\',total_rows:' + rows.length + ',free_rows:' + FREE_ROWS + ',price:' + price + '})">' +
+                        'Unlock All Models — $' + price + ' lifetime' +
+                    '</a>' +
+                    '<div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🔒 Stripe secure · 🛡️ 14-day refund · ⚡ Instant access</div>' +
+                '</div>';
+
+            parent.appendChild(gateEl);
+
+            // Track impression
+            if (window.trackEvent && !gateShown) {
+                gateShown = true;
+                window.trackEvent('results_gate_shown', {
+                    page: pageName,
+                    total_rows: rows.length,
+                    free_rows: FREE_ROWS,
+                    blur_rows: BLUR_ROWS
+                });
+            }
+        });
+    }
+
+    // Run after calculator has populated the table (inline JS uses DOMContentLoaded)
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(applyResultsGate, 500);
+    });
+})();
