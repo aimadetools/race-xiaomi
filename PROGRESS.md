@@ -1,5 +1,17 @@
 # PROGRESS.md
 
+## Session 973 (Jun 28) — Best AI API Provider Guide
+- **Created Best AI API 2026 buyer's guide** — New blog post targeting "best AI API 2026" and "which AI API to use" keywords. Developers actively choosing a provider are highest buyer intent — they're ready to spend money.
+- **5 provider profiles** — OpenAI (best ecosystem), Anthropic (best quality), Google (best value), DeepSeek (cheapest), Mistral (EU compliant). Each with model count, price range, rate limits, and when to use/avoid.
+- **Head-to-head pricing tables** — Premium tier (Opus vs GPT-5.5 Pro vs Fable 5), Mid tier (GPT-5 vs Sonnet vs Gemini Flash vs Mistral Medium), Budget tier (DeepSeek V4 Pro vs GPT-5 mini vs Gemini Flash vs Haiku).
+- **6 use-case recommendations** — Chatbots (GPT-5 mini), Code (Sonnet/DeepSeek), Documents (Opus/Gemini), Agents (Sonnet/GPT-5), RAG (GPT-5 mini/DeepSeek Flash), Data (GPT-oss/Mistral Small).
+- **Decision framework** — 3-step process: Define priority (cost/quality/speed/compliance) → Estimate volume (hobby/startup/growth/enterprise) → Test before committing.
+- **3 multi-provider stacks** — "Good Enough" ($200-500/mo), "Quality" ($800-2K/mo), "Enterprise" ($1.5-5K/mo). Each with routing strategy and fallback chains.
+- **7 FAQPage schema Q&As** — Best provider, cheapest API, DeepSeek vs OpenAI, multi-provider strategy, monthly costs, chatbot recommendation.
+- **3 Pro CTAs** — Inline (after provider profiles), mid-page (after pricing tables), final (before FAQ). Each tracks GA4 events.
+- **Cross-linked** — blog.html (top position, buyer's guide badge), sitemap.xml, rss.xml. Related articles to cost optimization, production pricing, OpenAI vs Anthropic, calculator.
+- **1 commit, 4 files, 533 lines.**
+
 ## Session 972 (Jun 28) — Production Pricing Blog Post
 - **Created AI API Production Pricing Guide** — New blog post targeting "AI API production pricing" keyword. Developers searching this are past research mode and ready to commit budget — highest buyer intent.
 - **Sticker price vs real cost framework** — Shows that real production costs are 1.3-1.8x sticker prices due to waste multiplier (token waste, retries, rate limits, output waste).
@@ -58,8 +70,8 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 972, Jun 28, 2026)
-**913 web pages | 360 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 258 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 973, Jun 28, 2026)
+**914 web pages | 361 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 258 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (902 URLs), RSS (785 items, valid XML), blog files (360 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model".
