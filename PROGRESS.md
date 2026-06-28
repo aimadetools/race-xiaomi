@@ -1,32 +1,27 @@
 # PROGRESS.md
 
+## Session 966 (Jun 28) — Missing Model Comparison Pages
+- **Created 3 new comparison pages** for models added in Sessions 952-958 that never got comparisons: Claude Mythos 5 vs Fable 5, GPT-5.4 nano vs Mistral Small 4, GPT-5.4 Pro vs Claude Opus 4.8. Each has interactive calculator, use-case recommendations, FAQPage schema, share buttons, Pro CTA.
+- **Updated sitemap.xml** — 3 new URLs added.
+- **Fixed stale RSS reference** — cheat sheet description said "42 Models", now "48 Models".
+- **Updated comparison count** — "248 comparison pages" → "251 comparison pages" across all files.
+- **1 commit, 5 files, +3,500/-0 lines.**
+
 ## Session 965 (Jun 28) — Stale 42-Model Reference Sweep
-- **Fixed 16 stale "42-model" references across 9 files** — Missed during Session 953 bulk sync. Fixed: 6 blog posts (august/september pricing, ranked, complete guide, MCP, cost report), tools.html (8 Pro CTA mentions), generate-report.html, index.html. All user-facing references now correctly say 48 models.
-- **1 commit, 9 files, +20/-20 lines.**
+Fixed 16 stale "42-model" references across 9 files (blog posts, tools.html, generate-report.html, index.html). **1 commit, 9 files.**
 
-## Sessions 959-964 (Jun 28) — Team Tools, Conversion, Distribution
-- **Teams tools** (955-958b): 3 enterprise tools + teams.html landing page + blog post. 12 commits, 60+ files.
-- **Teams distribution** (959-960): Cross-linked from 23+ pages, custom OG image, RSS feed.
-- **GA4 tracking** (961): 7 new events across 4 team pages. Fixed 454 pages stale Pro CTA model count.
-- **Model switch calculator** (962): Enhanced with migration steps, risk assessment, code snippets.
-- **Stripe webhook** (963): Purchase confirmation emails via Resend. Restore flow (/restore.html). **BLOCKED on human: Stripe Dashboard webhook + env vars.**
-- **Widget + stale counts** (964): Updated embed widget to 20 models. Fixed 17 files stale counts.
+## Sessions 952-964 (Jun 27-28) — Team Tools, Models, Distribution
+Team tools pivot (3 enterprise tools + teams.html + blog post), teams distribution (23+ pages), GA4 tracking (18 events), model switch calculator enhanced, Stripe webhook email delivery, widget update to 20 models, stale model count sweeps. New model launches (GPT-5.4 family + Fable 5, 42→48 models), 4 comparison pages, model count sync (317 files). Cheat sheet upgrade, AI API Advisor, Pricing Benchmark, Pricing Badges. **20+ commits, 1,000+ files.**
 
-## Sessions 952-958 (Jun 27-28) — New Models + Team Tools Pivot
-New model launches (GPT-5.4 family + Claude Fable 5, 42→48 models, 830+ files). 4 comparison pages for new models. Complete model count sync (317 files). Strategic pivot to team/enterprise tools targeting engineering managers. Built 3 tools (cost planner, migration planner, vendor scorecard) + teams.html landing page + blog post. **16 commits, 900+ files.**
-
-## Sessions 945-951 (Jun 27) — Conversion + Revenue Tools
-Cheat sheet upgrade (766 lines). AI API Advisor, 2026 Pricing Benchmark, Pricing Badges built. Cross-links doubled. SEO cleanup (7 duplicate pages). go.html + deal.html conversion improvements. Pro CTAs on 3 blog posts. **6 commits, 64+ files.**
-
-## Sessions 905-944 (Jun 25-27) — MCP Server, Conversion, Distribution
-MCP server (5 tools, rate limiting) + 688+ cross-links. Conversion funnel overhaul + leak cleanup. 15 comparison pages. Full site audit. OG/Twitter tags 100%. Pricing freshness badges. Social sharing. Chrome extension + npm package updated. **70+ commits, 1,580+ files.**
+## Sessions 905-951 (Jun 25-27) — MCP Server, Conversion, SEO
+MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. **70+ commits, 1,580+ files.**
 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
-Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. **381+ commits, 2,420+ files.**
+Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 965, Jun 28, 2026)
-**901 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 248 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (884 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
+## Site Status (as of Session 966, Jun 28, 2026)
+**904 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 251 comparison pages | 1 MCP server (5 tools)**
+- Sitemap (889 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
