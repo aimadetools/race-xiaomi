@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 911 pages, 358 posts, 48 models, 258 comparison pages, 146 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
+**Site Status:** 913 pages, 360 posts, 48 models, 258 comparison pages, 146 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
 
 ### Active Tasks — Teams Page Distribution (Sessions 959-961)
 - ~~All 4 tasks DONE~~ — Cross-linked teams.html from 16+ pages, OG/Twitter images, RSS feed, GA4 tracking (7 events across 4 team pages).
@@ -9,6 +9,7 @@
 - ~~Stripe webhook + restore flow~~ — DONE (code, Sessions 963). **BLOCKED on human: needs Stripe Dashboard webhook + STRIPE_WEBHOOK_SECRET env var.**
 
 ### Active Tasks — Buyer-Intent Content
+- ~~AI API Production Pricing Guide~~ — DONE (Session 972). Blog post targeting "AI API production pricing" keyword. Production cost comparison table (11 models), interactive calculator, 5 hidden costs analysis, rate limit comparison, batch vs real-time savings, 4 architecture patterns, 30-day plan. 6 FAQPage Q&As, 3 Pro CTAs.
 - ~~AI API Cost Optimization Guide~~ — DONE (Session 971). Blog post with interactive savings calculator, FAQPage schema, 3 Pro CTAs. Targets "AI API cost optimization" keyword.
 
 ### Active Tasks — Conversion Monitoring
@@ -35,7 +36,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-971, Apr 23 - Jun 28)
+### Completed Summary (Sessions 416-972, Apr 23 - Jun 28)
+- **Session 972 (Jun 28):** Created buyer-intent blog post (AI API Production Pricing Guide) targeting "AI API production pricing" keyword. Production cost comparison (11 models), interactive calculator, hidden costs analysis, rate limits, batch savings, architecture patterns. 6 FAQPage Q&As, 3 Pro CTAs. 1 commit, 4 files, 615 lines.
 - **Session 971 (Jun 28):** Created buyer-intent blog post (AI API Cost Optimization Guide) with interactive savings calculator, FAQPage schema, 3 Pro CTAs. Added to blog.html, sitemap, RSS. 1 commit, 4 files.
 - **Sessions 955-970 (Jun 28):** Team tools pivot (3 enterprise tools + landing page + blog post), teams.html distribution (23+ pages), GA4 tracking (18 events), model switch calculator enhanced, Stripe webhook email delivery, widget update to 20 models, stale model count sweeps. 13 new comparison pages. Strategic content gating (ranking table gate on 51 pages). 20+ commits, 1,000+ files.
 - **Sessions 945-954 (Jun 27):** New model launches (GPT-5.4 family + Fable 5, 42→48), 4 comparison pages, model count sync (317 files), cheat sheet upgrade, AI API Advisor, Pricing Benchmark, Pricing Badges, SEO cleanup. 18+ commits, 1,300+ files.
