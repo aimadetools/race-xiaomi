@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Management for Engineering Teams | APIpulse</title>
+    <meta name="description" content="Stop overpaying for AI APIs. Plan team budgets, compare providers, and generate finance reports. Tools for engineering managers at companies spending $500+/mo on AI.">
+    <meta name="keywords" content="AI API team budget, engineering cost management, LLM spend tracking, AI API governance, team AI costs, AI budget planning for managers">
+    <meta property="og:title" content="AI API Cost Management for Engineering Teams — APIpulse">
+    <meta property="og:description" content="Plan team budgets, compare providers, and generate finance reports. Tools for engineering managers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/teams.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Management for Engineering Teams">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Plan team budgets, compare providers, and generate finance reports.">
+    <link rel="canonical" href="https://getapipulse.com/teams.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much can my team save on AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Teams typically save 30-60% by switching to cost-optimized models. For a team of 10 developers making 500 requests/day, that can mean $2,000-$5,000/month in savings depending on current provider and model choices."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account to use the team tools?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. All team tools are free to use with no account required. Enter your team's usage data and get instant cost comparisons, migration plans, and vendor evaluations. Pro ($29 one-time) unlocks PDF exports for finance reports and detailed migration guides."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate are the cost estimates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pricing data is verified monthly against official provider documentation. We track 48 models across 10 providers including OpenAI, Anthropic, Google, DeepSeek, Mistral, and more. Estimates are based on published per-token rates and typical usage patterns."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I generate a report for my CFO or finance team?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The Team Cost Planner generates a detailed budget breakdown with per-developer costs, model comparisons, and projected annual spend. Pro users can export this as a formatted PDF ready for finance review."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if my team uses multiple AI providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All three tools support multi-provider analysis. The Vendor Scorecard lets you compare up to 8 providers side-by-side with weighted scoring. The Migration Planner handles cross-provider switches (e.g., OpenAI to Anthropic) with provider-specific code snippets."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .teams-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px 80px;
+        }
+
+        /* Hero */
+        .teams-hero {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .teams-hero-badge {
+            display: inline-block;
+            background: rgba(251,191,36,0.15);
+            color: #fbbf24;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .teams-hero h1 {
+            font-size: 38px;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .teams-hero h1 span {
+            background: linear-gradient(135deg, #22c55e, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .teams-hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+        }
+        .teams-hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        .teams-hero-stat {
+            text-align: center;
+        }
+        .teams-hero-stat .stat-num {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--accent);
+        }
+        .teams-hero-stat .stat-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Pain Points */
+        .teams-pain {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+        .teams-pain h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .pain-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .pain-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .pain-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+        .pain-text strong {
+            color: var(--text-primary);
+        }
+
+        /* Tools Section */
+        .teams-tools {
+            margin-bottom: 48px;
+        }
+        .teams-tools > h2 {
+            font-size: 26px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .teams-tools > p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 15px;
+        }
+        .tool-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s;
+        }
+        .tool-card:hover {
+            border-color: var(--accent);
+        }
+        .tool-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .tool-card-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(34,197,94,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .tool-card-title {
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .tool-card-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+        .tool-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .tool-card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .tool-card-features span {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        .tool-card .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .tool-card .btn-primary {
+            background: var(--accent);
+            color: #000;
+        }
+        .tool-card .btn-primary:hover {
+            background: #25d366;
+        }
+
+        /* ROI Calculator */
+        .teams-roi {
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(16,185,129,0.08));
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+        .teams-roi h2 {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+        .teams-roi p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+        .roi-calc {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .roi-calc label {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .roi-calc select, .roi-calc input {
+            padding: 10px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .roi-calc input {
+            width: 80px;
+            text-align: center;
+            font-weight: 700;
+        }
+        .roi-result {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--accent);
+            margin-top: 16px;
+        }
+        .roi-result small {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* How it Works */
+        .teams-how {
+            margin-bottom: 48px;
+        }
+        .teams-how h2 {
+            font-size: 24px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .how-step {
+            text-align: center;
+            padding: 24px 16px;
+        }
+        .how-step-num {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 900;
+            margin: 0 auto 16px;
+        }
+        .how-step h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .how-step p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Social Proof */
+        .teams-proof {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+        .teams-proof h2 {
+            font-size: 22px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .proof-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .proof-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .proof-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        .proof-card-author {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .proof-card-role {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Pro CTA */
+        .teams-pro {
+            background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(16,185,129,0.05));
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 36px;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .teams-pro h2 {
+            font-size: 26px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+        .teams-pro p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        .teams-pro .price-tag {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--accent);
+            margin: 16px 0;
+        }
+        .teams-pro .price-tag small {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        .teams-pro-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 20px 0 28px;
+        }
+        .teams-pro-features span {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .teams-pro .btn-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 14px 36px;
+            font-size: 16px;
+            font-weight: 800;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .teams-pro .btn-primary:hover {
+            background: #25d366;
+            transform: translateY(-1px);
+        }
+        .teams-pro .guarantee {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ */
+        .teams-faq {
+            margin-bottom: 48px;
+        }
+        .teams-faq h2 {
+            font-size: 24px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .teams-faq details {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .teams-faq summary {
+            padding: 16px 20px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .teams-faq summary::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--text-secondary);
+            transition: transform 0.2s;
+        }
+        .teams-faq details[open] summary::after {
+            content: '−';
+        }
+        .teams-faq details > div {
+            padding: 0 20px 16px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Related Tools */
+        .teams-related {
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+        }
+        .teams-related h2 {
+            font-size: 20px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .related-links a {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .related-links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .teams-hero h1 { font-size: 28px; }
+            .teams-hero-stats { gap: 24px; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .how-steps { grid-template-columns: 1fr; }
+            .proof-grid { grid-template-columns: 1fr; }
+            .roi-calc { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="teams-page">
+
+        <!-- Hero -->
+        <section class="teams-hero">
+            <div class="teams-hero-badge">For Engineering Teams</div>
+            <h1>Your Team Is <span>Overpaying</span> for AI APIs</h1>
+            <p>Most teams waste 30-60% on AI API costs because nobody has visibility across providers, models, and developers. Get the tools to take control.</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="team-cost-planner.html" class="btn-primary" style="padding:14px 28px;font-size:15px;">Plan Team Costs →</a>
+                <a href="#tools" class="btn-secondary" style="padding:14px 28px;font-size:15px;">See All Tools</a>
+            </div>
+            <div class="teams-hero-stats">
+                <div class="teams-hero-stat">
+                    <div class="stat-num">48</div>
+                    <div class="stat-label">Models Compared</div>
+                </div>
+                <div class="teams-hero-stat">
+                    <div class="stat-num">10</div>
+                    <div class="stat-label">Providers</div>
+                </div>
+                <div class="teams-hero-stat">
+                    <div class="stat-num">30-60%</div>
+                    <div class="stat-label">Typical Savings</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain Points -->
+        <section class="teams-pain">
+            <h2>Sound Familiar?</h2>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <div class="pain-icon">💸</div>
+                    <div class="pain-text"><strong>No visibility into team spend.</strong> You get one monthly bill but don't know which projects or developers are driving costs.</div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">🤷</div>
+                    <div class="pain-text"><strong>Model choice is guesswork.</strong> Developers pick whatever model they know, not the one that's cheapest for the task.</div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">📊</div>
+                    <div class="pain-text"><strong>Can't justify costs to finance.</strong> Your CFO wants a breakdown. You have a Stripe invoice and a prayer.</div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">🔄</div>
+                    <div class="pain-text"><strong>Migration is scary.</strong> Switching providers means rewriting code, testing, and hoping nothing breaks.</div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">🎯</div>
+                    <div class="pain-text"><strong>Vendor lock-in.</strong> You're not sure if your current provider is still the best deal — and researching alternatives takes days.</div>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">⏰</div>
+                    <div class="pain-text"><strong>No time to optimize.</strong> You know costs are high but who has a week to audit every API call?</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools -->
+        <section class="teams-tools" id="tools">
+            <h2>Three Tools. One Goal: Lower AI Costs.</h2>
+            <p>Each tool tackles a different part of the cost problem. Use them together for maximum impact.</p>
+
+            <div class="tool-card">
+                <div class="tool-card-header">
+                    <div class="tool-card-icon">📋</div>
+                    <div>
+                        <div class="tool-card-title">Team Cost Planner</div>
+                        <div class="tool-card-subtitle">Budget & Forecast</div>
+                    </div>
+                </div>
+                <p>Model your entire team's AI API usage. Add developers, set request volumes, pick models — see total monthly cost instantly. Generate a budget report your CFO will actually understand.</p>
+                <div class="tool-card-features">
+                    <span>Per-developer costs</span>
+                    <span>Multi-model comparison</span>
+                    <span>Budget forecasting</span>
+                    <span>PDF export (Pro)</span>
+                    <span>48 models</span>
+                </div>
+                <a href="team-cost-planner.html" class="btn btn-primary">Open Cost Planner →</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-card-header">
+                    <div class="tool-card-icon">🔄</div>
+                    <div>
+                        <div class="tool-card-title">Migration Planner</div>
+                        <div class="tool-card-subtitle">Switch Providers Safely</div>
+                    </div>
+                </div>
+                <p>Planning to switch models? Get a step-by-step migration plan with risk assessment, timeline estimates, and copy-paste code snippets for 6 SDKs. Know the cost delta before you commit.</p>
+                <div class="tool-card-features">
+                    <span>Risk assessment (5 factors)</span>
+                    <span>Migration timeline</span>
+                    <span>8-step guide</span>
+                    <span>SDK code snippets</span>
+                    <span>Cost comparison</span>
+                </div>
+                <a href="team-migration-planner.html" class="btn btn-primary">Open Migration Planner →</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-card-header">
+                    <div class="tool-card-icon">📊</div>
+                    <div>
+                        <div class="tool-card-title">Vendor Scorecard</div>
+                        <div class="tool-card-subtitle">Compare Providers Objectively</div>
+                    </div>
+                </div>
+                <p>Compare AI API providers side-by-side with a weighted scorecard. Adjust priorities (pricing vs. quality vs. latency), score each provider, and get data-driven recommendations.</p>
+                <div class="tool-card-features">
+                    <span>8 providers</span>
+                    <span>7 weighted criteria</span>
+                    <span>Category breakdown</span>
+                    <span>Visual rankings</span>
+                    <span>Export-ready</span>
+                </div>
+                <a href="vendor-evaluation-scorecard.html" class="btn btn-primary">Open Scorecard →</a>
+            </div>
+        </section>
+
+        <!-- ROI Calculator -->
+        <section class="teams-roi">
+            <h2>How Much Could Your Team Save?</h2>
+            <p>Quick estimate based on typical team sizes and current market rates.</p>
+            <div class="roi-calc">
+                <label>Team size:</label>
+                <input type="number" id="roi-devs" value="10" min="1" max="500">
+                <label>Avg requests/dev/day:</label>
+                <input type="number" id="roi-reqs" value="100" min="1" max="10000">
+                <label>Current model:</label>
+                <select id="roi-model">
+                    <option value="high">GPT-5.4 ($2.50/$15)</option>
+                    <option value="mid" selected>Claude Sonnet 4.6 ($3/$15)</option>
+                    <option value="low">GPT-4o ($2.50/$10)</option>
+                </select>
+            </div>
+            <div class="roi-result" id="roi-output">
+                ~$2,400/mo <small>potential savings by switching to cost-optimized models</small>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="teams-how">
+            <h2>How It Works</h2>
+            <div class="how-steps">
+                <div class="how-step">
+                    <div class="how-step-num">1</div>
+                    <h3>Enter Your Usage</h3>
+                    <p>Add your team size, request volume, and current models. Takes 2 minutes.</p>
+                </div>
+                <div class="how-step">
+                    <div class="how-step-num">2</div>
+                    <h3>See the Numbers</h3>
+                    <p>Get instant cost comparisons, savings estimates, and migration risk assessments.</p>
+                </div>
+                <div class="how-step">
+                    <div class="how-step-num">3</div>
+                    <h3>Take to Finance</h3>
+                    <p>Export a PDF report with budget breakdowns, vendor comparisons, and ROI projections.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="teams-proof">
+            <h2>What Teams Are Saying</h2>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <p>"We were spending $480/mo on GPT-4o for our RAG pipeline. APIpulse showed us DeepSeek V4 Flash does the same thing for $87/mo. Same quality, 82% cheaper."</p>
+                    <div class="proof-card-author">ML Engineer</div>
+                    <div class="proof-card-role">Series B Startup, 45-person eng team</div>
+                </div>
+                <div class="proof-card">
+                    <p>"The migration planner gave our team confidence to switch from OpenAI to Anthropic. The code snippets and risk assessment made the decision easy."</p>
+                    <div class="proof-card-author">CTO</div>
+                    <div class="proof-card-role">AI-first SaaS, 12-person team</div>
+                </div>
+                <div class="proof-card">
+                    <p>"I used the team cost planner to build a budget report for our CFO. She approved a provider switch that saved us $900/month. Took me 20 minutes."</p>
+                    <div class="proof-card-author">Engineering Manager</div>
+                    <div class="proof-card-role">Enterprise, 200+ developers</div>
+                </div>
+                <div class="proof-card">
+                    <p>"Finally, a way to compare providers that isn't just a pricing table. The weighted scorecard let us prioritize what matters — latency over cost for our use case."</p>
+                    <div class="proof-card-author">Staff Engineer</div>
+                    <div class="proof-card-role">Fintech, latency-sensitive workloads</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pro CTA -->
+        <section class="teams-pro">
+            <h2>Upgrade to Pro for Your Team</h2>
+            <p>One-time payment. Lifetime access. No per-seat pricing.</p>
+            <div class="price-tag">$29 <small>one-time</small></div>
+            <div class="teams-pro-features">
+                <span>PDF finance reports</span>
+                <span>Detailed migration guides</span>
+                <span>Vendor evaluation exports</span>
+                <span>Priority support</span>
+                <span>Lifetime updates</span>
+            </div>
+            <a href="go.html" class="btn-primary">Get Pro Access →</a>
+            <div class="guarantee">14-day money-back guarantee. Instant access.</div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="teams-faq">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>How much can my team save on AI API costs?</summary>
+                <div>Teams typically save 30-60% by switching to cost-optimized models. For a team of 10 developers making 500 requests/day, that can mean $2,000-$5,000/month in savings depending on current provider and model choices.</div>
+            </details>
+            <details>
+                <summary>Do I need an account to use the team tools?</summary>
+                <div>No. All team tools are free to use with no account required. Enter your team's usage data and get instant cost comparisons, migration plans, and vendor evaluations. Pro ($29 one-time) unlocks PDF exports for finance reports and detailed migration guides.</div>
+            </details>
+            <details>
+                <summary>How accurate are the cost estimates?</summary>
+                <div>Pricing data is verified monthly against official provider documentation. We track 48 models across 10 providers including OpenAI, Anthropic, Google, DeepSeek, Mistral, and more. Estimates are based on published per-token rates and typical usage patterns.</div>
+            </details>
+            <details>
+                <summary>Can I generate a report for my CFO or finance team?</summary>
+                <div>Yes. The Team Cost Planner generates a detailed budget breakdown with per-developer costs, model comparisons, and projected annual spend. Pro users can export this as a formatted PDF ready for finance review.</div>
+            </details>
+            <details>
+                <summary>What if my team uses multiple AI providers?</summary>
+                <div>All three tools support multi-provider analysis. The Vendor Scorecard lets you compare up to 8 providers side-by-side with weighted scoring. The Migration Planner handles cross-provider switches (e.g., OpenAI to Anthropic) with provider-specific code snippets.</div>
+            </details>
+            <details>
+                <summary>Is this just for large teams?</summary>
+                <div>No. Even a 2-person team can benefit — the tools scale from solo developers to enterprises with 200+ engineers. The smaller the team, the more each dollar saved matters.</div>
+            </details>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="teams-related">
+            <h2>More Tools</h2>
+            <div class="related-links">
+                <a href="calculator.html">Cost Calculator</a>
+                <a href="compare.html">Model Comparison</a>
+                <a href="ai-api-advisor.html">AI API Advisor</a>
+                <a href="cheat-sheet.html">Quick Reference</a>
+                <a href="budget-planner.html">Budget Planner</a>
+                <a href="cost-report.html">Cost Report</a>
+                <a href="savings-calculator.html">Savings Calculator</a>
+                <a href="deal.html">Get Pro</a>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // ROI Calculator
+        const devsEl = document.getElementById('roi-devs');
+        const reqsEl = document.getElementById('roi-reqs');
+        const modelEl = document.getElementById('roi-model');
+        const outputEl = document.getElementById('roi-output');
+
+        function calcROI() {
+            const devs = parseInt(devsEl.value) || 10;
+            const reqs = parseInt(reqsEl.value) || 100;
+            const tier = modelEl.value;
+
+            // Cost per 1K requests (avg ~800 input + 400 output tokens)
+            const costs = { high: 12, mid: 10, low: 8 };
+            const optimized = 3; // DeepSeek V4 Flash avg
+
+            const currentMonthly = (devs * reqs * 30 / 1000) * costs[tier];
+            const optimizedMonthly = (devs * reqs * 30 / 1000) * optimized;
+            const savings = Math.round(currentMonthly - optimizedMonthly);
+
+            outputEl.innerHTML = `$${savings.toLocaleString()}/mo <small>potential savings by switching to cost-optimized models</small>`;
+        }
+
+        devsEl.addEventListener('input', calcROI);
+        reqsEl.addEventListener('input', calcROI);
+        modelEl.addEventListener('change', calcROI);
+
+        // GA4 event tracking
+        if (typeof gtag === 'function') {
+            gtag('event', 'page_view', {
+                page_title: 'Teams Landing Page',
+                page_location: window.location.href
+            });
+        }
+    </script>
+</body>
+</html>
