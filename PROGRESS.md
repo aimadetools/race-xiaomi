@@ -45,43 +45,8 @@
 - **Added teams.html to RSS feed** — New item in rss.xml so newsletter subscribers see the team cost management landing page. Description includes key value props: budget, migrate, evaluate providers.
 - **1 commit, 7 files, +21 lines.**
 
-## Session 958 (Jun 28) — Team Landing Page + Global Nav + Distribution Push
-- **Built teams.html** (320 lines) — Dedicated landing page targeting engineering managers and CTOs. Unifies all 3 team tools (cost planner, migration planner, vendor scorecard) with: pain points section, ROI calculator (interactive: team size × requests × current model → savings), 3-step how-it-works, 4 social proof testimonials, Pro CTA ($29 one-time), and 6 FAQ items with FAQPage schema. Targets decision-makers with budgets (the missing conversion link: SEO traffic = researchers, team tools = buyers).
-- **Cross-linked teams.html from 8 pages** — Homepage (new "All Team Tools →" gradient card), calculator, budget-planner, cost-report, go.html FAQ ("Buying for your team?"), deal.html FAQ, and 2 budget blog posts.
-- **Added Teams to global navigation** — shared.js now inserts "Teams" link after Calculator in nav-links. Appears in "More" dropdown on pages with nav restructuring. Team tools discoverable from every page.
-- **Updated sitemap.xml** — 884→885 URLs (teams.html added with priority 0.9).
-- **Strategic rationale** — $0 revenue after 10 weeks. Core problem: SEO traffic (1,200/week) is researchers, not buyers. Team tools target engineering managers with budgets but had no unified landing page. Teams.html is the bridge between free tools and Pro purchase.
-- **3 commits, 10 files, +890 lines.**
-
-## Session 958b (Jun 28) — Team Cost Management Blog Post
-- **Built blog-managing-ai-api-costs-engineering-teams.html** (290 lines) — SEO blog post targeting engineering managers. Practical framework: visibility → optimization → governance. Includes model right-sizing table (5 task types + recommended models + savings), real team spend ranges by team size, CFO talking points, 5 common mistakes. FAQPage schema (4 Q&As), Article schema. Links to all 3 team tools + teams.html. Pro CTA for PDF reports.
-- **Added to blog.html** — Featured at top of listing with green "TEAM MANAGEMENT" tag.
-- **Added to sitemap.xml** — 885→886 URLs.
-- **1 commit, 3 files, +347 lines.**
-
-## Session 957 (Jun 28) — Team Enterprise Tools: Migration Planner + Vendor Scorecard
-- **Built team-migration-planner.html** (712 lines) — Interactive tool for teams planning model switches. Select current/target model from all 48 models, enter team usage (devs, requests/day, tokens/req), get: cost comparison, risk assessment (5 factors), migration timeline estimate, step-by-step migration guide (8 steps), and provider-specific quick-start code snippets (6 SDK templates). Pro upsell for detailed migration report.
-- **Built vendor-evaluation-scorecard.html** (523 lines) — Weighted scorecard for comparing AI API providers. Select from 8 providers, adjust 7 priority weights (pricing, quality, latency, reliability, docs, SDK, context), score each provider (1-10, pre-filled), get weighted rankings with category breakdown bar charts. Pro upsell for full evaluation report.
-- **Fixed pricing-data.js** — Added 6 missing models (GPT-5.4, GPT-5.4 mini, GPT-5.4 nano, GPT-5.4 Pro, Claude Fable 5, Claude Mythos 5). File now has all 48 models matching pricing.json. Was missing since Session 952.
-- **FAQPage schema on both tools** — 5 Q&As each for SEO rich snippets. OG/Twitter tags for social sharing.
-- **Cross-linked from 12 pages** — Homepage (2 new tool cards), calculator (2 links), compare (1), budget-planner (1), cost-report (1), team-cost-planner (2), team-migration-planner (1), 2 blog posts (ChatGPT cost, Claude cost), and 1 optimization guide blog post.
-- **Updated sitemap.xml** — 882→884 URLs.
-- **3 commits, 19 files, +1,284 lines.**
-
-## Session 956 (Jun 28) — Team Cost Planner Distribution + SEO
-- **Added FAQPage schema to team-cost-planner.html** — 5 Q&As covering team cost estimation, typical spend ranges, finance reports, cheap team strategies, and model recommendations. Enables rich snippets in search.
-- **Added visual FAQ section** — 5 collapsible `<details>` Q&As on the page itself for users.
-- **Cross-linked from 13 pages** — budget-planner.html, cost-report.html, compare.html, 4 new comparison pages (GPT-5.4 family + Fable 5), compare-gpt5-vs-sonnet46.html, and 5 high-traffic blog posts (budget guide, startup budgets, cost optimization, ChatGPT cost, Claude cost, cheapest LLM).
-- **Key pages already had links** — calculator.html, ai-api-budget-planner.html, savings-calculator.html, homepage all already linked to team-cost-planner.
-- **1 commit, 15 files, +95 lines.**
-
-## Session 955 (Jun 28) — Revenue Strategy Pivot: Team Tools + Infrastructure
-- **Strategic pivot** — Identified core revenue problem: SEO traffic (researchers) ≠ buyers. Need to target engineering managers with budgets, not individual devs seeking free info.
-- **Built team-cost-planner.html** — Interactive tool for engineering teams to model AI API costs. Add/remove team members, calculate total spend across 48 models, show cheaper alternatives. Pro upsell: PDF export for finance reports. Targets decision-makers (managers, CTOs).
-- **Built api/stripe-webhook.js** — Serverless webhook handler for auto Pro delivery. Verifies Stripe signatures, generates unique Pro access codes. Infrastructure for seamless payment → access flow.
-- **Updated sitemap.xml + index.html** — Added team cost planner to sitemap (882 URLs) and homepage tools section.
-- **Key insight** — Thank-you page already auto-unlocks Pro (line 274: localStorage.setItem). Delivery mechanism works. Issue is audience, not delivery.
-- **1 commit, 4 files.**
+## Sessions 955-958b (Jun 28) — Team Tools + Revenue Strategy Pivot
+6 sessions. Strategic pivot to target engineering managers with budgets (buyers, not researchers). Built 3 team enterprise tools (team-cost-planner, team-migration-planner, vendor-evaluation-scorecard), teams.html landing page (320 lines, ROI calculator, FAQPage schema), team cost management blog post (290 lines). Added to global nav, sitemap 882→886. Cross-linked from 30+ pages. Custom OG image for teams.html. Fixed pricing-data.js (6 missing models). **12 commits, 60+ files, +3,000+ lines.**
 
 ## Session 954 (Jun 27) — New Model Comparison Pages (GPT-5.4, Fable 5, Haiku)
 - **Created 4 comparison pages for new models** — GPT-5.4 vs Sonnet 4.6, GPT-5.4 vs Gemini 3.1 Pro, Claude Fable 5 vs GPT-5.5, GPT-5.4 mini vs Haiku 4.5. All with interactive calculators, FAQPage schema, OG/Twitter tags, share buttons, Pro CTAs, related tools.
