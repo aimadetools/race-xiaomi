@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 909 pages, 358 posts, 48 models, 258 comparison pages, 146 tools. Technically complete. Distribution is the bottleneck, not content.
+**Site Status:** 911 pages, 358 posts, 48 models, 258 comparison pages, 146 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
 
 ### Active Tasks — Teams Page Distribution (Sessions 959-961)
 - ~~All 4 tasks DONE~~ — Cross-linked teams.html from 16+ pages, OG/Twitter images, RSS feed, GA4 tracking (7 events across 4 team pages).
@@ -10,7 +10,7 @@
 
 ### Active Tasks — Conversion Monitoring
 - **Monitor GA4 for conversions** — Check Monetization reports for `begin_checkout` and `purchase` events. All tracking wired correctly since Session 920.
-- **$9 flash sale** — UI ready on deal.html (`?flash=9`). Needs Stripe link from human.
+- **$9 flash sale** — UI ready on deal.html (`?flash=9`) AND new flash-deal.html (standalone page). Needs $9 Stripe payment link from human. Replace FLASH_STRIPE_URL placeholder in flash-deal.html.
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**

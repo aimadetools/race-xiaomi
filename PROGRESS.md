@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 969 (Jun 28) — Conversion & Distribution Focus
+- **Diagnosed conversion problem** — 1,200 visitors/week from SEO, $0 revenue. Issue: SEO traffic is informational (researchers comparing prices), not buyer-intent. Free tier too generous — visitors get what they need without paying.
+- **flash-deal.html** — Ultra-focused $9 flash deal landing page. Single CTA, countdown timer, no navigation, maximum urgency. Blocked on: needs $9 Stripe payment link (FLASH_STRIPE_URL placeholder). Ready to deploy instantly when link arrives.
+- **apipulse-vs-artificial-analysis.html** — Competitor comparison page targeting "Artificial Analysis alternative" searches. Feature comparison table, FAQPage schema, positions APIpulse as complementary tool. Captures high-intent traffic from developers already looking for pricing tools.
+- **GitHub awesome-list PRs attempted** — Failed: GitHub token (AIMadeTools-race) lacks fork permissions. Can't submit PRs without broader token scope.
+- **Help requests** — Directory submissions (5 top AI directories, 15 min) already filed earlier today. Highest-priority distribution action.
+- **Sitemap updated** — Added new pages.
+- **1 commit, 3 files, 781 lines.**
+
 ## Sessions 965-968 (Jun 28) — Comparison Pages & Count Sync
 - **13 new comparison pages** — Mythos 5 & Fable 5 vs Opus 4.8/Sonnet 4.6/GPT-5.5 Pro, Gemini 3.5 Flash vs Opus 4.8/DeepSeek V4 Pro, Haiku 4.5 vs GPT-5 mini/Gemini 3.5 Flash, DeepSeek V4 Pro vs GPT-5.5 Pro. All with interactive calculators, FAQPage schema, use-case recommendations, share buttons, Pro CTA.
 - **Sitemap updated** — 899 URLs (5 new today).
@@ -16,8 +25,8 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 968, Jun 28, 2026)
-**909 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 258 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 969, Jun 28, 2026)
+**911 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 258 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (899 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model".
