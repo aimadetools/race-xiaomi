@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team AI API Cost Planner — Budget for Your Engineering Team | APIpulse</title>
+    <meta name="description" content="Plan AI API costs for your entire engineering team. Model multiple developers' usage, see total monthly spend, and generate a budget report for finance. 48 models, 10 providers.">
+    <meta name="keywords" content="team AI API cost, engineering budget planner, AI API spend management, LLM cost per developer, team API budget">
+    <meta property="og:title" content="Team AI API Cost Planner — Budget for Your Engineering Team">
+    <meta property="og:description" content="Model your team's AI API usage. See total monthly costs. Generate budget reports for finance.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/team-cost-planner.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Team AI API Cost Planner">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Model your team's AI API usage and generate budget reports.">
+    <link rel="canonical" href="https://getapipulse.com/team-cost-planner.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Team AI API Cost Planner",
+        "description": "Plan AI API costs for your engineering team. Model multiple developers' usage and generate budget reports.",
+        "url": "https://getapipulse.com/team-cost-planner.html",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .planner-page { max-width: 800px; margin: 0 auto; padding: 100px 24px 80px; }
+        .planner-hero { text-align: center; margin-bottom: 40px; }
+        .planner-hero h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 900; line-height: 1.15; margin-bottom: 12px; }
+        .planner-hero p { font-size: 16px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; }
+        .badge { display: inline-block; background: var(--accent); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Team member cards */
+        .team-section { margin-bottom: 32px; }
+        .team-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .team-header h2 { font-size: 20px; font-weight: 800; }
+        .add-member-btn {
+            background: var(--accent); color: white; border: none; padding: 8px 16px;
+            border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .add-member-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+        .member-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 12px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .member-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .member-name {
+            background: none; border: none; color: var(--text-primary); font-size: 16px;
+            font-weight: 700; font-family: inherit; padding: 4px 0; border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .member-name:focus { outline: none; border-bottom-color: var(--accent); }
+        .remove-member {
+            background: none; border: none; color: var(--text-muted); cursor: pointer;
+            font-size: 18px; padding: 4px 8px; border-radius: 6px; transition: all 0.2s;
+        }
+        .remove-member:hover { background: rgba(239,68,68,0.1); color: var(--red); }
+
+        .member-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .field-group { display: flex; flex-direction: column; gap: 4px; }
+        .field-group label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .field-group select, .field-group input {
+            padding: 10px 12px; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text-primary); font-size: 14px; font-family: inherit;
+        }
+        .field-group select:focus, .field-group input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+
+        /* Results */
+        .results-section {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 32px;
+            margin-bottom: 32px; display: none;
+        }
+        .results-section.visible { display: block; animation: fadeIn 0.4s ease; }
+        .results-title { font-size: 22px; font-weight: 900; text-align: center; margin-bottom: 24px; }
+
+        .result-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+        .result-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 16px; text-align: center;
+        }
+        .result-card .label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+        .result-card .value { font-size: 24px; font-weight: 900; color: var(--accent); font-family: monospace; }
+        .result-card .value.green { color: var(--green); }
+
+        /* Breakdown table */
+        .breakdown-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+        .breakdown-table th {
+            font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; padding: 8px 12px; text-align: left; border-bottom: 2px solid var(--border);
+        }
+        .breakdown-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .breakdown-table tr:hover td { background: var(--bg-secondary); }
+        .breakdown-table .total-row td { font-weight: 800; border-top: 2px solid var(--accent); }
+
+        /* CTA */
+        .pro-cta {
+            background: var(--bg-card); border: 2px solid var(--accent); border-radius: 12px;
+            padding: 24px; text-align: center; margin-top: 24px;
+        }
+        .pro-cta h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+        .pro-cta p { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
+        .pro-cta .cta-btn { display: inline-block; }
+
+        @media (max-width: 768px) {
+            .member-fields { grid-template-columns: 1fr; }
+            .result-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="compare.html">Compare</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="go.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="planner-page">
+        <!-- Hero -->
+        <div class="planner-hero">
+            <div class="badge">Team Budget Tool</div>
+            <h1>Plan AI API Costs for Your Team</h1>
+            <p>Model your engineering team's usage across 48 models and 10 providers. Generate a budget report you can share with finance.</p>
+        </div>
+
+        <!-- Team Members -->
+        <div class="team-section">
+            <div class="team-header">
+                <h2>Team Members</h2>
+                <button class="add-member-btn" onclick="addMember()">+ Add Developer</button>
+            </div>
+            <div id="team-members">
+                <!-- Members added dynamically -->
+            </div>
+        </div>
+
+        <!-- Calculate Button -->
+        <div style="text-align:center; margin-bottom: 32px;">
+            <button class="btn-primary" style="padding: 14px 40px; font-size: 16px;" onclick="calculateTeamCost()">
+                Calculate Team Cost →
+            </button>
+        </div>
+
+        <!-- Results -->
+        <div class="results-section" id="results">
+            <div class="results-title">📊 Team AI API Cost Summary</div>
+
+            <div class="result-grid">
+                <div class="result-card">
+                    <div class="label">Monthly Team Cost</div>
+                    <div class="value" id="total-monthly">$0</div>
+                </div>
+                <div class="result-card">
+                    <div class="label">Annual Projection</div>
+                    <div class="value" id="total-annual">$0</div>
+                </div>
+                <div class="result-card">
+                    <div class="label">Cheapest Alternative</div>
+                    <div class="value green" id="cheapest-alt">$0</div>
+                </div>
+            </div>
+
+            <table class="breakdown-table">
+                <thead>
+                    <tr>
+                        <th>Developer</th>
+                        <th>Model</th>
+                        <th>Monthly Cost</th>
+                        <th>Cheaper Alternative</th>
+                        <th>Potential Savings</th>
+                    </tr>
+                </thead>
+                <tbody id="breakdown-body">
+                </tbody>
+            </table>
+
+            <!-- Pro CTA -->
+            <div class="pro-cta">
+                <h3>📄 Export This Report for Finance</h3>
+                <p>Get a professional PDF report with migration code, provider comparisons, and optimization recommendations.</p>
+                <a href="go.html" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('team_planner_pro_click')">Get APIpulse Pro — $29 →</a>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">One-time payment · 14-day money-back guarantee</p>
+            </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div style="margin-top: 48px;">
+            <h3 style="font-size: 16px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Related Tools</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+                <a href="calculator.html" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-decoration: none;">
+                    <div style="font-size: 20px; margin-bottom: 8px;">🧮</div>
+                    <div style="font-weight: 700; font-size: 14px;">Cost Calculator</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">Individual model costs</div>
+                </a>
+                <a href="ai-api-budget-planner.html" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-decoration: none;">
+                    <div style="font-size: 20px; margin-bottom: 8px;">💰</div>
+                    <div style="font-weight: 700; font-size: 14px;">Budget Planner</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">Set monthly budget limits</div>
+                </a>
+                <a href="compare.html" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-decoration: none;">
+                    <div style="font-size: 20px; margin-bottom: 8px;">⚖️</div>
+                    <div style="font-weight: 700; font-size: 14px;">Compare Models</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">Side-by-side pricing</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-links">
+                <a href="compare.html">Compare</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="go.html">Get Pro</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Default models for new members
+    const defaultModels = [
+        { model: 'openai-gpt4o-mini', rpd: 1000, input: 1000, output: 500 },
+        { model: 'anthropic-sonnet-4', rpd: 500, input: 2000, output: 1000 },
+        { model: 'google-gemini-25-flash', rpd: 2000, input: 1500, output: 800 }
+    ];
+
+    let memberCount = 0;
+
+    function getModelOptions() {
+        if (!window.pricingData) return '<option>Loading...</option>';
+        const models = window.pricingData.models || window.pricingData;
+        return models.map(m =>
+            `<option value="${m.id}">${m.name || m.id} (${m.provider}) — $${m.input}/$${m.output} per 1M</option>`
+        ).join('');
+    }
+
+    function addMember(preset) {
+        memberCount++;
+        const idx = memberCount;
+        const defaults = preset || defaultModels[(idx - 1) % defaultModels.length];
+
+        const card = document.createElement('div');
+        card.className = 'member-card';
+        card.id = `member-${idx}`;
+        card.innerHTML = `
+            <div class="member-header">
+                <input class="member-name" type="text" placeholder="Developer ${idx}" value="Developer ${idx}">
+                <button class="remove-member" onclick="removeMember(${idx})" title="Remove">✕</button>
+            </div>
+            <div class="member-fields">
+                <div class="field-group">
+                    <label>Primary Model</label>
+                    <select id="model-${idx}">
+                        ${getModelOptions()}
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label>Requests / Day</label>
+                    <input type="number" id="rpd-${idx}" value="${defaults.rpd}" min="1">
+                </div>
+                <div class="field-group">
+                    <label>Avg Input Tokens</label>
+                    <input type="number" id="input-${idx}" value="${defaults.input}" min="1">
+                </div>
+                <div class="field-group">
+                    <label>Avg Output Tokens</label>
+                    <input type="number" id="output-${idx}" value="${defaults.output}" min="1">
+                </div>
+            </div>
+        `;
+
+        document.getElementById('team-members').appendChild(card);
+
+        // Set selected model
+        const select = document.getElementById(`model-${idx}`);
+        if (select) select.value = defaults.model;
+
+        // Track
+        if (window.trackEvent) window.trackEvent('team_member_added', { count: memberCount });
+    }
+
+    function removeMember(idx) {
+        const card = document.getElementById(`member-${idx}`);
+        if (card) card.remove();
+    }
+
+    function getMemberData() {
+        const members = [];
+        document.querySelectorAll('.member-card').forEach(card => {
+            const id = card.id.split('-')[1];
+            const name = card.querySelector('.member-name').value || `Developer ${id}`;
+            const modelId = document.getElementById(`model-${id}`)?.value;
+            const rpd = parseInt(document.getElementById(`rpd-${id}`)?.value) || 1000;
+            const input = parseInt(document.getElementById(`input-${id}`)?.value) || 1000;
+            const output = parseInt(document.getElementById(`output-${id}`)?.value) || 500;
+            members.push({ name, modelId, rpd, input, output });
+        });
+        return members;
+    }
+
+    function findModel(modelId) {
+        if (!window.pricingData) return null;
+        const models = window.pricingData.models || window.pricingData;
+        return models.find(m => m.id === modelId);
+    }
+
+    function findCheapestAlternative(currentModel) {
+        if (!window.pricingData) return null;
+        const models = window.pricingData.models || window.pricingData;
+        const currentBlend = (currentModel.input + currentModel.output) / 2;
+        const cheaper = models
+            .filter(m => m.id !== currentModel.id)
+            .map(m => ({ ...m, blend: (m.input + m.output) / 2 }))
+            .filter(m => m.blend < currentBlend)
+            .sort((a, b) => a.blend - b.blend);
+        return cheaper[0] || null;
+    }
+
+    function calculateMemberCost(member) {
+        const model = findModel(member.modelId);
+        if (!model) return { monthly: 0, model: null };
+
+        const dailyCost = (member.rpd * member.input / 1_000_000 * model.input) +
+                          (member.rpd * member.output / 1_000_000 * model.output);
+        const monthlyCost = dailyCost * 30;
+
+        return { monthly: monthlyCost, model };
+    }
+
+    function formatUSD(n) {
+        if (n >= 1000) return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        if (n >= 100) return '$' + n.toFixed(0);
+        if (n >= 10) return '$' + n.toFixed(1);
+        return '$' + n.toFixed(2);
+    }
+
+    function calculateTeamCost() {
+        const members = getMemberData();
+        if (members.length === 0) {
+            alert('Add at least one team member to calculate costs.');
+            return;
+        }
+
+        let totalMonthly = 0;
+        let totalCheapest = 0;
+        const rows = [];
+
+        members.forEach(member => {
+            const { monthly, model } = calculateMemberCost(member);
+            const alt = model ? findCheapestAlternative(model) : null;
+            const altMonthly = alt ? (member.rpd * member.input / 1_000_000 * alt.input + member.rpd * member.output / 1_000_000 * alt.output) * 30 : monthly;
+            const savings = monthly - altMonthly;
+
+            totalMonthly += monthly;
+            totalCheapest += altMonthly;
+
+            rows.push({
+                name: member.name,
+                modelName: model ? (model.name || model.id) : 'Unknown',
+                monthly,
+                altName: alt ? (alt.name || alt.id) : '—',
+                savings: Math.max(0, savings)
+            });
+        });
+
+        // Update results
+        document.getElementById('total-monthly').textContent = formatUSD(totalMonthly);
+        document.getElementById('total-annual').textContent = formatUSD(totalMonthly * 12);
+        document.getElementById('cheapest-alt').textContent = formatUSD(totalCheapest) + '/mo';
+
+        // Build breakdown table
+        const tbody = document.getElementById('breakdown-body');
+        tbody.innerHTML = rows.map(r => `
+            <tr>
+                <td><strong>${r.name}</strong></td>
+                <td>${r.modelName}</td>
+                <td style="font-family:monospace;font-weight:700;">${formatUSD(r.monthly)}/mo</td>
+                <td>${r.altName}</td>
+                <td style="color:var(--green);font-weight:700;">${r.savings > 0 ? formatUSD(r.savings) + '/mo' : '—'}</td>
+            </tr>
+        `).join('') + `
+            <tr class="total-row">
+                <td><strong>TEAM TOTAL</strong></td>
+                <td></td>
+                <td style="font-family:monospace;font-weight:900;color:var(--accent);">${formatUSD(totalMonthly)}/mo</td>
+                <td></td>
+                <td style="color:var(--green);font-weight:900;">${totalMonthly > totalCheapest ? formatUSD(totalMonthly - totalCheapest) + '/mo' : '—'}</td>
+            </tr>
+        `;
+
+        // Show results
+        document.getElementById('results').classList.add('visible');
+
+        // Scroll to results
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Track
+        if (window.trackEvent) window.trackEvent('team_cost_calculated', {
+            team_size: members.length,
+            total_monthly: Math.round(totalMonthly),
+            potential_savings: Math.round(totalMonthly - totalCheapest)
+        });
+    }
+
+    // Initialize with 3 default members when pricing data loads
+    function init() {
+        if (window.pricingData) {
+            addMember();
+            addMember();
+            addMember();
+        } else {
+            // Wait for pricing data
+            setTimeout(init, 100);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
