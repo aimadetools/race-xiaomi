@@ -18,21 +18,29 @@
   var MODELS = [
     { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', input: 5.00, output: 30.00 },
     { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', input: 1.25, output: 10.00 },
+    { id: 'openai-gpt54', name: 'GPT-5.4', provider: 'OpenAI', input: 2.50, output: 15.00 },
+    { id: 'openai-gpt54-mini', name: 'GPT-5.4 mini', provider: 'OpenAI', input: 0.75, output: 4.50 },
     { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', input: 0.25, output: 2.00 },
-    { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', input: 2.50, output: 10.00 },
     { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60 },
+    { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', input: 0.08, output: 0.35 },
     { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00 },
     { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00 },
     { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00 },
+    { id: 'anthropic-fable5', name: 'Claude Fable 5', provider: 'Anthropic', input: 10.00, output: 50.00 },
+    { id: 'anthropic-mythos5', name: 'Claude Mythos 5', provider: 'Anthropic', input: 10.00, output: 50.00 },
     { id: 'google-gemini35-flash', name: 'Gemini 3.5 Flash', provider: 'Google', input: 1.50, output: 9.00 },
-    { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00 },
+    { id: 'google-gemini31-pro', name: 'Gemini 3.1 Pro', provider: 'Google', input: 2.00, output: 12.00 },
+    { id: 'google-gemini3-flash', name: 'Gemini 3 Flash', provider: 'Google', input: 0.50, output: 3.00 },
     { id: 'google-25-flash-lite', name: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40 },
     { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.435, output: 0.87 },
     { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28 },
     { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', input: 0.50, output: 1.50 },
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', input: 0.10, output: 0.30 },
     { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta', input: 0.18, output: 0.59 },
-    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', input: 1.25, output: 2.50 }
+    { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Meta', input: 0.27, output: 0.85 },
+    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', input: 1.25, output: 2.50 },
+    { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', input: 0.50, output: 1.50 },
+    { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', input: 0.95, output: 4.00 }
   ];
 
   function fmt(n) {

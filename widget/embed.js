@@ -10,28 +10,42 @@
 (function() {
   'use strict';
 
-  // Pricing data (per 1M tokens, USD) — last updated 2026-06-28 (added GPT-5.4 family + Claude Fable 5)
+  // Pricing data (per 1M tokens, USD) — last updated 2026-06-28 (25 models, 10 providers)
   var MODELS = [
-    { name: 'GPT-5',           provider: 'OpenAI',     input: 1.25,  output: 10.00, context: '272K' },
-    { name: 'GPT-5.5 Pro',     provider: 'OpenAI',     input: 30.00, output: 180.00, context: '1.05M' },
-    { name: 'GPT-5.4',         provider: 'OpenAI',     input: 2.50,  output: 15.00, context: '400K' },
-    { name: 'GPT-5.4 mini',    provider: 'OpenAI',     input: 0.75,  output: 4.50,  context: '400K' },
-    { name: 'GPT-5 mini',      provider: 'OpenAI',     input: 0.25,  output: 2.00,  context: '272K' },
-    { name: 'GPT-4o',          provider: 'OpenAI',     input: 2.50,  output: 10.00, context: '128K' },
-    { name: 'Claude Opus 4.8', provider: 'Anthropic',  input: 5.00,  output: 25.00, context: '1M' },
-    { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, context: '1M' },
-    { name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00,  output: 5.00,  context: '200K' },
-    { name: 'Claude Fable 5',  provider: 'Anthropic',  input: 10.00, output: 50.00, context: '1M' },
-    { name: 'Gemini 3.5 Flash', provider: 'Google',    input: 1.50,  output: 9.00,  context: '1M' },
-    { name: 'Gemini 3.1 Pro',  provider: 'Google',     input: 2.00,  output: 12.00, context: '1M' },
-    { name: 'Gemini 2.5 Pro',  provider: 'Google',     input: 1.25,  output: 10.00, context: '1M' },
-    { name: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, context: '1M' },
-    { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14,  output: 0.28, context: '1M' },
-    { name: 'DeepSeek V4 Pro', provider: 'DeepSeek',   input: 0.435, output: 0.87, context: '1M' },
-    { name: 'Mistral Large 3', provider: 'Mistral',    input: 0.50,  output: 1.50,  context: '262K' },
-    { name: 'Mistral Small 4', provider: 'Mistral',    input: 0.10,  output: 0.30,  context: '128K' },
-    { name: 'Llama 4 Scout',   provider: 'Meta',       input: 0.18,  output: 0.59,  context: '1M' },
-    { name: 'Grok 4.3',        provider: 'xAI',        input: 1.25,  output: 2.50,  context: '1M' }
+    // OpenAI
+    { name: 'GPT-5.5',           provider: 'OpenAI',     input: 5.00,  output: 30.00, context: '1.05M' },
+    { name: 'GPT-5',             provider: 'OpenAI',     input: 1.25,  output: 10.00, context: '272K' },
+    { name: 'GPT-5.4',           provider: 'OpenAI',     input: 2.50,  output: 15.00, context: '400K' },
+    { name: 'GPT-5.4 mini',      provider: 'OpenAI',     input: 0.75,  output: 4.50,  context: '400K' },
+    { name: 'GPT-5 mini',        provider: 'OpenAI',     input: 0.25,  output: 2.00,  context: '272K' },
+    { name: 'GPT-4o mini',        provider: 'OpenAI',     input: 0.15,  output: 0.60,  context: '128K' },
+    { name: 'GPT-oss 20B',        provider: 'OpenAI',     input: 0.08,  output: 0.35,  context: '128K' },
+    // Anthropic
+    { name: 'Claude Opus 4.8',   provider: 'Anthropic',  input: 5.00,  output: 25.00, context: '1M' },
+    { name: 'Claude Sonnet 4.6', provider: 'Anthropic',  input: 3.00,  output: 15.00, context: '1M' },
+    { name: 'Claude Haiku 4.5',  provider: 'Anthropic',  input: 1.00,  output: 5.00,  context: '200K' },
+    { name: 'Claude Fable 5',    provider: 'Anthropic',  input: 10.00, output: 50.00, context: '1M' },
+    { name: 'Claude Mythos 5',   provider: 'Anthropic',  input: 10.00, output: 50.00, context: '1M' },
+    // Google
+    { name: 'Gemini 3.5 Flash',  provider: 'Google',     input: 1.50,  output: 9.00,  context: '1M' },
+    { name: 'Gemini 3.1 Pro',    provider: 'Google',     input: 2.00,  output: 12.00, context: '1M' },
+    { name: 'Gemini 3 Flash',    provider: 'Google',     input: 0.50,  output: 3.00,  context: '1M' },
+    { name: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10,  output: 0.40,  context: '1M' },
+    // DeepSeek
+    { name: 'DeepSeek V4 Pro',   provider: 'DeepSeek',   input: 0.435, output: 0.87,  context: '1M' },
+    { name: 'DeepSeek V4 Flash', provider: 'DeepSeek',   input: 0.14,  output: 0.28,  context: '1M' },
+    // Mistral
+    { name: 'Mistral Large 3',   provider: 'Mistral',    input: 0.50,  output: 1.50,  context: '262K' },
+    { name: 'Mistral Small 4',   provider: 'Mistral',    input: 0.10,  output: 0.30,  context: '128K' },
+    // Meta
+    { name: 'Llama 4 Scout',     provider: 'Meta',       input: 0.18,  output: 0.59,  context: '1M' },
+    { name: 'Llama 4 Maverick',  provider: 'Meta',       input: 0.27,  output: 0.85,  context: '1M' },
+    // xAI
+    { name: 'Grok 4.3',          provider: 'xAI',        input: 1.25,  output: 2.50,  context: '1M' },
+    // Cohere
+    { name: 'Command R',         provider: 'Cohere',     input: 0.50,  output: 1.50,  context: '128K' },
+    // Moonshot
+    { name: 'Kimi K2.6',         provider: 'Moonshot',   input: 0.95,  output: 4.00,  context: '256K' }
   ];
 
   // Sort by output price (cheapest first)
@@ -66,7 +80,7 @@
     '.badge-text { white-space:nowrap; }',
     '.panel {',
     '  position:absolute; bottom:52px; right:0;',
-    '  width:340px; max-height:420px; overflow-y:auto;',
+    '  width:360px; max-height:440px; overflow-y:auto;',
     '  background:#1a1a2e; border:1px solid rgba(99,102,241,0.3);',
     '  border-radius:16px; padding:0;',
     '  box-shadow:0 12px 40px rgba(0,0,0,0.5);',
@@ -76,6 +90,7 @@
     '.panel-header {',
     '  padding:16px 20px; border-bottom:1px solid rgba(99,102,241,0.2);',
     '  display:flex; justify-content:space-between; align-items:center;',
+    '  position:sticky; top:0; background:#1a1a2e; z-index:1;',
     '}',
     '.panel-title { font-size:15px; font-weight:700; color:white; }',
     '.panel-sub { font-size:11px; color:#9ca3af; margin-top:2px; }',
@@ -103,7 +118,7 @@
     '}',
     '.panel-footer {',
     '  padding:12px 20px; border-top:1px solid rgba(99,102,241,0.2);',
-    '  text-align:center;',
+    '  text-align:center; position:sticky; bottom:0; background:#1a1a2e;',
     '}',
     '.panel-link {',
     '  color:#818cf8; font-size:12px; text-decoration:none; font-weight:600;',
@@ -133,7 +148,7 @@
   }).join('');
 
   panel.innerHTML =
-    '<div class="panel-header"><div><div class="panel-title">AI API Pricing — Live</div><div class="panel-sub">' + MODELS.length + ' models · Updated Jun 2026</div></div><button class="panel-close" id="pw-close">✕</button></div>' +
+    '<div class="panel-header"><div><div class="panel-title">AI API Pricing — Live</div><div class="panel-sub">' + MODELS.length + ' models · 10 providers · Updated Jun 2026</div></div><button class="panel-close" id="pw-close">✕</button></div>' +
     rows +
     '<div class="panel-footer"><a href="https://getapipulse.com/pricing.html" target="_blank" rel="noopener" class="panel-link">Compare all 48 models on APIpulse →</a></div>';
   shadow.appendChild(panel);
