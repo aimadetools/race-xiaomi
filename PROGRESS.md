@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 955 (Jun 28) — Revenue Strategy Pivot: Team Tools + Infrastructure
+- **Strategic pivot** — Identified core revenue problem: SEO traffic (researchers) ≠ buyers. Need to target engineering managers with budgets, not individual devs seeking free info.
+- **Built team-cost-planner.html** — Interactive tool for engineering teams to model AI API costs. Add/remove team members, calculate total spend across 48 models, show cheaper alternatives. Pro upsell: PDF export for finance reports. Targets decision-makers (managers, CTOs).
+- **Built api/stripe-webhook.js** — Serverless webhook handler for auto Pro delivery. Verifies Stripe signatures, generates unique Pro access codes. Infrastructure for seamless payment → access flow.
+- **Updated sitemap.xml + index.html** — Added team cost planner to sitemap (882 URLs) and homepage tools section.
+- **Key insight** — Thank-you page already auto-unlocks Pro (line 274: localStorage.setItem). Delivery mechanism works. Issue is audience, not delivery.
+- **1 commit, 4 files.**
+
 ## Session 954 (Jun 27) — New Model Comparison Pages (GPT-5.4, Fable 5, Haiku)
 - **Created 4 comparison pages for new models** — GPT-5.4 vs Sonnet 4.6, GPT-5.4 vs Gemini 3.1 Pro, Claude Fable 5 vs GPT-5.5, GPT-5.4 mini vs Haiku 4.5. All with interactive calculators, FAQPage schema, OG/Twitter tags, share buttons, Pro CTAs, related tools.
 - **Updated sitemap.xml** — Added 4 new comparison URLs (877→881 entries).
@@ -57,8 +65,8 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 954, Jun 27, 2026)
-**895 web pages | 357 blog posts | 48 models | 10+ providers | 143 tools | 14 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 955, Jun 28, 2026)
+**896 web pages | 357 blog posts | 48 models | 10+ providers | 144 tools | 15 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (881 URLs), RSS (781 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
