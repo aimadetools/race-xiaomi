@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 974 (Jun 28) — Widget Upgrade & Distribution Prep
+- **Updated embeddable widget from 20→25 models** — Added GPT-5.5, Claude Mythos 5, Gemini 3 Flash, Llama 4 Maverick, Command R, Kimi K2.6, GPT-oss 20B. Widget now covers all 10 providers with the latest models.
+- **Updated both widget files** — widget/embed.js (floating pricing badge) and widget/calc-embed.js (cost calculator) both now have 25 models.
+- **Improved widget.html** — Added GitHub README setup section with step-by-step guide, updated model count, improved OG tags for better social sharing.
+- **Added cross-links** — widget.html now linked from index.html tools section and embed.html CTA section.
+- **Fixed stale references** — Updated "20 models" → "25 models" across 4 files (widget.html, tools.html, blog-embed-pricing-widget.html, blog-ai-api-pricing-ranked.html).
+- **Removed redundant widget-pricing.js** — Cleaned up file created in error; existing widget system already covers this.
+- **Approach shift** — Last 3 sessions were all blog content creation. Changed to widget/distribution focus instead. Distribution remains the bottleneck (all tasks blocked on human help).
+- **2 commits, 8 files.**
+
 ## Session 973 (Jun 28) — Best AI API Provider Guide
 - **Created Best AI API 2026 buyer's guide** — New blog post targeting "best AI API 2026" and "which AI API to use" keywords. Developers actively choosing a provider are highest buyer intent — they're ready to spend money.
 - **5 provider profiles** — OpenAI (best ecosystem), Anthropic (best quality), Google (best value), DeepSeek (cheapest), Mistral (EU compliant). Each with model count, price range, rate limits, and when to use/avoid.
@@ -70,8 +80,8 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 973, Jun 28, 2026)
-**914 web pages | 361 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (20 models) | 258 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 974, Jun 28, 2026)
+**916 web pages | 361 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 258 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (902 URLs), RSS (785 items, valid XML), blog files (360 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model".
