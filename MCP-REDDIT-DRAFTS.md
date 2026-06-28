@@ -91,7 +91,7 @@ Free, no API key: https://getapipulse.com/mcp.html
 
 ## Show HN
 
-**Title:** Show HN: Free MCP Server for AI API Pricing – 42 Models in Claude Code and Cursor
+**Title:** Show HN: Free MCP Server for AI API Pricing – 48 Models in Claude Code and Cursor
 
 **URL:** https://getapipulse.com/mcp.html
 

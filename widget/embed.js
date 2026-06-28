@@ -10,23 +10,28 @@
 (function() {
   'use strict';
 
-  // Pricing data (per 1M tokens, USD) — last updated 2026-06-22 (added Gemini 2.5 Flash-Lite)
+  // Pricing data (per 1M tokens, USD) — last updated 2026-06-28 (added GPT-5.4 family + Claude Fable 5)
   var MODELS = [
-    { name: 'GPT-5',           provider: 'OpenAI',     input: 1.25,  output: 10.00, context: '200K' },
+    { name: 'GPT-5',           provider: 'OpenAI',     input: 1.25,  output: 10.00, context: '272K' },
     { name: 'GPT-5.5 Pro',     provider: 'OpenAI',     input: 30.00, output: 180.00, context: '1.05M' },
+    { name: 'GPT-5.4',         provider: 'OpenAI',     input: 2.50,  output: 15.00, context: '400K' },
+    { name: 'GPT-5.4 mini',    provider: 'OpenAI',     input: 0.75,  output: 4.50,  context: '400K' },
     { name: 'GPT-5 mini',      provider: 'OpenAI',     input: 0.25,  output: 2.00,  context: '272K' },
     { name: 'GPT-4o',          provider: 'OpenAI',     input: 2.50,  output: 10.00, context: '128K' },
     { name: 'Claude Opus 4.8', provider: 'Anthropic',  input: 5.00,  output: 25.00, context: '1M' },
     { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, context: '1M' },
     { name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00,  output: 5.00,  context: '200K' },
+    { name: 'Claude Fable 5',  provider: 'Anthropic',  input: 10.00, output: 50.00, context: '1M' },
+    { name: 'Gemini 3.5 Flash', provider: 'Google',    input: 1.50,  output: 9.00,  context: '1M' },
+    { name: 'Gemini 3.1 Pro',  provider: 'Google',     input: 2.00,  output: 12.00, context: '1M' },
     { name: 'Gemini 2.5 Pro',  provider: 'Google',     input: 1.25,  output: 10.00, context: '1M' },
     { name: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, context: '1M' },
-    { name: 'Gemini 3.5 Flash', provider: 'Google',    input: 1.50,  output: 9.00,  context: '1M' },
-    { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14,  output: 0.28, context: '128K' },
-    { name: 'DeepSeek V4 Pro', provider: 'DeepSeek',   input: 0.435, output: 0.87, context: '128K' },
+    { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14,  output: 0.28, context: '1M' },
+    { name: 'DeepSeek V4 Pro', provider: 'DeepSeek',   input: 0.435, output: 0.87, context: '1M' },
     { name: 'Mistral Large 3', provider: 'Mistral',    input: 0.50,  output: 1.50,  context: '262K' },
     { name: 'Mistral Small 4', provider: 'Mistral',    input: 0.10,  output: 0.30,  context: '128K' },
-    { name: 'Llama 4 Scout',   provider: 'Meta',       input: 0.18,  output: 0.59,  context: '10M' }
+    { name: 'Llama 4 Scout',   provider: 'Meta',       input: 0.18,  output: 0.59,  context: '1M' },
+    { name: 'Grok 4.3',        provider: 'xAI',        input: 1.25,  output: 2.50,  context: '1M' }
   ];
 
   // Sort by output price (cheapest first)

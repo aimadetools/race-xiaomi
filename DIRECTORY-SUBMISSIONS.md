@@ -61,7 +61,7 @@
   - **Name:** APIpulse
   - **URL:** https://getapipulse.com
   - **Category:** Developer Tools
-  - **Description:** AI API cost calculator and budget planner. Compare 39 LLM models across 10 providers. Calculate monthly spend, find cheapest models, optimize costs.
+  - **Description:** AI API cost calculator and budget planner. Compare 48 LLM models across 10 providers. Calculate monthly spend, find cheapest models, optimize costs.
   - **Alternative to:** Artificial Analysis, OpenRouter pricing pages
 
 ### 9. AlternativeTo

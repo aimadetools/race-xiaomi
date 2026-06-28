@@ -10,7 +10,7 @@ https://getapipulse.com/widget.html
 
 I built this because I was tired of my blog posts about AI pricing being outdated within weeks.
 
-The widget shows live pricing for 14 AI models (GPT-4o, Claude 3.5, Gemini 1.5 Pro, Llama 3, Mistral, etc.) across 7 providers. Visitors can sort by cost and compare instantly.
+The widget shows live pricing for 20 AI models (GPT-5.4, Claude Opus 4.8, Gemini 3.5 Flash, DeepSeek V4, Llama 4 Scout, Mistral, Grok, etc.) across 10 providers. Visitors can sort by cost and compare instantly.
 
 To embed: one `<script>` tag. No signup, no API key, no npm package. Uses Shadow DOM so it won't conflict with your site's CSS. ~5KB gzipped.
 

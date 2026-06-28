@@ -77,7 +77,7 @@ APIpulse helps developers make smart decisions about AI API costs:
 ├── index.html              # Landing page with cost calculator
 ├── calculator.html         # Standalone cost calculator
 ├── compare.html            # Model comparison tool
-├── pricing-index.html      # All 39 models in sortable table
+├── pricing-index.html      # All 48 models in sortable table
 ├── pricing.html            # Free vs Pro pricing
 ├── pro.html                # Pro access gate
 ├── model-decision-tree.html # Interactive quiz
