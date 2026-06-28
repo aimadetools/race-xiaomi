@@ -22,7 +22,10 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 31. ✅ Team cost planner (Session 955) — Targets decision-makers with budgets
 32. ✅ **Build "AI API Pricing API" page** — DONE (api-docs.html, 875 lines, in sitemap, linked from homepage)
 33. ✅ **Build 2-3 more team/enterprise tools** — DONE (Session 957). team-migration-planner.html (712 lines, model switch planner with risk assessment + code snippets) + vendor-evaluation-scorecard.html (523 lines, weighted provider comparison scorecard). Cross-linked from 12+ pages each.
-34. **Plan v2** — If revenue justifies, plan next features.
+34. ✅ **Build team landing page** — DONE (Session 958). teams.html (320 lines) unifies all 3 team tools. Cross-linked from 8 pages + global nav. FAQPage schema, ROI calculator, social proof.
+35. **Submit to AI directories** — DIRECTORY-SUBMISSIONS.md has 22 listings. Top 5 (theresanaiforthat, toolify, aitoolsdirectory, topai, futurepedia) could drive 100-300 monthly visitors. **BLOCKED on human — forms require browser.**
+36. **Analyze conversion funnel** — 1,200 weekly visitors, 0 sales. Need to understand where users drop off. Check GA4 for page views, bounce rate, click-through to go.html/deal.html. (Needs GA4 access.)
+37. **Plan v2** — If revenue justifies, plan next features.
 
 ### Completed (Sessions 416-957, Apr 23 - Jun 28)
 - **Session 957 (Jun 28):** Built 2 team enterprise tools — team-migration-planner.html (712 lines, model switch planner with risk assessment, code snippets, migration guide) + vendor-evaluation-scorecard.html (523 lines, weighted provider comparison). Fixed pricing-data.js (6 missing models). Cross-linked from 12+ pages each. Sitemap 882→884. 3 commits, 19 files.

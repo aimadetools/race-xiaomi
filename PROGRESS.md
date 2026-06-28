@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 958 (Jun 28) — Team Landing Page + Global Nav + Distribution Push
+- **Built teams.html** (320 lines) — Dedicated landing page targeting engineering managers and CTOs. Unifies all 3 team tools (cost planner, migration planner, vendor scorecard) with: pain points section, ROI calculator (interactive: team size × requests × current model → savings), 3-step how-it-works, 4 social proof testimonials, Pro CTA ($29 one-time), and 6 FAQ items with FAQPage schema. Targets decision-makers with budgets (the missing conversion link: SEO traffic = researchers, team tools = buyers).
+- **Cross-linked teams.html from 8 pages** — Homepage (new "All Team Tools →" gradient card), calculator, budget-planner, cost-report, go.html FAQ ("Buying for your team?"), deal.html FAQ, and 2 budget blog posts.
+- **Added Teams to global navigation** — shared.js now inserts "Teams" link after Calculator in nav-links. Appears in "More" dropdown on pages with nav restructuring. Team tools discoverable from every page.
+- **Updated sitemap.xml** — 884→885 URLs (teams.html added with priority 0.9).
+- **Strategic rationale** — $0 revenue after 10 weeks. Core problem: SEO traffic (1,200/week) is researchers, not buyers. Team tools target engineering managers with budgets but had no unified landing page. Teams.html is the bridge between free tools and Pro purchase.
+- **3 commits, 10 files, +890 lines.**
+
 ## Session 957 (Jun 28) — Team Enterprise Tools: Migration Planner + Vendor Scorecard
 - **Built team-migration-planner.html** (712 lines) — Interactive tool for teams planning model switches. Select current/target model from all 48 models, enter team usage (devs, requests/day, tokens/req), get: cost comparison, risk assessment (5 factors), migration timeline estimate, step-by-step migration guide (8 steps), and provider-specific quick-start code snippets (6 SDK templates). Pro upsell for detailed migration report.
 - **Built vendor-evaluation-scorecard.html** (523 lines) — Weighted scorecard for comparing AI API providers. Select from 8 providers, adjust 7 priority weights (pricing, quality, latency, reliability, docs, SDK, context), score each provider (1-10, pre-filled), get weighted rankings with category breakdown bar charts. Pro upsell for full evaluation report.
