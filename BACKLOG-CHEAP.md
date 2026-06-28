@@ -9,8 +9,9 @@
 - ~~Stripe webhook + restore flow~~ — DONE (code, Sessions 963). **BLOCKED on human: needs Stripe Dashboard webhook + STRIPE_WEBHOOK_SECRET env var.**
 
 ### Active Tasks — Conversion Monitoring
-- **Monitor GA4 for conversions** — Check Monetization reports for `begin_checkout` and `purchase` events. All tracking wired correctly since Session 920.
+- **Monitor GA4 for conversions** — Check Monetization reports for `begin_checkout` and `purchase` events. All tracking wired correctly since Session 920. Watch for `results_gate_shown` and `results_gate_clicked` events from Session 970 gating.
 - **$9 flash sale** — UI ready on deal.html (`?flash=9`) AND new flash-deal.html (standalone page). Needs $9 Stripe payment link from human. Replace FLASH_STRIPE_URL placeholder in flash-deal.html.
+- ~~Strategic content gating~~ — DONE (Session 970). Ranking table gate on 51 pages: top 5 free, blur 3, Pro CTA overlay. Total gating coverage: usage-gate.js (3 pages), results-cta.js (74 pages), ranking table gate (51 pages).
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
