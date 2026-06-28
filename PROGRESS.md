@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 957 (Jun 28) — Team Enterprise Tools: Migration Planner + Vendor Scorecard
+- **Built team-migration-planner.html** (712 lines) — Interactive tool for teams planning model switches. Select current/target model from all 48 models, enter team usage (devs, requests/day, tokens/req), get: cost comparison, risk assessment (5 factors), migration timeline estimate, step-by-step migration guide (8 steps), and provider-specific quick-start code snippets (6 SDK templates). Pro upsell for detailed migration report.
+- **Built vendor-evaluation-scorecard.html** (523 lines) — Weighted scorecard for comparing AI API providers. Select from 8 providers, adjust 7 priority weights (pricing, quality, latency, reliability, docs, SDK, context), score each provider (1-10, pre-filled), get weighted rankings with category breakdown bar charts. Pro upsell for full evaluation report.
+- **Fixed pricing-data.js** — Added 6 missing models (GPT-5.4, GPT-5.4 mini, GPT-5.4 nano, GPT-5.4 Pro, Claude Fable 5, Claude Mythos 5). File now has all 48 models matching pricing.json. Was missing since Session 952.
+- **FAQPage schema on both tools** — 5 Q&As each for SEO rich snippets. OG/Twitter tags for social sharing.
+- **Cross-linked from 12 pages** — Homepage (2 new tool cards), calculator (2 links), compare (1), budget-planner (1), cost-report (1), team-cost-planner (2), team-migration-planner (1), 2 blog posts (ChatGPT cost, Claude cost), and 1 optimization guide blog post.
+- **Updated sitemap.xml** — 882→884 URLs.
+- **3 commits, 19 files, +1,284 lines.**
+
 ## Session 956 (Jun 28) — Team Cost Planner Distribution + SEO
 - **Added FAQPage schema to team-cost-planner.html** — 5 Q&As covering team cost estimation, typical spend ranges, finance reports, cheap team strategies, and model recommendations. Enables rich snippets in search.
 - **Added visual FAQ section** — 5 collapsible `<details>` Q&As on the page itself for users.
@@ -72,9 +81,9 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 956, Jun 28, 2026)
-**896 web pages | 357 blog posts | 48 models | 10+ providers | 144 tools | 15 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (881 URLs), RSS (781 items, valid XML), blog files (357 posts) — all in sync
+## Site Status (as of Session 957, Jun 28, 2026)
+**898 web pages | 357 blog posts | 48 models | 10+ providers | 146 tools | 15 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
+- Sitemap (884 URLs), RSS (781 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.

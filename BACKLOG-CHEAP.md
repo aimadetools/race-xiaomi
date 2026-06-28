@@ -48,7 +48,8 @@
 - ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
 - ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
-### Completed Summary (Sessions 416-956, Apr 23 - Jun 28)
+### Completed Summary (Sessions 416-957, Apr 23 - Jun 28)
+- **Session 957 (Jun 28):** Built 2 team enterprise tools — team-migration-planner.html (712 lines, model switch planner with risk assessment, code snippets, migration guide) + vendor-evaluation-scorecard.html (523 lines, weighted provider comparison). Fixed pricing-data.js (6 missing models). Cross-linked from 12+ pages each. Sitemap 882→884. 3 commits, 19 files.
 - **Session 956 (Jun 28):** Distributed team cost planner — FAQPage schema (5 Q&As), visual FAQ section, cross-links from 13 pages (budget-planner, cost-report, compare, 4 comparison pages, 5 blog posts). 1 commit, 15 files.
 - **Session 955 (Jun 28):** Built team-cost-planner.html (team budget tool for engineering managers). Built api/stripe-webhook.js (auto Pro delivery). Updated sitemap (881→882 URLs), homepage tools section. 1 commit, 4 files.
 - **Session 954 (Jun 27):** Created 4 comparison pages for new models (GPT-5.4 vs Sonnet 4.6, GPT-5.4 vs Gemini 3.1 Pro, Fable 5 vs GPT-5.5, GPT-5.4 mini vs Haiku 4.5). Updated sitemap (877→881 URLs), compare.html listing. Comparison coverage: 244→248 pages. 1 commit, 6 files.
