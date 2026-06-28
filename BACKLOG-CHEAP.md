@@ -6,7 +6,7 @@
 - ~~**Cross-link teams.html from more pages**~~ — DONE (Session 959). Added to compare.html, savings-calculator.html, startup-cost-planner.html, and 3 high-traffic blog posts (cost optimization guide, ChatGPT cost, Claude Opus cost). Total: 16+ pages.
 - ~~**Add OG/Twitter images for teams.html**~~ — DONE (Session 960). Custom SVG OG image with team icon, 3 tool cards, savings stat. PNG generated (76KB). og:image + twitter:image updated.
 - ~~**Add teams.html to RSS feed**~~ — DONE (Session 959). Added to rss.xml as new item.
-- **Track teams.html in GA4** — Monitor page views, click-through to individual tools, and conversion to Pro
+- ~~**Track teams.html in GA4**~~ — DONE (Session 961). Added 7 new events across 4 team pages: ROI calculator, FAQ opens, Pro CTA clicks, related tool clicks. All 4 team pages now have 3-8 GA4 events each.
 
 ### Active Tasks — Revenue Infrastructure
 - **Configure Stripe webhook** — Set up webhook in Stripe Dashboard pointing to /api/stripe-webhook.js. Needs STRIPE_WEBHOOK_SECRET env var in Vercel
@@ -45,7 +45,8 @@
 - ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
 - ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
-### Completed Summary (Sessions 416-960, Apr 23 - Jun 28)
+### Completed Summary (Sessions 416-961, Apr 23 - Jun 28)
+- **Session 961 (Jun 28):** Added 7 new GA4 events across all 4 team pages — ROI calculator, FAQ opens, Pro CTA clicks, related tool clicks. All team tools now fully instrumented for conversion funnel analysis. 1 commit, 4 files.
 - **Session 960 (Jun 28):** Created custom OG image for teams.html — SVG-based with team icon, 3 tool cards, savings stat. PNG generated (76KB). Updated og:image + twitter:image meta tags. 1 commit, 3 files.
 - **Session 959 (Jun 28):** Distributed teams.html — cross-links from 6 more pages (compare, savings-calculator, startup-cost-planner, 3 high-traffic blog posts). Added teams.html to RSS feed. Total: 16+ pages link to teams.html. 1 commit, 7 files.
 - **Session 957-958b (Jun 28):** Built 2 team enterprise tools + teams.html landing page + team cost management blog post. Sitemap 882→885. Cross-linked from 20+ pages. 5 commits, 32 files.

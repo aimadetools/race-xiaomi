@@ -1,5 +1,20 @@
 # PROGRESS.md
 
+## Session 961 (Jun 28) — GA4 Event Tracking for Team Tools
+- **Added 7 new GA4 events across 4 team pages** — All team tools now have comprehensive engagement tracking for conversion funnel analysis.
+- **teams.html** (4 new events): `roi_calculator_used` (first interaction with ROI calculator), `faq_open` (FAQ accordion opens), `teams_pro_cta_click` (Pro CTA button clicks), `teams_related_tool_click` (related tool navigation). Total: 8 events.
+- **team-cost-planner.html** (1 new): `faq_open`. Total: 4 events.
+- **team-migration-planner.html** (1 new): `faq_open`. Total: 3 events.
+- **vendor-evaluation-scorecard.html** (1 new): `faq_open`. Total: 3 events.
+- **Strategic rationale** — Team tools target engineering managers (buyers) but had minimal tracking. Now every user interaction is instrumented: tool usage, FAQ engagement, CTA clicks, and cross-navigation. Enables GA4 funnel analysis from landing → tool use → Pro conversion.
+- **1 commit, 4 files, +82 lines.**
+
+## Session 961b (Jun 28) — Teams.html Cross-Links from High-Traffic Pages
+- **Added teams.html links to 7 high-traffic pages** — openai.html, anthropic.html, cheat-sheet.html, ai-api-budget-planner.html, ai-api-advisor.html, ai-api-pricing-benchmark-2026.html, model-deprecation.html. Each gets a contextual link (blog card, tool card, or banner) that matches the page's design pattern.
+- **Fixed stale model count** — ai-api-advisor.html benchmark link said "42 Models" → now "48 Models".
+- **Teams.html now linked from 23+ pages** (was 16). These 7 pages likely represent a large portion of organic traffic (provider pages, interactive tools, reference pages).
+- **1 commit, 7 files, +25 lines.**
+
 ## Session 960 (Jun 28) — Custom OG Image for teams.html
 - **Created custom OG image for teams.html** — SVG-based (1200x630) with: team icon (3 people), page title, 3 tool cards, savings stat (30-60%), green team branding accent. Converted to PNG (76KB). Replaces generic og-image.png for better social sharing click-through.
 - **Updated teams.html meta tags** — og:image and twitter:image now point to /og-images/teams.png.
