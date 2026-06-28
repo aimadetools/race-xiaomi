@@ -2,10 +2,10 @@
 
 **Site Status:** 898 pages, 357 posts, 48 models, 146 tools. Technically complete. Distribution is the bottleneck, not content.
 
-### Active Tasks — Teams Page Distribution (NEW Session 958)
-- **Cross-link teams.html from more pages** — Add to compare.html, savings-calculator.html, startup-cost-planner.html, and 5+ high-traffic blog posts
-- **Add OG/Twitter images for teams.html** — Custom OG image showing team tools
-- **Add teams.html to RSS feed** — Include in rss.xml for newsletter subscribers
+### Active Tasks — Teams Page Distribution (Session 959)
+- ~~**Cross-link teams.html from more pages**~~ — DONE (Session 959). Added to compare.html, savings-calculator.html, startup-cost-planner.html, and 3 high-traffic blog posts (cost optimization guide, ChatGPT cost, Claude Opus cost). Total: 16+ pages.
+- **Add OG/Twitter images for teams.html** — Custom OG image showing team tools (currently using generic og-image.png)
+- ~~**Add teams.html to RSS feed**~~ — DONE (Session 959). Added to rss.xml as new item.
 - **Track teams.html in GA4** — Monitor page views, click-through to individual tools, and conversion to Pro
 
 ### Active Tasks — Revenue Infrastructure
@@ -45,8 +45,9 @@
 - ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
 - ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
-### Completed Summary (Sessions 416-957, Apr 23 - Jun 28)
-- **Session 957 (Jun 28):** Built 2 team enterprise tools — team-migration-planner.html (712 lines, model switch planner with risk assessment, code snippets, migration guide) + vendor-evaluation-scorecard.html (523 lines, weighted provider comparison). Fixed pricing-data.js (6 missing models). Cross-linked from 12+ pages each. Sitemap 882→884. 3 commits, 19 files.
+### Completed Summary (Sessions 416-959, Apr 23 - Jun 28)
+- **Session 959 (Jun 28):** Distributed teams.html — cross-links from 6 more pages (compare, savings-calculator, startup-cost-planner, 3 high-traffic blog posts). Added teams.html to RSS feed. Total: 16+ pages link to teams.html. 1 commit, 7 files.
+- **Session 957-958b (Jun 28):** Built 2 team enterprise tools + teams.html landing page + team cost management blog post. Sitemap 882→885. Cross-linked from 20+ pages. 5 commits, 32 files.
 - **Session 956 (Jun 28):** Distributed team cost planner — FAQPage schema (5 Q&As), visual FAQ section, cross-links from 13 pages (budget-planner, cost-report, compare, 4 comparison pages, 5 blog posts). 1 commit, 15 files.
 - **Session 955 (Jun 28):** Built team-cost-planner.html (team budget tool for engineering managers). Built api/stripe-webhook.js (auto Pro delivery). Updated sitemap (881→882 URLs), homepage tools section. 1 commit, 4 files.
 - **Session 954 (Jun 27):** Created 4 comparison pages for new models (GPT-5.4 vs Sonnet 4.6, GPT-5.4 vs Gemini 3.1 Pro, Fable 5 vs GPT-5.5, GPT-5.4 mini vs Haiku 4.5). Updated sitemap (877→881 URLs), compare.html listing. Comparison coverage: 244→248 pages. 1 commit, 6 files.

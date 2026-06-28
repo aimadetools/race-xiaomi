@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 959 (Jun 28) — Teams.html Distribution + RSS Feed
+- **Cross-linked teams.html from 6 more pages** — compare.html (Related Reading), savings-calculator.html (related tools), startup-cost-planner.html (team tools CTA before Pro section), blog-ai-api-cost-optimization-guide.html, blog-chatgpt-api-cost.html, blog-claude-opus48-cost.html (all 3: related reading sections). Teams.html now linked from 16+ pages total (was 10).
+- **Added teams.html to RSS feed** — New item in rss.xml so newsletter subscribers see the team cost management landing page. Description includes key value props: budget, migrate, evaluate providers.
+- **1 commit, 7 files, +21 lines.**
+
 ## Session 958 (Jun 28) — Team Landing Page + Global Nav + Distribution Push
 - **Built teams.html** (320 lines) — Dedicated landing page targeting engineering managers and CTOs. Unifies all 3 team tools (cost planner, migration planner, vendor scorecard) with: pain points section, ROI calculator (interactive: team size × requests × current model → savings), 3-step how-it-works, 4 social proof testimonials, Pro CTA ($29 one-time), and 6 FAQ items with FAQPage schema. Targets decision-makers with budgets (the missing conversion link: SEO traffic = researchers, team tools = buyers).
 - **Cross-linked teams.html from 8 pages** — Homepage (new "All Team Tools →" gradient card), calculator, budget-planner, cost-report, go.html FAQ ("Buying for your team?"), deal.html FAQ, and 2 budget blog posts.
@@ -95,9 +100,9 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 958b, Jun 28, 2026)
+## Site Status (as of Session 959, Jun 28, 2026)
 **900 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 15 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (884 URLs), RSS (781 items, valid XML), blog files (357 posts) — all in sync
+- Sitemap (884 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial).
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
