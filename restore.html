@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restore Pro Access — APIpulse</title>
+    <meta name="description" content="Restore your APIpulse Pro access. Enter your email to receive your access code.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <style>
+        .restore-page {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 100px 24px 80px;
+        }
+        .restore-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+        .restore-card h1 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .restore-card .subtitle {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+        .restore-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 360px;
+            margin: 0 auto;
+        }
+        .restore-form input {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .restore-form input:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-color: var(--accent);
+        }
+        .restore-form button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .restore-form button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        .restore-form button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .restore-success {
+            display: none;
+            background: rgba(34,197,94,0.08);
+            border: 1px solid rgba(34,197,94,0.25);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .restore-success h3 {
+            color: var(--green);
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .restore-success p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .restore-error {
+            display: none;
+            color: var(--red);
+            font-size: 13px;
+            margin-top: 12px;
+        }
+        .restore-steps {
+            text-align: left;
+            margin-top: 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .restore-steps h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .restore-steps ol {
+            padding-left: 20px;
+            margin: 0;
+        }
+        .restore-steps li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .restore-steps a {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            .restore-page { padding: 80px 16px 60px; }
+            .restore-card { padding: 28px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="restore-page">
+            <div class="restore-card">
+                <div style="font-size:48px;margin-bottom:16px;">🔑</div>
+                <h1>Restore Pro Access</h1>
+                <p class="subtitle">Enter the email you used when purchasing Pro. We'll send you your access code.</p>
+
+                <form class="restore-form" id="restore-form" onsubmit="handleRestore(event)">
+                    <input type="email" id="restore-email" placeholder="you@company.com" required
+                        aria-label="Email address" autocomplete="email">
+                    <button type="submit" id="restore-btn">Send My Access Code</button>
+                </form>
+
+                <p class="restore-error" id="restore-error">Something went wrong. Please try again.</p>
+
+                <div class="restore-success" id="restore-success">
+                    <h3>✓ Check your inbox</h3>
+                    <p>If an account exists with that email, you'll receive your access code within a few minutes. Check your spam folder if you don't see it.</p>
+                </div>
+
+                <div class="restore-steps">
+                    <h3>How to restore</h3>
+                    <ol>
+                        <li>Check your email for the access code</li>
+                        <li>Go to <a href="pro.html">getapipulse.com/pro.html</a></li>
+                        <li>Click "Already have a code? Enter it here"</li>
+                        <li>Paste the code — Pro is unlocked!</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        async function handleRestore(e) {
+            e.preventDefault();
+            var email = document.getElementById('restore-email').value.trim();
+            var btn = document.getElementById('restore-btn');
+            var error = document.getElementById('restore-error');
+            var success = document.getElementById('restore-success');
+
+            if (!email) return;
+
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            error.style.display = 'none';
+            success.style.display = 'none';
+
+            try {
+                var response = await fetch('/api/restore-access', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+
+                if (response.ok) {
+                    success.style.display = 'block';
+                    btn.textContent = 'Sent!';
+                    if (window.trackEvent) window.trackEvent('restore_code_requested');
+                } else {
+                    error.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Send My Access Code';
+                }
+            } catch (err) {
+                error.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Send My Access Code';
+            }
+        }
+    </script>
+</body>
+</html>

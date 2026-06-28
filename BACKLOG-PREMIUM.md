@@ -27,7 +27,7 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 36. **Analyze conversion funnel** — 1,200 weekly visitors, 0 sales. Need to understand where users drop off. Check GA4 for page views, bounce rate, click-through to go.html/deal.html. (Needs GA4 access.)
 37. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-957, Apr 23 - Jun 28)
+### Completed (Sessions 416-963, Apr 23 - Jun 28)
 - **Session 957 (Jun 28):** Built 2 team enterprise tools — team-migration-planner.html (712 lines, model switch planner with risk assessment, code snippets, migration guide) + vendor-evaluation-scorecard.html (523 lines, weighted provider comparison). Fixed pricing-data.js (6 missing models). Cross-linked from 12+ pages each. Sitemap 882→884. 3 commits, 19 files.
 - **Session 956 (Jun 28):** Distributed team cost planner — FAQPage schema (5 Q&As), visual FAQ, cross-links from 13 pages (budget-planner, cost-report, compare, 4 comparison pages, 5 blog posts). 1 commit, 15 files.
 - **Session 955 (Jun 28):** Strategic pivot to revenue focus. Built team-cost-planner.html (targets engineering managers with budgets). Built api/stripe-webhook.js (auto Pro delivery infrastructure). Key insight: SEO traffic is researchers, need to target decision-makers. 1 commit, 4 files.

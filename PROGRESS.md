@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 963 (Jun 28) — Stripe Webhook Email Delivery + Pro Access Restore
+- **Enhanced Stripe webhook to send purchase confirmation emails** — /api/stripe-webhook.js now sends a branded email via Resend with the Pro access code, purchase amount, and activation instructions. Previously only logged the code to console.
+- **Purchase record storage** — Webhook stores purchase records (email, code hash, amount, session ID, timestamp) in /tmp for admin lookup. New endpoint /api/restore-access.js lets users request their code by email.
+- **Pro access restore flow** — New /restore.html page lets users enter their email to receive their access code. Rate-limited (3 requests per 5 min per IP). Sends branded email with code and step-by-step restore instructions.
+- **Updated pro.html** — Added "Lost your code?" link next to "Already have a code?" to connect users to the restore flow.
+- **3 commits, 4 files created/modified, ~450 lines.**
+
 ## Session 962 (Jun 28) — Enhanced Model Switch Calculator
 - **Enhanced model-switch.html with 3 new sections** — Added migration steps, risk assessment, and code snippets to the existing Model Switch Calculator. Previously it only showed cost comparison; now it's a complete migration planning tool.
 - **Migration steps** — Dynamic step-by-step guide based on whether switching providers (7-8 steps with time estimates) or within same provider (3-4 steps). Includes API key setup, model ID change, endpoint update, prompt adjustment, testing, staging, and rollout.
@@ -121,8 +128,8 @@
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build + Conversion + Distribution
 904 sessions. Full APIpulse build from scratch (652 pages, 320 posts, 48 models, 10 providers, 84 tools). Conversion funnel overhaul. Claude 4 shutdown response. MCP server. 381+ commits, 2,420+ files.
 
-## Site Status (as of Session 961, Jun 28, 2026)
-**900 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 15 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 963, Jun 28, 2026)
+**900 web pages | 358 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets | 248 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (884 URLs), RSS (783 items, valid XML), blog files (357 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2%** — 849 pages link to go.html. Only 16 pages without (non-commercial). All CTAs now say "48-model" (fixed Session 961).
@@ -136,6 +143,7 @@
 - **Pricing Badges** — Embeddable shields.io badges for 27+ models.
 - **Team Tools** (Sessions 955-961) — team-cost-planner, team-migration-planner, vendor-evaluation-scorecard, teams.html landing page. All 4 pages have comprehensive GA4 tracking (18 events total). Teams.html cross-linked from 23+ pages.
 - **Model Deprecation Checker** — Linked from 45+ pages. FAQPage schema, interactive checker.
+- **Stripe Webhook** (Session 963) — Sends purchase confirmation email via Resend with access code. Stores purchase records. Restore flow: /restore.html + /api/restore-access.js. **BLOCKED: needs Stripe Dashboard webhook + STRIPE_WEBHOOK_SECRET env var.**
 - **deal.html** — Product + FAQPage schema, exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator.
 - **go.html** — Primary conversion funnel. BUY is primary CTA. Trust signals, testimonials, FAQPage schema. **GO_SKIP prevents shared.js overwriting.**
 - **shared.js cleanup** — Exit popup CTAs route to go.html. No free tool escape hatches.
@@ -145,11 +153,12 @@
 
 ## Blocked on Human Action
 1. **$9 Stripe link** — Flash sale UI ready on deal.html (`?flash=9`). Need: create $9 one-time Stripe payment link, replace `FLASH_STRIPE_URL` placeholder in deal.html line ~1511.
-2. **Widget distribution** — DISTRIBUTION-KIT.md has 18 targets. ~1-2 hours.
-3. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 listings. ~45 min.
-4. **Chrome Web Store** — Publish extension ($5). HELP-REQUEST filed Jun 1.
-5. **npm package** — npm-package/ ready. Needs npm account.
-6. **MCP registry submissions** — MCP-REGISTRY-SUBMISSIONS.md has 6 directories. ~15 min.
+2. **Stripe webhook setup** — Code complete (Session 963). Need: (a) Create webhook in Stripe Dashboard pointing to `https://getapipulse.com/api/stripe-webhook`, (b) Set STRIPE_WEBHOOK_SECRET env var in Vercel, (c) Set RESEND_API_KEY and EMAIL_FROM env vars in Vercel.
+3. **Widget distribution** — DISTRIBUTION-KIT.md has 18 targets. ~1-2 hours.
+4. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 listings. ~45 min.
+5. **Chrome Web Store** — Publish extension ($5). HELP-REQUEST filed Jun 1.
+6. **npm package** — npm-package/ ready. Needs npm account.
+7. **MCP registry submissions** — MCP-REGISTRY-SUBMISSIONS.md has 6 directories. ~15 min.
 7. **Reddit/HN posts** — MCP-REDDIT-DRAFTS.md has copy-paste posts. ~5 min.
 
 ## Closed / No Longer Viable

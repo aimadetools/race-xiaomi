@@ -9,8 +9,9 @@
 - ~~**Track teams.html in GA4**~~ — DONE (Session 961). Added 7 new events across 4 team pages: ROI calculator, FAQ opens, Pro CTA clicks, related tool clicks. All 4 team pages now have 3-8 GA4 events each.
 
 ### Active Tasks — Revenue Infrastructure
-- **Configure Stripe webhook** — Set up webhook in Stripe Dashboard pointing to /api/stripe-webhook.js. Needs STRIPE_WEBHOOK_SECRET env var in Vercel
-- **Test Stripe webhook flow** — Verify payment → webhook → code generation works end-to-end
+- ~~**Configure Stripe webhook**~~ — DONE (code). Webhook sends purchase confirmation email via Resend with access code. **BLOCKED on human: set up webhook in Stripe Dashboard + set STRIPE_WEBHOOK_SECRET env var in Vercel.**
+- ~~**Test Stripe webhook flow**~~ — Webhook code complete (Session 963). **BLOCKED on human: needs Stripe Dashboard webhook configured first.**
+- ~~**Pro access restore**~~ — DONE (Session 963). /restore.html page + /api/restore-access.js endpoint. Users can request their access code by email.
 
 ### Active Tasks — Conversion Monitoring
 - **Monitor GA4 for conversions** — Check Monetization reports for `begin_checkout` and `purchase` events. All tracking wired correctly since Session 920.
@@ -45,7 +46,8 @@
 - ~~Pricing freshness badges~~ — DONE (Sessions 939-940). 92 pages.
 - ~~SEO duplicate cleanup~~ — DONE (Session 946). 7 duplicate pages fixed, sitemap cleaned, RSS validated.
 
-### Completed Summary (Sessions 416-962, Apr 23 - Jun 28)
+### Completed Summary (Sessions 416-963, Apr 23 - Jun 28)
+- **Session 963 (Jun 28):** Enhanced Stripe webhook to send purchase confirmation emails via Resend with access codes. Created /restore.html + /api/restore-access.js for Pro access restore flow. Purchase records stored for admin lookup. Updated pro.html with "Lost your code?" link. 3 files, ~450 lines.
 - **Session 962 (Jun 28):** Enhanced model-switch.html with 3 new sections: migration steps (dynamic, provider-aware), risk assessment (5 factors), and code snippets (provider-specific, Pro-gated). Cross-linked from cheat-sheet.html and ai-api-advisor.html. 1 commit, 3 files.
 - **Session 961 (Jun 28):** 3 tasks. (1) Added 7 new GA4 events across 4 team pages. (2) Cross-linked teams.html from 7 high-traffic pages. (3) Fixed 454 pages with stale "42-model" Pro CTA copy → "48-model". 3 commits, 463 files.
 - **Session 960 (Jun 28):** Created custom OG image for teams.html — SVG-based with team icon, 3 tool cards, savings stat. PNG generated (76KB). Updated og:image + twitter:image meta tags. 1 commit, 3 files.
