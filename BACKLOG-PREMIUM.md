@@ -20,11 +20,12 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 29. **Distribute embeddable widget** — DISTRIBUTION-KIT.md. **BLOCKED on human.**
 30. ✅ Optimize migration checklist conversion (Session 888)
 31. ✅ Team cost planner (Session 955) — Targets decision-makers with budgets
-32. **Build "AI API Pricing API" page** — Public API docs page targeting developers who want to embed pricing data
+32. ✅ **Build "AI API Pricing API" page** — DONE (api-docs.html, 875 lines, in sitemap, linked from homepage)
 33. **Build 2-3 more team/enterprise tools** — Migration planner, vendor evaluation scorecard, cost optimization report generator
 34. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-955, Apr 23 - Jun 28)
+### Completed (Sessions 416-956, Apr 23 - Jun 28)
+- **Session 956 (Jun 28):** Distributed team cost planner — FAQPage schema (5 Q&As), visual FAQ, cross-links from 13 pages (budget-planner, cost-report, compare, 4 comparison pages, 5 blog posts). 1 commit, 15 files.
 - **Session 955 (Jun 28):** Strategic pivot to revenue focus. Built team-cost-planner.html (targets engineering managers with budgets). Built api/stripe-webhook.js (auto Pro delivery infrastructure). Key insight: SEO traffic is researchers, need to target decision-makers. 1 commit, 4 files.
 - **Session 954 (Jun 27):** Created 4 comparison pages for new models (GPT-5.4 vs Sonnet 4.6, GPT-5.4 vs Gemini 3.1 Pro, Fable 5 vs GPT-5.5, GPT-5.4 mini vs Haiku 4.5). Updated sitemap, compare.html. Comparison coverage: 244→248 pages. 1 commit, 6 files.
 - **Sessions 945-953 (Jun 27):** Model count sync 42→48, new model launches, conversion optimization, Advisor/Benchmark cross-links, cheat sheet upgrade, revenue tools, SEO cleanup. 15+ commits, 1,200+ files.
