@@ -1,9 +1,13 @@
 # PROGRESS.md
 
+## Session 978 (Jun 28) — Stale Reference Cleanup
+- **Fixed stale "20 models" → "25 models" in distribution files** — DISTRIBUTION-KIT.md (short/medium/long descriptions, Twitter/X post, LinkedIn post), DISTRIBUTION-DEVTO.md (frontmatter description + article body). These are the copy-paste ready descriptions for directory submissions and social media. Was using outdated model count from before the GPT-5.5/Kimi K2.6/GPT-oss widget update in Session 974.
+- **Updated model lists in descriptions** — Added GPT-5.5, Kimi K2.6, GPT-oss to description copy. Added Moonshot, Cohere, AI21 to provider list in long description.
+- **Impact** — Distribution descriptions now match actual widget (25 models, 10 providers). Ensures directory submissions and social posts are accurate.
+- **1 commit, 2 files.**
+
 ## Session 977 (Jun 28) — Internal Linking & Cross-Links
-- **Added related-reading sections to 3 buyer-intent blog posts** — blog-ai-api-cost-optimization-2026.html, blog-ai-api-production-pricing-2026.html, blog-best-ai-api-2026.html. Each now links to the other 2 plus top related guides (cost calculator, pricing comparison, provider guide). These posts had zero inbound links from other pages before.
-- **Added cross-links from 5 high-value existing blog posts** — blog-10-ai-api-cost-mistakes.html, blog-ai-api-batch-processing-complete-guide.html, blog-hidden-costs-ai-api.html, blog-claude-opus-48-alternatives.html, blog-gpt55pro-cost-guide.html. Each now has a "Keep Reading" section linking to the 3 buyer-intent guides.
-- **Impact** — Improves internal linking for SEO (Google uses internal links to discover and rank pages), guides users toward higher-value conversion content, and increases time-on-site. The 3 newest buyer-intent posts are the strongest conversion pages on the site.
+- **Added related-reading sections to 3 buyer-intent blog posts** — blog-ai-api-cost-optimization-2026.html, blog-ai-api-production-pricing-2026.html, blog-best-ai-api-2026.html. Each now links to the other 2 plus top related guides. Improved SEO internal linking and user flow toward conversion pages.
 - **1 commit, 8 files, 102 lines added.**
 
 ## Session 976 (Jun 28) — Sitemap & Index Cleanup
@@ -99,8 +103,8 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 977, Jun 28, 2026)
-**916 web pages | 361 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 266 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 978, Jun 28, 2026)
+**916 web pages | 361 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 312 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (911 URLs), RSS (786 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".

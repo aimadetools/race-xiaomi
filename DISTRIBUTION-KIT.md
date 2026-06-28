@@ -13,13 +13,13 @@
 Free embeddable widget for live AI API pricing.
 
 ### Short (150 chars)
-Free embeddable widget showing live AI API pricing for 20 models across 10 providers. One script tag, zero dependencies. Add to any website.
+Free embeddable widget showing live AI API pricing for 25 models across 10 providers. One script tag, zero dependencies. Add to any website.
 
 ### Medium (300 chars)
-Add live AI API pricing to any website with one script tag. The APIpulse widget shows input/output costs for 20 models (GPT-5.4, Claude Opus 4.8, Gemini 3.5, DeepSeek V4, Llama 4, Mistral, Grok) across 10 providers. Uses Shadow DOM for style isolation. ~5KB gzipped. No signup. Free forever.
+Add live AI API pricing to any website with one script tag. The APIpulse widget shows input/output costs for 25 models (GPT-5.5, Claude Opus 4.8, Gemini 3.5, DeepSeek V4, Llama 4, Mistral, Grok, Kimi K2.6, GPT-oss) across 10 providers. Uses Shadow DOM for style isolation. ~5KB gzipped. No signup. Free forever.
 
 ### Long (500 chars)
-The APIpulse AI Pricing Widget is a free, open embeddable component that displays live AI API pricing on any website. Drop in one script tag — no signup, API key, or configuration needed. Shows input/output token costs for 20 models across 10 providers including OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, and xAI. Features Shadow DOM isolation, zero dependencies, ~5KB gzipped, and async loading. Perfect for AI blogs, developer docs, and SaaS comparison sites. Free forever, unlimited embeds.
+The APIpulse AI Pricing Widget is a free, open embeddable component that displays live AI API pricing on any website. Drop in one script tag — no signup, API key, or configuration needed. Shows input/output token costs for 25 models across 10 providers including OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Moonshot, Cohere, and AI21. Features Shadow DOM isolation, zero dependencies, ~5KB gzipped, and async loading. Perfect for AI blogs, developer docs, and SaaS comparison sites. Free forever, unlimited embeds.
 
 ### Technical
 - File size: ~5KB gzipped, ~14KB raw
@@ -37,7 +37,7 @@ The APIpulse AI Pricing Widget is a free, open embeddable component that display
 ```
 I built a free embeddable widget for live AI API pricing.
 
-One script tag. Zero dependencies. 20 models, 10 providers.
+One script tag. Zero dependencies. 25 models, 10 providers.
 
 No signup. No API key. Free forever.
 
@@ -56,7 +56,7 @@ If you write about AI, build with AI APIs, or run a developer-focused site — k
 
 I built a free embeddable widget that solves this:
 
-✅ Shows live pricing for 20 AI models (GPT-5.4, Claude, Gemini, DeepSeek, Llama 4, Mistral, Grok...)
+✅ Shows live pricing for 25 AI models (GPT-5.5, Claude Opus 4.8, Gemini, DeepSeek, Llama 4, Mistral, Grok, Kimi K2.6...)
 ✅ One script tag to embed — no signup, no API key
 ✅ Shadow DOM for style isolation (won't break your CSS)
 ✅ ~5KB gzipped, loads async

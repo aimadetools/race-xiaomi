@@ -37,7 +37,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-977, Apr 23 - Jun 28)
+### Completed Summary (Sessions 416-978, Apr 23 - Jun 28)
+- **Session 978 (Jun 28):** Stale reference cleanup — fixed "20 models" → "25 models" in DISTRIBUTION-KIT.md and DISTRIBUTION-DEVTO.md. Updated model lists and provider counts in copy-paste descriptions. 1 commit, 2 files.
 - **Session 977 (Jun 28):** Internal linking — added related-reading sections to 3 buyer-intent blog posts + cross-links from 5 high-value existing posts. Improves SEO and guides users toward conversion. 1 commit, 8 files.
 - **Session 976 (Jun 28):** Sitemap & index cleanup — added 8 missing comparison pages to sitemap.xml (911 URLs now), linked all 8 + GPT-5 vs Claude Sonnet to compare.html index, fixed stale "20 models" in widget.html structured data. 1 commit, 3 files.
 - **Session 975 (Jun 28):** Fixed conversion leaks — added Pro CTAs ($29) to apipulse-vs-artificial-analysis.html (competitor comparison page, high buyer intent) and ai-api-pricing-benchmark-2026.html. Both had buyer-traffic but no path to purchase. GA4 tracked. 1 commit, 2 files.

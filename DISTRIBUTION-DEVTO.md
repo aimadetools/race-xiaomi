@@ -1,7 +1,7 @@
 ---
 title: I Built a Free Embeddable Widget for Live AI API Pricing — One Script Tag
 published: false
-description: AI API prices change constantly. I built a free, open widget that shows live pricing for 20 models across 10 providers. Drop it into any site with one script tag.
+description: AI API prices change constantly. I built a free, open widget that shows live pricing for 25 models across 10 providers. Drop it into any site with one script tag.
 tags: ai, webdev, api, productivity
 canonical_url: https://getapipulse.com/blog-embed-pricing-widget.html
 ---
@@ -16,7 +16,7 @@ So I built a **free, embeddable pricing widget**.
 
 ## What It Does
 
-The widget adds a small floating badge to the corner of any webpage. Click it, and visitors see a sortable table of live AI API pricing — input cost, output cost, and context window for 20 models.
+The widget adds a small floating badge to the corner of any webpage. Click it, and visitors see a sortable table of live AI API pricing — input cost, output cost, and context window for 25 models.
 
 [Include screenshot or GIF here — the widget expanded showing the pricing table]
 
