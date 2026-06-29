@@ -1071,7 +1071,7 @@ async function saveEmail(e) {
                 },
                 social: {
                     emoji: '🚀',
-                    headline: 'Join 1,247+ developers saving on AI',
+                    headline: 'Join 1,200+ developers saving on AI',
                     desc: 'See exactly which model to switch to — with migration code, cost projections, and a personalized optimization plan. Used by developers at startups and enterprises worldwide.',
                     cta: 'Get Pro Access — $' + price + ' lifetime'
                 }
