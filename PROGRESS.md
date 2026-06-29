@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 988 (Jun 29) — Bug Fixes & Missing Infrastructure
+- **Fixed broken $9 flash deal CTAs** — deal.html had `FLASH9_REPLACE_ME` placeholder (fake Stripe URL). flash-deal.html had literal `FLASH_STRIPE_URL` as href (404). Both now redirect to flash-19.html ($19 flash sale). No $9 Stripe link exists yet.
+- **Added shared.js + analytics.js to terminal.html** — Terminal page was standalone (no flash sale routing, no price override, no exit popups, no Pro CTA management, no funnel tracking). Now has full shared infrastructure.
+- **Added og:image + twitter:image to terminal.html and api-badge.html** — Both indexable pages were missing social preview images. Shares would show no image.
+- **1 commit, 5 files, 17 lines changed.**
+
 ## Session 987 (Jun 29) — Mobile Flash Sale CTA
 - **Enabled floating flash sale button on mobile** — Previously desktop-only (60%+ of traffic was invisible to the persistent CTA after dismissing the top banner). Now shows on all pages for mobile users with compact bottom-center design (13px font, shorter "⚡ $19 Sale" text). Desktop unchanged (bottom-right, 14px). No conflict with flash-19.html sticky CTA (floating button already skips that page). Hover effects disabled on touch devices. GA4 events now track device dimension (mobile/desktop) for conversion analysis.
 - **1 commit, 1 file, 73 lines changed.**
