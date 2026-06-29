@@ -7,6 +7,12 @@
 - **Sessions 905-951 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. AI API Advisor, Pricing Benchmark. **88+ commits, 2,880+ files.**
 - **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
+## Session 995 (Jun 29) — Sitemap Cleanup
+- **Removed 12 malformed `<url>` entries** — Empty entries with `<lastmod>`/`<changefreq>`/`<priority>` but no `<loc>` tag (invalid per sitemap protocol). Google cannot index URLs it doesn't know.
+- **Removed 1 duplicate homepage entry** — Second `https://getapipulse.com/` with stale 2026-06-15 lastmod, priority 0.8 (canonical copy at top has 2026-06-29, priority 1.0).
+- **Sitemap now has 911 valid URLs** (was 924, removed 13 invalid/duplicate entries).
+- **1 commit, 1 file, 66 lines removed.**
+
 ## Session 994 (Jun 29) — Comparison Index Sync + Sitemap Fix
 - **Added 7 missing comparison pages to compare.html index** — DeepSeek V3.2 vs GPT-5 mini, GPT-5 mini vs Claude Haiku 4.5, GPT-5 mini vs DeepSeek V4 Pro, GPT-5 mini vs Gemini 3.5 Flash, GPT-5 mini vs Mistral Small 4, Opus 4.8 vs Kimi K2.6, Sonnet 4.6 vs Mistral Large 3. All created Jun 28-29 but never added to the index.
 - **Added 7 missing comparison pages to sitemap.xml** — Same 7 pages now in sitemap (912 entries, was 905).
@@ -68,9 +74,9 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 994, Jun 29, 2026)
+## Site Status (as of Session 995, Jun 29, 2026)
 **919 web pages | 361 blog posts | 48 models | 10+ providers | 147 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 259 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
-- Sitemap (912 URLs — 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
+- Sitemap (911 URLs — 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.

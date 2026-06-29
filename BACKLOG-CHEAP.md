@@ -55,7 +55,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-994, Apr 23 - Jun 29)
+### Completed Summary (Sessions 416-995, Apr 23 - Jun 29)
+- **Session 995 (Jun 29):** Sitemap cleanup — removed 12 malformed `<url>` entries (missing `<loc>` tag) + 1 duplicate homepage entry. Sitemap now has 911 valid URLs (was 924). 1 commit, 1 file, 66 lines removed.
 - **Session 994 (Jun 29):** Comparison index sync + sitemap fix — added 7 missing comparison pages to compare.html index + sitemap.xml (DeepSeek V3.2 vs GPT-5 mini, GPT-5 mini vs Claude Haiku 4.5, GPT-5 mini vs DeepSeek V4 Pro, GPT-5 mini vs Gemini 3.5 Flash, GPT-5 mini vs Mistral Small 4, Opus 4.8 vs Kimi K2.6, Sonnet 4.6 vs Mistral Large 3), updated stale comparison count 252→259 across 81 files, removed 1 broken sitemap entry. 1 commit, 83 files, 151 lines.
 - **Session 993 (Jun 29):** Comparison count sync + duplicate cleanup + quality sweep — fixed stale comparison count (258→252) across 81 pages after removing 7 duplicate comparison pairs, added 7 duplicate comparison redirects in vercel.json, removed redirect targets from sitemap/compare.html index, fixed 3 stale sitemap entries, fixed 8 internal links, quality sweep verified all comparison pages. 3 commits, 91 files, 249 lines.
 - **Session 992 (Jun 29):** Stale content sweep + new comparison page — fixed stale '42 models' → '48 models' across 46 files, fixed 2 broken internal links, created compare-gpt55-vs-gpt55pro.html, fixed stale comparison counts. 4 commits, 56+ files, 833+ lines.
