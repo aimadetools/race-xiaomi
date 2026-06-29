@@ -55,7 +55,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-987, Apr 23 - Jun 29)
+### Completed Summary (Sessions 416-988, Apr 23 - Jun 29)
+- **Session 988 (Jun 29):** Bug fixes & missing infrastructure — fixed broken $9 flash deal CTAs (deal.html FLASH9_REPLACE_ME, flash-deal.html FLASH_STRIPE_URL → flash-19.html), added shared.js + analytics.js + og:image + twitter:image to terminal.html, added og:image to api-badge.html, fixed exit popup hardcoded $29, fixed 4 stale 42-model references. 3 commits, 8 files, 35+ lines.
 - **Session 987 (Jun 29):** Mobile floating flash sale button — enabled on mobile with compact bottom-center design. 60%+ of traffic now sees persistent $19 CTA. GA4 device tracking added. 1 commit, 1 file, 73 lines.
 - **Session 986 (Jun 29):** Terminal distribution — nav bar link (917 pages), 3 blog post cross-links, RSS feed entry. 1 commit, 5 files, 32 lines.
 - **Session 985 (Jun 29):** New distribution + persistent CTA — Terminal pricing dashboard (terminal.html), floating flash sale button on all pages. 2 commits, 5 files, 696 lines.
