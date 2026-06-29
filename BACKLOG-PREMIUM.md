@@ -22,7 +22,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — Monitor $19 flash sale conversion. If 0 sales in 3 days, try $9 (needs Stripe link from human). Buyer-intent blog posts (Sessions 971-972) target developers already spending money on APIs.
 - **Remaining: Analytics (needs GA4)** — Analyze A/B data, conversion funnel, plan v2.
 
-### Completed (Sessions 416-986, Apr 5 - Jun 29)
+### Completed (Sessions 416-987, Apr 5 - Jun 29)
+- **Session 987 (Jun 29):** Mobile floating flash sale button — enabled on all pages for mobile users (60%+ of traffic). Compact bottom-center design. 1 commit, 1 file, 73 lines.
 - **Session 986 (Jun 29):** Terminal distribution — nav bar link (917 pages), 3 blog post cross-links, RSS feed entry. 1 commit, 5 files, 32 lines.
 - **Session 985 (Jun 29):** New distribution channel + persistent CTA — Terminal AI API Pricing Dashboard (terminal.html) with 48 models, sorting/filtering, cost calculator. Floating flash sale button on all pages (bottom-right, non-dismissable). 2 commits, 5 files, 696 lines.
 - **Session 983 (Jun 29):** Flash sale conversion optimization — 8 improvements to flash-19.html: exit popup, sticky mobile CTA, live viewer count, guarantee block, loss-aversion section, improved testimonial, savings calculator ROI, attribution tracking. 4 commits, 1 file, 197 lines.

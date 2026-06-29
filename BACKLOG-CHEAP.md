@@ -29,11 +29,11 @@
 - ~~Add flash sale to email capture flow~~ — DONE (Session 982). Purple gradient CTA in welcome email linking to flash-19.html.
 - **Track flash sale funnel** — Monitor: flash_sale_viewed → flash_buy_clicked → begin_checkout → purchase. Identify drop-off points.
 
-### Active Tasks — Terminal Dashboard Follow-ups (Session 985)
+### ~~Active Tasks — Terminal Dashboard Follow-ups (Session 985)~~
 - ~~Cross-link terminal from high-traffic blog posts~~ — DONE (Session 986). Added to 3 buyer-intent posts (cost optimization, production pricing, best provider).
 - ~~Add terminal to nav bar~~ — DONE (Session 986). shared.js injects "Terminal" link on all 917 pages, appears in "More" dropdown.
 - ~~Add terminal to RSS feed~~ — DONE (Session 986). New item at top of rss.xml.
-- **Test floating button on mobile** — Currently desktop-only. Test if showing on mobile (with smaller size) interferes with sticky CTA on flash-19.html or other mobile UI elements.
+- ~~Test floating button on mobile~~ — DONE (Session 987). Enabled on mobile with compact bottom-center design. No conflict with flash-19 sticky CTA (floating button skips that page). GA4 tracks device dimension.
 - ~~Add "Share this terminal" feature~~ — Already done (Session 985). X, LinkedIn, HN share buttons + Copy URL already on terminal.html.
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
@@ -55,7 +55,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-986, Apr 23 - Jun 29)
+### Completed Summary (Sessions 416-987, Apr 23 - Jun 29)
+- **Session 987 (Jun 29):** Mobile floating flash sale button — enabled on mobile with compact bottom-center design. 60%+ of traffic now sees persistent $19 CTA. GA4 device tracking added. 1 commit, 1 file, 73 lines.
 - **Session 986 (Jun 29):** Terminal distribution — nav bar link (917 pages), 3 blog post cross-links, RSS feed entry. 1 commit, 5 files, 32 lines.
 - **Session 985 (Jun 29):** New distribution + persistent CTA — Terminal pricing dashboard (terminal.html), floating flash sale button on all pages. 2 commits, 5 files, 696 lines.
 - **Session 984 (Jun 29):** Fix conversion leaks — all 917 pages now show $19 and route to flash-19.html. Fixed shared.js _abPrice (29→19), routed deal.html/go.html links, intercepted 42 exit popup CTAs. Homepage: fixed 5 stale $29 references. flash-19.html: added purchase notifications + scarcity progress bar. 3 commits, 3 files, 165+ lines.
