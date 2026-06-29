@@ -20,11 +20,11 @@
 - ~~$9 flash sale~~ — UI ready on deal.html (`?flash=9`) AND flash-deal.html. Needs $9 Stripe payment link from human. Replace FLASH_STRIPE_URL placeholder.
 - ~~Strategic content gating~~ — DONE (Session 970). Ranking table gate on 51 pages: top 5 free, blur 3, Pro CTA overlay. Total gating coverage: usage-gate.js (3 pages), results-cta.js (74 pages), ranking table gate (51 pages).
 
-### Active Tasks — Flash Sale Follow-ups
-- **Add flash sale mention to blog posts** — Add a P.S. or banner to the 3 buyer-intent blog posts (cost optimization, production pricing, best provider) linking to flash-19.html.
-- **Add flash sale to email capture flow** — Update the /api/subscribe welcome email to mention the $19 flash sale.
-- **Update deal.html to mention $19 option** — Add a "Flash sale: get it for $19 instead" banner to deal.html.
-- **Update comparison pages** — Add flash sale banner to top 10 most-visited comparison pages.
+### ~~Active Tasks — Flash Sale Follow-ups~~
+- ~~Add flash sale mention to blog posts~~ — DONE (Session 981). Banners on 3 buyer-intent posts with contextual headlines + GA4 tracking.
+- ~~Update deal.html to mention $19 option~~ — DONE (Session 981). Yellow banner linking to flash-19.html, hidden when $9 flash is active.
+- ~~Update comparison pages~~ — DONE (global banner in shared.js already covers all 312 comparison pages + all 917 pages site-wide).
+- **Add flash sale to email capture flow** — Update the /api/subscribe welcome email to mention the $19 flash sale. *(Email-related, proceed with caution.)*
 - **Track flash sale funnel** — Monitor: flash_sale_viewed → flash_buy_clicked → begin_checkout → purchase. Identify drop-off points.
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
@@ -46,8 +46,9 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-978, Apr 23 - Jun 28)
-- **Sessions 969-979 (Jun 28):** Conversion focus — content gating (51 pages), flash deal page, competitor comparison, buyer-intent blog posts (3 posts targeting cost optimization, production pricing, best provider), widget upgrade (20→25 models), stale reference cleanup, compare index (17 pages added total), internal linking. Site completeness sweep — verified no broken links, all pages have Pro CTAs, all compare pages in sitemap. 16+ commits, 51+ files.
+### Completed Summary (Sessions 416-981, Apr 23 - Jun 29)
+- **Session 981 (Jun 29):** Flash sale follow-ups — banners on 3 buyer-intent blog posts, deal.html $19 option, verified global banner coverage. 1 commit, 4 files.
+- **Sessions 969-980 (Jun 28-29):** Conversion focus — content gating (51 pages), flash deal page, competitor comparison, buyer-intent blog posts (3 posts targeting cost optimization, production pricing, best provider), widget upgrade (20→25 models), stale reference cleanup, compare index (17 pages added total), internal linking, $19 flash sale landing page + site-wide promotion. 17+ commits, 55+ files.
 - **Sessions 955-968 (Jun 28):** Team tools pivot, GA4 tracking (18 events), model launches (42→48), 13 comparison pages, model count sync. 20+ commits, 1,000+ files.
 - **Sessions 905-954 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. New model launches. AI API Advisor, Pricing Benchmark. **88+ commits, 2,880+ files.**
 - **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
