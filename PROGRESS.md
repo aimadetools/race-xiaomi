@@ -1,7 +1,19 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1000 (Jun 29):** 4 new comparison pages — GPT-5.5 vs GPT-5.4 Pro, GPT-5.4 Pro vs Sonnet 4.6, DeepSeek V4 Pro vs GPT-5.4 Pro, Grok 4.3 vs Kimi K2.6. All with interactive calculators, FAQPage schema, social share, Pro CTA. Updated sitemap (+4→920 URLs), compare.html index (+4 cards), comparison count 263→267 across 80+ files. 1 commit, 89 files.
 - **Session 999 (Jun 29):** Full pricing-dashboard cross-link coverage — added "Full Pricing Dashboard" cross-link to ALL 267 comparison pages (243 new). Fixed duplicate quick-savings.html entry in sitemap (916 valid URLs). 1 commit, 244 files.
+
+## Session 1000 (Jun 29) — 4 New High-Value Comparison Pages
+- **Created compare-gpt55-vs-gpt54pro.html** — GPT-5.5 vs GPT-5.4 Pro (OpenAI family). GPT-5.5 is 83% cheaper on both input ($5 vs $30) and output ($30 vs $180). Targets "GPT-5.5 vs GPT-5.4 Pro" searches.
+- **Created compare-gpt54pro-vs-sonnet46.html** — GPT-5.4 Pro vs Sonnet 4.6 (cross-provider). Sonnet 4.6 is 90% cheaper on input ($3 vs $30) and 92% cheaper on output ($15 vs $180). Targets premium-to-mid migration queries.
+- **Created compare-deepseek-v4pro-vs-gpt54pro.html** — DeepSeek V4 Pro vs GPT-5.4 Pro (budget vs premium). DeepSeek V4 Pro is 98.6% cheaper on input ($0.435 vs $30) and 99.5% cheaper on output ($0.87 vs $180). Massive savings angle.
+- **Created compare-grok43-vs-kimi-k26.html** — Grok 4.3 vs Kimi K2.6 (emerging providers). Both under $5/M tokens. Grok has 1M context (4x more), Kimi has 24% cheaper input.
+- **Each page includes:** Interactive cost calculator, FAQPage schema (4 Q&As), use-case recommendations, social share buttons (X/LinkedIn), Pro CTA, related comparisons + tools, flash sale banner, GA4 tracking.
+- **Updated sitemap.xml** — +4 URLs (916→920).
+- **Updated compare.html index** — +4 cards with accent borders.
+- **Updated comparison count 263→267** across 80+ HTML files.
+- **1 commit, 89 files, 2,079 lines added.**
 - **Session 998 (Jun 29):** Dashboard nav link + cross-links — added "Dashboard" to nav bar (shared.js, all 917 pages), added Quick Savings + Full Pricing Dashboard links to calculator.html, added pricing-dashboard cross-link to 20 highest-traffic comparison pages. 1 commit, 22 files.
 - **Sessions 997 (Jun 29):** 2 new distribution tools — Pricing Dashboard (interactive table, 48 models, sorting/filtering, FAQPage schema) + Quick Savings Check (select model + spend → top 5 alternatives with dollar savings). Both with shared.js (exit popup + flash sale banner), cross-linked from tools.html + index.html, added to sitemap + RSS. 3 commits, 10 files.
 - **Sessions 980-996 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes, homepage sitemap fix, 60 comparison count fixes, stale 42→48 model sweep (46 files), new GPT-5.5 vs Pro comparison, duplicate comparison redirects (7 pairs), comparison count sync, 7 missing comparisons added to index + sitemap, 4 high-value DeepSeek V4 Pro comparison pages. 23+ commits, 260+ files.
@@ -97,9 +109,9 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 999, Jun 29, 2026)
-**925 web pages | 361 blog posts | 48 models | 10+ providers | 149 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 267 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
-- Sitemap (916 URLs — 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
+## Site Status (as of Session 1000, Jun 29, 2026)
+**929 web pages | 361 blog posts | 48 models | 10+ providers | 149 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 267 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
+- Sitemap (920 URLs — 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.
