@@ -975,10 +975,22 @@
             return false;
         }
 
-        // Track page view
-        if (typeof gtag === 'function') {
-            gtag('event', 'flash_sale_viewed', { price: 19, page: 'flash-19' });
-        }
+        // Track page view + capture attribution
+        (function() {
+            var params = new URLSearchParams(location.search);
+            var from = params.get('from') || 'direct';
+            if (typeof gtag === 'function') {
+                gtag('event', 'flash_sale_viewed', { price: 19, page: 'flash-19', from: from });
+            }
+            // Pass attribution to Stripe links via client_reference_id
+            document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a) {
+                try {
+                    var url = new URL(a.href);
+                    url.searchParams.set('client_reference_id', 'flash19_' + from);
+                    a.href = url.toString();
+                } catch(e) {}
+            });
+        })();
 
         // Live viewer count — realistic social proof
         (function() {
