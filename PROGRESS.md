@@ -5,8 +5,6 @@
 - **Session 1004 (Jun 29):** Site quality audit — fixed 2 broken comparison links, RSS XML error (3 unescaped ampersands), 2 stale comparison counts (258→267, 57→267). Audit passed: 915 sitemap URLs valid, 0 duplicates, all 267 comparison pages have FAQPage schema. 4 commits, 5 files.
 - **Session 1003 (Jun 29):** Fixed compare.html + calculator.html model selectors — added 6 missing models (GPT-5.4 family, Claude Fable 5, Claude Mythos 5), fixed Sonnet 4 label, updated FAQPage model counts. 2 commits, 2 files.
 - **Session 1002 (Jun 29):** New cost comparison matrix — interactive 48-model grid with color-coded pricing, sort/filter, monthly cost estimator, FAQPage schema. Cross-linked from homepage, tools, calculator, sitemap (+1→915 URLs), RSS. 1 commit, 6 files.
-- **Session 1001 (Jun 29):** Fixed 4 duplicate comparison stubs — replaced thin 205-line stubs with proper redirects to canonical pages, added 301 redirects in vercel.json, updated compare.html, removed 4 stubs from sitemap (920→916 valid URLs). 1 commit, 7 files.
-- **Session 1000 (Jun 29):** 4 new comparison pages — GPT-5.5 vs GPT-5.4 Pro, GPT-5.4 Pro vs Sonnet 4.6, DeepSeek V4 Pro vs GPT-5.4 Pro, Grok 4.3 vs Kimi K2.6. All with interactive calculators, FAQPage schema, social share, Pro CTA. Updated sitemap (+4→920 URLs), compare.html index (+4 cards), comparison count 263→267 across 80+ files. 1 commit, 89 files.
 
 ## Session 1005 (Jun 29) — 4 New Comparison Pages + Site Fixes
 - **Created 4 new high-value comparison pages:**
@@ -46,106 +44,21 @@
 - **Cross-linked from:** homepage (+1 tool link), tools.html (+1 card), calculator.html (+1 related tool), sitemap.xml (+1→915 URLs), RSS (+1 item).
 - **1 commit, 6 files, 542 lines added.**
 
-## Session 1001 (Jun 29) — Fix Duplicate Comparison Pages
-- **Replaced 4 thin stub pages with proper redirects** — Non-hyphenated slug variants (e.g., compare-opus48-vs-deepseekv4pro.html) were 205-line stubs competing with canonical versions (400-991 lines). Replaced with meta refresh + JS redirect + noindex.
-  - compare-opus48-vs-deepseekv4pro.html → compare-opus48-vs-deepseek-v4pro.html
-  - compare-sonnet46-vs-deepseekv4pro.html → compare-sonnet46-vs-deepseek-v4pro.html
-  - compare-haiku45-vs-deepseekv4pro.html → compare-haiku45-vs-deepseek-v4pro.html
-  - compare-gpt55-vs-deepseekv4pro.html → compare-gpt55-vs-deepseek-v4pro.html
-- **Redirected 2 more v4-pro duplicates** — Fixed reversed gpt55 redirect (was v4pro→v4-pro, now v4-pro→v4pro), added kimi-k26 redirect. Both now point to canonical v4pro format.
-- **Added 6 redirects in vercel.json** — All 6 pairs now have proper permanent redirects.
-- **Updated 24 internal links** — compare.html, 20 comparison pages, 1 blog page now link to canonical URLs.
-- **Cleaned up sitemap.xml** — Removed 6 redirect URLs (920→914 valid URLs) + 4 orphaned `<url>` tags.
-- **Cleaned up PROGRESS.md** — Updated site status, added Session 1001.
-- **Cleaned up BACKLOG-CHEAP.md** — Collapsed completed tasks into summary lines.
-- **3 commits, 30 files, 92 lines added, 1,941 lines removed.**
-
-## Session 1000 (Jun 29) — 4 New High-Value Comparison Pages
-- **Created compare-gpt55-vs-gpt54pro.html** — GPT-5.5 vs GPT-5.4 Pro (OpenAI family). GPT-5.5 is 83% cheaper on both input ($5 vs $30) and output ($30 vs $180). Targets "GPT-5.5 vs GPT-5.4 Pro" searches.
-- **Created compare-gpt54pro-vs-sonnet46.html** — GPT-5.4 Pro vs Sonnet 4.6 (cross-provider). Sonnet 4.6 is 90% cheaper on input ($3 vs $30) and 92% cheaper on output ($15 vs $180). Targets premium-to-mid migration queries.
-- **Created compare-deepseek-v4pro-vs-gpt54pro.html** — DeepSeek V4 Pro vs GPT-5.4 Pro (budget vs premium). DeepSeek V4 Pro is 98.6% cheaper on input ($0.435 vs $30) and 99.5% cheaper on output ($0.87 vs $180). Massive savings angle.
-- **Created compare-grok43-vs-kimi-k26.html** — Grok 4.3 vs Kimi K2.6 (emerging providers). Both under $5/M tokens. Grok has 1M context (4x more), Kimi has 24% cheaper input.
-- **Each page includes:** Interactive cost calculator, FAQPage schema (4 Q&As), use-case recommendations, social share buttons (X/LinkedIn), Pro CTA, related comparisons + tools, flash sale banner, GA4 tracking.
-- **Updated sitemap.xml** — +4 URLs (916→920).
-- **Updated compare.html index** — +4 cards with accent borders.
-- **Updated comparison count 263→267** across 80+ HTML files.
-- **1 commit, 89 files, 2,079 lines added.**
-- **Session 998 (Jun 29):** Dashboard nav link + cross-links — added "Dashboard" to nav bar (shared.js, all 917 pages), added Quick Savings + Full Pricing Dashboard links to calculator.html, added pricing-dashboard cross-link to 20 highest-traffic comparison pages. 1 commit, 22 files.
-- **Sessions 997 (Jun 29):** 2 new distribution tools — Pricing Dashboard (interactive table, 48 models, sorting/filtering, FAQPage schema) + Quick Savings Check (select model + spend → top 5 alternatives with dollar savings). Both with shared.js (exit popup + flash sale banner), cross-linked from tools.html + index.html, added to sitemap + RSS. 3 commits, 10 files.
-- **Sessions 980-996 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes, homepage sitemap fix, 60 comparison count fixes, stale 42→48 model sweep (46 files), new GPT-5.5 vs Pro comparison, duplicate comparison redirects (7 pairs), comparison count sync, 7 missing comparisons added to index + sitemap, 4 high-value DeepSeek V4 Pro comparison pages. 23+ commits, 260+ files.
-- **Sessions 969-979 (Jun 28):** Buyer-intent content (3 posts), content gating (51 pages), flash deal page, competitor comparison, widget upgrade, compare index. 17+ commits, 55+ files.
-- **Sessions 952-968 (Jun 27-28):** Team tools pivot, GA4 tracking (18 events), model launches (42→48), 13 comparison pages, model count sync. 20+ commits, 1,000+ files.
-- **Sessions 905-951 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. AI API Advisor, Pricing Benchmark. **88+ commits, 2,880+ files.**
-- **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
-
-## Session 999 (Jun 29) — Full Pricing Dashboard Cross-Link Coverage
-- **Added pricing-dashboard cross-link to 243 comparison pages** — All 267 comparison pages now link to the Full Pricing Dashboard. Session 998 added the link to 20 high-traffic pages; this session completed coverage for the remaining 243.
-- **Cross-link placement:** After MCP Server link (203 pages), after Widget link (40 pages), or before Related Comparisons section (20 pages with different layout).
-- **Fixed duplicate sitemap entry** — Removed duplicate `quick-savings.html` entry (stale 2026-06-18 lastmod). Sitemap now has 916 valid URLs (was 917).
-- **1 commit, 244 files, 973 lines added.**
-
-## Session 997 (Jun 29) — New Distribution Tools: Pricing Dashboard + Quick Savings
-- **Created pricing-dashboard.html** — Comprehensive AI API pricing comparison dashboard. Interactive table with 48 models, sort by any column, filter by provider/tier/search, show/hide deprecated. Cheapest input/output highlighting. FAQPage structured data (4 Q&As), WebApplication schema. Flash sale banner + Pro upsell. Mobile-responsive.
-- **Created quick-savings.html** — Quick savings calculator. Select current model + monthly spend, instantly see top 5 cheaper alternatives with dollar savings. Input:output ratio presets (chat/balanced/RAG/classify). 43 active models. 30-second results. GA4 tracking (savings_calculated event).
-- **Both pages include:** shared.js (exit popup, flash sale banner, nav), analytics.js, OG/Twitter tags, canonical URLs.
-- **Cross-linked from:** tools.html (2 new cards), index.html (2 new tool links), sitemap.xml (+2 URLs → 919), rss.xml (+2 items).
-- **Fixed:** Added shared.js to pricing-dashboard.html (was missing — exit popup + banner wouldn't work without it).
-- **3 commits, 10 files changed.**
-
-## Session 996 (Jun 29) — High-Value DeepSeek V4 Pro Comparison Pages
-- **Created 4 new comparison pages targeting "X vs DeepSeek" searches** — DeepSeek V4 Pro is the budget king ($0.435/$0.87) and the most-searched comparison target. These fill critical SEO gaps for premium-to-budget migration queries.
-  - **Opus 4.8 vs DeepSeek V4 Pro** — 91-97% cheaper, same 1M context
-  - **Sonnet 4.6 vs DeepSeek V4 Pro** — 85-94% cheaper, same 1M context
-  - **GPT-5.5 vs DeepSeek V4 Pro** — 91-97% cheaper, similar context
-  - **Haiku 4.5 vs DeepSeek V4 Pro** — 57-83% cheaper + 5x more context
-- Each page has: interactive cost calculator, FAQPage structured data, use-case recommendations, social share buttons (X/LinkedIn), Pro CTA, related comparison cross-links.
-- **Added 4 pages to sitemap.xml** (911→915 URLs).
-- **Added 4 pages to compare.html index** — All linked with accent borders highlighting the massive cost savings.
-- **Updated comparison count 259→263** across 81 HTML files and markdown files.
-- **1 commit, 90 files, 129 lines changed.**
-
-## Session 995 (Jun 29) — Sitemap Cleanup
-- **Removed 12 malformed `<url>` entries** — Empty entries with `<lastmod>`/`<changefreq>`/`<priority>` but no `<loc>` tag (invalid per sitemap protocol). Google cannot index URLs it doesn't know.
-- **Removed 1 duplicate homepage entry** — Second `https://getapipulse.com/` with stale 2026-06-15 lastmod, priority 0.8 (canonical copy at top has 2026-06-29, priority 1.0).
-- **Sitemap now has 911 valid URLs** (was 924, removed 13 invalid/duplicate entries).
-- **1 commit, 1 file, 66 lines removed.**
-
-## Session 994 (Jun 29) — Comparison Index Sync + Sitemap Fix
-- **Added 7 missing comparison pages to compare.html index** — DeepSeek V3.2 vs GPT-5 mini, GPT-5 mini vs Claude Haiku 4.5, GPT-5 mini vs DeepSeek V4 Pro, GPT-5 mini vs Gemini 3.5 Flash, GPT-5 mini vs Mistral Small 4, Opus 4.8 vs Kimi K2.6, Sonnet 4.6 vs Mistral Large 3. All created Jun 28-29 but never added to the index.
-- **Added 7 missing comparison pages to sitemap.xml** — Same 7 pages now in sitemap (912 entries, was 905).
-- **Updated stale comparison count (252→259) across 81 HTML files** — After adding 7 new pages, updated the site-wide count.
-- **Removed 1 broken sitemap entry** — `<url>` tag missing `<loc>` (line 963).
-- **1 commit, 83 files, 151 lines changed.**
-
-## Session 993 (Jun 29) — Comparison Count Sync + Duplicate Cleanup + Quality Sweep
-- **Fixed stale comparison count (258→252) across 81 pages** — After removing 7 duplicate comparison pairs, updated the site-wide count from 259→252 to reflect unique accessible comparisons.
-- **Added 7 duplicate comparison redirects in vercel.json** — Non-hyphenated URLs (e.g., compare-gpt5mini-vs-claudehaiku.html) now 301-redirect to canonical hyphenated versions (compare-gpt5-mini-vs-claude-haiku.html). Consolidates duplicate content for SEO.
-- **Removed 7 redirect targets from sitemap.xml** — Sitemap now has 905 URLs (was 912), all pointing to unique content.
-- **Removed 7 redirect targets from compare.html index** — Index now lists 252 unique comparisons.
-- **Fixed 3 stale sitemap entries** — Removed entries for non-existent files.
-- **Fixed 8 internal links** — Updated links in 6 files to point to canonical comparison URLs instead of redirect targets.
-- **Quality sweep** — Verified: all comparison pages have FAQPage schema, calculator, Pro CTA, and compare.html index link. No broken internal links. No stale content references. All key pages have structured data, canonical tags, and meta descriptions.
-- **3 commits, 91 files, 249 lines changed.**
-
-## Session 992 (Jun 29) — Stale Content Sweep + New Comparison Page
-- **Fixed stale '42 models' → '48 models' across 46 files** — Titles, meta tags, structured data, and body content still referenced 42 models when we have 48. Fixed in blog posts, landing pages, tools, index pages, AI advisor, cost calculator guide, deprecation pages, and badges pages.
-- **Fixed 2 broken internal links** — mcp-server.html → mcp.html, model-deprecation-checker.html → model-deprecation.html.
-- **Created compare-gpt55-vs-gpt55pro.html** — New comparison page for GPT-5.5 vs GPT-5.5 Pro (6x price difference). Interactive calculator, FAQPage schema, use-case recommendations, social share buttons, Pro CTA. Added to sitemap.xml and compare.html index.
-- **Fixed stale comparison counts** — '167 comparisons' → '267+ comparisons' in compare-gpt55-vs-opus48.html, '171 comparison' → '267 comparison' in 6 files, '168 comparison' → '267 comparison' in 1 file.
-- **4 commits, 56+ files, 833+ lines changed.**
-
-## Session 991 (Jun 29) — Homepage Sitemap Fix + Stale Comparison Counts
-- **Added homepage to sitemap.xml** — `https://getapipulse.com/` was missing from sitemap (critical SEO issue). Added with priority 1.0 and daily changefreq. 914 URLs now in sitemap.
-- **Fixed stale '167 comparisons' → '258 comparisons' on 60 comparison pages** — Session 968 updated the count to 258 but 60 pages still showed the old 167 count in their "All Comparisons" link text.
-- **1 commit, 61 files, 66 lines changed.**
-
-## Session 990 (Jun 29) — Calculator Dropdown Fixes + Stale Counts
-- **Fixed stale comparison count (232 → 258)** on 5 pages: index.html, pricing.html, trial-expired.html, best-ai-api-by-budget.html, blog-ai-api-pricing-ranked.html.
-- **Fixed duplicate Gemini 2.5 Flash-Lite in calculator dropdown** — two identical labels with different IDs. Corrected to: Gemini 2.5 Flash-Lite (non-deprecated), Gemini 2.0 Flash ⚠️ Deprecated, Gemini 2.0 Flash Lite ⚠️ Deprecated.
-- **Added 7 missing models to calculator dropdown** — GPT-5.4 family (GPT-5.4, GPT-5.4 mini, GPT-5.4 nano, GPT-5.4 Pro), Anthropic Fable 5, Anthropic Mythos 5, Google Gemini 3.1 Flash-Lite. All had pricing data in pricing-data.js but were missing from the homepage calculator.
-- **Fixed duplicate "Gemini 2.5 Flash-Lite" in FAQPage structured data** on homepage.
-- **Added Gemini 3 Flash to dropdown** — was in pricing-data.js but missing from calculator.
-- **1 commit, 5 files, 17 lines changed.**
+## Sessions 990-1002 (Jun 29) — Content & Quality Sweep
+- **Session 1002:** New cost comparison matrix — interactive 48-model grid, FAQPage schema. Sitemap +1→915.
+- **Session 1001:** Fixed 4 duplicate comparison stubs → redirects, vercel.json 301s, sitemap cleanup (920→916).
+- **Session 1000:** 4 new comparison pages (GPT-5.5 vs GPT-5.4 Pro, GPT-5.4 Pro vs Sonnet 4.6, DeepSeek V4 Pro vs GPT-5.4 Pro, Grok 4.3 vs Kimi K2.6). Sitemap +4→920, count 263→267.
+- **Session 999:** Full pricing-dashboard cross-link on all 267 comparison pages (243 new). Fixed duplicate sitemap entry.
+- **Session 998:** Dashboard nav link + cross-links on shared.js (all pages).
+- **Session 997:** New distribution tools — Pricing Dashboard + Quick Savings. Cross-linked from tools, index, sitemap, RSS.
+- **Session 996:** 4 DeepSeek V4 Pro comparison pages. Sitemap +4→915, count 259→263.
+- **Session 995:** Sitemap cleanup — removed 12 malformed + 1 duplicate (924→911).
+- **Session 994:** Added 7 missing comparisons to index + sitemap, count 252→259.
+- **Session 993:** Removed 7 duplicate comparison pairs, added redirects, quality sweep.
+- **Session 992:** Stale 42→48 model sweep (46 files), new GPT-5.5 vs Pro comparison, count fixes.
+- **Session 991:** Added homepage to sitemap (critical SEO fix), fixed stale 167→258 count on 60 pages.
+- **Session 990:** Calculator dropdown fixes, added 7 missing models, stale count fixes.
+- 15+ commits, 500+ files.
 
 ## Sessions 980-989 (Jun 29) — Flash Sale Launch + Conversion Optimization
 - **$19 flash sale + site-wide promotion** — flash-19.html, banner on 917 pages, floating CTA on desktop+mobile, exit popup on 353 pages, email capture, purchase notifications, scarcity bar. **Terminal dashboard** — terminal.html with 48 models, nav bar link, 3 blog cross-links, RSS entry. **Bug fixes** — $9 flash deal CTAs, hardcoded $29 exit popup, missing assets on terminal. 16+ commits, 110+ files.
