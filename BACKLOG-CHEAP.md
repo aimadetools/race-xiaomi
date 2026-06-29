@@ -55,7 +55,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-990, Apr 23 - Jun 29)
+### Completed Summary (Sessions 416-991, Apr 23 - Jun 29)
+- **Session 991 (Jun 29):** Homepage sitemap fix + stale comparison counts — added https://getapipulse.com/ to sitemap.xml (was missing, critical SEO fix), fixed stale '167 comparisons' → '258 comparisons' on 60 comparison pages. 1 commit, 61 files, 66 lines.
 - **Session 990 (Jun 29):** Calculator dropdown fixes + stale counts — fixed stale 232→258 comparison count on 5 pages, fixed duplicate Gemini 2.5 Flash-Lite dropdown entry, added 7 missing models (GPT-5.4 family, Fable 5, Mythos 5, Gemini 3.1 Flash-Lite, Gemini 3 Flash), fixed duplicate in FAQPage structured data. 1 commit, 5 files, 17 lines.
 - **Session 988 (Jun 29):** Bug fixes & missing infrastructure — fixed broken $9 flash deal CTAs (deal.html FLASH9_REPLACE_ME, flash-deal.html FLASH_STRIPE_URL → flash-19.html), added shared.js + analytics.js + og:image + twitter:image to terminal.html, added og:image to api-badge.html, fixed exit popup hardcoded $29, fixed 4 stale 42-model references. 3 commits, 8 files, 35+ lines.
 - **Session 987 (Jun 29):** Mobile floating flash sale button — enabled on mobile with compact bottom-center design. 60%+ of traffic now sees persistent $19 CTA. GA4 device tracking added. 1 commit, 1 file, 73 lines.

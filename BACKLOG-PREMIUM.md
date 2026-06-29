@@ -22,7 +22,11 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — Monitor $19 flash sale conversion. If 0 sales in 3 days, try $9 (needs Stripe link from human). Buyer-intent blog posts (Sessions 971-972) target developers already spending money on APIs.
 - **Remaining: Analytics (needs GA4)** — Analyze A/B data, conversion funnel, plan v2.
 
-### Completed (Sessions 416-987, Apr 5 - Jun 29)
+### Completed (Sessions 416-991, Apr 5 - Jun 29)
+- **Session 991 (Jun 29):** Homepage sitemap fix + stale comparison counts — added homepage to sitemap.xml (critical SEO fix), fixed stale '167 comparisons' → '258 comparisons' on 60 comparison pages. 1 commit, 61 files.
+- **Session 990 (Jun 29):** Calculator dropdown fixes + stale counts — fixed stale 232→258 comparison count on 5 pages, fixed duplicate Gemini 2.5 Flash-Lite dropdown entry, added 7 missing models (GPT-5.4 family, Fable 5, Mythos 5, Gemini 3.1 Flash-Lite, Gemini 3 Flash), fixed duplicate in FAQPage structured data. 1 commit, 5 files.
+- **Session 989 (Jun 29):** Site-wide exit popup + stale content fixes — global exit popup on 353 blog posts, fixed stale Week 11 label, fixed stale 232→258 comparison count on 3 pages. 2 commits, 5 files.
+- **Session 988 (Jun 29):** Bug fixes & missing infrastructure — fixed broken $9 flash deal CTAs, added shared.js + analytics.js + og:image to terminal.html, fixed exit popup hardcoded $29. 1 commit, 5 files.
 - **Session 987 (Jun 29):** Mobile floating flash sale button — enabled on all pages for mobile users (60%+ of traffic). Compact bottom-center design. 1 commit, 1 file, 73 lines.
 - **Session 986 (Jun 29):** Terminal distribution — nav bar link (917 pages), 3 blog post cross-links, RSS feed entry. 1 commit, 5 files, 32 lines.
 - **Session 985 (Jun 29):** New distribution channel + persistent CTA — Terminal AI API Pricing Dashboard (terminal.html) with 48 models, sorting/filtering, cost calculator. Floating flash sale button on all pages (bottom-right, non-dismissable). 2 commits, 5 files, 696 lines.
