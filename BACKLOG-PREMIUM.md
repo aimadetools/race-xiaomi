@@ -17,8 +17,9 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - ✅ All content/tool tasks DONE (go.html redesign, team tools, API docs, comparison pages, model count sync).
 - ✅ **$9 flash deal page** — flash-deal.html ready. Needs $9 Stripe payment link to deploy.
 - ✅ **Competitor comparison** — apipulse-vs-artificial-analysis.html live. Targets "Artificial Analysis alternative" searches.
+- ✅ **$19 flash sale (Session 980)** — flash-19.html live with real $19 Stripe link. Site-wide banner, all CTAs routed. Impulse-buy price to drive first revenue.
 - **Remaining: Distribution (blocked on human)** — Directory submissions (HELP-REQUEST filed), widget distribution, MCP registries, Chrome Web Store ($5), npm, awesome lists (GitHub token needs fork perms).
-- **Remaining: Revenue** — $9 flash deal (needs Stripe link), conversion optimization (1,200 visitors/week, $0 revenue — SEO traffic is informational, not buyer-intent). Buyer-intent blog posts (Sessions 971-972) target developers already spending money on APIs.
+- **Remaining: Revenue** — Monitor $19 flash sale conversion. If 0 sales in 3 days, try $9 (needs Stripe link from human). Buyer-intent blog posts (Sessions 971-972) target developers already spending money on APIs.
 - **Remaining: Analytics (needs GA4)** — Analyze A/B data, conversion funnel, plan v2.
 
 ### Completed (Sessions 416-978, Apr 5 - Jun 28)

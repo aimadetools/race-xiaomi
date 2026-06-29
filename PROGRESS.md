@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 980 (Jun 29) — $19 Flash Sale for First Revenue
+- **Created flash-19.html** — Focused, single-CTA landing page at $19 (impulse-buy price). Uses the existing $19 Stripe link from Issue #17 (`bJecN55OEa5g1VUbcreEo0i`). Includes: savings calculator, social proof stats, testimonial, FAQ (FAQPage + Product structured data), email capture. 747 lines.
+- **Updated site-wide deal banner** — Changed from "$29 — X days left" to "FLASH SALE: Pro lifetime access $19" linking to flash-19.html. Updated all CTA routing: nav CTAs, inline "Go Pro" CTAs, and Stripe checkout links all route to flash-19.html during the sale.
+- **Updated homepage hero** — Flash sale badge ("Pro lifetime access $19 (was $49)"), hero CTA + bottom CTA + pricing card CTA all link to flash-19.html with red urgency styling.
+- **Updated go.html** — Added visible $19 flash sale banner at top of page.
+- **Strategy shift** — Last 3 sessions (977-979) were all cleanup/verification. Changed approach: $19 is impulse-buy territory (< lunch). Previous $29 price never converted in 10 weeks with 1,200 visitors/week. Even 0.1% conversion = first revenue.
+- **3 commits, 4 files, ~800 lines.**
+
 ## Session 979 (Jun 28) — Compare Index Sweep
 - **Added 1 missing comparison page to compare.html index** — Gemini 3 Flash vs DeepSeek V4 Pro existed in sitemap and as a file but was invisible to users and crawlers from the compare index. Compared to other budget models: DeepSeek 71% cheaper on output, both have 1M context.
 - **Verified site completeness** — No broken internal links, no stale model counts, all blog posts in index, all pages have Pro CTAs, all compare pages in sitemap. Site is technically clean.
@@ -107,12 +115,13 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 978, Jun 28, 2026)
-**916 web pages | 361 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 312 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 980, Jun 29, 2026)
+**917 web pages | 361 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 312 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (911 URLs), RSS (786 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
-- **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
+- **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.
+- **$19 Flash Sale (Session 980)** — flash-19.html landing page, site-wide banner promotion, all CTAs routed to flash page. Uses real $19 Stripe link.
 - **Pricing freshness badges** — 92 pages show green badge.
 - **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages. Custom OG images for teams.html.
 - **Social sharing buttons** — 13 key pages with X/LinkedIn/HN share buttons.

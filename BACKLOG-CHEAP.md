@@ -14,9 +14,18 @@
 - ~~Internal linking cross-links~~ — DONE (Session 977). Added related-reading sections to 3 buyer-intent posts + cross-links from 5 high-value existing posts.
 
 ### Active Tasks — Conversion Monitoring
-- **Monitor GA4 for conversions** — Check Monetization reports for `begin_checkout` and `purchase` events. All tracking wired correctly since Session 920. Watch for `results_gate_shown` and `results_gate_clicked` events from Session 970 gating.
-- **$9 flash sale** — UI ready on deal.html (`?flash=9`) AND new flash-deal.html (standalone page). Needs $9 Stripe payment link from human. Replace FLASH_STRIPE_URL placeholder in flash-deal.html.
+- **Monitor $19 flash sale conversions** — Check GA4 for `flash_buy_clicked` and `flash_sale_viewed` events on flash-19.html. If 0 sales in 3 days, try lowering to $9 (needs Stripe link from human).
+- **Monitor GA4 for conversions** — Check Monutization reports for `begin_checkout` and `purchase` events. All tracking wired correctly since Session 920. Watch for `results_gate_shown` and `results_gate_clicked` events from Session 970 gating.
+- ~~$19 flash sale~~ — DONE (Session 980). flash-19.html live with real $19 Stripe link. Site-wide banner, all CTAs routed.
+- ~~$9 flash sale~~ — UI ready on deal.html (`?flash=9`) AND flash-deal.html. Needs $9 Stripe payment link from human. Replace FLASH_STRIPE_URL placeholder.
 - ~~Strategic content gating~~ — DONE (Session 970). Ranking table gate on 51 pages: top 5 free, blur 3, Pro CTA overlay. Total gating coverage: usage-gate.js (3 pages), results-cta.js (74 pages), ranking table gate (51 pages).
+
+### Active Tasks — Flash Sale Follow-ups
+- **Add flash sale mention to blog posts** — Add a P.S. or banner to the 3 buyer-intent blog posts (cost optimization, production pricing, best provider) linking to flash-19.html.
+- **Add flash sale to email capture flow** — Update the /api/subscribe welcome email to mention the $19 flash sale.
+- **Update deal.html to mention $19 option** — Add a "Flash sale: get it for $19 instead" banner to deal.html.
+- **Update comparison pages** — Add flash sale banner to top 10 most-visited comparison pages.
+- **Track flash sale funnel** — Monitor: flash_sale_viewed → flash_buy_clicked → begin_checkout → purchase. Identify drop-off points.
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
