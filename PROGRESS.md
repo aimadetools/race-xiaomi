@@ -34,7 +34,7 @@
 - **Fixed stale '42 models' → '48 models' across 46 files** — Titles, meta tags, structured data, and body content still referenced 42 models when we have 48. Fixed in blog posts, landing pages, tools, index pages, AI advisor, cost calculator guide, deprecation pages, and badges pages.
 - **Fixed 2 broken internal links** — mcp-server.html → mcp.html, model-deprecation-checker.html → model-deprecation.html.
 - **Created compare-gpt55-vs-gpt55pro.html** — New comparison page for GPT-5.5 vs GPT-5.5 Pro (6x price difference). Interactive calculator, FAQPage schema, use-case recommendations, social share buttons, Pro CTA. Added to sitemap.xml and compare.html index.
-- **Fixed stale comparison counts** — '167 comparisons' → '259+ comparisons' in compare-gpt55-vs-opus48.html, '171 comparison' → '259 comparison' in 6 files, '168 comparison' → '259 comparison' in 1 file.
+- **Fixed stale comparison counts** — '167 comparisons' → '263+ comparisons' in compare-gpt55-vs-opus48.html, '171 comparison' → '263 comparison' in 6 files, '168 comparison' → '263 comparison' in 1 file.
 - **4 commits, 56+ files, 833+ lines changed.**
 
 ## Session 991 (Jun 29) — Homepage Sitemap Fix + Stale Comparison Counts
@@ -75,7 +75,7 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
 ## Site Status (as of Session 995, Jun 29, 2026)
-**919 web pages | 361 blog posts | 48 models | 10+ providers | 147 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 259 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
+**919 web pages | 361 blog posts | 48 models | 10+ providers | 147 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 263 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
 - Sitemap (911 URLs — 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
