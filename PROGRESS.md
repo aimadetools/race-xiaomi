@@ -65,20 +65,14 @@
 ## Sessions 980-989 (Jun 29) — Flash Sale Launch + Conversion Optimization
 - **$19 flash sale + site-wide promotion** — flash-19.html, banner on 917 pages, floating CTA on desktop+mobile, exit popup on 353 pages, email capture, purchase notifications, scarcity bar. **Terminal dashboard** — terminal.html with 48 models, nav bar link, 3 blog cross-links, RSS entry. **Bug fixes** — $9 flash deal CTAs, hardcoded $29 exit popup, missing assets on terminal. 16+ commits, 110+ files.
 
-## Sessions 969-979 (Jun 28) — Conversion Optimization & Content
-- **3 buyer-intent blog posts** — Cost optimization guide, production pricing guide, best AI API provider guide. All with interactive calculators, FAQPage schema, Pro CTAs.
+## Sessions 965-979 (Jun 28) — Conversion Optimization + Comparisons
+- **3 buyer-intent blog posts** (cost optimization, production pricing, best provider). All with interactive calculators, FAQPage schema, Pro CTAs.
 - **Strategic content gating** — Ranking table gate on 51 pages. Total gate coverage: 74+ pages.
-- **Widget upgrade** — 20->25 models, stale reference cleanup.
-- **Compare index sweep** — 17 missing pages added. Site completeness verified.
-- **Conversion fixes** — Competitor comparison page, 2 high-intent Pro CTAs, internal linking.
-- **11+ commits, 25+ files.**
-
-## Sessions 965-968 (Jun 28) — Comparison Pages & Count Sync
-- **13 new comparison pages** — Mythos 5 & Fable 5 vs Opus 4.8/Sonnet 4.6/GPT-5.5 Pro, Gemini 3.5 Flash vs Opus 4.8/DeepSeek V4 Pro, Haiku 4.5 vs GPT-5 mini/Gemini 3.5 Flash, DeepSeek V4 Pro vs GPT-5.5 Pro. All with interactive calculators, FAQPage schema, use-case recommendations, share buttons, Pro CTA.
-- **Sitemap updated** — 899 URLs (5 new today).
-- **Comparison count synced** — 248 → 258 across all files.
+- **Widget upgrade** — 20→25 models. **Compare index sweep** — 17 missing pages added.
+- **13 new comparison pages** — Mythos 5 & Fable 5, Gemini 3.5 Flash, Haiku 4.5, DeepSeek V4 Pro pairs. All with calculators, FAQPage schema, share buttons, Pro CTA.
+- **Sitemap updated** — 899 URLs. **Comparison count synced** — 248→258.
 - **Stale reference sweep** — Fixed 16 stale "42-model" references, fixed RSS "42 Models" → "48 Models".
-- **3 commits, 32+ files.**
+- **11+ commits, 32+ files.****
 
 ## Sessions 905-964 (Jun 25-28) — Full Build Phase 2
 MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + teams.html). GA4 tracking (18 events). Model launches (42→48). 15 comparison pages. OG/Twitter 100%. Chrome extension + npm. AI API Advisor, Pricing Benchmark, Pricing Badges. **90+ commits, 3,580+ files.**
