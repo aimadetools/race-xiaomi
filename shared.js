@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nav) nav.style.top = '0';
         if (window.trackEvent) window.trackEvent('deprecation_banner_shown', { days_left: daysLeft });
     } else if (daysLeft <= 0 && daysLeft > -90) {
-        // POST-DEPRECATION: Show $19 flash sale banner (Week 11 special)
+        // POST-DEPRECATION: Show $19 flash sale banner
         // Session 980: $19 flash sale drives first revenue — lower impulse-buy price
         if (localStorage.getItem('apipulse_deprecation_retired_dismissed')) return;
         var banner = document.createElement('div');
@@ -1879,5 +1879,101 @@ var GO_MODEL_MAP = {
                 device: isMobile ? 'mobile' : 'desktop'
             });
         }
+    });
+})();
+
+// Site-wide exit popup — covers 350+ blog pages and other pages without their own exit popup
+// Skips pages that already have an exit popup (deal.html, flash-19.html, go.html, etc.)
+// Skips thank-you, restore, admin, and other non-commercial pages
+(function(){
+    var SKIP_PAGES = ['thank-you', 'restore', 'admin', 'flash-19', 'deal', 'go', 'pro', 'api/', '404'];
+    var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
+    // Skip non-commercial pages
+    for (var i = 0; i < SKIP_PAGES.length; i++) {
+        if (pageName.indexOf(SKIP_PAGES[i]) === 0) return;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Skip if page already has its own exit popup
+        if (document.getElementById('exit-popup') || document.getElementById('exit-overlay')) return;
+        // Skip if already shown this session
+        if (sessionStorage.getItem('global_exit_popup_shown')) return;
+
+        var flashActive = !window.DEAL_EXPIRED;
+        var ctaUrl = flashActive ? 'flash-19.html?from=exit_popup_' + encodeURIComponent(pageName) : 'go.html?from=exit_popup_' + encodeURIComponent(pageName);
+        var ctaText = flashActive ? 'Get Lifetime Access — $19' : 'Get Lifetime Access — $29';
+        var headline = flashActive ? "Wait — don't miss the $19 flash sale" : "Wait — before you go";
+        var subtext = flashActive
+            ? "APIpulse Pro gives you 48-model cost comparison, migration code, and PDF reports. Flash sale ends July 12."
+            : "APIpulse Pro gives you 48-model cost comparison, migration code, and PDF reports. One-time payment, lifetime access.";
+
+        // Create popup HTML
+        var overlay = document.createElement('div');
+        overlay.id = 'global-exit-popup';
+        overlay.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:99999;align-items:center;justify-content:center;padding:20px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;';
+        overlay.innerHTML =
+            '<div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;padding:28px 24px;max-width:400px;width:100%;text-align:center;position:relative;animation:fadeIn 0.2s ease;">' +
+                '<button id="global-exit-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:#64748b;font-size:20px;cursor:pointer;padding:4px 8px;" aria-label="Close">✕</button>' +
+                '<div style="font-size:32px;margin-bottom:12px;">⚡</div>' +
+                '<h3 style="font-size:20px;font-weight:800;color:#f1f5f9;margin-bottom:8px;">' + headline + '</h3>' +
+                '<p style="font-size:14px;color:#94a3b8;margin-bottom:16px;line-height:1.5;">' + subtext + '</p>' +
+                '<a href="' + ctaUrl + '" id="global-exit-cta" target="_blank" rel="noopener" style="display:block;width:100%;padding:16px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:12px;font-size:18px;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.3);">' + ctaText + '</a>' +
+                '<p style="font-size:12px;color:#475569;margin-top:12px;">🔒 Stripe secure · 🛡️ 14-day refund · ⚡ Instant access</p>' +
+                '<button id="global-exit-dismiss" style="display:block;margin:12px auto 0;background:none;border:none;color:#64748b;font-size:13px;cursor:pointer;">No thanks, I\\'ll pass on saving money</button>' +
+            '</div>';
+
+        // Add fadeIn animation
+        var animStyle = document.createElement('style');
+        animStyle.textContent = '@keyframes fadeIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}';
+        document.head.appendChild(animStyle);
+        document.body.appendChild(overlay);
+
+        var triggered = false;
+        function showPopup() {
+            if (triggered) return;
+            triggered = true;
+            sessionStorage.setItem('global_exit_popup_shown', '1');
+            overlay.style.display = 'flex';
+            if (window.gtag) {
+                gtag('event', 'global_exit_popup_shown', {page: pageName});
+            }
+        }
+
+        function hidePopup() {
+            overlay.style.display = 'none';
+        }
+
+        // Desktop: mouse leave (top edge)
+        document.addEventListener('mouseout', function(e) {
+            if (e.clientY <= 0) showPopup();
+        });
+
+        // Mobile: back-scroll detection
+        var lastScroll = 0;
+        var scrollUp = 0;
+        window.addEventListener('scroll', function() {
+            var cur = window.pageYOffset || document.documentElement.scrollTop;
+            if (cur < lastScroll - 50) {
+                scrollUp++;
+                if (scrollUp >= 2) showPopup();
+            } else {
+                scrollUp = 0;
+            }
+            lastScroll = cur;
+        });
+
+        // Timer fallback: use A/B test timing or default 45s
+        var timing = window._abPopupTiming || 45000;
+        setTimeout(showPopup, timing);
+
+        // Close handlers
+        document.getElementById('global-exit-close').addEventListener('click', hidePopup);
+        document.getElementById('global-exit-dismiss').addEventListener('click', hidePopup);
+        overlay.addEventListener('click', function(e) { if (e.target === overlay) hidePopup(); });
+
+        // CTA click tracking
+        document.getElementById('global-exit-cta').addEventListener('click', function() {
+            if (window.gtag) gtag('event', 'global_exit_popup_cta_click', {page: pageName});
+        });
     });
 })();
