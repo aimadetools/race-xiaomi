@@ -34,7 +34,7 @@ window.DEAL_DEADLINE = new Date('2026-07-12T23:59:59Z').getTime();
 window.DEAL_EXPIRED = Date.now() > window.DEAL_DEADLINE;
 window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()) / 86400000));
 
-// Pricing — standardized on $29 (Session 910: killed A/B test, $19 variant never converted)
+// Pricing — $19 flash sale (Session 980+), reverts to $29 after Jul 12
 // NOTE: deal.html is EXCLUDED — it has its own $29-only conversion flow with countdown,
 // value stack, and savings calculator. Overriding the price there breaks the messaging.
 // Session 877: After July 12 expiry, all prices become $49.
@@ -188,7 +188,7 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
                 }
             } catch(e) {}
         });
-        // Track pricing view (Session 910: A/B test killed, standardized on $29)
+        // Track pricing view
         if (window.trackEvent) window.trackEvent('pricing_view', {price: window._abPrice});
     });
 })();

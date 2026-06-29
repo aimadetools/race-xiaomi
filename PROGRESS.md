@@ -89,14 +89,14 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 987, Jun 29, 2026)
+## Site Status (as of Session 988, Jun 29, 2026)
 **918 web pages | 361 blog posts | 48 models | 10+ providers | 147 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 312 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (911 URLs), RSS (786 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.
-- **$19 Flash Sale (Session 980, optimized 983-987)** — flash-19.html landing page, site-wide banner promotion. Session 983: exit popup, sticky mobile CTA, live viewer count, guarantee block, loss-aversion section, attribution tracking. Session 984: fixed all 917 pages to show $19 and route to flash-19.html (was leaking to deal.html/$29 on 725+ pages). Added purchase notifications, scarcity progress bar. Session 985: added floating flash sale button (desktop only, bottom-right, non-dismissable, pulse animation, GA4 tracked). Session 987: enabled floating button on mobile (compact bottom-center design, 60%+ of traffic). Uses real $19 Stripe link.
-- **Terminal AI API Pricing Dashboard (Session 985)** — terminal.html. Interactive terminal-style dark UI with 48 models, sorting/filtering, monthly cost calculator. Developer-focused distribution tool. Cross-linked from homepage + tools.html.
+- **$19 Flash Sale (Session 980, optimized 983-988)** — flash-19.html landing page, site-wide banner promotion. Session 983: exit popup, sticky mobile CTA, live viewer count, guarantee block, loss-aversion section, attribution tracking. Session 984: fixed all 917 pages to show $19 and route to flash-19.html (was leaking to deal.html/$29 on 725+ pages). Added purchase notifications, scarcity progress bar. Session 985: added floating flash sale button (desktop only, bottom-right, non-dismissable, pulse animation, GA4 tracked). Session 987: enabled floating button on mobile (compact bottom-center design, 60%+ of traffic). Session 988: fixed exit popup hardcoded $29 (now uses dynamic price), fixed broken $9 flash deal CTAs in deal.html + flash-deal.html (now redirect to flash-19.html). Uses real $19 Stripe link.
+- **Terminal AI API Pricing Dashboard (Session 985, updated 988)** — terminal.html. Interactive terminal-style dark UI with 48 models, sorting/filtering, monthly cost calculator. Developer-focused distribution tool. Cross-linked from homepage + tools.html. Session 988: added shared.js, analytics.js, og:image, twitter:image.
 - **Pricing freshness badges** — 92 pages show green badge.
 - **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages. Custom OG images for teams.html.
 - **Social sharing buttons** — 13 key pages with X/LinkedIn/HN share buttons.
