@@ -988,7 +988,7 @@ async function saveEmail(e) {
             popupIcon = '⏰';
             popupTitle = daysUntilDealEnd + ' Day' + (daysUntilDealEnd === 1 ? '' : 's') + ' Left at Early Adopter Price';
             popupDesc = 'Early adopter pricing ends July 12. Pro shows you the cheapest model for your exact workload — most devs save 40-80% on their AI API costs.';
-            popupHighlight = 'Get lifetime access at $29 before the price increases to $49';
+            popupHighlight = 'Get lifetime access at $' + price + ' before the price increases to $' + futurePrice;
             popup.innerHTML = '<button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color=\'var(--text-primary)\'" onmouseout="this.style.color=\'var(--text-muted)\'">&times;</button>' +
                 '<div style="text-align:center;">' +
                 '<div style="font-size:40px;margin-bottom:16px;">' + popupIcon + '</div>' +
