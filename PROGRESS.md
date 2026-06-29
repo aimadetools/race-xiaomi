@@ -1,9 +1,15 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1002 (Jun 29):** New cost comparison matrix — interactive 48-model grid with color-coded pricing, sort/filter, monthly cost estimator, FAQPage schema. Cross-linked from homepage, tools, calculator, sitemap (+1→915 URLs), RSS. 1 commit, 6 files.
 - **Session 1001 (Jun 29):** Fixed 4 duplicate comparison stubs — replaced thin 205-line stubs with proper redirects to canonical pages, added 301 redirects in vercel.json, updated compare.html, removed 4 stubs from sitemap (920→916 valid URLs). 1 commit, 7 files.
 - **Session 1000 (Jun 29):** 4 new comparison pages — GPT-5.5 vs GPT-5.4 Pro, GPT-5.4 Pro vs Sonnet 4.6, DeepSeek V4 Pro vs GPT-5.4 Pro, Grok 4.3 vs Kimi K2.6. All with interactive calculators, FAQPage schema, social share, Pro CTA. Updated sitemap (+4→920 URLs), compare.html index (+4 cards), comparison count 263→267 across 80+ files. 1 commit, 89 files.
 - **Session 999 (Jun 29):** Full pricing-dashboard cross-link coverage — added "Full Pricing Dashboard" cross-link to ALL 267 comparison pages (243 new). Fixed duplicate quick-savings.html entry in sitemap (916 valid URLs). 1 commit, 244 files.
+
+## Session 1002 (Jun 29) — New Cost Comparison Matrix
+- **Created cost-matrix.html** — Interactive cost comparison matrix for all 48 AI models from 10 providers. Features: color-coded pricing cells (green=cheap, red=expensive), sortable columns (name, provider, tier, input/output/total cost, context), filter by provider/tier/context window, text search, monthly cost estimator with savings calculator, deprecated model toggle, FAQPage schema (4 Q&As), WebApplication schema.
+- **Cross-linked from:** homepage (+1 tool link), tools.html (+1 card), calculator.html (+1 related tool), sitemap.xml (+1→915 URLs), RSS (+1 item).
+- **1 commit, 6 files, 542 lines added.**
 
 ## Session 1001 (Jun 29) — Fix Duplicate Comparison Pages
 - **Replaced 4 thin stub pages with proper redirects** — Non-hyphenated slug variants (e.g., compare-opus48-vs-deepseekv4pro.html) were 205-line stubs competing with canonical versions (400-991 lines). Replaced with meta refresh + JS redirect + noindex.
@@ -124,9 +130,9 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1001, Jun 29, 2026)
-**929 web pages | 361 blog posts | 48 models | 10+ providers | 149 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 267 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
-- Sitemap (914 valid URLs — 6 duplicate redirects removed Session 1001, 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
+## Site Status (as of Session 1002, Jun 29, 2026)
+**930 web pages | 361 blog posts | 48 models | 10+ providers | 150 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 267 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
+- Sitemap (915 valid URLs — cost-matrix added Session 1002, 6 duplicate redirects removed Session 1001, 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (788 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.
