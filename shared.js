@@ -44,11 +44,11 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
     var FLASH19_SKIP = location.pathname.indexOf('flash-19.html') !== -1;
     var CONFIRMED_STRIPE_LINK = 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'; // $29 one-time
 
-    // Post-expiry: $49; otherwise $29
+    // Post-expiry: $49; flash sale (before July 12): $19; fallback $29
     if (window.DEAL_EXPIRED) {
         window._abPrice = 49;
     } else {
-        window._abPrice = 29;
+        window._abPrice = 19; // Session 984: flash sale price
     }
     window._abStripeLink = CONFIRMED_STRIPE_LINK;
     window._abVariant = 'B'; // standardized
@@ -104,17 +104,27 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
                 a.target = '_blank';
                 a.rel = 'noopener';
             }
+            // Session 984: Route go.html CTA links to flash-19.html during flash sale
+            if (a.href && a.href.includes('go.html') && !window.DEAL_EXPIRED) {
+                var from = new URL(a.href, location.href).searchParams.get('from') || location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
+                a.href = 'flash-19.html?from=' + encodeURIComponent(from);
+            }
+            // Session 984: Route deal.html banner links to flash-19.html during flash sale
+            if (a.href && a.href.includes('deal.html') && !window.DEAL_EXPIRED) {
+                a.href = 'flash-19.html?from=banner';
+            }
         });
 
-        // Funnel tracking: Track all clicks on go.html links
+        // Funnel tracking: Track all clicks on go.html and flash-19.html links
         // This tells us which pages send users to the checkout funnel
         document.addEventListener('click', function(e) {
-            var link = e.target.closest('a[href*="go.html"]');
+            var link = e.target.closest('a[href*="go.html"], a[href*="flash-19.html"]');
             if (!link) return;
             var from = new URL(link.href, location.href).searchParams.get('from') || 'unknown';
             var price = window._abPrice || 29;
+            var isFlash = link.href.includes('flash-19.html');
             if (typeof gtag === 'function') {
-                gtag('event', 'go_page_click', {
+                gtag('event', isFlash ? 'flash_page_click' : 'go_page_click', {
                     from_page: from,
                     link_text: (link.textContent || '').trim().substring(0, 50),
                     ab_price: price,

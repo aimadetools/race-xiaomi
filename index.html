@@ -492,7 +492,7 @@
     <div id="whats-new-banner" style="display:none;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,247,0.06));border-bottom:1px solid rgba(99,102,241,0.2);padding:10px 24px;text-align:center;position:relative;">
         <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;" id="whats-new-text">
             <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="deal.html" style="color:#dc2626;font-weight:700;text-decoration:none;">Pro lifetime access $29 — price goes up July 12 →</a>
+            <a href="flash-19.html" style="color:#dc2626;font-weight:700;text-decoration:none;">FLASH SALE: Pro lifetime access $19 — ends July 12 →</a>
         </p>
         <button onclick="document.getElementById('whats-new-banner').remove();localStorage.setItem('apipulse_whats_new_dismissed','1');" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:16px;padding:4px 8px;" aria-label="Close">&times;</button>
     </div>
@@ -1427,7 +1427,7 @@
             <div class="pricing-card featured">
                 <div class="badge">Recommended</div>
                 <h3>Pro</h3>
-                <div class="price" id="pro-price-display">$29</div>
+                <div class="price" id="pro-price-display">$19</div>
                 <div class="price-note">One-time payment, lifetime access</div>
                 <ul>
                     <li>Everything in Free</li>
@@ -1634,11 +1634,11 @@
                     html += `<div class="rec-card"><div class="rec-info"><div class="rec-name">${r.provider} ${r.name}</div><div class="rec-meta">${r.tier} · $${r.input}/$${r.output} per 1M · ${r.context} context</div></div><div class="rec-savings">Save $${r.savings.toFixed(2)}/mo (${Math.round(r.savingsPct)}%)</div></div>`;
                 });
                 html += '<a href="savings-calculator.html" class="rec-compare" style="display:block;text-align:center;margin-top:12px;">See all alternatives + full savings report →</a>';
-                html += `<div style="margin-top:12px;padding:12px 16px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:8px;text-align:center;font-size:13px;color:var(--text-secondary);">💡 You could save <strong style="color:var(--green);">$${(bestSavings * 12).toFixed(0)}/year</strong> by switching. <a href="deal.html" style="color:var(--accent);font-weight:600;">Get Pro for $29 — see all alternatives →</a></div>`;
+                html += `<div style="margin-top:12px;padding:12px 16px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:8px;text-align:center;font-size:13px;color:var(--text-secondary);">💡 You could save <strong style="color:var(--green);">$${(bestSavings * 12).toFixed(0)}/year</strong> by switching. <a href="flash-19.html?from=calc_savings" style="color:var(--accent);font-weight:600;">Get Pro for $19 — see all alternatives →</a></div>`;
                 html += '</div>';
                 savingsContainer.innerHTML = html;
             } else {
-                savingsContainer.innerHTML = '<div class="savings-badge">This is already the cheapest option for your usage!</div><div style="margin-top:12px;padding:12px 16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;text-align:center;font-size:13px;color:var(--text-secondary);">Pro still helps: migration code, PDF reports, price alerts, and 48-model tracking. <a href="deal.html" style="color:var(--accent);font-weight:600;">See Pro features →</a></div>';
+                savingsContainer.innerHTML = '<div class="savings-badge">This is already the cheapest option for your usage!</div><div style="margin-top:12px;padding:12px 16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;text-align:center;font-size:13px;color:var(--text-secondary);">Pro still helps: migration code, PDF reports, price alerts, and 48-model tracking. <a href="flash-19.html?from=calc_cheapest" style="color:var(--accent);font-weight:600;">See Pro features →</a></div>';
             }
 
             setTimeout(() => results.classList.remove('calculating'), 300);
@@ -1672,9 +1672,11 @@
                 }
                 if (gateIndicator) {
                     if (remaining <= 0) {
-                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="pricing.html" style="color:var(--accent);text-decoration:underline;">Get unlimited with Pro</a>';
+                        var gateLink = !window.DEAL_EXPIRED ? 'flash-19.html?from=gate_limit' : 'pricing.html';
+                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="' + gateLink + '" style="color:var(--accent);text-decoration:underline;">Get unlimited with Pro</a>';
                     } else if (remaining <= 2) {
-                        gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left this session — <a href="pricing.html" style="color:var(--accent);text-decoration:underline;">Get unlimited →</a>';
+                        var gateLink = !window.DEAL_EXPIRED ? 'flash-19.html?from=gate_remaining' : 'pricing.html';
+                        gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left this session — <a href="' + gateLink + '" style="color:var(--accent);text-decoration:underline;">Get unlimited →</a>';
                     }
                 }
                 if (hitLimit) {
@@ -1828,7 +1830,12 @@
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
             if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Stop the Leak — $' + window._abPrice + ' lifetime';
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
+            // Session 984: Route to flash-19.html during flash sale, Stripe link after expiry
+            if (!window.DEAL_EXPIRED) {
+                document.getElementById('exit-popup-cta').href = 'flash-19.html?from=exit_popup';
+            } else if (window._abStripeLink) {
+                document.getElementById('exit-popup-cta').href = window._abStripeLink;
+            }
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'index' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });
