@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Matrix — Compare All 48 Models Side by Side | APIpulse</title>
+    <meta name="description" content="Interactive AI API cost comparison matrix. Compare input/output pricing, context windows, and monthly costs across 48 models from 10 providers. Sort, filter, and find the cheapest option.">
+    <meta name="keywords" content="AI API cost matrix, LLM pricing comparison, GPT-5 cost, Claude pricing, cheapest AI API, model pricing grid, API cost comparison table">
+    <meta property="og:title" content="AI API Cost Matrix — Compare All 48 Models | APIpulse">
+    <meta property="og:description" content="Interactive cost comparison matrix for 48 AI models. Sort by price, filter by provider, find the cheapest option instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cost-matrix.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Matrix — Compare All 48 Models | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Interactive cost comparison matrix for 48 AI models from 10 providers. Sort, filter, find the cheapest.">
+    <link rel="canonical" href="https://getapipulse.com/cost-matrix.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse AI API Cost Matrix",
+        "url": "https://getapipulse.com/cost-matrix.html",
+        "description": "Interactive AI API cost comparison matrix. Compare 48 models from 10 providers side by side.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-oss 20B is the cheapest at $0.08/$0.35 per million input/output tokens. For production use, DeepSeek V4 Flash ($0.14/$0.28) offers the best value with 1M context window."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model has the best price-to-performance ratio?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Pro ($0.435/$0.87) offers the best price-to-performance for most tasks. For premium quality, Claude Sonnet 4.6 ($3/$15) provides excellent capability at a mid-range price with 1M context."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does GPT-5 cost per million tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5 costs $1.25 per million input tokens and $10.00 per million output tokens. GPT-5.5 costs $5.00/$30.00. GPT-5 mini is the budget option at $0.25/$2.00."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API for high-volume applications?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For high-volume use, GPT-oss 20B ($0.08/$0.35), Llama 3.1 8B ($0.10/$0.10), and Mistral Small 4 ($0.10/$0.30) are the cheapest options. DeepSeek V4 Flash ($0.14/$0.28) offers the best quality-to-cost ratio at scale."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 1200px; margin: 0 auto; padding: 100px 20px 60px; }
+        h1 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; text-align: center; margin-bottom: 8px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 17px; margin-bottom: 32px; line-height: 1.6; }
+
+        /* Controls */
+        .controls { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; align-items: center; }
+        .controls select, .controls input {
+            padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 14px;
+            min-width: 140px;
+        }
+        .controls select:focus, .controls input:focus { border-color: var(--accent); outline: none; }
+        .sort-btn {
+            padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 13px;
+            cursor: pointer; transition: all 0.2s; font-weight: 600;
+        }
+        .sort-btn:hover { border-color: var(--accent); }
+        .sort-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .model-count { color: var(--text-muted); font-size: 13px; margin-left: auto; }
+
+        /* Table */
+        .matrix-wrapper { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 32px; }
+        .matrix-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .matrix-table th {
+            background: var(--bg-secondary); padding: 14px 16px; text-align: left;
+            font-weight: 700; font-size: 13px; color: var(--text-secondary);
+            text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer;
+            user-select: none; white-space: nowrap; border-bottom: 2px solid var(--border);
+            position: sticky; top: 0; z-index: 2;
+        }
+        .matrix-table th:hover { color: var(--accent); }
+        .matrix-table th .sort-arrow { margin-left: 4px; opacity: 0.4; }
+        .matrix-table th.sorted .sort-arrow { opacity: 1; color: var(--accent); }
+        .matrix-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .matrix-table tr:hover { background: rgba(99,102,241,0.04); }
+        .matrix-table tr.deprecated { opacity: 0.5; }
+        .matrix-table tr.deprecated td { text-decoration: line-through; }
+
+        /* Price cells */
+        .price-cell { font-family: 'Menlo', 'Monaco', monospace; font-weight: 600; white-space: nowrap; }
+        .price-cheap { color: #22c55e; }
+        .price-mid { color: #eab308; }
+        .price-high { color: #f97316; }
+        .price-expensive { color: #ef4444; }
+
+        /* Provider badges */
+        .provider-badge {
+            display: inline-block; padding: 3px 10px; border-radius: 20px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px;
+        }
+        .provider-openai { background: rgba(16,163,127,0.15); color: #10a37f; }
+        .provider-anthropic { background: rgba(204,119,34,0.15); color: #cc7722; }
+        .provider-google { background: rgba(66,133,244,0.15); color: #4285f4; }
+        .provider-deepseek { background: rgba(99,102,241,0.15); color: #6366f1; }
+        .provider-mistral { background: rgba(255,119,0,0.15); color: #ff7700; }
+        .provider-cohere { background: rgba(162,89,255,0.15); color: #a259ff; }
+        .provider-together { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .provider-moonshot { background: rgba(236,72,153,0.15); color: #ec4899; }
+        .provider-xai { background: rgba(107,114,128,0.15); color: #6b7280; }
+        .provider-ai21 { background: rgba(245,158,11,0.15); color: #f59e0b; }
+
+        /* Tier badges */
+        .tier-badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+        .tier-premium { background: rgba(239,68,68,0.12); color: #ef4444; }
+        .tier-mid { background: rgba(234,179,8,0.12); color: #ca8a04; }
+        .tier-budget { background: rgba(34,197,94,0.12); color: #16a34a; }
+
+        .dep-badge { font-size: 10px; background: rgba(245,158,11,0.15); color: #f59e0b; padding: 2px 6px; border-radius: 4px; margin-left: 6px; }
+
+        /* Monthly cost estimator */
+        .estimator {
+            background: var(--bg-secondary); border: 2px solid var(--accent);
+            border-radius: 16px; padding: 28px; margin-bottom: 32px;
+        }
+        .estimator h2 { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+        .estimator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .estimator-grid label { font-size: 13px; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 4px; }
+        .estimator-grid input, .estimator-grid select {
+            width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-primary); color: var(--text-primary); font-size: 14px;
+        }
+        .estimator-result {
+            background: var(--bg-primary); border-radius: 10px; padding: 16px;
+            text-align: center; border: 1px solid var(--border);
+        }
+        .estimator-result .big { font-size: 28px; font-weight: 900; color: var(--accent); }
+        .estimator-result .label { font-size: 13px; color: var(--text-muted); }
+
+        /* Legend */
+        .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; font-size: 13px; }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-dot { width: 12px; height: 12px; border-radius: 3px; }
+
+        /* Pro CTA */
+        .pro-cta {
+            background: linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 32px 24px; margin: 32px 0; text-align: center;
+        }
+        .pro-cta h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .pro-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+        @media (max-width: 768px) {
+            .controls { flex-direction: column; }
+            .controls select, .controls input { width: 100%; }
+            .model-count { margin-left: 0; margin-top: 8px; }
+            .matrix-table { font-size: 12px; }
+            .matrix-table th, .matrix-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">⚡ APIpulse</a>
+        <div class="nav-links">
+            <a href="pricing-dashboard.html">Dashboard</a>
+            <a href="compare.html">Comparisons</a>
+            <a href="calculator.html">Calculator</a>
+            <a href="blog.html">Blog</a>
+            <a href="tools.html">Tools</a>
+            <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+        </div>
+    </nav>
+
+    <main class="content">
+        <h1>AI API Cost Matrix</h1>
+        <p class="subtitle">Compare input/output pricing, context windows, and tiers across all 48 models from 10 providers. Sort, filter, and find the cheapest option for your workload.</p>
+
+        <!-- Monthly Cost Estimator -->
+        <div class="estimator">
+            <h2>💰 Monthly Cost Estimator</h2>
+            <div class="estimator-grid">
+                <div>
+                    <label>Input Tokens / Request</label>
+                    <input type="number" id="est-input" value="1000" min="0" oninput="estimateMonthly()">
+                </div>
+                <div>
+                    <label>Output Tokens / Request</label>
+                    <input type="number" id="est-output" value="500" min="0" oninput="estimateMonthly()">
+                </div>
+                <div>
+                    <label>Requests / Day</label>
+                    <input type="number" id="est-requests" value="1000" min="0" oninput="estimateMonthly()">
+                </div>
+                <div>
+                    <label>Days / Month</label>
+                    <input type="number" id="est-days" value="30" min="1" max="31" oninput="estimateMonthly()">
+                </div>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <div class="estimator-result" style="flex:1;min-width:150px;">
+                    <div class="big" id="est-total">—</div>
+                    <div class="label">Monthly Cost (selected model)</div>
+                </div>
+                <div class="estimator-result" style="flex:1;min-width:150px;border-color:#22c55e;">
+                    <div class="big" id="est-cheapest" style="color:#22c55e;">—</div>
+                    <div class="label">Cheapest Alternative</div>
+                </div>
+                <div class="estimator-result" style="flex:1;min-width:150px;border-color:#22c55e;">
+                    <div class="big" id="est-savings" style="color:#22c55e;">—</div>
+                    <div class="label">Potential Savings</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <select id="filter-provider" onchange="filterMatrix()">
+                <option value="">All Providers</option>
+                <option value="OpenAI">OpenAI</option>
+                <option value="Anthropic">Anthropic</option>
+                <option value="Google">Google</option>
+                <option value="DeepSeek">DeepSeek</option>
+                <option value="Mistral">Mistral</option>
+                <option value="Cohere">Cohere</option>
+                <option value="Meta (Together.ai)">Meta / Together</option>
+                <option value="Moonshot">Moonshot</option>
+                <option value="xAI">xAI</option>
+                <option value="AI21">AI21</option>
+            </select>
+            <select id="filter-tier" onchange="filterMatrix()">
+                <option value="">All Tiers</option>
+                <option value="Budget">Budget</option>
+                <option value="Mid">Mid-Range</option>
+                <option value="Premium">Premium</option>
+            </select>
+            <select id="filter-context" onchange="filterMatrix()">
+                <option value="">All Context</option>
+                <option value="1M">1M+ tokens</option>
+                <option value="256K">256K+ tokens</option>
+                <option value="128K">128K+ tokens</option>
+            </select>
+            <input type="text" id="search-model" placeholder="Search models..." oninput="filterMatrix()" style="max-width:200px;">
+            <button class="sort-btn" onclick="toggleDeprecated()" id="dep-toggle">Show Deprecated</button>
+            <span class="model-count" id="model-count">48 models</span>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#22c55e;"></div> Under $0.50/M</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#eab308;"></div> $0.50–$5/M</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#f97316;"></div> $5–$15/M</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#ef4444;"></div> $15+/M</div>
+        </div>
+
+        <!-- Matrix Table -->
+        <div class="matrix-wrapper">
+            <table class="matrix-table" id="matrix-table">
+                <thead>
+                    <tr>
+                        <th onclick="sortMatrix('name')">Model <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortMatrix('provider')">Provider <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortMatrix('tier')">Tier <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortMatrix('input')">Input $/M <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortMatrix('output')">Output $/M <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortMatrix('total')">Est. Monthly* <span class="sort-arrow">↕</span></th>
+                        <th onclick="sortMatrix('context')">Context <span class="sort-arrow">↕</span></th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody id="matrix-body"></tbody>
+            </table>
+        </div>
+
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:32px;">* Estimated monthly cost based on 1,000 input tokens, 500 output tokens, 1,000 requests/day, 30 days. Adjust in the estimator above.</p>
+
+        <!-- Pro CTA -->
+        <div class="pro-cta">
+            <h2>Get personalized cost optimization</h2>
+            <p>Pro gives you migration code, PDF reports, price alerts, and optimization recommendations that save up to 40% on your API costs.</p>
+            <a href="go.html?from=cost-matrix" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 4px 20px rgba(99,102,241,0.4);transition:all 0.2s;">Get Pro — $19 lifetime</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">✅ 14-day money-back guarantee · ⚡ Instant access · 🔒 One-time payment</p>
+        </div>
+
+        <!-- Related Tools -->
+        <section style="margin-top:32px;">
+            <h2 style="font-size:20px;margin-bottom:16px;">Related Tools</h2>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="pricing-dashboard.html" style="padding:12px 20px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:700;">📊 Pricing Dashboard</a>
+                <a href="quick-savings.html" style="padding:12px 20px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);border-radius:8px;text-decoration:none;color:#22c55e;font-weight:600;">💰 Quick Savings</a>
+                <a href="calculator.html" style="padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">🧮 Cost Calculator</a>
+                <a href="terminal.html" style="padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">💻 Terminal Dashboard</a>
+                <a href="compare.html" style="padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">⚖️ Compare Models</a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section style="margin-top:40px;">
+            <h2 style="font-size:20px;margin-bottom:16px;">Frequently Asked Questions</h2>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+                <details style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;">
+                    <summary style="font-weight:700;cursor:pointer;">What is the cheapest AI API in 2026?</summary>
+                    <p style="margin-top:8px;color:var(--text-secondary);font-size:14px;">GPT-oss 20B is the cheapest at $0.08/$0.35 per million input/output tokens. For production use, DeepSeek V4 Flash ($0.14/$0.28) offers the best value with 1M context window.</p>
+                </details>
+                <details style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;">
+                    <summary style="font-weight:700;cursor:pointer;">Which AI model has the best price-to-performance ratio?</summary>
+                    <p style="margin-top:8px;color:var(--text-secondary);font-size:14px;">DeepSeek V4 Pro ($0.435/$0.87) offers the best price-to-performance for most tasks. For premium quality, Claude Sonnet 4.6 ($3/$15) provides excellent capability at a mid-range price with 1M context.</p>
+                </details>
+                <details style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;">
+                    <summary style="font-weight:700;cursor:pointer;">How much does GPT-5 cost per million tokens?</summary>
+                    <p style="margin-top:8px;color:var(--text-secondary);font-size:14px;">GPT-5 costs $1.25 per million input tokens and $10.00 per million output tokens. GPT-5.5 costs $5.00/$30.00. GPT-5 mini is the budget option at $0.25/$2.00.</p>
+                </details>
+                <details style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;">
+                    <summary style="font-weight:700;cursor:pointer;">What is the cheapest AI API for high-volume applications?</summary>
+                    <p style="margin-top:8px;color:var(--text-secondary);font-size:14px;">For high-volume use, GPT-oss 20B ($0.08/$0.35), Llama 3.1 8B ($0.10/$0.10), and Mistral Small 4 ($0.10/$0.30) are the cheapest options. DeepSeek V4 Flash ($0.14/$0.28) offers the best quality-to-cost ratio at scale.</p>
+                </details>
+            </div>
+        </section>
+
+        <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> · <a href="pricing.html">Pricing</a> · <a href="compare.html">Comparisons</a> · <a href="blog.html">Blog</a> · <a href="tools.html">Tools</a></p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') return;
+
+        const tbody = document.getElementById('matrix-body');
+        const countEl = document.getElementById('model-count');
+        let sortKey = 'input';
+        let sortDir = 1; // 1 = asc, -1 = desc
+        let showDeprecated = false;
+        let selectedModel = null;
+
+        function priceClass(price) {
+            if (price < 0.50) return 'price-cheap';
+            if (price < 5) return 'price-mid';
+            if (price < 15) return 'price-high';
+            return 'price-expensive';
+        }
+
+        function providerClass(slug) {
+            return 'provider-' + (slug || 'openai');
+        }
+
+        function tierClass(tier) {
+            return 'tier-' + (tier || 'mid').toLowerCase();
+        }
+
+        function estMonthly(m) {
+            const input = parseInt(document.getElementById('est-input').value) || 1000;
+            const output = parseInt(document.getElementById('est-output').value) || 500;
+            const requests = parseInt(document.getElementById('est-requests').value) || 1000;
+            const days = parseInt(document.getElementById('est-days').value) || 30;
+            return ((input * requests * days / 1e6) * m.input) + ((output * requests * days / 1e6) * m.output);
+        }
+
+        function renderMatrix() {
+            const providerFilter = document.getElementById('filter-provider').value;
+            const tierFilter = document.getElementById('filter-tier').value;
+            const contextFilter = document.getElementById('filter-context').value;
+            const search = document.getElementById('search-model').value.toLowerCase();
+
+            let models = API_MODELS.filter(m => {
+                if (!showDeprecated && m.deprecated) return false;
+                if (providerFilter && m.provider !== providerFilter) return false;
+                if (tierFilter && m.tier !== tierFilter) return false;
+                if (contextFilter) {
+                    const ctx = parseInt(m.context) || 0;
+                    const filter = parseInt(contextFilter) || 0;
+                    if (ctx < filter) return false;
+                }
+                if (search && !m.name.toLowerCase().includes(search) && !m.provider.toLowerCase().includes(search)) return false;
+                return true;
+            });
+
+            // Sort
+            models.sort((a, b) => {
+                let va, vb;
+                switch(sortKey) {
+                    case 'name': va = a.name; vb = b.name; return sortDir * va.localeCompare(vb);
+                    case 'provider': va = a.provider; vb = b.provider; return sortDir * va.localeCompare(vb);
+                    case 'tier': va = a.tier; vb = b.tier; return sortDir * va.localeCompare(vb);
+                    case 'input': va = a.input; vb = b.input; break;
+                    case 'output': va = a.output; vb = b.output; break;
+                    case 'total': va = estMonthly(a); vb = estMonthly(b); break;
+                    case 'context': va = parseInt(a.context) || 0; vb = parseInt(b.context) || 0; break;
+                    default: va = a.input; vb = b.input;
+                }
+                return sortDir * (va - vb);
+            });
+
+            tbody.innerHTML = models.map(m => {
+                const monthly = estMonthly(m);
+                const ctx = m.context || '—';
+                const compSlug = 'compare-' + (m.providerSlug || 'openai') + '-' + (m.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')) + '.html';
+                return `<tr class="${m.deprecated ? 'deprecated' : ''}" onclick="selectModel('${m.id}')" style="cursor:pointer;">
+                    <td><strong>${m.name}</strong>${m.deprecated ? '<span class="dep-badge">Deprecated</span>' : ''}</td>
+                    <td><span class="provider-badge ${providerClass(m.providerSlug)}">${m.provider}</span></td>
+                    <td><span class="tier-badge ${tierClass(m.tier)}">${m.tier}</span></td>
+                    <td class="price-cell ${priceClass(m.input)}">$${m.input.toFixed(m.input < 1 ? 3 : 2)}</td>
+                    <td class="price-cell ${priceClass(m.output)}">$${m.output.toFixed(m.output < 1 ? 3 : 2)}</td>
+                    <td class="price-cell ${priceClass(monthly / 30)}">$${monthly.toFixed(2)}</td>
+                    <td>${ctx}</td>
+                    <td><a href="compare.html" onclick="event.stopPropagation();" style="color:var(--accent);text-decoration:none;font-size:13px;">Compare →</a></td>
+                </tr>`;
+            }).join('');
+
+            countEl.textContent = models.length + ' model' + (models.length !== 1 ? 's' : '');
+
+            // Update sort indicators
+            document.querySelectorAll('.matrix-table th').forEach(th => th.classList.remove('sorted'));
+
+            // Update estimator
+            updateEstimator();
+        }
+
+        window.selectModel = function(id) {
+            selectedModel = API_MODELS.find(m => m.id === id);
+            if (selectedModel) {
+                document.getElementById('est-total').textContent = '$' + estMonthly(selectedModel).toFixed(2);
+                if (window.trackEvent) window.trackEvent('matrix_model_selected', { model: selectedModel.name, provider: selectedModel.provider });
+            }
+        };
+
+        window.sortMatrix = function(key) {
+            if (sortKey === key) { sortDir *= -1; } else { sortKey = key; sortDir = 1; }
+            renderMatrix();
+        };
+
+        window.filterMatrix = function() { renderMatrix(); };
+
+        window.toggleDeprecated = function() {
+            showDeprecated = !showDeprecated;
+            document.getElementById('dep-toggle').textContent = showDeprecated ? 'Hide Deprecated' : 'Show Deprecated';
+            document.getElementById('dep-toggle').classList.toggle('active', showDeprecated);
+            renderMatrix();
+        };
+
+        window.estimateMonthly = function() { renderMatrix(); };
+
+        function updateEstimator() {
+            if (!selectedModel) return;
+            const total = estMonthly(selectedModel);
+            document.getElementById('est-total').textContent = '$' + total.toFixed(2);
+
+            // Find cheapest
+            let cheapest = null, cheapestCost = Infinity;
+            API_MODELS.forEach(m => {
+                if (m.deprecated) return;
+                const c = estMonthly(m);
+                if (c < cheapestCost) { cheapestCost = c; cheapest = m; }
+            });
+
+            if (cheapest && total > 0) {
+                document.getElementById('est-cheapest').textContent = cheapest.name + ' $' + cheapestCost.toFixed(2);
+                const savings = total - cheapestCost;
+                const pct = ((savings / total) * 100).toFixed(0);
+                document.getElementById('est-savings').textContent = savings > 0 ? '$' + savings.toFixed(2) + '/mo (' + pct + '%)' : 'Already cheapest!';
+            }
+        }
+
+        // Initial render
+        renderMatrix();
+
+        // Select first model by default
+        if (API_MODELS.length > 0) selectModel(API_MODELS[0].id);
+    });
+    </script>
+</body>
+</html>
