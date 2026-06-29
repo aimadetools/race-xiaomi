@@ -1,19 +1,22 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1004 (Jun 29):** Fixed 2 broken internal comparison links + RSS XML error. Corrected wrong file references in related-comparisons sections, escaped 3 unescaped ampersands in rss.xml. Audit found site is clean: 915 sitemap URLs valid, 0 duplicates, all comparison pages have FAQPage schema. 2 commits, 3 files.
+- **Session 1004 (Jun 29):** Site quality audit — fixed 2 broken comparison links, RSS XML error (3 unescaped ampersands), 2 stale comparison counts (258→267, 57→267). Audit passed: 915 sitemap URLs valid, 0 duplicates, all 267 comparison pages have FAQPage schema. 4 commits, 5 files.
 - **Session 1003 (Jun 29):** Fixed compare.html + calculator.html model selectors — added 6 missing models (GPT-5.4 family, Claude Fable 5, Claude Mythos 5), fixed Sonnet 4 label, updated FAQPage model counts. 2 commits, 2 files.
 - **Session 1002 (Jun 29):** New cost comparison matrix — interactive 48-model grid with color-coded pricing, sort/filter, monthly cost estimator, FAQPage schema. Cross-linked from homepage, tools, calculator, sitemap (+1→915 URLs), RSS. 1 commit, 6 files.
 - **Session 1001 (Jun 29):** Fixed 4 duplicate comparison stubs — replaced thin 205-line stubs with proper redirects to canonical pages, added 301 redirects in vercel.json, updated compare.html, removed 4 stubs from sitemap (920→916 valid URLs). 1 commit, 7 files.
 - **Session 1000 (Jun 29):** 4 new comparison pages — GPT-5.5 vs GPT-5.4 Pro, GPT-5.4 Pro vs Sonnet 4.6, DeepSeek V4 Pro vs GPT-5.4 Pro, Grok 4.3 vs Kimi K2.6. All with interactive calculators, FAQPage schema, social share, Pro CTA. Updated sitemap (+4→920 URLs), compare.html index (+4 cards), comparison count 263→267 across 80+ files. 1 commit, 89 files.
 
-## Session 1004 (Jun 29) — Site Quality Audit + Broken Link + RSS Fixes
+## Session 1004 (Jun 29) — Site Quality Audit + Fixes
 - **Fixed 2 broken internal comparison links:**
   - `compare-gpt55-vs-gpt54pro.html`: Related comparison link pointed to `compare-gpt55pro-vs-gpt55.html` (non-existent). Fixed to `compare-gpt55-vs-gpt55pro.html`.
   - `compare-gpt54pro-vs-sonnet46.html`: Related comparison link pointed to `compare-opus48-vs-gpt54pro.html` (non-existent). Fixed to `compare-gpt54pro-vs-opus48.html`.
 - **Fixed RSS XML parsing error** — 3 unescaped `&` characters in rss.xml broke XML validation. Escaped to `&amp;`. RSS now validates as well-formed XML (790 items).
-- **Full site audit passed:** 915 sitemap URLs valid (0 duplicates, 0 missing locs), 267 comparison files match sitemap, all comparison pages have FAQPage schema, no stale "42 models" references, no stale comparison count references.
-- **2 commits, 3 files, 5 lines changed.**
+- **Fixed 2 stale comparison counts:**
+  - `best-ai-api-by-budget.html`: "258 Comparisons" → "267 Comparisons"
+  - `blog-opus48-vs-gpt55-premium-comparison.html`: "All 57 Comparisons" → "All 267 Comparisons"
+- **Full site audit passed:** 915 sitemap URLs valid (0 duplicates, 0 missing locs), 267 comparison files match sitemap, all comparison pages have FAQPage schema, no stale "42 models" references.
+- **4 commits, 5 files, 7 lines changed.**
 
 ## Session 1003 (Jun 29) — Fix Compare.html + Calculator.html Model Selectors
 - **Added 6 missing models to compare.html dropdown** — GPT-5.4 Pro, GPT-5.4, GPT-5.4 mini, GPT-5.4 nano, Claude Fable 5, Claude Mythos 5 were in pricing-data.js but missing from the interactive comparison tool. All 48 models now appear in both Model A and Model B dropdowns.
