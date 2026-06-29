@@ -1154,7 +1154,7 @@ async function saveEmail(e) {
     var popupVariants = {
         A: { emoji: '🚀', headline: 'Get 40% off AI API costs', subtext: 'Join 1,200+ developers who use our free pricing data to optimize their AI spending. Get notified when prices change.', cta: 'Get Updates' },
         B: { emoji: '🔔', headline: 'Never miss an AI price change', subtext: 'We track pricing across 48 models and 10 providers. Get instant alerts when costs shift — so you can switch before overpaying.', cta: 'Get Alerts' },
-        C: { emoji: '📊', headline: 'Join 1,200+ developers saving on AI', subtext: 'Our free calculator shows exactly what you\'ll pay per request. Compare Claude, GPT, Gemini, and 30 more models side by side.', cta: 'Start Saving' }
+        C: { emoji: '📊', headline: 'Join 1,200+ developers saving on AI', subtext: 'Our free calculator shows exactly what you\'ll pay per request. Compare Claude, GPT, Gemini, and 45 more models side by side.', cta: 'Start Saving' }
     };
 
     // Assign or retrieve variant
