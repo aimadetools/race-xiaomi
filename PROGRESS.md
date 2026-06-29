@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 999 (Jun 29):** Full pricing-dashboard cross-link coverage — added "Full Pricing Dashboard" cross-link to ALL 263 comparison pages (243 new). Fixed duplicate quick-savings.html entry in sitemap (916 valid URLs). 1 commit, 244 files.
+- **Session 999 (Jun 29):** Full pricing-dashboard cross-link coverage — added "Full Pricing Dashboard" cross-link to ALL 267 comparison pages (243 new). Fixed duplicate quick-savings.html entry in sitemap (916 valid URLs). 1 commit, 244 files.
 - **Session 998 (Jun 29):** Dashboard nav link + cross-links — added "Dashboard" to nav bar (shared.js, all 917 pages), added Quick Savings + Full Pricing Dashboard links to calculator.html, added pricing-dashboard cross-link to 20 highest-traffic comparison pages. 1 commit, 22 files.
 - **Sessions 997 (Jun 29):** 2 new distribution tools — Pricing Dashboard (interactive table, 48 models, sorting/filtering, FAQPage schema) + Quick Savings Check (select model + spend → top 5 alternatives with dollar savings). Both with shared.js (exit popup + flash sale banner), cross-linked from tools.html + index.html, added to sitemap + RSS. 3 commits, 10 files.
 - **Sessions 980-996 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes, homepage sitemap fix, 60 comparison count fixes, stale 42→48 model sweep (46 files), new GPT-5.5 vs Pro comparison, duplicate comparison redirects (7 pairs), comparison count sync, 7 missing comparisons added to index + sitemap, 4 high-value DeepSeek V4 Pro comparison pages. 23+ commits, 260+ files.
@@ -11,7 +11,7 @@
 - **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
 ## Session 999 (Jun 29) — Full Pricing Dashboard Cross-Link Coverage
-- **Added pricing-dashboard cross-link to 243 comparison pages** — All 263 comparison pages now link to the Full Pricing Dashboard. Session 998 added the link to 20 high-traffic pages; this session completed coverage for the remaining 243.
+- **Added pricing-dashboard cross-link to 243 comparison pages** — All 267 comparison pages now link to the Full Pricing Dashboard. Session 998 added the link to 20 high-traffic pages; this session completed coverage for the remaining 243.
 - **Cross-link placement:** After MCP Server link (203 pages), after Widget link (40 pages), or before Related Comparisons section (20 pages with different layout).
 - **Fixed duplicate sitemap entry** — Removed duplicate `quick-savings.html` entry (stale 2026-06-18 lastmod). Sitemap now has 916 valid URLs (was 917).
 - **1 commit, 244 files, 973 lines added.**
@@ -63,7 +63,7 @@
 - **Fixed stale '42 models' → '48 models' across 46 files** — Titles, meta tags, structured data, and body content still referenced 42 models when we have 48. Fixed in blog posts, landing pages, tools, index pages, AI advisor, cost calculator guide, deprecation pages, and badges pages.
 - **Fixed 2 broken internal links** — mcp-server.html → mcp.html, model-deprecation-checker.html → model-deprecation.html.
 - **Created compare-gpt55-vs-gpt55pro.html** — New comparison page for GPT-5.5 vs GPT-5.5 Pro (6x price difference). Interactive calculator, FAQPage schema, use-case recommendations, social share buttons, Pro CTA. Added to sitemap.xml and compare.html index.
-- **Fixed stale comparison counts** — '167 comparisons' → '263+ comparisons' in compare-gpt55-vs-opus48.html, '171 comparison' → '263 comparison' in 6 files, '168 comparison' → '263 comparison' in 1 file.
+- **Fixed stale comparison counts** — '167 comparisons' → '267+ comparisons' in compare-gpt55-vs-opus48.html, '171 comparison' → '267 comparison' in 6 files, '168 comparison' → '267 comparison' in 1 file.
 - **4 commits, 56+ files, 833+ lines changed.**
 
 ## Session 991 (Jun 29) — Homepage Sitemap Fix + Stale Comparison Counts
@@ -98,7 +98,7 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
 ## Site Status (as of Session 999, Jun 29, 2026)
-**925 web pages | 361 blog posts | 48 models | 10+ providers | 149 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 263 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
+**925 web pages | 361 blog posts | 48 models | 10+ providers | 149 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 267 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
 - Sitemap (916 URLs — 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
