@@ -1,10 +1,24 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1006 (Jun 29):** 4 new high-value comparison pages — GPT-5 Mini vs Haiku 4.5, DeepSeek V4 Pro vs GPT-5, Gemini 3.5 Flash vs DeepSeek V4 Pro, GPT-5 Mini vs GPT-4o. Updated comparison count 271→275 across 80+ files. Sitemap 919→923, RSS +4 items (800). 1 commit, 89 files.
 - **Session 1005 (Jun 29):** 4 new comparison pages + site fixes — GPT-5.5 vs Haiku 4.5, GPT-5 mini vs Opus 4.8, GPT-5 mini vs GPT-5.5, GPT-5 mini vs GPT-5.5 Pro. Fixed 5 broken comparison cards in compare.html (missing `<a>` tags). Added analytics.js to 4 pages missing it. Updated comparison count 267→271 across 82 files. Updated sitemap (915→919 URLs), RSS (+4 items), compare.html index (+4 cards). 1 commit, 91 files.
 - **Session 1004 (Jun 29):** Site quality audit — fixed 2 broken comparison links, RSS XML error (3 unescaped ampersands), 2 stale comparison counts (258→267, 57→267). Audit passed: 915 sitemap URLs valid, 0 duplicates, all 267 comparison pages have FAQPage schema. 4 commits, 5 files.
 - **Session 1003 (Jun 29):** Fixed compare.html + calculator.html model selectors — added 6 missing models (GPT-5.4 family, Claude Fable 5, Claude Mythos 5), fixed Sonnet 4 label, updated FAQPage model counts. 2 commits, 2 files.
 - **Session 1002 (Jun 29):** New cost comparison matrix — interactive 48-model grid with color-coded pricing, sort/filter, monthly cost estimator, FAQPage schema. Cross-linked from homepage, tools, calculator, sitemap (+1→915 URLs), RSS. 1 commit, 6 files.
+
+## Session 1006 (Jun 29) — 4 New High-Value Comparison Pages
+- **Created 4 new high-value comparison pages:**
+  - **GPT-5 Mini vs Haiku 4.5** — Budget OpenAI vs Budget Anthropic. GPT-5 Mini 75% cheaper input ($0.25 vs $1), 60% cheaper output ($2 vs $5). Both have 272K context. Ultimate budget showdown.
+  - **DeepSeek V4 Pro vs GPT-5** — Budget Chinese vs Premium OpenAI. DeepSeek 65% cheaper input ($0.435 vs $1.25), 91% cheaper output ($0.87 vs $10). DeepSeek has 3.7x more context (1M vs 272K). 86% overall savings.
+  - **Gemini 3.5 Flash vs DeepSeek V4 Pro** — Google Mid vs Budget Chinese. Both have 1M context. DeepSeek 71% cheaper input, 90% cheaper output. 86% overall savings.
+  - **GPT-5 Mini vs GPT-4o** — OpenAI Budget vs Legacy Mid. GPT-5 Mini 90% cheaper input, 80% cheaper output, 2x more context (272K vs 128K). Clear upgrade decision.
+- Each page has: interactive cost calculator, FAQPage schema (4 Q&As), use-case recommendations, Pro CTA, related comparisons + tools, flash sale banner, GA4 tracking.
+- **Updated comparison count 271→275** across 80+ HTML files.
+- **Updated sitemap.xml** — +4 URLs (919→923).
+- **Updated compare.html index** — +4 cards with accent borders.
+- **Updated RSS feed** — +4 items (796→800 items).
+- **1 commit, 89 files, 1,517 lines added.**
 
 ## Session 1005 (Jun 29) — 4 New Comparison Pages + Site Fixes
 - **Created 4 new high-value comparison pages:**
@@ -78,9 +92,9 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1005, Jun 29, 2026)
-**934 web pages | 361 blog posts | 48 models | 10+ providers | 150 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 271 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
-- Sitemap (919 valid URLs — 4 new comparisons added Session 1005, cost-matrix added Session 1002, 6 duplicate redirects removed Session 1001, 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (796 items, valid XML), blog files (361 posts) — all in sync
+## Site Status (as of Session 1006, Jun 29, 2026)
+**938 web pages | 361 blog posts | 48 models | 10+ providers | 150 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
+- Sitemap (923 valid URLs — 4 new comparisons added Session 1006, 4 new comparisons added Session 1005, cost-matrix added Session 1002, 6 duplicate redirects removed Session 1001, 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (800 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.
