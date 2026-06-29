@@ -83,7 +83,7 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 986, Jun 29, 2026)
+## Site Status (as of Session 987, Jun 29, 2026)
 **918 web pages | 361 blog posts | 48 models | 10+ providers | 147 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 312 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (911 URLs), RSS (786 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
