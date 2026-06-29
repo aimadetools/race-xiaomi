@@ -34,7 +34,7 @@
 - ~~Add terminal to nav bar~~ — DONE (Session 986). shared.js injects "Terminal" link on all 917 pages, appears in "More" dropdown.
 - ~~Add terminal to RSS feed~~ — DONE (Session 986). New item at top of rss.xml.
 - **Test floating button on mobile** — Currently desktop-only. Test if showing on mobile (with smaller size) interferes with sticky CTA on flash-19.html or other mobile UI elements.
-- **Add "Share this terminal" feature** — Add social share buttons (X, LinkedIn, HN) to terminal page. Terminal aesthetic makes it shareable.
+- ~~Add "Share this terminal" feature~~ — Already done (Session 985). X, LinkedIn, HN share buttons + Copy URL already on terminal.html.
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
