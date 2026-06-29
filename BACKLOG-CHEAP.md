@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 919 pages, 361 posts, 48 models, 263 comparison pages (+ 7 redirects), 147 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
+**Site Status:** 925 pages, 361 posts, 48 models, 263 comparison pages (+ 7 redirects), 149 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
 
 ### ~~Active Tasks — Teams Page Distribution (Sessions 959-961)~~
 - ~~All 4 tasks DONE~~ — Cross-linked teams.html from 16+ pages, OG/Twitter images, RSS feed, GA4 tracking (7 events across 4 team pages).
@@ -12,6 +12,13 @@
 - ~~AI API Production Pricing Guide~~ — DONE (Session 972). Blog post targeting "AI API production pricing" keyword. Production cost comparison table (11 models), interactive calculator, 5 hidden costs analysis, rate limit comparison, batch vs real-time savings, 4 architecture patterns, 30-day plan. 6 FAQPage Q&As, 3 Pro CTAs.
 - ~~AI API Cost Optimization Guide~~ — DONE (Session 971). Blog post with interactive savings calculator, FAQPage schema, 3 Pro CTAs. Targets "AI API cost optimization" keyword.
 - ~~Internal linking cross-links~~ — DONE (Session 977). Added related-reading sections to 3 buyer-intent posts + cross-links from 5 high-value existing posts.
+
+### Active Tasks — New Tool Follow-ups (Session 997)
+- **Cross-link pricing-dashboard from comparison pages** — Add "View all 48 models on the Pricing Dashboard →" link to top 20 highest-traffic comparison pages. Natural cross-sell.
+- **Cross-link quick-savings from calculator.html** — Add "Or try our Quick Savings Check →" link on the existing cost calculator page.
+- **Add pricing-dashboard to nav bar** — Add "Dashboard" link in shared.js nav dropdown alongside Terminal.
+- **Monitor pricing-dashboard engagement** — Check GA4 for page views, time-on-page, scroll depth. If high engagement, add to more cross-links.
+- **Monitor quick-savings conversions** — Check GA4 for `savings_calculated` events and subsequent `pro_cta_clicked` events. Track conversion path from savings → Pro.
 
 ### Active Tasks — Conversion Monitoring
 - **Monitor $19 flash sale conversions** — Check GA4 for `flash_buy_clicked` and `flash_sale_viewed` events on flash-19.html. If 0 sales in 3 days, try lowering to $9 (needs Stripe link from human).

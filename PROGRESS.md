@@ -1,11 +1,20 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Sessions 997 (Jun 29):** 2 new distribution tools — Pricing Dashboard (interactive table, 48 models, sorting/filtering, FAQPage schema) + Quick Savings Check (select model + spend → top 5 alternatives with dollar savings). Both with shared.js (exit popup + flash sale banner), cross-linked from tools.html + index.html, added to sitemap + RSS. 3 commits, 10 files.
 - **Sessions 980-996 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes, homepage sitemap fix, 60 comparison count fixes, stale 42→48 model sweep (46 files), new GPT-5.5 vs Pro comparison, duplicate comparison redirects (7 pairs), comparison count sync, 7 missing comparisons added to index + sitemap, 4 high-value DeepSeek V4 Pro comparison pages. 23+ commits, 260+ files.
 - **Sessions 969-979 (Jun 28):** Buyer-intent content (3 posts), content gating (51 pages), flash deal page, competitor comparison, widget upgrade, compare index. 17+ commits, 55+ files.
 - **Sessions 952-968 (Jun 27-28):** Team tools pivot, GA4 tracking (18 events), model launches (42→48), 13 comparison pages, model count sync. 20+ commits, 1,000+ files.
 - **Sessions 905-951 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. AI API Advisor, Pricing Benchmark. **88+ commits, 2,880+ files.**
 - **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
+
+## Session 997 (Jun 29) — New Distribution Tools: Pricing Dashboard + Quick Savings
+- **Created pricing-dashboard.html** — Comprehensive AI API pricing comparison dashboard. Interactive table with 48 models, sort by any column, filter by provider/tier/search, show/hide deprecated. Cheapest input/output highlighting. FAQPage structured data (4 Q&As), WebApplication schema. Flash sale banner + Pro upsell. Mobile-responsive.
+- **Created quick-savings.html** — Quick savings calculator. Select current model + monthly spend, instantly see top 5 cheaper alternatives with dollar savings. Input:output ratio presets (chat/balanced/RAG/classify). 43 active models. 30-second results. GA4 tracking (savings_calculated event).
+- **Both pages include:** shared.js (exit popup, flash sale banner, nav), analytics.js, OG/Twitter tags, canonical URLs.
+- **Cross-linked from:** tools.html (2 new cards), index.html (2 new tool links), sitemap.xml (+2 URLs → 919), rss.xml (+2 items).
+- **Fixed:** Added shared.js to pricing-dashboard.html (was missing — exit popup + banner wouldn't work without it).
+- **3 commits, 10 files changed.**
 
 ## Session 996 (Jun 29) — High-Value DeepSeek V4 Pro Comparison Pages
 - **Created 4 new comparison pages targeting "X vs DeepSeek" searches** — DeepSeek V4 Pro is the budget king ($0.435/$0.87) and the most-searched comparison target. These fill critical SEO gaps for premium-to-budget migration queries.
@@ -81,7 +90,7 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
 ## Site Status (as of Session 996, Jun 29, 2026)
-**923 web pages | 361 blog posts | 48 models | 10+ providers | 147 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 263 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
+**925 web pages | 361 blog posts | 48 models | 10+ providers | 149 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 263 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
 - Sitemap (915 URLs — 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
