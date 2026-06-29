@@ -1,11 +1,19 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Sessions 980-992 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes, homepage sitemap fix, 60 comparison count fixes, stale 42→48 model sweep (46 files), new GPT-5.5 vs Pro comparison. 20+ commits, 165+ files.
+- **Sessions 980-993 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes, homepage sitemap fix, 60 comparison count fixes, stale 42→48 model sweep (46 files), new GPT-5.5 vs Pro comparison, duplicate comparison redirects (7 pairs), comparison count sync. 21+ commits, 250+ files.
 - **Sessions 969-979 (Jun 28):** Buyer-intent content (3 posts), content gating (51 pages), flash deal page, competitor comparison, widget upgrade, compare index. 17+ commits, 55+ files.
 - **Sessions 952-968 (Jun 27-28):** Team tools pivot, GA4 tracking (18 events), model launches (42→48), 13 comparison pages, model count sync. 20+ commits, 1,000+ files.
 - **Sessions 905-951 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. AI API Advisor, Pricing Benchmark. **88+ commits, 2,880+ files.**
 - **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
+
+## Session 993 (Jun 29) — Comparison Count Sync + Duplicate Cleanup
+- **Fixed stale comparison count (258→252) across 81 pages** — After removing 7 duplicate comparison pairs, updated the site-wide count from 259→252 to reflect unique accessible comparisons.
+- **Added 7 duplicate comparison redirects in vercel.json** — Non-hyphenated URLs (e.g., compare-gpt5mini-vs-claudehaiku.html) now 301-redirect to canonical hyphenated versions (compare-gpt5-mini-vs-claude-haiku.html). Consolidates duplicate content for SEO.
+- **Removed 7 redirect targets from sitemap.xml** — Sitemap now has 905 URLs (was 912), all pointing to unique content.
+- **Removed 7 redirect targets from compare.html index** — Index now lists 252 unique comparisons.
+- **Fixed 3 stale sitemap entries** — Removed entries for non-existent files.
+- **1 commit, 84 files, 235 lines changed.**
 
 ## Session 992 (Jun 29) — Stale Content Sweep + New Comparison Page
 - **Fixed stale '42 models' → '48 models' across 46 files** — Titles, meta tags, structured data, and body content still referenced 42 models when we have 48. Fixed in blog posts, landing pages, tools, index pages, AI advisor, cost calculator guide, deprecation pages, and badges pages.
@@ -61,8 +69,8 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
 ## Site Status (as of Session 992, Jun 29, 2026)
-**919 web pages | 361 blog posts | 48 models | 10+ providers | 147 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 259 comparison pages | 1 MCP server (5 tools)**
-- Sitemap (915 URLs — new comparison page added Session 992), RSS (787 items, valid XML), blog files (361 posts) — all in sync
+**919 web pages | 361 blog posts | 48 models | 10+ providers | 147 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 252 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
+- Sitemap (905 URLs — 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.
