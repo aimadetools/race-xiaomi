@@ -41,6 +41,7 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
 (function(){
     var DEAL_SKIP = location.pathname.indexOf('deal.html') !== -1;
     var GO_SKIP = location.pathname.indexOf('go.html') !== -1;
+    var FLASH19_SKIP = location.pathname.indexOf('flash-19.html') !== -1;
     var CONFIRMED_STRIPE_LINK = 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'; // $29 one-time
 
     // Post-expiry: $49; otherwise $29
@@ -52,10 +53,11 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
     window._abStripeLink = CONFIRMED_STRIPE_LINK;
     window._abVariant = 'B'; // standardized
 
-    // Skip price overrides on deal.html and go.html
+    // Skip price overrides on deal.html, go.html, and flash-19.html
     // deal.html has its own $29 conversion flow
     // go.html has its own A/B pricing + Stripe link handling (Session 891 fix)
-    if (DEAL_SKIP || GO_SKIP) return;
+    // flash-19.html has its own $19 flash sale pricing (Session 980)
+    if (DEAL_SKIP || GO_SKIP || FLASH19_SKIP) return;
 
     // Update all CTAs on this page to use variant price and link
     document.addEventListener('DOMContentLoaded', function() {
@@ -65,26 +67,40 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
             if (a.textContent.includes('$29')) {
                 a.textContent = a.textContent.replace('$29', '$' + window._abPrice);
             }
-            // Route ALL Stripe checkout links through go.html for trust-building
-            // go.html shows social proof, testimonials, FAQ, and guarantee before Stripe
-            if (a.href && a.href.includes('buy.stripe.com') && !a.href.includes('go.html')) {
+            // Route Stripe checkout links: flash sale → flash-19.html, otherwise → go.html
+            // Session 980: $19 flash sale for first revenue
+            if (a.href && a.href.includes('buy.stripe.com') && !a.href.includes('go.html') && !a.href.includes('flash-19.html')) {
                 var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-                a.href = 'go.html?from=' + encodeURIComponent(pageName);
+                if (!window.DEAL_EXPIRED) {
+                    a.href = 'flash-19.html?from=' + encodeURIComponent(pageName);
+                } else {
+                    a.href = 'go.html?from=' + encodeURIComponent(pageName);
+                }
                 a.target = '_blank';
                 a.rel = 'noopener';
             }
-            // Route nav CTAs linking to pricing/pro/compare-plans through go.html
-            if (a.classList.contains('nav-cta') && a.href && !a.href.includes('go.html')) {
+            // Route nav CTAs: flash sale → flash-19.html, otherwise → go.html
+            if (a.classList.contains('nav-cta') && a.href && !a.href.includes('go.html') && !a.href.includes('flash-19.html')) {
                 if (a.href.includes('pricing.html') || a.href.includes('pro.html') || a.href.includes('compare-plans.html')) {
-                    a.href = 'go.html?from=nav_cta';
+                    // Session 980: $19 flash sale active — route to flash page
+                    if (!window.DEAL_EXPIRED) {
+                        a.href = 'flash-19.html?from=nav_cta';
+                    } else {
+                        a.href = 'go.html?from=nav_cta';
+                    }
                     a.target = '_blank';
                     a.rel = 'noopener';
                 }
             }
-            // Route inline "Go Pro" CTAs in blog posts through go.html
+            // Route inline "Go Pro" CTAs: flash sale → flash-19.html, otherwise → go.html
             if (a.href && (a.href.includes('pricing.html') || a.href.includes('pro.html')) && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro/i)) {
                 var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-                a.href = 'go.html?from=' + encodeURIComponent(pageName);
+                // Session 980: $19 flash sale active
+                if (!window.DEAL_EXPIRED) {
+                    a.href = 'flash-19.html?from=' + encodeURIComponent(pageName);
+                } else {
+                    a.href = 'go.html?from=' + encodeURIComponent(pageName);
+                }
                 a.target = '_blank';
                 a.rel = 'noopener';
             }
@@ -401,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Don't show on deprecation/migration/emergency pages (they have their own urgency)
     var path = window.location.pathname;
-    if (path.includes('deprecation') || path.includes('migration') || path.includes('claude-4-is-down') || path.includes('deal.html') || path.includes('go.html')) return;
+    if (path.includes('deprecation') || path.includes('migration') || path.includes('claude-4-is-down') || path.includes('deal.html') || path.includes('go.html') || path.includes('flash-19.html')) return;
 
     if (daysLeft > 0 && daysLeft <= 14) {
         // PRE-DEPRECATION: Show countdown banner
@@ -421,8 +437,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nav) nav.style.top = '0';
         if (window.trackEvent) window.trackEvent('deprecation_banner_shown', { days_left: daysLeft });
     } else if (daysLeft <= 0 && daysLeft > -90) {
-        // POST-DEPRECATION: Show deal urgency banner (conversion focus after deprecation)
-        // Session 877: After July 12 expiry, switch to post-deal messaging
+        // POST-DEPRECATION: Show $19 flash sale banner (Week 11 special)
+        // Session 980: $19 flash sale drives first revenue — lower impulse-buy price
         if (localStorage.getItem('apipulse_deprecation_retired_dismissed')) return;
         var banner = document.createElement('div');
         banner.id = 'deprecation-urgency-banner';
@@ -434,11 +450,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 '<a href="go.html" style="color:white;text-decoration:underline;font-weight:700;">Get Pro →</a>' +
                 '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
         } else {
-            // Pre-expiry: show deal urgency
+            // Pre-expiry: $19 flash sale (Session 980)
             banner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
             var urgencyText = window.DEAL_DAYS_LEFT <= 1 ? 'FINAL DAY' : window.DEAL_DAYS_LEFT + ' days left';
-            banner.innerHTML = '<span>🔥 Limited time: Pro lifetime access $29 — <strong>' + urgencyText + '</strong></span>' +
-                '<a href="go.html" style="color:white;text-decoration:underline;font-weight:700;">Get the deal →</a>' +
+            banner.innerHTML = '<span>⚡ FLASH SALE: Pro lifetime access <strong>$19</strong> — <strong>' + urgencyText + '</strong></span>' +
+                '<a href="flash-19.html" style="color:white;text-decoration:underline;font-weight:700;">Get $19 deal →</a>' +
                 '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
         }
         document.body.insertBefore(banner, document.body.firstChild);
