@@ -1,8 +1,22 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1001 (Jun 29):** Fixed 4 duplicate comparison stubs — replaced thin 205-line stubs with proper redirects to canonical pages, added 301 redirects in vercel.json, updated compare.html, removed 4 stubs from sitemap (920→916 valid URLs). 1 commit, 7 files.
 - **Session 1000 (Jun 29):** 4 new comparison pages — GPT-5.5 vs GPT-5.4 Pro, GPT-5.4 Pro vs Sonnet 4.6, DeepSeek V4 Pro vs GPT-5.4 Pro, Grok 4.3 vs Kimi K2.6. All with interactive calculators, FAQPage schema, social share, Pro CTA. Updated sitemap (+4→920 URLs), compare.html index (+4 cards), comparison count 263→267 across 80+ files. 1 commit, 89 files.
 - **Session 999 (Jun 29):** Full pricing-dashboard cross-link coverage — added "Full Pricing Dashboard" cross-link to ALL 267 comparison pages (243 new). Fixed duplicate quick-savings.html entry in sitemap (916 valid URLs). 1 commit, 244 files.
+
+## Session 1001 (Jun 29) — Fix Duplicate Comparison Stubs
+- **Replaced 4 thin stub pages with proper redirects** — Non-hyphenated slug variants (e.g., compare-opus48-vs-deepseekv4pro.html) were 205-line stubs competing with canonical versions (400-991 lines). Replaced with meta refresh + JS redirect + noindex.
+  - compare-opus48-vs-deepseekv4pro.html → compare-opus48-vs-deepseek-v4pro.html
+  - compare-sonnet46-vs-deepseekv4pro.html → compare-sonnet46-vs-deepseek-v4pro.html
+  - compare-haiku45-vs-deepseekv4pro.html → compare-haiku45-vs-deepseek-v4pro.html
+  - compare-gpt55-vs-deepseekv4pro.html → compare-gpt55-vs-deepseek-v4pro.html
+- **Added 301 redirects in vercel.json** — All 4 pairs now have proper permanent redirects.
+- **Updated compare.html** — Internal links now point to canonical versions.
+- **Cleaned up sitemap.xml** — Removed 4 stub URLs (920→916 valid URLs) + 4 orphaned `<url>` tags.
+- **Cleaned up PROGRESS.md** — Updated site status, added Session 1001.
+- **Cleaned up BACKLOG-CHEAP.md** — Collapsed completed tasks into summary lines.
+- **1 commit, 7 files, 52 lines added, 820 lines removed.**
 
 ## Session 1000 (Jun 29) — 4 New High-Value Comparison Pages
 - **Created compare-gpt55-vs-gpt54pro.html** — GPT-5.5 vs GPT-5.4 Pro (OpenAI family). GPT-5.5 is 83% cheaper on both input ($5 vs $30) and output ($30 vs $180). Targets "GPT-5.5 vs GPT-5.4 Pro" searches.
@@ -109,9 +123,9 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1000, Jun 29, 2026)
-**929 web pages | 361 blog posts | 48 models | 10+ providers | 149 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 267 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
-- Sitemap (920 URLs — 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
+## Site Status (as of Session 1001, Jun 29, 2026)
+**929 web pages | 361 blog posts | 48 models | 10+ providers | 149 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 267 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
+- Sitemap (916 valid URLs — 4 duplicate stubs removed Session 1001, 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.
