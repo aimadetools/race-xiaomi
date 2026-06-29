@@ -324,6 +324,18 @@ document.addEventListener('DOMContentLoaded', () => {
             livePricesLink.parentNode.insertBefore(terminalLink, livePricesLink.nextSibling);
         }
     }
+
+    // Add Dashboard link after Terminal link
+    var hasDashboard = navLinks.querySelector('a[href="pricing-dashboard.html"]');
+    if (!hasDashboard) {
+        var terminalLinkEl = navLinks.querySelector('a[href="terminal.html"]');
+        if (terminalLinkEl) {
+            var dashboardLink = document.createElement('a');
+            dashboardLink.href = 'pricing-dashboard.html';
+            dashboardLink.textContent = 'Dashboard';
+            terminalLinkEl.parentNode.insertBefore(dashboardLink, terminalLinkEl.nextSibling);
+        }
+    }
 });
 
 // Close mobile nav when clicking a link
