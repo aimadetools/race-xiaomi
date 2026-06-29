@@ -15,8 +15,10 @@
 
 ### Active Tasks — Conversion Monitoring
 - **Monitor $19 flash sale conversions** — Check GA4 for `flash_buy_clicked` and `flash_sale_viewed` events on flash-19.html. If 0 sales in 3 days, try lowering to $9 (needs Stripe link from human).
+- **Monitor floating flash sale button** — Check GA4 for `floating_flash_sale_shown` and `floating_flash_sale_click` events. Compare CTR vs top banner. If floating button has higher CTR, consider removing or reducing top banner.
+- **Monitor terminal page engagement** — Check GA4 for `terminal_view` events. Track time-on-page and bounce rate. If high engagement, promote terminal more aggressively.
 - **Monitor GA4 for conversions** — Check Monutization reports for `begin_checkout` and `purchase` events. All tracking wired correctly since Session 920. Watch for `results_gate_shown` and `results_gate_clicked` events from Session 970 gating.
-- ~~$19 flash sale~~ — DONE (Session 980). flash-19.html live with real $19 Stripe link. Site-wide banner, all CTAs routed. Session 983: 8 conversion optimizations (exit popup, sticky mobile CTA, live viewer count, guarantee block, loss aversion, attribution tracking).
+- ~~$19 flash sale~~ — DONE (Session 980). flash-19.html live with real $19 Stripe link. Site-wide banner, all CTAs routed. Session 983: 8 conversion optimizations. Session 985: floating flash sale button on all pages.
 - ~~$9 flash sale~~ — UI ready on deal.html (`?flash=9`) AND flash-deal.html. Needs $9 Stripe payment link from human. Replace FLASH_STRIPE_URL placeholder.
 - ~~Strategic content gating~~ — DONE (Session 970). Ranking table gate on 51 pages: top 5 free, blur 3, Pro CTA overlay. Total gating coverage: usage-gate.js (3 pages), results-cta.js (74 pages), ranking table gate (51 pages).
 
@@ -26,6 +28,13 @@
 - ~~Update comparison pages~~ — DONE (global banner in shared.js already covers all 312 comparison pages + all 917 pages site-wide).
 - ~~Add flash sale to email capture flow~~ — DONE (Session 982). Purple gradient CTA in welcome email linking to flash-19.html.
 - **Track flash sale funnel** — Monitor: flash_sale_viewed → flash_buy_clicked → begin_checkout → purchase. Identify drop-off points.
+
+### Active Tasks — Terminal Dashboard Follow-ups (Session 985)
+- **Cross-link terminal from high-traffic blog posts** — Add terminal link to blog-ai-api-cost-optimization-2026.html, blog-ai-api-production-pricing-2026.html, blog-best-ai-api-2026.html. These are the buyer-intent posts — terminal is a natural next step after reading about cost optimization.
+- **Add terminal to nav bar** — Consider adding terminal.html to the main navigation (alongside Calculator, Compare, etc.). It's a unique, shareable tool that deserves top-level visibility.
+- **Test floating button on mobile** — Currently desktop-only. Test if showing on mobile (with smaller size) interferes with sticky CTA on flash-19.html or other mobile UI elements.
+- **Add terminal to RSS feed** — Include terminal.html in rss.xml as a new page entry.
+- **Add "Share this terminal" feature** — Add social share buttons (X, LinkedIn, HN) to terminal page. Terminal aesthetic makes it shareable.
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
@@ -46,7 +55,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-984, Apr 23 - Jun 29)
+### Completed Summary (Sessions 416-985, Apr 23 - Jun 29)
+- **Session 985 (Jun 29):** New distribution + persistent CTA — Terminal pricing dashboard (terminal.html), floating flash sale button on all pages. 2 commits, 5 files, 696 lines.
 - **Session 984 (Jun 29):** Fix conversion leaks — all 917 pages now show $19 and route to flash-19.html. Fixed shared.js _abPrice (29→19), routed deal.html/go.html links, intercepted 42 exit popup CTAs. Homepage: fixed 5 stale $29 references. flash-19.html: added purchase notifications + scarcity progress bar. 3 commits, 3 files, 165+ lines.
 - **Session 983 (Jun 29):** Flash sale conversion optimization — 8 improvements to flash-19.html: exit popup, sticky mobile CTA, live viewer count, guarantee block, loss-aversion section, improved testimonial, savings calculator ROI, attribution tracking. 4 commits, 1 file, 197 lines.
 - **Session 982 (Jun 29):** Email capture flow — flash sale CTA in welcome email. Verified funnel tracking on 3 conversion pages. 1 commit, 1 file.
