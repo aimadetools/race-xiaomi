@@ -13,10 +13,10 @@
 - ~~AI API Cost Optimization Guide~~ — DONE (Session 971). Blog post with interactive savings calculator, FAQPage schema, 3 Pro CTAs. Targets "AI API cost optimization" keyword.
 - ~~Internal linking cross-links~~ — DONE (Session 977). Added related-reading sections to 3 buyer-intent posts + cross-links from 5 high-value existing posts.
 
-### Active Tasks — New Tool Follow-ups (Session 997)
-- **Cross-link pricing-dashboard from comparison pages** — Add "View all 48 models on the Pricing Dashboard →" link to top 20 highest-traffic comparison pages. Natural cross-sell.
-- **Cross-link quick-savings from calculator.html** — Add "Or try our Quick Savings Check →" link on the existing cost calculator page.
-- **Add pricing-dashboard to nav bar** — Add "Dashboard" link in shared.js nav dropdown alongside Terminal.
+### ~~Active Tasks — New Tool Follow-ups (Session 997)~~
+- ~~**Cross-link pricing-dashboard from comparison pages**~~ — DONE (Session 998). Added to 20 highest-traffic comparison pages with green accent styling.
+- ~~**Cross-link quick-savings from calculator.html**~~ — DONE (Session 998). Added Quick Savings Check + Full Pricing Dashboard to Related Tools section.
+- ~~**Add pricing-dashboard to nav bar**~~ — DONE (Session 998). "Dashboard" link in shared.js nav dropdown alongside Terminal. Shows on all 917 pages.
 - **Monitor pricing-dashboard engagement** — Check GA4 for page views, time-on-page, scroll depth. If high engagement, add to more cross-links.
 - **Monitor quick-savings conversions** — Check GA4 for `savings_calculated` events and subsequent `pro_cta_clicked` events. Track conversion path from savings → Pro.
 
@@ -62,7 +62,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-995, Apr 23 - Jun 29)
+### Completed Summary (Sessions 416-998, Apr 23 - Jun 29)
+- **Session 998 (Jun 29):** Dashboard nav link + cross-links — added "Dashboard" to nav bar (shared.js, all 917 pages), added Quick Savings + Full Pricing Dashboard links to calculator.html Related Tools, added pricing-dashboard cross-link to 20 highest-traffic comparison pages. 1 commit, 22 files, 139 lines.
 - **Session 995 (Jun 29):** Sitemap cleanup — removed 12 malformed `<url>` entries (missing `<loc>` tag) + 1 duplicate homepage entry. Sitemap now has 911 valid URLs (was 924). 1 commit, 1 file, 66 lines removed.
 - **Session 994 (Jun 29):** Comparison index sync + sitemap fix — added 7 missing comparison pages to compare.html index + sitemap.xml (DeepSeek V3.2 vs GPT-5 mini, GPT-5 mini vs Claude Haiku 4.5, GPT-5 mini vs DeepSeek V4 Pro, GPT-5 mini vs Gemini 3.5 Flash, GPT-5 mini vs Mistral Small 4, Opus 4.8 vs Kimi K2.6, Sonnet 4.6 vs Mistral Large 3), updated stale comparison count 252→259 across 81 files, removed 1 broken sitemap entry. 1 commit, 83 files, 151 lines.
 - **Session 993 (Jun 29):** Comparison count sync + duplicate cleanup + quality sweep — fixed stale comparison count (258→252) across 81 pages after removing 7 duplicate comparison pairs, added 7 duplicate comparison redirects in vercel.json, removed redirect targets from sitemap/compare.html index, fixed 3 stale sitemap entries, fixed 8 internal links, quality sweep verified all comparison pages. 3 commits, 91 files, 249 lines.
