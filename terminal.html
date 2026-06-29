@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Pricing Terminal — Compare 48 Models Live</title>
+    <meta name="description" content="Interactive terminal-style dashboard for comparing AI API pricing across 48 models and 10 providers. Sort by cost, filter by provider, calculate monthly spend.">
+    <meta name="keywords" content="AI API pricing, API cost comparison, GPT pricing, Claude pricing, LLM cost calculator, AI model pricing terminal">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AI API Pricing Terminal — Compare 48 Models Live">
+    <meta property="og:description" content="Interactive terminal-style dashboard for comparing AI API pricing across 48 models. Sort, filter, calculate.">
+    <meta property="og:url" content="https://getapipulse.com/terminal.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/terminal.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0CEP7S9Y3J');</script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "AI API Pricing Terminal",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "description": "Interactive terminal-style dashboard for comparing AI API pricing across 48 models and 10 providers.",
+        "url": "https://getapipulse.com/terminal.html",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+        body {
+            background: #0a0a0a;
+            color: #22c55e;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        /* Terminal window */
+        .terminal {
+            max-width: 1200px;
+            margin: 20px auto;
+            border: 1px solid #222;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        }
+        .terminal-bar {
+            background: #1a1a1a;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #222;
+        }
+        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .terminal-dot.red { background: #ef4444; }
+        .terminal-dot.yellow { background: #eab308; }
+        .terminal-dot.green { background: #22c55e; }
+        .terminal-title {
+            color: #666;
+            font-size: 12px;
+            margin-left: 12px;
+            flex: 1;
+        }
+        .terminal-body {
+            background: #0a0a0a;
+            padding: 16px;
+            min-height: 600px;
+        }
+
+        /* Header */
+        .header-art {
+            color: #22c55e;
+            font-size: 11px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            white-space: pre;
+        }
+        .header-info { color: #666; margin-bottom: 16px; }
+        .header-info span { color: #22c55e; }
+        .prompt { color: #22c55e; }
+        .prompt::before { content: '$ '; color: #666; }
+        .comment { color: #444; }
+
+        /* Command bar */
+        .cmd-bar {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .cmd {
+            background: #111;
+            border: 1px solid #333;
+            color: #22c55e;
+            font-family: inherit;
+            font-size: 12px;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.15s;
+        }
+        .cmd:hover { background: #1a2a1a; border-color: #22c55e; }
+        .cmd.active { background: #0f2a0f; border-color: #22c55e; color: #4ade80; }
+        .cmd-input {
+            background: #111;
+            border: 1px solid #333;
+            color: #22c55e;
+            font-family: inherit;
+            font-size: 12px;
+            padding: 6px 12px;
+            border-radius: 4px;
+            width: 200px;
+            outline: none;
+        }
+        .cmd-input:focus { border-color: #22c55e; }
+        .cmd-input::placeholder { color: #333; }
+
+        /* Table */
+        .table-header {
+            display: grid;
+            padding: 8px 12px;
+            color: #666;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #222;
+            cursor: pointer;
+            user-select: none;
+        }
+        .table-header span:hover { color: #22c55e; }
+        .table-header .sort-arrow { font-size: 10px; margin-left: 4px; }
+        .table-row {
+            display: grid;
+            padding: 8px 12px;
+            border-bottom: 1px solid #111;
+            transition: background 0.1s;
+            align-items: center;
+        }
+        .table-row:hover { background: #111; }
+        .table-row.header { background: #0f0f0f; }
+        .col-model { color: #e2e8f0; font-weight: 500; }
+        .col-provider { color: #888; }
+        .col-tier { font-size: 11px; }
+        .col-tier.premium { color: #f59e0b; }
+        .col-tier.mid { color: #3b82f6; }
+        .col-tier.budget { color: #22c55e; }
+        .col-price { color: #e2e8f0; text-align: right; }
+        .col-price.cheapest { color: #22c55e; font-weight: 600; }
+        .col-context { color: #666; text-align: right; }
+        .col-save { text-align: right; }
+
+        /* Grid columns */
+        .grid-6 { grid-template-columns: 2fr 1fr 0.7fr 1fr 1fr 0.8fr; }
+        .grid-6 .col-price { font-variant-numeric: tabular-nums; }
+
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            gap: 24px;
+            padding: 12px 0;
+            color: #666;
+            font-size: 12px;
+            flex-wrap: wrap;
+        }
+        .stat-value { color: #22c55e; font-weight: 600; }
+
+        /* Cost calculator */
+        .calc-section {
+            margin-top: 16px;
+            padding: 16px;
+            background: #0f0f0f;
+            border: 1px solid #222;
+            border-radius: 4px;
+        }
+        .calc-title { color: #22c55e; margin-bottom: 12px; font-weight: 600; }
+        .calc-row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        .calc-label { color: #666; min-width: 120px; }
+        .calc-input {
+            background: #111;
+            border: 1px solid #333;
+            color: #22c55e;
+            font-family: inherit;
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            width: 120px;
+            outline: none;
+        }
+        .calc-input:focus { border-color: #22c55e; }
+        .calc-result {
+            margin-top: 12px;
+            padding: 12px;
+            background: #0a0a0a;
+            border: 1px solid #222;
+            border-radius: 4px;
+        }
+        .calc-result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid #111;
+        }
+        .calc-result-row:last-child { border: none; }
+        .calc-cheapest { color: #22c55e; font-weight: 700; }
+        .calc-expensive { color: #ef4444; }
+
+        /* Footer */
+        .footer {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #222;
+            color: #333;
+            font-size: 11px;
+        }
+        .footer a { color: #22c55e; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+
+        /* Blinking cursor */
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 14px;
+            background: #22c55e;
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+            margin-left: 2px;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body { font-size: 11px; }
+            .terminal { margin: 8px; border-radius: 4px; }
+            .terminal-body { padding: 12px; }
+            .grid-6 { grid-template-columns: 1.5fr 1fr 0.7fr; }
+            .col-price, .col-context, .col-save { display: none; }
+            .header-art { font-size: 8px; }
+            .cmd-bar { gap: 4px; }
+            .cmd { font-size: 11px; padding: 4px 8px; }
+            .calc-row { flex-direction: column; align-items: flex-start; }
+        }
+
+        /* Pro upsell */
+        .pro-upsell {
+            margin-top: 16px;
+            padding: 16px;
+            background: linear-gradient(135deg, #0f2a0f, #0a1a0a);
+            border: 1px solid #22c55e33;
+            border-radius: 4px;
+        }
+        .pro-upsell a { color: #4ade80; font-weight: 600; }
+        .pro-upsell p { color: #666; margin: 8px 0; }
+
+        /* Pulse animation on cheapest price */
+        @keyframes pulse-green {
+            0%, 100% { text-shadow: 0 0 0 transparent; }
+            50% { text-shadow: 0 0 8px rgba(34,197,94,0.4); }
+        }
+        .cheapest { animation: pulse-green 2s ease-in-out infinite; }
+    </style>
+</head>
+<body>
+<div class="terminal">
+    <div class="terminal-bar">
+        <div class="terminal-dot red"></div>
+        <div class="terminal-dot yellow"></div>
+        <div class="terminal-dot green"></div>
+        <span class="terminal-title">apipulse — ai-api-pricing-terminal v2.0</span>
+    </div>
+    <div class="terminal-body">
+        <div class="header-art">
+ █████╗ ██╗ ██████╗██╗  ██╗██████╗ ██╗   ██╗██╗     ███████╗███████╗
+██╔══██╗██║██╔════╝██║ ██╔╝██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
+███████║██║██║     █████╔╝ ██████╔╝██║   ██║██║     ███████╗█████╗
+██╔══██║██║██║     ██╔═██╗ ██╔═══╝ ██║   ██║██║     ╚════██║██╔══╝
+██║  ██║██║╚██████╗██║  ██╗██║     ╚██████╔╝███████╗███████║███████╗
+╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚══════╝╚══════╝╚══════╝</div>
+        <div class="header-info">
+            <span>APIpulse</span> AI API Pricing Terminal <span>v2.0</span> — <span id="model-count">48</span> models across <span>10</span> providers
+            <br>Last updated: <span id="last-updated"></span> — Data: <a href="/data/pricing.json" style="color:#22c55e;">pricing.json</a> (CC-BY-4.0)
+        </div>
+
+        <div class="comment"># Filter by provider</div>
+        <div class="cmd-bar" id="provider-filters">
+            <button class="cmd active" data-provider="all">all</button>
+            <button class="cmd" data-provider="openai">openai</button>
+            <button class="cmd" data-provider="anthropic">anthropic</button>
+            <button class="cmd" data-provider="google">google</button>
+            <button class="cmd" data-provider="deepseek">deepseek</button>
+            <button class="cmd" data-provider="mistral">mistral</button>
+            <button class="cmd" data-provider="cohere">cohere</button>
+            <button class="cmd" data-provider="together">meta</button>
+            <button class="cmd" data-provider="xai">xai</button>
+            <button class="cmd" data-provider="ai21">ai21</button>
+            <button class="cmd" data-provider="moonshot">moonshot</button>
+        </div>
+
+        <div class="comment"># Filter by tier</div>
+        <div class="cmd-bar" id="tier-filters">
+            <button class="cmd active" data-tier="all">all</button>
+            <button class="cmd" data-tier="premium">premium</button>
+            <button class="cmd" data-tier="mid">mid</button>
+            <button class="cmd" data-tier="budget">budget</button>
+        </div>
+
+        <div class="stats-bar">
+            <span>Showing: <span class="stat-value" id="showing-count">48</span> models</span>
+            <span>Cheapest input: <span class="stat-value" id="cheapest-input">—</span></span>
+            <span>Cheapest output: <span class="stat-value" id="cheapest-output">—</span></span>
+            <span>Most expensive: <span class="stat-value" id="most-expensive">—</span></span>
+        </div>
+
+        <div class="table-header grid-6">
+            <span data-sort="name">MODEL <span class="sort-arrow">▼</span></span>
+            <span data-sort="provider">PROVIDER</span>
+            <span data-sort="tier">TIER</span>
+            <span data-sort="input" style="text-align:right">INPUT $/1M <span class="sort-arrow"></span></span>
+            <span data-sort="output" style="text-align:right">OUTPUT $/1M <span class="sort-arrow"></span></span>
+            <span data-sort="context" style="text-align:right">CONTEXT</span>
+        </div>
+        <div id="model-table"></div>
+
+        <!-- Cost Calculator -->
+        <div class="calc-section">
+            <div class="calc-title">$ apipulse calc --monthly</div>
+            <div class="calc-row">
+                <span class="calc-label">Requests/day:</span>
+                <input type="number" class="calc-input" id="calc-requests" value="1000" min="1">
+                <span class="calc-label">Avg input tokens:</span>
+                <input type="number" class="calc-input" id="calc-input-tokens" value="500" min="1">
+                <span class="calc-label">Avg output tokens:</span>
+                <input type="number" class="calc-input" id="calc-output-tokens" value="200" min="1">
+            </div>
+            <div class="calc-result" id="calc-result">
+                <div style="color:#666;">Enter values above to calculate monthly costs across all models.</div>
+            </div>
+        </div>
+
+        <!-- Pro Upsell -->
+        <div class="pro-upsell">
+            <span style="color:#22c55e;">$</span> <a href="flash-19.html?from=terminal">upgrade --to pro --price $19</a>
+            <p>→ Migration code (Python, Node, curl) for switching models<br>
+            → PDF report export for team sharing<br>
+            → Price change email alerts<br>
+            → 10 saved comparison scenarios<br>
+            → <strong style="color:#4ade80;">Lifetime access. One-time payment. 14-day money-back guarantee.</strong></p>
+        </div>
+
+        <div class="footer">
+            <span class="prompt" style="cursor:pointer;" onclick="window.location.href='terminal.html'">apipulse</span> — Powered by <a href="/">APIpulse</a> | Data: <a href="/data/pricing.json">pricing.json</a> (CC-BY-4.0) | <a href="flash-19.html?from=terminal_footer">Get Pro — $19 →</a>
+            <br>Built for developers who compare before they commit. 48 models. 10 providers. Updated weekly.
+        </div>
+        <span class="cursor"></span>
+    </div>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    // Model data (inline for performance — mirrors /data/pricing.json)
+    var models = [
+        {name:"GPT-5.5",provider:"openai",tier:"premium",input:5.00,output:30.00,context:"1.05M"},
+        {name:"GPT-5.5 Pro",provider:"openai",tier:"premium",input:30.00,output:180.00,context:"1.05M"},
+        {name:"GPT-5.3 Codex",provider:"openai",tier:"mid",input:1.75,output:14.00,context:"400K"},
+        {name:"GPT-5",provider:"openai",tier:"premium",input:1.25,output:10.00,context:"272K"},
+        {name:"GPT-5 mini",provider:"openai",tier:"budget",input:0.25,output:2.00,context:"272K"},
+        {name:"GPT-oss 120B",provider:"openai",tier:"budget",input:0.15,output:0.60,context:"128K"},
+        {name:"GPT-oss 20B",provider:"openai",tier:"budget",input:0.05,output:0.20,context:"128K"},
+        {name:"GPT-5.4 Pro",provider:"openai",tier:"premium",input:15.00,output:90.00,context:"1.05M"},
+        {name:"GPT-5.4 mini",provider:"openai",tier:"budget",input:0.40,output:1.60,context:"272K"},
+        {name:"GPT-5.4 nano",provider:"openai",tier:"budget",input:0.10,output:0.40,context:"272K"},
+        {name:"GPT-5.4 Codex",provider:"openai",tier:"mid",input:2.50,output:15.00,context:"400K"},
+        {name:"GPT-5.4 Realtime",provider:"openai",tier:"mid",input:5.00,output:20.00,context:"128K"},
+        {name:"o3-pro",provider:"openai",tier:"premium",input:20.00,output:80.00,context:"200K"},
+        {name:"Claude Opus 4.8",provider:"anthropic",tier:"premium",input:15.00,output:75.00,context:"200K"},
+        {name:"Claude Sonnet 4.6",provider:"anthropic",tier:"mid",input:3.00,output:15.00,context:"200K"},
+        {name:"Claude Haiku 4.5",provider:"anthropic",tier:"budget",input:0.80,output:4.00,context:"200K"},
+        {name:"Claude 4",provider:"anthropic",tier:"premium",input:5.00,output:25.00,context:"200K"},
+        {name:"Claude Mythos 5",provider:"anthropic",tier:"premium",input:20.00,output:100.00,context:"256K"},
+        {name:"Claude Fable 5",provider:"anthropic",tier:"mid",input:5.00,output:25.00,context:"256K"},
+        {name:"Claude Sonnet 4.5",provider:"anthropic",tier:"mid",input:3.00,output:15.00,context:"200K"},
+        {name:"Claude Haiku 4",provider:"anthropic",tier:"budget",input:0.50,output:2.50,context:"200K"},
+        {name:"Gemini 3.5 Flash",provider:"google",tier:"budget",input:0.15,output:0.60,context:"1M"},
+        {name:"Gemini 3.1 Pro",provider:"google",tier:"mid",input:1.25,output:5.00,context:"1M"},
+        {name:"Gemini 3 Flash",provider:"google",tier:"budget",input:0.10,output:0.40,context:"1M"},
+        {name:"Gemini 2.5 Pro",provider:"google",tier:"mid",input:1.25,output:10.00,context:"1M"},
+        {name:"Gemini 2.5 Flash",provider:"google",tier:"budget",input:0.15,output:0.60,context:"1M"},
+        {name:"Gemma 3 27B",provider:"google",tier:"budget",input:0.00,output:0.00,context:"128K"},
+        {name:"Gemini Ultra 2",provider:"google",tier:"premium",input:12.50,output:50.00,context:"2M"},
+        {name:"Gemini Flash Lite",provider:"google",tier:"budget",input:0.075,output:0.30,context:"1M"},
+        {name:"DeepSeek V4 Pro",provider:"deepseek",tier:"budget",input:0.27,output:1.10,context:"128K"},
+        {name:"DeepSeek V4 Flash",provider:"deepseek",tier:"budget",input:0.07,output:0.28,context:"128K"},
+        {name:"DeepSeek R2",provider:"deepseek",tier:"mid",input:0.55,output:2.19,context:"128K"},
+        {name:"DeepSeek V3.2",provider:"deepseek",tier:"budget",input:0.14,output:0.28,context:"128K"},
+        {name:"Mistral Large 3",provider:"mistral",tier:"mid",input:2.00,output:6.00,context:"128K"},
+        {name:"Mistral Medium 3",provider:"mistral",tier:"mid",input:0.40,output:2.00,context:"128K"},
+        {name:"Mistral Small 4",provider:"mistral",tier:"budget",input:0.10,output:0.30,context:"128K"},
+        {name:"Command R+",provider:"cohere",tier:"mid",input:2.50,output:10.00,context:"128K"},
+        {name:"Command R",provider:"cohere",tier:"mid",input:0.15,output:0.60,context:"128K"},
+        {name:"Command A",provider:"cohere",tier:"budget",input:0.25,output:1.00,context:"128K"},
+        {name:"Llama 4 Maverick",provider:"together",tier:"budget",input:0.20,output:0.60,context:"1M"},
+        {name:"Llama 4 Scout",provider:"together",tier:"budget",input:0.10,output:0.30,context:"10M"},
+        {name:"Llama 3.3 70B",provider:"together",tier:"budget",input:0.88,output:0.88,context:"128K"},
+        {name:"Llama 3.1 405B",provider:"together",tier:"mid",input:3.50,output:3.50,context:"128K"},
+        {name:"Kimi K2.6",provider:"moonshot",tier:"mid",input:0.60,output:3.00,context:"128K"},
+        {name:"Grok 4.3",provider:"xai",tier:"mid",input:3.00,output:15.00,context:"128K"},
+        {name:"Grok 4.3 mini",provider:"xai",tier:"budget",input:0.30,output:0.50,context:"128K"},
+        {name:"Jamba 1.5 Large",provider:"ai21",tier:"mid",input:2.00,output:8.00,context:"256K"},
+        {name:"Jamba 1.5 Mini",provider:"ai21",tier:"budget",input:0.20,output:0.40,context:"256K"}
+    ];
+
+    var state = {
+        provider: 'all',
+        tier: 'all',
+        sort: 'output',
+        sortDir: 'asc'
+    };
+
+    function getFiltered() {
+        var filtered = models.filter(function(m) {
+            if (state.provider !== 'all' && m.provider !== state.provider) return false;
+            if (state.tier !== 'all' && m.tier !== state.tier) return false;
+            return true;
+        });
+        filtered.sort(function(a, b) {
+            var va = a[state.sort], vb = b[state.sort];
+            if (typeof va === 'string') {
+                return state.sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+            }
+            return state.sortDir === 'asc' ? va - vb : vb - va;
+        });
+        return filtered;
+    }
+
+    function getCheapestOutput() {
+        var min = Infinity, name = '';
+        models.forEach(function(m) { if (m.output < min) { min = m.output; name = m.name; } });
+        return { name: name, price: min };
+    }
+
+    function getCheapestInput() {
+        var min = Infinity, name = '';
+        models.forEach(function(m) { if (m.input < min && m.input > 0) { min = m.input; name = m.name; } });
+        return { name: name, price: min };
+    }
+
+    function getMostExpensive() {
+        var max = 0, name = '';
+        models.forEach(function(m) { if (m.output > max) { max = m.output; name = m.name; } });
+        return { name: name, price: max };
+    }
+
+    function render() {
+        var filtered = getFiltered();
+        var cheapestOut = getCheapestOutput();
+        var cheapestIn = getCheapestInput();
+        var expensive = getMostExpensive();
+
+        // Update stats
+        document.getElementById('showing-count').textContent = filtered.length;
+        document.getElementById('cheapest-input').textContent = cheapestIn.name + ' ($' + cheapestIn.price.toFixed(2) + ')';
+        document.getElementById('cheapest-output').textContent = cheapestOut.name + ' ($' + cheapestOut.price.toFixed(2) + ')';
+        document.getElementById('most-expensive').textContent = expensive.name + ' ($' + expensive.price.toFixed(2) + ')';
+
+        // Render table
+        var html = '';
+        filtered.forEach(function(m) {
+            var isCheapest = m.output === cheapestOut.price;
+            html += '<div class="table-row grid-6">';
+            html += '<span class="col-model">' + m.name + '</span>';
+            html += '<span class="col-provider">' + m.provider + '</span>';
+            html += '<span class="col-tier ' + m.tier + '">' + m.tier + '</span>';
+            html += '<span class="col-price">' + (m.input === 0 ? 'FREE' : '$' + m.input.toFixed(2)) + '</span>';
+            html += '<span class="col-price ' + (isCheapest ? 'cheapest' : '') + '">$' + m.output.toFixed(2) + '</span>';
+            html += '<span class="col-context">' + m.context + '</span>';
+            html += '</div>';
+        });
+        document.getElementById('model-table').innerHTML = html;
+
+        // Update calc
+        updateCalc();
+    }
+
+    function updateCalc() {
+        var requests = parseInt(document.getElementById('calc-requests').value) || 1000;
+        var inputTokens = parseInt(document.getElementById('calc-input-tokens').value) || 500;
+        var outputTokens = parseInt(document.getElementById('calc-output-tokens').value) || 200;
+
+        var results = models.map(function(m) {
+            var inputCost = (requests * 30 * inputTokens / 1000000) * m.input;
+            var outputCost = (requests * 30 * outputTokens / 1000000) * m.output;
+            return { name: m.name, provider: m.provider, total: inputCost + outputCost, tier: m.tier };
+        }).sort(function(a, b) { return a.total - b.total; });
+
+        var cheapest = results[0];
+        var mostExpensive = results[results.length - 1];
+        var savings = mostExpensive.total - cheapest.total;
+
+        var html = '<div style="color:#666;margin-bottom:8px;">Monthly cost estimates (' + (requests * 30).toLocaleString() + ' requests/mo, ' + inputTokens + ' in / ' + outputTokens + ' out tokens avg):</div>';
+        results.slice(0, 5).forEach(function(r, i) {
+            var cls = i === 0 ? 'calc-cheapest' : '';
+            html += '<div class="calc-result-row">';
+            html += '<span class="' + cls + '">' + r.name + ' <span style="color:#666;">(' + r.provider + ')</span></span>';
+            html += '<span class="' + cls + '">$' + r.total.toFixed(2) + '/mo</span>';
+            html += '</div>';
+        });
+        if (results.length > 5) {
+            html += '<div class="calc-result-row" style="color:#444;">... and ' + (results.length - 5) + ' more</div>';
+        }
+        html += '<div class="calc-result-row" style="border-top:1px solid #222;padding-top:8px;margin-top:8px;">';
+        html += '<span style="color:#22c55e;">Potential savings: <strong>$' + savings.toFixed(2) + '/mo</strong></span>';
+        html += '<span style="color:#666;">(' + mostExpensive.name + ' → ' + cheapest.name + ')</span>';
+        html += '</div>';
+
+        document.getElementById('calc-result').innerHTML = html;
+    }
+
+    // Event handlers
+    document.getElementById('provider-filters').addEventListener('click', function(e) {
+        if (e.target.classList.contains('cmd')) {
+            document.querySelectorAll('#provider-filters .cmd').forEach(function(b) { b.classList.remove('active'); });
+            e.target.classList.add('active');
+            state.provider = e.target.dataset.provider;
+            render();
+        }
+    });
+
+    document.getElementById('tier-filters').addEventListener('click', function(e) {
+        if (e.target.classList.contains('cmd')) {
+            document.querySelectorAll('#tier-filters .cmd').forEach(function(b) { b.classList.remove('active'); });
+            e.target.classList.add('active');
+            state.tier = e.target.dataset.tier;
+            render();
+        }
+    });
+
+    document.querySelectorAll('.table-header span[data-sort]').forEach(function(th) {
+        th.addEventListener('click', function() {
+            var sortKey = this.dataset.sort;
+            if (state.sort === sortKey) {
+                state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+            } else {
+                state.sort = sortKey;
+                state.sortDir = 'asc';
+            }
+            document.querySelectorAll('.table-header .sort-arrow').forEach(function(a) { a.textContent = ''; });
+            this.querySelector('.sort-arrow').textContent = state.sortDir === 'asc' ? '▲' : '▼';
+            render();
+        });
+    });
+
+    document.getElementById('calc-requests').addEventListener('input', updateCalc);
+    document.getElementById('calc-input-tokens').addEventListener('input', updateCalc);
+    document.getElementById('calc-output-tokens').addEventListener('input', updateCalc);
+
+    // Set date
+    document.getElementById('last-updated').textContent = new Date().toISOString().split('T')[0];
+
+    // GA4 tracking
+    if (window.gtag) {
+        gtag('event', 'terminal_view', { page: 'terminal.html' });
+    }
+
+    // Initial render
+    render();
+})();
+</script>
+</body>
+</html>
