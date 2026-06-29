@@ -1750,3 +1750,89 @@ var GO_MODEL_MAP = {
         setTimeout(applyResultsGate, 500);
     });
 })();
+
+// ==========================================
+// FLOATING FLASH SALE BUTTON (Session 985)
+// Persistent, non-dismissable CTA that follows users on every page
+// Different from top banner (which gets dismissed) — this stays visible
+// ==========================================
+(function() {
+    'use strict';
+
+    // Don't show on flash-19.html, deal.html, go.html, or thank-you pages
+    var path = location.pathname;
+    if (path.includes('flash-19') || path.includes('deal.html') || path.includes('go.html') || path.includes('thank-you') || path.includes('restore.html')) return;
+
+    // Don't show if deal is expired
+    if (window.DEAL_EXPIRED) return;
+
+    // Don't show on mobile (already has sticky CTA on flash-19.html, and floating button is intrusive on mobile)
+    if (window.innerWidth < 768) return;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create floating button
+        var btn = document.createElement('a');
+        btn.href = 'flash-19.html?from=floating_cta';
+        btn.target = '_blank';
+        btn.rel = 'noopener';
+        btn.id = 'floating-flash-sale';
+        btn.innerHTML = '⚡ <strong>$19</strong> Flash Sale';
+
+        // Styles
+        var css = [
+            'position:fixed',
+            'bottom:24px',
+            'right:24px',
+            'z-index:9998',
+            'background:linear-gradient(135deg,#dc2626,#b91c1c)',
+            'color:white',
+            'padding:12px 20px',
+            'border-radius:50px',
+            'font-family:-apple-system,BlinkMacSystemFont,sans-serif',
+            'font-size:14px',
+            'font-weight:600',
+            'text-decoration:none',
+            'box-shadow:0 4px 16px rgba(220,38,38,0.4)',
+            'transition:all 0.2s ease',
+            'cursor:pointer',
+            'display:flex',
+            'align-items:center',
+            'gap:6px',
+            'animation:float-pulse 2s ease-in-out infinite'
+        ].join(';');
+        btn.style.cssText = css;
+
+        // Hover effects
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.05)';
+            this.style.boxShadow = '0 6px 24px rgba(220,38,38,0.5)';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 16px rgba(220,38,38,0.4)';
+        });
+
+        // Add pulse animation via stylesheet
+        var style = document.createElement('style');
+        style.textContent = '@keyframes float-pulse{0%,100%{box-shadow:0 4px 16px rgba(220,38,38,0.4)}50%{box-shadow:0 4px 24px rgba(220,38,38,0.6)}}';
+        document.head.appendChild(style);
+
+        // Click tracking
+        btn.addEventListener('click', function() {
+            if (window.gtag) {
+                gtag('event', 'floating_flash_sale_click', {
+                    from: location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home'
+                });
+            }
+        });
+
+        document.body.appendChild(btn);
+
+        // GA4: track that floating CTA was shown
+        if (window.gtag) {
+            gtag('event', 'floating_flash_sale_shown', {
+                page: location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home'
+            });
+        }
+    });
+})();
