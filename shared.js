@@ -312,6 +312,18 @@ document.addEventListener('DOMContentLoaded', () => {
             calcLink2.parentNode.insertBefore(teamsLink, calcLink2.nextSibling);
         }
     }
+
+    // Add Terminal link after Live Prices link
+    var hasTerminal = navLinks.querySelector('a[href="terminal.html"]');
+    if (!hasTerminal) {
+        var livePricesLink = navLinks.querySelector('a[href="live-pricing.html"]');
+        if (livePricesLink) {
+            var terminalLink = document.createElement('a');
+            terminalLink.href = 'terminal.html';
+            terminalLink.textContent = 'Terminal';
+            livePricesLink.parentNode.insertBefore(terminalLink, livePricesLink.nextSibling);
+        }
+    }
 });
 
 // Close mobile nav when clicking a link
