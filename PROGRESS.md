@@ -1,5 +1,20 @@
 # PROGRESS.md
 
+## Key Milestones
+- **Sessions 980-989 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes. 15+ commits, 50+ files.
+- **Sessions 969-979 (Jun 28):** Buyer-intent content (3 posts), content gating (51 pages), flash deal page, competitor comparison, widget upgrade, compare index. 17+ commits, 55+ files.
+- **Sessions 952-968 (Jun 27-28):** Team tools pivot, GA4 tracking (18 events), model launches (42→48), 13 comparison pages, model count sync. 20+ commits, 1,000+ files.
+- **Sessions 905-951 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. AI API Advisor, Pricing Benchmark. **88+ commits, 2,880+ files.**
+- **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
+
+## Session 990 (Jun 29) — Calculator Dropdown Fixes + Stale Counts
+- **Fixed stale comparison count (232 → 258)** on 5 pages: index.html, pricing.html, trial-expired.html, best-ai-api-by-budget.html, blog-ai-api-pricing-ranked.html.
+- **Fixed duplicate Gemini 2.5 Flash-Lite in calculator dropdown** — two identical labels with different IDs. Corrected to: Gemini 2.5 Flash-Lite (non-deprecated), Gemini 2.0 Flash ⚠️ Deprecated, Gemini 2.0 Flash Lite ⚠️ Deprecated.
+- **Added 7 missing models to calculator dropdown** — GPT-5.4 family (GPT-5.4, GPT-5.4 mini, GPT-5.4 nano, GPT-5.4 Pro), Anthropic Fable 5, Anthropic Mythos 5, Google Gemini 3.1 Flash-Lite. All had pricing data in pricing-data.js but were missing from the homepage calculator.
+- **Fixed duplicate "Gemini 2.5 Flash-Lite" in FAQPage structured data** on homepage.
+- **Added Gemini 3 Flash to dropdown** — was in pricing-data.js but missing from calculator.
+- **1 commit, 5 files, 17 lines changed.**
+
 ## Session 989 (Jun 29) — Site-wide Exit Popup + Stale Content Fixes
 - **Added site-wide exit popup to shared.js** — 353 out of 361 blog posts had NO exit popup (only 8 had one). Added global exit popup that covers all pages without their own. Triggers on mouse-leave (desktop), scroll-back (mobile), or A/B test timer (30/45/60s). Routes to flash-19.html during flash sale, go.html after. GA4 tracked (global_exit_popup_shown, global_exit_popup_cta_click). Skips pages with existing exit popups and non-commercial pages (thank-you, restore, admin, etc.). sessionStorage prevents showing twice. This is the biggest conversion gap found — blog posts are the #1 organic traffic source and 97.8% of them had zero exit intent recovery.
 - **Fixed stale 'Week 11' flash sale label** — flash-19.html badge said "Week 11 Flash Sale" (we're on Week 13). Removed week number entirely: now says "Flash Sale — Limited Time" so it doesn't go stale again. Also fixed meta description.
