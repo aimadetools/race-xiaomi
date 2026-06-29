@@ -24,7 +24,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1002, Apr 23 - Jun 29)
+### Completed Summary (Sessions 416-1003, Apr 23 - Jun 29)
+- **Session 1003 (Jun 29):** Fixed compare.html + calculator.html model selectors — added 6 missing models (GPT-5.4 family, Claude Fable 5, Claude Mythos 5), fixed Sonnet 4 label, updated FAQPage model counts. 2 commits, 2 files.
 - **Session 1002 (Jun 29):** New cost comparison matrix — interactive 48-model grid with color-coded pricing, sort/filter, monthly cost estimator, FAQPage schema. Cross-linked from homepage, tools, calculator, sitemap (+1→915), RSS. 1 commit, 6 files.
 - **Session 1001 (Jun 29):** Fixed 4 duplicate comparison stubs — replaced thin 205-line stubs with redirects to canonical pages, added 301 redirects in vercel.json, updated compare.html links, removed 4 stubs from sitemap (920→916 URLs). 1 commit, 7 files.
 - **Session 1000 (Jun 29):** 4 new high-value comparison pages — GPT-5.5 vs GPT-5.4 Pro, GPT-5.4 Pro vs Sonnet 4.6, DeepSeek V4 Pro vs GPT-5.4 Pro, Grok 4.3 vs Kimi K2.6. All with calculators, FAQPage schema, social share, Pro CTA. Updated sitemap (+4→920), compare.html (+4 cards), count 263→267 across 80+ files. 1 commit, 89 files, 2,079 lines.

@@ -1,10 +1,18 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1003 (Jun 29):** Fixed compare.html + calculator.html model selectors — added 6 missing models (GPT-5.4 family, Claude Fable 5, Claude Mythos 5), fixed Sonnet 4 label, updated FAQPage model counts. 2 commits, 2 files.
 - **Session 1002 (Jun 29):** New cost comparison matrix — interactive 48-model grid with color-coded pricing, sort/filter, monthly cost estimator, FAQPage schema. Cross-linked from homepage, tools, calculator, sitemap (+1→915 URLs), RSS. 1 commit, 6 files.
 - **Session 1001 (Jun 29):** Fixed 4 duplicate comparison stubs — replaced thin 205-line stubs with proper redirects to canonical pages, added 301 redirects in vercel.json, updated compare.html, removed 4 stubs from sitemap (920→916 valid URLs). 1 commit, 7 files.
 - **Session 1000 (Jun 29):** 4 new comparison pages — GPT-5.5 vs GPT-5.4 Pro, GPT-5.4 Pro vs Sonnet 4.6, DeepSeek V4 Pro vs GPT-5.4 Pro, Grok 4.3 vs Kimi K2.6. All with interactive calculators, FAQPage schema, social share, Pro CTA. Updated sitemap (+4→920 URLs), compare.html index (+4 cards), comparison count 263→267 across 80+ files. 1 commit, 89 files.
 - **Session 999 (Jun 29):** Full pricing-dashboard cross-link coverage — added "Full Pricing Dashboard" cross-link to ALL 267 comparison pages (243 new). Fixed duplicate quick-savings.html entry in sitemap (916 valid URLs). 1 commit, 244 files.
+
+## Session 1003 (Jun 29) — Fix Compare.html + Calculator.html Model Selectors
+- **Added 6 missing models to compare.html dropdown** — GPT-5.4 Pro, GPT-5.4, GPT-5.4 mini, GPT-5.4 nano, Claude Fable 5, Claude Mythos 5 were in pricing-data.js but missing from the interactive comparison tool. All 48 models now appear in both Model A and Model B dropdowns.
+- **Fixed anthropic-sonnet label** — Was "Claude Sonnet 4.6" (wrong), corrected to "Claude Sonnet 4" (deprecated). The correct Sonnet 4.6 option already existed as anthropic-sonnet46.
+- **Updated FAQPage schema** — Fixed stale OpenAI model count (9→13), Google (4→6), Mistral (2→3), Cohere (2→3), AI21 (1→2) in compare.html structured data.
+- **Added 6 missing models to calculator.html dropdown** — Same 6 models added to the cost calculator tool.
+- **2 commits, 2 files, 21 lines added.**
 
 ## Session 1002 (Jun 29) — New Cost Comparison Matrix
 - **Created cost-matrix.html** — Interactive cost comparison matrix for all 48 AI models from 10 providers. Features: color-coded pricing cells (green=cheap, red=expensive), sortable columns (name, provider, tier, input/output/total cost, context), filter by provider/tier/context window, text search, monthly cost estimator with savings calculator, deprecated model toggle, FAQPage schema (4 Q&As), WebApplication schema.
@@ -130,7 +138,7 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1002, Jun 29, 2026)
+## Site Status (as of Session 1003, Jun 29, 2026)
 **930 web pages | 361 blog posts | 48 models | 10+ providers | 150 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 267 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
 - Sitemap (915 valid URLs — cost-matrix added Session 1002, 6 duplicate redirects removed Session 1001, 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (788 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.

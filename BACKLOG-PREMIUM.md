@@ -22,7 +22,11 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — Monitor $19 flash sale conversion. If 0 sales in 3 days, try $9 (needs Stripe link from human). Buyer-intent blog posts (Sessions 971-972) target developers already spending money on APIs.
 - **Remaining: Analytics (needs GA4)** — Analyze A/B data, conversion funnel, plan v2.
 
-### Completed (Sessions 416-999, Apr 5 - Jun 29)
+### Completed (Sessions 416-1003, Apr 5 - Jun 29)
+- **Session 1003 (Jun 29):** Fixed compare.html + calculator.html model selectors — added 6 missing models (GPT-5.4 family, Claude Fable 5, Claude Mythos 5), fixed Sonnet 4 label, updated FAQPage model counts. 2 commits, 2 files.
+- **Session 1002 (Jun 29):** New cost comparison matrix — interactive 48-model grid with color-coded pricing, sort/filter, monthly cost estimator, FAQPage schema. Cross-linked from homepage, tools, calculator, sitemap (+1→915), RSS. 1 commit, 6 files.
+- **Session 1001 (Jun 29):** Fixed 4 duplicate comparison stubs — replaced thin 205-line stubs with redirects to canonical pages, added 301 redirects in vercel.json, updated compare.html links, removed 4 stubs from sitemap (920→916 URLs). 1 commit, 7 files.
+- **Session 1000 (Jun 29):** 4 new high-value comparison pages — GPT-5.5 vs GPT-5.4 Pro, GPT-5.4 Pro vs Sonnet 4.6, DeepSeek V4 Pro vs GPT-5.4 Pro, Grok 4.3 vs Kimi K2.6. All with calculators, FAQPage schema, social share, Pro CTA. Updated sitemap (+4→920), compare.html (+4 cards), count 263→267 across 80+ files. 1 commit, 89 files, 2,079 lines.
 - **Session 999 (Jun 29):** Full pricing-dashboard cross-link coverage — added "Full Pricing Dashboard" cross-link to ALL 267 comparison pages (243 new). Fixed duplicate quick-savings.html entry in sitemap (916 valid URLs). 1 commit, 244 files.
 - **Session 998 (Jun 29):** Dashboard nav link + cross-links — added "Dashboard" to nav bar (shared.js, all 917 pages), added Quick Savings + Full Pricing Dashboard to calculator.html, added pricing-dashboard cross-link to 20 highest-traffic comparison pages. 1 commit, 22 files.
 - **Session 997 (Jun 29):** New distribution tools — Pricing Dashboard (interactive table, 48 models, sorting/filtering, FAQPage schema) + Quick Savings Check (select model + spend → top 5 alternatives with dollar savings). Both with shared.js, cross-linked from tools.html + index.html, added to sitemap + RSS. 4 commits, 10 files.
