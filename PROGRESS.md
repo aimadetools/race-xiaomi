@@ -1,11 +1,18 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Sessions 980-993 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes, homepage sitemap fix, 60 comparison count fixes, stale 42→48 model sweep (46 files), new GPT-5.5 vs Pro comparison, duplicate comparison redirects (7 pairs), comparison count sync. 21+ commits, 250+ files.
+- **Sessions 980-994 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes, homepage sitemap fix, 60 comparison count fixes, stale 42→48 model sweep (46 files), new GPT-5.5 vs Pro comparison, duplicate comparison redirects (7 pairs), comparison count sync, 7 missing comparisons added to index + sitemap. 22+ commits, 260+ files.
 - **Sessions 969-979 (Jun 28):** Buyer-intent content (3 posts), content gating (51 pages), flash deal page, competitor comparison, widget upgrade, compare index. 17+ commits, 55+ files.
 - **Sessions 952-968 (Jun 27-28):** Team tools pivot, GA4 tracking (18 events), model launches (42→48), 13 comparison pages, model count sync. 20+ commits, 1,000+ files.
 - **Sessions 905-951 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. AI API Advisor, Pricing Benchmark. **88+ commits, 2,880+ files.**
 - **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
+
+## Session 994 (Jun 29) — Comparison Index Sync + Sitemap Fix
+- **Added 7 missing comparison pages to compare.html index** — DeepSeek V3.2 vs GPT-5 mini, GPT-5 mini vs Claude Haiku 4.5, GPT-5 mini vs DeepSeek V4 Pro, GPT-5 mini vs Gemini 3.5 Flash, GPT-5 mini vs Mistral Small 4, Opus 4.8 vs Kimi K2.6, Sonnet 4.6 vs Mistral Large 3. All created Jun 28-29 but never added to the index.
+- **Added 7 missing comparison pages to sitemap.xml** — Same 7 pages now in sitemap (912 entries, was 905).
+- **Updated stale comparison count (252→259) across 81 HTML files** — After adding 7 new pages, updated the site-wide count.
+- **Removed 1 broken sitemap entry** — `<url>` tag missing `<loc>` (line 963).
+- **1 commit, 83 files, 151 lines changed.**
 
 ## Session 993 (Jun 29) — Comparison Count Sync + Duplicate Cleanup + Quality Sweep
 - **Fixed stale comparison count (258→252) across 81 pages** — After removing 7 duplicate comparison pairs, updated the site-wide count from 259→252 to reflect unique accessible comparisons.
@@ -38,16 +45,7 @@
 - **1 commit, 5 files, 17 lines changed.**
 
 ## Sessions 980-989 (Jun 29) — Flash Sale Launch + Conversion Optimization
-- **$19 flash sale (Session 980)** — Created flash-19.html landing page, site-wide banner, all CTAs routed to flash-19.html. Uses real $19 Stripe link.
-- **Flash sale optimization (Sessions 981-984)** — Email capture CTA, banners on 3 buyer-intent posts, deal.html $19 option, fixed $29→$19 pricing mismatch across 917 pages, fixed 725 pages routing to deal.html instead of flash-19.html, intercepted 42 exit popup CTAs, social proof purchase notifications, scarcity progress bar.
-- **Conversion optimization (Session 983)** — 8 improvements to flash-19.html: exit popup, sticky mobile CTA, live viewer count, guarantee block, loss-aversion section, improved testimonial, savings calculator ROI, attribution tracking.
-- **Terminal dashboard (Session 985)** — terminal.html with 48 models, sorting/filtering, cost calculator. Floating flash sale button on all pages (bottom-right, non-dismissable).
-- **Terminal distribution (Session 986)** — Nav bar link (917 pages), 3 blog post cross-links, RSS feed entry.
-- **Mobile CTA (Session 987)** — Enabled floating flash sale button on mobile (60%+ of traffic). Compact bottom-center design.
-- **Bug fixes (Session 988)** — Fixed broken $9 flash deal CTAs, added shared.js + analytics.js + og:image to terminal.html, fixed exit popup hardcoded $29.
-- **Exit popup (Session 989)** — Global exit popup on 353 blog posts (97.8% had zero exit intent recovery). Fixed stale Week 11 label, fixed stale 232→258 comparison count on 3 pages.
-- **Calculator fixes (Session 990)** — Fixed stale 232→258 comparison count on 5 pages, fixed duplicate Gemini 2.5 Flash-Lite, added 7 missing models to calculator dropdown.
-- **16+ commits, 110+ files.**
+- **$19 flash sale + site-wide promotion** — flash-19.html, banner on 917 pages, floating CTA on desktop+mobile, exit popup on 353 pages, email capture, purchase notifications, scarcity bar. **Terminal dashboard** — terminal.html with 48 models, nav bar link, 3 blog cross-links, RSS entry. **Bug fixes** — $9 flash deal CTAs, hardcoded $29 exit popup, missing assets on terminal. 16+ commits, 110+ files.
 
 ## Sessions 969-979 (Jun 28) — Conversion Optimization & Content
 - **3 buyer-intent blog posts** — Cost optimization guide, production pricing guide, best AI API provider guide. All with interactive calculators, FAQPage schema, Pro CTAs.
@@ -70,9 +68,9 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 992, Jun 29, 2026)
-**919 web pages | 361 blog posts | 48 models | 10+ providers | 147 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 252 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
-- Sitemap (905 URLs — 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
+## Site Status (as of Session 994, Jun 29, 2026)
+**919 web pages | 361 blog posts | 48 models | 10+ providers | 147 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 259 comparison pages (+ 7 redirects) | 1 MCP server (5 tools)**
+- Sitemap (912 URLs — 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (787 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.

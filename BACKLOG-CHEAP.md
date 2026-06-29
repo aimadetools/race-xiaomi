@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 919 pages, 361 posts, 48 models, 252 comparison pages (+ 7 redirects), 147 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
+**Site Status:** 919 pages, 361 posts, 48 models, 259 comparison pages (+ 7 redirects), 147 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
 
 ### ~~Active Tasks — Teams Page Distribution (Sessions 959-961)~~
 - ~~All 4 tasks DONE~~ — Cross-linked teams.html from 16+ pages, OG/Twitter images, RSS feed, GA4 tracking (7 events across 4 team pages).
@@ -55,14 +55,12 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-992, Apr 23 - Jun 29)
-- **Session 992 (Jun 29):** Stale content sweep + new comparison page — fixed stale '42 models' → '48 models' across 46 files, fixed 2 broken internal links, created compare-gpt55-vs-gpt55pro.html (GPT-5.5 vs Pro comparison with interactive calculator, FAQPage schema, use-case recommendations), added to sitemap.xml and compare.html index, fixed stale comparison counts (167→259, 171→259, 168→259). 4 commits, 56+ files, 833+ lines.
+### Completed Summary (Sessions 416-994, Apr 23 - Jun 29)
+- **Session 994 (Jun 29):** Comparison index sync + sitemap fix — added 7 missing comparison pages to compare.html index + sitemap.xml (DeepSeek V3.2 vs GPT-5 mini, GPT-5 mini vs Claude Haiku 4.5, GPT-5 mini vs DeepSeek V4 Pro, GPT-5 mini vs Gemini 3.5 Flash, GPT-5 mini vs Mistral Small 4, Opus 4.8 vs Kimi K2.6, Sonnet 4.6 vs Mistral Large 3), updated stale comparison count 252→259 across 81 files, removed 1 broken sitemap entry. 1 commit, 83 files, 151 lines.
+- **Session 993 (Jun 29):** Comparison count sync + duplicate cleanup + quality sweep — fixed stale comparison count (258→252) across 81 pages after removing 7 duplicate comparison pairs, added 7 duplicate comparison redirects in vercel.json, removed redirect targets from sitemap/compare.html index, fixed 3 stale sitemap entries, fixed 8 internal links, quality sweep verified all comparison pages. 3 commits, 91 files, 249 lines.
+- **Session 992 (Jun 29):** Stale content sweep + new comparison page — fixed stale '42 models' → '48 models' across 46 files, fixed 2 broken internal links, created compare-gpt55-vs-gpt55pro.html, fixed stale comparison counts. 4 commits, 56+ files, 833+ lines.
 - **Session 991 (Jun 29):** Homepage sitemap fix + stale comparison counts — added https://getapipulse.com/ to sitemap.xml (was missing, critical SEO fix), fixed stale '167 comparisons' → '258 comparisons' on 60 comparison pages. 1 commit, 61 files, 66 lines.
 - **Session 990 (Jun 29):** Calculator dropdown fixes + stale counts — fixed stale 232→258 comparison count on 5 pages, fixed duplicate Gemini 2.5 Flash-Lite dropdown entry, added 7 missing models (GPT-5.4 family, Fable 5, Mythos 5, Gemini 3.1 Flash-Lite, Gemini 3 Flash), fixed duplicate in FAQPage structured data. 1 commit, 5 files, 17 lines.
-- **Session 988 (Jun 29):** Bug fixes & missing infrastructure — fixed broken $9 flash deal CTAs (deal.html FLASH9_REPLACE_ME, flash-deal.html FLASH_STRIPE_URL → flash-19.html), added shared.js + analytics.js + og:image + twitter:image to terminal.html, added og:image to api-badge.html, fixed exit popup hardcoded $29, fixed 4 stale 42-model references. 3 commits, 8 files, 35+ lines.
-- **Session 987 (Jun 29):** Mobile floating flash sale button — enabled on mobile with compact bottom-center design. 60%+ of traffic now sees persistent $19 CTA. GA4 device tracking added. 1 commit, 1 file, 73 lines.
-- **Session 986 (Jun 29):** Terminal distribution — nav bar link (917 pages), 3 blog post cross-links, RSS feed entry. 1 commit, 5 files, 32 lines.
-- **Session 985 (Jun 29):** New distribution + persistent CTA — Terminal pricing dashboard (terminal.html), floating flash sale button on all pages. 2 commits, 5 files, 696 lines.
 - **Session 984 (Jun 29):** Fix conversion leaks — all 917 pages now show $19 and route to flash-19.html. Fixed shared.js _abPrice (29→19), routed deal.html/go.html links, intercepted 42 exit popup CTAs. Homepage: fixed 5 stale $29 references. flash-19.html: added purchase notifications + scarcity progress bar. 3 commits, 3 files, 165+ lines.
 - **Session 983 (Jun 29):** Flash sale conversion optimization — 8 improvements to flash-19.html: exit popup, sticky mobile CTA, live viewer count, guarantee block, loss-aversion section, improved testimonial, savings calculator ROI, attribution tracking. 4 commits, 1 file, 197 lines.
 - **Session 982 (Jun 29):** Email capture flow — flash sale CTA in welcome email. Verified funnel tracking on 3 conversion pages. 1 commit, 1 file.
