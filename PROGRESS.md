@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 989 (Jun 29) — Site-wide Exit Popup + Stale Content Fixes
+- **Added site-wide exit popup to shared.js** — 353 out of 361 blog posts had NO exit popup (only 8 had one). Added global exit popup that covers all pages without their own. Triggers on mouse-leave (desktop), scroll-back (mobile), or A/B test timer (30/45/60s). Routes to flash-19.html during flash sale, go.html after. GA4 tracked (global_exit_popup_shown, global_exit_popup_cta_click). Skips pages with existing exit popups and non-commercial pages (thank-you, restore, admin, etc.). sessionStorage prevents showing twice. This is the biggest conversion gap found — blog posts are the #1 organic traffic source and 97.8% of them had zero exit intent recovery.
+- **Fixed stale 'Week 11' flash sale label** — flash-19.html badge said "Week 11 Flash Sale" (we're on Week 13). Removed week number entirely: now says "Flash Sale — Limited Time" so it doesn't go stale again. Also fixed meta description.
+- **Fixed stale comparison count (232 → 258)** — Homepage, blog-ai-api-pricing-ranked.html, and quick-savings.html all said "232 comparisons" when actual count is 258. Updated all 3 files.
+- **Cleaned stale comment** — shared.js banner code still said "Week 11 special" in comment.
+- **2 commits, 5 files, 102 lines added.**
+
 ## Session 988 (Jun 29) — Bug Fixes & Missing Infrastructure
 - **Fixed broken $9 flash deal CTAs** — deal.html had `FLASH9_REPLACE_ME` placeholder (fake Stripe URL). flash-deal.html had literal `FLASH_STRIPE_URL` as href (404). Both now redirect to flash-19.html ($19 flash sale). No $9 Stripe link exists yet.
 - **Added shared.js + analytics.js to terminal.html** — Terminal page was standalone (no flash sale routing, no price override, no exit popups, no Pro CTA management, no funnel tracking). Now has full shared infrastructure.

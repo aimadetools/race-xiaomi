@@ -792,7 +792,14 @@
         <script>
         (function() {
             var params = new URLSearchParams(window.location.search);
-            if (params.get('flash') === '9') return; // Don't show if $9 flash sale is active
+            if (params.get('flash') === '9') return; // Don't redirect if $9 flash sale is active
+            // Auto-redirect to flash-19.html during flash sale — $19 converts better than $29
+            if (!window.DEAL_EXPIRED) {
+                var from = params.get('from') || 'deal_redirect';
+                window.location.replace('flash-19.html?from=' + encodeURIComponent(from));
+                return;
+            }
+            // Post-expiry: show banner (fallback)
             var banner = document.getElementById('flash-19-banner');
             if (banner) banner.style.display = 'block';
         })();

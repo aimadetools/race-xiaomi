@@ -482,8 +482,15 @@
             <div style="font-size:13px;opacity:0.9;margin-top:4px;">Lifetime access · One-time payment · 61% off — click to claim →</div>
         </div>
         <script>
-        // Activate flash deal banner when FLASH_STRIPE_URL is set (not placeholder)
+        // Auto-redirect to flash-19.html during flash sale — $19 converts better than $29
         (function(){
+            if (!window.DEAL_EXPIRED) {
+                var params = new URLSearchParams(window.location.search);
+                var from = params.get('from') || 'go_redirect';
+                window.location.replace('flash-19.html?from=' + encodeURIComponent(from));
+                return;
+            }
+            // Post-expiry: activate flash deal banner if FLASH_STRIPE_URL is set
             var FLASH_URL = 'FLASH_STRIPE_URL';
             if (FLASH_URL && FLASH_URL !== 'FLASH_STRIPE_URL' && !FLASH_URL.startsWith('FLASH_')) {
                 document.getElementById('flash-deal-banner').style.display = 'block';
