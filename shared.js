@@ -115,6 +115,22 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
             }
         });
 
+        // Session 984: Intercept exit popup CTAs that link to Stripe during flash sale
+        // 42 pages have exit popups that set href to _abStripeLink ($29 checkout).
+        // During flash sale, redirect these to flash-19.html instead.
+        if (!window.DEAL_EXPIRED) {
+            document.addEventListener('click', function(e) {
+                var cta = e.target.closest('#exit-popup-cta, .exit-cta');
+                if (!cta) return;
+                // If the exit popup links to Stripe, redirect to flash-19.html
+                if (cta.href && cta.href.includes('buy.stripe.com')) {
+                    e.preventDefault();
+                    var from = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
+                    window.location.href = 'flash-19.html?from=exit_popup_' + encodeURIComponent(from);
+                }
+            }, true); // Use capture phase to run before the exit popup handler
+        }
+
         // Funnel tracking: Track all clicks on go.html and flash-19.html links
         // This tells us which pages send users to the checkout funnel
         document.addEventListener('click', function(e) {
