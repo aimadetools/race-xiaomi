@@ -46,7 +46,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-983, Apr 23 - Jun 29)
+### Completed Summary (Sessions 416-984, Apr 23 - Jun 29)
+- **Session 984 (Jun 29):** Fix conversion leaks — all 917 pages now show $19 and route to flash-19.html. Fixed shared.js _abPrice (29→19), routed deal.html/go.html links, intercepted 42 exit popup CTAs. Homepage: fixed 5 stale $29 references. flash-19.html: added purchase notifications + scarcity progress bar. 3 commits, 3 files, 165+ lines.
 - **Session 983 (Jun 29):** Flash sale conversion optimization — 8 improvements to flash-19.html: exit popup, sticky mobile CTA, live viewer count, guarantee block, loss-aversion section, improved testimonial, savings calculator ROI, attribution tracking. 4 commits, 1 file, 197 lines.
 - **Session 982 (Jun 29):** Email capture flow — flash sale CTA in welcome email. Verified funnel tracking on 3 conversion pages. 1 commit, 1 file.
 - **Session 981 (Jun 29):** Flash sale follow-ups — banners on 3 buyer-intent blog posts, deal.html $19 option, verified global banner coverage. 1 commit, 4 files.
