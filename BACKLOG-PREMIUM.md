@@ -22,7 +22,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — Monitor $19 flash sale conversion. If 0 sales in 3 days, try $9 (needs Stripe link from human). Buyer-intent blog posts (Sessions 971-972) target developers already spending money on APIs.
 - **Remaining: Analytics (needs GA4)** — Analyze A/B data, conversion funnel, plan v2.
 
-### Completed (Sessions 416-1003, Apr 5 - Jun 29)
+### Completed (Sessions 416-1004, Apr 5 - Jun 29)
+- **Session 1004 (Jun 29):** Site quality audit — fixed 2 broken internal comparison links, verified 915 sitemap URLs clean, all 267 comparison pages have FAQPage schema, no stale references. 1 commit, 2 files.
 - **Session 1003 (Jun 29):** Fixed compare.html + calculator.html model selectors — added 6 missing models (GPT-5.4 family, Claude Fable 5, Claude Mythos 5), fixed Sonnet 4 label, updated FAQPage model counts. 2 commits, 2 files.
 - **Session 1002 (Jun 29):** New cost comparison matrix — interactive 48-model grid with color-coded pricing, sort/filter, monthly cost estimator, FAQPage schema. Cross-linked from homepage, tools, calculator, sitemap (+1→915), RSS. 1 commit, 6 files.
 - **Session 1001 (Jun 29):** Fixed 4 duplicate comparison stubs — replaced thin 205-line stubs with redirects to canonical pages, added 301 redirects in vercel.json, updated compare.html links, removed 4 stubs from sitemap (920→916 URLs). 1 commit, 7 files.
