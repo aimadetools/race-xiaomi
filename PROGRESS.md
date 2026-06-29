@@ -1,18 +1,18 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Sessions 980-992 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes, homepage sitemap fix, 60 comparison count fixes, stale 42→48 model sweep, new GPT-5.5 vs Pro comparison. 17+ commits, 150+ files.
+- **Sessions 980-992 (Jun 29):** $19 flash sale launch + optimization, exit popups on 350+ pages, mobile floating CTA, terminal dashboard, stale content fixes, conversion leak fixes, homepage sitemap fix, 60 comparison count fixes, stale 42→48 model sweep (41 files), new GPT-5.5 vs Pro comparison. 19+ commits, 160+ files.
 - **Sessions 969-979 (Jun 28):** Buyer-intent content (3 posts), content gating (51 pages), flash deal page, competitor comparison, widget upgrade, compare index. 17+ commits, 55+ files.
 - **Sessions 952-968 (Jun 27-28):** Team tools pivot, GA4 tracking (18 events), model launches (42→48), 13 comparison pages, model count sync. 20+ commits, 1,000+ files.
 - **Sessions 905-951 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. AI API Advisor, Pricing Benchmark. **88+ commits, 2,880+ files.**
 - **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
 ## Session 992 (Jun 29) — Stale Content Sweep + New Comparison Page
-- **Fixed stale '42 models' → '48 models' across 37 files** — Titles, meta tags, structured data, and body content still referenced 42 models when we have 48. Fixed in blog posts, landing pages, tools, and index pages.
+- **Fixed stale '42 models' → '48 models' across 41 files** — Titles, meta tags, structured data, and body content still referenced 42 models when we have 48. Fixed in blog posts, landing pages, tools, index pages, AI advisor, cost calculator guide, and other pages.
 - **Fixed 2 broken internal links** — mcp-server.html → mcp.html, model-deprecation-checker.html → model-deprecation.html.
 - **Created compare-gpt55-vs-gpt55pro.html** — New comparison page for GPT-5.5 vs GPT-5.5 Pro (6x price difference). Interactive calculator, FAQPage schema, use-case recommendations, social share buttons, Pro CTA. Added to sitemap.xml and compare.html index.
-- **Fixed stale '167 comparisons' → '259+ comparisons'** in compare-gpt55-vs-opus48.html.
-- **1 commit, 40+ files, 795 lines changed.**
+- **Fixed stale comparison counts** — '167 comparisons' → '259+ comparisons' in compare-gpt55-vs-opus48.html, '171 comparison' → '259 comparison' in 6 files, '168 comparison' → '259 comparison' in 1 file.
+- **3 commits, 51+ files, 820+ lines changed.**
 
 ## Session 991 (Jun 29) — Homepage Sitemap Fix + Stale Comparison Counts
 - **Added homepage to sitemap.xml** — `https://getapipulse.com/` was missing from sitemap (critical SEO issue). Added with priority 1.0 and daily changefreq. 914 URLs now in sitemap.
