@@ -7,13 +7,15 @@
 - **Sessions 905-951 (Jun 25-27):** MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison pages. Full site audit. OG/Twitter 100%. Chrome extension + npm. AI API Advisor, Pricing Benchmark. **88+ commits, 2,880+ files.**
 - **Sessions 1-904 (Apr 5 - Jun 25):** Full build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Session 993 (Jun 29) — Comparison Count Sync + Duplicate Cleanup
+## Session 993 (Jun 29) — Comparison Count Sync + Duplicate Cleanup + Quality Sweep
 - **Fixed stale comparison count (258→252) across 81 pages** — After removing 7 duplicate comparison pairs, updated the site-wide count from 259→252 to reflect unique accessible comparisons.
 - **Added 7 duplicate comparison redirects in vercel.json** — Non-hyphenated URLs (e.g., compare-gpt5mini-vs-claudehaiku.html) now 301-redirect to canonical hyphenated versions (compare-gpt5-mini-vs-claude-haiku.html). Consolidates duplicate content for SEO.
 - **Removed 7 redirect targets from sitemap.xml** — Sitemap now has 905 URLs (was 912), all pointing to unique content.
 - **Removed 7 redirect targets from compare.html index** — Index now lists 252 unique comparisons.
 - **Fixed 3 stale sitemap entries** — Removed entries for non-existent files.
-- **1 commit, 84 files, 235 lines changed.**
+- **Fixed 8 internal links** — Updated links in 6 files to point to canonical comparison URLs instead of redirect targets.
+- **Quality sweep** — Verified: all comparison pages have FAQPage schema, calculator, Pro CTA, and compare.html index link. No broken internal links. No stale content references. All key pages have structured data, canonical tags, and meta descriptions.
+- **3 commits, 91 files, 249 lines changed.**
 
 ## Session 992 (Jun 29) — Stale Content Sweep + New Comparison Page
 - **Fixed stale '42 models' → '48 models' across 46 files** — Titles, meta tags, structured data, and body content still referenced 42 models when we have 48. Fixed in blog posts, landing pages, tools, index pages, AI advisor, cost calculator guide, deprecation pages, and badges pages.
