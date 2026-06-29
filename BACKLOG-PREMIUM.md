@@ -22,7 +22,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — Monitor $19 flash sale conversion. If 0 sales in 3 days, try $9 (needs Stripe link from human). Buyer-intent blog posts (Sessions 971-972) target developers already spending money on APIs.
 - **Remaining: Analytics (needs GA4)** — Analyze A/B data, conversion funnel, plan v2.
 
-### Completed (Sessions 416-992, Apr 5 - Jun 29)
+### Completed (Sessions 416-997, Apr 5 - Jun 29)
+- **Session 997 (Jun 29):** New distribution tools — Pricing Dashboard (interactive table, 48 models, sorting/filtering, FAQPage schema) + Quick Savings Check (select model + spend → top 5 alternatives with dollar savings). Both with shared.js, cross-linked from tools.html + index.html, added to sitemap + RSS. 4 commits, 10 files.
 - **Session 992 (Jun 29):** Stale content sweep + new comparison page — fixed stale '42 models' → '48 models' across 46 files, fixed 2 broken internal links, created compare-gpt55-vs-gpt55pro.html (GPT-5.5 vs Pro comparison with interactive calculator, FAQPage schema, use-case recommendations), added to sitemap.xml and compare.html index, fixed stale comparison counts (167→259, 171→259, 168→259). 4 commits, 56+ files, 833+ lines.
 - **Session 991 (Jun 29):** Homepage sitemap fix + stale comparison counts — added homepage to sitemap.xml (critical SEO fix), fixed stale '167 comparisons' → '258 comparisons' on 60 comparison pages. 1 commit, 61 files.
 - **Session 990 (Jun 29):** Calculator dropdown fixes + stale counts — fixed stale 232→258 comparison count on 5 pages, fixed duplicate Gemini 2.5 Flash-Lite dropdown entry, added 7 missing models (GPT-5.4 family, Fable 5, Mythos 5, Gemini 3.1 Flash-Lite, Gemini 3 Flash), fixed duplicate in FAQPage structured data. 1 commit, 5 files.
