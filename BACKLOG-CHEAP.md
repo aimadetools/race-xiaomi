@@ -24,7 +24,7 @@
 - ~~Add flash sale mention to blog posts~~ — DONE (Session 981). Banners on 3 buyer-intent posts with contextual headlines + GA4 tracking.
 - ~~Update deal.html to mention $19 option~~ — DONE (Session 981). Yellow banner linking to flash-19.html, hidden when $9 flash is active.
 - ~~Update comparison pages~~ — DONE (global banner in shared.js already covers all 312 comparison pages + all 917 pages site-wide).
-- **Add flash sale to email capture flow** — Update the /api/subscribe welcome email to mention the $19 flash sale. *(Email-related, proceed with caution.)*
+- ~~Add flash sale to email capture flow~~ — DONE (Session 982). Purple gradient CTA in welcome email linking to flash-19.html.
 - **Track flash sale funnel** — Monitor: flash_sale_viewed → flash_buy_clicked → begin_checkout → purchase. Identify drop-off points.
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
@@ -46,7 +46,8 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 - ~~All technical tasks (Sessions 927-956)~~ — MCP server, OG/Twitter, deprecation checker, widget SEO, broken links, pricing badges, SEO cleanup, team-cost-planner cross-links & FAQPage schema, $9 flash sale UI. All done.
 
-### Completed Summary (Sessions 416-981, Apr 23 - Jun 29)
+### Completed Summary (Sessions 416-982, Apr 23 - Jun 29)
+- **Session 982 (Jun 29):** Email capture flow — flash sale CTA in welcome email. Verified funnel tracking on 3 conversion pages. 1 commit, 1 file.
 - **Session 981 (Jun 29):** Flash sale follow-ups — banners on 3 buyer-intent blog posts, deal.html $19 option, verified global banner coverage. 1 commit, 4 files.
 - **Sessions 969-980 (Jun 28-29):** Conversion focus — content gating (51 pages), flash deal page, competitor comparison, buyer-intent blog posts (3 posts targeting cost optimization, production pricing, best provider), widget upgrade (20→25 models), stale reference cleanup, compare index (17 pages added total), internal linking, $19 flash sale landing page + site-wide promotion. 17+ commits, 55+ files.
 - **Sessions 955-968 (Jun 28):** Team tools pivot, GA4 tracking (18 events), model launches (42→48), 13 comparison pages, model count sync. 20+ commits, 1,000+ files.

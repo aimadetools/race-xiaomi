@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 982 (Jun 29) — Email Capture + Funnel Audit
+- **Added flash sale banner to welcome email** — Purple gradient CTA in /api/subscribe welcome email promoting $19 lifetime access (was $49). Links to flash-19.html. Placed above migration checklist for maximum visibility. New subscribers now see the flash deal immediately.
+- **Verified flash sale funnel tracking** — GA4 events `flash_sale_viewed` and `flash_buy_clicked` confirmed on all 3 conversion pages: flash-19.html, flash-deal.html, deal.html.
+- **1 commit, 1 file, 6 lines added.**
+
 ## Session 981 (Jun 29) — Flash Sale Follow-ups
 - **Added flash sale banners to 3 buyer-intent blog posts** — blog-ai-api-cost-optimization-2026.html, blog-ai-api-production-pricing-2026.html, blog-best-ai-api-2026.html. Each has contextual headline, urgency messaging ($49 → $19), and GA4 event tracking (`flash_banner_click` with from parameter).
 - **Added $19 flash sale option to deal.html** — Yellow banner near top linking to flash-19.html. Hidden when $9 flash sale is active (`?flash=9` parameter). Tracked via `flash_19_banner_click` GA4 event.
@@ -121,7 +126,7 @@ MCP server (5 tools) + 688+ cross-links. Conversion overhaul. 15 comparison page
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 981, Jun 29, 2026)
+## Site Status (as of Session 982, Jun 29, 2026)
 **917 web pages | 361 blog posts | 48 models | 10+ providers | 146 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 312 comparison pages | 1 MCP server (5 tools)**
 - Sitemap (911 URLs), RSS (786 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
