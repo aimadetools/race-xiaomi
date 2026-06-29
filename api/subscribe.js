@@ -79,6 +79,12 @@ async function sendWelcomeEmail(email) {
             <p style="font-size: 16px; line-height: 1.6; margin-bottom: 16px;">
               Thanks for subscribing. You'll get weekly updates on AI API pricing changes, new models, and cost-saving tips.
             </p>
+            <div style="background: linear-gradient(135deg, #7c3aed, #818cf8); border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+              <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #e2e8f0; margin-bottom: 8px;">⚡ Flash Sale — Limited Time</p>
+              <h2 style="color: white; font-size: 22px; margin-bottom: 8px;">Pro Lifetime Access — $19</h2>
+              <p style="color: #e2e8f0; font-size: 14px; margin-bottom: 16px;">48 models, 10 providers. Real-time pricing. One payment, forever. <s style="color: #c4b5fd;">$49</s></p>
+              <a href="https://getapipulse.com/flash-19.html" style="display: inline-block; background: white; color: #7c3aed; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px;">Claim Your Deal →</a>
+            </div>
             <div style="background: #1e293b; border-radius: 8px; padding: 20px; margin: 20px 0;">
               <h2 style="color: #818cf8; font-size: 18px; margin-bottom: 12px;">Your Migration Checklist</h2>
               <p style="margin-bottom: 12px;">Here's the print-ready cheat sheet you signed up for:</p>
