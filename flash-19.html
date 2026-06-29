@@ -568,6 +568,75 @@
             line-height: 1.4;
         }
         .miss-section li .x { color: #ef4444; font-weight: 700; flex-shrink: 0; }
+        /* Exit popup */
+        .exit-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .exit-overlay.show { display: flex; }
+        .exit-modal {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            padding: 28px 24px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 0.2s ease;
+        }
+        .exit-modal h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+        }
+        .exit-modal p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .exit-modal .exit-cta {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .exit-modal .exit-dismiss {
+            font-size: 13px;
+            color: #64748b;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .exit-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: #64748b;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
         /* Mobile */
         @media (max-width: 480px) {
             .flash-page { padding: 24px 16px 40px; }
@@ -746,6 +815,19 @@
         </div>
     </div>
 
+    <!-- Exit popup -->
+    <div class="exit-overlay" id="exit-overlay">
+        <div class="exit-modal">
+            <button class="exit-close" onclick="dismissExit()" aria-label="Close">✕</button>
+            <h3>Wait — don't miss the $19 deal</h3>
+            <p>This flash sale ends July 12. After that, Pro goes back to $49. You'd save <strong style="color:#22c55e;">$30</strong> by buying now.</p>
+            <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="exit-cta" onclick="if(typeof gtag==='function')gtag('event','flash_buy_clicked',{price:19,location:'exit_popup'});">
+                Get Lifetime Access — $19
+            </a>
+            <button class="exit-dismiss" onclick="dismissExit()">No thanks, I'll pay $49 later</button>
+        </div>
+    </div>
+
     <script>
         // Savings calculator
         var MODELS = {
@@ -863,6 +945,38 @@
                 var next = Math.max(18, Math.min(52, current + delta));
                 el.textContent = next;
             }, 8000 + Math.random() * 7000);
+        })();
+
+        // Exit-intent popup — recover leaving visitors
+        (function() {
+            var KEY = 'flash19_exit_dismissed';
+            var shown = false;
+            function showExit() {
+                if (shown || localStorage.getItem(KEY)) return;
+                shown = true;
+                document.getElementById('exit-overlay').classList.add('show');
+                if (typeof gtag === 'function') gtag('event', 'exit_popup_shown', {page: 'flash-19'});
+            }
+            function hideExit() {
+                document.getElementById('exit-overlay').classList.remove('show');
+                localStorage.setItem(KEY, '1');
+            }
+            window.dismissExit = hideExit;
+            // Desktop: mouse leaves viewport
+            document.addEventListener('mouseout', function(e) {
+                if (e.clientY < 5) showExit();
+            });
+            // Mobile: back button or scroll to top rapidly
+            var lastScroll = 0;
+            window.addEventListener('scroll', function() {
+                var cur = window.scrollY;
+                if (cur < 50 && lastScroll > 200) showExit();
+                lastScroll = cur;
+            }, {passive: true});
+            // 45s timer fallback — if they've been on the page but haven't clicked
+            setTimeout(function() {
+                if (!shown && !document.hidden) showExit();
+            }, 45000);
         })();
     </script>
 </body>
