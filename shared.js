@@ -116,7 +116,7 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
         });
 
         // Session 984: Intercept exit popup CTAs that link to Stripe during flash sale
-        // 42 pages have exit popups that set href to _abStripeLink ($29 checkout).
+        // ~42 pages have exit popups that set href to _abStripeLink ($29 checkout).
         // During flash sale, redirect these to flash-19.html instead.
         if (!window.DEAL_EXPIRED) {
             document.addEventListener('click', function(e) {

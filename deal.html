@@ -1581,8 +1581,8 @@
         var params = new URLSearchParams(window.location.search);
         if (params.get('flash') !== '9') return;
 
-        // TODO: Replace with real $9 Stripe payment link
-        var FLASH_STRIPE_URL = 'https://buy.stripe.com/FLASH9_REPLACE_ME';
+        // $9 Stripe link not available — redirect to $19 flash sale
+        var FLASH_STRIPE_URL = '/flash-19.html?from=deal_flash9';
         var FLASH_DURATION_MS = 72 * 60 * 60 * 1000; // 72 hours
         var flashEndTime = Date.now() + FLASH_DURATION_MS;
 
