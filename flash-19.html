@@ -220,6 +220,12 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 32px rgba(34, 197, 94, 0.5);
         }
+        @keyframes ctaPulse {
+            0%, 100% { box-shadow: 0 4px 24px rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 4px 32px rgba(34, 197, 94, 0.6); }
+        }
+        .flash-cta { animation: ctaPulse 2s ease-in-out infinite; }
+        .flash-cta:hover { animation: none; }
         .cta-trust {
             text-align: center;
             font-size: 13px;
