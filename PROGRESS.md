@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1019 (Jun 30):** Stale count sweep — fixed "82 tools" → 156 in 5 pages, "431 pages, 256 posts" → 945/361 in changelog, stale comparison counts 258/263→275 in 6 pages, tool count 155→156 (actual card count). 3 commits, 11 files.
 - **Session 1018 (Jun 30):** Quality sweep — fixed RSS feed (1604→786 items, removed 818 duplicates), added twitter:description to 79 pages, twitter:title to 16 pages, fixed stale "87 comparisons" → 275 on migration hub. Verified 927 sitemap URLs, 0 broken links, all pages have analytics.js + shared.js. 4 commits, 97 files.
 - **Session 1017 (Jun 30):** Fixed pricing consistency across 6 conversion pages — replaced misleading "was $49" strikethroughs with honest "→ $49 Jul 12" urgency. Fixed stale tool count 82→155. Launched background agent to add og:description to 6 comparison pages. 2 commits, 8 files.
 - **Session 1016 (Jun 30):** Built AI API Migration Code Generator — interactive tool generating Python/Node.js/curl code for switching providers. Supports 8 providers, 40+ models. Cost savings calculator, FAQPage + WebApplication schema. Cross-linked from tools, homepage, cost reduction guide, sitemap (+1→927), RSS. 1 commit, 6 files.
@@ -172,8 +173,8 @@ The existing compare-plans.html showed stale $29 pricing (flash sale is $19) and
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1018, Jun 30, 2026)
-**941 web pages | 361 blog posts | 48 models | 10+ providers | 155 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
+## Site Status (as of Session 1019, Jun 30, 2026)
+**945 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
 - Sitemap (927 valid URLs), RSS (786 items, deduplicated & sorted), blog files (361 posts) — all in sync
 - **Pricing consistency: FIXED (Session 1011 + 1017)** — All conversion pages now correctly show $29 regular price. "Was $49" replaced with "→ $49 Jul 12" urgency messaging. Flash sale: $19, regular: $29, future (post Jul 12): $49.
 - **RSS feed: FIXED (Session 1018)** — Removed 818 duplicate entries (1604→786 items), sorted by date.
@@ -182,7 +183,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers,
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.
 - **$19 Flash Sale (Session 980, optimized 983-988, fixed 1011+1017)** — flash-19.html landing page, site-wide banner promotion. Flash sale $19 ends July 12 → regular $29 → future $49.
 - **Terminal AI API Pricing Dashboard (Session 985, updated 988)** — terminal.html. Interactive terminal-style dark UI with 48 models.
-- **Tool count: 155** (updated Session 1017).
+- **Tool count: 156** (updated Session 1019).
 - **Cost Reduction Guide Cross-Links (Session 1010)** — linked from 56 pages total. Targets users comparing expensive models.
 - **Pricing freshness badges** — 92 pages show green badge.
 - **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages.

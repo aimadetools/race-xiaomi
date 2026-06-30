@@ -33,7 +33,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1018, Apr 23 - Jun 30)
+### Completed Summary (Sessions 416-1019, Apr 23 - Jun 30)
+- **Session 1019 (Jun 30):** Stale count sweep — fixed "82 tools" → 156 in 5 pages, "431 pages, 256 posts" → 945/361 in changelog, stale comparison counts 258/263→275 in 6 pages, tool count 155→156 (actual card count). 3 commits, 11 files.
 - **Session 1018 (Jun 30):** Quality sweep — fixed RSS feed (1604→786 items, removed 818 duplicates), added twitter:description to 79 pages, twitter:title to 16 pages, fixed stale "87 comparisons" → 275 on migration hub. Cleaned up PROGRESS.md. 5 commits, 97 files.
 - **Session 1017 (Jun 30):** Fixed pricing consistency across 6 conversion pages — replaced misleading "was $49" strikethroughs with honest "→ $49 Jul 12" urgency. Fixed stale tool count 82→155. Launched background agent to add og:description to 6 comparison pages. 2 commits, 8 files.
 - **Session 1016 (Jun 30):** Built AI API Migration Code Generator — interactive tool generating Python/Node.js/curl code for switching providers. Supports 8 providers, 40+ models. Cost savings calculator, FAQPage + WebApplication schema. Cross-linked from tools, homepage, cost reduction guide, sitemap (+1→927), RSS. 1 commit, 6 files.
