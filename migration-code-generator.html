@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Migration Code Generator — Switch Providers in Minutes | APIpulse</title>
+    <meta name="description" content="Free migration code generator for AI APIs. Get ready-to-use Python, Node.js, and curl code to switch from OpenAI to DeepSeek, Anthropic to Google, and more. Save 60-98% on API costs.">
+    <meta name="keywords" content="AI API migration, switch AI providers, OpenAI to DeepSeek migration, API code generator, LLM migration code">
+    <meta property="og:title" content="AI API Migration Code Generator — Switch Providers in Minutes">
+    <meta property="og:description" content="Get ready-to-use code to switch AI API providers. Python, Node.js, curl. Save 60-98% on costs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/migration-code-generator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Migration Code Generator — Switch Providers in Minutes">
+    <meta name="twitter:description" content="Get ready-to-use code to switch AI API providers. Python, Node.js, curl. Save 60-98% on costs.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/migration-code-generator.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Migration Code Generator",
+        "url": "https://getapipulse.com/migration-code-generator.html",
+        "description": "Free tool to generate migration code for switching between AI API providers. Supports Python, Node.js, and curl.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I migrate from OpenAI to DeepSeek?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek's API is OpenAI-compatible, so migration is straightforward. Change the base URL to api.deepseek.com, update your API key, and swap the model name. Our generator provides copy-paste code for Python, Node.js, and curl."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use the same code structure across providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Mostly yes. OpenAI, DeepSeek, Together.ai, and xAI use compatible API formats. Anthropic and Google have different request formats, but the migration code generator handles the conversion for you."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching AI API providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Savings range from 60% to 98% depending on the switch. For example, switching from GPT-5.5 ($5/$30 per 1M tokens) to DeepSeek V4 Flash ($0.14/$0.28) saves over 98%. The migration code generator shows exact savings for your switch."
+                }
+            }
+        ]
+    }
+    </style>
+    <style>
+        .mig-hero {
+            padding: 120px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto;
+        }
+        .mig-hero h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; margin-bottom: 16px; }
+        .mig-hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+        .mig-container { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+        .mig-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 24px;
+        }
+        .mig-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .mig-selectors {
+            display: grid; grid-template-columns: 1fr 80px 1fr; gap: 16px; align-items: end;
+            margin-bottom: 24px;
+        }
+        .mig-select-group label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 8px; text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .mig-select-group select {
+            width: 100%; padding: 12px 16px; border-radius: 10px;
+            border: 1px solid var(--border); background: var(--bg);
+            color: var(--text); font-size: 15px; font-weight: 500;
+            cursor: pointer; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 12px center;
+        }
+        .mig-arrow {
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px; color: var(--accent); padding-bottom: 8px;
+        }
+        .mig-savings {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px; margin-bottom: 24px;
+        }
+        .mig-stat {
+            background: var(--bg); border-radius: 12px; padding: 16px; text-align: center;
+        }
+        .mig-stat .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .mig-stat .value { font-size: 28px; font-weight: 800; margin-top: 4px; }
+        .mig-stat .value.green { color: var(--green); }
+        .mig-stat .value.red { color: #ef4444; }
+        .mig-tabs {
+            display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;
+        }
+        .mig-tab {
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
+            cursor: pointer; border: 1px solid var(--border); background: var(--bg);
+            color: var(--text-secondary); transition: all 0.2s;
+        }
+        .mig-tab.active {
+            background: var(--accent); color: white; border-color: var(--accent);
+        }
+        .mig-tab:hover:not(.active) {
+            border-color: var(--accent); color: var(--text);
+        }
+        .code-block {
+            background: #0d1117; border-radius: 12px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .code-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 16px; background: rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .code-header span { color: #8b949e; font-size: 13px; font-weight: 500; }
+        .code-copy {
+            padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600;
+            cursor: pointer; border: 1px solid rgba(255,255,255,0.2);
+            background: transparent; color: #8b949e; transition: all 0.2s;
+        }
+        .code-copy:hover { background: rgba(255,255,255,0.1); color: white; }
+        .code-copy.copied { background: var(--green); color: white; border-color: var(--green); }
+        .code-body {
+            padding: 20px; overflow-x: auto; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 13px; line-height: 1.6; color: #e6edf3;
+            white-space: pre; tab-size: 2;
+        }
+        .code-body .comment { color: #8b949e; }
+        .code-body .string { color: #a5d6ff; }
+        .code-body .keyword { color: #ff7b72; }
+        .code-body .function { color: #d2a8ff; }
+        .code-body .variable { color: #ffa657; }
+        .code-body .number { color: #79c0ff; }
+        .mig-notes {
+            background: var(--bg); border-radius: 12px; padding: 20px; margin-top: 20px;
+        }
+        .mig-notes h3 { font-size: 16px; margin-bottom: 12px; }
+        .mig-notes ul { padding-left: 20px; }
+        .mig-notes li {
+            font-size: 14px; color: var(--text-secondary); line-height: 1.8;
+        }
+        .mig-notes li code {
+            background: rgba(99,102,241,0.1); color: var(--accent);
+            padding: 2px 6px; border-radius: 4px; font-size: 13px;
+        }
+        .mig-pro-cta {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(99,102,241,0.05));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 32px; text-align: center; margin-top: 32px;
+        }
+        .mig-pro-cta h2 { font-size: 24px; margin-bottom: 12px; }
+        .mig-pro-cta p { color: var(--text-secondary); margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .mig-pro-cta .features {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px; margin-bottom: 24px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .mig-pro-cta .features div {
+            font-size: 14px; color: var(--text-secondary);
+        }
+        .mig-pro-cta .features div::before { content: '✓ '; color: var(--green); font-weight: 700; }
+        .mig-pro-cta a {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 14px 36px; border-radius: 10px; font-size: 16px; font-weight: 700;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .mig-pro-cta a:hover { background: var(--accent-hover); transform: translateY(-2px); }
+        @media (max-width: 768px) {
+            .mig-hero { padding: 100px 20px 30px; }
+            .mig-hero h1 { font-size: 26px; }
+            .mig-selectors { grid-template-columns: 1fr; }
+            .mig-arrow { transform: rotate(90deg); padding: 0; }
+            .mig-savings { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="mig-hero">
+            <h1>🔄 AI API Migration Code Generator</h1>
+            <p>Switch AI API providers in minutes. Get ready-to-use Python, Node.js, and curl code — copy, paste, save 60-98%.</p>
+        </section>
+
+        <div class="mig-container">
+            <!-- Provider Selection -->
+            <div class="mig-card">
+                <h2>Select your migration path</h2>
+                <div class="mig-selectors">
+                    <div class="mig-select-group">
+                        <label>From (Current Provider)</label>
+                        <select id="from-provider" onchange="updateModels(); generateCode();">
+                            <option value="openai">OpenAI</option>
+                            <option value="anthropic">Anthropic</option>
+                            <option value="google">Google</option>
+                            <option value="deepseek">DeepSeek</option>
+                            <option value="mistral">Mistral</option>
+                            <option value="cohere">Cohere</option>
+                            <option value="together">Meta (Together.ai)</option>
+                            <option value="xai">xAI</option>
+                        </select>
+                        <select id="from-model" onchange="generateCode();" style="margin-top:8px;"></select>
+                    </div>
+                    <div class="mig-arrow">→</div>
+                    <div class="mig-select-group">
+                        <label>To (Target Provider)</label>
+                        <select id="to-provider" onchange="updateModels(); generateCode();">
+                            <option value="deepseek">DeepSeek</option>
+                            <option value="openai">OpenAI</option>
+                            <option value="anthropic">Anthropic</option>
+                            <option value="google">Google</option>
+                            <option value="mistral">Mistral</option>
+                            <option value="cohere">Cohere</option>
+                            <option value="together">Meta (Together.ai)</option>
+                            <option value="xai">xAI</option>
+                        </select>
+                        <select id="to-model" onchange="generateCode();" style="margin-top:8px;"></select>
+                    </div>
+                </div>
+
+                <!-- Savings Display -->
+                <div class="mig-savings" id="savings-display">
+                    <div class="mig-stat">
+                        <div class="label">Input Cost</div>
+                        <div class="value" id="input-savings">—</div>
+                    </div>
+                    <div class="mig-stat">
+                        <div class="label">Output Cost</div>
+                        <div class="value" id="output-savings">—</div>
+                    </div>
+                    <div class="mig-stat">
+                        <div class="label">Savings per 1M tokens</div>
+                        <div class="value green" id="total-savings">—</div>
+                    </div>
+                    <div class="mig-stat">
+                        <div class="label">Annual Savings (1M/mo)</div>
+                        <div class="value green" id="annual-savings">—</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generated Code -->
+            <div class="mig-card">
+                <h2>Your migration code</h2>
+                <div class="mig-tabs">
+                    <div class="mig-tab active" onclick="showTab('python')">Python</div>
+                    <div class="mig-tab" onclick="showTab('node')">Node.js</div>
+                    <div class="mig-tab" onclick="showTab('curl')">curl</div>
+                </div>
+
+                <div id="code-python" class="code-block">
+                    <div class="code-header">
+                        <span>Python (OpenAI SDK)</span>
+                        <button class="code-copy" onclick="copyCode('python')">Copy</button>
+                    </div>
+                    <div class="code-body" id="python-code"></div>
+                </div>
+                <div id="code-node" class="code-block" style="display:none;">
+                    <div class="code-header">
+                        <span>Node.js (OpenAI SDK)</span>
+                        <button class="code-copy" onclick="copyCode('node')">Copy</button>
+                    </div>
+                    <div class="code-body" id="node-code"></div>
+                </div>
+                <div id="code-curl" class="code-block" style="display:none;">
+                    <div class="code-header">
+                        <span>curl</span>
+                        <button class="code-copy" onclick="copyCode('curl')">Copy</button>
+                    </div>
+                    <div class="code-body" id="curl-code"></div>
+                </div>
+
+                <!-- Migration Notes -->
+                <div class="mig-notes" id="migration-notes"></div>
+            </div>
+
+            <!-- Pro CTA -->
+            <div class="mig-pro-cta">
+                <h2>Get full migration code for all 48 models</h2>
+                <p>APIpulse Pro includes migration code for every provider switch, plus cost analysis and optimization tips.</p>
+                <div class="features">
+                    <div>Migration code for all 48×47 combinations</div>
+                    <div>Python, Node.js, curl for every switch</div>
+                    <div>Cost comparison tables included</div>
+                    <div>Provider-specific gotchas documented</div>
+                    <div>PDF export for team sharing</div>
+                    <div>Lifetime updates as new models launch</div>
+                </div>
+                <a href="flash-19.html?from=migration-tool">Get APIpulse Pro — $19 Flash Sale →</a>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. One-time payment.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div style="max-width:800px;margin:0 auto;padding:40px 24px;text-align:center;">
+            <p style="color:var(--text-muted);font-size:14px;">APIpulse — AI API pricing intelligence for developers</p>
+            <p style="color:var(--text-muted);font-size:12px;margin-top:8px;">Pricing data verified Jun 2026. 48 models across 10 providers.</p>
+        </div>
+    </footer>
+
+    <script src="shared.js"></script>
+    <script>
+    // Model data with API details
+    var PROVIDERS = {
+        openai: {
+            name: 'OpenAI',
+            baseUrl: 'https://api.openai.com/v1',
+            envKey: 'OPENAI_API_KEY',
+            sdk: 'openai',
+            compatible: true, // OpenAI-compatible API format
+            models: {
+                'gpt55': { name: 'GPT-5.5', input: 5.00, output: 30.00, context: '1.05M', apiName: 'gpt-5.5' },
+                'gpt55-pro': { name: 'GPT-5.5 Pro', input: 30.00, output: 180.00, context: '1.05M', apiName: 'gpt-5.5-pro' },
+                'gpt5': { name: 'GPT-5', input: 1.25, output: 10.00, context: '272K', apiName: 'gpt-5' },
+                'gpt5-mini': { name: 'GPT-5 mini', input: 0.25, output: 2.00, context: '272K', apiName: 'gpt-5-mini' },
+                'gpt4o': { name: 'GPT-4o', input: 2.50, output: 10.00, context: '128K', apiName: 'gpt-4o' },
+                'gpt4o-mini': { name: 'GPT-4o mini', input: 0.15, output: 0.60, context: '128K', apiName: 'gpt-4o-mini' },
+                'gpt54': { name: 'GPT-5.4', input: 2.50, output: 15.00, context: '400K', apiName: 'gpt-5.4' },
+                'gpt54-mini': { name: 'GPT-5.4 mini', input: 0.75, output: 4.50, context: '400K', apiName: 'gpt-5.4-mini' },
+                'gpt54-nano': { name: 'GPT-5.4 nano', input: 0.20, output: 1.25, context: '400K', apiName: 'gpt-5.4-nano' }
+            }
+        },
+        anthropic: {
+            name: 'Anthropic',
+            baseUrl: 'https://api.anthropic.com/v1',
+            envKey: 'ANTHROPIC_API_KEY',
+            sdk: 'anthropic',
+            compatible: false, // Different API format
+            models: {
+                'opus48': { name: 'Claude Opus 4.8', input: 5.00, output: 25.00, context: '1M', apiName: 'claude-opus-4-8' },
+                'opus47': { name: 'Claude Opus 4.7', input: 5.00, output: 25.00, context: '1M', apiName: 'claude-opus-4-7' },
+                'sonnet46': { name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, context: '1M', apiName: 'claude-sonnet-4-6' },
+                'haiku45': { name: 'Claude Haiku 4.5', input: 1.00, output: 5.00, context: '200K', apiName: 'claude-haiku-4-5' },
+                'fable5': { name: 'Claude Fable 5', input: 10.00, output: 50.00, context: '1M', apiName: 'claude-fable-5' }
+            }
+        },
+        google: {
+            name: 'Google',
+            baseUrl: 'https://generativelanguage.googleapis.com/v1beta',
+            envKey: 'GOOGLE_API_KEY',
+            sdk: 'google-generativeai',
+            compatible: false, // Different API format
+            models: {
+                'gemini35-flash': { name: 'Gemini 3.5 Flash', input: 1.50, output: 9.00, context: '1M', apiName: 'gemini-3.5-flash' },
+                'gemini31-pro': { name: 'Gemini 3.1 Pro', input: 2.00, output: 12.00, context: '1M', apiName: 'gemini-3.1-pro' },
+                'gemini3-flash': { name: 'Gemini 3 Flash', input: 0.50, output: 3.00, context: '1M', apiName: 'gemini-3-flash' },
+                'gemini25-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00, context: '1M', apiName: 'gemini-2.5-pro' },
+                'gemini31-flash-lite': { name: 'Gemini 3.1 Flash-Lite', input: 0.25, output: 1.50, context: '1M', apiName: 'gemini-3.1-flash-lite' }
+            }
+        },
+        deepseek: {
+            name: 'DeepSeek',
+            baseUrl: 'https://api.deepseek.com/v1',
+            envKey: 'DEEPSEEK_API_KEY',
+            sdk: 'openai',
+            compatible: true, // OpenAI-compatible
+            models: {
+                'v4': { name: 'DeepSeek V4', input: 0.27, output: 1.10, context: '128K', apiName: 'deepseek-v4' },
+                'v4-flash': { name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28, context: '128K', apiName: 'deepseek-v4-flash' },
+                'v4-pro': { name: 'DeepSeek V4 Pro', input: 0.50, output: 2.00, context: '128K', apiName: 'deepseek-v4-pro' },
+                'coder-v4': { name: 'DeepSeek Coder V4', input: 0.27, output: 1.10, context: '128K', apiName: 'deepseek-coder-v4' }
+            }
+        },
+        mistral: {
+            name: 'Mistral',
+            baseUrl: 'https://api.mistral.ai/v1',
+            envKey: 'MISTRAL_API_KEY',
+            sdk: 'openai',
+            compatible: true, // OpenAI-compatible
+            models: {
+                'large2': { name: 'Mistral Large 2', input: 2.00, output: 6.00, context: '128K', apiName: 'mistral-large-2' },
+                'medium3': { name: 'Mistral Medium 3', input: 0.40, output: 2.00, context: '128K', apiName: 'mistral-medium-3' },
+                'small': { name: 'Mistral Small', input: 0.10, output: 0.30, context: '32K', apiName: 'mistral-small' }
+            }
+        },
+        cohere: {
+            name: 'Cohere',
+            baseUrl: 'https://api.cohere.com/v2',
+            envKey: 'COHERE_API_KEY',
+            sdk: 'cohere',
+            compatible: false,
+            models: {
+                'command-r-plus': { name: 'Command R+', input: 2.50, output: 10.00, context: '128K', apiName: 'command-r-plus' },
+                'command-r': { name: 'Command R', input: 0.15, output: 0.60, context: '128K', apiName: 'command-r' },
+                'command-light': { name: 'Command Light', input: 0.04, output: 0.10, context: '128K', apiName: 'command-light' }
+            }
+        },
+        together: {
+            name: 'Meta (Together.ai)',
+            baseUrl: 'https://api.together.xyz/v1',
+            envKey: 'TOGETHER_API_KEY',
+            sdk: 'openai',
+            compatible: true, // OpenAI-compatible
+            models: {
+                'llama4-maverick': { name: 'Llama 4 Maverick', input: 0.20, output: 0.60, context: '1M', apiName: 'meta-llama/llama-4-maverick' },
+                'llama4-scout': { name: 'Llama 4 Scout', input: 0.08, output: 0.30, context: '10M', apiName: 'meta-llama/llama-4-scout' },
+                'llama33-70b': { name: 'Llama 3.3 70B', input: 0.88, output: 0.88, context: '128K', apiName: 'meta-llama/llama-3.3-70b' },
+                'llama31-8b': { name: 'Llama 3.1 8B', input: 0.06, output: 0.06, context: '128K', apiName: 'meta-llama/llama-3.1-8b' }
+            }
+        },
+        xai: {
+            name: 'xAI',
+            baseUrl: 'https://api.x.ai/v1',
+            envKey: 'XAI_API_KEY',
+            sdk: 'openai',
+            compatible: true, // OpenAI-compatible
+            models: {
+                'grok43': { name: 'Grok 4.3', input: 3.00, output: 15.00, context: '1M', apiName: 'grok-4.3' },
+                'grok43-mini': { name: 'Grok 4.3 mini', input: 0.30, output: 0.50, context: '1M', apiName: 'grok-4.3-mini' }
+            }
+        }
+    };
+
+    function updateModels() {
+        var fromProvider = document.getElementById('from-provider').value;
+        var toProvider = document.getElementById('to-provider').value;
+        var fromSelect = document.getElementById('from-model');
+        var toSelect = document.getElementById('to-model');
+
+        // Populate from models
+        fromSelect.innerHTML = '';
+        Object.keys(PROVIDERS[fromProvider].models).forEach(function(key) {
+            var m = PROVIDERS[fromProvider].models[key];
+            var opt = document.createElement('option');
+            opt.value = key;
+            opt.textContent = m.name + ' ($' + m.input + '/$' + m.output + ')';
+            fromSelect.appendChild(opt);
+        });
+
+        // Populate to models
+        toSelect.innerHTML = '';
+        Object.keys(PROVIDERS[toProvider].models).forEach(function(key) {
+            var m = PROVIDERS[toProvider].models[key];
+            var opt = document.createElement('option');
+            opt.value = key;
+            opt.textContent = m.name + ' ($' + m.input + '/$' + m.output + ')';
+            toSelect.appendChild(opt);
+        });
+    }
+
+    function showTab(tab) {
+        document.querySelectorAll('.mig-tab').forEach(function(t) { t.classList.remove('active'); });
+        event.target.classList.add('active');
+        document.getElementById('code-python').style.display = tab === 'python' ? 'block' : 'none';
+        document.getElementById('code-node').style.display = tab === 'node' ? 'block' : 'none';
+        document.getElementById('code-curl').style.display = tab === 'curl' ? 'block' : 'none';
+    }
+
+    function copyCode(lang) {
+        var code = document.getElementById(lang + '-code').textContent;
+        navigator.clipboard.writeText(code).then(function() {
+            var btn = event.target;
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = 'Copy';
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+        if (typeof gtag === 'function') gtag('event', 'migration_code_copied', { language: lang });
+    }
+
+    function generateCode() {
+        var fromProvider = document.getElementById('from-provider').value;
+        var toProvider = document.getElementById('to-provider').value;
+        var fromModelKey = document.getElementById('from-model').value;
+        var toModelKey = document.getElementById('to-model').value;
+
+        if (!fromModelKey || !toModelKey) return;
+
+        var fromProviderData = PROVIDERS[fromProvider];
+        var toProviderData = PROVIDERS[toProvider];
+        var fromModel = fromProviderData.models[fromModelKey];
+        var toModel = toProviderData.models[toModelKey];
+
+        // Calculate savings
+        var inputDiff = fromModel.input - toModel.input;
+        var outputDiff = fromModel.output - toModel.output;
+        var inputPct = fromModel.input > 0 ? Math.round((inputDiff / fromModel.input) * 100) : 0;
+        var outputPct = fromModel.output > 0 ? Math.round((outputDiff / fromModel.output) * 100) : 0;
+        var totalFrom = fromModel.input + fromModel.output;
+        var totalTo = toModel.input + toModel.output;
+        var totalSavings = totalFrom - totalTo;
+        var annualSavings = Math.round(totalSavings * 12); // 1M tokens/month
+
+        document.getElementById('input-savings').textContent = (inputDiff >= 0 ? '-' : '+') + '$' + Math.abs(inputDiff).toFixed(2);
+        document.getElementById('input-savings').className = 'value ' + (inputDiff >= 0 ? 'green' : 'red');
+        document.getElementById('output-savings').textContent = (outputDiff >= 0 ? '-' : '+') + '$' + Math.abs(outputDiff).toFixed(2);
+        document.getElementById('output-savings').className = 'value ' + (outputDiff >= 0 ? 'green' : 'red');
+        document.getElementById('total-savings').textContent = totalSavings >= 0 ? '$' + totalSavings.toFixed(2) : '-$' + Math.abs(totalSavings).toFixed(2);
+        document.getElementById('total-savings').className = 'value ' + (totalSavings >= 0 ? 'green' : 'red');
+        document.getElementById('annual-savings').textContent = annualSavings >= 0 ? '$' + annualSavings.toLocaleString() : '-$' + Math.abs(annualSavings).toLocaleString();
+        document.getElementById('annual-savings').className = 'value ' + (annualSavings >= 0 ? 'green' : 'red');
+
+        // Generate Python code
+        var pythonCode = generatePython(fromProviderData, toProviderData, fromModel, toModel);
+        document.getElementById('python-code').textContent = pythonCode;
+
+        // Generate Node.js code
+        var nodeCode = generateNode(fromProviderData, toProviderData, fromModel, toModel);
+        document.getElementById('node-code').textContent = nodeCode;
+
+        // Generate curl code
+        var curlCode = generateCurl(fromProviderData, toProviderData, fromModel, toModel);
+        document.getElementById('curl-code').textContent = curlCode;
+
+        // Generate migration notes
+        generateNotes(fromProviderData, toProviderData, fromModel, toModel);
+    }
+
+    function generatePython(from, to, fromModel, toModel) {
+        var isCompatible = to.compatible;
+        var sdk = to.sdk;
+
+        if (isCompatible && sdk === 'openai') {
+            return '# Python — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n' +
+                '# Uses the OpenAI SDK (pip install openai)\n\n' +
+                'import os\n' +
+                'from openai import OpenAI\n\n' +
+                '# Configure for ' + to.name + '\n' +
+                'client = OpenAI(\n' +
+                '    api_key=os.environ["' + to.envKey + '"],\n' +
+                '    base_url="' + to.baseUrl + '"\n' +
+                ')\n\n' +
+                '# Make a completion request\n' +
+                'response = client.chat.completions.create(\n' +
+                '    model="' + toModel.apiName + '",\n' +
+                '    messages=[\n' +
+                '        {"role": "system", "content": "You are a helpful assistant."},\n' +
+                '        {"role": "user", "content": "Explain quantum computing in one paragraph."}\n' +
+                '    ],\n' +
+                '    temperature=0.7,\n' +
+                '    max_tokens=500\n' +
+                ')\n\n' +
+                'print(response.choices[0].message.content)\n\n' +
+                '# Cost comparison (per 1M tokens):\n' +
+                '# ' + fromModel.name + ': $' + fromModel.input + ' input, $' + fromModel.output + ' output\n' +
+                '# ' + toModel.name + ': $' + toModel.input + ' input, $' + toModel.output + ' output';
+        }
+
+        if (to.name === 'Anthropic') {
+            return '# Python — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n' +
+                '# Uses the Anthropic SDK (pip install anthropic)\n\n' +
+                'import os\n' +
+                'import anthropic\n\n' +
+                '# Configure for Anthropic\n' +
+                'client = anthropic.Anthropic(\n' +
+                '    api_key=os.environ["ANTHROPIC_API_KEY"]\n' +
+                ')\n\n' +
+                '# Make a completion request\n' +
+                'message = client.messages.create(\n' +
+                '    model="' + toModel.apiName + '",\n' +
+                '    max_tokens=500,\n' +
+                '    messages=[\n' +
+                '        {"role": "user", "content": "Explain quantum computing in one paragraph."}\n' +
+                '    ]\n' +
+                ')\n\n' +
+                'print(message.content[0].text)\n\n' +
+                '# Cost comparison (per 1M tokens):\n' +
+                '# ' + fromModel.name + ': $' + fromModel.input + ' input, $' + fromModel.output + ' output\n' +
+                '# ' + toModel.name + ': $' + toModel.input + ' input, $' + toModel.output + ' output';
+        }
+
+        if (to.name === 'Google') {
+            return '# Python — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n' +
+                '# Uses the Google Generative AI SDK (pip install google-generativeai)\n\n' +
+                'import os\n' +
+                'import google.generativeai as genai\n\n' +
+                '# Configure for Google\n' +
+                'genai.configure(api_key=os.environ["GOOGLE_API_KEY"])\n\n' +
+                '# Initialize the model\n' +
+                'model = genai.GenerativeModel("' + toModel.apiName + '")\n\n' +
+                '# Generate content\n' +
+                'response = model.generate_content("Explain quantum computing in one paragraph.")\n' +
+                'print(response.text)\n\n' +
+                '# Cost comparison (per 1M tokens):\n' +
+                '# ' + fromModel.name + ': $' + fromModel.input + ' input, $' + fromModel.output + ' output\n' +
+                '# ' + toModel.name + ': $' + toModel.input + ' input, $' + toModel.output + ' output';
+        }
+
+        // Fallback for Cohere
+        return '# Python — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n' +
+            '# Uses the Cohere SDK (pip install cohere)\n\n' +
+            'import os\n' +
+            'import cohere\n\n' +
+            '# Configure for Cohere\n' +
+            'co = cohere.ClientV2(\n' +
+            '    api_key=os.environ["COHERE_API_KEY"]\n' +
+            ')\n\n' +
+            '# Make a completion request\n' +
+            'response = co.chat(\n' +
+            '    model="' + toModel.apiName + '",\n' +
+            '    messages=[\n' +
+            '        {"role": "user", "content": "Explain quantum computing in one paragraph."}\n' +
+            '    ]\n' +
+            ')\n\n' +
+            'print(response.message.content[0].text)\n\n' +
+            '# Cost comparison (per 1M tokens):\n' +
+            '# ' + fromModel.name + ': $' + fromModel.input + ' input, $' + fromModel.output + ' output\n' +
+            '# ' + toModel.name + ': $' + toModel.input + ' input, $' + toModel.output + ' output';
+    }
+
+    function generateNode(from, to, fromModel, toModel) {
+        var isCompatible = to.compatible;
+
+        if (isCompatible) {
+            return '// Node.js — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n' +
+                '// Uses the OpenAI SDK (npm install openai)\n\n' +
+                'import OpenAI from "openai";\n\n' +
+                '// Configure for ' + to.name + '\n' +
+                'const client = new OpenAI({\n' +
+                '  apiKey: process.env["' + to.envKey + '"],\n' +
+                '  baseURL: "' + to.baseUrl + '"\n' +
+                '});\n\n' +
+                '// Make a completion request\n' +
+                'const response = await client.chat.completions.create({\n' +
+                '  model: "' + toModel.apiName + '",\n' +
+                '  messages: [\n' +
+                '    { role: "system", content: "You are a helpful assistant." },\n' +
+                '    { role: "user", content: "Explain quantum computing in one paragraph." }\n' +
+                '  ],\n' +
+                '  temperature: 0.7,\n' +
+                '  max_tokens: 500\n' +
+                '});\n\n' +
+                'console.log(response.choices[0].message.content);\n\n' +
+                '// Cost comparison (per 1M tokens):\n' +
+                '// ' + fromModel.name + ': $' + fromModel.input + ' input, $' + fromModel.output + ' output\n' +
+                '// ' + toModel.name + ': $' + toModel.input + ' input, $' + toModel.output + ' output';
+        }
+
+        if (to.name === 'Anthropic') {
+            return '// Node.js — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n' +
+                '// Uses the Anthropic SDK (npm install @anthropic-ai/sdk)\n\n' +
+                'import Anthropic from "@anthropic-ai/sdk";\n\n' +
+                '// Configure for Anthropic\n' +
+                'const client = new Anthropic({\n' +
+                '  apiKey: process.env["ANTHROPIC_API_KEY"]\n' +
+                '});\n\n' +
+                '// Make a completion request\n' +
+                'const message = await client.messages.create({\n' +
+                '  model: "' + toModel.apiName + '",\n' +
+                '  max_tokens: 500,\n' +
+                '  messages: [\n' +
+                '    { role: "user", content: "Explain quantum computing in one paragraph." }\n' +
+                '  ]\n' +
+                '});\n\n' +
+                'console.log(message.content[0].text);\n\n' +
+                '// Cost comparison (per 1M tokens):\n' +
+                '// ' + fromModel.name + ': $' + fromModel.input + ' input, $' + fromModel.output + ' output\n' +
+                '// ' + toModel.name + ': $' + toModel.input + ' input, $' + toModel.output + ' output';
+        }
+
+        if (to.name === 'Google') {
+            return '// Node.js — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n' +
+                '// Uses the Google Generative AI SDK (npm install @google/generative-ai)\n\n' +
+                'import { GoogleGenerativeAI } from "@google/generative-ai";\n\n' +
+                '// Configure for Google\n' +
+                'const genAI = new GoogleGenerativeAI(process.env["GOOGLE_API_KEY"]);\n' +
+                'const model = genAI.getGenerativeModel({ model: "' + toModel.apiName + '" });\n\n' +
+                '// Generate content\n' +
+                'const result = await model.generateContent("Explain quantum computing in one paragraph.");\n' +
+                'const response = result.response;\n' +
+                'console.log(response.text());\n\n' +
+                '// Cost comparison (per 1M tokens):\n' +
+                '// ' + fromModel.name + ': $' + fromModel.input + ' input, $' + fromModel.output + ' output\n' +
+                '// ' + toModel.name + ': $' + toModel.input + ' input, $' + toModel.output + ' output';
+        }
+
+        // Fallback for Cohere
+        return '// Node.js — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n' +
+            '// Uses the Cohere SDK (npm install cohere-ai)\n\n' +
+            'import { CohereClient } from "cohere-ai";\n\n' +
+            '// Configure for Cohere\n' +
+            'const cohere = new CohereClient({\n' +
+            '  token: process.env["COHERE_API_KEY"]\n' +
+            '});\n\n' +
+            '// Make a completion request\n' +
+            'const response = await cohere.chat({\n' +
+            '  model: "' + toModel.apiName + '",\n' +
+            '  message: "Explain quantum computing in one paragraph."\n' +
+            '});\n\n' +
+            'console.log(response.text);\n\n' +
+            '// Cost comparison (per 1M tokens):\n' +
+            '// ' + fromModel.name + ': $' + fromModel.input + ' input, $' + fromModel.output + ' output\n' +
+            '// ' + toModel.name + ': $' + toModel.input + ' input, $' + toModel.output + ' output';
+    }
+
+    function generateCurl(from, to, fromModel, toModel) {
+        if (to.compatible) {
+            return '# curl — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n\n' +
+                'curl -X POST "' + to.baseUrl + '/chat/completions" \\\n' +
+                '  -H "Content-Type: application/json" \\\n' +
+                '  -H "Authorization: Bearer $' + to.envKey + '" \\\n' +
+                '  -d \'{\n' +
+                '    "model": "' + toModel.apiName + '",\n' +
+                '    "messages": [\n' +
+                '      {"role": "system", "content": "You are a helpful assistant."},\n' +
+                '      {"role": "user", "content": "Explain quantum computing in one paragraph."}\n' +
+                '    ],\n' +
+                '    "temperature": 0.7,\n' +
+                '    "max_tokens": 500\n' +
+                '  }\'';
+        }
+
+        if (to.name === 'Anthropic') {
+            return '# curl — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n\n' +
+                'curl -X POST "https://api.anthropic.com/v1/messages" \\\n' +
+                '  -H "Content-Type: application/json" \\\n' +
+                '  -H "x-api-key: $ANTHROPIC_API_KEY" \\\n' +
+                '  -H "anthropic-version: 2023-06-01" \\\n' +
+                '  -d \'{\n' +
+                '    "model": "' + toModel.apiName + '",\n' +
+                '    "max_tokens": 500,\n' +
+                '    "messages": [\n' +
+                '      {"role": "user", "content": "Explain quantum computing in one paragraph."}\n' +
+                '    ]\n' +
+                '  }\'';
+        }
+
+        if (to.name === 'Google') {
+            return '# curl — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n\n' +
+                'curl -X POST "https://generativelanguage.googleapis.com/v1beta/models/' + toModel.apiName + ':generateContent" \\\n' +
+                '  -H "Content-Type: application/json" \\\n' +
+                '  -H "x-goog-api-key: $GOOGLE_API_KEY" \\\n' +
+                '  -d \'{\n' +
+                '    "contents": [{\n' +
+                '      "parts": [{\n' +
+                '        "text": "Explain quantum computing in one paragraph."\n' +
+                '      }]\n' +
+                '    }],\n' +
+                '    "generationConfig": {\n' +
+                '      "temperature": 0.7,\n' +
+                '      "maxOutputTokens": 500\n' +
+                '    }\n' +
+                '  }\'';
+        }
+
+        // Fallback for Cohere
+        return '# curl — Migrate from ' + from.name + ' (' + fromModel.name + ') to ' + to.name + ' (' + toModel.name + ')\n\n' +
+            'curl -X POST "https://api.cohere.com/v2/chat" \\\n' +
+            '  -H "Content-Type: application/json" \\\n' +
+            '  -H "Authorization: Bearer $COHERE_API_KEY" \\\n' +
+            '  -d \'{\n' +
+            '    "model": "' + toModel.apiName + '",\n' +
+            '    "messages": [\n' +
+            '      {"role": "user", "content": "Explain quantum computing in one paragraph."}\n' +
+            '    ]\n' +
+            '  }\'';
+    }
+
+    function generateNotes(from, to, fromModel, toModel) {
+        var notes = '<h3>Migration notes</h3><ul>';
+
+        if (from.compatible && to.compatible) {
+            notes += '<li>Both providers use OpenAI-compatible APIs — migration is straightforward. Change the <code>base_url</code> and API key, then update the model name.</li>';
+        } else if (!to.compatible) {
+            notes += '<li>' + to.name + ' uses a different API format. The code above handles the conversion for you.</li>';
+        }
+
+        if (from.name === 'OpenAI' && to.name === 'DeepSeek') {
+            notes += '<li>DeepSeek is OpenAI-compatible — you can reuse your existing OpenAI SDK with minimal changes.</li>';
+            notes += '<li>DeepSeek supports most OpenAI parameters including <code>temperature</code>, <code>max_tokens</code>, and <code>stream</code>.</li>';
+        }
+
+        if (to.name === 'Anthropic') {
+            notes += '<li>Anthropic uses <code>max_tokens</code> as a required parameter (not optional like OpenAI).</li>';
+            notes += '<li>System prompts are passed via a <code>system</code> parameter, not inside the messages array.</li>';
+        }
+
+        if (to.name === 'Google') {
+            notes += '<li>Google uses <code>contents</code> instead of <code>messages</code> for the request format.</li>';
+            notes += '<li>The <code>maxOutputTokens</code> parameter replaces <code>max_tokens</code>.</li>';
+        }
+
+        notes += '<li>Pricing data from APIpulse — 48 models across 10 providers, verified Jun 2026.</li>';
+        notes += '<li>Test thoroughly before switching production traffic — response formats may differ between providers.</li>';
+        notes += '</ul>';
+
+        document.getElementById('migration-notes').innerHTML = notes;
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', function() {
+        updateModels();
+        generateCode();
+    });
+    </script>
+</body>
+</html>
