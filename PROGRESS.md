@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1018 (Jun 30):** Fixed RSS feed — removed 818 duplicate entries (1604→786 items), sorted by date. Verified all 927 sitemap URLs clean, no broken internal links, all pages have analytics.js + shared.js. 1 commit, 1 file.
+- **Session 1018 (Jun 30):** Quality sweep — fixed RSS feed (1604→786 items, removed 818 duplicates), added twitter:description to 79 pages, twitter:title to 16 pages, fixed stale "87 comparisons" → 275 on migration hub. Verified 927 sitemap URLs, 0 broken links, all pages have analytics.js + shared.js. 4 commits, 97 files.
 - **Session 1017 (Jun 30):** Fixed pricing consistency across 6 conversion pages — replaced misleading "was $49" strikethroughs with honest "→ $49 Jul 12" urgency. Fixed stale tool count 82→155. Launched background agent to add og:description to 6 comparison pages. 2 commits, 8 files.
 - **Session 1016 (Jun 30):** Built AI API Migration Code Generator — interactive tool generating Python/Node.js/curl code for switching providers. Supports 8 providers, 40+ models. Cost savings calculator, FAQPage + WebApplication schema. Cross-linked from tools, homepage, cost reduction guide, sitemap (+1→927), RSS. 1 commit, 6 files.
 - **Session 1015 (Jun 30):** Overhauled Free vs Pro comparison page (compare-plans.html) — replaced stale $29 pricing with $19 flash sale, added interactive live demo showing blurred Pro-only content, "Who should upgrade" section, new FAQPage schema. Cross-linked from flash-19.html + tools.html. 1 commit, 4 files.
@@ -11,24 +11,29 @@
 - **Session 1011 (Jun 30):** Fixed pricing inconsistency across flash sale pages. 1 commit, 7 files.
 - **Session 1010 (Jun 30):** Massive cross-link expansion — cost reduction guide on 49 premium comparison pages. 1 commit, 50 files.
 
-## Session 1018 (Jun 30) — RSS Feed Deduplication
+## Session 1018 (Jun 30) — Quality Sweep: RSS, Social Tags, Stale Counts
 
-### Problem
-RSS feed had 1604 items when it should have had ~803 unique entries. The migration-code-generator.html appeared 3 times in the first 50 lines alone. 818 duplicate entries bloat the feed, look unprofessional, and can hurt SEO syndication.
-
-### Fixed
+### RSS Feed Deduplication
 - **rss.xml** — Deduplicated by GUID (1604→786 items), removed 818 duplicates
 - **Sorted by pubDate** descending (newest first) with proper datetime parsing
 - **Validated** — XML parses cleanly, 786 unique items in correct chronological order
+
+### Social Tag Fixes
+- **twitter:description** — Added to 79 pages that had og:description but were missing twitter:description (derived from og:description content)
+- **twitter:title** — Added to 16 pages that had twitter:card but were missing twitter:title (derived from og:title content)
+
+### Stale Reference Fix
+- **claude-4-migration-command-center.html** — "87 Comparison Pages" → "275 Comparison Pages"
 
 ### Verification
 - Sitemap: 927 unique URLs, no duplicates ✅
 - Internal links: 0 broken links across all 941 HTML files ✅
 - Scripts: all pages have analytics.js + shared.js ✅
 - OG tags: all 275 comparison pages have og:description ✅
+- Twitter tags: all non-noindex pages now have twitter:title + twitter:description ✅
 - Canonical tags: all crawlable pages have canonical ✅
 
-**1 commit, 1 file, 4,629 insertions, 10,355 deletions.**
+**4 commits, 97 files, 79 insertions, 10,371 deletions.**
 
 ## Session 1017 (Jun 30) — Pricing Consistency & Trust Fixes
 
