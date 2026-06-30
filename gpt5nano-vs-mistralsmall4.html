@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-5.4 nano vs Mistral Small 4: Cheapest AI API Showdown | APIpulse</title>
+    <meta name="description" content="GPT-5.4 nano vs Mistral Small 4: detailed comparison of two ultra-budget AI APIs. Mistral Small 4 is 57% cheaper with 128K context. Find out which budget model wins for your use case.">
+    <meta name="keywords" content="gpt-5.4 nano vs mistral small 4, cheapest ai api, budget llm comparison, mistral pricing, gpt-5.4 nano pricing, ultra-budget ai api 2026">
+    <meta property="og:title" content="GPT-5.4 nano vs Mistral Small 4: Cheapest AI API Showdown">
+    <meta property="og:description" content="GPT-5.4 nano vs Mistral Small 4: two ultra-budget AI APIs compared. Mistral is 57% cheaper. Full pricing, migration guide, code examples.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-30">
+    <meta property="article:modified_time" content="2026-06-30">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/gpt5nano-vs-mistralsmall4.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPT-5.4 nano vs Mistral Small 4: Cheapest AI API Showdown">
+    <meta name="twitter:description" content="GPT-5.4 nano vs Mistral Small 4: two ultra-budget AI APIs compared. Mistral is 57% cheaper.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/gpt5nano-vs-mistralsmall4.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="comparison-gate.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "Article",
+        "headline": "GPT-5.4 nano vs Mistral Small 4: Cheapest AI API Showdown",
+        "description": "GPT-5.4 nano vs Mistral Small 4: detailed comparison of two ultra-budget AI APIs. Mistral Small 4 is 57% cheaper.",
+        "url": "https://getapipulse.com/gpt5nano-vs-mistralsmall4.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-30",
+        "dateModified": "2026-06-30"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is Mistral Small 4 cheaper than GPT-5.4 nano?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Mistral Small 4 costs $0.10 input / $0.30 output per million tokens. GPT-5.4 nano costs $0.20 input / $1.25 output. Mistral is 57% cheaper overall. For a workload of 100M input + 20M output tokens per month, Mistral costs $16/month vs GPT-5.4 nano's $45/month — saving you $29/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I migrate from GPT-5.4 nano to Mistral Small 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sign up for Mistral AI (mistral.ai), get an API key, change the base URL to api.mistral.ai, and replace the model name from 'gpt-5.4-nano' to 'mistral-small-latest'. Uses OpenAI-compatible API format. Migration takes 5-10 minutes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which is better for code generation — GPT-5.4 nano or Mistral Small 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Both are excellent for simple coding tasks at budget prices. Mistral Small 4 is 57% cheaper with strong multilingual support. GPT-5.4 nano integrates seamlessly with OpenAI ecosystem tools. For most simple tasks, Mistral Small 4 offers better value."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the absolute cheapest AI API available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.5 Flash-Lite at $0.10/$0.40 is the absolute cheapest. Mistral Small 4 at $0.10/$0.30 is the cheapest with strong quality. DeepSeek V4 Flash at $0.14/$0.28 is the cheapest with 1M context. GPT-5.4 nano at $0.20/$1.25 is the cheapest from OpenAI."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .comparison-hero { padding: 60px 24px 40px; max-width: 860px; margin: 0 auto; text-align: center; }
+        .comparison-hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .comparison-hero .subtitle { font-size: 18px; color: var(--text-secondary); line-height: 1.6; max-width: 640px; margin: 0 auto 32px; }
+
+        .content-section { max-width: 860px; margin: 0 auto 48px; padding: 0 24px; }
+        .content-section h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; margin: 24px 0 12px; }
+        .content-section p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+
+        .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: start; margin: 24px 0; }
+        .vs-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-align: center; }
+        .vs-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .vs-card .provider { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+        .vs-card .price { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
+        .vs-card .price-note { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+        .vs-card .feature-list { list-style: none; padding: 0; margin: 0; text-align: left; }
+        .vs-card .feature-list li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; display: flex; justify-content: space-between; }
+        .vs-card .feature-list li:last-child { border-bottom: none; }
+        .vs-card .feature-label { color: var(--text-secondary); }
+        .vs-card .feature-value { font-weight: 600; }
+        .vs-card .winner { color: var(--green); }
+        .vs-card .loser { color: var(--text-muted); }
+        .vs-divider { display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; color: var(--accent); padding-top: 40px; }
+
+        .verdict-card { background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(16,185,129,0.08)); border: 1px solid var(--green); border-radius: 16px; padding: 32px; text-align: center; margin: 24px 0; }
+        .verdict-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .verdict-card .winner-badge { display: inline-block; background: var(--green); color: #000; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+        .verdict-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin: 0; }
+
+        .migration-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+        .step-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+        .step-card .step-num { width: 32px; height: 32px; background: var(--green); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+        .step-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .step-card p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+        .code-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+        .code-block { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 16px; overflow-x: auto; }
+        .code-block .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .code-block .label.old { color: #f87171; }
+        .code-block .label.new { color: #4ade80; }
+        .code-block pre { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.5; color: #e6edf3; margin: 0; overflow-x: auto; }
+
+        .use-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+        .use-case-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+        .use-case-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .use-case-card p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+        .use-case-card .recommendation { margin-top: 12px; padding: 8px 12px; border-radius: 8px; font-size: 13px; font-weight: 600; }
+        .use-case-card .recommendation.mistral { background: rgba(34,197,94,0.1); color: var(--green); border: 1px solid rgba(34,197,94,0.2); }
+        .use-case-card .recommendation.openai { background: rgba(99,102,241,0.1); color: var(--accent); border: 1px solid rgba(99,102,241,0.2); }
+        .use-case-card .recommendation.either { background: rgba(245,158,11,0.1); color: #d97706; border: 1px solid rgba(245,158,11,0.2); }
+
+        .pro-section { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.08)); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; text-align: center; max-width: 600px; margin: 0 auto 48px; }
+        .pro-section h2 { font-size: 24px; margin-bottom: 8px; }
+        .pro-section .price { font-size: 36px; font-weight: 800; margin: 16px 0; }
+        .pro-section .cta { display: inline-block; padding: 14px 32px; background: var(--accent); color: white; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; transition: transform 0.2s; }
+        .pro-section .cta:hover { transform: translateY(-2px); }
+
+        .related-section { max-width: 860px; margin: 0 auto 48px; padding: 0 24px; }
+        .related-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 20px; text-align: center; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+        .related-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-decoration: none; color: var(--text-primary); transition: all 0.2s; }
+        .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .related-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+        .related-card p { font-size: 12px; color: var(--text-muted); margin: 0; }
+
+        @media (max-width: 640px) {
+            .comparison-hero h1 { font-size: 26px; }
+            .vs-grid { grid-template-columns: 1fr; }
+            .vs-divider { padding-top: 0; }
+            .migration-steps { grid-template-columns: 1fr; }
+            .code-compare { grid-template-columns: 1fr; }
+            .use-case-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="go.html?from=pro_page" class="nav-cta">Get Pro</a>
+            </div>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="comparison-hero">
+            <div style="display:inline-block;background:rgba(34,197,94,0.1);color:var(--green);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:700;letter-spacing:0.5px;margin-bottom:20px;">💸 ULTRA-BUDGET SHOWDOWN</div>
+            <h1>GPT-5.4 nano vs Mistral Small 4</h1>
+            <p class="subtitle">
+                Two of the cheapest AI APIs available. Mistral Small 4 is 57% cheaper than GPT-5.4 nano.
+                Here's everything you need to decide: pricing, performance, API compatibility, and migration difficulty.
+            </p>
+        </section>
+
+        <!-- VS Grid -->
+        <section class="content-section">
+            <h2>📊 Side-by-Side Comparison</h2>
+
+            <div class="vs-grid">
+                <!-- GPT-5.4 nano -->
+                <div class="vs-card">
+                    <h3>GPT-5.4 nano</h3>
+                    <div class="provider">OpenAI</div>
+                    <div class="price">$0.20 / $1.25</div>
+                    <div class="price-note">per 1M tokens (input/output)</div>
+                    <ul class="feature-list">
+                        <li><span class="feature-label">Status</span><span class="feature-value winner">✅ Active</span></li>
+                        <li><span class="feature-label">Context Window</span><span class="feature-value">400K tokens</span></li>
+                        <li><span class="feature-label">API Format</span><span class="feature-value">OpenAI Compatible</span></li>
+                        <li><span class="feature-label">SDK</span><span class="feature-value">Python, Node.js, Go</span></li>
+                        <li><span class="feature-label">Code Quality</span><span class="feature-value">Good</span></li>
+                        <li><span class="feature-label">Monthly Cost (100M in/20M out)</span><span class="feature-value">$45.00</span></li>
+                    </ul>
+                </div>
+
+                <div class="vs-divider">VS</div>
+
+                <!-- Mistral Small 4 -->
+                <div class="vs-card" style="border-color:rgba(34,197,94,0.3);">
+                    <h3>Mistral Small 4</h3>
+                    <div class="provider">Mistral AI</div>
+                    <div class="price" style="color:var(--green);">$0.10 / $0.30</div>
+                    <div class="price-note">per 1M tokens (input/output) — 57% cheaper</div>
+                    <ul class="feature-list">
+                        <li><span class="feature-label">Status</span><span class="feature-value winner">✅ Active</span></li>
+                        <li><span class="feature-label">Context Window</span><span class="feature-value">128K tokens</span></li>
+                        <li><span class="feature-label">API Format</span><span class="feature-value">OpenAI Compatible</span></li>
+                        <li><span class="feature-label">SDK</span><span class="feature-value">Python, Node.js, Go</span></li>
+                        <li><span class="feature-label">Code Quality</span><span class="feature-value">Very Good</span></li>
+                        <li><span class="feature-label">Monthly Cost (100M in/20M out)</span><span class="feature-value winner">$16.00</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Verdict -->
+            <div class="verdict-card">
+                <div class="winner-badge">💰 VALUE WINNER: Mistral Small 4</div>
+                <h3>Mistral Small 4 is 57% cheaper with strong quality</h3>
+                <p>
+                    For most use cases, Mistral Small 4 offers the best value. You save <strong>$29/month</strong> compared to
+                    GPT-5.4 nano for the same workload. Mistral uses OpenAI-compatible API format — migration takes 5-10 minutes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Detailed Pricing -->
+        <section class="content-section">
+            <h2>💰 Detailed Pricing Comparison</h2>
+            <p>All prices are per 1 million tokens:</p>
+
+            <div style="overflow-x:auto;">
+                <table style="width:100%;border-collapse:collapse;margin:16px 0;" class="model-name">
+                    <thead>
+                        <tr style="background:rgba(34,197,94,0.1);">
+                            <th style="padding:12px 16px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Model</th>
+                            <th style="padding:12px 16px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Input Price</th>
+                            <th style="padding:12px 16px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Output Price</th>
+                            <th style="padding:12px 16px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Monthly Cost*</th>
+                            <th style="padding:12px 16px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">vs GPT-5.4 nano</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:rgba(239,68,68,0.04);">
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);font-weight:600;">GPT-5.4 nano</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);">$0.20</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);">$1.25</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);font-weight:600;">$45.00</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);">—</td>
+                        </tr>
+                        <tr style="background:rgba(34,197,94,0.04);">
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);font-weight:600;">Mistral Small 4 ✅</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);">$0.10</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);">$0.30</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);font-weight:600;color:var(--green);">$16.00</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700;">Save 57%</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);font-weight:600;">Gemini 2.5 Flash-Lite ✅</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);">$0.10</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);">$0.40</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);font-weight:600;color:var(--green);">$18.00</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700;">Save 60%</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);font-weight:600;">DeepSeek V4 Flash ✅</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);">$0.14</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);">$0.28</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);font-weight:600;color:var(--green);">$19.60</td>
+                            <td style="padding:12px 16px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700;">Save 56%</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px 16px;font-weight:600;">GPT-oss 20B ✅</td>
+                            <td style="padding:12px 16px;">$0.08</td>
+                            <td style="padding:12px 16px;">$0.35</td>
+                            <td style="padding:12px 16px;font-weight:600;color:var(--green);">$15.00</td>
+                            <td style="padding:12px 16px;color:var(--green);font-weight:700;">Save 67%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size:12px;color:var(--text-muted);">* Monthly cost based on 100M input tokens + 20M output tokens per month.</p>
+        </section>
+
+        <!-- Migration Guide -->
+        <section class="content-section">
+            <h2>🔄 How to Migrate from GPT-5.4 nano to Mistral Small 4</h2>
+            <p>The migration is trivial — Mistral uses OpenAI-compatible API format. Here's what changes:</p>
+
+            <div class="migration-steps">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h4>Sign Up for Mistral AI</h4>
+                    <p>Create an account at mistral.ai and generate an API key. Free tier available with generous limits.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h4>Update Base URL</h4>
+                    <p>Change the API base URL from <code>https://api.openai.com/v1</code> to <code>https://api.mistral.ai/v1</code></p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h4>Change Model Name</h4>
+                    <p>Replace <code>gpt-5.4-nano</code> with <code>mistral-small-latest</code> in your code. Keep your existing SDK.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h4>Test & Deploy</h4>
+                    <p>Make a test call, verify output quality, then deploy. Total time: 5-10 minutes.</p>
+                </div>
+            </div>
+
+            <h3>Code Comparison</h3>
+            <div class="code-compare">
+                <div class="code-block">
+                    <div class="label old">❌ Before — GPT-5.4 nano (OpenAI)</div>
+                    <pre>from openai import OpenAI
+
+client = OpenAI(api_key="sk-...")
+response = client.chat.completions.create(
+    model="gpt-5.4-nano",
+    messages=[{"role": "user", "content": "Hello"}]
+)
+print(response.choices[0].message.content)</pre>
+                </div>
+                <div class="code-block">
+                    <div class="label new">✅ After — Mistral Small 4</div>
+                    <pre>from openai import OpenAI
+
+client = OpenAI(
+    api_key="your-mistral-key",
+    base_url="https://api.mistral.ai/v1"
+)
+response = client.chat.completions.create(
+    model="mistral-small-latest",
+    messages=[{"role": "user", "content": "Hello"}]
+)
+print(response.choices[0].message.content)</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="content-section">
+            <h2>🎯 Which Should You Choose?</h2>
+            <p>It depends on your use case. Here's our recommendation:</p>
+
+            <div class="use-case-grid">
+                <div class="use-case-card">
+                    <h4>💰 Cost-Sensitive Applications</h4>
+                    <p>Chatbots, content generation, summarization, basic coding assistance</p>
+                    <div class="recommendation mistral">✅ Recommended: Mistral Small 4 (57% cheaper)</div>
+                </div>
+                <div class="use-case-card">
+                    <h4>🌍 Multilingual Support</h4>
+                    <p>Applications requiring strong multilingual capabilities</p>
+                    <div class="recommendation mistral">✅ Recommended: Mistral Small 4 (strong multilingual)</div>
+                </div>
+                <div class="use-case-card">
+                    <h4>📄 Long Documents</h4>
+                    <p>Analyzing 128K+ token documents, legal contracts, research papers</p>
+                    <div class="recommendation openai">✅ Recommended: GPT-5.4 nano (400K context)</div>
+                </div>
+                <div class="use-case-card">
+                    <h4>🤖 OpenAI Ecosystem</h4>
+                    <p>Using OpenAI plugins, fine-tuned models, or specific OpenAI features</p>
+                    <div class="recommendation openai">✅ Recommended: GPT-5.4 nano (native OpenAI)</div>
+                </div>
+                <div class="use-case-card">
+                    <h4>💻 Code Generation</h4>
+                    <p>Writing code, debugging, code review, refactoring</p>
+                    <div class="recommendation either">⚡ Either works — test both for your language</div>
+                </div>
+                <div class="use-case-card">
+                    <h4>💸 Maximum Savings</h4>
+                    <p>Highest volume, budget-constrained, quality can vary</p>
+                    <div class="recommendation mistral">✅ Recommended: GPT-oss 20B ($0.08/$0.35)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Line -->
+        <section class="content-section">
+            <h2>📝 The Bottom Line</h2>
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;">
+                <p style="font-size:16px;line-height:1.7;margin:0;">
+                    <strong>If you want the cheapest option with strong quality:</strong> Switch to Mistral Small 4. It's 57% cheaper,
+                    uses OpenAI-compatible API format — migration takes 5-10 minutes.
+                </p>
+                <p style="font-size:16px;line-height:1.7;margin:16px 0 0;">
+                    <strong>If you need OpenAI ecosystem features:</strong> Stay with GPT-5.4 nano.
+                    Same API key, same SDK, no changes needed. You pay more for OpenAI integration.
+                </p>
+                <p style="font-size:16px;line-height:1.7;margin:16px 0 0;">
+                    <strong>If you want the absolute cheapest:</strong> GPT-oss 20B at $0.08/$0.35 per million tokens
+                    is 67% cheaper than GPT-5.4 nano. Open-source, self-hostable.
+                </p>
+            </div>
+        </section>
+
+        <!-- Pro Upsell -->
+        <section class="content-section">
+            <div class="pro-section">
+                <h2>🚀 Find the Cheapest Model for YOUR Workload</h2>
+                <p style="color:var(--text-secondary);margin-bottom:8px;">
+                    Don't guess. Use APIpulse Pro to calculate exact costs across all 48 models based on YOUR token usage.
+                </p>
+                <ul style="list-style:none;padding:0;margin:0 0 16px;text-align:left;max-width:400px;margin-left:auto;margin-right:auto;">
+                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Save & compare up to 10 migration scenarios</li>
+                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Export PDF cost reports for your team</li>
+                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Get personalized optimization recommendations</li>
+                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Cost alerts when provider prices change</li>
+                </ul>
+                <div class="price"><span id="ab-pro-price">$29</span> <span style="font-size:14px;color:var(--text-muted);font-weight:400;">one-time · lifetime</span></div>
+                <a href="#" class="cta" id="ab-pro-cta">Get Pro — Lifetime Access</a>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee · No subscription — ever</p>
+            </div>
+        </section>
+
+        <!-- Related Resources -->
+        <section class="related-section">
+            <h2>📚 More Resources</h2>
+            <div class="related-grid">
+                <a href="compare.html" class="related-card">
+                    <h3>📊 All Comparisons</h3>
+                    <p>Compare all 48 models side by side</p>
+                </a>
+                <a href="calculator.html" class="related-card">
+                    <h3>🧮 Cost Calculator</h3>
+                    <p>Calculate your exact costs with 48 models</p>
+                </a>
+                <a href="ai-api-cost-optimization-guide.html" class="related-card">
+                    <h3>💡 Cost Optimization Guide</h3>
+                    <p>Save 40-90% on your AI API costs</p>
+                </a>
+                <a href="pricing-heatmap.html" class="related-card">
+                    <h3>🔥 Pricing Heatmap</h3>
+                    <p>Visual pricing comparison across all models</p>
+                </a>
+                <a href="ai-model-quiz.html" class="related-card">
+                    <h3>❓ AI Model Quiz</h3>
+                    <p>Find the best model for your use case</p>
+                </a>
+                <a href="go.html?from=gpt5nanovsmistralsmall4" class="related-card">
+                    <h3>🚀 Get Pro</h3>
+                    <p>48-model comparison, migration tools, PDF reports</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Pro CTA -->
+        <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
+            <div style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(16,185,129,0.06));border:1px solid rgba(34,197,94,0.2);border-radius:16px;padding:32px;text-align:center;">
+                <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Stop guessing — get exact costs for every model</h2>
+                <p style="font-size:15px;color:var(--text-secondary);margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto;">Pro gives you 48-model comparison, migration code snippets, PDF reports, and personalized optimization tips.</p>
+                <a href="go.html?from=gpt5nanovsmistralsmall4" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--green),#10b981);color:white;border:none;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 4px 20px rgba(34,197,94,0.4);transition:all 0.2s;">Get Pro — $29 lifetime</a>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">✅ 14-day money-back guarantee · ⚡ Instant access · 🔒 One-time payment</p>
+            </div>
+        </div>
+
+        <!-- Footer CTA -->
+        <section style="text-align:center;padding:48px 24px;">
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">
+                Built by <a href="https://getapipulse.com" style="color:var(--accent);">APIpulse</a> — Know your AI API costs before you commit.
+            </p>
+            <p style="font-size:13px;color:var(--text-muted);">
+                48 models · 10 providers · 156 tools · Always up-to-date pricing data
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="go.html?from=pro_page">Pro</a>
+                <a href="sitemap.xml">Sitemap</a>
+            </div>
+            <p class="footer-copy">© 2026 APIpulse · Built for developers who care about costs</p>
+        </div>
+    </footer>
+    <!-- Exit Intent Popup -->
+    <div id="exit-popup" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;width:calc(100% - 48px);text-align:center;box-shadow:0 24px 64px rgba(0,0,0,0.5);">
+            <button onclick="closeExitPopup()" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;padding:4px 8px;">✕</button>
+            <div style="font-size:48px;margin-bottom:12px;">💸</div>
+            <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Ultra-budget models compared — now optimize</h2>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.5;">You've compared GPT-5.4 nano vs Mistral Small 4. Get Pro to access migration tools, cost calculators, and optimization guides for all 48 models.</p>
+            <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+                <div style="font-size:13px;color:var(--text-muted);">✓ 48 models compared</div>
+                <div style="font-size:13px;color:var(--text-muted);">✓ Migration tools</div>
+                <div style="font-size:13px;color:var(--text-muted);">✓ One-time payment</div>
+            </div>
+            <a href="go.html?from=gpt5nanovsmistralsmall4_exit" id="exit-popup-cta" style="display:inline-block;background:var(--green);color:white;padding:14px 36px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(34,197,94,0.3);">Get Pro — $29 lifetime</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">One-time payment · Lifetime access · 14-day money-back guarantee</p>
+        </div>
+    </div>
+    <script>
+    (function() {
+        if (sessionStorage.getItem('exit_popup_shown')) return;
+        var triggered = false;
+        function showExitPopup() {
+            if (triggered) return;
+            triggered = true;
+            sessionStorage.setItem('exit_popup_shown', '1');
+            document.getElementById('exit-popup').style.display = 'block';
+            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Get Pro — $' + window._abPrice + ' lifetime';
+            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
+            if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'gpt5nano-vs-mistralsmall4' });
+        }
+        document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });
+        document.getElementById('exit-popup-cta').addEventListener('click', function() {
+            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', page: 'gpt5nano-vs-mistralsmall4' });
+        });
+        document.getElementById('exit-popup').addEventListener('click', function(e) { if (e.target === this) closeExitPopup(); });
+    })();
+    function closeExitPopup() {
+        document.getElementById('exit-popup').style.display = 'none';
+        if (window.trackEvent) window.trackEvent('exit_popup_dismissed', { page: 'gpt5nano-vs-mistralsmall4' });
+    }
+    </script>
+</body>
+</html>
