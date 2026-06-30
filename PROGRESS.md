@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1025 (Jun 30):** Added cost health check cross-links to 20 high-traffic pages. Health check was linked from only 10 pages — now linked from 30+. Added to index.html, comparison-gate.js (275+ pages), flash-19, deal, go, pricing, trial-expired, 5 blog posts, and 6 tool pages. 1 commit, 20 files.
 - **Session 1024 (Jun 30):** Massive gating expansion — 373→533 pages gated (+160). Added gate to 12 comparison pages, 38 cheapest/pricing pages, 7 blog posts, 6 tool pages, 74 more pages with model-name tables, 22 calculator/tool pages. Verified: 0 comparison pages ungated, 0 stale counts. 3 commits, 161 files.
 - **Session 1023 (Jun 30):** Extended comparison gating to 34 more pages (339→373 total). Added gate to 14 comparison pages missing the script + 20 alternatives/pricing pages. Fixed missing og:title and twitter:card on community.html and flash-deal.html. 3 commits, 36 files.
 - **Session 1022 (Jun 30):** Created comparison-gate.js — automatic table row gating for conversion. Added Pro gate to 339 comparison pages (was 51). Visitors see top 3 models free, remaining gated behind Pro CTA. Biggest conversion change this session. 1 commit, 340 files.

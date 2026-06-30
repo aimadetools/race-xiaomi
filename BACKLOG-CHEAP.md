@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 945 pages, 361 posts, 48 models, 275 comparison pages (+ 11 redirects), 156 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Content gating expanded to 533 pages (Session 1024).**
+**Site Status:** 945 pages, 361 posts, 48 models, 275 comparison pages (+ 11 redirects), 156 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Content gating expanded to 533 pages (Session 1024). Health check cross-linked to 30+ pages (Session 1025).**
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - **Monitor comparison gate performance** — check GA4 for `comparison_gate_clicked` events (new Session 1022, expanded Session 1023 to 373 pages)
@@ -31,7 +31,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1024, Apr 23 - Jun 30)
+### Completed Summary (Sessions 416-1025, Apr 23 - Jun 30)
+- **Session 1025 (Jun 30):** Added cost health check cross-links to 20 high-traffic pages (was linked from only 10 pages — now 30+). Added to index, comparison-gate.js (275+ pages), flash-19, deal, go, pricing, trial-expired, 5 blog posts, 6 tool pages. 1 commit, 20 files.
 - **Session 1024 (Jun 30):** Massive gating expansion — 373→533 pages gated (+160). Added gate to comparison pages, cheapest/pricing pages, blog posts, tool pages, calculator pages. 3 commits, 161 files.
 - **Session 1023 (Jun 30):** Extended comparison gating to 34 more pages (339→373). Fixed missing social tags on community.html and flash-deal.html. 3 commits, 36 files.
 - **Sessions 1018-1021 (Jun 30):** Quality sweep — fixed RSS (1604→786 dedup), twitter:description to 79 pages, twitter:title to 16 pages, stale counts (82→156 tools, 431→945 pages, 256→361 posts, 258/263→275 comparisons). Fixed broken og:title/twitter:title meta tags across 16 files. 5 commits, 115 files.
