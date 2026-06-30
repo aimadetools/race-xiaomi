@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 948 pages, 361 posts, 48 models, 260 comparison pages (+ 29 redirects), 156 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Content gating expanded to 533 pages (Session 1024). Health check cross-linked to 30+ pages (Session 1025). 18 duplicate comparison pages fixed (Session 1026). New Opus 4.8 vs Gemini 3.1 Pro comparison (Session 1027). Budget model comparisons added (Session 1028).**
+**Site Status:** 949 pages, 361 posts, 48 models, 261 comparison pages (+ 29 redirects), 156 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Content gating expanded to 533 pages (Session 1024). Health check cross-linked to 30+ pages (Session 1025). 18 duplicate comparison pages fixed (Session 1026). New Opus 4.8 vs Gemini 3.1 Pro comparison (Session 1027). Budget model comparisons added (Sessions 1028-1029).**
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - **Monitor comparison gate performance** — check GA4 for `comparison_gate_clicked` events (new Session 1022, expanded Session 1023 to 373 pages)
@@ -31,7 +31,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1028, Apr 23 - Jun 30)
+### Completed Summary (Sessions 416-1029, Apr 23 - Jun 30)
+- **Session 1029 (Jun 30):** Added GPT-5.4 nano vs Mistral Small 4 ultra-budget comparison page. Mistral 57% cheaper. Sitemap 912→913 URLs. 1 commit, 3 files.
 - **Session 1028 (Jun 30):** Added GPT-5.4 mini vs DeepSeek V4 Pro and GPT-5.4 nano vs Llama 4 Scout comparison pages. Budget model showdowns. Sitemap 910→912 URLs. 1 commit, 4 files.
 - **Session 1027 (Jun 30):** Added Claude Opus 4.8 vs Gemini 3.1 Pro comparison page. Gemini 56% cheaper. 1 commit, 2 files.
 - **Session 1026 (Jun 30):** Fixed 18 duplicate comparison pages with competing canonicals. Sitemap 927→909 URLs. 4 commits, 21 files.
