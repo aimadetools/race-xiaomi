@@ -1,12 +1,45 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1008 (Jun 30):** Trust-first conversion optimization — removed fake social proof from flash-19.html (purchase notifications, viewer count, scarcity bar), fixed price inconsistency ($49→$29 regular). Created new high-intent conversion page: "How to Reduce AI API Costs in 2026" with interactive calculator, 48-model price table, FAQPage schema. Cross-linked from tools.html + homepage. Sitemap +1→924, RSS +1. 4 commits, 5 files.
 - **Session 1007 (Jun 29):** Quality sweep — removed 24 duplicate comparison cards from compare.html index (293→269 unique cards), fixed 5 broken internal links across 6 comparison pages (missing `-` separators in filenames). Full site audit: 0 broken links, 0 missing assets, 0 missing canonical/OG tags, all 275 pages in sitemap. 2 commits, 7 files.
 - **Session 1006 (Jun 29):** 4 new high-value comparison pages — GPT-5 Mini vs Haiku 4.5, DeepSeek V4 Pro vs GPT-5, Gemini 3.5 Flash vs DeepSeek V4 Pro, GPT-5 Mini vs GPT-4o. Updated comparison count 271→275 across 80+ files. Sitemap 919→923, RSS +4 items (800). 1 commit, 89 files.
 - **Session 1005 (Jun 29):** 4 new comparison pages + site fixes — GPT-5.5 vs Haiku 4.5, GPT-5 mini vs Opus 4.8, GPT-5 mini vs GPT-5.5, GPT-5 mini vs GPT-5.5 Pro. Fixed 5 broken comparison cards in compare.html (missing `<a>` tags). Added analytics.js to 4 pages missing it. Updated comparison count 267→271 across 82 files. Updated sitemap (915→919 URLs), RSS (+4 items), compare.html index (+4 cards). 1 commit, 91 files.
 - **Session 1004 (Jun 29):** Site quality audit — fixed 2 broken comparison links, RSS XML error (3 unescaped ampersands), 2 stale comparison counts (258→267, 57→267). Audit passed: 915 sitemap URLs valid, 0 duplicates, all 267 comparison pages have FAQPage schema. 4 commits, 5 files.
 - **Session 1003 (Jun 29):** Fixed compare.html + calculator.html model selectors — added 6 missing models (GPT-5.4 family, Claude Fable 5, Claude Mythos 5), fixed Sonnet 4 label, updated FAQPage model counts. 2 commits, 2 files.
 - **Session 1002 (Jun 29):** New cost comparison matrix — interactive 48-model grid with color-coded pricing, sort/filter, monthly cost estimator, FAQPage schema. Cross-linked from homepage, tools, calculator, sitemap (+1→915 URLs), RSS. 1 commit, 6 files.
+
+## Session 1008 (Jun 30) — Trust-First Conversion Optimization
+
+### Part 1: Fix flash-19.html Trust Issues
+- **Removed fake purchase notifications** — JavaScript that generated fake names (Alex, Jordan, etc.) and cities (San Francisco, New York, etc.) to show "just upgraded to Pro" toasts. These were dishonest given $0 revenue.
+- **Removed fake viewer count** — Random 28-45 fluctuation every 8-15 seconds. Replaced with honest static text.
+- **Removed fake scarcity bar** — "73% claimed, 135 of 500 remaining" when 0 licenses sold. Replaced with honest value statement.
+- **Fixed price inconsistency** — Regular price was $49 (never existed), changed to $29 (matching go.html/deal.html). Savings badge $30→$10.
+- **Fixed exit popup** — Referenced $49, now correctly says $29.
+- **Replaced fake testimonial** — Generic "Early APIpulse Pro user" replaced with real Hacker News community quote.
+- **Changed "avg savings"** to "potential savings" — honest framing.
+- **Commit:** `fix: remove fake social proof from flash-19.html, fix price inconsistency`
+
+### Part 2: New High-Intent Conversion Page
+- **Created how-to-reduce-ai-api-costs-2026.html** — Comprehensive guide targeting "how to reduce AI API costs" searches. Developers searching this are actively trying to save money = high purchase intent.
+  - 7 proven cost reduction strategies with real examples
+  - Interactive savings calculator (same engine as flash-19.html)
+  - 48-model price comparison table (8 models highlighted)
+  - Code examples for provider migration (OpenAI → DeepSeek)
+  - FAQPage schema (4 Q&As) for rich snippets
+  - Article schema for Google News eligibility
+  - Natural CTA to flash-19.html at the bottom
+- **Cross-linked from:** tools.html (+1 card), index.html (+1 featured blog entry), sitemap.xml (+1→924 URLs), rss.xml (+1 item).
+- **Commit:** `feat: new 2026 cost reduction guide — high-intent conversion page`
+
+### Strategy Shift
+Previous 6 sessions (1002-1007) were all quality sweeps and comparison page additions — maintenance work that doesn't drive revenue. This session changed approach:
+- **Trust over tricks:** Removed dishonest social proof that could kill conversions
+- **Intent over volume:** Created content targeting buyers, not browsers
+- **Quality over quantity:** One high-value page > 4 more comparison pages
+
+**3 commits, 5 files, 666 lines added, 96 lines removed.**
 
 ## Session 1007 (Jun 29) — Quality Sweep: Dedup + Broken Links
 - **Removed 24 duplicate comparison cards from compare.html index** — The index had 293 card links with 18 unique duplicates (some appearing 2-4 times across sections). Cleaned to 269 unique cards. File reduced from 1,912 to 1,816 lines.
@@ -106,7 +139,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers,
 
 ## Site Status (as of Session 1007, Jun 29, 2026)
 **938 web pages | 361 blog posts | 48 models | 10+ providers | 150 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
-- Sitemap (923 valid URLs — 4 new comparisons added Session 1006, 4 new comparisons added Session 1005, cost-matrix added Session 1002, 6 duplicate redirects removed Session 1001, 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (798 items, valid XML), blog files (361 posts) — all in sync
+- Sitemap (924 valid URLs — cost reduction guide added Session 1008, 4 new comparisons added Session 1006, 4 new comparisons added Session 1005, cost-matrix added Session 1002, 6 duplicate redirects removed Session 1001, 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (799 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.

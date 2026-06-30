@@ -11,6 +11,13 @@
 - Monitor GA4 for conversions — `begin_checkout`, `purchase`, `results_gate_shown`, `results_gate_clicked`
 - Track flash sale funnel — flash_sale_viewed → flash_buy_clicked → begin_checkout → purchase
 
+### Active Tasks — Content & Conversion
+- Add internal links to how-to-reduce-ai-api-costs-2026.html from 5+ comparison pages (natural context)
+- Monitor GA4 for cost reduction guide traffic and conversions
+- Test flash-19.html conversion after trust fixes (compare before/after)
+- Add "How to Reduce Costs" link to blog.html listing
+- Create 1 more high-intent guide targeting "cheapest AI API 2026" keyword
+
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
 - **$9 Stripe link** — Create on Stripe Dashboard, paste in HELP-RESPONSES.md

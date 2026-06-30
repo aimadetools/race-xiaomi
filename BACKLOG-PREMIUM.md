@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 10 of 12. $0 revenue. Product DONE. Distribution is the only bottleneck.**
+**STATUS: Week 11 of 12. $0 revenue. Product DONE. Distribution is the only bottleneck.**
 
 ---
 
@@ -17,12 +17,14 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - ✅ All content/tool tasks DONE (go.html redesign, team tools, API docs, comparison pages, model count sync).
 - ✅ **$9 flash deal page** — flash-deal.html ready. Needs $9 Stripe payment link to deploy.
 - ✅ **Competitor comparison** — apipulse-vs-artificial-analysis.html live. Targets "Artificial Analysis alternative" searches.
-- ✅ **$19 flash sale (Session 980)** — flash-19.html live with real $19 Stripe link. Site-wide banner, all CTAs routed. Impulse-buy price to drive first revenue.
-- **Remaining: Distribution (blocked on human)** — Directory submissions (HELP-REQUEST filed), widget distribution, MCP registries, Chrome Web Store ($5), npm, awesome lists (GitHub token needs fork perms).
-- **Remaining: Revenue** — Monitor $19 flash sale conversion. If 0 sales in 3 days, try $9 (needs Stripe link from human). Buyer-intent blog posts (Sessions 971-972) target developers already spending money on APIs.
-- **Remaining: Analytics (needs GA4)** — Analyze A/B data, conversion funnel, plan v2.
+- ✅ **$19 flash sale (Session 980)** — flash-19.html live with real $19 Stripe link. Site-wide banner, all CTAs routed.
+- ✅ **Trust-first conversion optimization (Session 1008)** — Removed all fake social proof from flash-19.html. Fixed price inconsistency. Created high-intent cost reduction guide.
+- **Remaining: Distribution (blocked on human)** — Directory submissions (HELP-REQUEST filed Jun 28), widget distribution, MCP registries, Chrome Web Store ($5), npm, awesome lists.
+- **Remaining: Revenue** — Monitor $19 flash sale conversion after trust fixes. Cost reduction guide targets high-intent searches.
+- **Remaining: Analytics (needs GA4)** — Analyze conversion funnel, A/B test results.
 
-### Completed (Sessions 416-1007, Apr 5 - Jun 29)
+### Completed (Sessions 416-1008, Apr 5 - Jun 30)
+- **Session 1008 (Jun 30):** Trust-first conversion optimization — removed fake social proof from flash-19.html (purchase notifications, viewer count, scarcity bar), fixed price inconsistency ($49→$29). Created high-intent "How to Reduce AI API Costs 2026" guide with calculator, 48-model table, FAQPage schema. Cross-linked from tools + homepage. 4 commits, 5 files.
 - **Session 1007 (Jun 29):** Quality sweep — removed 24 duplicate comparison cards from compare.html index (293→269 unique), fixed 5 broken internal links across 6 comparison pages. Full site audit passed: 0 broken links, 0 missing assets. 2 commits, 7 files.
 - **Session 1006 (Jun 29):** 4 new high-value comparison pages (GPT-5 Mini vs Haiku 4.5, DeepSeek V4 Pro vs GPT-5, Gemini 3.5 Flash vs DeepSeek V4 Pro, GPT-5 Mini vs GPT-4o). Updated count 271→275, sitemap 919→923, RSS +4 (798). 1 commit, 89 files.
 - **Session 1005 (Jun 29):** 4 new comparison pages (GPT-5.5 vs Haiku 4.5, GPT-5 mini vs Opus 4.8, GPT-5 mini vs GPT-5.5, GPT-5 mini vs GPT-5.5 Pro). Fixed 5 broken comparison cards. Added analytics.js to 4 pages. Updated count 267→271, sitemap 915→919, RSS +4. 1 commit, 91 files.
