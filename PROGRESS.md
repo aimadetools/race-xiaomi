@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1020 (Jun 30):** Fixed 3 remaining stale tool count refs (155→156) in changelog.html + tools.html meta tags. Fixed HTML syntax error (extra `>` in twitter:title tag). 1 commit, 2 files.
 - **Session 1019 (Jun 30):** Stale count sweep — fixed "82 tools" → 156 in 5 pages, "431 pages, 256 posts" → 945/361 in changelog, stale comparison counts 258/263→275 in 6 pages, tool count 155→156 (actual card count). 3 commits, 11 files.
 - **Session 1018 (Jun 30):** Quality sweep — fixed RSS feed (1604→786 items, removed 818 duplicates), added twitter:description to 79 pages, twitter:title to 16 pages, fixed stale "87 comparisons" → 275 on migration hub. Verified 927 sitemap URLs, 0 broken links, all pages have analytics.js + shared.js. 4 commits, 97 files.
 - **Session 1017 (Jun 30):** Fixed pricing consistency across 6 conversion pages — replaced misleading "was $49" strikethroughs with honest "→ $49 Jul 12" urgency. Fixed stale tool count 82→155. Launched background agent to add og:description to 6 comparison pages. 2 commits, 8 files.
@@ -36,119 +37,21 @@
 
 **4 commits, 97 files, 79 insertions, 10,371 deletions.**
 
-## Session 1017 (Jun 30) — Pricing Consistency & Trust Fixes
+## Session 1017 (Jun 30) — Fixed pricing consistency across 6 conversion pages — replaced misleading "was $49" strikethroughs with honest "→ $49 Jul 12" urgency. Fixed stale tool count 82→155. Launched background agent to add og:description to 6 comparison pages. 2 commits, 8 files.
 
-### Problem
-Session 1011 fixed flash-19.html's "was $49" → "was $29" pricing inconsistency, but missed 6 other conversion-critical pages. Visitors clicking from blog posts, go.html, deal.html, and pricing dashboard saw "was $49" — implying the regular price was $49 when it's actually $29. This eroded trust at the point of highest purchase intent.
+## Session 1016 (Jun 30) — Built AI API Migration Code Generator — interactive tool generating Python/Node.js/curl code for switching providers. Supports 8 providers, 40+ models. Cost savings calculator, FAQPage + WebApplication schema. Cross-linked from tools, homepage, cost reduction guide, sitemap (+1→927), RSS. 1 commit, 6 files.
 
-### Fixed Pages
-- **go.html** — Hero CTA: "$29 ~~$49~~" → "$29 → $49 Jul 12". Bottom CTA: same fix. Sticky bar: "was $49" → "→ $49 Jul 12". Price-was display hidden during founding period. JavaScript: dynamic "was" price now shows "→ $49 Jul 12" instead of "was $49".
-- **deal.html** — Price card: "was $49" → "Goes to $49 on Jul 12". Desktop sticky: "was $49" → "→ $49 Jul 12".
-- **flash-deal.html** — "Regular price: $49" → "$29". Savings badge: "Save 82%" → "Save 69%".
-- **pricing-dashboard.html** — Flash sale strikethrough: $49 → $29.
-- **claude-4-is-down.html** — Old-price and shutdown special displays: "$29 ~~$49~~" → "$29 → $49 Jul 12".
-- **trial-expired.html** — Was-price: "$49" → "Goes to $49 Jul 12".
+## Session 1015 (Jun 30) — Overhauled Free vs Pro comparison page (compare-plans.html) — replaced stale $29 pricing with $19 flash sale, added interactive live demo showing blurred Pro-only content, "Who should upgrade" section, new FAQPage schema. Cross-linked from flash-19.html + tools.html. 1 commit, 4 files.
 
-### Pricing Model Clarification
-- Flash sale: $19 (temporary, ends July 12)
-- Regular price: $29 (current — this IS the founding member price)
-- Future price: $49 (after July 12)
-- The "was $49" was showing the FUTURE price as if it were a past price. Fixed to show honest urgency messaging.
+## Session 1014 (Jun 30) — Added pricing heatmap cross-links to 266 comparison pages. Quiz link already on flash-19.html. 1 commit, 266 files.
 
-### Also Fixed
-- **tools.html** — Tool count: 142/141 → 155 (actual card count). Title, meta, og, schema all updated.
-- **changelog.html** — Tool count: 82 → 155 in meta tags.
-- **6 comparison pages** — Background agent adding missing og:description and twitter:description tags for SEO.
+## Session 1013 (Jun 30) — New viral tools — Pricing Heatmap (interactive 48-model cost visualization) + AI Model Quiz (personalized recommender). Cross-linked from tools, homepage, sitemap, RSS. 2 commits, 13 files.
 
-**2 commits, 8 files, 23 insertions, 18 deletions.**
+## Session 1012 (Jun 30) — Fixed 13 stale "42 Models" → "48 Models" across quality pages. 1 commit, 13 files.
 
-## Session 1016 (Jun 30) — AI API Migration Code Generator
+## Session 1011 (Jun 30) — Fixed pricing inconsistency across flash sale pages. 1 commit, 7 files.
 
-### Problem
-With 1,200 visitors/week and $0 revenue, the site needed a new conversion-oriented tool. Previous sessions built calculators, heatmaps, quizzes, and comparisons — but no tool that directly helped developers SWITCH providers. Migration code is a Pro feature ("migration code snippets for every provider switch"), so a free tool that demonstrates this value creates a natural conversion path.
-
-### Built: AI API Migration Code Generator (migration-code-generator.html)
-- **Interactive tool** that generates ready-to-use Python, Node.js, and curl code for switching between AI API providers
-- **8 providers supported:** OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Together.ai, xAI
-- **40+ models** with accurate pricing data from data/pricing.json
-- **Provider-specific code:** Handles API format differences (OpenAI-compatible vs Anthropic vs Google vs Cohere)
-- **Cost savings calculator:** Real-time display of input/output cost savings, per-1M-token savings, and annual savings estimate
-- **Copy-paste ready:** One-click copy for each code snippet
-- **Migration notes:** Provider-specific gotchas (e.g., Anthropic system prompt format, Google maxOutputTokens)
-- **FAQPage schema:** 3 migration-focused Q&As targeting "how to migrate from X to Y" searches
-- **WebApplication schema:** For rich search results
-- **Natural CTA:** "Get full migration code for all 48 models" → flash-19.html Pro upgrade
-
-### Cross-Links Added
-- **tools.html:** +1 featured card with "✨ NEW" tag
-- **index.html:** +1 link in Explore Our Tools section
-- **how-to-reduce-ai-api-costs-2026.html:** +1 Related Tools link alongside pricing heatmap
-- **sitemap.xml:** +1 URL (927 total)
-- **rss.xml:** +1 feed item
-
-**1 commit, 6 files, 6,489 lines added, 10 lines removed.**
-
-## Session 1015 (Jun 30) — Free vs Pro Page Overhaul
-
-### Problem
-The existing compare-plans.html showed stale $29 pricing (flash sale is $19) and lacked a compelling demo of what Pro unlocks. Visitors comparing free vs paid had no visual proof of the value gap.
-
-### Changes
-- **Replaced compare-plans.html** with new conversion-focused design — clean comparison table, interactive live demo, $19 flash sale pricing
-- **Added live demo section** — shows GPT-5.5 alternatives with 3 visible (free) and 4 blurred (Pro-only) rows
-- **Added "Who should upgrade" section** — 4 persona cards
-- **Updated FAQPage schema** — 4 new conversion-focused Q&As
-- **Cross-linked from flash-19.html + tools.html**
-- **Updated RSS feed** — new entry
-- **Removed duplicate free-vs-pro.html**
-
-**1 commit, 4 files, 577 lines added, 467 lines removed.**
-
-## Session 1014 (Jun 30) — Cross-Link Viral Tools from Comparison Pages
-
-- **Added pricing heatmap link to 266 comparison pages** — All pages with the Related Tools section that had the pricing dashboard card but were missing the heatmap card.
-- **Card style:** Red accent border (#ef4444), matching existing pages.
-
-**1 commit, 266 files, 1,064 lines added.**
-
-## Session 1013 (Jun 30) — Break the Loop: New Viral Tools
-
-### Built: AI API Pricing Heatmap (pricing-heatmap.html)
-- Interactive heatmap showing cost per million tokens across all 48 AI models
-- Color-coded (green=cheap, red=expensive), toggle metrics, hover tooltips
-- Share buttons (X, LinkedIn, HN), FAQPage schema, WebApplication schema
-- Cross-linked from tools, homepage, cost reduction guide, sitemap, RSS
-
-### Built: AI Model Quiz (ai-model-quiz.html)
-- 5-question interactive quiz with personalized recommendation engine
-- 3 alternative suggestions, shareable results, ecosystem-aware
-- FAQPage schema, natural CTAs to flash-19.html
-- Cross-linked from tools, homepage, sitemap, RSS
-
-**2 commits, 13 files, 1,143 lines added.**
-
-## Session 1012 (Jun 30) — Fix Stale Model Count References
-
-- Fixed 13 pages with stale "42 Models" → "48 Models" in stat boxes and social proof sections
-- Left blog posts with historical references unchanged
-
-**1 commit, 13 files, 13 lines changed.**
-
-## Session 1011 (Jun 30) — Fix Pricing Inconsistency Across Flash Sale Pages
-
-- Fixed 7 pages with stale "was $49" when regular price is $29
-- Flash-19.html, go.html, 3 blog posts, pricing-dashboard.html, quick-savings.html
-- Full site audit passed: 0 broken links, all 275 comparisons have FAQPage schema
-
-**1 commit, 7 files, 12 lines changed.**
-
-## Session 1010 (Jun 30) — Massive Cross-Link Expansion
-
-- Added cost reduction guide link to 49 premium model comparison pages (GPT-5.5, GPT-5.5 Pro, Opus 4.8, Gemini 3.1 Pro)
-- Fixed stale "258 Comparison Pages" reference
-- Total cost reduction guide links: 56 pages
-
-**1 commit, 50 files, 246 lines added.**
+## Session 1010 (Jun 30) — Added cost reduction guide cross-links to 49 premium comparison pages. 1 commit, 50 files.
 
 ## Sessions 980-1009 (Jun 29-30) — Conversion Optimization & Distribution
 
@@ -173,7 +76,7 @@ The existing compare-plans.html showed stale $29 pricing (flash sale is $19) and
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1019, Jun 30, 2026)
+## Site Status (as of Session 1020, Jun 30, 2026)
 **945 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
 - Sitemap (927 valid URLs), RSS (786 items, deduplicated & sorted), blog files (361 posts) — all in sync
 - **Pricing consistency: FIXED (Session 1011 + 1017)** — All conversion pages now correctly show $29 regular price. "Was $49" replaced with "→ $49 Jul 12" urgency messaging. Flash sale: $19, regular: $29, future (post Jul 12): $49.
