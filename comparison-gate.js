@@ -21,10 +21,12 @@
             var rows = table.querySelectorAll('tbody tr');
             if (rows.length <= FREE_ROWS) return; // Too few rows to gate
 
-            // Check if this is a pricing table (has model names)
+            // Check if this is a pricing table (has .model-name cells specifically)
+            // This prevents gating feature-comparison tables (compare-*.html) which use
+            // generic td:first-child for labels like "Input Price" — not model names.
             var hasModelNames = false;
             rows.forEach(function(row) {
-                var nameCell = row.querySelector('.model-name, td:first-child');
+                var nameCell = row.querySelector('.model-name');
                 if (nameCell && nameCell.textContent.trim().length > 2) {
                     hasModelNames = true;
                 }
