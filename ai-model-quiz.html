@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which AI Model Should You Use? — Free Quiz | APIpulse</title>
+    <meta name="description" content="Answer 5 quick questions and get a personalized AI model recommendation. Find the best LLM for your use case, budget, and team size. Free, instant results.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://getapipulse.com/ai-model-quiz.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Which AI Model Should You Use? — Free Quiz">
+    <meta property="og:description" content="5 questions. Your perfect AI model recommendation. Find the best LLM for chatbots, code, agents, or RAG.">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-model-quiz.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Which AI Model Should You Use?">
+    <meta name="twitter:description" content="5 questions. Your perfect AI model recommendation.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which AI model is best for building chatbots?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For chatbots, Claude Sonnet 4.6 or GPT-5 offer the best balance of quality and cost. For budget chatbots, DeepSeek V4 Pro delivers surprisingly capable results at 90% lower cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best AI model for code generation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Opus 4.8 and GPT-5.5 lead for code generation tasks. For high-volume code assistance, GPT-5.3 Codex offers specialized coding capabilities at lower cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I choose between AI API providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Consider your priority: quality (OpenAI/Anthropic premium), cost (DeepSeek/Mistral budget), context window (Google's 1M tokens), or ecosystem (Meta Llama for self-hosting). Use our free quiz to get a personalized recommendation."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .quiz-page { max-width: 640px; margin: 0 auto; padding: 40px 20px 60px; }
+        .quiz-hero { text-align: center; margin-bottom: 32px; }
+        .quiz-hero h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 900; margin-bottom: 8px; }
+        .quiz-hero .sub { color: var(--text-secondary); font-size: 15px; }
+        /* Progress */
+        .quiz-progress { display: flex; gap: 6px; margin-bottom: 32px; justify-content: center; }
+        .quiz-progress .dot {
+            width: 40px; height: 6px; border-radius: 3px;
+            background: var(--border); transition: background 0.3s;
+        }
+        .quiz-progress .dot.done { background: var(--accent); }
+        .quiz-progress .dot.current { background: var(--green); }
+        /* Question */
+        .quiz-question {
+            display: none; animation: fadeIn 0.3s ease;
+        }
+        .quiz-question.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .quiz-question h2 {
+            font-size: 20px; font-weight: 700; margin-bottom: 20px; text-align: center;
+        }
+        .quiz-options { display: flex; flex-direction: column; gap: 10px; }
+        .quiz-option {
+            display: flex; align-items: center; gap: 12px;
+            padding: 16px 20px;
+            background: var(--bg-card); border: 2px solid var(--border);
+            border-radius: 12px; cursor: pointer; transition: all 0.2s;
+        }
+        .quiz-option:hover { border-color: var(--accent); transform: translateX(4px); }
+        .quiz-option.selected { border-color: var(--accent); background: rgba(99,102,241,0.08); }
+        .quiz-option .opt-icon { font-size: 24px; flex-shrink: 0; }
+        .quiz-option .opt-text { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+        .quiz-option .opt-desc { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+        /* Result */
+        .quiz-result {
+            display: none; animation: fadeIn 0.4s ease;
+        }
+        .quiz-result.active { display: block; }
+        .result-card {
+            background: var(--bg-card); border: 2px solid var(--accent);
+            border-radius: 16px; padding: 28px; text-align: center;
+            margin-bottom: 20px;
+        }
+        .result-card .match-label {
+            font-size: 13px; color: var(--accent); font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+        }
+        .result-card h2 { font-size: 28px; font-weight: 900; margin-bottom: 4px; }
+        .result-card .provider { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
+        .result-pricing {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+            margin: 16px 0; text-align: center;
+        }
+        .result-pricing .rp-item {
+            background: var(--bg-secondary); border-radius: 10px; padding: 12px;
+        }
+        .result-pricing .rp-val {
+            font-size: 22px; font-weight: 900; color: var(--accent); font-family: monospace;
+        }
+        .result-pricing .rp-label { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
+        .result-why {
+            background: var(--bg-secondary); border-radius: 10px;
+            padding: 16px; margin: 16px 0; text-align: left;
+        }
+        .result-why h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+        .result-why ul { margin: 0; padding-left: 18px; }
+        .result-why li { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; line-height: 1.5; }
+        .result-alts {
+            background: var(--bg-secondary); border-radius: 10px;
+            padding: 16px; margin: 16px 0; text-align: left;
+        }
+        .result-alts h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; text-align: center; }
+        .alt-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 8px 0; border-bottom: 1px solid var(--border);
+        }
+        .alt-row:last-child { border-bottom: none; }
+        .alt-row .alt-name { font-size: 13px; font-weight: 600; }
+        .alt-row .alt-cost { font-size: 13px; font-family: monospace; color: var(--accent); }
+        .alt-row .alt-save { font-size: 11px; color: var(--green); }
+        /* CTA buttons */
+        .result-ctas { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        .result-ctas a {
+            display: inline-block; padding: 12px 24px; border-radius: 10px;
+            font-weight: 700; font-size: 14px; text-decoration: none; transition: all 0.2s;
+        }
+        .result-ctas .cta-primary { background: var(--accent); color: white; }
+        .result-ctas .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(99,102,241,0.3); }
+        .result-ctas .cta-secondary {
+            background: var(--bg-card); border: 2px solid var(--border); color: var(--text-primary);
+        }
+        .result-ctas .cta-secondary:hover { border-color: var(--accent); }
+        /* Share */
+        .share-result {
+            text-align: center; margin-top: 24px; padding: 20px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+        }
+        .share-result p { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; }
+        .share-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .share-btns a {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-secondary);
+            font-size: 13px; text-decoration: none; transition: all 0.2s;
+        }
+        .share-btns a:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 480px) {
+            .result-pricing { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-page">
+        <div class="quiz-hero">
+            <h1>🤔 Which AI Model Should You Use?</h1>
+            <p class="sub">5 quick questions → your perfect model recommendation</p>
+        </div>
+
+        <!-- Progress -->
+        <div class="quiz-progress" id="quiz-progress">
+            <div class="dot current"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+
+        <!-- Q1: Use case -->
+        <div class="quiz-question active" id="q1">
+            <h2>What's your primary use case?</h2>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="selectOption(1,'chatbot',this)">
+                    <span class="opt-icon">💬</span>
+                    <div><div class="opt-text">Chatbot / Conversational AI</div><div class="opt-desc">Customer support, virtual assistants, chat interfaces</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(1,'code',this)">
+                    <span class="opt-icon">💻</span>
+                    <div><div class="opt-text">Code Generation & Review</div><div class="opt-desc">Code completion, refactoring, PR reviews, debugging</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(1,'rag',this)">
+                    <span class="opt-icon">📚</span>
+                    <div><div class="opt-text">RAG / Document Processing</div><div class="opt-desc">Search, summarization, Q&A over documents</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(1,'agent',this)">
+                    <span class="opt-icon">🤖</span>
+                    <div><div class="opt-text">AI Agents / Automation</div><div class="opt-desc">Tool use, multi-step workflows, autonomous tasks</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q2: Budget -->
+        <div class="quiz-question" id="q2">
+            <h2>What's your monthly API budget?</h2>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="selectOption(2,'low',this)">
+                    <span class="opt-icon">💰</span>
+                    <div><div class="opt-text">Under $50/month</div><div class="opt-desc">Side project or early startup — every dollar counts</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(2,'mid',this)">
+                    <span class="opt-icon">💰💰</span>
+                    <div><div class="opt-text">$50–$500/month</div><div class="opt-desc">Growing product with real users</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(2,'high',this)">
+                    <span class="opt-icon">💰💰💰</span>
+                    <div><div class="opt-text">$500+/month</div><div class="opt-desc">Production workload — quality matters more than cost</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q3: Priority -->
+        <div class="quiz-question" id="q3">
+            <h2>What matters most to you?</h2>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="selectOption(3,'quality',this)">
+                    <span class="opt-icon">⭐</span>
+                    <div><div class="opt-text">Best quality output</div><div class="opt-desc">Accuracy, reasoning, and nuance matter most</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(3,'speed',this)">
+                    <span class="opt-icon">⚡</span>
+                    <div><div class="opt-text">Fast response times</div><div class="opt-desc">Low latency for real-time applications</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(3,'cost',this)">
+                    <span class="opt-icon">📉</span>
+                    <div><div class="opt-text">Lowest possible cost</div><div class="opt-desc">Optimize for cost per token above all</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(3,'context',this)">
+                    <span class="opt-icon">📏</span>
+                    <div><div class="opt-text">Large context window</div><div class="opt-desc">Need to process long documents or conversations</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q4: Volume -->
+        <div class="quiz-question" id="q4">
+            <h2>How many requests per day?</h2>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="selectOption(4,'low',this)">
+                    <span class="opt-icon">📊</span>
+                    <div><div class="opt-text">Under 1,000/day</div><div class="opt-desc">Low volume — individual or small team usage</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(4,'mid',this)">
+                    <span class="opt-icon">📊📊</span>
+                    <div><div class="opt-text">1,000–50,000/day</div><div class="opt-desc">Medium volume — production application</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(4,'high',this)">
+                    <span class="opt-icon">📊📊📊</span>
+                    <div><div class="opt-text">50,000+/day</div><div class="opt-desc">High volume — scale matters, need good rate limits</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q5: Ecosystem -->
+        <div class="quiz-question" id="q5">
+            <h2>Any ecosystem preference?</h2>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="selectOption(5,'openai',this)">
+                    <span class="opt-icon">🟢</span>
+                    <div><div class="opt-text">OpenAI ecosystem</div><div class="opt-desc">Already using OpenAI SDK/tools, want compatibility</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(5,'anthropic',this)">
+                    <span class="opt-icon">🟠</span>
+                    <div><div class="opt-text">Anthropic ecosystem</div><div class="opt-desc">Value safety, long context, Claude-specific features</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(5,'flexible',this)">
+                    <span class="opt-icon">🔀</span>
+                    <div><div class="opt-text">Flexible / No preference</div><div class="opt-desc">Open to any provider — just want the best option</div></div>
+                </div>
+                <div class="quiz-option" onclick="selectOption(5,'opensource',this)">
+                    <span class="opt-icon">🦙</span>
+                    <div><div class="opt-text">Open source preferred</div><div class="opt-desc">Want to self-host or use open-weight models</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div class="quiz-result" id="quiz-result">
+            <div class="result-card">
+                <div class="match-label">Your Best Match</div>
+                <h2 id="result-name">—</h2>
+                <div class="provider" id="result-provider">—</div>
+                <div class="result-pricing">
+                    <div class="rp-item"><div class="rp-val" id="result-input">$—</div><div class="rp-label">Input / 1M tokens</div></div>
+                    <div class="rp-item"><div class="rp-val" id="result-output">$—</div><div class="rp-label">Output / 1M tokens</div></div>
+                </div>
+                <div style="font-size:13px;color:var(--text-secondary);">Context: <span id="result-context">—</span> · Tier: <span id="result-tier">—</span></div>
+            </div>
+
+            <div class="result-why">
+                <h3>Why this model?</h3>
+                <ul id="result-why-list"></ul>
+            </div>
+
+            <div class="result-alts">
+                <h3>Also consider</h3>
+                <div id="result-alts-list"></div>
+            </div>
+
+            <div class="result-ctas">
+                <a href="flash-19.html" class="cta-primary" onclick="if(typeof gtag==='function')gtag('event','quiz_pro_click',{model:window._quizResult?.id});">Get APIpulse Pro — $19</a>
+                <a href="pricing-heatmap.html" class="cta-secondary">View Pricing Heatmap</a>
+                <a href="go.html" class="cta-secondary">Compare All Models</a>
+            </div>
+
+            <div class="share-result">
+                <p>Share your result with your team</p>
+                <div class="share-btns">
+                    <a id="share-x" href="#" target="_blank" rel="noopener">𝕏 Share</a>
+                    <a id="share-li" href="#" target="_blank" rel="noopener">LinkedIn</a>
+                    <a id="share-hn" href="#" target="_blank" rel="noopener">HN</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related tools -->
+        <div style="margin-top:32px;text-align:center;">
+            <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">More free tools from APIpulse:</p>
+            <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+                <a href="pricing-heatmap.html" style="padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-secondary);text-decoration:none;">🔥 Pricing Heatmap</a>
+                <a href="calculator.html" style="padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-secondary);text-decoration:none;">🧮 Cost Calculator</a>
+                <a href="compare.html" style="padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--text-secondary);text-decoration:none;">📊 Compare Models</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    var answers = {};
+    var currentQ = 1;
+
+    function selectOption(q, value, el) {
+        answers[q] = value;
+        el.classList.add('selected');
+        // Mark siblings as not selected
+        el.parentElement.querySelectorAll('.quiz-option').forEach(function(o) {
+            if (o !== el) o.classList.remove('selected');
+        });
+        // Advance after short delay
+        setTimeout(function() {
+            if (q < 5) {
+                document.getElementById('q' + q).classList.remove('active');
+                document.getElementById('q' + (q+1)).classList.add('active');
+                // Update progress
+                document.querySelectorAll('.quiz-progress .dot')[q-1].classList.remove('current');
+                document.querySelectorAll('.quiz-progress .dot')[q-1].classList.add('done');
+                document.querySelectorAll('.quiz-progress .dot')[q].classList.add('current');
+                currentQ = q + 1;
+            } else {
+                // Show result
+                document.querySelectorAll('.quiz-progress .dot')[4].classList.add('done');
+                document.querySelectorAll('.quiz-progress .dot')[4].classList.remove('current');
+                document.getElementById('q5').classList.remove('active');
+                showResult();
+            }
+        }, 300);
+    }
+
+    function showResult() {
+        // Recommendation engine
+        var useCase = answers[1], budget = answers[2], priority = answers[3], volume = answers[4], eco = answers[5];
+        var model = null;
+        var reasons = [];
+
+        // Ecosystem override
+        if (eco === 'openai') {
+            if (budget === 'high' && priority === 'quality') {
+                model = getModel('openai-gpt55'); reasons = ['GPT-5.5 is OpenAI\'s most capable model', 'Best for complex reasoning and generation', '1.05M context window for long tasks'];
+            } else if (budget === 'low') {
+                model = getModel('openai-gpt5-mini'); reasons = ['GPT-5 mini offers OpenAI quality at budget prices', 'Great for prototyping and side projects', '272K context is generous for the price'];
+            } else {
+                model = getModel('openai-gpt5'); reasons = ['GPT-5 balances quality and cost well', 'Strong across all task types', 'OpenAI ecosystem compatibility'];
+            }
+        } else if (eco === 'anthropic') {
+            if (budget === 'high' && priority === 'quality') {
+                model = getModel('anthropic-opus48'); reasons = ['Claude Opus 4.8 is Anthropic\'s flagship', 'Exceptional reasoning and code generation', '1M context window — process entire codebases'];
+            } else if (budget === 'low') {
+                model = getModel('anthropic-haiku'); reasons = ['Haiku 4.5 is fast and affordable', 'Great for high-volume chatbots', 'Strong instruction following'];
+            } else {
+                model = getModel('anthropic-sonnet46'); reasons = ['Sonnet 4.6 balances quality and cost', '1M context window', 'Excellent for code and analysis'];
+            }
+        } else if (eco === 'opensource') {
+            model = getModel('llama-4-maverick'); reasons = ['Llama 4 Maverick — best open-weight model', 'Run locally or via Together.ai', 'No vendor lock-in, competitive quality'];
+        } else {
+            // Use-case + budget + priority based
+            if (useCase === 'chatbot') {
+                if (budget === 'low') {
+                    model = getModel('deepseek-v4-pro'); reasons = ['DeepSeek V4 Pro: best value for chatbots', '97% cheaper than GPT-5.5 with strong quality', 'Ideal for high-volume chat applications'];
+                } else if (priority === 'quality') {
+                    model = getModel('anthropic-sonnet46'); reasons = ['Sonnet 4.6 excels at natural conversation', 'Strong instruction following and safety', '1M context for long chat histories'];
+                } else {
+                    model = getModel('google-gemini35-flash'); reasons = ['Gemini 3.5 Flash: fast and affordable', 'Great response quality for the price', '1M context window included'];
+                }
+            } else if (useCase === 'code') {
+                if (budget === 'high' && priority === 'quality') {
+                    model = getModel('anthropic-opus48'); reasons = ['Opus 4.8: best coding model available', 'Exceptional at complex refactoring and architecture', '1M context processes entire repos'];
+                } else if (budget === 'low') {
+                    model = getModel('deepseek-v4-pro'); reasons = ['DeepSeek V4 Pro: amazing code quality for the price', '90%+ cheaper than premium alternatives', 'Strong at Python, JS, Go, Rust, and more'];
+                } else {
+                    model = getModel('openai-gpt5'); reasons = ['GPT-5: excellent code generation', 'Strong across all programming languages', 'Good balance of quality and cost'];
+                }
+            } else if (useCase === 'rag') {
+                if (priority === 'context') {
+                    model = getModel('google-gemini35-flash'); reasons = ['Gemini 3.5 Flash: 1M context for huge docs', 'Fast retrieval-augmented responses', 'Cost-effective for document-heavy workloads'];
+                } else if (budget === 'low') {
+                    model = getModel('deepseek-v4-pro'); reasons = ['DeepSeek V4 Pro: RAG at 90% lower cost', 'Good quality for search and summarization', 'Save thousands vs premium models'];
+                } else {
+                    model = getModel('anthropic-sonnet46'); reasons = ['Sonnet 4.6: excellent for document Q&A', '1M context for long documents', 'Strong at following complex instructions'];
+                }
+            } else if (useCase === 'agent') {
+                if (budget === 'high') {
+                    model = getModel('anthropic-opus48'); reasons = ['Opus 4.8: best for complex agent workflows', 'Excellent tool use and multi-step reasoning', 'Most reliable for autonomous tasks'];
+                } else {
+                    model = getModel('openai-gpt5'); reasons = ['GPT-5: strong agent capabilities', 'Good function calling and tool use', 'Reliable for multi-step workflows'];
+                }
+            }
+        }
+
+        if (!model) {
+            model = getModel('deepseek-v4-pro');
+            reasons = ['Best overall value: premium quality at budget price', '97% cheaper than GPT-5.5 for similar tasks', 'Great starting point for any use case'];
+        }
+
+        window._quizResult = model;
+
+        // Fill result
+        document.getElementById('result-name').textContent = model.name;
+        document.getElementById('result-provider').textContent = model.provider + ' · ' + model.tier;
+        document.getElementById('result-input').textContent = '$' + model.input.toFixed(2);
+        document.getElementById('result-output').textContent = '$' + model.output.toFixed(2);
+        document.getElementById('result-context').textContent = model.context;
+        document.getElementById('result-tier').textContent = model.tier;
+
+        var whyList = document.getElementById('result-why-list');
+        whyList.innerHTML = reasons.map(function(r) { return '<li>' + r + '</li>'; }).join('');
+
+        // Alternatives
+        var alts = API_MODELS.filter(function(m) { return m.id !== model.id && !m.deprecated; })
+            .map(function(m) {
+                return { model: m, total: m.input + m.output };
+            })
+            .sort(function(a, b) { return a.total - b.total; });
+
+        var altList = document.getElementById('result-alts-list');
+        // Pick 3 alternatives: 1 cheaper, 1 similar, 1 premium
+        var cheaper = alts.find(function(a) { return a.total < (model.input + model.output) * 0.5; });
+        var similar = alts.find(function(a) { return Math.abs(a.total - (model.input + model.output)) < (model.input + model.output) * 0.3; });
+        var premium = alts.slice().reverse().find(function(a) { return a.total > (model.input + model.output) * 1.5; });
+
+        var shown = [cheaper, similar, premium].filter(Boolean).slice(0, 3);
+        altList.innerHTML = shown.map(function(a) {
+            return '<div class="alt-row"><span class="alt-name">' + a.model.name + ' <span style="color:var(--text-secondary);font-size:11px;">(' + a.model.provider + ')</span></span><span><span class="alt-cost">$' + a.model.input.toFixed(2) + ' / $' + a.model.output.toFixed(2) + '</span></span></div>';
+        }).join('');
+
+        // Share buttons
+        var shareText = 'I just got recommended ' + model.name + ' (' + model.provider + ') for my AI project! Find your perfect model:';
+        var shareUrl = 'https://getapipulse.com/ai-model-quiz.html';
+        document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl);
+        document.getElementById('share-li').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+        document.getElementById('share-hn').href = 'https://news.ycombinator.com/submitlink?u=' + encodeURIComponent(shareUrl) + '&t=' + encodeURIComponent('Which AI Model Should You Use? Quiz');
+
+        // Show result
+        document.getElementById('quiz-result').classList.add('active');
+
+        // Track
+        if (typeof gtag === 'function') {
+            gtag('event', 'quiz_completed', {
+                model: model.id,
+                provider: model.provider,
+                usecase: answers[1],
+                budget: answers[2],
+                priority: answers[3]
+            });
+        }
+    }
+
+    function getModel(id) {
+        return API_MODELS.find(function(m) { return m.id === id; });
+    }
+    </script>
+</body>
+</html>
