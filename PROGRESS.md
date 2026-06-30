@@ -33,10 +33,10 @@ Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
 ## Site Status (as of Session 1026, Jun 30, 2026)
 **945 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 257 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
-- Sitemap (927 valid URLs), RSS (786 items, deduplicated & sorted) — all in sync
+- Sitemap (909 valid URLs), RSS (786 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
 - **Social sharing tags: FIXED (Session 1021)** — All og:title and twitter:title tags properly closed across 16 files.
-- **Structured data: 98.3%** — FAQPage schema on all 275 comparison pages + key tool pages.
+- **Structured data: 98.3%** — FAQPage schema on all 257 comparison pages + key tool pages.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html. All CTAs say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **OG/Twitter social sharing tags: 100%** — All indexed content pages have complete meta tags.
