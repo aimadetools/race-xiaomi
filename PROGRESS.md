@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1009 (Jun 30):** Cross-linked cost reduction guide from blog + 6 comparison pages. Added featured blog card (top position) targeting high-intent "reduce AI API costs" searches. Internal links from Claude 4 Opus vs DeepSeek V4 Pro, Claude 4 Opus vs GPT-5, Claude 4 Opus vs GPT-5.5 Pro, ChatGPT vs DeepSeek, Anthropic vs DeepSeek, Best AI API for Startups. 1 commit, 7 files.
 - **Session 1008 (Jun 30):** Trust-first conversion optimization — removed fake social proof from flash-19.html (purchase notifications, viewer count, scarcity bar), fixed price inconsistency ($49→$29 regular). Created new high-intent conversion page: "How to Reduce AI API Costs in 2026" with interactive calculator, 48-model price table, FAQPage schema. Cross-linked from tools.html + homepage. Sitemap +1→924, RSS +1. 4 commits, 5 files.
 - **Session 1007 (Jun 29):** Quality sweep — removed 24 duplicate comparison cards from compare.html index (293→269 unique cards), fixed 5 broken internal links across 6 comparison pages (missing `-` separators in filenames). Full site audit: 0 broken links, 0 missing assets, 0 missing canonical/OG tags, all 275 pages in sitemap. 2 commits, 7 files.
 - **Session 1006 (Jun 29):** 4 new high-value comparison pages — GPT-5 Mini vs Haiku 4.5, DeepSeek V4 Pro vs GPT-5, Gemini 3.5 Flash vs DeepSeek V4 Pro, GPT-5 Mini vs GPT-4o. Updated comparison count 271→275 across 80+ files. Sitemap 919→923, RSS +4 items (800). 1 commit, 89 files.
@@ -40,6 +41,27 @@ Previous 6 sessions (1002-1007) were all quality sweeps and comparison page addi
 - **Quality over quantity:** One high-value page > 4 more comparison pages
 
 **3 commits, 5 files, 666 lines added, 96 lines removed.**
+
+## Session 1009 (Jun 30) — Cross-Link Cost Reduction Guide
+
+### Blog.html Entry
+- **Added featured blog card** for "How to Reduce AI API Costs in 2026" at the top of blog.html (newest guide, highest intent). Green "COST SAVINGS" tag, June 30 date. Targets developers actively searching for cost reduction.
+
+### Comparison Page Internal Links
+- **Added cost reduction guide link to 6 comparison pages** in the Related Tools section:
+  - `compare-claude4-opus-vs-deepseek-v4pro.html` — 97% savings, most dramatic price gap
+  - `compare-claude4-opus-vs-gpt5.html` — premium Anthropic vs OpenAI
+  - `compare-claude4-opus-vs-gpt55pro.html` — premium vs premium
+  - `compare-chatgpt-vs-deepseek.html` — popular brand comparison
+  - `compare-anthropic-vs-deepseek.html` — provider vs provider
+  - `compare-best-ai-api-for-startups.html` — startups are cost-sensitive
+- Used appropriate format for each page (newer inline-style grid for Session 998+ pages, older `related-card` class for legacy pages)
+- Link text: "💰 How to Reduce API Costs →" / "💰 Reduce API Costs" with "7 proven strategies to cut costs 40-98%" description
+
+### Impact
+- **SEO:** Internal links from 6 high-authority comparison pages boost the cost reduction guide's ranking potential
+- **Conversion:** Blog card targets high-intent searches, natural CTA path to flash-19.html
+- **1 commit, 7 files, 34 lines added.**
 
 ## Session 1007 (Jun 29) — Quality Sweep: Dedup + Broken Links
 - **Removed 24 duplicate comparison cards from compare.html index** — The index had 293 card links with 18 unique duplicates (some appearing 2-4 times across sections). Cleaned to 269 unique cards. File reduced from 1,912 to 1,816 lines.
