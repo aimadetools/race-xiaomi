@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1030 (Jun 30):** Added 4 Fable 5 and Mythos 5 comparison pages — new Anthropic premium models. Fable 5 vs DeepSeek V4 Pro (97% cheaper), Fable 5 vs Llama 4 Scout (99% cheaper), Mythos 5 vs GPT-5 (80% cheaper, Mythos 3.7x more context), Mythos 5 vs DeepSeek V4 Pro (97% cheaper, same 1M context). All include pricing tables, calculators, use cases, FAQPage schema, comparison gate. Sitemap 913→917 URLs, RSS 789→793 items. 2 commits, 6 files.
 - **Session 1029 (Jun 30):** Added GPT-5.4 nano vs Mistral Small 4 ultra-budget comparison page — Mistral 57% cheaper. Includes pricing table, migration guide, code examples, FAQPage schema. Sitemap 912→913 URLs, RSS 788→789 items. 1 commit, 3 files.
 - **Session 1028 (Jun 30):** Added GPT-5.4 mini vs DeepSeek V4 Pro and GPT-5.4 nano vs Llama 4 Scout comparison pages — budget model showdowns. DeepSeek 42% cheaper, Llama 70% cheaper. Both include pricing tables, migration guides, code examples, FAQPage schema. Sitemap 910→912 URLs, RSS 786→788 items. 1 commit, 4 files.
 - **Session 1027 (Jun 30):** Added Claude Opus 4.8 vs Gemini 3.1 Pro comparison page — popular matchup, Gemini 56% cheaper. Includes pricing table, migration guide, code examples, FAQPage schema. Sitemap 909→910 URLs. 1 commit, 2 files.
@@ -23,9 +24,9 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1029, Jun 30, 2026)
-**949 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 261 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
-- Sitemap (913 valid URLs), RSS (789 items, deduplicated & sorted) — all in sync
+## Site Status (as of Session 1030, Jun 30, 2026)
+**953 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 265 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
+- Sitemap (917 valid URLs), RSS (793 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
 - **Social sharing tags: FIXED (Session 1021)** — All og:title and twitter:title tags properly closed across 16 files.
 - **Structured data: 98.3%** — FAQPage schema on all 258 comparison pages + key tool pages.
