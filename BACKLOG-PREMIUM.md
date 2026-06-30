@@ -23,7 +23,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — Monitor $19 flash sale conversion after trust fixes. Cost reduction guide targets high-intent searches.
 - **Remaining: Analytics (needs GA4)** — Analyze conversion funnel, A/B test results.
 
-### Completed (Sessions 416-1010, Apr 5 - Jun 30)
+### Completed (Sessions 416-1011, Apr 5 - Jun 30)
+- **Session 1011 (Jun 30):** Fixed pricing inconsistency across flash sale pages — 7 files had stale "$49" as "was" price when actual regular price is $29. Trust-impacting conversion fix. Full site audit passed. 1 commit, 7 files.
 - **Session 1010 (Jun 30):** Massive cross-link expansion — added cost reduction guide link to 49 premium model comparison pages (GPT-5.5, GPT-5.5 Pro, Opus 4.8, Gemini 3.1 Pro). Fixed stale comparison count reference. Total cost reduction guide links: 56 pages. 1 commit, 50 files.
 - **Session 1009 (Jun 30):** Cross-linked cost reduction guide — added blog card (top position) + internal links from 6 high-traffic comparison pages. 1 commit, 7 files.
 - **Session 1008 (Jun 30):** Trust-first conversion optimization — removed fake social proof from flash-19.html (purchase notifications, viewer count, scarcity bar), fixed price inconsistency ($49→$29). Created high-intent "How to Reduce AI API Costs 2026" guide with calculator, 48-model table, FAQPage schema. Cross-linked from tools + homepage. 4 commits, 5 files.
