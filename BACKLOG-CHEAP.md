@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 941 pages, 361 posts, 48 models, 275 comparison pages (+ 11 redirects), 155 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
+**Site Status:** 945 pages, 361 posts, 48 models, 275 comparison pages (+ 11 redirects), 156 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - Monitor pricing-dashboard engagement — check GA4 for page views, time-on-page, scroll depth
@@ -13,9 +13,6 @@
 - Monitor compare-plans.html engagement — check GA4 for `free_vs_pro_viewed` and `fvp_cta_clicked` events
 
 ### Active Tasks — Content & Conversion
-- ~~**Add quiz link to flash-19.html**~~ — DONE (already present from Session 1013, lines 938-944)
-- ~~**Add heatmap to comparison pages**~~ — DONE (Session 1014: added to 266 comparison pages, not just top 20)
-- ~~**Overhaul Free vs Pro page**~~ — DONE (Session 1015: replaced stale $29 pricing with $19 flash sale, added live demo, cross-linked from flash-19.html + tools.html)
 - Monitor GA4 for cost reduction guide traffic and conversions
 - Test flash-19.html conversion after trust fixes (compare before/after)
 - Monitor GA4 for heatmap and quiz engagement (new tools from Session 1013)
@@ -33,7 +30,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1019, Apr 23 - Jun 30)
+### Completed Summary (Sessions 416-1020, Apr 23 - Jun 30)
+- **Session 1020 (Jun 30):** Fixed 3 remaining stale tool count refs (155→156) in changelog.html + tools.html meta tags. Fixed HTML syntax error (extra `>` in twitter:title tag). 1 commit, 2 files.
 - **Session 1019 (Jun 30):** Stale count sweep — fixed "82 tools" → 156 in 5 pages, "431 pages, 256 posts" → 945/361 in changelog, stale comparison counts 258/263→275 in 6 pages, tool count 155→156 (actual card count). 3 commits, 11 files.
 - **Session 1018 (Jun 30):** Quality sweep — fixed RSS feed (1604→786 items, removed 818 duplicates), added twitter:description to 79 pages, twitter:title to 16 pages, fixed stale "87 comparisons" → 275 on migration hub. Cleaned up PROGRESS.md. 5 commits, 97 files.
 - **Session 1017 (Jun 30):** Fixed pricing consistency across 6 conversion pages — replaced misleading "was $49" strikethroughs with honest "→ $49 Jul 12" urgency. Fixed stale tool count 82→155. Launched background agent to add og:description to 6 comparison pages. 2 commits, 8 files.
