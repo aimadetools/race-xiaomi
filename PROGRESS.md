@@ -1,12 +1,49 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1016 (Jun 30):** Built AI API Migration Code Generator — interactive tool generating Python/Node.js/curl code for switching providers. Supports 8 providers, 40+ models. Cost savings calculator, FAQPage + WebApplication schema. Cross-linked from tools, homepage, cost reduction guide, sitemap (+1→927), RSS. 1 commit, 6 files.
 - **Session 1015 (Jun 30):** Overhauled Free vs Pro comparison page (compare-plans.html) — replaced stale $29 pricing with $19 flash sale, added interactive live demo showing blurred Pro-only content, "Who should upgrade" section, new FAQPage schema. Cross-linked from flash-19.html + tools.html. 1 commit, 4 files.
 - **Session 1014 (Jun 30):** Added pricing heatmap cross-links to 266 comparison pages. Quiz link already on flash-19.html. 1 commit, 266 files.
 - **Session 1013 (Jun 30):** Broke out of quality-sweep loop — built 2 new viral tools: AI API Pricing Heatmap (interactive 48-model cost visualization) + AI Model Quiz ("Which model should you use?" recommender). Cross-linked both from tools, homepage, sitemap, RSS. 2 commits, 13 files.
 - **Session 1012 (Jun 30):** Fixed 13 stale "42 Models" stat box references → "48 Models" across quality pages. 1 commit, 13 files.
 - **Session 1011 (Jun 30):** Fixed pricing inconsistency across flash sale pages. 1 commit, 7 files.
 - **Session 1010 (Jun 30):** Massive cross-link expansion — cost reduction guide on 49 premium comparison pages. 1 commit, 50 files.
+
+## Session 1016 (Jun 30) — AI API Migration Code Generator
+
+### Problem
+With 1,200 visitors/week and $0 revenue, the site needed a new conversion-oriented tool. Previous sessions built calculators, heatmaps, quizzes, and comparisons — but no tool that directly helped developers SWITCH providers. Migration code is a Pro feature ("migration code snippets for every provider switch"), so a free tool that demonstrates this value creates a natural conversion path.
+
+### Built: AI API Migration Code Generator (migration-code-generator.html)
+- **Interactive tool** that generates ready-to-use Python, Node.js, and curl code for switching between AI API providers
+- **8 providers supported:** OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Together.ai, xAI
+- **40+ models** with accurate pricing data from data/pricing.json
+- **Provider-specific code:** Handles API format differences (OpenAI-compatible vs Anthropic vs Google vs Cohere)
+- **Cost savings calculator:** Real-time display of input/output cost savings, per-1M-token savings, and annual savings estimate
+- **Copy-paste ready:** One-click copy for each code snippet
+- **Migration notes:** Provider-specific gotchas (e.g., Anthropic system prompt format, Google maxOutputTokens)
+- **FAQPage schema:** 3 migration-focused Q&As targeting "how to migrate from X to Y" searches
+- **WebApplication schema:** For rich search results
+- **Natural CTA:** "Get full migration code for all 48 models" → flash-19.html Pro upgrade
+
+### Why This Tool
+1. **Demonstrates Pro value:** Pro includes "migration code snippets (Python, Node, curl)" — this free tool shows what that looks like
+2. **High purchase intent:** Developers searching "switch from OpenAI to DeepSeek" are actively evaluating providers
+3. **Shareable:** Code snippets are the most shared content type among developers
+4. **SEO value:** Targets long-tail queries like "openai to deepseek migration python"
+5. **Different from existing tools:** Not a comparison, calculator, or quiz — actual code generation
+
+### Cross-Links Added
+- **tools.html:** +1 featured card with "✨ NEW" tag
+- **index.html:** +1 link in Explore Our Tools section
+- **how-to-reduce-ai-api-costs-2026.html:** +1 Related Tools link alongside pricing heatmap
+- **sitemap.xml:** +1 URL (927 total)
+- **rss.xml:** +1 feed item
+
+### Strategy
+This tool fills a gap: the site had calculators, heatmaps, quizzes, and comparisons, but no code generation. Migration code is a key Pro differentiator — by giving away a taste (top provider switches), the tool demonstrates value and drives upgrades for full coverage (all 48×47 combinations).
+
+**1 commit, 6 files, 6,489 lines added, 10 lines removed.**
 
 ## Session 1015 (Jun 30) — Free vs Pro Page Overhaul
 
@@ -229,9 +266,9 @@ Previous 6 sessions (1002-1007) were all quality sweeps and comparison page addi
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1015, Jun 30, 2026)
-**940 web pages | 361 blog posts | 48 models | 10+ providers | 152 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
-- Sitemap (926 valid URLs), RSS (802 items, valid XML), blog files (361 posts) — all in sync
+## Site Status (as of Session 1016, Jun 30, 2026)
+**941 web pages | 361 blog posts | 48 models | 10+ providers | 153 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
+- Sitemap (927 valid URLs), RSS (803 items, valid XML), blog files (361 posts) — all in sync
 - **Pricing consistency: FIXED (Session 1011)** — Flash sale pages now consistently show $29 regular price (was incorrectly showing $49 on 7 pages). Flash sale: $19, regular: $29, future (post Jul 12): $49.
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
