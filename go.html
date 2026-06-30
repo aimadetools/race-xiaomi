@@ -587,7 +587,7 @@
 
             <!-- CTA: BUY is primary, trial is secondary -->
             <a id="buy-cta" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_hero');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'hero',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_hero'});">
-                🔥 Get lifetime access — <span id="cta-price">$29</span> <span style="font-size:14px;opacity:0.7;text-decoration:line-through;">$49</span>
+                🔥 Get lifetime access — <span id="cta-price">$29</span> <span style="font-size:12px;opacity:0.7;">→ $49 Jul 12</span>
             </a>
             <p class="cta-sub">🔒 Stripe secure checkout · 🛡️ 14-day money-back guarantee · ⚡ Instant access</p>
         </div>
@@ -841,8 +841,8 @@
                 <div class="price-type">one-time payment</div>
             </div>
             <div style="text-align:right;">
-                <div class="price-was" id="price-was">$49</div>
-                <div class="price-badge" id="price-badge">Save 41%</div>
+                <div class="price-was" id="price-was" style="display:none;"></div>
+                <div class="price-badge" id="price-badge" style="display:none;"></div>
             </div>
         </div>
 
@@ -866,7 +866,7 @@
 
         <!-- Bottom CTA: BUY is primary -->
         <a id="buy-cta-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_bottom');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'bottom',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_bottom'});">
-            🔥 Get lifetime access — <span id="cta-price-bottom">$29</span> <span style="font-size:14px;opacity:0.7;text-decoration:line-through;">$49</span>
+            🔥 Get lifetime access — <span id="cta-price-bottom">$29</span> <span style="font-size:12px;opacity:0.7;">→ $49 Jul 12</span>
         </a>
 
         <!-- Guarantee -->
@@ -956,7 +956,7 @@
 
     <!-- Mobile sticky buy CTA bar (Session 879) -->
     <div class="go-sticky-bar" id="go-sticky-bar">
-        <div class="sticky-price"><span id="sticky-price">$29</span> <small id="sticky-was">$49</small></div>
+        <div class="sticky-price"><span id="sticky-price">$29</span> <small id="sticky-was">→ $49 Jul 12</small></div>
         <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="sticky-buy" id="go-sticky-buy" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_mobile_sticky');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'mobile_sticky',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_mobile_sticky'});">
             🔥 Get lifetime access
         </a>
@@ -1049,12 +1049,17 @@
             document.getElementById('price-display').textContent = '$' + price;
 
             // Update "was" price and savings badge
-            var futurePrice = price === 19 ? 39 : 49;
-            var savingsPct = Math.round((1 - price / futurePrice) * 100);
             var wasEl = document.getElementById('price-was');
             var badgeEl = document.getElementById('price-badge');
-            if (wasEl) wasEl.textContent = '$' + futurePrice;
-            if (badgeEl) badgeEl.textContent = 'Save ' + savingsPct + '%';
+            if (price === 19) {
+                // Flash sale: show "was $29" discount
+                if (wasEl) { wasEl.textContent = '$29'; wasEl.style.display = ''; }
+                if (badgeEl) { badgeEl.textContent = 'Save 35%'; badgeEl.style.display = ''; }
+            } else {
+                // Founding period: show "→ $49 Jul 12" urgency
+                if (wasEl) { wasEl.textContent = '→ $49 Jul 12'; wasEl.style.display = ''; }
+                if (badgeEl) { badgeEl.style.display = 'none'; }
+            }
             // Update FAQ future price and urgency to match variant
             var faqFuture = document.getElementById('faq-future-price');
             if (faqFuture) faqFuture.textContent = '$' + futurePrice;
