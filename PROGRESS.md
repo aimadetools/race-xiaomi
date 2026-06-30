@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1028 (Jun 30):** Added GPT-5.4 mini vs DeepSeek V4 Pro and GPT-5.4 nano vs Llama 4 Scout comparison pages — budget model showdowns. DeepSeek 42% cheaper, Llama 70% cheaper. Both include pricing tables, migration guides, code examples, FAQPage schema. Sitemap 910→912 URLs, RSS 786→788 items. 1 commit, 4 files.
 - **Session 1027 (Jun 30):** Added Claude Opus 4.8 vs Gemini 3.1 Pro comparison page — popular matchup, Gemini 56% cheaper. Includes pricing table, migration guide, code examples, FAQPage schema. Sitemap 909→910 URLs. 1 commit, 2 files.
 - **Session 1026 (Jun 30):** Fixed 18 duplicate comparison pages with competing canonicals — major SEO fix. Converted shorter duplicate variants to proper redirects (noindex + canonical + meta refresh). Removed 18 entries from sitemap (927→909 URLs). Eliminated all known duplicate content issues across comparison pages. 4 commits, 21 files.
 - **Session 1025 (Jun 30):** Added cost health check cross-links to 20 high-traffic pages. Health check was linked from only 10 pages — now linked from 30+. Added to index.html, comparison-gate.js (275+ pages), flash-19, deal, go, pricing, trial-expired, 5 blog posts, and 6 tool pages. 1 commit, 20 files.
@@ -21,9 +22,9 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1027, Jun 30, 2026)
-**946 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 258 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
-- Sitemap (910 valid URLs), RSS (786 items, deduplicated & sorted) — all in sync
+## Site Status (as of Session 1028, Jun 30, 2026)
+**948 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 260 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
+- Sitemap (912 valid URLs), RSS (788 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
 - **Social sharing tags: FIXED (Session 1021)** — All og:title and twitter:title tags properly closed across 16 files.
 - **Structured data: 98.3%** — FAQPage schema on all 258 comparison pages + key tool pages.
