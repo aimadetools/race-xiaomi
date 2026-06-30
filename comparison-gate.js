@@ -64,7 +64,8 @@
                 '</div>' +
                 '<a href="' + link + '" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(99,102,241,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'comparison_gate_clicked\',{});">' +
                 'See All Models — ' + priceLabel + ' ' + price + '</a>' +
-                '<div style="font-size:11px;color:#475569;margin-top:8px;">One-time payment · Lifetime access · 14-day refund</div>';
+                '<div style="font-size:11px;color:#475569;margin-top:8px;">One-time payment · Lifetime access · 14-day refund</div>' +
+                '<div style="margin-top:10px;"><a href="cost-health-check.html" style="font-size:12px;color:#22c55e;font-weight:600;text-decoration:none;">🏥 Also try: Free Health Check →</a></div>';
 
             gateRow.appendChild(gateCell);
             table.querySelector('tbody').appendChild(gateRow);
