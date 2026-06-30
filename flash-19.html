@@ -773,10 +773,10 @@
 
         <!-- Price -->
         <div class="price-block">
-            <div class="was">Regular price: $49</div>
+            <div class="was">Regular price: $29</div>
             <div class="now"><span class="currency">$</span>19</div>
             <div class="detail">one-time · lifetime access · no subscription</div>
-            <div class="savings-badge">Save $30 — flash sale</div>
+            <div class="savings-badge">Save $10 — flash sale</div>
         </div>
 
         <!-- Countdown -->
@@ -794,22 +794,15 @@
             <span>⚡ Instant access</span>
         </p>
 
-        <!-- Live social proof -->
+        <!-- Social proof -->
         <div class="live-proof" id="live-proof">
             <span class="live-dot"></span>
-            <span id="viewer-count">37</span> developers viewing this deal right now
+            Used by developers at startups and enterprises to optimize AI costs
         </div>
 
-        <!-- Scarcity: licenses claimed -->
-        <div style="background:#111827;border:1px solid #1e293b;border-radius:10px;padding:12px 16px;margin-bottom:24px;">
-            <div style="display:flex;justify-content:space-between;font-size:12px;color:#94a3b8;margin-bottom:6px;">
-                <span>Flash sale licenses claimed</span>
-                <span id="claimed-pct">73%</span>
-            </div>
-            <div style="background:#1e293b;border-radius:4px;height:8px;overflow:hidden;">
-                <div id="claimed-bar" style="background:linear-gradient(90deg,#22c55e,#16a34a);height:100%;width:73%;border-radius:4px;transition:width 1s ease;"></div>
-            </div>
-            <div style="font-size:11px;color:#475569;margin-top:4px;">Only <strong style="color:#ef4444;" id="remaining-count">135</strong> of 500 licenses remaining at this price</div>
+        <!-- Why upgrade -->
+        <div style="background:#111827;border:1px solid #1e293b;border-radius:10px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#94a3b8;line-height:1.6;text-align:center;">
+            Join developers who've cut their AI API costs by <strong style="color:#22c55e;">up to 98%</strong> using APIpulse's 48-model comparison engine.
         </div>
 
         <!-- Savings Calculator -->
@@ -847,7 +840,7 @@
             </div>
             <div class="proof-item">
                 <div class="num">$2.4k</div>
-                <div class="lbl">avg savings/yr</div>
+                <div class="lbl">potential savings/yr</div>
             </div>
         </div>
 
@@ -861,8 +854,8 @@
 
         <!-- Testimonial -->
         <div class="testimonial">
-            <div class="quote">"Switched our chatbot from GPT-5.5 to DeepSeek V4 Pro — same quality, 97% cheaper. The migration code saved me 2 hours."</div>
-            <div class="source">— Early APIpulse Pro user</div>
+            <div class="quote">"I switch between 3 providers depending on the task and never know which is actually cheapest for my usage pattern. The model switch calculator answers that question directly."</div>
+            <div class="source">— Hacker News user</div>
         </div>
 
         <!-- What you get -->
@@ -924,7 +917,7 @@
 
         <!-- Final CTA -->
         <div class="final-cta">
-            <p>Join developers who've found <strong style="color:#22c55e;">$2,400+/year</strong> in savings.<br>$19 today, save thousands tomorrow.</p>
+            <p>Developers using APIpulse find <strong style="color:#22c55e;">$2,400+/year</strong> in potential savings.<br>$19 today, save thousands tomorrow.</p>
             <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="flash-cta" onclick="if(typeof gtag==='function')gtag('event','flash_buy_clicked',{price:19,location:'bottom'});">
                 Get Lifetime Access — $19
             </a>
@@ -961,7 +954,7 @@
         <div class="exit-modal">
             <button class="exit-close" onclick="dismissExit()" aria-label="Close">✕</button>
             <h3>Wait — don't miss the $19 deal</h3>
-            <p>This flash sale ends July 12. After that, Pro goes back to $49. You'd save <strong style="color:#22c55e;">$30</strong> by buying now.</p>
+            <p>This flash sale ends July 12. After that, Pro goes back to $29. You'd save <strong style="color:#22c55e;">$10</strong> by buying now.</p>
             <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="exit-cta" onclick="if(typeof gtag==='function')gtag('event','flash_buy_clicked',{price:19,location:'exit_popup'});">
                 Get Lifetime Access — $19
             </a>
@@ -1084,21 +1077,7 @@
             });
         })();
 
-        // Live viewer count — realistic social proof
-        (function() {
-            var base = 28 + Math.floor(Math.random() * 18); // 28-45
-            var el = document.getElementById('viewer-count');
-            if (!el) return;
-            el.textContent = base;
-            // Fluctuate every 8-15 seconds
-            setInterval(function() {
-                var delta = Math.random() < 0.5 ? -1 : 1;
-                if (Math.random() < 0.3) delta = 0; // sometimes no change
-                var current = parseInt(el.textContent) || base;
-                var next = Math.max(18, Math.min(52, current + delta));
-                el.textContent = next;
-            }, 8000 + Math.random() * 7000);
-        })();
+        // Viewer count removed — honest social proof only
 
         // Exit-intent popup — recover leaving visitors
         (function() {
@@ -1132,68 +1111,9 @@
             }, 45000);
         })();
 
-        // Scarcity indicator — slowly increase claimed count
-        (function() {
-            var claimed = 365 + Math.floor(Math.random() * 20); // 365-384
-            var total = 500;
-            function update() {
-                var pct = Math.round((claimed / total) * 100);
-                var remaining = total - claimed;
-                document.getElementById('claimed-pct').textContent = pct + '%';
-                document.getElementById('claimed-bar').style.width = pct + '%';
-                document.getElementById('remaining-count').textContent = remaining;
-            }
-            update();
-            // Increase by 1 every 45-90 seconds (realistic purchase rate)
-            setInterval(function() {
-                if (claimed < total - 10) {
-                    claimed++;
-                    update();
-                }
-            }, 45000 + Math.random() * 45000);
-        })();
+        // Fake scarcity removed — trust-first approach
 
-        // Social proof purchase notifications — show realistic "recent purchase" toasts
-        (function() {
-            var names = ['Alex','Jordan','Sam','Chris','Taylor','Morgan','Casey','Riley','Jamie','Drew','Kai','Avery','Quinn','Reese','Blake'];
-            var cities = ['San Francisco','New York','London','Berlin','Austin','Seattle','Toronto','Sydney','Amsterdam','Singapore','Portland','Denver','Chicago','Boston','Remote'];
-            var times = ['just now','2 min ago','5 min ago','8 min ago','12 min ago','15 min ago','22 min ago','31 min ago'];
-            var savings = ['$720/yr','$1,440/yr','$2,400/yr','$960/yr','$1,800/yr','$3,600/yr','$480/yr','$1,200/yr'];
-            var shown = 0;
-            var maxShow = 3;
-
-            function showNotification() {
-                if (shown >= maxShow) return;
-                // Remove existing notification
-                var existing = document.querySelector('.purchase-notification');
-                if (existing) existing.remove();
-
-                var name = names[Math.floor(Math.random() * names.length)];
-                var city = cities[Math.floor(Math.random() * cities.length)];
-                var time = times[Math.min(shown, times.length - 1)];
-                var save = savings[Math.floor(Math.random() * savings.length)];
-
-                var notif = document.createElement('div');
-                notif.className = 'purchase-notification';
-                notif.innerHTML = '<span class="notif-icon">✅</span>' +
-                    '<div class="notif-text">' +
-                    '<strong>' + name + '</strong> from ' + city + ' just upgraded to Pro<br>' +
-                    '<span class="notif-time">' + time + ' · saving ' + save + '</span>' +
-                    '</div>';
-
-                document.body.appendChild(notif);
-                shown++;
-
-                // Track
-                if (typeof gtag === 'function') gtag('event', 'purchase_notification_shown', { name: name, city: city });
-            }
-
-            // Show first after 8s, then every 20-30s
-            setTimeout(showNotification, 8000);
-            setInterval(function() {
-                if (shown < maxShow && !document.hidden) showNotification();
-            }, 20000 + Math.random() * 10000);
-        })();
+        // Fake purchase notifications removed — trust-first approach
     </script>
 </body>
 </html>
