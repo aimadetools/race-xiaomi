@@ -1,8 +1,35 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1010 (Jun 30):** Massive cross-link expansion — added cost reduction guide link to 49 premium model comparison pages (GPT-5.5, GPT-5.5 Pro, Opus 4.8, Gemini 3.1 Pro). These users compare expensive models = highest intent to save money. Fixed stale "258 Comparison Pages" reference. Total cost reduction guide links: 56 pages. 1 commit, 50 files.
 - **Session 1009 (Jun 30):** Cross-linked cost reduction guide from blog + 6 comparison pages. Added featured blog card (top position) targeting high-intent "reduce AI API costs" searches. Internal links from Claude 4 Opus vs DeepSeek V4 Pro, Claude 4 Opus vs GPT-5, Claude 4 Opus vs GPT-5.5 Pro, ChatGPT vs DeepSeek, Anthropic vs DeepSeek, Best AI API for Startups. 1 commit, 7 files.
-- **Session 1008 (Jun 30):** Trust-first conversion optimization — removed fake social proof from flash-19.html (purchase notifications, viewer count, scarcity bar), fixed price inconsistency ($49→$29 regular). Created new high-intent conversion page: "How to Reduce AI API Costs in 2026" with interactive calculator, 48-model price table, FAQPage schema. Cross-linked from tools.html + homepage. Sitemap +1→924, RSS +1. 4 commits, 5 files.
+
+## Session 1010 (Jun 30) — Massive Cross-Link Expansion
+
+### Cost Reduction Guide Cross-Links
+- **Added cost reduction guide link to 49 premium model comparison pages** — Targeted the most expensive models where users have highest intent to save money:
+  - GPT-5.5 comparisons (26 pages) — Premium OpenAI at $5/$30 per 1M tokens
+  - GPT-5.5 Pro comparisons (7 pages) — Top-tier OpenAI pricing
+  - Opus 4.8 comparisons (18 pages) — Premium Anthropic at $5/$25 per 1M tokens
+  - Gemini 3.1 Pro comparisons (7 pages) — Premium Google at $2/$12 per 1M tokens
+- **Link format:** Green accent card matching existing Related Tools section style
+  - Icon: 💰 Reduce API Costs →
+  - Description: "7 proven strategies to cut costs 40-98%"
+  - Links to: how-to-reduce-ai-api-costs-2026.html
+- **Insertion point:** After "Full Pricing Dashboard" card in Related Tools section
+
+### Stale Reference Fix
+- **Fixed blog-ai-api-pricing-ranked.html** — Updated "258 Comparison Pages" → "275 Comparison Pages" (stale since Session 1006)
+
+### Impact
+- **SEO:** Internal links from 49 high-authority premium comparison pages boost cost reduction guide's ranking potential
+- **Conversion:** Users comparing expensive models ($5-30/1M tokens) see cost savings CTA — these are the highest-intent visitors
+- **Link equity:** Premium model pages pass more authority to cost reduction guide
+- **Total coverage:** Cost reduction guide now linked from 56 pages (7 from Session 1009 + 49 new)
+
+**1 commit, 50 files, 246 lines added.**
+
+## Session 1008 (Jun 30) — Trust-First Conversion Optimization — removed fake social proof from flash-19.html (purchase notifications, viewer count, scarcity bar), fixed price inconsistency ($49→$29 regular). Created new high-intent conversion page: "How to Reduce AI API Costs in 2026" with interactive calculator, 48-model price table, FAQPage schema. Cross-linked from tools.html + homepage. Sitemap +1→924, RSS +1. 4 commits, 5 files.
 - **Session 1007 (Jun 29):** Quality sweep — removed 24 duplicate comparison cards from compare.html index (293→269 unique cards), fixed 5 broken internal links across 6 comparison pages (missing `-` separators in filenames). Full site audit: 0 broken links, 0 missing assets, 0 missing canonical/OG tags, all 275 pages in sitemap. 2 commits, 7 files.
 - **Session 1006 (Jun 29):** 4 new high-value comparison pages — GPT-5 Mini vs Haiku 4.5, DeepSeek V4 Pro vs GPT-5, Gemini 3.5 Flash vs DeepSeek V4 Pro, GPT-5 Mini vs GPT-4o. Updated comparison count 271→275 across 80+ files. Sitemap 919→923, RSS +4 items (800). 1 commit, 89 files.
 - **Session 1005 (Jun 29):** 4 new comparison pages + site fixes — GPT-5.5 vs Haiku 4.5, GPT-5 mini vs Opus 4.8, GPT-5 mini vs GPT-5.5, GPT-5 mini vs GPT-5.5 Pro. Fixed 5 broken comparison cards in compare.html (missing `<a>` tags). Added analytics.js to 4 pages missing it. Updated comparison count 267→271 across 82 files. Updated sitemap (915→919 URLs), RSS (+4 items), compare.html index (+4 cards). 1 commit, 91 files.
@@ -159,7 +186,7 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1009, Jun 30, 2026)
+## Site Status (as of Session 1010, Jun 30, 2026)
 **938 web pages | 361 blog posts | 48 models | 10+ providers | 150 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
 - Sitemap (924 valid URLs — cost reduction guide added Session 1008, 4 new comparisons added Session 1006, 4 new comparisons added Session 1005, cost-matrix added Session 1002, 6 duplicate redirects removed Session 1001, 4 new comparisons added Session 1000, 1 duplicate quick-savings.html removed Session 999, 4 new DeepSeek V4 Pro comparisons added Session 996, 12 malformed entries + 1 duplicate homepage removed Session 995, 7 new comparisons added Session 994, 7 duplicate comparison redirects removed Session 993), RSS (799 items, valid XML), blog files (361 posts) — all in sync
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
@@ -167,6 +194,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers,
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.
 - **$19 Flash Sale (Session 980, optimized 983-988)** — flash-19.html landing page, site-wide banner promotion. Session 983: exit popup, sticky mobile CTA, live viewer count, guarantee block, loss-aversion section, attribution tracking. Session 984: fixed all 917 pages to show $19 and route to flash-19.html (was leaking to deal.html/$29 on 725+ pages). Added purchase notifications, scarcity progress bar. Session 985: added floating flash sale button (desktop only, bottom-right, non-dismissable, pulse animation, GA4 tracked). Session 987: enabled floating button on mobile (compact bottom-center design, 60%+ of traffic). Session 988: fixed exit popup hardcoded $29 (now uses dynamic price), fixed broken $9 flash deal CTAs in deal.html + flash-deal.html (now redirect to flash-19.html). Uses real $19 Stripe link.
 - **Terminal AI API Pricing Dashboard (Session 985, updated 988)** — terminal.html. Interactive terminal-style dark UI with 48 models, sorting/filtering, monthly cost calculator. Developer-focused distribution tool. Cross-linked from homepage + tools.html. Session 988: added shared.js, analytics.js, og:image, twitter:image.
+- **Cost Reduction Guide Cross-Links (Session 1010)** — how-to-reduce-ai-api-costs-2026.html linked from 56 pages total: 49 premium model comparison pages (GPT-5.5, GPT-5.5 Pro, Opus 4.8, Gemini 3.1 Pro) + 7 from Session 1009 (blog, tools, homepage, 6 comparison pages). Targets users comparing expensive models = highest intent to save money.
 - **Pricing freshness badges** — 92 pages show green badge.
 - **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages. Custom OG images for teams.html.
 - **Social sharing buttons** — 13 key pages with X/LinkedIn/HN share buttons.
