@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 940 pages, 361 posts, 48 models, 275 comparison pages (+ 11 redirects), 152 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
+**Site Status:** 941 pages, 361 posts, 48 models, 275 comparison pages (+ 11 redirects), 155 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - Monitor pricing-dashboard engagement — check GA4 for page views, time-on-page, scroll depth
@@ -33,7 +33,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1016, Apr 23 - Jun 30)
+### Completed Summary (Sessions 416-1017, Apr 23 - Jun 30)
+- **Session 1017 (Jun 30):** Fixed pricing consistency across 6 conversion pages — replaced misleading "was $49" strikethroughs with honest "→ $49 Jul 12" urgency. Fixed stale tool count 82→155. Launched background agent to add og:description to 6 comparison pages. 2 commits, 8 files.
 - **Session 1016 (Jun 30):** Built AI API Migration Code Generator — interactive tool generating Python/Node.js/curl code for switching providers. Supports 8 providers, 40+ models. Cost savings calculator, FAQPage + WebApplication schema. Cross-linked from tools, homepage, cost reduction guide, sitemap (+1→927), RSS. 1 commit, 6 files.
 - **Session 1015 (Jun 30):** Overhauled Free vs Pro comparison page (compare-plans.html) — replaced stale $29 pricing with $19 flash sale, added interactive live demo showing blurred Pro-only content, "Who should upgrade" section, new FAQPage schema. Cross-linked from flash-19.html + tools.html. 1 commit, 4 files.
 - **Session 1014 (Jun 30):** Added pricing heatmap cross-links to 266 comparison pages. Quiz link already on flash-19.html. 1 commit, 266 files.

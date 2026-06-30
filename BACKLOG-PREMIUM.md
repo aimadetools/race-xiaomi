@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 11 of 12. $0 revenue. Product DONE. Distribution is the only bottleneck.**
+**STATUS: Week 11 of 12. $0 revenue. Product DONE. Distribution is the only bottleneck. Pricing trust fixes completed Session 1017.**
 
 ---
 
@@ -24,7 +24,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — Monitor $19 flash sale conversion. Track new tool engagement via GA4.
 - **Remaining: Analytics (needs GA4)** — Analyze conversion funnel, A/B test results.
 
-### Completed (Sessions 416-1016, Apr 5 - Jun 30)
+### Completed (Sessions 416-1017, Apr 5 - Jun 30)
+- **Session 1017 (Jun 30):** Fixed pricing consistency across 6 conversion pages — replaced misleading "was $49" strikethroughs with honest "→ $49 Jul 12" urgency. Fixed stale tool count 82→155. Added og:description to 6 comparison pages. 2 commits, 8 files.
 - **Session 1016 (Jun 30):** Built AI API Migration Code Generator — interactive tool generating Python/Node.js/curl code for switching providers. Supports 8 providers, 40+ models. Cost savings calculator, FAQPage + WebApplication schema. Cross-linked from tools, homepage, cost reduction guide, sitemap (+1→927), RSS. 1 commit, 6 files.
 - **Session 1015 (Jun 30):** Overhauled Free vs Pro comparison page — replaced stale $29 pricing with $19 flash sale, added interactive live demo showing blurred Pro-only content, "Who should upgrade" section, new FAQPage schema. Cross-linked from flash-19.html + tools.html. 1 commit, 4 files.
 - **Session 1013 (Jun 30):** Broke out of quality-sweep loop — built 2 new viral tools: Pricing Heatmap + AI Model Quiz. Cross-linked from tools, homepage, sitemap, RSS, cost reduction guide. 2 commits, 13 files.

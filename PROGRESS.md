@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1017 (Jun 30):** Fixed pricing consistency across 6 conversion pages — replaced misleading "was $49" strikethroughs with honest "→ $49 Jul 12" urgency. Fixed stale tool count 82→155. Launched background agent to add og:description to 6 comparison pages. 2 commits, 8 files.
 - **Session 1016 (Jun 30):** Built AI API Migration Code Generator — interactive tool generating Python/Node.js/curl code for switching providers. Supports 8 providers, 40+ models. Cost savings calculator, FAQPage + WebApplication schema. Cross-linked from tools, homepage, cost reduction guide, sitemap (+1→927), RSS. 1 commit, 6 files.
 - **Session 1015 (Jun 30):** Overhauled Free vs Pro comparison page (compare-plans.html) — replaced stale $29 pricing with $19 flash sale, added interactive live demo showing blurred Pro-only content, "Who should upgrade" section, new FAQPage schema. Cross-linked from flash-19.html + tools.html. 1 commit, 4 files.
 - **Session 1014 (Jun 30):** Added pricing heatmap cross-links to 266 comparison pages. Quiz link already on flash-19.html. 1 commit, 266 files.
@@ -8,6 +9,32 @@
 - **Session 1012 (Jun 30):** Fixed 13 stale "42 Models" stat box references → "48 Models" across quality pages. 1 commit, 13 files.
 - **Session 1011 (Jun 30):** Fixed pricing inconsistency across flash sale pages. 1 commit, 7 files.
 - **Session 1010 (Jun 30):** Massive cross-link expansion — cost reduction guide on 49 premium comparison pages. 1 commit, 50 files.
+
+## Session 1017 (Jun 30) — Pricing Consistency & Trust Fixes
+
+### Problem
+Session 1011 fixed flash-19.html's "was $49" → "was $29" pricing inconsistency, but missed 6 other conversion-critical pages. Visitors clicking from blog posts, go.html, deal.html, and pricing dashboard saw "was $49" — implying the regular price was $49 when it's actually $29. This eroded trust at the point of highest purchase intent.
+
+### Fixed Pages
+- **go.html** — Hero CTA: "$29 ~~$49~~" → "$29 → $49 Jul 12". Bottom CTA: same fix. Sticky bar: "was $49" → "→ $49 Jul 12". Price-was display hidden during founding period. JavaScript: dynamic "was" price now shows "→ $49 Jul 12" instead of "was $49".
+- **deal.html** — Price card: "was $49" → "Goes to $49 on Jul 12". Desktop sticky: "was $49" → "→ $49 Jul 12".
+- **flash-deal.html** — "Regular price: $49" → "$29". Savings badge: "Save 82%" → "Save 69%".
+- **pricing-dashboard.html** — Flash sale strikethrough: $49 → $29.
+- **claude-4-is-down.html** — Old-price and shutdown special displays: "$29 ~~$49~~" → "$29 → $49 Jul 12".
+- **trial-expired.html** — Was-price: "$49" → "Goes to $49 Jul 12".
+
+### Pricing Model Clarification
+- Flash sale: $19 (temporary, ends July 12)
+- Regular price: $29 (current — this IS the founding member price)
+- Future price: $49 (after July 12)
+- The "was $49" was showing the FUTURE price as if it were a past price. Fixed to show honest urgency messaging.
+
+### Also Fixed
+- **tools.html** — Tool count: 142/141 → 155 (actual card count). Title, meta, og, schema all updated.
+- **changelog.html** — Tool count: 82 → 155 in meta tags.
+- **6 comparison pages** — Background agent adding missing og:description and twitter:description tags for SEO.
+
+**2 commits, 8 files, 23 insertions, 18 deletions.**
 
 ## Session 1016 (Jun 30) — AI API Migration Code Generator
 
@@ -266,15 +293,16 @@ Previous 6 sessions (1002-1007) were all quality sweeps and comparison page addi
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1016, Jun 30, 2026)
-**941 web pages | 361 blog posts | 48 models | 10+ providers | 153 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
+## Site Status (as of Session 1017, Jun 30, 2026)
+**941 web pages | 361 blog posts | 48 models | 10+ providers | 155 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
 - Sitemap (927 valid URLs), RSS (803 items, valid XML), blog files (361 posts) — all in sync
-- **Pricing consistency: FIXED (Session 1011)** — Flash sale pages now consistently show $29 regular price (was incorrectly showing $49 on 7 pages). Flash sale: $19, regular: $29, future (post Jul 12): $49.
+- **Pricing consistency: FIXED (Session 1011 + 1017)** — All conversion pages now correctly show $29 regular price. "Was $49" replaced with "→ $49 Jul 12" urgency messaging. Flash sale: $19, regular: $29, future (post Jul 12): $49.
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages. Banner now promotes $19 flash sale.
-- **$19 Flash Sale (Session 980, optimized 983-988, fixed 1011)** — flash-19.html landing page, site-wide banner promotion. Session 983: exit popup, sticky mobile CTA, live viewer count, guarantee block, loss-aversion section, attribution tracking. Session 984: fixed all 917 pages to show $19 and route to flash-19.html. Session 985: floating flash sale button (desktop + mobile). Session 988: exit popup, $9 flash deal fixes. **Session 1011: fixed pricing inconsistency — 7 pages showed "was $49" instead of "was $29" (the real regular price).** Flash sale $19 ends July 12 → regular $29 → future $49.
+- **$19 Flash Sale (Session 980, optimized 983-988, fixed 1011+1017)** — flash-19.html landing page, site-wide banner promotion. Session 983: exit popup, sticky mobile CTA, live viewer count, guarantee block, loss-aversion section, attribution tracking. Session 984: fixed all 917 pages to show $19 and route to flash-19.html. Session 985: floating flash sale button (desktop + mobile). Session 988: exit popup, $9 flash deal fixes. **Session 1011: fixed pricing inconsistency on flash-19.html. Session 1017: fixed 6 more pages (go.html, deal.html, flash-deal.html, pricing-dashboard.html, claude-4-is-down.html, trial-expired.html) — replaced misleading "was $49" with honest "→ $49 Jul 12" urgency.** Flash sale $19 ends July 12 → regular $29 → future $49.
 - **Terminal AI API Pricing Dashboard (Session 985, updated 988)** — terminal.html. Interactive terminal-style dark UI with 48 models, sorting/filtering, monthly cost calculator. Developer-focused distribution tool. Cross-linked from homepage + tools.html. Session 988: added shared.js, analytics.js, og:image, twitter:image.
+- **Tool count: 155** (updated Session 1017 from stale 82/141/142 references).
 - **Cost Reduction Guide Cross-Links (Session 1010)** — how-to-reduce-ai-api-costs-2026.html linked from 56 pages total: 49 premium model comparison pages (GPT-5.5, GPT-5.5 Pro, Opus 4.8, Gemini 3.1 Pro) + 7 from Session 1009 (blog, tools, homepage, 6 comparison pages). Targets users comparing expensive models = highest intent to save money.
 - **Pricing freshness badges** — 92 pages show green badge.
 - **OG/Twitter social sharing tags** — 100% coverage on all indexed content pages. Custom OG images for teams.html.
