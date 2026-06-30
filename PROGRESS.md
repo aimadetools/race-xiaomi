@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1027 (Jun 30):** Added Claude Opus 4.8 vs Gemini 3.1 Pro comparison page — popular matchup, Gemini 56% cheaper. Includes pricing table, migration guide, code examples, FAQPage schema. Sitemap 909→910 URLs. 1 commit, 2 files.
 - **Session 1026 (Jun 30):** Fixed 18 duplicate comparison pages with competing canonicals — major SEO fix. Converted shorter duplicate variants to proper redirects (noindex + canonical + meta refresh). Removed 18 entries from sitemap (927→909 URLs). Eliminated all known duplicate content issues across comparison pages. 4 commits, 21 files.
 - **Session 1025 (Jun 30):** Added cost health check cross-links to 20 high-traffic pages. Health check was linked from only 10 pages — now linked from 30+. Added to index.html, comparison-gate.js (275+ pages), flash-19, deal, go, pricing, trial-expired, 5 blog posts, and 6 tool pages. 1 commit, 20 files.
 - **Session 1024 (Jun 30):** Massive gating expansion — 373→533 pages gated (+160). Added gate to 12 comparison pages, 38 cheapest/pricing pages, 7 blog posts, 6 tool pages, 74 more pages with model-name tables, 22 calculator/tool pages. Verified: 0 comparison pages ungated, 0 stale counts. 3 commits, 161 files.
@@ -31,12 +32,12 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1026, Jun 30, 2026)
-**945 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 257 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
-- Sitemap (909 valid URLs), RSS (786 items, deduplicated & sorted) — all in sync
+## Site Status (as of Session 1027, Jun 30, 2026)
+**946 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 258 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
+- Sitemap (910 valid URLs), RSS (786 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
 - **Social sharing tags: FIXED (Session 1021)** — All og:title and twitter:title tags properly closed across 16 files.
-- **Structured data: 98.3%** — FAQPage schema on all 257 comparison pages + key tool pages.
+- **Structured data: 98.3%** — FAQPage schema on all 258 comparison pages + key tool pages.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html. All CTAs say "48-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **OG/Twitter social sharing tags: 100%** — All indexed content pages have complete meta tags.

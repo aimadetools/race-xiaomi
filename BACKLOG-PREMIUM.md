@@ -24,7 +24,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — Monitor $19 flash sale conversion. Track new tool engagement via GA4.
 - **Remaining: Analytics (needs GA4)** — Analyze conversion funnel, A/B test results.
 
-### Completed (Sessions 416-1026, Apr 5 - Jun 30)
+### Completed (Sessions 416-1027, Apr 5 - Jun 30)
+- **Session 1027 (Jun 30):** Added Claude Opus 4.8 vs Gemini 3.1 Pro comparison page. Gemini 56% cheaper. Pricing table, migration guide, code examples, FAQPage schema. Sitemap 909→910 URLs. 1 commit, 2 files.
 - **Session 1026 (Jun 30):** Fixed 18 duplicate comparison pages with competing canonicals. Converted shorter duplicates to redirects. Removed 18 from sitemap (927→909). Major SEO fix. 4 commits, 21 files.
 - **Session 1024 (Jun 30):** Massive gating expansion — 373→533 pages gated (+160). All pages with model-name tables now gated. 3 commits, 161 files.
 - **Session 1023 (Jun 30):** Extended comparison gating to 34 more pages (339→373). Fixed missing social tags. 3 commits, 36 files.

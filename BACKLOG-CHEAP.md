@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 945 pages, 361 posts, 48 models, 257 comparison pages (+ 29 redirects), 156 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Content gating expanded to 533 pages (Session 1024). Health check cross-linked to 30+ pages (Session 1025). 18 duplicate comparison pages fixed (Session 1026).**
+**Site Status:** 946 pages, 361 posts, 48 models, 258 comparison pages (+ 29 redirects), 156 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Content gating expanded to 533 pages (Session 1024). Health check cross-linked to 30+ pages (Session 1025). 18 duplicate comparison pages fixed (Session 1026). New Opus 4.8 vs Gemini 3.1 Pro comparison (Session 1027).**
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - **Monitor comparison gate performance** — check GA4 for `comparison_gate_clicked` events (new Session 1022, expanded Session 1023 to 373 pages)
@@ -31,7 +31,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1026, Apr 23 - Jun 30)
+### Completed Summary (Sessions 416-1027, Apr 23 - Jun 30)
+- **Session 1027 (Jun 30):** Added Claude Opus 4.8 vs Gemini 3.1 Pro comparison page. Gemini 56% cheaper. Includes pricing table, migration guide, code examples, FAQPage schema. Sitemap 909→910 URLs. 1 commit, 2 files.
 - **Session 1026 (Jun 30):** Fixed 18 duplicate comparison pages with competing canonicals. Converted shorter duplicates to redirects (noindex + canonical + meta refresh). Removed 18 entries from sitemap (927→909 URLs). Major SEO fix — eliminated all known duplicate content. 4 commits, 21 files.
 - **Session 1025 (Jun 30):** Added cost health check cross-links to 20 high-traffic pages (was linked from only 10 pages — now 30+). Added to index, comparison-gate.js (275+ pages), flash-19, deal, go, pricing, trial-expired, 5 blog posts, 6 tool pages. 1 commit, 20 files.
 - **Session 1024 (Jun 30):** Massive gating expansion — 373→533 pages gated (+160). Added gate to comparison pages, cheapest/pricing pages, blog posts, tool pages, calculator pages. 3 commits, 161 files.
