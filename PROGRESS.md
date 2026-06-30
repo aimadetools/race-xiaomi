@@ -1,9 +1,37 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1011 (Jun 30):** Fixed pricing inconsistency across flash sale pages — 7 files had stale "$49" as "was" price when actual regular price is $29. Session 1008 fixed flash-19.html but missed 6 other conversion-critical pages (go.html, 3 blog pages, pricing-dashboard, quick-savings). Trust-impacting fix: visitors clicking flash sale banners saw "was $49" but landing page said "Regular price: $29". 1 commit, 7 files.
-- **Session 1010 (Jun 30):** Massive cross-link expansion — added cost reduction guide link to 49 premium model comparison pages (GPT-5.5, GPT-5.5 Pro, Opus 4.8, Gemini 3.1 Pro). These users compare expensive models = highest intent to save money. Fixed stale "258 Comparison Pages" reference. Total cost reduction guide links: 56 pages. 1 commit, 50 files.
-- **Session 1009 (Jun 30):** Cross-linked cost reduction guide from blog + 6 comparison pages. Added featured blog card (top position) targeting high-intent "reduce AI API costs" searches. Internal links from Claude 4 Opus vs DeepSeek V4 Pro, Claude 4 Opus vs GPT-5, Claude 4 Opus vs GPT-5.5 Pro, ChatGPT vs DeepSeek, Anthropic vs DeepSeek, Best AI API for Startups. 1 commit, 7 files.
+- **Session 1012 (Jun 30):** Fixed 13 stale "42 Models" stat box references → "48 Models" across quality pages (api-cost-audit, cost-optimizer, how-it-works, pricing-hub, why-apipulse, trial-expired, claude-4-best-replacement, live-pricing, 3 blog posts, cheapest-ai-api). Credibility fix: visitors saw outdated model count in social proof sections. 1 commit, 13 files.
+- **Session 1011 (Jun 30):** Fixed pricing inconsistency across flash sale pages — 7 files had stale "$49" as "was" price when actual regular price is $29. 1 commit, 7 files.
+- **Session 1010 (Jun 30):** Massive cross-link expansion — added cost reduction guide link to 49 premium model comparison pages. Total cost reduction guide links: 56 pages. 1 commit, 50 files.
+- **Session 1009 (Jun 30):** Cross-linked cost reduction guide from blog + 6 comparison pages. 1 commit, 7 files.
+
+## Session 1012 (Jun 30) — Fix Stale Model Count References
+
+### Problem
+13 pages still showed "42 Models" in stat boxes and social proof sections when the site tracks 48 models across 10+ providers. This was a credibility issue — visitors comparing AI APIs see an outdated model count and may question data accuracy.
+
+### Fixed Pages
+- **api-cost-audit.html** — stat-num: 42 → 48
+- **cost-optimizer.html** — strong tag: 42 → 48
+- **how-it-works.html** — stat-num: 42 → 48
+- **pricing-hub.html** — stat-num: 42 → 48
+- **why-apipulse.html** — stat-num: 42 → 48
+- **trial-expired.html** — num: 42 → 48
+- **claude-4-best-replacement.html** — num: 42 → 48
+- **live-pricing.html** — model-count span: 42 → 48
+- **blog-ai-api-pricing-ranked.html** — num: 42 → 48
+- **ai-api-pricing-report-2026.html** — num: 42 → 48
+- **state-of-llm-pricing-june-2026.html** — number: 42 → 48
+- **blog-ai-api-pricing-june-2026-mid-month.html** — number: 42 → 48
+- **cheapest-ai-api.html** — number: 42 → 48
+
+### Not Changed
+- Blog posts with historical "42 models" references (reflecting count at time of writing) — left intentionally
+- Widget calculator (17 models) — separate embeddable with its own model set
+- TTS/STT pages with "8 providers" — accurate for those specific use cases
+
+**1 commit, 13 files, 13 lines changed.**
 
 ## Session 1011 (Jun 30) — Fix Pricing Inconsistency Across Flash Sale Pages
 
@@ -122,28 +150,12 @@ Previous 6 sessions (1002-1007) were all quality sweeps and comparison page addi
 - **1 commit, 7 files, 34 lines added.**
 
 ## Session 1007 (Jun 29) — Quality Sweep: Dedup + Broken Links
-- **Removed 24 duplicate comparison cards from compare.html index** — The index had 293 card links with 18 unique duplicates (some appearing 2-4 times across sections). Cleaned to 269 unique cards. File reduced from 1,912 to 1,816 lines.
-- **Fixed 5 broken internal links across 6 comparison pages:**
-  - `compare-deepseekv4pro-vs-gpt55.html` → `compare-deepseek-v4pro-vs-gpt55.html` (2 files)
-  - `compare-deepseekv4pro-vs-sonnet46.html` → `compare-deepseek-v4pro-vs-sonnet46.html`
-  - `compare-gpt5mini-vs-deepseekv4flash.html` → `compare-gpt5-mini-vs-deepseek-v4-flash.html`
-  - `compare-gpt5-mini-vs-sonnet46.html` → `compare-gpt5mini-vs-sonnet46.html` (2 files)
-  - `compare-haiku45-vs-gpt5.html` → `compare-haiku45-vs-gpt5mini.html`
-- **Full site audit passed:** 0 broken internal links, 0 missing assets (analytics.js, shared.js), 0 missing canonical/OG tags, all 275 comparison pages in sitemap, all have FAQPage schema.
+- **Removed 24 duplicate comparison cards from compare.html index** — Cleaned to 269 unique cards.
+- **Fixed 5 broken internal links across 6 comparison pages.** Full site audit passed: 0 broken links, 0 missing assets.
 - **2 commits, 7 files.**
 
 ## Session 1006 (Jun 29) — 4 New High-Value Comparison Pages
-- **Created 4 new high-value comparison pages:**
-  - **GPT-5 Mini vs Haiku 4.5** — Budget OpenAI vs Budget Anthropic. GPT-5 Mini 75% cheaper input ($0.25 vs $1), 60% cheaper output ($2 vs $5). Both have 272K context. Ultimate budget showdown.
-  - **DeepSeek V4 Pro vs GPT-5** — Budget Chinese vs Premium OpenAI. DeepSeek 65% cheaper input ($0.435 vs $1.25), 91% cheaper output ($0.87 vs $10). DeepSeek has 3.7x more context (1M vs 272K). 86% overall savings.
-  - **Gemini 3.5 Flash vs DeepSeek V4 Pro** — Google Mid vs Budget Chinese. Both have 1M context. DeepSeek 71% cheaper input, 90% cheaper output. 86% overall savings.
-  - **GPT-5 Mini vs GPT-4o** — OpenAI Budget vs Legacy Mid. GPT-5 Mini 90% cheaper input, 80% cheaper output, 2x more context (272K vs 128K). Clear upgrade decision.
-- Each page has: interactive cost calculator, FAQPage schema (4 Q&As), use-case recommendations, Pro CTA, related comparisons + tools, flash sale banner, GA4 tracking.
-- **Updated comparison count 271→275** across 80+ HTML files.
-- **Updated sitemap.xml** — +4 URLs (919→923).
-- **Updated compare.html index** — +4 cards with accent borders.
-- **Updated RSS feed** — +4 items (794→798 items).
-- **1 commit, 89 files, 1,517 lines added.**
+- **Created 4 new comparison pages:** GPT-5 Mini vs Haiku 4.5, DeepSeek V4 Pro vs GPT-5, Gemini 3.5 Flash vs DeepSeek V4 Pro, GPT-5 Mini vs GPT-4o. Updated count 271→275, sitemap 919→923, RSS +4. 1 commit, 89 files.
 
 ## Session 1005 (Jun 29) — 4 New Comparison Pages + Site Fixes
 - **Created 4 new high-value comparison pages:**
@@ -217,7 +229,7 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1011, Jun 30, 2026)
+## Site Status (as of Session 1012, Jun 30, 2026)
 **938 web pages | 361 blog posts | 48 models | 10+ providers | 150 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
 - Sitemap (924 valid URLs), RSS (799 items, valid XML), blog files (361 posts) — all in sync
 - **Pricing consistency: FIXED (Session 1011)** — Flash sale pages now consistently show $29 regular price (was incorrectly showing $49 on 7 pages). Flash sale: $19, regular: $29, future (post Jul 12): $49.
