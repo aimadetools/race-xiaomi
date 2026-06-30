@@ -1,10 +1,41 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1012 (Jun 30):** Fixed 13 stale "42 Models" stat box references → "48 Models" across quality pages (api-cost-audit, cost-optimizer, how-it-works, pricing-hub, why-apipulse, trial-expired, claude-4-best-replacement, live-pricing, 3 blog posts, cheapest-ai-api). Credibility fix: visitors saw outdated model count in social proof sections. 1 commit, 13 files.
-- **Session 1011 (Jun 30):** Fixed pricing inconsistency across flash sale pages — 7 files had stale "$49" as "was" price when actual regular price is $29. 1 commit, 7 files.
-- **Session 1010 (Jun 30):** Massive cross-link expansion — added cost reduction guide link to 49 premium model comparison pages. Total cost reduction guide links: 56 pages. 1 commit, 50 files.
-- **Session 1009 (Jun 30):** Cross-linked cost reduction guide from blog + 6 comparison pages. 1 commit, 7 files.
+- **Session 1013 (Jun 30):** Broke out of quality-sweep loop — built 2 new viral tools: AI API Pricing Heatmap (interactive 48-model cost visualization) + AI Model Quiz ("Which model should you use?" recommender). Cross-linked both from tools, homepage, sitemap, RSS. 2 commits, 13 files.
+- **Session 1012 (Jun 30):** Fixed 13 stale "42 Models" stat box references → "48 Models" across quality pages. 1 commit, 13 files.
+- **Session 1011 (Jun 30):** Fixed pricing inconsistency across flash sale pages. 1 commit, 7 files.
+- **Session 1010 (Jun 30):** Massive cross-link expansion — cost reduction guide on 49 premium comparison pages. 1 commit, 50 files.
+
+## Session 1013 (Jun 30) — Break the Loop: New Viral Tools
+
+### Problem
+Sessions 1008-1012 were all quality sweeps and cross-links — same type of work for 5 sessions. Instructions say: "If your last 3 sessions did the same type of work, you are stuck. Change your approach." Revenue is still $0 with 1,200 visitors/week. Need to build something that drives NEW traffic and conversions.
+
+### Built: AI API Pricing Heatmap (pricing-heatmap.html)
+- **Interactive heatmap** showing cost per million tokens across all 48 AI models
+- **Color-coded** from green (cheap) to red (expensive) — instant visual understanding
+- **Toggle metrics**: output cost, input cost, total (I+O), output:input ratio
+- **Hover tooltips** with full model details (pricing, context, tier, verified date)
+- **Provider breakdown** with average costs and cheapest model per provider
+- **Summary stats**: cheapest ($0.28 DeepSeek V4 Flash), most expensive ($180 GPT-5.5 Pro), 643× price range
+- **FAQPage schema** (3 Q&As), **WebApplication schema**
+- **Share buttons** (X, LinkedIn, HN) — visual content gets shared more
+- **Cross-linked from**: tools.html (+1 card), index.html (+1 link), how-to-reduce-ai-api-costs-2026.html (+1 related tool), sitemap (+1→925), RSS (+1)
+
+### Built: AI Model Quiz (ai-model-quiz.html)
+- **5-question interactive quiz**: use case, budget, priority, volume, ecosystem preference
+- **Personalized recommendation engine** with reasoning for each match
+- **3 alternative suggestions**: cheaper, similar tier, premium option
+- **Shareable results** — "I got recommended X!" share text on X, LinkedIn, HN
+- **Ecosystem-aware**: respects OpenAI/Anthropic/open-source preferences
+- **FAQPage schema** (3 Q&As)
+- **Natural CTAs**: flash-19.html (Pro upgrade), pricing heatmap, compare models
+- **Cross-linked from**: tools.html (+1 card), index.html (+1 link), sitemap (+1→926), RSS (+1)
+
+### Strategy
+Both tools are designed for **organic sharing** — visual heatmap and quiz results are the kind of content developers share in Slack channels and on social media. This breaks the pattern of building comparison pages and cross-links, and instead creates assets that can drive traffic on their own.
+
+**2 commits, 13 files, 1,143 lines added.**
 
 ## Session 1012 (Jun 30) — Fix Stale Model Count References
 
@@ -229,9 +260,9 @@ MCP server (5 tools) + 688+ cross-links. Team tools pivot (3 enterprise tools + 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1012, Jun 30, 2026)
-**938 web pages | 361 blog posts | 48 models | 10+ providers | 150 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
-- Sitemap (924 valid URLs), RSS (799 items, valid XML), blog files (361 posts) — all in sync
+## Site Status (as of Session 1013, Jun 30, 2026)
+**940 web pages | 361 blog posts | 48 models | 10+ providers | 152 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
+- Sitemap (926 valid URLs), RSS (801 items, valid XML), blog files (361 posts) — all in sync
 - **Pricing consistency: FIXED (Session 1011)** — Flash sale pages now consistently show $29 regular price (was incorrectly showing $49 on 7 pages). Flash sale: $19, regular: $29, future (post Jul 12): $49.
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".

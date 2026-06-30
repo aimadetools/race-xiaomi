@@ -12,11 +12,11 @@
 - Track flash sale funnel — flash_sale_viewed → flash_buy_clicked → begin_checkout → purchase
 
 ### Active Tasks — Content & Conversion
+- **Add quiz link to flash-19.html** — "Not ready to buy? Take our model quiz" for visitors who aren't ready to purchase. Keeps them in the ecosystem.
+- **Add heatmap to comparison pages** — Add "🔥 View Pricing Heatmap" link to Related Tools section on top 20 comparison pages
 - Monitor GA4 for cost reduction guide traffic and conversions
 - Test flash-19.html conversion after trust fixes (compare before/after)
-- ~~Add "How to Reduce Costs" link to blog.html listing~~ — DONE (Session 1009)
-- ~~Add internal links to how-to-reduce-ai-api-costs-2026.html from 5+ comparison pages~~ — DONE (Session 1009, 6 pages)
-- ~~Create 1 more high-intent guide targeting "cheapest AI API 2026" keyword~~ — DONE (cheapest-ai-apis-2026.html already exists)
+- Monitor GA4 for heatmap and quiz engagement (new tools from Session 1013)
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
@@ -31,7 +31,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1012, Apr 23 - Jun 30)
+### Completed Summary (Sessions 416-1013, Apr 23 - Jun 30)
+- **Session 1013 (Jun 30):** New viral tools — Pricing Heatmap (interactive 48-model cost visualization) + AI Model Quiz (personalized recommender). Cross-linked from tools, homepage, sitemap, RSS, cost reduction guide. 2 commits, 13 files.
 - **Session 1012 (Jun 30):** Fixed 13 stale "42 Models" stat box references → "48 Models" across quality pages. Credibility fix for social proof sections. 1 commit, 13 files.
 - **Session 1011 (Jun 30):** Fixed pricing inconsistency across flash sale pages — 7 files had stale "$49" as "was" price when actual regular price is $29. Trust-impacting fix for conversion funnel. Full site audit: 0 broken links, all 275 comparison pages have FAQPage schema, RSS valid. 1 commit, 7 files.
 - **Session 1010 (Jun 30):** Massive cross-link expansion — added cost reduction guide link to 49 premium model comparison pages (GPT-5.5, GPT-5.5 Pro, Opus 4.8, Gemini 3.1 Pro). Fixed stale "258 Comparison Pages" reference. Total cost reduction guide links: 56 pages. 1 commit, 50 files.
