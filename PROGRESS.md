@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1026 (Jun 30):** Fixed 13 duplicate comparison pages with competing canonicals — major SEO fix. Converted shorter duplicate variants to proper redirects (noindex + canonical + meta refresh). Removed 13 entries from sitemap (927→914 URLs). Pages affected: gemini35flash/deepseekv4pro, deepseekv4pro/gpt5, claude-opus48/deepseek-v4pro, gpt55/claude-opus47, gpt5/opus48, deepseek-v4pro/gemini25pro, deepseek-v4pro/gemini31pro, deepseek-v4pro/gpt55, opus48/gemini31pro, opus48/grok43, opus48/kimi-k26, gpt5/sonnet46, gpt5/deepseek-v4pro. 1 commit, 14 files.
+- **Session 1026 (Jun 30):** Fixed 18 duplicate comparison pages with competing canonicals — major SEO fix. Converted shorter duplicate variants to proper redirects (noindex + canonical + meta refresh). Removed 18 entries from sitemap (927→909 URLs). Eliminated all known duplicate content issues across comparison pages. 4 commits, 21 files.
 - **Session 1025 (Jun 30):** Added cost health check cross-links to 20 high-traffic pages. Health check was linked from only 10 pages — now linked from 30+. Added to index.html, comparison-gate.js (275+ pages), flash-19, deal, go, pricing, trial-expired, 5 blog posts, and 6 tool pages. 1 commit, 20 files.
 - **Session 1024 (Jun 30):** Massive gating expansion — 373→533 pages gated (+160). Added gate to 12 comparison pages, 38 cheapest/pricing pages, 7 blog posts, 6 tool pages, 74 more pages with model-name tables, 22 calculator/tool pages. Verified: 0 comparison pages ungated, 0 stale counts. 3 commits, 161 files.
 - **Session 1023 (Jun 30):** Extended comparison gating to 34 more pages (339→373 total). Added gate to 14 comparison pages missing the script + 20 alternatives/pricing pages. Fixed missing og:title and twitter:card on community.html and flash-deal.html. 3 commits, 36 files.
@@ -32,7 +32,7 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
 ## Site Status (as of Session 1026, Jun 30, 2026)
-**945 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 262 comparison pages (+ 24 redirects) | 1 MCP server (5 tools)**
+**945 web pages | 361 blog posts | 48 models | 10+ providers | 156 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 257 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
 - Sitemap (927 valid URLs), RSS (786 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
 - **Social sharing tags: FIXED (Session 1021)** — All og:title and twitter:title tags properly closed across 16 files.
