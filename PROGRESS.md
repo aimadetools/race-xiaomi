@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1022 (Jun 30):** Created comparison-gate.js — automatic table row gating for conversion. Added Pro gate to 339 comparison pages (was 51). Visitors see top 3 models free, remaining gated behind Pro CTA. Biggest conversion change this session. 1 commit, 340 files.
 - **Session 1021 (Jun 30):** Fixed broken og:title and twitter:title meta tags across 16 files — og:title missing closing `>`, twitter:title had extra `>>`. SEO fix for social sharing. 1 commit, 16 files.
 - **Session 1020 (Jun 30):** Fixed 3 remaining stale tool count refs (155→156) in changelog.html + tools.html meta tags. Fixed HTML syntax error (extra `>` in twitter:title tag). 1 commit, 2 files.
 - **Session 1019 (Jun 30):** Stale count sweep — fixed "82 tools" → 156 in 5 pages, "431 pages, 256 posts" → 945/361 in changelog, stale comparison counts 258/263→275 in 6 pages. 3 commits, 11 files.
@@ -36,7 +37,7 @@ Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **OG/Twitter social sharing tags: 100%** — All indexed content pages have complete meta tags.
 - **Tool count: 156** — Verified on tools.html card count.
-- **Content gating** — 3 layers (usage-gate.js, results-cta.js, ranking table gate). 51+ pages gated.
+- **Content gating** — 4 layers (usage-gate.js, results-cta.js, ranking table gate, comparison-gate.js). 339+ comparison pages gated (was 51). Show top 3 models free, gate remaining behind Pro CTA.
 - **$19 Flash Sale** — flash-19.html landing page, site-wide banner. Ends Jul 12 → $29 regular → $49 future.
 
 ## Blocked on Human Action

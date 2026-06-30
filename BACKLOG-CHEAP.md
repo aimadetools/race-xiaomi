@@ -1,8 +1,9 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 945 pages, 361 posts, 48 models, 275 comparison pages (+ 11 redirects), 156 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
+**Site Status:** 945 pages, 361 posts, 48 models, 275 comparison pages (+ 11 redirects), 156 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Content gating expanded to 339 comparison pages (Session 1022).**
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
+- **Monitor comparison gate performance** — check GA4 for `comparison_gate_clicked` events (new Session 1022)
 - Monitor pricing-dashboard engagement — check GA4 for page views, time-on-page, scroll depth
 - Monitor quick-savings conversions — check GA4 for `savings_calculated` → `pro_cta_clicked` events
 - Monitor $19 flash sale conversions — check GA4 for `flash_buy_clicked` and `flash_sale_viewed` events
