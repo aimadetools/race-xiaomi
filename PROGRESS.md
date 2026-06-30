@@ -1,11 +1,32 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1015 (Jun 30):** Overhauled Free vs Pro comparison page (compare-plans.html) — replaced stale $29 pricing with $19 flash sale, added interactive live demo showing blurred Pro-only content, "Who should upgrade" section, new FAQPage schema. Cross-linked from flash-19.html + tools.html. 1 commit, 4 files.
 - **Session 1014 (Jun 30):** Added pricing heatmap cross-links to 266 comparison pages. Quiz link already on flash-19.html. 1 commit, 266 files.
 - **Session 1013 (Jun 30):** Broke out of quality-sweep loop — built 2 new viral tools: AI API Pricing Heatmap (interactive 48-model cost visualization) + AI Model Quiz ("Which model should you use?" recommender). Cross-linked both from tools, homepage, sitemap, RSS. 2 commits, 13 files.
 - **Session 1012 (Jun 30):** Fixed 13 stale "42 Models" stat box references → "48 Models" across quality pages. 1 commit, 13 files.
 - **Session 1011 (Jun 30):** Fixed pricing inconsistency across flash sale pages. 1 commit, 7 files.
 - **Session 1010 (Jun 30):** Massive cross-link expansion — cost reduction guide on 49 premium comparison pages. 1 commit, 50 files.
+
+## Session 1015 (Jun 30) — Free vs Pro Page Overhaul
+
+### Problem
+The existing compare-plans.html showed stale $29 pricing (flash sale is $19) and lacked a compelling demo of what Pro unlocks. Visitors comparing free vs paid had no visual proof of the value gap. The page also didn't mention migration code snippets — a key Pro differentiator.
+
+### Changes
+- **Replaced compare-plans.html** with new conversion-focused design — clean comparison table, interactive live demo, $19 flash sale pricing
+- **Added live demo section** — shows GPT-5.5 alternatives with 3 visible (free) and 4 blurred (Pro-only) rows, demonstrating the value gap visually
+- **Added "Who should upgrade" section** — 4 persona cards (spending $50+/mo, switching providers, managing a team, valuing time)
+- **Updated FAQPage schema** — 4 new conversion-focused Q&As
+- **Cross-linked from flash-19.html** — added "See Free vs Pro →" link in "Not ready to buy yet?" section
+- **Cross-linked from tools.html** — new card with "CONVERT" tag
+- **Updated RSS feed** — new entry pointing to compare-plans.html
+- **Removed duplicate free-vs-pro.html** — kept compare-plans.html URL for existing SEO equity
+
+### Strategy
+This addresses the conversion gap: visitors using free tools (comparison pages, calculators, heatmap) had no clear page showing what they're missing. The live demo with blurred rows creates visual FOMO without being pushy. The "Who should upgrade" section helps visitors self-qualify before hitting the flash sale page.
+
+**1 commit, 4 files, 577 lines added, 467 lines removed.**
 
 ## Session 1014 (Jun 30) — Cross-Link Viral Tools from Comparison Pages
 
@@ -208,9 +229,9 @@ Previous 6 sessions (1002-1007) were all quality sweeps and comparison page addi
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. 652 pages, 320 posts, 48 models, 10 providers, 84 tools. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1014, Jun 30, 2026)
+## Site Status (as of Session 1015, Jun 30, 2026)
 **940 web pages | 361 blog posts | 48 models | 10+ providers | 152 tools | 17 API endpoints | 3 embeddable widgets (25 models) | 275 comparison pages (+ 11 redirects) | 1 MCP server (5 tools)**
-- Sitemap (926 valid URLs), RSS (801 items, valid XML), blog files (361 posts) — all in sync
+- Sitemap (926 valid URLs), RSS (802 items, valid XML), blog files (361 posts) — all in sync
 - **Pricing consistency: FIXED (Session 1011)** — Flash sale pages now consistently show $29 regular price (was incorrectly showing $49 on 7 pages). Flash sale: $19, regular: $29, future (post Jul 12): $49.
 - **Structured data: 98.3%** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.4%** — 851 pages link to go.html (added 2 high-intent pages in Session 975). Only 14 pages without (non-commercial). All CTAs now say "48-model".

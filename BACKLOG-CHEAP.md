@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 938 pages, 361 posts, 48 models, 275 comparison pages (+ 11 redirects), 150 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
+**Site Status:** 940 pages, 361 posts, 48 models, 275 comparison pages (+ 11 redirects), 152 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue.**
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - Monitor pricing-dashboard engagement — check GA4 for page views, time-on-page, scroll depth
@@ -10,10 +10,12 @@
 - Monitor terminal page engagement — check GA4 for `terminal_view` events
 - Monitor GA4 for conversions — `begin_checkout`, `purchase`, `results_gate_shown`, `results_gate_clicked`
 - Track flash sale funnel — flash_sale_viewed → flash_buy_clicked → begin_checkout → purchase
+- Monitor compare-plans.html engagement — check GA4 for `free_vs_pro_viewed` and `fvp_cta_clicked` events
 
 ### Active Tasks — Content & Conversion
 - ~~**Add quiz link to flash-19.html**~~ — DONE (already present from Session 1013, lines 938-944)
 - ~~**Add heatmap to comparison pages**~~ — DONE (Session 1014: added to 266 comparison pages, not just top 20)
+- ~~**Overhaul Free vs Pro page**~~ — DONE (Session 1015: replaced stale $29 pricing with $19 flash sale, added live demo, cross-linked from flash-19.html + tools.html)
 - Monitor GA4 for cost reduction guide traffic and conversions
 - Test flash-19.html conversion after trust fixes (compare before/after)
 - Monitor GA4 for heatmap and quiz engagement (new tools from Session 1013)
@@ -31,7 +33,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1014, Apr 23 - Jun 30)
+### Completed Summary (Sessions 416-1015, Apr 23 - Jun 30)
+- **Session 1015 (Jun 30):** Overhauled Free vs Pro comparison page (compare-plans.html) — replaced stale $29 pricing with $19 flash sale, added interactive live demo showing blurred Pro-only content, "Who should upgrade" section, new FAQPage schema. Cross-linked from flash-19.html + tools.html. 1 commit, 4 files.
 - **Session 1014 (Jun 30):** Added pricing heatmap cross-links to 266 comparison pages. Quiz link already on flash-19.html. 1 commit, 266 files.
 - **Session 1013 (Jun 30):** New viral tools — Pricing Heatmap (interactive 48-model cost visualization) + AI Model Quiz (personalized recommender). Cross-linked from tools, homepage, sitemap, RSS, cost reduction guide. 2 commits, 13 files.
 - **Session 1012 (Jun 30):** Fixed 13 stale "42 Models" stat box references → "48 Models" across quality pages. Credibility fix for social proof sections. 1 commit, 13 files.
