@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI API Pricing Dashboard — Compare 48 Models Across 10 Providers (2026)</title>
-    <meta name="description" content="Live AI API pricing comparison for 49 models across 10 providers. Compare GPT-5.5, Claude Opus 4.8, Gemini 3, DeepSeek V4, and more. Find the cheapest model for your use case.">
-    <meta name="keywords" content="AI API pricing, LLM API cost, GPT pricing, Claude pricing, Gemini pricing, DeepSeek pricing, cheapest AI API, API cost comparison 2026">
+    <title>AI API Pricing Dashboard — Compare 49 Models Across 10 Providers | APIpulse</title>
+    <meta name="description" content="Live AI API pricing for 49 models across 10 providers. Sort by cost, filter by provider, compare input/output token prices. Updated Jul 2026. Free, no signup.">
+    <meta name="keywords" content="AI API pricing, LLM pricing comparison, GPT pricing, Claude pricing, Gemini pricing, AI model cost, API cost comparison 2026, cheapest AI model, OpenAI API pricing, Anthropic pricing">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="AI API Pricing Dashboard — 48 Models Compared">
-    <meta property="og:description" content="Compare AI API pricing across 49 models and 10 providers. Interactive dashboard with real-time filtering and sorting.">
-    <meta property="og:url" content="https://getapipulse.com/pricing-dashboard.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI API Pricing Dashboard — 49 Models Compared | APIpulse">
+    <meta property="og:description" content="Live AI API pricing for 49 models across 10 providers. Sort by cost, filter by provider, compare input/output token prices. Free, no signup.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/pricing-dashboard.html">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:site_name" content="APIpulse">
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI API Pricing Dashboard — 48 Models Compared">
-    <meta name="twitter:description" content="Compare AI API pricing across 49 models and 10 providers.">
+    <meta name="twitter:title" content="AI API Pricing Dashboard — 49 Models Compared">
+    <meta name="twitter:description" content="Live AI API pricing for 49 models across 10 providers. Sort by cost, filter by provider, compare input/output token prices.">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
     <link rel="canonical" href="https://getapipulse.com/pricing-dashboard.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
     <script>
@@ -27,280 +31,246 @@
       gtag('config', 'G-0CEP7S9Y3J');
     </script>
     <script src="analytics.js" defer></script>
+    <script src="pricing-data.js" defer></script>
     <script src="shared.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "AI API Pricing Dashboard",
+        "@type": "WebPage",
+        "name": "AI API Pricing Dashboard — Compare 49 Models Across 10 Providers",
+        "description": "Live AI API pricing comparison for 49 models across 10 providers. Sort by cost, filter by provider, compare input/output token prices. Updated Jul 2026.",
         "url": "https://getapipulse.com/pricing-dashboard.html",
-        "description": "Interactive dashboard comparing AI API pricing across 49 models and 10 providers.",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Web",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
+        "publisher": {
+            "@type": "Organization",
+            "name": "APIpulse",
+            "url": "https://getapipulse.com"
+        },
+        "dateModified": "2026-07-01",
+        "mainEntity": {
+            "@type": "Dataset",
+            "name": "AI API Pricing Data",
+            "description": "Pricing data for 49 AI models from 10 providers including OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, xAI, Moonshot, and AI21",
+            "keywords": ["AI API pricing", "LLM cost", "token pricing", "model comparison"],
+            "dateModified": "2026-07-01"
         }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is the cheapest AI API in 2026?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "DeepSeek V4 Flash is the cheapest at $0.14/$0.28 per 1M tokens (input/output). For budget-friendly options with large context windows, Gemini 2.5 Flash-Lite ($0.10/$0.40) and Mistral Small 4 ($0.10/$0.30) are also excellent choices."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How much does GPT-5.5 cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "GPT-5.5 costs $5.00 per 1M input tokens and $30.00 per 1M output tokens. The Pro variant costs $30.00/$180.00. Context window is 1.05M tokens."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How much does Claude Opus 4.8 cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Claude Opus 4.8 costs $5.00 per 1M input tokens and $25.00 per 1M output tokens. It has a 1M token context window. Claude Sonnet 4.6 is cheaper at $3.00/$15.00."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Which AI provider is cheapest for high-volume API usage?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "DeepSeek offers the lowest per-token prices. DeepSeek V4 Flash at $0.14/$0.28 per 1M tokens is 97% cheaper than GPT-5.5. For even lower costs, consider open-weight models via Together.ai like Llama 3.1 8B at $0.10/$0.10."
-                }
-            }
-        ]
     }
     </script>
     <style>
-        :root {
-            --bg: #0f1117;
-            --bg-card: #1a1d2e;
-            --bg-hover: #242840;
-            --border: #2a2e45;
-            --text: #e2e8f0;
-            --text-secondary: #94a3b8;
-            --accent: #6366f1;
-            --green: #22c55e;
-            --red: #ef4444;
-            --orange: #f59e0b;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-        }
-
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(34, 197, 94, 0.05));
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-        }
-        .header-inner {
-            max-width: 1400px;
+        .dashboard-page {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 100px 24px 80px;
         }
-        .logo { font-size: 20px; font-weight: 800; color: var(--accent); text-decoration: none; }
-        .logo span { color: var(--text); }
-        .header-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-            color: white;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s;
+        .dashboard-hero {
+            text-align: center;
+            margin-bottom: 40px;
         }
-        .header-cta:hover { opacity: 0.9; transform: translateY(-1px); }
-
-        /* Main */
-        .main { max-width: 1400px; margin: 0 auto; padding: 24px; }
-
-        /* Hero */
-        .hero { text-align: center; margin-bottom: 32px; }
-        .hero h1 {
-            font-size: clamp(24px, 4vw, 36px);
-            font-weight: 800;
+        .dashboard-hero h1 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 900;
             margin-bottom: 12px;
             line-height: 1.2;
         }
-        .hero h1 .highlight { color: var(--green); }
-        .hero p {
+        .dashboard-hero p {
             font-size: 16px;
             color: var(--text-secondary);
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 16px;
+            line-height: 1.6;
         }
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
-        }
-        .hero-stat { text-align: center; }
-        .hero-stat .num { font-size: 28px; font-weight: 800; color: var(--green); font-family: monospace; }
-        .hero-stat .lbl { font-size: 12px; color: var(--text-secondary); }
-
-        /* Flash sale banner */
-        .flash-banner {
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.12), rgba(220, 38, 38, 0.05));
-            border: 1px solid rgba(220, 38, 38, 0.3);
-            border-radius: 12px;
-            padding: 16px 24px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .flash-banner .text { font-size: 15px; font-weight: 600; color: #fca5a5; }
-        .flash-banner .text strong { color: #ef4444; }
-        .flash-banner a {
+        .freshness-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-            color: white;
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.25);
             border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
-            white-space: nowrap;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--green);
+        }
+        .freshness-dot {
+            width: 6px; height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
         }
 
-        /* Controls */
-        .controls {
-            display: flex;
+        /* Quick stats row */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 12px;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            align-items: center;
+            margin-bottom: 28px;
         }
-        .search-box {
-            flex: 1;
-            min-width: 200px;
-            padding: 10px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text);
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .search-box:focus { border-color: var(--accent); }
-        .filter-btn {
-            padding: 10px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text-secondary);
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-        .filter-btn:hover, .filter-btn.active {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: rgba(99, 102, 241, 0.08);
-        }
-        .filter-select {
-            padding: 10px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text);
-            font-size: 13px;
-            cursor: pointer;
-            font-family: inherit;
-            outline: none;
-        }
-        .filter-select:focus { border-color: var(--accent); }
-
-        /* Table */
-        .table-wrap {
+        .stat-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            overflow: hidden;
+            padding: 16px;
+            text-align: center;
+        }
+        .stat-card .stat-num {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--accent);
+            font-family: monospace;
+        }
+        .stat-card .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        @media (max-width: 600px) {
+            .quick-stats { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* Filters */
+        .filters-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+        .filters-bar label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 4px;
+        }
+        .filters-bar select, .filters-bar input[type="text"] {
+            padding: 8px 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 13px;
+            font-family: inherit;
+        }
+        .filters-bar input[type="text"] {
+            min-width: 180px;
+        }
+        .filters-bar .reset-btn {
+            padding: 8px 14px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filters-bar .reset-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .filter-count {
+            margin-left: auto;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .filter-count strong { color: var(--text-primary); }
+
+        /* Table */
+        .table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 12px;
             margin-bottom: 24px;
         }
-        table {
+        .pricing-table {
             width: 100%;
             border-collapse: collapse;
             font-size: 14px;
+            min-width: 800px;
         }
-        thead th {
-            background: rgba(99, 102, 241, 0.06);
-            padding: 14px 16px;
-            text-align: left;
+        .pricing-table thead th {
+            padding: 14px 12px;
+            background: var(--bg-secondary);
+            font-size: 11px;
             font-weight: 700;
-            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--text-secondary);
-            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+            text-align: left;
+            border-bottom: 2px solid var(--border);
+            position: sticky;
+            top: 0;
             cursor: pointer;
             user-select: none;
             white-space: nowrap;
             transition: color 0.2s;
         }
-        thead th:hover { color: var(--accent); }
-        thead th.sorted { color: var(--accent); }
-        thead th .arrow { font-size: 10px; margin-left: 4px; }
-        tbody tr {
-            border-bottom: 1px solid rgba(42, 46, 69, 0.5);
+        .pricing-table thead th:hover {
+            color: var(--accent);
+        }
+        .pricing-table thead th.sorted-asc::after {
+            content: ' \25B2';
+            font-size: 10px;
+        }
+        .pricing-table thead th.sorted-desc::after {
+            content: ' \25BC';
+            font-size: 10px;
+        }
+        .pricing-table tbody tr {
+            border-bottom: 1px solid var(--border);
             transition: background 0.15s;
         }
-        tbody tr:hover { background: var(--bg-hover); }
-        tbody tr.deprecated { opacity: 0.5; }
-        tbody td { padding: 12px 16px; white-space: nowrap; }
-        .model-name { font-weight: 600; color: var(--text); }
+        .pricing-table tbody tr:hover {
+            background: rgba(99,102,241,0.04);
+        }
+        .pricing-table tbody tr:last-child { border-bottom: none; }
+        .pricing-table td {
+            padding: 12px 12px;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+        .pricing-table .model-name {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .pricing-table .model-name a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .pricing-table .model-name a:hover {
+            color: var(--accent);
+        }
+        .pricing-table .price-cell {
+            font-family: monospace;
+            font-weight: 600;
+        }
+        .pricing-table .cheapest {
+            color: var(--green);
+            font-weight: 700;
+        }
+        .pricing-table .expensive {
+            color: var(--red);
+        }
         .provider-badge {
             display: inline-block;
             padding: 2px 8px;
             border-radius: 4px;
             font-size: 11px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
+            background: var(--bg-secondary);
+            color: var(--text-muted);
         }
-        .provider-openai { background: rgba(16, 163, 127, 0.12); color: #10a37f; }
-        .provider-anthropic { background: rgba(217, 119, 87, 0.12); color: #d97757; }
-        .provider-google { background: rgba(66, 133, 244, 0.12); color: #4285f4; }
-        .provider-deepseek { background: rgba(59, 130, 246, 0.12); color: #3b82f6; }
-        .provider-mistral { background: rgba(255, 123, 37, 0.12); color: #ff7b25; }
-        .provider-cohere { background: rgba(99, 102, 241, 0.12); color: #6366f1; }
-        .provider-together { background: rgba(168, 85, 247, 0.12); color: #a855f7; }
-        .provider-moonshot { background: rgba(236, 72, 153, 0.12); color: #ec4899; }
-        .provider-xai { background: rgba(156, 163, 175, 0.12); color: #9ca3af; }
-        .provider-ai21 { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
         .tier-badge {
             display: inline-block;
             padding: 2px 8px;
@@ -308,464 +278,442 @@
             font-size: 11px;
             font-weight: 600;
         }
-        .tier-premium { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
-        .tier-mid { background: rgba(99, 102, 241, 0.12); color: #6366f1; }
-        .tier-budget { background: rgba(34, 197, 94, 0.12); color: #22c55e; }
-        .price { font-family: 'SF Mono', 'Cascadia Code', monospace; font-weight: 600; }
-        .price-cheapest { color: var(--green); }
-        .price-expensive { color: var(--red); }
-        .dep-badge {
+        .tier-Premium { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .tier-Mid { background: rgba(99,102,241,0.1); color: var(--accent); }
+        .tier-Budget { background: rgba(34,197,94,0.1); color: var(--green); }
+        .deprecated-badge {
             display: inline-block;
-            padding: 2px 6px;
+            padding: 1px 6px;
             border-radius: 4px;
             font-size: 10px;
-            font-weight: 700;
-            background: rgba(239, 68, 68, 0.12);
-            color: var(--red);
+            font-weight: 600;
+            background: rgba(234,179,8,0.15);
+            color: #eab308;
+            margin-left: 6px;
         }
-        .context-size { color: var(--text-secondary); font-size: 13px; }
+        .compare-link {
+            font-size: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .pricing-table tbody tr:hover .compare-link {
+            opacity: 1;
+        }
 
-        /* Summary cards */
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-        .summary-card {
+        /* Cost calculator */
+        .calc-section {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 16px;
-            text-align: center;
-        }
-        .summary-card .label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
-        .summary-card .value { font-size: 24px; font-weight: 800; font-family: monospace; }
-        .summary-card .value.green { color: var(--green); }
-        .summary-card .value.accent { color: var(--accent); }
-        .summary-card .sub { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
-
-        /* Pro upsell */
-        .pro-upsell {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 14px;
-            padding: 32px;
-            text-align: center;
-            margin-bottom: 24px;
-        }
-        .pro-upsell h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
-        .pro-upsell p { color: var(--text-secondary); margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .pro-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            margin-bottom: 24px;
-            text-align: left;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .pro-feature {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-        .pro-feature .icon { color: var(--green); flex-shrink: 0; }
-        .pro-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            color: white;
-            border: none;
             border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+        .calc-section h2 {
             font-size: 18px;
             font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .calc-section .calc-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .calc-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 12px;
+            align-items: end;
+        }
+        .calc-inputs label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            display: block;
+        }
+        .calc-inputs select, .calc-inputs input {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+            font-family: inherit;
+        }
+        .calc-inputs input {
+            font-family: monospace;
+            font-weight: 600;
+        }
+        .calc-btn {
+            padding: 10px 20px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
             cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .calc-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+        .calc-result {
+            display: none;
+            margin-top: 16px;
+            padding: 16px;
+            background: rgba(34,197,94,0.06);
+            border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .calc-result.visible { display: block; }
+        .calc-result .total {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--green);
+            font-family: monospace;
+        }
+        .calc-result .breakdown {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        @media (max-width: 768px) {
+            .calc-inputs { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .calc-inputs { grid-template-columns: 1fr; }
+        }
+
+        /* CTA section */
+        .dashboard-cta {
+            text-align: center;
+            padding: 40px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-top: 28px;
+        }
+        .dashboard-cta h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+        .dashboard-cta p { color: var(--text-secondary); margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .dashboard-cta .cta-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 800;
             text-decoration: none;
             transition: all 0.2s;
-            box-shadow: 0 4px 24px rgba(34, 197, 94, 0.3);
+            box-shadow: 0 4px 20px rgba(99,102,241,0.4);
         }
-        .pro-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(34, 197, 94, 0.4); }
-        .pro-trust {
-            margin-top: 12px;
+        .dashboard-cta .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99,102,241,0.5);
+        }
+        .dashboard-cta .cta-sub {
             font-size: 13px;
-            color: var(--text-secondary);
-        }
-        .pro-trust span { margin: 0 8px; }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 24px;
-            border-top: 1px solid var(--border);
-            margin-top: 40px;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-        .footer a { color: var(--accent); text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .main { padding: 16px; }
-            .controls { flex-direction: column; }
-            .search-box { width: 100%; }
-            .table-wrap { overflow-x: auto; }
-            table { min-width: 900px; }
-            .flash-banner { flex-direction: column; text-align: center; }
-            .pro-features { grid-template-columns: 1fr; }
-            .hero-stats { gap: 16px; }
-            .header-cta { display: none; }
+            color: var(--text-muted);
+            margin-top: 10px;
         }
 
-        /* Result count */
-        .result-count {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-        .result-count strong { color: var(--text); }
-
-        /* No results */
-        .no-results {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-secondary);
-            font-size: 15px;
-        }
+        /* Provider colors */
+        .provider-openai { color: #10a37f; }
+        .provider-anthropic { color: #d97706; }
+        .provider-google { color: #4285f4; }
+        .provider-deepseek { color: #0066ff; }
+        .provider-mistral { color: #ff7000; }
+        .provider-cohere { color: #6c5ce7; }
+        .provider-together { color: #6366f1; }
+        .provider-xai { color: #1d9bf0; }
+        .provider-moonshot { color: #a855f7; }
+        .provider-ai21 { color: #e11d48; }
     </style>
-    <script src="comparison-gate.js" defer></script>
 </head>
 <body>
-    <header class="header">
-        <div class="header-inner">
-            <a href="/" class="logo">API<span>pulse</span></a>
-            <a href="flash-19.html" class="header-cta">⚡ Flash Sale — Pro $19</a>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="tools.html">Tools</a>
+                <a href="pricing-dashboard.html" style="color:var(--accent)">Pricing</a>
+                <a href="go.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="main">
+    <main id="main" class="dashboard-page">
         <!-- Hero -->
-        <div class="hero">
-            <h1>AI API Pricing <span class="highlight">Dashboard</span></h1>
-            <p>Compare pricing across 49 models and 10 providers. Updated regularly. Find the cheapest model for your use case.</p>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="num">48</div>
-                    <div class="lbl">Models</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="num">10</div>
-                    <div class="lbl">Providers</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="num">$0.075</div>
-                    <div class="lbl">Cheapest Input</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="num">1M</div>
-                    <div class="lbl">Max Context</div>
-                </div>
+        <section class="dashboard-hero">
+            <h1>AI API Pricing Dashboard</h1>
+            <p>Compare pricing for <strong>49 models</strong> across <strong>10 providers</strong>. Sort by cost, filter by provider, and find the cheapest model for your use case.</p>
+            <div class="freshness-badge">
+                <span class="freshness-dot"></span>
+                Pricing verified Jul 2026 · Updated weekly
             </div>
-        </div>
+        </section>
 
-        <!-- Flash sale banner -->
-        <div class="flash-banner">
-            <span class="text">⚡ <strong>Flash Sale:</strong> APIpulse Pro lifetime access — $19 (was $29). Ends July 12.</span>
-            <a href="flash-19.html?from=dashboard">Get Pro for $19 →</a>
-        </div>
+        <!-- Quick stats -->
+        <div class="quick-stats" id="quick-stats"></div>
 
-        <!-- Summary cards -->
-        <div class="summary-grid" id="summary-cards">
-            <div class="summary-card">
-                <div class="label">Cheapest Input</div>
-                <div class="value green">$0.075</div>
-                <div class="sub">Gemini 2.0 Flash Lite</div>
+        <!-- Inline cost calculator -->
+        <section class="calc-section">
+            <h2>Quick Cost Calculator</h2>
+            <p class="calc-sub">Estimate your monthly cost for any model based on token usage</p>
+            <div class="calc-inputs">
+                <div>
+                    <label for="calc-model">Model</label>
+                    <select id="calc-model"></select>
+                </div>
+                <div>
+                    <label for="calc-input-tokens">Input tokens / month</label>
+                    <input type="text" id="calc-input-tokens" value="1,000,000" inputmode="numeric">
+                </div>
+                <div>
+                    <label for="calc-output-tokens">Output tokens / month</label>
+                    <input type="text" id="calc-output-tokens" value="500,000" inputmode="numeric">
+                </div>
+                <button class="calc-btn" onclick="calculateCost()">Calculate</button>
             </div>
-            <div class="summary-card">
-                <div class="label">Cheapest Output</div>
-                <div class="value green">$0.10</div>
-                <div class="sub">Llama 3.1 8B / Mistral Small</div>
+            <div class="calc-result" id="calc-result">
+                <div class="total" id="calc-total">$0.00</div>
+                <div class="breakdown" id="calc-breakdown"></div>
             </div>
-            <div class="summary-card">
-                <div class="label">Best Value (Large Context)</div>
-                <div class="value accent">DeepSeek V4</div>
-                <div class="sub">1M ctx @ $0.435/$0.87</div>
-            </div>
-            <div class="summary-card">
-                <div class="label">Avg. Cost (Non-Premium)</div>
-                <div class="value accent" id="avg-cost">—</div>
-                <div class="sub">Per 1M output tokens</div>
-            </div>
-        </div>
+        </section>
 
-        <!-- Controls -->
-        <div class="controls">
-            <input type="text" class="search-box" id="search" placeholder="Search models (e.g., GPT, Claude, DeepSeek...)">
-            <select class="filter-select" id="provider-filter">
+        <!-- Filters -->
+        <div class="filters-bar">
+            <label>Filters:</label>
+            <select id="filter-provider" onchange="applyFilters()">
                 <option value="">All Providers</option>
-                <option value="openai">OpenAI</option>
-                <option value="anthropic">Anthropic</option>
-                <option value="google">Google</option>
-                <option value="deepseek">DeepSeek</option>
-                <option value="mistral">Mistral</option>
-                <option value="cohere">Cohere</option>
-                <option value="together">Meta (Together)</option>
-                <option value="moonshot">Moonshot</option>
-                <option value="xai">xAI</option>
-                <option value="ai21">AI21</option>
             </select>
-            <select class="filter-select" id="tier-filter">
+            <select id="filter-tier" onchange="applyFilters()">
                 <option value="">All Tiers</option>
-                <option value="premium">Premium</option>
-                <option value="mid">Mid-range</option>
-                <option value="budget">Budget</option>
+                <option value="Premium">Premium</option>
+                <option value="Mid">Mid-range</option>
+                <option value="Budget">Budget</option>
             </select>
-            <button class="filter-btn" id="toggle-deprecated" title="Show/hide deprecated models">Show Deprecated</button>
+            <input type="text" id="filter-search" placeholder="Search models..." oninput="applyFilters()">
+            <button class="reset-btn" onclick="resetFilters()">Reset</button>
+            <span class="filter-count">Showing <strong id="visible-count">0</strong> of <strong id="total-count">0</strong> models</span>
         </div>
 
-        <div class="result-count" id="result-count"></div>
-
-        <!-- Table -->
+        <!-- Pricing table -->
         <div class="table-wrap">
-            <table>
+            <table class="pricing-table" id="pricing-table">
                 <thead>
                     <tr>
-                        <th data-sort="name">Model <span class="arrow"></span></th>
-                        <th data-sort="provider">Provider <span class="arrow"></span></th>
-                        <th data-sort="tier">Tier <span class="arrow"></span></th>
-                        <th data-sort="input">Input $/1M <span class="arrow"></span></th>
-                        <th data-sort="output">Output $/1M <span class="arrow"></span></th>
-                        <th data-sort="context">Context <span class="arrow"></span></th>
-                        <th data-sort="status">Status <span class="arrow"></span></th>
+                        <th data-sort="name">Model</th>
+                        <th data-sort="provider">Provider</th>
+                        <th data-sort="tier">Tier</th>
+                        <th data-sort="input">Input <small>$/1M</small></th>
+                        <th data-sort="output">Output <small>$/1M</small></th>
+                        <th data-sort="context">Context</th>
+                        <th data-sort="blended">Blended*</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="pricing-body"></tbody>
             </table>
-            <div class="no-results" id="no-results" style="display:none;">No models match your filters.</div>
         </div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:-16px;margin-bottom:24px;">
+            * Blended price = (input × 3 + output × 1) / 4 — assumes 75% input / 25% output token mix typical for most workloads.
+        </p>
 
-        <!-- Pro upsell -->
-        <div class="pro-upsell">
-            <h2>Unlock Full Comparison Power</h2>
-            <p>Get migration code, PDF reports, price alerts, and personalized optimization tips.</p>
-            <div class="pro-features">
-                <div class="pro-feature"><span class="icon">✓</span> Migration code (Python, Node, curl)</div>
-                <div class="pro-feature"><span class="icon">✓</span> PDF report export for teams</div>
-                <div class="pro-feature"><span class="icon">✓</span> Price change email alerts</div>
-                <div class="pro-feature"><span class="icon">✓</span> 10 saved comparison scenarios</div>
-                <div class="pro-feature"><span class="icon">✓</span> Personalized optimization tips</div>
-                <div class="pro-feature"><span class="icon">✓</span> Lifetime updates as models launch</div>
-            </div>
-            <a href="flash-19.html?from=dashboard_cta" class="pro-cta" onclick="if(typeof gtag==='function')gtag('event','pro_cta_clicked',{source:'dashboard_bottom'});">
-                Get Pro Lifetime — $19 <span style="font-size:14px;text-decoration:line-through;opacity:0.7;">$29</span>
-            </a>
-            <div class="pro-trust">
-                <span>🔒 Stripe secure</span>
-                <span>🛡️ 14-day refund</span>
-                <span>⚡ Instant access</span>
-            </div>
-        </div>
+        <!-- CTA -->
+        <section class="dashboard-cta">
+            <h2>Stop overpaying for AI APIs</h2>
+            <p>Get personalized migration recommendations, savings reports, and cost optimization tips across all 49 models.</p>
+            <a href="flash-19.html" class="cta-btn" onclick="trackEvent('dashboard_cta_clicked', {source:'pricing-dashboard'})">Get APIpulse Pro — $19</a>
+            <p class="cta-sub">One-time payment · Lifetime access · 14-day money-back guarantee</p>
+        </section>
     </main>
 
-    <footer class="footer">
-        <p>APIpulse — AI API pricing data for 49 models across 10 providers. Updated regularly.</p>
-        <p style="margin-top:8px;">
-            <a href="/">Home</a> · <a href="compare.html">Comparisons</a> · <a href="calculator.html">Calculator</a> · <a href="terminal.html">Terminal</a> · <a href="data/pricing.json">API (JSON)</a>
-        </p>
-        <p style="margin-top:8px;font-size:11px;color:#475569;">Pricing data is for reference. Verify with provider for production use.</p>
-    </footer>
-
     <script>
-    (function() {
-        // Pricing data (from /data/pricing.json)
-        var models = [
-            {"id":"openai-gpt55","name":"GPT-5.5","provider":"openai","providerName":"OpenAI","tier":"premium","input":5.00,"output":30.00,"context":"1.05M","deprecated":false},
-            {"id":"openai-gpt55-pro","name":"GPT-5.5 Pro","provider":"openai","providerName":"OpenAI","tier":"premium","input":30.00,"output":180.00,"context":"1.05M","deprecated":false},
-            {"id":"openai-gpt53-codex","name":"GPT-5.3 Codex","provider":"openai","providerName":"OpenAI","tier":"mid","input":1.75,"output":14.00,"context":"400K","deprecated":false},
-            {"id":"openai-gpt5","name":"GPT-5","provider":"openai","providerName":"OpenAI","tier":"premium","input":1.25,"output":10.00,"context":"272K","deprecated":false},
-            {"id":"openai-gpt5-mini","name":"GPT-5 mini","provider":"openai","providerName":"OpenAI","tier":"budget","input":0.25,"output":2.00,"context":"272K","deprecated":false},
-            {"id":"openai-gpt-oss-120b","name":"GPT-oss 120B","provider":"openai","providerName":"OpenAI","tier":"budget","input":0.15,"output":0.60,"context":"128K","deprecated":false},
-            {"id":"openai-gpt-oss-20b","name":"GPT-oss 20B","provider":"openai","providerName":"OpenAI","tier":"budget","input":0.08,"output":0.35,"context":"128K","deprecated":false},
-            {"id":"openai-gpt4o","name":"GPT-4o","provider":"openai","providerName":"OpenAI","tier":"mid","input":2.50,"output":10.00,"context":"128K","deprecated":false},
-            {"id":"openai-gpt4o-mini","name":"GPT-4o mini","provider":"openai","providerName":"OpenAI","tier":"budget","input":0.15,"output":0.60,"context":"128K","deprecated":false},
-            {"id":"openai-gpt54","name":"GPT-5.4","provider":"openai","providerName":"OpenAI","tier":"mid","input":2.50,"output":15.00,"context":"400K","deprecated":false},
-            {"id":"openai-gpt54-mini","name":"GPT-5.4 mini","provider":"openai","providerName":"OpenAI","tier":"budget","input":0.75,"output":4.50,"context":"400K","deprecated":false},
-            {"id":"openai-gpt54-nano","name":"GPT-5.4 nano","provider":"openai","providerName":"OpenAI","tier":"budget","input":0.20,"output":1.25,"context":"400K","deprecated":false},
-            {"id":"openai-gpt54-pro","name":"GPT-5.4 Pro","provider":"openai","providerName":"OpenAI","tier":"premium","input":30.00,"output":180.00,"context":"400K","deprecated":false},
-            {"id":"anthropic-opus48","name":"Claude Opus 4.8","provider":"anthropic","providerName":"Anthropic","tier":"premium","input":5.00,"output":25.00,"context":"1M","deprecated":false},
-            {"id":"anthropic-opus47","name":"Claude Opus 4.7","provider":"anthropic","providerName":"Anthropic","tier":"premium","input":5.00,"output":25.00,"context":"1M","deprecated":false},
-            {"id":"anthropic-opus","name":"Claude 4 Opus","provider":"anthropic","providerName":"Anthropic","tier":"premium","input":15.00,"output":75.00,"context":"200K","deprecated":true},
-            {"id":"anthropic-sonnet46","name":"Claude Sonnet 4.6","provider":"anthropic","providerName":"Anthropic","tier":"mid","input":3.00,"output":15.00,"context":"1M","deprecated":false},
-            {"id":"anthropic-sonnet","name":"Claude Sonnet 4","provider":"anthropic","providerName":"Anthropic","tier":"mid","input":3.00,"output":15.00,"context":"200K","deprecated":true},
-            {"id":"anthropic-haiku","name":"Claude Haiku 4.5","provider":"anthropic","providerName":"Anthropic","tier":"budget","input":1.00,"output":5.00,"context":"200K","deprecated":false},
-            {"id":"anthropic-fable5","name":"Claude Fable 5","provider":"anthropic","providerName":"Anthropic","tier":"premium","input":10.00,"output":50.00,"context":"1M","deprecated":false},
-            {"id":"anthropic-mythos5","name":"Claude Mythos 5","provider":"anthropic","providerName":"Anthropic","tier":"premium","input":10.00,"output":50.00,"context":"1M","deprecated":false},
-            {"id":"google-gemini35-flash","name":"Gemini 3.5 Flash","provider":"google","providerName":"Google","tier":"mid","input":1.50,"output":9.00,"context":"1M","deprecated":false},
-            {"id":"google-gemini31-flash-lite","name":"Gemini 3.1 Flash-Lite","provider":"google","providerName":"Google","tier":"budget","input":0.25,"output":1.50,"context":"1M","deprecated":false},
-            {"id":"google-gemini3-pro","name":"Gemini 3.1 Pro","provider":"google","providerName":"Google","tier":"mid","input":2.00,"output":12.00,"context":"1M","deprecated":false},
-            {"id":"google-gemini3-flash","name":"Gemini 3 Flash","provider":"google","providerName":"Google","tier":"budget","input":0.50,"output":3.00,"context":"1M","deprecated":false},
-            {"id":"google-pro","name":"Gemini 2.5 Pro","provider":"google","providerName":"Google","tier":"mid","input":1.25,"output":10.00,"context":"1M","deprecated":false},
-            {"id":"google-25-flash-lite","name":"Gemini 2.5 Flash-Lite","provider":"google","providerName":"Google","tier":"budget","input":0.10,"output":0.40,"context":"1M","deprecated":false},
-            {"id":"google-flash","name":"Gemini 2.0 Flash","provider":"google","providerName":"Google","tier":"budget","input":0.10,"output":0.40,"context":"1M","deprecated":true},
-            {"id":"google-flash-lite","name":"Gemini 2.0 Flash Lite","provider":"google","providerName":"Google","tier":"budget","input":0.075,"output":0.30,"context":"1M","deprecated":true},
-            {"id":"deepseek-v4-pro","name":"DeepSeek V4 Pro","provider":"deepseek","providerName":"DeepSeek","tier":"budget","input":0.435,"output":0.87,"context":"1M","deprecated":false},
-            {"id":"deepseek-v4-flash","name":"DeepSeek V4 Flash","provider":"deepseek","providerName":"DeepSeek","tier":"budget","input":0.14,"output":0.28,"context":"1M","deprecated":false},
-            {"id":"deepseek-v32","name":"DeepSeek V3.2","provider":"deepseek","providerName":"DeepSeek","tier":"budget","input":0.23,"output":0.34,"context":"128K","deprecated":false},
-            {"id":"deepseek-v3","name":"DeepSeek V3","provider":"deepseek","providerName":"DeepSeek","tier":"budget","input":0.27,"output":1.10,"context":"128K","deprecated":true},
-            {"id":"mistral-large","name":"Mistral Large 3","provider":"mistral","providerName":"Mistral","tier":"budget","input":0.50,"output":1.50,"context":"262K","deprecated":false},
-            {"id":"mistral-medium","name":"Mistral Medium 3.5","provider":"mistral","providerName":"Mistral","tier":"mid","input":1.50,"output":7.50,"context":"128K","deprecated":false},
-            {"id":"mistral-small","name":"Mistral Small 4","provider":"mistral","providerName":"Mistral","tier":"budget","input":0.10,"output":0.30,"context":"128K","deprecated":false},
-            {"id":"cohere-command-a","name":"Command A","provider":"cohere","providerName":"Cohere","tier":"mid","input":2.50,"output":10.00,"context":"128K","deprecated":false},
-            {"id":"cohere-command-r-plus","name":"Command R+","provider":"cohere","providerName":"Cohere","tier":"mid","input":2.50,"output":10.00,"context":"128K","deprecated":false},
-            {"id":"cohere-command-r","name":"Command R","provider":"cohere","providerName":"Cohere","tier":"budget","input":0.50,"output":1.50,"context":"128K","deprecated":false},
-            {"id":"llama-4-scout","name":"Llama 4 Scout","provider":"together","providerName":"Meta (Together)","tier":"budget","input":0.18,"output":0.59,"context":"1M","deprecated":false},
-            {"id":"llama-4-maverick","name":"Llama 4 Maverick","provider":"together","providerName":"Meta (Together)","tier":"budget","input":0.27,"output":0.85,"context":"1M","deprecated":false},
-            {"id":"llama-3.1-70b","name":"Llama 3.1 70B","provider":"together","providerName":"Meta (Together)","tier":"mid","input":0.88,"output":0.88,"context":"128K","deprecated":false},
-            {"id":"llama-3.1-8b","name":"Llama 3.1 8B","provider":"together","providerName":"Meta (Together)","tier":"budget","input":0.10,"output":0.10,"context":"128K","deprecated":false},
-            {"id":"kimi-k26","name":"Kimi K2.6","provider":"moonshot","providerName":"Moonshot","tier":"budget","input":0.95,"output":4.00,"context":"256K","deprecated":false},
-            {"id":"xai-grok3","name":"Grok 4.3","provider":"xai","providerName":"xAI","tier":"mid","input":1.25,"output":2.50,"context":"1M","deprecated":false},
-            {"id":"xai-grok3-mini","name":"Grok Build 0.1","provider":"xai","providerName":"xAI","tier":"budget","input":0.30,"output":0.50,"context":"256K","deprecated":false},
-            {"id":"ai21-jamba17","name":"Jamba 1.7 Large","provider":"ai21","providerName":"AI21","tier":"mid","input":2.00,"output":8.00,"context":"256K","deprecated":false},
-            {"id":"ai21-jamba","name":"Jamba 1.5 Large","provider":"ai21","providerName":"AI21","tier":"mid","input":2.00,"output":8.00,"context":"256K","deprecated":true}
-        ];
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') {
+            console.error('pricing-data.js not loaded');
+            return;
+        }
+
+        var activeModels = API_MODELS.filter(function(m) { return !m.deprecated; });
+
+        // Quick Stats
+        var providers = [];
+        var seen = {};
+        activeModels.forEach(function(m) {
+            if (!seen[m.provider]) { seen[m.provider] = true; providers.push(m.provider); }
+        });
+        var cheapest = activeModels.reduce(function(a, b) { return a.input < b.input ? a : b; });
+        var mostExpensive = activeModels.reduce(function(a, b) { return a.output > b.output ? a : b; });
+
+        document.getElementById('quick-stats').innerHTML =
+            '<div class="stat-card"><div class="stat-num">' + activeModels.length + '</div><div class="stat-label">Active Models</div></div>' +
+            '<div class="stat-card"><div class="stat-num">' + providers.length + '</div><div class="stat-label">Providers</div></div>' +
+            '<div class="stat-card"><div class="stat-num">$' + cheapest.input.toFixed(2) + '</div><div class="stat-label">Cheapest Input /1M</div></div>' +
+            '<div class="stat-card"><div class="stat-num">$' + mostExpensive.output.toFixed(2) + '</div><div class="stat-label">Highest Output /1M</div></div>';
+
+        // Populate filter dropdowns
+        var providerSelect = document.getElementById('filter-provider');
+        providers.sort().forEach(function(p) {
+            var opt = document.createElement('option');
+            opt.value = p;
+            opt.textContent = p;
+            providerSelect.appendChild(opt);
+        });
+
+        // Populate calc model dropdown
+        var calcModel = document.getElementById('calc-model');
+        activeModels.slice().sort(function(a, b) { return a.input - b.input; }).forEach(function(m) {
+            var opt = document.createElement('option');
+            opt.value = m.id;
+            opt.textContent = m.name + ' (' + m.provider + ') — $' + m.input.toFixed(2) + ' / $' + m.output.toFixed(2);
+            calcModel.appendChild(opt);
+        });
 
         // State
-        var showDeprecated = false;
-        var sortCol = 'output';
-        var sortAsc = true;
-        var searchEl = document.getElementById('search');
-        var providerEl = document.getElementById('provider-filter');
-        var tierEl = document.getElementById('tier-filter');
-        var toggleEl = document.getElementById('toggle-deprecated');
-        var tbody = document.getElementById('pricing-body');
-        var noResults = document.getElementById('no-results');
-        var resultCount = document.getElementById('result-count');
-        var avgCostEl = document.getElementById('avg-cost');
+        window._currentSort = 'input';
+        window._currentDir = 'asc';
+        window._activeModels = activeModels;
 
-        // Calculate average non-premium output cost
-        var nonPremium = models.filter(function(m) { return !m.deprecated && m.tier !== 'premium'; });
-        var avgOutput = nonPremium.reduce(function(s, m) { return s + m.output; }, 0) / nonPremium.length;
-        avgCostEl.textContent = '$' + avgOutput.toFixed(2);
+        renderTable(activeModels);
 
-        // Parse context to number for sorting
-        function parseContext(ctx) {
-            if (!ctx) return 0;
-            ctx = ctx.toString();
-            if (ctx.indexOf('M') > -1) return parseFloat(ctx) * 1000000;
-            if (ctx.indexOf('K') > -1) return parseFloat(ctx) * 1000;
-            return parseFloat(ctx) || 0;
-        }
-
-        // Render table
-        function render() {
-            var q = searchEl.value.toLowerCase().trim();
-            var prov = providerEl.value;
-            var tier = tierEl.value;
-
-            var filtered = models.filter(function(m) {
-                if (!showDeprecated && m.deprecated) return false;
-                if (prov && m.provider !== prov) return false;
-                if (tier && m.tier !== tier) return false;
-                if (q && m.name.toLowerCase().indexOf(q) === -1 && m.providerName.toLowerCase().indexOf(q) === -1) return false;
-                return true;
-            });
-
-            // Sort
-            filtered.sort(function(a, b) {
-                var va, vb;
-                switch (sortCol) {
-                    case 'name': va = a.name.toLowerCase(); vb = b.name.toLowerCase(); break;
-                    case 'provider': va = a.providerName.toLowerCase(); vb = b.providerName.toLowerCase(); break;
-                    case 'tier': va = a.tier; vb = b.tier; break;
-                    case 'input': va = a.input; vb = b.input; break;
-                    case 'output': va = a.output; vb = b.output; break;
-                    case 'context': va = parseContext(a.context); vb = parseContext(b.context); break;
-                    case 'status': va = a.deprecated ? 1 : 0; vb = b.deprecated ? 1 : 0; break;
-                    default: va = a.output; vb = b.output;
-                }
-                if (va < vb) return sortAsc ? -1 : 1;
-                if (va > vb) return sortAsc ? 1 : -1;
-                return 0;
-            });
-
-            // Find cheapest input and output
-            var cheapestInput = Infinity, cheapestOutput = Infinity;
-            filtered.forEach(function(m) {
-                if (m.input < cheapestInput) cheapestInput = m.input;
-                if (m.output < cheapestOutput) cheapestOutput = m.output;
-            });
-
-            // Build rows
-            var html = '';
-            filtered.forEach(function(m) {
-                var depClass = m.deprecated ? ' deprecated' : '';
-                var inputClass = m.input === cheapestInput ? ' price-cheapest' : '';
-                var outputClass = m.output === cheapestOutput ? ' price-cheapest' : '';
-                var depBadge = m.deprecated ? ' <span class="dep-badge">DEPRECATED</span>' : '';
-
-                html += '<tr class="' + depClass + '">';
-                html += '<td><span class="model-name">' + m.name + '</span>' + depBadge + '</td>';
-                html += '<td><span class="provider-badge provider-' + m.provider + '">' + m.providerName + '</span></td>';
-                html += '<td><span class="tier-badge tier-' + m.tier + '">' + m.tier + '</span></td>';
-                html += '<td class="price' + inputClass + '">$' + m.input.toFixed(m.input < 1 ? 3 : 2) + '</td>';
-                html += '<td class="price' + outputClass + '">$' + m.output.toFixed(m.output < 1 ? 3 : 2) + '</td>';
-                html += '<td class="context-size">' + m.context + '</td>';
-                html += '<td>' + (m.deprecated ? '<span style="color:var(--red);">Deprecated</span>' : '<span style="color:var(--green);">Active</span>') + '</td>';
-                html += '</tr>';
-            });
-
-            tbody.innerHTML = html;
-            noResults.style.display = filtered.length === 0 ? 'block' : 'none';
-            resultCount.innerHTML = 'Showing <strong>' + filtered.length + '</strong> of ' + models.length + ' models';
-
-            // Update sort indicators
-            document.querySelectorAll('thead th').forEach(function(th) {
-                var col = th.getAttribute('data-sort');
-                th.classList.toggle('sorted', col === sortCol);
-                var arrow = th.querySelector('.arrow');
-                if (arrow) arrow.textContent = col === sortCol ? (sortAsc ? '▲' : '▼') : '';
-            });
-        }
-
-        // Event listeners
-        searchEl.addEventListener('input', render);
-        providerEl.addEventListener('change', render);
-        tierEl.addEventListener('change', render);
-
-        toggleEl.addEventListener('click', function() {
-            showDeprecated = !showDeprecated;
-            this.textContent = showDeprecated ? 'Hide Deprecated' : 'Show Deprecated';
-            this.classList.toggle('active', showDeprecated);
-            render();
-        });
-
-        document.querySelectorAll('thead th[data-sort]').forEach(function(th) {
+        // Sort on header click
+        document.querySelectorAll('.pricing-table thead th[data-sort]').forEach(function(th) {
             th.addEventListener('click', function() {
-                var col = this.getAttribute('data-sort');
-                if (sortCol === col) {
-                    sortAsc = !sortAsc;
+                var key = th.getAttribute('data-sort');
+                if (window._currentSort === key) {
+                    window._currentDir = window._currentDir === 'asc' ? 'desc' : 'asc';
                 } else {
-                    sortCol = col;
-                    sortAsc = col === 'name' || col === 'provider' || col === 'tier';
+                    window._currentSort = key;
+                    window._currentDir = 'asc';
                 }
-                render();
+                document.querySelectorAll('.pricing-table thead th').forEach(function(h) {
+                    h.classList.remove('sorted-asc', 'sorted-desc');
+                });
+                th.classList.add(window._currentDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+                applyFilters();
             });
         });
 
-        // Track page view
-        if (typeof gtag === 'function') {
-            gtag('event', 'page_view', { page_title: 'Pricing Dashboard', page_location: location.href });
+        // Track
+        if (typeof trackEvent === 'function') {
+            trackEvent('pricing_dashboard_viewed', { models: activeModels.length, providers: providers.length });
         }
+    });
 
-        // Initial render (sort by output price ascending)
-        render();
-    })();
+    function renderTable(models) {
+        var tbody = document.getElementById('pricing-body');
+        var html = '';
+        var minInput = Math.min.apply(null, models.map(function(m) { return m.input; }));
+        var maxOutput = Math.max.apply(null, models.map(function(m) { return m.output; }));
+
+        models.forEach(function(m) {
+            var blended = (m.input * 3 + m.output * 1) / 4;
+            var inputClass = m.input === minInput ? 'price-cell cheapest' : 'price-cell';
+            var outputClass = m.output === maxOutput ? 'price-cell expensive' : 'price-cell';
+            var providerClass = 'provider-' + m.providerSlug;
+            var deprecatedTag = m.deprecated ? '<span class="deprecated-badge">Deprecated</span>' : '';
+
+            // Build compare link slug: provider-modelname
+            var slug = m.providerSlug + '-' + m.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
+
+            html += '<tr>' +
+                '<td class="model-name"><a href="compare/' + slug + '.html">' + m.name + '</a>' + deprecatedTag + '</td>' +
+                '<td><span class="provider-badge ' + providerClass + '">' + m.provider + '</span></td>' +
+                '<td><span class="tier-badge tier-' + m.tier + '">' + m.tier + '</span></td>' +
+                '<td class="' + inputClass + '">$' + m.input.toFixed(2) + '</td>' +
+                '<td class="' + outputClass + '">$' + m.output.toFixed(2) + '</td>' +
+                '<td>' + m.context + '</td>' +
+                '<td class="price-cell">$' + blended.toFixed(2) + '</td>' +
+                '<td><a href="compare/' + slug + '.html" class="compare-link">Compare →</a></td>' +
+                '</tr>';
+        });
+
+        tbody.innerHTML = html;
+        document.getElementById('visible-count').textContent = models.length;
+        document.getElementById('total-count').textContent = window._activeModels.length;
+    }
+
+    function applyFilters() {
+        var provider = document.getElementById('filter-provider').value;
+        var tier = document.getElementById('filter-tier').value;
+        var search = document.getElementById('filter-search').value.toLowerCase();
+        var sortKey = window._currentSort;
+        var sortDir = window._currentDir;
+
+        var filtered = window._activeModels.filter(function(m) {
+            if (provider && m.provider !== provider) return false;
+            if (tier && m.tier !== tier) return false;
+            if (search && m.name.toLowerCase().indexOf(search) === -1 && m.provider.toLowerCase().indexOf(search) === -1) return false;
+            return true;
+        });
+
+        filtered.sort(function(a, b) {
+            var va, vb;
+            switch (sortKey) {
+                case 'name': va = a.name; vb = b.name; break;
+                case 'provider': va = a.provider; vb = b.provider; break;
+                case 'tier': va = a.tier; vb = b.tier; break;
+                case 'input': va = a.input; vb = b.input; break;
+                case 'output': va = a.output; vb = b.output; break;
+                case 'context': va = parseFloat(a.context); vb = parseFloat(b.context); break;
+                case 'blended': va = (a.input * 3 + a.output) / 4; vb = (b.input * 3 + b.output) / 4; break;
+                default: va = a.input; vb = b.input;
+            }
+            if (typeof va === 'string') {
+                return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+            }
+            return sortDir === 'asc' ? va - vb : vb - va;
+        });
+
+        renderTable(filtered);
+    }
+
+    function resetFilters() {
+        document.getElementById('filter-provider').value = '';
+        document.getElementById('filter-tier').value = '';
+        document.getElementById('filter-search').value = '';
+        window._currentSort = 'input';
+        window._currentDir = 'asc';
+        document.querySelectorAll('.pricing-table thead th').forEach(function(h) {
+            h.classList.remove('sorted-asc', 'sorted-desc');
+        });
+        applyFilters();
+    }
+
+    function calculateCost() {
+        var modelId = document.getElementById('calc-model').value;
+        var inputTokens = parseInt(document.getElementById('calc-input-tokens').value.replace(/,/g, '')) || 0;
+        var outputTokens = parseInt(document.getElementById('calc-output-tokens').value.replace(/,/g, '')) || 0;
+
+        var model = (typeof getModelById === 'function') ? getModelById(modelId) : null;
+        if (!model) return;
+
+        var inputCost = (inputTokens / 1000000) * model.input;
+        var outputCost = (outputTokens / 1000000) * model.output;
+        var total = inputCost + outputCost;
+
+        document.getElementById('calc-total').textContent = '$' + total.toFixed(2) + '/mo';
+        document.getElementById('calc-breakdown').textContent =
+            model.name + ': $' + inputCost.toFixed(2) + ' input + $' + outputCost.toFixed(2) + ' output = $' + total.toFixed(2) + '/month ($' + (total * 12).toFixed(2) + '/year)';
+        document.getElementById('calc-result').classList.add('visible');
+
+        if (typeof trackEvent === 'function') {
+            trackEvent('dashboard_calculator_used', { model: modelId, input_tokens: inputTokens, output_tokens: outputTokens, total: total });
+        }
+    }
     </script>
 </body>
 </html>
