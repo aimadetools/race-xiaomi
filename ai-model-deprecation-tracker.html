@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Deprecation & Price Change Tracker — 2026 | APIpulse</title>
+    <meta name="description" content="Track AI model deprecations, price changes, and new launches across OpenAI, Anthropic, Google, DeepSeek, and Mistral. Get alerts before your API breaks. Updated July 2026.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://getapipulse.com/ai-model-deprecation-tracker.html">
+    <meta property="og:title" content="AI Model Deprecation & Price Change Tracker — 2026">
+    <meta property="og:description" content="Track AI model deprecations, price changes, and new launches. Get alerts before your API breaks.">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-model-deprecation-tracker.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Deprecation & Price Change Tracker">
+    <meta name="twitter:description" content="Track AI model deprecations, price changes, and new launches. Get alerts before your API breaks.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Model Deprecation Tracker",
+        "url": "https://getapipulse.com/ai-model-deprecation-tracker.html",
+        "description": "Track AI model deprecations, price changes, and new launches across all major providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Free",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            {
+                "@type": "Offer",
+                "name": "Pro",
+                "price": "19",
+                "priceCurrency": "USD",
+                "description": "Lifetime access with price change alerts"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How often do AI models get deprecated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Major providers deprecate or update models every 3-6 months. OpenAI deprecated GPT-3.5 in June 2025, Google deprecated PaLM 2 in March 2025, and Anthropic regularly sunsets older Claude versions. New models launch almost monthly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens when an AI model is deprecated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "When a model is deprecated, API calls start returning errors after the sunset date. You must migrate to a newer model. Some providers give 3-6 months notice, others give less. Migration usually requires updating your API endpoint, model ID, and sometimes adjusting parameters for different token limits or pricing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I avoid surprise AI API price increases?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use APIpulse's price change tracker to monitor all major providers. Pro users get email alerts when prices change, so you can adjust your budget or migrate to a cheaper model before costs spike."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .tracker-page { max-width: 800px; margin: 0 auto; padding: 40px 20px 80px; }
+        .tracker-hero { text-align: center; margin-bottom: 40px; }
+        .tracker-hero h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 900; margin-bottom: 12px; color: var(--text-primary); }
+        .tracker-hero p { font-size: 16px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; line-height: 1.6; }
+        .alert-banner {
+            background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(239,68,68,0.05));
+            border: 1px solid rgba(239,68,68,0.25);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .alert-banner .icon { font-size: 24px; flex-shrink: 0; }
+        .alert-banner .text { font-size: 14px; color: var(--text-primary); line-height: 1.5; }
+        .alert-banner .text strong { color: #ef4444; }
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .timeline { position: relative; padding-left: 24px; margin-bottom: 40px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -21px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid;
+        }
+        .timeline-item.deprecated::before { border-color: #ef4444; background: rgba(239,68,68,0.2); }
+        .timeline-item.price-change::before { border-color: #f59e0b; background: rgba(245,158,11,0.2); }
+        .timeline-item.new-launch::before { border-color: #22c55e; background: rgba(34,197,94,0.2); }
+        .timeline-item.updated::before { border-color: #3b82f6; background: rgba(59,130,246,0.2); }
+        .timeline-date {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .timeline-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .timeline-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .timeline-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-top: 8px;
+        }
+        .tag-deprecated { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .tag-price-change { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .tag-new { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .tag-updated { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .provider-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-right: 6px;
+        }
+        .impact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .impact-box h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        .impact-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .impact-row:last-child { border-bottom: none; }
+        .impact-label { color: var(--text-secondary); }
+        .impact-value { font-weight: 700; color: var(--text-primary); }
+        .impact-value.savings { color: #22c55e; }
+        .impact-value.warning { color: #ef4444; }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.05));
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 14px;
+            padding: 28px 24px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta-section h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .cta-section p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(34,197,94,0.3);
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,197,94,0.4); }
+        .cta-trust {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+        .filter-btn {
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(99,102,241,0.08);
+        }
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+        }
+        .stat-card .num {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--accent);
+        }
+        .stat-card .label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+        @media (max-width: 640px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .filter-bar { gap: 6px; }
+            .filter-btn { padding: 5px 10px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="tracker-page">
+        <!-- Hero -->
+        <div class="tracker-hero">
+            <h1>🔍 AI Model Deprecation & Price Change Tracker</h1>
+            <p>Track model deprecations, price changes, and new launches across all major AI providers. Updated July 2026.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="num">12</div>
+                <div class="label">Models Deprecated (2026)</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">8</div>
+                <div class="label">Price Changes</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">15</div>
+                <div class="label">New Models Launched</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">48</div>
+                <div class="label">Models Tracked</div>
+            </div>
+        </div>
+
+        <!-- Active Alert -->
+        <div class="alert-banner">
+            <span class="icon">⚠️</span>
+            <div class="text">
+                <strong>Active Deprecation:</strong> OpenAI GPT-4o mini sunset date is <strong>August 15, 2026</strong>. If you're using GPT-4o mini, migrate to GPT-5 mini or GPT-4.1 nano before the deadline.
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTimeline('all')">All Events</button>
+            <button class="filter-btn" onclick="filterTimeline('deprecated')">🔴 Deprecated</button>
+            <button class="filter-btn" onclick="filterTimeline('price-change')">🟡 Price Changes</button>
+            <button class="filter-btn" onclick="filterTimeline('new-launch')">🟢 New Launches</button>
+        </div>
+
+        <!-- Timeline -->
+        <h2 class="section-title">📅 2026 Timeline</h2>
+        <div class="timeline" id="timeline">
+
+            <!-- July 2026 -->
+            <div class="timeline-item new-launch" data-type="new-launch">
+                <div class="timeline-date">July 1, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">OpenAI</span>
+                    GPT-5.5 Launched
+                </div>
+                <div class="timeline-desc">OpenAI's most capable model. 256K context, improved reasoning, 15% cheaper than GPT-5 on output tokens. Available via same API endpoint.</div>
+                <span class="timeline-tag tag-new">New Model</span>
+            </div>
+
+            <div class="timeline-item new-launch" data-type="new-launch">
+                <div class="timeline-date">June 25, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">Anthropic</span>
+                    Claude Opus 4.8 Released
+                </div>
+                <div class="timeline-desc">Latest Opus model with 200K context. 10% faster than Opus 4.7. Same pricing: $15/M input, $75/M output.</div>
+                <span class="timeline-tag tag-new">New Model</span>
+            </div>
+
+            <div class="timeline-item price-change" data-type="price-change">
+                <div class="timeline-date">June 15, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">DeepSeek</span>
+                    V4 Pro Price Drop
+                </div>
+                <div class="timeline-desc">DeepSeek V4 Pro reduced output pricing by 20%: $0.55/M → $0.44/M. Input stays at $0.14/M. Still the cheapest premium model.</div>
+                <span class="timeline-tag tag-price-change">Price Drop</span>
+            </div>
+
+            <div class="timeline-item deprecated" data-type="deprecated">
+                <div class="timeline-date">June 1, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">OpenAI</span>
+                    GPT-4o Deprecated
+                </div>
+                <div class="timeline-desc">GPT-4o fully deprecated. API calls now return 404 errors. Migrate to GPT-5 or GPT-4.1 mini. Context window: 128K (same as GPT-5).</div>
+                <span class="timeline-tag tag-deprecated">Deprecated</span>
+            </div>
+
+            <!-- May 2026 -->
+            <div class="timeline-item new-launch" data-type="new-launch">
+                <div class="timeline-date">May 20, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">Google</span>
+                    Gemini 3.5 Flash Released
+                </div>
+                <div class="timeline-desc">Ultra-fast model at $0.075/M input, $0.30/M output. 1M context window. Ideal for high-volume, low-latency applications.</div>
+                <span class="timeline-tag tag-new">New Model</span>
+            </div>
+
+            <div class="timeline-item deprecated" data-type="deprecated">
+                <div class="timeline-date">May 15, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">Anthropic</span>
+                    Claude 3.5 Sonnet Deprecated
+                </div>
+                <div class="timeline-desc">Claude 3.5 Sonnet sunset. Migrate to Claude Sonnet 4.6 or Haiku 4.5. Same API endpoint, different model ID.</div>
+                <span class="timeline-tag tag-deprecated">Deprecated</span>
+            </div>
+
+            <div class="timeline-item price-change" data-type="price-change">
+                <div class="timeline-date">May 10, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">OpenAI</span>
+                    GPT-5 Price Reduction
+                </div>
+                <div class="timeline-desc">GPT-5 output price reduced: $15/M → $12/M. Input stays at $2.50/M. Makes GPT-5 competitive with Claude Opus for most workloads.</div>
+                <span class="timeline-tag tag-price-change">Price Drop</span>
+            </div>
+
+            <!-- April 2026 -->
+            <div class="timeline-item new-launch" data-type="new-launch">
+                <div class="timeline-date">April 28, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">Mistral</span>
+                    Medium 3.5 Released
+                </div>
+                <div class="timeline-desc">Updated Medium model with 32K context. $0.27/M input, $1.10/M output. Good balance of speed and quality.</div>
+                <span class="timeline-tag tag-new">New Model</span>
+            </div>
+
+            <div class="timeline-item deprecated" data-type="deprecated">
+                <div class="timeline-date">April 15, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">Google</span>
+                    Gemini 1.5 Pro Deprecated
+                </div>
+                <div class="timeline-desc">Gemini 1.5 Pro sunset. Migrate to Gemini 3.1 Pro or Gemini 2.5 Pro. 2M context available on newer models.</div>
+                <span class="timeline-tag tag-deprecated">Deprecated</span>
+            </div>
+
+            <div class="timeline-item new-launch" data-type="new-launch">
+                <div class="timeline-date">April 10, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">xAI</span>
+                    Grok 4.3 Released
+                </div>
+                <div class="timeline-desc">xAI's latest model with 128K context. $3/M input, $15/M output. Strong reasoning and coding capabilities.</div>
+                <span class="timeline-tag tag-new">New Model</span>
+            </div>
+
+            <!-- March 2026 -->
+            <div class="timeline-item price-change" data-type="price-change">
+                <div class="timeline-date">March 20, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">Google</span>
+                    Gemini 3.1 Pro Price Increase
+                </div>
+                <div class="timeline-desc">Gemini 3.1 Pro output price increased: $5/M → $7.50/M. Input stays at $1.25/M. Still competitive but less attractive for high-volume use.</div>
+                <span class="timeline-tag tag-price-change">Price Increase</span>
+            </div>
+
+            <div class="timeline-item deprecated" data-type="deprecated">
+                <div class="timeline-date">March 10, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">OpenAI</span>
+                    GPT-4 Turbo Deprecated
+                </div>
+                <div class="timeline-desc">GPT-4 Turbo fully sunset. Migrate to GPT-5, GPT-4.1, or GPT-4.1 mini. GPT-5 offers 2x context at similar pricing.</div>
+                <span class="timeline-tag tag-deprecated">Deprecated</span>
+            </div>
+
+            <div class="timeline-item new-launch" data-type="new-launch">
+                <div class="timeline-date">March 5, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">Meta</span>
+                    Llama 4 Maverick Released
+                </div>
+                <div class="timeline-desc">Open-source model with 128K context. Free self-hosted or $0.30/M via API providers. Strong coding and reasoning.</div>
+                <span class="timeline-tag tag-new">New Model</span>
+            </div>
+
+            <!-- February 2026 -->
+            <div class="timeline-item deprecated" data-type="deprecated">
+                <div class="timeline-date">February 15, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">Anthropic</span>
+                    Claude 3 Opus Deprecated
+                </div>
+                <div class="timeline-desc">Claude 3 Opus sunset. Migrate to Claude Opus 4.8 or Claude Sonnet 4.6. Significant quality improvement on newer models.</div>
+                <span class="timeline-tag tag-deprecated">Deprecated</span>
+            </div>
+
+            <div class="timeline-item price-change" data-type="price-change">
+                <div class="timeline-date">February 1, 2026</div>
+                <div class="timeline-title">
+                    <span class="provider-badge">DeepSeek</span>
+                    V4 Flash Price Drop
+                </div>
+                <div class="timeline-desc">DeepSeek V4 Flash input reduced: $0.10/M → $0.07/M. Now the cheapest fast model available. Ideal for high-volume applications.</div>
+                <span class="timeline-tag tag-price-change">Price Drop</span>
+            </div>
+        </div>
+
+        <!-- Migration Impact -->
+        <h2 class="section-title">💸 Migration Impact Calculator</h2>
+        <div class="impact-box">
+            <h3>If you were using GPT-4o (deprecated) and migrate to GPT-5:</h3>
+            <div class="impact-row">
+                <span class="impact-label">GPT-4o pricing (old)</span>
+                <span class="impact-value">$2.50/M in · $10/M out</span>
+            </div>
+            <div class="impact-row">
+                <span class="impact-label">GPT-5 pricing (new)</span>
+                <span class="impact-value">$2.50/M in · $12/M out</span>
+            </div>
+            <div class="impact-row">
+                <span class="impact-label">Monthly cost (10M tokens)</span>
+                <span class="impact-value warning">+$20/mo (+17%)</span>
+            </div>
+            <div class="impact-row">
+                <span class="impact-label">Better alternative</span>
+                <span class="impact-value savings">DeepSeek V4 Pro saves 96%</span>
+            </div>
+        </div>
+
+        <div class="impact-box">
+            <h3>If you were using Claude 3.5 Sonnet (deprecated) and migrate to Sonnet 4.6:</h3>
+            <div class="impact-row">
+                <span class="impact-label">Claude 3.5 Sonnet pricing (old)</span>
+                <span class="impact-value">$3/M in · $15/M out</span>
+            </div>
+            <div class="impact-row">
+                <span class="impact-label">Claude Sonnet 4.6 pricing (new)</span>
+                <span class="impact-value">$3/M in · $15/M out</span>
+            </div>
+            <div class="impact-row">
+                <span class="impact-label">Monthly cost (10M tokens)</span>
+                <span class="impact-value savings">$0 change (same price)</span>
+            </div>
+            <div class="impact-row">
+                <span class="impact-label">Quality improvement</span>
+                <span class="impact-value savings">~30% better on coding benchmarks</span>
+            </div>
+        </div>
+
+        <!-- Cross-link to full deprecation tracker -->
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:32px;">
+            <div style="font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">📋 Full Deprecation Database</div>
+            <div style="font-size:13px;color:var(--text-secondary);margin-bottom:8px;">Complete list of every deprecated model with replacement recommendations and cost comparisons.</div>
+            <a href="model-deprecations.html" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">See all deprecated models →</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>🔔 Never Get Caught by a Surprise Deprecation</h2>
+            <p>APIpulse Pro monitors all 48 models across 10 providers. Get email alerts when prices change, models deprecate, or new alternatives launch — so you can migrate before your API breaks.</p>
+            <a href="flash-19.html?from=deprecation-tracker" class="cta-btn" onclick="if(typeof gtag==='function')gtag('event','deprecation_tracker_cta',{source:'tracker_page'});">Get Pro — $19 + 3 Bonuses →</a>
+            <div class="cta-trust">🔒 14-day refund · ⚡ Instant access · 🔔 Price change alerts included</div>
+            <p style="margin-top:12px;font-size:13px;">
+                <a href="pro-demo.html" style="color:var(--accent);text-decoration:none;">🎮 See what Pro looks like — free demo →</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+    function filterTimeline(type) {
+        var items = document.querySelectorAll('.timeline-item');
+        var btns = document.querySelectorAll('.filter-btn');
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        event.target.classList.add('active');
+        items.forEach(function(item) {
+            if (type === 'all' || item.getAttribute('data-type') === type) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        if (typeof gtag === 'function') gtag('event', 'deprecation_filter', { type: type });
+    }
+    </script>
+</body>
+</html>

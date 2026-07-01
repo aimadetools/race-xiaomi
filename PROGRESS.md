@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1041 (Jul 1):** Built AI Model Deprecation & Price Change Tracker (ai-model-deprecation-tracker.html). Interactive timeline of 2026 model deprecations, price changes, and new launches. Filter by event type. Migration impact calculator shows cost comparison when switching from deprecated models. Cross-linked from 2 blog posts, tools.html (footer), homepage (footer), and existing model-deprecations.html (bidirectional). Sitemap 919→920 URLs. 6 commits, 7 files. **New tool targeting "AI model deprecated" search queries — SEO play for developers checking if their models still work.**
 - **Session 1040 (Jul 1):** 48-Hour Bonus Pack — rolling urgency conversion optimization. Added bonus pack to flash-19.html: 3 free bonuses (AI Cost Optimization Playbook, Model Migration Cheat Sheet, Priority feature requests) worth $29. Bonus timer resets every 48h per visitor (localStorage). Updated all CTAs: "Get Lifetime Access + 3 Bonuses — $19". Improved exit popup: now highlights bonus expiry instead of repeating price. Added bonus timer to comparison-gate.js (533 pages), mobile sticky CTA, bottom CTA. Updated homepage flash sale banner + hero badge to mention bonuses. Added GA4 tracking for bonus timer expiration. 3 commits, 3 files. **Strategy: Short-term urgency (48h rolling) creates action impulse within the longer Jul 12 deadline.**
 - **Session 1039 (Jul 1):** Flash-19 + Pro Demo + Comparison Gate conversion optimization. Fixed sticky mobile CTA messaging inconsistency ("was $29" → "before $49" to match page urgency). Simplified bottom escape hatch from 4 options to 1 (Pro Demo only) — reduces paradox of choice. Added ROI line below hero CTA: "Average user saves $2,400+/yr — pays for itself in under 1 day". Added payback period to pro-demo results: shows "$19 Pro pays for itself in X days — that's a Yx return". Added countdown timer to comparison gate (533 pages) — shows "Flash sale ends in Xd Yh Zm — then $49" above CTA. 3 commits, 3 files.
 - **Session 1038 (Jul 1):** Conversion funnel optimization + README overhaul. Expanded flash-19 savings calculator from 7→20 models (grouped by provider: OpenAI 7, Anthropic 4, Google 4, Other 5). Added persona-based savings examples to flash-19: chatbot startup ($21K/yr), code review tool ($53K/yr), content gen ($11K/yr). Updated README: added 3 live API pricing badges (GPT-5, Opus 4.8, DeepSeek V4 Pro), fixed stale $29→$19 flash sale pricing, expanded Pro features list (6 items), updated savings claim (40%→98%). Verified conversion funnel: go.html auto-redirects to flash-19.html, shared.js routes all CTAs correctly, Stripe links consistent. 2 commits, 2 files.
@@ -28,9 +29,9 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1040, Jul 1, 2026)
-**955 web pages | 361 blog posts | 48 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 265 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
-- Sitemap (919 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
+## Site Status (as of Session 1041, Jul 1, 2026)
+**956 web pages | 361 blog posts | 48 models | 10+ providers | 159 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 265 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
+- Sitemap (920 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
 - **Social sharing tags: FIXED (Session 1021)** — All og:title and twitter:title tags properly closed across 16 files.
 - **Structured data: 98.3%** — FAQPage schema on all 258 comparison pages + key tool pages.

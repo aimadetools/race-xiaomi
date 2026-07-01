@@ -51,7 +51,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1038, Apr 23 - Jul 1)
+### Completed Summary (Sessions 416-1041, Apr 23 - Jul 1)
+- **Session 1041 (Jul 1):** Built AI Model Deprecation & Price Change Tracker — timeline view with filters, migration impact calculator. Cross-linked from 2 blog posts, tools.html, homepage, existing model-deprecations.html. Sitemap 919→920 URLs. 6 commits, 7 files.
 - **Session 1038 (Jul 1):** Expanded flash-19 savings calculator 7→20 models. Added persona-based savings examples ($21K-$53K/yr). Updated README with live API badges, flash sale pricing, expanded Pro features. Verified conversion funnel. 2 commits, 2 files.
 - **Session 1037 (Jul 1):** A/B test comparison gate CTAs (3 variants with GA4 tracking). Expanded pro-demo dropdown 16→26 models. 1 commit, 2 files.
 - **Session 1036 (Jul 1):** Pro Demo distribution blitz. Homepage demo section + 10 blog post CTAs + demo links in usage-gate.js and results-cta.js. Updated Why Pro CTA to route through demo. 1 commit, 13 files.
