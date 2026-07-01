@@ -18,7 +18,7 @@
     var CTA_VARIANTS = [
         { id: 'a', text: 'See All Models + 3 Bonuses — {priceLabel} {price}', demo: 'See What Pro Looks Like — Free' },
         { id: 'b', text: 'Find Your Biggest Savings + Bonuses — {priceLabel} {price}', demo: 'Find Your Biggest Savings — Free Demo' },
-        { id: 'c', text: 'Unlock All {count} Models + 3 Bonuses — {priceLabel} {price}', demo: 'Try Pro Free — See All 48 Models' }
+        { id: 'c', text: 'Unlock All {count} Models + 3 Bonuses — {priceLabel} {price}', demo: 'Try Pro Free — See All 49 Models' }
     ];
 
     function getCTAVariant() {
@@ -138,7 +138,7 @@
             var ctaText = activeVariant.text
                 .replace('{priceLabel}', priceLabel)
                 .replace('{price}', price)
-                .replace('{count}', '48');
+                .replace('{count}', '49');
 
             gateCell.innerHTML =
                 '<div style="margin-bottom:10px;">' +

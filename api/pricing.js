@@ -15,6 +15,7 @@ module.exports = (req, res) => {
         { id: 'openai-gpt-oss-20b', n: 'GPT-oss 20B', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.08, o: 0.35, c: '128K' },
         { id: 'openai-gpt4o', n: 'GPT-4o', p: 'OpenAI', ps: 'openai', t: 'Mid', i: 2.5, o: 10, c: '128K' },
         { id: 'openai-gpt4o-mini', n: 'GPT-4o mini', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.15, o: 0.6, c: '128K' },
+        { id: 'anthropic-sonnet5', n: 'Claude Sonnet 5', p: 'Anthropic', ps: 'anthropic', t: 'Mid', i: 3, o: 15, c: '1M' },
         { id: 'anthropic-opus48', n: 'Claude Opus 4.8', p: 'Anthropic', ps: 'anthropic', t: 'Premium', i: 5, o: 25, c: '1M' },
         { id: 'anthropic-opus47', n: 'Claude Opus 4.7', p: 'Anthropic', ps: 'anthropic', t: 'Premium', i: 5, o: 25, c: '1M' },
         { id: 'anthropic-opus', n: 'Claude 4 Opus', p: 'Anthropic', ps: 'anthropic', t: 'Premium', i: 15, o: 75, c: '200K', dep: true },
