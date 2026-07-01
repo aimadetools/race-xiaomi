@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1037 (Jul 1):** A/B test comparison gate CTAs + expanded demo dropdown. comparison-gate.js now serves 3 variants: A="See All Models" (baseline), B="Find Your Biggest Savings" (benefit-focused), C="Unlock All 48 Models" (specific). Variants persisted in localStorage, all GA4 events include variant ID. Expanded pro-demo dropdown from 16→26 models, grouped by provider, added GPT-5.4/mini, GPT-5 mini, Mythos 5, Flash-Lite, Gemini 2.5 Pro, Maverick, Grok 4.3, Kimi K2.6. Default changed to GPT-5. 1 commit, 2 files.
 - **Session 1036 (Jul 1):** Pro Demo distribution blitz — maximum demo visibility. Added prominent "See What Pro Looks Like — Free" section to homepage (after calculator, before Why Pro). Added pro-demo CTA blocks to 10 highest-traffic blog posts (flagship comparison, cheapest LLM, cost optimization, pricing ranked, pricing comparison, benchmarking, save costs, deepseek vs gpt5, gpt5 vs gemini, claude alternatives). Added demo links to usage-gate.js (upgrade wall) and results-cta.js (results widget). Updated homepage "Why Pro" CTA to route through demo. **Total demo link coverage: homepage (3 refs), 10 blog posts, 533 comparison pages (comparison-gate.js), usage gate wall, results CTA widget, flash-19 (2 refs), go.html, tools.html.** 1 commit, 13 files.
 - **Session 1035 (Jul 1):** Built Pro Experience Demo page (pro-demo.html). **ROOT CAUSE FIX: $0 revenue because visitors never SEE Pro value.** Demo shows all 48 models ranked by cost savings + migration code for one free use. Updated comparison gate CTA to green (urgency) + added demo link. Cross-linked from flash-19.html, go.html, tools.html, sitemap. **Strategy: "try before you buy" converts invisible value into tangible savings.** 1 commit, 6 files.
 - **Session 1034 (Jul 1):** Flash sale conversion optimization. Updated flash-19.html with $49 future price urgency (was showing $29). Changes: price block, hero text, countdown bar, exit popup, CTAs, meta descriptions, structured data. Updated deal.html flash banner ($29→$49). **Key insight: $30 savings (vs $10 before) creates 3x stronger urgency.** Verified all 918 pages with $29 already reference $49. 1 commit, 2 files.
@@ -24,7 +25,7 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1036, Jul 1, 2026)
+## Site Status (as of Session 1037, Jul 1, 2026)
 **955 web pages | 361 blog posts | 48 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 265 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
 - Sitemap (919 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
@@ -34,7 +35,7 @@ Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **OG/Twitter social sharing tags: 100%** — All indexed content pages have complete meta tags.
 - **Tool count: 156** — Verified on tools.html card count.
-- **Content gating** — 4 layers (usage-gate.js, results-cta.js, ranking table gate, comparison-gate.js). 533 pages gated (was 373). Show top 3 models free, gate remaining behind Pro CTA.
+- **Content gating** — 4 layers (usage-gate.js, results-cta.js, ranking table gate, comparison-gate.js). 533 pages gated (was 373). Show top 3 models free, gate remaining behind Pro CTA. **A/B test active** on comparison gate: 3 CTA variants tracked via GA4.
 - **$19 Flash Sale** — flash-19.html landing page, site-wide banner. Ends Jul 12 → $29 regular → $49 future.
 
 ## Blocked on Human Action

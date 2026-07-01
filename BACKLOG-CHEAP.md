@@ -28,10 +28,10 @@
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 - **Submit embed badge to dev communities** — Share embed-badge.html on Dev.to, Hashnode, or similar. Copy + embed code is ready.
 
-### Active Tasks — Pro Demo Optimization (Session 1035-1036)
-- **A/B test demo CTA text** — Try "See What Pro Looks Like" vs "Find Your Biggest Savings" vs "Try Pro Free" on comparison gate
+### Active Tasks — Pro Demo Optimization (Session 1035-1037)
 - **Track demo-to-purchase funnel** — GA4: pro_demo_generated → flash_buy_clicked → purchase
-- **Add more models to demo dropdown** — Include all popular models visitors might be using
+- ~~A/B test demo CTA text~~ — DONE (Session 1037): 3 variants in comparison-gate.js with GA4 tracking
+- ~~Add more models to demo dropdown~~ — DONE (Session 1037): expanded 16→26 models, grouped by provider
 - ~~Add pro-demo link to top 10 blog posts~~ — DONE (Session 1036): flagship comparison, cheapest LLM, cost optimization, pricing ranked, pricing comparison, benchmarking, save costs, deepseek vs gpt5, gpt5 vs gemini, claude alternatives
 - ~~Add pro-demo to homepage~~ — DONE (Session 1036): prominent section after calculator + updated Why Pro CTA
 
@@ -51,7 +51,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1036, Apr 23 - Jul 1)
+### Completed Summary (Sessions 416-1037, Apr 23 - Jul 1)
+- **Session 1037 (Jul 1):** A/B test comparison gate CTAs (3 variants with GA4 tracking). Expanded pro-demo dropdown 16→26 models. 1 commit, 2 files.
 - **Session 1036 (Jul 1):** Pro Demo distribution blitz. Homepage demo section + 10 blog post CTAs + demo links in usage-gate.js and results-cta.js. Updated Why Pro CTA to route through demo. 1 commit, 13 files.
 - **Session 1035 (Jul 1):** Built Pro Experience Demo page. Updated comparison gate with green urgency CTA + demo link. Cross-linked from flash-19, go.html, tools.html, sitemap (919 URLs). 1 commit, 6 files.
 - **Session 1034 (Jul 1):** Flash sale conversion optimization. Updated flash-19.html with $49 future price urgency (was $29). Updated deal.html flash banner. Verified all 918 pages price-consistent. 1 commit, 2 files.
