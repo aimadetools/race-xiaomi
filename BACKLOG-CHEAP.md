@@ -34,6 +34,11 @@
 - **Build badge analytics** — Track how many sites embed the badge via GA4 events
 - **Add badge to blog posts** — Embed the pricing badge in high-traffic blog posts for demo
 
+### Active Tasks — Conversion Monitoring (CRITICAL Session 1031)
+- **Monitor flash-19 conversion after shared.js fix** — 24 comparison pages were routing to $29 instead of $19. Check GA4 for `flash_buy_clicked` events after fix.
+- **Audit ALL pages for flash sale routing** — Periodically verify shared.js is loaded on all pages with Stripe links. Run: `for f in *.html; do if grep -q "buy.stripe.com" "$f" && ! grep -q "shared.js" "$f"; then echo "MISSING: $f"; fi; done`
+- **Track embed badge usage** — Check GA4 for embed-badge.html page views and badge.js loads
+
 ### Closed / No Longer Viable
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
