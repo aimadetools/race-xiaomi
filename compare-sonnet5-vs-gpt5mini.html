@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Sonnet 5 vs GPT-5 mini — Mid-Tier vs Budget 2026 | APIpulse</title>
+    <meta name="description" content="Claude Sonnet 5 vs GPT-5 mini pricing comparison. Sonnet 5 at $3/$15 vs GPT-5 mini at $0.25/$2 — GPT-5 mini is 88% cheaper. Interactive calculator.">
+    <meta name="keywords" content="Claude Sonnet 5 vs GPT-5 mini, Sonnet 5 pricing, GPT-5 mini cost, Anthropic vs OpenAI, AI API cost comparison">
+    <meta property="og:title" content="Claude Sonnet 5 vs GPT-5 mini — Mid-Tier vs Budget 2026">
+    <meta property="og:description" content="Compare Claude Sonnet 5 and GPT-5 mini pricing. GPT-5 mini is 88% cheaper — is Sonnet 5's premium quality worth it?">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/compare-sonnet5-vs-gpt5mini.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude Sonnet 5 vs GPT-5 mini — Mid-Tier vs Budget 2026">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare Claude Sonnet 5 and GPT-5 mini pricing. GPT-5 mini is 88% cheaper.">
+    <link rel="canonical" href="https://getapipulse.com/compare-sonnet5-vs-gpt5mini.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="comparison-gate.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude Sonnet 5 vs GPT-5 mini — Mid-Tier vs Budget 2026",
+        "description": "Compare Claude Sonnet 5 and GPT-5 mini API pricing. Interactive calculator shows exact costs.",
+        "url": "https://getapipulse.com/compare-sonnet5-vs-gpt5mini.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-07-01",
+        "dateModified": "2026-07-01"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "How much cheaper is GPT-5 mini than Claude Sonnet 5?", "acceptedAnswer": { "@type": "Answer", "text": "GPT-5 mini costs $0.25/$2 per 1M tokens while Claude Sonnet 5 costs $3/$15. GPT-5 mini is 92% cheaper on input and 87% cheaper on output. For 1M input + 500K output tokens/month, GPT-5 mini costs $1.25 vs Sonnet 5's $10.50 — saving $9.25/month." } },
+            { "@type": "Question", "name": "Is Claude Sonnet 5 worth 8x the cost of GPT-5 mini?", "acceptedAnswer": { "@type": "Answer", "text": "Claude Sonnet 5 at $3/$15 offers Anthropic's latest model quality with 1M context. GPT-5 mini at $0.25/$2 is 88% cheaper with 272K context. Choose Sonnet 5 for larger context and Anthropic's quality. Choose GPT-5 mini for budget-conscious workloads." } },
+            { "@type": "Question", "name": "When should I use GPT-5 mini over Sonnet 5?", "acceptedAnswer": { "@type": "Answer", "text": "Choose GPT-5 mini ($0.25/$2) for budget-conscious workloads where 272K context is sufficient. Choose Sonnet 5 ($3/$15) for tasks requiring 1M context or when Anthropic's model quality is preferred." } }
+        ]
+    }
+    </script>
+    <style>
+        .compare-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .compare-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .compare-hero h1 .vs{color:var(--accent)}
+        .compare-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px}
+        .compare-hero .last-updated{font-size:13px;color:var(--text-muted)}
+        .tier-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+        .tier-mid{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white}
+        .tier-budget{background:linear-gradient(135deg,#10b981,#059669);color:white}
+        .quick-comparison{max-width:900px;margin:0 auto 48px;padding:0 24px}
+        .quick-table{width:100%;border-collapse:collapse;background:var(--bg-secondary);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+        .quick-table th{padding:16px 20px;text-align:left;font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;background:var(--bg-card);border-bottom:1px solid var(--border)}
+        .quick-table td{padding:14px 20px;border-bottom:1px solid var(--border);font-size:15px}
+        .quick-table tr:last-child td{border-bottom:none}
+        .quick-table .cheaper{color:var(--green);font-weight:700}
+        .quick-table .pricier{color:var(--orange)}
+        .quick-table .same{color:var(--text-secondary)}
+        .calculator-section{max-width:900px;margin:0 auto 48px;padding:0 24px}
+        .calculator-section h2{font-size:28px;font-weight:800;margin-bottom:8px;text-align:center}
+        .calculator-section .section-sub{color:var(--text-secondary);text-align:center;margin-bottom:32px}
+        .usage-presets{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
+        .preset-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-secondary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
+        .preset-btn:hover,.preset-btn.active{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
+        .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+        .input-group{margin-bottom:16px}
+        .input-group label{display:block;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;font-weight:600}
+        .input-group input{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:15px}
+        .input-group input:focus{outline:2px solid var(--accent);outline-offset:2px}
+        .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+        .result-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center}
+        .result-card.winner{border-color:var(--green);box-shadow:0 0 24px rgba(34,197,94,0.1)}
+        .result-card .provider{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+        .result-card .model-name{font-size:22px;font-weight:800;margin-bottom:16px}
+        .result-card .price-big{font-size:36px;font-weight:800;margin-bottom:4px}
+        .result-card .price-label{font-size:13px;color:var(--text-muted);margin-bottom:20px}
+        .result-card .breakdown{text-align:left}
+        .result-card .breakdown-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+        .result-card .breakdown-row:last-child{border-bottom:none}
+        .result-card .breakdown-row .label{color:var(--text-secondary)}
+        .result-card .breakdown-row .val{font-weight:600}
+        .winner-badge{display:inline-block;background:rgba(34,197,94,0.15);color:var(--green);padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px}
+        .savings-banner{text-align:center;padding:24px;background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(99,102,241,0.1));border:1px solid var(--green);border-radius:var(--radius);margin-bottom:48px}
+        .savings-banner .amount{font-size:32px;font-weight:800;color:var(--green)}
+        .savings-banner .detail{color:var(--text-secondary);margin-top:8px}
+        .use-cases{max-width:900px;margin:0 auto 48px;padding:0 24px}
+        .use-cases h2{font-size:24px;font-weight:800;margin-bottom:24px;text-align:center}
+        .use-case-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+        .use-case-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+        .use-case-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+        .use-case-card p{font-size:14px;color:var(--text-secondary);line-height:1.6}
+        .use-case-card .recommendation{margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:13px;font-weight:600}
+        .use-case-card .recommendation .pick-sonnet5{color:var(--accent)}
+        .use-case-card .recommendation .pick-gpt5mini{color:#10b981}
+        .pro-upsell{max-width:700px;margin:0 auto 48px;padding:32px;background:var(--bg-card);border:1px solid var(--accent);border-radius:var(--radius);text-align:center}
+        .pro-upsell h2{font-size:24px;margin-bottom:8px}
+        .pro-upsell p{color:var(--text-secondary);margin-bottom:20px}
+        .pro-upsell .features{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+        .pro-upsell .feature{font-size:14px;color:var(--text-secondary)}
+        .pro-upsell .feature strong{color:var(--text-primary)}
+        .faq-section{max-width:800px;margin:0 auto 48px;padding:0 24px}
+        .faq-section h2{font-size:24px;font-weight:800;margin-bottom:24px;text-align:center}
+        .faq-item{margin-bottom:20px}
+        .faq-item h3{font-size:16px;font-weight:700;margin-bottom:8px}
+        .faq-item p{font-size:14px;color:var(--text-secondary);line-height:1.7}
+        .related-tools{max-width:900px;margin:0 auto 48px;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .related-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;transition:all 0.2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+        .related-card p{font-size:13px;color:var(--text-muted)}
+        .related-card a{text-decoration:none;color:inherit}
+        @media(max-width:768px){.compare-hero{padding:100px 20px 30px}.calc-grid,.results-grid,.use-case-grid{grid-template-columns:1fr}.related-tools{grid-template-columns:1fr}.quick-table{font-size:13px}.quick-table td,.quick-table th{padding:10px 12px}}
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+    <main id="main">
+    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
+        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
+            <strong style="color:#dc2626;">🔥 Limited time:</strong>
+            <a href="deal.html" style="color:#dc2626;font-weight:700;text-decoration:none;">Pro lifetime access $29 — price goes up July 12 →</a>
+        </p>
+    </div>
+
+    <div class="compare-hero">
+        <span class="tier-badge tier-mid">Mid</span> <span class="tier-badge tier-budget">Budget</span>
+        <h1>Claude Sonnet 5 <span class="vs">vs</span> GPT-5 mini</h1>
+        <p class="subtitle">Mid-tier meets budget. GPT-5 mini at $0.25/$2 is 88% cheaper than Sonnet 5 at $3/$15 — but Sonnet 5 offers 3.7x larger context (1M vs 272K). Which model gives you the best value?</p>
+        <p class="last-updated">Pricing data verified: Jul 1, 2026</p>
+    </div>
+    <div class="quick-comparison">
+        <table class="quick-table">
+            <thead><tr><th>Specification</th><th>Claude Sonnet 5 (Anthropic)</th><th>GPT-5 mini (OpenAI)</th></tr></thead>
+            <tbody>
+                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$3.00</td><td class="cheaper">$0.25</td></tr>
+                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$15.00</td><td class="cheaper">$2.00</td></tr>
+                <tr><td>Context Window</td><td class="cheaper">1M tokens</td><td class="pricier">272K tokens</td></tr>
+                <tr><td>Tier</td><td>Mid</td><td>Budget</td></tr>
+                <tr><td>Provider</td><td>Anthropic</td><td>OpenAI</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="calculator-section">
+        <h2>Calculate Your Exact Costs</h2>
+        <p class="section-sub">See how much you can save with GPT-5 mini — or whether Sonnet 5's larger context and premium quality justify 8x higher cost.</p>
+        <div class="usage-presets">
+            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
+            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
+            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
+            <button class="preset-btn" onclick="applyPreset('agentic')">Agentic Tasks</button>
+            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
+        </div>
+        <div class="calc-grid">
+            <div>
+                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
+                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
+            </div>
+            <div>
+                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
+                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
+            </div>
+        </div>
+        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
+        <div class="results-grid">
+            <div class="result-card" id="card-sonnet5">
+                <div class="provider">Anthropic</div><div class="model-name">Claude Sonnet 5</div>
+                <div id="winner-badge-sonnet5" class="winner-badge" style="display:none;">Cheaper Choice</div>
+                <div class="price-big" id="total-sonnet5">$0.00</div><div class="price-label">per month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-sonnet5"></span></div>
+                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-sonnet5"></span></div>
+                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-sonnet5"></span></div>
+                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-sonnet5"></span></div>
+                </div>
+            </div>
+            <div class="result-card" id="card-gpt5mini">
+                <div class="provider">OpenAI</div><div class="model-name">GPT-5 mini</div>
+                <div id="winner-badge-gpt5mini" class="winner-badge" style="display:none;">Cheaper Choice</div>
+                <div class="price-big" id="total-gpt5mini">$0.00</div><div class="price-label">per month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt5mini"></span></div>
+                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt5mini"></span></div>
+                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt5mini"></span></div>
+                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt5mini"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="use-cases">
+        <h2>Which Model for Which Use Case?</h2>
+        <div class="use-case-grid">
+            <div class="use-case-card"><h3>Budget-Conscious Workloads</h3><p>High-volume batch processing, data extraction, content moderation. GPT-5 mini at $0.25/$2 is 88% cheaper, making it the clear winner for cost-sensitive workloads.</p><div class="recommendation"><span class="pick-gpt5mini">Better value: GPT-5 mini</span></div></div>
+            <div class="use-case-card"><h3>Long Context Tasks</h3><p>Processing large documents, codebases, or multi-file analysis. Sonnet 5's 1M context is 3.7x larger than GPT-5 mini's 272K, making it essential for tasks that need massive context windows.</p><div class="recommendation"><span class="pick-sonnet5">Better value: Sonnet 5</span></div></div>
+            <div class="use-case-card"><h3>Code Generation</h3><p>Writing, debugging, refactoring code. Both models produce excellent code. GPT-5 mini at $0.25/$2 is 88% cheaper, but Sonnet 5's larger context helps with complex multi-file projects.</p><div class="recommendation"><span class="pick-gpt5mini">Simple tasks: GPT-5 mini</span> | <span class="pick-sonnet5">Complex projects: Sonnet 5</span></div></div>
+            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, documentation, marketing copy. GPT-5 mini at $0.25/$2 is 88% cheaper, making it the better value for content-heavy workloads where quality is sufficient.</p><div class="recommendation"><span class="pick-gpt5mini">Better value: GPT-5 mini</span></div></div>
+        </div>
+    </div>
+    <div class="pro-upsell">
+        <h2>Choosing between Anthropic and OpenAI?</h2>
+        <p>APIpulse Pro lets you compare all 49 models including Sonnet 5 ($3/$15) and GPT-5 mini ($0.25/$2), save scenarios, and export cost reports.</p>
+        <div class="features">
+            <div class="feature"><strong>49 models</strong> across 10 providers</div>
+            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
+            <div class="feature"><strong>Export</strong> PDF cost reports</div>
+            <div class="feature"><strong>Optimize</strong> — save up to 40%</div>
+        </div>
+        <a href="go.html?from=compare_cta" class="btn-primary">Get Pro — $29 lifetime</a>
+    </div>
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item"><h3>How much cheaper is GPT-5 mini?</h3><p>GPT-5 mini costs $0.25/$2 per 1M tokens vs Sonnet 5 at $3/$15 — 92% cheaper on input and 87% cheaper on output. At 1M input + 500K output tokens/month, that's $1.25 vs $10.50, saving $9.25/month.</p></div>
+        <div class="faq-item"><h3>Is Sonnet 5 worth 8x the cost of GPT-5 mini?</h3><p>Sonnet 5 at $3/$15 offers Anthropic's latest model quality with 1M context (3.7x larger than GPT-5 mini's 272K). For tasks requiring massive context windows or Anthropic's specific capabilities, the 8x premium may be justified.</p></div>
+        <div class="faq-item"><h3>When should I use GPT-5 mini over Sonnet 5?</h3><p>Choose GPT-5 mini ($0.25/$2) for budget-conscious workloads where 272K context is sufficient. Choose Sonnet 5 ($3/$15) for tasks requiring 1M context or when Anthropic's model quality is preferred.</p></div>
+    </div>
+    <div class="related-tools">
+        <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 49 models compared — find the cheapest</p></a>
+        <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>
+        <a href="api-cost-score.html" class="related-card"><h3>🎯 API Cost Score</h3><p>Rate your API setup — get a letter grade in 30 seconds</p></a>
+    </div>
+
+    <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
+        <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">Related Comparisons</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+            <a href="compare-sonnet5-vs-opus48.html" style="display:block;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><div style="font-size:14px;font-weight:700;color:var(--text-primary);">Sonnet 5 vs Opus 4.8</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Same provider, different tiers</div></a>
+            <a href="compare-sonnet5-vs-deepseekv4pro.html" style="display:block;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><div style="font-size:14px;font-weight:700;color:var(--text-primary);">Sonnet 5 vs DeepSeek V4 Pro</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Mid vs budget</div></a>
+            <a href="compare-sonnet5-vs-gpt55.html" style="display:block;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><div style="font-size:14px;font-weight:700;color:var(--text-primary);">Sonnet 5 vs GPT-5.5</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Mid vs premium</div></a>
+        </div>
+    </div>
+
+    <div style="max-width:700px;margin:0 auto 24px;padding:0 24px;display:flex;gap:8px;">
+        <a id="share-x" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>Share on X</a>
+        <a id="share-linkedin" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
+        <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,247,0.06));border:1px solid rgba(99,102,241,0.2);border-radius:16px;padding:32px;text-align:center;">
+            <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Stop guessing — get exact costs for every model</h2>
+            <p style="font-size:15px;color:var(--text-secondary);margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto;">Pro gives you 49-model comparison, migration code snippets, PDF reports, and personalized optimization tips.</p>
+            <a href="go.html?from=compare_cta" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 4px 20px rgba(99,102,241,0.4);transition:all 0.2s;">Get Pro — $29 lifetime</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">✅ 14-day money-back guarantee · ⚡ Instant access · 🔒 One-time payment</p>
+        </div>
+    </div>
+</main>
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="about.html">About</a></p>
+    </footer>
+    <script>
+        const SONNET5={name:'Claude Sonnet 5',provider:'Anthropic',input:3.00,output:15.00,context:'1M'};
+        const GPT5MINI={name:'GPT-5 mini',provider:'OpenAI',input:0.25,output:2.00,context:'272K'};
+        const PRESETS={coding:{input:8000,output:4000,rpd:80,label:'Coding'},content:{input:5000,output:3000,rpd:150,label:'Content Generation'},analysis:{input:10000,output:3000,rpd:100,label:'Data Analysis'},agentic:{input:15000,output:5000,rpd:50,label:'Agentic Tasks'},batch:{input:1000,output:500,rpd:2000,label:'Batch Processing'}};
+        function applyPreset(key){const p=PRESETS[key];document.getElementById('input-tokens').value=p.input;document.getElementById('output-tokens').value=p.output;document.getElementById('requests-day').value=p.rpd;document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');calculate();}
+        function calculate(){
+            const inputTokens=parseInt(document.getElementById('input-tokens').value)||0;
+            const outputTokens=parseInt(document.getElementById('output-tokens').value)||0;
+            const rpd=parseInt(document.getElementById('requests-day').value)||0;
+            const days=parseInt(document.getElementById('days-month').value)||30;
+            const rpm=rpd*days;
+            const s5Input=(inputTokens*rpm/1e6)*SONNET5.input;
+            const s5Output=(outputTokens*rpm/1e6)*SONNET5.output;
+            const s5Total=s5Input+s5Output;
+            const s5CPR=SONNET5.input*(inputTokens/1e6)+SONNET5.output*(outputTokens/1e6);
+            const gmInput=(inputTokens*rpm/1e6)*GPT5MINI.input;
+            const gmOutput=(outputTokens*rpm/1e6)*GPT5MINI.output;
+            const gmTotal=gmInput+gmOutput;
+            const gmCPR=GPT5MINI.input*(inputTokens/1e6)+GPT5MINI.output*(outputTokens/1e6);
+            document.getElementById('total-sonnet5').textContent='$'+s5Total.toFixed(2);
+            document.getElementById('total-gpt5mini').textContent='$'+gmTotal.toFixed(2);
+            document.getElementById('input-cost-sonnet5').textContent='$'+s5Input.toFixed(2);
+            document.getElementById('output-cost-sonnet5').textContent='$'+s5Output.toFixed(2);
+            document.getElementById('cpr-sonnet5').textContent='$'+s5CPR.toFixed(6);
+            document.getElementById('rpm-sonnet5').textContent=rpm.toLocaleString();
+            document.getElementById('input-cost-gpt5mini').textContent='$'+gmInput.toFixed(2);
+            document.getElementById('output-cost-gpt5mini').textContent='$'+gmOutput.toFixed(2);
+            document.getElementById('cpr-gpt5mini').textContent='$'+gmCPR.toFixed(6);
+            document.getElementById('rpm-gpt5mini').textContent=rpm.toLocaleString();
+            const cheaper=s5Total<gmTotal?'sonnet5':'gpt5mini';
+            const savings=Math.abs(s5Total-gmTotal);
+            document.getElementById('winner-badge-sonnet5').style.display=cheaper==='sonnet5'?'inline-block':'none';
+            document.getElementById('winner-badge-gpt5mini').style.display=cheaper==='gpt5mini'?'inline-block':'none';
+            document.getElementById('card-sonnet5').className='result-card'+(cheaper==='sonnet5'?' winner':'');
+            document.getElementById('card-gpt5mini').className='result-card'+(cheaper==='gpt5mini'?' winner':'');
+            if(savings>0.01){
+                document.getElementById('savings-banner').style.display='block';
+                document.getElementById('savings-amount').textContent='Save $'+savings.toFixed(2)+'/month with '+('sonnet5'===cheaper?'Sonnet 5':'GPT-5 mini');
+                document.getElementById('savings-detail').textContent='That\'s $'+(savings*12).toFixed(2)+'/year in savings';
+            }else{
+                document.getElementById('savings-banner').style.display='none';
+            }
+            if(window.trackEvent)window.trackEvent('comparison_calculated',{model1:'sonnet5',model2:'gpt5mini',savings:savings});
+        }
+        calculate();
+        document.getElementById('share-x').href='https://twitter.com/intent/tweet?text='+encodeURIComponent('Claude Sonnet 5 vs GPT-5 mini — GPT-5 mini is 88% cheaper at $0.25/$2 vs $3/$15 💰')+ '&url='+encodeURIComponent('https://getapipulse.com/compare-sonnet5-vs-gpt5mini.html');
+        document.getElementById('share-linkedin').href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent('https://getapipulse.com/compare-sonnet5-vs-gpt5mini.html');
+    </script>
+</body>
+</html>
