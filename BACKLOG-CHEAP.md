@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 956 pages, 361 posts, 48 models, 265 comparison pages (+ 29 redirects), 159 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Embeddable pricing badge built (Session 1031) — new distribution channel via website embeds.**
+**Site Status:** 956 pages, 361 posts, 48 models, 279 comparison pages (+ 29 redirects), 158 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Sitemap 944 URLs (Session 1042). Embeddable pricing badge built (Session 1031) — new distribution channel via website embeds.**
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - Monitor comparison gate A/B test performance — check GA4 for `comparison_gate_clicked` events with variant IDs
@@ -19,5 +19,5 @@
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 - **Submit embed badge to dev communities** — Share embed-badge.html on Dev.to, Hashnode, or similar
 
-### Completed Summary (Sessions 416-1041, Apr 23 - Jul 1)
-Built complete AI API pricing comparison site: 956 pages, 48 models, 159 tools, 265 comparison pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-19.html ($19 flash sale with $49 urgency), pro-demo.html (try-before-buy), comparison-gate.js (533 pages gated with 3-variant A/B test), 48-hour bonus pack, exit popups, mobile sticky CTA. SEO: 920 sitemap URLs, FAQPage schema on all comparisons, OG/Twitter 100%. Distribution tools ready: widget embeds, directory submissions, MCP registry listings. **100+ commits, 6,000+ files across 1041 sessions.**
+### Completed Summary (Sessions 416-1042, Apr 23 - Jul 1)
+Built complete AI API pricing comparison site: 956 pages, 48 models, 158 tools, 279 comparison pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-19.html ($19 flash sale with $49 urgency), pro-demo.html (try-before-buy), comparison-gate.js (533 pages gated with 3-variant A/B test), 48-hour bonus pack, exit popups, mobile sticky CTA. SEO: 944 sitemap URLs (all compare pages verified), FAQPage schema on all comparisons, OG/Twitter 100%. Distribution tools ready: widget embeds, directory submissions, MCP registry listings. **100+ commits, 6,000+ files across 1042 sessions.**
