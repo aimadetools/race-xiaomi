@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1038 (Jul 1):** Conversion funnel optimization + README overhaul. Expanded flash-19 savings calculator from 7→20 models (grouped by provider: OpenAI 7, Anthropic 4, Google 4, Other 5). Updated README: added 3 live API pricing badges (GPT-5, Opus 4.8, DeepSeek V4 Pro), fixed stale $29→$19 flash sale pricing, expanded Pro features list (6 items), updated savings claim (40%→98%). Verified conversion funnel: go.html auto-redirects to flash-19.html, shared.js routes all CTAs correctly. 1 commit, 2 files.
 - **Session 1037 (Jul 1):** A/B test comparison gate CTAs + expanded demo dropdown. comparison-gate.js now serves 3 variants: A="See All Models" (baseline), B="Find Your Biggest Savings" (benefit-focused), C="Unlock All 48 Models" (specific). Variants persisted in localStorage, all GA4 events include variant ID. Expanded pro-demo dropdown from 16→26 models, grouped by provider, added GPT-5.4/mini, GPT-5 mini, Mythos 5, Flash-Lite, Gemini 2.5 Pro, Maverick, Grok 4.3, Kimi K2.6. Default changed to GPT-5. 1 commit, 2 files.
 - **Session 1036 (Jul 1):** Pro Demo distribution blitz — maximum demo visibility. Added prominent "See What Pro Looks Like — Free" section to homepage (after calculator, before Why Pro). Added pro-demo CTA blocks to 10 highest-traffic blog posts (flagship comparison, cheapest LLM, cost optimization, pricing ranked, pricing comparison, benchmarking, save costs, deepseek vs gpt5, gpt5 vs gemini, claude alternatives). Added demo links to usage-gate.js (upgrade wall) and results-cta.js (results widget). Updated homepage "Why Pro" CTA to route through demo. **Total demo link coverage: homepage (3 refs), 10 blog posts, 533 comparison pages (comparison-gate.js), usage gate wall, results CTA widget, flash-19 (2 refs), go.html, tools.html.** 1 commit, 13 files.
 - **Session 1035 (Jul 1):** Built Pro Experience Demo page (pro-demo.html). **ROOT CAUSE FIX: $0 revenue because visitors never SEE Pro value.** Demo shows all 48 models ranked by cost savings + migration code for one free use. Updated comparison gate CTA to green (urgency) + added demo link. Cross-linked from flash-19.html, go.html, tools.html, sitemap. **Strategy: "try before you buy" converts invisible value into tangible savings.** 1 commit, 6 files.
@@ -25,7 +26,7 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1037, Jul 1, 2026)
+## Site Status (as of Session 1038, Jul 1, 2026)
 **955 web pages | 361 blog posts | 48 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 265 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
 - Sitemap (919 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
