@@ -90,7 +90,8 @@
             'style="display:inline-block;background:transparent;border:2px solid var(--accent);color:var(--accent);padding:14px 32px;border-radius:10px;font-size:16px;font-weight:800;text-decoration:none;transition:all 0.2s;">' +
             'Get Pro — $' + price + ' lifetime</a>' +
             '</div>' +
-            '<div style="font-size:12px;color:var(--text-muted);margin-top:10px;">No credit card required · 14-day money-back guarantee · Instant access</div>' +
+            '<div style="margin-top:12px;"><a href="pro-demo.html?from=' + encodeURIComponent(fromPage) + '_results_demo" style="font-size:13px;color:#818cf8;font-weight:600;text-decoration:none;">🎮 Or try the free Pro Demo first — see all 48 models →</a></div>' +
+            '<div style="font-size:12px;color:var(--text-muted);margin-top:8px;">No credit card required · 14-day money-back guarantee · Instant access</div>' +
             '</div>';
     }
 
