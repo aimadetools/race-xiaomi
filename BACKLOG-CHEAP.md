@@ -30,9 +30,9 @@
 
 ### Active Tasks — Embed Badge Distribution (NEW Session 1031)
 - **Add badge.js to GitHub repos** — Embed badge.js in APIpulse's own GitHub repos for visibility
-- **Create badge customization options** — Add data-models, data-theme, data-count attributes to badge.js
-- **Build badge analytics** — Track how many sites embed the badge via GA4 events
-- **Add badge to blog posts** — Embed the pricing badge in high-traffic blog posts for demo
+- ~~Create badge customization options~~ — DONE (Session 1032): data-theme, data-count, data-models
+- ~~Build badge analytics~~ — DONE (Session 1032): GA4 badge_load + widget-track pixel
+- ~~Add badge to blog posts~~ — DONE (Session 1032): 3 high-traffic blog posts
 
 ### Active Tasks — Conversion Monitoring (CRITICAL Session 1031)
 - **Monitor flash-19 conversion after shared.js fix** — 24 comparison pages were routing to $29 instead of $19. Check GA4 for `flash_buy_clicked` events after fix.
@@ -43,7 +43,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1031, Apr 23 - Jul 1)
+### Completed Summary (Sessions 416-1032, Apr 23 - Jul 1)
+- **Session 1032 (Jul 1):** Badge customization + analytics + blog embeds. badge.js v1.1: data-theme, data-count, data-models. GA4 + widget-track analytics. Live badge on 3 blog posts. Flash sale audit clean. 2 commits, 5 files.
 - **Session 1031 (Jul 1):** Built embeddable AI pricing badge — new distribution channel. embed-badge.html + badge.js (<2KB) + badge.svg. 3 embed styles. Added to tools + homepage nav. Sitemap 917→918 URLs. 3 commits, 7 files.
 - **Session 1030 (Jun 30):** Added 4 Fable 5 and Mythos 5 comparison pages. DeepSeek 97% cheaper, Llama 99% cheaper, GPT-5 80% cheaper. Sitemap 913→917 URLs, RSS 789→793 items. 2 commits, 6 files.
 - **Session 1028 (Jun 30):** Added GPT-5.4 mini vs DeepSeek V4 Pro and GPT-5.4 nano vs Llama 4 Scout comparison pages. Budget model showdowns. Sitemap 910→912 URLs. 1 commit, 4 files.
