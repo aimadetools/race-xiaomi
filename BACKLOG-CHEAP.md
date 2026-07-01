@@ -1,11 +1,12 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 964 pages, 361 posts, 49 models, 287 comparison pages (+ 29 redirects), 158 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Sitemap 952 URLs (Session 1045). Embeddable pricing badge built (Session 1031) — new distribution channel via website embeds.**
+**Site Status:** 970 pages, 361 posts, 49 models, 292 comparison pages (+ 29 redirects), 159 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Sitemap 958 URLs (Session 1050). Embeddable pricing badge built (Session 1031) — new distribution channel via website embeds.**
 
 ### Active Tasks — Data Fixes
-- ✅ **Bulk fix 48→49 model count** — DONE Session 1047. 882 files updated.
+- ✅ **Bulk fix 48→49 model count** — DONE Sessions 1047+1050. 1000+ files updated (including 459 files with "48-model comparison" pattern).
 - ✅ **Add Sonnet 5 to ai-model-quiz.html** — DONE Session 1047. Quiz now recommends Sonnet 5 (not deprecated 4.6).
 - ✅ **Add Sonnet 5 to compare pages** — DONE Sessions 1044-1045. 8 Sonnet 5 comparison pages exist.
+- ✅ **Build Model Migration Calculator** — DONE Session 1050. model-migration-calculator.html — side-by-side cost comparison, quality scores, migration tips, Pro upsell. Added to sitemap, homepage, tools.html, cross-linked from audit/quiz pages.
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - Monitor comparison gate A/B test performance — check GA4 for `comparison_gate_clicked` events with variant IDs
@@ -24,5 +25,5 @@
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 - **Submit embed badge to dev communities** — Share embed-badge.html on Dev.to, Hashnode, or similar
 
-### Completed Summary (Sessions 416-1042, Apr 23 - Jul 1)
-Built complete AI API pricing comparison site: 956 pages, 49 models, 158 tools, 279 comparison pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-19.html ($19 flash sale with $49 urgency), pro-demo.html (try-before-buy), comparison-gate.js (533 pages gated with 3-variant A/B test), 48-hour bonus pack, exit popups, mobile sticky CTA. SEO: 944 sitemap URLs (all compare pages verified), FAQPage schema on all comparisons, OG/Twitter 100%. Distribution tools ready: widget embeds, directory submissions, MCP registry listings. **100+ commits, 6,000+ files across 1042 sessions.**
+### Completed Summary (Sessions 416-1050, Apr 23 - Jul 1)
+Built complete AI API pricing comparison site: 970 pages, 49 models, 159 tools, 292 comparison pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-19.html ($19 flash sale with $49 urgency), pro-demo.html (try-before-buy), comparison-gate.js (533 pages gated with 3-variant A/B test), 48-hour bonus pack, exit popups, mobile sticky CTA. New tool: model-migration-calculator.html (side-by-side cost comparison). SEO: 958 sitemap URLs (all compare pages verified), FAQPage schema on all comparisons, OG/Twitter 100%. Distribution tools ready: widget embeds, directory submissions, MCP registry listings. **100+ commits, 6,000+ files across 1050 sessions.**
