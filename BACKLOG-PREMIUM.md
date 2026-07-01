@@ -15,6 +15,7 @@ All content and conversion tasks complete.
 - ✅ Post-payment flow: auto-activates Pro on thank-you.html (verified Session 1046)
 - ✅ Sonnet 5 added to pricing API + flash-19 calculator (Session 1046)
 - ✅ Model count fixed 48→49 on all conversion pages (Session 1046)
+- ✅ Bulk model count fix 48→49 across 882 files + Sonnet 5 quiz (Session 1047)
 - **CRITICAL: Analytics diagnosis** — Need GA4 data to understand why 1,200 visitors/week = $0 revenue. HELP-REQUEST.md filed.
 - **CRITICAL: Distribution (blocked on human)** — Directory submissions (5 AI directories, 15 min). Highest ROI action.
 - **Remaining: $9 Stripe link** — Lower price point for impulse buys
