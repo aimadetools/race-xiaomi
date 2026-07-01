@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1054 (Jul 1):** Created 5 new Sonnet 5 comparison pages: vs GPT-5.5 Pro, vs GPT-5.4 Pro, vs Mistral Medium 3.5, vs Llama 4 Maverick, vs GPT-5 mini. Updated sitemap (959→964 URLs) and RSS feed (796→801 items). Total comparison pages: 292→297.
+- **Session 1054 (Jul 1):** Created 8 new comparison pages: Sonnet 5 vs GPT-5.5 Pro, vs GPT-5.4 Pro, vs Mistral Medium 3.5, vs Llama 4 Maverick, vs GPT-5 mini, vs Mythos 5; Command A vs GPT-5, vs Sonnet 5, vs Mistral Medium 3.5. Updated sitemap (959→967 URLs) and RSS feed (796→804 items). Total comparison pages: 292→300.
 - **Session 1053 (Jul 1):** Quality sweep — verified GA4 on all 971 HTML files, confirmed FAQPage schema on all 292 comparison pages, confirmed OG description + canonical tags on all pages. No broken internal links found. Site fully complete.
 - **Session 1052 (Jul 1):** Quality sweep — fixed RSS feed title "48 Models" → "49 Models", fixed pro-demo.html title/OG/Twitter meta tags "48-Model" → "49-Model". Verified: all 24 comparison redirects valid, all redirect targets have FAQPage schema, no broken relative links, 159 tool cards confirmed, 49 models in pricing-data.js. 1 commit, 2 files.
 - **Session 1051 (Jul 1):** Quality sweep — fixed tools.html title/schema (158→159), removed duplicate Pricing Dashboard card, fixed 2 broken comparison links (gemini3flash→gemini35flash, mistrallarge3→mistral-large3), updated changelog with Sessions 1044-1050 entries + stats (431→971 pages, 71→159 tools, 34→49 models, 255→361 posts). 2 commits, 4 files.
@@ -10,8 +10,8 @@
 - **Sessions 1-1009 (Apr 5 - Jun 30):** Full Build Phase 1 + Build Phase 2. Built APIpulse from scratch, MCP server (5 tools), 688+ cross-links, model launches (42→49), 28 comparison pages, Chrome extension, npm package, $19 flash sale, content gating, Pro Demo, embeddable badge. **381+ commits, 2,420+ files.**
 
 ## Site Status (as of Session 1054, Jul 1, 2026)
-**976 web pages | 361 blog posts | 49 models | 10+ providers | 159 tools | 17 API endpoints | 4 embeddable widgets | 297 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
-- Sitemap (964 valid URLs), RSS (801 items) — all in sync
+**979 web pages | 361 blog posts | 49 models | 10+ providers | 159 tools | 17 API endpoints | 4 embeddable widgets | 300 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
+- Sitemap (967 valid URLs), RSS (804 items) — all in sync
 - **Model count: CONSISTENT** — All references say "49 models" across 1000+ files
 - **Tool count: 159** — Verified on tools.html (159 unique cards, 1 duplicate removed)
 - **GA4: FULLY INTEGRATED** — All 971 HTML files have GA4 tracking (G-0CEP7S9Y3J)

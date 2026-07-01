@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command A vs GPT-5 — Cohere vs OpenAI 2026 | APIpulse</title>
+    <meta name="description" content="Command A vs GPT-5 pricing comparison. Command A at $2.50/$10 vs GPT-5 at $1.25/$10 — GPT-5 is 50% cheaper on input. Interactive calculator.">
+    <meta name="keywords" content="Command A vs GPT-5, Command A pricing, GPT-5 cost, Cohere vs OpenAI, AI API cost comparison">
+    <meta property="og:title" content="Command A vs GPT-5 — Cohere vs OpenAI 2026">
+    <meta property="og:description" content="Compare Command A and GPT-5 pricing. GPT-5 is 50% cheaper on input — interactive calculator shows exact costs.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/compare-commanda-vs-gpt5.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Command A vs GPT-5 — Cohere vs OpenAI 2026">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/compare-commanda-vs-gpt5.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0CEP7S9Y3J');</script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="comparison-gate.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Command A vs GPT-5 — Cohere vs OpenAI 2026","url":"https://getapipulse.com/compare-commanda-vs-gpt5.html","publisher":{"@type":"Organization","name":"APIpulse"},"datePublished":"2026-07-01","dateModified":"2026-07-01"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much cheaper is GPT-5 than Command A?","acceptedAnswer":{"@type":"Answer","text":"GPT-5 costs $1.25/$10 per 1M tokens while Command A costs $2.50/$10. GPT-5 is 50% cheaper on input and same price on output. For 1M input + 500K output tokens/month, GPT-5 costs $6.25 vs Command A's $7.50 — saving $1.25/month."}},{"@type":"Question","name":"When should I use Command A over GPT-5?","acceptedAnswer":{"@type":"Answer","text":"Choose Command A ($2.50/$10) for Cohere's RAG-optimized capabilities and enterprise features. Choose GPT-5 ($1.25/$10) for 50% cheaper input pricing and OpenAI's ecosystem."}}]}</script>
+    <style>
+        .compare-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .compare-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .compare-hero h1 .vs{color:var(--accent)}
+        .compare-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px}
+        .tier-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+        .tier-mid{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white}
+        .tier-premium{background:linear-gradient(135deg,#f59e0b,#d97706);color:white}
+        .quick-comparison{max-width:900px;margin:0 auto 48px;padding:0 24px}
+        .quick-table{width:100%;border-collapse:collapse;background:var(--bg-secondary);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+        .quick-table th{padding:16px 20px;text-align:left;font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;background:var(--bg-card);border-bottom:1px solid var(--border)}
+        .quick-table td{padding:14px 20px;border-bottom:1px solid var(--border);font-size:15px}
+        .quick-table tr:last-child td{border-bottom:none}
+        .quick-table .cheaper{color:var(--green);font-weight:700}
+        .quick-table .pricier{color:var(--orange)}
+        .quick-table .same{color:var(--text-secondary)}
+        .calculator-section{max-width:900px;margin:0 auto 48px;padding:0 24px}
+        .calculator-section h2{font-size:28px;font-weight:800;margin-bottom:8px;text-align:center}
+        .calculator-section .section-sub{color:var(--text-secondary);text-align:center;margin-bottom:32px}
+        .usage-presets{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
+        .preset-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-secondary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
+        .preset-btn:hover,.preset-btn.active{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
+        .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+        .input-group{margin-bottom:16px}
+        .input-group label{display:block;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;font-weight:600}
+        .input-group input{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:15px}
+        .input-group input:focus{outline:2px solid var(--accent);outline-offset:2px}
+        .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+        .result-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center}
+        .result-card.winner{border-color:var(--green);box-shadow:0 0 24px rgba(34,197,94,0.1)}
+        .result-card .provider{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+        .result-card .model-name{font-size:22px;font-weight:800;margin-bottom:16px}
+        .result-card .price-big{font-size:36px;font-weight:800;margin-bottom:4px}
+        .result-card .price-label{font-size:13px;color:var(--text-muted);margin-bottom:20px}
+        .result-card .breakdown{text-align:left}
+        .result-card .breakdown-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+        .result-card .breakdown-row:last-child{border-bottom:none}
+        .result-card .breakdown-row .label{color:var(--text-secondary)}
+        .result-card .breakdown-row .val{font-weight:600}
+        .winner-badge{display:inline-block;background:rgba(34,197,94,0.15);color:var(--green);padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px}
+        .savings-banner{text-align:center;padding:24px;background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(99,102,241,0.1));border:1px solid var(--green);border-radius:var(--radius);margin-bottom:48px}
+        .savings-banner .amount{font-size:32px;font-weight:800;color:var(--green)}
+        .savings-banner .detail{color:var(--text-secondary);margin-top:8px}
+        .faq-section{max-width:800px;margin:0 auto 48px;padding:0 24px}
+        .faq-section h2{font-size:24px;font-weight:800;margin-bottom:24px;text-align:center}
+        .faq-item{margin-bottom:20px}
+        .faq-item h3{font-size:16px;font-weight:700;margin-bottom:8px}
+        .faq-item p{font-size:14px;color:var(--text-secondary);line-height:1.7}
+        .related-tools{max-width:900px;margin:0 auto 48px;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .related-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;transition:all 0.2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+        .related-card p{font-size:13px;color:var(--text-muted)}
+        .related-card a{text-decoration:none;color:inherit}
+        @media(max-width:768px){.compare-hero{padding:100px 20px 30px}.calc-grid,.results-grid{grid-template-columns:1fr}.related-tools{grid-template-columns:1fr}.quick-table{font-size:13px}.quick-table td,.quick-table th{padding:10px 12px}}
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button><div class="nav-links"><a href="calculator.html">Calculator</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="pricing.html" class="nav-cta">Get Pro — $29</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button></div></div></nav>
+    <main id="main">
+    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;"><p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;"><strong style="color:#dc2626;">🔥 Limited time:</strong> <a href="deal.html" style="color:#dc2626;font-weight:700;text-decoration:none;">Pro lifetime access $29 — price goes up July 12 →</a></p></div>
+    <div class="compare-hero">
+        <span class="tier-badge tier-mid">Mid</span> <span class="tier-badge tier-premium">Premium</span>
+        <h1>Command A <span class="vs">vs</span> GPT-5</h1>
+        <p class="subtitle">Cohere's enterprise model vs OpenAI's premium. Command A at $2.50/$10 vs GPT-5 at $1.25/$10 — GPT-5 is 50% cheaper on input with same output price. Both have 128K+ context.</p>
+    </div>
+    <div class="quick-comparison">
+        <table class="quick-table">
+            <thead><tr><th>Specification</th><th>Command A (Cohere)</th><th>GPT-5 (OpenAI)</th></tr></thead>
+            <tbody>
+                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$2.50</td><td class="cheaper">$1.25</td></tr>
+                <tr><td>Output Price (per 1M tokens)</td><td class="same">$10.00</td><td class="same">$10.00</td></tr>
+                <tr><td>Context Window</td><td class="same">128K tokens</td><td class="cheaper">272K tokens</td></tr>
+                <tr><td>Tier</td><td>Mid</td><td>Premium</td></tr>
+                <tr><td>Provider</td><td>Cohere</td><td>OpenAI</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="calculator-section">
+        <h2>Calculate Your Exact Costs</h2>
+        <p class="section-sub">See how much you can save with GPT-5 — or whether Command A's RAG-optimized features justify 2x input cost.</p>
+        <div class="usage-presets">
+            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
+            <button class="preset-btn" onclick="applyPreset('content')">Content</button>
+            <button class="preset-btn" onclick="applyPreset('rag')">RAG</button>
+            <button class="preset-btn" onclick="applyPreset('batch')">Batch</button>
+        </div>
+        <div class="calc-grid">
+            <div>
+                <div class="input-group"><label for="input-tokens">Input Tokens</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
+                <div class="input-group"><label for="output-tokens">Output Tokens</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
+            </div>
+            <div>
+                <div class="input-group"><label for="requests-day">Requests/Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
+                <div class="input-group"><label for="days-month">Days/Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
+            </div>
+        </div>
+        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
+        <div class="results-grid">
+            <div class="result-card" id="card-commanda">
+                <div class="provider">Cohere</div><div class="model-name">Command A</div>
+                <div id="winner-badge-commanda" class="winner-badge" style="display:none;">Cheaper</div>
+                <div class="price-big" id="total-commanda">$0.00</div><div class="price-label">/month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row"><span class="label">Input</span><span class="val" id="input-cost-commanda"></span></div>
+                    <div class="breakdown-row"><span class="label">Output</span><span class="val" id="output-cost-commanda"></span></div>
+                    <div class="breakdown-row"><span class="label">Per request</span><span class="val" id="cpr-commanda"></span></div>
+                </div>
+            </div>
+            <div class="result-card" id="card-gpt5">
+                <div class="provider">OpenAI</div><div class="model-name">GPT-5</div>
+                <div id="winner-badge-gpt5" class="winner-badge" style="display:none;">Cheaper</div>
+                <div class="price-big" id="total-gpt5">$0.00</div><div class="price-label">/month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row"><span class="label">Input</span><span class="val" id="input-cost-gpt5"></span></div>
+                    <div class="breakdown-row"><span class="label">Output</span><span class="val" id="output-cost-gpt5"></span></div>
+                    <div class="breakdown-row"><span class="label">Per request</span><span class="val" id="cpr-gpt5"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item"><h3>How much cheaper is GPT-5?</h3><p>GPT-5 costs $1.25/$10 vs Command A at $2.50/$10 — 50% cheaper on input, same on output. At 1M input + 500K output/month, that's $6.25 vs $7.50, saving $1.25/month.</p></div>
+        <div class="faq-item"><h3>When should I use Command A over GPT-5?</h3><p>Choose Command A ($2.50/$10) for Cohere's RAG-optimized capabilities and enterprise features. Choose GPT-5 ($1.25/$10) for 50% cheaper input pricing and OpenAI's ecosystem.</p></div>
+    </div>
+    <div class="related-tools">
+        <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 49 models compared</p></a>
+        <a href="compare.html" class="related-card"><h3>Compare Models</h3><p>Custom comparison tool</p></a>
+        <a href="calculator.html" class="related-card"><h3>Calculator</h3><p>Calculate your costs</p></a>
+    </div>
+    </main>
+    <footer><p>Pricing data last verified: <span class="verified-date"></span></p><p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="blog.html">Blog</a></p></footer>
+    <script>
+        const CMD={name:'Command A',provider:'Cohere',input:2.50,output:10.00};
+        const GPT5={name:'GPT-5',provider:'OpenAI',input:1.25,output:10.00};
+        const PRESETS={coding:{input:8000,output:4000,rpd:80},content:{input:5000,output:3000,rpd:150},rag:{input:10000,output:2000,rpd:100},batch:{input:1000,output:500,rpd:2000}};
+        function applyPreset(k){const p=PRESETS[k];document.getElementById('input-tokens').value=p.input;document.getElementById('output-tokens').value=p.output;document.getElementById('requests-day').value=p.rpd;document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');calculate();}
+        function calculate(){
+            const i=parseInt(document.getElementById('input-tokens').value)||0;
+            const o=parseInt(document.getElementById('output-tokens').value)||0;
+            const r=parseInt(document.getElementById('requests-day').value)||0;
+            const d=parseInt(document.getElementById('days-month').value)||30;
+            const m=r*d;
+            const ci=(i*m/1e6)*CMD.input,co=(o*m/1e6)*CMD.output,ct=ci+co;
+            const gi=(i*m/1e6)*GPT5.input,go=(o*m/1e6)*GPT5.output,gt=gi+go;
+            document.getElementById('total-commanda').textContent='$'+ct.toFixed(2);
+            document.getElementById('total-gpt5').textContent='$'+gt.toFixed(2);
+            document.getElementById('input-cost-commanda').textContent='$'+ci.toFixed(2);
+            document.getElementById('output-cost-commanda').textContent='$'+co.toFixed(2);
+            document.getElementById('cpr-commanda').textContent='$'+(CMD.input*(i/1e6)+CMD.output*(o/1e6)).toFixed(6);
+            document.getElementById('input-cost-gpt5').textContent='$'+gi.toFixed(2);
+            document.getElementById('output-cost-gpt5').textContent='$'+go.toFixed(2);
+            document.getElementById('cpr-gpt5').textContent='$'+(GPT5.input*(i/1e6)+GPT5.output*(o/1e6)).toFixed(6);
+            const w=ct<gt?'commanda':'gpt5',s=Math.abs(ct-gt);
+            document.getElementById('winner-badge-commanda').style.display=w==='commanda'?'inline-block':'none';
+            document.getElementById('winner-badge-gpt5').style.display=w==='gpt5'?'inline-block':'none';
+            document.getElementById('card-commanda').className='result-card'+(w==='commanda'?' winner':'');
+            document.getElementById('card-gpt5').className='result-card'+(w==='gpt5'?' winner':'');
+            if(s>0.01){document.getElementById('savings-banner').style.display='block';document.getElementById('savings-amount').textContent='Save $'+s.toFixed(2)+'/month with '+(w==='commanda'?'Command A':'GPT-5');document.getElementById('savings-detail').textContent='That\'s $'+(s*12).toFixed(2)+'/year';}else{document.getElementById('savings-banner').style.display='none';}
+        }
+        calculate();
+    </script>
+</body>
+</html>
