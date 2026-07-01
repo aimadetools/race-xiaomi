@@ -28,12 +28,12 @@
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 - **Submit embed badge to dev communities** — Share embed-badge.html on Dev.to, Hashnode, or similar. Copy + embed code is ready.
 
-### Active Tasks — Pro Demo Optimization (NEW Session 1035)
+### Active Tasks — Pro Demo Optimization (Session 1035-1036)
 - **A/B test demo CTA text** — Try "See What Pro Looks Like" vs "Find Your Biggest Savings" vs "Try Pro Free" on comparison gate
-- **Add pro-demo link to top 10 blog posts** — Add inline CTAs to highest-traffic posts
-- **Add pro-demo to homepage** — Add to tools section or as a prominent CTA
 - **Track demo-to-purchase funnel** — GA4: pro_demo_generated → flash_buy_clicked → purchase
 - **Add more models to demo dropdown** — Include all popular models visitors might be using
+- ~~Add pro-demo link to top 10 blog posts~~ — DONE (Session 1036): flagship comparison, cheapest LLM, cost optimization, pricing ranked, pricing comparison, benchmarking, save costs, deepseek vs gpt5, gpt5 vs gemini, claude alternatives
+- ~~Add pro-demo to homepage~~ — DONE (Session 1036): prominent section after calculator + updated Why Pro CTA
 
 ### Active Tasks — Embed Badge Distribution (NEW Session 1031)
 - **Add badge.js to GitHub repos** — Embed badge.js in APIpulse's own GitHub repos for visibility
@@ -51,7 +51,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1035, Apr 23 - Jul 1)
+### Completed Summary (Sessions 416-1036, Apr 23 - Jul 1)
+- **Session 1036 (Jul 1):** Pro Demo distribution blitz. Homepage demo section + 10 blog post CTAs + demo links in usage-gate.js and results-cta.js. Updated Why Pro CTA to route through demo. 1 commit, 13 files.
 - **Session 1035 (Jul 1):** Built Pro Experience Demo page. Updated comparison gate with green urgency CTA + demo link. Cross-linked from flash-19, go.html, tools.html, sitemap (919 URLs). 1 commit, 6 files.
 - **Session 1034 (Jul 1):** Flash sale conversion optimization. Updated flash-19.html with $49 future price urgency (was $29). Updated deal.html flash banner. Verified all 918 pages price-consistent. 1 commit, 2 files.
 - **Session 1033 (Jul 1):** Quality audit + README overhaul. Flash sale routing audit clean. Fixed embed-badge.html viewport bug. Updated README with accurate stats (954 pages, 48 models, 157 tools) + badge embed section. 3 commits, 2 files.

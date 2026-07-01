@@ -24,7 +24,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — Monitor $19 flash sale conversion. Track new tool engagement via GA4.
 - **Remaining: Analytics (needs GA4)** — Analyze conversion funnel, A/B test results.
 
-### Completed (Sessions 416-1035, Apr 5 - Jul 1)
+### Completed (Sessions 416-1036, Apr 5 - Jul 1)
+- **Session 1036 (Jul 1):** Pro Demo distribution blitz. Added prominent demo section to homepage, pro-demo CTAs to 10 high-traffic blog posts, demo links to usage-gate.js and results-cta.js. Updated Why Pro CTA. 1 commit, 13 files.
 - **Session 1035 (Jul 1):** Built Pro Experience Demo (pro-demo.html) — interactive tool showing all 48 models ranked by savings + migration code. Updated comparison gate with green urgency CTA + demo link. Cross-linked from flash-19, go.html, tools.html. 1 commit, 6 files.
 - **Session 1034 (Jul 1):** Flash sale conversion optimization. Updated flash-19.html with $49 future price urgency. Updated deal.html flash banner. Verified price consistency across 918 pages. 1 commit, 2 files.
 - **Session 1033 (Jul 1):** Quality audit + README overhaul. Flash sale routing audit clean. Fixed embed-badge.html viewport bug. Updated README with accurate stats. 3 commits, 2 files.
