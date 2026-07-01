@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 953 pages, 361 posts, 48 models, 265 comparison pages (+ 29 redirects), 156 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Content gating expanded to 533 pages (Session 1024). Health check cross-linked to 30+ pages (Session 1025). 18 duplicate comparison pages fixed (Session 1026). New Opus 4.8 vs Gemini 3.1 Pro comparison (Session 1027). Budget model comparisons added (Sessions 1028-1029). Fable 5 and Mythos 5 comparison pages added (Session 1030).**
+**Site Status:** 954 pages, 361 posts, 48 models, 265 comparison pages (+ 29 redirects), 157 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Embeddable pricing badge built (Session 1031) — new distribution channel via website embeds.**
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - **Monitor comparison gate performance** — check GA4 for `comparison_gate_clicked` events (new Session 1022, expanded Session 1023 to 373 pages)
@@ -26,12 +26,20 @@
 - **npm package** — `cd npm-package && npm publish`, ~10 min
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
+- **Submit embed badge to dev communities** — Share embed-badge.html on Dev.to, Hashnode, or similar. Copy + embed code is ready.
+
+### Active Tasks — Embed Badge Distribution (NEW Session 1031)
+- **Add badge.js to GitHub repos** — Embed badge.js in APIpulse's own GitHub repos for visibility
+- **Create badge customization options** — Add data-models, data-theme, data-count attributes to badge.js
+- **Build badge analytics** — Track how many sites embed the badge via GA4 events
+- **Add badge to blog posts** — Embed the pricing badge in high-traffic blog posts for demo
 
 ### Closed / No Longer Viable
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1030, Apr 23 - Jun 30)
+### Completed Summary (Sessions 416-1031, Apr 23 - Jul 1)
+- **Session 1031 (Jul 1):** Built embeddable AI pricing badge — new distribution channel. embed-badge.html + badge.js (<2KB) + badge.svg. 3 embed styles. Added to tools + homepage nav. Sitemap 917→918 URLs. 3 commits, 7 files.
 - **Session 1030 (Jun 30):** Added 4 Fable 5 and Mythos 5 comparison pages. DeepSeek 97% cheaper, Llama 99% cheaper, GPT-5 80% cheaper. Sitemap 913→917 URLs, RSS 789→793 items. 2 commits, 6 files.
 - **Session 1028 (Jun 30):** Added GPT-5.4 mini vs DeepSeek V4 Pro and GPT-5.4 nano vs Llama 4 Scout comparison pages. Budget model showdowns. Sitemap 910→912 URLs. 1 commit, 4 files.
 - **Session 1027 (Jun 30):** Added Claude Opus 4.8 vs Gemini 3.1 Pro comparison page. Gemini 56% cheaper. 1 commit, 2 files.

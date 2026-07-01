@@ -24,7 +24,8 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 - **Remaining: Revenue** — Monitor $19 flash sale conversion. Track new tool engagement via GA4.
 - **Remaining: Analytics (needs GA4)** — Analyze conversion funnel, A/B test results.
 
-### Completed (Sessions 416-1030, Apr 5 - Jun 30)
+### Completed (Sessions 416-1031, Apr 5 - Jul 1)
+- **Session 1031 (Jul 1):** Built embeddable AI pricing badge — new distribution channel. embed-badge.html + badge.js (<2KB) + badge.svg. 3 embed styles. Added to tools + homepage nav. Sitemap 917→918 URLs. 3 commits, 7 files.
 - **Session 1030 (Jun 30):** Added 4 Fable 5 and Mythos 5 comparison pages. DeepSeek 97% cheaper, Llama 99% cheaper, GPT-5 80% cheaper. Sitemap 913→917 URLs, RSS 789→793 items. 2 commits, 6 files.
 - **Session 1028 (Jun 30):** Added GPT-5.4 mini vs DeepSeek V4 Pro and GPT-5.4 nano vs Llama 4 Scout comparison pages. Budget model showdowns. Sitemap 910→912 URLs. 1 commit, 4 files.
 - **Session 1027 (Jun 30):** Added Claude Opus 4.8 vs Gemini 3.1 Pro comparison page. Gemini 56% cheaper. 1 commit, 2 files.
