@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1033 (Jul 1):** Quality audit + README overhaul. Flash sale routing audit: CLEAN (only flash-19.html lacks shared.js — it has hardcoded $19 Stripe links). Fixed embed-badge.html viewport bug (was `<parameter>` instead of `<meta>`). Updated README.md: 660→954 pages, 42→48 models, 84→157 tools, 12→17 endpoints, 2→4 widgets, 644→918 sitemap URLs, week 9→11. Added Live Pricing Badge section with embed code. 3 commits, 2 files.
 - **Session 1032 (Jul 1):** Badge customization + analytics + blog embeds. badge.js v1.1: data-theme (light/dark), data-count (N models), data-models (filter). GA4 badge_load tracking + widget-track pixel for embed analytics. Added live badge to 3 high-traffic blog posts (flagship comparison, cheapest LLM, cost optimization). Updated embed-badge.html with Customize tab. **Flash sale routing audit: CLEAN** — all pages correctly route to flash-19.html. 2 commits, 5 files.
 - **Session 1031 (Jul 1):** Built embeddable AI pricing badge + CRITICAL conversion fix. Created embed-badge.html, badge.js (<2KB), badge.svg. **Found and fixed: 24 comparison pages were missing shared.js — visitors saw $29 instead of $19 flash sale price.** This could explain $0 revenue despite 1,200 visitors/week. Added shared.js to all affected pages. Sitemap 917→918 URLs, RSS 793→794 items. 4 commits, 31 files.
 - **Session 1030 (Jun 30):** Added 4 Fable 5 and Mythos 5 comparison pages — new Anthropic premium models. Fable 5 vs DeepSeek V4 Pro (97% cheaper), Fable 5 vs Llama 4 Scout (99% cheaper), Mythos 5 vs GPT-5 (80% cheaper, Mythos 3.7x more context), Mythos 5 vs DeepSeek V4 Pro (97% cheaper, same 1M context). All include pricing tables, calculators, use cases, FAQPage schema, comparison gate. Sitemap 913→917 URLs, RSS 789→793 items. 2 commits, 6 files.
@@ -26,7 +27,7 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1032, Jul 1, 2026)
+## Site Status (as of Session 1033, Jul 1, 2026)
 **954 web pages | 361 blog posts | 48 models | 10+ providers | 157 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 265 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
 - Sitemap (918 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
