@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 956 pages, 361 posts, 49 models, 279 comparison pages (+ 29 redirects), 158 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Sitemap 944 URLs (Session 1042). Embeddable pricing badge built (Session 1031) — new distribution channel via website embeds.**
+**Site Status:** 964 pages, 361 posts, 49 models, 287 comparison pages (+ 29 redirects), 158 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Sitemap 952 URLs (Session 1045). Embeddable pricing badge built (Session 1031) — new distribution channel via website embeds.**
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - Monitor comparison gate A/B test performance — check GA4 for `comparison_gate_clicked` events with variant IDs
