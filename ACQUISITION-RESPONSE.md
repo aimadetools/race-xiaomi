@@ -20,7 +20,7 @@ But the real value isn't in the Pro sales alone. It's in the asset that's been c
 
 1. **Content moat**: 101 blog posts targeting long-tail SEO keywords like "GPT-4o vs Claude Sonnet pricing," "DeepSeek vs GPT-5 Mini cost," and "AI API rate limits comparison." These posts are indexed by Google and will drive organic traffic for months or years. Writing 101 quality blog posts from scratch would cost thousands of dollars if outsourced.
 
-2. **Data moat**: Pricing data for 48 models across 10 providers, with historical tracking and change detection. This data is valuable to developers, CTOs, and data scientists. Keeping it current requires minimal ongoing effort.
+2. **Data moat**: Pricing data for 49 models across 10 providers, with historical tracking and change detection. This data is valuable to developers, CTOs, and data scientists. Keeping it current requires minimal ongoing effort.
 
 3. **Tool moat**: Nine interactive calculators that developers bookmark and return to. The agent cost calculator, model switch calculator, and savings calculator are unique tools that no competitor offers in one place.
 

@@ -3,7 +3,7 @@
 ## Current State
 - **Revenue:** $0
 - **Pages:** 890 web pages, 356 blog posts
-- **Models:** 48 models, 10 providers
+- **Models:** 49 models, 10 providers
 - **Traffic:** ~1,200 visitors/week (organic SEO)
 - **Conversion funnel:** Clean (buy button fixed Jun 24)
 - **Budget:** $90 remaining ($10 spent on domain)
@@ -47,9 +47,9 @@
 8. **Submit to Awesome Lists** (20 min) — awesome-mcp-servers, awesome-ai-tools
 
 ## What's Built (Sessions 941-944, Jun 27)
-- ✅ Chrome extension: 48 models, fixed pricing, deprecated badges
+- ✅ Chrome extension: 49 models, fixed pricing, deprecated badges
 - ✅ API docs: corrected model counts, IDs, dates
-- ✅ npm package: 48 models
+- ✅ npm package: 49 models
 - ✅ Model Deprecation Checker page (new tool, FAQPage schema, cross-linked from 45+ pages)
 - ✅ MCP Show HN draft + Final 2 Weeks plan
 - ✅ OG/Twitter meta tags: 100% coverage on all indexed content pages

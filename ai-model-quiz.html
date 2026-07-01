@@ -37,7 +37,7 @@
                 "name": "Which AI model is best for building chatbots?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For chatbots, Claude Sonnet 4.6 or GPT-5 offer the best balance of quality and cost. For budget chatbots, DeepSeek V4 Pro delivers surprisingly capable results at 90% lower cost."
+                    "text": "For chatbots, Claude Sonnet 5 or GPT-5 offer the best balance of quality and cost. For budget chatbots, DeepSeek V4 Pro delivers surprisingly capable results at 90% lower cost."
                 }
             },
             {
@@ -392,7 +392,7 @@
             } else if (budget === 'low') {
                 model = getModel('anthropic-haiku'); reasons = ['Haiku 4.5 is fast and affordable', 'Great for high-volume chatbots', 'Strong instruction following'];
             } else {
-                model = getModel('anthropic-sonnet46'); reasons = ['Sonnet 4.6 balances quality and cost', '1M context window', 'Excellent for code and analysis'];
+                model = getModel('anthropic-sonnet5'); reasons = ['Sonnet 5 balances quality and cost', '1M context window', 'Excellent for code and analysis'];
             }
         } else if (eco === 'opensource') {
             model = getModel('llama-4-maverick'); reasons = ['Llama 4 Maverick — best open-weight model', 'Run locally or via Together.ai', 'No vendor lock-in, competitive quality'];
@@ -402,7 +402,7 @@
                 if (budget === 'low') {
                     model = getModel('deepseek-v4-pro'); reasons = ['DeepSeek V4 Pro: best value for chatbots', '97% cheaper than GPT-5.5 with strong quality', 'Ideal for high-volume chat applications'];
                 } else if (priority === 'quality') {
-                    model = getModel('anthropic-sonnet46'); reasons = ['Sonnet 4.6 excels at natural conversation', 'Strong instruction following and safety', '1M context for long chat histories'];
+                    model = getModel('anthropic-sonnet5'); reasons = ['Sonnet 5 excels at natural conversation', 'Strong instruction following and safety', '1M context for long chat histories'];
                 } else {
                     model = getModel('google-gemini35-flash'); reasons = ['Gemini 3.5 Flash: fast and affordable', 'Great response quality for the price', '1M context window included'];
                 }
@@ -420,7 +420,7 @@
                 } else if (budget === 'low') {
                     model = getModel('deepseek-v4-pro'); reasons = ['DeepSeek V4 Pro: RAG at 90% lower cost', 'Good quality for search and summarization', 'Save thousands vs premium models'];
                 } else {
-                    model = getModel('anthropic-sonnet46'); reasons = ['Sonnet 4.6: excellent for document Q&A', '1M context for long documents', 'Strong at following complex instructions'];
+                    model = getModel('anthropic-sonnet5'); reasons = ['Sonnet 5: excellent for document Q&A', '1M context for long documents', 'Strong at following complex instructions'];
                 }
             } else if (useCase === 'agent') {
                 if (budget === 'high') {

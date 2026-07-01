@@ -16,7 +16,7 @@ Submit APIpulse to the top 5 AI tool directories. These are the highest-traffic 
 - Name: APIpulse
 - URL: https://getapipulse.com
 - Tagline: Know your AI API costs before you commit
-- Description: Free AI API cost calculator and budget planner. Compare pricing across 48 models from 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, AI21). Calculate monthly spend, find the cheapest model for your use case, and optimize costs by up to 40%.
+- Description: Free AI API cost calculator and budget planner. Compare pricing across 49 models from 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, AI21). Calculate monthly spend, find the cheapest model for your use case, and optimize costs by up to 40%.
 - Category: Developer Tools
 - Pricing: Free / $29 one-time Pro
 

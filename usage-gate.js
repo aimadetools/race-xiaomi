@@ -63,7 +63,7 @@
                 '<a href="' + (!window.DEAL_EXPIRED ? 'flash-19.html?from=usage_gate' : 'go.html?from=usage_gate') + '" style="display:block;padding:14px 24px;background:var(--accent);color:white;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:transform 0.2s;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'" onclick="if(window.trackEvent)window.trackEvent(\'usage_gate_upgrade_clicked\',{source:\'wall\',price:' + price + '})">Get Pro — $' + price + ' lifetime</a>' +
                 '<button onclick="if(typeof startTrial===\'function\')startTrial();dismissUsageGate();" style="padding:12px 24px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background=\'rgba(99,102,241,0.1)\'" onmouseout="this.style.background=\'transparent\'">Try Free for 24 Hours</button>' +
             '</div>' +
-            '<p style="margin-top:16px;"><a href="pro-demo.html?from=usage_gate" style="font-size:13px;color:#818cf8;font-weight:600;text-decoration:none;">🎮 Or try the free Pro Demo first — see all 48 models →</a></p>' +
+            '<p style="margin-top:16px;"><a href="pro-demo.html?from=usage_gate" style="font-size:13px;color:#818cf8;font-weight:600;text-decoration:none;">🎮 Or try the free Pro Demo first — see all 49 models →</a></p>' +
             '<p style="font-size:13px;color:var(--text-muted);margin-top:8px;">No credit card needed for trial · 14-day money-back guarantee</p>' +
         '</div>';
 
