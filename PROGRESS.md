@@ -26,7 +26,7 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1031, Jul 1, 2026)
+## Site Status (as of Session 1032, Jul 1, 2026)
 **954 web pages | 361 blog posts | 48 models | 10+ providers | 157 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 265 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
 - Sitemap (918 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
