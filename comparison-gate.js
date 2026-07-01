@@ -15,9 +15,9 @@
     // A/B test: 3 CTA text variants (Session 1037)
     // Persisted in localStorage so returning visitors see the same variant
     var CTA_VARIANTS = [
-        { id: 'a', text: 'See All Models — {priceLabel} {price}', demo: 'See What Pro Looks Like — Free' },
-        { id: 'b', text: 'Find Your Biggest Savings — {priceLabel} {price}', demo: 'Find Your Biggest Savings — Free Demo' },
-        { id: 'c', text: 'Unlock All {count} Models — {priceLabel} {price}', demo: 'Try Pro Free — See All 48 Models' }
+        { id: 'a', text: 'See All Models + 3 Bonuses — {priceLabel} {price}', demo: 'See What Pro Looks Like — Free' },
+        { id: 'b', text: 'Find Your Biggest Savings + Bonuses — {priceLabel} {price}', demo: 'Find Your Biggest Savings — Free Demo' },
+        { id: 'c', text: 'Unlock All {count} Models + 3 Bonuses — {priceLabel} {price}', demo: 'Try Pro Free — See All 48 Models' }
     ];
 
     function getCTAVariant() {
@@ -93,7 +93,8 @@
                 '<div style="margin-bottom:10px;">' +
                 '<span style="font-size:14px;color:#94a3b8;">🔒 ' + hiddenCount + ' more model' + (hiddenCount !== 1 ? 's' : '') + ' — one might save you thousands more per year</span>' +
                 '</div>' +
-                (window.DEAL_EXPIRED ? '' : '<div style="margin-bottom:10px;font-size:12px;color:#ef4444;font-weight:600;">⏰ Flash sale ends in <span class="gate-countdown" data-variant="' + activeVariant.id + '">loading...</span> — then $49</div>') +
+                (window.DEAL_EXPIRED ? '' : '<div style="margin-bottom:8px;font-size:12px;color:#ef4444;font-weight:600;">⏰ Flash sale ends in <span class="gate-countdown" data-variant="' + activeVariant.id + '">loading...</span> — then $49</div>') +
+                (window.DEAL_EXPIRED ? '' : '<div style="margin-bottom:10px;font-size:11px;color:#a5b4fc;font-weight:600;">🎁 Includes 3 bonuses ($29 value) — bonus timer: <span class="gate-bonus-timer">loading...</span></div>') +
                 '<a href="' + link + '" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'comparison_gate_clicked\',{variant:\'' + activeVariant.id + '\'});">' +
                 ctaText + '</a>' +
                 '<div style="margin-top:10px;"><a href="pro-demo.html" style="font-size:12px;color:#818cf8;font-weight:600;text-decoration:none;" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'gate_demo_clicked\',{variant:\'' + activeVariant.id + '\'});">🎮 Or try: ' + activeVariant.demo + ' →</a></div>' +
@@ -132,6 +133,32 @@
             }
             updateGateCountdowns();
             setInterval(updateGateCountdowns, 60000); // Update every minute
+
+            // 48-hour bonus timer (Session 1040)
+            var BONUS_KEY = 'flash19_bonus_deadline';
+            var bonusDeadline = localStorage.getItem(BONUS_KEY);
+            var now = Date.now();
+            if (!bonusDeadline || parseInt(bonusDeadline) < now) {
+                bonusDeadline = now + (48 * 60 * 60 * 1000);
+                localStorage.setItem(BONUS_KEY, bonusDeadline.toString());
+            } else {
+                bonusDeadline = parseInt(bonusDeadline);
+            }
+            function updateGateBonusTimers() {
+                var diff = bonusDeadline - Date.now();
+                var timers = document.querySelectorAll('.gate-bonus-timer');
+                if (diff <= 0) {
+                    timers.forEach(function(el) { el.textContent = 'EXPIRED'; });
+                    return;
+                }
+                var h = Math.floor(diff / 3600000);
+                var m = Math.floor((diff % 3600000) / 60000);
+                var s = Math.floor((diff % 60000) / 1000);
+                var timeStr = h.toString().padStart(2,'0') + 'h ' + m.toString().padStart(2,'0') + 'm ' + s.toString().padStart(2,'0') + 's';
+                timers.forEach(function(el) { el.textContent = timeStr; });
+            }
+            updateGateBonusTimers();
+            setInterval(updateGateBonusTimers, 1000);
         }
     });
 
