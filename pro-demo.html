@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try APIpulse Pro Free — See the Full 48-Model Comparison | APIpulse</title>
+    <meta name="description" content="Try APIpulse Pro free. See all 48 AI models ranked by cost, get migration code, and find your biggest savings. One demo per visitor — then unlock everything for $19.">
+    <meta property="og:title" content="Try APIpulse Pro Free — See the Full 48-Model Comparison">
+    <meta property="og:description" content="See all 48 AI models ranked by cost. Get migration code. Find your biggest savings. Free demo, then $19 for everything.">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/pro-demo.html">
+    <meta property="og:type" product>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Try APIpulse Pro Free — See the Full 48-Model Comparison">
+    <meta name="twitter:description" content="See all 48 AI models ranked by cost. Free demo, then $19 for everything.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/pro-demo.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "APIpulse Pro — Free Demo",
+        "description": "Try APIpulse Pro free. See all 48 AI models ranked by cost, get migration code, and find your biggest savings.",
+        "url": "https://getapipulse.com/pro-demo.html",
+        "brand": { "@type": "Brand", "name": "APIpulse" },
+        "offers": {
+            "@type": "Offer",
+            "price": "19.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i",
+            "priceValidUntil": "2026-07-12",
+            "description": "Flash sale — goes to $49 after July 12"
+        }
+    }
+    </script>
+    <style>
+        body { background: #0a0a0f; }
+        .demo-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        /* Demo badge */
+        .demo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #818cf8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .demo-badge .dot {
+            width: 6px; height: 6px;
+            background: #818cf8;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        /* Hero */
+        .demo-hero {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .demo-hero h1 {
+            font-size: clamp(26px, 4.5vw, 38px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+        }
+        .demo-hero h1 .highlight { color: #22c55e; }
+        .demo-hero .sub {
+            font-size: 16px;
+            color: #94a3b8;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* Input section */
+        .input-section {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            padding: 28px 24px;
+            margin-bottom: 28px;
+        }
+        .input-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 4px;
+        }
+        .input-section .desc {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+        .input-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .input-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-bottom: 6px;
+        }
+        .input-group select,
+        .input-group input {
+            width: 100%;
+            padding: 12px 14px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            color: #e2e8f0;
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .input-group select:focus,
+        .input-group input:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+        .generate-btn {
+            display: block;
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+        .generate-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(99, 102, 241, 0.4);
+        }
+        /* Results */
+        .results-section {
+            display: none;
+        }
+        .results-section.visible { display: block; }
+        /* Savings headline */
+        .savings-headline {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.03));
+            border: 2px solid rgba(34, 197, 94, 0.25);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .savings-headline .label {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+        .savings-headline .amount {
+            font-size: clamp(40px, 7vw, 56px);
+            font-weight: 900;
+            color: #22c55e;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .savings-headline .detail {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+        .savings-headline .detail strong { color: #22c55e; }
+        /* Full comparison table */
+        .comparison-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        .comparison-card .card-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid #1e293b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .comparison-card .card-header h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin: 0;
+        }
+        .comparison-card .card-header .badge {
+            font-size: 11px;
+            padding: 3px 10px;
+            background: rgba(34, 197, 94, 0.12);
+            color: #22c55e;
+            border-radius: 100px;
+            font-weight: 700;
+        }
+        .model-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .model-table th {
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #1e293b;
+            background: #0f172a;
+        }
+        .model-table td {
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #cbd5e1;
+            border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+        }
+        .model-table tr:hover td {
+            background: rgba(99, 102, 241, 0.04);
+        }
+        .model-table .current-row td {
+            background: rgba(239, 68, 68, 0.06);
+        }
+        .model-table .best-row td {
+            background: rgba(34, 197, 94, 0.06);
+        }
+        .model-name {
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+        .provider-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            background: #1e293b;
+            color: #94a3b8;
+        }
+        .savings-cell {
+            color: #22c55e;
+            font-weight: 700;
+            font-family: monospace;
+        }
+        .savings-cell.negative {
+            color: #ef4444;
+        }
+        .price-cell {
+            font-family: monospace;
+            font-weight: 600;
+        }
+        .rank-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            background: #1e293b;
+            color: #94a3b8;
+        }
+        .rank-num.top { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+        .rank-num.current { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        /* Migration code */
+        .migration-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        .migration-card .card-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid #1e293b;
+        }
+        .migration-card .card-header h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin: 0;
+        }
+        .migration-card .card-header .desc {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+        .code-block {
+            position: relative;
+            background: #0a0a0f;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        .code-block pre {
+            margin: 0;
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #e2e8f0;
+        }
+        .code-block .comment { color: #64748b; }
+        .code-block .keyword { color: #818cf8; }
+        .code-block .string { color: #22c55e; }
+        .code-block .func { color: #fbbf24; }
+        .copy-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 6px 12px;
+            background: #1e293b;
+            color: #94a3b8;
+            border: none;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .copy-btn:hover { background: #334155; color: #e2e8f0; }
+        .tab-bar {
+            display: flex;
+            border-bottom: 1px solid #1e293b;
+            padding: 0 20px;
+            gap: 4px;
+        }
+        .tab-bar button {
+            padding: 10px 16px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .tab-bar button.active {
+            color: #818cf8;
+            border-bottom-color: #818cf8;
+        }
+        .tab-bar button:hover { color: #e2e8f0; }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.06), rgba(99, 102, 241, 0.04));
+            border: 2px solid rgba(34, 197, 94, 0.2);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .cta-section h2 {
+            font-size: 24px;
+            font-weight: 900;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+        }
+        .cta-section .sub {
+            font-size: 15px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .cta-section .sub strong { color: #22c55e; }
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 24px rgba(34, 197, 94, 0.4);
+            animation: ctaPulse 2s ease-in-out infinite;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(34, 197, 94, 0.5);
+            animation: none;
+        }
+        @keyframes ctaPulse {
+            0%, 100% { box-shadow: 0 4px 24px rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 4px 32px rgba(34, 197, 94, 0.6); }
+        }
+        .cta-trust {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 12px;
+        }
+        .cta-trust span { margin: 0 8px; }
+        /* Price block */
+        .price-tag {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .price-tag .was {
+            font-size: 18px;
+            color: #64748b;
+            text-decoration: line-through;
+        }
+        .price-tag .now {
+            font-size: 42px;
+            font-weight: 900;
+            color: #22c55e;
+        }
+        .price-tag .detail {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+        /* What's included */
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+            text-align: left;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 14px;
+            color: #cbd5e1;
+        }
+        .included-item .check { color: #22c55e; font-weight: 700; }
+        /* Countdown */
+        .countdown-bar {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 24px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .countdown-bar .time {
+            font-family: monospace;
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        /* Footer */
+        .demo-footer {
+            text-align: center;
+            font-size: 12px;
+            color: #475569;
+            padding-top: 20px;
+            border-top: 1px solid #1e293b;
+            margin-top: 40px;
+        }
+        .demo-footer a { color: #64748b; text-decoration: none; }
+        /* Responsive */
+        @media (max-width: 640px) {
+            .demo-page { padding: 24px 16px 60px; }
+            .model-table { font-size: 12px; }
+            .model-table th, .model-table td { padding: 8px 10px; }
+            .input-row { flex-direction: column; }
+            .included-grid { grid-template-columns: 1fr; }
+            .cta-button { padding: 16px 28px; font-size: 18px; }
+        }
+        /* Blur overlay for gated content */
+        .gated-overlay {
+            position: relative;
+        }
+        .gated-overlay::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, transparent, #111827);
+            pointer-events: none;
+        }
+        .gated-cta-row {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(99, 102, 241, 0.02));
+            border-top: 2px dashed rgba(99, 102, 241, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-page">
+        <!-- Badge -->
+        <div class="demo-badge">
+            <span class="dot"></span>
+            Free Pro Demo — Try Before You Buy
+        </div>
+
+        <!-- Hero -->
+        <div class="demo-hero">
+            <h1>See what <span class="highlight">all 48 models</span> look like.<br>Find your biggest savings.</h1>
+            <p class="sub">This is the actual APIpulse Pro experience. Enter your current model and monthly spend — we'll show you every alternative ranked by cost, with migration code. <strong>One free demo per visitor.</strong></p>
+        </div>
+
+        <!-- Input -->
+        <div class="input-section">
+            <h2>🔍 Your current setup</h2>
+            <p class="desc">Tell us what you're using and we'll show you everything Pro knows.</p>
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="demo-model">Your current model</label>
+                    <select id="demo-model">
+                        <option value="openai-gpt55">GPT-5.5 — $5.00 / $30.00</option>
+                        <option value="openai-gpt5">GPT-5 — $1.25 / $10.00</option>
+                        <option value="openai-gpt4o" selected>GPT-4o — $2.50 / $10.00</option>
+                        <option value="openai-gpt4o-mini">GPT-4o mini — $0.15 / $0.60</option>
+                        <option value="anthropic-opus48">Claude Opus 4.8 — $5.00 / $25.00</option>
+                        <option value="anthropic-sonnet46">Claude Sonnet 4.6 — $3.00 / $15.00</option>
+                        <option value="anthropic-haiku">Claude Haiku 4.5 — $1.00 / $5.00</option>
+                        <option value="anthropic-fable5">Claude Fable 5 — $10.00 / $50.00</option>
+                        <option value="google-gemini3-pro">Gemini 3.1 Pro — $2.00 / $12.00</option>
+                        <option value="google-gemini3-flash">Gemini 3 Flash — $0.50 / $3.00</option>
+                        <option value="cohere-command-a">Command A — $2.50 / $10.00</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="demo-spend">Monthly spend (USD)</label>
+                    <input type="number" id="demo-spend" value="500" min="1" max="100000" step="1">
+                </div>
+            </div>
+            <button class="generate-btn" onclick="generateDemo()">
+                ⚡ Show Me All 48 Models & My Savings
+            </button>
+        </div>
+
+        <!-- Results -->
+        <div class="results-section" id="results">
+            <!-- Savings headline -->
+            <div class="savings-headline" id="savings-headline">
+                <div class="label">Your estimated annual savings by switching to the cheapest model:</div>
+                <div class="amount" id="savings-amount">—</div>
+                <div class="detail" id="savings-detail"></div>
+            </div>
+
+            <!-- Full comparison table -->
+            <div class="comparison-card">
+                <div class="card-header">
+                    <h3>📊 All 48 Models — Ranked by Your Cost</h3>
+                    <span class="badge">PRO VIEW</span>
+                </div>
+                <div style="overflow-x:auto;">
+                    <table class="model-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Model</th>
+                                <th>Provider</th>
+                                <th>Input $/1M</th>
+                                <th>Output $/1M</th>
+                                <th>Your Cost</th>
+                                <th>Savings</th>
+                            </tr>
+                        </thead>
+                        <tbody id="model-rankings"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Migration code -->
+            <div class="migration-card">
+                <div class="card-header">
+                    <h3>💻 Migration Code — Switch to Your Best Alternative</h3>
+                    <p class="desc">Copy-paste code to switch from your current model to the cheapest option.</p>
+                </div>
+                <div class="tab-bar">
+                    <button class="active" onclick="switchTab('python', this)">Python</button>
+                    <button onclick="switchTab('node', this)">Node.js</button>
+                    <button onclick="switchTab('curl', this)">cURL</button>
+                </div>
+                <div id="tab-python" class="tab-panel active">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode('python')">Copy</button>
+                        <pre id="code-python"></pre>
+                    </div>
+                </div>
+                <div id="tab-node" class="tab-panel">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode('node')">Copy</button>
+                        <pre id="code-node"></pre>
+                    </div>
+                </div>
+                <div id="tab-curl" class="tab-panel">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode('curl')">Copy</button>
+                        <pre id="code-curl"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="countdown-bar">
+                ⏰ Flash sale: <span class="time" id="countdown">--d --h --m</span> left at $19 — then $49
+            </div>
+
+            <div class="cta-section">
+                <h2>This is just ONE comparison.</h2>
+                <p class="sub">APIpulse Pro gives you <strong>all 48 models across 265 comparisons</strong>, with migration code for every switch. Plus PDF reports, price alerts, and lifetime updates.</p>
+
+                <div class="price-tag">
+                    <span class="was">$49</span>
+                    <span class="now">$19</span>
+                    <span class="detail">one-time</span>
+                </div>
+
+                <div class="included-grid">
+                    <div class="included-item"><span class="check">✓</span> All 48 models ranked by cost</div>
+                    <div class="included-item"><span class="check">✓</span> 265 comparison pages</div>
+                    <div class="included-item"><span class="check">✓</span> Migration code (Python, Node, curl)</div>
+                    <div class="included-item"><span class="check">✓</span> PDF report export</div>
+                    <div class="included-item"><span class="check">✓</span> Price change email alerts</div>
+                    <div class="included-item"><span class="check">✓</span> Lifetime updates</div>
+                </div>
+
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="cta-button" onclick="if(typeof gtag==='function')gtag('event','pro_demo_buy_clicked',{price:19});">
+                    Get Lifetime Access — $19
+                </a>
+                <p class="cta-trust">
+                    <span>🔒 Stripe secure</span>
+                    <span>🛡️ 14-day refund</span>
+                    <span>⚡ Instant access</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="demo-footer">
+            <p>© 2026 APIpulse · <a href="/">Home</a> · <a href="/flash-19.html">Flash Sale</a> · <a href="/privacy.html">Privacy</a></p>
+        </div>
+    </div>
+
+    <script>
+    // Full model database (mirrors pricing-data.js)
+    var ALL_MODELS = [
+        { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', input: 5.00, output: 30.00, context: '1.05M' },
+        { id: 'openai-gpt55-pro', name: 'GPT-5.5 Pro', provider: 'OpenAI', input: 30.00, output: 180.00, context: '1.05M' },
+        { id: 'openai-gpt53-codex', name: 'GPT-5.3 Codex', provider: 'OpenAI', input: 1.75, output: 14.00, context: '400K' },
+        { id: 'openai-gpt54', name: 'GPT-5.4', provider: 'OpenAI', input: 2.50, output: 15.00, context: '400K' },
+        { id: 'openai-gpt54-mini', name: 'GPT-5.4 mini', provider: 'OpenAI', input: 0.75, output: 4.50, context: '400K' },
+        { id: 'openai-gpt54-nano', name: 'GPT-5.4 nano', provider: 'OpenAI', input: 0.20, output: 1.25, context: '400K' },
+        { id: 'openai-gpt54-pro', name: 'GPT-5.4 Pro', provider: 'OpenAI', input: 30.00, output: 180.00, context: '400K' },
+        { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', input: 1.25, output: 10.00, context: '272K' },
+        { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', input: 0.25, output: 2.00, context: '272K' },
+        { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', input: 0.15, output: 0.60, context: '128K' },
+        { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', input: 0.08, output: 0.35, context: '128K' },
+        { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', input: 2.50, output: 10.00, context: '128K' },
+        { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, context: '128K' },
+        { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00, context: '1M' },
+        { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00, context: '1M' },
+        { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, context: '1M' },
+        { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, context: '200K' },
+        { id: 'anthropic-fable5', name: 'Claude Fable 5', provider: 'Anthropic', input: 10.00, output: 50.00, context: '1M' },
+        { id: 'anthropic-mythos5', name: 'Claude Mythos 5', provider: 'Anthropic', input: 10.00, output: 50.00, context: '1M' },
+        { id: 'google-gemini35-flash', name: 'Gemini 3.5 Flash', provider: 'Google', input: 1.50, output: 9.00, context: '1M' },
+        { id: 'google-gemini31-flash-lite', name: 'Gemini 3.1 Flash-Lite', provider: 'Google', input: 0.25, output: 1.50, context: '1M' },
+        { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', input: 2.00, output: 12.00, context: '1M' },
+        { id: 'google-gemini3-flash', name: 'Gemini 3 Flash', provider: 'Google', input: 0.50, output: 3.00, context: '1M' },
+        { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00, context: '1M' },
+        { id: 'google-25-flash-lite', name: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, context: '1M' },
+        { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.435, output: 0.87, context: '1M' },
+        { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, context: '1M' },
+        { id: 'deepseek-v32', name: 'DeepSeek V3.2', provider: 'DeepSeek', input: 0.23, output: 0.34, context: '128K' },
+        { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', input: 0.50, output: 1.50, context: '262K' },
+        { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', input: 1.50, output: 7.50, context: '128K' },
+        { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', input: 0.10, output: 0.30, context: '128K' },
+        { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', input: 2.50, output: 10.00, context: '128K' },
+        { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', input: 2.50, output: 10.00, context: '128K' },
+        { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', input: 0.50, output: 1.50, context: '128K' },
+        { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta', input: 0.18, output: 0.59, context: '1M' },
+        { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Meta', input: 0.27, output: 0.85, context: '1M' },
+        { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Meta', input: 0.88, output: 0.88, context: '128K' },
+        { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta', input: 0.10, output: 0.10, context: '128K' },
+        { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', input: 0.95, output: 4.00, context: '256K' },
+        { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', input: 1.25, output: 2.50, context: '1M' },
+        { id: 'xai-grok3-mini', name: 'Grok 4.3 mini', provider: 'xAI', input: 0.30, output: 0.50, context: '1M' },
+        { id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', input: 2.00, output: 8.00, context: '256K' }
+    ];
+
+    // Provider slug to display name
+    var PROVIDER_NAMES = {
+        'openai': 'OpenAI', 'anthropic': 'Anthropic', 'google': 'Google',
+        'deepseek': 'DeepSeek', 'mistral': 'Mistral', 'cohere': 'Cohere',
+        'meta': 'Meta', 'moonshot': 'Moonshot', 'xai': 'xAI', 'ai21': 'AI21'
+    };
+
+    // Estimate token mix: 85% input, 15% output (typical)
+    var INPUT_RATIO = 0.85;
+
+    function calcMonthlyCost(model, totalSpend, currentModel) {
+        // Calculate how many tokens the user is buying with their spend on the current model
+        var curBlended = currentModel.input * INPUT_RATIO + currentModel.output * (1 - INPUT_RATIO);
+        var totalTokens = (totalSpend / curBlended) * 1000000;
+        // Calculate cost for this model at the same token volume
+        var modelBlended = model.input * INPUT_RATIO + model.output * (1 - INPUT_RATIO);
+        return (totalTokens * modelBlended) / 1000000;
+    }
+
+    function generateDemo() {
+        var modelId = document.getElementById('demo-model').value;
+        var spend = parseFloat(document.getElementById('demo-spend').value) || 500;
+
+        var currentModel = ALL_MODELS.find(function(m) { return m.id === modelId; });
+        if (!currentModel) return;
+
+        // Calculate costs for all models
+        var rankings = ALL_MODELS.map(function(m) {
+            var cost = calcMonthlyCost(m, spend, currentModel);
+            var annualSave = (spend - cost) * 12;
+            return {
+                model: m,
+                monthlyCost: cost,
+                annualSavings: annualSave,
+                isCurrent: m.id === modelId
+            };
+        });
+
+        // Sort by monthly cost (cheapest first), but keep current model in list
+        rankings.sort(function(a, b) { return a.monthlyCost - b.monthlyCost; });
+
+        // Find best alternative
+        var best = rankings.find(function(r) { return !r.isCurrent; });
+        var annualSave = best ? best.annualSavings : 0;
+        var pctSave = best ? Math.round((annualSave / (spend * 12)) * 100) : 0;
+
+        // Update savings headline
+        var savingsEl = document.getElementById('savings-amount');
+        var detailEl = document.getElementById('savings-detail');
+        if (annualSave > 0) {
+            savingsEl.textContent = '$' + Math.round(annualSave).toLocaleString() + '/yr';
+            detailEl.innerHTML = 'Switch from <strong>' + currentModel.name + '</strong> to <strong>' + best.model.name + '</strong> — save <strong>' + pctSave + '%</strong>';
+        } else {
+            savingsEl.textContent = "You're already on a great model!";
+            detailEl.textContent = 'But Pro shows you all 48 alternatives in case something changes.';
+        }
+
+        // Render table
+        var tbody = document.getElementById('model-rankings');
+        tbody.innerHTML = '';
+        rankings.forEach(function(r, i) {
+            var tr = document.createElement('tr');
+            if (r.isCurrent) tr.className = 'current-row';
+            if (i === 0 && !r.isCurrent) tr.className = 'best-row';
+
+            var rankClass = '';
+            if (r.isCurrent) rankClass = 'current';
+            else if (i < 3) rankClass = 'top';
+
+            var savingsStr = '';
+            if (r.isCurrent) {
+                savingsStr = '<span style="color:#ef4444;font-weight:600;">← you are here</span>';
+            } else if (r.annualSavings > 0) {
+                savingsStr = '<span class="savings-cell">+$' + Math.round(r.annualSavings).toLocaleString() + '/yr</span>';
+            } else {
+                savingsStr = '<span class="savings-cell negative">-$' + Math.round(Math.abs(r.annualSavings)).toLocaleString() + '/yr</span>';
+            }
+
+            tr.innerHTML =
+                '<td><span class="rank-num ' + rankClass + '">' + (i + 1) + '</span></td>' +
+                '<td><span class="model-name">' + r.model.name + '</span></td>' +
+                '<td><span class="provider-badge">' + r.model.provider + '</span></td>' +
+                '<td class="price-cell">$' + r.model.input.toFixed(2) + '</td>' +
+                '<td class="price-cell">$' + r.model.output.toFixed(2) + '</td>' +
+                '<td class="price-cell">$' + r.monthlyCost.toFixed(2) + '/mo</td>' +
+                '<td>' + savingsStr + '</td>';
+            tbody.appendChild(tr);
+        });
+
+        // Generate migration code
+        if (best) {
+            generateMigrationCode(currentModel, best.model);
+        }
+
+        // Show results
+        document.getElementById('results').classList.add('visible');
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Track
+        if (typeof gtag === 'function') {
+            gtag('event', 'pro_demo_generated', {
+                current_model: currentModel.name,
+                monthly_spend: spend,
+                best_model: best ? best.model.name : 'none',
+                annual_savings: Math.round(annualSave)
+            });
+        }
+    }
+
+    function generateMigrationCode(from, to) {
+        // Python
+        var pyCode =
+            '<span class="comment"># Before: ' + from.name + ' ($' + from.input + '/$' + from.output + ' per 1M tokens)</span>\n' +
+            '<span class="comment"># After:  ' + to.name + ' ($' + to.input + '/$' + to.output + ' per 1M tokens)</span>\n\n' +
+            '<span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI\n\n' +
+            'client = OpenAI(\n' +
+            '    base_url=<span class="string">"https://api.' + getProviderUrl(to.provider) + '"</span>,\n' +
+            '    api_key=<span class="string">"your-api-key"</span>\n' +
+            ')\n\n' +
+            'response = client.chat.completions.<span class="func">create</span>(\n' +
+            '    model=<span class="string">"' + to.id + '"</span>,\n' +
+            '    messages=[\n' +
+            '        {<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello!"</span>}\n' +
+            '    ]\n' +
+            ')\n' +
+            '<span class="keyword">print</span>(response.choices[0].message.content)';
+
+        document.getElementById('code-python').innerHTML = pyCode;
+
+        // Node.js
+        var nodeCode =
+            '<span class="comment">// Before: ' + from.name + ' ($' + from.input + '/$' + from.output + ' per 1M tokens)</span>\n' +
+            '<span class="comment">// After:  ' + to.name + ' ($' + to.input + '/$' + to.output + ' per 1M tokens)</span>\n\n' +
+            '<span class="keyword">import</span> OpenAI <span class="keyword">from</span> <span class="string">"openai"</span>;\n\n' +
+            '<span class="keyword">const</span> client = <span class="keyword">new</span> <span class="func">OpenAI</span>({\n' +
+            '  baseURL: <span class="string">"https://api.' + getProviderUrl(to.provider) + '"</span>,\n' +
+            '  apiKey: <span class="string">"your-api-key"</span>,\n' +
+            '});\n\n' +
+            '<span class="keyword">const</span> response = <span class="keyword">await</span> client.chat.completions.<span class="func">create</span>({\n' +
+            '  model: <span class="string">"' + to.id + '"</span>,\n' +
+            '  messages: [{ role: <span class="string">"user"</span>, content: <span class="string">"Hello!"</span> }],\n' +
+            '});\n\n' +
+            'console.<span class="func">log</span>(response.choices[0].message.content);';
+
+        document.getElementById('code-node').innerHTML = nodeCode;
+
+        // cURL
+        var curlCode =
+            '<span class="comment"># Before: ' + from.name + ' ($' + from.input + '/$' + from.output + ' per 1M tokens)</span>\n' +
+            '<span class="comment"># After:  ' + to.name + ' ($' + to.input + '/$' + to.output + ' per 1M tokens)</span>\n\n' +
+            'curl https://api.' + getProviderUrl(to.provider) + '/v1/chat/completions \\\n' +
+            '  -H <span class="string">"Authorization: Bearer your-api-key"</span> \\\n' +
+            '  -H <span class="string">"Content-Type: application/json"</span> \\\n' +
+            '  -d \'{\n' +
+            '    <span class="string">"model"</span>: <span class="string">"' + to.id + '"</span>,\n' +
+            '    <span class="string">"messages"</span>: [{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello!"</span>}]\n' +
+            '  }\'';
+
+        document.getElementById('code-curl').innerHTML = curlCode;
+    }
+
+    function getProviderUrl(provider) {
+        var urls = {
+            'OpenAI': 'openai.com', 'Anthropic': 'anthropic.com', 'Google': 'generativelanguage.googleapis.com',
+            'DeepSeek': 'deepseek.com', 'Mistral': 'mistral.ai', 'Cohere': 'cohere.ai',
+            'Meta': 'api.together.xyz', 'Moonshot': 'moonshot.cn', 'xAI': 'x.ai', 'AI21': 'api.ai21.com'
+        };
+        return urls[provider] || provider.toLowerCase() + '.com';
+    }
+
+    function switchTab(lang, btn) {
+        document.querySelectorAll('.tab-bar button').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('tab-' + lang).classList.add('active');
+    }
+
+    function copyCode(lang) {
+        var el = document.getElementById('code-' + lang);
+        var text = el.textContent || el.innerText;
+        navigator.clipboard.writeText(text).then(function() {
+            var btn = el.parentElement.querySelector('.copy-btn');
+            btn.textContent = 'Copied!';
+            setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+        });
+    }
+
+    // Countdown
+    (function() {
+        var deadline = new Date('2026-07-12T23:59:59Z');
+        function update() {
+            var diff = deadline - new Date();
+            if (diff <= 0) {
+                document.getElementById('countdown').textContent = 'EXPIRED';
+                return;
+            }
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('countdown').textContent =
+                d + 'd ' + h.toString().padStart(2,'0') + 'h ' +
+                m.toString().padStart(2,'0') + 'm ' + s.toString().padStart(2,'0') + 's';
+        }
+        update();
+        setInterval(update, 1000);
+    })();
+    </script>
+</body>
+</html>

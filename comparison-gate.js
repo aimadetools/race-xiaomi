@@ -60,12 +60,12 @@
 
             gateCell.innerHTML =
                 '<div style="margin-bottom:10px;">' +
-                '<span style="font-size:14px;color:#94a3b8;">🔒 ' + hiddenCount + ' more model' + (hiddenCount !== 1 ? 's' : '') + ' available with Pro</span>' +
+                '<span style="font-size:14px;color:#94a3b8;">🔒 ' + hiddenCount + ' more model' + (hiddenCount !== 1 ? 's' : '') + ' — one might save you thousands more per year</span>' +
                 '</div>' +
-                '<a href="' + link + '" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(99,102,241,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'comparison_gate_clicked\',{});">' +
+                '<a href="' + link + '" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'comparison_gate_clicked\',{});">' +
                 'See All Models — ' + priceLabel + ' ' + price + '</a>' +
-                '<div style="font-size:11px;color:#475569;margin-top:8px;">One-time payment · Lifetime access · 14-day refund</div>' +
-                '<div style="margin-top:10px;"><a href="cost-health-check.html" style="font-size:12px;color:#22c55e;font-weight:600;text-decoration:none;">🏥 Also try: Free Health Check →</a></div>';
+                '<div style="margin-top:10px;"><a href="pro-demo.html" style="font-size:12px;color:#818cf8;font-weight:600;text-decoration:none;">🎮 Or try: Free Pro Demo — see ALL 48 models →</a></div>' +
+                '<div style="font-size:11px;color:#475569;margin-top:6px;">One-time payment · Lifetime access · 14-day refund</div>';
 
             gateRow.appendChild(gateCell);
             table.querySelector('tbody').appendChild(gateRow);
