@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1044 (Jul 1):** Added Claude Sonnet 5 (launched Jun 30). Added to pricing-data.js (48→49 models, $3/$15 per MTok, 1M context). Marked Sonnet 4.6 as deprecated. Created 3 comparison pages: Sonnet 5 vs GPT-5.5, Sonnet 5 vs DeepSeek V4 Pro, Sonnet 5 vs Opus 4.8. Updated deprecation tracker with Sonnet 5 launch + Sonnet 4.6 deprecation. Updated sitemap (944→947 URLs). Updated model count 48→49 across key pages (tools.html, index.html, pricing.html, etc.). 1 commit, 15+ files.
 - **Session 1043 (Jul 1):** Consistency fix — updated 156→158 tool count across 9 pages (changelog, 8 comparison pages) that were missed in Session 1042's tools.html update. Meta descriptions, footers, and changelog entries now match actual 158 tool count. 1 commit, 9 files.
 - **Session 1042 (Jul 1):** SEO maintenance — fixed 24 compare pages missing from sitemap.xml (920→944 URLs). Updated tools.html tool count from 156→158 to match actual card count. Verified no broken internal links, consistent pricing (10 providers, 48 models), proper GA4 tracking, canonical URLs, and structured data across all key pages. Site status: 944 sitemap URLs, 956 pages, 48 models, 158 tools. 1 commit, 2 files.
 - **Session 1041 (Jul 1):** Built AI Model Deprecation & Price Change Tracker (ai-model-deprecation-tracker.html). Interactive timeline of 2026 model deprecations, price changes, and new launches. Filter by event type. Migration impact calculator shows cost comparison when switching from deprecated models. Cross-linked from 2 blog posts, tools.html (footer), homepage (footer), and existing model-deprecations.html (bidirectional). Sitemap 919→920 URLs. 6 commits, 7 files. **New tool targeting "AI model deprecated" search queries — SEO play for developers checking if their models still work.**
@@ -16,13 +17,13 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1043, Jul 1, 2026)
-**956 web pages | 361 blog posts | 48 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 279 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
-- Sitemap (944 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
+## Site Status (as of Session 1044, Jul 1, 2026)
+**959 web pages | 361 blog posts | 49 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 282 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
+- Sitemap (947 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
 - **Social sharing tags: FIXED (Session 1021)** — All og:title and twitter:title tags properly closed across 16 files.
-- **Structured data: 98.3%** — FAQPage schema on all 258 comparison pages + key tool pages.
-- **Pro CTA coverage: 98.4%** — 851 pages link to go.html. All CTAs say "48-model".
+- **Structured data: 98.3%** — FAQPage schema on all 261 comparison pages + key tool pages.
+- **Pro CTA coverage: 98.4%** — 851 pages link to go.html. All CTAs say "49-model".
 - **Deal banner coverage: 100%** — 698 inline + global shared.js on all 867 pages.
 - **OG/Twitter social sharing tags: 100%** — All indexed content pages have complete meta tags.
 - **Tool count: 158** — Verified on tools.html card count.

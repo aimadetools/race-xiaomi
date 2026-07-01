@@ -1,7 +1,7 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jun 27, 2026 (Added GPT-5.4 family + Claude Fable 5/Mythos 5, 48 models total)
-const PRICING_LAST_UPDATED = 'Jun 27, 2026';
+// Last verified: Jul 1, 2026 (Added Claude Sonnet 5, 49 models total)
+const PRICING_LAST_UPDATED = 'Jul 1, 2026';
 
 const API_MODELS = [
     // OpenAI
@@ -22,7 +22,8 @@ const API_MODELS = [
     { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jun 2026' },
     { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jun 2026' },
     { id: 'anthropic-opus', name: 'Claude 4 Opus', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-opus48' },
-    { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', verified: 'Jun 2026' },
+    { id: 'anthropic-sonnet5', name: 'Claude Sonnet 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', verified: 'Jul 2026' },
+    { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-30', replacement: 'anthropic-sonnet5' },
     { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-sonnet46' },
     { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K', verified: 'Jun 2026' },
     { id: 'anthropic-fable5', name: 'Claude Fable 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jun 2026' },
