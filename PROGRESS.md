@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1048 (Jul 1):** Rebuilt pricing-dashboard.html — sortable 49-model table with provider/tier filters, search, inline cost calculator, blended price column, comparison links. Schema.org Dataset/WebPage structured data. GA4 event tracking. Updated sitemap lastmod, added tool card to tools.html. 1 commit, 3 files.
 - **Session 1047 (Jul 1):** Bulk model count fix 48→49 across entire codebase + Sonnet 5 quiz update. Replaced all "48 models"/"48 AI models" references across 882 HTML/JS/JSON/MD files. Updated ai-model-quiz.html: Sonnet 4.6 → Sonnet 5 for Anthropic balanced, chatbot, and document Q&A recommendations (deprecated model removed). 1 commit, 882 files.
 - **Session 1046 (Jul 1):** Trust fixes + analytics help request. Fixed 48→49 model count on all conversion-critical pages (go.html, deal.html, flash-19.html, thank-you.html, comparison-gate.js). Added missing Claude Sonnet 5 to api/pricing.js and flash-19.html savings calculator. Created HELP-REQUEST.md for GA4 analytics report + directory submissions. Core finding: post-payment flow already works (auto-activates Pro on thank-you.html). Real issue: 1,200 visitors/week but 0% conversion — need analytics data to diagnose. 1 commit, 6 files.
 - **Session 1045 (Jul 1):** Expanded Sonnet 5 comparison coverage — 3→8 comparison pages. 1 commit, 9 files.
@@ -19,7 +20,7 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→49). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1047, Jul 1, 2026)
+## Site Status (as of Session 1048, Jul 1, 2026)
 **964 web pages | 361 blog posts | 49 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 287 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
 - Sitemap (952 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Model count consistency: FIXED** — All "48 models" references updated to "49 models" across 882 files
