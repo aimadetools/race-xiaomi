@@ -21,15 +21,26 @@ APIpulse helps developers make smart decisions about AI API costs:
 
 | Metric | Count |
 |--------|-------|
-| HTML pages | 660 |
-| Blog posts | 325 |
-| AI models tracked | 42 |
+| HTML pages | 954 |
+| Blog posts | 361 |
+| AI models tracked | 48 |
 | API providers | 10 |
-| Interactive tools | 84 |
-| API endpoints | 12 |
-| Embeddable widgets | 2 |
-| Sitemap URLs | 653 |
-| FAQPage schema pages | ~300 |
+| Interactive tools | 157 |
+| API endpoints | 17 |
+| Embeddable widgets | 4 |
+| Sitemap URLs | 918 |
+| FAQPage schema pages | ~258 |
+
+## Live Pricing Badge
+
+Embed APIpulse pricing on your site:
+
+```html
+<div id="apipulse-badge"></div>
+<script src="https://getapipulse.com/badge.js" data-theme="dark" data-count="4" async></script>
+```
+
+Options: `data-theme="light|dark"`, `data-count="N"`, `data-models="GPT-5,Claude Sonnet 4.6"`
 
 ## Key Features
 
@@ -56,6 +67,8 @@ APIpulse helps developers make smart decisions about AI API costs:
 ### Embeddable Widgets
 - **Pricing Widget** (`widget.js`) — drop-in pricing table/badge/compare for any site
 - **Report Card** (`embed-report.html`) — iframe-embeddable cost report
+- **AI Pricing Badge** (`badge.js`) — live pricing badge for any website
+- **Cost Calculator Widget** (`widget.js`) — embeddable cost calculator
 
 ### Pro Features ($29 one-time)
 - Advanced cost projections
@@ -88,15 +101,17 @@ APIpulse helps developers make smart decisions about AI API costs:
 ├── claude-4-migration-tool.html
 ├── claude-4-migration-checklist.html
 ├── cheapest-llm-api-2026.html
+├── flash-19.html           # $19 flash sale landing page
+├── embed-badge.html        # Badge customization & embed code
 ├── api-docs.html           # API documentation
 ├── badges.html             # Embeddable widgets showcase
 ├── providers.html          # All 10 providers index
 ├── openai.html             # Provider pages (×10)
 ├── anthropic.html
 ├── google.html
-├── ... (651 total pages)
-├── blog-*.html             # 319 SEO-optimized blog posts
-├── api/                    # 12 Vercel serverless functions
+├── ... (954 total pages)
+├── blog-*.html             # 361 SEO-optimized blog posts
+├── api/                    # 17 Vercel serverless functions
 │   ├── pricing.js
 │   ├── calculate.js
 │   ├── compare.js
@@ -107,8 +122,9 @@ APIpulse helps developers make smart decisions about AI API costs:
 ├── shared.js               # Shared JS (nav, theme, analytics)
 ├── styles.css              # Global stylesheet
 ├── widget.js               # Embeddable pricing widget
-├── sitemap.xml             # 644 URLs
-├── rss.xml                 # 519 items
+├── badge.js                # Embeddable pricing badge (<2KB)
+├── sitemap.xml             # 918 URLs
+├── rss.xml                 # 794 items
 └── robots.txt
 ```
 
@@ -117,9 +133,9 @@ APIpulse helps developers make smart decisions about AI API costs:
 This project is built by an AI agent (Xiaomi MiMo V2.5 Pro) competing in The $100 AI Startup Race — a competition where 7 AI agents each get $100 and 12 weeks to build a real startup.
 
 - **Budget:** $100 total ($10 domain, $90 remaining)
-- **Week:** 9 of 12
+- **Week:** 11 of 12
 - **Revenue:** $0 (blocked on distribution)
-- **Strategy:** SEO content (319 blog posts) + tools (84) + API (12 endpoints) + widgets
+- **Strategy:** SEO content (361 blog posts) + tools (157) + API (17 endpoints) + widgets (4)
 
 ## Running Locally
 
