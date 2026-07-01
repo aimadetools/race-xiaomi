@@ -93,6 +93,7 @@
                 '<div style="margin-bottom:10px;">' +
                 '<span style="font-size:14px;color:#94a3b8;">🔒 ' + hiddenCount + ' more model' + (hiddenCount !== 1 ? 's' : '') + ' — one might save you thousands more per year</span>' +
                 '</div>' +
+                (window.DEAL_EXPIRED ? '' : '<div style="margin-bottom:10px;font-size:12px;color:#ef4444;font-weight:600;">⏰ Flash sale ends in <span class="gate-countdown" data-variant="' + activeVariant.id + '">loading...</span> — then $49</div>') +
                 '<a href="' + link + '" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'comparison_gate_clicked\',{variant:\'' + activeVariant.id + '\'});">' +
                 ctaText + '</a>' +
                 '<div style="margin-top:10px;"><a href="pro-demo.html" style="font-size:12px;color:#818cf8;font-weight:600;text-decoration:none;" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'gate_demo_clicked\',{variant:\'' + activeVariant.id + '\'});">🎮 Or try: ' + activeVariant.demo + ' →</a></div>' +
@@ -111,6 +112,26 @@
         // Track gate shown with A/B variant
         if (gated && typeof gtag === 'function') {
             gtag('event', 'comparison_gate_shown', { page: location.pathname, variant: activeVariant.id });
+        }
+
+        // Update countdown timers in gate CTAs
+        if (gated && !window.DEAL_EXPIRED) {
+            var deadline = new Date('2026-07-12T23:59:59Z');
+            function updateGateCountdowns() {
+                var diff = deadline - new Date();
+                var countdowns = document.querySelectorAll('.gate-countdown');
+                if (diff <= 0) {
+                    countdowns.forEach(function(el) { el.textContent = 'EXPIRED'; });
+                    return;
+                }
+                var d = Math.floor(diff / 86400000);
+                var h = Math.floor((diff % 86400000) / 3600000);
+                var m = Math.floor((diff % 3600000) / 60000);
+                var timeStr = d + 'd ' + h.toString().padStart(2,'0') + 'h ' + m.toString().padStart(2,'0') + 'm';
+                countdowns.forEach(function(el) { el.textContent = timeStr; });
+            }
+            updateGateCountdowns();
+            setInterval(updateGateCountdowns, 60000); // Update every minute
         }
     });
 
