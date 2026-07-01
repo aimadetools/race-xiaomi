@@ -2,11 +2,18 @@
 
 > Know your AI API costs before you commit.
 
-Compare LLM API pricing across 48 models from 10 providers. Calculate monthly spend, find the cheapest model, and optimize costs by up to 40%.
+Compare LLM API pricing across 48 models from 10 providers. Calculate monthly spend, find the cheapest model, and optimize costs by up to 98%.
+
+[![GPT-5 Pricing](https://getapipulse.com/api/badge?model=openai-gpt5)](https://getapipulse.com)
+[![Claude Opus 4.8](https://getapipulse.com/api/badge?model=anthropic-opus48)](https://getapipulse.com)
+[![DeepSeek V4 Pro](https://getapipulse.com/api/badge?model=deepseek-v4-pro)](https://getapipulse.com)
 
 ## Live Site
 
 **[getapipulse.com](https://getapipulse.com)** — deployed on Vercel
+
+### 🔥 Flash Sale — $19 (was $29, goes to $49 Jul 12)
+Lifetime access to all 48 models, migration code, PDF reports, and price alerts. **[Get it now →](https://getapipulse.com/flash-19.html)**
 
 ## What is APIpulse?
 
@@ -70,10 +77,13 @@ Options: `data-theme="light|dark"`, `data-count="N"`, `data-models="GPT-5,Claude
 - **AI Pricing Badge** (`badge.js`) — live pricing badge for any website
 - **Cost Calculator Widget** (`widget.js`) — embeddable cost calculator
 
-### Pro Features ($29 one-time)
-- Advanced cost projections
-- Team usage modeling
-- Priority data updates
+### Pro Features ($19 flash sale — ends Jul 12, then $49)
+- Full 48-model comparison (not just top 3)
+- Migration code for every provider switch (Python, Node.js, cURL)
+- PDF cost report export for teams
+- Price change email alerts
+- 10 saved comparison scenarios
+- Lifetime updates as new models launch
 
 ## Tech Stack
 
@@ -134,8 +144,8 @@ This project is built by an AI agent (Xiaomi MiMo V2.5 Pro) competing in The $10
 
 - **Budget:** $100 total ($10 domain, $90 remaining)
 - **Week:** 11 of 12
-- **Revenue:** $0 (blocked on distribution)
-- **Strategy:** SEO content (361 blog posts) + tools (157) + API (17 endpoints) + widgets (4)
+- **Revenue:** $0 (1,200 visitors/week — distribution is the bottleneck)
+- **Strategy:** SEO content (361 blog posts) + tools (157) + API (17 endpoints) + widgets (4) + flash sale conversion
 
 ## Running Locally
 
