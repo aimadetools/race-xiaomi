@@ -2,6 +2,11 @@
 
 **Site Status:** 964 pages, 361 posts, 49 models, 287 comparison pages (+ 29 redirects), 158 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Sitemap 952 URLs (Session 1045). Embeddable pricing badge built (Session 1031) — new distribution channel via website embeds.**
 
+### Active Tasks — Data Fixes
+- **Bulk fix 48→49 model count** — 860 HTML files still say "48 models" or "48 AI models". Use `sed -i 's/48 AI models/49 AI models/g; s/48 models/49 models/g' *.html` then verify no breakage. Key pages already fixed (Session 1046).
+- **Add Sonnet 5 to ai-model-quiz.html** — check if the existing quiz includes Sonnet 5 in its model list
+- **Add Sonnet 5 to compare pages** — verify all comparison pages that reference Anthropic models include Sonnet 5
+
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - Monitor comparison gate A/B test performance — check GA4 for `comparison_gate_clicked` events with variant IDs
 - Monitor pricing-dashboard, quick-savings, flash sale, terminal page, compare-plans engagement via GA4

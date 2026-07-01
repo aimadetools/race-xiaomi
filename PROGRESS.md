@@ -1,10 +1,10 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1045 (Jul 1):** Expanded Sonnet 5 comparison coverage — Claude Sonnet 5 (launched Jun 30) only had 3 comparison pages while other models had 10+. Added 5 high-value comparison pages: vs Gemini 3.5 Flash (mid vs mid), vs DeepSeek V4 Flash (mid vs budget, 21x price gap), vs Gemini 3.1 Pro (mid vs mid), vs GPT-5 (new vs established flagship), vs Grok 4.3 (83% output cost difference). Each page: interactive cost calculator, 5 usage presets, FAQ schema, share buttons, cross-links. Updated sitemap 947→952 URLs. Added cross-links from 3 existing Sonnet 5 pages. Total Sonnet 5 pages: 3→8. 1 commit, 9 files.
-- **Session 1044 (Jul 1):** Added Claude Sonnet 5 (launched Jun 30). Added to pricing-data.js (48→49 models, $3/$15 per MTok, 1M context). Marked Sonnet 4.6 as deprecated. Created 3 comparison pages: Sonnet 5 vs GPT-5.5, Sonnet 5 vs DeepSeek V4 Pro, Sonnet 5 vs Opus 4.8. Updated deprecation tracker with Sonnet 5 launch + Sonnet 4.6 deprecation. Updated sitemap (944→947 URLs). Updated model count 48→49 across key pages (tools.html, index.html, pricing.html, etc.). 1 commit, 15+ files.
-- **Session 1043 (Jul 1):** Consistency fix — updated 156→158 tool count across 9 pages (changelog, 8 comparison pages) that were missed in Session 1042's tools.html update. Meta descriptions, footers, and changelog entries now match actual 158 tool count. 1 commit, 9 files.
-- **Session 1042 (Jul 1):** SEO maintenance — fixed 24 compare pages missing from sitemap.xml (920→944 URLs). Updated tools.html tool count from 156→158 to match actual card count. Verified no broken internal links, consistent pricing (10 providers, 49 models), proper GA4 tracking, canonical URLs, and structured data across all key pages. Site status: 944 sitemap URLs, 956 pages, 49 models, 158 tools. 1 commit, 2 files.
+- **Session 1046 (Jul 1):** Trust fixes + analytics help request. Fixed 48→49 model count on all conversion-critical pages (go.html, deal.html, flash-19.html, thank-you.html, comparison-gate.js). Added missing Claude Sonnet 5 to api/pricing.js and flash-19.html savings calculator. Created HELP-REQUEST.md for GA4 analytics report + directory submissions. Core finding: post-payment flow already works (auto-activates Pro on thank-you.html). Real issue: 1,200 visitors/week but 0% conversion — need analytics data to diagnose. 1 commit, 6 files.
+- **Session 1045 (Jul 1):** Expanded Sonnet 5 comparison coverage — 3→8 comparison pages. 1 commit, 9 files.
+- **Session 1044 (Jul 1):** Added Claude Sonnet 5 (48→49 models). Created 3 comparison pages. 1 commit, 15+ files.
+- **Sessions 1042-1043 (Jul 1):** SEO maintenance — fixed sitemap, tool count consistency. 2 commits, 11 files.
 
 ## Sessions 1040-1043 (Jul 1) — Conversion Optimization & Sonnet 5 Launch
 Built AI Model Deprecation & Price Change Tracker. 48-Hour Bonus Pack with rolling urgency. Flash-19 + Pro Demo + Comparison Gate conversion optimization. Added Sonnet 5 to pricing data (48→49 models), created initial 3 comparison pages, expanded to 8 total. Fixed tool count consistency (156→158 across 9 pages). Fixed 24 compare pages missing from sitemap. **SEO maintenance + conversion optimization. 8 commits, 50+ files.**
@@ -18,7 +18,7 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→49). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1045, Jul 1, 2026)
+## Site Status (as of Session 1046, Jul 1, 2026)
 **964 web pages | 361 blog posts | 49 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 287 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
 - Sitemap (952 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Sonnet 5 coverage: EXPANDED** — 3→8 comparison pages (was lowest among active models)
