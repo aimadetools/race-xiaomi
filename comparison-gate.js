@@ -1,6 +1,7 @@
-// APIpulse — Comparison Table Gate (Session 1022, A/B test Session 1037)
+// APIpulse — Comparison Table Gate (Session 1022, A/B test Session 1037, savings preview Session 1041)
 // Automatically gates comparison table rows on content pages.
 // Shows top 3 rows free, gates remaining rows behind Pro CTA.
+// Session 1041: Extracts pricing from hidden rows to show specific savings in gate CTA.
 // Usage: <script src="comparison-gate.js" defer></script>
 // Add to comparison pages that have pricing tables.
 
@@ -42,6 +43,7 @@
         // Find all pricing tables (tables with model-name cells)
         var tables = document.querySelectorAll('table');
         var gated = false;
+        var savingsHintShown = false;
 
         tables.forEach(function(table) {
             var rows = table.querySelectorAll('tbody tr');
@@ -61,6 +63,27 @@
 
             gated = true;
 
+            // Extract pricing data from ALL rows (visible + hidden) before hiding
+            var allRowData = [];
+            rows.forEach(function(row, index) {
+                var nameCell = row.querySelector('.model-name');
+                if (!nameCell) return;
+                var cells = row.querySelectorAll('td');
+                var inputPrice = null;
+                // Input price is typically in the 4th cell (index 3)
+                if (cells.length >= 4) {
+                    var priceText = cells[3].textContent.trim();
+                    var match = priceText.match(/\$([\d.]+)/);
+                    if (match) inputPrice = parseFloat(match[1]);
+                }
+                allRowData.push({
+                    name: nameCell.textContent.trim(),
+                    price: inputPrice,
+                    index: index,
+                    hidden: index >= FREE_ROWS
+                });
+            });
+
             // Hide rows beyond FREE_ROWS
             var hiddenCount = 0;
             rows.forEach(function(row, index) {
@@ -70,6 +93,34 @@
                     hiddenCount++;
                 }
             });
+
+            // Calculate savings preview from hidden rows
+            var hiddenData = allRowData.filter(function(r) { return r.hidden && r.price !== null; });
+            var visibleData = allRowData.filter(function(r) { return !r.hidden && r.price !== null; });
+            var savingsHint = '';
+
+            if (hiddenData.length > 0 && visibleData.length > 0) {
+                // Sort hidden by price ascending to find cheapest
+                hiddenData.sort(function(a, b) { return a.price - b.price; });
+                // Sort visible by price descending to find most expensive
+                visibleData.sort(function(a, b) { return b.price - a.price; });
+
+                var cheapestHidden = hiddenData[0];
+                var mostExpensiveVisible = visibleData[0];
+
+                if (cheapestHidden.price < mostExpensiveVisible.price) {
+                    var savingsPct = Math.round((1 - cheapestHidden.price / mostExpensiveVisible.price) * 100);
+                    savingsHint = '<div style="margin-bottom:8px;font-size:13px;color:#22c55e;font-weight:600;">💡 ' +
+                        cheapestHidden.name + ' ($' + cheapestHidden.price.toFixed(2) + '/1M) is ' +
+                        savingsPct + '% cheaper than ' + mostExpensiveVisible.name + '</div>';
+                    savingsHintShown = true;
+                } else {
+                    // Hidden models are all more expensive — show value of seeing ALL models
+                    var hiddenRange = hiddenData[0].price.toFixed(2) + '–$' + hiddenData[hiddenData.length-1].price.toFixed(2);
+                    savingsHint = '<div style="margin-bottom:8px;font-size:13px;color:#94a3b8;">📊 Hidden models range: $' + hiddenRange + '/1M — find the best fit for your workload</div>';
+                    savingsHintShown = true;
+                }
+            }
 
             // Create gate overlay
             var gateRow = document.createElement('tr');
@@ -91,8 +142,9 @@
 
             gateCell.innerHTML =
                 '<div style="margin-bottom:10px;">' +
-                '<span style="font-size:14px;color:#94a3b8;">🔒 ' + hiddenCount + ' more model' + (hiddenCount !== 1 ? 's' : '') + ' — one might save you thousands more per year</span>' +
+                '<span style="font-size:14px;color:#94a3b8;">🔒 ' + hiddenCount + ' more model' + (hiddenCount !== 1 ? 's' : '') + ' — ranked by cost, with migration code</span>' +
                 '</div>' +
+                savingsHint +
                 (window.DEAL_EXPIRED ? '' : '<div style="margin-bottom:8px;font-size:12px;color:#ef4444;font-weight:600;">⏰ Flash sale ends in <span class="gate-countdown" data-variant="' + activeVariant.id + '">loading...</span> — then $49</div>') +
                 (window.DEAL_EXPIRED ? '' : '<div style="margin-bottom:10px;font-size:11px;color:#a5b4fc;font-weight:600;">🎁 Includes 3 bonuses ($29 value) — bonus timer: <span class="gate-bonus-timer">loading...</span></div>') +
                 '<a href="' + link + '" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'comparison_gate_clicked\',{variant:\'' + activeVariant.id + '\'});">' +
@@ -110,9 +162,13 @@
             gateCalculatorResults(calcResults);
         }
 
-        // Track gate shown with A/B variant
+        // Track gate shown with A/B variant + savings preview
         if (gated && typeof gtag === 'function') {
-            gtag('event', 'comparison_gate_shown', { page: location.pathname, variant: activeVariant.id });
+            gtag('event', 'comparison_gate_shown', {
+                page: location.pathname,
+                variant: activeVariant.id,
+                has_savings_hint: savingsHintShown
+            });
         }
 
         // Update countdown timers in gate CTAs
