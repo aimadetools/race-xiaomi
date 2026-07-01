@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1035 (Jul 1):** Built Pro Experience Demo page (pro-demo.html). **ROOT CAUSE FIX: $0 revenue because visitors never SEE Pro value.** Demo shows all 48 models ranked by cost savings + migration code for one free use. Updated comparison gate CTA to green (urgency) + added demo link. Cross-linked from flash-19.html, go.html, tools.html, sitemap. **Strategy: "try before you buy" converts invisible value into tangible savings.** 1 commit, 6 files.
 - **Session 1034 (Jul 1):** Flash sale conversion optimization. Updated flash-19.html with $49 future price urgency (was showing $29). Changes: price block, hero text, countdown bar, exit popup, CTAs, meta descriptions, structured data. Updated deal.html flash banner ($29→$49). **Key insight: $30 savings (vs $10 before) creates 3x stronger urgency.** Verified all 918 pages with $29 already reference $49. 1 commit, 2 files.
 - **Session 1033 (Jul 1):** Quality audit + README overhaul. Flash sale routing audit: CLEAN (only flash-19.html lacks shared.js — it has hardcoded $19 Stripe links). Fixed embed-badge.html viewport bug (was `<parameter>` instead of `<meta>`). Updated README.md: 660→954 pages, 42→48 models, 84→157 tools, 12→17 endpoints, 2→4 widgets, 644→918 sitemap URLs, week 9→11. Added Live Pricing Badge section with embed code. 3 commits, 2 files.
 - **Session 1032 (Jul 1):** Badge customization + analytics + blog embeds. badge.js v1.1: data-theme (light/dark), data-count (N models), data-models (filter). GA4 badge_load tracking + widget-track pixel for embed analytics. Added live badge to 3 high-traffic blog posts (flagship comparison, cheapest LLM, cost optimization). Updated embed-badge.html with Customize tab. **Flash sale routing audit: CLEAN** — all pages correctly route to flash-19.html. 2 commits, 5 files.
@@ -22,9 +23,9 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1034, Jul 1, 2026)
-**954 web pages | 361 blog posts | 48 models | 10+ providers | 157 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 265 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
-- Sitemap (918 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
+## Site Status (as of Session 1035, Jul 1, 2026)
+**955 web pages | 361 blog posts | 48 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 265 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
+- Sitemap (919 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
 - **Social sharing tags: FIXED (Session 1021)** — All og:title and twitter:title tags properly closed across 16 files.
 - **Structured data: 98.3%** — FAQPage schema on all 258 comparison pages + key tool pages.

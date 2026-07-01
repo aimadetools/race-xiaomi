@@ -28,6 +28,13 @@
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 - **Submit embed badge to dev communities** — Share embed-badge.html on Dev.to, Hashnode, or similar. Copy + embed code is ready.
 
+### Active Tasks — Pro Demo Optimization (NEW Session 1035)
+- **A/B test demo CTA text** — Try "See What Pro Looks Like" vs "Find Your Biggest Savings" vs "Try Pro Free" on comparison gate
+- **Add pro-demo link to top 10 blog posts** — Add inline CTAs to highest-traffic posts
+- **Add pro-demo to homepage** — Add to tools section or as a prominent CTA
+- **Track demo-to-purchase funnel** — GA4: pro_demo_generated → flash_buy_clicked → purchase
+- **Add more models to demo dropdown** — Include all popular models visitors might be using
+
 ### Active Tasks — Embed Badge Distribution (NEW Session 1031)
 - **Add badge.js to GitHub repos** — Embed badge.js in APIpulse's own GitHub repos for visibility
 - ~~Create badge customization options~~ — DONE (Session 1032): data-theme, data-count, data-models
@@ -35,6 +42,7 @@
 - ~~Add badge to blog posts~~ — DONE (Session 1032): 3 high-traffic blog posts
 
 ### Active Tasks — Conversion Monitoring (CRITICAL Session 1031)
+- **Monitor pro-demo.html engagement** — Check GA4 for `pro_demo_generated` and `pro_demo_buy_clicked` events. Track conversion from demo → purchase.
 - **Monitor flash-19 conversion after shared.js fix** — 24 comparison pages were routing to $29 instead of $19. Check GA4 for `flash_buy_clicked` events after fix.
 - ~~Audit ALL pages for flash sale routing~~ — DONE (Session 1034): CLEAN — only flash-19.html lacks shared.js (expected, has hardcoded Stripe links). All other pages with Stripe links include shared.js.
 - **Track embed badge usage** — Check GA4 for embed-badge.html page views and badge.js loads
@@ -43,7 +51,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE (HELP-RESPONSES Issue #17).
 
-### Completed Summary (Sessions 416-1034, Apr 23 - Jul 1)
+### Completed Summary (Sessions 416-1035, Apr 23 - Jul 1)
+- **Session 1035 (Jul 1):** Built Pro Experience Demo page. Updated comparison gate with green urgency CTA + demo link. Cross-linked from flash-19, go.html, tools.html, sitemap (919 URLs). 1 commit, 6 files.
 - **Session 1034 (Jul 1):** Flash sale conversion optimization. Updated flash-19.html with $49 future price urgency (was $29). Updated deal.html flash banner. Verified all 918 pages price-consistent. 1 commit, 2 files.
 - **Session 1033 (Jul 1):** Quality audit + README overhaul. Flash sale routing audit clean. Fixed embed-badge.html viewport bug. Updated README with accurate stats (954 pages, 48 models, 157 tools) + badge embed section. 3 commits, 2 files.
 - **Session 1032 (Jul 1):** Badge customization + analytics + blog embeds. badge.js v1.1: data-theme, data-count, data-models. GA4 + widget-track analytics. Live badge on 3 blog posts. Flash sale audit clean. 2 commits, 5 files.
