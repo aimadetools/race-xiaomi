@@ -1,12 +1,15 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 970 pages, 361 posts, 49 models, 292 comparison pages (+ 29 redirects), 159 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Sitemap 958 URLs (Session 1050). Embeddable pricing badge built (Session 1031) — new distribution channel via website embeds.**
+**Site Status:** 971 pages, 361 posts, 49 models, 292 comparison pages (+ 29 redirects), 159 tools. Technically complete. Distribution is the bottleneck, not content. **1,200 visitors/week, $0 revenue. Sitemap 959 URLs, RSS 796 items. All broken links fixed (Session 1051).**
 
 ### Active Tasks — Data Fixes
 - ✅ **Bulk fix 48→49 model count** — DONE Sessions 1047+1050. 1000+ files updated (including 459 files with "48-model comparison" pattern).
 - ✅ **Add Sonnet 5 to ai-model-quiz.html** — DONE Session 1047. Quiz now recommends Sonnet 5 (not deprecated 4.6).
-- ✅ **Add Sonnet 5 to compare pages** — DONE Sessions 1044-1045. 8 Sonnet 5 comparison pages exist.
+- ✅ **Add Sonnet 5 to compare pages** — DONE Sessions 1044-1049. 13 Sonnet 5 comparison pages exist.
 - ✅ **Build Model Migration Calculator** — DONE Session 1050. model-migration-calculator.html — side-by-side cost comparison, quality scores, migration tips, Pro upsell. Added to sitemap, homepage, tools.html, cross-linked from audit/quiz pages.
+- ✅ **Fix broken comparison links** — DONE Session 1051. Fixed gemini3flash→gemini35flash, mistrallarge3→mistral-large3.
+- ✅ **Fix tools.html count** — DONE Session 1051. Title/schema 158→159, removed duplicate Pricing Dashboard card.
+- ✅ **Update changelog** — DONE Session 1051. Added Sessions 1044-1050 entries, fixed stats.
 
 ### Active Tasks — Conversion Monitoring (need GA4 data)
 - Monitor comparison gate A/B test performance — check GA4 for `comparison_gate_clicked` events with variant IDs
