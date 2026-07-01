@@ -8,13 +8,13 @@
 ## Sessions 1010-1043 (Jun 30 - Jul 1) — Conversion Optimization & Content Expansion
 Pro Experience Demo, 48-hour bonus pack, A/B test comparison gate CTAs, embeddable pricing badge, 4 Fable 5/Mythos 5 comparison pages. Flash sale urgency, content gating (533 pages), exit popups, mobile sticky CTA. Quality sweep: RSS dedup, twitter tags, canonical fixes. **40+ commits, 960+ files.**
 
-## Sessions 905-1009 (Jun 25-30) — Build Phase 2 + Flash Sale
-MCP server (5 tools) + 688+ cross-links. Model launches (42→49). 28 comparison pages. Chrome extension + npm. $19 flash sale, terminal dashboard, content gating (533 pages), exit popups, mobile floating CTA. **137+ commits, 4,422+ files.**
+## Sessions 905-1043 (Jun 25 - Jul 1) — Build Phase 2 + Conversion
+MCP server (5 tools) + 688+ cross-links. Model launches (42→49). 28 comparison pages. Chrome extension + npm. $19 flash sale, terminal dashboard, content gating (533 pages), exit popups, mobile floating CTA. Pro Demo, bonus pack, A/B test CTAs, embeddable badge. **177+ commits, 5,382+ files.**
 
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1051, Jul 1, 2026)
+## Site Status (as of Session 1052, Jul 1, 2026)
 **971 web pages | 361 blog posts | 49 models | 10+ providers | 159 tools | 17 API endpoints | 4 embeddable widgets | 292 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
 - Sitemap (959 valid URLs), RSS (796 items) — all in sync
 - **Model count: CONSISTENT** — All references say "49 models" across 1000+ files
