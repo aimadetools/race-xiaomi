@@ -803,7 +803,11 @@
         var detailEl = document.getElementById('savings-detail');
         if (annualSave > 0) {
             savingsEl.textContent = '$' + Math.round(annualSave).toLocaleString() + '/yr';
-            detailEl.innerHTML = 'Switch from <strong>' + currentModel.name + '</strong> to <strong>' + best.model.name + '</strong> — save <strong>' + pctSave + '%</strong>';
+            var monthlySave = annualSave / 12;
+            var paybackDays = Math.ceil(19 / (monthlySave / 30));
+            var roi = Math.round(annualSave / 19);
+            detailEl.innerHTML = 'Switch from <strong>' + currentModel.name + '</strong> to <strong>' + best.model.name + '</strong> — save <strong>' + pctSave + '%</strong><br>' +
+                '<span style="color:#818cf8;font-size:13px;">💡 $19 Pro pays for itself in <strong>' + paybackDays + ' day' + (paybackDays !== 1 ? 's' : '') + '</strong> — that\'s a <strong>' + roi + 'x</strong> return</span>';
         } else {
             savingsEl.textContent = "You're already on a great model!";
             detailEl.textContent = 'But Pro shows you all 48 alternatives in case something changes.';
