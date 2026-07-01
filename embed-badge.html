@@ -179,6 +179,7 @@
             <div class="tab-bar">
                 <button class="tab-btn active" onclick="switchTab('card')">Card Badge</button>
                 <button class="tab-btn" onclick="switchTab('compact')">Compact Badge</button>
+                <button class="tab-btn" onclick="switchTab('customize')">Customize</button>
                 <button class="tab-btn" onclick="switchTab('markdown')">Markdown / GitHub</button>
             </div>
 
@@ -217,6 +218,87 @@
 </script></code>
                 </div>
                 <p style="font-size:14px;color:var(--text-secondary);">A slim inline badge perfect for sidebars, footers, and README files.</p>
+            </div>
+
+            <!-- Customize -->
+            <div class="tab-content" id="tab-customize">
+                <div style="margin-bottom:24px;">
+                    <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">🎨 Theme</h3>
+                    <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Add <code style="background:var(--bg-secondary);padding:2px 6px;border-radius:4px;font-size:13px;">data-theme="light"</code> for light mode (default: dark).</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code><!-- Light theme badge -->
+<div id="apipulse-badge"></div>
+<script>
+(function(){
+  var s=document.createElement('script');
+  s.src='https://getapipulse.com/badge.js';
+  s.dataset.theme='light';
+  s.async=true;
+  document.getElementById('apipulse-badge').appendChild(s);
+})();
+</script></code>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:24px;">
+                    <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">🔢 Model Count</h3>
+                    <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Add <code style="background:var(--bg-secondary);padding:2px 6px;border-radius:4px;font-size:13px;">data-count="6"</code> to show more or fewer models (default: 4, max: 8).</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code><!-- Show 6 models -->
+<div id="apipulse-badge"></div>
+<script>
+(function(){
+  var s=document.createElement('script');
+  s.src='https://getapipulse.com/badge.js';
+  s.dataset.count='6';
+  s.async=true;
+  document.getElementById('apipulse-badge').appendChild(s);
+})();
+</script></code>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:24px;">
+                    <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">🎯 Specific Models</h3>
+                    <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Add <code style="background:var(--bg-secondary);padding:2px 6px;border-radius:4px;font-size:13px;">data-models="GPT-5,Claude"</code> to show only matching models (partial match supported).</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code><!-- Show only GPT and Claude models -->
+<div id="apipulse-badge"></div>
+<script>
+(function(){
+  var s=document.createElement('script');
+  s.src='https://getapipulse.com/badge.js';
+  s.dataset.models='GPT-5,Claude Sonnet 4.6';
+  s.async=true;
+  document.getElementById('apipulse-badge').appendChild(s);
+})();
+</script></code>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">✨ Full Customization</h3>
+                    <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Combine all options together.</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code><!-- Light theme, 6 models, compact -->
+<div id="apipulse-badge"></div>
+<script>
+(function(){
+  var s=document.createElement('script');
+  s.src='https://getapipulse.com/badge.js';
+  s.dataset.compact='true';
+  s.dataset.theme='light';
+  s.dataset.count='6';
+  s.async=true;
+  document.getElementById('apipulse-badge').appendChild(s);
+})();
+</script></code>
+                    </div>
+                </div>
             </div>
 
             <!-- Markdown Code -->
@@ -274,7 +356,7 @@
                 </div>
                 <div class="faq-item" onclick="this.classList.toggle('open')" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden;cursor:pointer;">
                     <div style="padding:14px 16px;font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:center;">Can I customize which models are shown? <span style="color:var(--text-muted)">+</span></div>
-                    <div style="display:none;padding:0 16px 14px;font-size:13px;color:var(--text-secondary);line-height:1.5;">The free badge shows the 4 cheapest models. APIpulse Pro users can customize the model selection, add their own branding, and track specific providers.</div>
+                    <div style="display:none;padding:0 16px 14px;font-size:13px;color:var(--text-secondary);line-height:1.5;">Yes! Use <code>data-count="6"</code> to show more models, <code>data-models="GPT-5,Claude"</code> to filter specific models, and <code>data-theme="light"</code> for light mode. See the Customize tab for full examples.</div>
                 </div>
             </div>
         </div>
