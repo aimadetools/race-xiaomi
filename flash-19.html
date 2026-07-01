@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$19 Flash Sale — APIpulse Pro Lifetime Access</title>
-    <meta name="description" content="APIpulse Pro for just $19 — lifetime access to 48-model AI API cost comparison, migration code, PDF reports, and price alerts. One-time payment, no subscription. Price goes to $49 on Jul 12.">
+    <meta name="description" content="APIpulse Pro for just $19 — lifetime access to 48-model AI API cost comparison, migration code, PDF reports, and price alerts. Plus 3 free bonuses ($29 value) for 48 hours. Price goes to $49 on Jul 12.">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="$19 Flash Sale — APIpulse Pro Lifetime Access">
-    <meta property="og:description" content="Lifetime access to AI API cost tools for $19. Compare 48 models, get migration code, save up to 98% on costs. Price goes to $49 Jul 12.">
+    <meta property="og:description" content="Lifetime access to AI API cost tools for $19. Compare 48 models, get migration code, save up to 98% on costs. Plus 3 free bonuses ($29 value) for 48 hours.">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/flash-19.html">
     <meta property="og:type" content="product">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="$19 Flash Sale — APIpulse Pro Lifetime Access">
-    <meta name="twitter:description" content="Lifetime access to AI API cost tools for $19. Compare 48 models, get migration code, save up to 98% on costs. Price goes to $49 Jul 12.">
+    <meta name="twitter:description" content="Lifetime access to AI API cost tools for $19. Compare 48 models, get migration code, save up to 98% on costs. Plus 3 free bonuses ($29 value) for 48 hours.">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
     <link rel="canonical" href="https://getapipulse.com/flash-19.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -668,6 +668,87 @@
             cursor: pointer;
             padding: 4px 8px;
         }
+        /* Bonus pack */
+        .bonus-pack {
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.08), rgba(99, 102, 241, 0.04));
+            border: 2px solid rgba(129, 140, 248, 0.25);
+            border-radius: 14px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            animation: bonusGlow 3s ease-in-out infinite;
+        }
+        @keyframes bonusGlow {
+            0%, 100% { border-color: rgba(129, 140, 248, 0.25); }
+            50% { border-color: rgba(129, 140, 248, 0.5); }
+        }
+        .bonus-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: rgba(99, 102, 241, 0.12);
+            border-bottom: 1px solid rgba(129, 140, 248, 0.15);
+        }
+        .bonus-icon { font-size: 18px; }
+        .bonus-label {
+            font-size: 13px;
+            font-weight: 800;
+            color: #a5b4fc;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .bonus-timer {
+            margin-left: auto;
+            font-family: monospace;
+            font-size: 15px;
+            font-weight: 800;
+            color: #f1f5f9;
+            background: rgba(0,0,0,0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        .bonus-content {
+            padding: 16px;
+        }
+        .bonus-content > strong {
+            display: block;
+            font-size: 14px;
+            color: #e2e8f0;
+            margin-bottom: 12px;
+        }
+        .bonus-items {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .bonus-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.4;
+        }
+        .bonus-item strong { color: #f1f5f9; }
+        .bonus-check {
+            color: #22c55e;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .bonus-value {
+            text-align: center;
+            font-size: 12px;
+            color: #94a3b8;
+            padding-top: 8px;
+            border-top: 1px solid rgba(129, 140, 248, 0.15);
+        }
+        .bonus-value strong {
+            color: #a5b4fc;
+            text-decoration: line-through;
+        }
+
         /* Sticky mobile CTA */
         .sticky-cta {
             display: none;
@@ -785,9 +866,27 @@
             ⏰ $19 deal expires in <span class="time" id="countdown">--d --h --m</span> — then $49
         </div>
 
+        <!-- 48-Hour Bonus Pack -->
+        <div class="bonus-pack" id="bonus-pack">
+            <div class="bonus-header">
+                <span class="bonus-icon">🎁</span>
+                <span class="bonus-label">48-Hour Bonus</span>
+                <span class="bonus-timer" id="bonus-timer">--h --m --s</span>
+            </div>
+            <div class="bonus-content">
+                <strong>Buy today and get 3 free bonuses:</strong>
+                <div class="bonus-items">
+                    <div class="bonus-item"><span class="bonus-check">✓</span> <div><strong>AI Cost Optimization Playbook</strong> — 10 proven strategies to cut API costs 30-80% (PDF)</div></div>
+                    <div class="bonus-item"><span class="bonus-check">✓</span> <div><strong>Model Migration Cheat Sheet</strong> — copy-paste code for switching between all 48 models</div></div>
+                    <div class="bonus-item"><span class="bonus-check">✓</span> <div><strong>Priority feature requests</strong> — vote on what we build next</div></div>
+                </div>
+                <div class="bonus-value">Bonus value: <strong>$29</strong> — included free with your $19 Pro access</div>
+            </div>
+        </div>
+
         <!-- CTA -->
         <a id="flash-buy" href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="flash-cta" onclick="if(typeof gtag==='function')gtag('event','flash_buy_clicked',{price:19,location:'hero'});">
-            Get Lifetime Access — $19
+            Get Lifetime Access + 3 Bonuses — $19
         </a>
         <p class="cta-trust">
             <span>🔒 Stripe secure</span>
@@ -973,8 +1072,9 @@
         <!-- Final CTA -->
         <div class="final-cta">
             <p>Developers using APIpulse find <strong style="color:#22c55e;">$2,400+/year</strong> in potential savings.<br>$19 today, save thousands tomorrow. <strong style="color:#ef4444;">Goes to $49 on Jul 12.</strong></p>
+            <p style="font-size:13px;color:#a5b4fc;margin-bottom:16px;">🎁 Includes 3 bonuses ($29 value) — bonus timer: <span id="bonus-timer-bottom" style="font-family:monospace;font-weight:700;">--h --m --s</span></p>
             <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="flash-cta" onclick="if(typeof gtag==='function')gtag('event','flash_buy_clicked',{price:19,location:'bottom'});">
-                Get Lifetime Access — $19
+                Get Lifetime Access + 3 Bonuses — $19
             </a>
             <p style="font-size:12px;color:#475569;margin-top:12px;">🔒 Secure checkout via Stripe · 14-day money-back guarantee</p>
         </div>
@@ -992,7 +1092,7 @@
 
         <!-- Not ready to buy -->
         <div style="text-align:center;padding:20px;margin-top:8px;">
-            <p style="font-size:13px;color:#64748b;margin-bottom:8px;">Not ready to buy yet?</p>
+            <p style="font-size:13px;color:#64748b;margin-bottom:8px;">Not ready to buy yet? <strong style="color:#a5b4fc;">Your 48-hour bonus timer is running.</strong></p>
             <a href="pro-demo.html" style="display:inline-block;padding:12px 24px;background:#111827;border:1px solid rgba(129,140,248,0.3);border-radius:8px;color:#818cf8;font-size:14px;text-decoration:none;font-weight:700;">🎮 Try the Free Pro Demo — See Your Exact Savings →</a>
         </div>
 
@@ -1005,21 +1105,26 @@
     <!-- Sticky mobile CTA -->
     <div class="sticky-cta" id="sticky-cta">
         <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','flash_buy_clicked',{price:19,location:'sticky_mobile'});">
-            Get Pro — $19 (before $49)
+            🎁 Get Pro + 3 Bonuses — $19
         </a>
-        <div class="sticky-trust">🔒 Stripe secure · 🛡️ 14-day refund</div>
+        <div class="sticky-trust">🔒 Stripe secure · 🛡️ 14-day refund · ⏰ Bonus timer: <span id="bonus-timer-mobile" style="font-family:monospace;">--h --m --s</span></div>
     </div>
 
     <!-- Exit popup -->
     <div class="exit-overlay" id="exit-overlay">
         <div class="exit-modal">
             <button class="exit-close" onclick="dismissExit()" aria-label="Close">✕</button>
-            <h3>Wait — don't miss the $19 deal</h3>
-            <p>This flash sale ends July 12. After that, Pro goes to <strong style="color:#ef4444;">$49</strong>. You'd save <strong style="color:#22c55e;">$30</strong> by buying now.</p>
+            <h3>🎁 Wait — your bonuses expire soon</h3>
+            <p>The $19 deal includes <strong style="color:#a5b4fc;">3 free bonuses worth $29</strong> — but only if you buy before the 48-hour bonus timer runs out. After that, you just get Pro at $19 (no bonuses).</p>
+            <p style="font-size:13px;margin-bottom:12px;">
+                <span style="color:#22c55e;">✓</span> AI Cost Optimization Playbook<br>
+                <span style="color:#22c55e;">✓</span> Model Migration Cheat Sheet<br>
+                <span style="color:#22c55e;">✓</span> Priority feature requests
+            </p>
             <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="exit-cta" onclick="if(typeof gtag==='function')gtag('event','flash_buy_clicked',{price:19,location:'exit_popup'});">
-                Get Lifetime Access — $19
+                Claim Bonuses + Pro — $19
             </a>
-            <button class="exit-dismiss" onclick="dismissExit()">No thanks, I'll pay $49 later</button>
+            <button class="exit-dismiss" onclick="dismissExit()">No thanks, I don't want the bonuses</button>
         </div>
     </div>
 
@@ -1111,6 +1216,49 @@
             }
             update();
             setInterval(update, 1000);
+        })();
+
+        // 48-Hour Bonus Timer — resets every 48h to create rolling urgency
+        (function() {
+            // Set bonus deadline to 48 hours from first visit (stored in localStorage)
+            var BONUS_KEY = 'flash19_bonus_deadline';
+            var bonusDeadline = localStorage.getItem(BONUS_KEY);
+            var now = Date.now();
+
+            if (!bonusDeadline || parseInt(bonusDeadline) < now) {
+                // First visit or expired: set new 48h deadline
+                bonusDeadline = now + (48 * 60 * 60 * 1000);
+                localStorage.setItem(BONUS_KEY, bonusDeadline.toString());
+            } else {
+                bonusDeadline = parseInt(bonusDeadline);
+            }
+
+            function updateBonus() {
+                var diff = bonusDeadline - Date.now();
+                if (diff <= 0) {
+                    // Bonus expired — hide the bonus pack and update CTAs
+                    var pack = document.getElementById('bonus-pack');
+                    if (pack) pack.style.display = 'none';
+                    document.getElementById('bonus-timer').textContent = 'EXPIRED';
+                    var bottomTimer = document.getElementById('bonus-timer-bottom');
+                    if (bottomTimer) bottomTimer.textContent = 'EXPIRED';
+                    if (typeof gtag === 'function') gtag('event', 'bonus_timer_expired', {page: 'flash-19'});
+                    return;
+                }
+                var h = Math.floor(diff / 3600000);
+                var m = Math.floor((diff % 3600000) / 60000);
+                var s = Math.floor((diff % 60000) / 1000);
+                var timeStr = h.toString().padStart(2,'0') + 'h ' +
+                    m.toString().padStart(2,'0') + 'm ' +
+                    s.toString().padStart(2,'0') + 's';
+                document.getElementById('bonus-timer').textContent = timeStr;
+                var bottomTimer = document.getElementById('bonus-timer-bottom');
+                if (bottomTimer) bottomTimer.textContent = timeStr;
+                var mobileTimer = document.getElementById('bonus-timer-mobile');
+                if (mobileTimer) mobileTimer.textContent = timeStr;
+            }
+            updateBonus();
+            setInterval(updateBonus, 1000);
         })();
 
         // Email capture
