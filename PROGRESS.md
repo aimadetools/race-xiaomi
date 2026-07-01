@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1052 (Jul 1):** Quality sweep — fixed RSS feed title "48 Models" → "49 Models", fixed pro-demo.html title/OG/Twitter meta tags "48-Model" → "49-Model". Verified: all 24 comparison redirects valid, all redirect targets have FAQPage schema, no broken relative links, 159 tool cards confirmed, 49 models in pricing-data.js. 1 commit, 2 files.
 - **Session 1051 (Jul 1):** Quality sweep — fixed tools.html title/schema (158→159), removed duplicate Pricing Dashboard card, fixed 2 broken comparison links (gemini3flash→gemini35flash, mistrallarge3→mistral-large3), updated changelog with Sessions 1044-1050 entries + stats (431→971 pages, 71→159 tools, 34→49 models, 255→361 posts). 2 commits, 4 files.
 - **Sessions 1044-1050 (Jul 1):** Sonnet 5 launch (48→49 models), 13 comparison pages, pricing dashboard rebuild, Model Migration Calculator, State of AI API Pricing 2026 report, bulk model count fix across 1000+ files. **8 commits, 900+ files.**
 
