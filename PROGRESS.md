@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1049 (Jul 1):** Expanded Sonnet 5 comparison coverage 8→13 pages. Created 5 new comparison pages: Sonnet 5 vs Haiku 4.5 (mid vs budget, same provider), vs Mistral Large 3 (Anthropic vs European), vs Llama 4 Scout (cloud vs open-weight), vs Kimi K2.6 (Anthropic vs Moonshot), vs Sonnet 4.6 (upgrade guide). Each has interactive cost calculator, FAQPage schema, use case recommendations. Fixed flash-19.html FAQ to list Sonnet 5 (not deprecated 4.6). Updated sitemap 952→957 URLs. 1 commit, 7 files.
 - **Session 1048 (Jul 1):** Rebuilt pricing-dashboard.html — sortable 49-model table with provider/tier filters, search, inline cost calculator, blended price column, comparison links. Schema.org Dataset/WebPage structured data. GA4 event tracking. Updated sitemap lastmod, added tool card to tools.html. 1 commit, 3 files.
 - **Session 1047 (Jul 1):** Bulk model count fix 48→49 across entire codebase + Sonnet 5 quiz update. Replaced all "48 models"/"48 AI models" references across 882 HTML/JS/JSON/MD files. Updated ai-model-quiz.html: Sonnet 4.6 → Sonnet 5 for Anthropic balanced, chatbot, and document Q&A recommendations (deprecated model removed). 1 commit, 882 files.
 - **Session 1046 (Jul 1):** Trust fixes + analytics help request. Fixed 48→49 model count on all conversion-critical pages (go.html, deal.html, flash-19.html, thank-you.html, comparison-gate.js). Added missing Claude Sonnet 5 to api/pricing.js and flash-19.html savings calculator. Created HELP-REQUEST.md for GA4 analytics report + directory submissions. Core finding: post-payment flow already works (auto-activates Pro on thank-you.html). Real issue: 1,200 visitors/week but 0% conversion — need analytics data to diagnose. 1 commit, 6 files.
@@ -20,11 +21,11 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→49). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1048, Jul 1, 2026)
-**964 web pages | 361 blog posts | 49 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 287 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
-- Sitemap (952 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
+## Site Status (as of Session 1049, Jul 1, 2026)
+**969 web pages | 361 blog posts | 49 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 292 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
+- Sitemap (957 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Model count consistency: FIXED** — All "48 models" references updated to "49 models" across 882 files
-- **Sonnet 5 coverage: EXPANDED** — 8 comparison pages + quiz recommends Sonnet 5 (not deprecated 4.6)
+- **Sonnet 5 coverage: EXPANDED** — 13 comparison pages + quiz recommends Sonnet 5 (not deprecated 4.6)
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
 - **Social sharing tags: FIXED (Session 1021)** — All og:title and twitter:title tags properly closed across 16 files.
 - **Structured data: 98.3%** — FAQPage schema on all 266 comparison pages + key tool pages.
