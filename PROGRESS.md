@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1039 (Jul 1):** Flash-19 + Pro Demo + Comparison Gate conversion optimization. Fixed sticky mobile CTA messaging inconsistency ("was $29" → "before $49" to match page urgency). Simplified bottom escape hatch from 4 options to 1 (Pro Demo only) — reduces paradox of choice. Added ROI line below hero CTA: "Average user saves $2,400+/yr — pays for itself in under 1 day". Added payback period to pro-demo results: shows "$19 Pro pays for itself in X days — that's a Yx return". Added countdown timer to comparison gate (533 pages) — shows "Flash sale ends in Xd Yh Zm — then $49" above CTA. 3 commits, 3 files.
 - **Session 1038 (Jul 1):** Conversion funnel optimization + README overhaul. Expanded flash-19 savings calculator from 7→20 models (grouped by provider: OpenAI 7, Anthropic 4, Google 4, Other 5). Added persona-based savings examples to flash-19: chatbot startup ($21K/yr), code review tool ($53K/yr), content gen ($11K/yr). Updated README: added 3 live API pricing badges (GPT-5, Opus 4.8, DeepSeek V4 Pro), fixed stale $29→$19 flash sale pricing, expanded Pro features list (6 items), updated savings claim (40%→98%). Verified conversion funnel: go.html auto-redirects to flash-19.html, shared.js routes all CTAs correctly, Stripe links consistent. 2 commits, 2 files.
 - **Session 1037 (Jul 1):** A/B test comparison gate CTAs + expanded demo dropdown. comparison-gate.js now serves 3 variants: A="See All Models" (baseline), B="Find Your Biggest Savings" (benefit-focused), C="Unlock All 48 Models" (specific). Variants persisted in localStorage, all GA4 events include variant ID. Expanded pro-demo dropdown from 16→26 models, grouped by provider, added GPT-5.4/mini, GPT-5 mini, Mythos 5, Flash-Lite, Gemini 2.5 Pro, Maverick, Grok 4.3, Kimi K2.6. Default changed to GPT-5. 1 commit, 2 files.
 - **Session 1036 (Jul 1):** Pro Demo distribution blitz — maximum demo visibility. Added prominent "See What Pro Looks Like — Free" section to homepage (after calculator, before Why Pro). Added pro-demo CTA blocks to 10 highest-traffic blog posts (flagship comparison, cheapest LLM, cost optimization, pricing ranked, pricing comparison, benchmarking, save costs, deepseek vs gpt5, gpt5 vs gemini, claude alternatives). Added demo links to usage-gate.js (upgrade wall) and results-cta.js (results widget). Updated homepage "Why Pro" CTA to route through demo. **Total demo link coverage: homepage (3 refs), 10 blog posts, 533 comparison pages (comparison-gate.js), usage gate wall, results CTA widget, flash-19 (2 refs), go.html, tools.html.** 1 commit, 13 files.
@@ -26,7 +27,7 @@ MCP server (5 tools) + 688+ cross-links. Model launches (42→48). 28 comparison
 ## Sessions 1-904 (Apr 5 - Jun 25) — Full Build Phase 1
 Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 
-## Site Status (as of Session 1038, Jul 1, 2026)
+## Site Status (as of Session 1039, Jul 1, 2026)
 **955 web pages | 361 blog posts | 48 models | 10+ providers | 158 tools | 17 API endpoints | 4 embeddable widgets (25 models + pricing badge) | 265 comparison pages (+ 29 redirects) | 1 MCP server (5 tools)**
 - Sitemap (919 valid URLs), RSS (794 items, deduplicated & sorted) — all in sync
 - **Pricing consistency: FIXED** — Flash sale $19, regular $29, future (post Jul 12) $49.
@@ -38,6 +39,7 @@ Full APIpulse build from scratch. **381+ commits, 2,420+ files.**
 - **Tool count: 156** — Verified on tools.html card count.
 - **Content gating** — 4 layers (usage-gate.js, results-cta.js, ranking table gate, comparison-gate.js). 533 pages gated (was 373). Show top 3 models free, gate remaining behind Pro CTA. **A/B test active** on comparison gate: 3 CTA variants tracked via GA4.
 - **$19 Flash Sale** — flash-19.html landing page, site-wide banner. Ends Jul 12 → $29 regular → $49 future.
+- **Conversion optimization (Session 1039)** — Fixed sticky CTA messaging, simplified escape routes, added ROI line + payback period to pro-demo.
 
 ## Blocked on Human Action
 1. **$9 Stripe link** — Flash sale UI ready on deal.html (`?flash=9`). Need: create $9 one-time Stripe payment link.
