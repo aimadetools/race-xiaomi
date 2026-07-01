@@ -1,4 +1,4 @@
-// APIpulse — Comparison Table Gate (Session 1022)
+// APIpulse — Comparison Table Gate (Session 1022, A/B test Session 1037)
 // Automatically gates comparison table rows on content pages.
 // Shows top 3 rows free, gates remaining rows behind Pro CTA.
 // Usage: <script src="comparison-gate.js" defer></script>
@@ -11,6 +11,32 @@
     var FREE_ROWS = 3;
     var FLASH_LINK = 'flash-19.html?from=comparison_gate';
     var POST_EXPIRY_LINK = 'go.html?from=comparison_gate';
+
+    // A/B test: 3 CTA text variants (Session 1037)
+    // Persisted in localStorage so returning visitors see the same variant
+    var CTA_VARIANTS = [
+        { id: 'a', text: 'See All Models — {priceLabel} {price}', demo: 'See What Pro Looks Like — Free' },
+        { id: 'b', text: 'Find Your Biggest Savings — {priceLabel} {price}', demo: 'Find Your Biggest Savings — Free Demo' },
+        { id: 'c', text: 'Unlock All {count} Models — {priceLabel} {price}', demo: 'Try Pro Free — See All 48 Models' }
+    ];
+
+    function getCTAVariant() {
+        try {
+            var stored = localStorage.getItem('ap_cta_variant');
+            if (stored) {
+                for (var i = 0; i < CTA_VARIANTS.length; i++) {
+                    if (CTA_VARIANTS[i].id === stored) return CTA_VARIANTS[i];
+                }
+            }
+        } catch(e) {}
+        // Random assignment (seeded by session for consistency)
+        var idx = Math.floor(Math.random() * CTA_VARIANTS.length);
+        var variant = CTA_VARIANTS[idx];
+        try { localStorage.setItem('ap_cta_variant', variant.id); } catch(e) {}
+        return variant;
+    }
+
+    var activeVariant = getCTAVariant();
 
     document.addEventListener('DOMContentLoaded', function() {
         // Find all pricing tables (tables with model-name cells)
@@ -58,13 +84,18 @@
             var price = window.DEAL_EXPIRED ? '$49' : '$19';
             var priceLabel = window.DEAL_EXPIRED ? 'Pro' : 'Flash Sale';
 
+            var ctaText = activeVariant.text
+                .replace('{priceLabel}', priceLabel)
+                .replace('{price}', price)
+                .replace('{count}', '48');
+
             gateCell.innerHTML =
                 '<div style="margin-bottom:10px;">' +
                 '<span style="font-size:14px;color:#94a3b8;">🔒 ' + hiddenCount + ' more model' + (hiddenCount !== 1 ? 's' : '') + ' — one might save you thousands more per year</span>' +
                 '</div>' +
-                '<a href="' + link + '" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'comparison_gate_clicked\',{});">' +
-                'See All Models — ' + priceLabel + ' ' + price + '</a>' +
-                '<div style="margin-top:10px;"><a href="pro-demo.html" style="font-size:12px;color:#818cf8;font-weight:600;text-decoration:none;">🎮 Or try: Free Pro Demo — see ALL 48 models →</a></div>' +
+                '<a href="' + link + '" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'comparison_gate_clicked\',{variant:\'' + activeVariant.id + '\'});">' +
+                ctaText + '</a>' +
+                '<div style="margin-top:10px;"><a href="pro-demo.html" style="font-size:12px;color:#818cf8;font-weight:600;text-decoration:none;" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'gate_demo_clicked\',{variant:\'' + activeVariant.id + '\'});">🎮 Or try: ' + activeVariant.demo + ' →</a></div>' +
                 '<div style="font-size:11px;color:#475569;margin-top:6px;">One-time payment · Lifetime access · 14-day refund</div>';
 
             gateRow.appendChild(gateCell);
@@ -77,9 +108,9 @@
             gateCalculatorResults(calcResults);
         }
 
-        // Track gate shown
+        // Track gate shown with A/B variant
         if (gated && typeof gtag === 'function') {
-            gtag('event', 'comparison_gate_shown', { page: location.pathname });
+            gtag('event', 'comparison_gate_shown', { page: location.pathname, variant: activeVariant.id });
         }
     });
 
@@ -106,10 +137,11 @@
                 var gateDiv = document.createElement('div');
                 gateDiv.className = 'calc-gate-cta';
                 gateDiv.style.cssText = 'text-align:center;padding:20px;margin-top:12px;background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(99,102,241,0.02));border:1px dashed rgba(99,102,241,0.3);border-radius:12px;';
+                var calcCTA = 'Unlock Full Results — ' + price;
                 gateDiv.innerHTML =
                     '<div style="font-size:14px;color:#94a3b8;margin-bottom:10px;">🔒 See all results with Pro</div>' +
-                    '<a href="' + link + '" style="display:inline-block;padding:10px 20px;background:#6366f1;color:white;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'calc_gate_clicked\',{});">' +
-                    'Unlock Full Results — ' + price + '</a>';
+                    '<a href="' + link + '" style="display:inline-block;padding:10px 20px;background:#6366f1;color:white;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'calc_gate_clicked\',{variant:\'' + activeVariant.id + '\'});">' +
+                    calcCTA + '</a>';
                 container.appendChild(gateDiv);
             });
         });
