@@ -24,6 +24,7 @@
     { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60 },
     { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', input: 0.08, output: 0.35 },
     { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00 },
+    { id: 'anthropic-sonnet5', name: 'Claude Sonnet 5', provider: 'Anthropic', input: 3.00, output: 15.00 },
     { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00 },
     { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00 },
     { id: 'anthropic-fable5', name: 'Claude Fable 5', provider: 'Anthropic', input: 10.00, output: 50.00 },

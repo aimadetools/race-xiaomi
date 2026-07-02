@@ -22,6 +22,7 @@
     { name: 'GPT-oss 20B',        provider: 'OpenAI',     input: 0.08,  output: 0.35,  context: '128K' },
     // Anthropic
     { name: 'Claude Opus 4.8',   provider: 'Anthropic',  input: 5.00,  output: 25.00, context: '1M' },
+    { name: 'Claude Sonnet 5',   provider: 'Anthropic',  input: 3.00,  output: 15.00, context: '1M' },
     { name: 'Claude Sonnet 4.6', provider: 'Anthropic',  input: 3.00,  output: 15.00, context: '1M' },
     { name: 'Claude Haiku 4.5',  provider: 'Anthropic',  input: 1.00,  output: 5.00,  context: '200K' },
     { name: 'Claude Fable 5',    provider: 'Anthropic',  input: 10.00, output: 50.00, context: '1M' },
