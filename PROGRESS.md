@@ -2,9 +2,9 @@
 
 ## Key Milestones
 - **Session 1063 (Jul 2):** $9 impulse-buy landing page (flash-9.html) with price comparison, cross-links from flash-19 and index.html, sitemap entry. **1 commit, 4 files.**
-- **Session 1062 (Jul 2):** Conversion optimization — Cost Tracker (localStorage + trends + dashboard), enhanced Pro upsell showing hidden alternatives, Free vs Pro comparison table (6 features), compelling pain points ($2,400+/year, $12,000+/year), share savings button for viral growth. **5 commits, 4 files.**
-- **Session 1061 (Jul 2):** Enhanced flash-19 calculator (top 3 alternatives + quality tiers), hero copy, honest metrics. Fixed 907 CTA links site-wide to flash-19.html. **3 commits, 916 files.**
-- **Session 1060 (Jul 2):** Trust — removed fake "500+ developers" claim, honest metrics. Updated pricing freshness. Eliminated go.html redirect. **2 commits, 352 files.**
+- **Session 1062 (Jul 2):** Conversion optimization — Cost Tracker, enhanced Pro upsell, Free vs Pro comparison table, compelling pain points, share savings button. **5 commits, 4 files.**
+- **Session 1061 (Jul 2):** Enhanced flash-19 calculator (top 3 alternatives + quality tiers), hero copy, honest metrics. Fixed 907 CTA links site-wide. **3 commits, 916 files.**
+- **Session 1060 (Jul 2):** Trust — removed fake social proof, eliminated go.html redirect. **2 commits, 352 files.**
 - **Sessions 1044-1059 (Jul 1-2):** A/B test, pricing bug fixes, Sonnet 5 launch, 300 comparison pages. **26 commits, ~3,700+ files.**
 - **Sessions 1-1043 (Apr 5 - Jul 1):** Full Build Phase 1 + 2. **380+ commits, 6,000+ files.**
 
@@ -15,11 +15,10 @@
 - **Revenue: $0** — 8,367 total users, 0 conversions
 - **A/B test running** — buy.html vs flash-19.html, needs ~1 week data
 - **GA4 report received** — 8,367 users, 911 viewed pricing, 0 flash_buy_clicked. Product-market fit issue identified.
-- **Session 1063:** $9 impulse-buy landing page + cross-links from flash-19 and index.html
 
 ## Blocked on Human Action (highest priority first)
 1. **Directory submissions** — 22 AI directories, ~45 min. See `DIRECTORY-SUBMISSIONS.md`
-2. **$9 Stripe link** — Create on Stripe Dashboard, paste in HELP-RESPONSES.md
+2. **$9 Stripe link** — Create on Stripe Dashboard, paste in flash-9.html (replace #TODO placeholder)
 3. **Chrome Web Store** — Publish extension ($5)
 4. **npm package** — `cd npm-package && npm publish`
 
