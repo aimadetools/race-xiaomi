@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Pricing Report — Week of June 30, 2026 | APIpulse</title>
+    <meta name="description" content="This week's AI API pricing digest: cheapest models by tier, biggest savings opportunities, price changes, and new model launches across 49 models from 10 providers.">
+    <meta name="keywords" content="AI API pricing report, LLM pricing weekly, cheapest AI models, API cost comparison, AI pricing changes 2026">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AI API Pricing Report — Week of June 30, 2026">
+    <meta property="og:description" content="This week's AI API pricing digest: cheapest models, biggest savings, price changes across 49 models.">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/weekly-report.html">
+    <meta property="og:type" article="true">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Pricing Report — Week of June 30, 2026">
+    <meta name="twitter:description" content="This week's AI API pricing digest: cheapest models, biggest savings, price changes across 49 models.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/weekly-report.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Pricing Report — Week of June 30, 2026",
+        "description": "Weekly digest of AI API pricing: cheapest models, biggest savings, price changes across 49 models from 10 providers.",
+        "url": "https://getapipulse.com/weekly-report.html",
+        "datePublished": "2026-06-30",
+        "dateModified": "2026-07-02",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse" },
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API model right now?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash Lite at $0.075/$0.30 per 1M tokens (input/output) is the cheapest model tracked by APIpulse. For models with 1M+ context, Gemini 2.5 Flash-Lite at $0.10/$0.40 is the best value."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching AI providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Savings vary by workload. Switching from GPT-5.5 ($5/$30) to DeepSeek V4 Flash ($0.14/$0.28) saves up to 98% on output tokens. The average developer can save 60-90% by choosing the right model for each task."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often do AI API prices change?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Major providers typically adjust pricing every 2-4 months, usually downward. New model launches often come with competitive pricing. Subscribe to APIpulse price alerts to get notified of any changes."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        body { background: #0a0a0f; }
+        .report {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        .report-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .report-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(99,102,241,0.12);
+            border: 1px solid rgba(99,102,241,0.25);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #818cf8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .report-header h1 {
+            font-size: clamp(26px, 4.5vw, 38px);
+            font-weight: 900;
+            color: #f1f5f9;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        .report-header .subtitle {
+            font-size: 15px;
+            color: #94a3b8;
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        .report-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 14px;
+            font-size: 12px;
+            color: #64748b;
+        }
+        .report-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        /* Stats row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+        .stat-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-card .num {
+            font-size: 28px;
+            font-weight: 900;
+            font-family: monospace;
+            color: #22c55e;
+            line-height: 1.2;
+        }
+        .stat-card .num.purple { color: #818cf8; }
+        .stat-card .num.amber { color: #f59e0b; }
+        .stat-card .num.red { color: #ef4444; }
+        .stat-card .lbl {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        /* Sections */
+        .section {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .section h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section h2 .icon { font-size: 20px; }
+        /* Tables */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .pricing-table th {
+            text-align: left;
+            padding: 10px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #1e293b;
+        }
+        .pricing-table td {
+            padding: 10px 12px;
+            color: #cbd5e1;
+            border-bottom: 1px solid rgba(30,41,59,0.5);
+        }
+        .pricing-table tr:last-child td { border-bottom: none; }
+        .pricing-table .model-name {
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        .pricing-table .price {
+            font-family: monospace;
+            font-weight: 700;
+            color: #22c55e;
+        }
+        .pricing-table .price.high { color: #ef4444; }
+        .pricing-table .price.mid { color: #f59e0b; }
+        .pricing-table .provider-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            background: rgba(99,102,241,0.12);
+            color: #818cf8;
+        }
+        .savings-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            background: rgba(34,197,94,0.12);
+            color: #22c55e;
+        }
+        /* Deprecation notice */
+        .dep-row td {
+            opacity: 0.6;
+        }
+        .dep-notice {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            background: rgba(239,68,68,0.1);
+            color: #ef4444;
+        }
+        /* Key insight box */
+        .insight-box {
+            background: rgba(99,102,241,0.06);
+            border: 1px solid rgba(99,102,241,0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .insight-box h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #818cf8;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .insight-box p {
+            font-size: 14px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin: 0;
+        }
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(34,197,94,0.08));
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 14px;
+            padding: 32px 24px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .cta-section h2 {
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+        .cta-section p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-buttons a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .cta-primary {
+            background: #6366f1;
+            color: white;
+        }
+        .cta-primary:hover { background: #4f46e5; }
+        .cta-green {
+            background: #22c55e;
+            color: white;
+        }
+        .cta-green:hover { background: #16a34a; }
+        .cta-outline {
+            background: transparent;
+            border: 1px solid #334155;
+            color: #94a3b8;
+        }
+        .cta-outline:hover { border-color: #6366f1; color: #e2e8f0; }
+        /* Mobile */
+        @media (max-width: 640px) {
+            .pricing-table { font-size: 12px; }
+            .pricing-table th, .pricing-table td { padding: 8px 6px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="report">
+        <div class="report-header">
+            <div class="report-badge">📊 Weekly Report</div>
+            <h1>AI API Pricing Report</h1>
+            <p class="subtitle">This week's pricing landscape across 49 models from 10 providers. Find the best deals, track price changes, and optimize your AI spend.</p>
+            <div class="report-meta">
+                <span>📅 Week of June 30, 2026</span>
+                <span>🔄 Updated Jul 2, 2026</span>
+                <span>📈 49 models tracked</span>
+            </div>
+        </div>
+
+        <!-- Key Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="num">49</div>
+                <div class="lbl">Models Tracked</div>
+            </div>
+            <div class="stat-card">
+                <div class="num purple">10</div>
+                <div class="lbl">Providers</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">$0.075</div>
+                <div class="lbl">Cheapest Input</div>
+            </div>
+            <div class="stat-card">
+                <div class="num amber">98%</div>
+                <div class="lbl">Max Savings</div>
+            </div>
+        </div>
+
+        <!-- Key Insight -->
+        <div class="insight-box">
+            <h3>💡 This Week's Key Insight</h3>
+            <p>The gap between the cheapest and most expensive models has never been wider. GPT-5.5 Pro costs 375× more per output token than Gemini 2.0 Flash Lite. Yet for many tasks — chatbots, summarization, code completion — budget models perform within 90% of premium ones. <strong>Most developers are overpaying by 60-90%.</strong></p>
+        </div>
+
+        <!-- Cheapest by Tier -->
+        <div class="section">
+            <h2><span class="icon">🏆</span> Best Value Models by Tier</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Tier</th>
+                        <th>Input / 1M</th>
+                        <th>Output / 1M</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="model-name">Gemini 2.0 Flash Lite</td>
+                        <td><span class="provider-badge">Google</span></td>
+                        <td>Budget</td>
+                        <td class="price">$0.075</td>
+                        <td class="price">$0.30</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">GPT-oss 20B</td>
+                        <td><span class="provider-badge">OpenAI</span></td>
+                        <td>Budget</td>
+                        <td class="price">$0.08</td>
+                        <td class="price">$0.35</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">Mistral Small 4</td>
+                        <td><span class="provider-badge">Mistral</span></td>
+                        <td>Budget</td>
+                        <td class="price">$0.10</td>
+                        <td class="price">$0.30</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">Llama 3.1 8B</td>
+                        <td><span class="provider-badge">Meta</span></td>
+                        <td>Budget</td>
+                        <td class="price">$0.10</td>
+                        <td class="price">$0.10</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">Gemini 2.5 Flash-Lite</td>
+                        <td><span class="provider-badge">Google</span></td>
+                        <td>Budget</td>
+                        <td class="price">$0.10</td>
+                        <td class="price">$0.40</td>
+                        <td>1M</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Biggest Savings Opportunities -->
+        <div class="section">
+            <h2><span class="icon">💰</span> Biggest Savings Opportunities</h2>
+            <p style="font-size:13px; color:#64748b; margin-bottom:16px;">Switch from expensive models to budget alternatives and save up to 98%.</p>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Switch From</th>
+                        <th>Switch To</th>
+                        <th>Output Savings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="model-name">GPT-5.5 Pro</span><br>
+                            <span class="price high">$180/1M output</span>
+                        </td>
+                        <td>
+                            <span class="model-name">DeepSeek V4 Flash</span><br>
+                            <span class="price">$0.28/1M output</span>
+                        </td>
+                        <td><span class="savings-badge">Save 99.8%</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="model-name">GPT-5.5</span><br>
+                            <span class="price high">$30/1M output</span>
+                        </td>
+                        <td>
+                            <span class="model-name">DeepSeek V4 Flash</span><br>
+                            <span class="price">$0.28/1M output</span>
+                        </td>
+                        <td><span class="savings-badge">Save 99.1%</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="model-name">Claude Opus 4.8</span><br>
+                            <span class="price mid">$25/1M output</span>
+                        </td>
+                        <td>
+                            <span class="model-name">Gemini 2.5 Flash-Lite</span><br>
+                            <span class="price">$0.40/1M output</span>
+                        </td>
+                        <td><span class="savings-badge">Save 98.4%</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="model-name">Claude Sonnet 5</span><br>
+                            <span class="price mid">$15/1M output</span>
+                        </td>
+                        <td>
+                            <span class="model-name">Mistral Large 3</span><br>
+                            <span class="price">$1.50/1M output</span>
+                        </td>
+                        <td><span class="savings-badge">Save 90%</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="model-name">GPT-5</span><br>
+                            <span class="price mid">$10/1M output</span>
+                        </td>
+                        <td>
+                            <span class="model-name">DeepSeek V4 Pro</span><br>
+                            <span class="price">$0.87/1M output</span>
+                        </td>
+                        <td><span class="savings-badge">Save 91.3%</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Price Changes & Deprecations -->
+        <div class="section">
+            <h2><span class="icon">⚡</span> Recent Model Changes</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Status</th>
+                        <th>Details</th>
+                        <th>Replacement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="model-name">Claude Sonnet 5</td>
+                        <td><span style="color:#22c55e; font-weight:600;">✨ New</span></td>
+                        <td>Added Jul 2026. $3/$15 per 1M tokens. 1M context window.</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">Claude Sonnet 4.6</td>
+                        <td><span class="dep-notice">⚠ Deprecated</span></td>
+                        <td>Deprecated Jun 30, 2026. Same pricing as successor.</td>
+                        <td>Claude Sonnet 5</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">Claude 4 Opus</td>
+                        <td><span class="dep-notice">⚠ Deprecated</span></td>
+                        <td>Deprecated Jun 15, 2026. Was $15/$75 — 3× more expensive than successor.</td>
+                        <td>Claude Opus 4.8</td>
+                    </tr>
+                    <tr class="dep-row">
+                        <td class="model-name">Gemini 2.0 Flash</td>
+                        <td><span class="dep-notice">⚠ Deprecated</span></td>
+                        <td>Replaced by newer Flash model with better performance.</td>
+                        <td>Gemini 3 Flash</td>
+                    </tr>
+                    <tr class="dep-row">
+                        <td class="model-name">DeepSeek V3</td>
+                        <td><span class="dep-notice">⚠ Deprecated</span></td>
+                        <td>Replaced by V4 Flash at lower cost.</td>
+                        <td>DeepSeek V4 Flash</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Provider Comparison -->
+        <div class="section">
+            <h2><span class="icon">📊</span> Provider Comparison — Budget Tier</h2>
+            <p style="font-size:13px; color:#64748b; margin-bottom:16px;">Cheapest model per provider, sorted by output cost.</p>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Cheapest Model</th>
+                        <th>Input / 1M</th>
+                        <th>Output / 1M</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="provider-badge">Google</span></td>
+                        <td class="model-name">Gemini 2.0 Flash Lite</td>
+                        <td class="price">$0.075</td>
+                        <td class="price">$0.30</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td><span class="provider-badge">OpenAI</span></td>
+                        <td class="model-name">GPT-oss 20B</td>
+                        <td class="price">$0.08</td>
+                        <td class="price">$0.35</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><span class="provider-badge">Mistral</span></td>
+                        <td class="model-name">Mistral Small 4</td>
+                        <td class="price">$0.10</td>
+                        <td class="price">$0.30</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><span class="provider-badge">Meta</span></td>
+                        <td class="model-name">Llama 3.1 8B</td>
+                        <td class="price">$0.10</td>
+                        <td class="price">$0.10</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><span class="provider-badge">DeepSeek</span></td>
+                        <td class="model-name">DeepSeek V4 Flash</td>
+                        <td class="price">$0.14</td>
+                        <td class="price">$0.28</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td><span class="provider-badge">Moonshot</span></td>
+                        <td class="model-name">Kimi K2.6</td>
+                        <td class="price">$0.95</td>
+                        <td class="price">$4.00</td>
+                        <td>256K</td>
+                    </tr>
+                    <tr>
+                        <td><span class="provider-badge">Anthropic</span></td>
+                        <td class="model-name">Claude Haiku 4.5</td>
+                        <td class="price">$1.00</td>
+                        <td class="price">$5.00</td>
+                        <td>200K</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Quick Tip -->
+        <div class="insight-box">
+            <h3>🎯 Quick Tip: Right-Size Your Models</h3>
+            <p>Use premium models (GPT-5.5, Opus 4.8) for complex reasoning and code generation. Use budget models (Flash, DeepSeek, Mistral Small) for classification, extraction, and simple Q&A. Splitting workloads across tiers typically saves 60-80% with no quality loss on routine tasks.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>📊 Track Your AI API Spending</h2>
+            <p>Use the free Cost Monitoring Dashboard to log your API costs, spot trends, and set budgets. Or get APIpulse Pro for price alerts on all 49 models, PDF reports, and migration code.</p>
+            <div class="cta-buttons">
+                <a href="cost-monitoring.html" class="cta-green" onclick="trackEvent('weekly_report_cta', {cta: 'cost_monitoring', page: 'weekly-report'})">📈 Free Cost Dashboard</a>
+                <a href="price-alerts.html" class="cta-primary" onclick="trackEvent('weekly_report_cta', {cta: 'price_alerts', page: 'weekly-report'})">🔔 Price Alerts</a>
+                <a href="flash-19.html" class="cta-outline" onclick="trackEvent('weekly_report_cta', {cta: 'pro_upgrade', page: 'weekly-report'})">⚡ Get Pro — $19</a>
+            </div>
+        </div>
+
+        <!-- Previous Reports -->
+        <div class="section" style="margin-top: 24px;">
+            <h2><span class="icon">📚</span> More Resources</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+                <a href="pricing-trends.html" style="display:block; padding:14px; background:#0f172a; border:1px solid #1e293b; border-radius:10px; text-decoration:none; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='#1e293b'">
+                    <div style="font-size:14px; font-weight:600; color:#e2e8f0;">📈 Pricing Trends</div>
+                    <div style="font-size:12px; color:#64748b; margin-top:4px;">Historical price data & charts</div>
+                </a>
+                <a href="ai-model-deprecation-tracker.html" style="display:block; padding:14px; background:#0f172a; border:1px solid #1e293b; border-radius:10px; text-decoration:none; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='#1e293b'">
+                    <div style="font-size:14px; font-weight:600; color:#e2e8f0;">⚠️ Deprecation Tracker</div>
+                    <div style="font-size:12px; color:#64748b; margin-top:4px;">Which models are retiring</div>
+                </a>
+                <a href="agent-cost-calculator.html" style="display:block; padding:14px; background:#0f172a; border:1px solid #1e293b; border-radius:10px; text-decoration:none; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='#1e293b'">
+                    <div style="font-size:14px; font-weight:600; color:#e2e8f0;">🧮 Cost Calculator</div>
+                    <div style="font-size:12px; color:#64748b; margin-top:4px;">Estimate your monthly spend</div>
+                </a>
+                <a href="ai-api-advisor.html" style="display:block; padding:14px; background:#0f172a; border:1px solid #1e293b; border-radius:10px; text-decoration:none; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#6366f1'" onmouseout="this.style.borderColor='#1e293b'">
+                    <div style="font-size:14px; font-weight:600; color:#e2e8f0;">🤖 AI Advisor</div>
+                    <div style="font-size:12px; color:#64748b; margin-top:4px;">Find the best model for your use case</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // GA4 tracking
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof trackEvent === 'function') {
+            trackEvent('weekly_report_viewed', {
+                report_week: '2026-06-30',
+                models_count: 49,
+                providers_count: 10
+            });
+        }
+    });
+    </script>
+</body>
+</html>
