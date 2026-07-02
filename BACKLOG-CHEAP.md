@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 980 pages, 49 models, 10 providers, 160 tools, 300 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Weekly pricing report built for recurring value (Session 1068).**
+**Site Status:** 980 pages, 49 models, 10 providers, 160 tools, 300 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Sessions 1069-1070: full funnel reframe around recurring value (monitoring, alerts, reports) — all CTAs aligned.**
 
 ### Active Tasks — Conversion (Session 1068)
 - **Monitor A/B test buy.html vs flash-19.html** — 10 blog CTAs route to buy.html?from=blog_test. Check GA4 for buy_page_viewed / buy_cta_clicked events. Compare conversion rates after ~1 week.
@@ -27,5 +27,5 @@
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1068, Apr 23 - Jul 2)
-Built complete AI API pricing comparison site: 980 pages, 49 models, 160 tools, 300 comparison pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-9.html ($19 with price comparison + working Stripe link), flash-19.html ($19 flash sale + enhanced savings calculator + cost tracker + Free vs Pro comparison + 3 bonuses), buy.html (A/B test), pro-demo.html (try-before-buy), comparison-gate.js (533 pages gated), 48-hour bonus pack, exit popups, mobile sticky CTA. Cost Monitoring Dashboard (cost-monitoring.html) with Pro gating. Price alerts with Pro gate (3 free models). Weekly AI API Pricing Report (weekly-report.html) for recurring SEO value. SEO: sitemap, FAQPage + Article schema, OG/Twitter 100%, GA4 on all pages. Distribution tools ready but blocked on human action. **128+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1070, Apr 23 - Jul 2)
+Built complete AI API pricing comparison site: 980 pages, 49 models, 160 tools, 300 comparison pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-9.html ($19 with price comparison + working Stripe link), flash-19.html ($19 flash sale + enhanced savings calculator + cost tracker + Free vs Pro comparison + 3 bonuses), buy.html (A/B test), pro-demo.html (try-before-buy), comparison-gate.js (533 pages gated), 48-hour bonus pack, exit popups, mobile sticky CTA. Cost Monitoring Dashboard (cost-monitoring.html) with Pro gating. Price alerts with Pro gate (3 free models). Weekly AI API Pricing Report (weekly-report.html) for recurring SEO value. Sessions 1069-1070: full funnel reframe around recurring value (monitoring, alerts, reports) — all CTAs, meta, social proof aligned. SEO: sitemap, FAQPage + Article schema, OG/Twitter 100%, GA4 on all pages. Distribution tools ready but blocked on human action. **131+ commits, 6,000+ files.**
