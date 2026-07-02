@@ -43,6 +43,38 @@
         }
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the APIpulse Cost Monitoring Dashboard?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A free tool to track your AI API spending over time. Log costs across 49 models from 10 providers, visualize spending trends, set monthly budgets, and detect price changes. Data is stored locally in your browser."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the cost monitoring dashboard free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — basic cost logging, spending charts, and model breakdowns are completely free. Pro features like CSV export, price change alerts, and the savings estimator are included with APIpulse Pro ($19 lifetime)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does APIpulse track my API usage automatically?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Currently, you log costs manually by entering model, tokens, and cost per entry. We're working on automatic tracking via API key integration. Manual logging gives you full control over what's tracked."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         body { background: #0a0a0f; }
         .dashboard {
@@ -632,6 +664,25 @@
                         <span style="font-size:12px;color:#475569;">Alerts are checked automatically when you visit this page.</span></p>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="section">
+            <h2 style="font-size:16px;font-weight:700;color:#f1f5f9;margin-bottom:16px;">❓ Frequently Asked Questions</h2>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+                <details style="background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:14px 16px;">
+                    <summary style="cursor:pointer;font-size:14px;font-weight:600;color:#e2e8f0;">What is the APIpulse Cost Monitoring Dashboard?</summary>
+                    <p style="font-size:13px;color:#94a3b8;margin-top:10px;line-height:1.6;">A free tool to track your AI API spending over time. Log costs across 49 models from 10 providers, visualize spending trends, set monthly budgets, and detect price changes. Data is stored locally in your browser — no account needed.</p>
+                </details>
+                <details style="background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:14px 16px;">
+                    <summary style="cursor:pointer;font-size:14px;font-weight:600;color:#e2e8f0;">Is the dashboard free? What's included in Pro?</summary>
+                    <p style="font-size:13px;color:#94a3b8;margin-top:10px;line-height:1.6;">Basic cost logging, spending charts, and model breakdowns are completely free. Pro ($19 lifetime) unlocks CSV export, price change alerts, and the savings estimator that shows how much you could save by switching models.</p>
+                </details>
+                <details style="background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:14px 16px;">
+                    <summary style="cursor:pointer;font-size:14px;font-weight:600;color:#e2e8f0;">Does APIpulse track my API usage automatically?</summary>
+                    <p style="font-size:13px;color:#94a3b8;margin-top:10px;line-height:1.6;">Currently, you log costs manually by entering model, tokens, and cost per entry. Manual logging gives you full control over what's tracked. No API keys or accounts required.</p>
+                </details>
             </div>
         </div>
 
