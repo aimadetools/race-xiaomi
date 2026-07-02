@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1079 (Jul 2):** Fix malformed duplicate "Why Pro" CTA section + stray footer link in index.html. **2 commits, 1 file.**
+- **Session 1079 (Jul 2):** Fix malformed duplicate "Why Pro" CTA section + stray footer link in index.html + misleading "$9 deal" reference in flash-19.html. **3 commits, 2 files.**
 - **Session 1078 (Jul 2):** Pro conversion fix — index.html "Why Pro" section now leads with recurring value (Cost Monitoring, Price Alerts, Weekly Reports) instead of generic features. **1 commit, 1 file.**
 - **Sessions 1075-1078 (Jul 2):** Data audit + freshness sweep + Pro conversion fix. pricing.json fixed, 375+ files updated, index.html conversion funnel improved. **8 commits, 375+ files.**
 - **Sessions 1060-1074 (Jul 1-2):** Cost monitoring, price alerts, cross-linking, conversion optimization. Full funnel reframe around recurring value. **~34 commits, ~46 files.**
