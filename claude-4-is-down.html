@@ -898,7 +898,7 @@ claude-sonnet-4-6</code>
                     </ul>
                 </div>
                 <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(168,85,247,0.08));border:1px solid var(--accent);border-radius:12px;padding:20px;">
-                    <div style="font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">Pro — $29 one-time</div>
+                    <div style="font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">Pro — $19 flash sale</div>
                     <ul style="list-style:none;padding:0;margin:0;">
                         <li style="padding:6px 0;font-size:14px;color:var(--text-primary);">✓ <strong>YOUR personalized migration plan</strong> — exact model, exact cost</li>
                         <li style="padding:6px 0;font-size:14px;color:var(--text-primary);">✓ <strong>10 saved scenarios</strong> — compare "stay Anthropic" vs "switch" side by side</li>
@@ -1253,7 +1253,7 @@ claude-sonnet-4-6</code>
                     // Replace the email section with a Pro CTA
                     var section = emailSection.closest('section') || emailSection.parentElement;
                     if (section) {
-                        var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                        var stripeLink = window._abStripeLink || 'flash-19.html?from=tool_page';
                         var price = window._abPrice || 29;
                         section.innerHTML = '<div style="background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(168,85,247,0.1));border:1px solid var(--accent);border-radius:14px;padding:28px;text-align:center;">' +
                             '<div style="font-size:28px;margin-bottom:12px;">🚀</div>' +
@@ -1291,7 +1291,7 @@ claude-sonnet-4-6</code>
             // Set new inline CTAs
             var whatHappensCta = document.getElementById('what-happens-cta');
             if (whatHappensCta) {
-                whatHappensCta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                whatHappensCta.href = window._abStripeLink || 'flash-19.html?from=tool_page';
                 if (window._abPrice) whatHappensCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
                 whatHappensCta.addEventListener('click', function() {
                     if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'what_happens_section', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
@@ -1301,7 +1301,7 @@ claude-sonnet-4-6</code>
             // Mid-page Pro upsell CTA (between Step 2 and Step 3)
             var midProCta = document.getElementById('mid-pro-cta');
             if (midProCta) {
-                midProCta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                midProCta.href = window._abStripeLink || 'flash-19.html?from=tool_page';
                 if (window._abPrice) midProCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
                 midProCta.addEventListener('click', function() {
                     if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'mid_page_upsell', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
@@ -1311,7 +1311,7 @@ claude-sonnet-4-6</code>
 
             // Shutdown Special: Use A/B test variant price and link
             var abPrice = window._abPrice || 29;
-            var abStripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+            var abStripeLink = window._abStripeLink || 'flash-19.html?from=tool_page';
             var SHUTDOWN_SPECIAL_URL = abStripeLink;
             if (SHUTDOWN_SPECIAL_URL) {
                 document.getElementById('shutdown-special').style.display = 'block';
@@ -1425,7 +1425,7 @@ claude-sonnet-4-6</code>
             var heroSection = document.querySelector('.emergency-hero');
             if (stickyBar && stickyBtn) {
                 // Set Stripe link from A/B variant or shutdown special
-                var stickyLink = SHUTDOWN_SPECIAL_URL || window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                var stickyLink = SHUTDOWN_SPECIAL_URL || window._abStripeLink || 'flash-19.html?from=tool_page';
                 stickyBtn.href = stickyLink;
                 var stickyPrice = window._abPrice || 29;
                 stickyBtn.textContent = 'Get Migration Plan — $' + stickyPrice;
@@ -1709,7 +1709,7 @@ claude-sonnet-4-6</code>
             // Bind Stripe link to inaction CTA
             var inactionCta = document.getElementById('inaction-cta');
             if (inactionCta) {
-                inactionCta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                inactionCta.href = window._abStripeLink || 'flash-19.html?from=tool_page';
                 if (window._abPrice) inactionCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
                 inactionCta.addEventListener('click', function() {
                     if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'inaction_calculator', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });

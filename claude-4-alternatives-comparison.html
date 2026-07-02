@@ -201,7 +201,7 @@
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
-                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $19</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
@@ -611,7 +611,7 @@ const response = await anthropic.messages.create({
                 </div>
                 <p style="font-size:15px;color:var(--text-secondary);margin-bottom:12px;"><strong style="color:var(--text-primary);">Get the full migration toolkit.</strong> Pro users get custom model routing strategies, saved scenarios, cost reports, and optimization tips — plus all current and future tools.</p>
                 <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-                    <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'comparison_cta'})">Get Pro — $29 lifetime</a>
+                    <a href="flash-19.html?from=tool_page" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'comparison_cta'})">Get Pro — $19 flash sale</a>
                     <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'comparison_cta'});" style="padding:12px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
                 </div>
                 <p style="font-size:11px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · Lock in founding member pricing · Or try free for 24 hours</p>
@@ -658,7 +658,7 @@ const response = await anthropic.messages.create({
         <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08));border:2px solid var(--accent);border-radius:16px;padding:32px 24px;margin:32px 0;text-align:center;">
             <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Stop guessing — get exact costs for every model</h2>
             <p style="font-size:15px;color:var(--text-secondary);margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto;">Pro gives you 49-model comparison, migration code snippets, PDF reports, and personalized optimization tips.</p>
-            <a href="go.html?from=claude-4-alternatives-comparison" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 4px 20px rgba(99,102,241,0.4);transition:all 0.2s;">Get Pro — $29 lifetime</a>
+            <a href="go.html?from=claude-4-alternatives-comparison" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;cursor:pointer;box-shadow:0 4px 20px rgba(99,102,241,0.4);transition:all 0.2s;">Get Pro — $19 flash sale</a>
             <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">✅ 14-day money-back guarantee · ⚡ Instant access · 🔒 One-time payment</p>
         </div>
     </main>
@@ -666,7 +666,7 @@ const response = await anthropic.messages.create({
     <!-- Sticky bottom CTA bar -->
     <div class="sticky-cta-bar" id="sticky-cta-bar">
         <span class="sticky-msg">🔴 <span>Claude 4 is retired</span> — Find your cheapest alternative</span>
-        <a href="#" class="sticky-btn" id="sticky-cta-btn">Get Pro — $29 lifetime</a>
+        <a href="#" class="sticky-btn" id="sticky-cta-btn">Get Pro — $19 flash sale</a>
     </div>
 
     <footer>
@@ -749,7 +749,7 @@ const response = await anthropic.messages.create({
         var stickyBtn = document.getElementById('sticky-cta-btn');
         var hero = document.querySelector('.comp-page') || document.querySelector('.hero');
         if (stickyBar && stickyBtn) {
-            stickyBtn.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+            stickyBtn.href = window._abStripeLink || 'flash-19.html?from=tool_page';
             var price = window._abPrice || 29;
             stickyBtn.textContent = 'Get Pro — $' + price + ' lifetime';
             var heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400;
