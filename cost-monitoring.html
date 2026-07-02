@@ -26,6 +26,7 @@
       gtag('config', 'G-0CEP7S9Y3J');
     </script>
     <script src="analytics.js" defer></script>
+    <script src="pro-features.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -338,6 +339,90 @@
             transform: translateY(0);
             opacity: 1;
         }
+        .pro-gate-overlay {
+            position: relative;
+            border: 1px dashed rgba(99,102,241,0.4);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .pro-gate-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10,10,15,0.7);
+            backdrop-filter: blur(4px);
+            pointer-events: none;
+            border-radius: 12px;
+        }
+        .pro-gate-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 28px 20px;
+        }
+        .pro-gate-content .icon { font-size: 28px; margin-bottom: 8px; }
+        .pro-gate-content h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 6px;
+        }
+        .pro-gate-content p {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 14px;
+            max-width: 360px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pro-gate-content .btn-pro {
+            display: inline-block;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .pro-gate-content .btn-pro:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+        }
+        .pro-banner {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(34,197,94,0.05));
+            border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .pro-banner .text h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 4px;
+        }
+        .pro-banner .text p {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+        .pro-banner .btn-pro {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+        }
         @media (max-width: 640px) {
             .dashboard { padding: 24px 16px 60px; }
             .dash-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
@@ -353,6 +438,15 @@
         <div class="dash-header">
             <h1>📊 API Cost Monitoring</h1>
             <p>Track your AI API spending over time. Log costs, set budgets, detect price changes, and optimize your spend.</p>
+        </div>
+
+        <!-- Pro Upsell Banner (hidden for Pro users) -->
+        <div class="pro-banner" id="pro-upsell-banner">
+            <div class="text">
+                <h3>🚀 Unlock Pro Monitoring</h3>
+                <p>CSV exports, budget alerts, price change detection, and unlimited history — all free with Pro.</p>
+            </div>
+            <a href="/flash-19.html?from=cost_monitoring" class="btn-pro" onclick="if(window.trackEvent) trackEvent('pro_banner_clicked', {source:'cost_monitoring'})">Get Pro — $19</a>
         </div>
 
         <!-- Summary Stats -->
@@ -451,8 +545,16 @@
 
             <!-- Chart Tab -->
             <div class="tab-content active" id="tab-chart">
-                <div class="export-bar">
-                    <button class="btn btn-outline" onclick="exportCSV()">📥 Export CSV</button>
+                <div class="export-bar" id="chart-export-gate">
+                    <div class="pro-gate-overlay" id="csv-gate-chart" style="display:none;">
+                        <div class="pro-gate-content">
+                            <div class="icon">📥</div>
+                            <h3>CSV Export</h3>
+                            <p>Export your spending history as CSV for spreadsheets and reports.</p>
+                            <a href="/flash-19.html?from=cost_monitoring_csv" class="btn-pro" onclick="if(window.trackEvent) trackEvent('csv_gate_clicked', {source:'chart'})">Unlock with Pro — $19</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" id="csv-btn-chart" onclick="exportCSV()">📥 Export CSV</button>
                 </div>
                 <div class="chart-container">
                     <canvas id="spending-chart"></canvas>
@@ -465,8 +567,16 @@
 
             <!-- History Tab -->
             <div class="tab-content" id="tab-history">
-                <div class="export-bar">
-                    <button class="btn btn-outline" onclick="exportCSV()">📥 Export CSV</button>
+                <div class="export-bar" id="history-export-gate">
+                    <div class="pro-gate-overlay" id="csv-gate-history" style="display:none;">
+                        <div class="pro-gate-content">
+                            <div class="icon">📥</div>
+                            <h3>CSV Export</h3>
+                            <p>Export your full spending history for analysis.</p>
+                            <a href="/flash-19.html?from=cost_monitoring_csv" class="btn-pro" onclick="if(window.trackEvent) trackEvent('csv_gate_clicked', {source:'history'})">Unlock with Pro — $19</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" id="csv-btn-history" onclick="exportCSV()">📥 Export CSV</button>
                     <button class="btn btn-danger" onclick="clearAll()">🗑 Clear All</button>
                 </div>
                 <div class="entry-list" id="entry-list">
@@ -485,10 +595,36 @@
                         <p>No model data yet. Log spends to see your model breakdown.</p>
                     </div>
                 </div>
+                <!-- Savings Estimator (Pro) -->
+                <div id="savings-estimator" style="display:none;margin-top:20px;">
+                    <div style="background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:16px;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                            <h3 style="font-size:14px;font-weight:700;color:#f1f5f9;">💰 Savings Estimator</h3>
+                            <span id="savings-pro-badge" style="display:none;background:rgba(99,102,241,0.15);color:#818cf8;font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;">PRO</span>
+                        </div>
+                        <div id="savings-pro-gate" style="display:none;">
+                            <div style="text-align:center;padding:16px;">
+                                <p style="font-size:13px;color:#94a3b8;margin-bottom:12px;">See how much you could save by optimizing your model mix.</p>
+                                <a href="/flash-19.html?from=cost_monitoring_savings" class="btn-pro" style="display:inline-block;padding:8px 16px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;" onclick="if(window.trackEvent) trackEvent('savings_gate_clicked')">Unlock with Pro — $19</a>
+                            </div>
+                        </div>
+                        <div id="savings-results"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- Alerts Tab -->
             <div class="tab-content" id="tab-alerts">
+                <div id="alerts-pro-gate" style="display:none;">
+                    <div class="pro-gate-overlay">
+                        <div class="pro-gate-content">
+                            <div class="icon">🔔</div>
+                            <h3>Price Change Alerts</h3>
+                            <p>Get notified when AI model prices change. Track price trends across 49 models and never miss a cost-saving opportunity.</p>
+                            <a href="/flash-19.html?from=cost_monitoring_alerts" class="btn-pro" onclick="if(window.trackEvent) trackEvent('alerts_gate_clicked')">Unlock with Pro — $19</a>
+                        </div>
+                    </div>
+                </div>
                 <div id="alerts-list">
                     <div class="empty-state" id="alerts-empty">
                         <div class="icon">🔔</div>
@@ -558,6 +694,50 @@
             document.getElementById('budget-input').value = budget;
         }
 
+        // ---- Pro Gating ----
+        var userIsPro = (typeof isProUser === 'function' && isProUser());
+        function applyProGating() {
+            userIsPro = (typeof isProUser === 'function' && isProUser());
+            // Hide Pro upsell banner for Pro users
+            var banner = document.getElementById('pro-upsell-banner');
+            if (banner) banner.style.display = userIsPro ? 'none' : 'flex';
+            // CSV export gating
+            var csvGateChart = document.getElementById('csv-gate-chart');
+            var csvBtnChart = document.getElementById('csv-btn-chart');
+            var csvGateHistory = document.getElementById('csv-gate-history');
+            var csvBtnHistory = document.getElementById('csv-btn-history');
+            if (csvGateChart) csvGateChart.style.display = userIsPro ? 'none' : 'block';
+            if (csvBtnChart) csvBtnChart.style.display = userIsPro ? 'inline-block' : 'none';
+            if (csvGateHistory) csvGateHistory.style.display = userIsPro ? 'none' : 'block';
+            if (csvBtnHistory) csvBtnHistory.style.display = userIsPro ? 'inline-block' : 'none';
+            // Price alerts gating
+            var alertsGate = document.getElementById('alerts-pro-gate');
+            var alertsList = document.getElementById('alerts-list');
+            if (alertsGate) alertsGate.style.display = userIsPro ? 'none' : 'block';
+            if (alertsList) alertsList.style.display = userIsPro ? 'block' : 'none';
+            // Savings estimator gating
+            var savingsEstimator = document.getElementById('savings-estimator');
+            var savingsProGate = document.getElementById('savings-pro-gate');
+            var savingsProBadge = document.getElementById('savings-pro-badge');
+            if (savingsEstimator) savingsEstimator.style.display = 'block';
+            if (savingsProGate) savingsProGate.style.display = userIsPro ? 'none' : 'block';
+            if (savingsProBadge) savingsProBadge.style.display = userIsPro ? 'none' : 'inline';
+            if (userIsPro) renderSavingsEstimator();
+            // Track gate impressions for non-Pro users
+            if (!userIsPro && typeof gtag === 'function') {
+                gtag('event', 'pro_gate_impressed', { page: 'cost_monitoring' });
+            }
+        }
+        applyProGating();
+        // Re-check after pro-features.js loads (it sets localStorage)
+        window.addEventListener('load', function() { setTimeout(applyProGating, 100); });
+        // Re-check when localStorage changes (trial started/expired in another tab)
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'apipulse_pro' || e.key === 'apipulse_pro_trial_expiry') {
+                applyProGating();
+            }
+        });
+
         // ---- GA4 events ----
         function trackEvent(name, params) {
             if (typeof gtag === 'function') gtag('event', name, params);
@@ -624,6 +804,65 @@
             refreshAll();
             notify('🗑 All data cleared');
         };
+
+        // ---- Savings Estimator (Pro) ----
+        var CHEAPER_MODELS = {
+            'GPT-5.5': { alt: 'GPT-5', saving: '75%', reason: 'GPT-5 is 75% cheaper on input' },
+            'GPT-5.4': { alt: 'GPT-5', saving: '50%', reason: 'GPT-5 is 50% cheaper on input' },
+            'GPT-5.4 mini': { alt: 'GPT-5 mini', saving: '67%', reason: 'GPT-5 mini is 67% cheaper' },
+            'GPT-4o': { alt: 'GPT-5', saving: '50%', reason: 'GPT-5 is cheaper with better capabilities' },
+            'GPT-4o mini': { alt: 'GPT-5 mini', saving: '67%', reason: 'GPT-5 mini is cheaper and newer' },
+            'Claude Opus 4.8': { alt: 'Claude Sonnet 5', saving: '40%', reason: 'Sonnet 5 handles most tasks at 40% less' },
+            'Claude Sonnet 5': { alt: 'Claude Haiku 4.5', saving: '67%', reason: 'Haiku is 67% cheaper for simple tasks' },
+            'Claude Sonnet 4.6': { alt: 'Claude Haiku 4.5', saving: '67%', reason: 'Haiku is 67% cheaper for simple tasks' },
+            'Gemini 3.1 Pro': { alt: 'Gemini 3.5 Flash', saving: '25%', reason: 'Flash is 25% cheaper with fast inference' },
+            'Gemini 2.5 Pro': { alt: 'Gemini 3 Flash', saving: '60%', reason: 'Flash is 60% cheaper' },
+            'Claude Fable 5': { alt: 'Claude Opus 4.8', saving: '50%', reason: 'Opus 4.8 is 50% cheaper' }
+        };
+        function renderSavingsEstimator() {
+            if (!userIsPro) return;
+            var entries = getEntries();
+            var resultsEl = document.getElementById('savings-results');
+            if (!resultsEl || entries.length === 0) {
+                if (resultsEl) resultsEl.innerHTML = '<p style="font-size:13px;color:#64748b;text-align:center;padding:12px;">Log some API spends to see savings estimates.</p>';
+                return;
+            }
+            var modelSpend = {};
+            entries.forEach(function(e) {
+                modelSpend[e.model] = (modelSpend[e.model] || 0) + e.cost;
+            });
+            var totalSpend = entries.reduce(function(s,e) { return s + e.cost; }, 0);
+            var totalSavings = 0;
+            var suggestions = [];
+            Object.keys(modelSpend).forEach(function(model) {
+                var tip = CHEAPER_MODELS[model];
+                if (tip) {
+                    var saving = modelSpend[model] * 0.3; // Conservative 30% estimate
+                    totalSavings += saving;
+                    suggestions.push({ model: model, spend: modelSpend[model], alt: tip.alt, reason: tip.reason, saving: saving });
+                }
+            });
+            if (suggestions.length === 0) {
+                resultsEl.innerHTML = '<p style="font-size:13px;color:#22c55e;text-align:center;padding:12px;">✅ You\'re already using cost-efficient models!</p>';
+                return;
+            }
+            suggestions.sort(function(a,b) { return b.saving - a.saving; });
+            var html = '';
+            suggestions.slice(0, 5).forEach(function(s) {
+                html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #1e293b;">';
+                html += '<div><div style="font-size:13px;font-weight:600;color:#e2e8f0;">' + s.model + ' → ' + s.alt + '</div>';
+                html += '<div style="font-size:12px;color:#64748b;">' + s.reason + '</div></div>';
+                html += '<div style="font-size:14px;font-weight:800;color:#22c55e;font-family:monospace;">-$' + s.saving.toFixed(2) + '</div></div>';
+            });
+            if (totalSavings > 0) {
+                html += '<div style="margin-top:12px;padding:12px;background:rgba(34,197,94,0.1);border-radius:8px;text-align:center;">';
+                html += '<div style="font-size:13px;color:#94a3b8;">Estimated monthly savings</div>';
+                html += '<div style="font-size:22px;font-weight:900;color:#22c55e;font-family:monospace;">$' + totalSavings.toFixed(2) + '/mo</div>';
+                html += '<div style="font-size:12px;color:#64748b;">$' + (totalSavings * 12).toFixed(0) + '/year by switching models</div></div>';
+            }
+            resultsEl.innerHTML = html;
+            trackEvent('savings_estimator_viewed', { models: suggestions.length, potential_savings: totalSavings.toFixed(2) });
+        }
 
         // ---- Budget ----
         window.setBudget = function() {
@@ -759,6 +998,9 @@
 
             // Price alerts
             checkPriceAlerts();
+
+            // Savings estimator
+            if (userIsPro) renderSavingsEstimator();
 
             // Chart
             drawChart();
