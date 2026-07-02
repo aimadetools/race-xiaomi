@@ -84,7 +84,7 @@ window.trackEvent = logEvent;
 // Usage: trackBeginCheckout(price, source) / trackPurchase(price, source)
 
 function trackBeginCheckout(price, source) {
-    price = price || window._abPrice || 29;
+    price = price || window._abPrice || 19;
     source = source || location.pathname;
     // GA4 standard ecommerce event
     if (typeof gtag === 'function') {
@@ -105,7 +105,7 @@ function trackBeginCheckout(price, source) {
 }
 
 function trackPurchase(price, source, transactionId) {
-    price = price || window._abPrice || 29;
+    price = price || window._abPrice || 19;
     source = source || 'thank_you_page';
     transactionId = transactionId || 'txn_' + Date.now();
     // GA4 standard ecommerce event

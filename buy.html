@@ -20,15 +20,21 @@
     <!-- Buy page tracking -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // Track page view
+        // Capture UTM/source params for A/B test tracking
+        var params = new URLSearchParams(window.location.search);
+        var fromParam = params.get('from') || 'direct';
+        var abVariant = params.get('variant') || 'none';
+
+        // Track page view with source
         if (typeof gtag === 'function') {
-          gtag('event', 'buy_page_viewed', {page: 'buy.html'});
+          gtag('event', 'buy_page_viewed', {page: 'buy.html', from: fromParam, variant: abVariant});
         }
-        // Track CTA clicks
+
+        // Track CTA clicks with source
         document.querySelectorAll('.buy-cta').forEach(function(btn, i) {
           btn.addEventListener('click', function() {
             if (typeof gtag === 'function') {
-              gtag('event', 'buy_cta_clicked', {location: i === 0 ? 'top' : 'bottom', price: 19});
+              gtag('event', 'buy_cta_clicked', {location: i === 0 ? 'top' : 'bottom', price: 19, from: fromParam, variant: abVariant});
             }
           });
         });
@@ -264,7 +270,7 @@
             <div class="savings">Save $30 — 61% off</div>
         </div>
 
-        <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-cta" onclick="if(typeof gtag==='function')gtag('event','buy_cta_clicked',{price:19,location:'buy_page'});">
+        <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-cta">
             Get Lifetime Access — $19
         </a>
 
@@ -298,7 +304,7 @@
             <p>Try APIpulse Pro risk-free. If it doesn't save you money, email us for a full refund — no questions asked. You keep everything either way.</p>
         </div>
 
-        <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-cta" onclick="if(typeof gtag==='function')gtag('event','buy_cta_clicked',{price:19,location:'buy_page_bottom'});">
+        <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-cta">
             Get Lifetime Access — $19
         </a>
 
