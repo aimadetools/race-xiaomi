@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1059 (Jul 2):** A/B test buy.html vs flash-19.html — updated 10 blog post CTAs to link to buy.html?from=blog_test, added from/variant URL param tracking to buy.html GA4 events, fixed analytics.js default price $29→$19. **1 commit, 12 files.**
 - **Session 1058 (Jul 2):** Conversion optimization — created minimal buy.html landing page, added social proof badge to flash-19.html, updated headline to lead with savings ($2,400+/yr). **3 commits.**
 - **Session 1057 (Jul 2):** Fixed critical site-wide pricing bug — A/B test removal (Session 911) left `_abPrice` fallback at $29 on go.html + 35 pages. Fixed 241 blog post CTAs (— HTML entity), 14 content pages with stale "one-time $29", pro.html price display, index.html Product schema ($29→$19), go.html sticky bar was-price. **3 commits, ~1,040 files.**
 - **Session 1056 (Jul 2):** Fixed critical checkout page bugs — undefined `futurePrice` variable causing JS runtime error on go.html, Product schema showing $29 instead of $19, mobile sticky bar and social proof notifications showing wrong price. **1 commit.**
