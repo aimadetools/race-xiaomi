@@ -411,12 +411,13 @@
         "brand": { "@type": "Brand", "name": "APIpulse" },
         "offers": {
             "@type": "Offer",
-            "price": "29.00",
+            "price": "19.00",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "url": "flash-19.html?from=go_schema",
+            "url": "https://getapipulse.com/flash-19.html?from=go_schema",
             "priceValidUntil": "2026-07-12",
-            "seller": { "@type": "Organization", "name": "APIpulse" }
+            "seller": { "@type": "Organization", "name": "APIpulse" },
+            "description": "Flash sale price — goes to $49 after July 12, 2026"
         }
     }
     </script>
@@ -960,7 +961,7 @@
 
     <!-- Mobile sticky buy CTA bar (Session 879) -->
     <div class="go-sticky-bar" id="go-sticky-bar">
-        <div class="sticky-price"><span id="sticky-price">$29</span> <small id="sticky-was">→ $49 Jul 12</small></div>
+        <div class="sticky-price"><span id="sticky-price">$19</span> <small id="sticky-was">→ $49 Jul 12</small></div>
         <a href="flash-19.html?from=tool_page" target="_blank" rel="noopener" class="sticky-buy" id="go-sticky-buy" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_mobile_sticky');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'mobile_sticky',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_mobile_sticky'});">
             🔥 Get lifetime access
         </a>
@@ -1065,6 +1066,7 @@
                 if (badgeEl) { badgeEl.style.display = 'none'; }
             }
             // Update FAQ future price and urgency to match variant
+            var futurePrice = 49;
             var faqFuture = document.getElementById('faq-future-price');
             if (faqFuture) faqFuture.textContent = '$' + futurePrice;
             var urgencyPrice = document.getElementById('urgency-price');
@@ -1307,7 +1309,7 @@
                 return {
                     icon: '⏰',
                     iconBg: 'linear-gradient(135deg, #ef4444, #dc2626)',
-                    title: daysLeft + ' days left at $29 — price goes to $49',
+                    title: daysLeft + ' days left at $19 — price goes to $49',
                     sub: 'Lock in founding member pricing',
                     duration: 6000
                 };
