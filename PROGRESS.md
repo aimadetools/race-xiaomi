@@ -1,15 +1,16 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1073 (Jul 2):** Documentation cleanup — summarized PROGRESS.md (collapse old sessions), collapsed completed backlog tasks into summary lines. All content/conversion tasks complete. Distribution blocked on human action. **1 commit, 3 files.**
-- **Session 1072 (Jul 2):** Data consistency audit and fixes — synced pricing data across all sources to 49 models. Fixed price-snapshot.json (3 ID mismatches + 2 missing models + wrong price), api/pricing.js (+6 models), data/pricing.json (+anthropic-sonnet5, totalModels 48→49). Fixed all 4 API endpoints: api/calculate.js (+14), api/compare.js (+18), api/cheapest.js (+26), api/recommend.js (+28) — all now have 49 models. Added Claude Sonnet 5 to embeddable widgets. Fixed stale "48 models" in advisor FAQ. **9 commits, 11 files.**
-- **Session 1071 (Jul 2):** Index page conversion improvements — recurring value subtitle, social proof (8,367 developers), Recent Price Changes section with 4 real price drops + CTA. **1 commit, 1 file.**
-- **Session 1070 (Jul 2):** Aligned ALL traffic sources with recurring value messaging — index, flash-19, flash-9, buy, pricing pages. Social proof with real user count. **3 commits, 5 files.**
-- **Sessions 1068-1069 (Jul 2):** Recurring value reframe + weekly pricing report. flash-19 Free vs Pro table + FAQ, flash-9/buy split features, index FAQ schema, weekly-report.html with FAQPage + Article schema. **7 commits, 11 files.**
-- **Sessions 1060-1067 (Jul 1-2):** Cost monitoring dashboard, price alerts, cross-linking, conversion optimization. **~21 commits, ~24 files.**
+- **Session 1074 (Jul 2):** Stale content fixes — updated pricing freshness badge to Jul 2 (was Jun 24), fixed stale "48 models" → "49 models" in July 2026 blog post. **1 commit, 2 files.**
+- **Session 1073 (Jul 2):** Documentation cleanup — summarized PROGRESS.md, collapsed completed backlog tasks. **1 commit, 3 files.**
+- **Session 1072 (Jul 2):** Data consistency audit — synced all 3 pricing sources + snapshot to 49 models. Fixed all 4 API endpoints. Added Claude Sonnet 5 to widgets. **9 commits, 11 files.**
+- **Session 1071 (Jul 2):** Index page conversion — recurring value subtitle, social proof (8,367 developers), Recent Price Changes section. **1 commit, 1 file.**
+- **Session 1070 (Jul 2):** Aligned ALL traffic sources with recurring value messaging. **3 commits, 5 files.**
+- **Sessions 1068-1069 (Jul 2):** Recurring value reframe + weekly pricing report. **7 commits, 11 files.**
+- **Sessions 1060-1067 (Jul 1-2):** Cost monitoring, price alerts, cross-linking, conversion optimization. **~21 commits, ~24 files.**
 - **Sessions 1-1059 (Apr 5 - Jul 1):** Full Build Phase 1 + 2. **380+ commits, 6,000+ files.**
 
-## Site Status (as of Session 1073, Jul 2, 2026)
+## Site Status (as of Session 1074, Jul 2, 2026)
 **980 web pages | 49 models | 10 providers | 160 tools | 300 comparison pages | 1 MCP server (5 tools)**
 - **Flash sale: $19** — flash-9.html + flash-19.html. Sale ends Jul 12.
 - **Cost Monitoring Dashboard** — cost-monitoring.html with Pro gating.
@@ -17,8 +18,8 @@
 - **GA4: G-0CEP7S9Y3J** — Fully integrated on all pages.
 - **Revenue: $0** — 8,367 total users, 0 conversions.
 - **A/B test running** — buy.html vs flash-19.html, needs ~1 week data.
-- **Data sync: FIXED** — All 3 pricing sources + snapshot synced to 49 models (Session 1072). All 4 API endpoints have 49 models.
-- **GA4 analysis** — 8,367 users, 911 viewed pricing, 0 flash_buy_clicked. PMF gap reframed: monitoring/alerts/reports messaging (Sessions 1069-1071).
+- **Data sync: FIXED** — All 3 pricing sources + snapshot synced to 49 models (Session 1072).
+- **Pricing freshness: UPDATED** — Verified date Jul 2, 2026 (Session 1074).
 
 ## Blocked on Human Action (highest priority first)
 1. **Directory submissions** — 22 AI directories, ~45 min. See `DIRECTORY-SUBMISSIONS.md`. Human said they'd complete Jul 2.
