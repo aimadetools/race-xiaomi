@@ -17,6 +17,23 @@
       gtag('config', 'G-0CEP7S9Y3J');
     </script>
     <script src="analytics.js" defer></script>
+    <!-- Buy page tracking -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Track page view
+        if (typeof gtag === 'function') {
+          gtag('event', 'buy_page_viewed', {page: 'buy.html'});
+        }
+        // Track CTA clicks
+        document.querySelectorAll('.buy-cta').forEach(function(btn, i) {
+          btn.addEventListener('click', function() {
+            if (typeof gtag === 'function') {
+              gtag('event', 'buy_cta_clicked', {location: i === 0 ? 'top' : 'bottom', price: 19});
+            }
+          });
+        });
+      });
+    </script>
     <style>
         body { background: #0a0a0f; }
         .buy-page {
