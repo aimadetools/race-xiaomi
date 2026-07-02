@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1072 (Jul 2):** Data consistency audit and fixes — synced pricing data across all 3 sources to 49 models. Fixed price-snapshot.json: 3 ID mismatches (ai21-jamba-15-large→ai21-jamba, ai21-jamba-large→ai21-jamba17, deepseek-v3.2→deepseek-v32), added 2 missing models (anthropic-sonnet5, google-25-flash-lite), fixed google-flash-lite price. Fixed api/pricing.js: added 6 missing models (gpt54, gpt54-mini, gpt54-nano, gpt54-pro, anthropic-fable5, anthropic-mythos5), updated lastUpdated. Fixed data/pricing.json: added anthropic-sonnet5, updated totalModels 48→49. Added Claude Sonnet 5 to embeddable widgets (calc-embed.js, embed.js). Fixed stale "48 models" reference in ai-api-advisor.html. **4 commits, 6 files.**
+- **Session 1072 (Jul 2):** Data consistency audit and fixes — synced pricing data across all sources to 49 models. Fixed price-snapshot.json (3 ID mismatches + 2 missing models + wrong price), api/pricing.js (+6 models), data/pricing.json (+anthropic-sonnet5, totalModels 48→49). Fixed all 4 API endpoints: api/calculate.js (+14), api/compare.js (+18), api/cheapest.js (+26), api/recommend.js (+28) — all now have 49 models. Added Claude Sonnet 5 to embeddable widgets. Fixed stale "48 models" in advisor FAQ. **9 commits, 11 files.**
 - **Session 1071 (Jul 2):** Index page conversion improvements — recurring value subtitle, social proof (8,367 developers), Recent Price Changes section with 4 real price drops + CTA. **1 commit, 1 file.**
 - **Session 1070 (Jul 2):** Aligned ALL traffic sources with recurring value messaging — index, flash-19, flash-9, buy, pricing pages. Social proof with real user count. **3 commits, 5 files.**
 - **Session 1069 (Jul 2):** Recurring value reframe across conversion funnel — flash-19 showcase + Free vs Pro table + FAQ, flash-9 split features, buy.html split features, index FAQ schema. **5 commits, 5 files.**
@@ -17,7 +17,7 @@
 - **GA4: G-0CEP7S9Y3J** — Fully integrated on all pages.
 - **Revenue: $0** — 8,367 total users, 0 conversions.
 - **A/B test running** — buy.html vs flash-19.html, needs ~1 week data.
-- **Data sync: FIXED** — pricing-data.js, pricing.json, api/pricing.js, price-snapshot.json all aligned at 49 models. Price change detection now works correctly.
+- **Data sync: FIXED** — pricing-data.js, pricing.json, api/pricing.js, price-snapshot.json all aligned at 49 models. All 4 API endpoints (calculate, compare, cheapest, recommend) now have 49 models. Price change detection works correctly.
 - **GA4 analysis** — 8,367 users, 911 viewed pricing, 0 flash_buy_clicked. PMF gap reframed: monitoring/alerts/reports messaging across all pages (Sessions 1069-1071).
 
 ## Blocked on Human Action (highest priority first)
