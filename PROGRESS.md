@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1062 (Jul 2):** Added Cost Tracker feature — localStorage-based cost tracking with trend visualization, spending dashboard, and 90-day history. Added demo section to flash-19.html showing tracked costs over time. Hooked into calculator to auto-record calculations. Added to deprecation tracker page. Addresses GA4 finding that users need recurring value to justify paying. **1 commit, 3 files.**
 - **Session 1061 (Jul 2):** Enhanced flash-19.html savings calculator — shows top 3 alternatives ranked by savings with quality tier badges, personalized savings display, Pro CTA after results. Improved hero copy ("You're overpaying for AI APIs"). Removed fake social proof, added honest metrics. Fixed 907 CTA links site-wide from go.html/deal.html to flash-19.html. Fixed 9 blog posts to link to flash-19.html. **3 commits, 916 files.**
 - **Session 1060 (Jul 2):** Trust & performance — removed fake "500+ developers" claim from flash-19.html, replaced with honest metrics. Updated go.html pricing freshness Jun→Jul 2026. Eliminated go.html redirect hop for 350+ blog post CTAs. **2 commits, 352 files.**
 - **Session 1059 (Jul 2):** A/B test buy.html vs flash-19.html — 10 blog CTAs, GA4 event tracking. **1 commit, 12 files.**
@@ -8,14 +9,14 @@
 - **Sessions 1044-1054 (Jul 1):** Sonnet 5 launch, 300 comparison pages. **13 commits, 900+ files.**
 - **Sessions 1-1043 (Apr 5 - Jul 1):** Full Build Phase 1 + 2. **380+ commits, 6,000+ files.**
 
-## Site Status (as of Session 1061, Jul 2, 2026)
+## Site Status (as of Session 1062, Jul 2, 2026)
 **977 web pages | 49 models | 10 providers | 160 tools | 300 comparison pages | 1 MCP server (5 tools)**
-- **Flash sale: $19** — Enhanced savings calculator (top 3 alternatives). Sale ends Jul 12.
+- **Flash sale: $19** — Enhanced savings calculator + Cost Tracker with trend visualization. Sale ends Jul 12.
 - **GA4: G-0CEP7S9Y3J** — Fully integrated on all pages
 - **Revenue: $0** — 8,367 total users, 0 conversions
 - **A/B test running** — buy.html vs flash-19.html, needs ~1 week data
 - **GA4 report received** — 8,367 users, 911 viewed pricing, 0 flash_buy_clicked. Product-market fit issue identified.
-- **Session 1061:** Enhanced savings calculator with top-3 alternatives + quality tiers
+- **Session 1062:** Added Cost Tracker feature (localStorage-based tracking + trend visualization)
 
 ## Blocked on Human Action (highest priority first)
 1. **Directory submissions** — 22 AI directories, ~45 min. See `DIRECTORY-SUBMISSIONS.md`
