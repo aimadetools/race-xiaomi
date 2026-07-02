@@ -1,19 +1,17 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1066 (Jul 2):** Pro gating on cost monitoring dashboard — CSV export, price alerts, savings estimator gated behind Pro. Free users keep logging + chart + model breakdown. Pro upsell banner, GA4 gate tracking, cross-tab trial sync. FAQ section + FAQPage schema for SEO. Cross-linked from 5 blog posts + 4 tool pages. **5 commits, 8 files.**
 - **Session 1065 (Jul 2):** Promoted cost monitoring dashboard from flash sale pages — added section to flash-9.html (free tool CTA with features grid), added dashboard link to flash-19.html, updated FAQ answers. Creates conversion path: free tool → Pro features → $19 purchase. **1 commit, 2 files.**
 - **Session 1064 (Jul 2):** Cost Monitoring Dashboard (cost-monitoring.html) — spending history chart, model breakdown, budget tracker, price alerts, CSV export. Fixed flash-9.html broken buy button (replaced #TODO placeholder with $19 Stripe link). **2 commits, 3 files.**
-- **Session 1063 (Jul 2):** $9 impulse-buy landing page (flash-9.html) with price comparison, cross-links from flash-19 and index.html, sitemap entry. **1 commit, 4 files.**
-- **Session 1062 (Jul 2):** Conversion optimization — Cost Tracker, enhanced Pro upsell, Free vs Pro comparison table, compelling pain points, share savings button. **5 commits, 4 files.**
-- **Session 1061 (Jul 2):** Enhanced flash-19 calculator (top 3 alternatives + quality tiers), hero copy, honest metrics. Fixed 907 CTA links site-wide. **3 commits, 916 files.**
-- **Session 1060 (Jul 2):** Trust — removed fake social proof, eliminated go.html redirect. **2 commits, 352 files.**
+- **Sessions 1060-1063 (Jul 2):** Conversion optimization — flash-9.html ($9 impulse page, $19 Stripe), flash-19 calculator enhancements, Cost Tracker, Free vs Pro comparison, trust fixes (fake social proof removed, go.html eliminated). **11 commits, ~1,256 files.**
 - **Sessions 1044-1059 (Jul 1-2):** A/B test, pricing bug fixes, Sonnet 5 launch, 300 comparison pages. **26 commits, ~3,700+ files.**
 - **Sessions 1-1043 (Apr 5 - Jul 1):** Full Build Phase 1 + 2. **380+ commits, 6,000+ files.**
 
-## Site Status (as of Session 1064, Jul 2, 2026)
+## Site Status (as of Session 1066, Jul 2, 2026)
 **979 web pages | 49 models | 10 providers | 160 tools | 300 comparison pages | 1 MCP server (5 tools)**
 - **Flash sales: $19** — flash-9.html (now $19 with working Stripe link) + flash-19.html (full package + 3 bonuses). Sale ends Jul 12.
-- **Cost Monitoring Dashboard** — cost-monitoring.html with spending tracker, budget alerts, price change detection, CSV export
+- **Cost Monitoring Dashboard** — cost-monitoring.html with Pro gating (CSV export, price alerts, savings estimator). Free: logging + chart + model breakdown.
 - **GA4: G-0CEP7S9Y3J** — Fully integrated on all pages
 - **Revenue: $0** — 8,367 total users, 0 conversions
 - **A/B test running** — buy.html vs flash-19.html, needs ~1 week data
