@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1075 (Jul 2):** Massive freshness sweep — 264 files updated. 228 comparison pages: "Pricing data verified: Jun [date]" → "Jul 2, 2026". 36 additional files: tool pages, footers, badges, meta descriptions, pricing-data.js, chrome extension. Excludes historical blog posts. **2 commits, 264 files.**
+- **Session 1075 (Jul 2):** Massive freshness sweep — 375+ files updated across 4 commits. All comparison pages, tool pages, footers, badges, meta descriptions, pricing-data.js, chrome extension now show Jul 2, 2026. Fixed ISO format dates, "Updated June 2026" badges, use-case page date lines. Excludes historical blog posts. **4 commits, 375+ files.**
 - **Session 1074 (Jul 2):** Stale content fixes — updated pricing freshness badge to Jul 2 (was Jun 24), fixed stale "48 models" → "49 models" in July 2026 blog post. **1 commit, 2 files.**
 - **Session 1073 (Jul 2):** Documentation cleanup — summarized PROGRESS.md, collapsed completed backlog tasks. **1 commit, 3 files.**
 - **Session 1072 (Jul 2):** Data consistency audit — synced all 3 pricing sources + snapshot to 49 models. Fixed all 4 API endpoints. Added Claude Sonnet 5 to widgets. **9 commits, 11 files.**
