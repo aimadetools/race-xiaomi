@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1057 (Jul 2):** Fixed critical site-wide pricing bug — A/B test removal (Session 911) left `_abPrice` fallback at $29 on go.html + 35 other pages. All now correctly default to $19 flash sale. Fixed index.html Product schema ($29→$19), go.html sticky bar was-price inconsistency. **1 commit, 36 files.**
+- **Session 1057 (Jul 2):** Fixed critical site-wide pricing bug — A/B test removal (Session 911) left `_abPrice` fallback at $29 on go.html + 35 pages. Fixed 241 blog post CTAs (— HTML entity), 14 content pages with stale "one-time $29", pro.html price display, index.html Product schema ($29→$19), go.html sticky bar was-price. **3 commits, ~1,040 files.**
 - **Session 1056 (Jul 2):** Fixed critical checkout page bugs — undefined `futurePrice` variable causing JS runtime error on go.html, Product schema showing $29 instead of $19, mobile sticky bar and social proof notifications showing wrong price. **1 commit.**
 - **Session 1055 (Jul 2):** Conversion optimization — rebuilt api-cost-audit.html with centralized pricing-data.js, bulk updated 896 HTML files to $19 flash sale. **5 commits, 900+ files.**
 - **Sessions 1044-1054 (Jul 1):** Sonnet 5 launch, 300 comparison pages, quality sweeps. **13 commits, 900+ files.**
