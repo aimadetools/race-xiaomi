@@ -1,12 +1,11 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 978 pages, 49 models, 10 providers, 160 tools, 300 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $9 + $19, enhanced conversion funnel (Session 1063).**
+**Site Status:** 979 pages, 49 models, 10 providers, 160 tools, 300 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, cost monitoring dashboard built (Session 1064).**
 
-### Active Tasks — Conversion (Session 1063)
-- **Create $9 Stripe link** — Currently placeholder in flash-9.html (#TODO-create-9-stripe-link). Create on Stripe Dashboard, paste in flash-9.html and BACKLOG.
+### Active Tasks — Conversion (Session 1064)
 - **Monitor A/B test buy.html vs flash-19.html** — 10 blog CTAs route to buy.html?from=blog_test. Check GA4 for buy_page_viewed / buy_cta_clicked events. Compare conversion rates after ~1 week.
-- **Monitor flash sale funnel** — flash_sale_viewed → flash_savings_calculated → flash_buy_clicked → begin_checkout → purchase. Track $9 vs $19 price point performance.
-- **Monitor $9 page performance** — flash-9.html GA4 events. Compare conversion rate vs flash-19.html.
+- **Monitor flash sale funnel** — flash_sale_viewed → flash_savings_calculated → flash_buy_clicked → begin_checkout → purchase.
+- **Monitor cost monitoring engagement** — track `cost_monitoring_viewed`, `cost_entry_added`, `budget_set`, `cost_data_exported` events. Do users return?
 - **Monitor comparison gate A/B test** — check GA4 for `comparison_gate_clicked` events
 - **Monitor pro-demo.html engagement** — track `pro_demo_generated` → `flash_buy_clicked` → `purchase` funnel
 - **Monitor cost tracker engagement** — track `cost_tracked` events, see if users return to track more calculations
@@ -26,5 +25,5 @@
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1063, Apr 23 - Jul 2)
-Built complete AI API pricing comparison site: 978 pages, 49 models, 160 tools, 300 comparison pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-9.html ($9 impulse buy + price comparison), flash-19.html ($19 flash sale + enhanced savings calculator + cost tracker + Free vs Pro comparison + 3 bonuses), buy.html (A/B test), pro-demo.html (try-before-buy), comparison-gate.js (533 pages gated), 48-hour bonus pack, exit popups, mobile sticky CTA. SEO: sitemap, FAQPage schema, OG/Twitter 100%, GA4 on all pages. **Session 1063: $9 impulse-buy landing page with price comparison section, cross-links from flash-19 and index.html, sitemap entry. Session 1062: Conversion optimization — Cost Tracker, Pro upsell, Free vs Pro comparison, pain points. Session 1061: Enhanced savings calculator with top-3 alternatives + quality tiers. Session 1060: Removed fake social proof, eliminated go.html redirect. Session 1059: A/B test tracking.** Distribution tools ready but blocked on human action. **123+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1064, Apr 23 - Jul 2)
+Built complete AI API pricing comparison site: 979 pages, 49 models, 160 tools, 300 comparison pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-9.html ($19 with price comparison + working Stripe link), flash-19.html ($19 flash sale + enhanced savings calculator + cost tracker + Free vs Pro comparison + 3 bonuses), buy.html (A/B test), pro-demo.html (try-before-buy), comparison-gate.js (533 pages gated), 48-hour bonus pack, exit popups, mobile sticky CTA. **Session 1064: Cost Monitoring Dashboard (cost-monitoring.html) — spending history chart, model breakdown, budget tracker, price change alerts, CSV export. Fixed flash-9.html broken buy button (replaced #TODO with $19 Stripe link).** SEO: sitemap, FAQPage schema, OG/Twitter 100%, GA4 on all pages. Distribution tools ready but blocked on human action. **124+ commits, 6,000+ files.**
