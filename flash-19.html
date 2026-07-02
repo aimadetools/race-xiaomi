@@ -847,10 +847,10 @@
             Flash Sale — Limited Time
         </div>
 
-        <!-- Hero -->
+        <!-- Hero — Session 1061: more personal, benefit-first -->
         <div class="flash-hero">
-            <h1>Save $2,400+/yr on AI APIs.<br>Get the tool for <span class="price-highlight">$19</span>.</h1>
-            <p class="sub">Compare 49 models across 10 providers. Find cheaper alternatives instantly. Get migration code. Lifetime access, one-time payment. <strong style="color:#ef4444;">Price goes to $49 on Jul 12.</strong></p>
+            <h1>You're overpaying for AI APIs.<br>Fix it for <span class="price-highlight">$19</span>.</h1>
+            <p class="sub">Compare 49 models across 10 providers. See your exact savings in 10 seconds. Get the cheapest model for your use case — with migration code ready to paste. <strong style="color:#ef4444;">Price goes to $49 on Jul 12.</strong></p>
         </div>
 
         <!-- Price -->
@@ -906,15 +906,9 @@
             💡 Average user saves <strong style="color:#22c55e;">$2,400+/yr</strong> — $19 pays for itself in <strong style="color:#22c55e;">under 1 day</strong>
         </p>
 
-        <!-- Social proof -->
-        <div class="live-proof" id="live-proof">
-            <span class="live-dot"></span>
-            1,200+ developers compare AI costs on APIpulse every week
-        </div>
-
-        <!-- Why upgrade -->
+        <!-- Social proof — Session 1061: honest metrics -->
         <div style="background:#111827;border:1px solid #1e293b;border-radius:10px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#94a3b8;line-height:1.6;text-align:center;">
-            Join developers who've cut their AI API costs by <strong style="color:#22c55e;">up to 98%</strong> using APIpulse's 49-model comparison engine.
+            49 models · 10 providers · Last updated Jul 2026 · <strong style="color:#22c55e;">Save up to 98%</strong> by switching providers
         </div>
 
         <!-- Real savings examples -->
@@ -943,9 +937,10 @@
             <div style="text-align:center;margin-top:10px;font-size:11px;color:#475569;">Based on 85% input / 15% output token mix. <a href="pro-demo.html" style="color:#818cf8;text-decoration:none;">See your exact savings →</a></div>
         </div>
 
-        <!-- Savings Calculator -->
-        <div class="savings-inline">
-            <h3>💰 See how much you'll save</h3>
+        <!-- Savings Calculator — Enhanced (Session 1061) -->
+        <div class="savings-inline" style="border:2px solid rgba(34,197,94,0.3);background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));">
+            <h3 style="font-size:18px;">💰 Find your cheapest model — see exact savings</h3>
+            <p style="font-size:13px;color:#94a3b8;margin:0 0 16px;text-align:center;">Select your current model and monthly spend. We'll show the top 3 cheaper alternatives.</p>
             <div class="calc-row">
                 <select id="calc-model">
                     <optgroup label="OpenAI">
@@ -958,8 +953,8 @@
                         <option value="gpt-4o-mini">GPT-4o mini ($0.15/$0.60)</option>
                     </optgroup>
                     <optgroup label="Anthropic">
-                        <option value="claude-sonnet-5">Sonnet 5 ($3/$15)</option>
                         <option value="claude-opus-4.8">Opus 4.8 ($5/$25)</option>
+                        <option value="claude-sonnet-5">Sonnet 5 ($3/$15)</option>
                         <option value="claude-sonnet-4.6">Sonnet 4.6 ($3/$15)</option>
                         <option value="claude-haiku">Haiku 4.5 ($1/$5)</option>
                         <option value="claude-fable-5">Fable 5 ($10/$50)</option>
@@ -970,8 +965,9 @@
                         <option value="gemini-3-flash">Gemini 3 Flash ($0.50/$3)</option>
                         <option value="gemini-2.5-pro">Gemini 2.5 Pro ($1.25/$10)</option>
                     </optgroup>
-                    <optgroup label="Other">
+                    <optgroup label="Budget Champions">
                         <option value="deepseek-v4-pro">DeepSeek V4 Pro ($0.44/$0.87)</option>
+                        <option value="deepseek-v4-flash">DeepSeek V4 Flash ($0.14/$0.28)</option>
                         <option value="mistral-large">Mistral Large 3 ($0.50/$1.50)</option>
                         <option value="llama-4-scout">Llama 4 Scout ($0.18/$0.59)</option>
                         <option value="grok-4.3">Grok 4.3 ($1.25/$2.50)</option>
@@ -980,11 +976,19 @@
                 </select>
                 <input type="number" id="calc-spend" value="500" min="1" max="100000" placeholder="$/mo">
             </div>
-            <button onclick="calcSavings()">Calculate My Savings</button>
+            <button onclick="calcSavings()">Show My Savings →</button>
             <div class="savings-result" id="calc-result">
                 <div class="big" id="savings-num">$0/yr</div>
-                <div class="lbl">estimated annual savings</div>
+                <div class="lbl" id="savings-subtitle">estimated annual savings</div>
                 <div class="payback" id="savings-payback"></div>
+                <!-- Top 3 alternatives (populated by JS) -->
+                <div id="alt-list" style="margin-top:16px;text-align:left;"></div>
+                <!-- Pro CTA after results -->
+                <div id="calc-pro-cta" style="display:none;margin-top:16px;padding:14px;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.3);border-radius:10px;text-align:center;">
+                    <div style="font-size:14px;font-weight:700;color:#c7d2fe;margin-bottom:6px;">🔓 See all 49 alternatives ranked by cost</div>
+                    <div style="font-size:12px;color:#94a3b8;margin-bottom:10px;">Pro shows every model with migration code + PDF export</div>
+                    <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;" onclick="if(typeof gtag==='function')gtag('event','flash_buy_clicked',{price:19,location:'calc_results'});">Get Pro — $19 lifetime</a>
+                </div>
             </div>
         </div>
 
@@ -1136,67 +1140,114 @@
     </div>
 
     <script>
-        // Savings calculator
+        // Enhanced Savings Calculator — Session 1061
         var MODELS = {
-            'gpt-5.5':          { input: 5.00,  output: 30.00 },
-            'gpt-5.4':          { input: 2.50,  output: 15.00 },
-            'gpt-5.4-mini':     { input: 0.75,  output: 4.50 },
-            'gpt-5':            { input: 1.25,  output: 10.00 },
-            'gpt-5-mini':       { input: 0.25,  output: 2.00 },
-            'gpt-4o':           { input: 2.50,  output: 10.00 },
-            'gpt-4o-mini':      { input: 0.15,  output: 0.60 },
-            'claude-sonnet-5':  { input: 3.00,  output: 15.00 },
-            'claude-opus-4.8':  { input: 5.00,  output: 25.00 },
-            'claude-sonnet-4.6':{ input: 3.00,  output: 15.00 },
-            'claude-haiku':     { input: 1.00,  output: 5.00 },
-            'claude-fable-5':   { input: 10.00, output: 50.00 },
-            'gemini-3.1-pro':   { input: 2.00,  output: 12.00 },
-            'gemini-3.5-flash': { input: 1.50,  output: 9.00 },
-            'gemini-3-flash':   { input: 0.50,  output: 3.00 },
-            'gemini-2.5-pro':   { input: 1.25,  output: 10.00 },
-            'deepseek-v4-pro':  { input: 0.435, output: 0.87 },
-            'mistral-large':    { input: 0.50,  output: 1.50 },
-            'llama-4-scout':    { input: 0.18,  output: 0.59 },
-            'grok-4.3':         { input: 1.25,  output: 2.50 },
-            'kimi-k2.6':        { input: 0.95,  output: 4.00 }
+            'gpt-5.5':          { name: 'GPT-5.5',          provider: 'OpenAI',     tier: 'Premium', input: 5.00,  output: 30.00 },
+            'gpt-5.4':          { name: 'GPT-5.4',          provider: 'OpenAI',     tier: 'Mid',     input: 2.50,  output: 15.00 },
+            'gpt-5.4-mini':     { name: 'GPT-5.4 mini',     provider: 'OpenAI',     tier: 'Budget',  input: 0.75,  output: 4.50 },
+            'gpt-5':            { name: 'GPT-5',            provider: 'OpenAI',     tier: 'Premium', input: 1.25,  output: 10.00 },
+            'gpt-5-mini':       { name: 'GPT-5 mini',       provider: 'OpenAI',     tier: 'Budget',  input: 0.25,  output: 2.00 },
+            'gpt-4o':           { name: 'GPT-4o',           provider: 'OpenAI',     tier: 'Mid',     input: 2.50,  output: 10.00 },
+            'gpt-4o-mini':      { name: 'GPT-4o mini',      provider: 'OpenAI',     tier: 'Budget',  input: 0.15,  output: 0.60 },
+            'claude-opus-4.8':  { name: 'Claude Opus 4.8',  provider: 'Anthropic',  tier: 'Premium', input: 5.00,  output: 25.00 },
+            'claude-sonnet-5':  { name: 'Claude Sonnet 5',  provider: 'Anthropic',  tier: 'Mid',     input: 3.00,  output: 15.00 },
+            'claude-sonnet-4.6':{ name: 'Claude Sonnet 4.6', provider: 'Anthropic',  tier: 'Mid',     input: 3.00,  output: 15.00 },
+            'claude-haiku':     { name: 'Claude Haiku 4.5',  provider: 'Anthropic',  tier: 'Budget',  input: 1.00,  output: 5.00 },
+            'claude-fable-5':   { name: 'Claude Fable 5',   provider: 'Anthropic',  tier: 'Premium', input: 10.00, output: 50.00 },
+            'gemini-3.1-pro':   { name: 'Gemini 3.1 Pro',   provider: 'Google',     tier: 'Mid',     input: 2.00,  output: 12.00 },
+            'gemini-3.5-flash': { name: 'Gemini 3.5 Flash', provider: 'Google',     tier: 'Mid',     input: 1.50,  output: 9.00 },
+            'gemini-3-flash':   { name: 'Gemini 3 Flash',   provider: 'Google',     tier: 'Budget',  input: 0.50,  output: 3.00 },
+            'gemini-2.5-pro':   { name: 'Gemini 2.5 Pro',   provider: 'Google',     tier: 'Mid',     input: 1.25,  output: 10.00 },
+            'deepseek-v4-pro':  { name: 'DeepSeek V4 Pro',  provider: 'DeepSeek',   tier: 'Budget',  input: 0.435, output: 0.87 },
+            'deepseek-v4-flash':{ name: 'DeepSeek V4 Flash',provider: 'DeepSeek',   tier: 'Budget',  input: 0.14,  output: 0.28 },
+            'mistral-large':    { name: 'Mistral Large 3',  provider: 'Mistral',    tier: 'Budget',  input: 0.50,  output: 1.50 },
+            'llama-4-scout':    { name: 'Llama 4 Scout',    provider: 'Meta',       tier: 'Budget',  input: 0.18,  output: 0.59 },
+            'grok-4.3':         { name: 'Grok 4.3',         provider: 'xAI',        tier: 'Mid',     input: 1.25,  output: 2.50 },
+            'kimi-k2.6':        { name: 'Kimi K2.6',        provider: 'Moonshot',   tier: 'Budget',  input: 0.95,  output: 4.00 }
         };
-        // Cheapest alternative (DeepSeek V4 Flash)
-        var CHEAPEST = { input: 0.14, output: 0.28 };
+
+        var TIER_COLORS = { Premium: '#f59e0b', Mid: '#6366f1', Budget: '#22c55e' };
+
+        function blendedCost(m) { return m.input * 0.85 + m.output * 0.15; }
 
         function calcSavings() {
             var modelKey = document.getElementById('calc-model').value;
             var spend = parseFloat(document.getElementById('calc-spend').value) || 500;
-            var model = MODELS[modelKey];
-            if (!model) return;
+            var cur = MODELS[modelKey];
+            if (!cur) return;
 
-            var blended = model.input * 0.85 + model.output * 0.15;
-            var totalTokens = (spend / blended) * 1000000;
-            var cheapBlended = CHEAPEST.input * 0.85 + CHEAPEST.output * 0.15;
-            var cheapCost = (totalTokens * cheapBlended) / 1000000;
-            var monthlySave = spend - cheapCost;
-            var annualSave = monthlySave * 12;
+            var curBlended = blendedCost(cur);
+            var totalTokens = (spend / curBlended) * 1000000;
+
+            // Calculate cost for every other model and rank by savings
+            var alternatives = [];
+            for (var key in MODELS) {
+                if (key === modelKey) continue;
+                var m = MODELS[key];
+                var cost = (totalTokens * blendedCost(m)) / 1000000;
+                var saveMo = spend - cost;
+                if (saveMo > 0) {
+                    alternatives.push({
+                        key: key, name: m.name, provider: m.provider, tier: m.tier,
+                        cost: cost, saveMo: saveMo, saveYr: saveMo * 12,
+                        pct: Math.round((saveMo / spend) * 100)
+                    });
+                }
+            }
+            alternatives.sort(function(a, b) { return b.saveMo - a.saveMo; });
 
             var result = document.getElementById('calc-result');
             var savingsNum = document.getElementById('savings-num');
+            var subtitle = document.getElementById('savings-subtitle');
             var payback = document.getElementById('savings-payback');
+            var altList = document.getElementById('alt-list');
+            var proCta = document.getElementById('calc-pro-cta');
 
-            if (annualSave <= 0) {
-                savingsNum.textContent = "You're already on the cheapest model";
-                savingsNum.style.fontSize = '20px';
-                payback.textContent = 'Pro still gives you migration code, PDF reports & more →';
+            if (alternatives.length === 0) {
+                savingsNum.textContent = "You're on the cheapest model!";
+                savingsNum.style.fontSize = '22px';
+                subtitle.textContent = 'No cheaper alternatives exist';
+                payback.textContent = 'Pro still gives you migration code, PDF reports & 49-model ranking →';
+                altList.innerHTML = '';
+                proCta.style.display = 'none';
             } else {
+                var best = alternatives[0];
                 savingsNum.style.fontSize = '';
-                var paybackDays = Math.ceil(19 / (monthlySave / 30));
-                var roi = Math.round(annualSave / 19);
-                savingsNum.textContent = '$' + Math.round(annualSave).toLocaleString() + '/yr';
-                payback.textContent = 'Pays for itself in ' + paybackDays + ' day' + (paybackDays !== 1 ? 's' : '') + ' — that\'s a ' + roi + 'x return on $19';
+                savingsNum.textContent = '$' + Math.round(best.saveYr).toLocaleString() + '/yr';
+                subtitle.textContent = 'savings by switching to ' + best.name;
+                var paybackDays = Math.ceil(19 / (best.saveMo / 30));
+                var roi = Math.round(best.saveYr / 19);
+                payback.textContent = '⚡ $19 pays for itself in ' + paybackDays + ' day' + (paybackDays !== 1 ? 's' : '') + ' — ' + roi + 'x return';
+
+                // Show top 3 alternatives
+                var html = '<div style="font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:8px;">Top ' + Math.min(3, alternatives.length) + ' cheaper alternatives:</div>';
+                var show = alternatives.slice(0, 3);
+                for (var i = 0; i < show.length; i++) {
+                    var a = show[i];
+                    var tierColor = TIER_COLORS[a.tier] || '#94a3b8';
+                    var badge = a.tier === 'Budget' ? '💰' : a.tier === 'Mid' ? '⚖️' : '⭐';
+                    html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:#0f172a;border:1px solid #1e293b;border-radius:8px;margin-bottom:6px;">';
+                    html += '<div style="display:flex;align-items:center;gap:8px;">';
+                    html += '<span style="font-size:16px;">' + badge + '</span>';
+                    html += '<div><div style="font-size:13px;font-weight:600;color:#e2e8f0;">' + a.name + '</div>';
+                    html += '<div style="font-size:11px;color:#64748b;">' + a.provider + ' · <span style="color:' + tierColor + ';">' + a.tier + '</span></div></div></div>';
+                    html += '<div style="text-align:right;"><div style="font-size:15px;font-weight:800;color:#22c55e;">-$' + Math.round(a.saveMo).toLocaleString() + '/mo</div>';
+                    html += '<div style="font-size:11px;color:#22c55e;">' + a.pct + '% cheaper</div></div></div>';
+                }
+                if (alternatives.length > 3) {
+                    html += '<div style="text-align:center;font-size:12px;color:#64748b;margin-top:4px;">+' + (alternatives.length - 3) + ' more alternatives in Pro</div>';
+                }
+                altList.innerHTML = html;
+                proCta.style.display = 'block';
             }
+
             result.style.display = 'block';
 
             if (typeof gtag === 'function') {
                 gtag('event', 'flash_savings_calculated', {
                     model: modelKey, spend: spend,
-                    annualSavings: Math.round(annualSave)
+                    annualSavings: Math.round(alternatives.length > 0 ? alternatives[0].saveYr : 0),
+                    alternatives_count: alternatives.length
                 });
             }
         }

@@ -43,3 +43,59 @@ Use these in your A/B test. Route 50% of users to each.
 
 ## Issue — Stripe Link Verification (June 13)
 Status: DONE. All three Stripe links verified — they are correctly configured as one-time payments (not subscriptions). $19, $29, $39 are all lifetime access. No changes needed.
+
+## Issue — GA4 Analytics Report (July 1 request, answered July 2)
+Status: DONE. Here are the full GA4 findings for the period since launch.
+
+### Summary Stats
+- Total users: 8,367
+- Total pageviews: 16,970
+- Total events: 85,762 (across 116 custom event types)
+- Revenue: $0
+
+### Top Events (full funnel)
+| Event | Count | Users |
+|-------|-------|-------|
+| page_view | 16,970 | 8,362 |
+| scroll_depth | 15,591 | 4,036 |
+| session_start | 8,471 | 8,347 |
+| first_visit | 8,322 | 8,345 |
+| ab_popup_timing_assigned | 5,551 | 4,913 |
+| ab_gated_recs_assigned | 5,325 | 4,729 |
+| sticky_cta_shown | 5,316 | 5,284 |
+| ab_pricing_variant_assigned | 5,218 | 4,574 |
+| deprecation_retired_banner_shown | 3,325 | 2,951 |
+| scroll | 2,779 | 2,605 |
+| pricing_view | 934 | 911 |
+| model_comparison_calculated | 374 | 359 |
+| exit_popup_variant_shown | 213 | 201 |
+| pro_exit_popup_shown | 108 | 100 |
+| free_tier_calculated | 107 | 78 |
+| exit_popup_dismissed | 84 | 83 |
+| calculator_used | 25 | 13 |
+| pricing_page_viewed | 23 | 20 |
+| roi_calculator_used | 23 | 20 |
+| pro_button_clicked | 8 | 8 |
+| pro_trial_started | 5 | 3 |
+| trial_started | 1 | 1 |
+| email_subscribe | 1 | 1 |
+
+### Conversion Funnel Analysis
+- 8,362 users land on site
+- 911 (10.9%) view pricing
+- 359 (4.3%) use a calculator
+- 8 (0.1%) click Pro button
+- 5 (0.06%) start a trial
+- 0 (0%) pay
+
+### Specific answers to your questions:
+1. **flash_buy_clicked events:** 0 found. The flash sale pages get views (deal_banner_shown: 1,204 users) but no click-through to purchase.
+2. **comparison_gate_clicked:** comparison_gate_shown has 7 events. Very low.
+3. **Traffic sources:** Majority is organic search and direct. Reddit/community posts got 0 traction (confirmed from previous help responses).
+4. **Device:** Not broken out in the event data you instrumented, but standard GA4 shows it in Audience reports.
+
+### My assessment:
+The problem is NOT traffic (you have 8,367 users). It is NOT awareness of pricing (911 viewed pricing, 359 used calculators). The problem is that nobody wants to pay a recurring subscription for an API pricing calculator they use once. The product is useful as a free tool but does not solve a recurring pain worth paying for. No amount of A/B testing, exit popups, urgency timers, or bonus packs will fix a product-market-fit gap. Consider: is there a version of this product (monitoring costs over time? alerts when prices change? team budget tracking?) that creates recurring value?
+
+## Issue — Directory Submissions (June 28 + July 1)
+Status: PENDING. Will complete today (July 2). Submitting to 5 directories as specified.
