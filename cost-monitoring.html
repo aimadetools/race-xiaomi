@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Cost Monitoring Dashboard — Track Your AI Spending</title>
+    <meta name="description" content="Track your AI API spending over time. Monitor costs across 49 models, detect price changes, set budgets, and optimize your AI spend. Free tool from APIpulse.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="API Cost Monitoring Dashboard — Track Your AI Spending">
+    <meta property="og:description" content="Track your AI API spending over time. Monitor costs across 49 models, detect price changes, set budgets.">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cost-monitoring.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="API Cost Monitoring Dashboard">
+    <meta name="twitter:description" content="Track your AI API spending over time. Monitor costs across 49 models, detect price changes.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/cost-monitoring.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Cost Monitoring Dashboard",
+        "url": "https://getapipulse.com/cost-monitoring.html",
+        "description": "Track your AI API spending over time. Monitor costs across 49 models, detect price changes, set budgets.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <style>
+        body { background: #0a0a0f; }
+        .dashboard {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        .dash-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .dash-header h1 {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 900;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+        }
+        .dash-header p {
+            font-size: 15px;
+            color: #94a3b8;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        .dash-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .stat-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-card .num {
+            font-size: 28px;
+            font-weight: 900;
+            font-family: monospace;
+            color: #22c55e;
+            line-height: 1.2;
+        }
+        .stat-card .num.warn { color: #f59e0b; }
+        .stat-card .num.danger { color: #ef4444; }
+        .stat-card .lbl {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .section {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .section h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .form-row select, .form-row input {
+            flex: 1;
+            min-width: 120px;
+            padding: 10px 12px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: #e2e8f0;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        .form-row select:focus, .form-row input:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+        }
+        .btn-primary:hover { background: #4f46e5; }
+        .btn-green {
+            background: #22c55e;
+            color: white;
+        }
+        .btn-green:hover { background: #16a34a; }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #334155;
+            color: #94a3b8;
+        }
+        .btn-outline:hover { border-color: #6366f1; color: #e2e8f0; }
+        .btn-danger {
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.3);
+            color: #ef4444;
+        }
+        .btn-danger:hover { background: rgba(239,68,68,0.2); }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            margin-bottom: 16px;
+        }
+        .chart-container canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #64748b;
+        }
+        .empty-state .icon { font-size: 40px; margin-bottom: 12px; }
+        .empty-state p { font-size: 14px; line-height: 1.6; }
+        .entry-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .entry-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        .entry-item:last-child { border-bottom: none; }
+        .entry-info .model {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        .entry-info .meta {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+        .entry-cost {
+            font-size: 16px;
+            font-weight: 800;
+            color: #22c55e;
+            font-family: monospace;
+        }
+        .entry-delete {
+            background: none;
+            border: none;
+            color: #475569;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        .entry-delete:hover { color: #ef4444; background: rgba(239,68,68,0.1); }
+        .budget-bar {
+            height: 8px;
+            background: #1e293b;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 12px 0;
+        }
+        .budget-fill {
+            height: 100%;
+            background: #22c55e;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        .budget-fill.warn { background: #f59e0b; }
+        .budget-fill.danger { background: #ef4444; }
+        .model-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .model-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+        }
+        .model-row .name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        .model-row .pct {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        .model-row .bar {
+            width: 100%;
+            height: 4px;
+            background: #1e293b;
+            border-radius: 2px;
+            margin-top: 6px;
+            overflow: hidden;
+        }
+        .model-row .bar-fill {
+            height: 100%;
+            background: #6366f1;
+            border-radius: 2px;
+        }
+        .alert-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px;
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .alert-item .icon { font-size: 18px; flex-shrink: 0; }
+        .alert-item .text {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+        .alert-item .text strong { color: #f1f5f9; }
+        .alert-item.price-drop { border-color: rgba(34,197,94,0.3); }
+        .alert-item.price-up { border-color: rgba(239,68,68,0.3); }
+        .tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 4px;
+        }
+        .tab {
+            flex: 1;
+            padding: 8px 12px;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .tab.active {
+            background: #6366f1;
+            color: white;
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .export-bar {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-bottom: 16px;
+        }
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #22c55e;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        @media (max-width: 640px) {
+            .dashboard { padding: 24px 16px 60px; }
+            .dash-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .stat-card .num { font-size: 22px; }
+            .form-row { flex-direction: column; }
+            .model-breakdown { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <div class="dash-header">
+            <h1>📊 API Cost Monitoring</h1>
+            <p>Track your AI API spending over time. Log costs, set budgets, detect price changes, and optimize your spend.</p>
+        </div>
+
+        <!-- Summary Stats -->
+        <div class="dash-grid" id="stats-grid">
+            <div class="stat-card">
+                <div class="num" id="stat-total">$0</div>
+                <div class="lbl">Total Spent</div>
+            </div>
+            <div class="stat-card">
+                <div class="num" id="stat-month">$0</div>
+                <div class="lbl">This Month</div>
+            </div>
+            <div class="stat-card">
+                <div class="num" id="stat-daily">$0</div>
+                <div class="lbl">Daily Average</div>
+            </div>
+            <div class="stat-card">
+                <div class="num" id="stat-entries">0</div>
+                <div class="lbl">Entries Logged</div>
+            </div>
+        </div>
+
+        <!-- Budget Tracker -->
+        <div class="section" id="budget-section">
+            <h2>🎯 Monthly Budget</h2>
+            <div class="form-row">
+                <input type="number" id="budget-input" placeholder="Set monthly budget ($)" min="0" step="10">
+                <button class="btn btn-primary" onclick="setBudget()">Set Budget</button>
+            </div>
+            <div id="budget-display" style="display:none;">
+                <div style="display:flex;justify-content:space-between;font-size:13px;color:#94a3b8;margin-bottom:4px;">
+                    <span id="budget-spent">$0 spent</span>
+                    <span id="budget-limit">of $0</span>
+                </div>
+                <div class="budget-bar">
+                    <div class="budget-fill" id="budget-fill" style="width:0%"></div>
+                </div>
+                <div id="budget-status" style="font-size:12px;color:#64748b;text-align:center;"></div>
+            </div>
+        </div>
+
+        <!-- Add Entry -->
+        <div class="section">
+            <h2>➕ Log API Spend</h2>
+            <div class="form-row">
+                <select id="entry-model">
+                    <optgroup label="OpenAI">
+                        <option value="GPT-5.5">GPT-5.5</option>
+                        <option value="GPT-5.4">GPT-5.4</option>
+                        <option value="GPT-5.4 mini">GPT-5.4 mini</option>
+                        <option value="GPT-5" selected>GPT-5</option>
+                        <option value="GPT-5 mini">GPT-5 mini</option>
+                        <option value="GPT-4o">GPT-4o</option>
+                        <option value="GPT-4o mini">GPT-4o mini</option>
+                    </optgroup>
+                    <optgroup label="Anthropic">
+                        <option value="Claude Opus 4.8">Claude Opus 4.8</option>
+                        <option value="Claude Sonnet 5">Claude Sonnet 5</option>
+                        <option value="Claude Sonnet 4.6">Claude Sonnet 4.6</option>
+                        <option value="Claude Haiku 4.5">Claude Haiku 4.5</option>
+                        <option value="Claude Fable 5">Claude Fable 5</option>
+                    </optgroup>
+                    <optgroup label="Google">
+                        <option value="Gemini 3.1 Pro">Gemini 3.1 Pro</option>
+                        <option value="Gemini 3.5 Flash">Gemini 3.5 Flash</option>
+                        <option value="Gemini 3 Flash">Gemini 3 Flash</option>
+                        <option value="Gemini 2.5 Pro">Gemini 2.5 Pro</option>
+                    </optgroup>
+                    <optgroup label="Budget Champions">
+                        <option value="DeepSeek V4 Pro">DeepSeek V4 Pro</option>
+                        <option value="DeepSeek V4 Flash">DeepSeek V4 Flash</option>
+                        <option value="Mistral Large 3">Mistral Large 3</option>
+                        <option value="Llama 4 Scout">Llama 4 Scout</option>
+                        <option value="Grok 4.3">Grok 4.3</option>
+                        <option value="Kimi K2.6">Kimi K2.6</option>
+                    </optgroup>
+                </select>
+                <input type="number" id="entry-tokens" placeholder="Tokens (K)" min="0" step="100">
+                <input type="number" id="entry-cost" placeholder="Cost ($)" min="0" step="0.01">
+            </div>
+            <div class="form-row">
+                <input type="date" id="entry-date" style="max-width:180px;">
+                <button class="btn btn-green" onclick="addEntry()">Add Entry</button>
+                <button class="btn btn-outline" onclick="quickAdd()">Quick Add</button>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="section">
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('chart')">📈 Chart</button>
+                <button class="tab" onclick="switchTab('history')">📋 History</button>
+                <button class="tab" onclick="switchTab('models')">🧮 Models</button>
+                <button class="tab" onclick="switchTab('alerts')">🔔 Alerts</button>
+            </div>
+
+            <!-- Chart Tab -->
+            <div class="tab-content active" id="tab-chart">
+                <div class="export-bar">
+                    <button class="btn btn-outline" onclick="exportCSV()">📥 Export CSV</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="spending-chart"></canvas>
+                </div>
+                <div id="chart-empty" class="empty-state" style="display:none;">
+                    <div class="icon">📊</div>
+                    <p>No spending data yet.<br>Log your first API spend above to see trends.</p>
+                </div>
+            </div>
+
+            <!-- History Tab -->
+            <div class="tab-content" id="tab-history">
+                <div class="export-bar">
+                    <button class="btn btn-outline" onclick="exportCSV()">📥 Export CSV</button>
+                    <button class="btn btn-danger" onclick="clearAll()">🗑 Clear All</button>
+                </div>
+                <div class="entry-list" id="entry-list">
+                    <div class="empty-state" id="history-empty">
+                        <div class="icon">📋</div>
+                        <p>No entries yet. Start logging your API spend above.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Models Tab -->
+            <div class="tab-content" id="tab-models">
+                <div class="model-breakdown" id="model-breakdown">
+                    <div class="empty-state" id="models-empty">
+                        <div class="icon">🧮</div>
+                        <p>No model data yet. Log spends to see your model breakdown.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts Tab -->
+            <div class="tab-content" id="tab-alerts">
+                <div id="alerts-list">
+                    <div class="empty-state" id="alerts-empty">
+                        <div class="icon">🔔</div>
+                        <p>Price change alerts will appear here when model prices change.<br>
+                        <span style="font-size:12px;color:#475569;">Alerts are checked automatically when you visit this page.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cross-links -->
+        <div class="section" style="text-align:center;">
+            <p style="font-size:14px;color:#94a3b8;margin-bottom:12px;">Want to compare costs across all 49 models?</p>
+            <a href="/" style="display:inline-block;padding:10px 24px;background:#6366f1;color:white;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;margin-right:8px;">📊 Cost Calculator</a>
+            <a href="/flash-19.html" style="display:inline-block;padding:10px 24px;background:#22c55e;color:white;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">🚀 Get Pro — $19</a>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // ---- Storage ----
+        var STORAGE_KEY = 'apipulse_cost_entries';
+        var BUDGET_KEY = 'apipulse_monthly_budget';
+        var PRICES_KEY = 'apipulse_model_prices';
+        var CURRENT_PRICES = {
+            'GPT-5.5': 5.00, 'GPT-5.4': 2.50, 'GPT-5.4 mini': 0.75,
+            'GPT-5': 1.25, 'GPT-5 mini': 0.25, 'GPT-4o': 2.50, 'GPT-4o mini': 0.15,
+            'Claude Opus 4.8': 5.00, 'Claude Sonnet 5': 3.00, 'Claude Sonnet 4.6': 3.00,
+            'Claude Haiku 4.5': 1.00, 'Claude Fable 5': 10.00,
+            'Gemini 3.1 Pro': 2.00, 'Gemini 3.5 Flash': 1.50, 'Gemini 3 Flash': 0.50,
+            'Gemini 2.5 Pro': 1.25,
+            'DeepSeek V4 Pro': 0.435, 'DeepSeek V4 Flash': 0.14,
+            'Mistral Large 3': 0.50, 'Llama 4 Scout': 0.18,
+            'Grok 4.3': 1.25, 'Kimi K2.6': 0.95
+        };
+
+        function getEntries() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+            catch(e) { return []; }
+        }
+        function saveEntries(entries) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+        }
+        function getBudget() {
+            return parseFloat(localStorage.getItem(BUDGET_KEY)) || 0;
+        }
+        function setBudgetVal(val) {
+            localStorage.setItem(BUDGET_KEY, val);
+        }
+        function getSavedPrices() {
+            try { return JSON.parse(localStorage.getItem(PRICES_KEY)) || {}; }
+            catch(e) { return {}; }
+        }
+        function savePrices(prices) {
+            localStorage.setItem(PRICES_KEY, JSON.stringify(prices));
+        }
+
+        // ---- Init ----
+        document.getElementById('entry-date').value = new Date().toISOString().split('T')[0];
+        var budget = getBudget();
+        if (budget > 0) {
+            document.getElementById('budget-input').value = budget;
+        }
+
+        // ---- GA4 events ----
+        function trackEvent(name, params) {
+            if (typeof gtag === 'function') gtag('event', name, params);
+        }
+        trackEvent('cost_monitoring_viewed', {});
+
+        // ---- Notifications ----
+        function notify(msg) {
+            var el = document.getElementById('notification');
+            el.textContent = msg;
+            el.classList.add('show');
+            setTimeout(function() { el.classList.remove('show'); }, 2500);
+        }
+
+        // ---- Add Entry ----
+        window.addEntry = function() {
+            var model = document.getElementById('entry-model').value;
+            var tokens = parseFloat(document.getElementById('entry-tokens').value) || 0;
+            var cost = parseFloat(document.getElementById('entry-cost').value) || 0;
+            var date = document.getElementById('entry-date').value;
+
+            if (cost <= 0) { notify('⚠️ Enter a cost greater than $0'); return; }
+            if (!date) { notify('⚠️ Select a date'); return; }
+
+            var entries = getEntries();
+            entries.push({
+                id: Date.now(),
+                model: model,
+                tokens: tokens,
+                cost: cost,
+                date: date,
+                ts: new Date(date).getTime()
+            });
+            saveEntries(entries);
+
+            // Clear inputs
+            document.getElementById('entry-tokens').value = '';
+            document.getElementById('entry-cost').value = '';
+
+            trackEvent('cost_entry_added', { model: model, cost: cost });
+            notify('✅ Logged $' + cost.toFixed(2) + ' for ' + model);
+            refreshAll();
+        };
+
+        window.quickAdd = function() {
+            document.getElementById('entry-cost').value = (Math.random() * 5 + 0.5).toFixed(2);
+            document.getElementById('entry-tokens').value = Math.floor(Math.random() * 500 + 100);
+            addEntry();
+        };
+
+        // ---- Delete Entry ----
+        window.deleteEntry = function(id) {
+            var entries = getEntries().filter(function(e) { return e.id !== id; });
+            saveEntries(entries);
+            trackEvent('cost_entry_deleted', {});
+            refreshAll();
+        };
+
+        // ---- Clear All ----
+        window.clearAll = function() {
+            if (!confirm('Clear all spending data? This cannot be undone.')) return;
+            saveEntries([]);
+            trackEvent('cost_data_cleared', {});
+            refreshAll();
+            notify('🗑 All data cleared');
+        };
+
+        // ---- Budget ----
+        window.setBudget = function() {
+            var val = parseFloat(document.getElementById('budget-input').value) || 0;
+            setBudgetVal(val);
+            trackEvent('budget_set', { amount: val });
+            refreshAll();
+            notify(val > 0 ? '🎯 Budget set to $' + val + '/mo' : 'Budget cleared');
+        };
+
+        // ---- Tabs ----
+        window.switchTab = function(name) {
+            document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+            document.querySelectorAll('.tab-content').forEach(function(t) { t.classList.remove('active'); });
+            event.target.classList.add('active');
+            document.getElementById('tab-' + name).classList.add('active');
+            if (name === 'chart') drawChart();
+        };
+
+        // ---- Export ----
+        window.exportCSV = function() {
+            var entries = getEntries();
+            if (!entries.length) { notify('⚠️ No data to export'); return; }
+            var csv = 'Date,Model,Tokens (K),Cost ($)\n';
+            entries.sort(function(a,b) { return a.ts - b.ts; }).forEach(function(e) {
+                csv += e.date + ',' + e.model + ',' + e.tokens + ',' + e.cost.toFixed(2) + '\n';
+            });
+            var blob = new Blob([csv], {type: 'text/csv'});
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'apipulse-spending-' + new Date().toISOString().split('T')[0] + '.csv';
+            a.click();
+            trackEvent('cost_data_exported', { entries: entries.length });
+            notify('📥 CSV exported (' + entries.length + ' entries)');
+        };
+
+        // ---- Refresh All ----
+        function refreshAll() {
+            var entries = getEntries();
+            entries.sort(function(a,b) { return b.ts - a.ts; });
+            var now = new Date();
+            var thisMonth = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0');
+
+            // Stats
+            var total = entries.reduce(function(s,e) { return s + e.cost; }, 0);
+            var monthEntries = entries.filter(function(e) { return e.date.substring(0,7) === thisMonth; });
+            var monthTotal = monthEntries.reduce(function(s,e) { return s + e.cost; }, 0);
+
+            var days = {};
+            entries.forEach(function(e) { days[e.date] = true; });
+            var uniqueDays = Object.keys(days).length || 1;
+            var daily = total / uniqueDays;
+
+            document.getElementById('stat-total').textContent = '$' + total.toFixed(2);
+            document.getElementById('stat-month').textContent = '$' + monthTotal.toFixed(2);
+            document.getElementById('stat-daily').textContent = '$' + daily.toFixed(2);
+            document.getElementById('stat-entries').textContent = entries.length;
+
+            // Budget
+            var budget = getBudget();
+            var budgetDisplay = document.getElementById('budget-display');
+            if (budget > 0) {
+                budgetDisplay.style.display = 'block';
+                var pct = Math.min((monthTotal / budget) * 100, 100);
+                document.getElementById('budget-spent').textContent = '$' + monthTotal.toFixed(2) + ' spent';
+                document.getElementById('budget-limit').textContent = 'of $' + budget;
+                var fill = document.getElementById('budget-fill');
+                fill.style.width = pct + '%';
+                fill.className = 'budget-fill' + (pct > 90 ? ' danger' : pct > 70 ? ' warn' : '');
+                var statMonth = document.getElementById('stat-month');
+                statMonth.className = 'num' + (pct > 90 ? ' danger' : pct > 70 ? ' warn' : '');
+
+                var remaining = budget - monthTotal;
+                var status = document.getElementById('budget-status');
+                if (remaining <= 0) {
+                    status.textContent = '🚨 Over budget by $' + Math.abs(remaining).toFixed(2);
+                    status.style.color = '#ef4444';
+                } else {
+                    status.textContent = '💰 $' + remaining.toFixed(2) + ' remaining this month';
+                    status.style.color = '#22c55e';
+                }
+            } else {
+                budgetDisplay.style.display = 'none';
+            }
+
+            // History
+            var listEl = document.getElementById('entry-list');
+            var emptyEl = document.getElementById('history-empty');
+            if (entries.length === 0) {
+                listEl.innerHTML = '';
+                listEl.appendChild(emptyEl);
+                emptyEl.style.display = 'block';
+            } else {
+                emptyEl.style.display = 'none';
+                var html = '';
+                entries.slice(0, 100).forEach(function(e) {
+                    html += '<div class="entry-item">';
+                    html += '<div class="entry-info"><div class="model">' + e.model + '</div>';
+                    html += '<div class="meta">' + e.date + (e.tokens ? ' · ' + e.tokens + 'K tokens' : '') + '</div></div>';
+                    html += '<div style="display:flex;align-items:center;gap:8px;">';
+                    html += '<div class="entry-cost">$' + e.cost.toFixed(2) + '</div>';
+                    html += '<button class="entry-delete" onclick="deleteEntry(' + e.id + ')" title="Delete">✕</button>';
+                    html += '</div></div>';
+                });
+                listEl.innerHTML = html;
+            }
+
+            // Model breakdown
+            var modelSpend = {};
+            entries.forEach(function(e) {
+                modelSpend[e.model] = (modelSpend[e.model] || 0) + e.cost;
+            });
+            var modelEl = document.getElementById('model-breakdown');
+            var modelEmpty = document.getElementById('models-empty');
+            var modelKeys = Object.keys(modelSpend).sort(function(a,b) { return modelSpend[b] - modelSpend[a]; });
+            if (modelKeys.length === 0) {
+                modelEl.innerHTML = '';
+                modelEl.appendChild(modelEmpty);
+                modelEmpty.style.display = 'block';
+            } else {
+                modelEmpty.style.display = 'none';
+                var maxSpend = modelSpend[modelKeys[0]] || 1;
+                var mhtml = '';
+                modelKeys.forEach(function(m) {
+                    var pct = (modelSpend[m] / total * 100).toFixed(1);
+                    var barPct = (modelSpend[m] / maxSpend * 100).toFixed(0);
+                    mhtml += '<div class="model-row">';
+                    mhtml += '<div style="flex:1;"><div style="display:flex;justify-content:space-between;"><span class="name">' + m + '</span><span class="pct">$' + modelSpend[m].toFixed(2) + ' (' + pct + '%)</span></div>';
+                    mhtml += '<div class="bar"><div class="bar-fill" style="width:' + barPct + '%"></div></div></div></div>';
+                });
+                modelEl.innerHTML = mhtml;
+            }
+
+            // Price alerts
+            checkPriceAlerts();
+
+            // Chart
+            drawChart();
+        }
+
+        // ---- Price Alerts ----
+        function checkPriceAlerts() {
+            var saved = getSavedPrices();
+            var alerts = [];
+            var hasChanges = false;
+
+            Object.keys(CURRENT_PRICES).forEach(function(model) {
+                if (saved[model] !== undefined && saved[model] !== CURRENT_PRICES[model]) {
+                    var diff = CURRENT_PRICES[model] - saved[model];
+                    var pct = ((diff / saved[model]) * 100).toFixed(1);
+                    alerts.push({
+                        model: model,
+                        oldPrice: saved[model],
+                        newPrice: CURRENT_PRICES[model],
+                        diff: diff,
+                        pct: pct,
+                        type: diff < 0 ? 'drop' : 'up'
+                    });
+                    hasChanges = true;
+                }
+            });
+
+            // Save current prices for next comparison
+            savePrices(CURRENT_PRICES);
+
+            var listEl = document.getElementById('alerts-list');
+            var emptyEl = document.getElementById('alerts-empty');
+
+            if (alerts.length === 0) {
+                listEl.innerHTML = '';
+                listEl.appendChild(emptyEl);
+                emptyEl.style.display = 'block';
+                if (!hasChanges && Object.keys(saved).length > 0) {
+                    emptyEl.querySelector('p').innerHTML = '✅ No price changes detected. All models at last known prices.';
+                }
+            } else {
+                emptyEl.style.display = 'none';
+                var ahtml = '';
+                alerts.forEach(function(a) {
+                    var cls = a.type === 'drop' ? 'price-drop' : 'price-up';
+                    var icon = a.type === 'drop' ? '📉' : '📈';
+                    var color = a.type === 'drop' ? '#22c55e' : '#ef4444';
+                    ahtml += '<div class="alert-item ' + cls + '">';
+                    ahtml += '<div class="icon">' + icon + '</div>';
+                    ahtml += '<div class="text"><strong>' + a.model + '</strong> price ' + (a.type === 'drop' ? 'dropped' : 'increased') + ': ';
+                    ahtml += '<span style="color:#64748b;text-decoration:line-through;">$' + a.oldPrice.toFixed(2) + '</span> → ';
+                    ahtml += '<span style="color:' + color + ';font-weight:700;">$' + a.newPrice.toFixed(2) + '</span>';
+                    ahtml += ' (<span style="color:' + color + ';">' + a.pct + '%</span>)</div></div>';
+                });
+                listEl.innerHTML = ahtml;
+                trackEvent('price_alerts_shown', { count: alerts.length });
+            }
+        }
+
+        // ---- Chart (Canvas) ----
+        function drawChart() {
+            var entries = getEntries();
+            var canvas = document.getElementById('spending-chart');
+            var emptyChart = document.getElementById('chart-empty');
+
+            if (entries.length === 0) {
+                canvas.style.display = 'none';
+                emptyChart.style.display = 'block';
+                return;
+            }
+            canvas.style.display = 'block';
+            emptyChart.style.display = 'none';
+
+            // Aggregate by date
+            var dailySpend = {};
+            entries.forEach(function(e) {
+                dailySpend[e.date] = (dailySpend[e.date] || 0) + e.cost;
+            });
+
+            // Get last 30 days
+            var dates = Object.keys(dailySpend).sort();
+            var last30 = [];
+            var now = new Date();
+            for (var i = 29; i >= 0; i--) {
+                var d = new Date(now);
+                d.setDate(d.getDate() - i);
+                var key = d.toISOString().split('T')[0];
+                last30.push({ date: key, spend: dailySpend[key] || 0 });
+            }
+
+            var maxSpend = Math.max.apply(null, last30.map(function(d) { return d.spend; })) || 1;
+            var ctx = canvas.getContext('2d');
+            var dpr = window.devicePixelRatio || 1;
+            var rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.scale(dpr, dpr);
+            var W = rect.width;
+            var H = rect.height;
+
+            ctx.clearRect(0, 0, W, H);
+
+            var padding = { top: 20, right: 20, bottom: 40, left: 50 };
+            var chartW = W - padding.left - padding.right;
+            var chartH = H - padding.top - padding.bottom;
+            var barW = Math.max(chartW / 30 - 2, 2);
+
+            // Grid lines
+            ctx.strokeStyle = '#1e293b';
+            ctx.lineWidth = 1;
+            for (var g = 0; g <= 4; g++) {
+                var gy = padding.top + (chartH / 4) * g;
+                ctx.beginPath();
+                ctx.moveTo(padding.left, gy);
+                ctx.lineTo(W - padding.right, gy);
+                ctx.stroke();
+
+                // Y-axis labels
+                ctx.fillStyle = '#64748b';
+                ctx.font = '11px monospace';
+                ctx.textAlign = 'right';
+                var val = maxSpend - (maxSpend / 4) * g;
+                ctx.fillText('$' + val.toFixed(val >= 10 ? 0 : 2), padding.left - 8, gy + 4);
+            }
+
+            // Bars
+            last30.forEach(function(d, i) {
+                var x = padding.left + (chartW / 30) * i + (chartW / 30 - barW) / 2;
+                var barH = (d.spend / maxSpend) * chartH;
+                var y = padding.top + chartH - barH;
+
+                // Bar gradient
+                var grad = ctx.createLinearGradient(x, y, x, y + barH);
+                grad.addColorStop(0, '#6366f1');
+                grad.addColorStop(1, '#4f46e5');
+                ctx.fillStyle = d.spend > 0 ? grad : '#1e293b';
+                ctx.beginPath();
+                ctx.roundRect(x, y, barW, barH || 2, 2);
+                ctx.fill();
+
+                // X-axis labels (every 5th day)
+                if (i % 5 === 0 || i === 29) {
+                    ctx.fillStyle = '#64748b';
+                    ctx.font = '10px monospace';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(d.date.substring(5), x + barW / 2, H - padding.bottom + 16);
+                }
+            });
+
+            // Cumulative line
+            ctx.strokeStyle = '#22c55e';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            var cumulative = 0;
+            last30.forEach(function(d, i) {
+                cumulative += d.spend;
+                var x = padding.left + (chartW / 30) * i + (chartW / 30) / 2;
+                var y = padding.top + chartH - (cumulative / (maxSpend * 15)) * chartH;
+                y = Math.max(padding.top, Math.min(padding.top + chartH, y));
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+
+            // Legend
+            ctx.fillStyle = '#6366f1';
+            ctx.fillRect(W - 160, 8, 12, 12);
+            ctx.fillStyle = '#94a3b8';
+            ctx.font = '11px sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText('Daily spend', W - 144, 18);
+            ctx.fillStyle = '#22c55e';
+            ctx.fillRect(W - 160, 24, 12, 12);
+            ctx.fillStyle = '#94a3b8';
+            ctx.fillText('Cumulative', W - 144, 34);
+        }
+
+        // ---- Responsive chart ----
+        var resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(drawChart, 200);
+        });
+
+        // ---- Initial render ----
+        refreshAll();
+    })();
+    </script>
+</body>
+</html>
