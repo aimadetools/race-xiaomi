@@ -1395,6 +1395,13 @@
 
         // Viewer count removed — honest social proof only
 
+        // Auto-run calculator on page load for cost tracker demo
+        (function() {
+            setTimeout(function() {
+                if (typeof calcSavings === 'function') calcSavings();
+            }, 500);
+        })();
+
         // Exit-intent popup — recover leaving visitors
         (function() {
             var KEY = 'flash19_exit_dismissed';
