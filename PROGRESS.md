@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1065 (Jul 2):** Promoted cost monitoring dashboard from flash sale pages — added section to flash-9.html (free tool CTA with features grid), added dashboard link to flash-19.html, updated FAQ answers. Creates conversion path: free tool → Pro features → $19 purchase. **1 commit, 2 files.**
 - **Session 1064 (Jul 2):** Cost Monitoring Dashboard (cost-monitoring.html) — spending history chart, model breakdown, budget tracker, price alerts, CSV export. Fixed flash-9.html broken buy button (replaced #TODO placeholder with $19 Stripe link). **2 commits, 3 files.**
 - **Session 1063 (Jul 2):** $9 impulse-buy landing page (flash-9.html) with price comparison, cross-links from flash-19 and index.html, sitemap entry. **1 commit, 4 files.**
 - **Session 1062 (Jul 2):** Conversion optimization — Cost Tracker, enhanced Pro upsell, Free vs Pro comparison table, compelling pain points, share savings button. **5 commits, 4 files.**
