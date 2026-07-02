@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1061 (Jul 2):** Enhanced flash-19.html savings calculator — shows top 3 alternatives ranked by savings with quality tier badges, personalized savings display, Pro CTA after results. Improved hero copy ("You're overpaying for AI APIs"). Removed fake social proof, added honest metrics. **1 commit.**
+- **Session 1061 (Jul 2):** Enhanced flash-19.html savings calculator — shows top 3 alternatives ranked by savings with quality tier badges, personalized savings display, Pro CTA after results. Improved hero copy ("You're overpaying for AI APIs"). Removed fake social proof, added honest metrics. Fixed 907 CTA links site-wide from go.html/deal.html to flash-19.html. Fixed 9 blog posts to link to flash-19.html. **3 commits, 916 files.**
 - **Session 1060 (Jul 2):** Trust & performance — removed fake "500+ developers" claim from flash-19.html, replaced with honest metrics. Updated go.html pricing freshness Jun→Jul 2026. Eliminated go.html redirect hop for 350+ blog post CTAs. **2 commits, 352 files.**
 - **Session 1059 (Jul 2):** A/B test buy.html vs flash-19.html — 10 blog CTAs, GA4 event tracking. **1 commit, 12 files.**
 - **Sessions 1055-1058 (Jul 2):** Critical pricing bug fixes ($29→$19), conversion optimization. **12 commits, ~2,800 files.**
