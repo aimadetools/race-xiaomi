@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1073 (Jul 2):** Documentation cleanup — summarized PROGRESS.md (collapse old sessions), collapsed completed backlog tasks into summary lines. All content/conversion tasks complete. Distribution blocked on human action. **1 commit, 3 files.**
 - **Session 1072 (Jul 2):** Data consistency audit and fixes — synced pricing data across all sources to 49 models. Fixed price-snapshot.json (3 ID mismatches + 2 missing models + wrong price), api/pricing.js (+6 models), data/pricing.json (+anthropic-sonnet5, totalModels 48→49). Fixed all 4 API endpoints: api/calculate.js (+14), api/compare.js (+18), api/cheapest.js (+26), api/recommend.js (+28) — all now have 49 models. Added Claude Sonnet 5 to embeddable widgets. Fixed stale "48 models" in advisor FAQ. **9 commits, 11 files.**
 - **Session 1071 (Jul 2):** Index page conversion improvements — recurring value subtitle, social proof (8,367 developers), Recent Price Changes section with 4 real price drops + CTA. **1 commit, 1 file.**
 - **Session 1070 (Jul 2):** Aligned ALL traffic sources with recurring value messaging — index, flash-19, flash-9, buy, pricing pages. Social proof with real user count. **3 commits, 5 files.**
