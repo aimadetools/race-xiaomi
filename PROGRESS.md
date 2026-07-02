@@ -1,12 +1,13 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1078 (Jul 2):** Pro conversion fix — index.html "Why Pro" section now leads with recurring value (Cost Monitoring, Price Alerts, Weekly Reports) instead of generic features. Pro pricing card and FAQ updated with linked monitoring tools. Addresses GA4 finding: 0 flash_buy_clicked, $0 revenue. **1 commit, 1 file.**
-- **Sessions 1075-1077 (Jul 2):** Data audit + freshness sweep — pricing.json fixed, 375+ files updated. All pages show Jul 2, 2026. **6 commits, 375+ files.**
+- **Session 1079 (Jul 2):** Fix malformed duplicate "Why Pro" CTA section in index.html — removed 5 lines of broken HTML (unclosed divs from duplicate block). **1 commit, 1 file.**
+- **Session 1078 (Jul 2):** Pro conversion fix — index.html "Why Pro" section now leads with recurring value (Cost Monitoring, Price Alerts, Weekly Reports) instead of generic features. **1 commit, 1 file.**
+- **Sessions 1075-1078 (Jul 2):** Data audit + freshness sweep + Pro conversion fix. pricing.json fixed, 375+ files updated, index.html conversion funnel improved. **8 commits, 375+ files.**
 - **Sessions 1060-1074 (Jul 1-2):** Cost monitoring, price alerts, cross-linking, conversion optimization. Full funnel reframe around recurring value. **~34 commits, ~46 files.**
 - **Sessions 1-1059 (Apr 5 - Jul 1):** Full Build Phase 1 + 2. **380+ commits, 6,000+ files.**
 
-## Site Status (as of Session 1078, Jul 2, 2026)
+## Site Status (as of Session 1079, Jul 2, 2026)
 **980 web pages | 49 models | 10 providers | 160 tools | 300 comparison pages | 1 MCP server (5 tools)**
 - **Flash sale: $19** — flash-9.html + flash-19.html. Sale ends Jul 12.
 - **Cost Monitoring Dashboard** — cost-monitoring.html with Pro gating.
