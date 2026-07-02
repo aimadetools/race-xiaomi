@@ -1254,7 +1254,7 @@ claude-sonnet-4-6</code>
                     var section = emailSection.closest('section') || emailSection.parentElement;
                     if (section) {
                         var stripeLink = window._abStripeLink || 'flash-19.html?from=tool_page';
-                        var price = window._abPrice || 29;
+                        var price = window._abPrice || 19;
                         section.innerHTML = '<div style="background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(168,85,247,0.1));border:1px solid var(--accent);border-radius:14px;padding:28px;text-align:center;">' +
                             '<div style="font-size:28px;margin-bottom:12px;">🚀</div>' +
                             '<h3 style="font-size:20px;font-weight:700;margin-bottom:8px;">Ready to migrate? Get your plan.</h3>' +
@@ -1310,7 +1310,7 @@ claude-sonnet-4-6</code>
 
 
             // Shutdown Special: Use A/B test variant price and link
-            var abPrice = window._abPrice || 29;
+            var abPrice = window._abPrice || 19;
             var abStripeLink = window._abStripeLink || 'flash-19.html?from=tool_page';
             var SHUTDOWN_SPECIAL_URL = abStripeLink;
             if (SHUTDOWN_SPECIAL_URL) {
@@ -1427,7 +1427,7 @@ claude-sonnet-4-6</code>
                 // Set Stripe link from A/B variant or shutdown special
                 var stickyLink = SHUTDOWN_SPECIAL_URL || window._abStripeLink || 'flash-19.html?from=tool_page';
                 stickyBtn.href = stickyLink;
-                var stickyPrice = window._abPrice || 29;
+                var stickyPrice = window._abPrice || 19;
                 stickyBtn.textContent = 'Get Migration Plan — $' + stickyPrice;
 
                 // Update sticky bar message based on pre/post shutdown

@@ -745,7 +745,7 @@
             document.getElementById('pro-cta-savings-line').textContent = 'You could save $' + savings + '/month — that\'s $' + (savings * 12) + '/year.';
             var goLink = 'go.html?savings=' + savings.toFixed(2) + '&from=health_check';
             document.getElementById('pro-cta-stripe-btn').href = goLink;
-            document.getElementById('pro-cta-stripe-btn').textContent = 'Get Pro — $' + (window._abPrice || 29);
+            document.getElementById('pro-cta-stripe-btn').textContent = 'Get Pro — $' + (window._abPrice || 19);
             // Also personalize bottom CTA
             document.getElementById('bottom-pro-title').textContent = 'Stop Overpaying — Save $' + savings + '/mo';
             document.getElementById('bottom-pro-desc').textContent = 'Pro shows you the exact model switches and routing strategy to save $' + (savings * 12) + '/year. Try free for 24 hours.';
@@ -809,7 +809,7 @@
         <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;" id="bottom-pro-desc">Get model routing, caching strategies, and save 40%+ on API costs. Try free for 24 hours.</p>
         <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var link = window._abStripeLink || 'flash-19.html?from=tool_page';
             var btn = document.getElementById('health-check-pro-btn');
             if (btn) { btn.href = link; btn.textContent = 'Unlock Pro — $' + price; }

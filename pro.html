@@ -449,7 +449,7 @@
         // ROI Calculator — shows payback period for Pro
         function updateROI() {
             var spend = parseInt(document.getElementById('roi-spend').value) || 200;
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var savingsRate = 0.40; // 40% avg savings
             var monthlySavings = Math.round(spend * savingsRate);
             var paybackDays = Math.ceil(price / (monthlySavings / 30));
@@ -497,7 +497,7 @@
     <script>
     // Update Pro page prices to match A/B variant
     document.addEventListener('DOMContentLoaded', function() {
-        var price = window._abPrice || 29;
+        var price = window._abPrice || 19;
         var priceText = document.getElementById('pro-price-text');
         if (priceText) priceText.textContent = '$' + price;
         // Update Product schema

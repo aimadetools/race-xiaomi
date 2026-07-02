@@ -277,25 +277,25 @@
         // Track purchase event
         if (window.trackEvent) window.trackEvent('pro_purchase_completed', {
             ab_variant: localStorage.getItem('ab_pricing_variant') || 'unknown',
-            price: window._abPrice || 29
+            price: window._abPrice || 19
         });
 
         // GA4 standard ecommerce purchase event — shows in Monetization reports
         if (window.trackPurchase) {
-            window.trackPurchase(window._abPrice || 29, 'thank_you_page');
+            window.trackPurchase(window._abPrice || 19, 'thank_you_page');
         } else if (typeof gtag === 'function') {
             gtag('event', 'purchase', {
                 transaction_id: 'txn_' + Date.now(),
                 currency: 'USD',
-                value: window._abPrice || 29,
-                items: [{ item_id: 'apipulse_pro', item_name: 'APIpulse Pro Lifetime', price: window._abPrice || 29, quantity: 1 }]
+                value: window._abPrice || 19,
+                items: [{ item_id: 'apipulse_pro', item_name: 'APIpulse Pro Lifetime', price: window._abPrice || 19, quantity: 1 }]
             });
         }
 
         // Track thank-you page view
         if (window.trackEvent) window.trackEvent('thankyou_page_viewed', {
             ab_variant: localStorage.getItem('ab_pricing_variant') || 'unknown',
-            price: window._abPrice || 29,
+            price: window._abPrice || 19,
             referrer: document.referrer || 'direct'
         });
 

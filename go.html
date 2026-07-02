@@ -587,7 +587,7 @@
             </div>
 
             <!-- CTA: BUY is primary, trial is secondary -->
-            <a id="buy-cta" href="flash-19.html?from=tool_page" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_hero');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'hero',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_hero'});">
+            <a id="buy-cta" href="flash-19.html?from=tool_page" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||19,'go_hero');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'hero',price:window._abPrice||19});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_hero'});">
                 🔥 Get lifetime access — <span id="cta-price">$19</span> <span style="font-size:12px;opacity:0.7;">→ $49 Jul 12</span>
             </a>
             <p class="cta-sub">🔒 Stripe secure checkout · 🛡️ 14-day money-back guarantee · ⚡ Instant access</p>
@@ -867,7 +867,7 @@
         </div>
 
         <!-- Bottom CTA: BUY is primary -->
-        <a id="buy-cta-bottom" href="flash-19.html?from=tool_page" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_bottom');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'bottom',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_bottom'});">
+        <a id="buy-cta-bottom" href="flash-19.html?from=tool_page" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||19,'go_bottom');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'bottom',price:window._abPrice||19});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_bottom'});">
             🔥 Get lifetime access — <span id="cta-price-bottom">$19</span> <span style="font-size:12px;opacity:0.7;">→ $49 Jul 12</span>
         </a>
 
@@ -962,7 +962,7 @@
     <!-- Mobile sticky buy CTA bar (Session 879) -->
     <div class="go-sticky-bar" id="go-sticky-bar">
         <div class="sticky-price"><span id="sticky-price">$19</span> <small id="sticky-was">→ $49 Jul 12</small></div>
-        <a href="flash-19.html?from=tool_page" target="_blank" rel="noopener" class="sticky-buy" id="go-sticky-buy" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_mobile_sticky');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'mobile_sticky',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_mobile_sticky'});">
+        <a href="flash-19.html?from=tool_page" target="_blank" rel="noopener" class="sticky-buy" id="go-sticky-buy" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||19,'go_mobile_sticky');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'mobile_sticky',price:window._abPrice||19});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_mobile_sticky'});">
             🔥 Get lifetime access
         </a>
     </div>
@@ -1045,7 +1045,7 @@
 
         // A/B pricing
         document.addEventListener('DOMContentLoaded', function() {
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var stripeLink = window._abStripeLink || 'flash-19.html?from=tool_page';
 
             // Update prices
@@ -1191,7 +1191,7 @@
             savingsLabel.textContent = 'switch to ' + bestAlt.name + ' — save ' + Math.round(bestAlt.pct) + '%';
 
             // Payback
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var paybackDays = Math.ceil((price / bestSaving) * 30);
             if (paybackDays <= 1) {
                 savingsPayback.textContent = '⚡ $' + price + ' Pro pays for itself on day 1';
@@ -1362,7 +1362,7 @@
             triggered = true;
             sessionStorage.setItem('go_exit_popup_shown', '1');
 
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var from = new URLSearchParams(window.location.search).get('from') || '';
 
             var overlay = document.createElement('div');
@@ -1505,13 +1505,13 @@
         if (!bar || !heroCta || !window.IntersectionObserver) return;
 
         // Update price and Stripe link from A/B test
-        var price = window._abPrice || 29;
+        var price = window._abPrice || 19;
         var stripeLink = window._abStripeLink || 'flash-19.html?from=tool_page';
         var priceEl = document.getElementById('sticky-price');
         var wasEl = document.getElementById('sticky-was');
         var buyBtn = document.getElementById('go-sticky-buy');
         if (priceEl) priceEl.textContent = '$' + price;
-        if (wasEl) wasEl.textContent = '$' + (price === 19 ? 39 : 49);
+        if (wasEl) wasEl.textContent = (price === 19 ? '$29' : '→ $49 Jul 12');
         if (buyBtn) buyBtn.href = stripeLink;
 
         // Show bar when hero CTA scrolls out of view

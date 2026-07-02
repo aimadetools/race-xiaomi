@@ -927,7 +927,7 @@
                     bleedingEl.style.display = 'block';
                     document.getElementById('bleeding-rate').innerHTML = '$' + dailyWaste.toFixed(2) + '<span style="font-size:12px;font-weight:600;">/day</span>';
                     // Payback calculation
-                    var price = window._abPrice || 29;
+                    var price = window._abPrice || 19;
                     var paybackDays = dailyWaste > 0 ? Math.ceil(price / dailyWaste) : 999;
                     document.getElementById('bleeding-payback').textContent = paybackDays <= 1 ? 'less than 1 day' : paybackDays + ' days';
                     // Update CTA with A/B variant link and price
@@ -1016,7 +1016,7 @@
                     var annualSavingsEl = document.getElementById('upsell-annual-savings');
                     var annualWasteEl = document.getElementById('upsell-annual-waste');
                     var proMultiplierEl = document.getElementById('upsell-pro-multiplier');
-                    var price = window._abPrice || 29;
+                    var price = window._abPrice || 19;
                     var savings = totalCost - cheapestCost;
                     var annualSavings = savings * 12;
                     var efficiency = (cheapestCost / totalCost * 100);
@@ -1070,7 +1070,7 @@
                 }
                 if (gateIndicator) {
                     if (remaining <= 0) {
-                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="#" onclick="event.preventDefault();startTrial();" style="color:var(--accent);text-decoration:underline;font-weight:600;">Try Pro Free for 24h</a> or <a href="pricing.html" style="color:var(--text-muted);text-decoration:underline;">buy $' + (window._abPrice || 29) + '</a>';
+                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="#" onclick="event.preventDefault();startTrial();" style="color:var(--accent);text-decoration:underline;font-weight:600;">Try Pro Free for 24h</a> or <a href="pricing.html" style="color:var(--text-muted);text-decoration:underline;">buy $' + (window._abPrice || 19) + '</a>';
                     } else if (remaining <= 2) {
                         gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left — <a href="#" onclick="event.preventDefault();startTrial();" style="color:var(--accent);text-decoration:underline;font-weight:600;">Try Pro Free for 24h →</a>';
                     }
@@ -1257,7 +1257,7 @@
     // Exit popup for calculator — shows personalized savings with efficiency score
     (function(){
         var shown=false;
-        var price=window._abPrice||29;
+        var price=window._abPrice||19;
         var stripeLink=window._abStripeLink||'flash-19.html?from=tool_page';
         document.addEventListener('mouseleave',function(e){
             if(shown||e.clientY>0)return;

@@ -413,7 +413,7 @@
         };
         var pct = savings[model] || 0.35;
         var annual = Math.round(spend * 12 * pct);
-        var price = window._abPrice || 29;
+        var price = window._abPrice || 19;
         var paybackDays = Math.ceil(price / (spend * pct / 30));
 
         document.getElementById('trial-savings-amount').textContent = '$' + annual.toLocaleString() + '/yr';
@@ -451,7 +451,7 @@
         }
 
         // A/B pricing
-        var price = window._abPrice || 29;
+        var price = window._abPrice || 19;
         var stripeLink = window._abStripeLink || 'flash-19.html?from=tool_page';
         document.getElementById('trial-price').textContent = '$' + price;
         document.getElementById('cta-price').textContent = '$' + price;

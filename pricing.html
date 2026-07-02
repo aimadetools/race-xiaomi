@@ -380,7 +380,7 @@
         </div>
         <script>
         (function(){
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var dailyWaste = 3.33; // ~$100/mo average overpay
             var startTime = Date.now();
             // Update A/B price in counter CTA
@@ -882,7 +882,7 @@
         function updateRoi(){
             var spend=parseFloat(document.getElementById('roi-spend').value)||0;
             var savings=Math.round(spend*0.30);
-            var proPrice=window._abPrice||29;
+            var proPrice=window._abPrice||19;
             var payback=savings>0?Math.ceil(proPrice/savings):0;
             document.getElementById('roi-savings').textContent='$'+savings;
             var paybackEl=document.getElementById('roi-payback');
@@ -918,7 +918,7 @@
         // Variant assigned in shared.js. This block updates pricing page elements.
         (function(){
             var variant = window._abVariant || 'B';
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var futurePrice = Math.round(price * 1.7);
             var stripeLink = window._abStripeLink || 'flash-19.html?from=tool_page';
 
@@ -977,7 +977,7 @@
         // Exit intent popup for pricing page (respects A/B variant)
         (function(){
             var shown=false;
-            var price=window._abPrice||29;
+            var price=window._abPrice||19;
             var futurePrice=Math.round(price*1.7);
             var variant=window._abVariant||'B';
             var stripeLink=window._abStripeLink||'flash-19.html?from=tool_page';
@@ -1022,7 +1022,7 @@
             } else if (daysLeft <= 0 && daysLeft > -90) {
                 // Post-deprecation: retired notice
                 var stripeLink = window._abStripeLink || 'flash-19.html?from=tool_page';
-                var price = window._abPrice || 29;
+                var price = window._abPrice || 19;
                 el.innerHTML = '<div style="font-size:32px;margin-bottom:8px;">🔴</div>' +
                     '<h2 style="font-size:20px;font-weight:800;margin-bottom:8px;color:var(--red);">Claude 4 Was Retired June 15 — Your API Is Failing</h2>' +
                     '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Pro shows you the cheapest replacement for <strong>your exact workload</strong> — most devs save 67-97%. Pay once, use forever.</p>' +
