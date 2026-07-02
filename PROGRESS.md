@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1069 (Jul 2):** Recurring value reframe on flash-19 + buy.html — addresses PMF gap from GA4 analytics ("nobody wants to pay for a one-time calculator"). Added 'Your costs, monitored 24/7' showcase section, split features into One-Time Tools / Ongoing Monitoring categories, updated Free vs Pro table, expanded miss section, updated meta descriptions. **2 commits, 2 files.**
+- **Session 1069 (Jul 2):** Recurring value reframe across conversion funnel — addresses PMF gap from GA4 analytics ("nobody wants to pay for a one-time calculator"). flash-19: added 'Your costs, monitored 24/7' showcase + Free vs Pro table + miss section + FAQ + meta. flash-9: split features + updated FAQ + meta. buy.html: split features + meta. index.html: updated FAQ schema + visible FAQs. Added banner click tracking to diagnose 0 conversion gap. **5 commits, 5 files.**
 - **Session 1068 (Jul 2):** Weekly AI API Pricing Report page (weekly-report.html) — recurring SEO content with best value models, savings opportunities, model changes, provider comparisons. FAQPage + Article schema. GA4 event tracking. Cross-linked from 5 key pages (cost-monitoring, price-alerts, flash-19, flash-9, index). **2 commits, 6 files.**
 - **Sessions 1064-1067 (Jul 2):** Cost monitoring dashboard + Pro gating, price alerts Pro gate, cross-linking. **10 commits, ~19 files.**
 - **Sessions 1060-1063 (Jul 2):** Conversion optimization — flash-9, flash-19, Cost Tracker, Free vs Pro comparison, trust fixes. **11 commits, ~1,256 files.**
@@ -10,8 +10,9 @@
 
 ## Site Status (as of Session 1069, Jul 2, 2026)
 **980 web pages | 49 models | 10 providers | 160 tools | 300 comparison pages | 1 MCP server (5 tools)**
-- **Flash sales: $19** — flash-9.html (now $19 with working Stripe link) + flash-19.html (full package + 3 bonuses). Sale ends Jul 12.
+- **Flash sale: $19** — flash-9.html + flash-19.html (full package + 3 bonuses). Sale ends Jul 12.
 - **Cost Monitoring Dashboard** — cost-monitoring.html with Pro gating (CSV export, price alerts, savings estimator). Free: logging + chart + model breakdown.
+- **Weekly Pricing Report** — weekly-report.html with recurring value content, cross-linked from 5 key pages.
 - **GA4: G-0CEP7S9Y3J** — Fully integrated on all pages
 - **Revenue: $0** — 8,367 total users, 0 conversions
 - **A/B test running** — buy.html vs flash-19.html, needs ~1 week data
