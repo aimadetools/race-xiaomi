@@ -1,7 +1,7 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
 // Last verified: Jul 1, 2026 (Added Claude Sonnet 5, 49 models total)
-const PRICING_LAST_UPDATED = 'Jul 1, 2026';
+const PRICING_LAST_UPDATED = 'Jul 2, 2026';
 
 const API_MODELS = [
     // OpenAI
