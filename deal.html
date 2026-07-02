@@ -792,8 +792,8 @@
         <script>
         (function() {
             var params = new URLSearchParams(window.location.search);
-            if (params.get('flash') === '9') return; // Don't redirect if $9 flash sale is active
-            // Auto-redirect to flash-19.html during flash sale — $19 converts better than $29
+            if (params.get('flash') === '9') return; // Don't redirect if $9 deal is active
+            // Auto-redirect to flash-19.html during the sale — $19 converts better than $29
             if (!window.DEAL_EXPIRED) {
                 var from = params.get('from') || 'deal_redirect';
                 window.location.replace('flash-19.html?from=' + encodeURIComponent(from));
@@ -904,7 +904,7 @@
             </div>
             <!-- Mid-page CTA at peak intent -->
             <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="deal-cta" id="calc-cta-btn" style="display:none;margin-top:16px;text-align:center;" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(29,'deal_calculator');if(window.trackEvent)window.trackEvent('deal_page_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown'});if(typeof gtag==='function')gtag('event','deal_buy_click',{variant:window.DEAL_HEADLINE_VARIANT||'unknown',location:'calculator'});">
-                Get Pro — $19 flash sale
+                Get Pro — $19 (monitor + save)
             </a>
         </div>
 
@@ -1578,7 +1578,7 @@
     <!-- Mobile sticky CTA -->
     <div class="sticky-cta" id="sticky-cta">
         <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('deal_sticky_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown'});">
-            Get Pro — $19 flash sale →
+            Get Pro — $19 (monitor + save) →
         </a>
     </div>
 
@@ -1588,7 +1588,7 @@
         var params = new URLSearchParams(window.location.search);
         if (params.get('flash') !== '9') return;
 
-        // $9 Stripe link not available — redirect to $19 flash sale
+        // $9 Stripe link not available — redirect to $19 (monitor + save)
         var FLASH_STRIPE_URL = '/flash-19.html?from=deal_flash9';
         var FLASH_DURATION_MS = 72 * 60 * 60 * 1000; // 72 hours
         var flashEndTime = Date.now() + FLASH_DURATION_MS;
@@ -1643,7 +1643,7 @@
         if (nowPrice) nowPrice.textContent = '$9';
         var savingsBadge = document.querySelector('.savings-badge');
         if (savingsBadge) {
-            savingsBadge.textContent = 'Save $20 — flash sale pricing';
+            savingsBadge.textContent = 'Save $20 — limited-time pricing';
             savingsBadge.style.background = 'rgba(220,38,38,0.12)';
             savingsBadge.style.color = '#dc2626';
         }
@@ -1660,7 +1660,7 @@
 
         // Update trust row
         var trustRow = document.querySelector('.trust-row');
-        if (trustRow) trustRow.innerHTML = '<span>🔒 Stripe secure</span><span>🛡️ 14-day money back</span><span>⚡ 72-hour flash sale</span><span>💳 No subscription</span>';
+        if (trustRow) trustRow.innerHTML = '<span>🔒 Stripe secure</span><span>🛡️ 14-day money back</span><span>⚡ 72-hour deal</span><span>💳 No subscription</span>';
 
         // Update value stack "You pay today"
         var valuePrice = document.querySelector('.value-deal .price');
@@ -1670,7 +1670,7 @@
 
         // Update final CTA
         var finalH2 = document.querySelector('.final-cta h2');
-        if (finalH2) finalH2.textContent = '⚡ Flash sale ends in hours';
+        if (finalH2) finalH2.textContent = '⚡ Deal ends in hours';
         var finalP = document.querySelector('.final-cta p');
         if (finalP) finalP.textContent = '$9 is impulse pricing. Most developers save $600–$2,400/yr — the tool pays for itself in hours, not days.';
         var finalNote = document.querySelector('.final-cta > p:last-child');
@@ -1678,9 +1678,9 @@
 
         // Update exit popup
         var exitH3 = document.querySelector('.deal-exit-popup h3');
-        if (exitH3) exitH3.textContent = '⚡ Flash sale: $9 lifetime access';
+        if (exitH3) exitH3.textContent = '⚡ Deal: $9 lifetime access';
         var exitP = document.querySelector('.deal-exit-popup p');
-        if (exitP) exitP.textContent = 'This flash sale won\'t last. $9 for lifetime Pro access — compare 49 models, get migration code, save up to 98% on API costs. Price goes to $29 when the timer ends.';
+        if (exitP) exitP.textContent = 'This deal won\'t last. $9 for lifetime Pro access — compare 49 models, get migration code, save up to 98% on API costs. Price goes to $29 when the timer ends.';
         var exitBadge = document.querySelector('.deal-exit-popup div[style*="background:linear-gradient"]');
         if (exitBadge) exitBadge.innerHTML = '⚡ FLASH SALE — ends in <span id="exit-countdown" style="font-family:monospace;"></span>';
 
@@ -1690,15 +1690,15 @@
         var dsBtn = document.querySelector('.desktop-sticky-btn');
         if (dsBtn) dsBtn.textContent = 'Get Lifetime Access — $9 →';
 
-        // Update developer activity counter for flash sale
+        // Update developer activity counter for deal
         var activityCounter = document.getElementById('activity-counter');
         if (activityCounter) {
             activityCounter.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">' +
                 '<div style="display:flex;align-items:center;gap:6px;">' +
                 '<div style="width:8px;height:8px;background:#dc2626;border-radius:50%;animation:pulse-dot 2s infinite;"></div>' +
-                '<span style="font-size:14px;color:var(--text-secondary);"><strong>Flash sale active</strong> — <span id="flash-buyers">23</strong> people bought in the last hour</span>' +
+                '<span style="font-size:14px;color:var(--text-secondary);"><strong>Deal active</strong> — <span id="flash-buyers">23</strong> people bought in the last hour</span>' +
                 '</div></div>';
-            // Simulate flash sale buyer counter
+            // Simulate deal buyer counter
             var buyerBase = 23;
             var buyerCount = parseInt(localStorage.getItem('flash_buyer_count') || '0');
             buyerCount += Math.floor(Math.random() * 3) + 1;
@@ -1713,7 +1713,7 @@
             var q = item.querySelector('.faq-q');
             if (q && q.textContent.includes('one-time')) {
                 var a = item.querySelector('.faq-a');
-                if (a) a.textContent = 'Yes. Pay $9 during the flash sale, get lifetime access. No monthly subscription, no annual renewal, no hidden fees. Price goes up to $29 when the 72-hour sale ends.';
+                if (a) a.textContent = 'Yes. Pay $9 during the sale, get lifetime access. No monthly subscription, no annual renewal, no hidden fees. Price goes up to $29 when the 72-hour sale ends.';
             }
         });
 
@@ -1737,7 +1737,7 @@
         updateFlashCountdown();
         setInterval(updateFlashCountdown, 1000);
 
-        // Track flash sale view
+        // Track deal view
         if (typeof gtag === 'function') {
             gtag('event', 'flash_sale_viewed', { price: 9, variant: window.DEAL_HEADLINE_VARIANT || 'unknown' });
         }
