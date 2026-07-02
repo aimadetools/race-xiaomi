@@ -1024,6 +1024,11 @@
                     <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border-radius:8px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(99,102,241,0.4);" onclick="if(typeof gtag==='function')gtag('event','flash_buy_clicked',{price:19,location:'calc_results'});">Get Pro — $19 lifetime</a>
                     <div style="font-size:11px;color:#64748b;margin-top:8px;">🛡️ 14-day refund · ⚡ Instant access · 🔔 Price alerts included</div>
                 </div>
+                <!-- Share savings button -->
+                <div id="calc-share" style="display:none;margin-top:12px;text-align:center;">
+                    <button onclick="shareSavings()" style="background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:8px 16px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600;">📋 Copy savings summary</button>
+                    <div id="share-confirm" style="display:none;font-size:12px;color:#22c55e;margin-top:6px;">✓ Copied! Share with your team</div>
+                </div>
             </div>
         </div>
 
@@ -1330,11 +1335,43 @@
 
             result.style.display = 'block';
 
+            // Store data for sharing and show share button
+            var shareBtn = document.getElementById('calc-share');
+            if (shareBtn && alternatives.length > 0) {
+                _lastCalcData = { model: cur.name, spend: spend, best: alternatives[0] };
+                shareBtn.style.display = 'block';
+            }
+
             if (typeof gtag === 'function') {
                 gtag('event', 'flash_savings_calculated', {
                     model: modelKey, spend: spend,
                     annualSavings: Math.round(alternatives.length > 0 ? alternatives[0].saveYr : 0),
                     alternatives_count: alternatives.length
+                });
+            }
+        }
+
+        // Share savings summary (copy to clipboard)
+        var _lastCalcData = {};
+        function shareSavings() {
+            var model = _lastCalcData.model || 'your current model';
+            var spend = _lastCalcData.spend || 0;
+            var best = _lastCalcData.best;
+            var text = '💰 AI API Cost Savings Report\n\n';
+            text += 'Current model: ' + model + ' ($' + spend.toLocaleString() + '/mo)\n';
+            if (best) {
+                text += 'Best alternative: ' + best.name + ' (save $' + Math.round(best.saveMo).toLocaleString() + '/mo)\n';
+                text += 'Annual savings: $' + Math.round(best.saveYr).toLocaleString() + '\n';
+                text += 'ROI: $19 pays for itself in ' + Math.ceil(19 / best.saveMo) + ' days\n\n';
+            }
+            text += 'Compare 49 AI models: getapipulse.com\n';
+            text += 'Pro ($19 lifetime): getapipulse.com/flash-19.html';
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(function() {
+                    var el = document.getElementById('share-confirm');
+                    if (el) { el.style.display = 'block'; setTimeout(function() { el.style.display = 'none'; }, 3000); }
+                    if (typeof gtag === 'function') gtag('event', 'savings_shared', { model: model, spend: spend });
                 });
             }
         }
