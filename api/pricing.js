@@ -14,6 +14,10 @@ module.exports = (req, res) => {
         { id: 'openai-gpt-oss-120b', n: 'GPT-oss 120B', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.15, o: 0.6, c: '128K' },
         { id: 'openai-gpt-oss-20b', n: 'GPT-oss 20B', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.08, o: 0.35, c: '128K' },
         { id: 'openai-gpt4o', n: 'GPT-4o', p: 'OpenAI', ps: 'openai', t: 'Mid', i: 2.5, o: 10, c: '128K' },
+        { id: 'openai-gpt54', n: 'GPT-5.4', p: 'OpenAI', ps: 'openai', t: 'Mid', i: 2.5, o: 15, c: '400K' },
+        { id: 'openai-gpt54-mini', n: 'GPT-5.4 mini', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.75, o: 4.5, c: '400K' },
+        { id: 'openai-gpt54-nano', n: 'GPT-5.4 nano', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.20, o: 1.25, c: '400K' },
+        { id: 'openai-gpt54-pro', n: 'GPT-5.4 Pro', p: 'OpenAI', ps: 'openai', t: 'Premium', i: 30, o: 180, c: '400K' },
         { id: 'openai-gpt4o-mini', n: 'GPT-4o mini', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.15, o: 0.6, c: '128K' },
         { id: 'anthropic-sonnet5', n: 'Claude Sonnet 5', p: 'Anthropic', ps: 'anthropic', t: 'Mid', i: 3, o: 15, c: '1M' },
         { id: 'anthropic-opus48', n: 'Claude Opus 4.8', p: 'Anthropic', ps: 'anthropic', t: 'Premium', i: 5, o: 25, c: '1M' },
@@ -22,6 +26,8 @@ module.exports = (req, res) => {
         { id: 'anthropic-sonnet46', n: 'Claude Sonnet 4.6', p: 'Anthropic', ps: 'anthropic', t: 'Mid', i: 3, o: 15, c: '1M' },
         { id: 'anthropic-sonnet', n: 'Claude Sonnet 4', p: 'Anthropic', ps: 'anthropic', t: 'Mid', i: 3, o: 15, c: '200K', dep: true },
         { id: 'anthropic-haiku', n: 'Claude Haiku 4.5', p: 'Anthropic', ps: 'anthropic', t: 'Budget', i: 1, o: 5, c: '200K' },
+        { id: 'anthropic-fable5', n: 'Claude Fable 5', p: 'Anthropic', ps: 'anthropic', t: 'Premium', i: 10, o: 50, c: '1M' },
+        { id: 'anthropic-mythos5', n: 'Claude Mythos 5', p: 'Anthropic', ps: 'anthropic', t: 'Premium', i: 10, o: 50, c: '1M' },
         { id: 'google-gemini3-pro', n: 'Gemini 3.1 Pro', p: 'Google', ps: 'google', t: 'Mid', i: 2, o: 12, c: '1M' },
         { id: 'google-pro', n: 'Gemini 2.5 Pro', p: 'Google', ps: 'google', t: 'Mid', i: 1.25, o: 10, c: '1M' },
         { id: 'google-flash', n: 'Gemini 2.0 Flash', p: 'Google', ps: 'google', t: 'Budget', i: 0.1, o: 0.4, c: '1M' },
@@ -60,6 +66,6 @@ module.exports = (req, res) => {
     }
     return res.status(200).json({
         models: d,
-        meta: { count: d.length, lastUpdated: '2026-06-20', source: 'https://getapipulse.com' }
+        meta: { count: d.length, lastUpdated: '2026-07-02', source: 'https://getapipulse.com' }
     });
 };
