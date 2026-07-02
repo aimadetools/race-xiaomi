@@ -1499,6 +1499,7 @@
                 </div>
                 <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"DeepSeek V4 Pro is 91% cheaper than GPT-5 on output tokens — APIpulse makes these comparisons instant." — <span style="font-style:normal;color:var(--text-muted);">Real pricing fact</span></div>
                 <a href="flash-19.html?from=pricing_card" class="btn-primary" style="text-align:center;background:linear-gradient(135deg,#dc2626,#b91c1c);" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_card'})">⚡ Flash Sale $19 — Get Pro</a>
+                <div style="text-align:center;margin-top:8px;"><a href="flash-9.html?from=pricing_card" style="font-size:12px;color:#22c55e;text-decoration:none;font-weight:600;">💡 Just the basics? $9 deal →</a></div>
                 <p style="font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center;">✅ 14-day money-back guarantee · ⚡ Instant access · 🔒 One-time payment</p>
             </div>
         </div>
@@ -1590,6 +1591,7 @@
             <a href="savings-calculator.html" class="btn-primary">Check My Savings — Free</a>
             <a href="flash-19.html?from=cta_bottom" class="btn-secondary" style="background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;border-color:#dc2626;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cta_bottom'})">⚡ Get Pro — $19 flash sale →</a>
         </div>
+        <div style="text-align:center;margin-top:12px;"><a href="flash-9.html?from=cta_bottom" style="font-size:13px;color:#22c55e;text-decoration:none;font-weight:600;">💡 Just the basics? $9 deal →</a></div>
         <p style="font-size:13px;color:var(--text-muted);margin-top:20px;">Also on <a href="https://www.producthunt.com/posts/apipulse" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">Product Hunt</a> · <a href="newsletter.html" style="color:var(--accent);text-decoration:none;">Weekly newsletter</a> · <a href="budget-planner.html" style="color:var(--accent);text-decoration:none;">Budget Planner</a></p>
     </section>
 
@@ -1689,7 +1691,7 @@
                     html += `<div class="rec-card"><div class="rec-info"><div class="rec-name">${r.provider} ${r.name}</div><div class="rec-meta">${r.tier} · $${r.input}/$${r.output} per 1M · ${r.context} context</div></div><div class="rec-savings">Save $${r.savings.toFixed(2)}/mo (${Math.round(r.savingsPct)}%)</div></div>`;
                 });
                 html += '<a href="savings-calculator.html" class="rec-compare" style="display:block;text-align:center;margin-top:12px;">See all alternatives + full savings report →</a>';
-                html += `<div style="margin-top:12px;padding:12px 16px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:8px;text-align:center;font-size:13px;color:var(--text-secondary);">💡 You could save <strong style="color:var(--green);">$${(bestSavings * 12).toFixed(0)}/year</strong> by switching. <a href="flash-19.html?from=calc_savings" style="color:var(--accent);font-weight:600;">Get Pro for $19 — see all alternatives →</a></div>`;
+                html += `<div style="margin-top:12px;padding:12px 16px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:8px;text-align:center;font-size:13px;color:var(--text-secondary);">💡 You could save <strong style="color:var(--green);">$${(bestSavings * 12).toFixed(0)}/year</strong> by switching. <a href="flash-19.html?from=calc_savings" style="color:var(--accent);font-weight:600;">Get Pro for $19 — see all alternatives →</a> <span style="color:var(--text-muted);">or</span> <a href="flash-9.html?from=calc_savings" style="color:#22c55e;font-weight:600;">$9 basic deal →</a></div>`;
                 html += '</div>';
                 savingsContainer.innerHTML = html;
             } else {
