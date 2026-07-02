@@ -656,14 +656,30 @@
     </div>
 
     <script>
-    // GA4 tracking
     document.addEventListener('DOMContentLoaded', function() {
+        // GA4 tracking
         if (typeof trackEvent === 'function') {
             trackEvent('weekly_report_viewed', {
                 report_week: '2026-06-30',
-                models_count: 49,
+                models_count: typeof API_MODELS !== 'undefined' ? API_MODELS.length : 49,
                 providers_count: 10
             });
+        }
+
+        // Dynamic model count from pricing data
+        if (typeof API_MODELS !== 'undefined') {
+            var active = API_MODELS.filter(function(m) { return !m.deprecated; });
+            var deprecated = API_MODELS.filter(function(m) { return m.deprecated; });
+            var cheapest = active.reduce(function(a, b) { return a.output < b.output ? a : b; });
+            var providers = [];
+            active.forEach(function(m) { if (providers.indexOf(m.provider) === -1) providers.push(m.provider); });
+
+            // Update stat cards with live data
+            var statNums = document.querySelectorAll('.stat-card .num');
+            if (statNums.length >= 2) {
+                statNums[0].textContent = API_MODELS.length;
+                statNums[1].textContent = providers.length;
+            }
         }
     });
     </script>
