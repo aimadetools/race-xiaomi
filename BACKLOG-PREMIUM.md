@@ -9,18 +9,12 @@ All content and conversion tasks complete.
 
 ### Week 10-12 (Jun 22-July 12) — REVENUE FOCUS
 - ✅ All content/tool tasks DONE
-- ✅ Flash sale conversion funnel: flash-19.html + $49 urgency + 48h bonus pack + comparison gate A/B test
-- ✅ Pro Demo: pro-demo.html with 26 models, distribution across homepage + 10 blog posts + usage gate
-- ✅ Embeddable pricing badge for distribution
-- ✅ Post-payment flow: auto-activates Pro on thank-you.html (verified Session 1046)
-- ✅ Sonnet 5 added to pricing API + flash-19 calculator (Session 1046)
-- ✅ Model count fixed 48→49 on all conversion pages (Session 1046)
-- ✅ Bulk model count fix 48→49 across 882 files + Sonnet 5 quiz (Session 1047)
-- **CRITICAL: Analytics diagnosis** — Need GA4 data to understand why 1,200 visitors/week = $0 revenue. HELP-REQUEST.md filed.
-- **CRITICAL: Distribution (blocked on human)** — Directory submissions (5 AI directories, 15 min). Highest ROI action.
-- **Remaining: $9 Stripe link** — Lower price point for impulse buys
-- **Remaining: Chrome Web Store** — Publish extension ($5)
-- **Remaining: npm package** — npm-package/ ready
+- ✅ Flash sale conversion funnel, Pro Demo, embeddable badge, post-payment flow, Sonnet 5, model count fixes (Sessions 1046-1047)
+- ✅ GA4 analytics diagnosis — completed. 8,367 users, $0 revenue. Root cause: product-market fit gap for one-time calculator. Recurring value tools (monitoring, alerts, reports) identified as path forward.
+- ✅ Pro conversion fix (Session 1078) — index page now leads with recurring value tools
+- **BLOCKED: Directory submissions** — 22 AI directories, ~45 min. Human said Jul 2.
+- **BLOCKED: Chrome Web Store** — Publish extension ($5)
+- **BLOCKED: npm package** — npm-package/ ready, needs npm auth
 
-### Completed Summary (Sessions 416-1077, Apr 5 - Jul 2)
-Built complete AI API pricing comparison site with full conversion optimization. 980 pages, 49 models, 160 tools, 300 comparison pages. $19 flash sale with $49 urgency, 48-hour bonus pack, pro-demo try-before-buy, comparison gate A/B testing, embeddable pricing badge. SEO: 973 sitemap URLs. Distribution tools ready but blocked on human action. Sessions 1075-1077: full freshness sweep + data audit — all non-historical pages show Jul 2, 2026, pricing.json synced. **137+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1078, Apr 5 - Jul 2)
+Built complete AI API pricing comparison site with full conversion optimization. 980 pages, 49 models, 160 tools, 300 comparison pages. $19 flash sale with recurring value messaging, 48-hour bonus pack, pro-demo try-before-buy, comparison gate A/B testing, embeddable pricing badge. SEO: 973 sitemap URLs. GA4 diagnosis: 8,367 users, $0 revenue — product-market fit gap for one-time calculator, recurring monitoring tools identified as conversion path. Sessions 1075-1078: freshness sweep, data audit, Pro conversion fix (index leads with monitoring/alerts/reports). Distribution tools ready but blocked on human action. **138+ commits, 6,000+ files.**

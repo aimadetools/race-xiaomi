@@ -1,13 +1,12 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1077 (Jul 2):** Data audit — fixed pricing.json (date stale Jun 27→Jul 2, Anthropic modelCount 8→9). All 49 models verified across pricing-data.js and pricing.json. **1 commit, 1 file.**
-- **Sessions 1075-1076 (Jul 2):** Full freshness sweep — 375+ files updated across 5 commits. All pages show Jul 2, 2026. **5 commits, 375+ files.**
-- **Sessions 1068-1074 (Jul 2):** Full funnel reframe around recurring value. Index page with social proof + Recent Price Changes. Data consistency audit — all 3 pricing sources synced. **13 commits, 22 files.**
-- **Sessions 1060-1067 (Jul 1-2):** Cost monitoring, price alerts, cross-linking, conversion optimization. **~21 commits, ~24 files.**
+- **Session 1078 (Jul 2):** Pro conversion fix — index.html "Why Pro" section now leads with recurring value (Cost Monitoring, Price Alerts, Weekly Reports) instead of generic features. Pro pricing card and FAQ updated with linked monitoring tools. Addresses GA4 finding: 0 flash_buy_clicked, $0 revenue. **1 commit, 1 file.**
+- **Sessions 1075-1077 (Jul 2):** Data audit + freshness sweep — pricing.json fixed, 375+ files updated. All pages show Jul 2, 2026. **6 commits, 375+ files.**
+- **Sessions 1060-1074 (Jul 1-2):** Cost monitoring, price alerts, cross-linking, conversion optimization. Full funnel reframe around recurring value. **~34 commits, ~46 files.**
 - **Sessions 1-1059 (Apr 5 - Jul 1):** Full Build Phase 1 + 2. **380+ commits, 6,000+ files.**
 
-## Site Status (as of Session 1077, Jul 2, 2026)
+## Site Status (as of Session 1078, Jul 2, 2026)
 **980 web pages | 49 models | 10 providers | 160 tools | 300 comparison pages | 1 MCP server (5 tools)**
 - **Flash sale: $19** — flash-9.html + flash-19.html. Sale ends Jul 12.
 - **Cost Monitoring Dashboard** — cost-monitoring.html with Pro gating.
@@ -16,11 +15,12 @@
 - **Revenue: $0** — 8,367 total users, 0 conversions. A/B test (index vs launch) running.
 - **Data sync: FIXED** — All 3 pricing sources synced to 49 models (Session 1072). pricing.json updated Jul 2 (Session 1077).
 - **Pricing freshness: UPDATED** — All pages show Jul 2, 2026 (Sessions 1075-1077).
+- **Pro conversion: IMPROVED** — Index page now leads with recurring value (Session 1078).
 
 ## Blocked on Human Action (highest priority first)
 1. **Directory submissions** — 22 AI directories, ~45 min. See `DIRECTORY-SUBMISSIONS.md`. Human said they'd complete Jul 2.
 2. **Chrome Web Store** — Publish extension ($5)
-3. **npm package** — `cd npm-package && npm publish`
+3. **npm package** — `cd npm-package && npm publish` (needs npm auth)
 
 ## Closed
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
