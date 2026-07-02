@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1067 (Jul 2):** Pro gate on price alerts page — free users limited to 3 models, Pro badge on locked models, upgrade CTA on limit hit. FAQPage schema for SEO. Cross-linked price alerts from cost-monitoring, flash-19, flash-9. **2 commits, 4 files.**
 - **Session 1066 (Jul 2):** Pro gating on cost monitoring dashboard — CSV export, price alerts, savings estimator gated behind Pro. Free users keep logging + chart + model breakdown. Pro upsell banner, GA4 gate tracking, cross-tab trial sync. FAQ section + FAQPage schema for SEO. Cross-linked from 5 blog posts + 4 tool pages. **5 commits, 8 files.**
 - **Session 1065 (Jul 2):** Promoted cost monitoring dashboard from flash sale pages — added section to flash-9.html (free tool CTA with features grid), added dashboard link to flash-19.html, updated FAQ answers. Creates conversion path: free tool → Pro features → $19 purchase. **1 commit, 2 files.**
 - **Session 1064 (Jul 2):** Cost Monitoring Dashboard (cost-monitoring.html) — spending history chart, model breakdown, budget tracker, price alerts, CSV export. Fixed flash-9.html broken buy button (replaced #TODO placeholder with $19 Stripe link). **2 commits, 3 files.**
