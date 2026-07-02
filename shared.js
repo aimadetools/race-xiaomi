@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
             banner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
             var urgencyText = window.DEAL_DAYS_LEFT <= 1 ? 'FINAL DAY' : window.DEAL_DAYS_LEFT + ' days left';
             banner.innerHTML = '<span>⚡ FLASH SALE: Pro lifetime access <strong>$19</strong> — <strong>' + urgencyText + '</strong></span>' +
-                '<a href="flash-19.html" style="color:white;text-decoration:underline;font-weight:700;">Get $19 deal →</a>' +
+                '<a href="flash-19.html" style="color:white;text-decoration:underline;font-weight:700;" onclick="if(window.trackEvent)window.trackEvent(\'deal_banner_clicked\',{source:\'deprecation_banner\'});">Get $19 deal →</a>' +
                 '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
         }
         document.body.insertBefore(banner, document.body.firstChild);
