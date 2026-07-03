@@ -242,12 +242,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!navLinks || navLinks.querySelector('.nav-more')) return; // Skip if already restructured
 
     // Add "Model Finder" link after Calculator link
-    var hasFinder = navLinks.querySelector('a[href="cheapest-model-finder.html"]');
+    var hasFinder = navLinks.querySelector('a[href="model-finder.html"]');
     if (!hasFinder) {
         var calcLink = navLinks.querySelector('a[href="calculator.html"]');
         if (calcLink) {
             var finderLink = document.createElement('a');
-            finderLink.href = 'cheapest-model-finder.html';
+            finderLink.href = 'model-finder.html';
             finderLink.textContent = 'Model Finder';
             calcLink.parentNode.insertBefore(finderLink, calcLink.nextSibling);
         }
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add "Cost Audit" link after Model Finder link
     var hasAudit = navLinks.querySelector('a[href="cost-audit.html"]');
     if (!hasAudit) {
-        var finderLinkEl = navLinks.querySelector('a[href="cheapest-model-finder.html"]');
+        var finderLinkEl = navLinks.querySelector('a[href="model-finder.html"]');
         if (finderLinkEl) {
             var auditLink = document.createElement('a');
             auditLink.href = 'cost-audit.html';
