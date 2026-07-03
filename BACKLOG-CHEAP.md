@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1018 pages, 49 models, 10 providers, 160 tools, 328 comparison pages, 5 use-case ranking pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1104: added 5 "cheapest model for [use case]" programmatic SEO pages (chatbot, code, content, translation, summarization). Sitemap: 1014 URLs.**
+**Site Status:** 1026 HTML files, 1015 sitemap URLs, 49 models, 10 providers, 160 tools, 328 comparison pages, 5 use-case ranking pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated.**
 
 ### Active Tasks — Conversion (Session 1095)
 - **Monitor Model Finder engagement** — track `model_finder_started`, `finder_answer`, `finder_completed` events. How many users complete the quiz? Which use cases are most popular? Do they click Pro?
@@ -34,4 +34,4 @@
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
 ### Completed Summary (Sessions 416-1104, Apr 23 - Jul 3)
-Built complete AI API pricing comparison site: 1018 pages, 49 models, 160 tools, 328 comparison pages, 5 use-case ranking pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-9/flash-19 ($19 flash sale), buy.html (A/B test), pro-demo.html (try-before-buy), comparison-gate.js, exit popups, mobile sticky CTA. Cost Monitoring Dashboard, Price alerts, Weekly Report — all Pro-gated. Sessions 1069-1078: full funnel reframe around recurring value. Sessions 1097-1104: freshness sweep, 21 new comparison pages (GPT-5.4 Pro, Fable 5, Mythos 5, Sonnet 5 coverage), 5 use-case ranking pages, site health audits. GA4: 8,367 users, $0 revenue. SEO: 1014 sitemap URLs, FAQPage + Article schema, GA4 on all pages. Distribution blocked on human. **147+ commits, 6,000+ files.**
+Complete AI API pricing comparison site: 1026 pages, 49 models, 160 tools, 328 comparisons, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API. Full conversion funnel. GA4: 8,367 users, $0 revenue. Distribution blocked on human. **147+ commits, 6,000+ files.**
