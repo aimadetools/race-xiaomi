@@ -2,10 +2,8 @@
 
 **Site Status:** 980 pages, 49 models, 10 providers, 160 tools, 300 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Sessions 1069-1078: full funnel reframe around recurring value — index page now leads with monitoring/alerts/reports, GA4 diagnosis complete.**
 
-### Active Tasks — Conversion (Session 1080)
+### Active Tasks — Conversion (Session 1081)
 - **Monitor Switch & Save engagement** — track `switch_save_page_viewed`, `switch_save_calculated` events. Do users complete the flow and click Pro?
-- **Add Switch & Save links to blog posts** — add "Switch & Save" CTA to migration blog posts (blog-claude-4-*.html). These readers are already switching providers.
-- **Add Switch & Save to other tool pages** — cross-link from savings-calculator.html, cost-audit.html, model-switch.html
 - **A/B test Switch & Save CTA** — test "Show Me The Savings" vs "Find Cheaper Alternatives" button text
 - **Monitor A/B test buy.html vs flash-19.html** — 10 blog CTAs route to buy.html?from=blog_test. Check GA4 for buy_page_viewed / buy_cta_clicked events. Compare conversion rates after ~1 week.
 - **Monitor A/B test buy.html vs flash-19.html** — 10 blog CTAs route to buy.html?from=blog_test. Check GA4 for buy_page_viewed / buy_cta_clicked events. Compare conversion rates after ~1 week.
@@ -17,7 +15,7 @@
 - **Monitor pro-demo.html engagement** — track `pro_demo_generated` → `flash_buy_clicked` → `purchase` funnel
 - **Monitor cost tracker engagement** — track `cost_tracked` events, see if users return to track more calculations
 
-**Completed (Sessions 1059-1078):** GA4 events on buy.html, flash-19 savings calculator with quality tiers, Cost Tracker with localStorage + trend viz, Free vs Pro comparison table (6 features), calculator Pro upsell with hidden alternatives, flash-9.html impulse-buy page. Full freshness sweep across 375+ files (Sessions 1075-1076). pricing.json data audit (Session 1077). Pro conversion fix — index page leads with recurring value tools (Session 1078).
+**Completed (Sessions 1059-1081):** GA4 events on buy.html, flash-19 savings calculator with quality tiers, Cost Tracker with localStorage + trend viz, Free vs Pro comparison table (6 features), calculator Pro upsell with hidden alternatives, flash-9.html impulse-buy page. Full freshness sweep across 375+ files (Sessions 1075-1076). pricing.json data audit (Session 1077). Pro conversion fix — index page leads with recurring value tools (Session 1078). Switch & Save Calculator built + cross-linked from 8 pages (Sessions 1080-1081).
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
