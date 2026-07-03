@@ -22,7 +22,7 @@
 - **Monitor Savings CTA engagement** — track `savings_cta_shown`, `savings_cta_dismissed` events. Does the bottom bar drive Pro clicks?
 - **Monitor Savings Multiplier engagement** — track `savings_multiplier_shown` events. Do users see the compounding savings widget? Does it increase Pro clicks?
 
-**Completed (Sessions 1059-1106):** All conversion optimization tasks: GA4 events, flash sale calculators, Cost Tracker, Free vs Pro comparison, freshness sweep, Pricing Grade, Savings CTA, Savings Multiplier, Badge API, blog posts, sitemap fixes, 334 comparison pages, 5 use-case ranking pages. Monitoring ROI Calculator added to index page (Session 1106). **50+ commits, 500+ files.**
+**Completed (Sessions 1059-1107):** All conversion optimization tasks: GA4 events, flash sale calculators, Cost Tracker, Free vs Pro comparison, freshness sweep, Pricing Grade, Savings CTA, Savings Multiplier, Badge API, blog posts, sitemap fixes, 333 comparison pages, 5 use-case ranking pages. Monitoring ROI Calculator added to index page (Session 1106). Pricing accuracy bugs fixed across 5 files (Session 1107). **54+ commits, 500+ files.**
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
@@ -33,5 +33,5 @@
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1106, Apr 23 - Jul 3)
-Complete AI API pricing comparison site: 1032 pages, 49 models, 160 tools, 334 comparisons, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API. Full conversion funnel with Monitoring ROI Calculator. GA4: 8,367 users, $0 revenue. Distribution blocked on human. **148+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1107, Apr 23 - Jul 3)
+Complete AI API pricing comparison site: 1027 pages, 49 models, 160 tools, 333 comparisons, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API. Full conversion funnel with Monitoring ROI Calculator. Pricing accuracy fixes across 5 files. GA4: 8,367 users, $0 revenue. Distribution blocked on human. **152+ commits, 6,000+ files.**
