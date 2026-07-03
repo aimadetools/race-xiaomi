@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1104 (Jul 3):** Built 3 "cheapest model for [use case]" programmatic SEO pages: chatbot, code generation, content writing. Each has interactive calculator, full ranking table, migration code snippets, quality tier guide, FAQ schema, cross-linking. Added to sitemap (1012 URLs), use-cases.html, compare.html related reading. Different from comparison pages — targets "cheapest AI model for X" search intent. **1 commit, 7 files.**
 - **Session 1103 (Jul 3):** Added 3 Sonnet 5 comparison pages targeting cross-provider mid-tier/budget comparisons: Gemini 2.5 Pro vs Sonnet 5 (58% cheaper input), DeepSeek V4 Pro vs Sonnet 5 (85.5% cheaper input), Gemini 3.1 Pro vs Sonnet 5 (33% cheaper input). Interactive calculators, FAQ schemas, use case recommendations. Cross-linked from related pages. Sitemap updated to 1009 URLs, 328 comparison pages total. **1 commit, 4 files.**
 - **Session 1102 (Jul 3):** Added 3 high-value comparison pages for GPT-5.4 Pro (most expensive model at $30/$180): vs DeepSeek V4 Pro (98.6% cheaper), vs Gemini 3.5 Flash (95% cheaper), vs Sonnet 5 (90% cheaper). Interactive calculators, FAQ schemas, use case recommendations. Cross-linked from existing GPT-5.4 Pro vs Gemini 3.1 Pro page. Sitemap updated to 1006 URLs, 325 comparison pages total. **1 commit, 5 files.**
 - **Session 1101 (Jul 3):** Added 3 high-value comparison pages for underrepresented premium models: Fable 5 vs Gemini 3.1 Pro (premium vs mid-tier, 80% cheaper), Fable 5 vs Sonnet 5 (Anthropic premium vs mid-tier, 70% cheaper), Mythos 5 vs Gemini 3.1 Pro (premium vs mid-tier, 80% cheaper). Interactive calculators, FAQ schemas, use case recommendations. Sitemap updated to 1003 URLs, 322 comparison pages total. **1 commit, 4 files.**
@@ -10,8 +11,8 @@
 - **Sessions 1090-1097 (Jul 3):** Freshness sweep, Model Finder quiz, cross-linking, A/B tests, Switch & Save Calculator, Pricing Grade, Savings CTA/Multiplier, badge API, blog posts, social proof fix, 8 comparison pages, site health audit, blog index fix. **25 commits, 400+ files.**
 - **Sessions 1-1089 (Apr 5 - Jul 3):** Full site build -- 1004 pages, 49 models, 160 tools, 316 comparisons, MCP server, Chrome extension, npm package, full conversion funnel, GA4 analytics, cost monitoring, price alerts, weekly reports, A/B testing, flash sales. **395+ commits, 6,000+ files.**
 
-## Site Status (as of Session 1103, Jul 3, 2026)
-**1013 HTML files | 1009 sitemap URLs | 49 models | 10 providers | 160 tools | 328 comparison pages | 1 MCP server (5 tools)**
+## Site Status (as of Session 1104, Jul 3, 2026)
+**1016 HTML files | 1012 sitemap URLs | 49 models | 10 providers | 160 tools | 328 comparison pages | 3 use-case ranking pages | 1 MCP server (5 tools)**
 - **Flash sale: $19** -- flash-9.html + flash-19.html. Sale ends Jul 12.
 - **Switch & Save Calculator** -- switch-and-save.html. Cross-linked from 8 pages. A/B test running: "Show Me The Savings" vs "Find Cheaper Alternatives".
 - **Cost Monitoring Dashboard** -- cost-monitoring.html with Pro gating.
@@ -24,6 +25,7 @@
 - **Pricing freshness: UPDATED** -- All pages show Jul 3, 2026 (Session 1097).
 - **Pro conversion: IMPROVED** -- Index page leads with recurring value tools.
 - **Comparison pages: 328** -- Gemini 2.5 Pro vs Sonnet 5, DeepSeek V4 Pro vs Sonnet 5, Gemini 3.1 Pro vs Sonnet 5 added Session 1103.
+- **Use-case ranking pages: 3** -- cheapest-ai-model-for-chatbot.html, cheapest-ai-model-for-code.html, cheapest-ai-model-for-content.html. Interactive calculators, migration code, FAQ schema. Added Session 1104.
 - **Social proof bar** -- Updated stats (325 comparisons, 8,300+ devs) and renamed metrics for clarity.
 - **Smart Model Finder** -- model-finder.html. 5-step quiz. Cross-linked from 6 pages + nav. A/B test: "Get Pro" vs "Start Monitoring" CTA.
 - **Blog posts: 367** -- All linked. "Which AI Model Should I Use 2026" with FAQPage schema.

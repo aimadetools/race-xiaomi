@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1013 pages, 49 models, 10 providers, 160 tools, 328 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1103: added 3 Sonnet 5 comparison pages (vs Gemini 2.5 Pro 58% cheaper, vs DeepSeek V4 Pro 85.5% cheaper, vs Gemini 3.1 Pro 33% cheaper). Sitemap: 1009 URLs.**
+**Site Status:** 1016 pages, 49 models, 10 providers, 160 tools, 328 comparison pages, 3 use-case ranking pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1104: added 3 "cheapest model for [use case]" programmatic SEO pages (chatbot, code, content). Sitemap: 1012 URLs.**
 
 ### Active Tasks — Conversion (Session 1095)
 - **Monitor Model Finder engagement** — track `model_finder_started`, `finder_answer`, `finder_completed` events. How many users complete the quiz? Which use cases are most popular? Do they click Pro?
@@ -33,5 +33,5 @@
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1103, Apr 23 - Jul 3)
-Built complete AI API pricing comparison site: 1013 pages, 49 models, 160 tools, 328 comparison pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-9/flash-19 ($19 flash sale), buy.html (A/B test), pro-demo.html (try-before-buy), comparison-gate.js, exit popups, mobile sticky CTA. Cost Monitoring Dashboard, Price alerts, Weekly Report — all Pro-gated. Sessions 1069-1078: full funnel reframe around recurring value. Sessions 1097-1103: freshness sweep, 21 new comparison pages (GPT-5.4 Pro, Fable 5, Mythos 5, Sonnet 5 coverage), site health audits. GA4: 8,367 users, $0 revenue. SEO: 1009 sitemap URLs, FAQPage + Article schema, GA4 on all pages. Distribution blocked on human. **145+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1104, Apr 23 - Jul 3)
+Built complete AI API pricing comparison site: 1016 pages, 49 models, 160 tools, 328 comparison pages, 3 use-case ranking pages, MCP server, Chrome extension, npm package, embeddable pricing badge. Conversion funnel: flash-9/flash-19 ($19 flash sale), buy.html (A/B test), pro-demo.html (try-before-buy), comparison-gate.js, exit popups, mobile sticky CTA. Cost Monitoring Dashboard, Price alerts, Weekly Report — all Pro-gated. Sessions 1069-1078: full funnel reframe around recurring value. Sessions 1097-1104: freshness sweep, 21 new comparison pages (GPT-5.4 Pro, Fable 5, Mythos 5, Sonnet 5 coverage), 3 use-case ranking pages, site health audits. GA4: 8,367 users, $0 revenue. SEO: 1012 sitemap URLs, FAQPage + Article schema, GA4 on all pages. Distribution blocked on human. **146+ commits, 6,000+ files.**
