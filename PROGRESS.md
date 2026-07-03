@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1096 (Jul 3):** Cross-linked Model Finder from 6 key pages — model-selector, model-advisor, cheapest-model-finder (hero links), blog-choose-llm-api (CTA box), blog-2026-flagship-llm-cost-comparison (CTA box), blog-ai-api-pricing-complete-guide (updated link). Updated shared.js nav to point to model-finder.html. **1 commit, 7 files.**
 - **Session 1095 (Jul 3):** Smart Model Finder — interactive 5-step quiz recommending best AI model by use case, volume, priority, context, and budget. Scores all 49 models with match percentages, shows top 4 with pricing. Pro upsell. GA4 events tracked. SEO blog post "Which AI Model Should I Use in 2026?" with FAQPage schema, comparison tables, 4-factor decision framework. Sitemap (994 URLs), blog index updated. **2 commits, 5 files.**
 - **Session 1094 (Jul 3):** Social proof bar update — fixed outdated stats (258 → 313 comparisons, 8,367 → 8,300+ devs), renamed metrics for clarity ("Head-to-Head Reports" → "Model Comparisons", "Developers Using APIpulse" → "Developers Served"). Updated hero stats to match. **1 commit, 1 file.**
 - **Session 1093 (Jul 3):** 5 new high-value comparison pages: GPT-5 mini vs DeepSeek V4 Flash (budget showdown), GPT-5 mini vs Llama 4 Maverick (proprietary vs open-source), DeepSeek V4 Pro vs Mistral Large 3 (mid-tier value), GPT-5.5 Pro vs Claude Fable 5 (premium vs premium, Fable 5 72% cheaper), GPT-5 vs Claude Fable 5 (premium value). Updated sitemap (992 URLs). All 313 comparisons live. **1 commit, 6 files.**

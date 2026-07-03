@@ -353,7 +353,18 @@
         }
 
         function showResults() {
-            gtag('event', 'finder_completed', { useCase: answers.useCase, volume: answers.volume, priority: answers.priority, context: answers.context, budget: answers.budget });
+            // A/B test: CTA button text
+            // Variant A: "Get Pro — $19 (Flash Sale)" (control)
+            // Variant B: "Start Monitoring — $19 (Flash Sale)"
+            const STORAGE_KEY = 'finder_cta_variant';
+            let ctaVariant = localStorage.getItem(STORAGE_KEY);
+            if (!ctaVariant) {
+                ctaVariant = Math.random() < 0.5 ? 'A' : 'B';
+                localStorage.setItem(STORAGE_KEY, ctaVariant);
+            }
+            const ctaText = ctaVariant === 'B' ? 'Start Monitoring — $19 (Flash Sale)' : 'Get Pro — $19 (Flash Sale)';
+
+            gtag('event', 'finder_completed', { useCase: answers.useCase, volume: answers.volume, priority: answers.priority, context: answers.context, budget: answers.budget, cta_variant: ctaVariant });
 
             const recommendations = getRecommendations(answers);
             const topPick = recommendations[0];
@@ -407,7 +418,7 @@
                             <li>Cost alerts when prices change</li>
                             <li>Lifetime access — pay once, use forever</li>
                         </ul>
-                        <a href="/flash-19.html?from=model-finder" class="btn-pro">Get Pro — $19 (Flash Sale)</a>
+                        <a href="/flash-19.html?from=model-finder" class="btn-pro" onclick="gtag('event','finder_cta_clicked',{cta_variant:'${ctaVariant}'})">${ctaText}</a>
                     </div>
 
                     <div style="text-align:center;">
