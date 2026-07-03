@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 987 pages, 49 models, 10 providers, 160 tools, 300 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1088: Savings Multiplier widget added to conversion pages.**
+**Site Status:** 991 pages, 49 models, 10 providers, 160 tools, 304 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1089: 3 new SEO blog posts + badge API endpoint for markdown embedding.**
 
 ### Active Tasks — Conversion (Session 1081)
 - **Monitor Switch & Save engagement** — track `switch_save_page_viewed`, `switch_save_calculated` events. Do users complete the flow and click Pro?
@@ -17,7 +17,7 @@
 - **Monitor Savings CTA engagement** — track `savings_cta_shown`, `savings_cta_dismissed` events. Does the bottom bar drive Pro clicks?
 - **Monitor Savings Multiplier engagement** — track `savings_multiplier_shown` events. Do users see the compounding savings widget? Does it increase Pro clicks?
 
-**Completed (Sessions 1059-1088):** GA4 events on buy.html, flash-19 savings calculator with quality tiers, Cost Tracker with localStorage + trend viz, Free vs Pro comparison table (6 features), calculator Pro upsell with hidden alternatives, flash-9.html impulse-buy page. Full freshness sweep across 375+ files. pricing.json data audit. Pro conversion fix — index page leads with recurring value tools. Switch & Save Calculator + cross-linking + A/B test. SEO content + model selector fix. **Pricing Grade tool + Savings CTA + cross-linking (Sessions 1085-1086).** Fixed broken mobile-nav.js reference. **3 new comparison pages (Session 1087).** **Savings Multiplier widget — compounding savings visualization on buy/flash-19/index (Session 1088).**
+**Completed (Sessions 1059-1089):** GA4 events on buy.html, flash-19 savings calculator with quality tiers, Cost Tracker with localStorage + trend viz, Free vs Pro comparison table (6 features), calculator Pro upsell with hidden alternatives, flash-9.html impulse-buy page. Full freshness sweep across 375+ files. pricing.json data audit. Pro conversion fix — index page leads with recurring value tools. Switch & Save Calculator + cross-linking + A/B test. SEO content + model selector fix. **Pricing Grade tool + Savings CTA + cross-linking (Sessions 1085-1086).** Fixed broken mobile-nav.js reference. **3 new comparison pages (Session 1087).** **Savings Multiplier widget — compounding savings visualization on buy/flash-19/index (Session 1088).** **Badge API + 3 SEO blog posts + comparison page (Session 1089):** /api/badge-md SVG endpoint for markdown embedding, "Free AI Pricing API" tutorial, "OpenAI vs Anthropic Pricing 2026", "Cheapest AI API July 2026", DeepSeek V4 Pro vs GPT-5 Mini comparison.
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
