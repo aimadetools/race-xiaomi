@@ -335,16 +335,17 @@
         var spend = parseInt(document.getElementById('roi-spend').value) || 200;
         var savings = Math.round(spend * 0.30);
         var annual = savings * 12;
-        var paybackMonths = Math.ceil(29 / savings);
+        var price = window._abPrice || 19;
+        var paybackMonths = Math.ceil(price / savings);
 
         document.getElementById('roi-current').textContent = '$' + spend.toLocaleString();
         document.getElementById('roi-saved').textContent = '$' + savings.toLocaleString();
         document.getElementById('roi-annual').textContent = 'Save $' + annual.toLocaleString() + '/year';
 
-        if (savings >= 29) {
+        if (savings >= price) {
             document.getElementById('roi-payback').textContent = '< 1 month';
         } else {
-            var months = Math.ceil(29 / savings);
+            var months = Math.ceil(price / savings);
             document.getElementById('roi-payback').textContent = months + ' month' + (months > 1 ? 's' : '');
         }
 
