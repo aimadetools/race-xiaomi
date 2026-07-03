@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Pricing Grade — Are You Overpaying? | APIpulse</title>
+    <meta name="description" content="Get your AI API pricing grade in 30 seconds. See if you're overpaying for GPT, Claude, or Gemini — and how much you could save by switching. Free tool.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://getapipulse.com/pricing-grade.html">
+    <meta property="og:title" content="What's Your AI API Pricing Grade? — A+ to F">
+    <meta property="og:description" content="30-second quiz: are you overpaying for AI APIs? Get your grade and see exact savings.">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/pricing-grade.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What's Your AI API Pricing Grade?">
+    <meta name="twitter:description" content="30-second quiz: are you overpaying for AI APIs? Get your grade and see exact savings.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Pricing Grade Calculator",
+        "url": "https://getapipulse.com/pricing-grade.html",
+        "description": "Get your AI API pricing grade in 30 seconds. See if you're overpaying and how much you could save.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": [
+            { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Pro", "price": "19", "priceCurrency": "USD", "description": "Lifetime access with all 49 models" }
+        ]
+    }
+    </script>
+    <style>
+        .grade-page { max-width: 640px; margin: 0 auto; padding: 40px 20px 80px; }
+        .grade-hero { text-align: center; margin-bottom: 36px; }
+        .grade-hero h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 900; margin-bottom: 12px; color: var(--text-primary); }
+        .grade-hero p { font-size: 15px; color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.6; }
+        .grade-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 28px;
+        }
+        .form-step { margin-bottom: 24px; }
+        .form-step:last-child { margin-bottom: 0; }
+        .step-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        .form-row { display: flex; gap: 10px; }
+        .form-row select, .form-row input {
+            flex: 1;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .form-row select:focus, .form-row input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .grade-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .grade-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.3); }
+
+        /* Results */
+        .grade-result {
+            display: none;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .grade-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border: 4px solid;
+            position: relative;
+        }
+        .grade-letter {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .grade-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+        .grade-summary {
+            font-size: 16px;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .grade-detail {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+
+        /* Savings breakdown */
+        .savings-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        .savings-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+        .savings-header h3 { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+        .savings-amount {
+            font-size: 24px;
+            font-weight: 900;
+            color: #22c55e;
+            font-family: monospace;
+        }
+        .alt-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+        .alt-row:last-child { margin-bottom: 0; }
+        .alt-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .alt-provider {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        .alt-save {
+            font-size: 16px;
+            font-weight: 800;
+            color: #22c55e;
+            font-family: monospace;
+        }
+        .alt-pct {
+            font-size: 11px;
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        /* Grade factors */
+        .factors-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        .factors-card h3 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+        .factor-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .factor-row:last-child { border-bottom: none; }
+        .factor-icon { font-size: 18px; flex-shrink: 0; }
+        .factor-name { flex: 1; font-size: 14px; color: var(--text-primary); font-weight: 500; }
+        .factor-score {
+            font-size: 14px;
+            font-weight: 800;
+            padding: 2px 10px;
+            border-radius: 6px;
+        }
+        .factor-good { background: rgba(34,197,94,0.12); color: #22c55e; }
+        .factor-ok { background: rgba(245,158,11,0.12); color: #f59e0b; }
+        .factor-bad { background: rgba(239,68,68,0.12); color: #ef4444; }
+
+        /* Share section */
+        .share-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .share-section h3 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+        .share-section p { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+        .share-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .share-btn:hover { border-color: var(--accent); }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));
+            border: 2px solid rgba(99,102,241,0.25);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .pro-upsell h3 { font-size: 18px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
+        .pro-upsell p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+        .pro-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+        .pro-feature {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .pro-feature .check { color: #22c55e; font-weight: 700; }
+        .pro-cta-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(34,197,94,0.3);
+            transition: all 0.2s;
+        }
+        .pro-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,197,94,0.4); }
+
+        @media (max-width: 480px) {
+            .grade-page { padding: 24px 16px 60px; }
+            .grade-circle { width: 110px; height: 110px; }
+            .grade-letter { font-size: 42px; }
+            .pro-features { grid-template-columns: 1fr; }
+            .form-row { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">APIpulse</a>
+            <div class="nav-links">
+                <a href="savings-calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="switch-and-save.html">Switch & Save</a>
+                <a href="pricing-grade.html" style="color:var(--accent);font-weight:700;">Pricing Grade</a>
+                <a href="flash-19.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $19</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="grade-page">
+        <div class="grade-hero">
+            <h1>What's Your AI API Pricing Grade?</h1>
+            <p>Tell us what you're paying — we'll grade your pricing efficiency and show exactly how much you could save. Takes 30 seconds.</p>
+        </div>
+
+        <!-- Input Form -->
+        <div class="grade-form" id="grade-form">
+            <div class="form-step">
+                <div class="step-label"><span class="step-num">1</span> Your current model</div>
+                <div class="form-row">
+                    <select id="g-provider" onchange="updateModels()">
+                        <option value="">Select provider...</option>
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="google">Google</option>
+                        <option value="deepseek">DeepSeek</option>
+                        <option value="mistral">Mistral</option>
+                        <option value="meta">Meta Llama</option>
+                        <option value="xai">xAI</option>
+                        <option value="cohere">Cohere</option>
+                        <option value="moonshot">Moonshot</option>
+                        <option value="ai21">AI21</option>
+                    </select>
+                    <select id="g-model" disabled>
+                        <option value="">Select model...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-step">
+                <div class="step-label"><span class="step-num">2</span> Monthly spend (approximate)</div>
+                <div class="form-row">
+                    <input type="number" id="g-spend" value="500" min="1" max="1000000" placeholder="$ per month" style="flex:1;">
+                    <span style="align-self:center;color:var(--text-muted);font-size:14px;font-weight:600;">$/month</span>
+                </div>
+            </div>
+            <div class="form-step">
+                <div class="step-label"><span class="step-num">3</span> Usage pattern</div>
+                <div class="form-row">
+                    <select id="g-usage">
+                        <option value="balanced">Balanced (85% in / 15% out)</option>
+                        <option value="heavy-input">Heavy input (95% in / 5% out)</option>
+                        <option value="heavy-output">Heavy output (50% in / 50% out)</option>
+                        <option value="chat">Chat/Conversation (70% in / 30% out)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="grade-btn" onclick="gradeMe()">Grade My Pricing →</button>
+        </div>
+
+        <!-- Results (hidden until graded) -->
+        <div class="grade-result" id="grade-result">
+            <!-- Grade Circle -->
+            <div class="grade-circle" id="grade-circle">
+                <span class="grade-letter" id="grade-letter">A</span>
+                <span class="grade-label" id="grade-label">Excellent</span>
+            </div>
+            <div class="grade-summary" id="grade-summary"></div>
+            <div class="grade-detail" id="grade-detail"></div>
+        </div>
+
+        <!-- Savings Breakdown -->
+        <div class="savings-card" id="savings-card" style="display:none;">
+            <div class="savings-header">
+                <h3>Your potential savings</h3>
+                <div class="savings-amount" id="total-savings">$0/yr</div>
+            </div>
+            <div id="alt-list"></div>
+        </div>
+
+        <!-- Grade Factors -->
+        <div class="factors-card" id="factors-card" style="display:none;">
+            <h3>How we graded you</h3>
+            <div id="factors-list"></div>
+        </div>
+
+        <!-- Share -->
+        <div class="share-section" id="share-section" style="display:none;">
+            <h3>Share your grade</h3>
+            <p>Challenge your team — are they overpaying too?</p>
+            <div class="share-btns">
+                <button class="share-btn" onclick="copyGrade()">📋 Copy Grade</button>
+                <a class="share-btn" id="tweet-btn" href="#" target="_blank" rel="noopener">𝕏 Tweet</a>
+                <a class="share-btn" id="linkedin-btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <div id="copy-confirm" style="display:none;margin-top:10px;font-size:13px;color:#22c55e;font-weight:600;">✓ Copied to clipboard!</div>
+        </div>
+
+        <!-- Pro Upsell -->
+        <div class="pro-upsell" id="pro-upsell" style="display:none;">
+            <h3>Unlock Your Full Report</h3>
+            <p>See all 49 models ranked by cost, get migration code, and track prices over time.</p>
+            <div class="pro-features">
+                <div class="pro-feature"><span class="check">✓</span> All 49 models ranked</div>
+                <div class="pro-feature"><span class="check">✓</span> Migration code snippets</div>
+                <div class="pro-feature"><span class="check">✓</span> PDF report export</div>
+                <div class="pro-feature"><span class="check">✓</span> Cost monitoring dashboard</div>
+                <div class="pro-feature"><span class="check">✓</span> Unlimited price alerts</div>
+                <div class="pro-feature"><span class="check">✓</span> Weekly pricing report</div>
+            </div>
+            <a href="flash-19.html?from=grade" class="pro-cta-btn" onclick="if(typeof gtag==='function')gtag('event','pro_button_clicked',{source:'pricing_grade'});">
+                Get Pro — $19 lifetime →
+            </a>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">
+                🔒 14-day refund · ⚡ Instant access · <a href="pro-demo.html" style="color:var(--accent);text-decoration:none;">Try demo first →</a>
+            </div>
+        </div>
+
+        <!-- More Tools -->
+        <div style="text-align:center;margin-top:16px;">
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">More free tools:</p>
+            <a href="savings-calculator.html" style="color:var(--accent);text-decoration:none;font-size:13px;font-weight:600;">Cost Calculator</a>
+            ·
+            <a href="switch-and-save.html" style="color:var(--accent);text-decoration:none;font-size:13px;font-weight:600;">Switch & Save</a>
+            ·
+            <a href="compare.html" style="color:var(--accent);text-decoration:none;font-size:13px;font-weight:600;">Compare Models</a>
+            ·
+            <a href="weekly-report.html" style="color:var(--accent);text-decoration:none;font-size:13px;font-weight:600;">Weekly Report</a>
+        </div>
+    </main>
+
+    <script>
+    // Model pricing data (per 1M tokens)
+    var MODELS = {
+        'openai': {
+            'gpt-5.5':          { name: 'GPT-5.5',          input: 5.00,  output: 30.00 },
+            'gpt-5.5-pro':      { name: 'GPT-5.5 Pro',      input: 15.00, output: 60.00 },
+            'gpt-5.4':          { name: 'GPT-5.4',          input: 2.50,  output: 15.00 },
+            'gpt-5.4-mini':     { name: 'GPT-5.4 mini',     input: 0.75,  output: 4.50 },
+            'gpt-5.4-nano':     { name: 'GPT-5.4 nano',     input: 0.20,  output: 0.80 },
+            'gpt-5':            { name: 'GPT-5',            input: 1.25,  output: 10.00 },
+            'gpt-5-mini':       { name: 'GPT-5 mini',       input: 0.25,  output: 2.00 },
+            'gpt-4o':           { name: 'GPT-4o',           input: 2.50,  output: 10.00 },
+            'gpt-4o-mini':      { name: 'GPT-4o mini',      input: 0.15,  output: 0.60 }
+        },
+        'anthropic': {
+            'claude-opus-4.8':  { name: 'Claude Opus 4.8',  input: 5.00,  output: 25.00 },
+            'claude-opus-4.7':  { name: 'Claude Opus 4.7',  input: 5.00,  output: 25.00 },
+            'claude-sonnet-5':  { name: 'Claude Sonnet 5',  input: 3.00,  output: 15.00 },
+            'claude-sonnet-4.6':{ name: 'Claude Sonnet 4.6', input: 3.00,  output: 15.00 },
+            'claude-haiku':     { name: 'Claude Haiku 4.5',  input: 1.00,  output: 5.00 },
+            'claude-fable-5':   { name: 'Fable 5',          input: 10.00, output: 50.00 },
+            'claude-mythos-5':  { name: 'Mythos 5',         input: 10.00, output: 50.00 }
+        },
+        'google': {
+            'gemini-3.1-pro':   { name: 'Gemini 3.1 Pro',   input: 2.00,  output: 12.00 },
+            'gemini-3.5-flash': { name: 'Gemini 3.5 Flash', input: 1.50,  output: 9.00 },
+            'gemini-3-flash':   { name: 'Gemini 3 Flash',   input: 0.50,  output: 3.00 },
+            'gemini-2.5-pro':   { name: 'Gemini 2.5 Pro',   input: 1.25,  output: 10.00 },
+            'gemini-2.5-flash': { name: 'Gemini 2.5 Flash-Lite', input: 0.075, output: 0.30 }
+        },
+        'deepseek': {
+            'deepseek-v4-pro':  { name: 'DeepSeek V4 Pro',  input: 0.435, output: 0.87 },
+            'deepseek-v4-flash':{ name: 'DeepSeek V4 Flash',input: 0.14,  output: 0.28 },
+            'deepseek-v3.2':    { name: 'DeepSeek V3.2',    input: 0.27,  output: 1.10 },
+            'deepseek-v3':      { name: 'DeepSeek V3',      input: 0.27,  output: 1.10 }
+        },
+        'mistral': {
+            'mistral-large':    { name: 'Mistral Large 3',  input: 0.50,  output: 1.50 },
+            'mistral-medium':   { name: 'Mistral Medium 3.5', input: 0.40, output: 2.00 },
+            'mistral-small':    { name: 'Mistral Small',    input: 0.10,  output: 0.30 }
+        },
+        'meta': {
+            'llama-4-scout':    { name: 'Llama 4 Scout',    input: 0.18,  output: 0.59 },
+            'llama-4-maverick': { name: 'Llama 4 Maverick', input: 0.25,  output: 0.80 },
+            'llama-3.1-70b':    { name: 'Llama 3.1 70B',    input: 0.35,  output: 0.40 },
+            'llama-3.1-8b':     { name: 'Llama 3.1 8B',     input: 0.05,  output: 0.08 }
+        },
+        'xai': {
+            'grok-4.3':         { name: 'Grok 4.3',         input: 1.25,  output: 2.50 },
+            'grok-build':       { name: 'Grok Build 0.1',   input: 0.15,  output: 0.60 }
+        },
+        'cohere': {
+            'command-r-plus':   { name: 'Command R+',       input: 1.15,  output: 2.88 },
+            'command-r':        { name: 'Command R',        input: 0.14,  output: 0.56 },
+            'command-a':        { name: 'Command A',        input: 1.25,  output: 5.00 }
+        },
+        'moonshot': {
+            'kimi-k2.6':        { name: 'Kimi K2.6',        input: 0.95,  output: 4.00 }
+        },
+        'ai21': {
+            'jamba-1.7':        { name: 'Jamba 1.7 Large',  input: 0.50,  output: 0.50 }
+        }
+    };
+
+    function updateModels() {
+        var provider = document.getElementById('g-provider').value;
+        var modelSel = document.getElementById('g-model');
+        modelSel.innerHTML = '<option value="">Select model...</option>';
+        if (!provider || !MODELS[provider]) { modelSel.disabled = true; return; }
+        var models = MODELS[provider];
+        for (var key in models) {
+            var m = models[key];
+            var opt = document.createElement('option');
+            opt.value = key;
+            opt.textContent = m.name + ' ($' + m.input + '/$' + m.output + ')';
+            modelSel.appendChild(opt);
+        }
+        modelSel.disabled = false;
+    }
+
+    function getBlend(usage) {
+        switch (usage) {
+            case 'heavy-input': return { input: 0.95, output: 0.05 };
+            case 'heavy-output': return { input: 0.50, output: 0.50 };
+            case 'chat': return { input: 0.70, output: 0.30 };
+            default: return { input: 0.85, output: 0.15 };
+        }
+    }
+
+    function blendedCost(m, blend) {
+        return m.input * blend.input + m.output * blend.output;
+    }
+
+    function gradeMe() {
+        var provider = document.getElementById('g-provider').value;
+        var modelKey = document.getElementById('g-model').value;
+        var spend = parseFloat(document.getElementById('g-spend').value) || 500;
+        var usage = document.getElementById('g-usage').value;
+
+        if (!provider || !modelKey) {
+            alert('Please select your provider and model.');
+            return;
+        }
+
+        var current = MODELS[provider][modelKey];
+        if (!current) return;
+
+        var blend = getBlend(usage);
+        var curBlended = blendedCost(current, blend);
+        var totalTokens = (spend / curBlended) * 1000000;
+
+        // Find ALL alternatives across ALL providers
+        var alternatives = [];
+        for (var prov in MODELS) {
+            for (var key in MODELS[prov]) {
+                if (prov === provider && key === modelKey) continue;
+                var m = MODELS[prov][key];
+                var cost = (totalTokens * blendedCost(m, blend)) / 1000000;
+                var saveMo = spend - cost;
+                alternatives.push({
+                    key: key, name: m.name, provider: prov,
+                    cost: cost, saveMo: saveMo, saveYr: saveMo * 12,
+                    blended: blendedCost(m, blend),
+                    input: m.input, output: m.output
+                });
+            }
+        }
+
+        // Sort by blended cost
+        alternatives.sort(function(a, b) { return a.blended - b.blended; });
+
+        // Calculate rank of current model among ALL models
+        var allModels = [];
+        for (var p in MODELS) {
+            for (var k in MODELS[p]) {
+                allModels.push({ provider: p, key: k, blended: blendedCost(MODELS[p][k], blend) });
+            }
+        }
+        allModels.sort(function(a, b) { return a.blended - b.blended; });
+        var rank = allModels.findIndex(function(m) { return m.provider === provider && m.key === modelKey; }) + 1;
+        var totalModels = allModels.length;
+        var percentile = Math.round(((totalModels - rank) / totalModels) * 100);
+
+        // Grade based on percentile (how much CHEAPER you are than others)
+        // If you're at the top (cheapest), you get an A. If at the bottom (most expensive), F.
+        var grade, gradeLabel, gradeColor, gradeSummary, gradeDetail;
+        if (percentile >= 85) {
+            grade = 'A+'; gradeLabel = 'Excellent'; gradeColor = '#22c55e';
+            gradeSummary = "You're on one of the cheapest models available.";
+            gradeDetail = "Out of " + totalModels + " models, yours ranks #" + rank + " in cost efficiency. You're already maximizing savings.";
+        } else if (percentile >= 70) {
+            grade = 'A'; gradeLabel = 'Great'; gradeColor = '#22c55e';
+            gradeSummary = "You're getting a great deal on AI APIs.";
+            gradeDetail = "Your model is in the top 30% for cost efficiency. There may be minor savings available.";
+        } else if (percentile >= 50) {
+            grade = 'B'; gradeLabel = 'Good'; gradeColor = '#84cc16';
+            gradeSummary = "You're paying a reasonable price — but there's room to save.";
+            gradeDetail = "Your model ranks #" + rank + " of " + totalModels + ". Switching could save you money without sacrificing quality.";
+        } else if (percentile >= 30) {
+            grade = 'C'; gradeLabel = 'Fair'; gradeColor = '#f59e0b';
+            gradeSummary = "You're overpaying. Significant savings are available.";
+            gradeDetail = "Your model ranks #" + rank + " of " + totalModels + ". Cheaper alternatives with similar capabilities exist.";
+        } else if (percentile >= 15) {
+            grade = 'D'; gradeLabel = 'Poor'; gradeColor = '#f97316';
+            gradeSummary = "You're paying too much. Switching could save thousands per year.";
+            gradeDetail = "Your model is in the bottom 30% for cost efficiency. Many better-priced alternatives exist.";
+        } else {
+            grade = 'F'; gradeLabel = 'Overpaying'; gradeColor = '#ef4444';
+            gradeSummary = "You're on one of the most expensive models. Major savings available.";
+            gradeDetail = "Your model ranks #" + rank + " of " + totalModels + ". Switching could cut your costs by 80%+.";
+        }
+
+        // Update grade circle
+        var circle = document.getElementById('grade-circle');
+        circle.style.borderColor = gradeColor;
+        circle.style.background = gradeColor + '11';
+        document.getElementById('grade-letter').textContent = grade;
+        document.getElementById('grade-letter').style.color = gradeColor;
+        document.getElementById('grade-label').textContent = gradeLabel;
+        document.getElementById('grade-label').style.color = gradeColor;
+        document.getElementById('grade-summary').textContent = gradeSummary;
+        document.getElementById('grade-detail').textContent = gradeDetail;
+
+        // Show savings
+        var savers = alternatives.filter(function(a) { return a.saveMo > 0; }).slice(0, 5);
+        var bestSave = savers.length > 0 ? savers[0].saveYr : 0;
+        document.getElementById('total-savings').textContent = bestSave > 0 ? '$' + Math.round(bestSave).toLocaleString() + '/yr' : '$0/yr';
+
+        var altHtml = '';
+        for (var i = 0; i < Math.min(5, savers.length); i++) {
+            var a = savers[i];
+            altHtml += '<div class="alt-row">';
+            altHtml += '<div><div class="alt-name">' + a.name + '</div><div class="alt-provider">' + capitalize(a.provider) + '</div></div>';
+            altHtml += '<div style="text-align:right;"><div class="alt-save">-$' + Math.round(a.saveMo).toLocaleString() + '/mo</div>';
+            altHtml += '<div class="alt-pct">' + Math.round((a.saveMo / spend) * 100) + '% cheaper</div></div>';
+            altHtml += '</div>';
+        }
+        if (savers.length > 5) {
+            altHtml += '<div style="text-align:center;padding:12px;margin-top:8px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.2);border-radius:8px;">';
+            altHtml += '<div style="font-size:13px;font-weight:700;color:var(--accent);">🔒 +' + (savers.length - 5) + ' more alternatives in Pro</div>';
+            altHtml += '<div style="font-size:12px;color:var(--text-muted);">See all 49 models ranked by cost</div>';
+            altHtml += '</div>';
+        }
+        document.getElementById('alt-list').innerHTML = altHtml;
+
+        // Grade factors
+        var factors = [];
+        // Factor 1: Cost efficiency (percentile)
+        if (percentile >= 70) factors.push({ icon: '💰', name: 'Cost efficiency', score: 'Top 30%', cls: 'factor-good' });
+        else if (percentile >= 40) factors.push({ icon: '💰', name: 'Cost efficiency', score: 'Average', cls: 'factor-ok' });
+        else factors.push({ icon: '💰', name: 'Cost efficiency', score: 'Below avg', cls: 'factor-bad' });
+
+        // Factor 2: Provider diversity risk
+        factors.push({ icon: '🏢', name: 'Provider lock-in risk', score: 'Single provider', cls: 'factor-ok' });
+
+        // Factor 3: Model freshness
+        var isDeprecated = current.name.indexOf('Deprecated') >= 0 || current.name.indexOf('Retired') >= 0;
+        if (isDeprecated) factors.push({ icon: '⚠️', name: 'Model status', score: 'Deprecated!', cls: 'factor-bad' });
+        else factors.push({ icon: '✅', name: 'Model status', score: 'Active', cls: 'factor-good' });
+
+        // Factor 4: Savings opportunity
+        if (bestSave > spend * 0.5) factors.push({ icon: '📉', name: 'Savings opportunity', score: 'Huge (' + Math.round(bestSave / spend * 100) + '%+)', cls: 'factor-bad' });
+        else if (bestSave > spend * 0.2) factors.push({ icon: '📉', name: 'Savings opportunity', score: 'Moderate', cls: 'factor-ok' });
+        else factors.push({ icon: '📉', name: 'Savings opportunity', score: 'Small', cls: 'factor-good' });
+
+        var factorsHtml = '';
+        for (var j = 0; j < factors.length; j++) {
+            var f = factors[j];
+            factorsHtml += '<div class="factor-row">';
+            factorsHtml += '<span class="factor-icon">' + f.icon + '</span>';
+            factorsHtml += '<span class="factor-name">' + f.name + '</span>';
+            factorsHtml += '<span class="factor-score ' + f.cls + '">' + f.score + '</span>';
+            factorsHtml += '</div>';
+        }
+        document.getElementById('factors-list').innerHTML = factorsHtml;
+
+        // Show results
+        document.getElementById('grade-result').style.display = 'block';
+        document.getElementById('savings-card').style.display = 'block';
+        document.getElementById('factors-card').style.display = 'block';
+        document.getElementById('share-section').style.display = 'block';
+        document.getElementById('pro-upsell').style.display = 'block';
+
+        // Scroll to results
+        document.getElementById('grade-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Update share buttons
+        var shareText = 'My AI API pricing grade: ' + grade + ' (' + gradeLabel + '). ' + gradeSummary + ' Check yours free at getapipulse.com/pricing-grade.html';
+        document.getElementById('tweet-btn').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText);
+        document.getElementById('linkedin-btn').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent('https://getapipulse.com/pricing-grade.html');
+
+        // Track
+        if (typeof gtag === 'function') {
+            gtag('event', 'pricing_grade_calculated', {
+                grade: grade,
+                provider: provider,
+                model: modelKey,
+                spend: spend,
+                annual_savings: Math.round(bestSave),
+                rank: rank,
+                total_models: totalModels
+            });
+        }
+    }
+
+    function copyGrade() {
+        var grade = document.getElementById('grade-letter').textContent;
+        var label = document.getElementById('grade-label').textContent;
+        var summary = document.getElementById('grade-summary').textContent;
+        var savings = document.getElementById('total-savings').textContent;
+        var text = '🎓 My AI API Pricing Grade: ' + grade + ' (' + label + ')\n\n' + summary + '\nPotential savings: ' + savings + '\n\nGrade your pricing free → getapipulse.com/pricing-grade.html';
+
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(function() {
+                document.getElementById('copy-confirm').style.display = 'block';
+                setTimeout(function() { document.getElementById('copy-confirm').style.display = 'none'; }, 3000);
+                if (typeof gtag === 'function') gtag('event', 'grade_shared', { grade: grade });
+            });
+        }
+    }
+
+    function capitalize(s) {
+        return s.charAt(0).toUpperCase() + s.slice(1);
+    }
+    </script>
+</body>
+</html>
