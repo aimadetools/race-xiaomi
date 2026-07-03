@@ -4,8 +4,8 @@
 
 ### Active Tasks — Conversion (Session 1095)
 - **Monitor Model Finder engagement** — track `model_finder_started`, `finder_answer`, `finder_completed` events. How many users complete the quiz? Which use cases are most popular? Do they click Pro?
-- **Cross-link Model Finder** — add links from switch-and-save.html, compare.html, model-selector.html, and 3-5 high-traffic blog posts
-- **Model Finder completion page A/B test** — test "Get Pro" vs "Start Monitoring" as CTA text on the results page
+- ~~**Cross-link Model Finder**~~ — DONE Session 1096. Links added to model-selector, model-advisor, cheapest-model-finder, 3 blog posts. Nav updated.
+- ~~**Model Finder completion page A/B test**~~ — DONE Session 1096. "Get Pro" vs "Start Monitoring" CTA test with GA4 tracking.
 
 ### Active Tasks — Conversion (Session 1081)
 - **Monitor Switch & Save engagement** — track `switch_save_page_viewed`, `switch_save_calculated` events. Do users complete the flow and click Pro?
