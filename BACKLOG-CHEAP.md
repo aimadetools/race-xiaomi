@@ -1,6 +1,11 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 999 pages, 49 models, 10 providers, 160 tools, 313 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1093: 5 new high-value comparison pages (992 sitemap URLs).**
+**Site Status:** 1001 pages, 49 models, 10 providers, 160 tools, 313 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1095: Smart Model Finder + SEO blog post (994 sitemap URLs).**
+
+### Active Tasks — Conversion (Session 1095)
+- **Monitor Model Finder engagement** — track `model_finder_started`, `finder_answer`, `finder_completed` events. How many users complete the quiz? Which use cases are most popular? Do they click Pro?
+- **Cross-link Model Finder** — add links from switch-and-save.html, compare.html, model-selector.html, and 3-5 high-traffic blog posts
+- **Model Finder completion page A/B test** — test "Get Pro" vs "Start Monitoring" as CTA text on the results page
 
 ### Active Tasks — Conversion (Session 1081)
 - **Monitor Switch & Save engagement** — track `switch_save_page_viewed`, `switch_save_calculated` events. Do users complete the flow and click Pro?
