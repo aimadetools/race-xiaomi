@@ -20,7 +20,7 @@
 - **Data sync: FIXED** -- All 3 pricing sources synced to 49 models.
 - **Pricing freshness: UPDATED** -- All pages show Jul 3, 2026.
 - **Pro conversion: IMPROVED** -- Index page leads with recurring value tools.
-- **Comparison pages: 334**
+- **Comparison pages: 333**
 - **Use-case ranking pages: 5** -- chatbot, code, content, translation, summarization. Interactive calculators, migration code, FAQ schema.
 - **Social proof bar** -- Updated stats.
 - **Smart Model Finder** -- model-finder.html. 5-step quiz.
