@@ -2,7 +2,12 @@
 
 **Site Status:** 980 pages, 49 models, 10 providers, 160 tools, 300 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Sessions 1069-1078: full funnel reframe around recurring value — index page now leads with monitoring/alerts/reports, GA4 diagnosis complete.**
 
-### Active Tasks — Conversion (Session 1068)
+### Active Tasks — Conversion (Session 1080)
+- **Monitor Switch & Save engagement** — track `switch_save_page_viewed`, `switch_save_calculated` events. Do users complete the flow and click Pro?
+- **Add Switch & Save links to blog posts** — add "Switch & Save" CTA to migration blog posts (blog-claude-4-*.html). These readers are already switching providers.
+- **Add Switch & Save to other tool pages** — cross-link from savings-calculator.html, cost-audit.html, model-switch.html
+- **A/B test Switch & Save CTA** — test "Show Me The Savings" vs "Find Cheaper Alternatives" button text
+- **Monitor A/B test buy.html vs flash-19.html** — 10 blog CTAs route to buy.html?from=blog_test. Check GA4 for buy_page_viewed / buy_cta_clicked events. Compare conversion rates after ~1 week.
 - **Monitor A/B test buy.html vs flash-19.html** — 10 blog CTAs route to buy.html?from=blog_test. Check GA4 for buy_page_viewed / buy_cta_clicked events. Compare conversion rates after ~1 week.
 - **Monitor price alerts Pro gate** — track `alert_gate_hit` events. Do free users hit the 3-model limit and upgrade?
 - **Monitor cost monitoring engagement** — track `cost_monitoring_viewed`, `cost_entry_added`, `budget_set`, `cost_data_exported` events. Do users return?
