@@ -791,8 +791,8 @@
             }
 
             var modelSavings = currentCost - cheapest.cost;
-            // Monitoring catches ~30% more savings over 12 months (price drops + new models)
-            var monitoringSavings12mo = modelSavings * 12 * 0.30;
+            // Monitoring catches price drops + new models over time — ~30% additional savings annually
+            var monitoringMonthly = modelSavings > 0 ? modelSavings * 0.30 : currentCost * 0.30;
 
             var oneTimeEl = document.getElementById('roi-onetime');
             var monitoringEl = document.getElementById('roi-monitoring');
@@ -800,7 +800,7 @@
                 oneTimeEl.textContent = '$' + currentCost.toFixed(2) + '/mo';
             }
             if (monitoringEl) {
-                monitoringEl.innerHTML = '$' + (currentCost * 0.3).toFixed(2) + '/mo <span style="font-size:14px;font-weight:400;color:var(--text-muted);">avg saved</span>';
+                monitoringEl.innerHTML = '$' + monitoringMonthly.toFixed(2) + '/mo <span style="font-size:14px;font-weight:400;color:var(--text-muted);">avg saved</span>';
             }
         }
 
