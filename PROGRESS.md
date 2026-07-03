@@ -14,7 +14,7 @@
 - **Switch & Save Calculator** -- switch-and-save.html. Cross-linked from 8 pages. A/B test running: "Show Me The Savings" vs "Find Cheaper Alternatives".
 - **Cost Monitoring Dashboard** -- cost-monitoring.html with Pro gating.
 - **Weekly Pricing Report** -- weekly-report.html, cross-linked from 5 key pages.
-- **Sitemap: 997 URLs** -- includes all 316 comparison pages.
+- **Sitemap: 1003 URLs** -- includes all 322 comparison pages.
 - **Blog index: FIXED** -- All 367 blog posts linked.
 - **GA4: G-0CEP7S9Y3J** -- Fully integrated on all pages. All key conversion pages verified.
 - **Revenue: $0** -- 8,367 total users, 0 conversions. A/B tests: index vs launch, Switch & Save CTA, Model Finder CTA.
@@ -22,7 +22,7 @@
 - **Pricing freshness: UPDATED** -- All pages show Jul 3, 2026 (Session 1097).
 - **Pro conversion: IMPROVED** -- Index page leads with recurring value tools.
 - **Comparison pages: 322** -- Fable 5 vs Gemini 3.1 Pro, Fable 5 vs Sonnet 5, Mythos 5 vs Gemini 3.1 Pro added Session 1101.
-- **Social proof bar** -- Updated stats (316 comparisons, 8,300+ devs) and renamed metrics for clarity.
+- **Social proof bar** -- Updated stats (322 comparisons, 8,300+ devs) and renamed metrics for clarity.
 - **Smart Model Finder** -- model-finder.html. 5-step quiz. Cross-linked from 6 pages + nav. A/B test: "Get Pro" vs "Start Monitoring" CTA.
 - **Blog posts: 367** -- All linked. "Which AI Model Should I Use 2026" with FAQPage schema.
 - **Savings Multiplier** -- Compounding savings visualization on buy.html, flash-19.html, index.html.
