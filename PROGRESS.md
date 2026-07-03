@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1104 (Jul 3):** Built 5 "cheapest model for [use case]" programmatic SEO pages: chatbot, code generation, content writing, translation, summarization. Each has interactive calculator, full ranking table, migration code snippets, quality tier guide, FAQ schema, cross-linking. Added to sitemap (1014 URLs), use-cases.html, compare.html. Different from comparison pages — targets "cheapest AI model for X" search intent. **2 commits, 10 files.**
+- **Session 1104 (Jul 3):** Built 5 "cheapest model for [use case]" programmatic SEO pages: chatbot, code, content, translation, summarization. Plus use-case-cost-rankings.html hub page linking all 5. Each page has interactive calculator, ranking table, migration code, quality tier guide, FAQ schema. Added to sitemap (1015 URLs), use-cases.html, compare.html. **3 commits, 12 files.**
 - **Session 1103 (Jul 3):** Added 3 Sonnet 5 comparison pages targeting cross-provider mid-tier/budget comparisons: Gemini 2.5 Pro vs Sonnet 5 (58% cheaper input), DeepSeek V4 Pro vs Sonnet 5 (85.5% cheaper input), Gemini 3.1 Pro vs Sonnet 5 (33% cheaper input). Interactive calculators, FAQ schemas, use case recommendations. Cross-linked from related pages. Sitemap updated to 1009 URLs, 328 comparison pages total. **1 commit, 4 files.**
 - **Session 1102 (Jul 3):** Added 3 high-value comparison pages for GPT-5.4 Pro (most expensive model at $30/$180): vs DeepSeek V4 Pro (98.6% cheaper), vs Gemini 3.5 Flash (95% cheaper), vs Sonnet 5 (90% cheaper). Interactive calculators, FAQ schemas, use case recommendations. Cross-linked from existing GPT-5.4 Pro vs Gemini 3.1 Pro page. Sitemap updated to 1006 URLs, 325 comparison pages total. **1 commit, 5 files.**
 - **Session 1101 (Jul 3):** Added 3 high-value comparison pages for underrepresented premium models: Fable 5 vs Gemini 3.1 Pro (premium vs mid-tier, 80% cheaper), Fable 5 vs Sonnet 5 (Anthropic premium vs mid-tier, 70% cheaper), Mythos 5 vs Gemini 3.1 Pro (premium vs mid-tier, 80% cheaper). Interactive calculators, FAQ schemas, use case recommendations. Sitemap updated to 1003 URLs, 322 comparison pages total. **1 commit, 4 files.**
@@ -12,7 +12,7 @@
 - **Sessions 1-1089 (Apr 5 - Jul 3):** Full site build -- 1004 pages, 49 models, 160 tools, 316 comparisons, MCP server, Chrome extension, npm package, full conversion funnel, GA4 analytics, cost monitoring, price alerts, weekly reports, A/B testing, flash sales. **395+ commits, 6,000+ files.**
 
 ## Site Status (as of Session 1104, Jul 3, 2026)
-**1018 HTML files | 1014 sitemap URLs | 49 models | 10 providers | 160 tools | 328 comparison pages | 5 use-case ranking pages | 1 MCP server (5 tools)**
+**1019 HTML files | 1015 sitemap URLs | 49 models | 10 providers | 160 tools | 328 comparison pages | 5 use-case ranking pages + 1 hub | 1 MCP server (5 tools)**
 - **Flash sale: $19** -- flash-9.html + flash-19.html. Sale ends Jul 12.
 - **Switch & Save Calculator** -- switch-and-save.html. Cross-linked from 8 pages. A/B test running: "Show Me The Savings" vs "Find Cheaper Alternatives".
 - **Cost Monitoring Dashboard** -- cost-monitoring.html with Pro gating.
