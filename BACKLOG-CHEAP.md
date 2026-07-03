@@ -22,7 +22,7 @@
 - **Monitor Savings CTA engagement** — track `savings_cta_shown`, `savings_cta_dismissed` events. Does the bottom bar drive Pro clicks?
 - **Monitor Savings Multiplier engagement** — track `savings_multiplier_shown` events. Do users see the compounding savings widget? Does it increase Pro clicks?
 
-**Completed (Sessions 1059-1093):** GA4 events on buy.html, flash-19 savings calculator with quality tiers, Cost Tracker with localStorage + trend viz, Free vs Pro comparison table (6 features), calculator Pro upsell with hidden alternatives, flash-9.html impulse-buy page. Full freshness sweep across 375+ files. pricing.json data audit. Pro conversion fix — index page leads with recurring value tools. Switch & Save Calculator + cross-linking + A/B test. SEO content + model selector fix. **Pricing Grade tool + Savings CTA + cross-linking (Sessions 1085-1086).** Fixed broken mobile-nav.js reference. **3 new comparison pages (Session 1087).** **Savings Multiplier widget — compounding savings visualization on buy/flash-19/index (Session 1088).** **Badge API + 3 SEO blog posts + comparison page (Session 1089):** /api/badge-md SVG endpoint for markdown embedding, "Free AI Pricing API" tutorial, "OpenAI vs Anthropic Pricing 2026", "Cheapest AI API July 2026", DeepSeek V4 Pro vs GPT-5 Mini comparison. **Sitemap + blog index fix (Session 1090):** Removed duplicate sitemap entry, added 3 missing blog posts to index. All 366 blog posts linked. **3 new high-value comparison pages (Session 1092):** Opus 4.8 vs Gemini 3.1 Pro, GPT-5.5 vs Sonnet 5, GPT-5 vs Sonnet 5. Sitemap updated to 987 URLs. **5 new high-value comparison pages (Session 1093):** GPT-5 mini vs DeepSeek V4 Flash, GPT-5 mini vs Llama 4 Maverick, DeepSeek V4 Pro vs Mistral Large 3, GPT-5.5 Pro vs Fable 5, GPT-5 vs Fable 5. Sitemap updated to 992 URLs. 313 total comparisons.
+**Completed (Sessions 1059-1106):** All conversion optimization tasks: GA4 events, flash sale calculators, Cost Tracker, Free vs Pro comparison, freshness sweep, Pricing Grade, Savings CTA, Savings Multiplier, Badge API, blog posts, sitemap fixes, 334 comparison pages, 5 use-case ranking pages. Monitoring ROI Calculator added to index page (Session 1106). **50+ commits, 500+ files.**
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
@@ -33,5 +33,5 @@
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1104, Apr 23 - Jul 3)
-Complete AI API pricing comparison site: 1026 pages, 49 models, 160 tools, 328 comparisons, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API. Full conversion funnel. GA4: 8,367 users, $0 revenue. Distribution blocked on human. **147+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1106, Apr 23 - Jul 3)
+Complete AI API pricing comparison site: 1032 pages, 49 models, 160 tools, 334 comparisons, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API. Full conversion funnel with Monitoring ROI Calculator. GA4: 8,367 users, $0 revenue. Distribution blocked on human. **148+ commits, 6,000+ files.**
