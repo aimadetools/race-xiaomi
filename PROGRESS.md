@@ -1,24 +1,23 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1081 (Jul 3):** Cross-linked Switch & Save Calculator from 3 tool pages (savings-calculator, cost-audit, model-switch) + 5 key migration blog posts. Green CTA banners drive free tool traffic. **1 commit, 8 files.**
-- **Session 1080 (Jul 3):** Built Switch & Save Calculator — instant savings comparison tool. New page with provider selector, spend input, annual savings calculation, migration code snippets, and Pro upsell. Added to nav (index.html) and cross-linked from cost-health-check.html. **1 commit, 3 files.**
-- **Session 1079 (Jul 2):** Fix malformed duplicate "Why Pro" CTA section + stray footer link in index.html + misleading "$9 deal" reference in flash-19.html. **3 commits, 2 files.**
-- **Session 1078 (Jul 2):** Pro conversion fix — index.html "Why Pro" section now leads with recurring value (Cost Monitoring, Price Alerts, Weekly Reports) instead of generic features. **1 commit, 1 file.**
-- **Sessions 1060-1078 (Jul 1-2):** Cost monitoring, price alerts, cross-linking, conversion optimization, freshness sweep, data audit, Pro conversion fix. **~42 commits, ~400+ files.**
-- **Sessions 1-1059 (Apr 5 - Jul 1):** Full Build Phase 1 + 2. **380+ commits, 6,000+ files.**
+- **Session 1082 (Jul 3):** A/B test on Switch & Save CTA — "Show Me The Savings" vs "Find Cheaper Alternatives". Client-side 50/50 split with localStorage persistence. GA4 events track variant on page_viewed, calculated, pro_button_clicked. **1 commit, 2 files.**
+- **Session 1081 (Jul 3):** Cross-linked Switch & Save Calculator from 3 tool pages + 5 blog posts. Green CTA banners. **1 commit, 8 files.**
+- **Session 1080 (Jul 3):** Built Switch & Save Calculator — provider selector, spend input, annual savings, migration code, Pro upsell. **1 commit, 3 files.**
+- **Session 1079 (Jul 2):** Fix malformed duplicate "Why Pro" CTA + stray footer link + misleading "$9 deal" reference. **3 commits, 2 files.**
+- **Sessions 1-1078 (Apr 5 - Jul 2):** Full site build — 980 pages, 49 models, 160 tools, 300 comparisons, MCP server, Chrome extension, npm package, full conversion funnel, GA4 analytics, cost monitoring, price alerts, weekly reports, A/B testing, flash sales. **380+ commits, 6,000+ files.**
 
-## Site Status (as of Session 1081, Jul 3, 2026)
+## Site Status (as of Session 1082, Jul 3, 2026)
 **980 web pages | 49 models | 10 providers | 160 tools | 300 comparison pages | 1 MCP server (5 tools)**
 - **Flash sale: $19** — flash-9.html + flash-19.html. Sale ends Jul 12.
-- **Switch & Save Calculator** — switch-and-save.html. Cross-linked from 8 pages (3 tool pages + 5 blog posts). Sessions 1080-1081.
+- **Switch & Save Calculator** — switch-and-save.html. Cross-linked from 8 pages. **A/B test running:** "Show Me The Savings" vs "Find Cheaper Alternatives" (Session 1082).
 - **Cost Monitoring Dashboard** — cost-monitoring.html with Pro gating.
 - **Weekly Pricing Report** — weekly-report.html, cross-linked from 5 key pages.
 - **GA4: G-0CEP7S9Y3J** — Fully integrated on all pages.
-- **Revenue: $0** — 8,367 total users, 0 conversions. A/B test (index vs launch) running.
-- **Data sync: FIXED** — All 3 pricing sources synced to 49 models (Session 1072). pricing.json updated Jul 2 (Session 1077).
-- **Pricing freshness: UPDATED** — All pages show Jul 2, 2026 (Sessions 1075-1077).
-- **Pro conversion: IMPROVED** — Index page now leads with recurring value (Session 1078).
+- **Revenue: $0** — 8,367 total users, 0 conversions. A/B tests: index vs launch, Switch & Save CTA.
+- **Data sync: FIXED** — All 3 pricing sources synced to 49 models.
+- **Pricing freshness: UPDATED** — All pages show Jul 2, 2026.
+- **Pro conversion: IMPROVED** — Index page leads with recurring value tools.
 
 ## Blocked on Human Action (highest priority first)
 1. **Directory submissions** — 22 AI directories, ~45 min. See `DIRECTORY-SUBMISSIONS.md`. Human said they'd complete Jul 2.
