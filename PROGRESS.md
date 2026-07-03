@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1107 (Jul 3):** Fixed 6 pricing accuracy bugs across 5 files. Index page monitoring ROI calculator had hardcoded pricing data 30-70% wrong (GPT-5.4 nano, Mistral Medium, Command A, etc.) — replaced with dynamic lookup from pricing-data.js. Fixed hardcoded $29 payback calculations in why-pro.html, claude-4-is-down.html, claude-4-migration-advisor.html, claude-4-last-chance.html, savings-calculator.html to use dynamic window._abPrice. Fixed monitoring ROI logic to show actual savings from model switching. **4 commits, 5 files.**
 - **Session 1106 (Jul 3):** Added Monitoring ROI Calculator to index page — shows "One calculation vs ongoing monitoring" comparison section. Auto-populates from calculator inputs, highlights what monitoring catches (price drops, new models, budget alerts, weekly reports). CTA to Pro demo. Addresses conversion gap: 359 calculator users → only 8 Pro clicks. **1 commit, 1 file.**
 - **Session 1105 (Jul 3):** 6 new comparison pages (GPT-5.5 Pro vs DeepSeek V4 Pro, Gemini 3.1 Pro vs DeepSeek V4 Pro, DeepSeek V4 Flash vs GPT-5.4 nano, GPT-5.4 Pro vs Mistral Medium 3.5, DeepSeek V4 Pro vs Llama 4 Maverick, GPT-5 mini vs DeepSeek V4 Flash). Interactive calculators, FAQ schema, social share. Sitemap 1021 URLs. **2 commits, 7 files.**
 - **Sessions 1099-1104 (Jul 3):** 8 comparison pages, 5 use-case ranking pages, freshness sweep, site health audit, Model Finder cross-linking. **12 commits, 25+ files.**
@@ -8,7 +9,7 @@
 - **Sessions 1-1089 (Apr 5 - Jul 3):** Full site build: 1026 pages, 49 models, 160 tools, 328 comparisons, MCP server, Chrome extension, npm package, conversion funnel, GA4, cost monitoring, price alerts, weekly reports, A/B testing, flash sales. **400+ commits, 6,000+ files.**
 
 ## Site Status (Jul 3, 2026)
-**1032 HTML files | 1021 sitemap URLs | 49 models | 10 providers | 160 tools | 334 comparison pages | 5 use-case ranking pages + 1 hub | 1 MCP server (5 tools)**
+**1027 HTML files | 1021 sitemap URLs | 49 models | 10 providers | 160 tools | 333 comparison pages | 5 use-case ranking pages + 1 hub | 1 MCP server (5 tools)**
 - **Flash sale: $19** -- flash-9.html + flash-19.html. Sale ends Jul 12.
 - **Switch & Save Calculator** -- switch-and-save.html. Cross-linked from 8 pages. A/B test running.
 - **Cost Monitoring Dashboard** -- cost-monitoring.html with Pro gating.
