@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 991 pages, 49 models, 10 providers, 160 tools, 304 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1089: 3 new SEO blog posts + badge API endpoint for markdown embedding.**
+**Site Status:** 995 pages, 49 models, 10 providers, 160 tools, 305 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1089: 3 new SEO blog posts + badge API endpoint for markdown embedding. Session 1090: Sitemap fix (compare-sonnet5-vs-gpt54.html added).**
 
 ### Active Tasks — Conversion (Session 1081)
 - **Monitor Switch & Save engagement** — track `switch_save_page_viewed`, `switch_save_calculated` events. Do users complete the flow and click Pro?
