@@ -761,6 +761,7 @@
 
     <script>
     // Auto-populate ROI calculator from main calculator inputs
+    // Uses API_MODELS from pricing-data.js (single source of truth) — no hardcoded prices
     (function(){
         function updateROI() {
             var provider = document.getElementById('provider')?.value;
@@ -769,69 +770,25 @@
             var requests = parseInt(document.getElementById('requests')?.value) || 1000;
             var days = parseInt(document.getElementById('days')?.value) || 30;
 
-            // Pricing data (per 1M tokens)
-            var pricing = {
-                'openai-gpt55': {input: 5.00, output: 30.00, name: 'GPT-5.5'},
-                'openai-gpt55-pro': {input: 10.00, output: 40.00, name: 'GPT-5.5 Pro'},
-                'openai-gpt5': {input: 1.25, output: 10.00, name: 'GPT-5'},
-                'openai-gpt5-mini': {input: 0.25, output: 2.00, name: 'GPT-5 mini'},
-                'openai-gpt54': {input: 2.50, output: 10.00, name: 'GPT-5.4'},
-                'openai-gpt54-mini': {input: 0.40, output: 1.60, name: 'GPT-5.4 mini'},
-                'openai-gpt54-nano': {input: 0.10, output: 0.40, name: 'GPT-5.4 nano'},
-                'openai-gpt54-pro': {input: 5.00, output: 20.00, name: 'GPT-5.4 Pro'},
-                'openai-gpt4o': {input: 2.50, output: 10.00, name: 'GPT-4o'},
-                'openai-gpt4o-mini': {input: 0.15, output: 0.60, name: 'GPT-4o mini'},
-                'anthropic-opus48': {input: 5.00, output: 25.00, name: 'Opus 4.8'},
-                'anthropic-opus47': {input: 5.00, output: 25.00, name: 'Opus 4.7'},
-                'anthropic-sonnet5': {input: 3.00, output: 15.00, name: 'Sonnet 5'},
-                'anthropic-sonnet46': {input: 3.00, output: 15.00, name: 'Sonnet 4.6'},
-                'anthropic-haiku': {input: 1.00, output: 5.00, name: 'Haiku 4.5'},
-                'anthropic-fable5': {input: 1.00, output: 5.00, name: 'Fable 5'},
-                'anthropic-mythos5': {input: 5.00, output: 25.00, name: 'Mythos 5'},
-                'google-gemini3-pro': {input: 2.00, output: 12.00, name: 'Gemini 3.1 Pro'},
-                'google-gemini31-flash-lite': {input: 0.075, output: 0.30, name: 'Gemini 3.1 Flash-Lite'},
-                'google-pro': {input: 1.25, output: 10.00, name: 'Gemini 2.5 Pro'},
-                'google-25-flash-lite': {input: 0.075, output: 0.30, name: 'Gemini 2.5 Flash-Lite'},
-                'google-flash': {input: 0.10, output: 0.40, name: 'Gemini Flash'},
-                'google-flash-lite': {input: 0.075, output: 0.30, name: 'Gemini Flash Lite'},
-                'google-gemini3-flash': {input: 0.40, output: 1.60, name: 'Gemini 3 Flash'},
-                'google-gemini35-flash': {input: 1.50, output: 9.00, name: 'Gemini 3.5 Flash'},
-                'deepseek-v4-pro': {input: 0.44, output: 0.87, name: 'DeepSeek V4 Pro'},
-                'deepseek-v4-flash': {input: 0.14, output: 0.28, name: 'DeepSeek V4 Flash'},
-                'deepseek-v3': {input: 0.27, output: 1.10, name: 'DeepSeek V3'},
-                'deepseek-v32': {input: 0.27, output: 1.10, name: 'DeepSeek V3.2'},
-                'mistral-large': {input: 0.50, output: 1.50, name: 'Mistral Large'},
-                'mistral-small': {input: 0.10, output: 0.30, name: 'Mistral Small'},
-                'mistral-medium': {input: 0.27, output: 1.10, name: 'Mistral Medium 3.5'},
-                'cohere-command-r-plus': {input: 2.50, output: 10.00, name: 'Command R+'},
-                'cohere-command-r': {input: 0.50, output: 1.50, name: 'Command R'},
-                'cohere-command-a': {input: 0.50, output: 1.50, name: 'Command A'},
-                'llama-4-scout': {input: 0.18, output: 0.59, name: 'Llama 4 Scout'},
-                'llama-4-maverick': {input: 0.36, output: 1.18, name: 'Llama 4 Maverick'},
-                'llama-3.1-70b': {input: 0.52, output: 0.75, name: 'Llama 3.1 70B'},
-                'llama-3.1-8b': {input: 0.10, output: 0.10, name: 'Llama 3.1 8B'},
-                'kimi-k26': {input: 0.95, output: 4.00, name: 'Kimi K2.6'},
-                'xai-grok3': {input: 1.25, output: 2.50, name: 'Grok 4.3'},
-                'xai-grok3-mini': {input: 0.30, output: 0.50, name: 'Grok Build 0.1'},
-                'ai21-jamba': {input: 0.50, output: 0.50, name: 'Jamba 1.5 Large'},
-                'ai21-jamba17': {input: 2.00, output: 8.00, name: 'Jamba 1.7 Large'}
-            };
-
-            var p = pricing[provider] || {input: 1.25, output: 10.00, name: 'GPT-5'};
+            // Look up current model from pricing-data.js (single source of truth)
+            var model = (typeof getModelById === 'function') ? getModelById(provider) : null;
+            var p = model || {input: 1.25, output: 10.00, name: 'GPT-5'};
             var totalInputCost = (inputTokens * requests * days * p.input) / 1000000;
             var totalOutputCost = (outputTokens * requests * days * p.output) / 1000000;
             var currentCost = totalInputCost + totalOutputCost;
 
-            // Find cheapest model for same use case
+            // Find cheapest non-deprecated model for same use case
             var cheapest = {cost: Infinity, name: ''};
-            Object.keys(pricing).forEach(function(key) {
-                var m = pricing[key];
-                var cost = (inputTokens * requests * days * m.input) / 1000000 +
-                           (outputTokens * requests * days * m.output) / 1000000;
-                if (cost < cheapest.cost) {
-                    cheapest = {cost: cost, name: m.name};
-                }
-            });
+            if (typeof API_MODELS !== 'undefined') {
+                API_MODELS.forEach(function(m) {
+                    if (m.deprecated) return;
+                    var cost = (inputTokens * requests * days * m.input) / 1000000 +
+                               (outputTokens * requests * days * m.output) / 1000000;
+                    if (cost < cheapest.cost) {
+                        cheapest = {cost: cost, name: m.name};
+                    }
+                });
+            }
 
             var modelSavings = currentCost - cheapest.cost;
             // Monitoring catches ~30% more savings over 12 months (price drops + new models)
