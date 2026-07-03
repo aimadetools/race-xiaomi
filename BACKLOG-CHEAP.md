@@ -14,7 +14,7 @@
 - **Monitor pro-demo.html engagement** — track `pro_demo_generated` → `flash_buy_clicked` → `purchase` funnel
 - **Monitor cost tracker engagement** — track `cost_tracked` events, see if users return to track more calculations
 
-**Completed (Sessions 1059-1081):** GA4 events on buy.html, flash-19 savings calculator with quality tiers, Cost Tracker with localStorage + trend viz, Free vs Pro comparison table (6 features), calculator Pro upsell with hidden alternatives, flash-9.html impulse-buy page. Full freshness sweep across 375+ files (Sessions 1075-1076). pricing.json data audit (Session 1077). Pro conversion fix — index page leads with recurring value tools (Session 1078). Switch & Save Calculator built + cross-linked from 8 pages (Sessions 1080-1081).
+**Completed (Sessions 1059-1082):** GA4 events on buy.html, flash-19 savings calculator with quality tiers, Cost Tracker with localStorage + trend viz, Free vs Pro comparison table (6 features), calculator Pro upsell with hidden alternatives, flash-9.html impulse-buy page. Full freshness sweep across 375+ files (Sessions 1075-1076). pricing.json data audit (Session 1077). Pro conversion fix — index page leads with recurring value tools (Session 1078). Switch & Save Calculator built + cross-linked from 8 pages (Sessions 1080-1081). A/B test Switch & Save CTA — "Show Me The Savings" vs "Find Cheaper Alternatives" (Session 1082).
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
