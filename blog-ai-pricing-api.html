@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Pricing API — Real-Time LLM Cost Data for 49 Models | APIpulse</title>
+    <meta name="description" content="Free JSON API for AI model pricing data. Get real-time costs for GPT-5, Claude, Gemini, DeepSeek, and 48 more models. No auth required. Use in your tools, dashboards, and cost calculators.">
+    <meta name="keywords" content="free AI pricing API, LLM pricing JSON, GPT cost API, Claude pricing API, AI model pricing data, OpenAI API pricing, Anthropic API pricing, AI cost calculator API">
+    <meta property="og:title" content="Free AI Pricing API — Real-Time LLM Cost Data | APIpulse">
+    <meta property="og:description" content="Free JSON API for AI model pricing. 49 models, 10 providers, no auth. Use in your tools and dashboards.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-07-03">
+    <meta property="article:modified_time" content="2026-07-03">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-ai-pricing-api.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free AI Pricing API — Real-Time LLM Cost Data | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free JSON API for AI model pricing. 49 models, 10 providers, no auth required.">
+    <link rel="canonical" href="https://getapipulse.com/blog-ai-pricing-api.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer;
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Free AI Pricing API — Real-Time LLM Cost Data for 49 Models",
+        "description": "Free JSON API for AI model pricing data. Get real-time costs for GPT-5, Claude, Gemini, DeepSeek, and 48 more models. No auth required.",
+        "datePublished": "2026-07-03",
+        "dateModified": "2026-07-03",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-ai-pricing-api.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "Free AI Pricing API", "item": "https://getapipulse.com/blog-ai-pricing-api.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is the APIpulse pricing API really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, the APIpulse pricing API is 100% free with no authentication required. It provides JSON data for 49 AI models across 10 providers. Rate limited to 60 requests per minute. Use it in your tools, dashboards, and cost calculators."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often is the pricing data updated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pricing data is updated within 24 hours of any provider price change. The APIpulse team monitors OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, xAI, Moonshot, and AI21 for pricing changes. Last verified: July 2, 2026."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What AI models are included in the pricing API?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The API covers 49 models from 10 providers: OpenAI (GPT-5.5, GPT-5, GPT-5.4, GPT-4o, GPT-oss), Anthropic (Claude Opus 4.8, Sonnet 5, Haiku 4.5), Google (Gemini 3.5 Flash, 3.1 Pro, 3 Flash), DeepSeek (V4 Pro, V4 Flash), Mistral (Large 3, Small 4), Cohere (Command A, R+), Meta (Llama 4 Scout, Maverick), xAI (Grok 4.3), Moonshot (Kimi K2.6), and AI21 (Jamba 1.7)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use the APIpulse pricing data in commercial products?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The APIpulse pricing data is released under CC-BY-4.0 license. You can use it in commercial products, dashboards, and tools. Attribution appreciated but not required. The data includes per-model input/output pricing, context windows, tier classification, and deprecation status."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; line-height: 1.6; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; color: var(--text-primary); }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; color: var(--text-primary); }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; line-height: 1.6; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+
+        .code-block {
+            background: #0f172a; border: 1px solid #1e293b;
+            border-radius: 12px; padding: 20px; margin: 16px 0 24px;
+            overflow-x: auto; position: relative;
+        }
+        .code-block pre {
+            margin: 0; font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 13px; line-height: 1.6; color: #e2e8f0;
+        }
+        .code-block .lang-label {
+            position: absolute; top: 8px; right: 12px;
+            font-size: 11px; color: #64748b; text-transform: uppercase;
+        }
+        .code-block .comment { color: #64748b; }
+        .code-block .keyword { color: #c084fc; }
+        .code-block .string { color: #34d399; }
+        .code-block .number { color: #fbbf24; }
+
+        .endpoint-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-bottom: 16px;
+        }
+        .endpoint-card .method {
+            display: inline-block; background: #10b981; color: white;
+            padding: 2px 8px; border-radius: 4px; font-size: 12px;
+            font-weight: 700; margin-right: 8px;
+        }
+        .endpoint-card .path {
+            font-family: monospace; font-size: 14px; color: var(--accent);
+        }
+        .endpoint-card p { color: var(--text-secondary); margin-top: 8px; font-size: 14px; }
+
+        .cta-box {
+            background: linear-gradient(135deg, #7c3aed, #818cf8);
+            border-radius: 16px; padding: 32px; margin: 40px 0;
+            text-align: center; color: white;
+        }
+        .cta-box h3 { color: white; font-size: 22px; margin-bottom: 8px; }
+        .cta-box p { color: #e2e8f0; margin-bottom: 20px; }
+        .cta-box a {
+            display: inline-block; background: white; color: #7c3aed;
+            padding: 12px 32px; border-radius: 8px; text-decoration: none;
+            font-weight: 700; font-size: 16px;
+        }
+        .cta-box a:hover { opacity: 0.9; }
+
+        .comparison-table {
+            width: 100%; border-collapse: collapse; margin: 16px 0 24px;
+            font-size: 14px;
+        }
+        .comparison-table th {
+            background: var(--bg-secondary); padding: 12px 16px;
+            text-align: left; font-weight: 600; color: var(--text-primary);
+            border-bottom: 2px solid var(--border);
+        }
+        .comparison-table td {
+            padding: 10px 16px; border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .comparison-table tr:hover td { background: var(--bg-secondary); }
+
+        .badge-preview {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin: 16px 0 24px;
+            text-align: center;
+        }
+        .badge-preview img { max-width: 100%; height: auto; }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 28px; }
+            .article h2 { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">⚡ APIpulse</a>
+            <div class="nav-links">
+                <a href="/compare.html">Compare</a>
+                <a href="/calculator.html">Calculator</a>
+                <a href="/pricing-index.html">Pricing</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/flash-19.html" class="nav-cta">🔥 Get Pro — $19</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <a href="/blog.html" class="back-link">← Back to Blog</a>
+
+        <h1>Free AI Pricing API — Real-Time LLM Cost Data for 49 Models</h1>
+        <p class="subtitle">A free JSON API that gives you up-to-date pricing for every major AI model. No API key. No signup. Use it in your tools, dashboards, and cost calculators.</p>
+
+        <div class="article">
+            <p>If you're building tools that need AI pricing data — cost calculators, budget dashboards, model comparison tools, or billing systems — you've probably tried to scrape provider pricing pages. It's fragile, time-consuming, and breaks every time OpenAI or Anthropic changes their pricing.</p>
+
+            <p>I built a free API that solves this. It returns JSON pricing data for <strong>49 AI models across 10 providers</strong>, updated within 24 hours of any price change. No authentication required.</p>
+
+            <h2>The Quick Start</h2>
+
+            <p>One request gets you all the data:</p>
+
+            <div class="code-block">
+                <span class="lang-label">curl</span>
+<pre><span class="comment"># Get all pricing data</span>
+curl https://getapipulse.com/api/pricing
+
+<span class="comment"># Filter by provider</span>
+curl https://getapipulse.com/api/pricing?provider=openai
+
+<span class="comment"># Filter by tier</span>
+curl https://getapipulse.com/api/pricing?tier=budget</pre>
+            </div>
+
+            <p>The response includes input/output pricing per 1M tokens, context windows, tier classification, and deprecation status for every model.</p>
+
+            <div class="code-block">
+                <span class="lang-label">json</span>
+<pre>{
+  <span class="string">"id"</span>: <span class="string">"openai-gpt5"</span>,
+  <span class="string">"name"</span>: <span class="string">"GPT-5"</span>,
+  <span class="string">"provider"</span>: <span class="string">"openai"</span>,
+  <span class="string">"tier"</span>: <span class="string">"premium"</span>,
+  <span class="string">"input"</span>: <span class="number">1.25</span>,
+  <span class="string">"output"</span>: <span class="number">10.00</span>,
+  <span class="string">"context"</span>: <span class="string">"272K"</span>,
+  <span class="string">"deprecated"</span>: <span class="number">false</span>
+}</pre>
+            </div>
+
+            <h2>What's Included</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Models</th>
+                        <th>Price Range (Input)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>OpenAI</strong></td><td>13 models</td><td>$0.08 — $30.00</td></tr>
+                    <tr><td><strong>Anthropic</strong></td><td>9 models</td><td>$1.00 — $15.00</td></tr>
+                    <tr><td><strong>Google</strong></td><td>8 models</td><td>$0.075 — $2.00</td></tr>
+                    <tr><td><strong>DeepSeek</strong></td><td>4 models</td><td>$0.14 — $0.44</td></tr>
+                    <tr><td><strong>Mistral</strong></td><td>3 models</td><td>$0.10 — $1.50</td></tr>
+                    <tr><td><strong>Cohere</strong></td><td>3 models</td><td>$0.50 — $2.50</td></tr>
+                    <tr><td><strong>Meta</strong></td><td>4 models</td><td>$0.10 — $0.88</td></tr>
+                    <tr><td><strong>xAI</strong></td><td>2 models</td><td>$0.30 — $1.25</td></tr>
+                    <tr><td><strong>Moonshot</strong></td><td>1 model</td><td>$0.95</td></tr>
+                    <tr><td><strong>AI21</strong></td><td>2 models</td><td>$2.00</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Use Cases</h2>
+
+            <h3>1. Cost Calculator</h3>
+            <p>Build a calculator that estimates monthly spend based on token usage:</p>
+
+            <div class="code-block">
+                <span class="lang-label">JavaScript</span>
+<pre><span class="keyword">const</span> res = <span class="keyword">await</span> fetch(<span class="string">'https://getapipulse.com/api/pricing'</span>);
+<span class="keyword">const</span> { models } = <span class="keyword">await</span> res.json();
+
+<span class="comment">// Calculate monthly cost for GPT-5</span>
+<span class="keyword">const</span> gpt5 = models.find(m => m.id === <span class="string">'openai-gpt5'</span>);
+<span class="keyword">const</span> inputTokens = <span class="number">1_000_000</span>;  <span class="comment">// 1M tokens/month</span>
+<span class="keyword">const</span> outputTokens = <span class="number">500_000</span>;
+
+<span class="keyword">const</span> monthlyCost =
+  (inputTokens / <span class="number">1_000_000</span>) * gpt5.input +
+  (outputTokens / <span class="number">1_000_000</span>) * gpt5.output;
+
+console.log(<span class="string">`GPT-5 monthly: $${monthlyCost.toFixed(2)}`</span>);
+<span class="comment">// → GPT-5 monthly: $6.25</span></pre>
+            </div>
+
+            <h3>2. Model Comparison Tool</h3>
+            <p>Compare costs across providers to find the cheapest option:</p>
+
+            <div class="code-block">
+                <span class="lang-label">JavaScript</span>
+<pre><span class="comment">// Find cheapest budget model</span>
+<span class="keyword">const</span> budget = models
+  .filter(m => m.tier === <span class="string">'budget'</span> && !m.deprecated)
+  .sort((a, b) => a.input - b.input);
+
+console.log(<span class="string">'Cheapest models:'</span>);
+budget.slice(<span class="number">0</span>, <span class="number">5</span>).forEach(m => {
+  console.log(<span class="string">`  ${m.name}: $${m.input}/$${m.output}`</span>);
+});
+<span class="comment">// → GPT-oss 20B: $0.08/$0.35</span>
+<span class="comment">// → Mistral Small 4: $0.10/$0.30</span>
+<span class="comment">// → Llama 3.1 8B: $0.10/$0.10</span></pre>
+            </div>
+
+            <h3>3. Budget Dashboard</h3>
+            <p>Build a real-time dashboard showing current pricing for your team's most-used models. The API includes <code>s-maxage=3600</code> headers for CDN caching, so it's fast and free at scale.</p>
+
+            <h3>4. Billing Integration</h3>
+            <p>Use the pricing data to calculate costs in your AI-powered SaaS billing system. Track per-user API costs and pass them through to customers.</p>
+
+            <h2>Embeddable Badge</h2>
+
+            <p>Want to show live pricing on your site or README? Use the SVG badge endpoint:</p>
+
+            <div class="code-block">
+                <span class="lang-label">Markdown</span>
+<pre>![GPT-5 Pricing](https://getapipulse.com/api/badge-md?model=openai-gpt5)</pre>
+            </div>
+
+            <div class="badge-preview">
+                <img src="/api/badge-md?model=openai-gpt5" alt="GPT-5 Pricing Badge" style="max-width: 400px;">
+            </div>
+
+            <div class="code-block">
+                <span class="lang-label">HTML</span>
+<pre><span class="comment">&lt;!-- Embeddable pricing badge for your site --&gt;</span>
+&lt;div id="apipulse-badge"&gt;&lt;/div&gt;
+&lt;script src="https://getapipulse.com/badge.js"
+  data-theme="dark" data-count="4" async&gt;&lt;/script&gt;</pre>
+            </div>
+
+            <h2>API Endpoints</h2>
+
+            <div class="endpoint-card">
+                <span class="method">GET</span>
+                <span class="path">/api/pricing</span>
+                <p>Full pricing dataset for all 49 models. Filter by <code>provider</code> or <code>tier</code>.</p>
+            </div>
+
+            <div class="endpoint-card">
+                <span class="method">GET</span>
+                <span class="path">/api/calculate?model=openai-gpt5&amp;input=1000000&amp;output=500000</span>
+                <p>Calculate cost for a specific model and token count.</p>
+            </div>
+
+            <div class="endpoint-card">
+                <span class="method">GET</span>
+                <span class="path">/api/cheapest?input=1000000&amp;output=500000</span>
+                <p>Find the cheapest model for your workload.</p>
+            </div>
+
+            <div class="endpoint-card">
+                <span class="method">GET</span>
+                <span class="path">/api/compare?models=openai-gpt5,anthropic-sonnet5</span>
+                <p>Compare pricing side-by-side for multiple models.</p>
+            </div>
+
+            <div class="endpoint-card">
+                <span class="method">GET</span>
+                <span class="path">/api/recommend?use-case=chatbot&amp;budget=100</span>
+                <p>Get model recommendations based on use case and budget.</p>
+            </div>
+
+            <div class="endpoint-card">
+                <span class="method">GET</span>
+                <span class="path">/api/badge?model=openai-gpt5</span>
+                <p>SVG pricing badge for embedding in docs and READMEs.</p>
+            </div>
+
+            <div class="endpoint-card">
+                <span class="method">GET</span>
+                <span class="path">/api/badge-md?model=openai-gpt5</span>
+                <p>Markdown-friendly SVG badge for GitLab, Discord, Slack, and Notion.</p>
+            </div>
+
+            <h2>Data Format</h2>
+
+            <p>The full dataset includes:</p>
+
+            <ul>
+                <li><strong>Model ID</strong> — unique identifier (e.g., <code>openai-gpt5</code>)</li>
+                <li><strong>Name</strong> — human-readable name (e.g., "GPT-5")</li>
+                <li><strong>Provider</strong> — provider slug (e.g., <code>openai</code>)</li>
+                <li><strong>Tier</strong> — classification: <code>premium</code>, <code>mid</code>, or <code>budget</code></li>
+                <li><strong>Input pricing</strong> — per 1M tokens (USD)</li>
+                <li><strong>Output pricing</strong> — per 1M tokens (USD)</li>
+                <li><strong>Context window</strong> — max context length</li>
+                <li><strong>Deprecation status</strong> — whether the model is deprecated</li>
+            </ul>
+
+            <h2>Rate Limits</h2>
+
+            <p>Free tier: <strong>60 requests per minute</strong>. No API key required. If you need higher limits for production use, <a href="/contact.html">get in touch</a>.</p>
+
+            <h2>License</h2>
+
+            <p>The pricing data is released under <strong>CC-BY-4.0</strong>. Use it in commercial products, dashboards, and tools. Attribution to APIpulse is appreciated but not required.</p>
+
+            <div class="cta-box">
+                <h3>Need More Than Raw Data?</h3>
+                <p>APIpulse Pro includes saved scenarios, PDF cost reports, price change alerts, and optimization recommendations — all powered by the same pricing data.</p>
+                <a href="/flash-19.html">Get Pro — $19 →</a>
+            </div>
+
+            <h2>FAQ</h2>
+
+            <h3>Is the APIpulse pricing API really free?</h3>
+            <p>Yes. 100% free, no authentication required. It provides JSON data for 49 AI models across 10 providers. Rate limited to 60 requests per minute.</p>
+
+            <h3>How often is the pricing data updated?</h3>
+            <p>Pricing data is updated within 24 hours of any provider price change. The APIpulse team monitors all 10 providers for pricing changes. Last verified: <span class="dynamic-date">Jul 2, 2026</span>.</p>
+
+            <h3>Can I use the data in commercial products?</h3>
+            <p>Yes. The data is released under CC-BY-4.0. Attribution appreciated but not required.</p>
+
+            <h3>What's the raw JSON endpoint?</h3>
+            <p>For direct access to the pricing data file (no API wrapper), use <code>https://getapipulse.com/data/pricing.json</code>. Same data, no rate limiting.</p>
+
+            <h3>Do you track historical pricing?</h3>
+            <p>Not yet. The current API shows current pricing only. Historical tracking is planned for a future release. <a href="/flash-19.html">Pro users</a> will get priority access.</p>
+
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 48px 0;">
+            <p style="font-size: 14px; color: var(--text-secondary);">
+                Built by <a href="/" style="color: var(--accent);">APIpulse</a> — compare AI API pricing across 49 models from 10 providers.
+                <a href="/calculator.html" style="color: var(--accent);">Calculate your costs →</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>APIpulse</h3>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Tools</h3>
+                <a href="/calculator.html">Cost Calculator</a>
+                <a href="/compare.html">Model Comparison</a>
+                <a href="/pricing-index.html">Pricing Index</a>
+                <a href="/widget.html">Embeddable Widget</a>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="/api-docs.html">API Documentation</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">About</a>
+            </div>
+            <div class="footer-section">
+                <h3>Pro</h3>
+                <a href="/flash-19.html">Flash Sale — $19</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/pro-demo.html">Try Pro Free</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 APIpulse. Built for the $100 AI Startup Race.</p>
+        </div>
+    </footer>
+</body>
+</html>
