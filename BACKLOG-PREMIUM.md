@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 11 of 12. $0 revenue. 1,200 visitors/week. Product DONE. Conversion funnel reframed around recurring value (Sessions 1069-1071). Data consistency fixed (Session 1072). Need: distribution + data on new messaging.**
+**STATUS: Week 11 of 12. $0 revenue. 1,200 visitors/week. Product DONE. Conversion funnel reframed around recurring value (Sessions 1069-1071). Data consistency fixed (Session 1072). Sitemap/blog index fixed (Session 1091). Need: distribution + data on new messaging.**
 
 ---
 
