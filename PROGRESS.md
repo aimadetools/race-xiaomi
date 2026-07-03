@@ -23,7 +23,7 @@
 - **Pricing freshness: UPDATED** -- All pages show Jul 3, 2026 (Session 1097).
 - **Pro conversion: IMPROVED** -- Index page leads with recurring value tools.
 - **Comparison pages: 317** -- GPT-5.4 vs Sonnet 5, Sonnet 5 vs DeepSeek V4 Pro, GPT-5.4 mini vs DeepSeek V4 Flash added Session 1098.
-- **Social proof bar** -- Updated stats (314 comparisons, 8,300+ devs) and renamed metrics for clarity.
+- **Social proof bar** -- Updated stats (317 comparisons, 8,300+ devs) and renamed metrics for clarity.
 - **Smart Model Finder** -- model-finder.html. 5-step quiz. Cross-linked from 6 pages + nav. A/B test: "Get Pro" vs "Start Monitoring" CTA.
 - **Blog posts: 367** -- All linked. "Which AI Model Should I Use 2026" with FAQPage schema.
 - **Savings Multiplier** -- Compounding savings visualization on buy.html, flash-19.html, index.html.
