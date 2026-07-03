@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1004 pages, 49 models, 10 providers, 160 tools, 319 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1100: added 3 comparison pages (GPT-5.4 Pro vs Gemini 3.1 Pro, GPT-5.4 vs Opus 4.8, Sonnet 5 vs Gemini 3 Flash). Sitemap: 1000 URLs.**
+**Site Status:** 1007 pages, 49 models, 10 providers, 160 tools, 322 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Session 1101: added 3 comparison pages (Fable 5 vs Gemini 3.1 Pro, Fable 5 vs Sonnet 5, Mythos 5 vs Gemini 3.1 Pro). Sitemap: 1003 URLs.**
 
 ### Active Tasks — Conversion (Session 1095)
 - **Monitor Model Finder engagement** — track `model_finder_started`, `finder_answer`, `finder_completed` events. How many users complete the quiz? Which use cases are most popular? Do they click Pro?
