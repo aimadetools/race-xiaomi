@@ -1768,6 +1768,17 @@
                 }, 1000);
             }
 
+            // Store savings for savings-multiplier.js widget
+            if (recs.length > 0 && recs[0].savings > 0) {
+                try {
+                    localStorage.setItem('apipulse_last_calc', JSON.stringify({
+                        savings: recs[0].savings * 12,
+                        model: providers[provider].name,
+                        timestamp: Date.now()
+                    }));
+                } catch(e) {}
+            }
+
             // Usage gate: track unique model calculations, show wall at limit
             if (window.APIpulseGate && totalCost > 0) {
                 var hitLimit = window.APIpulseGate.track(provider);
