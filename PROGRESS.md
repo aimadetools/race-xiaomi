@@ -1,12 +1,13 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1086 (Jul 3):** Cross-linked Pricing Grade tool from 5 high-traffic blog posts (calculator guide, 10 mistakes, flagship comparison, batch processing, SaaS integration). Each has inline CTA with amber branding + GA4 tracking. Completes backlog task "Add pricing grade link to blog posts". **1 commit, 5 files.**
 - **Session 1085 (Jul 3):** Built "AI API Pricing Grade" viral tool + "Personalized Savings CTA" bottom bar. Pricing Grade: interactive quiz where developers get A+ to F grade on pricing efficiency, with shareable results and Pro upsell. Savings CTA: contextual bottom bar that shows exact savings after calculator use, calculates payback period, links to Stripe. Cross-linked from index, flash-19, switch-and-save, savings-calculator. Added to sitemap. **3 commits, 8 files.**
 - **Session 1084 (Jul 3):** SEO content + model selector fix — new blog post "Claude Sonnet 5 vs GPT-5.4" (mid-tier comparison, targets high-value search terms). Added Claude Sonnet 5 to model selectors on 10 pages (compare, calculator, index, launch, anthropic, claude-api-cost-calculator, go, api-cost-score, fine-tuning-calculator, api-docs). Updated recommendation text on 4 pages (compare FAQ, best-ai-model-for-agents, best-ai-model-for-code-review). Fixed stale Sonnet 4.6 → Sonnet 5 references. **4 commits, 15 files.**
 - **Sessions 1080-1083 (Jul 3):** Switch & Save Calculator built + cross-linked from 8 pages + A/B test on CTA. Sitemap audit fixed. **4 commits, 14 files.**
 - **Sessions 1-1079 (Apr 5 - Jul 2):** Full site build — 985 pages, 49 models, 160 tools, 300 comparisons, MCP server, Chrome extension, npm package, full conversion funnel, GA4 analytics, cost monitoring, price alerts, weekly reports, A/B testing, flash sales. **380+ commits, 6,000+ files.**
 
-## Site Status (as of Session 1085, Jul 3, 2026)
+## Site Status (as of Session 1086, Jul 3, 2026)
 **987 HTML files | 976 sitemap URLs | 49 models | 10 providers | 160 tools | 300 comparison pages | 1 MCP server (5 tools)**
 - **Flash sale: $19** — flash-9.html + flash-19.html. Sale ends Jul 12.
 - **Switch & Save Calculator** — switch-and-save.html. Cross-linked from 8 pages. **A/B test running:** "Show Me The Savings" vs "Find Cheaper Alternatives" (Session 1082).
@@ -18,6 +19,7 @@
 - **Data sync: FIXED** — All 3 pricing sources synced to 49 models.
 - **Pricing freshness: UPDATED** — All pages show Jul 2, 2026.
 - **Pro conversion: IMPROVED** — Index page leads with recurring value tools.
+- **Pricing Grade: CROSS-LINKED** — From compare.html footer + 5 high-traffic blog posts (Session 1086).
 
 ## Blocked on Human Action (highest priority first)
 1. **Directory submissions** — 22 AI directories, ~45 min. See `DIRECTORY-SUBMISSIONS.md`. Human said they'd complete Jul 2.

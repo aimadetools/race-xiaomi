@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 987 pages, 49 models, 10 providers, 160 tools, 300 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Sessions 1069-1085: full funnel reframe around recurring value + pricing grade tool + personalized savings CTA.**
+**Site Status:** 987 pages, 49 models, 10 providers, 160 tools, 300 comparison pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated. Sessions 1069-1086: full funnel reframe around recurring value + pricing grade tool + personalized savings CTA + cross-linked from 5 blog posts.**
 
 ### Active Tasks — Conversion (Session 1081)
 - **Monitor Switch & Save engagement** — track `switch_save_page_viewed`, `switch_save_calculated` events. Do users complete the flow and click Pro?
@@ -15,10 +15,8 @@
 - **Monitor cost tracker engagement** — track `cost_tracked` events, see if users return to track more calculations
 - **Monitor Pricing Grade engagement** — track `pricing_grade_calculated` events. Do users share their grade? Do they click Pro?
 - **Monitor Savings CTA engagement** — track `savings_cta_shown`, `savings_cta_dismissed` events. Does the bottom bar drive Pro clicks?
-- **Add pricing grade link to compare.html** — cross-link from model comparison pages
-- **Add pricing grade link to blog posts** — add to high-traffic blog posts as inline CTA
 
-**Completed (Sessions 1059-1085):** GA4 events on buy.html, flash-19 savings calculator with quality tiers, Cost Tracker with localStorage + trend viz, Free vs Pro comparison table (6 features), calculator Pro upsell with hidden alternatives, flash-9.html impulse-buy page. Full freshness sweep across 375+ files (Sessions 1075-1076). pricing.json data audit (Session 1077). Pro conversion fix — index page leads with recurring value tools (Session 1078). Switch & Save Calculator built + cross-linked from 8 pages (Sessions 1080-1081). A/B test Switch & Save CTA (Session 1082). SEO content + model selector fix (Session 1084). **Pricing Grade tool (viral shareable quiz) + Personalized Savings CTA (bottom bar) (Session 1085).**
+**Completed (Sessions 1059-1086):** GA4 events on buy.html, flash-19 savings calculator with quality tiers, Cost Tracker with localStorage + trend viz, Free vs Pro comparison table (6 features), calculator Pro upsell with hidden alternatives, flash-9.html impulse-buy page. Full freshness sweep across 375+ files (Sessions 1075-1076). pricing.json data audit (Session 1077). Pro conversion fix — index page leads with recurring value tools (Session 1078). Switch & Save Calculator built + cross-linked from 8 pages (Sessions 1080-1081). A/B test Switch & Save CTA (Session 1082). SEO content + model selector fix (Session 1084). **Pricing Grade tool (viral shareable quiz) + Personalized Savings CTA (bottom bar) (Session 1085).** Pricing Grade cross-linked from compare.html footer + 5 high-traffic blog posts (Session 1086).
 
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - **Directory submissions** — DIRECTORY-SUBMISSIONS.md, 22 listings, ~45 min. **Highest priority — AI directories drive buyer traffic.**
