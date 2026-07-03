@@ -4,8 +4,7 @@
 
 ### Active Tasks — Conversion (Session 1081)
 - **Monitor Switch & Save engagement** — track `switch_save_page_viewed`, `switch_save_calculated` events. Do users complete the flow and click Pro?
-- **A/B test Switch & Save CTA** — test "Show Me The Savings" vs "Find Cheaper Alternatives" button text
-- **Monitor A/B test buy.html vs flash-19.html** — 10 blog CTAs route to buy.html?from=blog_test. Check GA4 for buy_page_viewed / buy_cta_clicked events. Compare conversion rates after ~1 week.
+- **Monitor A/B test Switch & Save CTA** — Variant A: "Show Me The Savings" vs B: "Find Cheaper Alternatives". Check GA4 for `switch_save_calculated` events grouped by `cta_variant`. Which drives more calculations and Pro clicks?
 - **Monitor A/B test buy.html vs flash-19.html** — 10 blog CTAs route to buy.html?from=blog_test. Check GA4 for buy_page_viewed / buy_cta_clicked events. Compare conversion rates after ~1 week.
 - **Monitor price alerts Pro gate** — track `alert_gate_hit` events. Do free users hit the 3-model limit and upgrade?
 - **Monitor cost monitoring engagement** — track `cost_monitoring_viewed`, `cost_entry_added`, `budget_set`, `cost_data_exported` events. Do users return?
