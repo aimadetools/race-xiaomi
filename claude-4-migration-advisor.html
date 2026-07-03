@@ -729,8 +729,8 @@
         document.getElementById('result-old-cost').textContent = formatMoney(spend);
         document.getElementById('result-new-cost').textContent = formatMoney(cheapest.newCost);
 
-        // Pro payback in days (assuming $29 / monthly savings * 30)
-        var paybackDays = Math.max(1, Math.ceil(29 / (maxSavings / 30)));
+        // Pro payback in days (using dynamic price)
+        var paybackDays = Math.max(1, Math.ceil((window._abPrice || 19) / (maxSavings / 30)));
         document.getElementById('result-payback').textContent =
             paybackDays <= 1 ? '< 1 day' : paybackDays + ' days';
 

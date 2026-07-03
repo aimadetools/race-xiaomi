@@ -562,7 +562,7 @@
 
         // Pro gate — show whenever there are cheaper alternatives
         if (alternatives.length > 0) {
-            var paybackMonths = monthlySavings > 0 ? Math.ceil(29 / monthlySavings) : 99;
+            var paybackMonths = monthlySavings > 0 ? Math.ceil((window._abPrice || 19) / monthlySavings) : 99;
             var paybackText = paybackMonths <= 1 ? 'pays for itself on day one' : 'pays for itself in ' + paybackMonths + ' months';
             var hiddenAlts = alternatives.length - 5;
             var proAnnual = (monthlySavings * 12).toFixed(0);

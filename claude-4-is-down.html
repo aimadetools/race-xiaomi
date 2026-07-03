@@ -1624,7 +1624,7 @@ claude-sonnet-4-6</code>
 
                 // Payback period
                 var dailySavings = savingsPerMonth / 30;
-                var paybackDays = 29 / dailySavings;
+                var paybackDays = (window._abPrice || 19) / dailySavings;
                 var paybackEl = document.getElementById('inaction-payback');
                 if (paybackDays < 1) {
                     var paybackHours = Math.ceil(paybackDays * 24);
@@ -1660,7 +1660,7 @@ claude-sonnet-4-6</code>
 
                 // Payback period
                 var dailySavings = savingsPerMonth / 30;
-                var paybackDays = 29 / dailySavings;
+                var paybackDays = (window._abPrice || 19) / dailySavings;
                 var paybackEl = document.getElementById('inaction-payback');
                 if (paybackDays < 1) {
                     var paybackHours = Math.ceil(paybackDays * 24);

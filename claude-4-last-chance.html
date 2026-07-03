@@ -834,10 +834,11 @@
         document.getElementById('savings-amount').textContent = '$' + savings.toFixed(2) + '/mo';
 
         // Update Pro ROI
-        var proPayback = savings > 0 ? Math.ceil(29 / (savings / 30)) : '—';
+        var price = window._abPrice || 19;
+        var proPayback = savings > 0 ? Math.ceil(price / (savings / 30)) : '—';
         var roiEl = document.getElementById('dynamic-pro-roi');
         if (roiEl) {
-            roiEl.textContent = 'If you save $' + savings.toFixed(0) + '/mo, Pro ($29) pays for itself in ' + proPayback + ' day' + (proPayback === 1 ? '' : 's');
+            roiEl.textContent = 'If you save $' + savings.toFixed(0) + '/mo, Pro ($' + price + ') pays for itself in ' + proPayback + ' day' + (proPayback === 1 ? '' : 's');
         }
     }
 
