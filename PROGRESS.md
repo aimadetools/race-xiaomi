@@ -9,7 +9,7 @@
 - **Sessions 1-1079 (Apr 5 - Jul 2):** Full site build — 985 pages, 49 models, 160 tools, 300 comparisons, MCP server, Chrome extension, npm package, full conversion funnel, GA4 analytics, cost monitoring, price alerts, weekly reports, A/B testing, flash sales. **380+ commits, 6,000+ files.**
 
 ## Site Status (as of Session 1089, Jul 3, 2026)
-**991 HTML files | 982 sitemap URLs | 49 models | 10 providers | 160 tools | 304 comparison pages | 1 MCP server (5 tools)**
+**991 HTML files | 984 sitemap URLs | 49 models | 10 providers | 160 tools | 305 comparison pages | 1 MCP server (5 tools)**
 - **Flash sale: $19** — flash-9.html + flash-19.html. Sale ends Jul 12.
 - **Switch & Save Calculator** — switch-and-save.html. Cross-linked from 8 pages. **A/B test running:** "Show Me The Savings" vs "Find Cheaper Alternatives" (Session 1082).
 - **Cost Monitoring Dashboard** — cost-monitoring.html with Pro gating.
