@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1097 (Jul 3):** Freshness sweep — updated "Jul 2, 2026" → "Jul 3, 2026" across 330 HTML pages + 7 sitemap lastmod entries for key conversion pages. All pages now show current date. **1 commit, 331 files.**
 - **Session 1096 (Jul 3):** Cross-linked Model Finder from 6 key pages + A/B test. Model Finder links added to model-selector, model-advisor, cheapest-model-finder (hero), blog-choose-llm-api, blog-2026-flagship-llm-cost-comparison, blog-ai-api-pricing-complete-guide. Updated shared.js nav to model-finder.html. Added completion page A/B test: "Get Pro" vs "Start Monitoring" CTA text with GA4 tracking. **2 commits, 8 files.**
 - **Session 1095 (Jul 3):** Smart Model Finder — interactive 5-step quiz recommending best AI model by use case, volume, priority, context, and budget. Scores all 49 models with match percentages, shows top 4 with pricing. Pro upsell. GA4 events tracked. SEO blog post "Which AI Model Should I Use in 2026?" with FAQPage schema, comparison tables, 4-factor decision framework. Sitemap (994 URLs), blog index updated. **2 commits, 5 files.**
 - **Session 1094 (Jul 3):** Social proof bar update — fixed outdated stats (258 → 313 comparisons, 8,367 → 8,300+ devs), renamed metrics for clarity ("Head-to-Head Reports" → "Model Comparisons", "Developers Using APIpulse" → "Developers Served"). Updated hero stats to match. **1 commit, 1 file.**
@@ -22,7 +23,7 @@
 - **GA4: G-0CEP7S9Y3J** — Fully integrated on all pages. All key conversion pages verified.
 - **Revenue: $0** — 8,367 total users, 0 conversions. A/B tests: index vs launch, Switch & Save CTA.
 - **Data sync: FIXED** — All 3 pricing sources synced to 49 models.
-- **Pricing freshness: UPDATED** — All pages show Jul 2, 2026.
+- **Pricing freshness: UPDATED** — All pages show Jul 3, 2026 (Session 1097).
 - **Pro conversion: IMPROVED** — Index page leads with recurring value tools.
 - **Comparison pages: 313** — GPT-5 mini vs DeepSeek V4 Flash, GPT-5 mini vs Llama 4 Maverick, DeepSeek V4 Pro vs Mistral Large 3, GPT-5.5 Pro vs Fable 5, GPT-5 vs Fable 5 added Session 1093.
 - **Social proof bar** — Updated stats (313 comparisons, 8,300+ devs) and renamed metrics for clarity (Session 1094).
