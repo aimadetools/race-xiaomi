@@ -31,6 +31,7 @@
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
+    <script src="sparkline.js" defer></script>
     <script src="pro-features.js" defer></script>
     <script type="application/ld+json">
     {
@@ -117,6 +118,16 @@
         .rank-2 { background: rgba(34,197,94,0.15); color: #22c55e; }
         .rank-3 { background: rgba(245,158,11,0.15); color: #f59e0b; }
         .rank-other { background: var(--bg-secondary); color: var(--text-muted); }
+        .sparkline-cell { text-align: center; vertical-align: middle; }
+        .sparkline { display: inline-block; vertical-align: middle; }
+        .sparkline-tooltip { position: relative; }
+        .sparkline-tooltip:hover::after {
+            content: attr(data-tip);
+            position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px;
+            padding: 4px 8px; font-size: 11px; white-space: nowrap; z-index: 10;
+            color: var(--text-primary); box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
 
         .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 32px; }
         .summary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
@@ -231,6 +242,7 @@
                             <th onclick="sortMatrix('output')" data-col="output">Output $/1M <span class="sort-arrow"></span></th>
                             <th onclick="sortMatrix('avg')" data-col="avg">Avg Cost <span class="sort-arrow"></span></th>
                             <th onclick="sortMatrix('context')" data-col="context">Context <span class="sort-arrow"></span></th>
+                            <th style="cursor:default;">Price Trend <span style="font-size:10px;color:var(--text-muted);">24h</span></th>
                         </tr>
                     </thead>
                     <tbody id="matrix-body"></tbody>
@@ -420,6 +432,7 @@
                 <td>$${m.output.toFixed(2)}</td>
                 <td class="${costClass}"><strong>$${m.avgCost.toFixed(3)}</strong></td>
                 <td><span class="context-badge">${m.context}</span></td>
+                <td class="sparkline-cell"><span class="sparkline-tooltip" data-tip="Input $${m.input.toFixed(2)} / Output $${m.output.toFixed(2)}">${typeof generateSparkline === 'function' ? generateSparkline(m.id, m.input, m.output) : ''}</span></td>
             </tr>`;
         }).join('');
     }
