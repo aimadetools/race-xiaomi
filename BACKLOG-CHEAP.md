@@ -18,5 +18,5 @@ All conversion tools built and instrumented. Need human to check GA4 data for: S
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1124, Apr 23 - Jul 4)
-Complete AI API pricing comparison site: 1145 pages, 49 models, 10 providers, 445 comparison/alternatives pages, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. Full conversion funnel. **168+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1128, Apr 23 - Jul 4)
+Complete AI API pricing comparison site: 1145 pages, 49 models, 10 providers, 445 comparison/alternatives pages, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. Full conversion funnel. Calculator bugs fixed, pricing data verified and corrected across 11 files. **175+ commits, 6,000+ files.**
