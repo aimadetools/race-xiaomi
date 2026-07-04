@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1122 (Jul 4):** Added 5 alternatives pages for models with zero coverage: GPT-5.4 nano ($0.20/$1.25), GPT-oss 120B ($0.15/$0.60), GPT-oss 20B ($0.08/$0.35), Claude Mythos 5 ($10/$50), Gemini 2.5 Flash-Lite ($0.10/$0.40). Each with cost comparison, savings calculator, FAQ schema. Updated sitemap to 1058 entries. **1 commit, 6 files, 2085 lines.**
 - **Session 1121 (Jul 4):** Fixed major conversion leak — 28 pages (index, 14 use-case pages) were routing Pro CTAs directly to Stripe checkout, bypassing the flash sale page. Users now see the full value proposition before purchasing. Added real community testimonials from Reddit/HN to flash-19 page. **2 commits, 16 files.**
 - **Session 1120 (Jul 4):** Added 8 alternatives pages for high-value models: GPT-5.5 Pro ($30/$180), GPT-5.5 ($5/$30), Claude 4 Opus ($15/$75), Claude Opus 4.7 ($5/$25), GPT-5.4 ($2.5/$15), GPT-4o ($2.5/$10), Claude Fable 5 ($10/$50), Gemini 2.5 Pro ($1.25/$10). Updated sitemap to 1053 entries. **1 commit, 9 files.**
 - **Session 1119 (Jul 4):** Added 5 alternatives pages for popular models with zero coverage: GPT-4o mini, Claude Haiku 4.5, Claude Sonnet 5, GPT-5 mini, DeepSeek V4 Pro. Updated sitemap to 1051 entries. Cross-linked from parent alternatives pages. **1 commit, 9 files, 2682 lines.**
@@ -11,12 +12,12 @@
 - **Session 1114 (Jul 4):** Built price alerts backend, wired weekly digest subscribe. **2 commits, 3 files.**
 
 ## Site Status (Jul 4, 2026)
-**1059 HTML files | 49 models | 10 providers | 359 comparison/alternatives pages**
+**1063 HTML files | 49 models | 10 providers | 364 comparison/alternatives pages | 1058 sitemap entries**
 - **Flash sale: $19** -- flash-19.html. Sale ends Jul 12.
 - **Weekly digest:** weekly-digest.html (pricing verified, links fixed).
 - **Price alerts:** price-alerts.html (49 models, dynamic). Backend: /api/subscribe-alerts.
 - **GA4: G-0CEP7S9Y3J** -- 8,367 users, $0 revenue.
 - **Blocked on human:** Directory submissions (22), Chrome Web Store ($5), npm publish.
 
-## Completed Summary (Sessions 416-1120, Apr 23 - Jul 4)
-Complete AI API pricing comparison site: 1059 pages, 49 models, 10 providers, 359 comparison/alternatives pages, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend, comparison pages for all 3 newest models (GPT-5.4 mini, GPT-5.4 Pro, Gemini 3.1 Flash-Lite), alternatives pages for 13 models (GPT-5.5 Pro, GPT-5.5, Claude 4 Opus, Claude Opus 4.7, GPT-5.4, GPT-4o, Claude Fable 5, Gemini 2.5 Pro, GPT-4o mini, Claude Haiku 4.5, Claude Sonnet 5, GPT-5 mini, DeepSeek V4 Pro). Full conversion funnel. **165+ commits, 6,000+ files.**
+## Completed Summary (Sessions 416-1122, Apr 23 - Jul 4)
+Complete AI API pricing comparison site: 1063 pages, 49 models, 10 providers, 364 comparison/alternatives pages, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend, alternatives pages for 18 models (GPT-5.5 Pro, GPT-5.5, Claude 4 Opus, Claude Opus 4.7, GPT-5.4, GPT-4o, Claude Fable 5, Gemini 2.5 Pro, GPT-4o mini, Claude Haiku 4.5, Claude Sonnet 5, GPT-5 mini, DeepSeek V4 Pro, GPT-5.4 nano, GPT-oss 120B, GPT-oss 20B, Claude Mythos 5, Gemini 2.5 Flash-Lite). Full conversion funnel. **166+ commits, 6,000+ files.**
