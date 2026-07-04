@@ -2,6 +2,11 @@
 
 **Site Status:** 1026 HTML files, 1015 sitemap URLs, 49 models, 10 providers, 160 tools, 328 comparison pages, 5 use-case ranking pages. Technically complete. Distribution is the bottleneck, not content. **8,367 total users, $0 revenue. Flash sales $19, price alerts + cost monitoring Pro-gated.**
 
+### Active Tasks — Conversion (Session 1108)
+- **Monitor direct Stripe link conversion** — All CTAs now link directly to Stripe (eliminated go.html → flash-19.html redirect chain). Track: Are more users reaching Stripe checkout? Compare `pro_button_clicked` events vs Stripe dashboard sessions.
+- **Monitor calculator savings card engagement** — New savings card shows annual savings + payback period + direct Stripe buy button. Track: Do calculator users click the new buy button? Compare `pro_button_clicked` source=calc_savings_card vs old source=calc_savings.
+- **Monitor hero scroll-to-calculator** — Hero CTA now scrolls to #calculator instead of navigating to savings-calculator.html. Track: Do more users complete a calculation after clicking the hero CTA? Monitor `hero_calc_cta_clicked` vs `calculator_used` events.
+
 ### Active Tasks — Conversion (Session 1095)
 - **Monitor Model Finder engagement** — track `model_finder_started`, `finder_answer`, `finder_completed` events. How many users complete the quiz? Which use cases are most popular? Do they click Pro?
 - ~~**Cross-link Model Finder**~~ — DONE Session 1096. Links added to model-selector, model-advisor, cheapest-model-finder, 3 blog posts. Nav updated.
