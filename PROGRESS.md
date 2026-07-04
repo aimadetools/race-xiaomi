@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1131 (Jul 4):** Fixed sitemap — added 83 missing comparison pages, removed 2 duplicate entries, standardized all entries to multi-line XML format. Updated 5 pages with hardcoded $29 to $19 flash sale pricing (claude-4-migration-hub, claude-4-deprecation, claude-4-is-down, claude-4-error, teams). **3 commits, 6 files.**
 - **Session 1130 (Jul 4):** Cleaned sitemap.xml — removed 3 non-page entries (data/pricing.json, data/pricing-openapi.json, llms.txt). Sitemap now has 1137 valid page URLs. **1 commit, 1 file.**
 - **Session 1129 (Jul 4):** Fixed stale $29 Pro pricing to $19 flash sale price across 12 files. Updated upsell sections in 5 calculator pages, meta tags and A/B variants in deal.html, MCP savings text, terms, trial-expired, and FAQ schema. **1 commit, 12 files.**
 - **Session 1128 (Jul 4):** Fixed Claude Haiku 4.5 pricing ($0.80/$4 → $1/$5) and Opus 4.8 pricing (swapped with Claude 4 in terminal.html) across 11 files. Corrected wrong Haiku prices in calculators, blog posts, use-case pages, and comparison content. **1 commit, 11 files.**
@@ -8,7 +9,7 @@
 - **Sessions 1119-1126 (Jul 4):** Alternatives page coverage for all 49 models (1068→1140 sitemap entries). Fixed 71 broken internal links, batch-generated 71 comparison pages. Added digest archive, recurring value features to pricing page, fixed outdated model counts. **12 commits, 134 files.**
 
 ## Site Status (Jul 4, 2026)
-**1146 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1137 sitemap entries**
+**1146 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1146 sitemap entries**
 - **Flash sale: $19** -- flash-19.html. Sale ends Jul 12. All pages now show consistent $19 pricing.
 - **Weekly digest:** weekly-digest.html (Jul 4 content). Archive: digest-archive.html.
 - **Price alerts:** price-alerts.html (49 models, dynamic). Backend: /api/subscribe-alerts.
