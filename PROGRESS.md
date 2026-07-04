@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1121 (Jul 4):** Fixed major conversion leak — 28 pages (index, 14 use-case pages) were routing Pro CTAs directly to Stripe checkout, bypassing the flash sale page. Users now see the full value proposition before purchasing. Added real community testimonials from Reddit/HN to flash-19 page. **2 commits, 16 files.**
 - **Session 1120 (Jul 4):** Added 8 alternatives pages for high-value models: GPT-5.5 Pro ($30/$180), GPT-5.5 ($5/$30), Claude 4 Opus ($15/$75), Claude Opus 4.7 ($5/$25), GPT-5.4 ($2.5/$15), GPT-4o ($2.5/$10), Claude Fable 5 ($10/$50), Gemini 2.5 Pro ($1.25/$10). Updated sitemap to 1053 entries. **1 commit, 9 files.**
 - **Session 1119 (Jul 4):** Added 5 alternatives pages for popular models with zero coverage: GPT-4o mini, Claude Haiku 4.5, Claude Sonnet 5, GPT-5 mini, DeepSeek V4 Pro. Updated sitemap to 1051 entries. Cross-linked from parent alternatives pages. **1 commit, 9 files, 2682 lines.**
 - **Session 1118 (Jul 4):** Added 4 comparison pages for 3 newest models (GPT-5.4 mini, GPT-5.4 Pro, Gemini 3.1 Flash-Lite) — these models had 0 comparison pages. Updated sitemap to 1040 entries. **1 commit, 5 files.**
