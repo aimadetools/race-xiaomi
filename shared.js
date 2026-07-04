@@ -67,24 +67,17 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
             if (a.textContent.includes('$29')) {
                 a.textContent = a.textContent.replace('$29', '$' + window._abPrice);
             }
-            // Route Stripe checkout links: flash sale → flash-19.html, otherwise → go.html
-            // Session 980: $19 flash sale for first revenue
+            // Route Stripe checkout links: flash sale → Stripe directly, otherwise → go.html
             if (a.href && a.href.includes('buy.stripe.com') && !a.href.includes('go.html') && !a.href.includes('flash-19.html')) {
-                var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-                if (!window.DEAL_EXPIRED) {
-                    a.href = 'flash-19.html?from=' + encodeURIComponent(pageName);
-                } else {
-                    a.href = 'go.html?from=' + encodeURIComponent(pageName);
-                }
-                a.target = '_blank';
-                a.rel = 'noopener';
+                // Keep as-is — already links to Stripe directly
             }
-            // Route nav CTAs: flash sale → flash-19.html, otherwise → go.html
+            // Route nav CTAs: flash sale → Stripe directly, otherwise → go.html
             if (a.classList.contains('nav-cta') && a.href && !a.href.includes('go.html') && !a.href.includes('flash-19.html')) {
                 if (a.href.includes('pricing.html') || a.href.includes('pro.html') || a.href.includes('compare-plans.html')) {
-                    // Session 980: $19 flash sale active — route to flash page
                     if (!window.DEAL_EXPIRED) {
-                        a.href = 'flash-19.html?from=nav_cta';
+                        a.href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+                        a.target = '_blank';
+                        a.rel = 'noopener';
                     } else {
                         a.href = 'go.html?from=nav_cta';
                     }
@@ -1008,7 +1001,7 @@ async function saveEmail(e) {
                 '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">' + popupDesc + '</p>' +
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings with Pro.</div>' +
                 '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:12px;margin-bottom:16px;font-size:14px;color:var(--green);font-weight:600;">' + popupHighlight + '</div>' +
-                '<a href="go.html?from=exit_popup_deprecation" id="deprecation-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
+                '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" id="deprecation-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' on July 12 · 14-day money-back guarantee</p>' +
                 '</div>';
             overlay.appendChild(popup);
@@ -1127,7 +1120,7 @@ async function saveEmail(e) {
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
                 '<div style="font-size:20px;font-weight:800;color:var(--green);">40%</div>' +
                 '<div style="font-size:11px;color:var(--text-muted);">avg. savings</div></div></div>' +
-                '<a href="go.html?from=exit_popup_pro" id="pro-exit-cta" style="display:inline-block;background:' + btnColor.bg + ';color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px ' + btnColor.shadow + ';" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">' + cc.cta + '</a>' +
+                '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" id="pro-exit-cta" style="display:inline-block;background:' + btnColor.bg + ';color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px ' + btnColor.shadow + ';" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">' + cc.cta + '</a>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' on July 12 · 14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
                 '</div>';
 
@@ -1299,7 +1292,7 @@ async function saveEmail(e) {
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,rgba(15,15,20,0.97),rgba(25,25,35,0.97));backdrop-filter:blur(12px);border-top:1px solid rgba(99,102,241,0.3);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.3);animation:stickySlideUp 0.4s ease;';
         var stickyPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
         bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">💡 Developers using APIpulse save an average of <strong style="color:var(--green);">40% on API costs</strong></span>' +
-            '<a href="go.html?from=sticky_bottom_bar_' + encodeURIComponent(stickyPageName) + '" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
+            '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
             '<button onclick="document.getElementById(\'sticky-bottom-bar\').remove();localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');if(window.trackEvent)window.trackEvent(\'sticky_bar_dismissed\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px;padding:4px 8px;line-height:1;" aria-label="Close">×</button>';
         document.body.appendChild(bar);
         if (window.trackEvent) window.trackEvent('sticky_bar_shown', { page: path, price: price });
@@ -1379,7 +1372,7 @@ function renderPricingFreshness(containerId) {
         }
         var stickyProPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
         bar.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">' + barMsg + '</span>' +
-            '<a href="go.html?from=' + encodeURIComponent(ctaContext + '_' + stickyProPageName) + '" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'' + ctaContext + '\',variant:\'' + variant + '\',price:' + price + '})">Get Pro — $' + price + ' one-time</a>' +
+            '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'' + ctaContext + '\',variant:\'' + variant + '\',price:' + price + '})">Get Pro — $' + price + ' one-time</a>' +
             '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
         document.body.appendChild(bar);
         requestAnimationFrame(function() { bar.style.transform = 'translateY(0)'; });
@@ -1413,7 +1406,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="go.html?from=blog_inline_upsell_' + encodeURIComponent(blogPageName) + modelParam + '" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'blog_inline_upsell\'})">Upgrade to Pro — $' + price + ' one-time</a>';
+    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'blog_inline_upsell\'})">Upgrade to Pro — $' + price + ' one-time</a>';
     cta.parentNode.insertBefore(upsell, cta.nextSibling);
 });
 
@@ -1746,7 +1739,7 @@ var GO_MODEL_MAP = {
                     '<div style="font-size:13px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🔒 Pro Feature</div>' +
                     '<div style="font-size:18px;font-weight:800;color:var(--text-primary);margin-bottom:6px;">Unlock ' + remaining + ' more models ranked by cost</div>' +
                     '<div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.5;">See all 49 models compared, get migration code, PDF exports, and price alerts. One-time payment, lifetime access.</div>' +
-                    '<a href="go.html?from=results_gate_' + encodeURIComponent(pageName) + '" target="_blank" rel="noopener" ' +
+                    '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" ' +
                         'style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border-radius:10px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(99,102,241,0.4);transition:all 0.2s;" ' +
                         'onclick="if(window.trackEvent)window.trackEvent(\'results_gate_clicked\',{page:\'' + pageName + '\',total_rows:' + rows.length + ',free_rows:' + FREE_ROWS + ',price:' + price + '})">' +
                         'Unlock All Models — $' + price + ' lifetime' +
@@ -1912,7 +1905,7 @@ var GO_MODEL_MAP = {
         if (sessionStorage.getItem('global_exit_popup_shown')) return;
 
         var flashActive = !window.DEAL_EXPIRED;
-        var ctaUrl = flashActive ? 'flash-19.html?from=exit_popup_' + encodeURIComponent(pageName) : 'go.html?from=exit_popup_' + encodeURIComponent(pageName);
+        var ctaUrl = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
         var ctaText = flashActive ? 'Get Lifetime Access — $19' : 'Get Lifetime Access — $29';
         var headline = flashActive ? "Wait — don't miss the $19 flash sale" : "Wait — before you go";
         var subtext = flashActive
