@@ -38,11 +38,20 @@ async function fetchSnapshot() {
 }
 
 async function fetchSubscribers() {
-  // Read from the emails file in /tmp (same as subscribe.js)
   const fs = require('fs');
   const path = require('path');
+  const ALERTS_FILE = path.join('/tmp', 'apipulse_alert_subs.json');
   const EMAILS_FILE = path.join('/tmp', 'apipulse_emails.json');
 
+  // Prefer alert subscribers (have model preferences)
+  try {
+    if (fs.existsSync(ALERTS_FILE)) {
+      const alertSubs = JSON.parse(fs.readFileSync(ALERTS_FILE, 'utf8'));
+      if (alertSubs.length > 0) return alertSubs;
+    }
+  } catch (e) { /* fall through */ }
+
+  // Fallback to generic email list (no model filtering)
   try {
     if (fs.existsSync(EMAILS_FILE)) {
       return JSON.parse(fs.readFileSync(EMAILS_FILE, 'utf8'));
@@ -265,12 +274,20 @@ module.exports = async (req, res) => {
       });
     }
 
-    // Send alerts to all subscribers
+    // Send alerts — filter by each subscriber's model preferences
     let sent = 0;
     let failed = 0;
+    const changedModelIds = new Set(changes.map(c => c.id));
 
     for (const sub of subscribers) {
-      const success = await sendAlertEmail(sub.email, changes);
+      // If subscriber has model preferences, only send changes for their models
+      let relevantChanges = changes;
+      if (sub.models && Array.isArray(sub.models) && sub.models.length > 0) {
+        relevantChanges = changes.filter(c => sub.models.includes(c.id));
+        if (relevantChanges.length === 0) continue; // no relevant changes for this subscriber
+      }
+
+      const success = await sendAlertEmail(sub.email, relevantChanges);
       if (success) sent++;
       else failed++;
 

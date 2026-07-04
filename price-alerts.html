@@ -521,15 +521,15 @@
         btn.textContent = 'Subscribing...';
 
         try {
-            const res = await fetch('/api/subscribe', {
+            const res = await fetch('/api/subscribe-alerts', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, source: 'price-alerts', models })
+                body: JSON.stringify({ email, models })
             });
             const data = await res.json();
 
             document.getElementById('success-msg').style.display = 'block';
-            btn.textContent = 'Subscribed!';
+            btn.textContent = data.updated ? 'Preferences Updated!' : 'Subscribed!';
             if (window.trackEvent) window.trackEvent('price_alert_subscribe', { model_count: models.length });
         } catch (err) {
             // Fallback: store locally
