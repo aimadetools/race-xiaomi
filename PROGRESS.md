@@ -10,7 +10,7 @@
 - **Sessions 1119-1122 (Jul 4):** Added 23 alternatives pages for models with zero coverage. Fixed conversion leak (28 pages bypassing flash sale). Added community testimonials. **5 commits, 40 files.**
 
 ## Site Status (Jul 4, 2026)
-**1145 HTML files | 49 models | 10 providers | 534 comparison/alternatives pages | 1140 sitemap entries**
+**1146 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1140 sitemap entries**
 - **Flash sale: $19** -- flash-19.html. Sale ends Jul 12.
 - **Weekly digest:** weekly-digest.html (pricing verified, links fixed). Archive: digest-archive.html.
 - **Price alerts:** price-alerts.html (49 models, dynamic). Backend: /api/subscribe-alerts.
@@ -19,4 +19,4 @@
 - **Quality fixes today:** Calculator double-counting bug (23 pages), model name corrections (6 pages), pricing accuracy (11 files — Haiku 4.5 and Opus 4.8/4.7).
 
 ## Completed Summary (Sessions 416-1128, Apr 23 - Jul 4)
-Complete AI API pricing comparison site: 1145 pages, 49 models, 10 providers, 534 comparison/alternatives pages, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. Full conversion funnel. Pricing page optimized with recurring value features. Calculator accuracy fixed across all pages. Pricing data accuracy verified and corrected. **175+ commits, 6,000+ files.**
+Complete AI API pricing comparison site: 1146 pages, 49 models, 10 providers, 533 comparison/alternatives pages, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. Full conversion funnel. Pricing page optimized with recurring value features. Calculator accuracy fixed across all pages. Pricing data accuracy verified and corrected. **175+ commits, 6,000+ files.**
