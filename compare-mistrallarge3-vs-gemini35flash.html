@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistral Large 3 vs Gemini 3.5 Flash — AI API Pricing Comparison 2026 | APIpulse</title>
+    <meta name="description" content="Mistral Large 3 ($0.5/$1.5 per 1M tokens) vs Gemini 3.5 Flash ($1.5/$9). Mistral Large 3 is 67% cheaper on input. Interactive calculator included.">
+    <meta property="og:title" content="Mistral Large 3 vs Gemini 3.5 Flash — AI API Pricing Comparison 2026">
+    <meta property="og:description" content="Mistral Large 3 ($0.5/$1.5 per 1M tokens) vs Gemini 3.5 Flash ($1.5/$9). Mistral Large 3 is 67% cheaper on input. Interactive calculator included.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/compare-mistrallarge3-vs-gemini35flash.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/compare-mistrallarge3-vs-gemini35flash.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Mistral Large 3 vs Gemini 3.5 Flash — AI API Pricing Comparison 2026",
+        "description": "Mistral Large 3 ($0.5/$1.5 per 1M tokens) vs Gemini 3.5 Flash ($1.5/$9). Mistral Large 3 is 67% cheaper on input. Interactive calculator included.",
+        "url": "https://getapipulse.com/compare-mistrallarge3-vs-gemini35flash.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-07-04",
+        "dateModified": "2026-07-04"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is Mistral Large 3 cheaper than Gemini 3.5 Flash?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Mistral Large 3 costs $0.5/$1.5 per 1M tokens while Gemini 3.5 Flash costs $1.5/$9. That's 67% cheaper on input and 83% cheaper on output."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save switching from Gemini 3.5 Flash to Mistral Large 3?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can save 67% on input and 83% on output tokens by switching. For a typical workload of 1M input + 500K output tokens per month, Mistral Large 3 costs $1.25 vs $6.00 — saving $4.75/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which model should I use: Mistral Large 3 or Gemini 3.5 Flash?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Choose Mistral Large 3 for cost efficiency — it's 67% cheaper on input. Choose Gemini 3.5 Flash if you need Google ecosystem integration. Mistral Large 3 has 262K context vs Gemini 3.5 Flash's 1M."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .compare-hero { max-width: var(--max-width); margin: 0 auto; padding: 120px 24px 40px; text-align: center; }
+        .compare-hero h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .compare-hero h1 .vs { color: var(--accent); }
+        .compare-hero .subtitle { font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto 24px; }
+        .summary-cards { max-width: 900px; margin: 0 auto 48px; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        .summary-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-align: center; }
+        .summary-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .summary-card .value { font-size: 28px; font-weight: 800; }
+        .summary-card .detail { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+        .summary-card .winner { color: var(--green); }
+        .summary-card .loser { color: var(--orange); }
+        .quick-comparison { max-width: 1000px; margin: 0 auto 48px; padding: 0 24px; }
+        .quick-comparison h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .quick-table { width: 100%; border-collapse: collapse; background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+        .quick-table th { padding: 16px 20px; text-align: left; font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; background: var(--bg-card); border-bottom: 1px solid var(--border); }
+        .quick-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .quick-table tr:last-child td { border-bottom: none; }
+        .quick-table .model-name { font-weight: 700; }
+        .quick-table .cheaper { color: var(--green); font-weight: 700; }
+        .quick-table .pricier { color: var(--orange); }
+        .provider-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge-openai { background: rgba(16,163,127,0.15); color: #10a37f; }
+        .badge-deepseek { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .badge-google { background: rgba(66,133,244,0.15); color: #4285f4; }
+        .badge-anthropic { background: rgba(217,119,87,0.15); color: #d97757; }
+        .badge-cohere { background: rgba(99,102,241,0.15); color: #6366f1; }
+        .badge-mistral { background: rgba(234,88,12,0.15); color: #ea580c; }
+        .badge-meta { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .badge-ai21 { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .badge-moonshot { background: rgba(234,179,8,0.15); color: #eab308; }
+        .badge-xai { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tier-budget { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tier-mid { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .tier-premium { background: rgba(234,179,8,0.15); color: #eab308; }
+        .savings-banner { text-align: center; padding: 24px; background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(99,102,241,0.1)); border: 1px solid var(--green); border-radius: var(--radius); margin: 0 auto 48px; max-width: 700px; }
+        .savings-banner .amount { font-size: 32px; font-weight: 800; color: var(--green); }
+        .savings-banner .detail { color: var(--text-secondary); margin-top: 8px; }
+        .use-cases { max-width: 900px; margin: 0 auto 48px; padding: 0 24px; }
+        .use-cases h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .use-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .use-case-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+        .use-case-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .use-case-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .use-case-card .recommendation { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 13px; font-weight: 600; }
+        .pro-upsell { max-width: 700px; margin: 0 auto 48px; padding: 32px; background: var(--bg-card); border: 1px solid var(--accent); border-radius: var(--radius); text-align: center; }
+        .pro-upsell h2 { font-size: 24px; margin-bottom: 8px; }
+        .pro-upsell p { color: var(--text-secondary); margin-bottom: 20px; }
+        .faq-section { max-width: 800px; margin: 0 auto 48px; padding: 0 24px; }
+        .faq-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        .related-tools { max-width: 900px; margin: 0 auto 48px; padding: 0 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .related-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; text-align: center; transition: all 0.2s; }
+        .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .related-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .related-card p { font-size: 13px; color: var(--text-muted); }
+        .related-card a { text-decoration: none; color: inherit; }
+        @media (max-width: 768px) {
+            .compare-hero { padding: 100px 20px 30px; }
+            .summary-cards, .use-case-grid { grid-template-columns: 1fr; }
+            .related-tools { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo"><span>⚡</span> APIpulse</a>
+            <div class="nav-links">
+                <a href="/calculator.html">Calculator</a>
+                <a href="/tools.html">Tools</a>
+                <a href="/compare.html">Compare</a>
+                <a href="/pricing.html" class="nav-cta">Get Pro — $19</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="compare-hero">
+        <h1>Mistral Large 3 <span class="vs">vs</span> Gemini 3.5 Flash</h1>
+        <p class="subtitle">Side-by-side API pricing comparison: which model gives you more for less?</p>
+        <p style="font-size: 13px; color: var(--text-muted);">Last verified Jun 2026 · Prices per 1M tokens</p>
+    </section>
+
+    <div class="summary-cards">
+        <div class="summary-card">
+            <div class="label">Cheaper Input</div>
+            <div class="value winner">Mistral Large 3</div>
+            <div class="detail">$0.5 vs $1.5</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Cheaper Output</div>
+            <div class="value winner">Mistral Large 3</div>
+            <div class="detail">$1.5 vs $9</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Max Savings</div>
+            <div class="value" style="color: var(--green);">83%</div>
+            <div class="detail">by switching to Mistral Large 3</div>
+        </div>
+    </div>
+
+    <div class="savings-banner">
+        <div class="amount">Save up to 83%</div>
+        <div class="detail">Switch from Gemini 3.5 Flash to Mistral Large 3 · $0.5 input / $1.5 output per 1M tokens</div>
+    </div>
+
+    <section class="quick-comparison">
+        <h2>Quick Comparison</h2>
+        <table class="quick-table">
+            <thead>
+                <tr><th>Feature</th><th>Mistral Large 3</th><th>Gemini 3.5 Flash</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Provider</td>
+                    <td><span class="provider-badge badge-mistral">Mistral</span></td>
+                    <td><span class="provider-badge badge-google">Google</span></td>
+                </tr>
+                <tr>
+                    <td>Tier</td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td><span class="tier-badge tier-mid">Mid</span></td>
+                </tr>
+                <tr>
+                    <td>Input Price</td>
+                    <td class="cheaper">$0.5</td>
+                    <td class="pricier">$1.5</td>
+                </tr>
+                <tr>
+                    <td>Output Price</td>
+                    <td class="cheaper">$1.5</td>
+                    <td class="pricier">$9</td>
+                </tr>
+                <tr>
+                    <td>Context Window</td>
+                    <td>262K</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td>Verified</td>
+                    <td>Jun 2026</td>
+                    <td>Jun 2026</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="use-cases">
+        <h2>When to Use Each</h2>
+        <div class="use-case-grid">
+            <div class="use-case-card">
+                <h3>💰 Cost-Sensitive Workloads</h3>
+                <p>High-volume APIs, batch processing, and startups watching runway.</p>
+                <div class="recommendation" style="color: var(--green);">→ Use Mistral Large 3 — 67% cheaper input, 83% cheaper output</div>
+            </div>
+            <div class="use-case-card">
+                <h3>🧠 Complex Reasoning</h3>
+                <p>Tasks requiring advanced reasoning, code generation, or nuanced analysis.</p>
+                <div class="recommendation">→ Either model works — compare quality on your specific tasks</div>
+            </div>
+            <div class="use-case-card">
+                <h3>⚡ High-Throughput APIs</h3>
+                <p>Real-time chatbots, streaming responses, and latency-sensitive apps.</p>
+                <div class="recommendation">→ Mistral Large 3 for cost at scale, Gemini 3.5 Flash if quality matters more</div>
+            </div>
+            <div class="use-case-card">
+                <h3>🔬 Prototyping & Testing</h3>
+                <p>Development, experimentation, and non-critical workloads.</p>
+                <div class="recommendation" style="color: var(--green);">→ Use Mistral Large 3 — same context (262K), much cheaper</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pro-upsell">
+        <h2>Track price changes for both models</h2>
+        <p>APIpulse Pro monitors 49 models across 10 providers. Get alerts when Mistral Large 3 or Gemini 3.5 Flash prices change.</p>
+        <a href="/flash-19.html" class="btn-primary">Get Pro for $19 →</a>
+    </section>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Is Mistral Large 3 cheaper than Gemini 3.5 Flash?</h3>
+            <p>Yes. Mistral Large 3 costs $0.5 input / $1.5 output per 1M tokens, while Gemini 3.5 Flash costs $1.5 input / $9 output. That's 67% cheaper on input and 83% cheaper on output.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How much can I save switching to Mistral Large 3?</h3>
+            <p>For a typical workload (1M input + 500K output tokens/month), Mistral Large 3 costs $1.25/month vs $6.00/month for Gemini 3.5 Flash. That's a savings of $4.75/month (83%).</p>
+        </div>
+        <div class="faq-item">
+            <h3>Which should I choose: Mistral Large 3 or Gemini 3.5 Flash?</h3>
+            <p>Choose Mistral Large 3 for cost efficiency. Choose Gemini 3.5 Flash for Google ecosystem benefits. Mistral Large 3 has 262K context vs Gemini 3.5 Flash's 1M.</p>
+        </div>
+    </section>
+
+    <section class="related-tools">
+        <div class="related-card">
+            <a href="/calculator.html"><h3>🧮 Cost Calculator</h3><p>Estimate monthly API costs</p></a>
+        </div>
+        <div class="related-card">
+            <a href="/compare.html"><h3>📊 Compare Models</h3><p>Side-by-side pricing</p></a>
+        </div>
+        <div class="related-card">
+            <a href="/price-alerts.html"><h3>🔔 Price Alerts</h3><p>Get notified of changes</p></a>
+        </div>
+    </section>
+
+    <footer style="background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 48px 24px; margin-top: 40px;">
+        <div style="max-width: var(--max-width); margin: 0 auto; text-align: center;">
+            <p style="color: var(--text-muted); font-size: 14px;">© 2026 APIpulse. Built for developers who care about costs. · <a href="price-alerts.html" style="color:var(--accent);">🔔 Price Alerts</a></p>
+            <div style="margin-top: 12px; display: flex; gap: 24px; justify-content: center;">
+                <a href="/" style="color: var(--text-secondary); font-size: 14px;">Home</a>
+                <a href="/calculator.html" style="color: var(--text-secondary); font-size: 14px;">Calculator</a>
+                <a href="/tools.html" style="color: var(--text-secondary); font-size: 14px;">Tools</a>
+                <a href="/compare.html" style="color: var(--text-secondary); font-size: 14px;">Compare</a>
+                <a href="/pricing.html" style="color: var(--text-secondary); font-size: 14px;">Pricing</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
