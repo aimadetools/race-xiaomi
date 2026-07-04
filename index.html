@@ -1857,18 +1857,27 @@
                 modeEl.style.display = 'none';
             }
 
-            // Recommended alternatives
+            // Recommended alternatives — conversion-optimized
             const savingsContainer = document.getElementById('savings-container');
             const recs = typeof getRecommendations === 'function' ? getRecommendations(provider, inputTokens, outputTokens, requests, days, 3) : [];
             if (recs.length > 0) {
-                const totalSavings = recs.reduce((sum, r) => sum + r.savings, 0);
                 const bestSavings = recs[0].savings;
+                const annualSavings = bestSavings * 12;
+                const paybackDays = Math.max(1, Math.ceil(19 / (bestSavings / 30)));
+                const paybackText = paybackDays <= 1 ? '1 day' : paybackDays <= 7 ? paybackDays + ' days' : Math.ceil(paybackDays / 7) + ' weeks';
                 let html = '<div class="recommendations"><h3>Recommended For You</h3>';
                 recs.forEach(r => {
                     html += `<div class="rec-card"><div class="rec-info"><div class="rec-name">${r.provider} ${r.name}</div><div class="rec-meta">${r.tier} · $${r.input}/$${r.output} per 1M · ${r.context} context</div></div><div class="rec-savings">Save $${r.savings.toFixed(2)}/mo (${Math.round(r.savingsPct)}%)</div></div>`;
                 });
                 html += '<a href="savings-calculator.html" class="rec-compare" style="display:block;text-align:center;margin-top:12px;">See all alternatives + full savings report →</a>';
-                html += `<div style="margin-top:12px;padding:12px 16px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:8px;text-align:center;font-size:13px;color:var(--text-secondary);">💡 You could save <strong style="color:var(--green);">$${(bestSavings * 12).toFixed(0)}/year</strong> by switching. <a href="flash-19.html?from=calc_savings" style="color:var(--accent);font-weight:600;">Get Pro for $19 — see all alternatives →</a> <span style="color:var(--text-muted);">or</span> <a href="flash-9.html?from=calc_savings" style="color:#22c55e;font-weight:600;">Simpler package $19 →</a></div>`;
+                // Big savings card with direct buy CTA
+                html += `<div style="margin-top:16px;padding:20px;background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(34,197,94,0.03));border:2px solid rgba(34,197,94,0.3);border-radius:14px;text-align:center;">
+                    <div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px;">Your annual savings potential</div>
+                    <div style="font-size:clamp(32px,6vw,48px);font-weight:900;color:var(--green);font-family:monospace;line-height:1.1;">$${annualSavings.toFixed(0)}<span style="font-size:0.4em;color:var(--text-muted);">/year</span></div>
+                    <div style="font-size:14px;color:var(--text-secondary);margin:8px 0 16px;">$19 Pro pays for itself in <strong style="color:var(--green);">${paybackText}</strong> — that's a <strong style="color:var(--green);">${Math.round(annualSavings / 19)}x return</strong></div>
+                    <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:14px 36px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.4);transition:all 0.2s;" onclick="if(typeof gtag==='function')gtag('event','pro_button_clicked',{source:'calc_savings_card'});">Get Pro — $19 Lifetime</a>
+                    <div style="font-size:11px;color:var(--text-muted);margin-top:8px;">🔒 Stripe secure · 14-day refund · No subscription</div>
+                </div>`;
                 html += '</div>';
                 savingsContainer.innerHTML = html;
             } else {
