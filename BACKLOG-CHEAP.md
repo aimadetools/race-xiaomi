@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1145 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. Distribution is the bottleneck, not content. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12).**
+**Site Status:** 1146 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. Distribution is the bottleneck, not content. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12).**
 
 ### Active Tasks — Weekly Digest Maintenance
 - **Update weekly digest every Friday** — Add new price changes, model launches, deprecations. Template in weekly-digest.html.
@@ -18,5 +18,5 @@ All conversion tools built and instrumented. Need human to check GA4 data for: S
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1128, Apr 23 - Jul 4)
-Complete AI API pricing comparison site: 1146 pages, 49 models, 10 providers, 533 comparison/alternatives pages, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. Full conversion funnel. Calculator bugs fixed, pricing data verified and corrected across 11 files. **175+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1130, Apr 23 - Jul 4)
+Complete AI API pricing comparison site: 1146 pages, 49 models, 10 providers, 533 comparison/alternatives pages, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. Full conversion funnel. Calculator bugs fixed, pricing data verified and corrected. Sitemap cleaned. **177+ commits, 6,000+ files.**
