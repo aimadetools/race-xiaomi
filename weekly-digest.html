@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Pricing Digest — Week of Jul 4, 2026 | APIpulse</title>
+    <meta name="description" content="This week in AI API pricing: GPT-5.4 models launch, Claude 4 deprecated, Gemini 3.1 Flash-Lite arrives. Price changes, new models, and deals you shouldn't miss.">
+    <meta property="og:title" content="API Pricing Digest — Week of Jul 4, 2026">
+    <meta property="og:description" content="GPT-5.4 models launch, Claude 4 deprecated, Gemini 3.1 Flash-Lite arrives. Stay on top of AI API pricing changes.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://getapipulse.com/weekly-digest.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/weekly-digest.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <style>
+        .digest-hero {
+            padding: 120px 24px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+        .digest-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .digest-hero .date-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+        .digest-hero p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .digest-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        .tldr-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(167, 139, 250, 0.05) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            margin: 40px 0;
+        }
+        .tldr-box h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .tldr-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .tldr-box li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text-primary);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .tldr-box li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .section-header {
+            margin: 48px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .section-header h2 span {
+            margin-right: 8px;
+        }
+        .news-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: border-color 0.2s;
+        }
+        .news-card:hover {
+            border-color: var(--accent);
+        }
+        .news-card .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+        .tag-new { background: rgba(34, 197, 94, 0.15); color: var(--green); }
+        .tag-price-drop { background: rgba(34, 197, 94, 0.15); color: var(--green); }
+        .tag-price-up { background: rgba(239, 68, 68, 0.15); color: var(--red); }
+        .tag-deprecation { background: rgba(239, 68, 68, 0.15); color: var(--red); }
+        .tag-deal { background: rgba(245, 158, 11, 0.15); color: var(--orange); }
+        .tag-trend { background: rgba(99, 102, 241, 0.15); color: var(--accent); }
+        .news-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+        .news-card h3 a {
+            color: var(--text-primary);
+        }
+        .news-card h3 a:hover {
+            color: var(--accent);
+        }
+        .news-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .news-card .meta {
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .news-card .meta a {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .price-change {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .price-down { color: var(--green); }
+        .price-up { color: var(--red); }
+        .deal-banner {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin: 32px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .deal-banner .deal-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+        .deal-banner h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+        .deal-banner p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        .deal-banner .btn-primary {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin-top: 8px;
+            display: inline-block;
+        }
+        .subscribe-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            text-align: center;
+            margin: 48px 0;
+        }
+        .subscribe-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        .subscribe-box p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .subscribe-form {
+            display: flex;
+            gap: 12px;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        .subscribe-form input {
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+        .subscribe-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .subscribe-form button {
+            padding: 12px 24px;
+            border-radius: 8px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .subscribe-form button:hover {
+            background: var(--accent-hover);
+        }
+        .past-digests {
+            margin-top: 48px;
+        }
+        .past-digests h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+        .past-digests ul {
+            list-style: none;
+            padding: 0;
+        }
+        .past-digests li {
+            padding: 8px 0;
+        }
+        .past-digests li a {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        .past-digests li a:hover {
+            color: var(--accent);
+        }
+        @media (max-width: 640px) {
+            .digest-hero h1 { font-size: 1.8rem; }
+            .deal-banner { flex-direction: column; text-align: center; }
+            .subscribe-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo"><span>⚡</span> APIpulse</a>
+            <div class="nav-links">
+                <a href="/models.html">Models</a>
+                <a href="/tools.html">Tools</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/weekly-digest.html" style="color: var(--accent); font-weight: 600;">Digest</a>
+                <a href="/pricing.html" class="nav-cta">Get Pro — $19</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="digest-hero">
+        <div class="date-badge">📅 Week of July 4, 2026</div>
+        <h1>API Pricing Digest</h1>
+        <p>What changed in AI API pricing this week — and what it means for your budget.</p>
+    </section>
+
+    <!-- Content -->
+    <div class="digest-container">
+
+        <!-- TL;DR -->
+        <div class="tldr-box">
+            <h2>TL;DR</h2>
+            <ul>
+                <li><strong>3 new models</strong> — GPT-5.4 mini, GPT-5.4 Pro, and Gemini 3.1 Flash-Lite all launched this week</li>
+                <li><strong>Claude 4 retired</strong> — Anthropic sunsets Claude 4; migration to Claude 4.5 or Sonnet 5 recommended</li>
+                <li><strong>Pricing pressure continues</strong> — OpenAI's GPT-5.4 mini at $0.40/$1.60 per 1M tokens undercuts mid-tier competition</li>
+                <li><strong>Flash sale</strong> — APIpulse Pro lifetime access $19 (reg $29) through Jul 12</li>
+            </ul>
+        </div>
+
+        <!-- Flash Sale -->
+        <div class="deal-banner">
+            <div class="deal-icon">🔥</div>
+            <div>
+                <h3>Flash Sale: APIpulse Pro — $19 (reg $29)</h3>
+                <p>Lifetime access to all premium tools: price alerts, cost monitoring, comparison gates, and every future update. Sale ends Jul 12.</p>
+                <a href="/flash-19.html" class="btn-primary" onclick="gtag('event', 'digest_flash_click', {'source': 'weekly-digest'})">Get Pro for $19 →</a>
+            </div>
+        </div>
+
+        <!-- New Models -->
+        <div class="section-header">
+            <h2><span>🆕</span> New Models This Week</h2>
+        </div>
+
+        <div class="news-card">
+            <span class="tag tag-new">New</span>
+            <h3><a href="/gpt-5.4-mini.html">GPT-5.4 mini — OpenAI's new value champion</a></h3>
+            <p>OpenAI launched GPT-5.4 mini at <strong>$0.40 input / $1.60 output</strong> per 1M tokens. That's 33% cheaper than GPT-4o mini was at launch, with significantly better reasoning. For most API workloads — chatbots, content generation, data extraction — this is now the default choice.</p>
+            <div class="meta">
+                <span class="price-change price-down">▼ 33% vs predecessor</span> · <a href="/gpt-5.4-mini.html">View pricing & alternatives →</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <span class="tag tag-new">New</span>
+            <h3><a href="/gpt-5.4-pro.html">GPT-5.4 Pro — OpenAI's premium reasoning model</a></h3>
+            <p>The new flagship from OpenAI. GPT-5.4 Pro targets complex reasoning, code generation, and agentic workflows at <strong>$5.00 input / $15.00 output</strong> per 1M tokens. Benchmarks show 40% improvement on SWE-bench vs GPT-4o. Positioned as direct competitor to Claude Sonnet 5.</p>
+            <div class="meta">
+                <span>Premium tier</span> · <a href="/gpt-5.4-pro.html">View pricing & alternatives →</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <span class="tag tag-new">New</span>
+            <h3><a href="/gemini-3.1-flash-lite.html">Gemini 3.1 Flash-Lite — Google's ultra-cheap option</a></h3>
+            <p>Google's answer to the price war. Gemini 3.1 Flash-Lite at <strong>$0.04 input / $0.15 output</strong> per 1M tokens is the cheapest multimodal model from a major provider. Perfect for high-volume, low-complexity tasks like classification, routing, and simple Q&A.</p>
+            <div class="meta">
+                <span class="price-change price-down">▼ 60% vs Flash 2.0</span> · <a href="/gemini-3.1-flash-lite.html">View pricing & alternatives →</a>
+            </div>
+        </div>
+
+        <!-- Deprecations -->
+        <div class="section-header">
+            <h2><span>⚠️</span> Deprecations & Retirements</h2>
+        </div>
+
+        <div class="news-card">
+            <span class="tag tag-deprecation">Deprecation</span>
+            <h3><a href="/claude-4-alternatives-comparison.html">Claude 4 officially retired by Anthropic</a></h3>
+            <p>Anthropic has retired Claude 4 from its API. If you're still pointing at <code>claude-4</code>, you need to migrate. <strong>Claude 4.5</strong> is the direct successor (same price, better performance). <strong>Sonnet 5</strong> is the new mid-tier champion at $3/$15 per 1M tokens.</p>
+            <div class="meta">
+                <span style="color: var(--red);">Action required if using claude-4 endpoint</span> · <a href="/claude-4-alternatives-comparison.html">See migration guide & alternatives →</a>
+            </div>
+        </div>
+
+        <!-- Pricing Trends -->
+        <div class="section-header">
+            <h2><span>📊</span> Pricing Trends</h2>
+        </div>
+
+        <div class="news-card">
+            <span class="tag tag-trend">Trend</span>
+            <h3>The price floor keeps dropping</h3>
+            <p>Twelve months ago, the cheapest API model from a major provider was ~$0.15/1M input tokens. Today, Gemini 3.1 Flash-Lite is at $0.04. DeepSeek V3 is at $0.03. The "good enough for most tasks" price has collapsed by 75% in a year. If you locked in pricing assumptions 6 months ago, <strong>you're overpaying</strong>.</p>
+            <div class="meta">
+                <span class="price-change price-down">▼ 75% YoY on budget models</span> · <a href="/llm-pricing-trends-2026.html">Full trend analysis →</a>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <span class="tag tag-trend">Trend</span>
+            <h3>Premium models holding steady — for now</h3>
+            <p>While budget models race to the bottom, premium-tier pricing (GPT-5.4 Pro, Claude Opus 4, o3) remains at $5-15 input / $15-60 output per 1M tokens. The gap between "cheap" and "best" is now 100-500x. This creates a clear optimization opportunity: <strong>route simple tasks to cheap models, reserve premium for complex reasoning</strong>.</p>
+            <div class="meta">
+                <a href="/cost-optimization-guide.html">Learn model routing strategies →</a>
+            </div>
+        </div>
+
+        <!-- Subscribe -->
+        <div class="subscribe-box">
+            <h3>📬 Don't miss next week's changes</h3>
+            <p>Get the API Pricing Digest delivered every Monday. No spam — just pricing intelligence.</p>
+            <div class="subscribe-form">
+                <input type="email" placeholder="your@email.com" id="digest-email">
+                <button onclick="subscribeDigest()">Subscribe</button>
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">Free. Unsubscribe anytime. We respect your inbox.</p>
+        </div>
+
+        <!-- Past Digests -->
+        <div class="past-digests">
+            <h3>📚 Past Digests</h3>
+            <ul>
+                <li><a href="/weekly-digest.html">Week of Jul 4, 2026</a> — GPT-5.4 launch, Claude 4 retirement, Gemini Flash-Lite</li>
+            </ul>
+            <p style="color: var(--text-muted); font-size: 13px; margin-top: 12px;">This is the first edition. More coming every Monday.</p>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align: center; margin-top: 48px; padding: 32px; background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border);">
+            <h3 style="margin-bottom: 8px;">Track every price change automatically</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">APIpulse Pro monitors 49 models across 10 providers. Get alerts when prices drop — or when your costs are about to increase.</p>
+            <a href="/flash-19.html" class="btn-primary" onclick="gtag('event', 'digest_bottom_cta', {'source': 'weekly-digest'})">Get Pro for $19 (reg $29) →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 48px 24px; margin-top: 40px;">
+        <div style="max-width: var(--max-width); margin: 0 auto; text-align: center;">
+            <p style="color: var(--text-muted); font-size: 14px;">© 2026 APIpulse. Built for developers who care about costs.</p>
+            <div style="margin-top: 12px; display: flex; gap: 24px; justify-content: center;">
+                <a href="/" style="color: var(--text-secondary); font-size: 14px;">Home</a>
+                <a href="/models.html" style="color: var(--text-secondary); font-size: 14px;">Models</a>
+                <a href="/tools.html" style="color: var(--text-secondary); font-size: 14px;">Tools</a>
+                <a href="/blog.html" style="color: var(--text-secondary); font-size: 14px;">Blog</a>
+                <a href="/pricing.html" style="color: var(--text-secondary); font-size: 14px;">Pricing</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function subscribeDigest() {
+            const email = document.getElementById('digest-email').value;
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            gtag('event', 'digest_subscribe', { 'email_domain': email.split('@')[1] });
+            // Store locally for now — in production this would hit an API
+            const subscribers = JSON.parse(localStorage.getItem('digest_subscribers') || '[]');
+            if (!subscribers.includes(email)) {
+                subscribers.push(email);
+                localStorage.setItem('digest_subscribers', JSON.stringify(subscribers));
+            }
+            document.querySelector('.subscribe-form').innerHTML = '<p style="color: var(--green); font-weight: 600;">✅ Subscribed! We\'ll send you the next digest.</p>';
+        }
+    </script>
+</body>
+</html>
