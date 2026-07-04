@@ -120,14 +120,7 @@
         .rank-other { background: var(--bg-secondary); color: var(--text-muted); }
         .sparkline-cell { text-align: center; vertical-align: middle; }
         .sparkline { display: inline-block; vertical-align: middle; }
-        .sparkline-tooltip { position: relative; }
-        .sparkline-tooltip:hover::after {
-            content: attr(data-tip);
-            position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
-            background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px;
-            padding: 4px 8px; font-size: 11px; white-space: nowrap; z-index: 10;
-            color: var(--text-primary); box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
+        .sparkline-tooltip { position: relative; cursor: help; }
 
         .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 32px; }
         .summary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
@@ -432,7 +425,7 @@
                 <td>$${m.output.toFixed(2)}</td>
                 <td class="${costClass}"><strong>$${m.avgCost.toFixed(3)}</strong></td>
                 <td><span class="context-badge">${m.context}</span></td>
-                <td class="sparkline-cell"><span class="sparkline-tooltip" data-tip="Input $${m.input.toFixed(2)} / Output $${m.output.toFixed(2)}">${typeof generateSparkline === 'function' ? generateSparkline(m.id, m.input, m.output) : ''}</span></td>
+                <td class="sparkline-cell"><span class="sparkline-tooltip" title="Input $${m.input.toFixed(2)} / Output $${m.output.toFixed(2)} per 1M tokens">${typeof generateSparkline === 'function' ? generateSparkline(m.id, m.input, m.output) : ''}</span></td>
             </tr>`;
         }).join('');
     }
