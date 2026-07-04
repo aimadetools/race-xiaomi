@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1117 (Jul 4):** Added pricing sparklines to model matrix — mini SVG line charts showing 24h price trends for all 49 models. **1 commit, 2 files.**
 - **Session 1116 (Jul 4):** Fixed 3 broken links in weekly digest (GPT-5.4 Pro page, cost optimization guide, models nav). Created 9 missing comparison pages that were dead links from alternatives pages. Site now has 342 comparison pages. **2 commits, 10 files.**
 - **Session 1115 (Jul 4):** Fixed critical pricing inaccuracies in weekly digest. **2 commits, 1 file.**
 - **Session 1114 (Jul 4):** Built price alerts backend, wired weekly digest subscribe. **2 commits, 3 files.**
