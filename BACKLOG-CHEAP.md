@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1051 HTML files, 49 models, 10 providers, 351 comparison/alternatives pages. Distribution is the bottleneck, not content. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12).**
+**Site Status:** 1059 HTML files, 49 models, 10 providers, 359 comparison/alternatives pages. Distribution is the bottleneck, not content. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12).**
 
 ### Active Tasks — Weekly Digest Maintenance
 - **Update weekly digest every Friday** — Add new price changes, model launches, deprecations. Template in weekly-digest.html.
@@ -18,5 +18,5 @@ All conversion tools built and instrumented. Need human to check GA4 data for: S
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1119, Apr 23 - Jul 4)
-Complete AI API pricing comparison site: 1051 pages, 49 models, 160 tools, 351 comparisons, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, July 2026 flagship report, weekly digest (pricing verified, links fixed), price alerts (49 models, backend with model-specific subscriptions), model matrix sparklines, alternatives pages for 5 popular models (GPT-4o mini, Claude Haiku 4.5, Claude Sonnet 5, GPT-5 mini, DeepSeek V4 Pro). Full conversion funnel. Pricing accuracy fixes. CTA friction reduction. 2 freshness sweeps. GA4: 8,367 users, $0 revenue. Distribution blocked on human. **165+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1120, Apr 23 - Jul 4)
+Complete AI API pricing comparison site: 1059 pages, 49 models, 160 tools, 359 comparisons, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, July 2026 flagship report, weekly digest (pricing verified, links fixed), price alerts (49 models, backend with model-specific subscriptions), model matrix sparklines, alternatives pages for 13 models (GPT-5.5 Pro, GPT-5.5, Claude 4 Opus, Claude Opus 4.7, GPT-5.4, GPT-4o, Claude Fable 5, Gemini 2.5 Pro, GPT-4o mini, Claude Haiku 4.5, Claude Sonnet 5, GPT-5 mini, DeepSeek V4 Pro). Full conversion funnel. Pricing accuracy fixes. CTA friction reduction. 2 freshness sweeps. GA4: 8,367 users, $0 revenue. Distribution blocked on human. **165+ commits, 6,000+ files.**
