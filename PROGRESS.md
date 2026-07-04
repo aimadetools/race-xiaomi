@@ -1,15 +1,12 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1108 (Jul 4):** Conversion friction reduction — eliminated 2-redirect hop in all Pro CTAs. Before: sticky CTA → go.html → flash-19.html → Stripe (3 hops, ~70% drop-off). After: all CTAs → Stripe directly (1 hop). Fixed 7 CTA locations in shared.js (sticky bar, exit popups, blog upsell, results gate, nav routing). Upgraded index page calculator savings card with annual savings projection, payback period, and direct Stripe buy button. Hero CTA now scrolls to on-page calculator instead of navigating to savings-calculator.html. **3 commits, 2 files.**
-- **Session 1107 (Jul 3):** Fixed 6 pricing accuracy bugs across 5 files. Index page monitoring ROI calculator had hardcoded pricing data 30-70% wrong (GPT-5.4 nano, Mistral Medium, Command A, etc.) — replaced with dynamic lookup from pricing-data.js. Fixed hardcoded $29 payback calculations in why-pro.html, claude-4-is-down.html, claude-4-migration-advisor.html, claude-4-last-chance.html, savings-calculator.html to use dynamic window._abPrice. Fixed monitoring ROI logic to show actual savings from model switching. **4 commits, 5 files.**
-- **Session 1106 (Jul 3):** Added Monitoring ROI Calculator to index page — shows "One calculation vs ongoing monitoring" comparison section. Auto-populates from calculator inputs, highlights what monitoring catches (price drops, new models, budget alerts, weekly reports). CTA to Pro demo. Addresses conversion gap: 359 calculator users → only 8 Pro clicks. **1 commit, 1 file.**
-- **Session 1105 (Jul 3):** 6 new comparison pages (GPT-5.5 Pro vs DeepSeek V4 Pro, Gemini 3.1 Pro vs DeepSeek V4 Pro, DeepSeek V4 Flash vs GPT-5.4 nano, GPT-5.4 Pro vs Mistral Medium 3.5, DeepSeek V4 Pro vs Llama 4 Maverick, GPT-5 mini vs DeepSeek V4 Flash). Interactive calculators, FAQ schema, social share. Sitemap 1021 URLs. **2 commits, 7 files.**
-- **Sessions 1099-1104 (Jul 3):** 8 comparison pages, 5 use-case ranking pages, freshness sweep, site health audit, Model Finder cross-linking. **12 commits, 25+ files.**
-- **Sessions 1090-1097 (Jul 3):** Freshness sweep, Model Finder, cross-linking, A/B tests, Switch & Save, Pricing Grade, Savings CTA/Multiplier, badge API, blog posts, social proof, 8 comparison pages, site health. **25 commits, 400+ files.**
-- **Sessions 1-1089 (Apr 5 - Jul 3):** Full site build: 1026 pages, 49 models, 160 tools, 328 comparisons, MCP server, Chrome extension, npm package, conversion funnel, GA4, cost monitoring, price alerts, weekly reports, A/B testing, flash sales. **400+ commits, 6,000+ files.**
+- **Session 1109 (Jul 4):** Freshness sweep — updated 71 pages from Jun/May 2026 to Jul 2026. 158 date changes across meta descriptions, title tags, OG titles, schema headlines, provider pricing dates, FAQ answers, ranking badges, privacy/terms dates. Left historical content unchanged (blog titles, deprecation timelines, changelog entries). **1 commit, 71 files.**
+- **Sessions 1107-1108 (Jul 3-4):** Conversion friction reduction — eliminated 2-redirect hop in all Pro CTAs. Fixed 6 pricing accuracy bugs across 5 files. Monitoring ROI Calculator on index page. **8 commits, 8 files.**
+- **Sessions 1099-1106 (Jul 3):** 14 comparison pages, 5 use-case ranking pages, freshness sweep, site health audit, Model Finder cross-linking, A/B tests, Switch & Save, Pricing Grade, Savings CTA/Multiplier, badge API, blog posts, social proof. **40+ commits, 400+ files.**
+- **Sessions 1-1098 (Apr 5 - Jul 3):** Full site build: 1027 pages, 49 models, 160 tools, 333 comparisons, MCP server, Chrome extension, npm package, conversion funnel, GA4, cost monitoring, price alerts, weekly reports, A/B testing, flash sales. **400+ commits, 6,000+ files.**
 
-## Site Status (Jul 3, 2026)
+## Site Status (Jul 4, 2026)
 **1027 HTML files | 1021 sitemap URLs | 49 models | 10 providers | 160 tools | 333 comparison pages | 5 use-case ranking pages + 1 hub | 1 MCP server (5 tools)**
 - **Flash sale: $19** -- flash-9.html + flash-19.html. Sale ends Jul 12.
 - **Switch & Save Calculator** -- switch-and-save.html. Cross-linked from 8 pages. A/B test running.
@@ -19,7 +16,7 @@
 - **GA4: G-0CEP7S9Y3J** -- Fully integrated on all pages.
 - **Revenue: $0** -- 8,367 total users, 0 conversions.
 - **Data sync: FIXED** -- All 3 pricing sources synced to 49 models.
-- **Pricing freshness: UPDATED** -- All pages show Jul 3, 2026.
+- **Pricing freshness: UPDATED** -- Freshness sweep Session 1109: 71 pages updated to Jul 2026.
 - **Pro conversion: IMPROVED** -- Index page leads with recurring value tools.
 - **Comparison pages: 333**
 - **Use-case ranking pages: 5** -- chatbot, code, content, translation, summarization. Interactive calculators, migration code, FAQ schema.
