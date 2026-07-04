@@ -12,7 +12,7 @@
 - **Build alert email template** — HTML email template for when prices actually change.
 - **Create /api/subscribe-alerts serverless function** — Store email + model subscriptions. Free tier: 3 models. Pro: unlimited.
 - ~~**Cross-link price alerts from model pages**~~ — DONE. Added "Track [Provider] price changes" CTAs to all 10 provider pages (Session 1113).
-- **Add price alert link to remaining footers** — ~600 pages have minimal footers without price-alerts link. Need bulk script.
+- ~~**Add price alert link to remaining footers**~~ — DONE. Added to 608 footers (Session 1113). Every page now links to price-alerts.html.
 
 ### Active Tasks — Conversion Monitoring (check GA4)
 All conversion tools built and instrumented. Need human to check GA4 data for: Stripe link conversion, calculator savings card, hero scroll-to-calculator, Model Finder engagement, Switch & Save, A/B tests (buy vs flash-19, comparison gate, CTA variants), price alerts gate, cost monitoring, flash sale funnel, weekly report, pro-demo, cost tracker, Pricing Grade, Savings CTA, Savings Multiplier. **18 monitoring tasks — all require GA4 dashboard access.**
