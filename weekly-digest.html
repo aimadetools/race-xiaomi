@@ -429,20 +429,35 @@
     </footer>
 
     <script>
-        function subscribeDigest() {
+        async function subscribeDigest() {
             const email = document.getElementById('digest-email').value;
             if (!email || !email.includes('@')) {
                 alert('Please enter a valid email address.');
                 return;
             }
             gtag('event', 'digest_subscribe', { 'email_domain': email.split('@')[1] });
-            // Store locally for now — in production this would hit an API
-            const subscribers = JSON.parse(localStorage.getItem('digest_subscribers') || '[]');
-            if (!subscribers.includes(email)) {
-                subscribers.push(email);
-                localStorage.setItem('digest_subscribers', JSON.stringify(subscribers));
+            const btn = document.querySelector('.subscribe-form button');
+            if (btn) btn.textContent = 'Subscribing...';
+            try {
+                const res = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, source: 'weekly-digest' })
+                });
+                if (res.ok) {
+                    document.querySelector('.subscribe-form').innerHTML = '<p style="color: var(--green); font-weight: 600;">✅ Subscribed! We\'ll send you the next digest.</p>';
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (err) {
+                // Fallback to localStorage
+                const subscribers = JSON.parse(localStorage.getItem('digest_subscribers') || '[]');
+                if (!subscribers.includes(email)) {
+                    subscribers.push(email);
+                    localStorage.setItem('digest_subscribers', JSON.stringify(subscribers));
+                }
+                document.querySelector('.subscribe-form').innerHTML = '<p style="color: var(--green); font-weight: 600;">✅ Subscribed! We\'ll send you the next digest.</p>';
             }
-            document.querySelector('.subscribe-form').innerHTML = '<p style="color: var(--green); font-weight: 600;">✅ Subscribed! We\'ll send you the next digest.</p>';
         }
     </script>
 </body>
