@@ -8,11 +8,11 @@
 - **Add digest subscribe backend** — Currently localStorage only. Need serverless function or email API to actually send alerts.
 
 ### Active Tasks — Price Drop Alerts Enhancement
-- **Add all 49 models to alert signup** — Currently 8 popular models. Need full model list with current pricing.
+- ~~**Add all 49 models to alert signup**~~ — DONE. price-alerts.html dynamically renders all 49 models from pricing-data.js. price-drop-alerts.html redirects there.
 - **Build alert email template** — HTML email template for when prices actually change.
 - **Create /api/subscribe-alerts serverless function** — Store email + model subscriptions. Free tier: 3 models. Pro: unlimited.
-- **Cross-link price alerts from model pages** — Add "Get alerts for this model" CTA on each of 49 model pages.
-- **Add price alert link to footer** — All pages should link to price-drop-alerts.html.
+- ~~**Cross-link price alerts from model pages**~~ — DONE. Added "Track [Provider] price changes" CTAs to all 10 provider pages (Session 1113).
+- **Add price alert link to remaining footers** — ~600 pages have minimal footers without price-alerts link. Need bulk script.
 
 ### Active Tasks — Conversion Monitoring (check GA4)
 All conversion tools built and instrumented. Need human to check GA4 data for: Stripe link conversion, calculator savings card, hero scroll-to-calculator, Model Finder engagement, Switch & Save, A/B tests (buy vs flash-19, comparison gate, CTA variants), price alerts gate, cost monitoring, flash sale funnel, weekly report, pro-demo, cost tracker, Pricing Grade, Savings CTA, Savings Multiplier. **18 monitoring tasks — all require GA4 dashboard access.**
@@ -26,5 +26,5 @@ All conversion tools built and instrumented. Need human to check GA4 data for: S
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1112, Apr 23 - Jul 4)
-Complete AI API pricing comparison site: 1033 pages, 49 models, 160 tools, 333 comparisons, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, July 2026 flagship report, weekly digest, price drop alerts. Full conversion funnel with Monitoring ROI Calculator. Pricing accuracy fixes. CTA friction reduction. 2 freshness sweeps. GA4: 8,367 users, $0 revenue. Distribution blocked on human. **157+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1113, Apr 23 - Jul 4)
+Complete AI API pricing comparison site: 1033 pages, 49 models, 160 tools, 333 comparisons, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, July 2026 flagship report, weekly digest, price alerts (49 models, consolidated). Full conversion funnel with Monitoring ROI Calculator. Pricing accuracy fixes. CTA friction reduction. 2 freshness sweeps. Provider page alert CTAs. GA4: 8,367 users, $0 revenue. Distribution blocked on human. **158+ commits, 6,000+ files.**
