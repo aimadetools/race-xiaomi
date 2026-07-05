@@ -531,6 +531,7 @@
                     <optgroup label="OpenAI">
                         <option value="openai-gpt55">GPT-5.5</option>
                         <option value="openai-gpt55-pro">GPT-5.5 Pro</option>
+                        <option value="openai-gpt53-codex">GPT-5.3 Codex</option>
                         <option value="openai-gpt5">GPT-5</option>
                         <option value="openai-gpt5-mini">GPT-5 mini</option>
                         <option value="openai-gpt54">GPT-5.4</option>
@@ -539,13 +540,19 @@
                         <option value="openai-gpt54-pro">GPT-5.4 Pro</option>
                         <option value="openai-gpt4o">GPT-4o</option>
                         <option value="openai-gpt4o-mini">GPT-4o mini</option>
+                        <option value="openai-gpt-oss-120b">GPT-oss 120B</option>
+                        <option value="openai-gpt-oss-20b">GPT-oss 20B</option>
                     </optgroup>
                     <optgroup label="Anthropic">
                         <option value="anthropic-opus48">Claude Opus 4.8</option>
+                        <option value="anthropic-claude4-opus">Claude 4 Opus</option>
+                        <option value="anthropic-opus47">Claude Opus 4.7</option>
                         <option value="anthropic-sonnet5">Claude Sonnet 5</option>
                         <option value="anthropic-sonnet46">Claude Sonnet 4.6</option>
+                        <option value="anthropic-sonnet4">Claude Sonnet 4</option>
                         <option value="anthropic-haiku">Claude Haiku 4.5</option>
                         <option value="anthropic-fable5">Claude Fable 5</option>
+                        <option value="anthropic-mythos5">Claude Mythos 5</option>
                     </optgroup>
                     <optgroup label="Google">
                         <option value="google-gemini35-flash">Gemini 3.5 Flash</option>
@@ -554,18 +561,37 @@
                         <option value="google-pro">Gemini 2.5 Pro</option>
                         <option value="google-gemini31-flash-lite">Gemini 3.1 Flash-Lite</option>
                         <option value="google-25-flash-lite">Gemini 2.5 Flash-Lite</option>
+                        <option value="google-gemini20-flash">Gemini 2.0 Flash</option>
+                        <option value="google-gemini20-flash-lite">Gemini 2.0 Flash Lite</option>
                     </optgroup>
                     <optgroup label="DeepSeek">
                         <option value="deepseek-v4-pro">DeepSeek V4 Pro</option>
                         <option value="deepseek-v4-flash">DeepSeek V4 Flash</option>
                         <option value="deepseek-v32">DeepSeek V3.2</option>
+                        <option value="deepseek-v3">DeepSeek V3</option>
                     </optgroup>
-                    <optgroup label="Others">
+                    <optgroup label="Mistral">
                         <option value="mistral-large">Mistral Large 3</option>
                         <option value="mistral-medium">Mistral Medium 3.5</option>
-                        <option value="xai-grok3">Grok 4.3</option>
+                        <option value="mistral-small">Mistral Small 4</option>
+                    </optgroup>
+                    <optgroup label="Cohere">
                         <option value="cohere-command-a">Command A</option>
+                        <option value="cohere-command-r-plus">Command R+</option>
+                        <option value="cohere-command-r">Command R</option>
+                    </optgroup>
+                    <optgroup label="Meta (via Together)">
                         <option value="llama-4-scout">Llama 4 Scout</option>
+                        <option value="llama-4-maverick">Llama 4 Maverick</option>
+                        <option value="llama-31-70b">Llama 3.1 70B</option>
+                        <option value="llama-31-8b">Llama 3.1 8B</option>
+                    </optgroup>
+                    <optgroup label="Others">
+                        <option value="xai-grok3">Grok 4.3</option>
+                        <option value="xai-grok-build">Grok Build 0.1</option>
+                        <option value="kimi-k26">Kimi K2.6</option>
+                        <option value="ai21-jamba-17">Jamba 1.7 Large</option>
+                        <option value="ai21-jamba-15">Jamba 1.5 Large</option>
                     </optgroup>
                 </select>
             </div>
@@ -676,10 +702,15 @@
             </div>
 
             <!-- Bottom CTA -->
-            <div style="text-align:center;padding:20px 0 40px;">
+            <div style="text-align:center;padding:20px 0 16px;">
                 <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_bottom'});">
                     Get Pro — $19 Lifetime
                 </a>
+            </div>
+
+            <!-- Try another model -->
+            <div style="text-align:center;padding:0 0 40px;">
+                <button onclick="if(window.trackEvent)window.trackEvent('audit_retry');document.getElementById('results').classList.remove('visible');document.getElementById('audit-form').style.display='block';document.getElementById('model-select').value='';document.getElementById('spend-input').value='';window.scrollTo({top:0,behavior:'smooth'});" style="background:none;border:1px solid #334155;color:#94a3b8;padding:10px 24px;border-radius:8px;cursor:pointer;font-size:14px;">← Try a different model</button>
             </div>
         </div>
 
@@ -705,6 +736,7 @@
             'openai-gpt4o': { name: 'GPT-4o', input: 2.50, output: 10.00, provider: 'OpenAI' },
             'openai-gpt4o-mini': { name: 'GPT-4o mini', input: 0.15, output: 0.60, provider: 'OpenAI' },
             'anthropic-opus48': { name: 'Claude Opus 4.8', input: 5.00, output: 25.00, provider: 'Anthropic' },
+            'anthropic-claude4-opus': { name: 'Claude 4 Opus', input: 15.00, output: 75.00, provider: 'Anthropic' },
             'anthropic-sonnet5': { name: 'Claude Sonnet 5', input: 3.00, output: 15.00, provider: 'Anthropic' },
             'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, provider: 'Anthropic' },
             'anthropic-haiku': { name: 'Claude Haiku 4.5', input: 1.00, output: 5.00, provider: 'Anthropic' },
@@ -723,7 +755,25 @@
             'xai-grok3': { name: 'Grok 4.3', input: 1.25, output: 2.50, provider: 'xAI' },
             'cohere-command-a': { name: 'Command A', input: 2.50, output: 10.00, provider: 'Cohere' },
             'llama-4-scout': { name: 'Llama 4 Scout', input: 0.18, output: 0.59, provider: 'Together' },
-            'llama-4-maverick': { name: 'Llama 4 Maverick', input: 0.27, output: 0.85, provider: 'Together' }
+            'llama-4-maverick': { name: 'Llama 4 Maverick', input: 0.27, output: 0.85, provider: 'Together' },
+            'openai-gpt53-codex': { name: 'GPT-5.3 Codex', input: 1.75, output: 14.00, provider: 'OpenAI' },
+            'openai-gpt-oss-120b': { name: 'GPT-oss 120B', input: 0.15, output: 0.60, provider: 'OpenAI' },
+            'openai-gpt-oss-20b': { name: 'GPT-oss 20B', input: 0.08, output: 0.35, provider: 'OpenAI' },
+            'anthropic-opus47': { name: 'Claude Opus 4.7', input: 5.00, output: 25.00, provider: 'Anthropic' },
+            'anthropic-sonnet4': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00, provider: 'Anthropic' },
+            'anthropic-mythos5': { name: 'Claude Mythos 5', input: 10.00, output: 50.00, provider: 'Anthropic' },
+            'google-gemini20-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40, provider: 'Google' },
+            'google-gemini20-flash-lite': { name: 'Gemini 2.0 Flash Lite', input: 0.075, output: 0.30, provider: 'Google' },
+            'deepseek-v3': { name: 'DeepSeek V3', input: 0.27, output: 1.10, provider: 'DeepSeek' },
+            'mistral-small': { name: 'Mistral Small 4', input: 0.10, output: 0.30, provider: 'Mistral' },
+            'cohere-command-r-plus': { name: 'Command R+', input: 2.50, output: 10.00, provider: 'Cohere' },
+            'cohere-command-r': { name: 'Command R', input: 0.50, output: 1.50, provider: 'Cohere' },
+            'llama-31-70b': { name: 'Llama 3.1 70B', input: 0.88, output: 0.88, provider: 'Together' },
+            'llama-31-8b': { name: 'Llama 3.1 8B', input: 0.10, output: 0.10, provider: 'Together' },
+            'kimi-k26': { name: 'Kimi K2.6', input: 0.95, output: 4.00, provider: 'Moonshot' },
+            'xai-grok-build': { name: 'Grok Build 0.1', input: 0.30, output: 0.50, provider: 'xAI' },
+            'ai21-jamba-17': { name: 'Jamba 1.7 Large', input: 2.00, output: 8.00, provider: 'AI21' },
+            'ai21-jamba-15': { name: 'Jamba 1.5 Large', input: 2.00, output: 8.00, provider: 'AI21' }
         };
 
         function fmt(n) {
@@ -873,7 +923,7 @@
         <div class="exit-modal">
             <h3>Wait — your audit is free</h3>
             <p>See exactly how much you're overpaying on AI APIs. It takes 30 seconds and costs nothing. The $19 Pro deal expires Jul 12.</p>
-            <a href="#" class="exit-cta" onclick="document.getElementById('exit-popup').classList.remove('show');return false;">Run My Free Audit →</a>
+            <a href="#" class="exit-cta" onclick="document.getElementById('exit-popup').classList.remove('show');document.getElementById('audit-form').style.display='block';document.getElementById('results').classList.remove('visible');document.getElementById('audit-form').scrollIntoView({behavior:'smooth',block:'center'});return false;">Run My Free Audit →</a>
             <button class="exit-dismiss" onclick="document.getElementById('exit-popup').classList.remove('show')">No thanks, I like overpaying</button>
         </div>
     </div>
