@@ -7,7 +7,7 @@
 - **Add past digests archive** — Link previous weeks as new digests are created.
 
 ### Active Tasks — Post-Calculator CTA Monitoring
-- **Track post-calculator CTA clicks** — monitor `monitoring_cta_clicked` and `alerts_cta_clicked` events in GA4. Are users clicking through to monitoring after calculating?
+- **Track post-calculator CTA clicks** — events now fire on 509 pages (Session 1134). Check GA4 for `monitoring_cta_clicked` and `alerts_cta_clicked` with source=post_calculator.
 - **Compare conversion rates** — before vs after post-calculator CTA. Target: >5% of calculator users clicking through to monitoring.
 - **Check cost-monitoring.html engagement** — are users who arrive from calculator actually using the monitoring dashboard?
 
@@ -23,5 +23,5 @@ All conversion tools built and instrumented. Need human to check GA4 data for: S
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1132, Apr 23 - Jul 5)
-Complete AI API pricing comparison site: 1146 pages, 49 models, 10 providers, 533 comparison/alternatives pages, 5 use-case ranking pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. Full conversion funnel. Calculator bugs fixed, pricing data verified and corrected. Sitemap cleaned. PMF pivot: post-calculator CTA bridges calculator to monitoring features. **179+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1134, Apr 23 - Jul 5)
+Complete AI API pricing comparison site: 1146 pages, 49 models, 10 providers, 533 comparison/alternatives pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. **CRITICAL:** Fixed trackEvent on 927 pages (all event tracking was dead). Post-calculator CTA on 509 pages. Full conversion funnel instrumented. **184+ commits, 6,000+ files.**

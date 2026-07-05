@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="styles.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
     <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0CEP7S9Y3J');</script>
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
@@ -91,6 +92,15 @@
     </div>
     <div class="related-tools"><a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 49 models compared</p></a><a href="compare.html" class="related-card"><h3>Compare Any Two</h3><p>Custom comparison tool</p></a><a href="api-cost-score.html" class="related-card"><h3>🎯 Cost Score</h3><p>Rate your API setup</p></a></div>
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+                    <!-- Post-Calculator Conversion CTA -->
+                    <div id="post-calc-cta" style="margin-top:20px;padding:20px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.06));border:1px solid rgba(99,102,241,0.25);border-radius:12px;text-align:center;">
+                        <div style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:6px;">This was a snapshot. What about next month?</div>
+                        <div style="font-size:13px;color:var(--text-secondary);margin-bottom:14px;line-height:1.5;">Prices change. New models launch. Monitoring catches what a one-time calculation can't — and saves you money every month.</div>
+                        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+                            <a href="cost-monitoring.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--green);color:white;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;box-shadow:0 2px 12px rgba(34,197,94,0.3);" onclick="if(window.trackEvent)window.trackEvent('monitoring_cta_clicked',{source:'post_calculator'})">📈 Track My Costs Monthly — Free</a>
+                            <a href="price-alerts.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--bg-secondary);border:1px solid var(--accent);color:var(--accent);border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;" onclick="if(window.trackEvent)window.trackEvent('alerts_cta_clicked',{source:'post_calculator'})">🔔 Get Price Alerts</a>
+                        </div>
+                    </div>
 </main>
     <footer><p>Pricing data last verified: <span class="verified-date"></span></p><p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="compare.html">Compare</a> · <a href="calculator.html">Calculator</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a> · <a href="about.html">About</a> · <a href="price-alerts.html" style="color:var(--accent);">🔔 Price Alerts</a></p></footer>
     <script>

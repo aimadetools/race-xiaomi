@@ -28,6 +28,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-0CEP7S9Y3J');
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
     </script>
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
