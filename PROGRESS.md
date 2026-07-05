@@ -1,7 +1,8 @@
 # PROGRESS.md
 
 ## Key Milestones
-### Jul 5 (Today — Sessions 1156-1158)
+### Jul 5 (Today — Sessions 1156-1159)
+- **Session 1159:** Added flash sale countdown banner to pro.html with live timer. Fixed stale schema.org price ($29→$19). Updated title, OG, and Twitter meta tags to mention flash sale. pro.html was the only key conversion page missing flash sale urgency messaging. **1 commit, 1 file.**
 - **Session 1158:** Fixed critical broken flash sale click tracking — `this.if(window.trackEvent)` → `if(window.trackEvent)` on 10 onclick handlers across flash-9.html and flash-19.html. This JS error silently prevented ALL flash_buy_clicked events from firing in GA4, making it impossible to measure flash sale CTA performance. **1 commit, 2 files.**
 - **Session 1157:** Fixed stale $29 Stripe links across conversion funnel. Updated CONFIRMED_STRIPE_LINK in shared.js from $29 to $19 flash sale link. Fixed 2 fallback links in shared.js exit popups, results-cta.js, and usage-gate.js. Fixed weekly-digest.html CTA buttons (was audit.html → Stripe) and flash sale strikethrough pricing. **1 commit, 4 files.**
 - **Session 1156:** Eliminated claim.html friction from conversion funnel. Created waste-calculator.html and ai-api-cost-optimization-checklist.html landing pages. Fixed stale $29 pricing on 77 blog/content pages. **5 commits, 91 files, +1,309 lines.**
