@@ -617,6 +617,11 @@
                 <div class="label">You're overpaying by</div>
                 <div class="amount" id="waste-amount">$0</div>
                 <div class="detail">per year on <strong id="waste-model-name">your current model</strong></div>
+                <div style="margin-top:16px;">
+                    <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.35);" id="waste-cta" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'waste_card'});">
+                        Save $<span id="waste-cta-savings">0</span>/yr — Just $19 →
+                    </a>
+                </div>
             </div>
 
             <!-- Comparison table -->
@@ -683,6 +688,9 @@
 
             <!-- CTA -->
             <div class="cta-card">
+                <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:12px 16px;margin-bottom:16px;text-align:center;">
+                    <div style="font-size:13px;color:#ef4444;font-weight:700;">⏱️ You're losing <span id="monthly-loss" style="font-size:16px;">$0</span>/month while you decide</div>
+                </div>
                 <h3>Never overpay for AI APIs again</h3>
                 <p>Get the exact model to switch to, migration code ready to paste, and <strong>24/7 price monitoring</strong> that alerts you the instant a cheaper option launches. One payment, lifetime of savings.</p>
                 <div class="price-row">
@@ -691,7 +699,7 @@
                 </div>
                 <div class="price-note">One-time · Lifetime access · Ends Jul 12</div>
                 <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" id="audit-buy-btn" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_page'});">
-                    Unlock My Savings Report — $19
+                    Save $<span id="cta-savings-amount">0</span>/yr — Just $19
                 </a>
                 <div class="trust-row">
                     <span>🔒 Stripe secure</span>
@@ -767,8 +775,8 @@
 
             <!-- Bottom CTA -->
             <div style="text-align:center;padding:20px 0 16px;">
-                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_bottom'});">
-                    Get Pro — $19 Lifetime
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" id="audit-buy-btn-bottom" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_bottom'});">
+                    Save $<span id="cta-savings-amount-bottom">0</span>/yr — Just $19
                 </a>
             </div>
 
@@ -949,6 +957,16 @@
             document.getElementById('roi-amount').textContent = fmtFull(savingsAnnual) + '/yr';
             document.getElementById('roi-multiplier').textContent = roiMultiplier + 'x';
 
+            // Dynamic CTA buttons — show exact savings amount
+            var ctaSavings = Math.round(savingsAnnual).toLocaleString('en-US');
+            document.getElementById('cta-savings-amount').textContent = ctaSavings;
+            document.getElementById('cta-savings-amount-bottom').textContent = ctaSavings;
+            document.getElementById('waste-cta-savings').textContent = ctaSavings;
+
+            // Monthly loss urgency
+            var monthlyLoss = Math.round(savingsAnnual / 12);
+            document.getElementById('monthly-loss').textContent = fmtFull(monthlyLoss);
+
             // Show results, hide form
             document.getElementById('audit-form').style.display = 'none';
             document.getElementById('results').classList.add('visible');
@@ -1043,7 +1061,7 @@
                         // User already ran audit — push purchase
                         document.getElementById('exit-title').textContent = 'Your savings are real — don\'t walk away';
                         document.getElementById('exit-desc').innerHTML = 'You\'re overpaying <strong id="exit-savings">' + document.getElementById('waste-amount').textContent + '</strong>. Unlock your full report with the exact model to switch to, migration code, and ongoing monitoring.';
-                        document.getElementById('exit-cta').textContent = 'Unlock My Report — $19';
+                        document.getElementById('exit-cta').textContent = 'Save ' + document.getElementById('waste-amount').textContent + ' — Just $19';
                         document.getElementById('exit-cta').href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
                         document.getElementById('exit-cta').onclick = function() {
                             if(window.trackEvent) window.trackEvent('audit_exit_buy_clicked', {savings: window._auditSavings || 0});
