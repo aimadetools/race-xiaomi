@@ -337,7 +337,7 @@
                     </div>
                     <div class="result-item" style="background:rgba(34,197,94,0.08);margin:4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(34,197,94,0.2);">
                         <span class="result-label" style="font-weight:600;color:var(--green);">vs GPT-5 savings</span>
-                        <span class="result-value" id="savings-vs-gpt5" style="color:var(--green);">-0%</span>
+                        <span class="result-value" id="savings-vs-gpt5" style="color:var(--green);">0%</span>
                     </div>
                     <div class="share-row">
                         <button class="share-btn" onclick="copyResults()"><span id="copy-btn-text">Copy Results</span></button>
@@ -516,8 +516,16 @@
             var gpt5Model = API_MODELS.find(function(m) { return m.id === 'openai-gpt5'; });
             if (gpt5Model) {
                 var gpt5Cost = (inputTokens * gpt5Model.input + outputTokens * gpt5Model.output) / 1000000;
-                var savings = ((gpt5Cost - totalCostReq) / gpt5Cost * 100).toFixed(0);
-                document.getElementById('savings-vs-gpt5').textContent = '-' + savings + '% vs GPT-5';
+                var savingsRaw = (gpt5Cost - totalCostReq) / gpt5Cost * 100;
+                var savings = Math.abs(savingsRaw).toFixed(0);
+                if (savingsRaw > 0.5) {
+                    document.getElementById('savings-vs-gpt5').textContent = '-' + savings + '% vs GPT-5';
+                } else if (savingsRaw < -0.5) {
+                    document.getElementById('savings-vs-gpt5').textContent = '+' + savings + '% vs GPT-5';
+                    document.getElementById('savings-vs-gpt5').style.color = 'var(--red, #ef4444)';
+                } else {
+                    document.getElementById('savings-vs-gpt5').textContent = '0% vs GPT-5';
+                }
             }
 
             // All open source models ranked by cost
