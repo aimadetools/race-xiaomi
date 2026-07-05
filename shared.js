@@ -42,7 +42,7 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
     var DEAL_SKIP = location.pathname.indexOf('deal.html') !== -1;
     var GO_SKIP = location.pathname.indexOf('go.html') !== -1;
     var FLASH19_SKIP = location.pathname.indexOf('flash-19.html') !== -1;
-    var CONFIRMED_STRIPE_LINK = 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'; // $29 one-time
+    var CONFIRMED_STRIPE_LINK = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'; // $19 flash sale (ends Jul 12)
 
     // Post-expiry: $49; flash sale (before July 12): $19; fallback $29
     if (window.DEAL_EXPIRED) {
@@ -982,7 +982,7 @@ async function saveEmail(e) {
 
             var price = window._abPrice || 29;
             var futurePrice = Math.round(price * 1.7);
-            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
 
             var overlay = document.createElement('div');
             overlay.id = 'exit-popup-overlay';
@@ -1063,7 +1063,7 @@ async function saveEmail(e) {
 
             var price = window._abPrice || 29;
             var futurePrice = Math.round(price * 1.7);
-            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
             var variant = window._abVariant || 'B';
 
             // Copy variant content — loss-framed vs social-proof

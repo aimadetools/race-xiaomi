@@ -74,9 +74,9 @@
     function getStripeId() {
         if (window._abStripeLink) {
             var match = window._abStripeLink.match(/buy\.stripe\.com\/(\w+)/);
-            return match ? match[1] : 'fZu7sL3Gw3GS0RQeoDeEo0a';
+            return match ? match[1] : 'bJecN55OEa5g1VUbcreEo0i';
         }
-        return 'fZu7sL3Gw3GS0RQeoDeEo0a';
+        return 'bJecN55OEa5g1VUbcreEo0i';
     }
 
     window.dismissUsageGate = function() {

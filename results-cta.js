@@ -36,7 +36,7 @@
     }
 
     function getStripeLink() {
-        return window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+        return window._abStripeLink || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
     }
 
     // Extract savings from page if available
