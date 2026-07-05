@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which AI Model Should You Use? Free 30-Second Quiz | APIpulse</title>
+    <meta name="description" content="Answer 3 questions, get a personalized AI model recommendation with exact pricing. Compare 49 models across 10 providers. Free, no signup.">
+    <meta property="og:title" content="Which AI Model Should You Use? — Free Quiz">
+    <meta property="og:description" content="3 questions. Your perfect AI model + exact cost. Free.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://getapipulse.com/ai-model-finder.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Model Finder Quiz",
+        "url": "https://getapipulse.com/ai-model-finder.html",
+        "description": "Free quiz to find the best AI model for your use case with exact pricing.",
+        "applicationCategory": "DeveloperApplication",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0CEP7S9Y3J');</script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a0f;color:#e2e8f0;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+        .wrap{max-width:600px;width:100%;padding:20px;margin:0 auto}
+        .header{text-align:center;padding:40px 0 24px}
+        .header .logo{font-size:14px;color:#6366f1;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+        .header h1{font-size:32px;font-weight:800;line-height:1.15;color:#f1f5f9;margin-bottom:12px}
+        .header .sub{font-size:16px;color:#94a3b8;line-height:1.6}
+        .step{display:none}.step.active{display:block}
+        .step-label{font-size:12px;color:#6366f1;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+        .q{font-size:18px;font-weight:700;color:#f1f5f9;margin-bottom:20px;line-height:1.4}
+        .opts{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+        .opt{padding:16px 20px;background:#111827;border:2px solid #1e293b;border-radius:12px;cursor:pointer;transition:all 0.2s;font-size:15px;color:#e2e8f0}
+        .opt:hover{border-color:#6366f1;background:rgba(99,102,241,0.06)}
+        .opt.selected{border-color:#6366f1;background:rgba(99,102,241,0.1);color:#f1f5f9}
+        .opt .opt-title{font-weight:700;margin-bottom:4px}
+        .opt .opt-desc{font-size:13px;color:#94a3b8}
+        .next-btn{width:100%;padding:16px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;transition:all 0.2s;margin-top:8px}
+        .next-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(99,102,241,0.4)}
+        .next-btn:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none}
+        .results{display:none}.results.visible{display:block}
+        .rec-card{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.06));border:2px solid rgba(99,102,241,0.3);border-radius:16px;padding:28px;text-align:center;margin-bottom:20px}
+        .rec-card h3{font-size:13px;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+        .rec-card .model-name{font-size:24px;font-weight:900;color:#f1f5f9;margin-bottom:4px}
+        .rec-card .model-provider{font-size:14px;color:#94a3b8;margin-bottom:16px}
+        .rec-card .price-row{display:flex;justify-content:center;gap:24px;margin-bottom:16px}
+        .rec-card .price-item{text-align:center}
+        .rec-card .price-item .plabel{font-size:11px;color:#64748b;text-transform:uppercase}
+        .rec-card .price-item .pval{font-size:18px;font-weight:800;color:#f1f5f9}
+        .alts{background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px;margin-bottom:20px}
+        .alts h4{font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:12px}
+        .alt-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e293b}
+        .alt-row:last-child{border-bottom:none}
+        .alt-name{font-size:14px;color:#e2e8f0;font-weight:600}
+        .alt-meta{font-size:12px;color:#64748b}
+        .alt-price{font-size:14px;font-weight:700;color:#22c55e}
+        .cta-card{background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(34,197,94,0.03));border:2px solid rgba(34,197,94,0.3);border-radius:16px;padding:24px;text-align:center;margin-bottom:20px}
+        .cta-card h3{font-size:18px;font-weight:800;color:#f1f5f9;margin-bottom:8px}
+        .cta-card p{font-size:14px;color:#94a3b8;margin-bottom:16px;line-height:1.6}
+        .buy-btn{display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:12px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.4);transition:all 0.2s}
+        .buy-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(34,197,94,0.5)}
+        .trust{display:flex;justify-content:center;gap:20px;margin-top:12px;font-size:12px;color:#64748b}
+        .footer{text-align:center;padding:24px 0;font-size:12px;color:#334155}
+        .footer a{color:#475569}
+        @media(max-width:640px){.header h1{font-size:24px}.wrap{padding:16px}}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <div class="logo">APIpulse</div>
+        <h1>Which AI model should you use?</h1>
+        <p class="sub">Answer 3 questions. Get a personalized recommendation with exact pricing.</p>
+    </div>
+
+    <!-- Step 1: Use case -->
+    <div class="step active" id="step1">
+        <div class="step-label">Question 1 of 3</div>
+        <div class="q">What will you use the AI model for?</div>
+        <div class="opts" id="opts1">
+            <div class="opt" data-val="chat" onclick="selectOpt(1,this)"><div class="opt-title">💬 Chat & Conversations</div><div class="opt-desc">Chatbots, customer support, conversational AI</div></div>
+            <div class="opt" data-val="code" onclick="selectOpt(1,this)"><div class="opt-title">💻 Code Generation</div><div class="opt-desc">Writing, reviewing, or debugging code</div></div>
+            <div class="opt" data-val="content" onclick="selectOpt(1,this)"><div class="opt-title">✍️ Content & Writing</div><div class="opt-desc">Blog posts, marketing copy, documentation</div></div>
+            <div class="opt" data-val="analysis" onclick="selectOpt(1,this)"><div class="opt-title">📊 Data Analysis</div><div class="opt-desc">Summarization, extraction, reasoning over data</div></div>
+            <div class="opt" data-val="vision" onclick="selectOpt(1,this)"><div class="opt-title">👁️ Vision & Multimodal</div><div class="opt-desc">Image analysis, document parsing, visual AI</div></div>
+        </div>
+        <button class="next-btn" id="btn1" disabled onclick="goStep(2)">Next →</button>
+    </div>
+
+    <!-- Step 2: Priority -->
+    <div class="step" id="step2">
+        <div class="step-label">Question 2 of 3</div>
+        <div class="q">What matters most to you?</div>
+        <div class="opts" id="opts2">
+            <div class="opt" data-val="quality" onclick="selectOpt(2,this)"><div class="opt-title">🏆 Best Quality</div><div class="opt-desc">I want the most capable model, cost is secondary</div></div>
+            <div class="opt" data-val="balanced" onclick="selectOpt(2,this)"><div class="opt-title">⚖️ Best Value</div><div class="opt-desc">Good quality at a reasonable price</div></div>
+            <div class="opt" data-val="budget" onclick="selectOpt(2,this)"><div class="opt-title">💰 Lowest Cost</div><div class="opt-desc">I need to minimize spend, quality is "good enough"</div></div>
+        </div>
+        <button class="next-btn" id="btn2" disabled onclick="goStep(3)">Next →</button>
+    </div>
+
+    <!-- Step 3: Volume -->
+    <div class="step" id="step3">
+        <div class="step-label">Question 3 of 3</div>
+        <div class="q">Roughly how many API calls per month?</div>
+        <div class="opts" id="opts3">
+            <div class="opt" data-val="low" onclick="selectOpt(3,this)"><div class="opt-title">🌱 Light (< 10K/mo)</div><div class="opt-desc">Prototyping, side projects, low traffic</div></div>
+            <div class="opt" data-val="medium" onclick="selectOpt(3,this)"><div class="opt-title">📈 Moderate (10K–500K/mo)</div><div class="opt-desc">Production app, growing user base</div></div>
+            <div class="opt" data-val="high" onclick="selectOpt(3,this)"><div class="opt-title">🚀 Heavy (500K+/mo)</div><div class="opt-desc">High-traffic app, enterprise usage</div></div>
+        </div>
+        <button class="next-btn" id="btn3" disabled onclick="showResults()">See My Recommendation →</button>
+    </div>
+
+    <!-- Results -->
+    <div class="results" id="results">
+        <div class="rec-card">
+            <h3>Your Best Match</h3>
+            <div class="model-name" id="rec-name">—</div>
+            <div class="model-provider" id="rec-provider">—</div>
+            <div class="price-row">
+                <div class="price-item"><div class="plabel">Input</div><div class="pval" id="rec-input">—</div></div>
+                <div class="price-item"><div class="plabel">Output</div><div class="pval" id="rec-output">—</div></div>
+                <div class="price-item"><div class="plabel">Context</div><div class="pval" id="rec-context">—</div></div>
+            </div>
+            <div id="rec-why" style="font-size:13px;color:#94a3b8;line-height:1.6"></div>
+        </div>
+
+        <div class="alts">
+            <h4>Other good options</h4>
+            <div id="alt-list"></div>
+        </div>
+
+        <div class="cta-card">
+            <h3>See exactly how much you'd save</h3>
+            <p>Your personalized cost audit shows the exact savings for your usage, migration code ready to paste, and ongoing monitoring.</p>
+            <a href="audit.html?from=model_finder" class="buy-btn" onclick="if(window.trackEvent)window.trackEvent('audit_link_clicked',{source:'model_finder'})">Get Your Free Cost Audit →</a>
+            <div class="trust">
+                <span>Free audit</span>
+                <span>🔒 No signup</span>
+                <span>⚡ 30 seconds</span>
+            </div>
+        </div>
+
+        <div style="text-align:center;padding:16px 0;">
+            <a href="audit.html?from=model_finder_bottom" style="color:#818cf8;font-size:14px;font-weight:600;text-decoration:none;">Or buy Pro now — $19 lifetime (all 49 models + monitoring) →</a>
+        </div>
+    </div>
+
+    <div class="footer"><a href="/">APIpulse</a> · 49 models · 10 providers · Updated Jul 2026</div>
+</div>
+
+<script>
+if(window.trackEvent) window.trackEvent('model_finder_view');
+
+var answers = {};
+
+function selectOpt(step, el) {
+    var parent = el.parentNode;
+    var siblings = parent.querySelectorAll('.opt');
+    siblings.forEach(function(s){s.classList.remove('selected')});
+    el.classList.add('selected');
+    answers[step] = el.getAttribute('data-val');
+    document.getElementById('btn' + step).disabled = false;
+}
+
+function goStep(n) {
+    document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active')});
+    document.getElementById('step' + n).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// Model data
+var MODELS = [
+    {id:'opus48',name:'Claude Opus 4.8',provider:'Anthropic',input:5,output:25,context:'1M',tier:'quality',use:['chat','code','analysis','vision']},
+    {id:'sonnet5',name:'Claude Sonnet 5',provider:'Anthropic',input:3,output:15,context:'1M',tier:'balanced',use:['chat','code','content','analysis','vision']},
+    {id:'sonnet46',name:'Claude Sonnet 4.6',provider:'Anthropic',input:3,output:15,context:'1M',tier:'balanced',use:['chat','code','content','analysis','vision']},
+    {id:'haiku',name:'Claude Haiku 4.5',provider:'Anthropic',input:1,output:5,context:'200K',tier:'budget',use:['chat','content','analysis']},
+    {id:'gpt55',name:'GPT-5.5',provider:'OpenAI',input:5,output:30,context:'1.05M',tier:'quality',use:['chat','code','analysis','vision']},
+    {id:'gpt5',name:'GPT-5',provider:'OpenAI',input:1.25,output:10,context:'272K',tier:'balanced',use:['chat','code','content','analysis']},
+    {id:'gpt5mini',name:'GPT-5 mini',provider:'OpenAI',input:0.25,output:2,context:'272K',tier:'budget',use:['chat','content','analysis']},
+    {id:'gpt54',name:'GPT-5.4',provider:'OpenAI',input:2.5,output:15,context:'400K',tier:'balanced',use:['chat','code','content','analysis']},
+    {id:'gpt54mini',name:'GPT-5.4 mini',provider:'OpenAI',input:0.75,output:4.5,context:'400K',tier:'budget',use:['chat','content','analysis']},
+    {id:'gpt4o',name:'GPT-4o',provider:'OpenAI',input:2.5,output:10,context:'128K',tier:'balanced',use:['chat','content','analysis','vision']},
+    {id:'gpt4omini',name:'GPT-4o mini',provider:'OpenAI',input:0.15,output:0.6,context:'128K',tier:'budget',use:['chat','content','analysis']},
+    {id:'gemini35flash',name:'Gemini 3.5 Flash',provider:'Google',input:1.5,output:9,context:'1M',tier:'balanced',use:['chat','code','content','analysis','vision']},
+    {id:'gemini3pro',name:'Gemini 3.1 Pro',provider:'Google',input:2,output:12,context:'1M',tier:'balanced',use:['chat','code','analysis','vision']},
+    {id:'gemini3flash',name:'Gemini 3 Flash',provider:'Google',input:0.5,output:3,context:'1M',tier:'budget',use:['chat','content','analysis']},
+    {id:'deepseekv4pro',name:'DeepSeek V4 Pro',provider:'DeepSeek',input:0.435,output:0.87,context:'1M',tier:'budget',use:['chat','code','analysis']},
+    {id:'deepseekv4flash',name:'DeepSeek V4 Flash',provider:'DeepSeek',input:0.14,output:0.28,context:'1M',tier:'budget',use:['chat','code','content']},
+    {id:'mistral3',name:'Mistral Large 3',provider:'Mistral',input:0.5,output:1.5,context:'262K',tier:'budget',use:['chat','code','content','analysis']},
+    {id:'grok43',name:'Grok 4.3',provider:'xAI',input:1.25,output:2.5,context:'1M',tier:'balanced',use:['chat','code','analysis','vision']},
+    {id:'llama4scout',name:'Llama 4 Scout',provider:'Together.ai',input:0.18,output:0.59,context:'1M',tier:'budget',use:['chat','code','content']},
+];
+
+function showResults() {
+    var useCase = answers[1], priority = answers[2], volume = answers[3];
+    if(window.trackEvent) window.trackEvent('model_finder_completed',{use:useCase,priority:priority,volume:volume});
+
+    // Filter models that support the use case
+    var eligible = MODELS.filter(function(m){return m.use.indexOf(useCase) >= 0;});
+
+    // Sort by priority
+    if (priority === 'quality') {
+        eligible.sort(function(a,b){return (b.input+b.output) - (a.input+a.output);});
+    } else if (priority === 'budget') {
+        eligible.sort(function(a,b){return (a.input+a.output) - (b.input+b.output);});
+    } else {
+        // balanced: favor mid-tier
+        eligible.sort(function(a,b){
+            var aScore = Math.abs((a.input+a.output) - 8);
+            var bScore = Math.abs((b.input+b.output) - 8);
+            return aScore - bScore;
+        });
+    }
+
+    var rec = eligible[0];
+    var alts = eligible.slice(1, 4);
+
+    document.getElementById('rec-name').textContent = rec.name;
+    document.getElementById('rec-provider').textContent = rec.provider;
+    document.getElementById('rec-input').textContent = '$' + rec.input;
+    document.getElementById('rec-output').textContent = '$' + rec.output;
+    document.getElementById('rec-context').textContent = rec.context;
+
+    var whyMap = {
+        quality: 'Top-tier capability for ' + useCase + '. Best results, higher cost.',
+        balanced: 'Great balance of quality and cost for ' + useCase + '.',
+        budget: 'Most cost-effective option for ' + useCase + '.'
+    };
+    document.getElementById('rec-why').textContent = whyMap[priority];
+
+    var altHtml = '';
+    alts.forEach(function(m){
+        altHtml += '<div class="alt-row"><div><div class="alt-name">' + m.name + '</div><div class="alt-meta">' + m.provider + ' · ' + m.context + ' context</div></div><div class="alt-price">$' + m.input + '/$' + m.output + '</div></div>';
+    });
+    document.getElementById('alt-list').innerHTML = altHtml;
+
+    document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active')});
+    document.getElementById('results').classList.add('visible');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+</body>
+</html>
