@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1136 (Jul 5):** Added GPT-5.4 Pro ($30/$180) and Gemini 3.1 Flash-Lite ($0.25/$1.50) to flash-19.html and flash-9.html savings calculators. Both new models from this week's digest were missing from the primary conversion pages — users searching for these models couldn't compare spend. **1 commit, 2 files.**
+- **Session 1136 (Jul 5):** Added GPT-5.4 Pro ($30/$180) and Gemini 3.1 Flash-Lite ($0.25/$1.50) to 4 calculator pages: flash-19.html, flash-9.html, pricing-grade.html, ai-api-cost-per-request.html. Both new models from this week's digest were missing from the primary conversion pages — users searching for these models couldn't compare spend. **4 commits, 5 files.**
 - **Session 1135 (Jul 5):** Fixed analytics coverage gap: embed-badge.html was missing analytics.js (GA4 snippet existed but trackEvent was undefined — all onclick handlers were no-ops). Also routed ALL conversion events through trackEvent() — 92+ files had raw gtag('event',...) calls that only sent to GA4, skipping localStorage (admin dashboard blind). Now every conversion event (flash_buy_clicked, pro_button_clicked, deal_buy_click, savings_calculated, email_subscribe, etc.) logs to both GA4 and localStorage. **3 commits, 116 files.**
 - **Session 1134 (Jul 5):** Fixed CRITICAL site-wide bug: `window.trackEvent` was used on 927 pages but only defined on cost-monitoring.html. All GA4 custom events were silently dead. Added trackEvent function to all 927 pages. Also expanded post-calculator CTA from 1 page (index.html) to all 509 calculator pages. **2 commits, 1,424 files.**
 - **Session 1133 (Jul 5):** Fixed `-0%` display bug in open-source LLM cost calculator. **1 commit, 1 file.**
