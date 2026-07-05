@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1147 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. Distribution is the bottleneck, not content. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12).**
+**Site Status:** 1151 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. Distribution is the bottleneck, not content. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12).**
 
 ### Active Tasks — Weekly Digest Maintenance
 - **Update weekly digest every Friday** — Add new price changes, model launches, deprecations. Template in weekly-digest.html.
@@ -23,5 +23,5 @@ All conversion tools built and instrumented. Need human to check GA4 data for: S
 - **Widget distribution** — DISTRIBUTION-KIT.md, 18 targets, ~1-2 hours
 - **Awesome lists** — awesome-mcp-servers, awesome-ai-tools, ~20 min
 
-### Completed Summary (Sessions 416-1139, Apr 23 - Jul 5)
-Complete AI API pricing comparison site: 1147 pages, 49 models, 10 providers, 533 comparison/alternatives pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. **CRITICAL:** Fixed trackEvent on 927 pages (all event tracking was dead). All conversion events now route through trackEvent() for GA4 + localStorage. Post-calculator CTA on 510 pages. embed-badge.html analytics fixed. Full conversion funnel instrumented. Built audit.html with gated recommendations and conversion optimization. Rebuilt pricing report with comprehensive 49-model comparison and SEO schema. **194+ commits, 6,000+ files.**
+### Completed Summary (Sessions 416-1143, Apr 23 - Jul 5)
+Complete AI API pricing comparison site: 1151 pages, 49 models, 10 providers, 533 comparison/alternatives pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. **CRITICAL:** Fixed trackEvent on 927 pages (all event tracking was dead). All conversion events now route through trackEvent() for GA4 + localStorage. Post-calculator CTA on 510 pages. embed-badge.html analytics fixed. Full conversion funnel instrumented. Built audit.html with gated recommendations and conversion optimization. Rebuilt pricing report with comprehensive 49-model comparison and SEO schema. Built /spend-tracker.html (localStorage-powered spend tracker with trends, optimizations, CSV export). Created 3 high-intent SEO pages: cheapest-gpt-api.html, reduce-ai-api-costs.html, ai-api-cost-calculator.html. **200+ commits, 6,000+ files.**

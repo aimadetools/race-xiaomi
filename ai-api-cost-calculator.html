@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Calculator — Compare 49 Models Across 10 Providers | APIpulse</title>
+    <meta name="description" content="Free AI API cost calculator. Compare pricing for GPT, Claude, Gemini, DeepSeek, Mistral. Calculate monthly spend for any model. See savings with cheaper alternatives.">
+    <meta name="keywords" content="AI API cost calculator, LLM pricing calculator, GPT cost calculator, Claude pricing, API cost estimator, AI budget calculator">
+    <meta property="og:title" content="AI API Cost Calculator — Compare 49 Models">
+    <meta property="og:description" content="Calculate your AI API costs across 49 models and 10 providers. Free, instant, no signup.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/ai-api-cost-calculator.html">
+    <link rel="canonical" href="https://getapipulse.com/ai-api-cost-calculator.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Cost Calculator",
+        "url": "https://getapipulse.com/ai-api-cost-calculator.html",
+        "description": "Free AI API cost calculator. Compare pricing for 49 models across 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "provider": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I calculate AI API costs?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Multiply your token count by the per-token price. For example, 1M input tokens × $2.50/M = $2.50. Most APIs charge separately for input and output tokens. Our calculator does this automatically — just enter your usage and we'll show the cost." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API?",
+                "acceptedAnswer": { "@type": "Answer", "text": "As of July 2026, the cheapest AI APIs are: Gemini 2.0 Flash Lite ($0.075/M input), DeepSeek V4 Flash ($0.14/M input), and GPT-oss 20B ($0.08/M input). For mainstream models, GPT-4o mini ($0.15/M) and Gemini 3 Flash ($0.50/M) are the most cost-effective." }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does GPT-5 cost?",
+                "acceptedAnswer": { "@type": "Answer", "text": "GPT-5 costs $1.25/M input tokens and $10.00/M output tokens. For a typical workload (75% input, 25% output), that's about $3.44 per million tokens. GPT-5 mini is cheaper at $0.25/M input and $2.00/M output." }
+            }
+        ]
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0CEP7S9Y3J');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0f; color: #e2e8f0; min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 48px 0 32px; }
+        .header .logo { font-size: 14px; color: #6366f1; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; }
+        .header h1 { font-size: 32px; font-weight: 800; line-height: 1.2; color: #f1f5f9; margin-bottom: 12px; }
+        .header .sub { font-size: 16px; color: #94a3b8; }
+        .card { background: #111827; border: 1px solid #1e293b; border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+        .card h3 { font-size: 16px; font-weight: 700; color: #f1f5f9; margin-bottom: 16px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .form-group select, .form-group input {
+            width: 100%; padding: 12px 14px; background: #0f172a; border: 1px solid #334155;
+            border-radius: 10px; color: #f1f5f9; font-size: 14px; outline: none; transition: border-color 0.2s;
+        }
+        .form-group select:focus, .form-group input:focus { border-color: #6366f1; }
+        .form-group select option { background: #0f172a; color: #f1f5f9; }
+        .calc-btn {
+            width: 100%; padding: 14px; background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 700;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .calc-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(99,102,241,0.4); }
+
+        /* Results */
+        .results { display: none; }
+        .results.visible { display: block; }
+        .result-header { text-align: center; margin-bottom: 20px; }
+        .result-header .cost { font-size: 48px; font-weight: 900; color: #22c55e; }
+        .result-header .label { font-size: 14px; color: #94a3b8; margin-top: 4px; }
+        .breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+        .breakdown-item { background: #0f172a; border-radius: 10px; padding: 14px; text-align: center; }
+        .breakdown-item .label { font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+        .breakdown-item .value { font-size: 18px; font-weight: 800; color: #f1f5f9; margin-top: 4px; }
+        .cheaper-section { margin-top: 20px; }
+        .cheaper-header { font-size: 13px; font-weight: 700; color: #22c55e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .cheaper-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #1e293b; }
+        .cheaper-row:last-child { border-bottom: none; }
+        .cheaper-row .model-name { font-weight: 700; color: #f1f5f9; font-size: 14px; }
+        .cheaper-row .provider { color: #64748b; font-size: 12px; }
+        .cheaper-row .savings { color: #22c55e; font-weight: 700; font-size: 14px; }
+        .cta-box { background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(34,197,94,0.08)); border: 2px solid rgba(99,102,241,0.3); border-radius: 16px; padding: 28px; text-align: center; margin: 24px 0; }
+        .cta-box h3 { font-size: 20px; font-weight: 800; color: #f1f5f9; margin-bottom: 8px; }
+        .cta-box p { font-size: 14px; color: #94a3b8; margin-bottom: 16px; line-height: 1.6; }
+        .buy-btn { display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #6366f1, #4f46e5); color: white; text-decoration: none; border-radius: 10px; font-size: 16px; font-weight: 700; }
+        .buy-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.4); }
+        .price-row { display: flex; justify-content: center; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+        .price-was { font-size: 16px; color: #64748b; text-decoration: line-through; }
+        .price-now { font-size: 28px; font-weight: 900; color: #22c55e; }
+        .price-note { font-size: 12px; color: #64748b; margin-bottom: 16px; }
+        .trust-row { display: flex; justify-content: center; gap: 16px; margin-top: 12px; font-size: 12px; color: #64748b; }
+
+        /* FAQ */
+        .faq { margin: 32px 0; }
+        .faq h2 { font-size: 22px; font-weight: 800; color: #f1f5f9; margin-bottom: 16px; }
+        .faq details { background: #111827; border: 1px solid #1e293b; border-radius: 10px; margin-bottom: 8px; }
+        .faq summary { padding: 16px 20px; cursor: pointer; font-weight: 700; color: #f1f5f9; font-size: 15px; }
+        .faq summary:hover { color: #818cf8; }
+        .faq .faq-body { padding: 0 20px 16px; color: #94a3b8; font-size: 14px; line-height: 1.7; }
+        .footer { text-align: center; padding: 32px 0; font-size: 13px; color: #475569; }
+        .footer a { color: #6366f1; text-decoration: none; }
+        @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } .breakdown { grid-template-columns: 1fr; } .header h1 { font-size: 26px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">APIpulse</div>
+            <h1>AI API Cost Calculator</h1>
+            <p class="sub">Compare costs for 49 models across 10 providers. See exactly what you'd pay — and where you could save.</p>
+        </div>
+
+        <div class="card">
+            <h3>Calculate Your Costs</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Model</label>
+                    <select id="model-select"></select>
+                </div>
+                <div class="form-group">
+                    <label>Monthly Input Tokens</label>
+                    <input type="number" id="input-tokens" placeholder="e.g. 1000000" min="0">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Monthly Output Tokens</label>
+                    <input type="number" id="output-tokens" placeholder="e.g. 500000" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Or Monthly Spend ($)</label>
+                    <input type="number" id="monthly-spend" placeholder="e.g. 500" min="0" step="0.01">
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calculate()">Calculate Cost →</button>
+        </div>
+
+        <!-- Results -->
+        <div class="results" id="results">
+            <div class="card">
+                <div class="result-header">
+                    <div class="cost" id="total-cost">$0</div>
+                    <div class="label">estimated monthly cost</div>
+                </div>
+                <div class="breakdown">
+                    <div class="breakdown-item">
+                        <div class="label">Input Cost</div>
+                        <div class="value" id="input-cost">$0</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="label">Output Cost</div>
+                        <div class="value" id="output-cost">$0</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="label">Annual Cost</div>
+                        <div class="value" id="annual-cost">$0</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="label">Cost per 1K Tokens</div>
+                        <div class="value" id="cost-per-1k">$0</div>
+                    </div>
+                </div>
+
+                <!-- Cheaper alternatives -->
+                <div class="cheaper-section" id="cheaper-section" style="display:none;">
+                    <div class="cheaper-header">💰 Cheaper Alternatives</div>
+                    <div id="cheaper-list"></div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Want to monitor this automatically?</h3>
+                <p>APIpulse Pro tracks your models 24/7, alerts you when cheaper options launch, and gives you migration code. One payment, lifetime access.</p>
+                <div class="price-row">
+                    <span class="price-was">$49</span>
+                    <span class="price-now">$19</span>
+                </div>
+                <div class="price-note">Flash sale ends Jul 12 · One-time · Lifetime</div>
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" onclick="if(window.trackEvent)window.trackEvent('calc_buy_clicked');">Unlock Pro — $19</a>
+                <div class="trust-row">
+                    <span>🔒 Stripe secure</span>
+                    <span>🛡️ 14-day refund</span>
+                    <span>⚡ Instant access</span>
+                </div>
+            </div>
+
+            <!-- Audit CTA -->
+            <div style="text-align:center;padding:16px 0;">
+                <a href="/audit.html" style="color:#6366f1;text-decoration:none;font-size:14px;font-weight:600;">→ Run a free cost audit to find hidden savings</a>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>How do I calculate AI API costs?</summary>
+                <div class="faq-body">Multiply your token count by the per-token price. For example, 1M input tokens × $2.50/M = $2.50. Most APIs charge separately for input and output tokens. Our calculator does this automatically.</div>
+            </details>
+            <details>
+                <summary>What is the cheapest AI API?</summary>
+                <div class="faq-body">As of July 2026, the cheapest are: Gemini 2.0 Flash Lite ($0.075/M input), DeepSeek V4 Flash ($0.14/M input), and GPT-oss 20B ($0.08/M input). For mainstream models, GPT-4o mini ($0.15/M) is the most cost-effective.</div>
+            </details>
+            <details>
+                <summary>How much does GPT-5 cost?</summary>
+                <div class="faq-body">GPT-5 costs $1.25/M input tokens and $10.00/M output tokens. GPT-5 mini is cheaper at $0.25/M input and $2.00/M output. GPT-5.5 (flagship) costs $5.00/M input and $30.00/M output.</div>
+            </details>
+            <details>
+                <summary>Should I use the cheapest model for everything?</summary>
+                <div class="faq-body">No. Match the model to the task. Use cheap models (GPT-4o mini, DeepSeek) for chat and simple tasks. Use mid-tier (GPT-5 mini, Claude Sonnet) for complex work. Reserve flagship models (GPT-5.5, Claude Opus) for tasks requiring maximum capability.</div>
+            </details>
+        </div>
+
+        <div class="footer">
+            <a href="/">APIpulse</a> · AI API pricing for 49 models across 10 providers
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var MODELS = {
+            'openai-gpt55': { name: 'GPT-5.5', input: 5.00, output: 30.00, provider: 'OpenAI' },
+            'openai-gpt55-pro': { name: 'GPT-5.5 Pro', input: 30.00, output: 180.00, provider: 'OpenAI' },
+            'openai-gpt5': { name: 'GPT-5', input: 1.25, output: 10.00, provider: 'OpenAI' },
+            'openai-gpt5-mini': { name: 'GPT-5 mini', input: 0.25, output: 2.00, provider: 'OpenAI' },
+            'openai-gpt54': { name: 'GPT-5.4', input: 2.50, output: 15.00, provider: 'OpenAI' },
+            'openai-gpt54-mini': { name: 'GPT-5.4 mini', input: 0.75, output: 4.50, provider: 'OpenAI' },
+            'openai-gpt54-nano': { name: 'GPT-5.4 nano', input: 0.20, output: 1.25, provider: 'OpenAI' },
+            'openai-gpt4o': { name: 'GPT-4o', input: 2.50, output: 10.00, provider: 'OpenAI' },
+            'openai-gpt4o-mini': { name: 'GPT-4o mini', input: 0.15, output: 0.60, provider: 'OpenAI' },
+            'anthropic-sonnet5': { name: 'Claude Sonnet 5', input: 3.00, output: 15.00, provider: 'Anthropic' },
+            'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, provider: 'Anthropic' },
+            'anthropic-haiku': { name: 'Claude Haiku 4.5', input: 1.00, output: 5.00, provider: 'Anthropic' },
+            'anthropic-opus48': { name: 'Claude Opus 4.8', input: 5.00, output: 25.00, provider: 'Anthropic' },
+            'google-gemini35-flash': { name: 'Gemini 3.5 Flash', input: 1.50, output: 9.00, provider: 'Google' },
+            'google-gemini3-pro': { name: 'Gemini 3.1 Pro', input: 2.00, output: 12.00, provider: 'Google' },
+            'google-gemini3-flash': { name: 'Gemini 3 Flash', input: 0.50, output: 3.00, provider: 'Google' },
+            'google-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00, provider: 'Google' },
+            'google-gemini31-flash-lite': { name: 'Gemini 3.1 Flash-Lite', input: 0.25, output: 1.50, provider: 'Google' },
+            'google-25-flash-lite': { name: 'Gemini 2.5 Flash-Lite', input: 0.10, output: 0.40, provider: 'Google' },
+            'google-gemini20-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40, provider: 'Google' },
+            'google-gemini20-flash-lite': { name: 'Gemini 2.0 Flash Lite', input: 0.075, output: 0.30, provider: 'Google' },
+            'deepseek-v4-pro': { name: 'DeepSeek V4 Pro', input: 0.435, output: 0.87, provider: 'DeepSeek' },
+            'deepseek-v4-flash': { name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28, provider: 'DeepSeek' },
+            'deepseek-v32': { name: 'DeepSeek V3.2', input: 0.23, output: 0.34, provider: 'DeepSeek' },
+            'deepseek-v3': { name: 'DeepSeek V3', input: 0.27, output: 1.10, provider: 'DeepSeek' },
+            'mistral-large': { name: 'Mistral Large 3', input: 0.50, output: 1.50, provider: 'Mistral' },
+            'mistral-medium': { name: 'Mistral Medium 3.5', input: 1.50, output: 7.50, provider: 'Mistral' },
+            'mistral-small': { name: 'Mistral Small 4', input: 0.10, output: 0.30, provider: 'Mistral' },
+            'xai-grok3': { name: 'Grok 4.3', input: 1.25, output: 2.50, provider: 'xAI' },
+            'xai-grok-build': { name: 'Grok Build 0.1', input: 0.30, output: 0.50, provider: 'xAI' },
+            'llama-4-scout': { name: 'Llama 4 Scout', input: 0.18, output: 0.59, provider: 'Together' },
+            'llama-4-maverick': { name: 'Llama 4 Maverick', input: 0.27, output: 0.85, provider: 'Together' },
+            'llama-31-70b': { name: 'Llama 3.1 70B', input: 0.88, output: 0.88, provider: 'Together' },
+            'llama-31-8b': { name: 'Llama 3.1 8B', input: 0.10, output: 0.10, provider: 'Together' },
+            'cohere-command-a': { name: 'Command A', input: 2.50, output: 10.00, provider: 'Cohere' },
+            'cohere-command-r-plus': { name: 'Command R+', input: 2.50, output: 10.00, provider: 'Cohere' },
+            'cohere-command-r': { name: 'Command R', input: 0.50, output: 1.50, provider: 'Cohere' },
+            'kimi-k26': { name: 'Kimi K2.6', input: 0.95, output: 4.00, provider: 'Moonshot' },
+            'ai21-jamba-17': { name: 'Jamba 1.7 Large', input: 2.00, output: 8.00, provider: 'AI21' },
+            'ai21-jamba-15': { name: 'Jamba 1.5 Large', input: 2.00, output: 8.00, provider: 'AI21' },
+            'openai-gpt53-codex': { name: 'GPT-5.3 Codex', input: 1.75, output: 14.00, provider: 'OpenAI' },
+            'openai-gpt-oss-120b': { name: 'GPT-oss 120B', input: 0.15, output: 0.60, provider: 'OpenAI' },
+            'openai-gpt-oss-20b': { name: 'GPT-oss 20B', input: 0.08, output: 0.35, provider: 'OpenAI' },
+            'anthropic-opus47': { name: 'Claude Opus 4.7', input: 5.00, output: 25.00, provider: 'Anthropic' },
+            'anthropic-sonnet4': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00, provider: 'Anthropic' },
+            'anthropic-mythos5': { name: 'Claude Mythos 5', input: 10.00, output: 50.00, provider: 'Anthropic' }
+        };
+
+        // Populate dropdown
+        var select = document.getElementById('model-select');
+        var providers = {};
+        for (var id in MODELS) {
+            var p = MODELS[id].provider;
+            if (!providers[p]) providers[p] = [];
+            providers[p].push({ id: id, name: MODELS[id].name });
+        }
+        for (var p in providers) {
+            var group = document.createElement('optgroup');
+            group.label = p;
+            providers[p].forEach(function(m) {
+                var opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = m.name;
+                group.appendChild(opt);
+            });
+            select.appendChild(group);
+        }
+
+        window.calculate = function() {
+            var modelId = document.getElementById('model-select').value;
+            var inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+            var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+            var monthlySpend = parseFloat(document.getElementById('monthly-spend').value) || 0;
+
+            var model = MODELS[modelId];
+            if (!model) return;
+
+            var inputCost, outputCost, totalCost;
+
+            if (monthlySpend > 0) {
+                // Estimate from spend: assume 3:1 input:output ratio
+                totalCost = monthlySpend;
+                inputCost = monthlySpend * 0.75;
+                outputCost = monthlySpend * 0.25;
+                // Estimate tokens
+                inputTokens = Math.round(inputCost / (model.input / 1000000));
+                outputTokens = Math.round(outputCost / (model.output / 1000000));
+            } else if (inputTokens > 0 || outputTokens > 0) {
+                inputCost = (inputTokens / 1000000) * model.input;
+                outputCost = (outputTokens / 1000000) * model.output;
+                totalCost = inputCost + outputCost;
+            } else {
+                alert('Please enter token counts or monthly spend.');
+                return;
+            }
+
+            var annualCost = totalCost * 12;
+            var totalTokens = inputTokens + outputTokens;
+            var costPer1k = totalTokens > 0 ? (totalCost / totalTokens * 1000) : 0;
+
+            document.getElementById('total-cost').textContent = '$' + totalCost.toFixed(2);
+            document.getElementById('input-cost').textContent = '$' + inputCost.toFixed(2);
+            document.getElementById('output-cost').textContent = '$' + outputCost.toFixed(2);
+            document.getElementById('annual-cost').textContent = '$' + annualCost.toFixed(0);
+            document.getElementById('cost-per-1k').textContent = '$' + costPer1k.toFixed(4);
+
+            // Find cheaper alternatives
+            var myBlended = (model.input * 0.75 + model.output * 0.25) / 1000000;
+            var cheaper = [];
+            for (var id in MODELS) {
+                if (id === modelId) continue;
+                var m = MODELS[id];
+                var blended = (m.input * 0.75 + m.output * 0.25) / 1000000;
+                if (blended < myBlended * 0.8) {
+                    var saving = (1 - blended / myBlended) * 100;
+                    var newCost = totalTokens * blended;
+                    var saved = totalCost - newCost;
+                    cheaper.push({ name: m.name, provider: m.provider, saving: saving, saved: saved });
+                }
+            }
+            cheaper.sort(function(a, b) { return b.saving - a.saving; });
+
+            var cheaperSection = document.getElementById('cheaper-section');
+            var cheaperList = document.getElementById('cheaper-list');
+            if (cheaper.length > 0) {
+                cheaperSection.style.display = 'block';
+                var html = '';
+                cheaper.slice(0, 5).forEach(function(c) {
+                    html += '<div class="cheaper-row">';
+                    html += '<div><span class="model-name">' + c.name + '</span> <span class="provider">' + c.provider + '</span></div>';
+                    html += '<span class="savings">Save $' + c.saved.toFixed(0) + '/mo (' + c.saving.toFixed(0) + '%)</span>';
+                    html += '</div>';
+                });
+                cheaperList.innerHTML = html;
+            } else {
+                cheaperSection.style.display = 'none';
+            }
+
+            document.getElementById('results').classList.add('visible');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            if (window.trackEvent) window.trackEvent('cost_calculator_used', { model: modelId, total_cost: totalCost });
+        };
+
+        // Allow Enter key
+        document.getElementById('monthly-spend').addEventListener('keydown', function(e) { if (e.key === 'Enter') calculate(); });
+        document.getElementById('output-tokens').addEventListener('keydown', function(e) { if (e.key === 'Enter') calculate(); });
+
+        if (window.trackEvent) window.trackEvent('cost_calculator_view');
+    })();
+    </script>
+</body>
+</html>

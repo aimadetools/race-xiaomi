@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Spend Tracker — Track Your Monthly API Costs | APIpulse</title>
+    <meta name="description" content="Free AI API spend tracker. Log your monthly costs by model, see spending trends, get optimization suggestions. Track OpenAI, Anthropic, Google, DeepSeek spending over time.">
+    <meta name="keywords" content="AI API cost tracker, API spend tracker, LLM cost monitoring, GPT spending, Claude spending, AI budget tracker">
+    <meta property="og:title" content="AI API Spend Tracker — Track Your Monthly Costs">
+    <meta property="og:description" content="Log your AI API spend by model. See trends. Get optimization suggestions. Free, private, runs in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/spend-tracker.html">
+    <link rel="canonical" href="https://getapipulse.com/spend-tracker.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Spend Tracker",
+        "url": "https://getapipulse.com/spend-tracker.html",
+        "description": "Free AI API spend tracker. Log monthly costs by model, see spending trends, get optimization suggestions.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "APIpulse",
+            "url": "https://getapipulse.com"
+        }
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0CEP7S9Y3J');</script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+        /* Header */
+        .header { text-align: center; padding: 48px 0 32px; }
+        .header .logo { font-size: 14px; color: #6366f1; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; }
+        .header h1 { font-size: 32px; font-weight: 800; line-height: 1.2; color: #f1f5f9; margin-bottom: 12px; }
+        .header .sub { font-size: 16px; color: #94a3b8; line-height: 1.6; }
+        .header .privacy { display: inline-block; margin-top: 12px; font-size: 13px; color: #22c55e; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); border-radius: 20px; padding: 6px 14px; }
+
+        /* Tabs */
+        .tabs { display: flex; gap: 4px; margin-bottom: 24px; background: #111827; border-radius: 12px; padding: 4px; }
+        .tab { flex: 1; padding: 12px; text-align: center; border-radius: 10px; cursor: pointer; font-size: 14px; font-weight: 600; color: #94a3b8; transition: all 0.2s; border: none; background: none; }
+        .tab.active { background: #6366f1; color: white; }
+        .tab:hover:not(.active) { color: #e2e8f0; background: rgba(99,102,241,0.1); }
+
+        /* Cards */
+        .card { background: #111827; border: 1px solid #1e293b; border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+        .card h3 { font-size: 16px; font-weight: 700; color: #f1f5f9; margin-bottom: 16px; }
+
+        /* Summary Row */
+        .summary-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+        .summary-card { background: #111827; border: 1px solid #1e293b; border-radius: 12px; padding: 16px; text-align: center; }
+        .summary-card .label { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .summary-card .value { font-size: 24px; font-weight: 800; color: #f1f5f9; }
+        .summary-card .value.green { color: #22c55e; }
+        .summary-card .value.red { color: #ef4444; }
+        .summary-card .value.accent { color: #6366f1; }
+        .summary-card .detail { font-size: 11px; color: #64748b; margin-top: 4px; }
+
+        /* Form */
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .form-group select, .form-group input {
+            width: 100%; padding: 12px 14px; background: #0f172a; border: 1px solid #334155;
+            border-radius: 10px; color: #f1f5f9; font-size: 14px; outline: none; transition: border-color 0.2s;
+        }
+        .form-group select:focus, .form-group input:focus { border-color: #6366f1; }
+        .form-group select option { background: #0f172a; color: #f1f5f9; }
+        .add-btn {
+            width: 100%; padding: 14px; background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 700;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .add-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(99,102,241,0.4); }
+
+        /* Entries Table */
+        .entries-list { max-height: 400px; overflow-y: auto; }
+        .entry-row {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr auto; gap: 8px;
+            align-items: center; padding: 12px 0; border-bottom: 1px solid #1e293b; font-size: 13px;
+        }
+        .entry-row:last-child { border-bottom: none; }
+        .entry-row .model { font-weight: 700; color: #f1f5f9; }
+        .entry-row .provider { color: #64748b; font-size: 11px; }
+        .entry-row .month { color: #94a3b8; }
+        .entry-row .amount { color: #22c55e; font-weight: 700; }
+        .entry-row .tokens { color: #94a3b8; }
+        .delete-btn { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 16px; padding: 4px 8px; border-radius: 6px; }
+        .delete-btn:hover { background: rgba(239,68,68,0.1); }
+
+        /* Chart */
+        .chart-container { position: relative; height: 200px; margin-top: 16px; }
+        .chart-bar-group { display: flex; align-items: flex-end; gap: 4px; height: 100%; padding: 0 4px; }
+        .chart-bar { flex: 1; min-width: 0; border-radius: 4px 4px 0 0; transition: height 0.3s; position: relative; }
+        .chart-bar:hover { opacity: 0.85; }
+        .chart-label { text-align: center; font-size: 10px; color: #64748b; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .chart-amount { text-align: center; font-size: 10px; color: #94a3b8; margin-bottom: 4px; }
+        .chart-axis { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1px solid #1e293b; }
+        .chart-axis span { font-size: 11px; color: #64748b; }
+
+        /* Optimization */
+        .opt-item {
+            display: flex; align-items: flex-start; gap: 12px; padding: 14px;
+            background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.15);
+            border-radius: 10px; margin-bottom: 10px;
+        }
+        .opt-icon { font-size: 20px; flex-shrink: 0; }
+        .opt-text { font-size: 13px; color: #94a3b8; line-height: 1.5; }
+        .opt-text strong { color: #22c55e; }
+        .opt-savings { font-size: 14px; font-weight: 700; color: #22c55e; white-space: nowrap; }
+
+        /* CTA */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(34,197,94,0.08));
+            border: 2px solid rgba(99,102,241,0.3); border-radius: 16px; padding: 28px;
+            text-align: center; margin: 24px 0;
+        }
+        .cta-box h3 { font-size: 20px; font-weight: 800; color: #f1f5f9; margin-bottom: 8px; }
+        .cta-box p { font-size: 14px; color: #94a3b8; margin-bottom: 16px; line-height: 1.6; }
+        .cta-box .price-row { display: flex; justify-content: center; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+        .cta-box .price-was { font-size: 16px; color: #64748b; text-decoration: line-through; }
+        .cta-box .price-now { font-size: 28px; font-weight: 900; color: #22c55e; }
+        .cta-box .price-note { font-size: 12px; color: #64748b; margin-bottom: 16px; }
+        .buy-btn {
+            display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white; text-decoration: none; border-radius: 10px; font-size: 16px; font-weight: 700;
+            transition: all 0.2s;
+        }
+        .buy-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.4); }
+        .trust-row { display: flex; justify-content: center; gap: 16px; margin-top: 12px; font-size: 12px; color: #64748b; }
+
+        /* Empty State */
+        .empty-state { text-align: center; padding: 40px 20px; color: #64748b; }
+        .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+        .empty-state p { font-size: 14px; line-height: 1.6; }
+
+        /* Section */
+        .section-title { font-size: 13px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+
+        /* Footer */
+        .footer { text-align: center; padding: 32px 0; font-size: 13px; color: #475569; }
+        .footer a { color: #6366f1; text-decoration: none; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+
+        @media (max-width: 640px) {
+            .summary-row { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .entry-row { grid-template-columns: 1fr 1fr auto; }
+            .entry-row .provider, .entry-row .tokens { display: none; }
+            .header h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">APIpulse</div>
+            <h1>Track Your AI API Spend</h1>
+            <p class="sub">Log your monthly costs by model. See trends. Find waste. All data stays in your browser.</p>
+            <span class="privacy">🔒 100% private — data never leaves your device</span>
+        </div>
+
+        <!-- Summary -->
+        <div class="summary-row">
+            <div class="summary-card">
+                <div class="label">This Month</div>
+                <div class="value accent" id="this-month">$0</div>
+                <div class="detail" id="this-month-models">0 models</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Last Month</div>
+                <div class="value" id="last-month">$0</div>
+                <div class="detail" id="last-month-models">0 models</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Trend</div>
+                <div class="value green" id="trend">—</div>
+                <div class="detail" id="trend-detail">no data yet</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('log')">Log Spend</button>
+            <button class="tab" onclick="switchTab('history')">History</button>
+            <button class="tab" onclick="switchTab('insights')">Insights</button>
+        </div>
+
+        <!-- Log Spend Tab -->
+        <div id="tab-log">
+            <div class="card">
+                <h3>Add Monthly Spend</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Month</label>
+                        <input type="month" id="entry-month">
+                    </div>
+                    <div class="form-group">
+                        <label>Model</label>
+                        <select id="entry-model"></select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Monthly Spend ($)</label>
+                        <input type="number" id="entry-amount" placeholder="e.g. 500" min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label>Tokens Used (optional)</label>
+                        <input type="number" id="entry-tokens" placeholder="e.g. 1000000" min="0">
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addEntry()">+ Add Entry</button>
+            </div>
+
+            <!-- Quick Add: Common Models -->
+            <div class="card">
+                <h3>Quick Add</h3>
+                <p style="font-size:13px;color:#64748b;margin-bottom:12px;">Common models — click to add with your last spend amount</p>
+                <div id="quick-add" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+            </div>
+        </div>
+
+        <!-- History Tab -->
+        <div id="tab-history" style="display:none;">
+            <div class="card">
+                <h3>Spend History</h3>
+                <div id="entries-list" class="entries-list">
+                    <div class="empty-state">
+                        <div class="icon">📊</div>
+                        <p>No entries yet. Go to "Log Spend" to add your first entry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Breakdown Chart -->
+            <div class="card">
+                <h3>Monthly Breakdown</h3>
+                <div id="chart-container" class="chart-container">
+                    <div class="empty-state">
+                        <p>Add at least 2 months of data to see your spending trend.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export -->
+            <div style="text-align:center;padding:12px 0;">
+                <button onclick="exportData()" style="background:none;border:1px solid #334155;color:#94a3b8;padding:10px 20px;border-radius:8px;cursor:pointer;font-size:13px;">📥 Export CSV</button>
+                <button onclick="if(confirm('Clear all data? This cannot be undone.')){localStorage.removeItem('apipulse_spend');location.reload();}" style="background:none;border:1px solid #334155;color:#ef4444;padding:10px 20px;border-radius:8px;cursor:pointer;font-size:13px;margin-left:8px;">🗑️ Clear All</button>
+            </div>
+        </div>
+
+        <!-- Insights Tab -->
+        <div id="tab-insights" style="display:none;">
+            <div class="card">
+                <h3>Spending Insights</h3>
+                <div id="insights-list">
+                    <div class="empty-state">
+                        <div class="icon">💡</div>
+                        <p>Add at least 2 entries to get personalized insights.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optimization Suggestions -->
+            <div class="card">
+                <h3>Optimization Suggestions</h3>
+                <div id="opt-list">
+                    <div class="empty-state">
+                        <p>Log your spend to see where you can save.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>Want automated monitoring?</h3>
+                <p>APIpulse Pro tracks your models 24/7, alerts you when cheaper options launch, and gives you migration code ready to paste. One payment, lifetime access.</p>
+                <div class="price-row">
+                    <span class="price-was">$49</span>
+                    <span class="price-now">$19</span>
+                </div>
+                <div class="price-note">Flash sale ends Jul 12 · One-time · Lifetime</div>
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" onclick="if(window.trackEvent)window.trackEvent('spend_tracker_buy_clicked');">Unlock Pro — $19</a>
+                <div class="trust-row">
+                    <span>🔒 Stripe secure</span>
+                    <span>🛡️ 14-day refund</span>
+                    <span>⚡ Instant access</span>
+                </div>
+            </div>
+
+            <!-- Audit CTA -->
+            <div style="text-align:center;padding:16px 0;">
+                <a href="/audit.html" style="color:#6366f1;text-decoration:none;font-size:14px;font-weight:600;">→ Run a free cost audit to find hidden savings</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="/">APIpulse</a> · AI API pricing for 49 models across 10 providers
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        // Model data
+        var MODELS = {
+            'openai-gpt55': { name: 'GPT-5.5', provider: 'OpenAI' },
+            'openai-gpt55-pro': { name: 'GPT-5.5 Pro', provider: 'OpenAI' },
+            'openai-gpt5': { name: 'GPT-5', provider: 'OpenAI' },
+            'openai-gpt5-mini': { name: 'GPT-5 mini', provider: 'OpenAI' },
+            'openai-gpt54': { name: 'GPT-5.4', provider: 'OpenAI' },
+            'openai-gpt54-mini': { name: 'GPT-5.4 mini', provider: 'OpenAI' },
+            'openai-gpt54-nano': { name: 'GPT-5.4 nano', provider: 'OpenAI' },
+            'openai-gpt4o': { name: 'GPT-4o', provider: 'OpenAI' },
+            'openai-gpt4o-mini': { name: 'GPT-4o mini', provider: 'OpenAI' },
+            'anthropic-sonnet5': { name: 'Claude Sonnet 5', provider: 'Anthropic' },
+            'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', provider: 'Anthropic' },
+            'anthropic-haiku': { name: 'Claude Haiku 4.5', provider: 'Anthropic' },
+            'anthropic-opus48': { name: 'Claude Opus 4.8', provider: 'Anthropic' },
+            'google-gemini35-flash': { name: 'Gemini 3.5 Flash', provider: 'Google' },
+            'google-gemini3-pro': { name: 'Gemini 3.1 Pro', provider: 'Google' },
+            'google-gemini3-flash': { name: 'Gemini 3 Flash', provider: 'Google' },
+            'google-pro': { name: 'Gemini 2.5 Pro', provider: 'Google' },
+            'deepseek-v4-pro': { name: 'DeepSeek V4 Pro', provider: 'DeepSeek' },
+            'deepseek-v4-flash': { name: 'DeepSeek V4 Flash', provider: 'DeepSeek' },
+            'deepseek-v32': { name: 'DeepSeek V3.2', provider: 'DeepSeek' },
+            'mistral-large': { name: 'Mistral Large 3', provider: 'Mistral' },
+            'mistral-medium': { name: 'Mistral Medium 3.5', provider: 'Mistral' },
+            'xai-grok3': { name: 'Grok 4.3', provider: 'xAI' },
+            'llama-4-scout': { name: 'Llama 4 Scout', provider: 'Together' },
+            'llama-4-maverick': { name: 'Llama 4 Maverick', provider: 'Together' },
+            'cohere-command-a': { name: 'Command A', provider: 'Cohere' }
+        };
+
+        // Pricing data for optimization suggestions
+        var PRICING = {
+            'openai-gpt55': { input: 5.00, output: 30.00 },
+            'openai-gpt5': { input: 1.25, output: 10.00 },
+            'openai-gpt5-mini': { input: 0.25, output: 2.00 },
+            'openai-gpt54': { input: 2.50, output: 15.00 },
+            'openai-gpt54-mini': { input: 0.75, output: 4.50 },
+            'openai-gpt54-nano': { input: 0.20, output: 1.25 },
+            'openai-gpt4o': { input: 2.50, output: 10.00 },
+            'openai-gpt4o-mini': { input: 0.15, output: 0.60 },
+            'anthropic-sonnet5': { input: 3.00, output: 15.00 },
+            'anthropic-sonnet46': { input: 3.00, output: 15.00 },
+            'anthropic-haiku': { input: 1.00, output: 5.00 },
+            'anthropic-opus48': { input: 5.00, output: 25.00 },
+            'google-gemini35-flash': { input: 1.50, output: 9.00 },
+            'google-gemini3-pro': { input: 2.00, output: 12.00 },
+            'google-gemini3-flash': { input: 0.50, output: 3.00 },
+            'google-pro': { input: 1.25, output: 10.00 },
+            'deepseek-v4-pro': { input: 0.435, output: 0.87 },
+            'deepseek-v4-flash': { input: 0.14, output: 0.28 },
+            'deepseek-v32': { input: 0.23, output: 0.34 },
+            'mistral-large': { input: 0.50, output: 1.50 },
+            'mistral-medium': { input: 1.50, output: 7.50 },
+            'xai-grok3': { input: 1.25, output: 2.50 },
+            'llama-4-scout': { input: 0.18, output: 0.59 },
+            'llama-4-maverick': { input: 0.27, output: 0.85 },
+            'cohere-command-a': { input: 2.50, output: 10.00 }
+        };
+
+        var STORAGE_KEY = 'apipulse_spend';
+
+        function getEntries() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+            catch(e) { return []; }
+        }
+
+        function saveEntries(entries) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+        }
+
+        function fmt(n) {
+            if (n >= 1000) return '$' + (n/1000).toFixed(1).replace(/\.0$/, '') + 'k';
+            return '$' + n.toFixed(0);
+        }
+
+        function fmtFull(n) {
+            return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        // Populate model dropdown
+        var select = document.getElementById('entry-model');
+        var providers = {};
+        for (var id in MODELS) {
+            var p = MODELS[id].provider;
+            if (!providers[p]) providers[p] = [];
+            providers[p].push({ id: id, name: MODELS[id].name });
+        }
+        for (var p in providers) {
+            var group = document.createElement('optgroup');
+            group.label = p;
+            providers[p].forEach(function(m) {
+                var opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = m.name;
+                group.appendChild(opt);
+            });
+            select.appendChild(group);
+        }
+
+        // Set default month to current
+        var now = new Date();
+        document.getElementById('entry-month').value = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+
+        // Quick add buttons
+        var quickModels = ['openai-gpt4o-mini', 'anthropic-haiku', 'google-gemini3-flash', 'deepseek-v4-flash', 'openai-gpt54-mini'];
+        var quickDiv = document.getElementById('quick-add');
+        quickModels.forEach(function(id) {
+            var m = MODELS[id];
+            var btn = document.createElement('button');
+            btn.textContent = m.name;
+            btn.style.cssText = 'background:#0f172a;border:1px solid #334155;color:#e2e8f0;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;';
+            btn.onmouseover = function() { btn.style.borderColor = '#6366f1'; };
+            btn.onmouseout = function() { btn.style.borderColor = '#334155'; };
+            btn.onclick = function() {
+                document.getElementById('entry-model').value = id;
+                document.getElementById('entry-amount').focus();
+            };
+            quickDiv.appendChild(btn);
+        });
+
+        // Add entry
+        window.addEntry = function() {
+            var month = document.getElementById('entry-month').value;
+            var modelId = document.getElementById('entry-model').value;
+            var amount = parseFloat(document.getElementById('entry-amount').value);
+            var tokens = parseInt(document.getElementById('entry-tokens').value) || 0;
+
+            if (!month) { alert('Please select a month.'); return; }
+            if (!modelId) { alert('Please select a model.'); return; }
+            if (!amount || amount <= 0) { alert('Please enter a spend amount.'); return; }
+
+            var entries = getEntries();
+            entries.push({
+                id: Date.now(),
+                month: month,
+                model: modelId,
+                amount: amount,
+                tokens: tokens,
+                added: new Date().toISOString()
+            });
+            saveEntries(entries);
+
+            if (window.trackEvent) window.trackEvent('spend_entry_added', { model: modelId, amount: amount });
+
+            // Reset amount fields
+            document.getElementById('entry-amount').value = '';
+            document.getElementById('entry-tokens').value = '';
+
+            refreshAll();
+        };
+
+        // Delete entry
+        window.deleteEntry = function(id) {
+            var entries = getEntries().filter(function(e) { return e.id !== id; });
+            saveEntries(entries);
+            refreshAll();
+        };
+
+        // Tab switching
+        window.switchTab = function(tab) {
+            document.querySelectorAll('.tab').forEach(function(t, i) {
+                t.classList.toggle('active', ['log', 'history', 'insights'][i] === tab);
+            });
+            document.getElementById('tab-log').style.display = tab === 'log' ? 'block' : 'none';
+            document.getElementById('tab-history').style.display = tab === 'history' ? 'block' : 'none';
+            document.getElementById('tab-insights').style.display = tab === 'insights' ? 'block' : 'none';
+        };
+
+        // Refresh all views
+        function refreshAll() {
+            var entries = getEntries();
+            updateSummary(entries);
+            updateEntriesList(entries);
+            updateChart(entries);
+            updateInsights(entries);
+            updateOptimizations(entries);
+        }
+
+        // Summary
+        function updateSummary(entries) {
+            var thisMonth = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+            var lastMonthDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+            var lastMonth = lastMonthDate.getFullYear() + '-' + String(lastMonthDate.getMonth() + 1).padStart(2, '0');
+
+            var thisMonthTotal = 0, thisMonthModels = new Set();
+            var lastMonthTotal = 0, lastMonthModels = new Set();
+
+            entries.forEach(function(e) {
+                if (e.month === thisMonth) {
+                    thisMonthTotal += e.amount;
+                    thisMonthModels.add(e.model);
+                }
+                if (e.month === lastMonth) {
+                    lastMonthTotal += e.amount;
+                    lastMonthModels.add(e.model);
+                }
+            });
+
+            document.getElementById('this-month').textContent = fmtFull(Math.round(thisMonthTotal));
+            document.getElementById('this-month-models').textContent = thisMonthModels.size + ' model' + (thisMonthModels.size !== 1 ? 's' : '');
+            document.getElementById('last-month').textContent = fmtFull(Math.round(lastMonthTotal));
+            document.getElementById('last-month-models').textContent = lastMonthModels.size + ' model' + (lastMonthModels.size !== 1 ? 's' : '');
+
+            if (lastMonthTotal > 0 && thisMonthTotal > 0) {
+                var change = ((thisMonthTotal - lastMonthTotal) / lastMonthTotal * 100).toFixed(0);
+                var trendEl = document.getElementById('trend');
+                var trendDetail = document.getElementById('trend-detail');
+                if (thisMonthTotal < lastMonthTotal) {
+                    trendEl.textContent = '↓ ' + Math.abs(change) + '%';
+                    trendEl.className = 'value green';
+                    trendDetail.textContent = 'spending decreased';
+                } else if (thisMonthTotal > lastMonthTotal) {
+                    trendEl.textContent = '↑ ' + change + '%';
+                    trendEl.className = 'value red';
+                    trendDetail.textContent = 'spending increased';
+                } else {
+                    trendEl.textContent = '→ Flat';
+                    trendEl.className = 'value';
+                    trendDetail.textContent = 'no change';
+                }
+            } else if (thisMonthTotal > 0) {
+                document.getElementById('trend').textContent = '—';
+                document.getElementById('trend-detail').textContent = 'need last month';
+            }
+        }
+
+        // Entries list
+        function updateEntriesList(entries) {
+            var container = document.getElementById('entries-list');
+            if (entries.length === 0) {
+                container.innerHTML = '<div class="empty-state"><div class="icon">📊</div><p>No entries yet. Go to "Log Spend" to add your first entry.</p></div>';
+                return;
+            }
+
+            var sorted = entries.slice().sort(function(a, b) { return b.month.localeCompare(a.month) || b.id - a.id; });
+            var html = '<div class="entry-row" style="font-weight:700;color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid #1e293b;"><div>Model</div><div>Month</div><div>Amount</div><div>Tokens</div><div></div></div>';
+            sorted.forEach(function(e) {
+                var m = MODELS[e.model] || { name: e.model, provider: '?' };
+                html += '<div class="entry-row">';
+                html += '<div><span class="model">' + m.name + '</span> <span class="provider">' + m.provider + '</span></div>';
+                html += '<div class="month">' + e.month + '</div>';
+                html += '<div class="amount">' + fmtFull(Math.round(e.amount)) + '</div>';
+                html += '<div class="tokens">' + (e.tokens ? e.tokens.toLocaleString() : '—') + '</div>';
+                html += '<button class="delete-btn" onclick="deleteEntry(' + e.id + ')" title="Delete">✕</button>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        // Chart
+        function updateChart(entries) {
+            var container = document.getElementById('chart-container');
+            if (entries.length < 2) {
+                container.innerHTML = '<div class="empty-state"><p>Add at least 2 months of data to see your spending trend.</p></div>';
+                return;
+            }
+
+            // Aggregate by month
+            var monthly = {};
+            entries.forEach(function(e) {
+                if (!monthly[e.month]) monthly[e.month] = 0;
+                monthly[e.month] += e.amount;
+            });
+
+            var months = Object.keys(monthly).sort();
+            if (months.length < 2) {
+                container.innerHTML = '<div class="empty-state"><p>Add data for at least 2 different months to see a trend.</p></div>';
+                return;
+            }
+
+            var maxVal = Math.max.apply(null, Object.values(monthly));
+            var colors = ['#6366f1', '#818cf8', '#a5b4fc', '#c7d2fe'];
+            var html = '<div style="display:flex;align-items:flex-end;gap:8px;height:160px;padding:0 4px;">';
+
+            months.forEach(function(m, i) {
+                var val = monthly[m];
+                var pct = maxVal > 0 ? (val / maxVal * 100) : 0;
+                var color = colors[i % colors.length];
+                html += '<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">';
+                html += '<div style="font-size:10px;color:#94a3b8;margin-bottom:4px;">' + fmtFull(Math.round(val)) + '</div>';
+                html += '<div style="width:100%;max-width:48px;height:' + Math.max(pct, 4) + '%;background:' + color + ';border-radius:4px 4px 0 0;transition:height 0.3s;"></div>';
+                html += '<div style="font-size:10px;color:#64748b;margin-top:6px;text-align:center;">' + m.slice(5) + '/' + m.slice(2, 4) + '</div>';
+                html += '</div>';
+            });
+
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        // Insights
+        function updateInsights(entries) {
+            var container = document.getElementById('insights-list');
+            if (entries.length < 2) {
+                container.innerHTML = '<div class="empty-state"><div class="icon">💡</div><p>Add at least 2 entries to get personalized insights.</p></div>';
+                return;
+            }
+
+            var insights = [];
+
+            // Find most expensive model
+            var modelTotals = {};
+            entries.forEach(function(e) {
+                if (!modelTotals[e.model]) modelTotals[e.model] = 0;
+                modelTotals[e.model] += e.amount;
+            });
+            var sorted = Object.keys(modelTotals).sort(function(a, b) { return modelTotals[b] - modelTotals[a]; });
+            var topModel = sorted[0];
+            var topModelName = MODELS[topModel] ? MODELS[topModel].name : topModel;
+            insights.push({
+                icon: '💸',
+                text: 'Your biggest expense is <strong>' + topModelName + '</strong> at ' + fmtFull(Math.round(modelTotals[topModel])) + ' total.',
+                savings: ''
+            });
+
+            // Check if using expensive models when cheaper alternatives exist
+            var expensiveModels = ['openai-gpt55', 'openai-gpt55-pro', 'anthropic-opus48'];
+            entries.forEach(function(e) {
+                if (expensiveModels.indexOf(e.model) !== -1) {
+                    var name = MODELS[e.model] ? MODELS[e.model].name : e.model;
+                    insights.push({
+                        icon: '⚠️',
+                        text: '<strong>' + name + '</strong> is a premium model. Consider if you need this tier for all your use cases.',
+                        savings: ''
+                    });
+                }
+            });
+
+            // Month-over-month trend
+            var monthly = {};
+            entries.forEach(function(e) {
+                if (!monthly[e.month]) monthly[e.month] = 0;
+                monthly[e.month] += e.amount;
+            });
+            var months = Object.keys(monthly).sort();
+            if (months.length >= 2) {
+                var prev = monthly[months[months.length - 2]] || 0;
+                var curr = monthly[months[months.length - 1]] || 0;
+                if (curr > prev * 1.2) {
+                    insights.push({
+                        icon: '📈',
+                        text: 'Spending jumped <strong>' + ((curr - prev) / prev * 100).toFixed(0) + '%</strong> from ' + months[months.length - 2] + ' to ' + months[months.length - 1] + '. Review if this growth is expected.',
+                        savings: ''
+                    });
+                } else if (curr < prev * 0.8) {
+                    insights.push({
+                        icon: '📉',
+                        text: 'Spending dropped <strong>' + ((prev - curr) / prev * 100).toFixed(0) + '%</strong> — nice optimization!',
+                        savings: ''
+                    });
+                }
+            }
+
+            // Total spend
+            var totalAll = entries.reduce(function(sum, e) { return sum + e.amount; }, 0);
+            insights.push({
+                icon: '💰',
+                text: 'Total tracked spend: <strong>' + fmtFull(Math.round(totalAll)) + '</strong> across <strong>' + entries.length + '</strong> entries.',
+                savings: ''
+            });
+
+            var html = '';
+            insights.forEach(function(ins) {
+                html += '<div class="opt-item">';
+                html += '<span class="opt-icon">' + ins.icon + '</span>';
+                html += '<div class="opt-text">' + ins.text + '</div>';
+                if (ins.savings) html += '<span class="opt-savings">' + ins.savings + '</span>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        // Optimizations
+        function updateOptimizations(entries) {
+            var container = document.getElementById('opt-list');
+            if (entries.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>Log your spend to see where you can save.</p></div>';
+                return;
+            }
+
+            var suggestions = [];
+
+            // For each model the user is spending on, suggest cheaper alternatives
+            var modelTotals = {};
+            entries.forEach(function(e) {
+                if (!modelTotals[e.model]) modelTotals[e.model] = { total: 0, latest: e.amount };
+                modelTotals[e.model].total += e.amount;
+            });
+
+            for (var modelId in modelTotals) {
+                var price = PRICING[modelId];
+                if (!price) continue;
+
+                // Find cheaper models with similar capability
+                var cheaper = [];
+                for (var otherId in PRICING) {
+                    if (otherId === modelId) continue;
+                    var otherPrice = PRICING[otherId];
+                    var otherBlended = (otherPrice.input * 0.75 + otherPrice.output * 0.25) / 1000000;
+                    var myBlended = (price.input * 0.75 + price.output * 0.25) / 1000000;
+                    if (otherBlended < myBlended * 0.7) {
+                        var saving = (1 - otherBlended / myBlended) * 100;
+                        cheaper.push({ id: otherId, name: MODELS[otherId].name, saving: saving });
+                    }
+                }
+                cheaper.sort(function(a, b) { return b.saving - a.saving; });
+
+                if (cheaper.length > 0) {
+                    var best = cheaper[0];
+                    var monthlySpend = modelTotals[modelId].latest;
+                    var potentialSaving = Math.round(monthlySpend * best.saving / 100);
+                    var name = MODELS[modelId] ? MODELS[modelId].name : modelId;
+                    suggestions.push({
+                        icon: '🔄',
+                        text: 'Switch from <strong>' + name + '</strong> to <strong>' + best.name + '</strong> to save ~<strong>' + fmtFull(potentialSaving) + '/mo</strong> (' + best.saving.toFixed(0) + '% cheaper per token).',
+                        savings: fmtFull(potentialSaving) + '/mo'
+                    });
+                }
+            }
+
+            // If no suggestions, show generic tips
+            if (suggestions.length === 0) {
+                suggestions.push({
+                    icon: '✅',
+                    text: 'You\'re already using cost-effective models! Consider <a href="/audit.html" style="color:#6366f1;">running a full audit</a> to find hidden savings.',
+                    savings: ''
+                });
+            }
+
+            var html = '';
+            suggestions.forEach(function(s) {
+                html += '<div class="opt-item">';
+                html += '<span class="opt-icon">' + s.icon + '</span>';
+                html += '<div class="opt-text">' + s.text + '</div>';
+                if (s.savings) html += '<span class="opt-savings">' + s.savings + '</span>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        // Export CSV
+        window.exportData = function() {
+            var entries = getEntries();
+            if (entries.length === 0) { alert('No data to export.'); return; }
+
+            var csv = 'Month,Model,Provider,Amount,Tokens,Date Added\n';
+            entries.sort(function(a, b) { return a.month.localeCompare(b.month); }).forEach(function(e) {
+                var m = MODELS[e.model] || { name: e.model, provider: '?' };
+                csv += e.month + ',' + m.name + ',' + m.provider + ',' + e.amount + ',' + (e.tokens || '') + ',' + e.added + '\n';
+            });
+
+            var blob = new Blob([csv], { type: 'text/csv' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'apipulse-spend-' + new Date().toISOString().slice(0, 10) + '.csv';
+            a.click();
+            URL.revokeObjectURL(url);
+        };
+
+        // Track page view
+        if (window.trackEvent) window.trackEvent('spend_tracker_view');
+
+        // Initial render
+        refreshAll();
+    })();
+    </script>
+</body>
+</html>
