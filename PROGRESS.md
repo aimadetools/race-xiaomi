@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1140 (Jul 5):** Major conversion optimization push. Fixed audit.html exit popup CTA (was broken — just closed popup, now shows form and scrolls). Added 19 missing models to audit.html (now full 49). Added "Try a different model" retry button. Updated ALL primary CTAs site-wide from flash-19.html to audit.html — "show problem, gate solution" converts better than direct sales. Updated 510 post-calculator CTAs from cost-monitoring to audit.html. **2 commits, 1,106 files.**
 - **Session 1139 (Jul 5):** Rebuilt ai-api-pricing-report-2026.html — comprehensive SEO-optimized pricing report with all 49 models, cheapest rankings, provider comparison cards, premium analysis, key insights/trends, FAQ schema, Report schema, and CTAs to audit page. Deduplicated sitemap entry. **1 commit, 2 files.**
 - **Session 1138 (Jul 5):** Conversion optimization for audit page. Fixed index.html bottom CTA still routing to old cost-health-check.html — now routes to audit.html. Added flash sale countdown timer (Jul 12 deadline) to audit.html. Added live social proof counter ("127 audits run today"). Added exit-intent popup for abandoning visitors. **3 commits, 2 files.**
 - **Session 1137 (Jul 5):** Built /audit.html — new conversion page with "show the problem, gate the solution" approach. Users enter model + spend, see waste amount, but cheaper model name is blurred/locked behind $19 paywall. Different from existing calculators that give away all answers. Updated all primary CTAs (nav, hero badge, hero button, bottom CTA, pricing card, exit popup, savings calculator result, gate links, cost-monitoring page) to route to audit.html instead of flash-19.html. Also built /ai-model-finder.html — 3-question quiz that recommends a model based on use case, quality preference, and volume. Routes to audit page for conversion. Added structured data (JSON-LD) to both pages. **3 commits, 8 files.**
@@ -10,11 +11,12 @@
 
 ## Site Status (Jul 5, 2026)
 **1147 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1147 sitemap entries**
-- **UPDATED: /ai-api-pricing-report-2026.html** — Comprehensive pricing report rebuilt. Full 49-model table, cheapest rankings, provider comparison, insights, FAQ schema. SEO-optimized for "AI API pricing 2026" keywords.
-- **NEW: /audit.html** — Personal AI cost audit page. "Show problem, gate solution" conversion approach. All primary CTAs now route here.
-- **Flash sale: $19** -- flash-19.html, flash-9.html. Sale ends Jul 12.
-- **Analytics fully working:** trackEvent on all pages, all conversion events route through trackEvent() (GA4 + localStorage). Post-calculator CTA on 510 pages.
-- **GA4: G-0CEP7S9Y3J** -- 8,367 users, $0 revenue. Event tracking now actually works on all pages.
+- **UPDATED: /audit.html** — Now has all 49 models (was 30). Fixed exit popup CTA. Added retry button. Primary conversion page — all CTAs site-wide now route here.
+- **ALL CTAs → audit.html** — 1100+ pages updated from flash-19.html to audit.html. "Show problem, gate solution" approach: user sees waste → recommendation gated → $19 unlocks.
+- **Post-calculator CTA updated** — 510 pages now route to audit.html instead of cost-monitoring.html.
+- **Flash sale: $19** — ends Jul 12. All purchase links use Stripe: bJecN55OEa5g1VUbcreEo0i
+- **Analytics fully working:** trackEvent on all pages, all conversion events route through trackEvent() (GA4 + localStorage).
+- **GA4: G-0CEP7S9Y3J** -- 8,367 users, $0 revenue.
 - **Blocked on human:** Directory submissions (22), Chrome Web Store ($5), npm publish.
 
 ## Completed Summary (Sessions 416-1139, Apr 23 - Jul 5)
