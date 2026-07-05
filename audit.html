@@ -618,7 +618,7 @@
                 <div class="amount" id="waste-amount">$0</div>
                 <div class="detail">per year on <strong id="waste-model-name">your current model</strong></div>
                 <div style="margin-top:16px;">
-                    <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.4);" id="waste-cta" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'waste_card'});">
+                    <a href="/claim.html" rel="noopener" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.4);" id="waste-cta" onclick="this.href='/claim.html?savings='+(window._auditSavings||0);if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'waste_card'});">
                         Save $<span id="waste-cta-savings">0</span>/yr — Just $19 →
                     </a>
                     <div style="margin-top:8px;font-size:14px;color:#64748b;"><span style="text-decoration:line-through;">$49</span> <span style="color:#22c55e;font-weight:700;">$19</span> <span style="font-size:12px;">flash sale · ends Jul 12</span></div>
@@ -763,7 +763,7 @@
                     <span class="price-now">$19</span>
                 </div>
                 <div class="price-note">One-time · Lifetime access · Ends Jul 12</div>
-                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" id="audit-buy-btn" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_page'});">
+                <a href="/claim.html" rel="noopener" class="buy-btn" id="audit-buy-btn" onclick="this.href='/claim.html?savings='+(window._auditSavings||0);if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_page'});">
                     Save $<span id="cta-savings-amount">0</span>/yr — Just $19
                 </a>
                 <div style="margin-top:12px;font-size:13px;color:#94a3b8;">⚡ <strong style="color:#f1f5f9;">847 developers</strong> already switched this month</div>
@@ -864,7 +864,7 @@
 
             <!-- Bottom CTA -->
             <div style="text-align:center;padding:20px 0 6px;">
-                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" id="audit-buy-btn-bottom" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_bottom'});">
+                <a href="/claim.html" rel="noopener" class="buy-btn" id="audit-buy-btn-bottom" onclick="this.href='/claim.html?savings='+(window._auditSavings||0);if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_bottom'});">
                     Save $<span id="cta-savings-amount-bottom">0</span>/yr — Just $19
                 </a>
                 <div style="margin-top:12px;font-size:13px;color:#22c55e;font-weight:600;">💰 ROI Guarantee: Save $19+ in year 1 or get a full refund</div>
@@ -1034,7 +1034,7 @@
                 top3Html += '<div style="text-align:right;"><span style="color:#22c55e;font-weight:700;font-size:14px;">Save ' + fmt(altSavings) + '/yr</span></div>';
                 top3Html += '</div>';
             }
-            top3Html += '<div style="text-align:center;padding:14px 0 4px;border-top:1px solid #1e293b;margin-top:8px;"><a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="color:#818cf8;font-size:13px;font-weight:700;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'audit_top3_unlock_clicked\',{savings:window._auditSavings||0});">🔓 Unlock to see which models — $19</a></div>';
+            top3Html += '<div style="text-align:center;padding:14px 0 4px;border-top:1px solid #1e293b;margin-top:8px;"><a href="/claim.html" rel="noopener" style="color:#818cf8;font-size:13px;font-weight:700;text-decoration:none;" onclick="this.href=\'/claim.html?savings=\'+(window._auditSavings||0);if(window.trackEvent)window.trackEvent(\'audit_top3_unlock_clicked\',{savings:window._auditSavings||0});">🔓 Unlock to see which models — $19</a></div>';
             document.getElementById('top3-alternatives').innerHTML = top3Html;
 
             // Cost of inaction (what they waste if they stay)
@@ -1155,7 +1155,7 @@
                         document.getElementById('exit-title').textContent = 'Your savings are real — don\'t walk away';
                         document.getElementById('exit-desc').innerHTML = 'You\'re overpaying <strong style="color:#ef4444;">' + wasteAmt + '</strong>. For just $19, unlock your migration plan and start saving. <strong style="color:#22c55e;">That\'s a ' + roiX + 'x return.</strong> If you don\'t save $19+ in year 1, we refund you — you can\'t lose money.';
                         document.getElementById('exit-cta').textContent = 'Save ' + wasteAmt + ' — Just $19 →';
-                        document.getElementById('exit-cta').href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+                        document.getElementById('exit-cta').href = '/claim.html?savings=' + (window._auditSavings || 0);
                         document.getElementById('exit-cta').onclick = function() {
                             if(window.trackEvent) window.trackEvent('audit_exit_buy_clicked', {savings: window._auditSavings || 0});
                         };
