@@ -303,7 +303,7 @@
                 <a href="claude-4-is-down.html" style="color:var(--red);font-weight:700;">🔴 Claude 4 Retired</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-                <a href="flash-19.html?from=pro_page" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Pro — $19</a>
+                <a href="audit.html?from=pro_page" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Pro — $19</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
@@ -648,7 +648,7 @@ response = client.chat.completions.create(
         <div class="pro-cta">
             <h2>Get optimization recommendations for your specific usage</h2>
             <p>Pro users get personalized cost optimization tips, saved scenarios, and PDF reports. $19 (monitor + save), lifetime access.</p>
-            <a href="flash-19.html?from=tool_page" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'command-center'})">Get Pro — $19</a>
+            <a href="audit.html?from=tool_page" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'command-center'})">Get Pro — $19</a>
         </div>
 
         <!-- SHARE -->
@@ -717,7 +717,7 @@ response = client.chat.completions.create(
                         <div style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:6px;">This was a snapshot. What about next month?</div>
                         <div style="font-size:13px;color:var(--text-secondary);margin-bottom:14px;line-height:1.5;">Prices change. New models launch. Monitoring catches what a one-time calculation can't — and saves you money every month.</div>
                         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-                            <a href="cost-monitoring.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--green);color:white;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;box-shadow:0 2px 12px rgba(34,197,94,0.3);" onclick="if(window.trackEvent)window.trackEvent('monitoring_cta_clicked',{source:'post_calculator'})">📈 Track My Costs Monthly — Free</a>
+                            <a href="audit.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--green);color:white;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;box-shadow:0 2px 12px rgba(34,197,94,0.3);" onclick="if(window.trackEvent)window.trackEvent('monitoring_cta_clicked',{source:'post_calculator'})">🔍 Run Free Cost Audit →</a>
                             <a href="price-alerts.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--bg-secondary);border:1px solid var(--accent);color:var(--accent);border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;" onclick="if(window.trackEvent)window.trackEvent('alerts_cta_clicked',{source:'post_calculator'})">🔔 Get Price Alerts</a>
                         </div>
                     </div>
@@ -883,7 +883,7 @@ response = client.chat.completions.create(
     // Sticky bottom CTA (appears after scrolling 500px)
     (function() {
         var price = window._abPrice || 19;
-        var stripeLink = window._abStripeLink || 'flash-19.html?from=tool_page';
+        var stripeLink = window._abStripeLink || 'audit.html?from=tool_page';
         var sticky = document.createElement('div');
         sticky.id = 'sticky-cta';
         sticky.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1e1b4b,#312e81);padding:12px 20px;display:none;align-items:center;justify-content:center;gap:16px;z-index:9999;border-top:2px solid var(--accent);';

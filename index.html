@@ -500,7 +500,7 @@
     <div id="whats-new-banner" style="display:none;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,247,0.06));border-bottom:1px solid rgba(99,102,241,0.2);padding:10px 24px;text-align:center;position:relative;">
         <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;" id="whats-new-text">
             <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="flash-19.html" style="color:#dc2626;font-weight:700;text-decoration:none;">Pro: monitor 49 AI models, get price alerts + weekly reports — $19 (ends Jul 12) →</a>
+            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">Pro: monitor 49 AI models, get price alerts + weekly reports — $19 (ends Jul 12) →</a>
         </p>
         <button onclick="document.getElementById('whats-new-banner').remove();localStorage.setItem('apipulse_whats_new_dismissed','1');" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:16px;padding:4px 8px;" aria-label="Close">&times;</button>
     </div>
@@ -513,7 +513,7 @@
         if (window.DEAL_EXPIRED) {
             var txt = document.getElementById('whats-new-text');
             if (txt) {
-                txt.innerHTML = '<strong style="color:#6366f1;">📊 APIpulse Pro:</strong> <a href="flash-19.html" style="color:#6366f1;font-weight:700;text-decoration:none;">Lifetime access $49 — compare 49 models, save 40% →</a>';
+                txt.innerHTML = '<strong style="color:#6366f1;">📊 APIpulse Pro:</strong> <a href="audit.html" style="color:#6366f1;font-weight:700;text-decoration:none;">Lifetime access $49 — compare 49 models, save 40% →</a>';
             }
             banner.style.background = 'linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,247,0.06))';
             banner.style.borderBottom = '1px solid rgba(99,102,241,0.2)';
@@ -745,7 +745,7 @@
                         <div style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:6px;">This was a snapshot. What about next month?</div>
                         <div style="font-size:13px;color:var(--text-secondary);margin-bottom:14px;line-height:1.5;">Prices change. New models launch. Monitoring catches what a one-time calculation can't — and saves you money every month.</div>
                         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-                            <a href="cost-monitoring.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--green);color:white;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;box-shadow:0 2px 12px rgba(34,197,94,0.3);" onclick="if(window.trackEvent)window.trackEvent('monitoring_cta_clicked',{source:'post_calculator'})">📈 Track My Costs Monthly — Free</a>
+                            <a href="audit.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--green);color:white;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;box-shadow:0 2px 12px rgba(34,197,94,0.3);" onclick="if(window.trackEvent)window.trackEvent('monitoring_cta_clicked',{source:'post_calculator'})">🔍 Run Free Cost Audit →</a>
                             <a href="price-alerts.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--bg-secondary);border:1px solid var(--accent);color:var(--accent);border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;" onclick="if(window.trackEvent)window.trackEvent('alerts_cta_clicked',{source:'post_calculator'})">🔔 Get Price Alerts</a>
                         </div>
                     </div>
@@ -1821,7 +1821,7 @@
         <p>Developers using APIpulse save an average of $720–2,400/year on AI API costs. Find your savings in 30 seconds — free.</p>
         <div class="hero-actions">
             <a href="audit.html?from=cta_bottom" class="btn-primary">🔍 Free Cost Audit — 30 Seconds →</a>
-            <a href="flash-19.html?from=cta_bottom" class="btn-secondary" style="background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;border-color:#dc2626;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cta_bottom'})">⚡ Get Pro — $19 (monitor + save) →</a>
+            <a href="audit.html?from=cta_bottom" class="btn-secondary" style="background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;border-color:#dc2626;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cta_bottom'})">⚡ Get Pro — $19 (monitor + save) →</a>
         </div>
         <div style="text-align:center;margin-top:12px;"><a href="flash-9.html?from=cta_bottom" style="font-size:13px;color:#22c55e;text-decoration:none;font-weight:600;">💡 Simpler package — $19 →</a></div>
         <p style="font-size:13px;color:var(--text-muted);margin-top:20px;">Also on <a href="https://www.producthunt.com/posts/apipulse" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">Product Hunt</a> · <a href="newsletter.html" style="color:var(--accent);text-decoration:none;">Weekly newsletter</a> · <a href="budget-planner.html" style="color:var(--accent);text-decoration:none;">Budget Planner</a></p>
@@ -1936,7 +1936,7 @@
                 html += '</div>';
                 savingsContainer.innerHTML = html;
             } else {
-                savingsContainer.innerHTML = '<div class="savings-badge">This is already the cheapest option for your usage!</div><div style="margin-top:12px;padding:12px 16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;text-align:center;font-size:13px;color:var(--text-secondary);">Pro still helps: migration code, PDF reports, price alerts, and 49-model tracking. <a href="flash-19.html?from=calc_cheapest" style="color:var(--accent);font-weight:600;">See Pro features →</a></div>';
+                savingsContainer.innerHTML = '<div class="savings-badge">This is already the cheapest option for your usage!</div><div style="margin-top:12px;padding:12px 16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;text-align:center;font-size:13px;color:var(--text-secondary);">Pro still helps: migration code, PDF reports, price alerts, and 49-model tracking. <a href="audit.html?from=calc_cheapest" style="color:var(--accent);font-weight:600;">See Pro features →</a></div>';
             }
 
             setTimeout(() => results.classList.remove('calculating'), 300);
@@ -2139,7 +2139,7 @@
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
             if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Stop the Leak — $' + window._abPrice + ' lifetime';
-            // Session 984: Route to flash-19.html during flash sale, Stripe link after expiry
+            // Session 984: Route to audit.html during flash sale, Stripe link after expiry
             if (!window.DEAL_EXPIRED) {
                 document.getElementById('exit-popup-cta').href = 'audit.html?from=exit_popup';
             } else if (window._abStripeLink) {
