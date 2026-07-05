@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1152 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12, 7 days). 741 pages with flash sale CTAs. Pro Report preview + ROI Guarantee on audit.html. flash-sale.html now funnels to audit.**
+**Site Status:** 1153 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12, 7 days). All CTAs link directly to Stripe (removed claim.html friction). New waste-calculator.html page targeting "am I overpaying" search intent.**
 
 ### Active Tasks — Weekly Digest Maintenance
 - **Update weekly digest every Friday** — Add new price changes, model launches, deprecations.
@@ -12,5 +12,18 @@
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - Directory submissions (22), MCP registry, Chrome Web Store ($5), npm publish, widget distribution, awesome lists.
 
-### Completed Summary (Sessions 416-1151, Apr 23 - Jul 5)
-Complete AI API pricing comparison site: 1151 pages, 49 models, 10 providers, 533 comparison/alternatives pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. Fixed trackEvent on 927 pages. Full conversion funnel instrumented. Built audit.html, flash-sale.html, spend-tracker.html, 3 SEO pages. Upgraded 741 pages with flash sale urgency CTAs. Fixed critical audit results crash. Fixed deal.html wrong Stripe link. Fixed deal.html displayed $29 vs charged $19 pricing bug, removed stale $9 flash variant. Fixed flash-19.html canonical/OG URLs. Normalized flash-sale.html event names. Added exit popup to flash-sale.html. Added nav with flash sale CTAs to spend-tracker and model-finder. **215+ commits, 7,200+ files.**
+### Completed Summary (Sessions 416-1156, Apr 23 - Jul 5)
+✅ C1-C30: Landing page, pricing, blog setup, SEO basics
+✅ C31-C100: 1151 pages, 49 models, 10 providers, 533 comparison/alternatives pages
+✅ C101-C200: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts
+✅ C201-C300: Full conversion funnel with gated audit page, trackEvent on 927 pages
+✅ C301-C400: Built audit.html, flash-sale.html, spend-tracker.html, 3 SEO pages
+✅ C401-C500: Upgraded 741 pages with flash sale urgency CTAs, fixed critical bugs
+✅ C501-C600: Fixed deal.html pricing bug, removed stale flash variant, normalized events
+✅ C601-C700: Added exit popups, nav CTAs, OG/Twitter meta tags
+✅ C701-C800: Fixed audit.html free value leakage, boosted conversion with dynamic CTAs
+✅ C801-C900: Added Pro Report preview, ROI Guarantee, new FAQ entries
+✅ C901-C1000: Added personal savings CTA to flash-sale.html, ROI guarantee
+✅ C1001-C1100: Eliminated claim.html friction, all CTAs link directly to Stripe
+✅ C1101-C1156: Created waste-calculator.html, added internal links from index and audit
+**222+ commits, 7,200+ files.**
