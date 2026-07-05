@@ -686,6 +686,13 @@
                 <div class="feat"><span class="check">✓</span> Lifetime updates — one payment, forever</div>
             </div>
 
+            <!-- Cost of inaction -->
+            <div style="background:linear-gradient(135deg,rgba(239,68,68,0.06),rgba(249,115,22,0.04));border:1px solid rgba(239,68,68,0.15);border-radius:14px;padding:20px 24px;margin-bottom:24px;text-align:center;">
+                <div style="font-size:13px;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">If you do nothing</div>
+                <div style="font-size:32px;font-weight:900;color:#ef4444;margin-bottom:8px;" id="cost-of-inaction">$0</div>
+                <div style="font-size:14px;color:#94a3b8;">wasted over the next 12 months on the same model</div>
+            </div>
+
             <!-- Social proof -->
             <div class="social-proof">
                 <strong>49 models</strong> · <strong>10 providers</strong> · Updated Jul 2026<br>
@@ -883,6 +890,9 @@
                 top3Html += '</div>';
             }
             document.getElementById('top3-alternatives').innerHTML = top3Html;
+
+            // Cost of inaction (what they waste if they stay)
+            document.getElementById('cost-of-inaction').textContent = fmtFull(currentAnnual);
 
             // Show results, hide form
             document.getElementById('audit-form').style.display = 'none';
