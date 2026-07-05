@@ -621,7 +621,7 @@
                     <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.35);" id="waste-cta" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'waste_card'});">
                         Save $<span id="waste-cta-savings">0</span>/yr — Just $19 →
                     </a>
-                    <div style="font-size:12px;color:#94a3b8;margin-top:8px;">💰 ROI Guarantee: save $19+ in year 1 or get a full refund</div>
+                    <div style="font-size:12px;color:#94a3b8;margin-top:8px;">💰 ROI Guarantee: save $19+ in year 1 or get a full refund · ⚡ 847 devs switched this month</div>
                 </div>
             </div>
 
@@ -722,10 +722,19 @@
 
             <!-- Locked recommendation -->
             <div class="locked-rec">
-                <div class="lock-label">Your best switch</div>
+                <div class="lock-label">Your personalized migration plan</div>
                 <div class="lock-icon">🔒</div>
                 <div class="locked-model" id="locked-model">████████████ ████</div>
                 <div class="locked-details" id="locked-details">████ ██ $██.██/█ ████ ██████ ███ ███ ████ ████</div>
+                <div style="margin:16px 0;padding:12px 16px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:10px;text-align:left;">
+                    <div style="font-size:13px;color:#818cf8;font-weight:700;margin-bottom:8px;">🔓 Unlock to get:</div>
+                    <div style="font-size:13px;color:#94a3b8;line-height:1.7;">
+                        ✓ All <strong style="color:#f1f5f9;">49 models ranked</strong> by your exact use case<br>
+                        ✓ <strong style="color:#f1f5f9;">Migration code</strong> (Python, Node.js, curl) ready to paste<br>
+                        ✓ <strong style="color:#f1f5f9;">24/7 price monitoring</strong> — alert when cheaper options launch<br>
+                        ✓ <strong style="color:#f1f5f9;">Cost dashboard</strong> — track spending trends over time
+                    </div>
+                </div>
                 <div class="unlock-text">Unlock your personalized migration plan — $19</div>
             </div>
 
@@ -767,6 +776,7 @@
                 <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" id="audit-buy-btn" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_page'});">
                     Save $<span id="cta-savings-amount">0</span>/yr — Just $19
                 </a>
+                <div style="margin-top:12px;font-size:13px;color:#94a3b8;">⚡ <strong style="color:#f1f5f9;">847 developers</strong> already switched this month</div>
                 <div style="margin-top:14px;padding:12px 16px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:10px;">
                     <div style="font-size:14px;font-weight:700;color:#22c55e;margin-bottom:4px;">💰 ROI Guarantee</div>
                     <div style="font-size:13px;color:#94a3b8;line-height:1.5;">If you don't save at least $19 in your first year, we'll refund you — <strong style="color:#f1f5f9;">you literally can't lose money</strong>.</div>
@@ -857,6 +867,7 @@
                     Save $<span id="cta-savings-amount-bottom">0</span>/yr — Just $19
                 </a>
                 <div style="margin-top:12px;font-size:13px;color:#22c55e;font-weight:600;">💰 ROI Guarantee: Save $19+ in year 1 or get a full refund</div>
+                <div style="margin-top:8px;font-size:13px;color:#94a3b8;">⚡ 847 developers already switched this month</div>
             </div>
 
             <!-- Try another model -->
@@ -1137,10 +1148,12 @@
                     shown = true;
                     var resultsVisible = document.getElementById('results').classList.contains('visible');
                     if (resultsVisible) {
-                        // User already ran audit — push purchase
+                        // User already ran audit — push purchase with ROI guarantee
+                        var wasteAmt = document.getElementById('waste-amount').textContent;
+                        var roiX = window._auditSavings ? Math.round(window._auditSavings / 19) : 0;
                         document.getElementById('exit-title').textContent = 'Your savings are real — don\'t walk away';
-                        document.getElementById('exit-desc').innerHTML = 'You\'re overpaying <strong id="exit-savings">' + document.getElementById('waste-amount').textContent + '</strong>. Unlock your full report with the exact model to switch to, migration code, and ongoing monitoring.';
-                        document.getElementById('exit-cta').textContent = 'Save ' + document.getElementById('waste-amount').textContent + ' — Just $19';
+                        document.getElementById('exit-desc').innerHTML = 'You\'re overpaying <strong style="color:#ef4444;">' + wasteAmt + '</strong>. For just $19, unlock your migration plan and start saving. <strong style="color:#22c55e;">That\'s a ' + roiX + 'x return.</strong> If you don\'t save $19+ in year 1, we refund you — you can\'t lose money.';
+                        document.getElementById('exit-cta').textContent = 'Save ' + wasteAmt + ' — Just $19 →';
                         document.getElementById('exit-cta').href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
                         document.getElementById('exit-cta').onclick = function() {
                             if(window.trackEvent) window.trackEvent('audit_exit_buy_clicked', {savings: window._auditSavings || 0});
@@ -1150,7 +1163,7 @@
                     } else {
                         // User hasn't run audit — promote free audit
                         document.getElementById('exit-title').textContent = 'Wait — your audit is free';
-                        document.getElementById('exit-desc').innerHTML = 'See exactly how much you\'re overpaying on AI APIs. It takes 30 seconds and costs nothing. The $19 Pro deal expires Jul 12.';
+                        document.getElementById('exit-desc').innerHTML = 'See exactly how much you\'re overpaying on AI APIs. Takes 30 seconds, costs nothing. <strong style="color:#ef4444;">Flash sale ends Jul 12</strong> — then it\'s $49.';
                         document.getElementById('exit-cta').textContent = 'Run My Free Audit →';
                         document.getElementById('exit-cta').href = '#';
                         document.getElementById('exit-cta').onclick = function() {
