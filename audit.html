@@ -645,7 +645,7 @@
 
             <!-- Top 3 alternatives -->
             <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px 24px;margin-bottom:20px;">
-                <div style="font-size:13px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">Your top 3 cheapest alternatives</div>
+                <div style="font-size:13px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">Your top 3 cheapest alternatives <span style="color:#6366f1;font-size:11px;margin-left:6px;">🔒 Names hidden</span></div>
                 <div id="top3-alternatives"></div>
             </div>
 
@@ -909,7 +909,7 @@
             document.getElementById('locked-details').textContent =
                 '$' + cheapest.model.input + '/M in · $' + cheapest.model.output + '/M out — ' + fmt(cheapest.monthlyCost) + '/mo';
 
-            // Top 3 alternatives
+            // Top 3 alternatives (blurred names — unlock to reveal)
             var top3Html = '';
             var medals = ['🥇', '🥈', '🥉'];
             for (var i = 0; i < Math.min(3, alternatives.length); i++) {
@@ -918,10 +918,11 @@
                 var altSavings = currentAnnual - altAnnual;
                 if (altSavings < 0) altSavings = 0;
                 top3Html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;' + (i < 2 ? 'border-bottom:1px solid #1e293b;' : '') + '">';
-                top3Html += '<div><span style="margin-right:8px;">' + medals[i] + '</span><span style="color:#f1f5f9;font-weight:700;font-size:14px;">' + alt.model.name + '</span> <span style="color:#475569;font-size:12px;">' + alt.model.provider + '</span></div>';
+                top3Html += '<div><span style="margin-right:8px;">' + medals[i] + '</span><span style="color:#f1f5f9;font-weight:700;font-size:14px;filter:blur(6px);user-select:none;">████████ ███</span></div>';
                 top3Html += '<div style="text-align:right;"><span style="color:#22c55e;font-weight:700;font-size:14px;">Save ' + fmt(altSavings) + '/yr</span></div>';
                 top3Html += '</div>';
             }
+            top3Html += '<div style="text-align:center;padding:14px 0 4px;border-top:1px solid #1e293b;margin-top:8px;"><a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="color:#818cf8;font-size:13px;font-weight:700;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'audit_top3_unlock_clicked\',{savings:window._auditSavings||0});">🔓 Unlock to see which models — $19</a></div>';
             document.getElementById('top3-alternatives').innerHTML = top3Html;
 
             // Cost of inaction (what they waste if they stay)
