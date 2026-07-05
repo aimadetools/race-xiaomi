@@ -794,7 +794,7 @@
         (function() {
             var params = new URLSearchParams(window.location.search);
             if (params.get('flash') === '9') return; // Don't redirect if $9 deal is active
-            // Auto-redirect to audit.html during the sale — $19 converts better than $29
+            // Auto-redirect to audit.html during the sale — $19 converts better than $19
             if (!window.DEAL_EXPIRED) {
                 var from = params.get('from') || 'deal_redirect';
                 window.location.replace('audit.html?from=' + encodeURIComponent(from));

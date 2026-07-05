@@ -480,11 +480,11 @@
 
         <!-- Session 980: $19 (monitor + save) banner -->
         <div id="flash-deal-banner" style="display:block;background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:14px 20px;border-radius:12px;text-align:center;margin-bottom:16px;cursor:pointer;" onclick="window.location.href='audit.html'">
-            <div style="font-size:15px;font-weight:800;">⚡ FLASH SALE: APIpulse Pro — <span style="font-size:20px;">$19</span> <span style="text-decoration:line-through;opacity:0.7;">$29</span></div>
+            <div style="font-size:15px;font-weight:800;">⚡ FLASH SALE: APIpulse Pro — <span style="font-size:20px;">$19</span> <span style="text-decoration:line-through;opacity:0.7;">$19</span></div>
             <div style="font-size:13px;opacity:0.9;margin-top:4px;">Lifetime access · One-time payment · 61% off — click to claim →</div>
         </div>
         <script>
-        // Auto-redirect to audit.html during the sale — $19 converts better than $29
+        // Auto-redirect to audit.html during the sale — $19 converts better than $19
         (function(){
             if (!window.DEAL_EXPIRED) {
                 var params = new URLSearchParams(window.location.search);
@@ -1068,8 +1068,8 @@
             var wasEl = document.getElementById('price-was');
             var badgeEl = document.getElementById('price-badge');
             if (price === 19) {
-                // Flash sale: show "was $29" discount
-                if (wasEl) { wasEl.textContent = '$29'; wasEl.style.display = ''; }
+                // Flash sale: show "was $19" discount
+                if (wasEl) { wasEl.textContent = '$19'; wasEl.style.display = ''; }
                 if (badgeEl) { badgeEl.textContent = 'Save 35%'; badgeEl.style.display = ''; }
             } else {
                 // Founding period: show "→ $49 Jul 12" urgency
@@ -1522,7 +1522,7 @@
         var wasEl = document.getElementById('sticky-was');
         var buyBtn = document.getElementById('go-sticky-buy');
         if (priceEl) priceEl.textContent = '$' + price;
-        if (wasEl) wasEl.textContent = (price === 19 ? '$29' : '→ $49 Jul 12');
+        if (wasEl) wasEl.textContent = (price === 19 ? '$19' : '→ $49 Jul 12');
         if (buyBtn) buyBtn.href = stripeLink;
 
         // Show bar when hero CTA scrolls out of view

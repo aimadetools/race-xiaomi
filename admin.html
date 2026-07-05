@@ -59,7 +59,7 @@
 
         <!-- A/B Pricing Test -->
         <div class="section" id="ab-pricing-section">
-            <h2>💰 A/B Pricing Test ($19 / $29 / $39)</h2>
+            <h2>💰 A/B Pricing Test ($19 / $19 / $39)</h2>
             <div id="ab-pricing-content"></div>
         </div>
 
@@ -147,9 +147,9 @@
         document.getElementById('ab-pricing-content').innerHTML = totalPricing ?
             barChart([
                 {label: '$19', count: pricingCounts.A, total: totalPricing, cls: 'bar-a'},
-                {label: '$29', count: pricingCounts.B, total: totalPricing, cls: 'bar-b'},
+                {label: '$19', count: pricingCounts.B, total: totalPricing, cls: 'bar-b'},
                 {label: '$39', count: pricingCounts.C, total: totalPricing, cls: 'bar-c'}
-            ]) + '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">Stripe links: $19=bJecN5, $29=fZu7s, $39=28EfZh</p>' :
+            ]) + '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">Stripe links: $19=bJecN5, $19=fZu7s, $39=28EfZh</p>' :
             '<p class="empty">No pricing variant assignments yet</p>';
 
         // --- A/B Popup Timing ---
