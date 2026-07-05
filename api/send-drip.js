@@ -103,7 +103,7 @@ const DRIP_TEMPLATES = {
   </p>
 
   <div style="background:#1e293b;border-radius:8px;padding:20px;margin:20px 0;">
-    <h2 style="color:#818cf8;font-size:17px;margin-bottom:12px;">What you get for $29 (one-time)</h2>
+    <h2 style="color:#818cf8;font-size:17px;margin-bottom:12px;">What you get for $49 (one-time)</h2>
     <ul style="padding-left:20px;line-height:2;">
       <li><strong style="color:#22c55e;">Saved scenarios</strong> — compare up to 10 configurations side-by-side</li>
       <li><strong style="color:#22c55e;">Export cost reports</strong> — PDF-ready reports for your team or budget meetings</li>
