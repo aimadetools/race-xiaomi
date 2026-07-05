@@ -413,6 +413,62 @@
         }
         .footer a { color: #475569; }
 
+        /* Exit popup */
+        .exit-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .exit-overlay.show { display: flex; }
+        .exit-modal {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+        }
+        .exit-modal h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+        }
+        .exit-modal p {
+            font-size: 15px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .exit-modal .exit-cta {
+            display: inline-block;
+            padding: 14px 36px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 12px;
+        }
+        .exit-modal .exit-dismiss {
+            display: block;
+            font-size: 13px;
+            color: #475569;
+            cursor: pointer;
+            background: none;
+            border: none;
+            margin: 0 auto;
+        }
+
         /* FAQ */
         .faq { margin-bottom: 32px; }
         .faq details {
@@ -796,6 +852,30 @@
             update();
             setInterval(update, 60000);
         })();
+
+        // Exit popup — show once when user moves cursor to leave
+        (function() {
+            var shown = false;
+            var formHidden = document.getElementById('audit-form').style.display === 'none';
+            document.addEventListener('mouseleave', function(e) {
+                if (shown) return;
+                if (e.clientY < 5) {
+                    shown = true;
+                    document.getElementById('exit-popup').classList.add('show');
+                    if (window.trackEvent) window.trackEvent('audit_exit_popup_shown');
+                }
+            });
+        })();
     </script>
+
+    <!-- Exit popup -->
+    <div class="exit-overlay" id="exit-popup" onclick="if(event.target===this)this.classList.remove('show')">
+        <div class="exit-modal">
+            <h3>Wait — your audit is free</h3>
+            <p>See exactly how much you're overpaying on AI APIs. It takes 30 seconds and costs nothing. The $19 Pro deal expires Jul 12.</p>
+            <a href="#" class="exit-cta" onclick="document.getElementById('exit-popup').classList.remove('show');return false;">Run My Free Audit →</a>
+            <button class="exit-dismiss" onclick="document.getElementById('exit-popup').classList.remove('show')">No thanks, I like overpaying</button>
+        </div>
+    </div>
 </body>
 </html>
