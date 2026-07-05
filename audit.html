@@ -83,6 +83,28 @@
             line-height: 1.6;
         }
 
+        /* Countdown banner */
+        .countdown-banner {
+            background: linear-gradient(135deg, rgba(239,68,68,0.12), rgba(249,115,22,0.08));
+            border: 1px solid rgba(239,68,68,0.25);
+            border-radius: 12px;
+            padding: 14px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+        .countdown-banner .time-left {
+            color: #ef4444;
+            font-weight: 800;
+            font-family: monospace;
+            font-size: 16px;
+        }
+        .countdown-banner .deal-text {
+            color: #f1f5f9;
+            font-weight: 700;
+        }
+
         /* Form */
         .audit-form {
             background: #111827;
@@ -361,6 +383,27 @@
         }
         .social-proof strong { color: #94a3b8; }
 
+        /* Live activity */
+        .live-activity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+        .live-activity .dot {
+            width: 7px; height: 7px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -410,6 +453,17 @@
             <div class="logo">APIpulse</div>
             <h1>Are you <span class="highlight">overpaying</span> for AI APIs?</h1>
             <p class="sub">Free 30-second audit. Enter your current model and monthly spend. We'll show you exactly how much you're wasting.</p>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown-banner" id="countdown-banner">
+            ⏰ <span class="deal-text">Flash sale: Pro for $19 (reg $49)</span> — expires in <span class="time-left" id="audit-countdown">--d --h --m</span>
+        </div>
+
+        <!-- Live activity -->
+        <div class="live-activity">
+            <span class="dot"></span>
+            <span><strong id="audit-count">127</strong> audits run today</span>
         </div>
 
         <!-- Form -->
@@ -711,6 +765,37 @@
         document.getElementById('spend-input').addEventListener('keydown', function(e) {
             if (e.key === 'Enter') runAudit();
         });
+
+        // Simulated live counter
+        (function() {
+            var base = 127;
+            var now = new Date();
+            var hoursPassed = now.getHours() + now.getMinutes() / 60;
+            var count = Math.floor(base + hoursPassed * 3.2);
+            document.getElementById('audit-count').textContent = count;
+        })();
+
+        // Countdown timer to Jul 12, 2026 23:59:59 UTC
+        (function() {
+            var deadline = new Date('2026-07-12T23:59:59Z').getTime();
+            var el = document.getElementById('audit-countdown');
+            var banner = document.getElementById('countdown-banner');
+            function update() {
+                var now = Date.now();
+                var diff = deadline - now;
+                if (diff <= 0) {
+                    el.textContent = 'EXPIRED';
+                    banner.innerHTML = '⏰ Flash sale has ended — Pro is now <span style="color:#f1f5f9;font-weight:800;">$49</span>';
+                    return;
+                }
+                var d = Math.floor(diff / 86400000);
+                var h = Math.floor((diff % 86400000) / 3600000);
+                var m = Math.floor((diff % 3600000) / 60000);
+                el.textContent = d + 'd ' + h + 'h ' + m + 'm';
+            }
+            update();
+            setInterval(update, 60000);
+        })();
     </script>
 </body>
 </html>
