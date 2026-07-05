@@ -484,7 +484,7 @@
     <script>
         // GA4 tracking
         if(typeof gtag === 'function'){
-            gtag('event', 'blog_post_viewed', {
+            window.trackEvent('blog_post_viewed', {
                 post_slug: 'claude-opus-48-alternatives',
                 source: document.referrer || 'direct'
             });

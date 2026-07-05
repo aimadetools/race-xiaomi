@@ -510,7 +510,7 @@
                 btn.classList.remove('copied');
             }, 2000);
         });
-        if (typeof gtag === 'function') gtag('event', 'migration_code_copied', { language: lang });
+        if (typeof gtag === 'function') window.trackEvent('migration_code_copied', { language: lang });
     }
 
     function generateCode() {

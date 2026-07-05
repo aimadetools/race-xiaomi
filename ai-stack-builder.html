@@ -721,7 +721,7 @@
 
         // GA4 event
         if (typeof gtag === 'function') {
-            gtag('event', 'stack_builder_complete', {
+            window.trackEvent('stack_builder_complete', {
                 usecase: state.usecase,
                 priority: state.priority,
                 volume: state.volume,

@@ -502,7 +502,7 @@
 
             // Track event
             if (typeof gtag === 'function') {
-                gtag('event', 'budget_calculator_used', {
+                window.trackEvent('budget_calculator_used', {
                     budget: budget,
                     models_count: results.length,
                     top_model: results.length > 0 ? results[0].model.id : 'none'

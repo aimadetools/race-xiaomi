@@ -619,7 +619,7 @@
 
         // Track GA4 event
         if (window.gtag) {
-            gtag('event', 'claude_alternatives_calculated', {
+            window.trackEvent('claude_alternatives_calculated', {
                 claude_model: claude.name,
                 best_alternative: best.name,
                 monthly_savings: savings.toFixed(2),
@@ -644,7 +644,7 @@
 
         // Track GA4
         if (window.gtag) {
-            gtag('event', 'email_signup', { source: 'claude-alternatives-calculator' });
+            window.trackEvent('email_signup', { source: 'claude-alternatives-calculator' });
         }
 
         document.getElementById('emailCapture').innerHTML = '<p style="color:var(--green);font-weight:600;font-size:18px;">Thanks! Check your email for the migration report.</p>';

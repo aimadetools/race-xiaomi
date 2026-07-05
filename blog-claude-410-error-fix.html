@@ -478,14 +478,14 @@ Content-Type: application/json
             }
             if (cta) {
                 cta.addEventListener('click', function() {
-                    gtag('event', 'pro_cta_clicked', {
+                    window.trackEvent('pro_cta_clicked', {
                         page: 'blog-410-fix',
                         variant: window._abPriceVariant || 'default'
                     });
                 });
             }
             // Track page view
-            gtag('event', 'page_view', {
+            window.trackEvent('page_view', {
                 page_title: 'Claude 410 Error Fix Guide',
                 page_location: window.location.href
             });

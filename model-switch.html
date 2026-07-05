@@ -675,7 +675,7 @@
 
         // Track event
         if (window.gtag) {
-            gtag('event', 'model_switch_calculated', {
+            window.trackEvent('model_switch_calculated', {
                 current_model: currentId,
                 target_model: targetId,
                 savings: savings.toFixed(2)

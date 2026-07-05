@@ -515,7 +515,7 @@
         document.getElementById('outputTokens').addEventListener('input', calcSavings);
         calcSavings();
         if (typeof gtag === 'function') {
-            gtag('event', 'page_view', { page_title: 'Grok Build 0.1 Alternatives Landing Page' });
+            window.trackEvent('page_view', { page_title: 'Grok Build 0.1 Alternatives Landing Page' });
         }
     </script>
     <script src="comparison-gate.js" defer></script>

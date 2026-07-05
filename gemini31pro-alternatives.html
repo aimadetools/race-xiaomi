@@ -359,7 +359,7 @@
         document.getElementById('outputTokens').addEventListener('input', calcSavings);
         calcSavings();
         if (typeof gtag === 'function') {
-            gtag('event', 'page_view', { page_title: 'Gemini 3.1 Pro Alternatives Landing Page' });
+            window.trackEvent('page_view', { page_title: 'Gemini 3.1 Pro Alternatives Landing Page' });
         }
     </script>
     <script src="comparison-gate.js" defer></script>

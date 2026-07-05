@@ -663,7 +663,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
         // GA4 event
-        if (window.gtag) gtag('event', 'cost_report_generated', { models: results.length, cheapest_model: cheapest.name });
+        if (window.gtag) window.trackEvent('cost_report_generated', { models: results.length, cheapest_model: cheapest.name });
     }
 
     function resetForm() {

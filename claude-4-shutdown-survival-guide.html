@@ -582,7 +582,7 @@ const model = anthropic('claude-opus-4-8');</code></pre>
                         if (res.ok) {
                             document.getElementById('email-form').style.display = 'none';
                             document.getElementById('email-success').style.display = 'block';
-                            gtag('event', 'email_signup', {source: 'survival-guide'});
+                            window.trackEvent('email_signup', {source: 'survival-guide'});
                         }
                     } catch(err) {}
                 });

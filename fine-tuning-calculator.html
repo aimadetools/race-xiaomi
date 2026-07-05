@@ -677,7 +677,7 @@
 
         // GA4
         if (typeof gtag === 'function') {
-            gtag('event', 'fine_tuning_calculator_complete', {
+            window.trackEvent('fine_tuning_calculator_complete', {
                 model: modelId,
                 monthly_calls: monthlyCalls,
                 verdict: isFTBetter ? 'finetune' : isAPIBetter ? 'api' : 'marginal',

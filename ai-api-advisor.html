@@ -574,7 +574,7 @@
         document.getElementById('results').classList.add('visible');
 
         // GA4 event
-        gtag('event', 'advisor_completed', {
+        window.trackEvent('advisor_completed', {
             use_case: state.answers[0],
             budget: state.answers[1],
             volume: state.answers[2],

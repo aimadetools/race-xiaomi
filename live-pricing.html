@@ -482,7 +482,7 @@
 
         // Track page view
         if (typeof gtag === 'function') {
-            gtag('event', 'live_pricing_viewed', {
+            window.trackEvent('live_pricing_viewed', {
                 models_count: models.length,
                 providers_count: new Set(models.map(function(m) { return m.providerSlug; })).size
             });

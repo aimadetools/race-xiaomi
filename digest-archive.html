@@ -255,7 +255,7 @@
                 alert('Please enter a valid email address.');
                 return;
             }
-            gtag('event', 'archive_subscribe', { 'email_domain': email.split('@')[1] });
+            window.trackEvent('archive_subscribe', { 'email_domain': email.split('@')[1] });
             const btn = document.querySelector('.subscribe-form button');
             if (btn) btn.textContent = 'Subscribing...';
             try {

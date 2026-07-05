@@ -682,7 +682,7 @@
         document.getElementById('selected-count').innerHTML = `<strong>${selectedModels.length}</strong> model${selectedModels.length !== 1 ? 's' : ''} selected`;
         document.getElementById('step1-next').disabled = selectedModels.length === 0;
 
-        gtag('event', 'cost_audit_model_toggled', {
+        window.trackEvent('cost_audit_model_toggled', {
             model_id: id,
             total_selected: selectedModels.length
         });
@@ -778,7 +778,7 @@
 
         if (step === 2) buildUsageInputs();
 
-        gtag('event', 'cost_audit_step', { step: step });
+        window.trackEvent('cost_audit_step', { step: step });
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -798,7 +798,7 @@
             return;
         }
 
-        gtag('event', 'cost_audit_completed', {
+        window.trackEvent('cost_audit_completed', {
             models_count: selectedModels.length
         });
 
@@ -980,7 +980,7 @@
     }
 
     function trackProClick(source) {
-        gtag('event', 'pro_cta_clicked', { source: source });
+        window.trackEvent('pro_cta_clicked', { source: source });
     }
 
     // Init

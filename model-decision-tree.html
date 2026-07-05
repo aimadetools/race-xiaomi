@@ -711,7 +711,7 @@
 
         // Track variant assignment
         if (typeof gtag === 'function') {
-            gtag('event', 'dt_ab_assigned', { variant: variant });
+            window.trackEvent('dt_ab_assigned', { variant: variant });
         }
 
         // Expose for debugging
@@ -723,7 +723,7 @@
             emailForm.addEventListener('submit', function() {
                 setTimeout(function() {
                     if (typeof gtag === 'function') {
-                        gtag('event', 'dt_ab_email_signup', { variant: variant });
+                        window.trackEvent('dt_ab_email_signup', { variant: variant });
                     }
                 }, 500);
             });

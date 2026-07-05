@@ -550,7 +550,7 @@
 
         // GA4 tracking
         if (typeof gtag === 'function') {
-            gtag('event', 'stack_optimizer_calculate', {
+            window.trackEvent('stack_optimizer_calculate', {
                 feature_count: results.length,
                 total_monthly: totalMonthly.toFixed(2),
             });
@@ -570,7 +570,7 @@
             document.getElementById('email-form').style.display = 'none';
             document.getElementById('email-success').style.display = 'block';
             if (typeof gtag === 'function') {
-                gtag('event', 'stack_optimizer_email_signup', { email });
+                window.trackEvent('stack_optimizer_email_signup', { email });
             }
         }).catch(() => {
             document.getElementById('email-form').style.display = 'none';

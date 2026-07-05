@@ -381,7 +381,7 @@
         document.getElementById('cw-results').style.display = 'block';
 
         if (window.gtag) {
-            gtag('event', 'context_window_used', {
+            window.trackEvent('context_window_used', {
                 input_tokens: inputTokens,
                 output_tokens: outputTokens,
                 total_tokens: totalTokens

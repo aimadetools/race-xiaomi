@@ -500,7 +500,7 @@ curl https://api.anthropic.com/v1/messages \
                 document.getElementById('email-msg').textContent = d.message || 'Check your inbox!';
                 document.getElementById('email-msg').style.display = 'block';
                 document.getElementById('email-input').value = '';
-                gtag('event', 'email_subscribe', { source: 'blog-claude-4-deprecated' });
+                window.trackEvent('email_subscribe', { source: 'blog-claude-4-deprecated' });
             });
         }
     </script>

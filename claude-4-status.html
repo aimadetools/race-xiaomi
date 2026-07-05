@@ -463,7 +463,7 @@
             countdownSection.style.display = 'none';
 
             if (typeof gtag === 'function') {
-                gtag('event', 'claude4_status_checked', { status: 'deprecated' });
+                window.trackEvent('claude4_status_checked', { status: 'deprecated' });
             }
         } else {
             // ACTIVE STATE
@@ -479,7 +479,7 @@
             errorSection.style.display = 'none';
 
             if (typeof gtag === 'function') {
-                gtag('event', 'claude4_status_checked', { status: 'active', days_left: daysLeft });
+                window.trackEvent('claude4_status_checked', { status: 'active', days_left: daysLeft });
             }
 
             // Live countdown

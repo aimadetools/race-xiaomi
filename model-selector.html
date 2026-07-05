@@ -448,7 +448,7 @@
         el.classList.add('selected');
         useCase = el.dataset.value;
         document.getElementById('next1').disabled = false;
-        gtag('event', 'model_selector_use_case', { use_case: useCase });
+        window.trackEvent('model_selector_use_case', { use_case: useCase });
     }
 
     function updateBudget(val) {
@@ -519,7 +519,7 @@
             });
         }
 
-        gtag('event', 'model_selector_complete', { use_case: useCase, budget: budget, priorities: priorities.join(',') });
+        window.trackEvent('model_selector_complete', { use_case: useCase, budget: budget, priorities: priorities.join(',') });
 
         const weights = USE_CASE_WEIGHTS[useCase];
         const topPriorities = priorities.length > 0 ? priorities : ['quality', 'cost'];

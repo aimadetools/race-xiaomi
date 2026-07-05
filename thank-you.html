@@ -285,7 +285,7 @@
         if (window.trackPurchase) {
             window.trackPurchase(window._abPrice || 19, 'thank_you_page');
         } else if (typeof gtag === 'function') {
-            gtag('event', 'purchase', {
+            window.trackEvent('purchase', {
                 transaction_id: 'txn_' + Date.now(),
                 currency: 'USD',
                 value: window._abPrice || 19,

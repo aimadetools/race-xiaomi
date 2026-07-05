@@ -324,7 +324,7 @@ async function callWithBudgetCheck(model, prompt) {
 
   if (dailySpend + estimatedCost > DAILY_BUDGET) {
     // Log the blocked request
-    gtag('event', 'budget_limit_hit', {
+    window.trackEvent('budget_limit_hit', {
       model, estimated_cost: estimatedCost,
       daily_spend: dailySpend
     });
@@ -432,7 +432,7 @@ class CostTracker {
     this.monthlySpend += cost;
 
     // Log to analytics
-    gtag('event', 'api_call_cost', {
+    window.trackEvent('api_call_cost', {
       model, cost: cost.toFixed(6),
       daily_total: this.dailySpend.toFixed(2),
       monthly_total: this.monthlySpend.toFixed(2)

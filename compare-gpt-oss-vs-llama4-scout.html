@@ -478,7 +478,7 @@
                 });
             }
             if (window.gtag) {
-                gtag('event', 'calculator_used', {
+                window.trackEvent('calculator_used', {
                     model_a: 'GPT-oss 120B', model_b: 'Llama 4 Scout',
                     monthly_cost_a: aTotal.toFixed(2), monthly_cost_b: bTotal.toFixed(2),
                     requests_per_day: String(rpd)

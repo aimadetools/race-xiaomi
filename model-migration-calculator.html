@@ -462,7 +462,7 @@
 
         // Track
         if (typeof gtag === 'function') {
-            gtag('event', 'migration_calculated', {
+            window.trackEvent('migration_calculated', {
                 current_model: currentId,
                 target_model: targetId,
                 monthly_savings: monthlySavings.toFixed(2),

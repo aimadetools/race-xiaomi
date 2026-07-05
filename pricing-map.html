@@ -602,7 +602,7 @@
 
         // GA4 event
         if (typeof gtag === 'function') {
-            gtag('event', 'pricing_map_view', { page_title: 'LLM Pricing Map' });
+            window.trackEvent('pricing_map_view', { page_title: 'LLM Pricing Map' });
         }
     });
     </script>

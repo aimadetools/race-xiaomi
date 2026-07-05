@@ -378,7 +378,7 @@
         document.getElementById('outputTokens').addEventListener('input', calcSavings);
         calcSavings();
         if (typeof gtag === 'function') {
-            gtag('event', 'page_view', { page_title: 'Gemini 3.5 Flash Alternatives Landing Page' });
+            window.trackEvent('page_view', { page_title: 'Gemini 3.5 Flash Alternatives Landing Page' });
         }
     </script>
     <script src="comparison-gate.js" defer></script>

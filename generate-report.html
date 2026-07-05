@@ -508,7 +508,7 @@
 
         // Track event
         if (typeof gtag === 'function') {
-            gtag('event', 'report_generated', { model: modelKey, spend: spend, use_case: useCase });
+            window.trackEvent('report_generated', { model: modelKey, spend: spend, use_case: useCase });
         }
 
         // Calculate costs
@@ -626,7 +626,7 @@
 
     // Track page view
     if (typeof gtag === 'function') {
-        gtag('event', 'report_page_viewed');
+        window.trackEvent('report_page_viewed');
     }
     </script>
 </body>

@@ -28,14 +28,14 @@
 
         // Track page view with source
         if (typeof gtag === 'function') {
-          gtag('event', 'buy_page_viewed', {page: 'buy.html', from: fromParam, variant: abVariant});
+          window.trackEvent('buy_page_viewed', {page: 'buy.html', from: fromParam, variant: abVariant});
         }
 
         // Track CTA clicks with source
         document.querySelectorAll('.buy-cta').forEach(function(btn, i) {
           btn.addEventListener('click', function() {
             if (typeof gtag === 'function') {
-              gtag('event', 'buy_cta_clicked', {location: i === 0 ? 'top' : 'bottom', price: 19, from: fromParam, variant: abVariant});
+              window.trackEvent('buy_cta_clicked', {location: i === 0 ? 'top' : 'bottom', price: 19, from: fromParam, variant: abVariant});
             }
           });
         });

@@ -472,7 +472,7 @@
                 });
             }
             if (window.gtag) {
-                gtag('event', 'calculator_used', {
+                window.trackEvent('calculator_used', {
                     model_a: 'Gemini 3.5 Flash', model_b: 'Mistral Medium 3.5',
                     monthly_cost_a: aTotal.toFixed(2), monthly_cost_b: bTotal.toFixed(2),
                     requests_per_day: String(rpd)

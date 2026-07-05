@@ -325,7 +325,7 @@
             var ctaLink = document.querySelector('a[href*="go.html?from=deprecation_tracker"]');
             if (ctaLink) {
                 ctaLink.addEventListener('click', function() {
-                    if (typeof gtag === 'function') gtag('event', 'deprecation_pro_cta_clicked', { source: 'deprecation_tracker' });
+                    if (typeof gtag === 'function') window.trackEvent('deprecation_pro_cta_clicked', { source: 'deprecation_tracker' });
                 });
             }
         });

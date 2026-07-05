@@ -657,14 +657,14 @@ response = client.chat.completions.create(
 
         // GA4 tracking
         if(typeof gtag === 'function'){
-            gtag('event', 'sample_report_viewed', {
+            window.trackEvent('sample_report_viewed', {
                 report_type: 'opus48',
                 source: document.referrer || 'direct'
             });
             var cta = document.getElementById('pro-cta-btn');
             if(cta){
                 cta.addEventListener('click', function(){
-                    gtag('event', 'sample_report_cta_clicked', {
+                    window.trackEvent('sample_report_cta_clicked', {
                         report_type: 'opus48',
                         price: window._abPrice || 19
                     });

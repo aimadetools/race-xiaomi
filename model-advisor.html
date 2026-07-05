@@ -722,7 +722,7 @@
 
         // GA4
         if (typeof gtag === 'function') {
-            gtag('event', 'model_advisor_complete', {
+            window.trackEvent('model_advisor_complete', {
                 usecase: state.usecase,
                 priority: state.priority,
                 context: state.context,

@@ -595,7 +595,7 @@
 
         container.innerHTML = html;
         container.classList.add('show');
-        gtag('event', 'pricing_hub_calculated', { input_tokens: inputTokens, output_tokens: outputTokens });
+        window.trackEvent('pricing_hub_calculated', { input_tokens: inputTokens, output_tokens: outputTokens });
     }
 
     document.addEventListener('DOMContentLoaded', buildTables);

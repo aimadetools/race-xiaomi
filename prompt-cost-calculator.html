@@ -695,7 +695,7 @@
             const toast = document.getElementById('copyToast');
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 2000);
-            gtag('event', 'share', { method: 'copy_link', content_type: 'calculator' });
+            window.trackEvent('share', { method: 'copy_link', content_type: 'calculator' });
         });
     }
 

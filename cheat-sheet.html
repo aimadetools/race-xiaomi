@@ -765,7 +765,7 @@
     // GA4 tracking
     document.addEventListener('DOMContentLoaded', function() {
         if (typeof gtag === 'function') {
-            gtag('event', 'cheatsheet_view', { page: 'ai-api-pricing-cheat-sheet' });
+            window.trackEvent('cheatsheet_view', { page: 'ai-api-pricing-cheat-sheet' });
         }
     });
 

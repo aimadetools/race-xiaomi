@@ -500,7 +500,7 @@ Happy to provide any data or quotes for a piece.</div>
         saveState();
         updateProgress();
         if (typeof gtag === 'function') {
-            gtag('event', 'community_post_completed', { post_id: id, subreddit: posts[id].sub });
+            window.trackEvent('community_post_completed', { post_id: id, subreddit: posts[id].sub });
         }
     }
 
@@ -513,7 +513,7 @@ Happy to provide any data or quotes for a piece.</div>
             setTimeout(function() { btns[0].textContent = 'Copy Title'; btns[0].classList.remove('copied'); }, 2000);
         });
         if (typeof gtag === 'function') {
-            gtag('event', 'community_post_copied', { post_id: id, type: 'title', subreddit: posts[id].sub });
+            window.trackEvent('community_post_copied', { post_id: id, type: 'title', subreddit: posts[id].sub });
         }
     }
 
@@ -528,7 +528,7 @@ Happy to provide any data or quotes for a piece.</div>
             setTimeout(function() { btns[1].textContent = 'Copy Full'; btns[1].classList.remove('copied'); }, 2000);
         });
         if (typeof gtag === 'function') {
-            gtag('event', 'community_post_copied', { post_id: id, type: 'full', subreddit: posts[id].sub });
+            window.trackEvent('community_post_copied', { post_id: id, type: 'full', subreddit: posts[id].sub });
         }
     }
 
