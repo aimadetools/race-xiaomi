@@ -751,17 +751,6 @@
                 <div style="font-size:13px;color:#64748b;">That's <strong style="color:#f1f5f9;" id="roi-multiplier">0x</strong> return in the first year alone — plus ongoing monitoring forever.</div>
             </div>
 
-            <!-- Free price alert capture -->
-            <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px 24px;margin-bottom:20px;text-align:center;">
-                <div style="font-size:13px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Free: Price drop alerts</div>
-                <p style="font-size:14px;color:#94a3b8;margin-bottom:14px;line-height:1.5;">Get emailed the instant a cheaper model launches for <strong style="color:#f1f5f9;" id="alert-model-name">your use case</strong>. Free forever — no Pro required.</p>
-                <div style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
-                    <input type="email" id="audit-alert-email" placeholder="you@company.com" style="flex:1;padding:12px 14px;background:#0f172a;border:1px solid #334155;border-radius:10px;color:#f1f5f9;font-size:14px;outline:none;">
-                    <button onclick="subscribeAuditAlert()" style="padding:12px 20px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;">🔔 Alert me</button>
-                </div>
-                <div id="audit-alert-msg" style="font-size:12px;color:#64748b;margin-top:8px;"></div>
-            </div>
-
             <!-- CTA -->
             <div class="cta-card">
                 <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:12px 16px;margin-bottom:16px;text-align:center;">
@@ -787,6 +776,17 @@
                     <span>🛡️ 14-day refund</span>
                     <span>⚡ Instant access</span>
                 </div>
+            </div>
+
+            <!-- Free price alert capture (moved below CTA to avoid competing with buy button) -->
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px 24px;margin-bottom:20px;text-align:center;">
+                <div style="font-size:13px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Not ready yet? Get free price alerts</div>
+                <p style="font-size:14px;color:#94a3b8;margin-bottom:14px;line-height:1.5;">Get emailed the instant a cheaper model launches for <strong style="color:#f1f5f9;" id="alert-model-name">your use case</strong>. Free forever — no Pro required.</p>
+                <div style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                    <input type="email" id="audit-alert-email" placeholder="you@company.com" style="flex:1;padding:12px 14px;background:#0f172a;border:1px solid #334155;border-radius:10px;color:#f1f5f9;font-size:14px;outline:none;">
+                    <button onclick="subscribeAuditAlert()" style="padding:12px 20px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;">🔔 Alert me</button>
+                </div>
+                <div id="audit-alert-msg" style="font-size:12px;color:#64748b;margin-top:8px;"></div>
             </div>
 
             <!-- How it works after you buy -->
