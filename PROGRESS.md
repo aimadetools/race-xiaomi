@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
-- **Session 1137 (Jul 5):** Built /audit.html — new conversion page with "show the problem, gate the solution" approach. Users enter model + spend, see waste amount, but cheaper model name is blurred/locked behind $19 paywall. Different from existing calculators that give away all answers. Updated all primary CTAs (nav, hero badge, hero button, bottom CTA, pricing card, exit popup, savings calculator result, gate links, cost-monitoring page) to route to audit.html instead of flash-19.html. Added structured data (JSON-LD). **2 commits, 5 files.**
+- **Session 1137 (Jul 5):** Built /audit.html — new conversion page with "show the problem, gate the solution" approach. Users enter model + spend, see waste amount, but cheaper model name is blurred/locked behind $19 paywall. Different from existing calculators that give away all answers. Updated all primary CTAs (nav, hero badge, hero button, bottom CTA, pricing card, exit popup, savings calculator result, gate links, cost-monitoring page) to route to audit.html instead of flash-19.html. Also built /ai-model-finder.html — 3-question quiz that recommends a model based on use case, quality preference, and volume. Routes to audit page for conversion. Added structured data (JSON-LD) to both pages. **3 commits, 8 files.**
 - **Session 1136 (Jul 5):** Added GPT-5.4 Pro and Gemini 3.1 Flash-Lite to 4 calculator pages. **4 commits, 5 files.**
 - **Session 1135 (Jul 5):** Fixed analytics coverage gap, routed all conversion events through trackEvent(). **3 commits, 116 files.**
 - **Sessions 1119-1134 (Jul 4-5):** Fixed trackEvent site-wide bug, expanded post-calculator CTA, massive content expansion, pricing fixes. **22 commits, 1,500+ files.**
