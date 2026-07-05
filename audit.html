@@ -552,11 +552,11 @@
                     </optgroup>
                     <optgroup label="Anthropic">
                         <option value="anthropic-opus48">Claude Opus 4.8</option>
-                        <option value="anthropic-claude4-opus">Claude 4 Opus</option>
+                        <option value="anthropic-claude4-opus">Claude 4 Opus ⚠️ Retired</option>
                         <option value="anthropic-opus47">Claude Opus 4.7</option>
                         <option value="anthropic-sonnet5">Claude Sonnet 5</option>
-                        <option value="anthropic-sonnet46">Claude Sonnet 4.6</option>
-                        <option value="anthropic-sonnet4">Claude Sonnet 4</option>
+                        <option value="anthropic-sonnet46">Claude Sonnet 4.6 ⚠️ Deprecated</option>
+                        <option value="anthropic-sonnet4">Claude Sonnet 4 ⚠️ Retired</option>
                         <option value="anthropic-haiku">Claude Haiku 4.5</option>
                         <option value="anthropic-fable5">Claude Fable 5</option>
                         <option value="anthropic-mythos5">Claude Mythos 5</option>
@@ -568,14 +568,14 @@
                         <option value="google-pro">Gemini 2.5 Pro</option>
                         <option value="google-gemini31-flash-lite">Gemini 3.1 Flash-Lite</option>
                         <option value="google-25-flash-lite">Gemini 2.5 Flash-Lite</option>
-                        <option value="google-gemini20-flash">Gemini 2.0 Flash</option>
-                        <option value="google-gemini20-flash-lite">Gemini 2.0 Flash Lite</option>
+                        <option value="google-gemini20-flash">Gemini 2.0 Flash ⚠️ Deprecated</option>
+                        <option value="google-gemini20-flash-lite">Gemini 2.0 Flash Lite ⚠️ Deprecated</option>
                     </optgroup>
                     <optgroup label="DeepSeek">
                         <option value="deepseek-v4-pro">DeepSeek V4 Pro</option>
                         <option value="deepseek-v4-flash">DeepSeek V4 Flash</option>
                         <option value="deepseek-v32">DeepSeek V3.2</option>
-                        <option value="deepseek-v3">DeepSeek V3</option>
+                        <option value="deepseek-v3">DeepSeek V3 ⚠️ Deprecated</option>
                     </optgroup>
                     <optgroup label="Mistral">
                         <option value="mistral-large">Mistral Large 3</option>
@@ -598,7 +598,7 @@
                         <option value="xai-grok-build">Grok Build 0.1</option>
                         <option value="kimi-k26">Kimi K2.6</option>
                         <option value="ai21-jamba-17">Jamba 1.7 Large</option>
-                        <option value="ai21-jamba-15">Jamba 1.5 Large</option>
+                        <option value="ai21-jamba-15">Jamba 1.5 Large ⚠️ Deprecated</option>
                     </optgroup>
                 </select>
             </div>
@@ -625,6 +625,9 @@
                     <div style="font-size:12px;color:#94a3b8;margin-top:6px;">💰 ROI Guarantee: save $19+ in year 1 or get a full refund · ⚡ 847 devs switched this month</div>
                 </div>
             </div>
+
+            <!-- Deprecation warning (shown when deprecated model selected) -->
+            <div id="deprecation-warning" style="display:none;background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.3);border-radius:12px;padding:14px 18px;margin-bottom:16px;font-size:14px;color:#fbbf24;line-height:1.5;"></div>
 
             <!-- Comparison table -->
             <div class="comparison">
@@ -902,9 +905,9 @@
             'openai-gpt4o': { name: 'GPT-4o', input: 2.50, output: 10.00, provider: 'OpenAI' },
             'openai-gpt4o-mini': { name: 'GPT-4o mini', input: 0.15, output: 0.60, provider: 'OpenAI' },
             'anthropic-opus48': { name: 'Claude Opus 4.8', input: 5.00, output: 25.00, provider: 'Anthropic' },
-            'anthropic-claude4-opus': { name: 'Claude 4 Opus', input: 15.00, output: 75.00, provider: 'Anthropic' },
+            'anthropic-claude4-opus': { name: 'Claude 4 Opus', input: 15.00, output: 75.00, provider: 'Anthropic', deprecated: true, replacement: 'anthropic-opus48' },
             'anthropic-sonnet5': { name: 'Claude Sonnet 5', input: 3.00, output: 15.00, provider: 'Anthropic' },
-            'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, provider: 'Anthropic' },
+            'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, provider: 'Anthropic', deprecated: true, replacement: 'anthropic-sonnet5' },
             'anthropic-haiku': { name: 'Claude Haiku 4.5', input: 1.00, output: 5.00, provider: 'Anthropic' },
             'anthropic-fable5': { name: 'Claude Fable 5', input: 10.00, output: 50.00, provider: 'Anthropic' },
             'google-gemini35-flash': { name: 'Gemini 3.5 Flash', input: 1.50, output: 9.00, provider: 'Google' },
@@ -926,11 +929,11 @@
             'openai-gpt-oss-120b': { name: 'GPT-oss 120B', input: 0.15, output: 0.60, provider: 'OpenAI' },
             'openai-gpt-oss-20b': { name: 'GPT-oss 20B', input: 0.08, output: 0.35, provider: 'OpenAI' },
             'anthropic-opus47': { name: 'Claude Opus 4.7', input: 5.00, output: 25.00, provider: 'Anthropic' },
-            'anthropic-sonnet4': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00, provider: 'Anthropic' },
+            'anthropic-sonnet4': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00, provider: 'Anthropic', deprecated: true, replacement: 'anthropic-sonnet46' },
             'anthropic-mythos5': { name: 'Claude Mythos 5', input: 10.00, output: 50.00, provider: 'Anthropic' },
-            'google-gemini20-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40, provider: 'Google' },
-            'google-gemini20-flash-lite': { name: 'Gemini 2.0 Flash Lite', input: 0.075, output: 0.30, provider: 'Google' },
-            'deepseek-v3': { name: 'DeepSeek V3', input: 0.27, output: 1.10, provider: 'DeepSeek' },
+            'google-gemini20-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40, provider: 'Google', deprecated: true, replacement: 'google-gemini3-flash' },
+            'google-gemini20-flash-lite': { name: 'Gemini 2.0 Flash Lite', input: 0.075, output: 0.30, provider: 'Google', deprecated: true, replacement: 'google-gemini31-flash-lite' },
+            'deepseek-v3': { name: 'DeepSeek V3', input: 0.27, output: 1.10, provider: 'DeepSeek', deprecated: true, replacement: 'deepseek-v4-flash' },
             'mistral-small': { name: 'Mistral Small 4', input: 0.10, output: 0.30, provider: 'Mistral' },
             'cohere-command-r-plus': { name: 'Command R+', input: 2.50, output: 10.00, provider: 'Cohere' },
             'cohere-command-r': { name: 'Command R', input: 0.50, output: 1.50, provider: 'Cohere' },
@@ -939,7 +942,7 @@
             'kimi-k26': { name: 'Kimi K2.6', input: 0.95, output: 4.00, provider: 'Moonshot' },
             'xai-grok-build': { name: 'Grok Build 0.1', input: 0.30, output: 0.50, provider: 'xAI' },
             'ai21-jamba-17': { name: 'Jamba 1.7 Large', input: 2.00, output: 8.00, provider: 'AI21' },
-            'ai21-jamba-15': { name: 'Jamba 1.5 Large', input: 2.00, output: 8.00, provider: 'AI21' }
+            'ai21-jamba-15': { name: 'Jamba 1.5 Large', input: 2.00, output: 8.00, provider: 'AI21', deprecated: true, replacement: 'ai21-jamba-17' }
         };
 
         function fmt(n) {
@@ -1010,6 +1013,17 @@
             // Populate waste card
             document.getElementById('waste-amount').textContent = fmtFull(savingsAnnual) + '/yr';
             document.getElementById('waste-model-name').textContent = current.name;
+
+            // Show deprecation warning if selected model is deprecated
+            var deprecationEl = document.getElementById('deprecation-warning');
+            if (current.deprecated) {
+                var replacementModel = current.replacement ? MODELS[current.replacement] : null;
+                var replacementText = replacementModel ? ' — migrate to <strong>' + replacementModel.name + '</strong>' : '';
+                deprecationEl.innerHTML = '⚠️ <strong>' + current.name + '</strong> is deprecated and will be retired. Switch to a current model to avoid API disruptions' + replacementText + '.';
+                deprecationEl.style.display = 'block';
+            } else {
+                deprecationEl.style.display = 'none';
+            }
 
             // Populate comparison
             document.getElementById('current-model-label').textContent = current.name + ' (' + current.provider + ')';
