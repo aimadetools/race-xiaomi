@@ -636,13 +636,24 @@
                 </div>
             </div>
 
+            <!-- Top 3 alternatives -->
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px 24px;margin-bottom:20px;">
+                <div style="font-size:13px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">Your top 3 cheapest alternatives</div>
+                <div id="top3-alternatives"></div>
+            </div>
+
             <!-- Locked recommendation -->
             <div class="locked-rec">
-                <div class="lock-label">Recommended switch</div>
+                <div class="lock-label">Your best switch</div>
                 <div class="lock-icon">🔒</div>
                 <div class="locked-model" id="locked-model">████████████ ████</div>
                 <div class="locked-details" id="locked-details">████ ██ $██.██/█ ████ ██████ ███ ███ ████ ████</div>
                 <div class="unlock-text">Unlock your personalized migration plan — $19</div>
+            </div>
+
+            <!-- Flash sale reminder -->
+            <div style="background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(249,115,22,0.06));border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:14px 20px;text-align:center;margin-bottom:20px;font-size:14px;color:#94a3b8;">
+                ⏰ <span style="color:#f1f5f9;font-weight:700;">Flash sale ends in <span style="color:#ef4444;font-weight:800;font-family:monospace;" id="results-countdown">--d --h --m</span></span> — then it's $49
             </div>
 
             <!-- CTA -->
@@ -801,19 +812,18 @@
             // Estimate tokens from spend: tokens = spend / blended_cost_per_token
             var estimatedTokens = monthlySpend / currentBlended;
 
-            // Now find cheapest alternative
-            var cheapest = null;
-            var cheapestCost = Infinity;
+            // Find all alternatives sorted by cost
+            var alternatives = [];
             for (var id in MODELS) {
                 if (id === modelId) continue;
                 var m = MODELS[id];
                 var blended = (m.input * 0.75 + m.output * 0.25) / 1000000;
                 var cost = estimatedTokens * blended;
-                if (cost < cheapestCost) {
-                    cheapestCost = cost;
-                    cheapest = { id: id, model: m, monthlyCost: cost };
-                }
+                alternatives.push({ id: id, model: m, monthlyCost: cost });
             }
+            alternatives.sort(function(a, b) { return a.monthlyCost - b.monthlyCost; });
+
+            var cheapest = alternatives[0];
 
             if (!cheapest) return;
 
@@ -859,6 +869,21 @@
             // CTA
             document.getElementById('cta-savings-amount').textContent = fmtFull(savingsAnnual) + '/yr';
 
+            // Top 3 alternatives
+            var top3Html = '';
+            var medals = ['🥇', '🥈', '🥉'];
+            for (var i = 0; i < Math.min(3, alternatives.length); i++) {
+                var alt = alternatives[i];
+                var altAnnual = alt.monthlyCost * 12;
+                var altSavings = currentAnnual - altAnnual;
+                if (altSavings < 0) altSavings = 0;
+                top3Html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;' + (i < 2 ? 'border-bottom:1px solid #1e293b;' : '') + '">';
+                top3Html += '<div><span style="margin-right:8px;">' + medals[i] + '</span><span style="color:#f1f5f9;font-weight:700;font-size:14px;">' + alt.model.name + '</span> <span style="color:#475569;font-size:12px;">' + alt.model.provider + '</span></div>';
+                top3Html += '<div style="text-align:right;"><span style="color:#22c55e;font-weight:700;font-size:14px;">Save ' + fmt(altSavings) + '/yr</span></div>';
+                top3Html += '</div>';
+            }
+            document.getElementById('top3-alternatives').innerHTML = top3Html;
+
             // Show results, hide form
             document.getElementById('audit-form').style.display = 'none';
             document.getElementById('results').classList.add('visible');
@@ -886,33 +911,62 @@
             var deadline = new Date('2026-07-12T23:59:59Z').getTime();
             var el = document.getElementById('audit-countdown');
             var banner = document.getElementById('countdown-banner');
+            var resultsEl = document.getElementById('results-countdown');
             function update() {
                 var now = Date.now();
                 var diff = deadline - now;
                 if (diff <= 0) {
                     el.textContent = 'EXPIRED';
                     banner.innerHTML = '⏰ Flash sale has ended — Pro is now <span style="color:#f1f5f9;font-weight:800;">$49</span>';
+                    if (resultsEl) resultsEl.textContent = 'EXPIRED';
                     return;
                 }
                 var d = Math.floor(diff / 86400000);
                 var h = Math.floor((diff % 86400000) / 3600000);
                 var m = Math.floor((diff % 3600000) / 60000);
                 el.textContent = d + 'd ' + h + 'h ' + m + 'm';
+                if (resultsEl) resultsEl.textContent = d + 'd ' + h + 'h ' + m + 'm';
             }
             update();
             setInterval(update, 60000);
         })();
 
-        // Exit popup — show once when user moves cursor to leave
+        // Exit popup — show once, context-aware (different CTA if audit already completed)
         (function() {
             var shown = false;
-            var formHidden = document.getElementById('audit-form').style.display === 'none';
             document.addEventListener('mouseleave', function(e) {
                 if (shown) return;
                 if (e.clientY < 5) {
                     shown = true;
+                    var resultsVisible = document.getElementById('results').classList.contains('visible');
+                    if (resultsVisible) {
+                        // User already ran audit — push purchase
+                        document.getElementById('exit-title').textContent = 'Your savings are real — don\'t walk away';
+                        document.getElementById('exit-desc').innerHTML = 'You\'re overpaying <strong id="exit-savings">' + document.getElementById('waste-amount').textContent + '</strong>. Unlock your full report with the exact model to switch to, migration code, and ongoing monitoring.';
+                        document.getElementById('exit-cta').textContent = 'Unlock My Report — $19';
+                        document.getElementById('exit-cta').href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+                        document.getElementById('exit-cta').onclick = function() {
+                            if(window.trackEvent) window.trackEvent('audit_exit_buy_clicked', {savings: window._auditSavings || 0});
+                        };
+                        document.getElementById('exit-dismiss').textContent = 'No thanks, I\'ll keep overpaying';
+                        if (window.trackEvent) window.trackEvent('audit_exit_popup_shown', {context: 'post_audit'});
+                    } else {
+                        // User hasn't run audit — promote free audit
+                        document.getElementById('exit-title').textContent = 'Wait — your audit is free';
+                        document.getElementById('exit-desc').innerHTML = 'See exactly how much you\'re overpaying on AI APIs. It takes 30 seconds and costs nothing. The $19 Pro deal expires Jul 12.';
+                        document.getElementById('exit-cta').textContent = 'Run My Free Audit →';
+                        document.getElementById('exit-cta').href = '#';
+                        document.getElementById('exit-cta').onclick = function() {
+                            document.getElementById('exit-popup').classList.remove('show');
+                            document.getElementById('audit-form').style.display='block';
+                            document.getElementById('results').classList.remove('visible');
+                            document.getElementById('audit-form').scrollIntoView({behavior:'smooth',block:'center'});
+                            return false;
+                        };
+                        document.getElementById('exit-dismiss').textContent = 'No thanks, I like overpaying';
+                        if (window.trackEvent) window.trackEvent('audit_exit_popup_shown', {context: 'pre_audit'});
+                    }
                     document.getElementById('exit-popup').classList.add('show');
-                    if (window.trackEvent) window.trackEvent('audit_exit_popup_shown');
                 }
             });
         })();
@@ -921,10 +975,10 @@
     <!-- Exit popup -->
     <div class="exit-overlay" id="exit-popup" onclick="if(event.target===this)this.classList.remove('show')">
         <div class="exit-modal">
-            <h3>Wait — your audit is free</h3>
-            <p>See exactly how much you're overpaying on AI APIs. It takes 30 seconds and costs nothing. The $19 Pro deal expires Jul 12.</p>
-            <a href="#" class="exit-cta" onclick="document.getElementById('exit-popup').classList.remove('show');document.getElementById('audit-form').style.display='block';document.getElementById('results').classList.remove('visible');document.getElementById('audit-form').scrollIntoView({behavior:'smooth',block:'center'});return false;">Run My Free Audit →</a>
-            <button class="exit-dismiss" onclick="document.getElementById('exit-popup').classList.remove('show')">No thanks, I like overpaying</button>
+            <h3 id="exit-title">Wait — your audit is free</h3>
+            <p id="exit-desc">See exactly how much you're overpaying on AI APIs. It takes 30 seconds and costs nothing. The $19 Pro deal expires Jul 12.</p>
+            <a href="#" class="exit-cta" id="exit-cta" onclick="document.getElementById('exit-popup').classList.remove('show');document.getElementById('audit-form').style.display='block';document.getElementById('results').classList.remove('visible');document.getElementById('audit-form').scrollIntoView({behavior:'smooth',block:'center'});return false;">Run My Free Audit →</a>
+            <button class="exit-dismiss" id="exit-dismiss" onclick="document.getElementById('exit-popup').classList.remove('show')">No thanks, I like overpaying</button>
         </div>
     </div>
 </body>
