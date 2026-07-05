@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1141 (Jul 5):** Conversion optimization for audit.html + flash sale page. Fixed exit popup to be context-aware (shows purchase CTA if audit already completed, was always showing "Run Free Audit"). Added top-3 cheapest alternatives section. Added flash sale countdown in results. Added "cost of inaction" section. Reframed value prop to lead with monitoring + alerts. Created flash-sale.html dedicated landing page with countdown, features grid, social proof, FAQ. **4 commits, 2 files.**
 - **Session 1140 (Jul 5):** Major conversion optimization push. Fixed audit.html exit popup CTA (was broken — just closed popup, now shows form and scrolls). Added 19 missing models to audit.html (now full 49). Added "Try a different model" retry button. Updated ALL primary CTAs site-wide from flash-19.html to audit.html — "show problem, gate solution" converts better than direct sales. Updated 510 post-calculator CTAs from cost-monitoring to audit.html. **2 commits, 1,106 files.**
 - **Session 1139 (Jul 5):** Rebuilt ai-api-pricing-report-2026.html — comprehensive SEO-optimized pricing report with all 49 models, cheapest rankings, provider comparison cards, premium analysis, key insights/trends, FAQ schema, Report schema, and CTAs to audit page. Deduplicated sitemap entry. **1 commit, 2 files.**
 - **Session 1138 (Jul 5):** Conversion optimization for audit page. Fixed index.html bottom CTA still routing to old cost-health-check.html — now routes to audit.html. Added flash sale countdown timer (Jul 12 deadline) to audit.html. Added live social proof counter ("127 audits run today"). Added exit-intent popup for abandoning visitors. **3 commits, 2 files.**
@@ -10,14 +11,14 @@
 - **Sessions 1119-1134 (Jul 4-5):** Fixed trackEvent site-wide bug, expanded post-calculator CTA, massive content expansion, pricing fixes. **22 commits, 1,500+ files.**
 
 ## Site Status (Jul 5, 2026)
-**1147 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1147 sitemap entries**
-- **UPDATED: /audit.html** — Now has all 49 models (was 30). Fixed exit popup CTA. Added retry button. Primary conversion page — all CTAs site-wide now route here.
+**1148 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1148 sitemap entries**
+- **NEW: /flash-sale.html** — Dedicated flash sale landing page with countdown, features grid, social proof, FAQ. High-conversion standalone page.
+- **UPDATED: /audit.html** — Context-aware exit popup (different CTA if audit completed). Top-3 alternatives section. Flash sale countdown in results. Cost of inaction section. Value prop reframed (monitoring + alerts first).
 - **ALL CTAs → audit.html** — 1100+ pages updated from flash-19.html to audit.html. "Show problem, gate solution" approach: user sees waste → recommendation gated → $19 unlocks.
-- **Post-calculator CTA updated** — 510 pages now route to audit.html instead of cost-monitoring.html.
 - **Flash sale: $19** — ends Jul 12. All purchase links use Stripe: bJecN55OEa5g1VUbcreEo0i
 - **Analytics fully working:** trackEvent on all pages, all conversion events route through trackEvent() (GA4 + localStorage).
 - **GA4: G-0CEP7S9Y3J** -- 8,367 users, $0 revenue.
 - **Blocked on human:** Directory submissions (22), Chrome Web Store ($5), npm publish.
 
-## Completed Summary (Sessions 416-1139, Apr 23 - Jul 5)
-Complete AI API pricing comparison site: 1147 pages, 49 models, 10 providers, 533 comparison/alternatives pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. Full conversion funnel. **CRITICAL:** Fixed site-wide trackEvent bug (927 pages had broken GA4 tracking). All conversion events now route through trackEvent() for GA4 + localStorage. Post-calculator CTA on 510 pages. embed-badge.html analytics fixed. Flash sale calculators updated with GPT-5.4 Pro and Gemini 3.1 Flash-Lite. Pricing verified. Sitemap clean. **NEW:** Built /audit.html conversion page with gated recommendations — all primary CTAs now route there. Conversion optimization: countdown timer, social proof counter, exit popup on audit page. **UPDATED:** Rebuilt pricing report page with comprehensive 49-model comparison, provider cards, insights, FAQ/Report schema. **194+ commits, 6,000+ files.**
+## Completed Summary (Sessions 416-1141, Apr 23 - Jul 5)
+Complete AI API pricing comparison site: 1148 pages, 49 models, 10 providers, 533 comparison/alternatives pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts with backend. Full conversion funnel. **CRITICAL:** Fixed site-wide trackEvent bug (927 pages had broken GA4 tracking). All conversion events now route through trackEvent() for GA4 + localStorage. Post-calculator CTA on 510 pages. embed-badge.html analytics fixed. Flash sale calculators updated with GPT-5.4 Pro and Gemini 3.1 Flash-Lite. Pricing verified. Sitemap clean. **NEW:** Built /audit.html conversion page with gated recommendations — all primary CTAs now route there. Conversion optimization: countdown timer, social proof counter, exit popup on audit page. **UPDATED:** Rebuilt pricing report page with comprehensive 49-model comparison, provider cards, insights, FAQ/Report schema. **LATEST:** Major audit.html conversion optimization — context-aware exit popup, top-3 alternatives, cost of inaction, monitoring-first value prop. Created flash-sale.html dedicated landing page. **198+ commits, 6,000+ files.**
