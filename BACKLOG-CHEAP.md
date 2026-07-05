@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1151 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12). 741 pages with flash sale CTAs. deal.html pricing fixed. Exit popup on flash-sale.html. Nav on tool pages.**
+**Site Status:** 1152 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12, 7 days). 741 pages with flash sale CTAs. Pro Report preview + ROI Guarantee on audit.html. flash-sale.html now funnels to audit.**
 
 ### Active Tasks — Weekly Digest Maintenance
 - **Update weekly digest every Friday** — Add new price changes, model launches, deprecations.
