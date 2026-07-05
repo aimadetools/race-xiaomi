@@ -1930,7 +1930,7 @@
                     <div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px;">Your annual savings potential</div>
                     <div style="font-size:clamp(32px,6vw,48px);font-weight:900;color:var(--green);font-family:monospace;line-height:1.1;">$${annualSavings.toFixed(0)}<span style="font-size:0.4em;color:var(--text-muted);">/year</span></div>
                     <div style="font-size:14px;color:var(--text-secondary);margin:8px 0 16px;">$19 Pro pays for itself in <strong style="color:var(--green);">${paybackText}</strong> — that's a <strong style="color:var(--green);">${Math.round(annualSavings / 19)}x return</strong></div>
-                    <a href="flash-19.html?from=calc_savings" style="display:inline-block;padding:14px 36px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.4);transition:all 0.2s;" onclick="if(typeof gtag==='function')gtag('event','pro_button_clicked',{source:'calc_savings_card'});">Get Pro — $19 Lifetime</a>
+                    <a href="flash-19.html?from=calc_savings" style="display:inline-block;padding:14px 36px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:17px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.4);transition:all 0.2s;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calc_savings_card'});">Get Pro — $19 Lifetime</a>
                     <div style="font-size:11px;color:var(--text-muted);margin-top:8px;">🔒 Stripe secure · 14-day refund · No subscription</div>
                 </div>`;
                 html += '</div>';

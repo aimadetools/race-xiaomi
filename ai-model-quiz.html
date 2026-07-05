@@ -315,7 +315,7 @@
             </div>
 
             <div class="result-ctas">
-                <a href="flash-19.html" class="cta-primary" onclick="if(typeof gtag==='function')gtag('event','quiz_pro_click',{model:window._quizResult?.id});">Get APIpulse Pro — $19</a>
+                <a href="flash-19.html" class="cta-primary" onclick="if(window.trackEvent)window.trackEvent('quiz_pro_click',{model:window._quizResult?.id});">Get APIpulse Pro — $19</a>
                 <a href="pricing-heatmap.html" class="cta-secondary">View Pricing Heatmap</a>
                 <a href="flash-19.html" class="cta-secondary">Compare All Models</a>
             </div>
@@ -480,7 +480,7 @@
 
         // Track
         if (typeof gtag === 'function') {
-            gtag('event', 'quiz_completed', {
+            window.trackEvent('quiz_completed', {
                 model: model.id,
                 provider: model.provider,
                 usecase: answers[1],

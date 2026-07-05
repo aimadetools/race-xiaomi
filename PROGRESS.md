@@ -1,6 +1,7 @@
 # PROGRESS.md
 
 ## Key Milestones
+- **Session 1135 (Jul 5):** Audit: verified Session 1134 trackEvent fix covers all user-facing pages. Found embed-badge.html (full interactive page) was missing analytics.js — GA4 snippet existed but trackEvent was never defined, so all onclick handlers were no-ops. Fixed. Also confirmed 1146 HTML files all have analytics.js (6 exceptions are all redirects or snippets). **1 commit, 1 file.**
 - **Session 1134 (Jul 5):** Fixed CRITICAL site-wide bug: `window.trackEvent` was used on 927 pages but only defined on cost-monitoring.html. All GA4 custom events (calculator_used, savings_calculated, monitoring_cta_clicked, pro_button_clicked, exit_popup_shown, etc.) were silently dead. Added trackEvent function to all 927 pages. Also expanded post-calculator CTA from 1 page (index.html) to all 509 calculator pages. **2 commits, 1,424 files.**
 - **Session 1133 (Jul 5):** Fixed `-0%` display bug in open-source LLM cost calculator. **1 commit, 1 file.**
 - **Session 1132 (Jul 5):** PMF pivot — added post-calculator conversion CTA bridging calculator → monitoring. **1 commit, 1 file.**

@@ -644,7 +644,7 @@
                     <span>PDF export (Pro)</span>
                     <span>49 models</span>
                 </div>
-                <a href="team-cost-planner.html" class="btn btn-primary" onclick="if(typeof gtag==='function')gtag('event','tool_click',{tool_name:'team_cost_planner',source:'teams_page'})">Open Cost Planner →</a>
+                <a href="team-cost-planner.html" class="btn btn-primary" onclick="if(window.trackEvent)window.trackEvent('tool_click',{tool_name:'team_cost_planner',source:'teams_page'})">Open Cost Planner →</a>
             </div>
 
             <div class="tool-card">
@@ -663,7 +663,7 @@
                     <span>SDK code snippets</span>
                     <span>Cost comparison</span>
                 </div>
-                <a href="team-migration-planner.html" class="btn btn-primary" onclick="if(typeof gtag==='function')gtag('event','tool_click',{tool_name:'team_migration_planner',source:'teams_page'})">Open Migration Planner →</a>
+                <a href="team-migration-planner.html" class="btn btn-primary" onclick="if(window.trackEvent)window.trackEvent('tool_click',{tool_name:'team_migration_planner',source:'teams_page'})">Open Migration Planner →</a>
             </div>
 
             <div class="tool-card">
@@ -682,7 +682,7 @@
                     <span>Visual rankings</span>
                     <span>Export-ready</span>
                 </div>
-                <a href="vendor-evaluation-scorecard.html" class="btn btn-primary" onclick="if(typeof gtag==='function')gtag('event','tool_click',{tool_name:'vendor_scorecard',source:'teams_page'})">Open Scorecard →</a>
+                <a href="vendor-evaluation-scorecard.html" class="btn btn-primary" onclick="if(window.trackEvent)window.trackEvent('tool_click',{tool_name:'vendor_scorecard',source:'teams_page'})">Open Scorecard →</a>
             </div>
         </section>
 
@@ -847,7 +847,7 @@
 
         // GA4 event tracking
         if (typeof gtag === 'function') {
-            gtag('event', 'page_view', {
+            window.trackEvent('page_view', {
                 page_title: 'Teams Landing Page',
                 page_location: window.location.href
             });

@@ -331,7 +331,7 @@
                     this.classList.add('selected');
                     answers[this.dataset.key] = this.dataset.value;
                     document.getElementById('btnNext').disabled = false;
-                    gtag('event', 'finder_answer', { step: step + 1, value: this.dataset.value });
+                    window.trackEvent('finder_answer', { step: step + 1, value: this.dataset.value });
                 });
             });
 
@@ -364,7 +364,7 @@
             }
             const ctaText = ctaVariant === 'B' ? 'Start Monitoring — $19 (Flash Sale)' : 'Get Pro — $19 (Flash Sale)';
 
-            gtag('event', 'finder_completed', { useCase: answers.useCase, volume: answers.volume, priority: answers.priority, context: answers.context, budget: answers.budget, cta_variant: ctaVariant });
+            window.trackEvent('finder_completed', { useCase: answers.useCase, volume: answers.volume, priority: answers.priority, context: answers.context, budget: answers.budget, cta_variant: ctaVariant });
 
             const recommendations = getRecommendations(answers);
             const topPick = recommendations[0];
@@ -418,7 +418,7 @@
                             <li>Cost alerts when prices change</li>
                             <li>Lifetime access — pay once, use forever</li>
                         </ul>
-                        <a href="/flash-19.html?from=model-finder" class="btn-pro" onclick="gtag('event','finder_cta_clicked',{cta_variant:'${ctaVariant}'})">${ctaText}</a>
+                        <a href="/flash-19.html?from=model-finder" class="btn-pro" onclick="if(window.trackEvent)window.trackEvent('finder_cta_clicked',{cta_variant:'${ctaVariant}'})">${ctaText}</a>
                     </div>
 
                     <div style="text-align:center;">
@@ -550,7 +550,7 @@
         }
 
         // GA4 events
-        gtag('event', 'model_finder_started');
+        window.trackEvent('model_finder_started');
 
         // Start quiz when DOM is ready (pricing-data.js loads via defer)
         function init() { renderStep(0); }

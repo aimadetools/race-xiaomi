@@ -688,7 +688,7 @@
                     <div class="included-item"><span class="check">✓</span> Lifetime updates</div>
                 </div>
 
-                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="cta-button" onclick="if(typeof gtag==='function')gtag('event','pro_demo_buy_clicked',{price:19});">
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="cta-button" onclick="if(window.trackEvent)window.trackEvent('pro_demo_buy_clicked',{price:19});">
                     Get Lifetime Access — $19
                 </a>
                 <p class="cta-trust">
@@ -875,7 +875,7 @@
 
         // Track
         if (typeof gtag === 'function') {
-            gtag('event', 'pro_demo_generated', {
+            window.trackEvent('pro_demo_generated', {
                 current_model: currentModel.name,
                 monthly_spend: spend,
                 best_model: best ? best.model.name : 'none',

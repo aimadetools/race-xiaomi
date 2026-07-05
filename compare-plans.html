@@ -621,7 +621,7 @@
             <div class="price-big">$19</div>
             <div class="price-detail">one-time payment · lifetime access · no subscription</div>
             <div class="savings-note">Regular price $29 — sale ends July 12</div>
-            <a href="flash-19.html?from=free_vs_pro" class="unlock-cta" onclick="if(typeof gtag==='function')gtag('event','fvp_cta_clicked',{location:'unlock_banner'});">
+            <a href="flash-19.html?from=free_vs_pro" class="unlock-cta" onclick="if(window.trackEvent)window.trackEvent('fvp_cta_clicked',{location:'unlock_banner'});">
                 Unlock Pro — $19
             </a>
             <div class="trust-line">
@@ -687,7 +687,7 @@
         <div class="final-cta">
             <h2>Ready to unlock all 49 models?</h2>
             <p>$19 one-time. Lifetime access. 14-day money-back guarantee.</p>
-            <a href="flash-19.html?from=free_vs_pro_bottom" class="unlock-cta" onclick="if(typeof gtag==='function')gtag('event','fvp_cta_clicked',{location:'bottom'});">
+            <a href="flash-19.html?from=free_vs_pro_bottom" class="unlock-cta" onclick="if(window.trackEvent)window.trackEvent('fvp_cta_clicked',{location:'bottom'});">
                 Get Pro — $19
             </a>
             <div class="trust-line">
@@ -705,7 +705,7 @@
     <script>
         // Track page view
         if (typeof gtag === 'function') {
-            gtag('event', 'free_vs_pro_viewed', { page: 'compare-plans' });
+            window.trackEvent('free_vs_pro_viewed', { page: 'compare-plans' });
         }
     </script>
     <script src="comparison-gate.js" defer></script>

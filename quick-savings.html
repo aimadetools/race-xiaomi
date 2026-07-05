@@ -140,7 +140,7 @@
     <div class="up">
         <h2>Get Migration Code + Full Report</h2>
         <p>Pro includes Python/Node/curl migration code, PDF exports, price alerts, and personalized tips.</p>
-        <a href="flash-19.html?from=quick_savings" class="cta" onclick="if(typeof gtag==='function')gtag('event','pro_cta_clicked',{source:'quick_savings'});">Get Pro — $19 <span style="font-size:12px;text-decoration:line-through;opacity:.7">$29</span></a>
+        <a href="flash-19.html?from=quick_savings" class="cta" onclick="if(window.trackEvent)window.trackEvent('pro_cta_clicked',{source:'quick_savings'});">Get Pro — $19 <span style="font-size:12px;text-decoration:line-through;opacity:.7">$29</span></a>
         <div class="tr"><span>🔒 Stripe</span><span>🛡️ 14-day refund</span><span>⚡ Instant</span></div>
     </div>
     <div class="lk">
@@ -207,7 +207,7 @@ var b=t[0];document.getElementById('amt').textContent='$'+b.sv.toFixed(0);docume
 var h='<div class="a cur"><div><div class="n">'+c.n+'</div><div class="p">'+c.p+' (current)</div></div><div><div class="pr">$'+sp.toFixed(0)+'/mo</div></div></div>';
 t.forEach(function(x){h+='<div class="a"><div><div class="n">'+x.n+'</div><div class="p">'+x.p+'</div></div><div><div class="pr">$'+x.c.toFixed(0)+'/mo</div><div class="sv">-$'+x.sv.toFixed(0)+' ('+x.pc.toFixed(0)+'%)</div></div></div>'});
 document.getElementById('al').innerHTML=h;
-if(typeof gtag==='function')gtag('event','savings_calculated',{current_model:cid,monthly_spend:sp,best_savings:b.sv,best_alternative:b.n});
+if(window.trackEvent)window.trackEvent('savings_calculated',{current_model:cid,monthly_spend:sp,best_savings:b.sv,best_alternative:b.n});
 };
 })();
 </script>

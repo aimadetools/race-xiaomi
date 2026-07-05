@@ -237,7 +237,7 @@
                     <span>Real-time price alerts</span>
                     <span>49-model comparison tables</span>
                 </div>
-                <a href="flash-19.html?from=audit_upsell" class="pro-btn" id="proUpsellBtn" onclick="if(typeof gtag==='function')gtag('event','flash_buy_clicked',{price:19,location:'audit_upsell'});">⚡ Get Pro — $19 Flash Sale</a>
+                <a href="flash-19.html?from=audit_upsell" class="pro-btn" id="proUpsellBtn" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'audit_upsell'});">⚡ Get Pro — $19 Flash Sale</a>
                 <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">🔥 Lifetime access · Price goes to $49 on Jul 12 · 14-day refund</p>
                 <div class="social-strip">
                     <div class="stat"><div class="stat-num">49</div><div class="stat-label">Models</div></div>
@@ -380,7 +380,7 @@
 
         // Track
         if (typeof gtag === 'function') {
-            gtag('event', 'cost_audit_completed', {
+            window.trackEvent('cost_audit_completed', {
                 model: modelId,
                 spend: spend,
                 inputRatio: inputRatio,
@@ -410,7 +410,7 @@
         navigator.clipboard.writeText(text).then(function() {
             var confirm = document.getElementById('auditShareConfirm');
             if (confirm) { confirm.style.display = 'block'; setTimeout(function() { confirm.style.display = 'none'; }, 3000); }
-            if (typeof gtag === 'function') gtag('event', 'savings_shared', { method: 'clipboard', source: 'audit' });
+            if (window.trackEvent) window.trackEvent('savings_shared', { method: 'clipboard', source: 'audit' });
         }).catch(function() {
             var ta = document.createElement('textarea');
             ta.value = text;
@@ -426,7 +426,7 @@
     function resetAudit() {
         document.getElementById('auditForm').style.display = 'block';
         document.getElementById('auditResults').style.display = 'none';
-        if (typeof gtag === 'function') gtag('event', 'audit_retake');
+        if (window.trackEvent) window.trackEvent('audit_retake');
     }
     </script>
 </body>

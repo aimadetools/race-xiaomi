@@ -564,7 +564,7 @@
         <div class="inline-cta">
             <h3>Find your cheapest provider in 30 seconds</h3>
             <p>APIpulse compares pricing across 49 models from 10 providers. Free to use.</p>
-            <a href="/flash-19.html" onclick="if(typeof gtag==='function')gtag('event','cta_clicked',{location:'guide_bottom',page:'cost-guide'});">Try APIpulse Free →</a>
+            <a href="/flash-19.html" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{location:'guide_bottom',page:'cost-guide'});">Try APIpulse Free →</a>
         </div>
 
         <h2>FAQ</h2>
@@ -632,7 +632,7 @@
             result.style.display = 'block';
 
             if (typeof gtag === 'function') {
-                gtag('event', 'savings_calculated', {
+                window.trackEvent('savings_calculated', {
                     model: modelKey, spend: spend,
                     annualSavings: Math.round(annualSave),
                     page: 'cost_guide'
