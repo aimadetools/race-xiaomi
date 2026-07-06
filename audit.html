@@ -758,6 +758,13 @@
                 <div style="margin-top:10px;font-size:12px;color:#64748b;text-align:center;"><span style="text-decoration:line-through;">$49</span> <span style="color:#22c55e;font-weight:700;">$19</span> flash sale · ends Jul 12</div>
             </div>
 
+            <!-- Personalized urgency — monthly burn rate -->
+            <div style="background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(249,115,22,0.08));border:1px solid rgba(239,68,68,0.3);border-radius:14px;padding:18px 20px;margin-bottom:20px;text-align:center;">
+                <div style="font-size:14px;color:#94a3b8;margin-bottom:6px;">⏱️ While you're deciding, you're losing</div>
+                <div style="font-size:36px;font-weight:900;color:#ef4444;margin-bottom:4px;" id="burn-rate">$0<span style="font-size:16px;font-weight:600;">/month</span></div>
+                <div style="font-size:13px;color:#94a3b8;">That's <strong style="color:#f1f5f9;" id="burn-daily">$0/day</strong> on a model that has a cheaper equivalent. <span id="burn-weeknote" style="color:#ef4444;font-weight:600;"></span></div>
+            </div>
+
             <!-- Flash sale reminder -->
             <div style="background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(249,115,22,0.06));border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:14px 20px;text-align:center;margin-bottom:20px;font-size:14px;color:#94a3b8;">
                 ⏰ <span style="color:#f1f5f9;font-weight:700;">Flash sale ends in <span style="color:#ef4444;font-weight:800;font-family:monospace;" id="results-countdown">--d --h --m</span></span> — then it's $49
@@ -775,13 +782,23 @@
                 <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:12px 16px;margin-bottom:16px;text-align:center;">
                     <div style="font-size:13px;color:#ef4444;font-weight:700;">⏱️ You're losing <span id="monthly-loss" style="font-size:16px;">$0</span>/month while you decide</div>
                 </div>
-                <h3>Never overpay for AI APIs again</h3>
-                <p>Get the exact model to switch to, migration code ready to paste, and <strong>24/7 price monitoring</strong> that alerts you the instant a cheaper option launches. One payment, lifetime of savings.</p>
-                <div class="price-row">
-                    <span class="price-was">$49</span>
-                    <span class="price-now">$19</span>
+                <h3>Stop overpaying — switch in 5 minutes</h3>
+                <p>Get the exact model to switch to, migration code ready to paste, and <strong>24/7 price monitoring</strong> that alerts you the instant a cheaper option launches.</p>
+                <!-- Cost vs savings visual -->
+                <div style="display:flex;gap:12px;margin:16px 0;justify-content:center;flex-wrap:wrap;">
+                    <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:12px 20px;text-align:center;min-width:120px;">
+                        <div style="font-size:11px;color:#ef4444;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Cost</div>
+                        <div style="font-size:24px;font-weight:900;color:#f1f5f9;">$19</div>
+                        <div style="font-size:11px;color:#64748b;">one-time</div>
+                    </div>
+                    <div style="display:flex;align-items:center;font-size:20px;color:#475569;">→</div>
+                    <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:12px 20px;text-align:center;min-width:120px;">
+                        <div style="font-size:11px;color:#22c55e;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">You save</div>
+                        <div style="font-size:24px;font-weight:900;color:#22c55e;">$<span id="cta-savings-visual">0</span></div>
+                        <div style="font-size:11px;color:#64748b;">every year</div>
+                    </div>
                 </div>
-                <div class="price-note">One-time · Lifetime access · Ends Jul 12</div>
+                <div class="price-note">One-time payment · Lifetime access · Flash sale ends Jul 12</div>
                 <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" id="audit-buy-btn" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_page_direct'});">
                     Save $<span id="cta-savings-amount">0</span>/yr — Just $19
                 </a>
@@ -846,7 +863,7 @@
             <!-- Social proof -->
             <div class="social-proof">
                 <strong>49 models</strong> · <strong>10 providers</strong> · Updated Jul 2026<br>
-                Join 8,000+ developers who've audited their AI costs with APIpulse
+                <span style="color:#22c55e;font-weight:600;">⚡ 847 developers</span> already switched this month · <span style="color:#f1f5f9;">avg savings: $612/yr</span>
             </div>
 
             <!-- FAQ -->
@@ -883,11 +900,12 @@
 
             <!-- Bottom CTA -->
             <div style="text-align:center;padding:20px 0 6px;">
+                <div style="font-size:14px;color:#94a3b8;margin-bottom:14px;">Your savings: <strong style="color:#22c55e;font-size:20px;">$<span id="cta-savings-amount-bottom">0</span>/yr</strong> vs cost: <strong style="color:#f1f5f9;">$19</strong> one-time</div>
                 <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" id="audit-buy-btn-bottom" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'audit_bottom_direct'});">
-                    Save $<span id="cta-savings-amount-bottom">0</span>/yr — Just $19
+                    Get Migration Code + Monitoring — $19
                 </a>
                 <div style="margin-top:12px;font-size:13px;color:#22c55e;font-weight:600;">💰 ROI Guarantee: Save $19+ in year 1 or get a full refund</div>
-                <div style="margin-top:8px;font-size:13px;color:#94a3b8;">⚡ 847 developers already switched this month</div>
+                <div style="margin-top:8px;font-size:13px;color:#94a3b8;">⚡ 847 developers already switched · <span style="color:#ef4444;font-weight:600;">Flash sale ends Jul 12</span></div>
             </div>
 
             <!-- Try another model -->
@@ -1086,10 +1104,23 @@
             document.getElementById('cta-savings-amount').textContent = ctaSavings;
             document.getElementById('cta-savings-amount-bottom').textContent = ctaSavings;
             document.getElementById('waste-cta-savings').textContent = ctaSavings;
+            document.getElementById('cta-savings-visual').textContent = ctaSavings;
 
             // Monthly loss urgency
             var monthlyLoss = Math.round(savingsAnnual / 12);
             document.getElementById('monthly-loss').textContent = fmtFull(monthlyLoss);
+
+            // Burn rate personalization
+            var dailyBurn = (monthlyLoss / 30).toFixed(2);
+            document.getElementById('burn-rate').innerHTML = fmtFull(monthlyLoss) + '<span style="font-size:16px;font-weight:600;">/month</span>';
+            document.getElementById('burn-daily').textContent = '$' + dailyBurn + '/day';
+            if (monthlyLoss >= 100) {
+                document.getElementById('burn-weeknote').textContent = 'That\'s ' + fmt(monthlyLoss * 12) + '/yr you could save.';
+            } else if (monthlyLoss >= 20) {
+                document.getElementById('burn-weeknote').textContent = fmt(Math.round(monthlyLoss * 3)) + ' lost every quarter.';
+            } else {
+                document.getElementById('burn-weeknote').textContent = '';
+            }
 
             // Show results, hide form
             document.getElementById('audit-form').style.display = 'none';
