@@ -653,9 +653,9 @@
                 </div>
             </div>
 
-            <!-- Top 3 alternatives -->
+            <!-- Top 3 alternatives — names visible, savings shown -->
             <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px 24px;margin-bottom:20px;">
-                <div style="font-size:13px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">Your top 3 cheapest alternatives <span style="color:#6366f1;font-size:11px;margin-left:6px;">🔒 Names hidden</span></div>
+                <div style="font-size:13px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">Your top 3 cheapest alternatives</div>
                 <div id="top3-alternatives"></div>
             </div>
 
@@ -724,22 +724,38 @@
                 </div>
             </div>
 
-            <!-- Locked recommendation -->
-            <div class="locked-rec">
-                <div class="lock-label">Your personalized migration plan</div>
-                <div class="lock-icon">🔒</div>
-                <div class="locked-model" id="locked-model">████████████ ████</div>
-                <div class="locked-details" id="locked-details">████ ██ $██.██/█ ████ ██████ ███ ███ ████ ████</div>
+            <!-- Pro upsell — gate migration code + monitoring, not model names -->
+            <div class="locked-rec" style="border-color:rgba(34,197,94,0.3);">
+                <div class="lock-label" style="color:#22c55e;">Switch to <span id="locked-model" style="color:#22c55e;">—</span> and start saving</div>
+                <div style="font-size:15px;color:#94a3b8;margin-bottom:16px;line-height:1.6;" id="locked-details">—</div>
+                <div style="margin:0 0 16px;padding:12px 16px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;position:relative;">
+                    <div style="font-size:11px;color:#6366f1;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">📦 Your migration code (Python)</div>
+                    <div style="filter:blur(3px);user-select:none;pointer-events:none;">
+                        <code style="font-size:12px;color:#94a3b8;line-height:1.8;display:block;">
+                            <span style="color:#6366f1;">import</span> openai<br>
+                            <br>
+                            client = openai.OpenAI()<br>
+                            response = client.chat.completions.create(<br>
+                              model=<span style="color:#22c55e;">"recommended-model"</span>,<br>
+                              messages=messages<br>
+                            )
+                        </code>
+                    </div>
+                    <div style="position:absolute;bottom:0;left:0;right:0;height:30px;background:linear-gradient(transparent,#111827);"></div>
+                </div>
                 <div style="margin:16px 0;padding:12px 16px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:10px;text-align:left;">
-                    <div style="font-size:13px;color:#818cf8;font-weight:700;margin-bottom:8px;">🔓 Unlock to get:</div>
+                    <div style="font-size:13px;color:#818cf8;font-weight:700;margin-bottom:8px;">🔓 $19 unlocks:</div>
                     <div style="font-size:13px;color:#94a3b8;line-height:1.7;">
-                        ✓ All <strong style="color:#f1f5f9;">49 models ranked</strong> by your exact use case<br>
                         ✓ <strong style="color:#f1f5f9;">Migration code</strong> (Python, Node.js, curl) ready to paste<br>
+                        ✓ All <strong style="color:#f1f5f9;">49 models ranked</strong> by your exact use case<br>
                         ✓ <strong style="color:#f1f5f9;">24/7 price monitoring</strong> — alert when cheaper options launch<br>
                         ✓ <strong style="color:#f1f5f9;">Cost dashboard</strong> — track spending trends over time
                     </div>
                 </div>
-                <div class="unlock-text">Unlock your personalized migration plan — $19</div>
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="buy-btn" style="display:block;text-align:center;margin:0;" onclick="if(window.trackEvent)window.trackEvent('audit_buy_clicked',{savings:window._auditSavings||0,from:'migration_code_section'});">
+                    Get Migration Code — Just $19
+                </a>
+                <div style="margin-top:10px;font-size:12px;color:#64748b;text-align:center;"><span style="text-decoration:line-through;">$49</span> <span style="color:#22c55e;font-weight:700;">$19</span> flash sale · ends Jul 12</div>
             </div>
 
             <!-- Flash sale reminder -->
@@ -882,7 +898,8 @@
 
         <div class="footer">
             <a href="/">APIpulse</a> · AI API pricing for 49 models across 10 providers<br>
-            <a href="/waste-calculator.html" style="color:#ef4444;margin-top:8px;display:inline-block;">💸 Calculate your waste →</a>
+            <a href="/prices.html" style="color:#818cf8;margin-top:8px;display:inline-block;">📊 Live price tracker →</a>
+            <a href="/waste-calculator.html" style="color:#ef4444;margin-top:8px;display:inline-block;margin-left:12px;">💸 Calculate your waste →</a>
             <a href="/ai-api-cost-optimization-checklist.html" style="color:#22c55e;margin-top:8px;display:inline-block;margin-left:12px;">📋 Cost optimization checklist →</a>
             <a href="/spend-tracker.html" style="color:#6366f1;margin-top:8px;display:inline-block;margin-left:12px;">📈 Track your spend over time →</a>
         </div>
@@ -1032,12 +1049,12 @@
             document.getElementById('cheapest-annual').textContent = fmtFull(cheapestAnnual);
             document.getElementById('savings-amount').textContent = fmtFull(savingsAnnual);
 
-            // Locked recommendation
+            // Pro upsell section — show recommendation name + details
             document.getElementById('locked-model').textContent = cheapest.model.name + ' (' + cheapest.model.provider + ')';
-            document.getElementById('locked-details').textContent =
-                '$' + cheapest.model.input + '/M in · $' + cheapest.model.output + '/M out — ' + fmt(cheapest.monthlyCost) + '/mo';
+            document.getElementById('locked-details').innerHTML =
+                'At <strong style="color:#f1f5f9;">$' + cheapest.model.input + '/M input</strong> · <strong style="color:#f1f5f9;">$' + cheapest.model.output + '/M output</strong>, you\'d pay just <strong style="color:#22c55e;">' + fmt(cheapest.monthlyCost) + '/mo</strong> instead of <strong style="color:#ef4444;">' + fmt(monthlySpend) + '/mo</strong>.';
 
-            // Top 3 alternatives (blurred names — unlock to reveal)
+            // Top 3 alternatives — show names, show savings
             var top3Html = '';
             var medals = ['🥇', '🥈', '🥉'];
             for (var i = 0; i < Math.min(3, alternatives.length); i++) {
@@ -1046,11 +1063,11 @@
                 var altSavings = currentAnnual - altAnnual;
                 if (altSavings < 0) altSavings = 0;
                 top3Html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;' + (i < 2 ? 'border-bottom:1px solid #1e293b;' : '') + '">';
-                top3Html += '<div><span style="margin-right:8px;">' + medals[i] + '</span><span style="color:#f1f5f9;font-weight:700;font-size:14px;filter:blur(6px);user-select:none;">████████ ███</span></div>';
+                top3Html += '<div><span style="margin-right:8px;">' + medals[i] + '</span><span style="color:#f1f5f9;font-weight:700;font-size:14px;">' + alt.model.name + '</span> <span style="color:#64748b;font-size:12px;">(' + alt.model.provider + ')</span></div>';
                 top3Html += '<div style="text-align:right;"><span style="color:#22c55e;font-weight:700;font-size:14px;">Save ' + fmt(altSavings) + '/yr</span></div>';
                 top3Html += '</div>';
             }
-            top3Html += '<div style="text-align:center;padding:14px 0 4px;border-top:1px solid #1e293b;margin-top:8px;"><a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="color:#818cf8;font-size:13px;font-weight:700;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'audit_top3_unlock_clicked\',{savings:window._auditSavings||0});">🔓 Unlock to see which models — $19</a></div>';
+            top3Html += '<div style="text-align:center;padding:14px 0 4px;border-top:1px solid #1e293b;margin-top:8px;font-size:13px;color:#94a3b8;">Get <strong style="color:#f1f5f9;">migration code</strong> + <strong style="color:#f1f5f9;">24/7 price monitoring</strong> for all alternatives →</div>';
             document.getElementById('top3-alternatives').innerHTML = top3Html;
 
             // Cost of inaction (what they waste if they stay)
