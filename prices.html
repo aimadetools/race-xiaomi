@@ -418,6 +418,23 @@
         </div>
     </div>
 
+    <!-- Quick calculator: cheapest model for your spend -->
+    <div style="max-width:600px;margin:0 auto 24px;padding:0 24px;">
+        <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px 24px;text-align:center;">
+            <div style="font-size:13px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">⚡ Quick: cheapest model for your spend</div>
+            <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;">
+                <input type="number" id="quick-spend" placeholder="Monthly $ spend" style="padding:10px 14px;background:#0f172a;border:1px solid #334155;border-radius:10px;color:#f1f5f9;font-size:14px;width:160px;outline:none;" oninput="findCheapest()">
+                <select id="quick-tier" style="padding:10px 14px;background:#0f172a;border:1px solid #334155;border-radius:10px;color:#f1f5f9;font-size:14px;outline:none;" onchange="findCheapest()">
+                    <option value="all">Any tier</option>
+                    <option value="Budget">Budget only</option>
+                    <option value="Mid">Mid-tier only</option>
+                    <option value="Premium">Premium only</option>
+                </select>
+            </div>
+            <div id="quick-result" style="font-size:14px;color:#64748b;">Enter your monthly spend to see the cheapest option</div>
+        </div>
+    </div>
+
     <div class="controls">
         <input type="text" class="search-box" id="search" placeholder="Search models, providers..." oninput="filterTable()">
         <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">All</button>
@@ -631,6 +648,62 @@
                 grid.appendChild(a);
             });
         }
+
+        // Quick calculator: cheapest model for your spend
+        window.findCheapest = function() {
+            var spend = parseFloat(document.getElementById('quick-spend').value);
+            var tier = document.getElementById('quick-tier').value;
+            var resultEl = document.getElementById('quick-result');
+
+            if (!spend || spend <= 0) {
+                resultEl.innerHTML = 'Enter your monthly spend to see the cheapest option';
+                resultEl.style.color = '#64748b';
+                return;
+            }
+
+            if (typeof API_MODELS === 'undefined') return;
+
+            var models = API_MODELS.filter(function(m) { return !m.deprecated; });
+            if (tier !== 'all') {
+                models = models.filter(function(m) { return m.tier === tier; });
+            }
+
+            if (models.length === 0) {
+                resultEl.innerHTML = 'No models in this tier';
+                return;
+            }
+
+            // For each model, estimate how many tokens you get for your spend
+            // Assume 3:1 input:output ratio
+            var ranked = models.map(function(m) {
+                var blended = m.input * 0.75 + m.output * 0.25; // cost per 1M tokens
+                var tokensPerDollar = 1000000 / blended;
+                var totalTokens = tokensPerDollar * spend;
+                return { model: m, blended: blended, tokensPerDollar: tokensPerDollar, totalTokens: totalTokens };
+            });
+
+            // Sort by cheapest (lowest blended cost)
+            ranked.sort(function(a, b) { return a.blended - b.blended; });
+
+            var best = ranked[0];
+            var tokens = best.totalTokens;
+            var tokensStr;
+            if (tokens >= 1e9) tokensStr = (tokens / 1e9).toFixed(1) + 'B';
+            else if (tokens >= 1e6) tokensStr = (tokens / 1e6).toFixed(1) + 'M';
+            else tokensStr = tokens.toFixed(0);
+
+            resultEl.innerHTML = 'Best value: <strong style="color:#22c55e;">' + best.model.name + '</strong> (' + best.model.provider + ') — ' +
+                '<strong style="color:#f1f5f9;">' + tokensStr + ' tokens</strong> for $' + spend + '/mo ' +
+                '<span style="color:#64748b;">($' + best.blended.toFixed(2) + '/M blended)</span>';
+            resultEl.style.color = '#94a3b8';
+
+            if (window.trackEvent) window.trackEvent('quick_calc_used', { spend: spend, tier: tier, best_model: best.model.name });
+        };
+
+        // Allow Enter key on quick spend input
+        document.getElementById('quick-spend').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') findCheapest();
+        });
 
         init();
     })();
