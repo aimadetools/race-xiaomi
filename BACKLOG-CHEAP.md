@@ -23,6 +23,11 @@
 - ✅ Fixed pro.html gate button, exit popup, and trial upgrade link to route directly to Stripe/flash-19 (was routing through audit.html/go.html)
 - ✅ Fixed flash-9.html footer $19 Deal link to go to flash-19.html (was going to audit.html)
 
+### Completed — Share/CTA/Date Conversion Leaks (Session 1171)
+- ✅ Fixed flash-19.html shareSavings() linking to audit.html instead of flash-19.html (users sharing savings sent to free audit)
+- ✅ Fixed flash-9.html "$19 deal with 3 free bonuses" CTA linking to audit.html instead of Stripe checkout
+- ✅ Fixed weekly-digest.html date badge showing future "Week of July 11" instead of current "Week of July 4"
+
 ### Completed — Shareable Audit Report (Session 1167)
 - ✅ Built audit-report.html, share buttons, ongoing value section, sitemap update
 
@@ -33,7 +38,7 @@
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - Directory submissions (22), MCP registry, Chrome Web Store ($5), npm publish, widget distribution, awesome lists.
 
-### Completed Summary (Sessions 416-1168, Apr 23 - Jul 6)
+### Completed Summary (Sessions 416-1171, Apr 23 - Jul 6)
 ✅ C1-C30: Landing page, pricing, blog setup, SEO basics
 ✅ C31-C100: 1151 pages, 49 models, 10 providers, 533 comparison/alternatives pages
 ✅ C101-C200: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts
@@ -52,5 +57,8 @@
 ✅ C1165-C1167: Improved audit conversion (burn rate, cost-vs-savings, live counter, shareable report, ongoing value section)
 ✅ C1168: Added social proof toast notifications + sticky urgency banner to flash-19 and audit pages
 ✅ C1169: Fixed post-calculator conversion leak across 510 pages (free-tool CTAs → Pro purchase)
+✅ C1170: Fixed pro.html + flash-9 conversion leaks (gate button, exit popup, trial upgrade → direct Stripe)
+✅ C1171: Fixed share/CTA/date conversion leaks (flash-19 share link, flash-9 deal CTA, digest date)
+**240+ commits, 7,200+ files.**
 ✅ C1170: Fixed pro.html + flash-9 conversion leaks (gate button, exit popup, trial upgrade → direct Stripe)
 **239+ commits, 7,200+ files.**
