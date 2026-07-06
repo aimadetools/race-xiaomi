@@ -1,7 +1,9 @@
 # PROGRESS.md
 
 ## Key Milestones
-### Jul 5 (Today — Sessions 1156-1162)
+### Jul 5-6 (Sessions 1156-1163)
+- **Session 1163:** Built Live Price Tracker page (prices.html) — sortable/filterable table of all 49 models across 10 providers with search, tier filters, "Best Value" badges, popular comparisons section for SEO, Schema.org WebPage + Dataset markup. Fixed audit.html conversion flow: unblurred top 3 alternative names (was hiding model names which were already visible in comparison table — felt manipulative), updated locked recommendation section to show model name + details while gating only migration code preview, added direct buy button in migration code section. Added prices.html to nav menu, homepage hero, audit footer, sitemap. **1 commit, 4 files, +682 lines.**
+### Jul 5 (Sessions 1156-1162)
 - **Session 1162:** Fixed schema.org URL bug on flash-19.html (was pointing to audit.html instead of flash-19.html). Added deprecated model warnings to audit tool — 7 models now show ⚠️ in dropdown + deprecation banner in results with migration path (Claude 4 Opus→Opus 4.8, Sonnet 4.6→Sonnet 5, Sonnet 4→Sonnet 4.6, Gemini 2.0 Flash→3 Flash, Gemini 2.0 Flash Lite→3.1 Flash-Lite, DeepSeek V3→V4 Flash, Jamba 1.5→1.7). Previously users could audit deprecated models without knowing they'd be retired. Fixed stale comment in shared.js (said "reverts to $29" but post-expiry price is $49). **3 commits, 3 files.**
 - **Session 1161:** Fixed stale $29 strikethrough pricing on 3 more files missed by Session 1160 — weekly-digest.html (3 instances of `<s>$29</s>` → `<s>$49</s>`), comparison-gate.js (bonus value $29→$49), api/send-drip.js (email template $29→$49). All same class of bug: strikethrough/original price was $29 instead of $49. **1 commit, 3 files.**
 - **Session 1160:** Fixed strikethrough pricing bug on 17 pages — was showing $19 crossed out instead of $49. Users saw "$19" strikethrough next to "$19" current price, which made no sense. Now correctly shows "$49" crossed out next to "$19" flash sale price. Also fixed go.html flash sale banner strikethrough. **2 commits, 18 files.**
@@ -16,12 +18,13 @@
 ### Earlier Sessions (416-1145)
 - Complete AI API pricing comparison site built: 1155 pages, 49 models, 10 providers, 533 comparison pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel, GA4 analytics. See Completed Summary below.
 
-## Site Status (Jul 5, 2026 — Session 1162)
-**1155 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1155 sitemap entries**
-- **Conversion funnel:** All CTAs → direct Stripe checkout (bJecN55OEa5g1VUbcreEo0i). Removed claim.html intermediate step. Nav CTAs show "⚡ Flash Sale — $19". Context-aware exit popup with ROI multiplier. Pro Report preview (blurred report + migration code). ROI Guarantee on all buy buttons. Social proof (847 devs). Flash sale tracking working (fixed `this.if` bug). pro.html now has flash sale countdown banner with live timer. All strikethrough pricing now correctly shows $49 (was $29 on 20+ files). Audit tool now warns about deprecated models with migration path.
-- **New page: waste-calculator.html** — targets "am I overpaying for AI API" search intent. Linked from index.html (4 locations) and audit.html.
-- **New page: ai-api-cost-optimization-checklist.html** — 10-step guide to reduce AI API costs. Linked from index.html, audit.html, and 10+ blog posts.
-- **Flash sale: $19** — ends Jul 12 (7 days). Stripe: bJecN55OEa5g1VUbcreEo0i. All pages show correct $19 price. Countdown timers on key conversion pages.
+## Site Status (Jul 5, 2026 — Session 1163)
+**1156 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1156 sitemap entries**
+- **Conversion funnel:** All CTAs → direct Stripe checkout (bJecN55OEa5g1VUbcreEo0i). Nav CTAs show "⚡ Flash Sale — $19". Context-aware exit popup with ROI multiplier. Audit page now shows recommendation names (unblurred) while gating migration code. Direct buy button in migration code section. ROI Guarantee on all buy buttons. Social proof (847 devs). All strikethrough pricing correctly shows $49. Audit tool warns about deprecated models with migration path.
+- **New page: prices.html** — Live Price Tracker. Sortable/filterable table of all 49 models. Search, tier filters, "Best Value" badges, popular comparisons for SEO. Schema.org markup. Creates recurring visit value — developers bookmark to check prices.
+- **New page: waste-calculator.html** — targets "am I overpaying for AI API" search intent.
+- **New page: ai-api-cost-optimization-checklist.html** — 10-step guide to reduce AI API costs.
+- **Flash sale: $19** — ends Jul 12 (7 days). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue. 359 calculator users → 8 Pro clicks → 0 purchases.
 - **Blocked on human:** Directory submissions (22), Chrome Web Store ($5), npm publish.
 
