@@ -122,6 +122,22 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
                     window.location.href = 'flash-19.html?from=exit_popup_' + encodeURIComponent(from);
                 }
             }, true); // Use capture phase to run before the exit popup handler
+
+            // Session 1170: Intercept "Get Pro" CTAs that link to audit.html during flash sale
+            // 991 pages have purchase CTAs going to audit.html instead of Stripe/flash-19.
+            // Redirect purchase-intent CTAs to flash-19.html (the optimized flash sale page).
+            document.addEventListener('click', function(e) {
+                var cta = e.target.closest('a[href*="audit.html"]');
+                if (!cta) return;
+                // Only intercept purchase-intent CTAs, not informational "Free audit" links
+                var text = (cta.textContent || '').toLowerCase();
+                if (text.match(/get pro|flash sale|pro for \$|pro —|get apipulse|buy pro|unlock pro|get migration|save \$|stop the leak|monitor \+ save/)) {
+                    e.preventDefault();
+                    var params = new URL(cta.href, location.href).searchParams;
+                    var from = params.get('from') || location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
+                    window.location.href = 'flash-19.html?from=' + encodeURIComponent(from);
+                }
+            }, true); // Capture phase to run before other handlers
         }
 
         // Funnel tracking: Track all clicks on go.html and flash-19.html links
