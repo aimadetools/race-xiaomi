@@ -455,7 +455,7 @@
                 </div>
                 <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;">
                     <a href="#" id="qs-gate-pro-cta" class="pro-cta-btn">Unlock All Targets — $<span class="ab-price">29</span></a>
-                    <a href="#" id="qs-gate-trial" class="trial-link">Or try Pro free for 24 hours →</a>
+                    <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="color:#22c55e;font-weight:700;">⚡ Get Pro — $19 lifetime</a>
                 </div>
                 <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · Lifetime access</p>
             </div>
@@ -915,20 +915,6 @@
             });
         }
 
-        // Trial button in Pro gate
-        var trialBtn = document.getElementById('qs-gate-trial');
-        if (trialBtn) {
-            trialBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                startTrial();
-                // Re-render: unlock targets and generate code
-                updateProHint();
-                var gate = document.getElementById('qs-pro-gate');
-                if (gate) gate.classList.remove('visible');
-                generateCode();
-                if (window.trackEvent) window.trackEvent('trial_started', { source: 'quick_switch_gate' });
-            });
-        }
     });
     </script>
 
