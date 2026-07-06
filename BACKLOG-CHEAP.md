@@ -16,6 +16,9 @@
 - ✅ Added sticky urgency banner with countdown to flash-19.html
 - ✅ Fixed broken CSS variables in post-calculator CTA
 
+### Completed — Post-Calculator Conversion Leak Fix (Session 1169)
+- ✅ Replaced free-tool CTAs with Pro purchase link across 510 pages (was diverting calculator users to free audit/price alerts instead of $19 purchase)
+
 ### Completed — Shareable Audit Report (Session 1167)
 - ✅ Built audit-report.html, share buttons, ongoing value section, sitemap update
 

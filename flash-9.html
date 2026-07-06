@@ -1155,8 +1155,27 @@
     </script>
                     <!-- Post-Calculator Conversion CTA — Pro-focused, not free tools -->
                     <div id="post-calc-cta" style="margin-top:20px;padding:20px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.06));border:1px solid rgba(99,102,241,0.25);border-radius:12px;text-align:center;">
-                        <div style="font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:6px;">This was a snapshot. What about next month?</div>
-                        <div style="font-size:13px;color:#94a3b8;margin-bottom:14px;line-height:1.5;">Prices change. New models launch. Pro catches what a one-time calculation can't — 49 models, migration code, price alerts, and weekly reports.</div>
+                        <div id="post-calc-title" style="font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:6px;">This was a snapshot. What about next month?</div>
+                        <div id="post-calc-desc" style="font-size:13px;color:#94a3b8;margin-bottom:14px;line-height:1.5;">Prices change. New models launch. Pro catches what a one-time calculation can't — 49 models, migration code, price alerts, and weekly reports.</div>
+                        <script>
+                        (function() {
+                            var el = document.getElementById('savings-num');
+                            if (!el) return;
+                            var obs = new MutationObserver(function() {
+                                var txt = el.textContent || '';
+                                var match = txt.match(/\$([\d,]+)/);
+                                if (!match) return;
+                                var amount = parseInt(match[1].replace(/,/g, ''));
+                                if (amount <= 0) return;
+                                var title = document.getElementById('post-calc-title');
+                                var desc = document.getElementById('post-calc-desc');
+                                if (title) title.innerHTML = '💸 You\'re losing <span style="color:#22c55e;">$' + amount.toLocaleString() + '/yr</span> — fix it for $19';
+                                if (desc) desc.innerHTML = 'That\'s ' + Math.round(amount / 19) + 'x your investment back, every year. Pro locks in the savings with 49 models, migration code, and price alerts.';
+                                obs.disconnect();
+                            });
+                            obs.observe(el, { childList: true, characterData: true, subtree: true });
+                        })();
+                        </script>
                         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
                             <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px;box-shadow:0 4px 16px rgba(99,102,241,0.4);" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'post_calculator'})">⚡ Get Pro — $19 lifetime</a>
                             <a href="audit.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#111827;border:1px solid #334155;color:#94a3b8;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;" onclick="if(window.trackEvent)window.trackEvent('monitoring_cta_clicked',{source:'post_calculator'})">🔍 Free audit first</a>

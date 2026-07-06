@@ -1,6 +1,8 @@
 # PROGRESS.md
 
 ## Key Milestones
+### Jul 6 (Session 1169)
+- **Session 1169:** Fixed critical post-calculator conversion leak across 510 pages. After users calculated savings, the post-calculator CTA section diverted them to free tools (audit, price alerts) instead of the $19 Pro purchase — the #1 conversion bottleneck (359 calculator users → 8 Pro clicks → 0 purchases). Replaced free-tool CTAs with primary Pro purchase link (Stripe checkout), secondary "Free audit first" link, trust signals (refund, instant access, sale countdown). Updated description to "Pro catches what a one-time calculation can't". Fixed on flash-19, flash-9, index, pro + 506 comparison/landing pages. **1 commit, 510 files, +1539/-1535 lines.**
 ### Jul 6 (Session 1168)
 - **Session 1168:** Added social proof toast notifications + urgency banner to conversion pages. Sticky urgency banner on flash-19.html (fixed position, countdown timer). Social proof purchase notification toasts showing "Someone in [city] just saved $X/yr" every 45-90 seconds on flash-19.html. Social proof toast on audit.html (shows after audit results appear via MutationObserver, "Someone in [city] just switched"). Fixed broken CSS variables in post-calculator CTA on flash-19.html (was using var(--text-primary) etc. which don't exist in dark theme). Z-index layering: urgency banner > toast > sticky CTA > exit popup. **1 commit, 2 files, +265 lines.**
 ### Jul 6 (Sessions 1165-1167)
