@@ -1137,7 +1137,7 @@ async function saveEmail(e) {
                 '<div style="font-size:20px;font-weight:800;color:var(--green);">40%</div>' +
                 '<div style="font-size:11px;color:var(--text-muted);">avg. savings</div></div></div>' +
                 '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" id="pro-exit-cta" style="display:inline-block;background:' + btnColor.bg + ';color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px ' + btnColor.shadow + ';" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">' + cc.cta + '</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' on July 12 · 14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Flash sale ends Jul 12 — price goes to $' + futurePrice + ' · 14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
                 '</div>';
 
             overlay.appendChild(popup);
@@ -1307,7 +1307,11 @@ async function saveEmail(e) {
         bar.id = 'sticky-bottom-bar';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,rgba(15,15,20,0.97),rgba(25,25,35,0.97));backdrop-filter:blur(12px);border-top:1px solid rgba(99,102,241,0.3);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.3);animation:stickySlideUp 0.4s ease;';
         var stickyPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-        bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">💡 Developers using APIpulse save an average of <strong style="color:var(--green);">40% on API costs</strong></span>' +
+        var daysLeft = window.DEAL_DAYS_LEFT || 0;
+        var urgencyLabel = daysLeft <= 1 ? '⚡ FINAL HOURS — flash sale ends tonight!' :
+            daysLeft <= 3 ? '⚡ Only ' + daysLeft + ' days left — flash sale ends Jul 12' :
+            '⚡ Flash sale: $' + price + ' (reg $49) — ' + daysLeft + ' days left';
+        bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">' + urgencyLabel + '</span>' +
             '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
             '<button onclick="document.getElementById(\'sticky-bottom-bar\').remove();localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');if(window.trackEvent)window.trackEvent(\'sticky_bar_dismissed\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px;padding:4px 8px;line-height:1;" aria-label="Close">×</button>';
         document.body.appendChild(bar);
@@ -1383,7 +1387,7 @@ function renderPricingFreshness(containerId) {
             barMsg = 'Stop guessing — Pro gives data-driven cost optimization';
             ctaContext = 'sticky_bar_cost_tools';
         } else {
-            barMsg = 'Founding Member: Pro for $' + price + ' one-time <span style="opacity:0.7;font-weight:400;font-size:12px;">(goes to $' + futurePrice + ' soon)</span>';
+            barMsg = '⚡ Flash sale: Pro for $' + price + ' one-time <span style="opacity:0.7;font-weight:400;font-size:12px;">(ends Jul 12 — then $' + futurePrice + ')</span>';
             ctaContext = 'sticky_bar_default';
         }
         var stickyProPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
