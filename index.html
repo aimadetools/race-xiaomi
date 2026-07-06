@@ -752,7 +752,8 @@
                             <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px;box-shadow:0 4px 16px rgba(99,102,241,0.4);" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'post_calculator'})">⚡ Get Pro — $19 lifetime</a>
                             <a href="audit.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--bg-secondary);border:1px solid #334155;color:#94a3b8;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;" onclick="if(window.trackEvent)window.trackEvent('monitoring_cta_clicked',{source:'post_calculator'})">🔍 Free audit first</a>
                         </div>
-                        <div style="font-size:11px;color:var(--text-muted);margin-top:10px;">🛡️ 14-day refund · ⚡ Instant access · Sale ends Jul 12</div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🛡️ 14-day refund · ⚡ Instant access · <span id="calc-countdown" style="color:#ef4444;font-weight:600;">Sale ends Jul 12</span></div>
+                        <script>(function(){var e=new Date('2026-07-12T23:59:59'),c=document.getElementById('calc-countdown');function u(){var n=new Date(),d=e-n;if(d<=0){c.textContent='Sale ended';return}var dd=Math.floor(d/864e5),h=Math.floor((d%864e5)/36e5),m=Math.floor((d%36e5)/6e4);c.textContent=dd+'d '+h+'h '+m+'m left — price goes to $49';}u();setInterval(u,6e4);})();</script>
                     </div>
                     <p style="margin-top: 16px; font-size: 12px; color: var(--text-muted);">
                         Based on published API pricing. Actual costs may vary.
