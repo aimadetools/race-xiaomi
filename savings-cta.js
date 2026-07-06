@@ -99,7 +99,7 @@
                     '</div>' +
                 '</div>' +
                 '<div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">' +
-                    '<a href="' + STRIPE_LINK + '" target="_blank" rel="noopener" style="display:inline-block;padding:10px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:14px;font-weight:800;text-decoration:none;white-space:nowrap;box-shadow:0 4px 12px rgba(34,197,94,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'pro_button_clicked\',{source:\'savings_cta\'});">Get Pro — $19</a>' +
+                    '<a href="' + STRIPE_LINK + '" target="_blank" rel="noopener" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none;white-space:nowrap;box-shadow:0 4px 12px rgba(34,197,94,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'pro_button_clicked\',{source:\'savings_cta\'});">⚡ Get Pro — $19</a>' +
                     '<button onclick="dismissSavingsCTA()" style="background:none;border:none;color:#64748b;cursor:pointer;font-size:18px;padding:4px 8px;" aria-label="Close">✕</button>' +
                 '</div>' +
             '</div>';

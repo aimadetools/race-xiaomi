@@ -80,18 +80,25 @@
               '<div style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Pro shows you exactly how — with migration code for each alternative</div>'
             : '<div style="font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:16px;">See the full analysis with all alternatives ranked by cost</div>';
 
+        // Session 1175: Route directly to Stripe — no intermediate pages during flash sale
+        // Removed "Try Free for 24 Hours" trial — it was a conversion leak (users got their answer for free)
+        var buyLink = (!window.DEAL_EXPIRED)
+            ? 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'
+            : stripeLink;
+
         return '<div id="results-pro-cta" style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));border:2px solid var(--accent);border-radius:16px;padding:28px 24px;margin:24px 0;text-align:center;animation:fadeIn 0.4s ease;">' +
             '<div style="font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🔓 Unlock the full ' + toolName + '</div>' +
             savingsLine +
             '<ul style="list-style:none;margin:0 0 20px;padding:0;text-align:left;max-width:360px;margin-left:auto;margin-right:auto;">' + featuresHtml + '</ul>' +
             '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">' +
-            '<button onclick="startTrial()" style="display:inline-block;background:var(--green);color:#000;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:800;border:none;cursor:pointer;transition:all 0.2s;">Try Free for 24 Hours</button>' +
-            '<a href="go.html?from=' + encodeURIComponent(fromPage) + '_results_cta" target="_blank" rel="noopener" ' +
-            'style="display:inline-block;background:transparent;border:2px solid var(--accent);color:var(--accent);padding:14px 32px;border-radius:10px;font-size:16px;font-weight:800;text-decoration:none;transition:all 0.2s;">' +
-            'Get Pro — $' + price + ' lifetime</a>' +
+            '<a href="' + buyLink + '" target="_blank" rel="noopener" ' +
+            'style="display:inline-block;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;padding:16px 40px;border-radius:10px;font-size:17px;font-weight:800;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" ' +
+            'onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'" ' +
+            'onclick="if(window.trackEvent)window.trackEvent(\'results_cta_clicked\',{tool:\'' + toolName + '\',price:' + price + '})">' +
+            '⚡ Get Pro — $' + price + ' lifetime</a>' +
             '</div>' +
             '<div style="margin-top:12px;"><a href="pro-demo.html?from=' + encodeURIComponent(fromPage) + '_results_demo" style="font-size:13px;color:#818cf8;font-weight:600;text-decoration:none;">🎮 Or try the free Pro Demo first — see all 49 models →</a></div>' +
-            '<div style="font-size:12px;color:var(--text-muted);margin-top:8px;">No credit card required · 14-day money-back guarantee · Instant access</div>' +
+            '<div style="font-size:12px;color:var(--text-muted);margin-top:8px;">One-time payment · 14-day money-back guarantee · Instant access</div>' +
             '</div>';
     }
 
