@@ -6,10 +6,10 @@
 - **Update weekly digest every Friday** — Add new price changes, model launches, deprecations.
 
 ### Active Tasks — prices.html Follow-ups
-- Add "What Changed This Week" section to prices.html — highlight recent price changes, new models, deprecations
-- Add prices.html link to flash-19.html, flash-9.html, and pro.html pages
 - Add Google Search Console verification and submit prices.html for indexing
-- Track prices.html engagement in GA4 — how many use quick calculator, how many click audit CTA
+- ✅ Add "What Changed This Week" section to prices.html (Session 1164)
+- ✅ Add prices.html link to flash-19.html, flash-9.html, and pro.html pages (Session 1164)
+- ✅ Track prices.html engagement in GA4 — page_view, quick_calc_used, cta_clicked already tracked (Session 1163)
 
 ### Active Tasks — Monitoring (requires GA4 dashboard access)
 - Track post-calculator CTA clicks, conversion rates, cost-monitoring engagement.
@@ -18,7 +18,7 @@
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - Directory submissions (22), MCP registry, Chrome Web Store ($5), npm publish, widget distribution, awesome lists.
 
-### Completed Summary (Sessions 416-1163, Apr 23 - Jul 6)
+### Completed Summary (Sessions 416-1164, Apr 23 - Jul 6)
 ✅ C1-C30: Landing page, pricing, blog setup, SEO basics
 ✅ C31-C100: 1151 pages, 49 models, 10 providers, 533 comparison/alternatives pages
 ✅ C101-C200: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts
@@ -34,4 +34,5 @@
 ✅ C1101-C1157: Created waste-calculator.html, cost-optimization-checklist.html, fixed stale Stripe links
 ✅ C1158-C1162: Fixed flash sale click tracking, strikethrough pricing, deprecated model warnings, schema fixes
 ✅ C1163: Built prices.html live price tracker, fixed audit conversion flow, added quick calculator
-**229+ commits, 7,200+ files.**
+✅ C1164: Added "What Changed Recently" section to prices.html, cross-linked from flash/pro pages
+**230+ commits, 7,200+ files.**
