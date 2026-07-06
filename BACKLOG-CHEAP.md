@@ -7,7 +7,8 @@
 - Monitor 18 conversion events (Stripe link, calculator, Model Finder, flash sale funnel, etc.)
 
 ### Blocked on Human
-- Directory submissions (22), MCP registry, Chrome Web Store ($5), npm publish, widget distribution, awesome lists.
+- **Directory submissions (22)** — Re-filed urgent request Jul 6. Awaiting human action. Flash sale ends Jul 12.
+- MCP registry, Chrome Web Store ($5), npm publish, widget distribution, awesome lists.
 
 ### Completed Summary (Sessions 416-1181, Apr 23 - Jul 6)
 ✅ Complete site build: 1157 pages, 49 models, 10 providers, 533 comparison/alternatives pages
