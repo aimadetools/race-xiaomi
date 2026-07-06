@@ -429,6 +429,52 @@
         }
         .footer a { color: #475569; }
 
+        /* Social proof toast */
+        .audit-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            z-index: 10000;
+            transform: translateY(120%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            max-width: 320px;
+        }
+        .audit-toast.show { transform: translateY(0); }
+        .audit-toast .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #22c55e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .audit-toast .text {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.4;
+        }
+        .audit-toast .text strong { color: #f1f5f9; }
+        .audit-toast .text .time {
+            font-size: 11px;
+            color: #64748b;
+            display: block;
+            margin-top: 2px;
+        }
+        @media (max-width: 640px) {
+            .audit-toast { left: 12px; right: 12px; max-width: none; }
+        }
+
         /* Exit popup */
         .exit-overlay {
             display: none;
@@ -1285,7 +1331,58 @@
                 }
             });
         })();
+
+        // Social proof toast — shows after audit results appear
+        (function() {
+            var cities = ['San Francisco', 'New York', 'London', 'Berlin', 'Tokyo', 'Toronto', 'Sydney', 'Austin', 'Seattle', 'Chicago'];
+            var actions = ['just switched from GPT-5 to DeepSeek', 'saved $4,800/yr by switching models', 'just ran their team audit', 'saved $12,200/yr on API costs', 'switched to Claude Haiku 4.5', 'found $8,400 in annual savings'];
+            var avatars = ['👨‍💻', '👩‍💻', '🧑‍💻', '👨‍🔬', '👩‍🔬', '🧑‍🚀'];
+            var toast = document.getElementById('audit-toast');
+            var textEl = document.getElementById('at-text');
+            var timeEl = document.getElementById('at-time');
+            var avatarEl = document.getElementById('at-avatar');
+            var toastStarted = false;
+
+            function showAuditToast() {
+                var city = cities[Math.floor(Math.random() * cities.length)];
+                var action = actions[Math.floor(Math.random() * actions.length)];
+                var avatar = avatars[Math.floor(Math.random() * avatars.length)];
+                var minutes = Math.floor(Math.random() * 20) + 1;
+
+                textEl.innerHTML = 'Someone in <strong>' + city + '</strong> ' + action;
+                timeEl.textContent = minutes + ' min ago';
+                avatarEl.textContent = avatar;
+
+                toast.classList.add('show');
+                if (window.trackEvent) window.trackEvent('audit_social_proof_shown', { city: city });
+
+                setTimeout(function() { toast.classList.remove('show'); }, 5000);
+            }
+
+            // Watch for audit results appearing — show toast 5 seconds later
+            var observer = new MutationObserver(function() {
+                var results = document.getElementById('results');
+                if (results && results.classList.contains('visible') && !toastStarted) {
+                    toastStarted = true;
+                    setTimeout(showAuditToast, 5000);
+                    setInterval(function() {
+                        if (!document.hidden) showAuditToast();
+                    }, 60000 + Math.floor(Math.random() * 60000));
+                }
+            });
+            var resultsEl = document.getElementById('results');
+            if (resultsEl) observer.observe(resultsEl, { attributes: true, attributeFilter: ['class'] });
+        })();
     </script>
+
+    <!-- Social proof toast -->
+    <div class="audit-toast" id="audit-toast">
+        <div class="avatar" id="at-avatar">👨‍💻</div>
+        <div class="text">
+            <span id="at-text">Someone just switched models</span>
+            <span class="time" id="at-time">2 minutes ago</span>
+        </div>
+    </div>
 
     <!-- Exit popup -->
     <div class="exit-overlay" id="exit-popup" onclick="if(event.target===this)this.classList.remove('show')">
