@@ -60,11 +60,9 @@
             '<h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">You\'ve used all 3 free calculations</h2>' +
             '<p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:24px;">Upgrade to <strong>Pro</strong> for unlimited calculations, saved scenarios, cost reports, and optimization recommendations that save you up to 40%.</p>' +
             '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;">' +
-                '<a href="' + (!window.DEAL_EXPIRED ? 'flash-19.html?from=usage_gate' : 'go.html?from=usage_gate') + '" style="display:block;padding:14px 24px;background:var(--accent);color:white;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:transform 0.2s;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'" onclick="if(window.trackEvent)window.trackEvent(\'usage_gate_upgrade_clicked\',{source:\'wall\',price:' + price + '})">Get Pro — $' + price + ' lifetime</a>' +
-                '<button onclick="if(typeof startTrial===\'function\')startTrial();dismissUsageGate();" style="padding:12px 24px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background=\'rgba(99,102,241,0.1)\'" onmouseout="this.style.background=\'transparent\'">Try Free for 24 Hours</button>' +
+                '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:block;padding:14px 24px;background:var(--accent);color:white;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:transform 0.2s;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'" onclick="if(window.trackEvent)window.trackEvent(\'usage_gate_upgrade_clicked\',{source:\'wall\',price:19})">⚡ Get Pro — $19 lifetime</a>' +
             '</div>' +
-            '<p style="margin-top:16px;"><a href="pro-demo.html?from=usage_gate" style="font-size:13px;color:#818cf8;font-weight:600;text-decoration:none;">🎮 Or try the free Pro Demo first — see all 49 models →</a></p>' +
-            '<p style="font-size:13px;color:var(--text-muted);margin-top:8px;">No credit card needed for trial · 14-day money-back guarantee</p>' +
+            '<p style="font-size:13px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · Instant access</p>' +
         '</div>';
 
         document.body.appendChild(wall);

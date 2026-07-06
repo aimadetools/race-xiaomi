@@ -97,7 +97,6 @@
             'onclick="if(window.trackEvent)window.trackEvent(\'results_cta_clicked\',{tool:\'' + toolName + '\',price:' + price + '})">' +
             '⚡ Get Pro — $' + price + ' lifetime</a>' +
             '</div>' +
-            '<div style="margin-top:12px;"><a href="pro-demo.html?from=' + encodeURIComponent(fromPage) + '_results_demo" style="font-size:13px;color:#818cf8;font-weight:600;text-decoration:none;">🎮 Or try the free Pro Demo first — see all 49 models →</a></div>' +
             '<div style="font-size:12px;color:var(--text-muted);margin-top:8px;">One-time payment · 14-day money-back guarantee · Instant access</div>' +
             '</div>';
     }

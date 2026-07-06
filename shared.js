@@ -1480,28 +1480,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// Auto-inject trial buttons next to existing Pro CTAs — runs on ALL pages (not just blog)
-document.addEventListener('DOMContentLoaded', function() {
-    if (typeof startTrial === 'function') {
-        document.querySelectorAll('a[href*="buy.stripe.com"], a[href*="pricing.html"], a[href*="go.html"]').forEach(function(a) {
-            var text = (a.textContent || '').trim();
-            if (!text.match(/Get Pro|Unlock Pro|Buy Pro|Pro — \$|Pro —/i)) return;
-            // Don't add if already has a trial button next to it
-            var next = a.nextElementSibling;
-            if (next && next.tagName === 'BUTTON' && next.textContent.indexOf('Free') !== -1) return;
-            // Also check parent for existing trial button
-            if (a.parentElement && a.parentElement.querySelector('button[onclick*="startTrial"]')) return;
-            var btn = document.createElement('button');
-            btn.onclick = function() {
-                startTrial();
-                if (window.trackEvent) window.trackEvent('trial_started', { source: 'auto_cta_' + (a.className || 'link') });
-            };
-            btn.style.cssText = 'display:inline-block;padding:8px 16px;font-size:13px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;cursor:pointer;transition:all 0.2s;margin-left:8px;vertical-align:middle;';
-            btn.textContent = 'Try Free 24h';
-            a.insertAdjacentElement('afterend', btn);
-        });
-    }
-});
+// Session 1177: Removed auto-inject trial buttons — they were a conversion leak.
+// Trial gave away free Pro access, removing the reason to pay $19.
 
 // Live cost-of-inaction ticker — auto-initializes on any page with #cost-ticker-amount
 // Shows money lost per second since Claude 4 shutdown (based on $500/mo default spend)
