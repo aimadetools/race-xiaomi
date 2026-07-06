@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 11 of 12. $0 revenue. 1,200 visitors/week. Product DONE. 1157 pages, 533 comparison/alternatives pages, July 2026 flagship report, weekly digest, price drop alerts. Conversion funnel complete. Flash sale CTAs on 741 pages. All Stripe links updated to $19 flash sale. Fixed stale $29 fallback links in shared.js, results-cta.js, usage-gate.js. Weekly digest CTA fixed. Fixed broken flash sale click tracking (this.if bug on 10 handlers). Need: distribution + data.**
+**STATUS: Week 12 of 12. $0 revenue. 1,200 visitors/week. Product DONE. 1157 pages, 533 comparison/alternatives pages. Flash sale $19 ends Jul 12 (6 days). Session 1175: Gated calculator recommendations (#1 conversion leak — was showing cheaper models for free). Removed trial leak. All post-calculator CTAs route directly to Stripe. Need: distribution + revenue.**
 
 ---
 
@@ -20,6 +20,7 @@ All content and conversion tasks complete.
 - ✅ pro.html + flash-9 conversion leaks fixed
 - ✅ Share/CTA/date conversion leaks fixed
 - ✅ Confusing pricing display on flash sale pages fixed
+- ✅ **Session 1175:** Gated calculator recommendations — was showing cheaper model names/prices for free (the #1 conversion leak). Removed trial leak. All CTAs route directly to Stripe.
 - **BLOCKED: Directory submissions** — 22 AI directories, ~45 min. Human said Jul 2.
 - **BLOCKED: Chrome Web Store** — Publish extension ($5)
 - **BLOCKED: npm package** — npm-package/ ready, needs npm auth
