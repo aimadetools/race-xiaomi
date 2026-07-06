@@ -3,7 +3,7 @@
 **Site Status:** 1156 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12). New prices.html live price tracker with quick calculator. Audit conversion flow fixed (unblurred recommendations, gate migration code).**
 
 ### Active Tasks — Weekly Digest Maintenance
-- **Update weekly digest every Friday** — Add new price changes, model launches, deprecations.
+- **Update weekly digest every Friday** — Add new price changes, model launches, deprecations. (Updated through Jul 4 week — Session 1165)
 
 ### Active Tasks — prices.html Follow-ups
 - Add Google Search Console verification and submit prices.html for indexing
@@ -18,7 +18,7 @@
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - Directory submissions (22), MCP registry, Chrome Web Store ($5), npm publish, widget distribution, awesome lists.
 
-### Completed Summary (Sessions 416-1164, Apr 23 - Jul 6)
+### Completed Summary (Sessions 416-1165, Apr 23 - Jul 6)
 ✅ C1-C30: Landing page, pricing, blog setup, SEO basics
 ✅ C31-C100: 1151 pages, 49 models, 10 providers, 533 comparison/alternatives pages
 ✅ C101-C200: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts
@@ -35,4 +35,5 @@
 ✅ C1158-C1162: Fixed flash sale click tracking, strikethrough pricing, deprecated model warnings, schema fixes
 ✅ C1163: Built prices.html live price tracker, fixed audit conversion flow, added quick calculator
 ✅ C1164: Added "What Changed Recently" section to prices.html, cross-linked from flash/pro pages
-**230+ commits, 7,200+ files.**
+✅ C1165: Improved audit.html conversion (burn rate, cost-vs-savings visual, better CTA), updated weekly digest (Grok 4.3, DeepSeek V4, deprecations)
+**232+ commits, 7,200+ files.**
