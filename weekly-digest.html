@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Pricing Digest — Week of Jul 4, 2026 | APIpulse</title>
-    <meta name="description" content="This week in AI API pricing: 5 new models, Grok 4.3 83% price cut, 7 models deprecated, Claude Sonnet 5 launch. Budget models hit $0.08/1M input. Flash sale $19.">
-    <meta property="og:title" content="API Pricing Digest — Week of Jul 4, 2026">
-    <meta property="og:description" content="5 new models, Grok 4.3 83% price cut, 7 deprecated, Sonnet 5 launch. Budget models at $0.08/1M input. Stay on top of AI API pricing changes.">
+    <title>API Pricing Digest — Final Week: Flash Sale Ends Jul 12 | APIpulse</title>
+    <meta name="description" content="FINAL WEEK: APIpulse Pro flash sale ends Jul 12. Lifetime access $19 (reg $49). 49 models, 10 providers, price alerts, migration code. Plus: this week's pricing recap.">
+    <meta property="og:title" content="API Pricing Digest — Final Week: Flash Sale Ends Jul 12">
+    <meta property="og:description" content="FINAL WEEK: APIpulse Pro flash sale ends Jul 12. Lifetime access $19 (reg $49). 49 models, 10 providers, price alerts, migration code.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://getapipulse.com/weekly-digest.html">
     <meta name="twitter:card" content="summary_large_image">
@@ -288,9 +288,9 @@
 
     <!-- Hero -->
     <section class="digest-hero">
-        <div class="date-badge">📅 Week of July 4, 2026</div>
+        <div class="date-badge">📅 Week of July 11, 2026</div>
         <h1>API Pricing Digest</h1>
-        <p>What changed in AI API pricing this week — and what it means for your budget.</p>
+        <p>What changed in AI API pricing — and <strong style="color:var(--red);">last chance</strong> to grab Pro at the flash sale price.</p>
     </section>
 
     <!-- Content -->
@@ -298,25 +298,44 @@
 
         <!-- TL;DR -->
         <div class="tldr-box">
-            <h2>TL;DR</h2>
+            <h2>🚨 TL;DR — Final Week</h2>
             <ul>
-                <li><strong>5 new models</strong> — GPT-5.4 mini, GPT-5.4 Pro, Gemini 3.1 Flash-Lite, GPT-oss 120B, and DeepSeek V4 Flash all launched</li>
-                <li><strong>Grok 4.3 massive price cut</strong> — xAI slashed Grok 3 → Grok 4.3 output pricing by 83% ($15 → $2.50/1M tokens)</li>
-                <li><strong>Claude Sonnet 5 arrives</strong> — same price as Sonnet 4.6 ($3/$15) with 1M context window. 7 models deprecated.</li>
-                <li><strong>Budget tier keeps dropping</strong> — GPT-oss 20B at $0.08/1M input is now the cheapest major-provider model</li>
-                <li><strong>Flash sale</strong> — APIpulse Pro lifetime access <s>$49</s> <strong>$19</strong> through Jul 12</li>
+                <li><strong>Flash sale ends Jul 12</strong> — APIpulse Pro lifetime access <s>$49</s> <strong style="color:#22c55e;">$19</strong>. Price goes to $49 forever after Saturday.</li>
+                <li><strong>No new pricing changes</strong> this week — the market held steady after last week's 5 new models and Grok 4.3's 83% price cut</li>
+                <li><strong>7 deprecated models</strong> still need migration — Claude 4 Opus, Sonnet 4, Gemini 2.0 Flash, DeepSeek V3, and 3 others are being retired. <a href="/audit.html" style="color:var(--accent);">Check if yours is affected →</a></li>
+                <li><strong>Budget models at all-time lows</strong> — GPT-oss 20B ($0.08/1M), Mistral Small ($0.10), Gemini Flash-Lite ($0.10). If you haven't audited in 3 months, you're overpaying.</li>
             </ul>
         </div>
 
-        <!-- Flash Sale -->
-        <div class="deal-banner">
-            <div class="deal-icon">🔥</div>
+        <!-- Flash Sale — LAST CALL -->
+        <div class="deal-banner" style="border-color:rgba(239,68,68,0.5);background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(245,158,11,0.08));">
+            <div class="deal-icon">🚨</div>
             <div>
-                <h3>Flash Sale: APIpulse Pro — <s>$49</s> $19</h3>
-                <p>Lifetime access to all premium tools: price alerts, cost monitoring, comparison gates, and every future update. Sale ends Jul 12.</p>
-                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" class="btn-primary" onclick="window.trackEvent('digest_flash_click', {'source': 'weekly-digest'})">Get Pro for $19 →</a>
+                <h3 style="color:#ef4444;">FINAL WEEK — Flash Sale Ends <span id="digest-countdown" style="font-family:monospace;">Jul 12</span></h3>
+                <p>APIpulse Pro lifetime access for <s>$49</s> <strong style="color:#22c55e;">$19</strong>. Price monitoring for 49 models, migration code, cost dashboard. After Jul 12 it's $49 — forever.</p>
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" class="btn-primary" style="background:linear-gradient(135deg,#ef4444,#dc2626);" onclick="if(window.trackEvent)window.trackEvent('digest_flash_click',{source:'weekly-digest-final'});">Get Pro for $19 — Last Chance →</a>
+                <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">🔒 Stripe secure · 14-day refund · Instant access</div>
             </div>
         </div>
+
+        <!-- Urgency countdown script -->
+        <script>
+        (function(){
+            var deadline = new Date('2026-07-12T23:59:59Z').getTime();
+            var el = document.getElementById('digest-countdown');
+            function update() {
+                var diff = deadline - Date.now();
+                if (diff <= 0) { el.textContent = 'EXPIRED'; el.style.color='#ef4444'; return; }
+                var d = Math.floor(diff / 86400000);
+                var h = Math.floor((diff % 86400000) / 3600000);
+                var m = Math.floor((diff % 3600000) / 60000);
+                el.textContent = d + 'd ' + h + 'h ' + m + 'm';
+                if (d <= 2) el.style.color = '#ef4444';
+            }
+            update();
+            setInterval(update, 60000);
+        })();
+        </script>
 
         <!-- New Models -->
         <div class="section-header">
@@ -419,6 +438,14 @@
             </div>
         </div>
 
+        <!-- Mid-page audit CTA -->
+        <div style="text-align:center;margin:40px 0;padding:28px 24px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.06));border:1px solid rgba(99,102,241,0.2);border-radius:var(--radius);">
+            <div style="font-size:14px;color:var(--accent);font-weight:700;margin-bottom:8px;">Are you on a deprecated model? Are you overpaying?</div>
+            <p style="color:var(--text-secondary);margin-bottom:16px;font-size:15px;">Run a free 30-second audit of your current API model. See exactly how much you could save — and get migration code if you need to switch.</p>
+            <a href="/audit.html" class="btn-primary" style="display:inline-block;">Run My Free Audit →</a>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">Takes 30 seconds · No signup required · See savings instantly</div>
+        </div>
+
         <!-- Subscribe -->
         <div class="subscribe-box">
             <h3>📬 Don't miss next week's changes</h3>
@@ -434,16 +461,19 @@
         <div class="past-digests">
             <h3>📚 Past Digests</h3>
             <ul>
+                <li><strong>Week of Jul 11, 2026</strong> — Flash sale FINAL WEEK, last chance at $19 (current)</li>
                 <li><a href="/weekly-digest.html">Week of Jul 4, 2026</a> — 5 new models, Grok 4.3 price cut, 7 deprecations, Sonnet 5</li>
             </ul>
             <p style="font-size: 14px; margin-top: 16px;"><a href="/digest-archive.html" style="color: var(--accent); font-weight: 600;">Browse full archive →</a></p>
         </div>
 
-        <!-- CTA -->
-        <div style="text-align: center; margin-top: 48px; padding: 32px; background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border);">
-            <h3 style="margin-bottom: 8px;">Track every price change automatically</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 20px;">APIpulse Pro monitors 49 models across 10 providers. Get alerts when prices drop — or when your costs are about to increase.</p>
-            <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" class="btn-primary" onclick="window.trackEvent('digest_bottom_cta', {'source': 'weekly-digest'})">Get Pro for <s>$49</s> $19 →</a>
+        <!-- CTA — Final Week -->
+        <div style="text-align: center; margin-top: 48px; padding: 32px; background: linear-gradient(135deg,rgba(239,68,68,0.06),rgba(245,158,11,0.04)); border-radius: var(--radius); border: 1px solid rgba(239,68,68,0.2);">
+            <div style="font-size:13px;color:#ef4444;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">⏰ Last Chance — Flash sale ends Jul 12</div>
+            <h3 style="margin-bottom: 8px;">Stop checking 49 models manually</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">APIpulse Pro monitors every model across 10 providers. Get alerts when prices drop, migration code ready to paste, and a cost dashboard to track savings. Lifetime access — one payment.</p>
+            <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" class="btn-primary" style="background:linear-gradient(135deg,#ef4444,#dc2626);" onclick="if(window.trackEvent)window.trackEvent('digest_bottom_cta',{source:'weekly-digest-final'});">Get Pro for <s>$49</s> $19 — Last Chance →</a>
+            <div style="margin-top:12px;font-size:13px;color:var(--text-muted);">One-time payment · Lifetime access · <span style="color:#ef4444;font-weight:600;">Price goes to $49 after Jul 12</span></div>
         </div>
     </div>
 
