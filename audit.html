@@ -58,6 +58,15 @@
             margin: 0 auto;
         }
 
+        /* Live counter pulse animation */
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        #live-lost-counter {
+            animation: livePulse 2s ease-in-out infinite;
+        }
+
         /* Header */
         .header {
             text-align: center;
@@ -758,11 +767,12 @@
                 <div style="margin-top:10px;font-size:12px;color:#64748b;text-align:center;"><span style="text-decoration:line-through;">$49</span> <span style="color:#22c55e;font-weight:700;">$19</span> flash sale · ends Jul 12</div>
             </div>
 
-            <!-- Personalized urgency — monthly burn rate -->
-            <div style="background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(249,115,22,0.08));border:1px solid rgba(239,68,68,0.3);border-radius:14px;padding:18px 20px;margin-bottom:20px;text-align:center;">
-                <div style="font-size:14px;color:#94a3b8;margin-bottom:6px;">⏱️ While you're deciding, you're losing</div>
-                <div style="font-size:36px;font-weight:900;color:#ef4444;margin-bottom:4px;" id="burn-rate">$0<span style="font-size:16px;font-weight:600;">/month</span></div>
-                <div style="font-size:13px;color:#94a3b8;">That's <strong style="color:#f1f5f9;" id="burn-daily">$0/day</strong> on a model that has a cheaper equivalent. <span id="burn-weeknote" style="color:#ef4444;font-weight:600;"></span></div>
+            <!-- Live money-lost counter — ticks up in real time -->
+            <div style="background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(249,115,22,0.08));border:1px solid rgba(239,68,68,0.3);border-radius:14px;padding:18px 20px;margin-bottom:20px;text-align:center;position:relative;overflow:hidden;">
+                <div style="font-size:14px;color:#94a3b8;margin-bottom:6px;">⏱️ Since you opened these results, you've lost</div>
+                <div style="font-size:42px;font-weight:900;color:#ef4444;margin-bottom:4px;font-family:monospace;letter-spacing:-1px;" id="live-lost-counter">$0.00</div>
+                <div style="font-size:13px;color:#94a3b8;margin-bottom:2px;">That's <strong style="color:#ef4444;font-family:monospace;" id="burn-rate-live">$0/month</strong> you're overpaying — <strong style="color:#f1f5f9;" id="burn-daily">$0/day</strong> wasted on a model with a cheaper equivalent.</div>
+                <div id="burn-weeknote" style="font-size:12px;color:#ef4444;font-weight:600;margin-top:4px;"></div>
             </div>
 
             <!-- Flash sale reminder -->
@@ -1110,17 +1120,33 @@
             var monthlyLoss = Math.round(savingsAnnual / 12);
             document.getElementById('monthly-loss').textContent = fmtFull(monthlyLoss);
 
-            // Burn rate personalization
+            // Live money-lost counter — ticks up in real time
             var dailyBurn = (monthlyLoss / 30).toFixed(2);
-            document.getElementById('burn-rate').innerHTML = fmtFull(monthlyLoss) + '<span style="font-size:16px;font-weight:600;">/month</span>';
+            document.getElementById('burn-rate-live').textContent = fmtFull(monthlyLoss) + '/month';
             document.getElementById('burn-daily').textContent = '$' + dailyBurn + '/day';
             if (monthlyLoss >= 100) {
-                document.getElementById('burn-weeknote').textContent = 'That\'s ' + fmt(monthlyLoss * 12) + '/yr you could save.';
+                document.getElementById('burn-weeknote').textContent = 'That\'s ' + fmt(monthlyLoss * 12) + '/yr you\'re overpaying.';
             } else if (monthlyLoss >= 20) {
                 document.getElementById('burn-weeknote').textContent = fmt(Math.round(monthlyLoss * 3)) + ' lost every quarter.';
             } else {
                 document.getElementById('burn-weeknote').textContent = '';
             }
+
+            // Start live ticking counter
+            if (window._burnInterval) clearInterval(window._burnInterval);
+            var lossPerSec = monthlyLoss / 30 / 24 / 60 / 60;
+            var startTime = Date.now();
+            var counterEl = document.getElementById('live-lost-counter');
+            window._burnInterval = setInterval(function() {
+                var elapsed = (Date.now() - startTime) / 1000;
+                var lost = lossPerSec * elapsed;
+                if (lost < 0.01) {
+                    // Show sub-cent amounts for small losses
+                    counterEl.textContent = '$' + lost.toFixed(3);
+                } else {
+                    counterEl.textContent = '$' + lost.toFixed(2);
+                }
+            }, 200);
 
             // Show results, hide form
             document.getElementById('audit-form').style.display = 'none';
