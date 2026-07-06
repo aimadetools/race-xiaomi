@@ -17,7 +17,10 @@
 ### Earlier Sessions (416-1150)
 - Flash sale launch ($19 pricing, 741 pages with urgency CTAs). Complete site build: 1155 pages, 49 models, 10 providers, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel, GA4 analytics. **200+ commits, 7,000+ files.**
 
-## Site Status (Jul 6, 2026 — Session 1172)
+### Jul 6 (Session 1173)
+- Cleaned up PROGRESS.md — summarized session milestones, collapsed completed backlog tasks into summary lines. Fixed stale model names in cost optimization checklist (Claude 3.5 Haiku → Haiku 4.5, Sonnet 4 → Sonnet 5, Gemini 2.5 Flash → 3 Flash, Opus 4 → Opus 4.8). **2 commits, 4 files.**
+
+## Site Status (Jul 6, 2026 — Session 1173)
 **1157 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1157 sitemap entries**
 - **Conversion funnel:** All CTAs → direct Stripe checkout (bJecN55OEa5g1VUbcreEo0i). Nav CTAs show "⚡ Flash Sale — $19". Context-aware exit popup with ROI multiplier. Post-calculator CTA on 510+ pages leads with Pro purchase. Purchase-intent CTAs on 991 pages redirect to flash-19.html. Personalized savings on flash-19/flash-9. Social proof toast notifications on flash-19 and audit pages. Sticky urgency banner on flash-19. Audit page: live money-lost counter, personalized burn rate, cost-vs-savings visual, shareable audit report. Pro.html conversion leaks fixed.
 - **audit-report.html** — Shareable audit results page. URL-based (?model=X&spend=Y).
