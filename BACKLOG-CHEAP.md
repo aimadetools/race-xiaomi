@@ -28,6 +28,10 @@
 - ✅ Fixed flash-9.html "$19 deal with 3 free bonuses" CTA linking to audit.html instead of Stripe checkout
 - ✅ Fixed weekly-digest.html date badge showing future "Week of July 11" instead of current "Week of July 4"
 
+### Completed — Pricing Display Fix (Session 1172)
+- ✅ Fixed flash-19.html confusing "Regular: $19" label → "Regular price: $49 · Flash sale: $19"
+- ✅ Fixed flash-9.html same pricing label + incorrect savings badge ("Save $10" → "Save $30")
+
 ### Completed — Shareable Audit Report (Session 1167)
 - ✅ Built audit-report.html, share buttons, ongoing value section, sitemap update
 
@@ -59,6 +63,5 @@
 ✅ C1169: Fixed post-calculator conversion leak across 510 pages (free-tool CTAs → Pro purchase)
 ✅ C1170: Fixed pro.html + flash-9 conversion leaks (gate button, exit popup, trial upgrade → direct Stripe)
 ✅ C1171: Fixed share/CTA/date conversion leaks (flash-19 share link, flash-9 deal CTA, digest date)
-**240+ commits, 7,200+ files.**
-✅ C1170: Fixed pro.html + flash-9 conversion leaks (gate button, exit popup, trial upgrade → direct Stripe)
-**239+ commits, 7,200+ files.**
+✅ C1172: Fixed confusing pricing display on flash sale pages (regular price label + savings badge)
+**241+ commits, 7,200+ files.**
