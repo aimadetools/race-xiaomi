@@ -821,6 +821,28 @@
                 <div class="feat"><span class="check">✓</span> <strong>Lifetime updates</strong> — one payment, forever. New models added automatically.</div>
             </div>
 
+            <!-- Ongoing value — why this isn't just a calculator -->
+            <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.06));border:2px solid rgba(99,102,241,0.25);border-radius:14px;padding:20px 24px;margin-bottom:20px;">
+                <div style="text-align:center;margin-bottom:14px;">
+                    <div style="font-size:11px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">This isn't just a one-time calculator</div>
+                    <div style="font-size:16px;font-weight:800;color:#f1f5f9;">Pro keeps working after you buy</div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr;gap:10px;">
+                    <div style="display:flex;align-items:center;gap:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:12px 14px;">
+                        <span style="font-size:20px;">🔔</span>
+                        <div><div style="font-size:13px;font-weight:700;color:#f1f5f9;">Price drop alerts</div><div style="font-size:12px;color:#94a3b8;">Get emailed when a cheaper model launches for your use case</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:12px 14px;">
+                        <span style="font-size:20px;">📈</span>
+                        <div><div style="font-size:13px;font-weight:700;color:#f1f5f9;">Cost monitoring</div><div style="font-size:12px;color:#94a3b8;">Track spending trends over time — spot cost spikes before they hit</div></div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:12px 14px;">
+                        <span style="font-size:20px;">📰</span>
+                        <div><div style="font-size:13px;font-weight:700;color:#f1f5f9;">Weekly pricing report</div><div style="font-size:12px;color:#94a3b8;">Every price change, new model, deprecation — in your inbox</div></div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Cost of inaction -->
             <div style="background:linear-gradient(135deg,rgba(239,68,68,0.06),rgba(249,115,22,0.04));border:1px solid rgba(239,68,68,0.15);border-radius:14px;padding:20px 24px;margin-bottom:24px;text-align:center;">
                 <div style="font-size:13px;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">If you do nothing</div>
@@ -874,6 +896,17 @@
                 </a>
                 <div style="margin-top:12px;font-size:13px;color:#22c55e;font-weight:600;">💰 ROI Guarantee: Save $19+ in year 1 or get a full refund</div>
                 <div style="margin-top:8px;font-size:13px;color:#94a3b8;">⚡ 847 developers already switched · <span style="color:#ef4444;font-weight:600;">Flash sale ends Jul 12</span></div>
+            </div>
+
+            <!-- Share your results -->
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px 24px;margin-bottom:20px;text-align:center;">
+                <div style="font-size:13px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">📤 Share your results</div>
+                <p style="font-size:14px;color:#94a3b8;margin-bottom:14px;line-height:1.5;">Send this audit to your team — <strong style="color:#f1f5f9;">show them how much you could save together</strong>.</p>
+                <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+                    <button onclick="shareAuditReport()" style="padding:10px 18px;background:#1e293b;border:1px solid #334155;color:#94a3b8;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">📋 Copy shareable link</button>
+                    <a id="share-audit-twitter" href="#" target="_blank" rel="noopener" style="padding:10px 18px;background:#1d9bf0;color:white;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">𝕏 Tweet</a>
+                </div>
+                <div id="share-audit-msg" style="font-size:12px;color:#64748b;margin-top:8px;"></div>
             </div>
 
             <!-- Try another model -->
@@ -1121,6 +1154,26 @@
         document.getElementById('spend-input').addEventListener('keydown', function(e) {
             if (e.key === 'Enter') runAudit();
         });
+
+        // Share audit report — generates a shareable URL
+        function shareAuditReport() {
+            var modelId = document.getElementById('model-select').value;
+            var spend = document.getElementById('spend-input').value;
+            if (!modelId || !spend) return;
+            var url = 'https://getapipulse.com/audit-report.html?model=' + encodeURIComponent(modelId) + '&spend=' + encodeURIComponent(spend);
+            var msg = document.getElementById('share-audit-msg');
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function() {
+                    msg.textContent = '✓ Link copied! Share it with your team.';
+                    msg.style.color = '#22c55e';
+                    setTimeout(function() { msg.textContent = ''; }, 4000);
+                    if (window.trackEvent) window.trackEvent('audit_share_link_copied', {model: modelId, spend: spend});
+                });
+            }
+            // Update Twitter share link
+            var tweet = '💰 Found $' + (window._auditSavings || 0).toLocaleString() + '/yr in AI API savings by switching from ' + (window._auditModelName || 'my model') + '. Try it:';
+            document.getElementById('share-audit-twitter').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweet + ' ' + url);
+        }
 
         // Audit alert subscription
         function subscribeAuditAlert() {

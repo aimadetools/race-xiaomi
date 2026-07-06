@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Audit Report — APIpulse</title>
+    <meta name="description" content="AI API cost audit results — see how much you could save by switching models.">
+    <meta property="og:title" content="AI API Cost Audit Report — APIpulse">
+    <meta property="og:description" content="Check your AI API cost audit results — see your savings potential.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/audit-report.html">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Audit Report — APIpulse">
+    <meta name="twitter:description" content="Check your AI API cost audit results — see your savings potential.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/audit-report.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0CEP7S9Y3J');window.trackEvent=function(n,p){if(typeof gtag==='function')gtag('event',n,p);};</script>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#0a0a0f; color:#e2e8f0; min-height:100vh; display:flex; flex-direction:column; align-items:center; }
+        .report { max-width:520px; width:100%; padding:40px 20px 60px; }
+        /* Badge */
+        .badge { display:inline-flex; align-items:center; gap:6px; background:rgba(99,102,241,0.12); border:1px solid rgba(99,102,241,0.3); padding:6px 14px; border-radius:100px; font-size:12px; font-weight:700; color:#818cf8; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:20px; }
+        /* Savings card */
+        .savings-card { background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(99,102,241,0.06)); border:2px solid rgba(34,197,94,0.3); border-radius:20px; padding:32px 24px; text-align:center; margin-bottom:20px; }
+        .savings-card .label { font-size:13px; font-weight:700; color:#22c55e; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+        .savings-card .amount { font-size:56px; font-weight:900; color:#22c55e; line-height:1; margin-bottom:4px; }
+        .savings-card .amount .currency { font-size:0.5em; vertical-align:super; }
+        .savings-card .sub { font-size:15px; color:#94a3b8; }
+        .savings-card .sub strong { color:#f1f5f9; }
+        /* Info rows */
+        .info-rows { background:#111827; border:1px solid #1e293b; border-radius:14px; margin-bottom:20px; overflow:hidden; }
+        .info-row { display:flex; justify-content:space-between; align-items:center; padding:14px 20px; border-bottom:1px solid #1e293b; }
+        .info-row:last-child { border-bottom:none; }
+        .info-row .lbl { font-size:13px; color:#94a3b8; }
+        .info-row .val { font-size:15px; font-weight:700; color:#f1f5f9; text-align:right; }
+        .info-row.highlight { background:rgba(34,197,94,0.06); }
+        .info-row.highlight .val { color:#22c55e; }
+        /* CTA */
+        .cta { display:block; width:100%; padding:18px; background:linear-gradient(135deg,#22c55e,#16a34a); color:white; border:none; border-radius:14px; font-size:18px; font-weight:800; cursor:pointer; text-align:center; text-decoration:none; transition:all 0.2s; box-shadow:0 4px 24px rgba(34,197,94,0.4); margin-bottom:12px; }
+        .cta:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(34,197,94,0.5); }
+        @keyframes ctaPulse { 0%,100%{box-shadow:0 4px 24px rgba(34,197,94,0.4);} 50%{box-shadow:0 4px 32px rgba(34,197,94,0.6);} }
+        .cta { animation:ctaPulse 2s ease-in-out infinite; }
+        .cta:hover { animation:none; }
+        .trust { text-align:center; font-size:12px; color:#64748b; margin-bottom:24px; }
+        .trust span { margin:0 6px; }
+        /* Price */
+        .price-row { display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:16px; }
+        .price-was { font-size:16px; color:#64748b; text-decoration:line-through; }
+        .price-now { font-size:28px; font-weight:900; color:#22c55e; }
+        /* Share */
+        .share-section { background:#111827; border:1px solid #1e293b; border-radius:14px; padding:20px; margin-bottom:20px; text-align:center; }
+        .share-section h3 { font-size:15px; font-weight:700; color:#f1f5f9; margin-bottom:12px; }
+        .share-btns { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+        .share-btn { padding:10px 16px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer; border:none; text-decoration:none; transition:all 0.2s; }
+        .share-btn:hover { transform:translateY(-1px); }
+        .share-copy { background:#1e293b; border:1px solid #334155; color:#94a3b8; }
+        .share-copy:hover { border-color:#6366f1; color:#818cf8; }
+        .share-twitter { background:#1d9bf0; color:white; }
+        .share-linkedin { background:#0a66c2; color:white; }
+        .share-confirm { display:none; font-size:12px; color:#22c55e; margin-top:8px; }
+        /* Social proof */
+        .proof { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:20px; }
+        .proof-item { background:#111827; border:1px solid #1e293b; border-radius:10px; padding:14px 10px; text-align:center; }
+        .proof-item .num { font-size:20px; font-weight:800; color:#22c55e; font-family:monospace; }
+        .proof-item .lbl { font-size:11px; color:#64748b; margin-top:2px; }
+        /* Countdown */
+        .countdown { background:linear-gradient(135deg,#dc2626,#b91c1c); color:white; padding:12px 16px; border-radius:10px; text-align:center; margin-bottom:20px; font-weight:600; font-size:14px; }
+        .countdown .time { font-family:monospace; font-size:18px; font-weight:900; letter-spacing:1px; }
+        /* Footer */
+        .footer { text-align:center; font-size:12px; color:#475569; padding-top:20px; border-top:1px solid #1e293b; }
+        .footer a { color:#64748b; text-decoration:none; }
+        /* CTA after results */
+        .post-cta { margin-top:20px; padding:20px; background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.06)); border:1px solid rgba(99,102,241,0.25); border-radius:12px; text-align:center; }
+        .post-cta h3 { font-size:16px; font-weight:700; color:#f1f5f9; margin-bottom:8px; }
+        .post-cta p { font-size:13px; color:#94a3b8; margin-bottom:14px; line-height:1.5; }
+        /* Sticky mobile CTA */
+        .sticky-cta { display:none; position:fixed; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(10,10,15,0.98),rgba(10,10,15,0.92)); backdrop-filter:blur(10px); padding:12px 16px; z-index:9998; border-top:1px solid rgba(34,197,94,0.2); }
+        .sticky-cta a { display:block; width:100%; padding:14px; background:linear-gradient(135deg,#22c55e,#16a34a); color:white; border-radius:10px; font-size:16px; font-weight:800; text-align:center; text-decoration:none; }
+        .sticky-cta .sticky-trust { text-align:center; font-size:11px; color:#64748b; margin-top:6px; }
+        @media(max-width:768px) { .sticky-cta{display:block;} .report{padding-bottom:100px;} }
+        @media(max-width:480px) { .report{padding:24px 16px 40px;} .savings-card .amount{font-size:44px;} .proof{grid-template-columns:repeat(3,1fr);gap:8px;} .proof-item{padding:10px 6px;} .proof-item .num{font-size:18px;} }
+        /* Loading state */
+        .loading { text-align:center; padding:60px 20px; }
+        .loading .spinner { width:40px; height:40px; border:3px solid #1e293b; border-top-color:#6366f1; border-radius:50%; animation:spin 0.8s linear infinite; margin:0 auto 16px; }
+        @keyframes spin { to { transform:rotate(360deg); } }
+        .loading p { color:#94a3b8; font-size:14px; }
+        /* Error state */
+        .error { text-align:center; padding:60px 20px; }
+        .error h2 { font-size:24px; color:#f1f5f9; margin-bottom:12px; }
+        .error p { color:#94a3b8; font-size:14px; margin-bottom:20px; }
+        .error a { color:#818cf8; text-decoration:none; font-weight:600; }
+    </style>
+</head>
+<body>
+    <div class="report">
+        <!-- Loading state -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading your audit results...</p>
+        </div>
+
+        <!-- Error state -->
+        <div class="error" id="error" style="display:none;">
+            <h2>🤔 No audit results found</h2>
+            <p>This report link doesn't have the right parameters. Run a free audit to generate your shareable results.</p>
+            <a href="/audit.html">Run Free Audit →</a>
+        </div>
+
+        <!-- Report content (hidden until loaded) -->
+        <div id="report-content" style="display:none;">
+            <!-- Badge -->
+            <div class="badge">
+                <span style="width:6px;height:6px;background:#818cf8;border-radius:50;display:inline-block;"></span>
+                AI API Cost Audit
+            </div>
+
+            <!-- Savings card -->
+            <div class="savings-card">
+                <div class="label">Annual savings potential</div>
+                <div class="amount"><span class="currency">$</span><span id="r-savings">0</span></div>
+                <div class="sub">by switching from <strong id="r-current-model">—</strong> to <strong id="r-best-model">—</strong></div>
+            </div>
+
+            <!-- Info rows -->
+            <div class="info-rows">
+                <div class="info-row">
+                    <span class="lbl">Current model</span>
+                    <span class="val" id="r-model">—</span>
+                </div>
+                <div class="info-row">
+                    <span class="lbl">Monthly spend</span>
+                    <span class="val" id="r-spend">—</span>
+                </div>
+                <div class="info-row">
+                    <span class="lbl">Annual cost now</span>
+                    <span class="val" style="color:#ef4444;" id="r-current-annual">—</span>
+                </div>
+                <div class="info-row highlight">
+                    <span class="lbl">Annual cost after switch</span>
+                    <span class="val" id="r-switch-annual">—</span>
+                </div>
+                <div class="info-row highlight">
+                    <span class="lbl">ROI on $19 Pro</span>
+                    <span class="val" id="r-roi">—</span>
+                </div>
+            </div>
+
+            <!-- Countdown -->
+            <div class="countdown">
+                ⏰ Flash sale: Pro for <strong>$19</strong> (reg $49) — expires in <span class="time" id="r-countdown">--d --h --m</span>
+            </div>
+
+            <!-- CTA -->
+            <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="cta" onclick="if(window.trackEvent)window.trackEvent('report_buy_clicked',{savings:window._reportSavings||0,from:'shareable_report'});">
+                Get Pro — Save $<span id="r-cta-savings">0</span>/yr
+            </a>
+            <div class="trust">
+                <span>🔒 Stripe secure</span>
+                <span>🛡️ 14-day refund</span>
+                <span>⚡ Instant access</span>
+            </div>
+
+            <!-- Price -->
+            <div class="price-row">
+                <span class="price-was">$49</span>
+                <span class="price-now">$19</span>
+            </div>
+
+            <!-- Social proof -->
+            <div class="proof">
+                <div class="proof-item">
+                    <div class="num">8,367</div>
+                    <div class="lbl">developers</div>
+                </div>
+                <div class="proof-item">
+                    <div class="num">49</div>
+                    <div class="lbl">models</div>
+                </div>
+                <div class="proof-item">
+                    <div class="num">$612</div>
+                    <div class="lbl">avg savings</div>
+                </div>
+            </div>
+
+            <!-- Share -->
+            <div class="share-section">
+                <h3>📤 Share your results with your team</h3>
+                <div class="share-btns">
+                    <button class="share-btn share-copy" onclick="copyShareLink()">📋 Copy link</button>
+                    <a class="share-btn share-twitter" id="share-twitter" href="#" target="_blank" rel="noopener">𝕏 Tweet</a>
+                    <a class="share-btn share-linkedin" id="share-linkedin" href="#" target="_blank" rel="noopener">in LinkedIn</a>
+                </div>
+                <div class="share-confirm" id="share-confirm">✓ Link copied to clipboard!</div>
+            </div>
+
+            <!-- What Pro includes -->
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px;margin-bottom:20px;">
+                <h3 style="font-size:15px;font-weight:700;color:#f1f5f9;margin-bottom:14px;text-align:center;">What you get with Pro ($19):</h3>
+                <div style="font-size:13px;color:#94a3b8;line-height:2;">
+                    ✓ <strong style="color:#f1f5f9;">Migration code</strong> — Python, Node.js, curl snippets ready to paste<br>
+                    ✓ <strong style="color:#f1f5f9;">49 models ranked</strong> — all alternatives for your exact use case<br>
+                    ✓ <strong style="color:#f1f5f9;">24/7 price monitoring</strong> — alerts when cheaper options launch<br>
+                    ✓ <strong style="color:#f1f5f9;">Cost dashboard</strong> — track spending trends over time<br>
+                    ✓ <strong style="color:#f1f5f9;">PDF reports</strong> — professional cost reports for your team<br>
+                    ✓ <strong style="color:#f1f5f9;">Lifetime updates</strong> — new models added as they launch
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>Audit by <a href="/">APIpulse</a> · 49 models · 10 providers · Updated Jul 2026</p>
+                <p style="margin-top:8px;"><a href="/audit.html" style="color:#818cf8;">Run your own free audit →</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky mobile CTA -->
+    <div class="sticky-cta" id="sticky-cta">
+        <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('report_buy_clicked',{savings:window._reportSavings||0,from:'sticky_mobile'});">
+            Get Pro — Save $<span id="r-sticky-savings">0</span>/yr
+        </a>
+        <div class="sticky-trust">🔒 Stripe secure · 🛡️ 14-day refund · ⏰ Flash sale ends Jul 12</div>
+    </div>
+
+    <script>
+        // Model pricing data (same as audit.html)
+        var MODELS = {
+            'openai-gpt55': { name: 'GPT-5.5', input: 5.00, output: 30.00, provider: 'OpenAI' },
+            'openai-gpt55-pro': { name: 'GPT-5.5 Pro', input: 30.00, output: 180.00, provider: 'OpenAI' },
+            'openai-gpt5': { name: 'GPT-5', input: 1.25, output: 10.00, provider: 'OpenAI' },
+            'openai-gpt5-mini': { name: 'GPT-5 mini', input: 0.25, output: 2.00, provider: 'OpenAI' },
+            'openai-gpt54': { name: 'GPT-5.4', input: 2.50, output: 15.00, provider: 'OpenAI' },
+            'openai-gpt54-mini': { name: 'GPT-5.4 mini', input: 0.75, output: 4.50, provider: 'OpenAI' },
+            'openai-gpt54-nano': { name: 'GPT-5.4 nano', input: 0.20, output: 1.25, provider: 'OpenAI' },
+            'openai-gpt54-pro': { name: 'GPT-5.4 Pro', input: 30.00, output: 180.00, provider: 'OpenAI' },
+            'openai-gpt4o': { name: 'GPT-4o', input: 2.50, output: 10.00, provider: 'OpenAI' },
+            'openai-gpt4o-mini': { name: 'GPT-4o mini', input: 0.15, output: 0.60, provider: 'OpenAI' },
+            'openai-gpt53-codex': { name: 'GPT-5.3 Codex', input: 1.75, output: 14.00, provider: 'OpenAI' },
+            'openai-gpt-oss-120b': { name: 'GPT-oss 120B', input: 0.15, output: 0.60, provider: 'OpenAI' },
+            'openai-gpt-oss-20b': { name: 'GPT-oss 20B', input: 0.08, output: 0.35, provider: 'OpenAI' },
+            'anthropic-opus48': { name: 'Claude Opus 4.8', input: 5.00, output: 25.00, provider: 'Anthropic' },
+            'anthropic-opus47': { name: 'Claude Opus 4.7', input: 5.00, output: 25.00, provider: 'Anthropic' },
+            'anthropic-claude4-opus': { name: 'Claude 4 Opus', input: 15.00, output: 75.00, provider: 'Anthropic' },
+            'anthropic-sonnet5': { name: 'Claude Sonnet 5', input: 3.00, output: 15.00, provider: 'Anthropic' },
+            'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, provider: 'Anthropic' },
+            'anthropic-sonnet4': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00, provider: 'Anthropic' },
+            'anthropic-haiku': { name: 'Claude Haiku 4.5', input: 1.00, output: 5.00, provider: 'Anthropic' },
+            'anthropic-fable5': { name: 'Claude Fable 5', input: 10.00, output: 50.00, provider: 'Anthropic' },
+            'anthropic-mythos5': { name: 'Claude Mythos 5', input: 10.00, output: 50.00, provider: 'Anthropic' },
+            'google-gemini35-flash': { name: 'Gemini 3.5 Flash', input: 1.50, output: 9.00, provider: 'Google' },
+            'google-gemini3-pro': { name: 'Gemini 3.1 Pro', input: 2.00, output: 12.00, provider: 'Google' },
+            'google-gemini3-flash': { name: 'Gemini 3 Flash', input: 0.50, output: 3.00, provider: 'Google' },
+            'google-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00, provider: 'Google' },
+            'google-gemini31-flash-lite': { name: 'Gemini 3.1 Flash-Lite', input: 0.25, output: 1.50, provider: 'Google' },
+            'google-25-flash-lite': { name: 'Gemini 2.5 Flash-Lite', input: 0.10, output: 0.40, provider: 'Google' },
+            'google-gemini20-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40, provider: 'Google' },
+            'google-gemini20-flash-lite': { name: 'Gemini 2.0 Flash Lite', input: 0.075, output: 0.30, provider: 'Google' },
+            'deepseek-v4-pro': { name: 'DeepSeek V4 Pro', input: 0.435, output: 0.87, provider: 'DeepSeek' },
+            'deepseek-v4-flash': { name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28, provider: 'DeepSeek' },
+            'deepseek-v32': { name: 'DeepSeek V3.2', input: 0.23, output: 0.34, provider: 'DeepSeek' },
+            'deepseek-v3': { name: 'DeepSeek V3', input: 0.27, output: 1.10, provider: 'DeepSeek' },
+            'mistral-large': { name: 'Mistral Large 3', input: 0.50, output: 1.50, provider: 'Mistral' },
+            'mistral-medium': { name: 'Mistral Medium 3.5', input: 1.50, output: 7.50, provider: 'Mistral' },
+            'mistral-small': { name: 'Mistral Small 4', input: 0.10, output: 0.30, provider: 'Mistral' },
+            'xai-grok3': { name: 'Grok 4.3', input: 1.25, output: 2.50, provider: 'xAI' },
+            'xai-grok-build': { name: 'Grok Build 0.1', input: 0.30, output: 0.50, provider: 'xAI' },
+            'cohere-command-a': { name: 'Command A', input: 2.50, output: 10.00, provider: 'Cohere' },
+            'cohere-command-r-plus': { name: 'Command R+', input: 2.50, output: 10.00, provider: 'Cohere' },
+            'cohere-command-r': { name: 'Command R', input: 0.50, output: 1.50, provider: 'Cohere' },
+            'llama-4-scout': { name: 'Llama 4 Scout', input: 0.18, output: 0.59, provider: 'Meta' },
+            'llama-4-maverick': { name: 'Llama 4 Maverick', input: 0.27, output: 0.85, provider: 'Meta' },
+            'llama-31-70b': { name: 'Llama 3.1 70B', input: 0.88, output: 0.88, provider: 'Meta' },
+            'llama-31-8b': { name: 'Llama 3.1 8B', input: 0.10, output: 0.10, provider: 'Meta' },
+            'kimi-k26': { name: 'Kimi K2.6', input: 0.95, output: 4.00, provider: 'Moonshot' },
+            'ai21-jamba-17': { name: 'Jamba 1.7 Large', input: 2.00, output: 8.00, provider: 'AI21' },
+            'ai21-jamba-15': { name: 'Jamba 1.5 Large', input: 2.00, output: 8.00, provider: 'AI21' }
+        };
+
+        function fmt(n) {
+            if (n >= 1000) return '$' + (n/1000).toFixed(1).replace(/\.0$/, '') + 'k';
+            return '$' + n.toFixed(0);
+        }
+        function fmtFull(n) {
+            return '$' + Math.round(n).toLocaleString('en-US');
+        }
+
+        // Parse URL params
+        var params = new URLSearchParams(location.search);
+        var modelId = params.get('model');
+        var spend = parseFloat(params.get('spend'));
+
+        if (!modelId || !spend || !MODELS[modelId]) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+        } else {
+            var current = MODELS[modelId];
+
+            // Calculate alternatives
+            var currentBlended = (current.input * 0.75 + current.output * 0.25) / 1000000;
+            var estimatedTokens = spend / currentBlended;
+            var alternatives = [];
+            for (var id in MODELS) {
+                if (id === modelId) continue;
+                var m = MODELS[id];
+                var blended = (m.input * 0.75 + m.output * 0.25) / 1000000;
+                var cost = estimatedTokens * blended;
+                alternatives.push({ id: id, model: m, monthlyCost: cost });
+            }
+            alternatives.sort(function(a, b) { return a.monthlyCost - b.monthlyCost; });
+
+            var best = alternatives[0];
+            var currentAnnual = spend * 12;
+            var bestAnnual = best.monthlyCost * 12;
+            var savingsAnnual = currentAnnual - bestAnnual;
+            if (savingsAnnual < 0) savingsAnnual = 0;
+
+            // Update page title
+            document.title = current.name + ' → ' + best.model.name + ': Save $' + Math.round(savingsAnnual).toLocaleString() + '/yr — APIpulse';
+
+            // Update meta tags
+            var desc = 'Using ' + current.name + ' at $' + Math.round(spend).toLocaleString() + '/mo? Switch to ' + best.model.name + ' and save $' + Math.round(savingsAnnual).toLocaleString() + '/yr. $19 one-time Pro access.';
+            document.querySelector('meta[name="description"]').content = desc;
+            document.querySelector('meta[property="og:description"]').content = desc;
+            document.querySelector('meta[name="twitter:description"]').content = desc;
+
+            // Populate report
+            document.getElementById('r-savings').textContent = Math.round(savingsAnnual).toLocaleString();
+            document.getElementById('r-current-model').textContent = current.name;
+            document.getElementById('r-best-model').textContent = best.model.name;
+            document.getElementById('r-model').textContent = current.name + ' (' + current.provider + ')';
+            document.getElementById('r-spend').textContent = fmtFull(spend) + '/mo';
+            document.getElementById('r-current-annual').textContent = fmtFull(currentAnnual);
+            document.getElementById('r-switch-annual').textContent = fmtFull(bestAnnual);
+            var roi = savingsAnnual > 0 ? Math.round(savingsAnnual / 19) : 0;
+            document.getElementById('r-roi').textContent = roi + 'x return';
+            document.getElementById('r-cta-savings').textContent = Math.round(savingsAnnual).toLocaleString();
+            document.getElementById('r-sticky-savings').textContent = Math.round(savingsAnnual).toLocaleString();
+
+            window._reportSavings = Math.round(savingsAnnual);
+
+            // Set share URLs
+            var shareUrl = 'https://getapipulse.com/audit-report.html?model=' + encodeURIComponent(modelId) + '&spend=' + encodeURIComponent(spend);
+            var shareText = '💰 I just found $' + Math.round(savingsAnnual).toLocaleString() + '/yr in AI API savings by switching from ' + current.name + ' to ' + best.model.name + '. Try it:';
+
+            document.getElementById('share-twitter').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText + ' ' + shareUrl);
+            document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+
+            // Show report
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('report-content').style.display = 'block';
+
+            // Track
+            if (window.trackEvent) {
+                window.trackEvent('report_viewed', {
+                    model: modelId, spend: spend,
+                    savings: Math.round(savingsAnnual),
+                    best_model: best.model.name
+                });
+            }
+        }
+
+        // Share link copy
+        function copyShareLink() {
+            var url = location.href;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function() {
+                    var el = document.getElementById('share-confirm');
+                    el.style.display = 'block';
+                    setTimeout(function() { el.style.display = 'none'; }, 3000);
+                    if (window.trackEvent) window.trackEvent('report_link_copied');
+                });
+            }
+        }
+
+        // Countdown to Jul 12
+        (function() {
+            var deadline = new Date('2026-07-12T23:59:59Z').getTime();
+            var el = document.getElementById('r-countdown');
+            function update() {
+                var diff = deadline - Date.now();
+                if (diff <= 0) { el.textContent = 'EXPIRED'; return; }
+                var d = Math.floor(diff / 86400000);
+                var h = Math.floor((diff % 86400000) / 3600000);
+                var m = Math.floor((diff % 3600000) / 60000);
+                el.textContent = d + 'd ' + h + 'h ' + m + 'm';
+            }
+            update();
+            setInterval(update, 60000);
+        })();
+    </script>
+</body>
+</html>
