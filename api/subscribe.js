@@ -83,7 +83,7 @@ async function sendWelcomeEmail(email) {
               <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #e2e8f0; margin-bottom: 8px;">⚡ Flash Sale — Limited Time</p>
               <h2 style="color: white; font-size: 22px; margin-bottom: 8px;">Pro Lifetime Access — $19</h2>
               <p style="color: #e2e8f0; font-size: 14px; margin-bottom: 16px;">49 models, 10 providers. Real-time pricing. One payment, forever. <s style="color: #c4b5fd;">$49</s></p>
-              <a href="https://getapipulse.com/flash-19.html" style="display: inline-block; background: white; color: #7c3aed; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px;">Claim Your Deal →</a>
+              <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" style="display: inline-block; background: white; color: #7c3aed; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px;">Claim Your Deal →</a>
             </div>
             <div style="background: #1e293b; border-radius: 8px; padding: 20px; margin: 20px 0;">
               <h2 style="color: #818cf8; font-size: 18px; margin-bottom: 12px;">Your Migration Checklist</h2>

@@ -10,7 +10,8 @@
 
     // Configuration
     var FREE_ROWS = 3;
-    var FLASH_LINK = 'flash-19.html?from=comparison_gate';
+    // Session 1182: Route directly to Stripe during flash sale — no flash-19.html middleman
+    var FLASH_LINK = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
     var POST_EXPIRY_LINK = 'go.html?from=comparison_gate';
 
     // A/B test: 3 CTA text variants (Session 1037)
@@ -147,7 +148,7 @@
                 savingsHint +
                 (window.DEAL_EXPIRED ? '' : '<div style="margin-bottom:8px;font-size:12px;color:#ef4444;font-weight:600;">⏰ Flash sale ends in <span class="gate-countdown" data-variant="' + activeVariant.id + '">loading...</span> — then $49</div>') +
                 (window.DEAL_EXPIRED ? '' : '<div style="margin-bottom:10px;font-size:11px;color:#a5b4fc;font-weight:600;">🎁 Includes 3 bonuses ($49 value) — bonus timer: <span class="gate-bonus-timer">loading...</span></div>') +
-                '<a href="' + link + '" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'comparison_gate_clicked\',{variant:\'' + activeVariant.id + '\'});">' +
+                '<a href="' + link + '" target="_blank" rel="noopener" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(window.trackEvent)window.trackEvent(\'comparison_gate_clicked\',{variant:\'' + activeVariant.id + '\',page:location.pathname});">' +
                 ctaText + '</a>' +
                 '<div style="font-size:11px;color:#475569;margin-top:6px;">One-time payment · Lifetime access · 14-day refund</div>';
 
@@ -243,7 +244,7 @@
                 var calcCTA = 'Unlock Full Results — ' + price;
                 gateDiv.innerHTML =
                     '<div style="font-size:14px;color:#94a3b8;margin-bottom:10px;">🔒 See all results with Pro</div>' +
-                    '<a href="' + link + '" style="display:inline-block;padding:10px 20px;background:#6366f1;color:white;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'calc_gate_clicked\',{variant:\'' + activeVariant.id + '\'});">' +
+                    '<a href="' + link + '" target="_blank" rel="noopener" style="display:inline-block;padding:10px 20px;background:#6366f1;color:white;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'calc_gate_clicked\',{variant:\'' + activeVariant.id + '\',page:location.pathname});">' +
                     calcCTA + '</a>';
                 container.appendChild(gateDiv);
             });

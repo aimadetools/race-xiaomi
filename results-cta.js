@@ -163,8 +163,8 @@
             });
         }
 
-        // Track CTA click
-        var ctaLink = ctaElement.querySelector('a[href*="go.html"]');
+        // Track CTA click (Session 1182: also match Stripe links since flash sale routes direct)
+        var ctaLink = ctaElement.querySelector('a[href*="go.html"], a[href*="buy.stripe.com"]');
         if (ctaLink) {
             ctaLink.addEventListener('click', function() {
                 if (window.trackEvent) {
