@@ -668,67 +668,25 @@
                 <div id="top3-alternatives"></div>
             </div>
 
-            <!-- Pro Report Preview — shows users what they're buying -->
-            <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px 24px;margin-bottom:20px;position:relative;overflow:hidden;">
-                <div style="font-size:13px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">👁️ Sneak peek: What you get for $19</div>
-
-                <!-- Blurred full report mockup -->
-                <div style="position:relative;">
-                    <div style="filter:blur(3px);user-select:none;pointer-events:none;">
-                        <!-- Mock ranking table -->
-                        <div style="display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #1e293b;font-size:13px;">
-                            <span style="color:#f1f5f9;font-weight:700;">1. Gemini 2.5 Flash-Lite</span>
-                            <span style="color:#22c55e;">$0.10/M in</span>
-                        </div>
-                        <div style="display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #1e293b;font-size:13px;">
-                            <span style="color:#f1f5f9;font-weight:700;">2. Llama 3.1 8B</span>
-                            <span style="color:#22c55e;">$0.10/M in</span>
-                        </div>
-                        <div style="display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #1e293b;font-size:13px;">
-                            <span style="color:#f1f5f9;font-weight:700;">3. DeepSeek V4 Flash</span>
-                            <span style="color:#22c55e;">$0.14/M in</span>
-                        </div>
-                        <div style="display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #1e293b;font-size:13px;">
-                            <span style="color:#f1f5f9;font-weight:700;">4. Mistral Small 4</span>
-                            <span style="color:#22c55e;">$0.10/M in</span>
-                        </div>
-                        <div style="display:flex;justify-content:space-between;padding:10px 14px;font-size:13px;">
-                            <span style="color:#94a3b8;">...46 more models ranked by your usage</span>
-                        </div>
+            <!-- What you're missing without Pro — cost of inaction -->
+            <div style="background:linear-gradient(135deg,rgba(239,68,68,0.06),rgba(249,115,22,0.04));border:1px solid rgba(239,68,68,0.2);border-radius:14px;padding:20px 24px;margin-bottom:20px;">
+                <div style="font-size:13px;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">⚠️ Without Pro, you're stuck with:</div>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                    <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#94a3b8;">
+                        <span style="color:#ef4444;font-size:16px;">✗</span>
+                        <span>Manually checking 49 models across 10 providers <strong style="color:#f1f5f9;">every month</strong></span>
                     </div>
-                    <!-- Overlay gradient -->
-                    <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(transparent,#111827);"></div>
-                </div>
-
-                <!-- Migration code preview -->
-                <div style="margin-top:16px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:14px;position:relative;">
-                    <div style="font-size:11px;color:#6366f1;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">📦 Migration code (Python)</div>
-                    <div style="filter:blur(2.5px);user-select:none;pointer-events:none;">
-                        <code style="font-size:12px;color:#94a3b8;line-height:1.8;display:block;">
-                            <span style="color:#6366f1;">import</span> openai<br>
-                            <br>
-                            client = openai.OpenAI()<br>
-                            response = client.chat.completions.create(<br>
-                              model=<span style="color:#22c55e;">"gpt-4o-mini"</span>,<br>
-                              messages=messages<br>
-                            )
-                        </code>
+                    <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#94a3b8;">
+                        <span style="color:#ef4444;font-size:16px;">✗</span>
+                        <span>Writing your own migration code for every model switch</span>
                     </div>
-                </div>
-
-                <!-- Also included preview -->
-                <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;">
-                    <div style="flex:1;min-width:140px;background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:10px;text-align:center;">
-                        <div style="font-size:18px;margin-bottom:4px;">📊</div>
-                        <div style="font-size:11px;color:#94a3b8;">Cost Monitor<br>Dashboard</div>
+                    <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#94a3b8;">
+                        <span style="color:#ef4444;font-size:16px;">✗</span>
+                        <span>Missing price drops that could save you <strong style="color:#22c55e;">$<span id="missed-savings">hundreds</span>/yr</strong></span>
                     </div>
-                    <div style="flex:1;min-width:140px;background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:10px;text-align:center;">
-                        <div style="font-size:18px;margin-bottom:4px;">🔔</div>
-                        <div style="font-size:11px;color:#94a3b8;">Price Drop<br>Alerts</div>
-                    </div>
-                    <div style="flex:1;min-width:140px;background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:10px;text-align:center;">
-                        <div style="font-size:18px;margin-bottom:4px;">📋</div>
-                        <div style="font-size:11px;color:#94a3b8;">Weekly<br>Digest</div>
+                    <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#94a3b8;">
+                        <span style="color:#ef4444;font-size:16px;">✗</span>
+                        <span>No alerts when new cheaper models launch for your use case</span>
                     </div>
                 </div>
             </div>
@@ -1103,6 +1061,9 @@
 
             // How it works savings amount
             document.getElementById('how-much-saved').textContent = fmt(Math.round(savingsAnnual));
+
+            // "What you're missing" savings estimate
+            document.getElementById('missed-savings').textContent = Math.round(savingsAnnual).toLocaleString('en-US');
 
             // ROI calculation
             var roiMultiplier = savingsAnnual > 0 ? (savingsAnnual / 19).toFixed(0) : 0;
