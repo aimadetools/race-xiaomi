@@ -19,6 +19,10 @@
 ### Completed — Post-Calculator Conversion Leak Fix (Session 1169)
 - ✅ Replaced free-tool CTAs with Pro purchase link across 510 pages (was diverting calculator users to free audit/price alerts instead of $19 purchase)
 
+### Completed — Pro.html + Flash-9 Conversion Leak Fix (Session 1170)
+- ✅ Fixed pro.html gate button, exit popup, and trial upgrade link to route directly to Stripe/flash-19 (was routing through audit.html/go.html)
+- ✅ Fixed flash-9.html footer $19 Deal link to go to flash-19.html (was going to audit.html)
+
 ### Completed — Shareable Audit Report (Session 1167)
 - ✅ Built audit-report.html, share buttons, ongoing value section, sitemap update
 
@@ -47,4 +51,6 @@
 ✅ C1163-C1164: Built prices.html live price tracker, "What Changed Recently", cross-linked from flash/pro pages
 ✅ C1165-C1167: Improved audit conversion (burn rate, cost-vs-savings, live counter, shareable report, ongoing value section)
 ✅ C1168: Added social proof toast notifications + sticky urgency banner to flash-19 and audit pages
-**236+ commits, 7,200+ files.**
+✅ C1169: Fixed post-calculator conversion leak across 510 pages (free-tool CTAs → Pro purchase)
+✅ C1170: Fixed pro.html + flash-9 conversion leaks (gate button, exit popup, trial upgrade → direct Stripe)
+**239+ commits, 7,200+ files.**
