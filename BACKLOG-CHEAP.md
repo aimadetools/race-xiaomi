@@ -12,7 +12,7 @@
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - Directory submissions (22), MCP registry, Chrome Web Store ($5), npm publish, widget distribution, awesome lists.
 
-### Completed Summary (Sessions 416-1172, Apr 23 - Jul 6)
+### Completed Summary (Sessions 416-1174, Apr 23 - Jul 6)
 ✅ Complete site build: 1157 pages, 49 models, 10 providers, 533 comparison/alternatives pages
 ✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts
 ✅ Conversion funnel: gated audit, trackEvent on 927 pages, exit popups, nav CTAs, OG/Twitter meta
@@ -22,4 +22,5 @@
 ✅ Audit improvements: burn rate, cost-vs-savings, live counter, shareable report, ongoing value section
 ✅ Social proof: toast notifications, sticky urgency banner, personalized savings CTA
 ✅ Conversion fixes: post-calculator leak (510 pages), pro.html leaks, share/CTA/date leaks, confusing pricing
-**241+ commits, 7,200+ files.**
+✅ Model name updates: Fixed stale Opus 4, Sonnet 4, Haiku 3.5, Gemini 2.5, Grok 3 across calculators
+**243+ commits, 7,200+ files.**

@@ -387,6 +387,8 @@
                         <option value="openai-gpt54-pro">GPT-5.4 Pro</option>
                         <option value="openai-gpt4o">GPT-4o</option>
                         <option value="openai-gpt4o-mini">GPT-4o mini</option>
+                        <option value="openai-gpt-oss-120b">GPT-oss 120B</option>
+                        <option value="openai-gpt-oss-20b">GPT-oss 20B</option>
                         <option value="openai-gpt4-turbo">GPT-4 Turbo</option>
                         <option value="openai-gpt4">GPT-4</option>
                         <option value="openai-o3">o3</option>
@@ -396,21 +398,21 @@
                         <option value="openai-o1-mini">o1-mini</option>
                     </optgroup>
                     <optgroup label="Anthropic">
-                        <option value="anthropic-claude-opus-4">Claude Opus 4</option>
-                        <option value="anthropic-claude-sonnet-4">Claude Sonnet 4</option>
+                        <option value="anthropic-claude-opus-48">Claude Opus 4.8</option>
+                        <option value="anthropic-claude-sonnet-46">Claude Sonnet 4.6</option>
                         <option value="anthropic-claude-3.7-sonnet">Claude 3.7 Sonnet</option>
                         <option value="anthropic-claude-3.5-sonnet">Claude 3.5 Sonnet</option>
-                        <option value="anthropic-claude-3.5-haiku">Claude 3.5 Haiku</option>
+                        <option value="anthropic-claude-haiku">Claude Haiku 4.5</option>
                         <option value="anthropic-claude-3-haiku">Claude 3 Haiku</option>
                         <option value="anthropic-claude-3-opus">Claude 3 Opus</option>
                     </optgroup>
                     <optgroup label="Google">
-                        <option value="google-gemini-2.5-pro">Gemini 2.5 Pro</option>
-                        <option value="google-gemini-2.5-flash">Gemini 2.5 Flash</option>
-                        <option value="google-gemini-2.0-flash">Gemini 2.0 Flash</option>
-                        <option value="google-gemini-2.0-flash-lite">Gemini 2.0 Flash-Lite</option>
-                        <option value="google-gemini-1.5-pro">Gemini 1.5 Pro</option>
-                        <option value="google-gemini-1.5-flash">Gemini 1.5 Flash</option>
+                        <option value="google-gemini31-pro">Gemini 3.1 Pro</option>
+                        <option value="google-gemini35-flash">Gemini 3.5 Flash</option>
+                        <option value="google-gemini3-flash">Gemini 3 Flash</option>
+                        <option value="google-gemini31-flash-lite">Gemini 3.1 Flash-Lite</option>
+                        <option value="google-gemini20-flash">Gemini 2.0 Flash</option>
+                        <option value="google-gemini20-flash-lite">Gemini 2.0 Flash-Lite</option>
                     </optgroup>
                     <optgroup label="DeepSeek">
                         <option value="deepseek-v4">DeepSeek V4</option>
@@ -432,8 +434,8 @@
                         <option value="mistral-codestral">Codestral</option>
                     </optgroup>
                     <optgroup label="xAI">
-                        <option value="xai-grok-3">Grok 3</option>
-                        <option value="xai-grok-3-mini">Grok 3 Mini</option>
+                        <option value="xai-grok3">Grok 4.3</option>
+                        <option value="xai-grok-build">Grok Build 0.1</option>
                     </optgroup>
                     <optgroup label="Cohere">
                         <option value="cohere-command-a">Command A</option>
@@ -584,6 +586,8 @@
             'openai-gpt54-pro': { name: 'GPT-5.4 Pro', input: 30.00, output: 180.00, provider: 'OpenAI' },
             'openai-gpt4o': { name: 'GPT-4o', input: 2.50, output: 10.00, provider: 'OpenAI' },
             'openai-gpt4o-mini': { name: 'GPT-4o mini', input: 0.15, output: 0.60, provider: 'OpenAI' },
+            'openai-gpt-oss-120b': { name: 'GPT-oss 120B', input: 0.15, output: 0.60, provider: 'OpenAI' },
+            'openai-gpt-oss-20b': { name: 'GPT-oss 20B', input: 0.08, output: 0.35, provider: 'OpenAI' },
             'openai-gpt4-turbo': { name: 'GPT-4 Turbo', input: 10.00, output: 30.00, provider: 'OpenAI' },
             'openai-gpt4': { name: 'GPT-4', input: 30.00, output: 60.00, provider: 'OpenAI' },
             'openai-o3': { name: 'o3', input: 10.00, output: 40.00, provider: 'OpenAI' },
@@ -591,19 +595,19 @@
             'openai-o4-mini': { name: 'o4-mini', input: 1.10, output: 4.40, provider: 'OpenAI' },
             'openai-o1': { name: 'o1', input: 15.00, output: 60.00, provider: 'OpenAI' },
             'openai-o1-mini': { name: 'o1-mini', input: 3.00, output: 12.00, provider: 'OpenAI' },
-            'anthropic-claude-opus-4': { name: 'Claude Opus 4', input: 15.00, output: 75.00, provider: 'Anthropic' },
-            'anthropic-claude-sonnet-4': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00, provider: 'Anthropic' },
+            'anthropic-claude-opus-48': { name: 'Claude Opus 4.8', input: 5.00, output: 25.00, provider: 'Anthropic' },
+            'anthropic-claude-sonnet-46': { name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, provider: 'Anthropic' },
             'anthropic-claude-3.7-sonnet': { name: 'Claude 3.7 Sonnet', input: 3.00, output: 15.00, provider: 'Anthropic' },
             'anthropic-claude-3.5-sonnet': { name: 'Claude 3.5 Sonnet', input: 3.00, output: 15.00, provider: 'Anthropic' },
-            'anthropic-claude-3.5-haiku': { name: 'Claude 3.5 Haiku', input: 0.80, output: 4.00, provider: 'Anthropic' },
+            'anthropic-claude-haiku': { name: 'Claude Haiku 4.5', input: 1.00, output: 5.00, provider: 'Anthropic' },
             'anthropic-claude-3-haiku': { name: 'Claude 3 Haiku', input: 0.25, output: 1.25, provider: 'Anthropic' },
             'anthropic-claude-3-opus': { name: 'Claude 3 Opus', input: 15.00, output: 75.00, provider: 'Anthropic' },
-            'google-gemini-2.5-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00, provider: 'Google' },
-            'google-gemini-2.5-flash': { name: 'Gemini 2.5 Flash', input: 0.15, output: 0.60, provider: 'Google' },
-            'google-gemini-2.0-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40, provider: 'Google' },
-            'google-gemini-2.0-flash-lite': { name: 'Gemini 2.0 Flash-Lite', input: 0.075, output: 0.30, provider: 'Google' },
-            'google-gemini-1.5-pro': { name: 'Gemini 1.5 Pro', input: 1.25, output: 5.00, provider: 'Google' },
-            'google-gemini-1.5-flash': { name: 'Gemini 1.5 Flash', input: 0.075, output: 0.30, provider: 'Google' },
+            'google-gemini31-pro': { name: 'Gemini 3.1 Pro', input: 2.00, output: 12.00, provider: 'Google' },
+            'google-gemini35-flash': { name: 'Gemini 3.5 Flash', input: 1.50, output: 9.00, provider: 'Google' },
+            'google-gemini3-flash': { name: 'Gemini 3 Flash', input: 0.50, output: 3.00, provider: 'Google' },
+            'google-gemini31-flash-lite': { name: 'Gemini 3.1 Flash-Lite', input: 0.25, output: 1.50, provider: 'Google' },
+            'google-gemini20-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40, provider: 'Google' },
+            'google-gemini20-flash-lite': { name: 'Gemini 2.0 Flash Lite', input: 0.075, output: 0.30, provider: 'Google' },
             'deepseek-v4': { name: 'DeepSeek V4', input: 0.27, output: 1.10, provider: 'DeepSeek' },
             'deepseek-v4-flash': { name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28, provider: 'DeepSeek' },
             'deepseek-v3': { name: 'DeepSeek V3', input: 0.27, output: 1.10, provider: 'DeepSeek' },
@@ -617,8 +621,8 @@
             'mistral-small-4': { name: 'Mistral Small 4', input: 0.10, output: 0.30, provider: 'Mistral' },
             'mistral-medium': { name: 'Mistral Medium', input: 2.70, output: 8.10, provider: 'Mistral' },
             'mistral-codestral': { name: 'Codestral', input: 0.30, output: 0.90, provider: 'Mistral' },
-            'xai-grok-3': { name: 'Grok 3', input: 3.00, output: 15.00, provider: 'xAI' },
-            'xai-grok-3-mini': { name: 'Grok 3 Mini', input: 0.30, output: 0.50, provider: 'xAI' },
+            'xai-grok3': { name: 'Grok 4.3', input: 1.25, output: 2.50, provider: 'xAI' },
+            'xai-grok-build': { name: 'Grok Build 0.1', input: 0.30, output: 0.50, provider: 'xAI' },
             'cohere-command-a': { name: 'Command A', input: 2.50, output: 10.00, provider: 'Cohere' },
             'cohere-command-r-plus': { name: 'Command R+', input: 2.50, output: 10.00, provider: 'Cohere' },
             'ai21-jamba-17': { name: 'Jamba 1.7 Large', input: 2.00, output: 8.00, provider: 'AI21' },

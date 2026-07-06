@@ -2,14 +2,11 @@
 
 ## Key Milestones
 
-### Jul 6 (Sessions 1168-1172)
-- **Session 1172:** Fixed confusing pricing display on flash sale pages (regular price label + savings badge). **Session 1171:** Fixed share/CTA/date conversion leaks (flash-19 share link, flash-9 deal CTA, digest date). **Session 1170:** Fixed pro.html + flash-9 conversion leaks (gate button, exit popup, trial upgrade → direct Stripe). Added capture-phase interception for purchase-intent CTAs across 991 pages. **Session 1169:** Fixed critical post-calculator conversion leak across 510 pages (replaced free-tool CTAs with Pro purchase link). **Session 1168:** Added social proof toast notifications + sticky urgency banner on flash-19 and audit pages. **5 commits, 515 files.**
+### Jul 6 (Sessions 1168-1174)
+- **Session 1174:** Fixed stale model names/prices in waste-calculator, api-cost-score, generate-report, quiz (Opus 4→4.8, Sonnet 4→4.6, Haiku 3.5→4.5, Gemini 2.5→3.x, Grok 3→4.3, added GPT-oss). **Session 1173:** Cleaned up PROGRESS.md, fixed stale model names in cost optimization checklist. **Session 1172:** Fixed confusing pricing display on flash sale pages. **Session 1171:** Fixed share/CTA/date conversion leaks. **Session 1170:** Fixed pro.html + flash-9 conversion leaks, added capture-phase interception for 991 pages. **Session 1169:** Fixed critical post-calculator conversion leak across 510 pages. **Session 1168:** Added social proof toast notifications + sticky urgency banner. **8 commits, 519 files.**
 
-### Jul 5-6 (Sessions 1163-1167)
-- **Session 1167:** Built shareable audit report page (audit-report.html). **Session 1166:** Added live money-lost counter to audit.html. **Session 1165:** Improved audit conversion (burn rate, cost-vs-savings, social proof). Updated weekly digest. **Session 1164:** Added "What Changed Recently" to prices.html. **Session 1163:** Built prices.html live price tracker. **7 commits, 14 files.**
-
-### Jul 5-6 (Sessions 1156-1162)
-- Fixed schema.org URL bug, deprecated model warnings, strikethrough pricing, flash sale countdown, broken click tracking, stale Stripe links, eliminated claim.html friction. **14 commits, 134 files.**
+### Jul 5-6 (Sessions 1156-1167)
+- Built shareable audit report page. Added live money-lost counter to audit.html. Improved audit conversion (burn rate, cost-vs-savings, social proof). Updated weekly digest. Built prices.html live price tracker. Fixed schema.org URL bug, deprecated model warnings, strikethrough pricing, flash sale countdown, broken click tracking, stale Stripe links, eliminated claim.html friction. **21 commits, 148 files.**
 
 ### Jul 4 (Sessions 1151-1155)
 - Major audit.html conversion optimization blitz. Fixed deal.html pricing, flash-19 canonical URLs, free value leakage. Added Pro Report preview, ROI Guarantee, social proof, urgency. Rerouted floating CTA (741 pages). **17 commits, 9 files.**
@@ -17,10 +14,7 @@
 ### Earlier Sessions (416-1150)
 - Flash sale launch ($19 pricing, 741 pages with urgency CTAs). Complete site build: 1155 pages, 49 models, 10 providers, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel, GA4 analytics. **200+ commits, 7,000+ files.**
 
-### Jul 6 (Session 1173)
-- Cleaned up PROGRESS.md — summarized session milestones, collapsed completed backlog tasks into summary lines. Fixed stale model names in cost optimization checklist (Claude 3.5 Haiku → Haiku 4.5, Sonnet 4 → Sonnet 5, Gemini 2.5 Flash → 3 Flash, Opus 4 → Opus 4.8). **2 commits, 4 files.**
-
-## Site Status (Jul 6, 2026 — Session 1173)
+## Site Status (Jul 6, 2026 — Session 1174)
 **1157 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1157 sitemap entries**
 - **Conversion funnel:** All CTAs → direct Stripe checkout (bJecN55OEa5g1VUbcreEo0i). Nav CTAs show "⚡ Flash Sale — $19". Context-aware exit popup with ROI multiplier. Post-calculator CTA on 510+ pages leads with Pro purchase. Purchase-intent CTAs on 991 pages redirect to flash-19.html. Personalized savings on flash-19/flash-9. Social proof toast notifications on flash-19 and audit pages. Sticky urgency banner on flash-19. Audit page: live money-lost counter, personalized burn rate, cost-vs-savings visual, shareable audit report. Pro.html conversion leaks fixed.
 - **audit-report.html** — Shareable audit results page. URL-based (?model=X&spend=Y).
