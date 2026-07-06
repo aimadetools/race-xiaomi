@@ -60,7 +60,7 @@
                 "name": "Is Mistral cheaper than Anthropic Claude?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, significantly. Mistral Small 4 ($0.10/$0.30 per 1M tokens) is 7x cheaper on input and 8x cheaper on output than Claude Haiku 4.5 ($1.00/$5.00). Mistral Large 3 ($0.50/$1.50) is 6x cheaper than Claude Sonnet 4.6 ($3.00/$15.00). Mistral offers the cheapest option for EU-based workloads."
+                    "text": "Yes, significantly. Mistral Small 4 ($0.15/$0.60 per 1M tokens) is 7x cheaper on input and 8x cheaper on output than Claude Haiku 4.5 ($1.00/$5.00). Mistral Large 3 ($0.50/$1.50) is 6x cheaper than Claude Sonnet 4.6 ($3.00/$15.00). Mistral offers the cheapest option for EU-based workloads."
                 }
             },
             {
@@ -68,7 +68,7 @@
                 "name": "What is the cheapest Mistral vs Claude option?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Mistral Small 4 at $0.10/$0.30 per 1M tokens is the cheapest option — 7x cheaper than Claude Haiku 4.5 ($1.00/$5.00). For 1M tokens/month, Mistral Small 4 costs $7.50 vs $60 for Haiku 4.5. Mistral Large 3 ($0.50/$1.50) is also much cheaper than any Claude model."
+                    "text": "Mistral Small 4 at $0.15/$0.60 per 1M tokens is the cheapest option — 7x cheaper than Claude Haiku 4.5 ($1.00/$5.00). For 1M tokens/month, Mistral Small 4 costs $7.50 vs $60 for Haiku 4.5. Mistral Large 3 ($0.50/$1.50) is also much cheaper than any Claude model."
                 }
             },
             {
@@ -474,7 +474,7 @@
             <div class="select-group">
                 <label>Mistral Model</label>
                 <select id="mistralModel">
-                    <option value="mistral-small" selected>Mistral Small 4 ($0.10/$0.30)</option>
+                    <option value="mistral-small" selected>Mistral Small 4 ($0.15/$0.60)</option>
                     <option value="mistral-large">Mistral Large 3 ($0.50/$1.50)</option>
                 </select>
             </div>
@@ -566,7 +566,7 @@
             <div class="use-case-card">
                 <h3>Budget Chatbot</h3>
                 <p>High volume, short responses. Cost per message matters most. Need to keep monthly bills under $10.</p>
-                <div class="recommendation"><span class="pick-mistral">Pick Mistral:</span> Mistral Small 4 at $0.10/$0.30 is 7x cheaper than Haiku 4.5. At 5K messages/day: $13.50/mo vs $90/mo.</div>
+                <div class="recommendation"><span class="pick-mistral">Pick Mistral:</span> Mistral Small 4 at $0.15/$0.60 is 7x cheaper than Haiku 4.5. At 5K messages/day: $13.50/mo vs $90/mo.</div>
             </div>
             <div class="use-case-card">
                 <h3>Code Generation</h3>
@@ -586,7 +586,7 @@
             <div class="use-case-card">
                 <h3>High-Volume Processing</h3>
                 <p>Classification, extraction, summarization at scale. Volume in millions of requests.</p>
-                <div class="recommendation"><span class="pick-mistral">Pick Mistral:</span> Mistral Small 4 at $0.10/$0.30 is the cheapest option. At 1M requests/month: $2,250 vs $15,000 for Haiku 4.5.</div>
+                <div class="recommendation"><span class="pick-mistral">Pick Mistral:</span> Mistral Small 4 at $0.15/$0.60 is the cheapest option. At 1M requests/month: $2,250 vs $15,000 for Haiku 4.5.</div>
             </div>
             <div class="use-case-card">
                 <h3>Startup MVP</h3>
@@ -613,11 +613,11 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <h3>Is Mistral cheaper than Anthropic Claude?</h3>
-            <p>Yes, significantly. Mistral Small 4 ($0.10/$0.30 per 1M tokens) is 7x cheaper on input and 8x cheaper on output than Claude Haiku 4.5 ($1.00/$5.00). Mistral Large 3 ($0.50/$1.50) is 6x cheaper than Claude Sonnet 4.6 ($3.00/$15.00). Mistral offers the cheapest option for EU-based workloads.</p>
+            <p>Yes, significantly. Mistral Small 4 ($0.15/$0.60 per 1M tokens) is 7x cheaper on input and 8x cheaper on output than Claude Haiku 4.5 ($1.00/$5.00). Mistral Large 3 ($0.50/$1.50) is 6x cheaper than Claude Sonnet 4.6 ($3.00/$15.00). Mistral offers the cheapest option for EU-based workloads.</p>
         </div>
         <div class="faq-item">
             <h3>What is the cheapest Mistral vs Claude option?</h3>
-            <p>Mistral Small 4 at $0.10/$0.30 per 1M tokens is the cheapest option — 7x cheaper than Claude Haiku 4.5 ($1.00/$5.00). For 1M tokens/month, Mistral Small 4 costs $7.50 vs $60 for Haiku 4.5. Mistral Large 3 ($0.50/$1.50) is also much cheaper than any Claude model.</p>
+            <p>Mistral Small 4 at $0.15/$0.60 per 1M tokens is the cheapest option — 7x cheaper than Claude Haiku 4.5 ($1.00/$5.00). For 1M tokens/month, Mistral Small 4 costs $7.50 vs $60 for Haiku 4.5. Mistral Large 3 ($0.50/$1.50) is also much cheaper than any Claude model.</p>
         </div>
         <div class="faq-item">
             <h3>When should I choose Anthropic Claude over Mistral?</h3>
@@ -795,11 +795,11 @@
     <script>
     // Model data
     const MODELS = {
-        'mistral-small': { name: 'Mistral Small 4', provider: 'Mistral', input: 0.10, output: 0.30 },
+        'mistral-small': { name: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60 },
         'mistral-large': { name: 'Mistral Large 3', provider: 'Mistral', input: 0.50, output: 1.50 },
         'haiku': { name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00 },
-        'sonnet': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00 },
-        'sonnet46': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00 },
+        'sonnet': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 2.00, output: 10.00 },
+        'sonnet46': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 2.00, output: 10.00 },
         'opus47': { name: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00 },
         'opus': { name: 'Claude 4 Opus', provider: 'Anthropic', input: 15.00, output: 75.00 }
     };

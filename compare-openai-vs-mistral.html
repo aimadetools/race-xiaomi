@@ -60,7 +60,7 @@
                 "name": "Is Mistral cheaper than OpenAI?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, across the board. Mistral Small 4 ($0.10/$0.30 per 1M tokens) matches GPT-4o mini on input but beats it on output ($0.30 vs $0.30). Mistral Large 3 ($0.50/$1.50) is 3x cheaper than GPT-5 mini ($0.25/$2.00 output). For open-source equivalents, Mistral is competitive with GPT-oss models but offers better EU data sovereignty."
+                    "text": "Yes, across the board. Mistral Small 4 ($0.15/$0.60 per 1M tokens) matches GPT-4o mini on input but beats it on output ($0.30 vs $0.30). Mistral Large 3 ($0.50/$1.50) is 3x cheaper than GPT-5 mini ($0.25/$2.00 output). For open-source equivalents, Mistral is competitive with GPT-oss models but offers better EU data sovereignty."
                 }
             },
             {
@@ -68,7 +68,7 @@
                 "name": "What is the cheapest OpenAI vs Mistral option?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "GPT-oss 20B at $0.08/$0.35 per 1M tokens is the cheapest OpenAI model. Mistral Small 4 at $0.10/$0.30 is slightly more expensive on input but comparable on output. For 1M tokens/month, GPT-oss 20B costs $4.75 vs $7.50 for Mistral Small 4. However, Mistral Small 4 has better general capability and EU hosting."
+                    "text": "GPT-oss 20B at $0.08/$0.35 per 1M tokens is the cheapest OpenAI model. Mistral Small 4 at $0.15/$0.60 is slightly more expensive on input but comparable on output. For 1M tokens/month, GPT-oss 20B costs $4.75 vs $7.50 for Mistral Small 4. However, Mistral Small 4 has better general capability and EU hosting."
                 }
             },
             {
@@ -515,7 +515,7 @@
             <div class="select-group">
                 <label>Mistral Model</label>
                 <select id="mistralModel">
-                    <option value="mistral-small" selected>Mistral Small 4 ($0.10/$0.30)</option>
+                    <option value="mistral-small" selected>Mistral Small 4 ($0.15/$0.60)</option>
                     <option value="mistral-large">Mistral Large 3 ($0.50/$1.50)</option>
                 </select>
             </div>
@@ -596,7 +596,7 @@
             <div class="use-case-card">
                 <h3>Budget Chatbot</h3>
                 <p>High volume, short responses. Cost per message matters most. Need to keep monthly bills under $10.</p>
-                <div class="recommendation"><span class="pick-mistral">Pick Mistral:</span> Mistral Small 4 at $0.10/$0.30 matches GPT-4o mini on price but offers better general capability. For pure budget, GPT-oss 20B ($0.08/$0.35) is cheaper but lower quality.</div>
+                <div class="recommendation"><span class="pick-mistral">Pick Mistral:</span> Mistral Small 4 at $0.15/$0.60 matches GPT-4o mini on price but offers better general capability. For pure budget, GPT-oss 20B ($0.08/$0.35) is cheaper but lower quality.</div>
             </div>
             <div class="use-case-card">
                 <h3>Code Generation</h3>
@@ -616,7 +616,7 @@
             <div class="use-case-card">
                 <h3>High-Volume Processing</h3>
                 <p>Classification, extraction, summarization at scale. Volume in millions of requests.</p>
-                <div class="recommendation"><span class="pick-mistral">Pick Mistral:</span> Mistral Small 4 at $0.10/$0.30 offers the best quality-to-cost ratio at scale. GPT-oss 20B ($0.08/$0.35) is cheaper but Mistral has better general capability.</div>
+                <div class="recommendation"><span class="pick-mistral">Pick Mistral:</span> Mistral Small 4 at $0.15/$0.60 offers the best quality-to-cost ratio at scale. GPT-oss 20B ($0.08/$0.35) is cheaper but Mistral has better general capability.</div>
             </div>
             <div class="use-case-card">
                 <h3>Startup MVP</h3>
@@ -643,11 +643,11 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <h3>Is Mistral cheaper than OpenAI?</h3>
-            <p>Yes, across the board. Mistral Small 4 ($0.10/$0.30 per 1M tokens) matches GPT-4o mini on input but offers better general capability. Mistral Large 3 ($0.50/$1.50) has cheaper output than GPT-5 mini ($0.25/$2.00). For open-source equivalents, Mistral is competitive with GPT-oss models but offers better EU data sovereignty.</p>
+            <p>Yes, across the board. Mistral Small 4 ($0.15/$0.60 per 1M tokens) matches GPT-4o mini on input but offers better general capability. Mistral Large 3 ($0.50/$1.50) has cheaper output than GPT-5 mini ($0.25/$2.00). For open-source equivalents, Mistral is competitive with GPT-oss models but offers better EU data sovereignty.</p>
         </div>
         <div class="faq-item">
             <h3>What is the cheapest OpenAI vs Mistral option?</h3>
-            <p>GPT-oss 20B at $0.08/$0.35 per 1M tokens is the cheapest OpenAI model. Mistral Small 4 at $0.10/$0.30 is slightly more expensive on input but comparable on output. For 1M tokens/month, GPT-oss 20B costs $4.75 vs $7.50 for Mistral Small 4. However, Mistral Small 4 has better general capability and EU hosting.</p>
+            <p>GPT-oss 20B at $0.08/$0.35 per 1M tokens is the cheapest OpenAI model. Mistral Small 4 at $0.15/$0.60 is slightly more expensive on input but comparable on output. For 1M tokens/month, GPT-oss 20B costs $4.75 vs $7.50 for Mistral Small 4. However, Mistral Small 4 has better general capability and EU hosting.</p>
         </div>
         <div class="faq-item">
             <h3>When should I choose OpenAI over Mistral?</h3>
@@ -834,7 +834,7 @@
         'gpt4o': { name: 'GPT-4o', provider: 'OpenAI', input: 2.50, output: 10.00 },
         'gpt55': { name: 'GPT-5.5', provider: 'OpenAI', input: 5.00, output: 30.00 },
         'gpt55-pro': { name: 'GPT-5.5 Pro', provider: 'OpenAI', input: 30.00, output: 180.00 },
-        'mistral-small': { name: 'Mistral Small 4', provider: 'Mistral', input: 0.10, output: 0.30 },
+        'mistral-small': { name: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60 },
         'mistral-large': { name: 'Mistral Large 3', provider: 'Mistral', input: 0.50, output: 1.50 }
     };
 

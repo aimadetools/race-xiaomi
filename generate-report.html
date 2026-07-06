@@ -290,11 +290,11 @@
                     </optgroup>
                     <optgroup label="Meta">
                         <option value="meta/llama-4-maverick">Llama 4 Maverick — $0.20 / $0.60 per 1M tokens</option>
-                        <option value="meta/llama-4-scout">Llama 4 Scout — $0.10 / $0.30 per 1M tokens</option>
+                        <option value="meta/llama-4-scout">Llama 4 Scout — $0.15 / $0.60 per 1M tokens</option>
                     </optgroup>
                     <optgroup label="Mistral">
                         <option value="mistral/mistral-large">Mistral Large — $2.00 / $6.00 per 1M tokens</option>
-                        <option value="mistral/mistral-small">Mistral Small — $0.10 / $0.30 per 1M tokens</option>
+                        <option value="mistral/mistral-small">Mistral Small — $0.15 / $0.60 per 1M tokens</option>
                     </optgroup>
                     <optgroup label="xAI">
                         <option value="xai/grok-3">Grok 4.3 — $1.25 / $2.50 per 1M tokens</option>
@@ -474,7 +474,7 @@
         'openai/o3':               { name: 'o3', provider: 'OpenAI', input: 2.00, output: 8.00, quality: 94 },
         'openai/o4-mini':          { name: 'o4-mini', provider: 'OpenAI', input: 0.55, output: 2.20, quality: 86 },
         'anthropic/claude-opus-4.8':  { name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00, quality: 96 },
-        'anthropic/claude-sonnet-4.6': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, quality: 93 },
+        'anthropic/claude-sonnet-4.6': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 2.00, output: 10.00, quality: 93 },
         'anthropic/claude-haiku-4.5':  { name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, quality: 82 },
         'google/gemini-2.5-pro':   { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00, quality: 90 },
         'google/gemini-3.5-flash': { name: 'Gemini 3.5 Flash', provider: 'Google', input: 1.50, output: 9.00, quality: 87 },
@@ -482,11 +482,11 @@
         'deepseek/v4-pro':         { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.27, output: 1.10, quality: 88 },
         'deepseek/v4-flash':       { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.07, output: 0.28, quality: 76 },
         'meta/llama-4-maverick':   { name: 'Llama 4 Maverick', provider: 'Meta', input: 0.20, output: 0.60, quality: 84 },
-        'meta/llama-4-scout':     { name: 'Llama 4 Scout', provider: 'Meta', input: 0.10, output: 0.30, quality: 74 },
+        'meta/llama-4-scout':     { name: 'Llama 4 Scout', provider: 'Meta', input: 0.15, output: 0.60, quality: 74 },
         'mistral/mistral-large':   { name: 'Mistral Large', provider: 'Mistral', input: 2.00, output: 6.00, quality: 86 },
-        'mistral/mistral-small':   { name: 'Mistral Small', provider: 'Mistral', input: 0.10, output: 0.30, quality: 75 },
+        'mistral/mistral-small':   { name: 'Mistral Small', provider: 'Mistral', input: 0.15, output: 0.60, quality: 75 },
         'xai/grok-3':             { name: 'Grok 4.3', provider: 'xAI', input: 1.25, output: 2.50, quality: 88 },
-        'xai/grok-3-mini':        { name: 'Grok Build 0.1', provider: 'xAI', input: 0.30, output: 0.50, quality: 80 },
+        'xai/grok-3-mini':        { name: 'Grok Build 0.1', provider: 'xAI', input: 1.00, output: 2.00, quality: 80 },
     };
 
     function calculateCost(model, requests, inputTokens, outputTokens) {

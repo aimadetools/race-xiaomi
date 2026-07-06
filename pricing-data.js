@@ -1,7 +1,7 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
 // Last verified: Jul 1, 2026 (Added Claude Sonnet 5, 49 models total)
-const PRICING_LAST_UPDATED = 'Jul 3, 2026';
+const PRICING_LAST_UPDATED = 'Jul 6, 2026';
 
 const API_MODELS = [
     // OpenAI
@@ -22,9 +22,9 @@ const API_MODELS = [
     { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jun 2026' },
     { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jun 2026' },
     { id: 'anthropic-opus', name: 'Claude 4 Opus', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-opus48' },
-    { id: 'anthropic-sonnet5', name: 'Claude Sonnet 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', verified: 'Jul 2026' },
-    { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-30', replacement: 'anthropic-sonnet5' },
-    { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-sonnet46' },
+    { id: 'anthropic-sonnet5', name: 'Claude Sonnet 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 2.00, output: 10.00, context: '1M', verified: 'Jul 2026', note: 'Introductory pricing $2/$10 through Aug 31, 2026 (regular $3/$15)' },
+    { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 2.00, output: 10.00, context: '1M', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-30', replacement: 'anthropic-sonnet5' },
+    { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 2.00, output: 10.00, context: '200K', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-sonnet46' },
     { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K', verified: 'Jun 2026' },
     { id: 'anthropic-fable5', name: 'Claude Fable 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jun 2026' },
     { id: 'anthropic-mythos5', name: 'Claude Mythos 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jun 2026' },
@@ -45,7 +45,7 @@ const API_MODELS = [
     // Mistral
     { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '262K', verified: 'Jun 2026' },
     { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K', verified: 'Jun 2026' },
-    { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.10, output: 0.30, context: '128K', verified: 'Jun 2026' },
+    { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026' },
     // Cohere
     { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jun 2026' },
     { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jun 2026' },
@@ -59,7 +59,7 @@ const API_MODELS = [
     { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K', verified: 'Jun 2026' },
     // xAI
     { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 1.25, output: 2.50, context: '1M', verified: 'Jun 2026' },  // Was Grok 3 at $3/$15 — rebranded & repriced Jun 2026
-    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', providerSlug: 'xai', tier: 'Budget', input: 0.30, output: 0.50, context: '256K', verified: 'Jun 2026' },  // Replaced Grok 3 Mini ($0.30/$0.50)
+    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', providerSlug: 'xai', tier: 'Budget', input: 1.00, output: 2.00, context: '256K', verified: 'Jul 2026' },  // Code API pricing (was $0.30/$0.50)
     // AI21
     { id: 'ai21-jamba17', name: 'Jamba 1.7 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'Jun 2026' },
     { id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'Jun 2026', deprecated: true, replacement: 'ai21-jamba17' },

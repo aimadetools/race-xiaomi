@@ -55,7 +55,7 @@
                 "name": "Is GPT-5.4 nano or Mistral Small 4 cheaper?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Mistral Small 4 is cheaper. It costs $0.10/$0.30 per 1M tokens while GPT-5.4 nano costs $0.20/$1.25. That's 50% cheaper on input and 76% cheaper on output. At 1M tokens/month, Mistral Small 4 costs $0.40 vs GPT-5.4 nano's $1.45."
+                    "text": "Mistral Small 4 is cheaper. It costs $0.15/$0.60 per 1M tokens while GPT-5.4 nano costs $0.20/$1.25. That's 50% cheaper on input and 76% cheaper on output. At 1M tokens/month, Mistral Small 4 costs $0.40 vs GPT-5.4 nano's $1.45."
                 }
             },
             {
@@ -87,7 +87,7 @@
                 "name": "How do these compare to DeepSeek V4 Flash?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "DeepSeek V4 Flash at $0.14/$0.28 is the cheapest overall. Mistral Small 4 ($0.10/$0.30) is cheaper on input but more expensive on output. GPT-5.4 nano ($0.20/$1.25) is the most expensive of the three but offers 400K context (vs 1M for both others)."
+                    "text": "DeepSeek V4 Flash at $0.14/$0.28 is the cheapest overall. Mistral Small 4 ($0.15/$0.60) is cheaper on input but more expensive on output. GPT-5.4 nano ($0.20/$1.25) is the most expensive of the three but offers 400K context (vs 1M for both others)."
                 }
             }
         ]
@@ -312,7 +312,7 @@
             <div class="select-group">
                 <label>Mistral Model</label>
                 <select id="mistralModel">
-                    <option value="mistral-small" selected>Mistral Small 4 ($0.10/$0.30)</option>
+                    <option value="mistral-small" selected>Mistral Small 4 ($0.15/$0.60)</option>
                 </select>
             </div>
         </div>
@@ -418,7 +418,7 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <h3>Is GPT-5.4 nano or Mistral Small 4 cheaper?</h3>
-            <p>Mistral Small 4 is cheaper. It costs $0.10/$0.30 per 1M tokens while GPT-5.4 nano costs $0.20/$1.25. That's 50% cheaper on input and 76% cheaper on output. At 1M tokens/month, Mistral Small 4 costs $0.40 vs GPT-5.4 nano's $1.45.</p>
+            <p>Mistral Small 4 is cheaper. It costs $0.15/$0.60 per 1M tokens while GPT-5.4 nano costs $0.20/$1.25. That's 50% cheaper on input and 76% cheaper on output. At 1M tokens/month, Mistral Small 4 costs $0.40 vs GPT-5.4 nano's $1.45.</p>
         </div>
         <div class="faq-item">
             <h3>What is the context window difference?</h3>
@@ -430,7 +430,7 @@
         </div>
         <div class="faq-item">
             <h3>How do these compare to DeepSeek V4 Flash?</h3>
-            <p>DeepSeek V4 Flash at $0.14/$0.28 is cheapest overall for balanced workloads. Mistral Small 4 ($0.10/$0.30) is cheaper on input but slightly more on output. GPT-5.4 nano ($0.20/$1.25) is most expensive but offers 400K context.</p>
+            <p>DeepSeek V4 Flash at $0.14/$0.28 is cheapest overall for balanced workloads. Mistral Small 4 ($0.15/$0.60) is cheaper on input but slightly more on output. GPT-5.4 nano ($0.20/$1.25) is most expensive but offers 400K context.</p>
         </div>
         <div class="faq-item">
             <h3>Can I switch between them easily?</h3>
@@ -521,7 +521,7 @@
     <script>
     const MODELS = {
         'openai-gpt54nano': { name: 'GPT-5.4 nano', provider: 'OpenAI', input: 0.20, output: 1.25 },
-        'mistral-small': { name: 'Mistral Small 4', provider: 'Mistral', input: 0.10, output: 0.30 }
+        'mistral-small': { name: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60 }
     };
     const PRESETS = {
         chatbot: { input: 800, output: 200, reqPerDay: 5000 },

@@ -28,7 +28,7 @@ const M = {
     'llama-3.1-8b': { n: 'Llama 3.1 8B', p: 'Meta', i: 0.1, o: 0.1 },
     'kimi-k26': { n: 'Kimi K2.6', p: 'Moonshot', i: 0.95, o: 4 },
     'xai-grok3': { n: 'Grok 4.3', p: 'xAI', i: 1.25, o: 2.5 },
-    'xai-grok3-mini': { n: 'Grok Build 0.1', p: 'xAI', i: 0.3, o: 0.5 },
+    'xai-grok3-mini': { n: 'Grok Build 0.1', p: 'xAI', i: 1.0, o: 2.0 },
     'ai21-jamba': { n: 'Jamba 1.5 Large', p: 'AI21', i: 2, o: 8 }
 };
 module.exports = (req, res) => {

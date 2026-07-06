@@ -21,8 +21,8 @@ const MODELS = [
   { name: 'Claude Opus 4.8', provider: 'Anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M' },
   { name: 'Claude Opus 4.7', provider: 'Anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M' },
   { name: 'Claude 4 Opus', provider: 'Anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', deprecated: true },
-  { name: 'Claude Sonnet 4.6', provider: 'Anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M' },
-  { name: 'Claude Sonnet 4', provider: 'Anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', deprecated: true },
+  { name: 'Claude Sonnet 4.6', provider: 'Anthropic', tier: 'Mid', input: 2.00, output: 10.00, context: '1M' },
+  { name: 'Claude Sonnet 4', provider: 'Anthropic', tier: 'Mid', input: 2.00, output: 10.00, context: '200K', deprecated: true },
   { name: 'Claude Haiku 4.5', provider: 'Anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K' },
   { name: 'Claude Fable 5', provider: 'Anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M' },
   { name: 'Claude Mythos 5', provider: 'Anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M' },
@@ -43,7 +43,7 @@ const MODELS = [
   // Mistral
   { name: 'Mistral Large 3', provider: 'Mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '262K' },
   { name: 'Mistral Medium 3.5', provider: 'Mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K' },
-  { name: 'Mistral Small 4', provider: 'Mistral', tier: 'Budget', input: 0.10, output: 0.30, context: '128K' },
+  { name: 'Mistral Small 4', provider: 'Mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K' },
   // Cohere
   { name: 'Command A', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K' },
   { name: 'Command R+', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K' },
@@ -57,7 +57,7 @@ const MODELS = [
   { name: 'Kimi K2.6', provider: 'Moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K' },
   // xAI
   { name: 'Grok 4.3', provider: 'xAI', tier: 'Mid', input: 1.25, output: 2.50, context: '1M' },
-  { name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 0.30, output: 0.50, context: '256K' },
+  { name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 1.00, output: 2.00, context: '256K' },
   // AI21
   { name: 'Jamba 1.7 Large', provider: 'AI21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K' },
   { name: 'Jamba 1.5 Large', provider: 'AI21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', deprecated: true },
