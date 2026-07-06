@@ -85,47 +85,37 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
                     a.rel = 'noopener';
                 }
             }
-            // Route inline "Go Pro" CTAs: flash sale → flash-19.html, otherwise → go.html
+            // Route inline "Go Pro" CTAs: flash sale → Stripe directly (Session 1179: removed flash-19 middleman)
             if (a.href && (a.href.includes('pricing.html') || a.href.includes('pro.html')) && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro/i)) {
                 var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-                // Session 980: $19 flash sale active
                 if (!window.DEAL_EXPIRED) {
-                    a.href = 'flash-19.html?from=' + encodeURIComponent(pageName);
+                    a.href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
                 } else {
                     a.href = 'go.html?from=' + encodeURIComponent(pageName);
                 }
                 a.target = '_blank';
                 a.rel = 'noopener';
             }
-            // Session 984: Route go.html CTA links to flash-19.html during flash sale
+            // Route go.html CTA links directly to Stripe during flash sale (Session 1179)
             if (a.href && a.href.includes('go.html') && !window.DEAL_EXPIRED) {
-                var from = new URL(a.href, location.href).searchParams.get('from') || location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-                a.href = 'flash-19.html?from=' + encodeURIComponent(from);
+                a.href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+                a.target = '_blank';
+                a.rel = 'noopener';
             }
-            // Session 984: Route deal.html banner links to flash-19.html during flash sale
+            // Route deal.html banner links directly to Stripe during flash sale (Session 1179)
             if (a.href && a.href.includes('deal.html') && !window.DEAL_EXPIRED) {
-                a.href = 'flash-19.html?from=banner';
+                a.href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+                a.target = '_blank';
+                a.rel = 'noopener';
             }
         });
 
-        // Session 984: Intercept exit popup CTAs that link to Stripe during flash sale
-        // ~42 pages have exit popups that set href to _abStripeLink ($29 checkout).
-        // During flash sale, redirect these to flash-19.html instead.
-        if (!window.DEAL_EXPIRED) {
-            document.addEventListener('click', function(e) {
-                var cta = e.target.closest('#exit-popup-cta, .exit-cta');
-                if (!cta) return;
-                // If the exit popup links to Stripe, redirect to flash-19.html
-                if (cta.href && cta.href.includes('buy.stripe.com')) {
-                    e.preventDefault();
-                    var from = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-                    window.location.href = 'flash-19.html?from=exit_popup_' + encodeURIComponent(from);
-                }
-            }, true); // Use capture phase to run before the exit popup handler
+        // Exit popup CTAs: let them go directly to Stripe (already set by exit popup handler).
+        // Session 1179: Removed flash-19.html redirect — direct checkout reduces friction.
 
-            // Session 1170: Intercept "Get Pro" CTAs that link to audit.html during flash sale
-            // 991 pages have purchase CTAs going to audit.html instead of Stripe/flash-19.
-            // Redirect purchase-intent CTAs to flash-19.html (the optimized flash sale page).
+        // Session 1179: Intercept purchase-intent CTAs linking to audit.html during flash sale.
+        // Route directly to Stripe instead of flash-19.html middleman.
+        if (!window.DEAL_EXPIRED) {
             document.addEventListener('click', function(e) {
                 var cta = e.target.closest('a[href*="audit.html"]');
                 if (!cta) return;
@@ -133,9 +123,7 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
                 var text = (cta.textContent || '').toLowerCase();
                 if (text.match(/get pro|flash sale|pro for \$|pro —|get apipulse|buy pro|unlock pro|get migration|save \$|stop the leak|monitor \+ save/)) {
                     e.preventDefault();
-                    var params = new URL(cta.href, location.href).searchParams;
-                    var from = params.get('from') || location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-                    window.location.href = 'flash-19.html?from=' + encodeURIComponent(from);
+                    window.open('https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i', '_blank', 'noopener');
                 }
             }, true); // Capture phase to run before other handlers
         }
@@ -513,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
             banner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
             var urgencyText = window.DEAL_DAYS_LEFT <= 1 ? 'FINAL DAY' : window.DEAL_DAYS_LEFT + ' days left';
             banner.innerHTML = '<span>⚡ FLASH SALE: Pro lifetime access <strong>$19</strong> — <strong>' + urgencyText + '</strong></span>' +
-                '<a href="audit.html?from=banner" style="color:white;text-decoration:underline;font-weight:700;" onclick="if(window.trackEvent)window.trackEvent(\'deal_banner_clicked\',{source:\'deprecation_banner\'});">Get $19 deal →</a>' +
+                '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="color:white;text-decoration:underline;font-weight:700;" onclick="if(window.trackEvent)window.trackEvent(\'deal_banner_clicked\',{source:\'deprecation_banner\'});">Get $19 deal →</a>' +
                 '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
         }
         document.body.insertBefore(banner, document.body.firstChild);
