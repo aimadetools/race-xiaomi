@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1156 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12). New prices.html live price tracker with quick calculator. Audit conversion flow fixed (unblurred recommendations, gate migration code).**
+**Site Status:** 1156 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12). Live price tracker, live money-lost counter on audit, cost-of-inaction section replaces blurred preview.**
 
 ### Active Tasks — Weekly Digest Maintenance
 - **Update weekly digest every Friday** — Add new price changes, model launches, deprecations. (Updated through Jul 4 week — Session 1165)
