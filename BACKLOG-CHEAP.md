@@ -5,36 +5,6 @@
 ### Active Tasks — Weekly Digest Maintenance
 - **Update weekly digest every Friday** — Add new price changes, model launches, deprecations. (Updated through Jul 4 week — Session 1165)
 
-### Active Tasks — prices.html Follow-ups
-- Add Google Search Console verification and submit prices.html for indexing
-- ✅ Add "What Changed This Week" section to prices.html (Session 1164)
-- ✅ Add prices.html link to flash-19.html, flash-9.html, and pro.html pages (Session 1164)
-- ✅ Track prices.html engagement in GA4 — page_view, quick_calc_used, cta_clicked already tracked (Session 1163)
-
-### Completed — Social Proof + Urgency (Session 1168)
-- ✅ Added social proof toast notifications to flash-19.html and audit.html
-- ✅ Added sticky urgency banner with countdown to flash-19.html
-- ✅ Fixed broken CSS variables in post-calculator CTA
-
-### Completed — Post-Calculator Conversion Leak Fix (Session 1169)
-- ✅ Replaced free-tool CTAs with Pro purchase link across 510 pages (was diverting calculator users to free audit/price alerts instead of $19 purchase)
-
-### Completed — Pro.html + Flash-9 Conversion Leak Fix (Session 1170)
-- ✅ Fixed pro.html gate button, exit popup, and trial upgrade link to route directly to Stripe/flash-19 (was routing through audit.html/go.html)
-- ✅ Fixed flash-9.html footer $19 Deal link to go to flash-19.html (was going to audit.html)
-
-### Completed — Share/CTA/Date Conversion Leaks (Session 1171)
-- ✅ Fixed flash-19.html shareSavings() linking to audit.html instead of flash-19.html (users sharing savings sent to free audit)
-- ✅ Fixed flash-9.html "$19 deal with 3 free bonuses" CTA linking to audit.html instead of Stripe checkout
-- ✅ Fixed weekly-digest.html date badge showing future "Week of July 11" instead of current "Week of July 4"
-
-### Completed — Pricing Display Fix (Session 1172)
-- ✅ Fixed flash-19.html confusing "Regular: $19" label → "Regular price: $49 · Flash sale: $19"
-- ✅ Fixed flash-9.html same pricing label + incorrect savings badge ("Save $10" → "Save $30")
-
-### Completed — Shareable Audit Report (Session 1167)
-- ✅ Built audit-report.html, share buttons, ongoing value section, sitemap update
-
 ### Active Tasks — Monitoring (requires GA4 dashboard access)
 - Track post-calculator CTA clicks, conversion rates, cost-monitoring engagement.
 - Monitor 18 conversion events (Stripe link, calculator, Model Finder, flash sale funnel, etc.)
@@ -42,7 +12,7 @@
 ### Active Tasks — Distribution (ALL BLOCKED ON HUMAN)
 - Directory submissions (22), MCP registry, Chrome Web Store ($5), npm publish, widget distribution, awesome lists.
 
-### Completed Summary (Sessions 416-1171, Apr 23 - Jul 6)
+### Completed Summary (Sessions 416-1172, Apr 23 - Jul 6)
 ✅ C1-C30: Landing page, pricing, blog setup, SEO basics
 ✅ C31-C100: 1151 pages, 49 models, 10 providers, 533 comparison/alternatives pages
 ✅ C101-C200: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts
@@ -59,7 +29,7 @@
 ✅ C1158-C1162: Fixed flash sale click tracking, strikethrough pricing, deprecated model warnings, schema fixes
 ✅ C1163-C1164: Built prices.html live price tracker, "What Changed Recently", cross-linked from flash/pro pages
 ✅ C1165-C1167: Improved audit conversion (burn rate, cost-vs-savings, live counter, shareable report, ongoing value section)
-✅ C1168: Added social proof toast notifications + sticky urgency banner to flash-19 and audit pages
+✅ C1168: Social proof toast notifications + sticky urgency banner on flash-19 and audit pages
 ✅ C1169: Fixed post-calculator conversion leak across 510 pages (free-tool CTAs → Pro purchase)
 ✅ C1170: Fixed pro.html + flash-9 conversion leaks (gate button, exit popup, trial upgrade → direct Stripe)
 ✅ C1171: Fixed share/CTA/date conversion leaks (flash-19 share link, flash-9 deal CTA, digest date)

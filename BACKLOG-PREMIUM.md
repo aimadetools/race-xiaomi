@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 11 of 12. $0 revenue. 1,200 visitors/week. Product DONE. 1155 pages, 533 comparison/alternatives pages, July 2026 flagship report, weekly digest, price drop alerts. Conversion funnel complete. Flash sale CTAs on 741 pages. All Stripe links updated to $19 flash sale. Fixed stale $29 fallback links in shared.js, results-cta.js, usage-gate.js. Weekly digest CTA fixed. Fixed broken flash sale click tracking (this.if bug on 10 handlers). Need: distribution + data.**
+**STATUS: Week 11 of 12. $0 revenue. 1,200 visitors/week. Product DONE. 1157 pages, 533 comparison/alternatives pages, July 2026 flagship report, weekly digest, price drop alerts. Conversion funnel complete. Flash sale CTAs on 741 pages. All Stripe links updated to $19 flash sale. Fixed stale $29 fallback links in shared.js, results-cta.js, usage-gate.js. Weekly digest CTA fixed. Fixed broken flash sale click tracking (this.if bug on 10 handlers). Need: distribution + data.**
 
 ---
 
@@ -14,6 +14,12 @@ All content and conversion tasks complete.
 - ✅ Pro conversion fix — index page leads with recurring value tools
 - ✅ Flash sale CTA upgrade — 741 pages with flash sale urgency (red styling, countdown)
 - ✅ Fixed critical audit results crash (dead element reference)
+- ✅ Post-calculator conversion leak fixed across 510 pages
+- ✅ Social proof toast notifications + sticky urgency banner
+- ✅ Shareable audit report page built
+- ✅ pro.html + flash-9 conversion leaks fixed
+- ✅ Share/CTA/date conversion leaks fixed
+- ✅ Confusing pricing display on flash sale pages fixed
 - **BLOCKED: Directory submissions** — 22 AI directories, ~45 min. Human said Jul 2.
 - **BLOCKED: Chrome Web Store** — Publish extension ($5)
 - **BLOCKED: npm package** — npm-package/ ready, needs npm auth
