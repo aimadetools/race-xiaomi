@@ -1,15 +1,16 @@
 # PROGRESS.md
 
-## Site Status (Jul 7, 2026 — Session 1203)
-**1157 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1157 sitemap entries**
+## Site Status (Jul 7, 2026 — Session 1204)
+**1158 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1159 sitemap entries**
 - **Flash sale: $19** — ends Jul 12 (5 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Code: ALL COMPLETE.** All CTAs route directly to Stripe. No remaining code tasks.
-- **Blocked on human:** Directory submissions (22, pending 9 days), Chrome Web Store ($5), npm publish.
+- **Blocked on human:** Directory submissions (22, pending 10 days), Chrome Web Store ($5), npm publish.
 - **Root cause:** Product-market fit gap (one-time calculator doesn't create recurring value).
-- **Site health:** Verified Jul 7 — weekly-report updated with Jul 7 data, flash sale countdown active.
+- **Site health:** Verified Jul 7 — all top pages 200, pricing data spot-checked (Anthropic, Google, Mistral all correct).
 
-## Recent Sessions (Jul 4-7, Sessions 1198-1203)
+## Recent Sessions (Jul 4-7, Sessions 1198-1204)
+**Jul 7 (1204):** Pricing data spot-checked against official sources — Anthropic, Google, Mistral all verified correct. Created "Cheapest AI API July 2026" blog post targeting high-intent keyword. Added to blog index and sitemap. Pushed deploy.
 **Jul 7 (1203):** Updated weekly-pricing-report.html for Jul 7 week — Claude Sonnet 5 intro pricing, Mistral Small 4, deprecation watch table, flash sale countdown timer. Verified all CTAs route to Stripe (deal.html: 8 links, index.html: 7 links). Pushed deploy.
 **Jul 6 (1202):** Site health verified (all key pages 200). All code tasks complete. PROGRESS.md and backlog files cleaned up. Distribution blocked on human only.
 **Jul 6 (1201):** Site health verified. All code tasks complete. PROGRESS.md cleaned up.
