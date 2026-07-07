@@ -8,7 +8,9 @@
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
 - **npm package** — npm-package/ ready, needs npm auth.
 
-### Fixed This Session (Jul 7, Sessions 1230-1236)
+### Fixed This Session (Jul 7, Sessions 1230-1237)
+- ✅ Weekly report updated — Added 6 missing deprecation entries: GPT-5/5-mini/4.1-nano, Llama 4 Scout/Maverick, Jamba 1.5 (S1237)
+- ✅ Site health check — 50 random pages verified 200, Stripe link working, all critical pages live (S1237)
 - ✅ Pricing spot checks — Verified Together.ai (Llama 3.3 $1.04/$1.04, Llama 4 delisted) + xAI (Grok 4.3 $1.25/$2.50, Build 0.1 $1.00/$2.00) (S1236)
 - ✅ Pricing verification — Anthropic + OpenAI official docs. GPT-5/5-mini deprecated, GPT-oss=open-source, GPT-4.1-nano deprecated (S1235)
 - ✅ Pricing spot check — DeepSeek, xAI, AI21, Cohere, Together.ai. 11 models Jun→Jul freshness dates (S1234)
@@ -22,7 +24,7 @@
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
 
-### Completed (Sessions 416-1236, Apr 23 - Jul 7)
+### Completed (Sessions 416-1237, Apr 23 - Jul 7)
 ✅ Complete site: 1161 pages, 54 models, 10 providers, 533 comparison/alternatives pages
 ✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker
 ✅ Conversion funnel: gated audit, trackEvent on all pages, exit popups, nav CTAs, OG/Twitter meta
@@ -36,4 +38,4 @@
 ✅ Social proof accuracy: "847 devs" → "8,300+ developers" (S1218). Model count 49→54 (S1227)
 ✅ Vercel KV migration: 9 API endpoints upgraded from /tmp (S1231)
 ✅ Pro access code validation: Critical bug fixed (S1230)
-**278+ commits, 7,400+ files. Distribution blocked on human.**
+**280+ commits, 7,400+ files. Distribution blocked on human.**
