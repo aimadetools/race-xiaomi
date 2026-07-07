@@ -329,10 +329,9 @@
                         <div style="font-size:11px;color:var(--text-muted);">Unlock immediately after payment</div>
                     </div>
                 </div>
-                <a href="audit.html?from=pricing_page" class="btn-primary" style="text-align:center;background:linear-gradient(135deg,#dc2626,#b91c1c);" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_page_flash'})">⚡ Flash Sale — Get Pro for $19 (was $49)</a>
-                <div style="text-align:center;margin-top:10px;font-size:13px;color:#dc2626;font-weight:700;">⏰ Flash sale ends Jul 12 — price goes to $49</div>
-                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'trial_replacement'})">⚡ Get Pro — $19 lifetime</a>
-                <p style="font-size:12px;color:var(--text-muted);margin-top:12px;text-align:center;">After checkout, you'll be redirected to activate your Pro features automatically.</p>
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="btn-primary" style="text-align:center;background:linear-gradient(135deg,#dc2626,#b91c1c);font-size:18px;padding:18px 32px;box-shadow:0 4px 20px rgba(220,38,38,0.4);" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_page_flash'})">⚡ Get Pro — $19 lifetime (was $49)</a>
+                <div style="text-align:center;margin-top:12px;font-size:13px;color:#dc2626;font-weight:700;">⏰ Flash sale ends Jul 12 — price goes to $49. Save $30.</div>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center;">Instant access after checkout · 14-day money-back guarantee</p>
             </div>
         </div>
 
@@ -999,37 +998,7 @@
         })();
 
 
-        // Exit intent popup for pricing page (respects A/B variant)
-        (function(){
-            var shown=false;
-            var price=window._abPrice||19;
-            var futurePrice=Math.round(price*1.7);
-            var variant=window._abVariant||'B';
-            var stripeLink=window._abStripeLink||'audit.html?from=tool_page';
-            document.addEventListener('mouseleave',function(e){
-                if(shown||e.clientY>0)return;
-                shown=true;
-                showPricingExit();
-            });
-            // Mobile fallback: timed popup after 30s
-            if('ontouchstart' in window){
-                setTimeout(function(){ if(!shown){ shown=true; showPricingExit(); } },30000);
-            }
-            function showPricingExit(){
-                var overlay=document.createElement('div');
-                overlay.id='pricing-exit-popup';
-                overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;';
-                var popup=document.createElement('div');
-                popup.style.cssText='background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;text-align:center;margin:20px;';
-                popup.innerHTML='<h2 style="font-size:24px;font-weight:800;margin-bottom:12px;">You\'re losing money right now</h2><p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">Most developers save <strong style="color:var(--green);">$60-200/month</strong> after using APIpulse Pro. That\'s $720-2,400/year you\'re leaving on the table.</p><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px;"><div style="font-size:36px;font-weight:800;color:var(--accent);">$'+price+'</div><div style="font-size:13px;color:var(--text-muted);text-decoration:line-through;">$'+futurePrice+' after founding period</div><div style="font-size:13px;color:var(--text-muted);">one-time, lifetime access</div></div><div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#d97706;">🔥 Founding member pricing — lock in $'+price+' before it goes to $'+futurePrice+'</div><a href="'+stripeLink+'" class="btn-primary" style="display:block;text-align:center;margin-bottom:12px;" target="_blank" rel="noopener" id="exit-popup-cta">Stop the Leak — $'+price+' lifetime</a><button onclick="document.getElementById(\'pricing-exit-popup\').remove()" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:13px;">No thanks, I\'ll keep overpaying</button>';
-                overlay.appendChild(popup);
-                document.body.appendChild(overlay);
-                document.getElementById('exit-popup-cta').addEventListener('click',function(){
-                    if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'exit_popup_pricing',variant:variant,price:price,timing_variant:window._abPopupTimingVariant});
-                });
-                if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'pricing',variant:variant,timing_variant:window._abPopupTimingVariant});
-            }
-        })();
+        // Exit popup removed — was causing decision fatigue without converting
 
         // Show deprecation urgency banner when Claude 4 deadline is near or passed
         (function(){
