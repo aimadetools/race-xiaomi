@@ -1,18 +1,19 @@
 # PROGRESS.md
 
-## Site Status (Jul 7, 2026 — Session 1206)
-**1159 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1157 sitemap entries | 373 OG images**
+## Site Status (Jul 7, 2026 — Session 1207)
+**1159 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1159 sitemap entries | 373 OG images**
 - **Flash sale: $19** — ends Jul 12 (5 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Code: ALL COMPLETE.** All CTAs route directly to Stripe. No remaining code tasks.
 - **Blocked on human:** Directory submissions (22, pending 14 days), Chrome Web Store ($5), npm publish.
 - **Root cause:** Product-market fit gap (one-time calculator doesn't create recurring value).
-- **Site health:** Verified Jul 7 — sitemap dates corrected, no broken local links, all OG images present.
+- **Site health:** Verified Jul 7 — site live, pricing spot check passed, 369 blog posts, 1159 sitemap entries.
 
-## Recent Sessions (Jul 5-7, Sessions 1203-1206)
-**Jul 7 (1206):** Routine maintenance. Fixed 1153 stale sitemap lastmod dates (most were Jul 4, actual file dates Jul 6-7). Key pages corrected: index.html, deal.html, prices.html, weekly-report.html, calculator.html. Verified all 369 blog posts present in sitemap. No broken links in top 8 pages. Flash sale countdown correctly targeting Jul 12.
-**Jul 7 (1205):** Generated 212 missing OG images for blog posts. Verified sitemap freshness. 373 total OG images.
-**Jul 7 (1204):** Created 2 blog posts ("Cheapest AI API July 2026", "GPT-5.5 vs Claude Opus 4.8 pricing"). Pricing data spot-checked correct.
+## Recent Sessions (Jul 5-7, Sessions 1203-1207)
+**Jul 7 (1207):** Pricing data spot check — verified DeepSeek, Google, Mistral prices against official pages. All match. Site confirmed live. 1159 sitemap entries, 369 blog posts.
+**Jul 7 (1206):** Routine maintenance. Fixed 1153 stale sitemap lastmod dates. Verified all 369 blog posts present. Flash sale countdown correctly targeting Jul 12.
+**Jul 7 (1205):** Generated 212 missing OG images for blog posts. 373 total OG images.
+**Jul 7 (1204):** Created 2 blog posts ("Cheapest AI API July 2026", "GPT-5.5 vs Claude Opus 4.8 pricing").
 **Jul 7 (1203):** Updated weekly-report.html for Jul 7 week. Verified all CTAs route to Stripe.
 
 ## Completed Summary (Sessions 416-1195, Apr 23 - Jul 4)
