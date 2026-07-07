@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 7, 2026 (S1227: OpenAI +GPT-4.1/mini/nano, deprecated GPT-4o; Mistral confirmed. 54 models total)
+// Last verified: Jul 7, 2026 (S1229: Spot-checked DeepSeek/xAI/AI21. 56 entries, 44 active, 12 deprecated)
 const PRICING_LAST_UPDATED = 'Jul 7, 2026';
 
 const API_MODELS = [
