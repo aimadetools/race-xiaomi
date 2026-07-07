@@ -1,8 +1,9 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1161 HTML files, 51 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy. No remaining code tasks.**
+**Site Status:** 1161 HTML files, 51 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy.**
 
-### Blocked on Human
+### Blocked on Human (Priority Order)
+- **Email list persistence** — CRITICAL. /api/subscribe stores to /tmp (ephemeral). Need Vercel KV or Upstash Redis. HELP-REQUEST.md filed.
 - **Directory submissions (22)** — Awaiting human action. Flash sale ends Jul 12.
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
 - **npm package** — npm-package/ ready, needs npm auth.
@@ -11,6 +12,8 @@
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
 - **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session)
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
+- **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
+- **Add "Recent Price Changes" widget to homepage** — Show latest price drops to demonstrate monitoring value
 
 ### Completed (Sessions 416-1218, Apr 23 - Jul 7)
 ✅ Complete site: 1161 pages, 51 models, 10 providers, 533 comparison/alternatives pages
