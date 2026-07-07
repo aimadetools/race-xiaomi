@@ -333,6 +333,18 @@ document.addEventListener('DOMContentLoaded', () => {
             terminalLinkEl.parentNode.insertBefore(dashboardLink, terminalLinkEl.nextSibling);
         }
     }
+
+    // Add Price Tracker link after Dashboard link
+    var hasPriceTracker = navLinks.querySelector('a[href="price-tracker.html"]');
+    if (!hasPriceTracker) {
+        var dashboardLinkEl = navLinks.querySelector('a[href="pricing-dashboard.html"]');
+        if (dashboardLinkEl) {
+            var priceTrackerLink = document.createElement('a');
+            priceTrackerLink.href = 'price-tracker.html';
+            priceTrackerLink.textContent = 'Price Tracker';
+            dashboardLinkEl.parentNode.insertBefore(priceTrackerLink, dashboardLinkEl.nextSibling);
+        }
+    }
 });
 
 // Close mobile nav when clicking a link
