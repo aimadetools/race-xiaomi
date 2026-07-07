@@ -9,6 +9,7 @@
 - **Site health:** Verified Jul 7 — site live (307→www), pricing current, 369 blog posts, 1160 sitemap entries.
 
 ## Recent Sessions (Jul 7)
+**Jul 7 (1232):** Pricing spot check — verified Google, DeepSeek, Mistral against official pages. All 10 models match. Fixed model count typo in FINAL-2-WEEKS.md (51→54). Site healthy, all code complete, all remaining tasks blocked on human action.
 **Jul 7 (1231):** Vercel KV migration — Upgraded all 9 API endpoints from ephemeral /tmp storage to @vercel/kv with /tmp fallback. Endpoints: subscribe, unsubscribe, validate-code, stripe-webhook, restore-access, subscribe-alerts, send-drip, newsletter, admin/subscribers. Added @vercel/kv ^2.0.0 to package.json. All storage functions now async, using KV when KV_REST_API_URL env var is set. Human action: set KV_REST_API_URL and KV_REST_API_TOKEN in Vercel dashboard.
 **Jul 7 (1230):** CRITICAL BUG FIX — Pro access code validation broken. Created /api/validate-code.js, updated pro-features.js to call API first. NEW purchases can now activate Pro.
 **Jul 7 (1229):** Model count consistency — updated 571+ files from "51 models" to "54 models". Pricing verified for DeepSeek, xAI, AI21.
