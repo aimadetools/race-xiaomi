@@ -8,7 +8,9 @@
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
 - **npm package** — npm-package/ ready, needs npm auth.
 
-### Fixed This Session (Jul 7, Sessions 1230-1237)
+### Fixed This Session (Jul 7, Sessions 1230-1238)
+- ✅ Model count consistency — Fixed "51" → "54" on index.html (2) and pricing.html (1) social proof stats (S1238)
+- ✅ Pricing spot checks — Verified Mistral (all 4 models) + Cohere (all 3 models) against official docs (S1238)
 - ✅ Weekly report updated — Added 6 missing deprecation entries: GPT-5/5-mini/4.1-nano, Llama 4 Scout/Maverick, Jamba 1.5 (S1237)
 - ✅ Site health check — 50 random pages verified 200, Stripe link working, all critical pages live (S1237)
 - ✅ Pricing spot checks — Verified Together.ai (Llama 3.3 $1.04/$1.04, Llama 4 delisted) + xAI (Grok 4.3 $1.25/$2.50, Build 0.1 $1.00/$2.00) (S1236)
