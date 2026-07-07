@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1161 HTML files, 54 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy.**
+**Site Status:** 1161 HTML files, 54 models (41 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy.**
 
 ### Blocked on Human (Priority Order)
 - **Vercel KV env vars** — Code upgraded to use @vercel/kv (Session 1231). Human needs to set KV_REST_API_URL and KV_REST_API_TOKEN in Vercel dashboard. Until then, /tmp fallback is active (data lost on cold starts).
@@ -8,7 +8,8 @@
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
 - **npm package** — npm-package/ ready, needs npm auth.
 
-### Fixed This Session (Jul 7, Sessions 1230-1234)
+### Fixed This Session (Jul 7, Sessions 1230-1235)
+- ✅ Pricing verification — Anthropic + OpenAI official docs verified. GPT-5/5-mini deprecated, GPT-oss=open-source not API, GPT-4.1-nano deprecated (S1235)
 - ✅ Pricing spot check — DeepSeek, xAI, AI21, Cohere, Together.ai Llama 3.3 verified. 11 models Jun→Jul freshness dates updated (S1234)
 - ✅ Vercel KV migration — 9 API endpoints upgraded from /tmp to @vercel/kv with fallback (S1231)
 - ✅ Pro access code validation — Critical bug fixed. Created /api/validate-code.js (S1230)

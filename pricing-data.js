@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 7, 2026 (S1233: Verified DeepSeek, xAI, AI21, Cohere, Together.ai Llama 3.3 70B. 56 entries, 44 active, 12 deprecated)
+// Last verified: Jul 7, 2026 (S1235: Verified Anthropic + OpenAI official docs. GPT-5/5 mini deprecated→GPT-5.5/5.4-mini. GPT-oss not API models. GPT-4.1 nano deprecated→5.4-nano. 56 entries, 41 active, 15 deprecated)
 const PRICING_LAST_UPDATED = 'Jul 7, 2026';
 
 const API_MODELS = [
@@ -12,15 +12,15 @@ const API_MODELS = [
     { id: 'openai-gpt54-mini', name: 'GPT-5.4 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.75, output: 4.50, context: '400K', verified: 'Jul 2026' },
     { id: 'openai-gpt54-nano', name: 'GPT-5.4 nano', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.20, output: 1.25, context: '400K', verified: 'Jul 2026' },
     { id: 'openai-gpt54-pro', name: 'GPT-5.4 Pro', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 30.00, output: 180.00, context: '400K', verified: 'Jul 2026' },
-    { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 1.25, output: 10.00, context: '272K', verified: 'Jul 2026' },
-    { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.25, output: 2.00, context: '272K', verified: 'Jul 2026' },
-    { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026' },
-    { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.08, output: 0.35, context: '128K', verified: 'Jul 2026' },
+    { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 1.25, output: 10.00, context: '272K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-12-11', replacement: 'openai-gpt55', note: 'Deprecated; shutdown Dec 11 2026, replaced by GPT-5.5' },
+    { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.25, output: 2.00, context: '272K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-12-11', replacement: 'openai-gpt54-mini', note: 'Deprecated; shutdown Dec 11 2026, replaced by GPT-5.4 mini' },
+    { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026', note: 'Open-source model (not available via OpenAI API; self-host or use Hugging Face)' },
+    { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.08, output: 0.35, context: '128K', verified: 'Jul 2026', note: 'Open-source model (not available via OpenAI API; self-host or use Hugging Face)' },
     { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-04-14', replacement: 'openai-gpt41', note: 'Deprecated Apr 2025; replaced by GPT-4.1 family' },
     { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-04-14', replacement: 'openai-gpt41-nano', note: 'Deprecated Apr 2025; replaced by GPT-4.1 family' },
     { id: 'openai-gpt41', name: 'GPT-4.1', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.00, output: 8.00, context: '1M', verified: 'Jul 2026' },
     { id: 'openai-gpt41-mini', name: 'GPT-4.1 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.40, output: 1.60, context: '1M', verified: 'Jul 2026' },
-    { id: 'openai-gpt41-nano', name: 'GPT-4.1 nano', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Jul 2026' },
+    { id: 'openai-gpt41-nano', name: 'GPT-4.1 nano', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-10-23', replacement: 'openai-gpt54-nano', note: 'Deprecated; shutdown Oct 23 2026, replaced by GPT-5.4 nano' },
     // Anthropic
     { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jul 2026' },
     { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jul 2026' },
