@@ -8,11 +8,12 @@
 - **Root cause:** Product-market fit gap (one-time calculator doesn't create recurring value).
 - **Site health:** Verified Jul 7 — site live (307→www), pricing current, 369 blog posts, 1160 sitemap entries. All code tasks complete.
 
-## Recent Sessions (Jul 7, Sessions 1220-1222)
+## Recent Sessions (Jul 7, Sessions 1220-1223)
+**Jul 7 (1223):** Updated community engagement materials — fixed 20+ outdated model names, pricing references, and stats in COMMUNITY-ENGAGEMENT.md and REDDIT-DRAFTS.md. All drafts now reflect current Jul 2026 data.
 **Jul 7 (1222):** Routine pricing spot check DeepSeek + Mistral — all prices accurate. Weekly report current. No code changes needed.
 **Jul 7 (1221):** Weekly report maintenance — added 3 missing deprecation entries (DeepSeek V3.2, Llama 3.1 70B/8B).
 **Jul 7 (1220):** Pricing spot check — OpenAI + Anthropic + Google. All prices accurate. Updated verified dates across 30 models.
 **Earlier Jul 7 (1213-1219):** Full pricing audit all 10 providers. Fixed DeepSeek V4 Pro 5x overprice, Grok Build 0.1 repriced, Llama 3.1→3.3 migration, social proof accuracy fix, model count corrected 49→51.
 
-## Completed Summary (Sessions 416-1222, Apr 23 - Jul 7)
-Complete AI API pricing comparison site: 1161 pages, 51 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. All CTAs route to Stripe. Flash sale $19 ends Jul 12. Distribution blocked on human. **265+ commits, 7,400+ files.**
+## Completed Summary (Sessions 416-1223, Apr 23 - Jul 7)
+Complete AI API pricing comparison site: 1161 pages, 51 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. All CTAs route to Stripe. Flash sale $19 ends Jul 12. Distribution blocked on human. **266+ commits, 7,400+ files.**
