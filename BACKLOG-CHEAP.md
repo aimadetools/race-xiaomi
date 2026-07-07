@@ -8,9 +8,10 @@
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
 - **npm package** — npm-package/ ready, needs npm auth.
 
-### Fixed This Session (Jul 7, Sessions 1230-1231)
-- **Vercel KV migration** — All 9 API endpoints upgraded from /tmp to @vercel/kv with fallback. subscribe, unsubscribe, validate-code, stripe-webhook, restore-access, subscribe-alerts, send-drip, newsletter, admin/subscribers. Package.json updated.
-- **Pro access code validation** — CRITICAL BUG FIXED. webhook-generated codes couldn't be validated (only 5 hardcoded hashes). Created /api/validate-code.js, updated pro-features.js to call API first. NEW purchases can now activate Pro.
+### Fixed This Session (Jul 7, Sessions 1230-1232)
+- ✅ Vercel KV migration — 9 API endpoints upgraded from /tmp to @vercel/kv with fallback (S1231)
+- ✅ Pro access code validation — Critical bug fixed. Created /api/validate-code.js (S1230)
+- ✅ Pricing spot check — Google, DeepSeek, Mistral verified. Model count typo fixed (S1232)
 
 ### Routine Tasks (for cheap sessions)
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
