@@ -31,7 +31,8 @@
   - Updated Llama 3.1 70B → Llama 3.3 70B ($0.88/$0.88 → $1.04/$1.04) — 32 files updated
   - Marked Llama 3.1 70B/8B deprecated (delisted from Together.ai serverless)
   - Verified Cohere pricing: Command A/Command R+ at $2.50/$10.00 matches official
+✅ Weekly report maintenance (S1221) — added 3 missing deprecation entries (DeepSeek V3.2, Llama 3.1 70B/8B)
 ✅ Price Tracker in global nav (S1211) — now visible on all 1160 pages
 ✅ Pricing freshness dates fixed (S1211+S1216) — 116 files updated to Jul 7 (77 S1211 + 39 S1216)
 ✅ Social proof accuracy (S1218) — Fixed fake "847 devs switched" → "8,300+ developers use APIpulse" across audit, claim, blog pages. Updated pricing page stats (49→51 models, 476→533 comparisons).
-**264+ commits, 7,400+ files. Distribution blocked on human.**
+**265+ commits, 7,400+ files. Distribution blocked on human.**
