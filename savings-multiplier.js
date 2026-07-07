@@ -151,7 +151,7 @@
                 '💡 Average user finds $2,400/yr in savings',
                 '🔄 New model prices added weekly — savings grow over time',
                 '⚡ Most users see ROI in under 1 day',
-                '📊 49 models monitored across 10 providers'
+                '📊 51 models monitored across 10 providers'
             ];
             var msgIdx = 0;
             function nextMessage() {

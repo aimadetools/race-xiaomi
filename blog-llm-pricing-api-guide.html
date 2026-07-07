@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Use a Free LLM Pricing API in Your Projects — APIpulse</title>
-    <meta name="description" content="Step-by-step guide to using the free APIpulse LLM Pricing API. Fetch real-time pricing for GPT-5, Claude, Gemini, and 49 models. Build cost dashboards, CI checks, and budget tools. No API key needed.">
+    <meta name="description" content="Step-by-step guide to using the free APIpulse LLM Pricing API. Fetch real-time pricing for GPT-5, Claude, Gemini, and 51 models. Build cost dashboards, CI checks, and budget tools. No API key needed.">
     <meta name="keywords" content="LLM pricing API, AI API pricing JSON, GPT pricing API, Claude cost API, free AI pricing data, LLM cost calculator API, AI model pricing endpoint">
     <meta property="og:title" content="How to Use a Free LLM Pricing API in Your Projects — APIpulse">
     <meta property="og:description" content="Fetch real-time pricing for 49 AI models. Build cost dashboards, CI checks, and budget tools. Free, no API key.">
@@ -65,7 +65,7 @@
                 "name": "How many AI models does the pricing API cover?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "49 models across 10 providers: OpenAI (GPT-5, GPT-5 mini, GPT-5.5, etc.), Anthropic (Claude Opus 4.8, Sonnet 4.6, Haiku 4.5), Google (Gemini 3.5 Flash, Gemini 2.5 Pro), DeepSeek (V4 Pro, V3.2), Mistral, Cohere, Meta Llama, Moonshot Kimi, xAI Grok, and AI21 Jamba."
+                    "text": "51 models across 10 providers: OpenAI (GPT-5, GPT-5 mini, GPT-5.5, etc.), Anthropic (Claude Opus 4.8, Sonnet 4.6, Haiku 4.5), Google (Gemini 3.5 Flash, Gemini 2.5 Pro), DeepSeek (V4 Pro, V3.2), Mistral, Cohere, Meta Llama, Moonshot Kimi, xAI Grok, and AI21 Jamba."
                 }
             },
             {
@@ -212,12 +212,12 @@
         <p>Instead of manually checking 10 provider pricing pages, you can pull structured data from a single API endpoint. Here's how.</p>
 
         <h2>The API: 6 Endpoints, Zero Auth</h2>
-        <p>The APIpulse LLM Pricing API is free, CORS-enabled, and requires no API key. It covers 49 models across 10 providers with verified pricing data updated regularly.</p>
+        <p>The APIpulse LLM Pricing API is free, CORS-enabled, and requires no API key. It covers 51 models across 10 providers with verified pricing data updated regularly.</p>
 
         <div class="endpoint-card">
             <span class="endpoint-method">GET</span>
             <span class="endpoint-path">/api/pricing</span>
-            <p class="endpoint-desc">Returns all 49 models with pricing, context windows, tier, and provider info. Supports filtering by provider, tier, or individual model.</p>
+            <p class="endpoint-desc">Returns all 51 models with pricing, context windows, tier, and provider info. Supports filtering by provider, tier, or individual model.</p>
             <a href="https://getapipulse.com/api/pricing" target="_blank" class="try-it">Try it live →</a>
         </div>
         <div class="cta-box" style="background:linear-gradient(135deg,var(--accent-bg),rgba(99,102,241,0.02));border-color:rgba(99,102,241,0.3);">
@@ -271,7 +271,7 @@ const res = await fetch('https://getapipulse.com/api/pricing');
 const { models, meta } = await res.json();
 
 console.log(`Tracking ${meta.count} models across ${meta.providers.length} providers`);
-// → Tracking 49 models across 10 providers
+// → Tracking 51 models across 10 providers
 
 // Find cheapest model
 const sorted = models
@@ -412,7 +412,7 @@ jobs:
 <div style="max-width:700px;margin:0 auto 32px;padding:0 24px;">
     <div style="padding:20px;border-radius:12px;border:1px solid var(--accent);background:rgba(99,102,241,0.05);">
         <div style="font-size:16px;font-weight:700;color:var(--accent);margin-bottom:4px;">🔧 Free Embeddable Pricing Widget</div>
-        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:8px;">Add live AI API pricing to your docs, blog, or README with one script tag. 49 models, auto-updating.</div>
+        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:8px;">Add live AI API pricing to your docs, blog, or README with one script tag. 51 models, auto-updating.</div>
         <a href="widget.html" style="font-size:14px;color:var(--accent);font-weight:600;text-decoration:none;">Get the Free Widget →</a>
         <a href="mcp.html" style="font-size:14px;color:var(--accent);font-weight:600;text-decoration:none;">Free MCP Server →</a>
     </div>

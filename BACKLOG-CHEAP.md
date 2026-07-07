@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1159 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy. No remaining code tasks.**
+**Site Status:** 1159 HTML files, 51 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy. No remaining code tasks.**
 
 ### Blocked on Human
 - **Directory submissions (22)** — Awaiting human action. Flash sale ends Jul 12.
@@ -17,7 +17,7 @@
 - ✅ **Update OG images** — Fixed Session 1205. Generated 212 missing OG images for blog posts. 373 total now.
 
 ### Completed (Sessions 416-1209, Apr 23 - Jul 7)
-✅ Complete site: 1160 pages, 49 models, 10 providers, 533 comparison/alternatives pages
+✅ Complete site: 1160 pages, 51 models, 10 providers, 533 comparison/alternatives pages
 ✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker
 ✅ Conversion funnel: gated audit, trackEvent on all pages, exit popups, nav CTAs, OG/Twitter meta
 ✅ All conversion leaks fixed. Calculator recommendations gated on all 8 pages

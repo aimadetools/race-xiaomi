@@ -1,7 +1,7 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 1, 2026 (Added Claude Sonnet 5, 49 models total)
-const PRICING_LAST_UPDATED = 'Jul 6, 2026';
+// Last verified: Jul 7, 2026 (Added Gemini 2.5 Flash, Codestral; fixed Mistral Small 4 prices; 51 models total)
+const PRICING_LAST_UPDATED = 'Jul 7, 2026';
 
 const API_MODELS = [
     // OpenAI
@@ -35,6 +35,7 @@ const API_MODELS = [
     { id: 'google-gemini3-flash', name: 'Gemini 3 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.50, output: 3.00, context: '1M', verified: 'Jun 2026' },
     { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M', verified: 'Jun 2026' },
     { id: 'google-25-flash-lite', name: 'Gemini 2.5 Flash-Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Jun 2026' },
+    { id: 'google-25-flash', name: 'Gemini 2.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 0.30, output: 2.50, context: '1M', verified: 'Jul 2026' },
     { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'May 2026', deprecated: true, replacement: 'google-gemini3-flash' },
     { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.075, output: 0.30, context: '1M', verified: 'May 2026', deprecated: true, replacement: 'google-gemini31-flash-lite' },
     // DeepSeek
@@ -46,6 +47,7 @@ const API_MODELS = [
     { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '262K', verified: 'Jun 2026' },
     { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K', verified: 'Jun 2026' },
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026' },
+    { id: 'codestral', name: 'Codestral', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 0.30, output: 0.90, context: '256K', verified: 'Jul 2026' },
     // Cohere
     { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jun 2026' },
     { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jun 2026' },
