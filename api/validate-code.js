@@ -1,5 +1,5 @@
 // Vercel Serverless Function: Validate Pro Access Code
-// Checks code against stored purchases OR hardcoded hashes
+// Checks code against stored purchases (Vercel KV or /tmp) OR hardcoded hashes
 // This fixes the critical bug where webhook-generated codes couldn't be validated
 
 const crypto = require('crypto');
@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PURCHASES_FILE = path.join('/tmp', 'apipulse_purchases.json');
+const KV_KEY = 'apipulse:purchases';
 
 // Hardcoded hashes (backward compat with manually distributed codes)
 const LEGACY_CODE_HASHES = [
@@ -17,14 +18,44 @@ const LEGACY_CODE_HASHES = [
     '159b2b12f05d0c2ac21c84b9b2d80d31de2510d2e252e1c4f77c8291e883d714',
 ];
 
-function loadPurchases() {
-    try {
-        if (fs.existsSync(PURCHASES_FILE)) {
-            return JSON.parse(fs.readFileSync(PURCHASES_FILE, 'utf8'));
-        }
-    } catch (e) { /* start fresh */ }
-    return [];
+// --- Storage abstraction: Vercel KV or /tmp fallback ---
+
+let kvClient = null;
+
+async function getKvClient() {
+  if (kvClient) return kvClient;
+  if (!process.env.KV_REST_API_URL) return null;
+  try {
+    const kv = require('@vercel/kv');
+    kvClient = kv;
+    return kv;
+  } catch (e) {
+    console.warn('[VALIDATE-CODE] @vercel/kv not installed, falling back to /tmp');
+    return null;
+  }
 }
+
+async function loadPurchases() {
+  const kv = await getKvClient();
+  if (kv) {
+    try {
+      const data = await kv.get(KV_KEY);
+      return Array.isArray(data) ? data : [];
+    } catch (e) {
+      console.error('[VALIDATE-CODE] KV read error:', e.message);
+      return [];
+    }
+  }
+  // /tmp fallback
+  try {
+    if (fs.existsSync(PURCHASES_FILE)) {
+      return JSON.parse(fs.readFileSync(PURCHASES_FILE, 'utf8'));
+    }
+  } catch (e) { /* start fresh */ }
+  return [];
+}
+
+// --- End storage abstraction ---
 
 function hashCode(code) {
     return crypto.createHash('sha256').update(code.toUpperCase()).digest('hex');
@@ -57,8 +88,8 @@ module.exports = async (req, res) => {
         return res.status(200).json({ valid: true, source: 'legacy' });
     }
 
-    // 2. Check stored purchases
-    const purchases = loadPurchases();
+    // 2. Check stored purchases (Vercel KV or /tmp)
+    const purchases = await loadPurchases();
     const match = purchases.find(p => p.codeHash === hash);
     if (match) {
         return res.status(200).json({

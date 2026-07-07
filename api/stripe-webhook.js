@@ -1,5 +1,7 @@
 // Vercel Serverless Function: Stripe Webhook Handler
 // Auto-delivers Pro access after successful payment via email
+// Uses Vercel KV (Upstash Redis) when KV_REST_API_URL is set
+// Falls back to /tmp file storage for local development
 // Requires: STRIPE_WEBHOOK_SECRET, RESEND_API_KEY env vars
 
 const crypto = require('crypto');
@@ -7,6 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PURCHASES_FILE = path.join('/tmp', 'apipulse_purchases.json');
+const KV_KEY = 'apipulse:purchases';
 
 // Simple access code generator
 function generateAccessCode() {
@@ -24,19 +27,59 @@ function hashCode(code) {
     return crypto.createHash('sha256').update(code.toUpperCase()).digest('hex');
 }
 
-// --- Purchase storage ---
-function loadPurchases() {
-    try {
-        if (fs.existsSync(PURCHASES_FILE)) {
-            return JSON.parse(fs.readFileSync(PURCHASES_FILE, 'utf8'));
-        }
-    } catch (e) { /* start fresh */ }
-    return [];
+// --- Storage abstraction: Vercel KV or /tmp fallback ---
+
+let kvClient = null;
+
+async function getKvClient() {
+  if (kvClient) return kvClient;
+  if (!process.env.KV_REST_API_URL) return null;
+  try {
+    const kv = require('@vercel/kv');
+    kvClient = kv;
+    return kv;
+  } catch (e) {
+    console.warn('[WEBHOOK] @vercel/kv not installed, falling back to /tmp');
+    return null;
+  }
 }
 
-function savePurchases(purchases) {
-    fs.writeFileSync(PURCHASES_FILE, JSON.stringify(purchases, null, 2));
+async function loadPurchases() {
+  const kv = await getKvClient();
+  if (kv) {
+    try {
+      const data = await kv.get(KV_KEY);
+      return Array.isArray(data) ? data : [];
+    } catch (e) {
+      console.error('[WEBHOOK] KV read error:', e.message);
+      return [];
+    }
+  }
+  // /tmp fallback
+  try {
+    if (fs.existsSync(PURCHASES_FILE)) {
+      return JSON.parse(fs.readFileSync(PURCHASES_FILE, 'utf8'));
+    }
+  } catch (e) { /* start fresh */ }
+  return [];
 }
+
+async function savePurchases(purchases) {
+  const kv = await getKvClient();
+  if (kv) {
+    try {
+      await kv.set(KV_KEY, JSON.parse(JSON.stringify(purchases)));
+      return;
+    } catch (e) {
+      console.error('[WEBHOOK] KV write error:', e.message);
+      // fall through to /tmp
+    }
+  }
+  // /tmp fallback
+  fs.writeFileSync(PURCHASES_FILE, JSON.stringify(purchases, null, 2));
+}
+
+// --- End storage abstraction ---
 
 // --- Email sending via Resend ---
 async function sendPurchaseEmail(email, accessCode, amount) {
@@ -202,7 +245,7 @@ module.exports = async function handler(req, res) {
         const codeHash = hashCode(accessCode);
 
         // Store purchase record
-        const purchases = loadPurchases();
+        const purchases = await loadPurchases();
         purchases.push({
             email: customerEmail,
             accessCode,
@@ -211,9 +254,10 @@ module.exports = async function handler(req, res) {
             sessionId,
             timestamp: new Date().toISOString()
         });
-        savePurchases(purchases);
+        await savePurchases(purchases);
 
-        console.log(`[WEBHOOK] Purchase stored. Total purchases: ${purchases.length}`);
+        const storageType = (await getKvClient()) ? 'vercel-kv' : '/tmp';
+        console.log(`[WEBHOOK] Purchase stored. Total purchases: ${purchases.length} (storage: ${storageType})`);
         console.log(`[WEBHOOK] PRO_ACCESS_CODE for ${customerEmail}: ${accessCode}`);
 
         // Send purchase confirmation email (non-blocking)

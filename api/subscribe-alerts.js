@@ -1,5 +1,5 @@
 // Vercel Serverless Function: Price Alert Subscription API
-// Stores email + model subscriptions in /tmp/apipulse_alert_subs.json
+// Stores email + model subscriptions via Vercel KV or /tmp fallback
 // Free tier: 3 models. Pro (localStorage check): unlimited.
 // Sends welcome email via Resend.
 //
@@ -10,6 +10,61 @@ const path = require('path');
 const crypto = require('crypto');
 
 const ALERTS_FILE = path.join('/tmp', 'apipulse_alert_subs.json');
+const KV_KEY = 'apipulse:alert_subs';
+
+// --- Storage abstraction: Vercel KV or /tmp fallback ---
+
+let kvClient = null;
+
+async function getKvClient() {
+  if (kvClient) return kvClient;
+  if (!process.env.KV_REST_API_URL) return null;
+  try {
+    const kv = require('@vercel/kv');
+    kvClient = kv;
+    return kv;
+  } catch (e) {
+    console.warn('[ALERT-SUB] @vercel/kv not installed, falling back to /tmp');
+    return null;
+  }
+}
+
+async function loadSubs() {
+  const kv = await getKvClient();
+  if (kv) {
+    try {
+      const data = await kv.get(KV_KEY);
+      return Array.isArray(data) ? data : [];
+    } catch (e) {
+      console.error('[ALERT-SUB] KV read error:', e.message);
+      return [];
+    }
+  }
+  // /tmp fallback
+  try {
+    if (fs.existsSync(ALERTS_FILE)) {
+      return JSON.parse(fs.readFileSync(ALERTS_FILE, 'utf8'));
+    }
+  } catch (e) { /* fresh start */ }
+  return [];
+}
+
+async function saveSubs(subs) {
+  const kv = await getKvClient();
+  if (kv) {
+    try {
+      await kv.set(KV_KEY, JSON.parse(JSON.stringify(subs)));
+      return;
+    } catch (e) {
+      console.error('[ALERT-SUB] KV write error:', e.message);
+      // fall through to /tmp
+    }
+  }
+  // /tmp fallback
+  fs.writeFileSync(ALERTS_FILE, JSON.stringify(subs, null, 2));
+}
+
+// --- End storage abstraction ---
 
 // Rate limiter
 const rateLimit = new Map();
@@ -25,19 +80,6 @@ function isRateLimited(ip) {
   }
   rec.count++;
   return rec.count > RATE_MAX;
-}
-
-function loadSubs() {
-  try {
-    if (fs.existsSync(ALERTS_FILE)) {
-      return JSON.parse(fs.readFileSync(ALERTS_FILE, 'utf8'));
-    }
-  } catch (e) { /* fresh start */ }
-  return [];
-}
-
-function saveSubs(subs) {
-  fs.writeFileSync(ALERTS_FILE, JSON.stringify(subs, null, 2));
 }
 
 function isValidEmail(email) {
@@ -140,14 +182,14 @@ module.exports = async (req, res) => {
   }
 
   const normalizedEmail = email.toLowerCase().trim();
-  const subs = loadSubs();
+  const subs = await loadSubs();
 
   // Check if already subscribed — update models if so
   const existing = subs.find(s => s.email === normalizedEmail);
   if (existing) {
     existing.models = models;
     existing.updatedAt = new Date().toISOString();
-    saveSubs(subs);
+    await saveSubs(subs);
     console.log(`[ALERT-SUB] Updated ${normalizedEmail} — now tracking ${models.length} models (total subs: ${subs.length})`);
     return res.status(200).json({
       message: 'Alert preferences updated!',
@@ -163,7 +205,7 @@ module.exports = async (req, res) => {
     subscribedAt: new Date().toISOString(),
     source: req.headers.referer || 'price-alerts'
   });
-  saveSubs(subs);
+  await saveSubs(subs);
 
   console.log(`[ALERT-SUB] New subscriber: ${normalizedEmail} tracking ${models.length} models (total: ${subs.length})`);
 

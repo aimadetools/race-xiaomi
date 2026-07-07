@@ -1,5 +1,7 @@
 // Vercel Serverless Function: Pro Access Restore
 // Users enter their email to receive their access code
+// Uses Vercel KV (Upstash Redis) when KV_REST_API_URL is set
+// Falls back to /tmp file storage for local development
 // Requires: RESEND_API_KEY, ADMIN_SECRET env vars
 
 const crypto = require('crypto');
@@ -7,15 +9,46 @@ const fs = require('fs');
 const path = require('path');
 
 const PURCHASES_FILE = path.join('/tmp', 'apipulse_purchases.json');
+const KV_KEY = 'apipulse:purchases';
 
-function loadPurchases() {
-    try {
-        if (fs.existsSync(PURCHASES_FILE)) {
-            return JSON.parse(fs.readFileSync(PURCHASES_FILE, 'utf8'));
-        }
-    } catch (e) { /* start fresh */ }
-    return [];
+// --- Storage abstraction: Vercel KV or /tmp fallback ---
+
+let kvClient = null;
+
+async function getKvClient() {
+  if (kvClient) return kvClient;
+  if (!process.env.KV_REST_API_URL) return null;
+  try {
+    const kv = require('@vercel/kv');
+    kvClient = kv;
+    return kv;
+  } catch (e) {
+    console.warn('[RESTORE] @vercel/kv not installed, falling back to /tmp');
+    return null;
+  }
 }
+
+async function loadPurchases() {
+  const kv = await getKvClient();
+  if (kv) {
+    try {
+      const data = await kv.get(KV_KEY);
+      return Array.isArray(data) ? data : [];
+    } catch (e) {
+      console.error('[RESTORE] KV read error:', e.message);
+      return [];
+    }
+  }
+  // /tmp fallback
+  try {
+    if (fs.existsSync(PURCHASES_FILE)) {
+      return JSON.parse(fs.readFileSync(PURCHASES_FILE, 'utf8'));
+    }
+  } catch (e) { /* start fresh */ }
+  return [];
+}
+
+// --- End storage abstraction ---
 
 // Simple in-memory rate limiter
 const rateLimit = new Map();
@@ -120,7 +153,7 @@ module.exports = async (req, res) => {
     }
 
     const normalizedEmail = email.toLowerCase().trim();
-    const purchases = loadPurchases();
+    const purchases = await loadPurchases();
     const purchase = purchases.find(p => p.email === normalizedEmail);
 
     if (!purchase) {
