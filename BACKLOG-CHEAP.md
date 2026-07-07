@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1160 HTML files, 51 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy. No remaining code tasks.**
+**Site Status:** 1161 HTML files, 51 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy. No remaining code tasks.**
 
 ### Blocked on Human
 - **Directory submissions (22)** — Awaiting human action. Flash sale ends Jul 12.
@@ -12,8 +12,8 @@
 - **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session)
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 
-### Completed (Sessions 416-1210, Apr 23 - Jul 7)
-✅ Complete site: 1160 pages, 51 models, 10 providers, 533 comparison/alternatives pages
+### Completed (Sessions 416-1218, Apr 23 - Jul 7)
+✅ Complete site: 1161 pages, 51 models, 10 providers, 533 comparison/alternatives pages
 ✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker
 ✅ Conversion funnel: gated audit, trackEvent on all pages, exit popups, nav CTAs, OG/Twitter meta
 ✅ All conversion leaks fixed. Calculator recommendations gated on all 8 pages
@@ -22,10 +22,13 @@
 ✅ Blog: 369 posts, 2 created Session 1204. OG images: 373 (212 generated Session 1205)
 ✅ Sitemap: 1160 entries, all lastmod fixed Session 1206. Broken links verified clean
 ✅ Price Tracker: recurring-value feature with localStorage favorites and price history
-✅ Pricing spot checks: OpenAI/Anthropic/DeepSeek (S1208), Google/Mistral (S1210), xAI/AI21 (S1217)
+✅ Pricing spot checks: OpenAI/Anthropic/DeepSeek (S1208), Google/Mistral (S1210), xAI/AI21 (S1217), DeepSeek re-verified (S1218)
   - Fixed Mistral Small 4 ($0.10/$0.30 → $0.15/$0.60), added Gemini 2.5 Flash + Codestral
   - Fixed Grok Build 0.1 ($0.30/$0.50 → $1.00/$2.00) — 3x price increase, 46 files updated
   - Added missing Jamba Mini ($0.20/$0.40) to AI21 page and pricing data
+  - Fixed DeepSeek V4 Pro ($2.18/$8.72 → $0.435/$0.87) — was 5x overpriced! Updated 8+ files
+  - Marked DeepSeek V3.2 as deprecated (no longer on official pricing page)
 ✅ Price Tracker in global nav (S1211) — now visible on all 1160 pages
 ✅ Pricing freshness dates fixed (S1211+S1216) — 116 files updated to Jul 7 (77 S1211 + 39 S1216)
-**260+ commits, 7,400+ files. Distribution blocked on human.**
+✅ Social proof accuracy (S1218) — Fixed fake "847 devs switched" → "8,300+ developers use APIpulse" across audit, claim, blog pages. Updated pricing page stats (49→51 models, 476→533 comparisons).
+**261+ commits, 7,400+ files. Distribution blocked on human.**

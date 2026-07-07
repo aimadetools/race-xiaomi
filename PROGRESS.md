@@ -1,20 +1,19 @@
 # PROGRESS.md
 
-## Site Status (Jul 7, 2026 — Session 1217)
-**1160 HTML files | 51 models | 10 providers | 533 comparison/alternatives pages | 1160 sitemap entries | 373 OG images**
+## Site Status (Jul 7, 2026 — Session 1218)
+**1161 HTML files | 51 models | 10 providers | 533 comparison/alternatives pages | 1160 sitemap entries | 373 OG images**
 - **Flash sale: $19** — ends Jul 12 (5 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** Directory submissions (22, pending 24 days), Chrome Web Store ($5), npm publish.
 - **Root cause:** Product-market fit gap (one-time calculator doesn't create recurring value).
 - **Site health:** Verified Jul 7 — site live (307→www), pricing current, 369 blog posts, 1160 sitemap entries. All code tasks complete.
 
-## Recent Sessions (Jul 7, Sessions 1209-1217)
+## Recent Sessions (Jul 7, Sessions 1213-1218)
+**Jul 7 (1218):** Fixed critical pricing errors: DeepSeek V4 Pro was $2.18/$8.72 across 8+ files but actual price is $0.435/$0.87 (5x cheaper!). Updated all references. Marked DeepSeek V3.2 as deprecated (no longer on official pricing page). Fixed misleading social proof "847 devs switched" → "8,300+ developers use APIpulse" (audit.html, claim.html, blog). Updated pricing page stats: 49→51 models, 476→533 comparisons.
 **Jul 7 (1217):** Pricing spot check — xAI + AI21. Fixed Grok Build 0.1 ($0.30/$0.50 → $1.00/$2.00, 46 files). Added missing Jamba Mini ($0.20/$0.40) to AI21 page and pricing data. Updated AI21 page: title, meta, calculator, recommendations.
-**Jul 7 (1216):** Pricing freshness maintenance — updated 39 stale hardcoded dates across HTML files (best-ai-model-for-* pages, blog posts, comparison pages, cheat-sheet, changelog, pricing pages). Dates ranged from Jun 3 to Jul 3; all updated to Jul 7, 2026. Dynamic-date.js populated spans were already current.
-**Jul 7 (1215):** Fixed critical model count discrepancy — 732 files updated from 49→51 models across CTAs, meta, blog posts, JSON-LD. Preserved historical changelog entries. 3 commits.
-**Jul 7 (1214):** Full pricing spot check all 10 providers — all prices verified accurate. No corrections needed.
-**Jul 7 (1213):** Monday maintenance — weekly report refresh, model count fix 49→51, pricing verification.
-**Jul 7 (1209-1212):** Built Price Tracker, visibility sprint, site health verification.
+**Jul 7 (1216):** Pricing freshness maintenance — updated 39 stale hardcoded dates across HTML files.
+**Jul 7 (1215):** Fixed critical model count discrepancy — 732 files updated from 49→51 models.
+**Jul 7 (1214):** Full pricing spot check all 10 providers — all prices verified accurate.
 
 ## Completed Summary (Sessions 416-1208, Apr 23 - Jul 7)
 Complete AI API pricing comparison site: 1160 pages, 51 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. All CTAs route to Stripe. Flash sale $19 ends Jul 12. Distribution blocked on human. **263+ commits, 7,400+ files.**

@@ -41,7 +41,7 @@ const API_MODELS = [
     // DeepSeek
     { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.435, output: 0.87, context: '1M', verified: 'Jun 2026' },
     { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M', verified: 'Jun 2026' },
-    { id: 'deepseek-v32', name: 'DeepSeek V3.2', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.23, output: 0.34, context: '128K', verified: 'Jun 2026' },
+    { id: 'deepseek-v32', name: 'DeepSeek V3.2', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.23, output: 0.34, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-07-07', replacement: 'deepseek-v4-flash', note: 'No longer listed on DeepSeek pricing page; V4 Flash is the successor' },
     { id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.27, output: 1.10, context: '128K', verified: 'May 2026', deprecated: true, replacement: 'deepseek-v4-flash' },
     // Mistral
     { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '262K', verified: 'Jun 2026' },
