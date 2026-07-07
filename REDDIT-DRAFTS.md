@@ -11,11 +11,11 @@ Copy-paste these into Reddit. Each post is tuned for the target subreddit's norm
 
 **Body:**
 
-I was tired of not knowing how much I was actually spending on AI APIs each month, so I built a free tool that generates a visual "cost card" showing your exact monthly spend across GPT-5, Claude, Gemini, DeepSeek, and 30+ other models.
+I was tired of not knowing how much I was actually spending on AI APIs each month, so I built a free tool that generates a visual "cost card" showing your exact monthly spend across GPT-5, Claude, Gemini, DeepSeek, and 47 other models.
 
 You just pick your models and usage, and it generates a card you can share on X/LinkedIn or embed in your README. It also calculates potential savings if you switched to cheaper alternatives.
 
-It covers 51 models from 10 providers with current pricing (verified Jun 2026). No signup required.
+It covers 51 models from 10 providers with current pricing (verified Jul 2026). No signup required.
 
 Check it out: https://getapipulse.com/api-cost-card.html
 
@@ -29,7 +29,7 @@ The site also has a full pricing comparison, cost calculator, and a model decisi
 
 **Body:**
 
-With so many LLM APIs available now (GPT-5, Claude, Gemini, DeepSeek, Llama, Mistral...), picking the right one for your project is overwhelming. Pricing varies 100x between models.
+With so many LLM APIs available now (GPT-5, Claude, Gemini, DeepSeek, Llama, Mistral, xAI Grok...), picking the right one for your project is overwhelming. Pricing varies 100x between models.
 
 I built an interactive decision tree that asks you 4 questions:
 1. What's your use case? (chat, code, analysis, creative)
@@ -47,18 +47,18 @@ Free, no signup. Feedback welcome.
 
 ## Post 3: Claude 4 Migration Cheat Sheet (r/webdev, r/ChatGPTDev, r/MachineLearning)
 
-**Title:** Claude 4 is retiring June 15 — here's a 60-second migration cheat sheet
+**Title:** Claude 4 retired June 15 — here's the migration cheat sheet (still relevant for stragglers)
 
 **Body:**
 
-If you're using Claude 4 Opus or Claude Sonnet 4 via the API, they're being retired on June 15. I put together a quick cheat sheet showing:
+If you're still using Claude 4 Opus or Claude Sonnet 4 via the API, they were retired on June 15. I put together a quick cheat sheet showing:
 
-- Exactly which model to switch to (Claude Opus 4.8, Claude Sonnet 4.6)
+- Exactly which model to switch to (Claude Opus 4.8, Claude Sonnet 5)
 - The 3-line code change needed
 - Cost comparison (spoiler: the new models are significantly cheaper)
 - Common pitfalls during migration
 
-The new models have 1M context windows vs 200K, and the pricing is much better — Claude Opus 4.8 is $5/$25 per M tokens vs Claude 4 Opus at $15/$75.
+The new models have 1M context windows vs 200K, and the pricing is much better — Claude Opus 4.8 is $5/$25 per M tokens vs Claude 4 Opus at $15/$75. Claude Sonnet 5 is at intro pricing $2/$10 through Aug 31.
 
 Cheat sheet: https://getapipulse.com/claude-4-migration-cheatsheet.html
 

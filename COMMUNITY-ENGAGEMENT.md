@@ -27,7 +27,7 @@
 ## Content Angles (ranked by engagement potential)
 
 ### 1. Pricing Data Insights (highest share potential)
-**Hook**: "xAI dropped Grok pricing 96% — Grok 4.3 is now $1.25/M. Here's what it means for your AI budget."
+**Hook**: "Claude Sonnet 5 launched at intro pricing $2/$1M — and 5 other models just got deprecated. Here's what changed."
 - Share specific pricing changes with context
 - Link to full analysis blog post
 - Works on: r/artificial, r/MachineLearning, HN
@@ -62,7 +62,7 @@
 ### Reddit r/SaaS — Build in Public
 **Title**: "I built a free AI API cost calculator in 2 weeks — lessons from launching on Product Hunt"
 
-I was tired of manually comparing Claude vs GPT pricing in spreadsheets. So I built APIpulse — a free tool that compares 39 AI models across 10 providers.
+I was tired of manually comparing Claude vs GPT pricing in spreadsheets. So I built APIpulse — a free tool that compares 51 AI models across 10 providers.
 
 What I learned:
 - SEO content before launch = organic traffic on day one
@@ -99,10 +99,11 @@ Would love feedback on what features would be most useful.
 **Title**: "Show HN: AI API pricing has changed dramatically — here's a free tool to navigate it"
 
 The LLM API market has shifted massively in 2025-2026:
-- GPT-4o dropped 67% ($10 → $2.50/1M input)
-- Mistral Large dropped 75% ($2 → $0.50)
-- DeepSeek V4 Pro dropped 75% ($1.75 → $0.44)
-- xAI dropped Grok pricing 96% — Grok 4.3 is now $1.25/M (was $30/M)
+- GPT-4o: $2.50/$10 per 1M tokens (was $5/$15 at launch)
+- Mistral Large 3: $0.50/$1.50 (was $2/$6 — 75% drop)
+- DeepSeek V4 Pro: $0.44/$0.87 with 1M context
+- Claude Sonnet 5: $2/$10 intro pricing through Aug 31 (regular $3/$15)
+- Grok 4.3: $1.25/$2.50 with 1M context (was $3/$15 — rebranded & repriced)
 
 I built APIpulse to help developers navigate this. It's a free, static tool that compares 51 models across 10 providers with interactive calculators.
 
@@ -112,27 +113,28 @@ Key pages:
 - /model-switch — side-by-side savings calculator
 - /agent-cost-calculator — costs for AI agent workloads
 
-231 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, cost per request analysis, AI API rate limits, Opus 4.8 vs GPT-5, etc.).
+369 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, cost per request analysis, AI API rate limits, Opus 4.8 vs GPT-5, etc.).
 
 All static HTML/JS, no backend, no signup. Deployed on Vercel.
 
 URL: https://getapipulse.com/?utm_source=hn&utm_medium=show_hn&utm_campaign=pricing_trends
 
 ### Reddit r/artificial — Pricing Data Insights
-**Title**: "AI API pricing in 2026: GPT-4o dropped 67%, Mistral dropped 75%, xAI dropped Grok 96%"
+**Title**: "AI API pricing in 2026: Claude Sonnet 5 launched, 5 models deprecated, budget tier under $0.15/1M"
 
 I've been tracking AI API pricing changes across all major providers. Here's what's happened:
 
-Biggest drops:
-- GPT-4o: $10 → $2.50/1M input (-67%)
-- Mistral Large: $2 → $0.50 (-75%)
-- DeepSeek V4 Pro: $1.75 → $0.44 (-75%)
-- xAI Grok: $30 → $1.25/1M input (-96%) — biggest price drop in the market
+Latest changes:
+- Claude Sonnet 5 launched at intro pricing $2/$10 (regular $3/$15 after Aug 31)
+- DeepSeek V3.2 deprecated (replaced by V4 Flash at $0.14/$0.28)
+- Llama 3.1 70B/8B deprecated from Together.ai (replaced by Llama 3.3 70B at $1.04/$1.04)
+- Gemini 2.0 Flash/Flash Lite deprecated (replaced by Gemini 3 Flash and 3.1 Flash-Lite)
 
 Budget models are now production-viable:
-- Gemini 2.0 Flash Lite at $0.075/1M input
-- Llama 3.1 8B at $0.10/1M via Together.ai
-- DeepSeek V4 Flash at $0.14/1M with 1M context
+- GPT-oss 20B at $0.08/$0.35 (cheapest input)
+- Gemini 2.5 Flash-Lite at $0.10/$0.40 with 1M context
+- DeepSeek V4 Flash at $0.14/$0.28 with 1M context
+- Mistral Small 4 at $0.15/$0.60
 
 I built a free tool to track all this: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_artificial_pricing
 
@@ -144,14 +146,16 @@ Full comparison of 51 models across 10 providers. Would be curious to hear what 
 I've been comparing open-source hosted APIs vs commercial providers. Here's the breakdown:
 
 Open-source (via hosted APIs):
-- Llama 3.1 8B (Together.ai): $0.10/$0.10 per 1M tokens
-- Llama 4 Scout: $0.11/$0.33 — 10M context window
-- Llama 4 Maverick: $0.22/$0.66
+- Llama 3.3 70B (Together.ai): $1.04/$1.04 per 1M tokens
+- Llama 4 Scout: $0.18/$0.59 — 1M context window
+- Llama 4 Maverick: $0.27/$0.85 — 1M context window
 
 Commercial budget tier:
-- Gemini 2.0 Flash Lite: $0.075/$0.30 (cheapest overall)
-- DeepSeek V4 Flash: $0.14/$0.28
-- Grok Build 0.1: $0.30/$0.50 (xAI's budget model)
+- GPT-oss 20B: $0.08/$0.35 (cheapest input)
+- Gemini 2.5 Flash-Lite: $0.10/$0.40 with 1M context
+- DeepSeek V4 Flash: $0.14/$0.28 with 1M context
+- Mistral Small 4: $0.15/$0.60
+- Grok Build 0.1: $1.00/$2.00 (xAI's code API)
 - GPT-4o mini: $0.15/$0.60
 
 The gap is closing fast. Gemini Flash Lite at $0.075 is actually cheaper than most open-source hosted options. But open-source gives you self-hosting flexibility and no vendor lock-in.
@@ -161,11 +165,11 @@ For self-hosters: the break-even point vs API calls depends heavily on utilizati
 Full comparison: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_localllama_oss
 
 ### Reddit r/startups — Build in Public
-**Title**: "Building a startup on $100 — Week 8 update (AI API pricing tool)"
+**Title**: "Building a startup on $100 — Week 12 update (AI API pricing tool)"
 
-I'm 8 weeks into a 12-week challenge: build a real startup with only $100.
+I'm 12 weeks into a 12-week challenge: build a real startup with only $100.
 
-What I built: APIpulse — a free tool that compares AI API pricing across 51 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, cost optimizer, and 231 blog guides.
+What I built: APIpulse — a free tool that compares AI API pricing across 51 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, cost optimizer, and 369 blog guides.
 
 Week 1-2: Built the entire site (174 pages, 120 blog posts). Launched on Product Hunt.
 Week 3: Distribution push. Added savings calculator, exit popup A/B test, community engagement.
@@ -173,7 +177,10 @@ Week 4: Responded to community feedback — added cost-per-request view, request
 Week 5: Built a cost optimizer tool, cost projection calculator, and AI model advisor.
 Week 6: Added 7 provider-specific calculators (Gemini, xAI Grok, DeepSeek, Mistral, Meta Llama, Open Source, Cheapest Coding). AI API Pricing Comparison 2026 page.
 Week 7: Blog index sync, cost calculator API, 295 pages total, 192 blog posts, 9 API endpoints.
-Week 8: Added Claude Opus 4.8 (new Anthropic flagship, model count 33→34). Site health checks, A/B pricing test fix, stale stats cleanup. 296 pages, 192 blog posts.
+Week 8: Added Claude Opus 4.8 (new Anthropic flagship, model count 33→34). Site health checks, A/B pricing test fix, stale stats cleanup.
+Week 9-10: Expanded to 533 comparison/alternatives pages, 1161 total pages, 369 blog posts. Price Tracker feature with localStorage favorites. MCP server, Chrome extension, npm package, badge API.
+Week 11: Full pricing audit across all 10 providers. Fixed 6 pricing errors (DeepSeek V4 Pro 5x overprice, Grok Build 0.1 repriced, Llama 3.1→3.3 migration). Added AI21 and Moonshot providers.
+Week 12: Final push — flash sale $19 (ends Jul 12), all CTAs routed to Stripe, social proof accuracy fixed, model count corrected to 51. Site health verified, all code tasks complete.
 
 Lessons so far:
 - Static HTML + Vercel = $0 hosting, instant deploys
@@ -181,13 +188,10 @@ Lessons so far:
 - SEO content before launch = organic traffic from day one
 - Reddit feedback shaped the product more than any other channel
 - The $100 budget forces creative solutions (and that's a feature, not a bug)
+- Pricing data freshness is the #1 trust signal for developers
 
-Revenue: $0 so far (Pro tier at $29, Stripe needs config fix).
-Traffic: Growing steadily from PH launch and organic SEO.
-
-Next up: Community distribution (Show HN, Reddit posts), newsletter pitches, conversion optimization.
-
-Full write-up with budget breakdown: https://getapipulse.com/blog-building-startup-on-100-dollars.html?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
+Revenue: $0 so far (Pro tier at $19 flash sale, $29 regular).
+Traffic: ~1,200 visitors/week from organic SEO (8,367 total users).
 
 The tool: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
 
@@ -198,15 +202,15 @@ Happy to share specifics about the build process, tech stack, or PH launch strat
 
 I analyzed current AI API pricing across all major providers. Key findings:
 
-1. **Budget tier is production-viable**: Gemini 2.0 Flash Lite ($0.075/1M) and DeepSeek V4 Flash ($0.14/1M) now match 2024 flagship quality at 1/20th the price.
+1. **Budget tier is production-viable**: GPT-oss 20B ($0.08/1M input), Gemini 2.5 Flash-Lite ($0.10/1M), and DeepSeek V4 Flash ($0.14/1M) now match 2024 flagship quality at a fraction of the cost.
 
-2. **Context windows exploded**: Budget models now offer 1M+ context (Gemini Flash, DeepSeek V4 Pro). Premium models at 200K-1M.
+2. **Context windows exploded**: Budget models now offer 1M+ context (Gemini Flash, DeepSeek V4 Pro, Grok 4.3). Premium models at 200K-1M.
 
-3. **Price volatility is real**: xAI dropped Grok pricing 96% (Grok 4.3 at $1.25/M). GPT-4o dropped 67%. If you haven't re-evaluated your provider in 6 months, you're likely overpaying.
+3. **Price volatility is real**: 5 models deprecated in July alone (DeepSeek V3.2, Llama 3.1 70B/8B, Gemini 2.0 Flash/Flash Lite). If you haven't re-evaluated your provider in 3 months, you're likely using deprecated models.
 
-4. **Multi-model pipelines are optimal**: Route simple tasks to Gemini Flash ($0.10), code to DeepSeek V4 Pro ($0.44), complex reasoning to GPT-5 ($1.25). Under $2/1M tokens average.
+4. **Multi-model pipelines are optimal**: Route simple tasks to GPT-oss 20B ($0.08), code to DeepSeek V4 Pro ($0.44), complex reasoning to GPT-5 ($1.25). Under $1/1M tokens average.
 
-5. **The cheapest option depends on workload**: For high-volume classification, Llama 3.1 8B ($0.10) wins. For long-context analysis, Gemini Flash ($0.10/1M, 1M context) wins. For code, DeepSeek V4 Pro ($0.44/1M, 1M context) wins.
+5. **The cheapest option depends on workload**: For high-volume classification, GPT-oss 20B ($0.08) wins. For long-context analysis, Gemini 2.5 Flash-Lite ($0.10/1M, 1M context) wins. For code, DeepSeek V4 Pro ($0.44/1M, 1M context) wins.
 
 **New feature** (thanks to r/MachineLearning feedback): Batch vs streaming toggle. Streaming responses typically use ~10% more tokens due to overhead. OpenAI's Batch API offers 50% off. The calculator now shows both modes so you can budget accurately.
 
@@ -225,34 +229,34 @@ AI API pricing changed dramatically in 2026. Here's what happened to your budget
 🧵 Thread ↓
 
 **Tweet 2:**
-The biggest drops:
-• GPT-4o: $10 → $2.50/1M (-67%)
-• Mistral Large: $2 → $0.50 (-75%)
-• DeepSeek V4 Pro: $1.75 → $0.44 (-75%)
+Biggest value plays right now:
+• GPT-oss 20B: $0.08/1M input (cheapest ever)
+• Gemini 2.5 Flash-Lite: $0.10/1M with 1M context
+• DeepSeek V4 Flash: $0.14/1M with 1M context
 
-If you haven't re-evaluated your provider in 6 months, you're overpaying.
+If you haven't re-evaluated your provider in 3 months, you're overpaying.
 
 **Tweet 3:**
-xAI dropped Grok pricing 96%: Grok 4.3 is now $1.25/1M input (was $30/M).
+Claude Sonnet 5 just launched at intro pricing $2/$10 (regular $3/$15 after Aug 31).
 
-Biggest price drop in the market.
+1M context window. Best mid-tier value right now.
 
 **Tweet 4:**
-Budget models are now production-viable:
-• Gemini 2.0 Flash Lite: $0.075/1M
-• Llama 3.1 8B: $0.10/1M
-• DeepSeek V4 Flash: $0.14/1M
+5 models deprecated in July:
+• DeepSeek V3.2 → V4 Flash
+• Llama 3.1 70B/8B → Llama 3.3 70B
+• Gemini 2.0 Flash/Flash Lite → Gemini 3 Flash/3.1 Flash-Lite
 
-That's 1/20th the cost of 2024 flagships.
+Check if you're still using retired models.
 
 **Tweet 5:**
 The optimal strategy in 2026: multi-model pipelines.
 
-• Simple tasks → Gemini Flash ($0.10/1M)
+• Simple tasks → GPT-oss 20B ($0.08/1M)
 • Code → DeepSeek V4 Pro ($0.44/1M)
 • Complex reasoning → GPT-5 ($1.25/1M)
 
-Average: under $2/1M tokens.
+Average: under $1/1M tokens.
 
 **Tweet 6:**
 I built a free tool to track all of this — 51 models, 10 providers, interactive calculators.
@@ -270,9 +274,9 @@ How to cut your AI API bill by 40% (with real numbers):
 **Tweet 2:**
 Strategy 1: Model routing.
 
-80% of chatbot requests work fine on GPT-4o mini ($0.15/1M) instead of GPT-4o ($2.50/1M).
+80% of chatbot requests work fine on GPT-4o mini ($0.15/1M) instead of GPT-5 ($1.25/1M).
 
-That's a 17x cost reduction for most of your traffic.
+That's an 8x cost reduction for most of your traffic.
 
 **Tweet 3:**
 Strategy 2: Prompt optimization.
@@ -282,7 +286,7 @@ Average prompt has 40% unnecessary tokens. Trimming from 2000 to 1200 input toke
 **Tweet 4:**
 Strategy 3: Response caching.
 
-If 30% of requests are similar/identical, caching saves 30% of output costs. For GPT-4o at $10/1M output, that's $3/1M saved.
+If 30% of requests are similar/identical, caching saves 30% of output costs. For GPT-5 at $10/1M output, that's $3/1M saved.
 
 **Tweet 5:**
 Strategy 4: Batch processing.
@@ -308,9 +312,9 @@ Hi TLDR team,
 I built APIpulse — a free tool that helps developers compare AI API costs across 51 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, and more.
 
 Key data points for your readers:
-- GPT-4o dropped 67% ($10 → $2.50/1M input)
-- Budget models (Gemini Flash at $0.075/1M) are now production-viable
-- xAI dropped Grok pricing 96% — Grok 4.3 at $1.25/M
+- Claude Sonnet 5 launched at intro pricing $2/$10 through Aug 31
+- Budget models (GPT-oss 20B at $0.08/1M, Gemini Flash-Lite at $0.10/1M) are now production-viable
+- 5 models deprecated in July — developers need to migrate
 
 Interactive tools: cost calculator, model comparison, savings calculator, pricing trends.
 
@@ -329,7 +333,7 @@ The AI API pricing landscape has shifted massively in 2025-2026. I built APIpuls
 - 51 models across 10 providers
 - Interactive savings calculator
 - Pricing trends with every major price move
-- 231 comparison blog posts
+- 369 comparison blog posts
 
 Would be a great fit for your developer audience. Free tool, no signup required.
 
