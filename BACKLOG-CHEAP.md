@@ -11,7 +11,7 @@
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
 - **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session)
 - ✅ **Blog post: "Cheapest AI API July 2026"** — Created Session 1204. Targets high-intent keyword, links to calculator and flash sale.
-- **Blog post: "GPT-5.5 vs Claude Opus 4.8 pricing"** — Comparison article targeting comparison keywords
+- ✅ **Blog post: "GPT-5.5 vs Claude Opus 4.8 pricing"** — Created Session 1204. Comparison article targeting comparison keywords.
 - **Verify sitemap freshness** — Check sitemap.xml lastmod dates match actual page updates
 - **Check for broken links** — Run quick scan on top 20 pages for 404s
 - **Update OG images** — Ensure all key pages have valid og:image that renders correctly

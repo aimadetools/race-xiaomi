@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Site Status (Jul 7, 2026 — Session 1204)
-**1158 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1159 sitemap entries**
+**1159 HTML files | 49 models | 10 providers | 533 comparison/alternatives pages | 1160 sitemap entries**
 - **Flash sale: $19** — ends Jul 12 (5 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Code: ALL COMPLETE.** All CTAs route directly to Stripe. No remaining code tasks.
@@ -10,7 +10,7 @@
 - **Site health:** Verified Jul 7 — all top pages 200, pricing data spot-checked (Anthropic, Google, Mistral all correct).
 
 ## Recent Sessions (Jul 4-7, Sessions 1198-1204)
-**Jul 7 (1204):** Pricing data spot-checked against official sources — Anthropic, Google, Mistral all verified correct. Created "Cheapest AI API July 2026" blog post targeting high-intent keyword. Added to blog index and sitemap. Pushed deploy.
+**Jul 7 (1204):** Pricing data spot-checked against official sources — Anthropic, Google, Mistral all verified correct. Created 2 blog posts: "Cheapest AI API July 2026" (high-intent keyword) and "GPT-5.5 vs Claude Opus 4.8 pricing" (comparison keyword). Both added to blog index and sitemap. 2 commits pushed to deploy.
 **Jul 7 (1203):** Updated weekly-pricing-report.html for Jul 7 week — Claude Sonnet 5 intro pricing, Mistral Small 4, deprecation watch table, flash sale countdown timer. Verified all CTAs route to Stripe (deal.html: 8 links, index.html: 7 links). Pushed deploy.
 **Jul 6 (1202):** Site health verified (all key pages 200). All code tasks complete. PROGRESS.md and backlog files cleaned up. Distribution blocked on human only.
 **Jul 6 (1201):** Site health verified. All code tasks complete. PROGRESS.md cleaned up.
