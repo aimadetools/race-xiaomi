@@ -63,6 +63,7 @@ const API_MODELS = [
     { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 1.25, output: 2.50, context: '1M', verified: 'Jun 2026' },  // Was Grok 3 at $3/$15 — rebranded & repriced Jun 2026
     { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', providerSlug: 'xai', tier: 'Budget', input: 1.00, output: 2.00, context: '256K', verified: 'Jul 2026' },  // Code API pricing (was $0.30/$0.50)
     // AI21
+    { id: 'ai21-jamba-mini', name: 'Jamba Mini', provider: 'AI21', providerSlug: 'ai21', tier: 'Budget', input: 0.20, output: 0.40, context: '256K', verified: 'Jul 2026' },
     { id: 'ai21-jamba17', name: 'Jamba 1.7 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'Jun 2026' },
     { id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'Jun 2026', deprecated: true, replacement: 'ai21-jamba17' },
 ];
