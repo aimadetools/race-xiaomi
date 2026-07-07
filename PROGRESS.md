@@ -8,7 +8,8 @@
 - **Root cause:** Product-market fit gap (one-time calculator doesn't create recurring value).
 - **Site health:** Verified Jul 7 — site live (200 OK), pricing current, 369 blog posts, 1160 sitemap entries. All code tasks complete.
 
-## Recent Sessions (Jul 7, Sessions 1209-1213)
+## Recent Sessions (Jul 7, Sessions 1209-1214)
+**Jul 7 (1214):** Full pricing spot check across all 10 providers — verified xAI (Grok 4.3 $1.25/$2.50, Grok Build 0.1 $1.00/$2.00), Cohere (Command R $0.50/$1.50, Command R+ $2.50/$10.00), Moonshot (Kimi K2.6 $0.95/$4.00), AI21 (Jamba Large $2.00/$8.00), Together.ai (Llama 4 models no longer on serverless). All prices match our data. No corrections needed.
 **Jul 7 (1213):** Monday maintenance — weekly report refresh: fixed model count 49→51 in stat card, CTA, and JS fallback. Pricing spot check: verified Anthropic, Google, DeepSeek prices against official sources — all accurate. Pricing freshness dates current (Jul 7, 2026).
 **Jul 7 (1212):** Maintenance session — verified site health (1160 HTML, 1160 sitemap entries match, 51 models, 369 blog posts). Site live at 200 OK. All code tasks complete. Distribution blocked on human.
 **Jul 7 (1211):** Price Tracker visibility sprint — added to global nav, homepage tools section, Popular Tools grid, Pro FAQ. Fixed stale pricing freshness dates across 77 files. Model count 49→51 in FAQ.
