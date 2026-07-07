@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Price Tracker — Watch Models, Track Price Changes | APIpulse</title>
+    <meta name="description" content="Track AI API price changes over time. Watch your favorite models, get notified when prices drop. Free tool covering 49 models across 10 providers.">
+    <meta name="keywords" content="AI API price tracker, LLM price alerts, AI model price changes, API pricing monitor, GPT price drop, Claude price change, track AI costs">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AI API Price Tracker — Watch Models, Track Price Changes">
+    <meta property="og:description" content="Track AI API price changes. Watch your favorite models and get notified when prices drop.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/price-tracker.html">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Price Tracker — Watch Models, Track Price Changes">
+    <meta name="twitter:description" content="Track AI API price changes. Watch your favorite models and get notified when prices drop.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/price-tracker.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Price Tracker",
+        "url": "https://getapipulse.com/price-tracker.html",
+        "description": "Track AI API price changes over time. Watch your favorite models and get notified when prices drop.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <style>
+        body { background: #0a0a0f; }
+        .tracker-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 20px 80px;
+        }
+        /* Header */
+        .tracker-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .tracker-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(34,197,94,0.12);
+            border: 1px solid rgba(34,197,94,0.25);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #22c55e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .tracker-badge .dot {
+            width: 6px; height: 6px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        .tracker-header h1 {
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+        }
+        .tracker-header .sub {
+            font-size: 16px;
+            color: #94a3b8;
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        /* Return visit banner */
+        .return-banner {
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02));
+            border: 1px solid rgba(34,197,94,0.25);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: none;
+            text-align: center;
+        }
+        .return-banner.show { display: block; }
+        .return-banner .title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #22c55e;
+            margin-bottom: 4px;
+        }
+        .return-banner .detail {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+        /* Stats */
+        .tracker-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .tracker-stat {
+            text-align: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 24px;
+            min-width: 140px;
+        }
+        .tracker-stat .num {
+            font-size: 28px;
+            font-weight: 900;
+            color: #22c55e;
+        }
+        .tracker-stat .label {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+        /* Price history timeline */
+        .timeline {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .timeline h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .timeline-event {
+            display: flex;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .timeline-event:last-child { border-bottom: none; }
+        .timeline-date {
+            flex-shrink: 0;
+            width: 80px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748b;
+            padding-top: 2px;
+        }
+        .timeline-content {
+            flex: 1;
+        }
+        .timeline-content .model {
+            font-weight: 700;
+            color: #f1f5f9;
+            font-size: 14px;
+        }
+        .timeline-content .change {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+        .timeline-content .change .drop {
+            color: #22c55e;
+            font-weight: 700;
+        }
+        .timeline-content .change .increase {
+            color: #ef4444;
+            font-weight: 700;
+        }
+        .timeline-content .change .new {
+            color: #818cf8;
+            font-weight: 700;
+        }
+        /* Watched models */
+        .watched-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .watched-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 16px;
+        }
+        .watched-empty {
+            text-align: center;
+            padding: 24px;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .watched-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .watched-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+        .watched-item:hover {
+            border-color: rgba(99,102,241,0.3);
+        }
+        .watched-item .model-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .watched-item .model-name {
+            font-weight: 700;
+            color: #f1f5f9;
+            font-size: 14px;
+        }
+        .watched-item .model-provider {
+            font-size: 12px;
+            color: #64748b;
+        }
+        .watched-item .model-price {
+            font-size: 13px;
+            color: #94a3b8;
+            font-family: monospace;
+        }
+        .watched-item .unwatch-btn {
+            background: none;
+            border: 1px solid rgba(239,68,68,0.3);
+            color: #ef4444;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .watched-item .unwatch-btn:hover {
+            background: rgba(239,68,68,0.1);
+        }
+        /* All models table */
+        .models-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .models-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+        }
+        .models-section .hint {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+        .model-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .model-table th {
+            text-align: left;
+            padding: 10px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        .model-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            color: #cbd5e1;
+        }
+        .model-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+        .model-table .model-name-cell {
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+        .model-table .price-cell {
+            font-family: monospace;
+            font-size: 13px;
+        }
+        .model-table .changed-cell {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .changed-cell.drop { color: #22c55e; }
+        .changed-cell.increase { color: #ef4444; }
+        .changed-cell.stable { color: #64748b; }
+        .watch-btn {
+            background: none;
+            border: 1px solid rgba(99,102,241,0.3);
+            color: #818cf8;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .watch-btn:hover {
+            background: rgba(99,102,241,0.15);
+        }
+        .watch-btn.watched {
+            background: rgba(34,197,94,0.15);
+            border-color: rgba(34,197,94,0.3);
+            color: #22c55e;
+        }
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(99,102,241,0.02));
+            border: 1px solid rgba(99,102,241,0.25);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .pro-upsell h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+        }
+        .pro-upsell p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .pro-upsell .cta-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(34,197,94,0.3);
+        }
+        .pro-upsell .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(34,197,94,0.4);
+            color: white;
+        }
+        .pro-upsell .features {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .pro-upsell .feature {
+            font-size: 13px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .pro-upsell .feature .check { color: #22c55e; }
+        @media (max-width: 768px) {
+            .tracker-page { padding: 80px 16px 60px; }
+            .tracker-stats { gap: 12px; }
+            .tracker-stat { min-width: 100px; padding: 12px 16px; }
+            .tracker-stat .num { font-size: 22px; }
+            .model-table { font-size: 12px; }
+            .model-table th, .model-table td { padding: 8px 6px; }
+            .pro-upsell .features { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">⚡ APIpulse</a>
+            <div class="nav-links">
+                <a href="/prices.html">Pricing</a>
+                <a href="/calculator.html">Calculator</a>
+                <a href="/tools.html">Tools</a>
+                <a href="/blog.html">Blog</a>
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="nav-cta">🔥 Flash Sale $19</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tracker-page">
+        <div class="tracker-header">
+            <div class="tracker-badge"><span class="dot"></span> Free Tool</div>
+            <h1>AI API Price Tracker</h1>
+            <p class="sub">Watch the models you use. Track price changes over time. Never miss a price drop again.</p>
+        </div>
+
+        <div class="return-banner" id="returnBanner">
+            <div class="title" id="returnTitle">Welcome back!</div>
+            <div class="detail" id="returnDetail"></div>
+        </div>
+
+        <div class="tracker-stats">
+            <div class="tracker-stat">
+                <div class="num" id="watchedCount">0</div>
+                <div class="label">Models Watched</div>
+            </div>
+            <div class="tracker-stat">
+                <div class="num" id="priceDropsCount">12</div>
+                <div class="label">Price Drops (2026)</div>
+            </div>
+            <div class="tracker-stat">
+                <div class="num">49</div>
+                <div class="label">Models Tracked</div>
+            </div>
+        </div>
+
+        <!-- Price History Timeline -->
+        <div class="timeline">
+            <h2>📉 Price Change History (2026)</h2>
+            <div id="timelineEvents"></div>
+        </div>
+
+        <!-- Watched Models -->
+        <div class="watched-section">
+            <h2>👁️ Your Watched Models</h2>
+            <div id="watchedModels"></div>
+        </div>
+
+        <!-- Pro Upsell -->
+        <div class="pro-upsell">
+            <h3>Want email alerts when prices change?</h3>
+            <p>APIpulse Pro sends you instant notifications when any tracked model drops in price — plus unlimited price alerts, weekly reports, and a cost monitoring dashboard.</p>
+            <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'price_tracker_upsell'})">⚡ Get Pro — $19 lifetime</a>
+            <div class="features">
+                <div class="feature"><span class="check">✓</span> Unlimited price alerts</div>
+                <div class="feature"><span class="check">✓</span> Weekly pricing report</div>
+                <div class="feature"><span class="check">✓</span> Cost monitoring dashboard</div>
+                <div class="feature"><span class="check">✓</span> 49 models, 10 providers</div>
+            </div>
+        </div>
+
+        <!-- All Models -->
+        <div class="models-section">
+            <h2>All Tracked Models</h2>
+            <p class="hint">Click "Watch" to track a model. Your selections are saved locally.</p>
+            <table class="model-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Input/1M</th>
+                        <th>Output/1M</th>
+                        <th>Recent Change</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="modelTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') return;
+
+        var WATCH_KEY = 'apipulse_watched_models';
+        var VISIT_KEY = 'apipulse_tracker_last_visit';
+        var PRICES_KEY = 'apipulse_tracker_prices_snapshot';
+
+        // Price change history (hardcoded — real historical data)
+        var PRICE_HISTORY = [
+            { date: 'Jun 2026', model: 'Grok Build 0.1', change: 'Repriced from $0.30/$0.50 to $1.00/$2.00', type: 'increase' },
+            { date: 'Jun 2026', model: 'Claude Sonnet 5', change: 'Launched at $2/$10 (intro pricing through Aug 31)', type: 'new' },
+            { date: 'Jun 2026', model: 'Mistral Small 4', change: 'Launched at $0.15/$0.60 (replacing Mistral Small 3)', type: 'new' },
+            { date: 'Jun 2026', model: 'Grok 4.3', change: 'Rebranded from Grok 3, repriced $3/$15 → $1.25/$2.50', type: 'drop' },
+            { date: 'Jun 2026', model: 'Claude 4 Opus', change: 'Deprecated → replaced by Opus 4.8 at $5/$25 (was $15/$75)', type: 'drop' },
+            { date: 'Jun 2026', model: 'Claude Sonnet 4.6', change: 'Deprecated → replaced by Sonnet 5 at same price', type: 'new' },
+            { date: 'Jun 2026', model: 'DeepSeek V4 Pro', change: 'Repriced $0.55/$1.10 → $0.435/$0.87', type: 'drop' },
+            { date: 'Jun 2026', model: 'DeepSeek V4 Flash', change: 'Repriced $0.18/$0.36 → $0.14/$0.28', type: 'drop' },
+            { date: 'Jun 2026', model: 'Gemini 3.5 Flash', change: 'Launched at $1.50/$9.00', type: 'new' },
+            { date: 'May 2026', model: 'GPT-5.4 series', change: 'Launched: GPT-5.4 ($2.50/$15), mini ($0.75/$4.50), nano ($0.20/$1.25)', type: 'new' },
+            { date: 'May 2026', model: 'GPT-5.5', change: 'Launched at $5/$30 (flagship)', type: 'new' },
+            { date: 'May 2026', model: 'Claude Haiku 4.5', change: 'Repriced $1.25/$6.25 → $1.00/$5.00', type: 'drop' },
+            { date: 'May 2026', model: 'Mistral Large 3', change: 'Repriced $2/$6 → $0.50/$1.50', type: 'drop' },
+        ];
+
+        // Render timeline
+        var timelineHtml = '';
+        PRICE_HISTORY.forEach(function(e) {
+            var typeClass = e.type === 'drop' ? 'drop' : e.type === 'increase' ? 'increase' : 'new';
+            var icon = e.type === 'drop' ? '📉' : e.type === 'increase' ? '📈' : '🆕';
+            timelineHtml += '<div class="timeline-event">' +
+                '<div class="timeline-date">' + e.date + '</div>' +
+                '<div class="timeline-content">' +
+                '<div class="model">' + icon + ' ' + e.model + '</div>' +
+                '<div class="change"><span class="' + typeClass + '">' + e.change + '</span></div>' +
+                '</div></div>';
+        });
+        document.getElementById('timelineEvents').innerHTML = timelineHtml;
+
+        // Get watched models
+        function getWatched() {
+            try { return JSON.parse(localStorage.getItem(WATCH_KEY)) || []; } catch(e) { return []; }
+        }
+        function setWatched(ids) {
+            localStorage.setItem(WATCH_KEY, JSON.stringify(ids));
+            updateWatchedCount();
+        }
+        function isWatched(id) {
+            return getWatched().indexOf(id) !== -1;
+        }
+        function toggleWatch(id) {
+            var w = getWatched();
+            var idx = w.indexOf(id);
+            if (idx === -1) { w.push(id); } else { w.splice(idx, 1); }
+            setWatched(w);
+            renderWatched();
+            renderTable();
+        }
+
+        function updateWatchedCount() {
+            var el = document.getElementById('watchedCount');
+            if (el) el.textContent = getWatched().length;
+        }
+
+        // Render watched models
+        function renderWatched() {
+            var w = getWatched();
+            var container = document.getElementById('watchedModels');
+            if (w.length === 0) {
+                container.innerHTML = '<div class="watched-empty">No models watched yet. Click "Watch" on any model below to start tracking it.</div>';
+                return;
+            }
+            var html = '<div class="watched-list">';
+            w.forEach(function(id) {
+                var m = getModelById(id);
+                if (!m) return;
+                html += '<div class="watched-item">' +
+                    '<div class="model-info">' +
+                    '<div><div class="model-name">' + m.name + '</div><div class="model-provider">' + m.provider + '</div></div>' +
+                    '</div>' +
+                    '<div class="model-price">$' + m.input.toFixed(2) + ' / $' + m.output.toFixed(2) + '</div>' +
+                    '<button class="unwatch-btn" onclick="window._toggleWatch(\'' + id + '\')">✕ Remove</button>' +
+                    '</div>';
+            });
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        // Render all models table
+        function renderTable() {
+            var tbody = document.getElementById('modelTableBody');
+            var rows = '';
+            // Sort by output price
+            var sorted = API_MODELS.slice().sort(function(a, b) { return a.output - b.output; });
+            sorted.forEach(function(m) {
+                var watched = isWatched(m.id);
+                var changeClass = 'stable';
+                var changeText = 'Stable';
+                // Check for recent price info
+                if (m.deprecated) {
+                    changeClass = 'drop';
+                    changeText = 'Deprecated';
+                } else if (m.note) {
+                    changeClass = 'new';
+                    changeText = 'Intro pricing';
+                }
+                rows += '<tr>' +
+                    '<td class="model-name-cell">' + m.name + '</td>' +
+                    '<td>' + m.provider + '</td>' +
+                    '<td class="price-cell">$' + m.input.toFixed(m.input < 1 ? 3 : 2) + '</td>' +
+                    '<td class="price-cell">$' + m.output.toFixed(m.output < 1 ? 3 : 2) + '</td>' +
+                    '<td class="changed-cell ' + changeClass + '">' + changeText + '</td>' +
+                    '<td><button class="watch-btn' + (watched ? ' watched' : '') + '" onclick="window._toggleWatch(\'' + m.id + '\')">' + (watched ? '✓ Watching' : '👁 Watch') + '</button></td>' +
+                    '</tr>';
+            });
+            tbody.innerHTML = rows;
+        }
+
+        // Expose toggle globally
+        window._toggleWatch = toggleWatch;
+
+        // Return visit detection
+        var lastVisit = localStorage.getItem(VISIT_KEY);
+        if (lastVisit) {
+            var lastDate = new Date(parseInt(lastVisit));
+            var now = new Date();
+            var daysSince = Math.floor((now - lastDate) / 86400000);
+            if (daysSince >= 1) {
+                var banner = document.getElementById('returnBanner');
+                var title = document.getElementById('returnTitle');
+                var detail = document.getElementById('returnDetail');
+                banner.classList.add('show');
+                title.textContent = 'Welcome back! 👋';
+                // Check if any watched model prices changed
+                var w = getWatched();
+                if (w.length > 0) {
+                    detail.textContent = 'You\'re watching ' + w.length + ' model' + (w.length > 1 ? 's' : '') + '. Last visit: ' + daysSince + ' day' + (daysSince > 1 ? 's' : '') + ' ago. Prices below are current.';
+                } else {
+                    detail.textContent = 'Last visit: ' + daysSince + ' day' + (daysSince > 1 ? 's' : '') + ' ago. Watch some models to track price changes!';
+                }
+                if (window.trackEvent) window.trackEvent('price_tracker_return_visit', { days_since: daysSince, watched_count: w.length });
+            }
+        }
+        localStorage.setItem(VISIT_KEY, Date.now().toString());
+
+        // Init
+        updateWatchedCount();
+        renderWatched();
+        renderTable();
+
+        // Track page view
+        if (window.trackEvent) window.trackEvent('price_tracker_view');
+    });
+    </script>
+</body>
+</html>
