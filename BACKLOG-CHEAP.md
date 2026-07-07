@@ -22,9 +22,10 @@
 ✅ Blog: 369 posts, 2 created Session 1204. OG images: 373 (212 generated Session 1205)
 ✅ Sitemap: 1160 entries, all lastmod fixed Session 1206. Broken links verified clean
 ✅ Price Tracker: recurring-value feature with localStorage favorites and price history
-✅ Pricing spot checks: OpenAI/Anthropic/DeepSeek (S1208), Google/Mistral (S1210), xAI (S1217)
+✅ Pricing spot checks: OpenAI/Anthropic/DeepSeek (S1208), Google/Mistral (S1210), xAI/AI21 (S1217)
   - Fixed Mistral Small 4 ($0.10/$0.30 → $0.15/$0.60), added Gemini 2.5 Flash + Codestral
   - Fixed Grok Build 0.1 ($0.30/$0.50 → $1.00/$2.00) — 3x price increase, 46 files updated
+  - Added missing Jamba Mini ($0.20/$0.40) to AI21 page and pricing data
 ✅ Price Tracker in global nav (S1211) — now visible on all 1160 pages
 ✅ Pricing freshness dates fixed (S1211+S1216) — 116 files updated to Jul 7 (77 S1211 + 39 S1216)
 **260+ commits, 7,400+ files. Distribution blocked on human.**

@@ -9,7 +9,7 @@
 - **Site health:** Verified Jul 7 — site live (307→www), pricing current, 369 blog posts, 1160 sitemap entries. All code tasks complete.
 
 ## Recent Sessions (Jul 7, Sessions 1209-1217)
-**Jul 7 (1217):** xAI pricing spot check — Grok Build 0.1 price increased 3x ($0.30/$0.50 → $1.00/$2.00). Updated 46 HTML files. Added Jul 7 changelog entry. pricing-data.js was already correct.
+**Jul 7 (1217):** Pricing spot check — xAI + AI21. Fixed Grok Build 0.1 ($0.30/$0.50 → $1.00/$2.00, 46 files). Added missing Jamba Mini ($0.20/$0.40) to AI21 page and pricing data. Updated AI21 page: title, meta, calculator, recommendations.
 **Jul 7 (1216):** Pricing freshness maintenance — updated 39 stale hardcoded dates across HTML files (best-ai-model-for-* pages, blog posts, comparison pages, cheat-sheet, changelog, pricing pages). Dates ranged from Jun 3 to Jul 3; all updated to Jul 7, 2026. Dynamic-date.js populated spans were already current.
 **Jul 7 (1215):** Fixed critical model count discrepancy — 732 files updated from 49→51 models across CTAs, meta, blog posts, JSON-LD. Preserved historical changelog entries. 3 commits.
 **Jul 7 (1214):** Full pricing spot check all 10 providers — all prices verified accurate. No corrections needed.
