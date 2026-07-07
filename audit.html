@@ -600,8 +600,11 @@
                         <option value="openai-gpt54-mini">GPT-5.4 mini</option>
                         <option value="openai-gpt54-nano">GPT-5.4 nano</option>
                         <option value="openai-gpt54-pro">GPT-5.4 Pro</option>
-                        <option value="openai-gpt4o">GPT-4o</option>
-                        <option value="openai-gpt4o-mini">GPT-4o mini</option>
+                        <option value="openai-gpt41">GPT-4.1</option>
+                        <option value="openai-gpt41-mini">GPT-4.1 mini</option>
+                        <option value="openai-gpt41-nano">GPT-4.1 nano</option>
+                        <option value="openai-gpt4o">GPT-4o ⚠️ Deprecated</option>
+                        <option value="openai-gpt4o-mini">GPT-4o mini ⚠️ Deprecated</option>
                         <option value="openai-gpt-oss-120b">GPT-oss 120B</option>
                         <option value="openai-gpt-oss-20b">GPT-oss 20B</option>
                     </optgroup>
@@ -653,6 +656,7 @@
                         <option value="xai-grok-build">Grok Build 0.1</option>
                         <option value="kimi-k26">Kimi K2.6</option>
                         <option value="ai21-jamba-17">Jamba 1.7 Large</option>
+                        <option value="ai21-jamba-mini">Jamba Mini</option>
                         <option value="ai21-jamba-15">Jamba 1.5 Large ⚠️ Deprecated</option>
                     </optgroup>
                 </select>
@@ -984,8 +988,11 @@
             'openai-gpt54-mini': { name: 'GPT-5.4 mini', input: 0.75, output: 4.50, provider: 'OpenAI' },
             'openai-gpt54-nano': { name: 'GPT-5.4 nano', input: 0.20, output: 1.25, provider: 'OpenAI' },
             'openai-gpt54-pro': { name: 'GPT-5.4 Pro', input: 30.00, output: 180.00, provider: 'OpenAI' },
-            'openai-gpt4o': { name: 'GPT-4o', input: 2.50, output: 10.00, provider: 'OpenAI' },
-            'openai-gpt4o-mini': { name: 'GPT-4o mini', input: 0.15, output: 0.60, provider: 'OpenAI' },
+            'openai-gpt41': { name: 'GPT-4.1', input: 2.00, output: 8.00, provider: 'OpenAI' },
+            'openai-gpt41-mini': { name: 'GPT-4.1 mini', input: 0.40, output: 1.60, provider: 'OpenAI' },
+            'openai-gpt41-nano': { name: 'GPT-4.1 nano', input: 0.10, output: 0.40, provider: 'OpenAI' },
+            'openai-gpt4o': { name: 'GPT-4o', input: 2.50, output: 10.00, provider: 'OpenAI', deprecated: true, replacement: 'openai-gpt41' },
+            'openai-gpt4o-mini': { name: 'GPT-4o mini', input: 0.15, output: 0.60, provider: 'OpenAI', deprecated: true, replacement: 'openai-gpt41-nano' },
             'anthropic-opus48': { name: 'Claude Opus 4.8', input: 5.00, output: 25.00, provider: 'Anthropic' },
             'anthropic-claude4-opus': { name: 'Claude 4 Opus', input: 15.00, output: 75.00, provider: 'Anthropic', deprecated: true, replacement: 'anthropic-opus48' },
             'anthropic-sonnet5': { name: 'Claude Sonnet 5', input: 2.00, output: 10.00, provider: 'Anthropic' },
@@ -1025,6 +1032,7 @@
             'kimi-k26': { name: 'Kimi K2.6', input: 0.95, output: 4.00, provider: 'Moonshot' },
             'xai-grok-build': { name: 'Grok Build 0.1', input: 1.00, output: 2.00, provider: 'xAI' },
             'ai21-jamba-17': { name: 'Jamba 1.7 Large', input: 2.00, output: 8.00, provider: 'AI21' },
+            'ai21-jamba-mini': { name: 'Jamba Mini', input: 0.20, output: 0.40, provider: 'AI21' },
             'ai21-jamba-15': { name: 'Jamba 1.5 Large', input: 2.00, output: 8.00, provider: 'AI21', deprecated: true, replacement: 'ai21-jamba-17' }
         };
 
