@@ -14,7 +14,7 @@
 - ✅ **Blog post: "GPT-5.5 vs Claude Opus 4.8 pricing"** — Created Session 1204. Comparison article targeting comparison keywords.
 - **Verify sitemap freshness** — Check sitemap.xml lastmod dates match actual page updates
 - **Check for broken links** — Run quick scan on top 20 pages for 404s
-- **Update OG images** — Ensure all key pages have valid og:image that renders correctly
+- ✅ **Update OG images** — Fixed Session 1205. Generated 212 missing OG images for blog posts. 373 total now.
 
 ### Completed (Sessions 416-1202, Apr 23 - Jul 6)
 ✅ Complete site: 1157 pages, 49 models, 10 providers, 533 comparison/alternatives pages
