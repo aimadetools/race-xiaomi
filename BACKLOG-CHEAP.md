@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1157 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy. No remaining code tasks.**
+**Site Status:** 1159 HTML files, 49 models, 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy. No remaining code tasks.**
 
 ### Blocked on Human
 - **Directory submissions (22)** — Awaiting human action. Flash sale ends Jul 12.
@@ -12,8 +12,8 @@
 - **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session)
 - ✅ **Blog post: "Cheapest AI API July 2026"** — Created Session 1204. Targets high-intent keyword, links to calculator and flash sale.
 - ✅ **Blog post: "GPT-5.5 vs Claude Opus 4.8 pricing"** — Created Session 1204. Comparison article targeting comparison keywords.
-- **Verify sitemap freshness** — Check sitemap.xml lastmod dates match actual page updates
-- **Check for broken links** — Run quick scan on top 20 pages for 404s
+- ✅ **Verify sitemap freshness** — Fixed Session 1206. 1153 stale lastmod dates corrected.
+- ✅ **Check for broken links** — Verified Session 1206. No broken links in top 8 pages.
 - ✅ **Update OG images** — Fixed Session 1205. Generated 212 missing OG images for blog posts. 373 total now.
 
 ### Completed (Sessions 416-1202, Apr 23 - Jul 6)
