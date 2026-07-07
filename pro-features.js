@@ -26,6 +26,29 @@ const VALID_CODE_HASHES = [
 
 async function validateCode(code) {
     const normalized = code.trim().toUpperCase();
+
+    // 1. Try server-side validation (handles webhook-generated codes)
+    try {
+        const resp = await fetch('https://getapipulse.com/api/validate-code', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ code: normalized })
+        });
+        if (resp.ok) {
+            const data = await resp.json();
+            if (data.valid) {
+                localStorage.setItem('apipulse_pro', 'true');
+                localStorage.setItem('apipulse_pro_code', normalized);
+                if (window.trackEvent) window.trackEvent('pro_code_validated', { source: data.source });
+                return true;
+            }
+        }
+    } catch (e) {
+        // API unavailable — fall through to local validation
+        console.log('[PRO] API validation failed, trying local:', e.message);
+    }
+
+    // 2. Fallback: local hash validation (legacy codes)
     const hash = await hashString(normalized);
     if (VALID_CODE_HASHES.includes(hash)) {
         localStorage.setItem('apipulse_pro', 'true');
