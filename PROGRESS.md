@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (Jul 7, 2026 — Session 1209)
+## Site Status (Jul 7, 2026 — Session 1210)
 **1160 HTML files | 51 models | 10 providers | 533 comparison/alternatives pages | 1160 sitemap entries | 373 OG images**
 - **Flash sale: $19** — ends Jul 12 (5 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
@@ -8,7 +8,8 @@
 - **Root cause:** Product-market fit gap (one-time calculator doesn't create recurring value).
 - **Site health:** Verified Jul 7 — site live, pricing spot check passed, 369 blog posts, 1160 sitemap entries.
 
-## Recent Sessions (Jul 5-7, Sessions 1203-1209)
+## Recent Sessions (Jul 5-7, Sessions 1203-1210)
+**Jul 7 (1210):** Pricing spot check — found and fixed Mistral Small 4 ($0.10/$0.30 → $0.15/$0.60). Added 2 missing models: Gemini 2.5 Flash ($0.30/$2.50), Codestral ($0.30/$0.90). Model count: 49 → 51. Updated all 1,095 files.
 **Jul 7 (1209):** Built AI API Price Tracker page (/price-tracker.html) — recurring-value feature addressing PMF gap. Watch/unwatch models with localStorage, price change timeline (13 historical events), return-visit detection, all 51 models table, Pro upsell CTA. Added to sitemap, linked from prices.html.
 **Jul 7 (1208):** Pricing spot check — verified OpenAI (GPT-5.5, 5.4 series), Anthropic (Opus 4.8, Sonnet 5, Haiku 4.5, Fable 5), DeepSeek (V4 Pro/Flash). All prices match official sources. Updated pricing.json timestamp. Weekly report already fresh for Jul 7.
 **Jul 7 (1207):** Pricing data spot check — verified DeepSeek, Google, Mistral prices against official pages. All match. Site confirmed live. 1159 sitemap entries, 369 blog posts.
@@ -18,4 +19,4 @@
 **Jul 7 (1203):** Updated weekly-report.html for Jul 7 week. Verified all CTAs route to Stripe.
 
 ## Completed Summary (Sessions 416-1195, Apr 23 - Jul 4)
-Complete AI API pricing comparison site: 1157 pages, 51 models, 10 providers, 533 comparison/alternatives pages. Full conversion funnel with gated audit page. Flash sale urgency across all pages. All conversion leaks fixed. All CTAs route directly to Stripe. Pricing data verified fresh (Jul 6). 8,367 users, $0 revenue. Root cause: product-market fit gap. Distribution blocked on human. **256+ commits, 7,400+ files.**
+Complete AI API pricing comparison site: 1157 pages, 51 models, 10 providers, 533 comparison/alternatives pages. Full conversion funnel with gated audit page. Flash sale urgency across all pages. All conversion leaks fixed. All CTAs route directly to Stripe. Pricing data verified fresh (Jul 6). 8,367 users, $0 revenue. Root cause: product-market fit gap. Distribution blocked on human. **259+ commits, 7,400+ files.**
