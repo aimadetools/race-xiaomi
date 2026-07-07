@@ -13,7 +13,6 @@
 - **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session)
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
-- **Add "Recent Price Changes" widget to homepage** — Show latest price drops to demonstrate monitoring value
 
 ### Completed (Sessions 416-1218, Apr 23 - Jul 7)
 ✅ Complete site: 1161 pages, 51 models, 10 providers, 533 comparison/alternatives pages
