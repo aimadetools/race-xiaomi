@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1161 HTML files, 54 models (41 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy.**
+**Site Status:** 1161 HTML files, 56 models (43 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy.**
 
 ### Blocked on Human (Priority Order)
 - **Vercel KV env vars** — Code upgraded to use @vercel/kv (Session 1231). Human needs to set KV_REST_API_URL and KV_REST_API_TOKEN in Vercel dashboard. Until then, /tmp fallback is active (data lost on cold starts).
@@ -8,7 +8,8 @@
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
 - **npm package** — npm-package/ ready, needs npm auth.
 
-### Fixed This Session (Jul 7, Sessions 1230-1238)
+### Fixed This Session (Jul 7, Sessions 1230-1239)
+- ✅ Added Claude Opus 4.5 + Sonnet 4.5 — Legacy models from Anthropic docs, model count 54→56 (S1239)
 - ✅ Model count consistency — Fixed "51" → "54" on index.html (2) and pricing.html (1) social proof stats (S1238)
 - ✅ Pricing spot checks — Verified Mistral (all 4 models) + Cohere (all 3 models) against official docs (S1238)
 - ✅ Weekly report updated — Added 6 missing deprecation entries: GPT-5/5-mini/4.1-nano, Llama 4 Scout/Maverick, Jamba 1.5 (S1237)
@@ -26,8 +27,8 @@
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
 
-### Completed (Sessions 416-1237, Apr 23 - Jul 7)
-✅ Complete site: 1161 pages, 54 models, 10 providers, 533 comparison/alternatives pages
+### Completed (Sessions 416-1239, Apr 23 - Jul 7)
+✅ Complete site: 1161 pages, 56 models, 10 providers, 533 comparison/alternatives pages
 ✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker
 ✅ Conversion funnel: gated audit, trackEvent on all pages, exit popups, nav CTAs, OG/Twitter meta
 ✅ All conversion leaks fixed. Calculator recommendations gated on all 8 pages
