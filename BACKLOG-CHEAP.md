@@ -8,12 +8,13 @@
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
 - **npm package** — npm-package/ ready, needs npm auth.
 
-### Fixed This Session (Jul 7, Sessions 1230-1235)
-- ✅ Pricing verification — Anthropic + OpenAI official docs verified. GPT-5/5-mini deprecated, GPT-oss=open-source not API, GPT-4.1-nano deprecated (S1235)
-- ✅ Pricing spot check — DeepSeek, xAI, AI21, Cohere, Together.ai Llama 3.3 verified. 11 models Jun→Jul freshness dates updated (S1234)
-- ✅ Vercel KV migration — 9 API endpoints upgraded from /tmp to @vercel/kv with fallback (S1231)
-- ✅ Pro access code validation — Critical bug fixed. Created /api/validate-code.js (S1230)
-- ✅ Pricing spot check — Google, DeepSeek, Mistral verified. Model count typo fixed (S1232)
+### Fixed This Session (Jul 7, Sessions 1230-1236)
+- ✅ Pricing spot checks — Verified Together.ai (Llama 3.3 $1.04/$1.04, Llama 4 delisted) + xAI (Grok 4.3 $1.25/$2.50, Build 0.1 $1.00/$2.00) (S1236)
+- ✅ Pricing verification — Anthropic + OpenAI official docs. GPT-5/5-mini deprecated, GPT-oss=open-source, GPT-4.1-nano deprecated (S1235)
+- ✅ Pricing spot check — DeepSeek, xAI, AI21, Cohere, Together.ai. 11 models Jun→Jul freshness dates (S1234)
+- ✅ Vercel KV migration — 9 API endpoints upgraded from /tmp (S1231)
+- ✅ Pro access code validation — Critical bug fixed (S1230)
+- ✅ Pricing spot check — Google, DeepSeek, Mistral verified (S1232)
 
 ### Routine Tasks (for cheap sessions)
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
@@ -21,7 +22,7 @@
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
 
-### Completed (Sessions 416-1234, Apr 23 - Jul 7)
+### Completed (Sessions 416-1236, Apr 23 - Jul 7)
 ✅ Complete site: 1161 pages, 54 models, 10 providers, 533 comparison/alternatives pages
 ✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker
 ✅ Conversion funnel: gated audit, trackEvent on all pages, exit popups, nav CTAs, OG/Twitter meta
@@ -30,7 +31,7 @@
 ✅ All CTAs route directly to Stripe. Pricing data verified fresh (Jul 7)
 ✅ Blog: 369 posts. OG images: 373. Sitemap: 1160 entries, all lastmod fixed
 ✅ Price Tracker: recurring-value feature with localStorage favorites and price history
-✅ Pricing spot checks: All 10 providers verified (S1208-S1234). Fixed DeepSeek V4 Pro 5x overprice, Grok Build 0.1 repriced, Llama 3.1→3.3, GPT-4.1 family added, GPT-4o deprecated
+✅ Pricing spot checks: All 10 providers verified (S1208-S1236). Fixed DeepSeek V4 Pro 5x overprice, Grok Build 0.1 repriced, Llama 3.1→3.3, GPT-4.1 family added, GPT-4o deprecated
 ✅ Pricing freshness dates: 116 files updated (S1211+S1216), 11 models Jun→Jul (S1234)
 ✅ Social proof accuracy: "847 devs" → "8,300+ developers" (S1218). Model count 49→54 (S1227)
 ✅ Vercel KV migration: 9 API endpoints upgraded from /tmp (S1231)
