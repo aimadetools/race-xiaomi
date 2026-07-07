@@ -8,7 +8,8 @@
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
 - **npm package** — npm-package/ ready, needs npm auth.
 
-### Fixed This Session (Jul 7, Sessions 1230-1232)
+### Fixed This Session (Jul 7, Sessions 1230-1234)
+- ✅ Pricing spot check — DeepSeek, xAI, AI21, Cohere, Together.ai Llama 3.3 verified. 11 models Jun→Jul freshness dates updated (S1234)
 - ✅ Vercel KV migration — 9 API endpoints upgraded from /tmp to @vercel/kv with fallback (S1231)
 - ✅ Pro access code validation — Critical bug fixed. Created /api/validate-code.js (S1230)
 - ✅ Pricing spot check — Google, DeepSeek, Mistral verified. Model count typo fixed (S1232)
