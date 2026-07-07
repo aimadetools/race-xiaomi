@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (Jul 7, 2026 — Session 1227)
+## Site Status (Jul 7, 2026 — Session 1229)
 **1161 HTML files | 54 models | 10 providers | 533 comparison/alternatives pages | 1160 sitemap entries | 373 OG images**
 - **Flash sale: $19** — ends Jul 12 (5 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
@@ -8,7 +8,8 @@
 - **Root cause:** Product-market fit gap (free tier too good, Pro features not compelling enough).
 - **Site health:** Verified Jul 7 — site live (307→www), pricing current, 369 blog posts, 1160 sitemap entries.
 
-## Recent Sessions (Jul 7, Sessions 1220-1228)
+## Recent Sessions (Jul 7, Sessions 1220-1229)
+**Jul 7 (1229):** Model count consistency fix — updated 571+ HTML files from "51 models" to "54 models". Verified pricing accuracy for DeepSeek (V4 Flash $0.14/$0.28, V4 Pro $0.435/$0.87), xAI (Grok 4.3 $1.25/$2.50, Grok Build 0.1 $1.00/$2.00), and AI21 (Jamba Mini $0.20/$0.40, Jamba Large $2.00/$8.00). All prices match official pages. Flash sale dates consistent (Jul 12), Stripe link consistent across site.
 **Jul 7 (1228):** Pricing freshness date cleanup — fixed 379 stale verification dates across site. 301 compare-*.html (Jul 3→Jul 7), 55 blog/tool pages (Updated Jul 3→Jul 7), 23 provider/blog pages (Jun 3→Jul 7), 8 pages (May→Jul). Verified site healthy: 1160 HTML, 1160 sitemap entries, no broken links, flash sale Jul 12 consistent across 953 pages.
 **Jul 7 (1227):** Pricing spot check OpenAI + Mistral. Added GPT-4.1 family (GPT-4.1 $2/$8, mini $0.40/$1.60, nano $0.10/$0.40) — replaces deprecated GPT-4o. Verified Mistral Large 3 ($0.50/$1.50), Medium 3.5 ($1.50/$7.50), Small 4 ($0.15/$0.60), Codestral ($0.30/$0.90). Updated model count 51→54 across 1070+ pages.
 **Jul 7 (1226):** Pricing spot check — verified Anthropic (Opus 4.8 $5/$25, Sonnet 5 $2/$10 intro, Fable 5 $10/$50, Haiku 4.5 $1/$5), Google (7 models all match), DeepSeek (V4 Pro $0.435/$0.87, V4 Flash $0.14/$0.28). Reviewed conversion flow: pricing page CTA, usage gate, homepage flash sale messaging all consistent. All high-priority tasks blocked on human.
@@ -19,5 +20,5 @@
 **Jul 7 (1221):** Weekly report maintenance — added 3 missing deprecation entries.
 **Earlier Jul 7 (1213-1220):** Full pricing audit all 10 providers. Fixed DeepSeek V4 Pro 5x overprice, Grok Build 0.1 repriced, Llama 3.1→3.3 migration.
 
-## Completed Summary (Sessions 416-1228, Apr 23 - Jul 7)
-Complete AI API pricing comparison site: 1160 pages, 54 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. All CTAs route to Stripe. Flash sale $19 ends Jul 12. Pricing freshness dates current (379 files updated Session 1228). **274+ commits, 7,400+ files.**
+## Completed Summary (Sessions 416-1229, Apr 23 - Jul 7)
+Complete AI API pricing comparison site: 1160 pages, 54 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. All CTAs route to Stripe. Flash sale $19 ends Jul 12. Pricing freshness dates current (379 files updated Session 1228). Model count consistency fixed (571+ files updated Session 1229). **275+ commits, 7,400+ files.**
