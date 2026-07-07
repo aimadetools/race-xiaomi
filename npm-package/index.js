@@ -2,7 +2,7 @@
  * apipulse — LLM API pricing data from APIpulse
  * https://getapipulse.com
  *
- * Compare costs across 51 models from 10 providers.
+ * Compare costs across 54 models from 10 providers.
  * CLI: npx apipulse
  */
 

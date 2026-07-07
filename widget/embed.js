@@ -151,7 +151,7 @@
   panel.innerHTML =
     '<div class="panel-header"><div><div class="panel-title">AI API Pricing — Live</div><div class="panel-sub">' + MODELS.length + ' models · 10 providers · Updated Jun 2026</div></div><button class="panel-close" id="pw-close">✕</button></div>' +
     rows +
-    '<div class="panel-footer"><a href="https://getapipulse.com/pricing.html" target="_blank" rel="noopener" class="panel-link">Compare all 51 models on APIpulse →</a></div>';
+    '<div class="panel-footer"><a href="https://getapipulse.com/pricing.html" target="_blank" rel="noopener" class="panel-link">Compare all 54 models on APIpulse →</a></div>';
   shadow.appendChild(panel);
 
   // Events

@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 7, 2026 (Full 10-provider spot check S1214+S1219+S1220: OpenAI, Anthropic, Google, xAI, Cohere, Moonshot, AI21, Together.ai, DeepSeek, Mistral all confirmed; 51 models)
+// Last verified: Jul 7, 2026 (S1227: OpenAI +GPT-4.1/mini/nano, deprecated GPT-4o; Mistral confirmed. 54 models total)
 const PRICING_LAST_UPDATED = 'Jul 7, 2026';
 
 const API_MODELS = [
@@ -16,8 +16,11 @@ const API_MODELS = [
     { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.25, output: 2.00, context: '272K', verified: 'Jul 2026' },
     { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026' },
     { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.08, output: 0.35, context: '128K', verified: 'Jul 2026' },
-    { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jul 2026' },
-    { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026' },
+    { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-04-14', replacement: 'openai-gpt41', note: 'Deprecated Apr 2025; replaced by GPT-4.1 family' },
+    { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-04-14', replacement: 'openai-gpt41-nano', note: 'Deprecated Apr 2025; replaced by GPT-4.1 family' },
+    { id: 'openai-gpt41', name: 'GPT-4.1', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.00, output: 8.00, context: '1M', verified: 'Jul 2026' },
+    { id: 'openai-gpt41-mini', name: 'GPT-4.1 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.40, output: 1.60, context: '1M', verified: 'Jul 2026' },
+    { id: 'openai-gpt41-nano', name: 'GPT-4.1 nano', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Jul 2026' },
     // Anthropic
     { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jul 2026' },
     { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jul 2026' },
@@ -44,8 +47,8 @@ const API_MODELS = [
     { id: 'deepseek-v32', name: 'DeepSeek V3.2', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.23, output: 0.34, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-07-07', replacement: 'deepseek-v4-flash', note: 'No longer listed on DeepSeek pricing page; V4 Flash is the successor' },
     { id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.27, output: 1.10, context: '128K', verified: 'May 2026', deprecated: true, replacement: 'deepseek-v4-flash' },
     // Mistral
-    { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '262K', verified: 'Jun 2026' },
-    { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K', verified: 'Jun 2026' },
+    { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '262K', verified: 'Jul 2026' },
+    { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K', verified: 'Jul 2026' },
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026' },
     { id: 'codestral', name: 'Codestral', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 0.30, output: 0.90, context: '256K', verified: 'Jul 2026' },
     // Cohere

@@ -82,7 +82,7 @@ async function sendWelcomeEmail(email) {
             <div style="background: linear-gradient(135deg, #7c3aed, #818cf8); border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
               <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #e2e8f0; margin-bottom: 8px;">⚡ Flash Sale — Limited Time</p>
               <h2 style="color: white; font-size: 22px; margin-bottom: 8px;">Pro Lifetime Access — $19</h2>
-              <p style="color: #e2e8f0; font-size: 14px; margin-bottom: 16px;">51 models, 10 providers. Real-time pricing. One payment, forever. <s style="color: #c4b5fd;">$49</s></p>
+              <p style="color: #e2e8f0; font-size: 14px; margin-bottom: 16px;">54 models, 10 providers. Real-time pricing. One payment, forever. <s style="color: #c4b5fd;">$49</s></p>
               <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" style="display: inline-block; background: white; color: #7c3aed; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px;">Claim Your Deal →</a>
             </div>
             <div style="background: #1e293b; border-radius: 8px; padding: 20px; margin: 20px 0;">
@@ -97,7 +97,7 @@ async function sendWelcomeEmail(email) {
               <p style="margin-bottom: 8px;">Here's what you can do right now:</p>
               <ul style="padding-left: 20px; line-height: 1.8;">
                 <li><a href="https://getapipulse.com/claude-4-migration-scanner.html" style="color: #818cf8;">Scan your code for deprecated Claude 4 references</a> — free, instant, private</li>
-                <li><a href="https://getapipulse.com/calculator.html" style="color: #818cf8;">Estimate your AI costs</a> — 51 models across 10 providers</li>
+                <li><a href="https://getapipulse.com/calculator.html" style="color: #818cf8;">Estimate your AI costs</a> — 54 models across 10 providers</li>
                 <li><a href="https://getapipulse.com/compare.html" style="color: #818cf8;">Compare models side-by-side</a> — find the cheapest option</li>
                 <li><a href="https://getapipulse.com/pricing-index.html" style="color: #818cf8;">Browse all pricing</a> — sortable reference table</li>
               </ul>
