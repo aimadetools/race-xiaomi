@@ -25,5 +25,5 @@
 ✅ Pricing spot checks: OpenAI/Anthropic/DeepSeek (S1208), Google/Mistral (S1210)
   - Fixed Mistral Small 4 ($0.10/$0.30 → $0.15/$0.60), added Gemini 2.5 Flash + Codestral
 ✅ Price Tracker in global nav (S1211) — now visible on all 1160 pages
-✅ Pricing freshness dates fixed (S1211) — 77 files updated (Jul 3/4/Jun/May → Jul 7)
+✅ Pricing freshness dates fixed (S1211+S1216) — 116 files updated to Jul 7 (77 S1211 + 39 S1216)
 **260+ commits, 7,400+ files. Distribution blocked on human.**
