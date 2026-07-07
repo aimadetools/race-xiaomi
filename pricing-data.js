@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 7, 2026 (Full 10-provider spot check S1214: xAI, Cohere, Moonshot, AI21 confirmed; Llama 4 delisted from Together.ai serverless; 51 models total)
+// Last verified: Jul 7, 2026 (Full 10-provider spot check S1214+S1219: xAI, Cohere, Moonshot, AI21, Together.ai confirmed; Llama 4 delisted; Llama 3.1→3.3 on Together.ai serverless; 51 models)
 const PRICING_LAST_UPDATED = 'Jul 7, 2026';
 
 const API_MODELS = [
@@ -55,8 +55,9 @@ const API_MODELS = [
     // Meta (Together.ai)
     { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.18, output: 0.59, context: '1M', verified: 'Jun 2026', note: 'Delisted from Together.ai serverless Jul 2026 — may only be available via dedicated endpoints' },
     { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.27, output: 0.85, context: '1M', verified: 'Jun 2026', note: 'Delisted from Together.ai serverless Jul 2026 — may only be available via dedicated endpoints' },
-    { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Mid', input: 0.88, output: 0.88, context: '128K', verified: 'May 2026' },
-    { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.10, output: 0.10, context: '128K', verified: 'May 2026' },
+    { id: 'llama-33-70b', name: 'Llama 3.3 70B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Mid', input: 1.04, output: 1.04, context: '128K', verified: 'Jul 2026' },
+    { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Mid', input: 0.88, output: 0.88, context: '128K', verified: 'May 2026', deprecated: true, deprecatedDate: '2026-07-01', replacement: 'llama-33-70b' },
+    { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.10, output: 0.10, context: '128K', verified: 'May 2026', deprecated: true, deprecatedDate: '2026-07-01', replacement: 'llama-33-70b' },
     // Moonshot (Kimi)
     { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K', verified: 'Jun 2026' },
     // xAI
