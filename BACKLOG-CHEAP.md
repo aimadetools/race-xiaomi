@@ -22,13 +22,16 @@
 ✅ Blog: 369 posts, 2 created Session 1204. OG images: 373 (212 generated Session 1205)
 ✅ Sitemap: 1160 entries, all lastmod fixed Session 1206. Broken links verified clean
 ✅ Price Tracker: recurring-value feature with localStorage favorites and price history
-✅ Pricing spot checks: OpenAI/Anthropic/DeepSeek (S1208), Google/Mistral (S1210), xAI/AI21 (S1217), DeepSeek re-verified (S1218)
+✅ Pricing spot checks: OpenAI/Anthropic/DeepSeek (S1208), Google/Mistral (S1210), xAI/AI21 (S1217), DeepSeek re-verified (S1218), Together.ai/Cohere (S1219)
   - Fixed Mistral Small 4 ($0.10/$0.30 → $0.15/$0.60), added Gemini 2.5 Flash + Codestral
   - Fixed Grok Build 0.1 ($0.30/$0.50 → $1.00/$2.00) — 3x price increase, 46 files updated
   - Added missing Jamba Mini ($0.20/$0.40) to AI21 page and pricing data
   - Fixed DeepSeek V4 Pro ($2.18/$8.72 → $0.435/$0.87) — was 5x overpriced! Updated 8+ files
   - Marked DeepSeek V3.2 as deprecated (no longer on official pricing page)
+  - Updated Llama 3.1 70B → Llama 3.3 70B ($0.88/$0.88 → $1.04/$1.04) — 32 files updated
+  - Marked Llama 3.1 70B/8B deprecated (delisted from Together.ai serverless)
+  - Verified Cohere pricing: Command A/Command R+ at $2.50/$10.00 matches official
 ✅ Price Tracker in global nav (S1211) — now visible on all 1160 pages
 ✅ Pricing freshness dates fixed (S1211+S1216) — 116 files updated to Jul 7 (77 S1211 + 39 S1216)
 ✅ Social proof accuracy (S1218) — Fixed fake "847 devs switched" → "8,300+ developers use APIpulse" across audit, claim, blog pages. Updated pricing page stats (49→51 models, 476→533 comparisons).
-**261+ commits, 7,400+ files. Distribution blocked on human.**
+**264+ commits, 7,400+ files. Distribution blocked on human.**
