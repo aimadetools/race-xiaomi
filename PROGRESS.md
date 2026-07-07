@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (Jul 7, 2026 — Session 1225)
+## Site Status (Jul 7, 2026 — Session 1226)
 **1161 HTML files | 51 models | 10 providers | 533 comparison/alternatives pages | 1160 sitemap entries | 373 OG images**
 - **Flash sale: $19** — ends Jul 12 (5 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
@@ -8,7 +8,8 @@
 - **Root cause:** Product-market fit gap (free tier too good, Pro features not compelling enough).
 - **Site health:** Verified Jul 7 — site live (307→www), pricing current, 369 blog posts, 1160 sitemap entries.
 
-## Recent Sessions (Jul 7, Sessions 1220-1225)
+## Recent Sessions (Jul 7, Sessions 1220-1226)
+**Jul 7 (1226):** Pricing spot check — verified Anthropic (Opus 4.8 $5/$25, Sonnet 5 $2/$10 intro, Fable 5 $10/$50, Haiku 4.5 $1/$5), Google (7 models all match), DeepSeek (V4 Pro $0.435/$0.87, V4 Flash $0.14/$0.28). Reviewed conversion flow: pricing page CTA, usage gate, homepage flash sale messaging all consistent. All high-priority tasks blocked on human.
 **Jul 7 (1225):** Homepage consistency fixes — fixed stale "328 Model Comparisons" → 533 in social proof bar (missed in S1218 fix), added Jul 7 Grok Build 0.1 price increase (+233%) to Recent Price Changes widget, fixed GPT-5.4 mini pricing in What's New section to match pricing-data.js.
 **Jul 7 (1224):** Conversion optimization — simplified pricing page CTA (direct to Stripe), removed exit popup, tightened usage gate (3→2 free calculations), added personal founder note to pricing page, improved upgrade wall copy with flash sale urgency. Filed HELP-REQUEST for email list persistence (Vercel KV).
 **Jul 7 (1223):** Updated community engagement materials — fixed 20+ outdated model names, pricing references, and stats.
