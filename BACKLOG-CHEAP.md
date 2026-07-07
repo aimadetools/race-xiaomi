@@ -10,6 +10,7 @@
 ### Routine Tasks (for cheap sessions)
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
 - **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session)
+- **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 
 ### Completed (Sessions 416-1210, Apr 23 - Jul 7)
 ✅ Complete site: 1160 pages, 51 models, 10 providers, 533 comparison/alternatives pages
@@ -23,4 +24,6 @@
 ✅ Price Tracker: recurring-value feature with localStorage favorites and price history
 ✅ Pricing spot checks: OpenAI/Anthropic/DeepSeek (S1208), Google/Mistral (S1210)
   - Fixed Mistral Small 4 ($0.10/$0.30 → $0.15/$0.60), added Gemini 2.5 Flash + Codestral
-**259+ commits, 7,400+ files. Distribution blocked on human.**
+✅ Price Tracker in global nav (S1211) — now visible on all 1160 pages
+✅ Pricing freshness dates fixed (S1211) — 77 files updated (Jul 3/4/Jun/May → Jul 7)
+**260+ commits, 7,400+ files. Distribution blocked on human.**
