@@ -8,7 +8,8 @@
 - **Root cause:** Product-market fit gap (one-time calculator doesn't create recurring value).
 - **Site health:** Verified Jul 7 — site live (307→www), pricing current, 369 blog posts, 1160 sitemap entries. All code tasks complete.
 
-## Recent Sessions (Jul 7, Sessions 1213-1219)
+## Recent Sessions (Jul 7, Sessions 1213-1220)
+**Jul 7 (1220):** Pricing spot check — OpenAI + Anthropic + Google. Verified all 3 major providers against official docs. All prices accurate. Updated verified dates from Jun/May 2026 → Jul 2026 across 30 models in pricing-data.js.
 **Jul 7 (1219):** Pricing spot check — Together.ai + Cohere. Updated Llama 3.1 70B → Llama 3.3 70B ($0.88/$0.88 → $1.04/$1.04) across 32 files. Together.ai serverless now shows Llama 3.3 70B; Llama 3.1 70B/8B delisted. Marked Llama 3.1 models deprecated. Verified Cohere pricing (Command A/Command R+ at $2.50/$10.00 matches official).
 **Jul 7 (1218):** Fixed critical pricing errors: DeepSeek V4 Pro was $2.18/$8.72 across 8+ files but actual price is $0.435/$0.87 (5x cheaper!). Updated all references. Marked DeepSeek V3.2 as deprecated (no longer on official pricing page). Fixed misleading social proof "847 devs switched" → "8,300+ developers use APIpulse" (audit.html, claim.html, blog). Updated pricing page stats: 49→51 models, 476→533 comparisons.
 **Jul 7 (1217):** Pricing spot check — xAI + AI21. Fixed Grok Build 0.1 ($0.30/$0.50 → $1.00/$2.00, 46 files). Added missing Jamba Mini ($0.20/$0.40) to AI21 page and pricing data. Updated AI21 page: title, meta, calculator, recommendations.
