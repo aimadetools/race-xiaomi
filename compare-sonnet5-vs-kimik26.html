@@ -187,7 +187,7 @@
         <h2>Other Mid-Tier Models</h2>
         <div class="premium-grid">
             <div class="premium-card"><div class="name">Claude Sonnet 5</div><div class="provider">Anthropic</div><div class="price">$3 / $15 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="premium-card"><div class="name">Kimi K2.6</div><div class="provider">Moonshot</div><div class="price">$0.95 / $4.00 per 1M</div><div class="ctx">128K context</div></div>
+            <div class="premium-card"><div class="name">Kimi K2.6</div><div class="provider">Moonshot</div><div class="price">$0.95 / $4.00 per 1M</div><div class="ctx">256K context</div></div>
             <div class="premium-card"><div class="name">Gemini 3.1 Pro</div><div class="provider">Google</div><div class="price">$1.25 / $5.00 per 1M</div><div class="ctx">1M context</div></div>
         </div>
     </div>
@@ -196,15 +196,15 @@
         <div class="use-case-grid">
             <div class="use-case-card"><h3>Code Generation</h3><p>Sonnet 5 at $3/$15 produces higher-quality code with better reasoning for complex tasks. Kimi K2.6 at $0.95/$4.00 handles standard code well at 68% lower input cost — great for utility scripts and boilerplate.</p><div class="recommendation"><span class="pick-kimi">Budget code: Kimi K2.6</span> | <span class="pick-sonnet5">Complex code: Sonnet 5</span></div></div>
             <div class="use-case-card"><h3>Content Generation</h3><p>Kimi K2.6 excels at Chinese content generation and is 73% cheaper on output. At 1M input + 500K output, Kimi costs $2.95 vs Sonnet 5's $10.50. Perfect for multilingual content, especially Chinese-market blogs and marketing copy.</p><div class="recommendation"><span class="pick-kimi">Chinese content: Kimi K2.6</span> | <span class="pick-sonnet5">English content: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Data Analysis</h3><p>Sonnet 5's 1M context window and stronger reasoning give it an edge for complex multi-document analysis. Kimi K2.6's 128K context is sufficient for most standard analysis tasks at a fraction of the cost.</p><div class="recommendation"><span class="pick-sonnet5">Deep analysis: Sonnet 5</span> | <span class="pick-kimi">Standard analysis: Kimi</span></div></div>
+            <div class="use-case-card"><h3>Data Analysis</h3><p>Sonnet 5's 1M context window and stronger reasoning give it an edge for complex multi-document analysis. Kimi K2.6's 256K context is sufficient for most standard analysis tasks at a fraction of the cost.</p><div class="recommendation"><span class="pick-sonnet5">Deep analysis: Sonnet 5</span> | <span class="pick-kimi">Standard analysis: Kimi</span></div></div>
             <div class="use-case-card"><h3>Batch Processing</h3><p>For high-volume batch workloads, Kimi K2.6's 68-73% cost savings add up fast. At 10K requests/day, Kimi saves $1,812/month vs Sonnet 5. The quality trade-off is usually acceptable for batch jobs.</p><div class="recommendation"><span class="pick-kimi">Better value: Kimi K2.6</span></div></div>
         </div>
     </div>
     <div class="pro-upsell">
         <h2>Comparing mid-tier models?</h2>
-        <p>APIpulse Pro lets you compare all 59 models including Sonnet 5 ($3/$15) and Kimi K2.6 ($0.95/$4.00), save scenarios, and export cost reports for your team.</p>
+        <p>APIpulse Pro lets you compare all 60 models including Sonnet 5 ($3/$15) and Kimi K2.6 ($0.95/$4.00), save scenarios, and export cost reports for your team.</p>
         <div class="features">
-            <div class="feature"><strong>59 models</strong> across 10 providers</div>
+            <div class="feature"><strong>60 models</strong> across 10 providers</div>
             <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
             <div class="feature"><strong>Export</strong> PDF cost reports</div>
             <div class="feature"><strong>Optimize</strong> — save up to 73%</div>
@@ -218,7 +218,7 @@
         <div class="faq-item"><h3>When should I choose Kimi K2.6 over Sonnet 5?</h3><p>Choose Kimi K2.6 for Chinese content generation, standard analysis, batch processing, and cost-sensitive workloads where 68-73% savings justify a slight quality trade-off. Choose Sonnet 5 for complex code generation, deep reasoning, nuanced English analysis, and tasks requiring the 1M context window.</p></div>
     </div>
     <div class="related-tools">
-        <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 59 models compared — find the cheapest</p></a>
+        <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 60 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>
         <a href="api-cost-score.html" class="related-card"><h3>🎯 API Cost Score</h3><p>Rate your API setup — get a letter grade in 30 seconds</p></a>
     </div>
@@ -256,7 +256,7 @@
     <footer><p>Pricing data last verified: <span class="verified-date"></span></p><p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="compare.html">Compare</a> · <a href="calculator.html">Calculator</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a> · <a href="about.html">About</a> · <a href="price-alerts.html" style="color:var(--accent);">🔔 Price Alerts</a></p></footer>
     <script>
         const SONNET5={name:'Claude Sonnet 5',provider:'Anthropic',input:3.00,output:15.00,context:'1M'};
-        const KIMI={name:'Kimi K2.6',provider:'Moonshot',input:0.95,output:4.00,context:'128K'};
+        const KIMI={name:'Kimi K2.6',provider:'Moonshot',input:0.95,output:4.00,context:'256K'};
         const PRESETS={coding:{input:8000,output:4000,rpd:80,label:'Coding'},content:{input:5000,output:3000,rpd:150,label:'Content Generation'},analysis:{input:10000,output:3000,rpd:100,label:'Data Analysis'},chatbot:{input:2000,output:1000,rpd:500,label:'Chatbot'},batch:{input:1000,output:500,rpd:2000,label:'Batch Processing'}};
         function applyPreset(key){const p=PRESETS[key];document.getElementById('input-tokens').value=p.input;document.getElementById('output-tokens').value=p.output;document.getElementById('requests-day').value=p.rpd;document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');calculate();}
         function calculate(){

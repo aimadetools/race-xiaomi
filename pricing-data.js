@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 8, 2026 (S1260: Google Gemini full spot check — all 7 active models confirmed. 59 entries, 45 active, 14 deprecated)
+// Last verified: Jul 8, 2026 (S1271: AI21 + Moonshot verification — added Kimi K2.7 Code. 60 entries, 46 active, 14 deprecated)
 const PRICING_LAST_UPDATED = 'Jul 8, 2026';
 
 const API_MODELS = [
@@ -65,7 +65,8 @@ const API_MODELS = [
     { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Mid', input: 0.88, output: 0.88, context: '128K', verified: 'May 2026', deprecated: true, deprecatedDate: '2026-07-01', replacement: 'llama-33-70b' },
     { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.14, output: 0.14, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-07-01', replacement: 'llama-33-70b' },
     // Moonshot (Kimi)
-    { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K', verified: 'Jun 2026' },
+    { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K', verified: 'Jul 2026' },
+    { id: 'kimi-k27-code', name: 'Kimi K2.7 Code', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.96, output: 3.97, context: '256K', verified: 'Jul 2026' },
     // xAI
     { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 1.25, output: 2.50, context: '1M', verified: 'Jul 2026' },  // Was Grok 3 at $3/$15 — rebranded & repriced Jun 2026
     { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', providerSlug: 'xai', tier: 'Budget', input: 1.00, output: 2.00, context: '256K', verified: 'Jul 2026' },  // Code API pricing (was $0.30/$0.50)
