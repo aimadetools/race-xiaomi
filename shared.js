@@ -1537,6 +1537,7 @@ var GO_MODEL_MAP = {
     'claude-sonnet': 'anthropic-sonnet46', 'sonnet': 'anthropic-sonnet46', 'claude-sonnet4': 'anthropic-sonnet46', 'sonnet4': 'anthropic-sonnet46', 'claude4-sonnet': 'anthropic-sonnet46',
     'anthropic-opus48': 'anthropic-opus48', 'claude-opus47': 'anthropic-opus48', 'claude-opus48': 'anthropic-opus48', 'opus47': 'anthropic-opus48', 'opus48': 'anthropic-opus48',
     'claude-opus': 'anthropic-opus48', 'opus': 'anthropic-opus48', 'opus4': 'anthropic-opus48', 'anthropic-opus': 'anthropic-opus48', 'anthropic-opus47': 'anthropic-opus48', 'claude4-opus': 'anthropic-opus48',
+    'anthropic-opus46': 'anthropic-opus46', 'claude-opus46': 'anthropic-opus46', 'opus46': 'anthropic-opus46', 'claude-opus-46': 'anthropic-opus46',
     // Google
     'google': 'google-pro', 'gemini': 'google-pro',
     'google-pro': 'google-pro', 'gemini-pro': 'google-pro', 'gemini-25-pro': 'google-pro', 'gemini25-pro': 'google-pro', 'pro25': 'google-pro', 'google-gemini25pro': 'google-pro',

@@ -54,7 +54,7 @@
                 "name": "What models does Anthropic offer and how much do they cost?",
                 "acceptedAnswer": {{
                     "@type": "Answer",
-                    "text": "8 Claude models from Haiku 4.5 ($1/$5) to Fable 5 ($10/$50). New: Claude Fable 5 (most capable widely released) and Mythos 5 (restricted). Best value: Sonnet 4.6 ($3/$15). Budget: Haiku 4.5. Premium: Fable 5, Opus 4.8, Opus 4.7."
+                    "text": "10 Claude models from Haiku 4.5 ($1/$5) to Fable 5 ($10/$50). New: Claude Fable 5 (most capable widely released) and Mythos 5 (restricted). Best value: Sonnet 4.6 ($3/$15). Budget: Haiku 4.5. Premium: Fable 5, Opus 4.8, Opus 4.7, Opus 4.6."
                 }}
             }},
             {{
@@ -62,7 +62,7 @@
                 "name": "What is Anthropic's pricing per million tokens?",
                 "acceptedAnswer": {{
                     "@type": "Answer",
-                    "text": "Claude Sonnet 4.6 at $3/$15 per million tokens is the most popular choice. Haiku 4.5 ($1/$5) is the budget option. Opus 4.8/4.7 ($5/$25) are the premium tier. Older Opus 4 ($15/$75) retired on June 15, 2026 — use Opus 4.8 instead."
+                    "text": "Claude Sonnet 4.6 at $3/$15 per million tokens is the most popular choice. Haiku 4.5 ($1/$5) is the budget option. Opus 4.8/4.7/4.6 ($5/$25) are the premium tier. Older Opus 4 ($15/$75) retired on June 15, 2026 — use Opus 4.8 instead."
                 }}
             }}
         ]
@@ -351,6 +351,13 @@
                         <td>1M</td>
                         <td><span class="tier-badge tier-premium">Premium</span></td>
                     </tr>
+                    <tr>
+                        <td><strong>Claude Opus 4.6</strong></td>
+                        <td class="cost-cell">$5.00</td>
+                        <td class="cost-cell">$25.00</td>
+                        <td>1M</td>
+                        <td><span class="tier-badge tier-premium">Premium</span></td>
+                    </tr>
                     <tr style="opacity:0.65;">
                         <td><strong>Claude 4 Opus</strong> <span style="display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;background:rgba(245,158,11,0.15);color:#f59e0b;vertical-align:middle;">Retires Jun 15</span></td>
                         <td class="cost-cell">$15.00</td>
@@ -366,7 +373,7 @@
                         <td><span class="tier-badge tier-mid">Mid</span></td>
                     </tr>
                     <tr style="opacity:0.65;">
-                        <td><strong>Claude Sonnet 4.6</strong> <span style="display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;background:rgba(245,158,11,0.15);color:#f59e0b;vertical-align:middle;">Retires Jun 15</span></td>
+                        <td><strong>Claude Sonnet 4</strong> <span style="display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;background:rgba(245,158,11,0.15);color:#f59e0b;vertical-align:middle;">Retires Jun 15</span></td>
                         <td class="cost-cell">$3.00</td>
                         <td class="cost-cell">$15.00</td>
                         <td>200K</td>
@@ -433,6 +440,7 @@
                             <select id="anth-model" onchange="anthCalculate()" aria-label="Select Anthropic model">
                                 <option value="anthropic-opus48">Claude Opus 4.8 — $5.00/$25.00</option>
                                 <option value="anthropic-opus47">Claude Opus 4.7 — $5.00/$25.00</option>
+                                <option value="anthropic-opus46">Claude Opus 4.6 — $5.00/$25.00</option>
                                 <option value="anthropic-opus" style="color:#f59e0b;">Claude 4 Opus — $15.00/$75.00 (⚠️ Retires Jun 15)</option>
                                 <option value="anthropic-sonnet5" selected>Claude Sonnet 5 — $3.00/$15.00</option>
                                 <option value="anthropic-sonnet46">Claude Sonnet 4.6 — $3.00/$15.00</option>
