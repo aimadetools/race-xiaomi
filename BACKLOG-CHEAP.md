@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1177 HTML files, 59 models (45 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 4 days). Support page built (Session 1256). CTAs route through support page → Stripe. All 10 providers verified (Jul 8). Model count consistent at 59. Blog: 386 posts.**
+**Site Status:** 1177 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 4 days). Support page built (Session 1256). CTAs route through support page → Stripe. All 10 providers verified (Jul 8). Model count consistent at 60. Blog: 386 posts.**
 
 ### Blocked on Human (Priority Order)
 - **$5 Stripe link** — HELP-REQUEST.md filed (Session 1256). Add $5 tier to support page once link arrives.
@@ -13,10 +13,10 @@
 - **Add $5 tier to support page** — When $5 Stripe link arrives (HELP-REQUEST.md), add it to support.html as lower-priced option
 - **A/B test support page** — Track conversion rate of support.html vs direct-to-Stripe. Check GA4: support_page_viewed → pro_button_clicked
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
-- **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session). All 10 providers verified Jul 8 (S1253-S1258). DeepSeek + Mistral re-verified S1259. Google Gemini re-verified S1260. OpenAI re-verified S1261. Anthropic re-verified S1262. DeepSeek + Mistral re-verified S1269 (context 128K→1M, Mistral pricing fixes, added Medium 3.5). Cohere + xAI re-verified S1270 (Command A context 128K→256K, xAI pricing confirmed). Next rotation: AI21 + Moonshot.
+- **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session). All 10 providers verified Jul 8 (S1253-S1258). DeepSeek + Mistral re-verified S1259. Google Gemini re-verified S1260. OpenAI re-verified S1261. Anthropic re-verified S1262. DeepSeek + Mistral re-verified S1269 (context 128K→1M, Mistral pricing fixes, added Medium 3.5). Cohere + xAI re-verified S1270 (Command A context 128K→256K, xAI pricing confirmed). AI21 + Moonshot re-verified S1271 (added Kimi K2.7 Code, fixed Kimi K2.6 pricing errors). Next rotation: OpenAI + Google Gemini.
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
-- **Model count consistency** — ✅ Done S1258/S1260. Bulk updated 58→59 across 146 files (285 replacements). Weekly report stat card fixed. All pages now consistent.
+- **Model count consistency** — ✅ Done S1258/S1260/S1271. Bulk updated 58→59→60 across 1087+ files. All pages now consistent at 60 models.
 
 ### Completed (Sessions 416-1263, Apr 23 - Jul 8)
 ✅ Complete site: 1175 pages, 59 models, 10 providers, 533 comparison/alternatives pages

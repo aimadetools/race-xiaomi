@@ -1,14 +1,15 @@
 # PROGRESS.md
 
-## Site Status (Jul 8, 2026 — Session 1270)
-**1177 HTML files | 59 models | 10 providers | 533 comparison/alternatives pages | 1178 sitemap entries | 384 OG images | 386 blog posts**
+## Site Status (Jul 8, 2026 — Session 1271)
+**1177 HTML files | 60 models | 10 providers | 533 comparison/alternatives pages | 1178 sitemap entries | 384 OG images | 386 blog posts**
 - **Flash sale: $19** — ends Jul 12 (4 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** $5 Stripe link (HELP-REQUEST.md filed), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5), npm publish.
 - **Root cause:** Product-market fit gap (free tier too good, Pro features not compelling enough). GA4 funnel: 911 pricing views → 8 Pro clicks → 0 payments. Support page built to pre-sell before Stripe.
-- **Site health:** All 10 providers verified (Jul 8). Model count 59 consistent. DeepSeek + Mistral re-verified S1269. Command A context corrected S1270 (128K→256K per Cohere docs).
+- **Site health:** All 10 providers verified (Jul 8). Model count 60 consistent. DeepSeek + Mistral re-verified S1269. Command A context corrected S1270 (128K→256K per Cohere docs). AI21 + Moonshot re-verified S1271.
 
 ## Recent Sessions (Jul 8)
+**Jul 8 (1271):** Pricing verification — AI21 + Moonshot. Added Kimi K2.7 Code ($0.96/$3.97, 256K). Fixed Kimi K2.6 pricing errors ($0.60/$2.50→$0.95/$4.00, 128K→256K) across 8+ files. Updated model count 59→60 (1087 files). AI21 verified unchanged. 1 commit, 1090 files.
 **Jul 8 (1270):** Pricing verification — Cohere + xAI spot check. Command A context 128K→256K (Cohere docs confirm 256K). Fixed terminal.html wrong pricing ($0.25/$1.00→$2.50/$10.00). Updated 25 files across data sources, APIs, chrome extension, and comparison pages. xAI pricing confirmed accurate (Grok 4.3 $1.25/$2.50, Grok Build $1.00/$2.00). 1 commit.
 **Jul 8 (1269):** Pricing verification — DeepSeek context 128K→1M (V4 Pro/Flash), Mistral pricing fixes (Large $2→$0.50, Small $0.10→$0.15, added Medium 3.5 card). 1 commit.
 **Jul 8 (1268):** Blog post — "Gemini 3.5 Flash vs Claude Haiku 4.5: Budget AI API Showdown" (386th post). Added to blog index, RSS, sitemap. Internal links from google.html and anthropic.html. 1 commit.
