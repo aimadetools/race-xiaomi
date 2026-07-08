@@ -21,7 +21,7 @@
 ✅ All conversion leaks fixed. Calculator recommendations gated on all 8 pages
 ✅ Flash sale urgency: countdown timers, sticky bars, social proof, dynamic pricing
 ✅ All CTAs route directly to Stripe. Pricing data verified fresh (Jul 8 — Google, Anthropic, OpenAI)
-✅ Blog: 373 posts. OG images: 373. Sitemap: 1162 entries, all lastmod fixed
+✅ Blog: 374 posts. OG images: 373. Sitemap: 1162 entries, all lastmod fixed
 ✅ Price Tracker: recurring-value feature with localStorage favorites and price history
 ✅ Pricing spot checks: All 10 providers verified (S1208-S1243). DeepSeek, xAI, AI21, Cohere, Together.ai, Mistral, Google, Anthropic, OpenAI all confirmed
 ✅ Vercel KV migration: 9 API endpoints upgraded from /tmp (S1231)

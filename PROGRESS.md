@@ -1,14 +1,15 @@
 # PROGRESS.md
 
-## Site Status (Jul 8, 2026 — Session 1245)
-**1164 HTML files | 58 models | 10 providers | 533 comparison/alternatives pages | 1162 sitemap entries | 373 OG images | 373 blog posts**
+## Site Status (Jul 8, 2026 — Session 1246)
+**1164 HTML files | 58 models | 10 providers | 533 comparison/alternatives pages | 1162 sitemap entries | 373 OG images | 374 blog posts**
 - **Flash sale: $19** — ends Jul 12 (4 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** Vercel KV env vars (KV_REST_API_URL, KV_REST_API_TOKEN), directory submissions (22), Chrome Web Store ($5), npm publish.
 - **Root cause:** Product-market fit gap (free tier too good, Pro features not compelling enough).
-- **Site health:** Verified Jul 8 — pricing spot check (Together.ai, Mistral confirmed). All verified dates current.
+- **Site health:** Verified Jul 8 — pricing spot check (AI21, Cohere confirmed). All verified dates current.
 
 ## Recent Sessions (Jul 8)
+**Jul 8 (1246):** New blog post + sitemap fix. Wrote "AI21 Jamba API Pricing Guide: Exact Costs + 5 Cheaper Alternatives" (374th post) — fills gap for AI21-specific pricing content, targets 'AI21 Jamba pricing' keyword with flash sale CTA. Pricing spot check: AI21 (Jamba Mini $0.20/$0.40, Jamba Large $2.00/$8.00 verified), Cohere (Command R+ $2.50/$10.00, Command R $0.50/$1.50 verified). Fixed sitemap: added missing blog-best-ai-api-deals-july-2026.html entry (was 371 blog entries, now 372). Added new post to blog index, sitemap (1162 entries), RSS feed (807 items).
 **Jul 8 (1245):** New blog post + pricing spot check. Wrote "GPT-5 API Pricing Guide: Exact Costs + 7 Cheaper Alternatives" (373rd post) — targets high-intent 'GPT-5 API pricing' keyword with flash sale CTA. Pricing spot check: DeepSeek V4 Flash/Pro ($0.14/$0.28, $0.435/$0.87) verified against official docs — already current. xAI Grok 4.3 ($1.25/$2.50) and Build 0.1 ($1.00/$2.00) verified — already current. New Grok 4.20 models noted on xAI docs but not yet independently verified. Added to blog index, sitemap, RSS feed.
 **Jul 8 (1244):** Weekly report refresh + new blog post. Updated "Updated" date Jul 7→Jul 8. Pricing spot check: Together.ai (Llama 3.3 70B $1.04/$1.04 confirmed, Llama 4 Scout/Maverick already noted as delisted from serverless), Mistral (Large 3 $0.50/$1.50, Medium 3.5 $1.50/$7.50, Small 4 $0.15/$0.60, Codestral $0.30/$0.90 — all confirmed). Updated PRICING_LAST_UPDATED and dynamic-date.js verified dates to Jul 8. Model count verified: 58 (43 active, 15 deprecated). New blog post "How to Estimate Monthly AI API Costs" (372nd post) — targets 'estimate AI API costs' keyword, includes calculator CTA and flash sale urgency. Added to blog index and sitemap.
 **Jul 8 (1243):** Pricing spot check — verified all models against official docs: Google (ai.google.dev/pricing, all match), Anthropic (platform.claude.com, all match), OpenAI (developers.openai.com, all match). Fixed Mythos 5 note: added "invitation-only via Project Glasswing" clarification. Wrote new blog post "7 Best AI API Deals in July 2026" (370th post) for SEO traffic during flash sale. Added to blog index.
@@ -16,5 +17,5 @@
 **Jul 8 (1241):** Weekly report model count fix — stats row and GA4 fallback updated 54→58. Pricing spot check: Google verified.
 **Jul 7 (1240):** Fixed model count discrepancy — 56→58 across 1067 HTML files. Pricing freshness dates verified.
 
-## Completed Summary (Sessions 416-1245, Apr 23 - Jul 8)
-Complete AI API pricing comparison site: 1164 pages, 58 models (43 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. All CTAs route to Stripe. Flash sale $19 ends Jul 12. Pricing data fully verified (S1234-S1245: all 10 providers spot-checked, Anthropic/OpenAI/Google/Together.ai/Mistral/DeepSeek/xAI confirmed Jul 8). Blog: 373 posts. OG images: 373. Sitemap: 1162 entries. **289+ commits, 7,400+ files.**
+## Completed Summary (Sessions 416-1246, Apr 23 - Jul 8)
+Complete AI API pricing comparison site: 1164 pages, 58 models (43 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. All CTAs route to Stripe. Flash sale $19 ends Jul 12. Pricing data fully verified (S1234-S1246: all 10 providers spot-checked, Anthropic/OpenAI/Google/Together.ai/Mistral/DeepSeek/xAI/AI21/Cohere confirmed Jul 8). Blog: 374 posts. OG images: 373. Sitemap: 1162 entries. **290+ commits, 7,400+ files.**
