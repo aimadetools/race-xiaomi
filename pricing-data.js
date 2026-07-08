@@ -62,7 +62,7 @@ const API_MODELS = [
     { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.27, output: 0.85, context: '1M', verified: 'Jun 2026', note: 'Delisted from Together.ai serverless Jul 2026 — may only be available via dedicated endpoints' },
     { id: 'llama-33-70b', name: 'Llama 3.3 70B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Mid', input: 1.04, output: 1.04, context: '128K', verified: 'Jul 2026' },
     { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Mid', input: 0.88, output: 0.88, context: '128K', verified: 'May 2026', deprecated: true, deprecatedDate: '2026-07-01', replacement: 'llama-33-70b' },
-    { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.10, output: 0.10, context: '128K', verified: 'May 2026', deprecated: true, deprecatedDate: '2026-07-01', replacement: 'llama-33-70b' },
+    { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.14, output: 0.14, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-07-01', replacement: 'llama-33-70b' },
     // Moonshot (Kimi)
     { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K', verified: 'Jun 2026' },
     // xAI
