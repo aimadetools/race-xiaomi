@@ -13,6 +13,7 @@
 - **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session)
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
+- **Model count consistency** — Fixed 54→58 across key tool pages (S1247). ~250 blog posts still say "54" — low priority, doesn't affect conversion
 
 ### Completed (Sessions 416-1243, Apr 23 - Jul 8)
 ✅ Complete site: 1162 pages, 58 models, 10 providers, 533 comparison/alternatives pages
