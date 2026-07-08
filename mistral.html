@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mistral AI API Pricing Guide 2026: Mistral Large 3 and Small — APIpulse</title>
-    <meta name="description" content="Mistral AI API pricing breakdown: Mistral Large 3 ($0.50/$1.50 per 1M tokens) and Mistral Small 4 ($0.15/$0.60). European-built models with competitive pricing and data sovereignty.">
+    <meta name="description" content="Mistral AI API pricing breakdown: Mistral Medium 3.5 ($1.50/$7.50), Large 3 ($0.50/$1.50), and Small 4 ($0.15/$0.60). European-built models with competitive pricing and data sovereignty.">
     <meta name="keywords" content="Mistral AI pricing, Mistral Large 3 cost, Mistral Small 4 pricing, European LLM API, Mistral API 2026, Mistral vs OpenAI, Mistral API cost calculator">
     <meta property="og:title" content="Mistral AI API Pricing Guide 2026: Mistral Large 3 and Small — APIpulse">
     <meta property="og:description" content="Mistral AI API pricing breakdown: Mistral Large 3 and Mistral Small 4. European-built models with competitive pricing and data sovereignty.">
@@ -53,7 +53,7 @@
                 "name": "What models does Mistral offer and how much do they cost?",
                 "acceptedAnswer": {{
                     "@type": "Answer",
-                    "text": "2 models: Large 3 ($0.50/$1.50) and Small 4 ($0.15/$0.60). Both budget-tier with 128K context."
+                    "text": "3 models: Medium 3.5 ($1.50/$7.50), Large 3 ($0.50/$1.50), and Small 4 ($0.15/$0.60). 128K context on all models."
                 }}
             }},
             {{
@@ -61,7 +61,7 @@
                 "name": "What is Mistral's pricing per million tokens?",
                 "acceptedAnswer": {{
                     "@type": "Answer",
-                    "text": "Mistral Large 3 at $0.50/$1.50 is one of the best value mid-tier models. Mistral Small 4 ($0.15/$0.60) handles basic tasks at very low cost. Both are significantly cheaper than OpenAI and Anthropic equivalents."
+                    "text": "Mistral Medium 3.5 ($1.50/$7.50) is the most capable model. Mistral Large 3 at $0.50/$1.50 is one of the best value mid-tier models. Mistral Small 4 ($0.15/$0.60) handles basic tasks at very low cost. All are significantly cheaper than OpenAI and Anthropic equivalents."
                 }}
             }}
         ]
@@ -339,11 +339,11 @@
         <!-- Quick Stats Bar -->
         <div class="stats-bar">
             <div class="stat-item">
-                <div class="stat-value">2</div>
+                <div class="stat-value">3</div>
                 <div class="stat-label">Models</div>
             </div>
             <div class="stat-item">
-                <div class="stat-value">$0.10–$3</div>
+                <div class="stat-value">$0.15–$7.50</div>
                 <div class="stat-label">per 1M tokens</div>
             </div>
             <div class="stat-item">
@@ -385,8 +385,8 @@
                     </tr>
                     <tr>
                         <td><strong>Mistral Small 4</strong></td>
-                        <td class="cost-cell">$0.10</td>
-                        <td class="cost-cell">$0.30</td>
+                        <td class="cost-cell">$0.15</td>
+                        <td class="cost-cell">$0.60</td>
                         <td>128K</td>
                         <td><span class="tier-badge tier-budget">Budget</span></td>
                     </tr>
@@ -413,16 +413,28 @@
             <div class="feature-card">
                 <div class="feature-icon">💰</div>
                 <h3>Competitive Pricing</h3>
-                <p>Mistral Large 3 at $0.50/$1.50 per 1M tokens is now one of the cheapest mid-capable models available. Mistral Small 4 at $0.15/$0.60 competes with DeepSeek V4 Flash and GPT-4o mini.</p>
+                <p>Mistral Large 3 at $0.50/$1.50 per 1M tokens is one of the cheapest mid-capable models available. Mistral Small 4 at $0.15/$0.60 competes with DeepSeek V4 Flash and GPT-4o mini. Mistral Medium 3.5 ($1.50/$7.50) offers premium capabilities at mid-tier prices.</p>
             </div>
         </div>
 
         <!-- Which Mistral Model Should You Use? -->
         <div class="section-header model-selector">
             <h2>Which Mistral Model Should You Use?</h2>
-            <p>Mistral offers two tiers designed for different workloads.</p>
+            <p>Mistral offers three tiers designed for different workloads.</p>
         </div>
-        <div class="model-cards">
+        <div class="model-cards" style="grid-template-columns: 1fr 1fr 1fr;">
+            <div class="model-card">
+                <h3>Mistral Medium 3.5</h3>
+                <div class="price-tag">$1.50 input / $7.50 output per 1M tokens</div>
+                <ul>
+                    <li>128K context window</li>
+                    <li>Most capable Mistral model</li>
+                    <li>Advanced reasoning and analysis</li>
+                    <li>Complex document processing</li>
+                    <li>Enterprise-grade reliability</li>
+                </ul>
+                <div class="use-case"><strong>Best for:</strong> High-stakes workloads requiring maximum accuracy. Ideal for legal, financial, and medical document analysis.</div>
+            </div>
             <div class="model-card">
                 <h3>Mistral Large 3</h3>
                 <div class="price-tag">$0.50 input / $1.50 output per 1M tokens</div>
@@ -437,7 +449,7 @@
             </div>
             <div class="model-card">
                 <h3>Mistral Small 4</h3>
-                <div class="price-tag">$0.10 input / $0.30 output per 1M tokens</div>
+                <div class="price-tag">$0.15 input / $0.60 output per 1M tokens</div>
                 <ul>
                     <li>128K context window</li>
                     <li>Fast and lightweight</li>
@@ -460,7 +472,8 @@
                     <div class="input-group">
                         <label for="calc-provider">Model</label>
                         <select id="calc-provider" onchange="calculate()" aria-label="Select Mistral model">
-                            <option value="mistral-large">Mistral — Large ($2.00 / $6.00)</option>
+                            <option value="mistral-medium">Mistral — Medium ($1.50 / $7.50)</option>
+                            <option value="mistral-large">Mistral — Large ($0.50 / $1.50)</option>
                             <option value="mistral-small">Mistral — Small ($0.15 / $0.60)</option>
                         </select>
                     </div>
@@ -534,8 +547,8 @@
                 <tr class="highlight">
                     <td class="provider-name">Mistral</td>
                     <td>Large</td>
-                    <td class="price">$2.00</td>
-                    <td class="price">$6.00</td>
+                    <td class="price">$0.50</td>
+                    <td class="price">$1.50</td>
                     <td>128K</td>
                 </tr>
                 <tr>
@@ -562,9 +575,9 @@
                 <tr class="highlight">
                     <td class="provider-name">Mistral</td>
                     <td>Small</td>
-                    <td class="price">$0.10</td>
-                    <td class="price">$0.30</td>
-                    <td>32K</td>
+                    <td class="price">$0.15</td>
+                    <td class="price">$0.60</td>
+                    <td>128K</td>
                 </tr>
                 <tr>
                     <td class="provider-name">OpenAI</td>
