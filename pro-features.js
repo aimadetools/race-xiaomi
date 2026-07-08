@@ -440,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     banner.innerHTML = `
                         <div>
                             <div style="font-weight:700;font-size:15px;">Free Trial Active</div>
-                            <div style="font-size:13px;color:var(--text-secondary);">Expires in ${remaining.hours}h ${remaining.mins}m · <a href="go.html?from=trial_banner" style="color:var(--accent);font-weight:600;">Get lifetime access for $${window._abPrice || 29}</a></div>
+                            <div style="font-size:13px;color:var(--text-secondary);">Expires in ${remaining.hours}h ${remaining.mins}m · <a href="go.html?from=trial_banner" style="color:var(--accent);font-weight:600;">Get lifetime access for $${window._abPrice || 19}</a></div>
                         </div>
                     `;
                     content.insertBefore(banner, content.firstChild);
@@ -462,7 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     var urgencyBanner = document.createElement('div');
                     urgencyBanner.id = 'trial-urgency-banner';
                     var minsLeft = Math.ceil(remaining.ms / 60000);
-                    var price = window._abPrice || 29;
+                    var price = window._abPrice || 19;
                     urgencyBanner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:12px 20px;border-radius:12px;margin-bottom:16px;text-align:center;font-size:14px;font-weight:600;';
                     urgencyBanner.innerHTML = '⏰ Trial expires in <strong>' + minsLeft + ' minutes</strong> — <a href="go.html?from=trial_urgency" style="color:white;text-decoration:underline;">Lock in Pro for $' + price + ' lifetime →</a>';
                     content.insertBefore(urgencyBanner, content.firstChild);

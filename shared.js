@@ -134,7 +134,7 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
             var link = e.target.closest('a[href*="go.html"], a[href*="flash-19.html"]');
             if (!link) return;
             var from = new URL(link.href, location.href).searchParams.get('from') || 'unknown';
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var isFlash = link.href.includes('flash-19.html');
             if (typeof gtag === 'function') {
                 gtag('event', isFlash ? 'flash_page_click' : 'go_page_click', {
@@ -996,7 +996,7 @@ async function saveEmail(e) {
             depPopupShown = true;
             if (window.trackEvent) window.trackEvent('urgency_popup_shown', { days_left: daysUntilDealEnd, timing_variant: window._abPopupTimingVariant });
 
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var futurePrice = Math.round(price * 1.7);
             var stripeLink = window._abStripeLink || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
 
@@ -1077,7 +1077,7 @@ async function saveEmail(e) {
             if (proPopupShown || localStorage.getItem('apipulse_popup_dismissed')) return;
             proPopupShown = true;
 
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var futurePrice = Math.round(price * 1.7);
             var stripeLink = window._abStripeLink || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
             var variant = window._abVariant || 'B';
@@ -1297,7 +1297,7 @@ async function saveEmail(e) {
     for (var i = 0; i < skipPages.length; i++) {
         if (path.indexOf(skipPages[i]) !== -1) return;
     }
-    var price = window._abPrice || 29;
+    var price = window._abPrice || 19;
     setTimeout(function() {
         if (localStorage.getItem('apipulse_sticky_bar_dismissed')) return;
         if (localStorage.getItem('apipulse_pro_cta_dismissed')) return; // Session 902: unified dismiss
@@ -1307,10 +1307,13 @@ async function saveEmail(e) {
         bar.id = 'sticky-bottom-bar';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,rgba(15,15,20,0.97),rgba(25,25,35,0.97));backdrop-filter:blur(12px);border-top:1px solid rgba(99,102,241,0.3);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.3);animation:stickySlideUp 0.4s ease;';
         var stickyPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-        var daysLeft = window.DEAL_DAYS_LEFT || 0;
-        var urgencyLabel = daysLeft <= 1 ? '⚡ FINAL HOURS — flash sale ends tonight!' :
-            daysLeft <= 3 ? '⚡ Only ' + daysLeft + ' days left — flash sale ends Jul 12' :
-            '⚡ Flash sale: $' + price + ' (reg $49) — ' + daysLeft + ' days left';
+        var deadline = new Date('2026-07-12T23:59:59Z').getTime();
+        var diff = deadline - Date.now();
+        var daysLeft = diff > 0 ? Math.ceil(diff / 86400000) : 0;
+        var hoursLeft = diff > 0 ? Math.floor((diff % 86400000) / 3600000) : 0;
+        var urgencyLabel = daysLeft <= 0 ? '⚡ Flash sale EXPIRED' :
+            daysLeft <= 1 ? '⚡ FINAL HOURS — flash sale ends tonight!' :
+            '⚡ Only ' + daysLeft + 'd ' + hoursLeft + 'h left — flash sale ends Jul 12';
         bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">' + urgencyLabel + '</span>' +
             '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
             '<button onclick="document.getElementById(\'sticky-bottom-bar\').remove();localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');if(window.trackEvent)window.trackEvent(\'sticky_bar_dismissed\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px;padding:4px 8px;line-height:1;" aria-label="Close">×</button>';
@@ -1350,7 +1353,7 @@ function renderPricingFreshness(containerId) {
     if (localStorage.getItem('apipulse_sticky_bar_dismissed')) return; // Session 902: unified dismiss
     if (localStorage.getItem('apipulse_pro') === 'true') return;
 
-    var price = window._abPrice || 29;
+    var price = window._abPrice || 19;
     var futurePrice = Math.round(price * 1.7);
     var variant = window._abVariant || 'B';
 
@@ -1407,7 +1410,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var cta = document.querySelector('.cta-inline');
     if (!cta) return;
     var upsell = document.createElement('div');
-    var price = window._abPrice || 29;
+    var price = window._abPrice || 19;
     upsell.style.cssText = 'text-align:center;margin-top:12px;padding:12px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:8px;font-size:13px;color:var(--text-secondary);';
     var blogPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'blog';
     // Detect model from blog post filename for pre-fill
@@ -1726,7 +1729,7 @@ var GO_MODEL_MAP = {
             }
 
             // Add the gate overlay after the table
-            var price = window._abPrice || 29;
+            var price = window._abPrice || 19;
             var gateEl = document.createElement('div');
             gateEl.className = 'results-gate-overlay';
             gateEl.style.cssText = 'text-align:center;padding:28px 20px;margin-top:-4px;background:linear-gradient(to bottom, transparent, var(--bg-secondary) 30%);position:relative;z-index:2;';
