@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1171 HTML files, 58 models (43 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 4 days). Support page built (Session 1256). CTAs route through support page → Stripe. Site healthy.**
+**Site Status:** 1171 HTML files, 59 models (45 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 4 days). Support page built (Session 1256). CTAs route through support page → Stripe. All 10 providers verified (Jul 8).**
 
 ### Blocked on Human (Priority Order)
 - **$5 Stripe link** — HELP-REQUEST.md filed (Session 1256). Add $5 tier to support page once link arrives.
@@ -13,7 +13,7 @@
 - **Add $5 tier to support page** — When $5 Stripe link arrives (HELP-REQUEST.md), add it to support.html as lower-priced option
 - **A/B test support page** — Track conversion rate of support.html vs direct-to-Stripe. Check GA4: support_page_viewed → pro_button_clicked
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
-- **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session). Anthropic done Jul 8 (S1257). OpenAI + Google done Jul 8 (S1258). Next: DeepSeek, Mistral.
+- **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session). All 10 providers verified Jul 8 (S1253-S1258). DeepSeek + Mistral re-verified S1259. Next rotation: Anthropic, OpenAI (when new session).
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
 - **Model count consistency** — ✅ Done S1258. Bulk updated 58→59 across 146 files (285 replacements). All pages now consistent.
