@@ -4,14 +4,20 @@
 
 ---
 
-### Week 12 — Final Push (Jul 7)
-**Conversion optimization (Session 1224):**
+### Week 12 — Final Push (Jul 7-8)
+**Conversion optimization (Sessions 1224-1242):**
 - ✅ Simplified pricing page CTA (direct to Stripe)
 - ✅ Removed exit popup (annoying, <2% conversion)
-- ✅ Tightened usage gate (3→2 free calculations)
+- ✅ Tightened usage gate (3→2→1 free calculations)
 - ✅ Added personal founder note to pricing page
 - ✅ Improved upgrade wall copy with flash sale urgency
 - ✅ Filed HELP-REQUEST for email list persistence (Vercel KV)
+- ✅ Fixed all $29→$19 default price fallbacks (8+ instances across JS)
+- ✅ Fixed all 56→58 model count references (pricing, OG meta, JS)
+- ✅ Added dynamic countdown timers (pricing, gate wall, hero)
+- ✅ Improved usage gate wall with concrete savings ($2,400/yr)
+- ✅ Made pricing page bleeding counter visible immediately
+- ✅ Updated sticky bar with real countdown instead of static days
 
 ### Blocked on Human
 - **Email list persistence** — /api/subscribe stores to /tmp (ephemeral). Need Vercel KV or Upstash Redis. HELP-REQUEST.md filed.
