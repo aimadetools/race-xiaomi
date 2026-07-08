@@ -8,7 +8,8 @@
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
 - **npm package** — npm-package/ ready, needs npm auth.
 
-### Fixed This Session (Jul 7, Sessions 1230-1239)
+### Fixed This Session (Jul 7, Sessions 1230-1240)
+- ✅ Fixed model count discrepancy — 56→58 across 1067 HTML files (S1240)
 - ✅ Added Claude Opus 4.5 + Sonnet 4.5 — Legacy models from Anthropic docs, model count 54→56 (S1239)
 - ✅ Model count consistency — Fixed "51" → "54" on index.html (2) and pricing.html (1) social proof stats (S1238)
 - ✅ Pricing spot checks — Verified Mistral (all 4 models) + Cohere (all 3 models) against official docs (S1238)
