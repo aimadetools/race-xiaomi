@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Site Status (Jul 8, 2026 — Session 1253)
-**1167 HTML files | 58 models | 10 providers | 533 comparison/alternatives pages | 1167 sitemap entries | 373 OG images | 376 blog posts**
+**1168 HTML files | 58 models | 10 providers | 533 comparison/alternatives pages | 1165 sitemap entries | 373 OG images | 376 blog posts**
 - **Flash sale: $19** — ends Jul 12 (4 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** Vercel KV env vars (KV_REST_API_URL, KV_REST_API_TOKEN), directory submissions (22), Chrome Web Store ($5), npm publish.
