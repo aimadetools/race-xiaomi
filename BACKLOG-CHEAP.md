@@ -16,7 +16,7 @@
 - **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session). Anthropic done Jul 8 (S1257). OpenAI + Google done Jul 8 (S1258). Next: DeepSeek, Mistral.
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
-- **Model count consistency** — Updated 58→59 (S1257). Still need bulk pass on ~30 pages that say "58 models".
+- **Model count consistency** — ✅ Done S1258. Bulk updated 58→59 across 146 files (285 replacements). All pages now consistent.
 
 ### Completed (Sessions 416-1256, Apr 23 - Jul 8)
 ✅ Complete site: 1171 pages, 58 models, 10 providers, 533 comparison/alternatives pages
