@@ -1,14 +1,15 @@
 # PROGRESS.md
 
-## Site Status (Jul 8, 2026 — Session 1241)
+## Site Status (Jul 8, 2026 — Session 1242)
 **1161 HTML files | 58 models | 10 providers | 533 comparison/alternatives pages | 1160 sitemap entries | 373 OG images**
 - **Flash sale: $19** — ends Jul 12 (4 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** Vercel KV env vars (KV_REST_API_URL, KV_REST_API_TOKEN), directory submissions (22), Chrome Web Store ($5), npm publish.
 - **Root cause:** Product-market fit gap (free tier too good, Pro features not compelling enough).
-- **Site health:** Verified Jul 8 — Google pricing spot-checked (all 6 active models match official docs), weekly report model count fixed 54→58.
+- **Site health:** Verified Jul 8 — conversion funnel fixed: all price defaults now $19, all model counts 58, countdown timers live.
 
-## Recent Sessions (Jul 7-8)
+## Recent Sessions (Jul 8)
+**Jul 8 (1242):** Conversion funnel sweep — fixed ALL \$29→\$19 default price fallbacks across shared.js (8 instances), usage-gate.js, results-cta.js, pro-features.js. Fixed remaining 56→58 model references in pricing.html (social proof, OG meta), usage-gate.js, shared.js (3 instances), savings-multiplier.js, index.html, live-pricing.html. Added dynamic countdown timers to pricing page, usage gate wall, and index hero banner. Improved usage gate wall copy with concrete savings ($2,400/yr example) and social proof. Sticky bar now shows real countdown instead of static days.
 **Jul 8 (1241):** Weekly report model count fix — stats row and GA4 fallback updated 54→58. Pricing spot check: Google (all 6 active Gemini models verified against ai.google.dev/pricing — all match).
 **Jul 7 (1240):** Fixed model count discrepancy — pricing-data.js had 58 entries (including Fable 5 and Mythos 5) but site said "56 models". Updated 1067 HTML files from 56→58. Pricing freshness dates verified current (all Jul 2026).
 **1161 HTML files | 58 models | 10 providers | 533 comparison/alternatives pages | 1160 sitemap entries | 373 OG images**
