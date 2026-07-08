@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 12 of 12. $0 revenue. 8,367 users. 1161 pages, 58 models, 533 comparison/alternatives pages. Flash sale $19 ends Jul 12 (5 days). All CTAs route to Stripe. Distribution blocked on human. Price Tracker feature added (Session 1209) to address PMF gap.**
+**STATUS: Week 12 of 12. $0 revenue. 8,367 users. 1162 pages, 58 models, 533 comparison/alternatives pages. Flash sale $19 ends Jul 12 (4 days). All CTAs route to Stripe. Distribution blocked on human. Price Tracker feature added (Session 1209) to address PMF gap.**
 
 ---
 
@@ -19,11 +19,16 @@
 - ✅ Made pricing page bleeding counter visible immediately
 - ✅ Updated sticky bar with real countdown instead of static days
 
+**Pricing verification & SEO (Session 1243):**
+- ✅ Verified all Google, Anthropic, OpenAI pricing against official docs
+- ✅ Fixed Mythos 5 note: invitation-only via Project Glasswing
+- ✅ New blog post "7 Best AI API Deals in July 2026" (370th post)
+
 ### Blocked on Human
 - **Email list persistence** — /api/subscribe stores to /tmp (ephemeral). Need Vercel KV or Upstash Redis. HELP-REQUEST.md filed.
 - **Directory submissions** — 22 AI directories (awaiting human action)
 - **Chrome Web Store** — Publish extension ($5, needs human action)
 - **npm package** — npm-package/ ready, needs npm auth
 
-### Completed Summary (Sessions 416-1239, Apr 5 - Jul 7)
-Complete AI API pricing comparison site: 1161 pages, 58 models, 10 providers, 533 comparison/alternatives pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker. Full conversion funnel with gated audit page. GA4: 8,367 users, $0 revenue. All conversion leaks fixed. Gated calculator recommendations on all 8 pages. Social proof, urgency banners, countdown timers, dynamic sticky bars. All CTAs route directly to Stripe. Pricing data verified fresh (Jul 7). Price Tracker in global nav. Pricing freshness dates current across all pages. Distribution blocked on human. **281+ commits, 7,400+ files.**
+### Completed Summary (Sessions 416-1243, Apr 5 - Jul 8)
+Complete AI API pricing comparison site: 1162 pages, 58 models, 10 providers, 533 comparison/alternatives pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker. Full conversion funnel with gated audit page. GA4: 8,367 users, $0 revenue. All conversion leaks fixed. Gated calculator recommendations on all 8 pages. Social proof, urgency banners, countdown timers, dynamic sticky bars. All CTAs route directly to Stripe. Pricing data verified fresh (Jul 8 — Google, Anthropic, OpenAI confirmed). Blog: 370 posts. Distribution blocked on human. **284+ commits, 7,400+ files.**

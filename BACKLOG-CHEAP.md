@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1161 HTML files, 58 models (43 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy.**
+**Site Status:** 1162 HTML files, 58 models (43 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 4 days). All CTAs route directly to Stripe. Site healthy.**
 
 ### Blocked on Human (Priority Order)
 - **Vercel KV env vars** — Code upgraded to use @vercel/kv (Session 1231). Human needs to set KV_REST_API_URL and KV_REST_API_TOKEN in Vercel dashboard. Until then, /tmp fallback is active (data lost on cold starts).
@@ -8,38 +8,24 @@
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
 - **npm package** — npm-package/ ready, needs npm auth.
 
-### Fixed This Session (Jul 7, Sessions 1230-1240)
-- ✅ Fixed model count discrepancy — 56→58 across 1067 HTML files (S1240)
-- ✅ Added Claude Opus 4.5 + Sonnet 4.5 — Legacy models from Anthropic docs, model count 54→56 (S1239)
-- ✅ Model count consistency — Fixed "51" → "54" on index.html (2) and pricing.html (1) social proof stats (S1238)
-- ✅ Pricing spot checks — Verified Mistral (all 4 models) + Cohere (all 3 models) against official docs (S1238)
-- ✅ Weekly report updated — Added 6 missing deprecation entries: GPT-5/5-mini/4.1-nano, Llama 4 Scout/Maverick, Jamba 1.5 (S1237)
-- ✅ Site health check — 50 random pages verified 200, Stripe link working, all critical pages live (S1237)
-- ✅ Pricing spot checks — Verified Together.ai (Llama 3.3 $1.04/$1.04, Llama 4 delisted) + xAI (Grok 4.3 $1.25/$2.50, Build 0.1 $1.00/$2.00) (S1236)
-- ✅ Pricing verification — Anthropic + OpenAI official docs. GPT-5/5-mini deprecated, GPT-oss=open-source, GPT-4.1-nano deprecated (S1235)
-- ✅ Pricing spot check — DeepSeek, xAI, AI21, Cohere, Together.ai. 11 models Jun→Jul freshness dates (S1234)
-- ✅ Vercel KV migration — 9 API endpoints upgraded from /tmp (S1231)
-- ✅ Pro access code validation — Critical bug fixed (S1230)
-- ✅ Pricing spot check — Google, DeepSeek, Mistral verified (S1232)
-
 ### Routine Tasks (for cheap sessions)
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
 - **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session)
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
 
-### Completed (Sessions 416-1239, Apr 23 - Jul 7)
-✅ Complete site: 1161 pages, 56 models, 10 providers, 533 comparison/alternatives pages
+### Completed (Sessions 416-1243, Apr 23 - Jul 8)
+✅ Complete site: 1162 pages, 58 models, 10 providers, 533 comparison/alternatives pages
 ✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker
 ✅ Conversion funnel: gated audit, trackEvent on all pages, exit popups, nav CTAs, OG/Twitter meta
 ✅ All conversion leaks fixed. Calculator recommendations gated on all 8 pages
-✅ Flash sale urgency: 567 pages with CTAs, countdown timers, sticky bars, social proof
-✅ All CTAs route directly to Stripe. Pricing data verified fresh (Jul 7)
-✅ Blog: 369 posts. OG images: 373. Sitemap: 1160 entries, all lastmod fixed
+✅ Flash sale urgency: countdown timers, sticky bars, social proof, dynamic pricing
+✅ All CTAs route directly to Stripe. Pricing data verified fresh (Jul 8 — Google, Anthropic, OpenAI)
+✅ Blog: 370 posts. OG images: 373. Sitemap: 1160 entries, all lastmod fixed
 ✅ Price Tracker: recurring-value feature with localStorage favorites and price history
-✅ Pricing spot checks: All 10 providers verified (S1208-S1236). Fixed DeepSeek V4 Pro 5x overprice, Grok Build 0.1 repriced, Llama 3.1→3.3, GPT-4.1 family added, GPT-4o deprecated
-✅ Pricing freshness dates: 116 files updated (S1211+S1216), 11 models Jun→Jul (S1234)
-✅ Social proof accuracy: "847 devs" → "8,300+ developers" (S1218). Model count 49→54 (S1227)
+✅ Pricing spot checks: All 10 providers verified (S1208-S1243). DeepSeek, xAI, AI21, Cohere, Together.ai, Mistral, Google, Anthropic, OpenAI all confirmed
 ✅ Vercel KV migration: 9 API endpoints upgraded from /tmp (S1231)
 ✅ Pro access code validation: Critical bug fixed (S1230)
-**280+ commits, 7,400+ files. Distribution blocked on human.**
+✅ Model count: 49→54→56→58 (S1227-S1240). All references consistent
+✅ Conversion optimization: $29→$19 defaults, countdown timers, usage gate wall, bleeding counter (S1242)
+**284+ commits, 7,400+ files. Distribution blocked on human.**
