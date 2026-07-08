@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1162 HTML files, 58 models (43 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 4 days). All CTAs route directly to Stripe. Site healthy.**
+**Site Status:** 1165 HTML files, 58 models (43 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 4 days). All CTAs route directly to Stripe. Site healthy.**
 
 ### Blocked on Human (Priority Order)
 - **Vercel KV env vars** — Code upgraded to use @vercel/kv (Session 1231). Human needs to set KV_REST_API_URL and KV_REST_API_TOKEN in Vercel dashboard. Until then, /tmp fallback is active (data lost on cold starts).
@@ -22,7 +22,7 @@
 ✅ All conversion leaks fixed. Calculator recommendations gated on all 8 pages
 ✅ Flash sale urgency: countdown timers, sticky bars, social proof, dynamic pricing
 ✅ All CTAs route directly to Stripe. Pricing data verified fresh (Jul 8 — Google, Anthropic, OpenAI)
-✅ Blog: 374 posts. OG images: 373. Sitemap: 1162 entries, all lastmod fixed
+✅ Blog: 375 posts. OG images: 373. Sitemap: 1163 entries, all lastmod fixed
 ✅ Price Tracker: recurring-value feature with localStorage favorites and price history
 ✅ Pricing spot checks: All 10 providers verified (S1208-S1243). DeepSeek, xAI, AI21, Cohere, Together.ai, Mistral, Google, Anthropic, OpenAI all confirmed
 ✅ Vercel KV migration: 9 API endpoints upgraded from /tmp (S1231)

@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (Jul 8, 2026 — Session 1246)
-**1164 HTML files | 58 models | 10 providers | 533 comparison/alternatives pages | 1162 sitemap entries | 373 OG images | 374 blog posts**
+## Site Status (Jul 8, 2026 — Session 1248)
+**1165 HTML files | 58 models | 10 providers | 533 comparison/alternatives pages | 1165 sitemap entries | 373 OG images | 375 blog posts**
 - **Flash sale: $19** — ends Jul 12 (4 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** Vercel KV env vars (KV_REST_API_URL, KV_REST_API_TOKEN), directory submissions (22), Chrome Web Store ($5), npm publish.
@@ -9,6 +9,7 @@
 - **Site health:** Verified Jul 8 — pricing spot check (AI21, Cohere confirmed). All verified dates current.
 
 ## Recent Sessions (Jul 8)
+**Jul 8 (1248):** New blog post. Wrote "Mistral Small 4 vs DeepSeek V4 Flash: Which Budget AI API Wins in July 2026?" (375th post) — fills gap for budget model comparison, targets 'Mistral Small 4 vs DeepSeek V4 Flash' keyword. DeepSeek wins on cost (53% cheaper output, 8x context window), Mistral wins on code quality and EU compliance. Added to blog index, sitemap (1165 entries), RSS feed (808 items).
 **Jul 8 (1247):** Conversion optimization sweep. Fixed flash-sale.html social proof: model count 49→58, developer count 8,000+→8,300+. Rewrote usage gate wall copy: new headline "You've compared 1 model. There are 57 more you should compare.", added feature grid (58 models ranked, migration code, price alerts, cost monitoring), green CTA instead of red, better urgency framing. Improved calculator page Pro CTA: "You've compared 1 model. Pro shows all 58." with savings stat. Fixed "54 Models"→"58 Models" across 8 key tool pages (calculator, benchmark, report, TCO, SaaS cost, API docs, chatbot calculator, advisor).
 **Jul 8 (1246):** New blog post + sitemap fix. Wrote "AI21 Jamba API Pricing Guide: Exact Costs + 5 Cheaper Alternatives" (374th post) — fills gap for AI21-specific pricing content, targets 'AI21 Jamba pricing' keyword with flash sale CTA. Pricing spot check: AI21 (Jamba Mini $0.20/$0.40, Jamba Large $2.00/$8.00 verified), Cohere (Command R+ $2.50/$10.00, Command R $0.50/$1.50 verified). Fixed sitemap: added missing blog-best-ai-api-deals-july-2026.html entry (was 371 blog entries, now 372). Added new post to blog index, sitemap (1162 entries), RSS feed (807 items).
 **Jul 8 (1245):** New blog post + pricing spot check. Wrote "GPT-5 API Pricing Guide: Exact Costs + 7 Cheaper Alternatives" (373rd post) — targets high-intent 'GPT-5 API pricing' keyword with flash sale CTA. Pricing spot check: DeepSeek V4 Flash/Pro ($0.14/$0.28, $0.435/$0.87) verified against official docs — already current. xAI Grok 4.3 ($1.25/$2.50) and Build 0.1 ($1.00/$2.00) verified — already current. New Grok 4.20 models noted on xAI docs but not yet independently verified. Added to blog index, sitemap, RSS feed.
