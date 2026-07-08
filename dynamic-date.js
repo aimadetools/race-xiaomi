@@ -2,11 +2,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     var els = document.querySelectorAll('.verified-date');
     for (var i = 0; i < els.length; i++) {
-        els[i].textContent = 'Jul 7, 2026';
+        els[i].textContent = 'Jul 8, 2026';
     }
 });
 
-// Pricing Freshness Badge — shows "Prices verified Jun 2026" on tool pages
+// Pricing Freshness Badge — shows "Prices verified Jul 2026" on tool pages
 function renderPricingFreshness(containerId) {
     var el = document.getElementById(containerId);
     if (!el || typeof PRICING_LAST_UPDATED === 'undefined') return;

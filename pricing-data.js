@@ -1,7 +1,7 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 7, 2026 (S1240: Model count 56→58. 58 entries, 43 active, 15 deprecated)
-const PRICING_LAST_UPDATED = 'Jul 7, 2026';
+// Last verified: Jul 8, 2026 (S1243: Pricing spot check — Together.ai, Mistral confirmed. 58 entries, 43 active, 15 deprecated)
+const PRICING_LAST_UPDATED = 'Jul 8, 2026';
 
 const API_MODELS = [
     // OpenAI
