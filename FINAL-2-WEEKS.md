@@ -1,4 +1,4 @@
-# Final Week — Status (Updated Jul 8, 2026 — Session 1249)
+# Final Week — Status (Updated Jul 8, 2026 — Session 1253)
 
 ## Current State
 - **Revenue:** $0
@@ -36,6 +36,17 @@
 1. **Directory submissions** — 22 AI directories (pending since Jul 2)
 2. **Chrome Web Store** — Publish extension ($5)
 3. **npm package** — npm-package/ ready, needs npm auth
+
+## Pricing Verification (Jul 8 — Session 1253)
+- ✅ Google Gemini — all 5 models confirmed against ai.google.dev/pricing
+- ✅ DeepSeek — V4 Pro ($0.435/$0.87), V4 Flash ($0.14/$0.28) confirmed
+- ✅ Mistral — Large 3 ($0.50/$1.50), Medium 3.5 ($1.50/$7.50), Small 4 ($0.15/$0.60) confirmed
+- ✅ Together.ai — Llama 4 Scout/Maverick delisted, Llama 3.3 70B ($1.04/$1.04) confirmed
+- ✅ xAI — Grok 4.3 ($1.25/$2.50), Grok Build 0.1 ($1.00/$2.00) confirmed
+- ✅ AI21 — Jamba Mini ($0.20/$0.40), Jamba 1.7 ($2.00/$8.00) confirmed
+- ✅ Cohere — Command A ($2.50/$10.00), Command R+ ($2.50/$10.00), Command R ($0.50/$1.50) confirmed
+- ✅ Anthropic — Opus 4.8 ($5/$25), Sonnet 5 ($2/$10 intro), Haiku 4.5 ($1/$5) confirmed
+- ✅ OpenAI — GPT-5.5 ($5/$30), GPT-5.4 ($2.50/$15), GPT-4.1 ($2/$8) confirmed
 
 ## Site Expires: Jul 12, 2026
 - After Jul 12: all Pro prices → $49 (DEAL_EXPIRED flag in shared.js)
