@@ -32,7 +32,7 @@ const API_MODELS = [
     { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 2.00, output: 10.00, context: '200K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-sonnet46' },
     { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K', verified: 'Jul 2026' },
     { id: 'anthropic-fable5', name: 'Claude Fable 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jul 2026' },
-    { id: 'anthropic-mythos5', name: 'Claude Mythos 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jul 2026' },
+    { id: 'anthropic-mythos5', name: 'Claude Mythos 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jul 2026', note: 'Invitation-only via Project Glasswing — not generally available via standard API' },
     // Google
     { id: 'google-gemini35-flash', name: 'Gemini 3.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.50, output: 9.00, context: '1M', verified: 'Jul 2026' },
     { id: 'google-gemini31-flash-lite', name: 'Gemini 3.1 Flash-Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.25, output: 1.50, context: '1M', verified: 'Jul 2026' },
