@@ -9,7 +9,7 @@
 - **Site health:** All 10 providers verified (Jul 8). Model count 59 consistent.
 
 ## Recent Sessions (Jul 8)
-**Jul 8 (1261):** Blog post — "3 Model Swaps That Cut Your AI API Bill by 95%" (379th post). OpenAI pricing spot check: GPT-5.5 ($5/$30) and GPT-5.4 ($2.50/$15) verified. GPT-4.1 removed from pricing page. New models noted: GPT-5.4-nano ($0.20/$1.25), GPT-5.4-mini ($0.75/$4.50), GPT-5.5-pro ($30/$180). Anthropic pricing check pending.
+**Jul 8 (1261):** Blog post — "3 Model Swaps That Cut Your AI API Bill by 95%" (379th post). OpenAI pricing spot check: GPT-5.5 ($5/$30) and GPT-5.4 ($2.50/$15) verified. GPT-4.1 removed from pricing page. New models noted: GPT-5.4-nano ($0.20/$1.25), GPT-5.4-mini ($0.75/$4.50), GPT-5.5-pro ($30/$180). Fixed homepage blog count (352→379). 4 commits.
 **Jul 8 (1260):** Weekly report refresh — fixed model count 58→59 in stat card, CTA, and GA4 fallback. Updated JSON-LD dateModified. Google Gemini pricing spot check: all 7 active models verified against ai.google.dev/pricing.
 **Jul 8 (1259):** Pricing spot check — DeepSeek + Mistral re-verified (all prices match official pages). Updated FINAL-2-WEEKS.md: corrected page count (1168→1171), model count (58→59), CTA routing (support page → Stripe), pricing verification dates with session refs. All 10/10 providers now verified across sessions 1253-1258.
 **Jul 8 (1258):** Model count consistency — bulk updated 58→59 across 146 HTML/JS files (285 replacements). Pricing spot check: OpenAI + Google confirmed.
