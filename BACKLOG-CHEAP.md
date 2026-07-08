@@ -13,7 +13,7 @@
 - **Add $5 tier to support page** — When $5 Stripe link arrives (HELP-REQUEST.md), add it to support.html as lower-priced option
 - **A/B test support page** — Track conversion rate of support.html vs direct-to-Stripe. Check GA4: support_page_viewed → pro_button_clicked
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
-- **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session). All 10 providers verified Jul 8 (S1253-S1258). DeepSeek + Mistral re-verified S1259. Google Gemini re-verified S1260. OpenAI re-verified S1261 (GPT-5.5 $5/$30, GPT-5.4 $2.50/$15 confirmed; GPT-4.1 removed from pricing page). Next rotation: Anthropic.
+- **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session). All 10 providers verified Jul 8 (S1253-S1258). DeepSeek + Mistral re-verified S1259. Google Gemini re-verified S1260. OpenAI re-verified S1261. Anthropic re-verified S1262 (Fable 5 $10/$50, Opus 4.8 $5/$25, Sonnet 5 $3/$15, Haiku 4.5 $1/$5 confirmed). Next rotation: DeepSeek + Mistral.
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
 - **Model count consistency** — ✅ Done S1258/S1260. Bulk updated 58→59 across 146 files (285 replacements). Weekly report stat card fixed. All pages now consistent.
@@ -25,7 +25,7 @@
 ✅ Support page: pre-sell warm-up before Stripe checkout (S1256). CTAs route through support page.
 ✅ Flash sale urgency: countdown timers, sticky bars, social proof, dynamic pricing
 ✅ All CTAs route through support page → Stripe. Pricing data verified fresh (Jul 8 — all 10 providers confirmed)
-✅ Blog: 378 posts. OG images: 373. Sitemap: 1170 entries, all lastmod fixed
+✅ Blog: 380 posts. OG images: 384. Sitemap: 1172 entries, all lastmod fixed
 ✅ Model count: 49→54→56→58→59 across all pages (S1227-S1258). All references consistent
 ✅ Conversion optimization: $29→$19 defaults, countdown timers, usage gate wall, bleeding counter (S1242)
 ✅ Together.ai: Llama 4 Scout/Maverick delisted from serverless, pricing updated (S1250)

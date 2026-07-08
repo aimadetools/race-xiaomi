@@ -45,7 +45,7 @@
 - ✅ xAI — Grok 4.3 ($1.25/$2.50), Grok Build 0.1 ($1.00/$2.00) confirmed (S1253)
 - ✅ AI21 — Jamba Mini ($0.20/$0.40), Jamba 1.7 ($2.00/$8.00) confirmed (S1253)
 - ✅ Cohere — Command A ($2.50/$10.00), Command R+ ($2.50/$10.00), Command R ($0.50/$1.50) confirmed (S1253)
-- ✅ Anthropic — Opus 4.8 ($5/$25), Sonnet 5 ($2/$10 intro), Haiku 4.5 ($1/$5) confirmed (S1257)
+- ✅ Anthropic — Fable 5 ($10/$50), Opus 4.8 ($5/$25), Sonnet 5 ($3/$15, intro $2/$10 thru Aug 31), Haiku 4.5 ($1/$5) confirmed (S1257, re-verified S1262)
 - ✅ OpenAI — GPT-5.5 ($5/$30), GPT-5.4 ($2.50/$15) confirmed (S1258, re-verified S1261). GPT-4.1 removed from pricing page (may be deprecated)
 
 ## Site Expires: Jul 12, 2026
