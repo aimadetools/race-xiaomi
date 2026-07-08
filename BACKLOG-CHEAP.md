@@ -13,7 +13,7 @@
 - **Add $5 tier to support page** — When $5 Stripe link arrives (HELP-REQUEST.md), add it to support.html as lower-priced option
 - **A/B test support page** — Track conversion rate of support.html vs direct-to-Stripe. Check GA4: support_page_viewed → pro_button_clicked
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
-- **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session). All 10 providers verified Jul 8 (S1253-S1258). DeepSeek + Mistral re-verified S1259. Next rotation: Anthropic, OpenAI (when new session).
+- **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session). All 10 providers verified Jul 8 (S1253-S1258). DeepSeek + Mistral re-verified S1259. Google Gemini re-verified S1260. Next rotation: Anthropic, OpenAI.
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
 - **Model count consistency** — ✅ Done S1258. Bulk updated 58→59 across 146 files (285 replacements). All pages now consistent.

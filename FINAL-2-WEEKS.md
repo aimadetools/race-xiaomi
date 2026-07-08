@@ -1,4 +1,4 @@
-# Final Week — Status (Updated Jul 8, 2026 — Session 1258)
+# Final Week — Status (Updated Jul 8, 2026 — Session 1260)
 
 ## Current State
 - **Revenue:** $0
@@ -38,7 +38,7 @@
 3. **npm package** — npm-package/ ready, needs npm auth
 
 ## Pricing Verification (Jul 8 — Sessions 1253-1258)
-- ✅ Google Gemini — all 5 models confirmed against ai.google.dev/pricing (S1253)
+- ✅ Google Gemini — all 7 active models confirmed against ai.google.dev/pricing (S1253, re-verified S1260)
 - ✅ DeepSeek — V4 Pro ($0.435/$0.87), V4 Flash ($0.14/$0.28) confirmed (S1253, re-verified S1258)
 - ✅ Mistral — Large 3 ($0.50/$1.50), Medium 3.5 ($1.50/$7.50), Small 4 ($0.15/$0.60), Codestral ($0.30/$0.90) confirmed (S1253, re-verified S1258)
 - ✅ Together.ai — Llama 4 Scout/Maverick delisted, Llama 3.3 70B ($1.04/$1.04) confirmed (S1253)

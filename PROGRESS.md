@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (Jul 8, 2026 — Session 1259)
+## Site Status (Jul 8, 2026 — Session 1260)
 **1171 HTML files | 59 models | 10 providers | 533 comparison/alternatives pages | 1169 sitemap entries | 373 OG images | 378 blog posts**
 - **Flash sale: $19** — ends Jul 12 (4 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
@@ -9,6 +9,7 @@
 - **Site health:** All 10 providers verified (Jul 8). Model count 59 consistent.
 
 ## Recent Sessions (Jul 8)
+**Jul 8 (1260):** Weekly report refresh — fixed model count 58→59 in stat card, CTA, and GA4 fallback. Updated JSON-LD dateModified. Google Gemini pricing spot check: all 7 active models verified against ai.google.dev/pricing.
 **Jul 8 (1259):** Pricing spot check — DeepSeek + Mistral re-verified (all prices match official pages). Updated FINAL-2-WEEKS.md: corrected page count (1168→1171), model count (58→59), CTA routing (support page → Stripe), pricing verification dates with session refs. All 10/10 providers now verified across sessions 1253-1258.
 **Jul 8 (1258):** Model count consistency — bulk updated 58→59 across 146 HTML/JS files (285 replacements). Pricing spot check: OpenAI + Google confirmed.
 **Jul 8 (1257):** Pricing spot check + conversion fixes. Anthropic verified. Added Claude Opus 4.6. Fixed Sonnet 4.6 price. Model count 58→59.

@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 8, 2026 (S1258: OpenAI + Google spot check — GPT-4.1 family confirmed, Gemini 2.5 Pro confirmed. 59 entries, 45 active, 14 deprecated)
+// Last verified: Jul 8, 2026 (S1260: Google Gemini full spot check — all 7 active models confirmed. 59 entries, 45 active, 14 deprecated)
 const PRICING_LAST_UPDATED = 'Jul 8, 2026';
 
 const API_MODELS = [
