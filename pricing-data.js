@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 8, 2026 (S1243: Pricing spot check — Together.ai, Mistral confirmed. 58 entries, 43 active, 15 deprecated)
+// Last verified: Jul 8, 2026 (S1243: Pricing spot check — Together.ai, Mistral confirmed. 59 entries, 45 active, 14 deprecated)
 const PRICING_LAST_UPDATED = 'Jul 8, 2026';
 
 const API_MODELS = [
