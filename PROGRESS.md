@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (Jul 8, 2026 — Session 1267)
-**1177 HTML files | 59 models | 10 providers | 533 comparison/alternatives pages | 1177 sitemap entries | 384 OG images | 385 blog posts**
+## Site Status (Jul 8, 2026 — Session 1268)
+**1177 HTML files | 59 models | 10 providers | 533 comparison/alternatives pages | 1178 sitemap entries | 384 OG images | 386 blog posts**
 - **Flash sale: $19** — ends Jul 12 (4 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** $5 Stripe link (HELP-REQUEST.md filed), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5), npm publish.
@@ -9,12 +9,10 @@
 - **Site health:** All 10 providers verified (Jul 8). Model count 59 consistent.
 
 ## Recent Sessions (Jul 8)
+**Jul 8 (1268):** Blog post — "Gemini 3.5 Flash vs Claude Haiku 4.5: Budget AI API Showdown" (386th post). Added to blog index, RSS, sitemap. Internal links from google.html and anthropic.html. 1 commit.
 **Jul 8 (1267):** Blog post — "DeepSeek V4 Pro vs GPT-5.4: Can a $0.44 Model Beat GPT-5.4?" (385th post). Added to blog index, RSS, sitemap. Internal link from openai.html. 1 commit.
 **Jul 8 (1266):** Blog post — "Command A vs Claude Sonnet 5: Mid-Tier AI API Showdown" (384th post). Added to blog index, RSS, sitemap. Internal links from cohere.html and anthropic.html. 1 commit.
-**Jul 8 (1265):** Blog post — "Gemini 3.5 Flash vs DeepSeek V4 Flash: 95% Cheaper Budget AI" (383rd post). Added to blog index, RSS, sitemap. Internal links from deepseek.html and google.html. 1 commit.
-**Jul 8 (1264):** Blog post — "Fable 5 vs GPT-5.5: The Premium AI API Showdown" (382nd post). Added to sitemap, anthropic.html, openai.html, RSS. Fixed 3 broken internal links in weekly-digest.html. 3 commits.
-**Jul 8 (1263):** Blog post — "Grok 4.3 vs GPT-5.4: Which Mid-Tier AI API Wins?" (381st post). Added to blog index, sitemap, RSS, xai.html. 1 commit.
-**Jul 8 (1253-1262):** Blog posts (380th-379th). Pricing verification sweep — all 10 providers verified. Model count 58→59 bulk fix (146 files). Support page built. HELP-REQUEST filed for $5 Stripe link. 10 sessions, 8 commits.
+**Jul 8 (1253-1265):** Blog posts (383rd-379th). Pricing verification sweep — all 10 providers verified. Model count 58→59 bulk fix (146 files). Support page built. HELP-REQUEST filed for $5 Stripe link. 13 sessions, 10 commits.
 
-## Completed Summary (Sessions 416-1267, Apr 23 - Jul 8)
-Complete AI API pricing comparison site: 1177 pages, 59 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Support page pre-sell warm-up. Flash sale $19 ends Jul 12. All 10 providers verified. Blog: 385 posts. OG images: 384. Sitemap: 1177 entries. **308+ commits, 7,400+ files.**
+## Completed Summary (Sessions 416-1268, Apr 23 - Jul 8)
+Complete AI API pricing comparison site: 1177 pages, 59 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Support page pre-sell warm-up. Flash sale $19 ends Jul 12. All 10 providers verified. Blog: 386 posts. OG images: 384. Sitemap: 1178 entries. **309+ commits, 7,400+ files.**
