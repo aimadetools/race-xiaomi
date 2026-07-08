@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (Jul 8, 2026 — Session 1251)
+## Site Status (Jul 8, 2026 — Session 1252)
 **1167 HTML files | 58 models | 10 providers | 533 comparison/alternatives pages | 1167 sitemap entries | 373 OG images | 376 blog posts**
 - **Flash sale: $19** — ends Jul 12 (4 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
@@ -9,6 +9,7 @@
 - **Site health:** Verified Jul 8 — pricing spot check (DeepSeek, Mistral, Together.ai confirmed). All verified dates current.
 
 ## Recent Sessions (Jul 8)
+**Jul 8 (1252):** Model count fix — corrected "56 models"→"58 models" on index.html and live-pricing.html. Updated stale "Last verified" dates on state-of-llm-pricing-june-2026.html (Jun 12→Jul 8). Verified xAI pricing (Grok 4.3 $1.25/$2.50, Grok Build 0.1 $1.00/$2.00 — confirmed against docs.x.ai). All 9 provider pages verified present.
 **Jul 8 (1251):** New blog post — "Claude Sonnet 5 vs GPT-5.5: Which Flagship Model Delivers More Value?" (376th post). Targets high-intent 'Claude Sonnet 5 vs GPT-5.5' keyword. Sonnet 5 at intro pricing ($2/$10) is 60-67% cheaper than GPT-5.5 ($5/$30) with same 1M context. 4 use case cost breakdowns (chatbot, code review, doc analysis, classification). Added to blog index, sitemap (1167 entries), RSS feed (810 items).
 **Jul 8 (1250):** Pricing spot check — DeepSeek, Mistral confirmed. Together.ai: Llama 4 Scout/Maverick delisted from serverless Jul 2026, Llama 3.3 70B now $1.04/$1.04, Llama 3.1 8B updated to $0.14/$0.14. Updated together.html (meta, FAQ schema, stats, pricing table, recommendations) and pricing-data.js.
 **Jul 8 (1249):** New blog post. Wrote "Moonshot Kimi K2.6 API Pricing: Is It Worth It in July 2026?" (376th post) — targets 'Kimi K2.6 pricing' keyword. Kimi at $0.95/$4.00 is 10x more expensive than DeepSeek V4 Flash. Added to blog index, sitemap (1166 entries), RSS feed (809 items).
