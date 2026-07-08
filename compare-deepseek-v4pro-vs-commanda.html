@@ -71,7 +71,7 @@
                 "name": "Which model has a better context window?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "DeepSeek V4 Pro has a 1M token context window — 8x larger than Command A's 128K. For long documents, large codebases, or extended conversations, DeepSeek V4 Pro handles significantly more context in a single request."
+                    "text": "DeepSeek V4 Pro has a 1M token context window — 4x larger than Command A's 256K. For long documents, large codebases, or extended conversations, DeepSeek V4 Pro handles significantly more context in a single request."
                 }
             },
             {
@@ -263,7 +263,7 @@
         <h2>Which Model for Which Use Case?</h2>
         <div class="use-case-grid">
             <div class="use-case-card"><h3>Cost-Sensitive Production</h3><p>DeepSeek V4 Pro's pricing is in a different league: $0.435/M input vs $2.50/M, and $0.87/M output vs $10.00/M. For any high-volume or cost-sensitive workload, DeepSeek V4 Pro delivers 83-91% savings across the board.</p><div class="recommendation"><span class="pick-deepseek">Cheaper on everything: DeepSeek V4 Pro</span></div></div>
-            <div class="use-case-card"><h3>Long Document Processing</h3><p>DeepSeek V4 Pro's 1M token context window is 8x larger than Command A's 128K. For analyzing long legal contracts, entire codebases, or lengthy research papers in a single request, DeepSeek handles far more context.</p><div class="recommendation"><span class="pick-deepseek">Better context: DeepSeek V4 Pro</span></div></div>
+            <div class="use-case-card"><h3>Long Document Processing</h3><p>DeepSeek V4 Pro's 1M token context window is 4x larger than Command A's 256K. For analyzing long legal contracts, entire codebases, or lengthy research papers in a single request, DeepSeek handles far more context.</p><div class="recommendation"><span class="pick-deepseek">Better context: DeepSeek V4 Pro</span></div></div>
             <div class="use-case-card"><h3>Enterprise RAG Pipelines</h3><p>Command A includes Cohere's native RAG connectors for web search, databases, and enterprise knowledge bases. If you need out-of-the-box retrieval integration without building custom pipelines, Command A's ecosystem saves engineering time.</p><div class="recommendation"><span class="pick-commanda">Better RAG connectors: Command A</span></div></div>
             <div class="use-case-card"><h3>Cohere Ecosystem Users</h3><p>If you are already using Cohere's platform for embeddings, reranking, or search, Command A slots in seamlessly. The integration with Cohere's existing tools and enterprise features may justify the premium for teams deeply embedded in that ecosystem.</p><div class="recommendation"><span class="pick-commanda">Better ecosystem fit: Command A</span></div></div>
         </div>
@@ -283,7 +283,7 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item"><h3>Is DeepSeek V4 Pro cheaper than Cohere Command A?</h3><p>Yes, significantly. DeepSeek V4 Pro costs $0.435/M input and $0.87/M output, while Command A costs $2.50/M input and $10.00/M output. That makes DeepSeek V4 Pro 83% cheaper on input and 91% cheaper on output. For a workload of 1M input and 500K output tokens per day, you would save over $400/month by choosing DeepSeek V4 Pro.</p></div>
         <div class="faq-item"><h3>When would I choose Command A over DeepSeek V4 Pro?</h3><p>Choose Command A if you need Cohere's native RAG connectors for web search, databases, or enterprise knowledge bases. Command A integrates with Cohere's embedding and reranking models, making it a strong choice for teams already in the Cohere ecosystem or building retrieval-augmented generation pipelines that benefit from purpose-built connectors.</p></div>
-        <div class="faq-item"><h3>Which model has a better context window?</h3><p>DeepSeek V4 Pro has a 1M token context window — 8x larger than Command A's 128K. For tasks that require processing long documents, large codebases, or extended conversations in a single request, DeepSeek V4 Pro handles significantly more context without chunking or summarization.</p></div>
+        <div class="faq-item"><h3>Which model has a better context window?</h3><p>DeepSeek V4 Pro has a 1M token context window — 4x larger than Command A's 256K. For tasks that require processing long documents, large codebases, or extended conversations in a single request, DeepSeek V4 Pro handles significantly more context without chunking or summarization.</p></div>
         <div class="faq-item"><h3>Can DeepSeek V4 Pro match Command A quality for RAG tasks?</h3><p>DeepSeek V4 Pro offers strong general-purpose performance and a much larger context window, which can compensate by including more source material directly in the prompt. However, Command A has purpose-built RAG connectors and optimized retrieval pipelines that may produce better results for enterprise search use cases, despite the significantly higher per-token cost.</p></div>
     </div>
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
@@ -361,7 +361,7 @@
     </footer>
     <script>
         const MODEL_A={name:'DeepSeek V4 Pro',provider:'DeepSeek',input:0.435,output:0.87,context:'1M'};
-        const MODEL_B={name:'Command A',provider:'Cohere',input:2.5,output:10,context:'128K'};
+        const MODEL_B={name:'Command A',provider:'Cohere',input:2.5,output:10,context:'256K'};
         const PRESETS={chatbot:{input:500,output:800,rpd:2000,label:'Chatbot'},classification:{input:200,output:50,rpd:5000,label:'Classification'},content:{input:300,output:1500,rpd:200,label:'Content Generation'},rag:{input:3000,output:500,rpd:500,label:'RAG Pipeline'},'high-volume':{input:100,output:100,rpd:10000,label:'High Volume'}};
         function applyPreset(key){const p=PRESETS[key];document.getElementById('input-tokens').value=p.input;document.getElementById('output-tokens').value=p.output;document.getElementById('requests-day').value=p.rpd;document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');calculate();}
         function calculate(){

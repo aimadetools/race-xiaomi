@@ -45,7 +45,7 @@ const MODELS = [
   { name: 'Mistral Medium 3.5', provider: 'Mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K' },
   { name: 'Mistral Small 4', provider: 'Mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K' },
   // Cohere
-  { name: 'Command A', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K' },
+  { name: 'Command A', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '256K' },
   { name: 'Command R+', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K' },
   { name: 'Command R', provider: 'Cohere', tier: 'Budget', input: 0.50, output: 1.50, context: '128K' },
   // Meta (Together.ai)

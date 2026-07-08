@@ -35,7 +35,7 @@ const MODELS = [
     { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', tier: 'budget', input: 0.5, output: 1.5, context: '262K' },
     { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', tier: 'mid', input: 1.5, output: 7.5, context: '128K' },
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', tier: 'budget', input: 0.1, output: 0.3, context: '128K' },
-    { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', tier: 'mid', input: 2.5, output: 10, context: '128K' },
+    { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', tier: 'mid', input: 2.5, output: 10, context: '256K' },
     { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', tier: 'mid', input: 2.5, output: 10, context: '128K' },
     { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', tier: 'budget', input: 0.5, output: 1.5, context: '128K' },
     { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta', tier: 'budget', input: 0.18, output: 0.59, context: '1M' },

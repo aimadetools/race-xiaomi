@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Command A vs Mistral Medium 3.5 — Pricing Comparison 2026 | APIpulse</title>
-    <meta name="description" content="Command A vs Mistral Medium 3.5 pricing comparison. Mistral Medium 3.5 is 40% cheaper on input and 25% cheaper on output. Both have 128K context. Interactive calculator shows exact monthly costs.">
+    <meta name="description" content="Command A vs Mistral Medium 3.5 pricing comparison. Mistral Medium 3.5 is 40% cheaper on input and 25% cheaper on output. Command A has 256K context vs 128K. Interactive calculator shows exact monthly costs.">
     <meta name="keywords" content="Command A vs Mistral Medium 3.5, Command A pricing, Mistral Medium 3.5 cost, Cohere vs Mistral, AI API cost comparison, Command A Mistral comparison">
     <meta property="og:title" content="Command A vs Mistral Medium 3.5 — Pricing Comparison 2026">
     <meta property="og:description" content="Mistral Medium 3.5 is 40% cheaper than Command A with the same 128K context window. Compare pricing now.">
@@ -84,7 +84,7 @@
                 "name": "What are the context windows for Command A and Mistral Medium 3.5?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Both Command A and Mistral Medium 3.5 offer 128K token context windows. This is sufficient for processing long documents, multi-turn conversations, and complex RAG pipelines. For use cases requiring larger contexts (1M+ tokens), you would need to look at models like Claude Opus 4.8 or DeepSeek V4 Pro."
+                    "text": "Command A offers 256K token context while Mistral Medium 3.5 has 128K. Command A's larger context is better for processing long documents and complex RAG pipelines. For use cases requiring even larger contexts (1M+ tokens), look at Claude Opus 4.8 or DeepSeek V4 Pro."
                 }
             }
         ]
@@ -466,7 +466,7 @@
         </div>
         <div class="faq-item">
             <h3>What are the context windows for Command A and Mistral Medium 3.5?</h3>
-            <p>Both Command A and Mistral Medium 3.5 offer 128K token context windows. This is sufficient for processing long documents, multi-turn conversations, and complex RAG pipelines. For use cases requiring larger contexts (1M+ tokens), you would need to look at models like Claude Opus 4.8 or DeepSeek V4 Pro.</p>
+            <p>Command A offers 256K token context while Mistral Medium 3.5 has 128K. Command A's larger context is better for processing long documents and complex RAG pipelines. For use cases requiring even larger contexts (1M+ tokens), look at Claude Opus 4.8 or DeepSeek V4 Pro.</p>
         </div>
     </div>
 
@@ -601,7 +601,7 @@
     <script>
         // Pricing data
         const MISTRAL = { name: 'Mistral Medium 3.5', provider: 'Mistral', input: 1.50, output: 7.50, context: '128K' };
-        const COMMAND = { name: 'Command A', provider: 'Cohere', input: 2.50, output: 10.00, context: '128K' };
+        const COMMAND = { name: 'Command A', provider: 'Cohere', input: 2.50, output: 10.00, context: '256K' };
 
         const PRESETS = {
             chatbot: { input: 800, output: 400, rpd: 2000, label: 'Chatbot' },
@@ -698,7 +698,7 @@
 
         // Social share links
         document.addEventListener('DOMContentLoaded', () => {
-            const text = encodeURIComponent('Command A vs Mistral Medium 3.5 — Mistral 40% cheaper with same 128K context:');
+            const text = encodeURIComponent('Command A vs Mistral Medium 3.5 — Mistral 40% cheaper, Command A has 2x context (256K vs 128K):');
             const url = encodeURIComponent('https://getapipulse.com/compare-command-a-vs-mistral-medium35.html');
             document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
             document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;

@@ -43,7 +43,7 @@ module.exports = (req, res) => {
         { id: 'mistral-large', n: 'Mistral Large 3', p: 'Mistral', ps: 'mistral', t: 'Budget', i: 0.5, o: 1.5, c: '262K' },
         { id: 'mistral-medium', n: 'Mistral Medium 3.5', p: 'Mistral', ps: 'mistral', t: 'Mid', i: 1.5, o: 7.5, c: '128K' },
         { id: 'mistral-small', n: 'Mistral Small 4', p: 'Mistral', ps: 'mistral', t: 'Budget', i: 0.10, o: 0.30, c: '128K' },
-        { id: 'cohere-command-a', n: 'Command A', p: 'Cohere', ps: 'cohere', t: 'Mid', i: 2.5, o: 10, c: '128K' },
+        { id: 'cohere-command-a', n: 'Command A', p: 'Cohere', ps: 'cohere', t: 'Mid', i: 2.5, o: 10, c: '256K' },
         { id: 'cohere-command-r-plus', n: 'Command R+', p: 'Cohere', ps: 'cohere', t: 'Mid', i: 2.5, o: 10, c: '128K' },
         { id: 'cohere-command-r', n: 'Command R', p: 'Cohere', ps: 'cohere', t: 'Budget', i: 0.5, o: 1.5, c: '128K' },
         { id: 'llama-4-scout', n: 'Llama 4 Scout', p: 'Meta', ps: 'together', t: 'Budget', i: 0.18, o: 0.59, c: '1M' },

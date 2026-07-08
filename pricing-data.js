@@ -55,7 +55,7 @@ const API_MODELS = [
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026' },
     { id: 'codestral', name: 'Codestral', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 0.30, output: 0.90, context: '256K', verified: 'Jul 2026' },
     // Cohere
-    { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jul 2026' },
+    { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '256K', verified: 'Jul 2026' },
     { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jul 2026' },
     { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', providerSlug: 'cohere', tier: 'Budget', input: 0.50, output: 1.50, context: '128K', verified: 'Jul 2026' },
     // Meta (Together.ai)

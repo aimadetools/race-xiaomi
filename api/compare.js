@@ -44,7 +44,7 @@ const MODELS = {
     'mistral-large': { name: 'Mistral Large 3', provider: 'Mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '128K' },
     'mistral-medium': { name: 'Mistral Medium 3.5', provider: 'Mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K' },
     'mistral-small': { name: 'Mistral Small 4', provider: 'Mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K' },
-    'cohere-command-a': { name: 'Command A', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K' },
+    'cohere-command-a': { name: 'Command A', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '256K' },
     'cohere-command-r-plus': { name: 'Command R+', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K' },
     'cohere-command-r': { name: 'Command R', provider: 'Cohere', tier: 'Budget', input: 0.50, output: 1.50, context: '128K' },
     'llama-4-scout': { name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.18, output: 0.59, context: '1M' },
