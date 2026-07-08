@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 7, 2026 (S1239: Added Claude Opus 4.5 + Sonnet 4.5 from Anthropic docs. 58 entries, 43 active, 15 deprecated)
+// Last verified: Jul 7, 2026 (S1240: Model count 56→58. 58 entries, 43 active, 15 deprecated)
 const PRICING_LAST_UPDATED = 'Jul 7, 2026';
 
 const API_MODELS = [

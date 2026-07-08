@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1161 HTML files, 56 models (43 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy.**
+**Site Status:** 1161 HTML files, 58 models (43 active, 15 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 5 days). All CTAs route directly to Stripe. Site healthy.**
 
 ### Blocked on Human (Priority Order)
 - **Vercel KV env vars** — Code upgraded to use @vercel/kv (Session 1231). Human needs to set KV_REST_API_URL and KV_REST_API_TOKEN in Vercel dashboard. Until then, /tmp fallback is active (data lost on cold starts).
