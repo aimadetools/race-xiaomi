@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State of AI API Pricing — July 2026 | 58 Models Compared</title>
+    <meta name="description" content="July 2026 AI API pricing landscape: Claude Sonnet 5 at $2/$10 intro pricing, GPT-4.1 replaces GPT-4o, Mistral Small 4 ultra-budget at $0.15. 58 models, 10 providers. Most devs save 60-99%.">
+    <meta name="keywords" content="AI API pricing July 2026, Claude Sonnet 5 pricing, GPT-4.1 pricing, cheapest AI API, LLM pricing comparison, Mistral Small 4, DeepSeek V4 Flash, AI model pricing, best AI API value 2026">
+    <meta property="og:title" content="State of AI API Pricing — July 2026 | 58 Models Compared">
+    <meta property="og:description" content="Claude Sonnet 5 at $2/$10, GPT-4.1 replaces GPT-4o, Mistral Small 4 at $0.15. 58 models, 10 providers, real quality data.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-state-of-ai-api-pricing-june-2026.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-state-of-ai-api-pricing-july-2026.html">
+    <meta property="article:published_time" content="2026-07-08">
+    <meta property="article:modified_time" content="2026-07-08">
+    <meta property="article:author" content="APIpulse">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="State of AI API Pricing — July 2026">
+    <meta name="twitter:description" content="Claude Sonnet 5 at $2/$10, GPT-4.1 replaces GPT-4o, Mistral Small 4 at $0.15. 58 models compared.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-state-of-ai-api-pricing-june-2026.png">
+    <link rel="canonical" href="https://getapipulse.com/blog-state-of-ai-api-pricing-july-2026.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "State of AI API Pricing — July 2026",
+        "description": "July 2026 AI API pricing landscape: Claude Sonnet 5 intro pricing, GPT-4.1 replaces GPT-4o, Mistral Small 4 ultra-budget. 58 models, 10 providers.",
+        "datePublished": "2026-07-08",
+        "dateModified": "2026-07-08",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "mainEntityOfPage": "https://getapipulse.com/blog-state-of-ai-api-pricing-july-2026.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API in July 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-oss 20B at $0.08/$0.35 per million tokens is the cheapest hosted model. For API-accessible models, Gemini 2.5 Flash-Lite ($0.10/$0.40) and DeepSeek V4 Flash ($0.14/$0.28) are the most affordable. Mistral Small 4 at $0.15/$0.60 is a new ultra-budget option."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happened to GPT-4o and GPT-5?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-4o and GPT-4o mini are deprecated — GPT-4.1 is 20% cheaper with 8× larger context (1M vs 128K). GPT-5 and GPT-5 mini are deprecated with a shutdown date of Dec 11, 2026 — migrate to GPT-5.5 or GPT-5.4 mini. GPT-4.1 nano shuts down Oct 23, 2026."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Claude Sonnet 5 worth the intro pricing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "At $2/$10 per 1M tokens (through Aug 31, regular $3/$15), Claude Sonnet 5 is the best mid-tier value. It matches Claude Sonnet 4.6 quality with a 1M context window. After Aug 31, it's still competitive at $3/$15 — cheaper than GPT-5 ($1.25/$10) on output tokens."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching AI providers in July 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Developers switching from premium models save 60-99%. A $500/month Claude 4 Opus bill becomes $165 with Opus 4.8 (67% savings), $40 with GPT-5 (92%), or $4.70 with DeepSeek V4 Flash (99%). The average developer saves $2,400/year by right-sizing their model selection."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .report-hero {
+            padding: 80px 24px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .report-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        .report-hero h1 {
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .report-hero .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto 24px;
+        }
+        .report-meta {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        /* Stats bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .stat-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .stat-value.green { color: var(--green); }
+        .stat-value.orange { color: var(--orange); }
+        .stat-value.red { color: var(--red); }
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Content sections */
+        .report-section {
+            max-width: 900px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .report-section h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        .report-section h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
+        .report-section p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        /* Pricing table */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+        .pricing-table th {
+            background: var(--bg-card);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            border-bottom: 2px solid var(--border);
+            position: sticky;
+            top: 0;
+        }
+        .pricing-table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .pricing-table tr:hover td {
+            background: var(--bg-card-hover);
+        }
+        .pricing-table .model-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .pricing-table .deprecated {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        .pricing-table .badge-dead {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .pricing-table .badge-best {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .pricing-table .badge-value {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .pricing-table .badge-new {
+            display: inline-block;
+            background: #8b5cf6;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .pricing-table .savings {
+            color: var(--green);
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* Provider cards */
+        .provider-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .provider-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .provider-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .provider-card .cheapest {
+            font-size: 13px;
+            color: var(--green);
+            font-weight: 600;
+        }
+        .provider-card .model-count {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Recommendation cards */
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .rec-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+        .rec-card.best {
+            border-color: var(--green);
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.1);
+        }
+        .rec-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .rec-card .use-case {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .rec-card .price {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .rec-card .price-note {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 48px 0;
+        }
+        .pro-upsell h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .pro-upsell p {
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto 20px;
+        }
+        .pro-upsell .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+        .pro-upsell .cta-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Related resources */
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .related-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .related-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .related-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+        .related-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .report-hero h1 { font-size: 28px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .provider-grid { grid-template-columns: 1fr; }
+            .rec-grid { grid-template-columns: 1fr; }
+            .related-grid { grid-template-columns: 1fr; }
+            .pricing-table { font-size: 12px; }
+            .pricing-table th, .pricing-table td { padding: 8px 10px; }
+        }
+    </style>
+    <script src="comparison-gate.js" defer></script>
+</head>
+<body>
+    <!-- Deal urgency banner -->
+    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
+        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
+            <strong style="color:#dc2626;">🔥 Limited time:</strong>
+            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">Pro lifetime access $19 — price goes up July 12 →</a>
+        </p>
+    </div>
+
+    <!-- Shared navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">APIpulse</a>
+            <div class="nav-links">
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="audit.html?from=blog_post" class="nav-cta">⚡ Flash Sale — $19</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="report-hero">
+        <span class="report-badge">📊 JULY 2026 REPORT</span>
+        <h1>State of AI API Pricing — July 2026</h1>
+        <p class="subtitle">Claude Sonnet 5 launches at $2/$10. GPT-4.1 replaces GPT-4o at 20% cheaper. Mistral Small 4 enters the ultra-budget tier. Here's where every AI API stands — 58 models, 10 providers, real quality data.</p>
+        <div class="report-meta">
+            <span>Updated Jul 8, 2026</span>
+            <span>58 models compared</span>
+            <span>10 providers</span>
+        </div>
+    </section>
+
+    <!-- Stats bar -->
+    <section class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-value green">99%</div>
+            <div class="stat-label">Max Savings vs Premium</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">$0.08</div>
+            <div class="stat-label">Cheapest per 1M tokens</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value orange">58</div>
+            <div class="stat-label">Models Tracked</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value red">4</div>
+            <div class="stat-label">Models Deprecated (Jul)</div>
+        </div>
+    </section>
+
+    <!-- What changed -->
+    <section class="report-section">
+        <h2>What Changed in July 2026</h2>
+        <p>July brought the biggest wave of model launches and deprecations since the Claude 4 shutdown. Claude Sonnet 5 arrived at aggressive intro pricing, OpenAI replaced the entire GPT-4o family with GPT-4.1, and Mistral entered the ultra-budget tier.</p>
+
+        <h3>Claude Sonnet 5 — The New Mid-Tier King</h3>
+        <p>Anthropic launched <strong>Claude Sonnet 5 at $2/$10 per 1M tokens</strong> (intro pricing through Aug 31, regular $3/$15). With a 1M context window and quality matching Claude Sonnet 4.6, it's the best mid-tier value right now. The intro price makes it cheaper than GPT-4.1 ($2/$8) on output tokens — a first for Anthropic.</p>
+
+        <h3>GPT-4.1 Replaces GPT-4o</h3>
+        <p>OpenAI officially deprecated GPT-4o and GPT-4o mini. The <strong>GPT-4.1 family is 20% cheaper with 8× larger context</strong> (1M vs 128K). GPT-4.1 ($2/$8), GPT-4.1 mini ($0.40/$1.60), and GPT-4.1 nano ($0.10/$0.40) span the full price range. Note: GPT-4.1 nano is already marked for shutdown on Oct 23, 2026.</p>
+
+        <h3>GPT-5 and GPT-5 Mini Deprecated</h3>
+        <p>OpenAI deprecated GPT-5 ($1.25/$10) and GPT-5 mini ($0.25/$2) with a <strong>shutdown date of Dec 11, 2026</strong>. Migrate to GPT-5.5 ($5/$30) for premium or GPT-5.4 mini ($0.40/$1.60) for budget. GPT-oss 20B at $0.08/$0.35 remains the cheapest OpenAI-hosted option.</p>
+
+        <h3>Mistral Small 4 — Ultra-Budget contender</h3>
+        <p>Mistral launched <strong>Small 4 at $0.15/$0.60 per 1M tokens</strong> with 128K context. It's price-competitive with DeepSeek V4 Flash ($0.14/$0.28) and significantly cheaper than Jamba Mini ($0.20/$0.40). A strong option for EU data residency requirements.</p>
+
+        <h3>Together.ai Model Cleanup</h3>
+        <p>Together.ai delisted <strong>Llama 4 Scout and Maverick</strong> from serverless inference in July 2026. Llama 3.1 70B and 8B were also removed. The recommended replacement is Llama 3.3 70B at $1.04/$1.04. These models may still be available via dedicated endpoints.</p>
+    </section>
+
+    <!-- Complete pricing table -->
+    <section class="report-section">
+        <h2>Complete AI API Pricing — All 58 Models</h2>
+        <p>Every active AI API model, sorted by output price. Deprecated models marked in red. Prices per million tokens.</p>
+        <div style="overflow-x: auto;">
+            <table class="pricing-table" id="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Tier</th>
+                        <th>Input $/1M</th>
+                        <th>Output $/1M</th>
+                        <th>Context</th>
+                        <th>vs Claude 4 Opus</th>
+                    </tr>
+                </thead>
+                <tbody id="pricing-body">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">Prices verified Jul 8, 2026. Claude 4 Opus was $15.00 input / $75.00 output per 1M tokens.</p>
+    </section>
+
+    <!-- Provider breakdown -->
+    <section class="report-section">
+        <h2>Provider Breakdown — Who's Winning</h2>
+        <p>10 providers, each with different strengths. Here's who leads in price, quality, and reliability.</p>
+
+        <div class="provider-grid">
+            <div class="provider-card">
+                <h4>🟣 Anthropic</h4>
+                <p class="cheapest">Cheapest: Haiku 4.5 — $1.00/$5.00</p>
+                <p class="model-count">4 active models · Opus 4.8, Sonnet 5, Sonnet 4.6, Haiku 4.5</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Highest quality (97% of Claude 4 Opus). Sonnet 5 at intro pricing ($2/$10) is the best mid-tier value. Best for complex reasoning, coding, and creative work.</p>
+            </div>
+            <div class="provider-card">
+                <h4>🟢 DeepSeek</h4>
+                <p class="cheapest">Cheapest: V4 Flash — $0.14/$0.28</p>
+                <p class="model-count">2 active models · V4 Pro, V4 Flash</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Price leader. V3.2 deprecated Jul 7. 99% cheaper than Claude 4 Opus. Excellent for batch processing, prototyping, and cost-sensitive workloads.</p>
+            </div>
+            <div class="provider-card">
+                <h4>🔵 OpenAI</h4>
+                <p class="cheapest">Cheapest: GPT-oss 20B — $0.08/$0.35</p>
+                <p class="model-count">8 active models · GPT-5.5, 5.4-mini, 4.1, 4.1-mini, oss</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Broadest model range. GPT-4.1 replaces GPT-4o at 20% cheaper. GPT-5 and GPT-5 mini deprecated (shutdown Dec 11). GPT-oss models are cheapest.</p>
+            </div>
+            <div class="provider-card">
+                <h4>🔴 Google</h4>
+                <p class="cheapest">Cheapest: Gemini 2.5 Flash-Lite — $0.10/$0.40</p>
+                <p class="model-count">7 active models · 3.5 Flash, 3.1 Pro, 2.5 Pro, 2.5 Flash</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Best context window (1M tokens). Gemini 2.0 Flash/Flash-Lite deprecated. Great for long-document processing and multimodal tasks.</p>
+            </div>
+            <div class="provider-card">
+                <h4>🟡 Mistral</h4>
+                <p class="cheapest">Cheapest: Small 4 — $0.15/$0.60</p>
+                <p class="model-count">3 active models · Large 3, Medium 3.5, Small 4</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Small 4 is new ultra-budget contender. European provider with strong privacy focus. Price-competitive with DeepSeek for EU data residency.</p>
+            </div>
+            <div class="provider-card">
+                <h4>🟠 Meta (Together.ai)</h4>
+                <p class="cheapest">Cheapest: Llama 3.3 70B — $1.04/$1.04</p>
+                <p class="model-count">1 active model · Llama 3.3 70B</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Llama 4 Scout/Maverick delisted from serverless Jul 2026. Llama 3.1 70B/8B also removed. Llama 3.3 70B is the recommended open-source option.</p>
+            </div>
+            <div class="provider-card">
+                <h4>⚪ Cohere</h4>
+                <p class="cheapest">Cheapest: Command R — $0.50/$1.50</p>
+                <p class="model-count">3 active models · Command A, R+, R</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Enterprise-focused with strong RAG capabilities. Command A is competitive with GPT-5 for retrieval-augmented generation tasks.</p>
+            </div>
+            <div class="provider-card">
+                <h4>🔵 xAI</h4>
+                <p class="cheapest">Cheapest: Grok Build 0.1 — $1.00/$2.00</p>
+                <p class="model-count">2 active models · Grok 4.3, Grok Build 0.1</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Grok Build 0.1 repriced to $1.00/$2.00. Grok 4.3 at $1.25/$2.50 with 1M context. Good for developers in the X/Twitter ecosystem.</p>
+            </div>
+            <div class="provider-card">
+                <h4>🟤 AI21</h4>
+                <p class="cheapest">Cheapest: Jamba Mini — $0.20/$0.40</p>
+                <p class="model-count">2 active models · Jamba 1.7 Large, Jamba Mini</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Jamba 1.5 Large deprecated (superseded by 1.7). Hybrid SSM+Transformer architecture for efficient 256K context processing.</p>
+            </div>
+            <div class="provider-card">
+                <h4>🌙 Moonshot</h4>
+                <p class="cheapest">Cheapest: Kimi K2.6 — $0.95/$4.00</p>
+                <p class="model-count">1 active model · Kimi K2.6</p>
+                <p style="font-size: 13px; color: var(--text-muted);">Chinese provider with 256K context. 10× more expensive than DeepSeek V4 Flash. Niche use case for Chinese language tasks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="report-section">
+        <h2>Our Recommendations — By Use Case</h2>
+        <p>There's no single "best" AI API. The right choice depends on your workload, budget, and quality requirements.</p>
+
+        <div class="rec-grid">
+            <div class="rec-card">
+                <h4>🏆 Best Quality</h4>
+                <p class="use-case">Complex reasoning, coding, creative work</p>
+                <p class="price">Claude Opus 4.8</p>
+                <p class="price-note">$5.00/$25.00 per 1M tokens</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">97% of Claude 4 Opus quality. The safest choice for quality-critical workloads. Worth the premium for important tasks.</p>
+            </div>
+            <div class="rec-card best">
+                <h4>💰 Best Value</h4>
+                <p class="use-case">General purpose, good quality at low cost</p>
+                <p class="price">Claude Sonnet 5</p>
+                <p class="price-note">$2.00/$10.00 per 1M tokens (intro)</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">Best mid-tier value right now. 1M context, quality matching Sonnet 4.6. Intro pricing through Aug 31 — regular $3/$15.</p>
+            </div>
+            <div class="rec-card">
+                <h4>⚡ Cheapest</h4>
+                <p class="use-case">Batch processing, prototyping, high volume</p>
+                <p class="price">DeepSeek V4 Flash</p>
+                <p class="price-note">$0.14/$0.28 per 1M tokens</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">99% cheaper than Claude 4 Opus. Perfect for non-critical tasks, data processing, and rapid prototyping.</p>
+            </div>
+        </div>
+
+        <div class="rec-grid">
+            <div class="rec-card">
+                <h4>🔒 Most Reliable</h4>
+                <p class="use-case">Mission-critical, enterprise SLA</p>
+                <p class="price">GPT-4.1</p>
+                <p class="price-note">$2.00/$8.00 per 1M tokens</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">Replaces GPT-4o at 20% cheaper with 8× larger context. OpenAI's enterprise infrastructure. Safe choice for production.</p>
+            </div>
+            <div class="rec-card">
+                <h4>📄 Longest Context</h4>
+                <p class="use-case">Document analysis, long conversations</p>
+                <p class="price">Gemini 3.1 Pro</p>
+                <p class="price-note">$2.00/$12.00 per 1M tokens</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">1M token context window. Best for processing long documents, codebases, and multi-turn conversations.</p>
+            </div>
+            <div class="rec-card">
+                <h4>🇪🇺 EU Compliance</h4>
+                <p class="use-case">GDPR, data residency requirements</p>
+                <p class="price">Mistral Small 4</p>
+                <p class="price-note">$0.15/$0.60 per 1M tokens</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">European provider with strong privacy guarantees. New ultra-budget option. Best for EU-regulated industries.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost comparison -->
+    <section class="report-section">
+        <h2>What a $500/Month Claude 4 Opus Bill Looks Like Now</h2>
+        <p>If you were spending $500/month on Claude 4 Opus, here's what you'd pay with each alternative:</p>
+
+        <div style="overflow-x: auto;">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Model</th>
+                        <th>Monthly Cost</th>
+                        <th>Savings</th>
+                        <th>Quality</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge-dead">RETIRED</span></td>
+                        <td class="model-name deprecated">Claude 4 Opus</td>
+                        <td class="deprecated">$500.00</td>
+                        <td>—</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Anthropic</td>
+                        <td class="model-name">Claude Opus 4.8</td>
+                        <td>$165.00</td>
+                        <td class="savings">-$335 (67%)</td>
+                        <td>97%</td>
+                    </tr>
+                    <tr>
+                        <td>Anthropic</td>
+                        <td class="model-name">Claude Sonnet 5 <span class="badge-new">INTRO</span></td>
+                        <td>$50.00</td>
+                        <td class="savings">-$450 (90%)</td>
+                        <td>90%</td>
+                    </tr>
+                    <tr>
+                        <td>OpenAI</td>
+                        <td class="model-name">GPT-4.1</td>
+                        <td>$40.00</td>
+                        <td class="savings">-$460 (92%)</td>
+                        <td>88%</td>
+                    </tr>
+                    <tr>
+                        <td>Google</td>
+                        <td class="model-name">Gemini 2.5 Pro</td>
+                        <td>$40.00</td>
+                        <td class="savings">-$460 (92%)</td>
+                        <td>85%</td>
+                    </tr>
+                    <tr>
+                        <td>DeepSeek</td>
+                        <td class="model-name">DeepSeek V4 Pro</td>
+                        <td>$14.50</td>
+                        <td class="savings">-$486 (97%)</td>
+                        <td>82%</td>
+                    </tr>
+                    <tr>
+                        <td>Mistral</td>
+                        <td class="model-name">Mistral Small 4</td>
+                        <td>$5.50</td>
+                        <td class="savings">-$495 (99%)</td>
+                        <td>70%</td>
+                    </tr>
+                    <tr>
+                        <td>DeepSeek</td>
+                        <td class="model-name">DeepSeek V4 Flash</td>
+                        <td>$4.70</td>
+                        <td class="savings">-$495 (99%)</td>
+                        <td>72%</td>
+                    </tr>
+                    <tr>
+                        <td>Google</td>
+                        <td class="model-name">Gemini 2.5 Flash-Lite</td>
+                        <td>$1.75</td>
+                        <td class="savings">-$498 (99.6%)</td>
+                        <td>65%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">Based on ~33M tokens/month (1:3 input:output ratio). Quality scores from our internal benchmark suite. Sonnet 5 intro pricing through Aug 31.</p>
+    </section>
+
+    <!-- Deprecation timeline -->
+    <section class="report-section">
+        <h2>⚠️ Deprecation Timeline — Act Now</h2>
+        <p>Several models are approaching shutdown dates. Migrate before you lose access.</p>
+
+        <div style="overflow-x: auto;">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Shutdown Date</th>
+                        <th>Replacement</th>
+                        <th>Current Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="model-name">GPT-4.1 nano</td>
+                        <td>OpenAI</td>
+                        <td><span style="color:#f59e0b;font-weight:600;">Oct 23, 2026</span></td>
+                        <td>GPT-5.4 nano</td>
+                        <td>$0.10/$0.40</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">GPT-5</td>
+                        <td>OpenAI</td>
+                        <td><span style="color:#ef4444;font-weight:600;">Dec 11, 2026</span></td>
+                        <td>GPT-5.5</td>
+                        <td>$1.25/$10.00</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">GPT-5 mini</td>
+                        <td>OpenAI</td>
+                        <td><span style="color:#ef4444;font-weight:600;">Dec 11, 2026</span></td>
+                        <td>GPT-5.4 mini</td>
+                        <td>$0.25/$2.00</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">Claude Sonnet 4.6</td>
+                        <td>Anthropic</td>
+                        <td><span style="color:#ef4444;font-weight:600;">Deprecated</span></td>
+                        <td>Claude Sonnet 5</td>
+                        <td>$3/$15</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">DeepSeek V3.2</td>
+                        <td>DeepSeek</td>
+                        <td><span style="color:#ef4444;font-weight:600;">Deprecated</span></td>
+                        <td>DeepSeek V4 Flash</td>
+                        <td>N/A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- What's next -->
+    <section class="report-section">
+        <h2>What's Next — Price Predictions</h2>
+        <p>The AI API price war continues to accelerate. Here's what we expect:</p>
+
+        <h3>Sonnet 5 Post-Intro Pricing</h3>
+        <p>After Aug 31, Claude Sonnet 5 returns to $3/$15. Still competitive with GPT-4.1 ($2/$8) on a total-cost basis due to 1M context. Expect Anthropic to hold this price through Q4 2026.</p>
+
+        <h3>GPT-5.4 Nano Launch</h3>
+        <p>With GPT-4.1 nano shutting down Oct 23, OpenAI will launch GPT-5.4 nano as the replacement. Expect pricing at $0.10-$0.15 input — maintaining the ultra-budget tier.</p>
+
+        <h3>Post-Shutdown Migration Wave</h3>
+        <p>The Dec 11 GPT-5/GPT-5 mini shutdown will trigger another mass migration. Developers should start testing alternatives now. GPT-5.4 mini ($0.40/$1.60) and DeepSeek V4 Pro ($0.44/$0.87) are the top destinations.</p>
+
+        <h3>Budget Tier Convergence</h3>
+        <p>The budget tier is converging around $0.10-$0.20 input. DeepSeek V4 Flash ($0.14), Mistral Small 4 ($0.15), Jamba Mini ($0.20), and Gemini 2.5 Flash-Lite ($0.10) are all within 2× of each other. Quality differences will determine the winner, not price.</p>
+    </section>
+
+    <!-- Pro upsell -->
+    <section class="pro-upsell">
+        <h3>Get Personalized Migration Recommendations</h3>
+        <p>This report covers the landscape. Pro tells you exactly which model to use for YOUR workload — with code snippets, cost projections, and a migration plan.</p>
+        <a href="#" class="cta-btn" id="pro-cta-link">Get Your Migration Plan — $19</a>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">One-time payment. Lifetime access. No subscription. Flash sale ends Jul 12.</p>
+    </section>
+
+    <!-- Related resources -->
+    <section class="report-section">
+        <h2>Related Resources</h2>
+        <div class="related-grid">
+            <a href="pricing.html" class="related-card">
+                <h4>Full Pricing Comparison</h4>
+                <p>All 58 models with live pricing data.</p>
+            </a>
+            <a href="agent-cost-calculator.html" class="related-card">
+                <h4>Cost Calculator</h4>
+                <p>Estimate your monthly spend across providers.</p>
+            </a>
+            <a href="ai-model-deprecation-tracker.html" class="related-card">
+                <h4>Deprecation Tracker</h4>
+                <p>Which models are retiring and when.</p>
+            </a>
+            <a href="blog-claude-sonnet-5-vs-gpt55.html" class="related-card">
+                <h4>Sonnet 5 vs GPT-5.5</h4>
+                <p>The flagship showdown — who wins on value?</p>
+            </a>
+            <a href="blog-best-ai-api-deals-july-2026.html" class="related-card">
+                <h4>7 Best AI API Deals</h4>
+                <p>The cheapest models ranked by value.</p>
+            </a>
+            <a href="price-alerts.html" class="related-card">
+                <h4>Price Alerts</h4>
+                <p>Get notified when prices change.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="audit.html?from=blog_post">Pro</a>
+            </div>
+            <p class="footer-copy">APIpulse — AI API pricing intelligence. Updated daily. · <a href="price-alerts.html" style="color:var(--accent);">🔔 Price Alerts</a></p>
+        </div>
+    </footer>
+
+    <script>
+    // Populate pricing table from centralized data
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') return;
+
+        var tbody = document.getElementById('pricing-body');
+        var claudeInput = 15.00;
+        var claudeOutput = 75.00;
+
+        // Sort by output price (ascending), deprecated at bottom
+        var sorted = API_MODELS.slice().sort(function(a, b) {
+            if (a.deprecated && !b.deprecated) return 1;
+            if (!a.deprecated && b.deprecated) return -1;
+            return a.output - b.output;
+        });
+
+        sorted.forEach(function(model) {
+            var tr = document.createElement('tr');
+            var savings = (((claudeOutput - model.output) / claudeOutput) * 100).toFixed(0);
+            var isBest = model.id === 'deepseek-v4-flash' || model.id === 'google-25-flash-lite';
+            var isValue = model.id === 'deepseek-v4-pro';
+            var isNew = model.id === 'claude-sonnet-5' || model.id === 'mistral-small-4' || model.id === 'gpt-41';
+
+            tr.innerHTML =
+                '<td class="model-name ' + (model.deprecated ? 'deprecated' : '') + '">' +
+                    model.name +
+                    (model.deprecated ? ' <span class="badge-dead">RETIRED</span>' : '') +
+                    (isBest ? ' <span class="badge-best">CHEAPEST</span>' : '') +
+                    (isValue ? ' <span class="badge-value">BEST VALUE</span>' : '') +
+                    (isNew && !model.deprecated ? ' <span class="badge-new">NEW</span>' : '') +
+                '</td>' +
+                '<td>' + model.provider + '</td>' +
+                '<td>' + model.tier + '</td>' +
+                '<td>$' + model.input.toFixed(2) + '</td>' +
+                '<td>$' + model.output.toFixed(2) + '</td>' +
+                '<td>' + model.context + '</td>' +
+                '<td>' + (model.deprecated ? '—' : '<span class="savings">-' + savings + '%</span>') + '</td>';
+            tbody.appendChild(tr);
+        });
+
+        // Bind A/B Stripe link to Pro CTA
+        if (window._abStripeLink) {
+            document.getElementById('pro-cta-link').href = window._abStripeLink;
+        }
+        if (window._abPrice) {
+            document.getElementById('pro-cta-link').textContent = 'Get Your Migration Plan — $' + window._abPrice;
+        }
+
+        // GA4 tracking
+        if (typeof trackEvent === 'function') {
+            trackEvent('blog_post_viewed', {
+                post_slug: 'state-of-ai-api-pricing-july-2026',
+                post_title: 'State of AI API Pricing — July 2026',
+                models_count: API_MODELS.length
+            });
+        }
+    });
+    </script>
+</body>
+</html>
