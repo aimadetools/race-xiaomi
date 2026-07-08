@@ -4,7 +4,7 @@
 // Pro users and trial users bypass the gate entirely.
 
 (function() {
-    var FREE_LIMIT = 2;
+    var FREE_LIMIT = 1;
     var STORAGE_KEY = 'apipulse_calc_usage';
     var SESSION_KEY = 'apipulse_calc_session';
 
@@ -58,7 +58,7 @@
             '<button onclick="dismissUsageGate()" style="position:absolute;top:16px;right:20px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;padding:4px 8px;" aria-label="Close">×</button>' +
             '<div style="font-size:56px;margin-bottom:16px;">💸</div>' +
             '<h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Stop overpaying for AI APIs</h2>' +
-            '<p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:12px;">You\'ve compared 2 models. <strong>The average user saves $2,400/yr</strong> by finding cheaper alternatives across all 58 models. Pro shows you exactly which ones.</p>' +
+            '<p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:12px;">You\'ve compared 1 model. <strong>The average user saves $2,400/yr</strong> by finding cheaper alternatives across all 58 models. Pro shows you exactly which ones.</p>' +
             '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.3);border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#22c55e;">💡 Example: Switching from GPT-5 to DeepSeek V4 Flash saves <strong>96% on input costs</strong></div>' +
             '<div style="background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#dc2626;">⏰ Flash sale ends Jul 12 — <span id="gate-countdown" style="font-weight:700;font-variant-numeric:tabular-nums;"></span></div>' +
             '<div style="display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;">' +
