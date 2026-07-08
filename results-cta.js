@@ -32,7 +32,7 @@
 
     // Get current A/B price
     function getPrice() {
-        return window._abPrice || 29;
+        return window._abPrice || 19;
     }
 
     function getStripeLink() {

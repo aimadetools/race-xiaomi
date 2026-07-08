@@ -6,14 +6,14 @@
     <title>Pricing — APIpulse</title>
     <meta name="description" content="APIpulse pricing — free AI API cost tools. Pro $19 (normally $49): monitor 58 models, get price alerts, weekly reports. Lifetime access, no subscriptions.">
     <meta property="og:title" content="Pricing — APIpulse ($19 Pro)">
-    <meta property="og:description" content="APIpulse Pro $19 (normally $49). Monitor 56 AI models, get price alerts, weekly reports. Lifetime access, no subscriptions.">
+    <meta property="og:description" content="APIpulse Pro $19 (normally $49). Monitor 58 AI models, get price alerts, weekly reports. Lifetime access, no subscriptions.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/pricing.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pricing — APIpulse">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
-    <meta name="twitter:description" content="APIpulse Pro $19 (normally $49). Monitor 56 AI models, get price alerts, weekly reports. Lifetime access.">
+    <meta name="twitter:description" content="APIpulse Pro $19 (normally $49). Monitor 58 AI models, get price alerts, weekly reports. Lifetime access.">
     <meta name="keywords" content="AI API pricing, LLM pricing plans, API cost calculator, Pro upgrade">
     <link rel="canonical" href="https://getapipulse.com/pricing.html">
     <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
@@ -284,10 +284,33 @@
                 <div class="price" style="color:#dc2626;">$19</div>
                 <div class="price-note" style="text-decoration:line-through;color:var(--text-muted);font-size:13px;">$49 after Jul 12</div>
                 <div class="price-note">Flash sale — one-time payment, lifetime access</div>
-                <div style="background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#dc2626;display:flex;align-items:center;gap:8px;">
+                <div id="flash-countdown" style="background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#dc2626;display:flex;align-items:center;gap:8px;">
                     <span style="font-size:16px;">⏰</span>
-                    <span><strong>Flash sale ends Jul 12</strong> — price goes from $19 back to $49. Save $30 today.</span>
+                    <span><strong>Flash sale ends Jul 12</strong> — <span id="countdown-timer" style="font-variant-numeric:tabular-nums;font-weight:700;"></span></span>
                 </div>
+                <script>
+                (function(){
+                    var deadline = new Date('2026-07-12T23:59:59Z').getTime();
+                    function updateCountdown(){
+                        var now = Date.now();
+                        var diff = deadline - now;
+                        if(diff <= 0){
+                            document.getElementById('countdown-timer').textContent = 'EXPIRED';
+                            return;
+                        }
+                        var days = Math.floor(diff / 86400000);
+                        var hours = Math.floor((diff % 86400000) / 3600000);
+                        var mins = Math.floor((diff % 3600000) / 60000);
+                        var secs = Math.floor((diff % 60000) / 1000);
+                        var text = '';
+                        if(days > 0) text += days + 'd ';
+                        text += hours + 'h ' + mins + 'm ' + secs + 's left';
+                        document.getElementById('countdown-timer').textContent = text;
+                    }
+                    updateCountdown();
+                    setInterval(updateCountdown, 1000);
+                })();
+                </script>
                 <script>
                 // Dynamic founding member counter — simulates spots filling up over time
                 (function(){
@@ -342,7 +365,7 @@
         <div class="social-proof">
             <div class="social-proof-stats">
                 <div class="stat-item">
-                    <div class="stat-number">56</div>
+                    <div class="stat-number">58</div>
                     <div class="stat-label">AI models compared</div>
                 </div>
                 <div class="stat-item">
