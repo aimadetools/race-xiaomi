@@ -13,10 +13,10 @@
 - **Add $5 tier to support page** — When $5 Stripe link arrives (HELP-REQUEST.md), add it to support.html as lower-priced option
 - **A/B test support page** — Track conversion rate of support.html vs direct-to-Stripe. Check GA4: support_page_viewed → pro_button_clicked
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date, insights, and any pricing changes
-- **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session)
+- **Pricing data spot check** — Verify 2-3 provider prices against official pages (rotate providers each session). Anthropic done Jul 8 (S1257). Next: OpenAI, Google.
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
-- **Model count consistency** — Fixed 54→58 across all pages (S1248). All pages consistent.
+- **Model count consistency** — Updated 58→59 (S1257). Still need bulk pass on ~30 pages that say "58 models".
 
 ### Completed (Sessions 416-1256, Apr 23 - Jul 8)
 ✅ Complete site: 1171 pages, 58 models, 10 providers, 533 comparison/alternatives pages
