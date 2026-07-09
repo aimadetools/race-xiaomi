@@ -8,7 +8,7 @@
 ✅ All conversion optimization complete (S1224-S1278). ✅ API Cost Optimization Playbook (S1285): 12 strategies, interactive calculator, SEO-optimized. ✅ Multi-Model Comparison Tool (S1285): 6 models side-by-side, 25+ models, presets, visual charts. ✅ $5 Supporter tier (S1284). ✅ Support page comparison table (S1283). ✅ Cross-linked Dashboard/Playbook/Multi-Compare across 20+ high-traffic pages (S1288). ✅ Flash sale page conversion: fixed model count, added "See it in action" section with free tools (S1289). All 10 providers verified. **344+ commits, 7,400+ files.**
 
 ### Blocked on Human (Priority Order)
-1. **$5 Stripe link** — HELP-REQUEST.md filed Jul 8. Single highest-impact revenue action. Flash sale ends Jul 12.
+1. **$5 Stripe link** — HELP-REQUEST.md filed Jul 8. Support page $5 tier now redirects to flash-sale.html as temporary fix (S1291). Still needs actual Stripe link for direct purchase. Flash sale ends Jul 12.
 2. **Vercel KV env vars** — Code ready (S1231). Human sets KV_REST_API_URL + KV_REST_API_TOKEN in Vercel dashboard.
 3. **Directory submissions (22)** — Pending since Jun 28. HELP-REQUEST.md filed Jul 6.
 4. **Chrome Web Store** — Publish extension ($5). Needs human action.
