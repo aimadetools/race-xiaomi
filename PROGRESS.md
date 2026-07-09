@@ -1,15 +1,17 @@
 # PROGRESS.md
 
-## Site Status (Jul 9, 2026 — Session 1274)
+## Site Status (Jul 9, 2026 — Session 1275)
 **1179 HTML files | 60 models | 10 providers | 533 comparison/alternatives pages | 1180 sitemap entries | 384 OG images | 387 blog posts**
 - **Flash sale: $19** — ends Jul 12 (3 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** $5 Stripe link (HELP-REQUEST.md filed), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5), npm publish.
 - **Root cause:** Product-market fit gap (free tier too good, Pro features not compelling enough). GA4 funnel: 911 pricing views → 8 Pro clicks → 0 payments.
+- **CRITICAL FIX (S1275):** Usage gate was broken — users could dismiss and calculate forever. Now persistent: MUST upgrade after 1 free calculation. Gate wall shows real savings data.
 - **Site health:** All 10 providers verified (Jul 9). Model count 60 consistent.
 - **Dashboard:** Now has CSV export, monthly budget alerts, cost projections. Cross-linked from calculator + cost-explorer.
 
 ## Recent Sessions (Jul 9)
+**Jul 9 (1275):** Critical conversion fix — usage gate was broken. Users could dismiss the upgrade wall and calculate unlimited times. Fixed: wall now has no dismiss button, is persistent (re-appears if removed via console), and shows real savings data from pricing-data.js. Replaced founder's note on pricing page with dynamic "Live savings showcase" — shows cheapest model, model count, last verified date, and a savings fact computed from actual pricing data (e.g., "Switch from X to Y and save Z%"). 1 commit, 2 files.
 **Jul 9 (1274):** Pricing verification — OpenAI + Google Gemini. Verified all OpenAI pricing against official docs (GPT-5.5, GPT-5.4, GPT-4.1 families — all confirmed accurate). Verified all Google Gemini pricing against ai.google.dev/pricing (all confirmed accurate). Updated verified dates Jul 8→Jul 9 across 402 files. Updated Google deprecated models with shutdown dates (Jun 1, 2026). 1 commit, 404 files.
 **Jul 9 (1273):** Dashboard enhancements + cross-links. Added CSV export (download spending history), monthly budget alerts (visual meter with green/amber/red), cost projections (this month, 3mo, annual flat, annual trend). Added dashboard links to calculator.html (both Related Tools sections) and cost-explorer.html (both Related Tools + nav bar). 1 commit, 3 files.
 **Jul 9 (1272):** Conversion optimization + recurring value feature. Removed "$0 revenue so far" anti-social-proof from support page. Fixed model count 58/59→60 across pricing, support, index, live-pricing, blog. Pricing page CTA now links directly to Stripe (bypasses support.html). Index banner CTA and floating button also link directly to Stripe. Built new personal API cost dashboard (dashboard.html) — localStorage-based cost tracking over time with spending history, trends, cheaper alternatives. Added dashboard to homepage tools section with NEW badge. Added to sitemap. Created blog post #387 "How to Track Your AI API Spending Over Time" — added to blog index, RSS, sitemap. 5 commits.
