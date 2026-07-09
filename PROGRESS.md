@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (Jul 9, 2026 — Session 1283)
+## Site Status (Jul 9, 2026 — Session 1284)
 **1180 HTML files | 60 models | 10 providers | 533 comparison/alternatives pages | 1181 sitemap entries | 384 OG images | 387 blog posts**
 - **Flash sale: $19** — ends Jul 12 (3 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
@@ -10,6 +10,7 @@
 - **Dashboard:** CSV export, monthly budget alerts, cost projections. Cross-linked from calculator + cost-explorer. Featured on support page as free value prop. Auto-saves calculator results.
 
 ## Recent Sessions (Jul 9)
+**Jul 9 (1284):** Added $5 Supporter tier to support page. New tier card below Pro — uses mailto: as placeholder until Stripe link arrives. Updated "Where your support goes" copy to mention both price points. Support page now has: Supporter tier ($5), Pro tier ($19), countdown timer, comparison table, dashboard promo, ROI math, guarantee badges, FAQ. 1 commit, 1 file.
 **Jul 9 (1283):** Support page conversion optimization. Added Free vs Pro comparison table to support.html (12-row table: 5 shared features, 7 Pro-only highlighted). Removed duplicate theme toggle code that used wrong localStorage key. Support page now has: tier card, countdown timer, comparison table, dashboard promo, ROI math, guarantee badges, FAQ. 2 commits, 1 file.
 **Jul 9 (1282):** Page count consistency fix. Updated support.html: 1,179 → 1,181 (OG meta, story copy, stats bar). Site verified: 1181 HTML files, 60 models, 10 providers, 1181 sitemap entries. All internal links clean. 1 commit, 1 file.
 **Jul 9 (1281):** Pricing spot check (Anthropic + Meta). Verified Anthropic pricing: Haiku 4.5 $1/$5 ✓, Sonnet 4.6 $3/$15 ✓, Opus 4.8/4.7/4.6 $5/$25 ✓. Meta/Llama 4 Scout+Maverick delisted from Together AI serverless (already noted on site). Updated weekly-report.html dateModified to Jul 9, refreshed subtitle with dashboard features. 1 commit, 2 files.
@@ -27,4 +28,4 @@
 **Jul 7-8 (1262-1271):** Pricing verification sprint — verified all 10 providers (Anthropic, Meta, Moonshot, AI21, Cohere, xAI, DeepSeek, Mistral, Google, OpenAI). Added Kimi K2.7 Code. Fixed model count 59→60. 4 commits, 1090+ files.
 
 ## Completed Summary (Sessions 416-1281, Apr 23 - Jul 9)
-Complete AI API pricing comparison site: 1181 pages, 60 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard (with CSV export, budget alerts, cost projections)**. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Flash sale $19 ends Jul 12. All 10 providers verified. **Dashboard showcased on support + pricing pages (S1276). Calculator auto-saves to dashboard (S1277).** Blog: 387 posts. OG images: 384. Sitemap: 1181 entries. **321+ commits, 7,400+ files. Internal links fully audited (S1280). Pricing spot-checked (S1281).**
+Complete AI API pricing comparison site: 1181 pages, 60 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard (with CSV export, budget alerts, cost projections)**. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Flash sale $19 ends Jul 12. All 10 providers verified. **Dashboard showcased on support + pricing pages (S1276). Calculator auto-saves to dashboard (S1277).** Blog: 387 posts. OG images: 384. Sitemap: 1181 entries. **323+ commits, 7,400+ files. Internal links fully audited (S1280). Pricing spot-checked (S1281). $5 Supporter tier on support page (S1284).**
