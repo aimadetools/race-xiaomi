@@ -46,14 +46,23 @@
         return Math.max(0, FREE_LIMIT - usage.count);
     }
 
-    // Compute a compelling savings fact from the pricing data
+    // Compute a compelling savings fact — personalized from the page if available, else from pricing data
     function getSavingsFact() {
         try {
+            // First try: personalized savings from the calculator page
+            var annualEl = document.getElementById('upsell-annual-savings');
+            var gradeEl = document.getElementById('upsell-grade-text');
+            if (annualEl && annualEl.textContent && annualEl.textContent.indexOf('$') !== -1 && annualEl.textContent.indexOf('$0') === -1) {
+                var annual = annualEl.textContent.trim();
+                var grade = gradeEl ? gradeEl.textContent.trim() : '';
+                return { personalized: true, annual: annual, grade: grade };
+            }
+
+            // Fallback: generic savings fact from pricing data
             if (typeof API_MODELS === 'undefined') return null;
             var active = API_MODELS.filter(function(m) { return !m.deprecated && m.input && m.output; });
             if (active.length < 2) return null;
 
-            // Find the biggest price gap between expensive and cheap models in same tier
             var premiums = active.filter(function(m) { return m.tier === 'Premium'; });
             var budgets = active.filter(function(m) { return m.tier === 'Budget'; });
             if (premiums.length && budgets.length) {
@@ -76,11 +85,21 @@
         var savings = getSavingsFact();
         var savingsHtml = '';
         if (savings) {
-            savingsHtml = '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:10px;padding:14px 16px;margin-bottom:16px;text-align:left;">' +
-                '<div style="font-size:11px;color:#22c55e;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">💡 Did you know?</div>' +
-                '<div style="font-size:14px;color:var(--text-primary);line-height:1.5;">Switching from <strong>' + savings.from + '</strong> to <strong>' + savings.to + '</strong> saves <strong style="color:#22c55e;font-size:18px;">' + savings.pct + '%</strong> on output costs.</div>' +
-                '<div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Pro shows you all ' + (typeof API_MODELS !== 'undefined' ? API_MODELS.filter(function(m){return !m.deprecated;}).length : '60') + ' active models ranked by cost for your exact workload.</div>' +
-            '</div>';
+            if (savings.personalized) {
+                // Personalized: show the user's actual savings
+                savingsHtml = '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:10px;padding:14px 16px;margin-bottom:16px;text-align:left;">' +
+                    '<div style="font-size:11px;color:#22c55e;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">💰 Based on your calculation</div>' +
+                    '<div style="font-size:14px;color:var(--text-primary);line-height:1.5;">You could save <strong style="color:#22c55e;font-size:20px;">' + savings.annual + '</strong> by switching to cheaper alternatives' + (savings.grade ? ' (your efficiency grade: <strong>' + savings.grade + '</strong>)' : '') + '.</div>' +
+                    '<div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Pro shows you exactly which models to switch to — with migration code ready to paste.</div>' +
+                '</div>';
+            } else {
+                // Generic: show the pricing data fact
+                savingsHtml = '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:10px;padding:14px 16px;margin-bottom:16px;text-align:left;">' +
+                    '<div style="font-size:11px;color:#22c55e;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">💡 Did you know?</div>' +
+                    '<div style="font-size:14px;color:var(--text-primary);line-height:1.5;">Switching from <strong>' + savings.from + '</strong> to <strong>' + savings.to + '</strong> saves <strong style="color:#22c55e;font-size:18px;">' + savings.pct + '%</strong> on output costs.</div>' +
+                    '<div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Pro shows you all ' + (typeof API_MODELS !== 'undefined' ? API_MODELS.filter(function(m){return !m.deprecated;}).length : '60') + ' active models ranked by cost for your exact workload.</div>' +
+                '</div>';
+            }
         }
 
         var wall = document.createElement('div');
