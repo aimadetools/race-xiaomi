@@ -431,22 +431,6 @@
         var links = document.querySelector('.nav-links');
         if(links) links.classList.toggle('open');
     }
-    function toggleTheme(){
-        var body = document.body;
-        var isDark = !body.hasAttribute('data-theme') || body.getAttribute('data-theme') === 'dark';
-        body.setAttribute('data-theme', isDark ? 'light' : 'dark');
-        var btn = document.querySelector('.theme-toggle');
-        if(btn) btn.textContent = isDark ? '☀️' : '🌙';
-        localStorage.setItem('apipulse-theme', isDark ? 'light' : 'dark');
-    }
-    (function(){
-        var saved = localStorage.getItem('apipulse-theme');
-        if(saved === 'light'){
-            document.body.setAttribute('data-theme', 'light');
-            var btn = document.querySelector('.theme-toggle');
-            if(btn) btn.textContent = '☀️';
-        }
-    })();
     </script>
     <script src="shared.js" defer></script>
 </body>
