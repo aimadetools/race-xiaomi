@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI API Cost Calculator — Compare 59 Models Across 10 Providers | APIpulse</title>
+    <title>AI API Cost Calculator — Compare 60 Models Across 10 Providers | APIpulse</title>
     <meta name="description" content="Free AI API cost calculator. Compare pricing for GPT, Claude, Gemini, DeepSeek, Mistral. Calculate monthly spend for any model. See savings with cheaper alternatives.">
     <meta name="keywords" content="AI API cost calculator, LLM pricing calculator, GPT cost calculator, Claude pricing, API cost estimator, AI budget calculator">
-    <meta property="og:title" content="AI API Cost Calculator — Compare 59 Models">
+    <meta property="og:title" content="AI API Cost Calculator — Compare 60 Models">
     <meta property="og:description" content="Calculate your AI API costs across 60 models and 10 providers. Free, instant, no signup.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://getapipulse.com/ai-api-cost-calculator.html">
@@ -185,7 +185,7 @@
 
             <!-- CTA -->
             <div class="cta-box">
-                <h3>You've compared 1 model. Pro shows all 59.</h3>
+                <h3>You've compared 1 model. Pro shows all 60.</h3>
                 <p>Developers who compare 5+ models save $2,400/yr on average. Pro ranks all 60 models by cost for your use case — with migration code ready to paste.</p>
                 <div class="price-row">
                     <span class="price-was">$49</span>
@@ -379,6 +379,22 @@
 
             document.getElementById('results').classList.add('visible');
             document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Auto-save to dashboard localStorage
+            try {
+                var dashboardKey = 'apipulse_dashboard_history';
+                var history = JSON.parse(localStorage.getItem(dashboardKey) || '[]');
+                history.push({
+                    date: new Date().toISOString(),
+                    modelId: modelId,
+                    modelName: model.name,
+                    provider: model.provider,
+                    inputM: inputTokens / 1000000,
+                    outputM: outputTokens / 1000000,
+                    cost: totalCost
+                });
+                localStorage.setItem(dashboardKey, JSON.stringify(history));
+            } catch(e) {}
 
             if (window.trackEvent) window.trackEvent('cost_calculator_used', { model: modelId, total_cost: totalCost });
         };
