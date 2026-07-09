@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1177 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 4 days). Support page built (Session 1256). CTAs route through support page → Stripe. All 10 providers verified (Jul 8). Model count consistent at 60. Blog: 386 posts.**
+**Site Status:** 1178 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). All CTAs link directly to Stripe. New cost dashboard built (S1272). All 10 providers verified (Jul 8). Model count consistent at 60. Blog: 386 posts.**
 
 ### Blocked on Human (Priority Order)
 - **$5 Stripe link** — HELP-REQUEST.md filed (Session 1256). Add $5 tier to support page once link arrives.
@@ -17,19 +17,24 @@
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
 - **Model count consistency** — ✅ Done S1258/S1260/S1271. Bulk updated 58→59→60 across 1087+ files. All pages now consistent at 60 models.
+- **Dashboard enhancements** — Add export to CSV, monthly budget alerts, cost projections based on usage trends
+- **Dashboard blog post** — Write "How to Track Your AI API Spending Over Time" blog post featuring the new dashboard
+- **Dashboard internal links** — Add links to dashboard.html from calculator.html, cost-explorer.html, and other tool pages
 
-### Completed (Sessions 416-1263, Apr 23 - Jul 8)
-✅ Complete site: 1175 pages, 59 models, 10 providers, 533 comparison/alternatives pages
-✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker
+### Completed (Sessions 416-1272, Apr 23 - Jul 9)
+✅ Complete site: 1178 pages, 60 models, 10 providers, 533 comparison/alternatives pages
+✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker, **personal cost dashboard**
 ✅ Conversion funnel: gated audit, trackEvent on all pages, exit popups, nav CTAs, OG/Twitter meta
-✅ Support page: pre-sell warm-up before Stripe checkout (S1256). CTAs route through support page.
+✅ Support page: pre-sell warm-up before Stripe checkout (S1256). CTAs now link directly to Stripe (S1272).
 ✅ Flash sale urgency: countdown timers, sticky bars, social proof, dynamic pricing
-✅ All CTAs route through support page → Stripe. Pricing data verified fresh (Jul 8 — all 10 providers confirmed)
-✅ Blog: 383 posts. OG images: 384. Sitemap: 1175 entries, all lastmod fixed
-✅ Model count: 49→54→56→58→59 across all pages (S1227-S1258). All references consistent
+✅ All CTAs link directly to Stripe (S1272). Pricing data verified fresh (Jul 8 — all 10 providers confirmed)
+✅ Blog: 386 posts. OG images: 384. Sitemap: 1179 entries, all lastmod fixed
+✅ Model count: 49→54→56→58→59→60 across all pages (S1227-S1272). All references consistent
 ✅ Conversion optimization: $29→$19 defaults, countdown timers, usage gate wall, bleeding counter (S1242)
+✅ Removed "$0 revenue" anti-social-proof from support page (S1272)
+✅ Personal cost dashboard: localStorage-based tracking, spending history, trends, alternatives (S1272)
 ✅ Together.ai: Llama 4 Scout/Maverick delisted from serverless, pricing updated (S1250)
 ✅ Vercel KV migration: 9 API endpoints upgraded from /tmp (S1231)
 ✅ Pro access code validation: Critical bug fixed (S1230)
 ✅ Fixed broken internal links (compare.html leading slash)
-**306+ commits, 7,400+ files. Distribution blocked on human.**
+**314+ commits, 7,400+ files. Distribution blocked on human.**
