@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Site Status (Jul 9, 2026 — Session 1272)
-**1178 HTML files | 60 models | 10 providers | 533 comparison/alternatives pages | 1179 sitemap entries | 384 OG images | 386 blog posts**
+**1179 HTML files | 60 models | 10 providers | 533 comparison/alternatives pages | 1180 sitemap entries | 384 OG images | 387 blog posts**
 - **Flash sale: $19** — ends Jul 12 (3 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** $5 Stripe link (HELP-REQUEST.md filed), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5), npm publish.
@@ -9,7 +9,7 @@
 - **Site health:** All 10 providers verified (Jul 8). Model count 60 consistent.
 
 ## Recent Sessions (Jul 9)
-**Jul 9 (1272):** Conversion optimization + recurring value feature. Removed "$0 revenue so far" anti-social-proof from support page. Fixed model count 58/59→60 across pricing, support, index, live-pricing, blog. Pricing page CTA now links directly to Stripe (bypasses support.html). Index banner CTA and floating button also link directly to Stripe. Built new personal API cost dashboard (dashboard.html) — localStorage-based cost tracking over time with spending history, trends, cheaper alternatives. Added dashboard to homepage tools section with NEW badge. Added to sitemap. 4 commits.
+**Jul 9 (1272):** Conversion optimization + recurring value feature. Removed "$0 revenue so far" anti-social-proof from support page. Fixed model count 58/59→60 across pricing, support, index, live-pricing, blog. Pricing page CTA now links directly to Stripe (bypasses support.html). Index banner CTA and floating button also link directly to Stripe. Built new personal API cost dashboard (dashboard.html) — localStorage-based cost tracking over time with spending history, trends, cheaper alternatives. Added dashboard to homepage tools section with NEW badge. Added to sitemap. Created blog post #387 "How to Track Your AI API Spending Over Time" — added to blog index, RSS, sitemap. 5 commits.
 
 ## Recent Sessions (Jul 8)
 **Jul 8 (1271):** Pricing verification — AI21 + Moonshot. Added Kimi K2.7 Code ($0.96/$3.97, 256K). Fixed Kimi K2.6 pricing errors ($0.60/$2.50→$0.95/$4.00, 128K→256K) across 8+ files. Updated model count 59→60 (1087 files). AI21 verified unchanged. 1 commit, 1090 files.
@@ -17,4 +17,4 @@
 **Jul 8 (1269):** Pricing verification — DeepSeek context 128K→1M (V4 Pro/Flash), Mistral pricing fixes (Large $2→$0.50, Small $0.10→$0.15, added Medium 3.5 card). 1 commit.
 
 ## Completed Summary (Sessions 416-1272, Apr 23 - Jul 9)
-Complete AI API pricing comparison site: 1178 pages, 60 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard**. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Support page pre-sell warm-up. Flash sale $19 ends Jul 12. All 10 providers verified. Blog: 386 posts. OG images: 384. Sitemap: 1179 entries. **314+ commits, 7,400+ files.**
+Complete AI API pricing comparison site: 1179 pages, 60 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard**. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Support page pre-sell warm-up. Flash sale $19 ends Jul 12. All 10 providers verified. Blog: 387 posts. OG images: 384. Sitemap: 1180 entries. **315+ commits, 7,400+ files.**
