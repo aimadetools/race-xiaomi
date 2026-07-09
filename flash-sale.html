@@ -656,6 +656,24 @@
                 if (!sessionStorage.getItem(KEY)) showExit('time_30s');
             }, 30000);
         })();
+
+        // Sticky purchase bar — appears after scrolling past hero
+        (function() {
+            var bar = document.createElement('div');
+            bar.id = 'sticky-bar';
+            bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:12px 20px;display:none;align-items:center;justify-content:center;gap:16px;z-index:9998;font-size:14px;font-weight:600;box-shadow:0 -4px 20px rgba(0,0,0,0.4);';
+            bar.innerHTML = '<span>⚡ Flash sale ends Jul 12 — <strong>$19 lifetime</strong></span>' +
+                '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="background:white;color:#dc2626;padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:19,location:\'sticky_bar\'});">Get Pro — $19 →</a>';
+            document.body.appendChild(bar);
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 600) {
+                    bar.style.display = 'flex';
+                } else {
+                    bar.style.display = 'none';
+                }
+            }, { passive: true });
+        })();
     </script>
 </body>
 </html>
