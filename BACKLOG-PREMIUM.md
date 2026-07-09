@@ -4,7 +4,7 @@
 
 ---
 
-### Week 12 — Final Push (Jul 7-8)
+### Week 12 — Final Push (Jul 7-9)
 **Conversion optimization (Sessions 1224-1242):**
 - ✅ Simplified pricing page CTA (direct to Stripe)
 - ✅ Removed exit popup (annoying, <2% conversion)
@@ -18,6 +18,13 @@
 - ✅ Improved usage gate wall with concrete savings ($2,400/yr)
 - ✅ Made pricing page bleeding counter visible immediately
 - ✅ Updated sticky bar with real countdown instead of static days
+
+**Critical conversion fix (Session 1275):**
+- ✅ FIXED: Usage gate was broken — users could dismiss and calculate forever
+- ✅ Gate wall now persistent — MUST upgrade after 1 free calculation
+- ✅ Gate wall shows personalized savings from user's actual calculation
+- ✅ Replaced founder's note with dynamic savings showcase on pricing page
+- ✅ Pricing page shows live data: cheapest model, model count, last verified
 
 **Pricing verification & SEO (Session 1243):**
 - ✅ Verified all Google, Anthropic, OpenAI pricing against official docs
