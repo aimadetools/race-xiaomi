@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Multiple AI Models Side-by-Side — Cost Comparison Tool | APIpulse</title>
+    <meta name="description" content="Compare API costs across multiple AI models at once. Side-by-side pricing for OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, and more. Find the cheapest model for your use case.">
+    <meta name="keywords" content="compare AI model costs, AI API pricing comparison, GPT vs Claude cost, cheapest AI model, LLM cost comparison, API pricing side by side">
+    <meta property="og:title" content="Compare Multiple AI Models Side-by-Side — APIpulse">
+    <meta property="og:description" content="See costs for 3-5 models at once. Find the cheapest option for your workload in 30 seconds.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/compare-multi.html">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/compare-multi.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <style>
+        .cmp-page { max-width: 960px; margin: 0 auto; padding: 100px 24px 80px; }
+        .cmp-hero { text-align: center; margin-bottom: 36px; }
+        .cmp-hero h1 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; margin-bottom: 10px; }
+        .cmp-hero p { font-size: 16px; color: var(--text-secondary); }
+
+        /* Input card */
+        .input-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 28px; margin-bottom: 32px;
+        }
+        .input-card h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+        .model-selects { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+        .model-slot { flex: 1; min-width: 160px; }
+        .model-slot label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .model-slot select {
+            width: 100%; padding: 10px 12px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 14px;
+        }
+        .model-slot select:focus { outline: none; border-color: var(--accent); }
+        .usage-row { display: flex; gap: 16px; flex-wrap: wrap; }
+        .usage-field { flex: 1; min-width: 180px; }
+        .usage-field label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .usage-field input {
+            width: 100%; padding: 10px 14px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 14px;
+        }
+        .usage-field input:focus { outline: none; border-color: var(--accent); }
+        .add-slot-btn {
+            background: none; border: 1px dashed var(--border); color: var(--text-muted);
+            padding: 10px 16px; border-radius: 8px; cursor: pointer; font-size: 14px;
+            margin-top: 8px;
+        }
+        .add-slot-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Results table */
+        .results-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 28px; margin-bottom: 32px;
+        }
+        .results-card h2 { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+        .cmp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .cmp-table th {
+            text-align: left; padding: 12px 14px; font-weight: 600; font-size: 12px;
+            text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 2px solid var(--border);
+        }
+        .cmp-table td {
+            padding: 14px; border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+        .cmp-table tr:last-child td { border-bottom: none; }
+        .cmp-table .winner { background: rgba(34,197,94,0.05); }
+        .cmp-table .winner td:first-child { border-left: 3px solid var(--green); }
+        .model-name { font-weight: 700; font-size: 15px; }
+        .provider-tag {
+            display: inline-block; font-size: 11px; color: var(--text-muted);
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px; margin-left: 8px;
+        }
+        .cost-cell { font-weight: 700; font-size: 16px; }
+        .cost-low { color: var(--green); }
+        .cost-mid { color: var(--orange); }
+        .cost-high { color: var(--red); }
+        .savings-badge {
+            display: inline-block; font-size: 12px; font-weight: 700;
+            background: rgba(34,197,94,0.15); color: var(--green);
+            padding: 3px 8px; border-radius: 6px;
+        }
+
+        /* Bar chart */
+        .bar-chart { margin-top: 20px; }
+        .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+        .bar-label { width: 120px; font-size: 13px; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .bar-bg { flex: 1; height: 28px; background: var(--bg-card); border-radius: 6px; overflow: hidden; position: relative; }
+        .bar-fill { height: 100%; border-radius: 6px; transition: width 0.4s; display: flex; align-items: center; padding-left: 10px; font-size: 12px; font-weight: 700; color: white; }
+        .bar-fill.best { background: linear-gradient(90deg, #22c55e, #16a34a); }
+        .bar-fill.ok { background: linear-gradient(90deg, #f59e0b, #d97706); }
+        .bar-fill.expensive { background: linear-gradient(90deg, #ef4444, #dc2626); }
+
+        /* Recommendation */
+        .rec-card {
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.03));
+            border: 1px solid rgba(34,197,94,0.25); border-radius: 14px;
+            padding: 28px; margin-bottom: 32px; text-align: center;
+        }
+        .rec-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; color: var(--green); }
+        .rec-card .rec-model { font-size: 28px; font-weight: 800; margin: 12px 0; }
+        .rec-card .rec-reason { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Quick presets */
+        .presets { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+        .preset-btn {
+            padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 13px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active { border-color: var(--accent); background: rgba(99,102,241,0.1); color: var(--accent); font-weight: 600; }
+
+        /* CTA */
+        .cmp-cta {
+            text-align: center; padding: 36px 24px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.05));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 14px;
+        }
+        .cmp-cta h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .cmp-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; }
+        .cmp-cta .btn {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 12px 28px; border-radius: 10px; font-weight: 700;
+        }
+        .cmp-cta .btn:hover { background: var(--accent-hover); color: white; }
+
+        @media (max-width: 640px) {
+            .model-selects { flex-direction: column; }
+            .cmp-table { font-size: 13px; }
+            .cmp-table th, .cmp-table td { padding: 10px 8px; }
+            .bar-label { width: 80px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="/#models">Models</a>
+                <a href="/calculator.html">Calculator</a>
+                <a href="/compare-multi.html" style="color:var(--text-primary)">Compare</a>
+                <a href="/dashboard.html">Dashboard</a>
+                <a href="/support.html" class="nav-cta">Get Pro — $19</a>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+        </div>
+    </nav>
+
+    <main class="cmp-page">
+        <div class="cmp-hero">
+            <h1>Compare AI Model Costs Side-by-Side</h1>
+            <p>Select up to 6 models and see exactly how much each one costs for your workload.</p>
+        </div>
+
+        <!-- Quick Presets -->
+        <div style="margin-bottom: 24px;">
+            <div style="font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">QUICK PRESETS</div>
+            <div class="presets">
+                <button class="preset-btn" data-preset="coding">Code Generation</button>
+                <button class="preset-btn" data-preset="chat">Chatbot / Assistant</button>
+                <button class="preset-btn" data-preset="rag">RAG / Search</button>
+                <button class="preset-btn" data-preset="classify">Classification</button>
+                <button class="preset-btn" data-preset="summarize">Summarization</button>
+            </div>
+        </div>
+
+        <!-- Input Card -->
+        <div class="input-card">
+            <h2>Select Models to Compare</h2>
+            <div class="model-selects" id="model-selects">
+                <div class="model-slot">
+                    <label>Model 1</label>
+                    <select id="m1"></select>
+                </div>
+                <div class="model-slot">
+                    <label>Model 2</label>
+                    <select id="m2"></select>
+                </div>
+                <div class="model-slot">
+                    <label>Model 3</label>
+                    <select id="m3"></select>
+                </div>
+            </div>
+            <button class="add-slot-btn" id="add-slot" onclick="addModelSlot()">+ Add model</button>
+
+            <h2 style="margin-top: 28px;">Your Usage</h2>
+            <div class="usage-row">
+                <div class="usage-field">
+                    <label>Avg input tokens / request</label>
+                    <input type="number" id="in-tokens" value="1500" min="1">
+                </div>
+                <div class="usage-field">
+                    <label>Avg output tokens / request</label>
+                    <input type="number" id="out-tokens" value="500" min="1">
+                </div>
+                <div class="usage-field">
+                    <label>Requests per day</label>
+                    <input type="number" id="req-day" value="100" min="1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendation -->
+        <div class="rec-card" id="rec-card" style="display: none;">
+            <h2>💡 Recommendation</h2>
+            <div class="rec-model" id="rec-model"></div>
+            <div class="rec-reason" id="rec-reason"></div>
+        </div>
+
+        <!-- Results Table -->
+        <div class="results-card">
+            <h2>Monthly Cost Comparison</h2>
+            <div style="overflow-x: auto;">
+                <table class="cmp-table" id="cmp-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Input / 1M tokens</th>
+                            <th>Output / 1M tokens</th>
+                            <th>Monthly Cost</th>
+                            <th>vs. Cheapest</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cmp-body"></tbody>
+                </table>
+            </div>
+
+            <!-- Bar Chart -->
+            <div class="bar-chart" id="bar-chart"></div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cmp-cta">
+            <h2>Track Your Costs Over Time</h2>
+            <p>Use the free APIpulse dashboard to monitor spending, set budgets, and get alerts when prices change.</p>
+            <a href="/dashboard.html" class="btn">Open Free Dashboard →</a>
+        </div>
+    </main>
+
+    <footer style="text-align:center; padding:40px 24px; color:var(--text-muted); font-size:13px; border-top:1px solid var(--border); margin-top:60px;">
+        <p>APIpulse — AI API pricing intelligence for developers. <a href="/">Compare prices</a> · <a href="/playbook.html">Playbook</a> · <a href="/support.html">Support</a></p>
+    </footer>
+
+    <script>
+    // Model pricing data (input/output per 1M tokens)
+    const MODELS = [
+        // OpenAI
+        { id: 'gpt54', name: 'GPT-5.4', provider: 'OpenAI', input: 2.50, output: 10.00, tier: 'frontier' },
+        { id: 'gpt54-mini', name: 'GPT-5.4 Mini', provider: 'OpenAI', input: 0.40, output: 1.60, tier: 'mid' },
+        { id: 'gpt54-nano', name: 'GPT-5.4 Nano', provider: 'OpenAI', input: 0.10, output: 0.40, tier: 'small' },
+        { id: 'o3', name: 'o3', provider: 'OpenAI', input: 2.00, output: 8.00, tier: 'frontier' },
+        { id: 'o4-mini', name: 'o4-mini', provider: 'OpenAI', input: 1.10, output: 4.40, tier: 'mid' },
+        // Anthropic
+        { id: 'opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00, tier: 'frontier' },
+        { id: 'sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tier: 'mid' },
+        { id: 'haiku45', name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tier: 'mid' },
+        // Google
+        { id: 'gemini25pro', name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00, tier: 'frontier' },
+        { id: 'gemini25flash', name: 'Gemini 2.5 Flash', provider: 'Google', input: 0.15, output: 0.60, tier: 'mid' },
+        { id: 'gemini25flashlite', name: 'Gemini 2.5 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tier: 'small' },
+        // DeepSeek
+        { id: 'deepseek-v4', name: 'DeepSeek V4', provider: 'DeepSeek', input: 0.14, output: 0.28, tier: 'mid' },
+        { id: 'deepseek-v4pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.50, output: 2.00, tier: 'mid' },
+        { id: 'deepseek-r2', name: 'DeepSeek R2', provider: 'DeepSeek', input: 0.55, output: 2.19, tier: 'frontier' },
+        // Mistral
+        { id: 'mistral-large', name: 'Mistral Large', provider: 'Mistral', input: 2.00, output: 6.00, tier: 'mid' },
+        { id: 'mistral-small', name: 'Mistral Small', provider: 'Mistral', input: 0.10, output: 0.30, tier: 'small' },
+        { id: 'mistral-codestral', name: 'Codestral', provider: 'Mistral', input: 0.30, output: 0.90, tier: 'mid' },
+        // Meta (via providers)
+        { id: 'llama4-maverick', name: 'Llama 4 Maverick', provider: 'Meta', input: 0.25, output: 1.00, tier: 'mid' },
+        { id: 'llama4-scout', name: 'Llama 4 Scout', provider: 'Meta', input: 0.08, output: 0.30, tier: 'small' },
+        // xAI
+        { id: 'grok4', name: 'Grok 4', provider: 'xAI', input: 3.00, output: 15.00, tier: 'frontier' },
+        { id: 'grok4-mini', name: 'Grok 4 Mini', provider: 'xAI', input: 0.30, output: 0.50, tier: 'mid' },
+        // Cohere
+        { id: 'command-a', name: 'Command A', provider: 'Cohere', input: 2.50, output: 10.00, tier: 'mid' },
+        { id: 'command-r-plus', name: 'Command R+', provider: 'Cohere', input: 2.50, output: 10.00, tier: 'mid' },
+        { id: 'command-r', name: 'Command R', provider: 'Cohere', input: 0.15, output: 0.60, tier: 'small' },
+        // AI21
+        { id: 'jamba-large', name: 'Jamba Large', provider: 'AI21', input: 2.00, output: 8.00, tier: 'mid' },
+        { id: 'jamba-mini', name: 'Jamba Mini', provider: 'AI21', input: 0.20, output: 0.40, tier: 'small' },
+        // Moonshot
+        { id: 'kimi-k27', name: 'Kimi K2.7', provider: 'Moonshot', input: 0.60, output: 2.40, tier: 'mid' },
+        { id: 'kimi-k27-code', name: 'Kimi K2.7 Code', provider: 'Moonshot', input: 0.60, output: 2.40, tier: 'mid' },
+    ];
+
+    // Presets: map scenario to recommended models
+    const PRESETS = {
+        coding: ['gpt54', 'sonnet46', 'deepseek-v4', 'kimi-k27-code'],
+        chat: ['gpt54-mini', 'sonnet46', 'gemini25flash', 'llama4-maverick'],
+        rag: ['gpt54-nano', 'haiku45', 'gemini25flashlite', 'llama4-scout'],
+        classify: ['gpt54-nano', 'haiku45', 'mistral-small', 'llama4-scout'],
+        summarize: ['gpt54-mini', 'haiku45', 'gemini25flash', 'deepseek-v4'],
+    };
+
+    const USAGE_PRESETS = {
+        coding: { inTok: 3000, outTok: 1500, reqDay: 50 },
+        chat: { inTok: 1500, outTok: 800, reqDay: 200 },
+        rag: { inTok: 4000, outTok: 300, reqDay: 500 },
+        classify: { inTok: 500, outTok: 50, reqDay: 1000 },
+        summarize: { inTok: 3000, outTok: 400, reqDay: 100 },
+    };
+
+    let slotCount = 3;
+    let activePreset = null;
+
+    function populateSelect(sel, selectedId) {
+        const groups = {};
+        MODELS.forEach(m => {
+            if (!groups[m.provider]) groups[m.provider] = [];
+            groups[m.provider].push(m);
+        });
+        sel.innerHTML = '<option value="">— Select model —</option>';
+        Object.keys(groups).sort().forEach(prov => {
+            const grp = document.createElement('optgroup');
+            grp.label = prov;
+            groups[prov].forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = m.name + ' — $' + m.input.toFixed(2) + '/$' + m.output.toFixed(2);
+                if (m.id === selectedId) opt.selected = true;
+                grp.appendChild(opt);
+            });
+            sel.appendChild(grp);
+        });
+    }
+
+    function initSelects() {
+        for (let i = 1; i <= 6; i++) {
+            const sel = document.getElementById('m' + i);
+            if (sel) populateSelect(sel, sel.dataset.default || '');
+        }
+    }
+
+    function addModelSlot() {
+        if (slotCount >= 6) return;
+        slotCount++;
+        const container = document.getElementById('model-selects');
+        const div = document.createElement('div');
+        div.className = 'model-slot';
+        div.innerHTML = '<label>Model ' + slotCount + '</label><select id="m' + slotCount + '"></select>';
+        container.appendChild(div);
+        populateSelect(document.getElementById('m' + slotCount), '');
+        if (slotCount >= 6) document.getElementById('add-slot').style.display = 'none';
+    }
+
+    function getSelectedModels() {
+        const models = [];
+        for (let i = 1; i <= slotCount; i++) {
+            const sel = document.getElementById('m' + i);
+            if (sel && sel.value) {
+                const m = MODELS.find(x => x.id === sel.value);
+                if (m) models.push(m);
+            }
+        }
+        return models;
+    }
+
+    function calculate() {
+        const models = getSelectedModels();
+        const inTok = parseInt(document.getElementById('in-tokens').value) || 1500;
+        const outTok = parseInt(document.getElementById('out-tokens').value) || 500;
+        const reqDay = parseInt(document.getElementById('req-day').value) || 100;
+
+        const monthlyReqs = reqDay * 30;
+        const inM = (inTok * monthlyReqs) / 1000000;
+        const outM = (outTok * monthlyReqs) / 1000000;
+
+        const results = models.map(m => ({
+            ...m,
+            monthlyCost: m.input * inM + m.output * outM,
+        }));
+
+        results.sort((a, b) => a.monthlyCost - b.monthlyCost);
+
+        const cheapest = results.length > 0 ? results[0].monthlyCost : 0;
+        const mostExpensive = results.length > 0 ? results[results.length - 1].monthlyCost : 0;
+
+        // Render table
+        const tbody = document.getElementById('cmp-body');
+        tbody.innerHTML = '';
+
+        results.forEach((m, i) => {
+            const tr = document.createElement('tr');
+            if (i === 0 && results.length > 1) tr.className = 'winner';
+
+            const diff = m.monthlyCost - cheapest;
+            const diffPct = cheapest > 0 ? ((diff / cheapest) * 100).toFixed(0) : 0;
+
+            let costClass = 'cost-low';
+            if (mostExpensive > 0) {
+                const ratio = m.monthlyCost / mostExpensive;
+                if (ratio > 0.7) costClass = 'cost-high';
+                else if (ratio > 0.3) costClass = 'cost-mid';
+            }
+
+            tr.innerHTML = `
+                <td>
+                    <span class="model-name">${m.name}</span>
+                    <span class="provider-tag">${m.provider}</span>
+                </td>
+                <td>$${m.input.toFixed(2)}</td>
+                <td>$${m.output.toFixed(2)}</td>
+                <td class="cost-cell ${costClass}">$${m.monthlyCost.toFixed(2)}</td>
+                <td>${i === 0 && results.length > 1 ? '<span class="savings-badge">CHEAPEST</span>' : (diff > 0 ? '+$' + diff.toFixed(2) + ' (' + diffPct + '%)' : '—')}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        // Render bar chart
+        const barChart = document.getElementById('bar-chart');
+        barChart.innerHTML = '';
+        results.forEach((m, i) => {
+            const pct = mostExpensive > 0 ? (m.monthlyCost / mostExpensive * 100) : 0;
+            let cls = 'best';
+            if (results.length > 1) {
+                const ratio = m.monthlyCost / mostExpensive;
+                if (ratio > 0.7) cls = 'expensive';
+                else if (ratio > 0.3) cls = 'ok';
+            }
+            barChart.innerHTML += `
+                <div class="bar-row">
+                    <div class="bar-label">${m.name}</div>
+                    <div class="bar-bg">
+                        <div class="bar-fill ${cls}" style="width:${Math.max(pct, 5)}%">$${m.monthlyCost.toFixed(2)}</div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Recommendation
+        const recCard = document.getElementById('rec-card');
+        if (results.length >= 2) {
+            recCard.style.display = 'block';
+            const best = results[0];
+            const savings = mostExpensive - cheapest;
+            document.getElementById('rec-model').textContent = best.name + ' (' + best.provider + ')';
+            document.getElementById('rec-reason').textContent =
+                `At $${cheapest.toFixed(2)}/month, ${best.name} is the cheapest option — saving you $${savings.toFixed(2)}/month vs. the most expensive alternative. ` +
+                `That's $${(savings * 12).toFixed(2)}/year.`;
+        } else {
+            recCard.style.display = 'none';
+        }
+
+        // Track
+        if (typeof trackEvent === 'function') {
+            trackEvent('compare_multi_calculated', {
+                models_count: results.length,
+                models: results.map(m => m.id).join(','),
+            });
+        }
+    }
+
+    // Presets
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const preset = this.dataset.preset;
+            document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            activePreset = preset;
+
+            // Set models
+            const modelIds = PRESETS[preset] || [];
+            for (let i = 0; i < 6; i++) {
+                const sel = document.getElementById('m' + (i + 1));
+                if (sel) {
+                    sel.value = modelIds[i] || '';
+                }
+            }
+
+            // Ensure enough slots
+            while (slotCount < modelIds.length) addModelSlot();
+            for (let i = 0; i < 6; i++) {
+                const sel = document.getElementById('m' + (i + 1));
+                if (sel) sel.value = modelIds[i] || '';
+            }
+
+            // Set usage
+            const usage = USAGE_PRESETS[preset];
+            if (usage) {
+                document.getElementById('in-tokens').value = usage.inTok;
+                document.getElementById('out-tokens').value = usage.outTok;
+                document.getElementById('req-day').value = usage.reqDay;
+            }
+
+            calculate();
+        });
+    });
+
+    // Event listeners
+    document.addEventListener('change', e => {
+        if (e.target.closest('.model-slot') || e.target.closest('.usage-field')) calculate();
+    });
+    document.addEventListener('input', e => {
+        if (e.target.closest('.usage-field')) calculate();
+    });
+
+    // Initialize
+    // Set defaults for first 3 selects
+    document.getElementById('m1').dataset.default = 'gpt54';
+    document.getElementById('m2').dataset.default = 'sonnet46';
+    document.getElementById('m3').dataset.default = 'deepseek-v4';
+    initSelects();
+    document.getElementById('m1').value = 'gpt54';
+    document.getElementById('m2').value = 'sonnet46';
+    document.getElementById('m3').value = 'deepseek-v4';
+    calculate();
+    </script>
+</body>
+</html>
