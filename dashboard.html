@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My API Cost Dashboard — Track Your AI Spending Over Time | APIpulse</title>
+    <meta name="description" content="Free personal API cost dashboard. Track your AI API spending over time, see trends, and find cheaper alternatives. localStorage-based, no account needed.">
+    <meta name="keywords" content="API cost tracker, AI spending dashboard, LLM cost monitoring, API budget tracker, AI API spending">
+    <meta property="og:title" content="My API Cost Dashboard — Track Your AI Spending">
+    <meta property="og:description" content="Free personal API cost dashboard. Track spending over time, see trends, find cheaper alternatives.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/dashboard.html">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/dashboard.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="shared.js" defer></script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 17px; margin-bottom: 40px; line-height: 1.6; }
+
+        /* Input form */
+        .input-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-bottom: 32px;
+        }
+        .input-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .form-row { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+        .form-group { flex: 1; min-width: 200px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
+        .form-group select, .form-group input {
+            width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary); font-size: 14px;
+        }
+        .form-group select:focus, .form-group input:focus { outline: none; border-color: var(--accent); }
+
+        /* Results */
+        .result-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-bottom: 32px;
+        }
+        .result-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .cost-display {
+            text-align: center; padding: 24px; margin-bottom: 20px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.06));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 12px;
+        }
+        .cost-amount { font-size: 48px; font-weight: 800; color: var(--accent); }
+        .cost-label { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Alternatives */
+        .alternatives { margin-top: 20px; }
+        .alt-item {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 16px; border-radius: 10px; margin-bottom: 8px;
+            background: var(--bg-card); border: 1px solid var(--border);
+        }
+        .alt-name { font-weight: 600; font-size: 14px; }
+        .alt-cost { font-size: 14px; color: var(--green); font-weight: 700; }
+        .alt-savings { font-size: 12px; color: var(--green); background: rgba(34,197,94,0.1); padding: 2px 8px; border-radius: 4px; }
+
+        /* History */
+        .history-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-bottom: 32px;
+        }
+        .history-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .history-empty { text-align: center; color: var(--text-muted); padding: 40px 20px; }
+        .history-item {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 14px 16px; border-radius: 10px; margin-bottom: 8px;
+            background: var(--bg-card); border: 1px solid var(--border);
+        }
+        .history-date { font-size: 13px; color: var(--text-muted); }
+        .history-model { font-size: 14px; font-weight: 600; }
+        .history-cost { font-size: 16px; font-weight: 700; color: var(--accent); }
+        .history-delete {
+            background: none; border: none; color: var(--text-muted); cursor: pointer;
+            font-size: 16px; padding: 4px 8px; border-radius: 4px;
+        }
+        .history-delete:hover { color: var(--red); background: rgba(239,68,68,0.1); }
+
+        /* Trend */
+        .trend-bar {
+            display: flex; align-items: center; gap: 12px; padding: 16px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; margin-bottom: 16px;
+        }
+        .trend-arrow { font-size: 24px; }
+        .trend-text { font-size: 14px; color: var(--text-secondary); }
+        .trend-value { font-weight: 700; }
+        .trend-up { color: var(--red); }
+        .trend-down { color: var(--green); }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.06));
+            border: 1px solid rgba(99,102,241,0.25); border-radius: 14px;
+            padding: 24px; text-align: center; margin-top: 32px;
+        }
+        .pro-upsell h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .pro-upsell p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+
+        /* Chart */
+        .chart-container { margin-top: 20px; }
+        .chart-bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+        .chart-label { width: 80px; font-size: 12px; color: var(--text-muted); text-align: right; }
+        .chart-bar-bg { flex: 1; height: 24px; background: var(--bg-card); border-radius: 6px; overflow: hidden; }
+        .chart-bar-fill { height: 100%; border-radius: 6px; transition: width 0.3s; }
+        .chart-value { width: 80px; font-size: 13px; font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            .form-row { flex-direction: column; }
+            .cost-amount { font-size: 36px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="dashboard.html" style="color:var(--accent);">Dashboard</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Flash Sale — $19</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <h1>📊 My API Cost Dashboard</h1>
+        <p class="subtitle">Track your AI API spending over time. See trends, find cheaper alternatives, and stop overpaying.</p>
+
+        <!-- Input Form -->
+        <div class="input-card">
+            <h2>Log This Month's Usage</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="model-select">Current Model</label>
+                    <select id="model-select"></select>
+                </div>
+                <div class="form-group">
+                    <label for="input-tokens">Monthly Input Tokens (millions)</label>
+                    <input type="number" id="input-tokens" placeholder="e.g. 100" min="0" step="1">
+                </div>
+                <div class="form-group">
+                    <label for="output-tokens">Monthly Output Tokens (millions)</label>
+                    <input type="number" id="output-tokens" placeholder="e.g. 50" min="0" step="1">
+                </div>
+            </div>
+            <button id="save-btn" style="background:var(--accent);color:white;padding:12px 28px;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;width:100%;" onclick="saveSnapshot()">💾 Save to My Dashboard</button>
+        </div>
+
+        <!-- Current Cost -->
+        <div class="result-card" id="result-section" style="display:none;">
+            <h2>Your Current Spend</h2>
+            <div class="cost-display">
+                <div class="cost-amount" id="current-cost">$0.00</div>
+                <div class="cost-label">estimated monthly cost</div>
+            </div>
+
+            <!-- Trend -->
+            <div id="trend-section" style="display:none;"></div>
+
+            <!-- Cheaper Alternatives -->
+            <div class="alternatives" id="alternatives-section">
+                <h3 style="font-size:16px;font-weight:700;margin-bottom:12px;">💡 Cheaper Alternatives</h3>
+                <div id="alternatives-list"></div>
+            </div>
+        </div>
+
+        <!-- Spending History -->
+        <div class="history-card">
+            <h2>📈 Spending History</h2>
+            <div id="history-chart" class="chart-container"></div>
+            <div id="history-list"></div>
+        </div>
+
+        <!-- Pro Upsell -->
+        <div class="pro-upsell">
+            <h3>🔔 Never Miss a Price Change</h3>
+            <p>Pro users get email alerts when any of 60 models changes price, plus weekly cost digests and personalized optimization tips.</p>
+            <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'dashboard_upsell'})">Get Pro — $19 Lifetime</a>
+        </div>
+    </div>
+    </main>
+
+    <script>
+    var STORAGE_KEY = 'apipulse_dashboard_history';
+
+    // Populate model dropdown
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') return;
+        var sel = document.getElementById('model-select');
+        var activeModels = API_MODELS.filter(function(m) { return !m.deprecated; });
+        // Group by provider
+        var providers = {};
+        activeModels.forEach(function(m) {
+            if (!providers[m.provider]) providers[m.provider] = [];
+            providers[m.provider].push(m);
+        });
+        Object.keys(providers).sort().forEach(function(prov) {
+            var group = document.createElement('optgroup');
+            group.label = prov;
+            providers[prov].sort(function(a, b) { return a.input - b.input; });
+            providers[prov].forEach(function(m) {
+                var opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = m.name + ' ($' + m.input.toFixed(2) + '/$' + m.output.toFixed(2) + ')';
+                group.appendChild(opt);
+            });
+            sel.appendChild(group);
+        });
+        // Restore last used model
+        var last = localStorage.getItem('apipulse_dashboard_last_model');
+        if (last) sel.value = last;
+        // Show history
+        renderHistory();
+        // Auto-calculate on input
+        sel.addEventListener('change', calculate);
+        document.getElementById('input-tokens').addEventListener('input', calculate);
+        document.getElementById('output-tokens').addEventListener('input', calculate);
+        // Trigger initial calc
+        calculate();
+    });
+
+    function getModel(id) {
+        return API_MODELS.find(function(m) { return m.id === id; });
+    }
+
+    function calculate() {
+        var modelId = document.getElementById('model-select').value;
+        var inputM = parseFloat(document.getElementById('input-tokens').value) || 0;
+        var outputM = parseFloat(document.getElementById('output-tokens').value) || 0;
+        var model = getModel(modelId);
+        if (!model || (inputM === 0 && outputM === 0)) {
+            document.getElementById('result-section').style.display = 'none';
+            return;
+        }
+        var cost = (inputM * model.input) + (outputM * model.output);
+        document.getElementById('current-cost').textContent = '$' + cost.toFixed(2);
+        document.getElementById('result-section').style.display = 'block';
+        // Show alternatives
+        showAlternatives(model, inputM, outputM, cost);
+        // Show trend
+        showTrend(cost);
+        // Save last used model
+        localStorage.setItem('apipulse_dashboard_last_model', modelId);
+    }
+
+    function showAlternatives(currentModel, inputM, outputM, currentCost) {
+        var active = API_MODELS.filter(function(m) {
+            return !m.deprecated && m.id !== currentModel.id;
+        });
+        // Calculate cost for each
+        var alts = active.map(function(m) {
+            var cost = (inputM * m.input) + (outputM * m.output);
+            return { model: m, cost: cost, savings: currentCost - cost };
+        }).filter(function(a) {
+            return a.savings > 0;
+        }).sort(function(a, b) {
+            return b.savings - a.savings;
+        }).slice(0, 5);
+
+        var html = '';
+        if (alts.length === 0) {
+            html = '<div style="text-align:center;color:var(--text-muted);padding:16px;">This is already one of the cheapest options for your usage! 🎉</div>';
+        } else {
+            alts.forEach(function(a) {
+                var pct = Math.round((a.savings / currentCost) * 100);
+                html += '<div class="alt-item">' +
+                    '<div><div class="alt-name">' + a.model.name + ' <span style="color:var(--text-muted);font-weight:400;font-size:12px;">(' + a.model.provider + ')</span></div></div>' +
+                    '<div style="display:flex;align-items:center;gap:12px;">' +
+                    '<span class="alt-cost">$' + a.cost.toFixed(2) + '/mo</span>' +
+                    '<span class="alt-savings">Save ' + pct + '%</span>' +
+                    '</div></div>';
+            });
+        }
+        document.getElementById('alternatives-list').innerHTML = html;
+    }
+
+    function showTrend(currentCost) {
+        var history = getHistory();
+        if (history.length < 2) {
+            document.getElementById('trend-section').style.display = 'none';
+            return;
+        }
+        var prev = history[history.length - 1].cost;
+        var diff = currentCost - prev;
+        var pct = prev > 0 ? Math.round((diff / prev) * 100) : 0;
+        var isUp = diff > 0;
+        var arrow = isUp ? '📈' : '📉';
+        var cls = isUp ? 'trend-up' : 'trend-down';
+        var label = isUp ? 'more' : 'less';
+        document.getElementById('trend-section').innerHTML =
+            '<div class="trend-bar">' +
+            '<span class="trend-arrow">' + arrow + '</span>' +
+            '<span class="trend-text">That\'s <span class="trend-value ' + cls + '">' + (isUp ? '+' : '') + pct + '% ' + label + '</span> than your last entry ($' + prev.toFixed(2) + ')</span>' +
+            '</div>';
+        document.getElementById('trend-section').style.display = 'block';
+    }
+
+    function getHistory() {
+        try {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        } catch(e) { return []; }
+    }
+
+    function saveSnapshot() {
+        var modelId = document.getElementById('model-select').value;
+        var inputM = parseFloat(document.getElementById('input-tokens').value) || 0;
+        var outputM = parseFloat(document.getElementById('output-tokens').value) || 0;
+        var model = getModel(modelId);
+        if (!model || (inputM === 0 && outputM === 0)) return;
+        var cost = (inputM * model.input) + (outputM * model.output);
+        var history = getHistory();
+        history.push({
+            date: new Date().toISOString(),
+            modelId: modelId,
+            modelName: model.name,
+            provider: model.provider,
+            inputM: inputM,
+            outputM: outputM,
+            cost: cost
+        });
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+        renderHistory();
+        // Visual feedback
+        var btn = document.getElementById('save-btn');
+        btn.textContent = '✅ Saved!';
+        btn.style.background = '#22c55e';
+        setTimeout(function() {
+            btn.textContent = '💾 Save to My Dashboard';
+            btn.style.background = 'var(--accent)';
+        }, 2000);
+        if (window.trackEvent) window.trackEvent('dashboard_snapshot_saved', { model: modelId, cost: cost });
+    }
+
+    function deleteSnapshot(idx) {
+        var history = getHistory();
+        history.splice(idx, 1);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+        renderHistory();
+    }
+
+    function renderHistory() {
+        var history = getHistory();
+        var chartEl = document.getElementById('history-chart');
+        var listEl = document.getElementById('history-list');
+
+        if (history.length === 0) {
+            chartEl.innerHTML = '';
+            listEl.innerHTML = '<div class="history-empty">No entries yet. Log your first month above to start tracking!</div>';
+            return;
+        }
+
+        // Chart — last 12 entries
+        var recent = history.slice(-12);
+        var maxCost = Math.max.apply(null, recent.map(function(h) { return h.cost; }));
+        var chartHtml = '';
+        recent.forEach(function(h) {
+            var d = new Date(h.date);
+            var label = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            var pct = maxCost > 0 ? (h.cost / maxCost * 100) : 0;
+            chartHtml += '<div class="chart-bar-row">' +
+                '<span class="chart-label">' + label + '</span>' +
+                '<div class="chart-bar-bg"><div class="chart-bar-fill" style="width:' + pct + '%;background:var(--accent);"></div></div>' +
+                '<span class="chart-value">$' + h.cost.toFixed(2) + '</span>' +
+                '</div>';
+        });
+        chartEl.innerHTML = chartHtml;
+
+        // List — all entries, newest first
+        var listHtml = '';
+        for (var i = history.length - 1; i >= 0; i--) {
+            var h = history[i];
+            var d = new Date(h.date);
+            var dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            listHtml += '<div class="history-item">' +
+                '<div><div class="history-model">' + h.modelName + ' <span style="color:var(--text-muted);font-weight:400;font-size:12px;">(' + h.provider + ')</span></div>' +
+                '<div class="history-date">' + dateStr + ' · ' + h.inputM + 'M in / ' + h.outputM + 'M out</div></div>' +
+                '<div style="display:flex;align-items:center;gap:12px;">' +
+                '<span class="history-cost">$' + h.cost.toFixed(2) + '</span>' +
+                '<button class="history-delete" onclick="deleteSnapshot(' + i + ')" title="Delete">✕</button>' +
+                '</div></div>';
+        }
+        listEl.innerHTML = listHtml;
+    }
+    </script>
+</body>
+</html>
