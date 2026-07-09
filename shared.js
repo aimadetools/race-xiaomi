@@ -1795,7 +1795,7 @@ var GO_MODEL_MAP = {
     document.addEventListener('DOMContentLoaded', function() {
         // Create floating button
         var btn = document.createElement('a');
-        btn.href = 'audit.html?from=floating_cta';
+        btn.href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
         btn.target = '_blank';
         btn.rel = 'noopener';
         btn.id = 'floating-flash-sale';
