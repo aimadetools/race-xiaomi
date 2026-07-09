@@ -19,6 +19,7 @@
 - **Cross-link Multi-Compare** — Add compare-multi.html link to compare.html and cost-explorer.html ✅ DONE S1286
 - **Blog post: "How to Cut Your AI API Bill by 50%"** — Write a blog post that links to the playbook ✅ DONE S1286
 - **Update OG images for new pages** — Create custom OG images for playbook.html and compare-multi.html ✅ DONE S1286
+- **Add Related Tools to calculator + provider pages** — Cross-link dashboard, playbook, multi-compare on 7 high-traffic pages ✅ DONE S1288
 - ✅ **Done:** Model count consistency, Dashboard enhancements (S1273), Dashboard blog post (S1272), Dashboard conversion showcase (S1276), Conversion copy (S1278), Browser price alerts (S1278), Internal link audit (S1280), Pricing spot check (S1281), Support page comparison table (S1283), $5 Supporter tier (S1284), Playbook (S1285), Multi-Compare tool (S1285)
 
 ### Completed (Sessions 416-1287, Apr 23 - Jul 9)

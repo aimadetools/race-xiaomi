@@ -10,6 +10,8 @@
 - **Dashboard:** CSV export, monthly budget alerts, cost projections. Cross-linked from calculator + cost-explorer. Featured on support page as free value prop. Auto-saves calculator results.
 
 ## Recent Sessions (Jul 9)
+**Jul 9 (1288):** Added "Related Tools" cross-links to 7 high-traffic pages: ai-api-cost-calculator.html, ai-api-cost-optimization-checklist.html, anthropic.html, openai.html, google.html, deepseek.html, mistral.html. Each section links to Personal Cost Dashboard, API Cost Optimization Playbook, and Multi-Model Comparison. Goal: drive users toward recurring-value features. 1 commit, 7 files.
+
 **Jul 9 (1287):** Added playbook cross-links to 5 high-traffic cost optimization blog posts: blog-10-ai-api-cost-mistakes.html, blog-ai-api-budget-2026.html, blog-3-swaps-cut-ai-bill-95-percent.html, blog-ai-api-cost-optimization-2026.html, blog-ai-api-caching-strategies.html. Playbook link placed first in each "Keep Reading" section for maximum visibility. 1 commit, 5 files.
 
 **Jul 9 (1286):** Cross-linking + blog content. (1) Added compare-multi.html + playbook.html links to compare.html "Related Reading" section and cost-explorer.html "Related Tools" (both list and button sections). (2) Wrote new blog post: "How to Cut Your AI API Bill by 50% (Without Switching Models)" — 6 strategies (prompt optimization, batching, caching, model routing, streaming, response caching) with code examples, cost tables, FAQ. Links to playbook + multi-compare. (3) Generated OG images for 8 new blog posts via generate-blog-og.js. (4) Added blog post to sitemap + blog index. (5) Added "Related Reading" section to playbook.html linking to blog post + multi-compare + swaps post. 1 commit, 5 files.
