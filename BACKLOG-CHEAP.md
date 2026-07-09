@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1180 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). All CTAs link directly to Stripe. Dashboard enhanced (S1273). Dashboard showcased on support + pricing pages (S1276). Conversion copy improved (S1278). All 10 providers verified (Jul 9). Model count consistent at 60. Blog: 387 posts. Internal links audited (S1280).**
+**Site Status:** 1180 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). All CTAs link directly to Stripe. Dashboard enhanced (S1273). Dashboard showcased on support + pricing pages (S1276). Conversion copy improved (S1278). All 10 providers verified (Jul 9). Model count consistent at 60. Blog: 387 posts. Internal links audited (S1280). Pricing spot-checked (S1281).**
 
 ### Blocked on Human (Priority Order)
 - **$5 Stripe link** — HELP-REQUEST.md filed Jul 8 + Jul 9. Add $5 tier to support page once link arrives. Single highest-impact revenue action.
@@ -15,7 +15,7 @@
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date/insights
 - **Pricing data spot check** — Verify 2-3 providers per session. All 10 verified Jul 9 (S1253-S1274). Next rotation: Anthropic + Meta
 - **Monitor conversion metrics** — Check GA4 weekly
-- ✅ **Done:** Model count consistency (S1258/S1260/S1271), Dashboard enhancements (S1273), Dashboard blog post (S1272), Dashboard internal links (S1273), Dashboard conversion showcase (S1276), Conversion copy (S1278), Browser price alerts (S1278), Internal link audit (S1280)
+- ✅ **Done:** Model count consistency (S1258/S1260/S1271), Dashboard enhancements (S1273), Dashboard blog post (S1272), Dashboard internal links (S1273), Dashboard conversion showcase (S1276), Conversion copy (S1278), Browser price alerts (S1278), Internal link audit (S1280), Pricing spot check Anthropic+Meta (S1281), Weekly report refresh (S1281)
 
 ### Completed (Sessions 416-1280, Apr 23 - Jul 9)
 ✅ Complete site: 1180 pages, 60 models, 10 providers, 533 comparison/alternatives pages

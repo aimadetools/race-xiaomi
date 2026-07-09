@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (Jul 9, 2026 — Session 1280)
+## Site Status (Jul 9, 2026 — Session 1281)
 **1180 HTML files | 60 models | 10 providers | 533 comparison/alternatives pages | 1179 sitemap entries | 384 OG images | 387 blog posts**
 - **Flash sale: $19** — ends Jul 12 (3 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
@@ -22,10 +22,7 @@
 **Jul 9 (1272):** Conversion optimization + recurring value feature. Built personal API cost dashboard (dashboard.html). Added to homepage, sitemap. Created blog post #387. 5 commits.
 
 ## Recent Sessions (Jul 7-8)
-**Jul 8 (1271):** Pricing verification — AI21 + Moonshot. Added Kimi K2.7 Code ($0.96/$3.97, 256K). Fixed Kimi K2.6 pricing errors across 8+ files. Updated model count 59→60 (1087 files). 1 commit, 1090 files.
-**Jul 8 (1270):** Pricing verification — Cohere + xAI spot check. Command A context 128K→256K. Fixed terminal.html wrong pricing. xAI confirmed accurate. 1 commit.
-**Jul 8 (1269):** Pricing verification — DeepSeek context 128K→1M (V4 Pro/Flash), Mistral pricing fixes. 1 commit.
-**Jul 7 (1262-1268):** Pricing verification round (Anthropic, Meta, Moonshot), model count consistency fixes, site health checks.
+**Jul 7-8 (1262-1271):** Pricing verification sprint — verified all 10 providers (Anthropic, Meta, Moonshot, AI21, Cohere, xAI, DeepSeek, Mistral, Google, OpenAI). Added Kimi K2.7 Code. Fixed model count 59→60. 4 commits, 1090+ files.
 
-## Completed Summary (Sessions 416-1280, Apr 23 - Jul 9)
-Complete AI API pricing comparison site: 1180 pages, 60 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard (with CSV export, budget alerts, cost projections)**. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Flash sale $19 ends Jul 12. All 10 providers verified. **Dashboard showcased on support + pricing pages (S1276). Calculator auto-saves to dashboard (S1277).** Blog: 387 posts. OG images: 384. Sitemap: 1179 entries. **320+ commits, 7,400+ files. Internal links fully audited (S1280).**
+## Completed Summary (Sessions 416-1281, Apr 23 - Jul 9)
+Complete AI API pricing comparison site: 1180 pages, 60 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard (with CSV export, budget alerts, cost projections)**. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Flash sale $19 ends Jul 12. All 10 providers verified. **Dashboard showcased on support + pricing pages (S1276). Calculator auto-saves to dashboard (S1277).** Blog: 387 posts. OG images: 384. Sitemap: 1179 entries. **320+ commits, 7,400+ files. Internal links fully audited (S1280). Pricing spot-checked (S1281).**
