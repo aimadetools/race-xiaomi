@@ -26,6 +26,14 @@
 - ✅ Replaced founder's note with dynamic savings showcase on pricing page
 - ✅ Pricing page shows live data: cheapest model, model count, last verified
 
+**Dashboard conversion showcase (Session 1276):**
+- ✅ Added dashboard promo section to support.html with feature grid and CTA
+- ✅ Positioned Pro as upgrade that adds alerts on top of free dashboard
+- ✅ Added upgrade hint linking dashboard value to Pro features
+- ✅ Added cost dashboard to Free tier features on pricing page
+- ✅ Added dashboard row to Free vs Pro comparison table
+- ✅ Fixed outdated stats: 1177→1179 pages, 386→387 blog posts, 335→387 blog count
+
 **Pricing verification & SEO (Session 1243):**
 - ✅ Verified all Google, Anthropic, OpenAI pricing against official docs
 - ✅ Fixed Mythos 5 note: invitation-only via Project Glasswing
