@@ -1,26 +1,26 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 8, 2026 (S1271: AI21 + Moonshot verification — added Kimi K2.7 Code. 60 entries, 46 active, 14 deprecated)
-const PRICING_LAST_UPDATED = 'Jul 8, 2026';
+// Last verified: Jul 9, 2026 (S1274: OpenAI + Google Gemini verification — all prices confirmed against official docs. 60 entries, 46 active, 14 deprecated)
+const PRICING_LAST_UPDATED = 'Jul 9, 2026';
 
 const API_MODELS = [
     // OpenAI
-    { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 5.00, output: 30.00, context: '1.05M', verified: 'Jul 2026' },
-    { id: 'openai-gpt55-pro', name: 'GPT-5.5 Pro', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 30.00, output: 180.00, context: '1.05M', verified: 'Jul 2026' },
-    { id: 'openai-gpt53-codex', name: 'GPT-5.3 Codex', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 1.75, output: 14.00, context: '400K', verified: 'Jul 2026' },
-    { id: 'openai-gpt54', name: 'GPT-5.4', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 15.00, context: '400K', verified: 'Jul 2026' },
-    { id: 'openai-gpt54-mini', name: 'GPT-5.4 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.75, output: 4.50, context: '400K', verified: 'Jul 2026' },
-    { id: 'openai-gpt54-nano', name: 'GPT-5.4 nano', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.20, output: 1.25, context: '400K', verified: 'Jul 2026' },
-    { id: 'openai-gpt54-pro', name: 'GPT-5.4 Pro', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 30.00, output: 180.00, context: '400K', verified: 'Jul 2026' },
-    { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 1.25, output: 10.00, context: '272K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-12-11', replacement: 'openai-gpt55', note: 'Deprecated; shutdown Dec 11 2026, replaced by GPT-5.5' },
-    { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.25, output: 2.00, context: '272K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-12-11', replacement: 'openai-gpt54-mini', note: 'Deprecated; shutdown Dec 11 2026, replaced by GPT-5.4 mini' },
-    { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026', note: 'Open-source model (not available via OpenAI API; self-host or use Hugging Face)' },
-    { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.08, output: 0.35, context: '128K', verified: 'Jul 2026', note: 'Open-source model (not available via OpenAI API; self-host or use Hugging Face)' },
-    { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-04-14', replacement: 'openai-gpt41', note: 'Deprecated Apr 2025; replaced by GPT-4.1 family' },
-    { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-04-14', replacement: 'openai-gpt41-nano', note: 'Deprecated Apr 2025; replaced by GPT-4.1 family' },
-    { id: 'openai-gpt41', name: 'GPT-4.1', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.00, output: 8.00, context: '1M', verified: 'Jul 2026' },
-    { id: 'openai-gpt41-mini', name: 'GPT-4.1 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.40, output: 1.60, context: '1M', verified: 'Jul 2026' },
-    { id: 'openai-gpt41-nano', name: 'GPT-4.1 nano', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-10-23', replacement: 'openai-gpt54-nano', note: 'Deprecated; shutdown Oct 23 2026, replaced by GPT-5.4 nano' },
+    { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 5.00, output: 30.00, context: '1.05M', verified: 'Jul 9, 2026' },
+    { id: 'openai-gpt55-pro', name: 'GPT-5.5 Pro', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 30.00, output: 180.00, context: '1.05M', verified: 'Jul 9, 2026' },
+    { id: 'openai-gpt53-codex', name: 'GPT-5.3 Codex', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 1.75, output: 14.00, context: '400K', verified: 'Jul 9, 2026' },
+    { id: 'openai-gpt54', name: 'GPT-5.4', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 15.00, context: '400K', verified: 'Jul 9, 2026' },
+    { id: 'openai-gpt54-mini', name: 'GPT-5.4 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.75, output: 4.50, context: '400K', verified: 'Jul 9, 2026' },
+    { id: 'openai-gpt54-nano', name: 'GPT-5.4 nano', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.20, output: 1.25, context: '400K', verified: 'Jul 9, 2026' },
+    { id: 'openai-gpt54-pro', name: 'GPT-5.4 Pro', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 30.00, output: 180.00, context: '400K', verified: 'Jul 9, 2026' },
+    { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 1.25, output: 10.00, context: '272K', verified: 'Jul 9, 2026', deprecated: true, deprecatedDate: '2026-12-11', replacement: 'openai-gpt55', note: 'Deprecated; shutdown Dec 11 2026, replaced by GPT-5.5' },
+    { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.25, output: 2.00, context: '272K', verified: 'Jul 9, 2026', deprecated: true, deprecatedDate: '2026-12-11', replacement: 'openai-gpt54-mini', note: 'Deprecated; shutdown Dec 11 2026, replaced by GPT-5.4 mini' },
+    { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 9, 2026', note: 'Open-source model (not available via OpenAI API; self-host or use Hugging Face)' },
+    { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.08, output: 0.35, context: '128K', verified: 'Jul 9, 2026', note: 'Open-source model (not available via OpenAI API; self-host or use Hugging Face)' },
+    { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jul 9, 2026', deprecated: true, deprecatedDate: '2026-04-14', replacement: 'openai-gpt41', note: 'Deprecated Apr 2025; replaced by GPT-4.1 family' },
+    { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 9, 2026', deprecated: true, deprecatedDate: '2026-04-14', replacement: 'openai-gpt41-nano', note: 'Deprecated Apr 2025; replaced by GPT-4.1 family' },
+    { id: 'openai-gpt41', name: 'GPT-4.1', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.00, output: 8.00, context: '1M', verified: 'Jul 9, 2026' },
+    { id: 'openai-gpt41-mini', name: 'GPT-4.1 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.40, output: 1.60, context: '1M', verified: 'Jul 9, 2026' },
+    { id: 'openai-gpt41-nano', name: 'GPT-4.1 nano', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Jul 9, 2026', deprecated: true, deprecatedDate: '2026-10-23', replacement: 'openai-gpt54-nano', note: 'Deprecated; shutdown Oct 23 2026, replaced by GPT-5.4 nano' },
     // Anthropic
     { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jul 2026' },
     { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jul 2026' },
@@ -35,15 +35,15 @@ const API_MODELS = [
     { id: 'anthropic-fable5', name: 'Claude Fable 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jul 2026' },
     { id: 'anthropic-mythos5', name: 'Claude Mythos 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jul 2026', note: 'Invitation-only via Project Glasswing — not generally available via standard API' },
     // Google
-    { id: 'google-gemini35-flash', name: 'Gemini 3.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.50, output: 9.00, context: '1M', verified: 'Jul 2026' },
-    { id: 'google-gemini31-flash-lite', name: 'Gemini 3.1 Flash-Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.25, output: 1.50, context: '1M', verified: 'Jul 2026' },
-    { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 2.00, output: 12.00, context: '1M', verified: 'Jul 2026' },
-    { id: 'google-gemini3-flash', name: 'Gemini 3 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.50, output: 3.00, context: '1M', verified: 'Jul 2026' },
-    { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M', verified: 'Jul 2026' },
-    { id: 'google-25-flash-lite', name: 'Gemini 2.5 Flash-Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Jul 2026' },
-    { id: 'google-25-flash', name: 'Gemini 2.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 0.30, output: 2.50, context: '1M', verified: 'Jul 2026' },
-    { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'May 2026', deprecated: true, replacement: 'google-gemini3-flash' },
-    { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.075, output: 0.30, context: '1M', verified: 'May 2026', deprecated: true, replacement: 'google-gemini31-flash-lite' },
+    { id: 'google-gemini35-flash', name: 'Gemini 3.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.50, output: 9.00, context: '1M', verified: 'Jul 9, 2026' },
+    { id: 'google-gemini31-flash-lite', name: 'Gemini 3.1 Flash-Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.25, output: 1.50, context: '1M', verified: 'Jul 9, 2026' },
+    { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 2.00, output: 12.00, context: '1M', verified: 'Jul 9, 2026' },
+    { id: 'google-gemini3-flash', name: 'Gemini 3 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.50, output: 3.00, context: '1M', verified: 'Jul 9, 2026' },
+    { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M', verified: 'Jul 9, 2026' },
+    { id: 'google-25-flash-lite', name: 'Gemini 2.5 Flash-Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Jul 9, 2026' },
+    { id: 'google-25-flash', name: 'Gemini 2.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 0.30, output: 2.50, context: '1M', verified: 'Jul 9, 2026' },
+    { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-01', replacement: 'google-gemini3-flash', note: 'Shut down Jun 1, 2026; replaced by Gemini 3 Flash' },
+    { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.075, output: 0.30, context: '1M', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-01', replacement: 'google-gemini31-flash-lite', note: 'Shut down Jun 1, 2026; replaced by Gemini 3.1 Flash-Lite' },
     // DeepSeek
     { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.435, output: 0.87, context: '1M', verified: 'Jul 2026' },
     { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M', verified: 'Jul 2026' },

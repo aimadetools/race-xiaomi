@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var els = document.querySelectorAll('.verified-date');
     for (var i = 0; i < els.length; i++) {
-        els[i].textContent = 'Jul 8, 2026';
+        els[i].textContent = 'Jul 9, 2026';
     }
 });
 
