@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My API Cost Dashboard — Track Your AI Spending Over Time | APIpulse</title>
-    <meta name="description" content="Free personal API cost dashboard. Track your AI API spending over time, see trends, and find cheaper alternatives. localStorage-based, no account needed.">
+    <meta name="description" content="Free personal API cost dashboard. Track AI API spending over time, set monthly budgets, get cost projections, and export CSV reports. localStorage-based, no account needed.">
     <meta name="keywords" content="API cost tracker, AI spending dashboard, LLM cost monitoring, API budget tracker, AI API spending">
     <meta property="og:title" content="My API Cost Dashboard — Track Your AI Spending">
     <meta property="og:description" content="Free personal API cost dashboard. Track spending over time, see trends, find cheaper alternatives.">
@@ -121,6 +121,60 @@
         .chart-bar-fill { height: 100%; border-radius: 6px; transition: width 0.3s; }
         .chart-value { width: 80px; font-size: 13px; font-weight: 600; }
 
+        /* Budget Alert */
+        .budget-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-bottom: 32px;
+        }
+        .budget-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .budget-input-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .budget-input-row input {
+            flex: 1; min-width: 140px; padding: 10px 14px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 14px;
+        }
+        .budget-input-row button {
+            padding: 10px 20px; border-radius: 8px; border: none;
+            background: var(--accent); color: white; font-size: 14px;
+            font-weight: 700; cursor: pointer;
+        }
+        .budget-meter {
+            margin-top: 20px; background: var(--bg-card); border-radius: 8px;
+            height: 32px; overflow: hidden; position: relative;
+        }
+        .budget-meter-fill {
+            height: 100%; border-radius: 8px; transition: width 0.5s ease;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: 700; color: white; min-width: 40px;
+        }
+        .budget-status { margin-top: 12px; font-size: 14px; font-weight: 600; }
+        .budget-ok { color: var(--green); }
+        .budget-warn { color: #f59e0b; }
+        .budget-over { color: var(--red); }
+
+        /* Projections */
+        .projection-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-bottom: 32px;
+        }
+        .projection-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .projection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+        .projection-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px; text-align: center;
+        }
+        .projection-value { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .projection-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Export button */
+        .export-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary); font-size: 13px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .export-btn:hover { border-color: var(--accent); color: var(--accent); }
+
         @media (max-width: 768px) {
             .content { padding: 100px 16px 60px; }
             .form-row { flex-direction: column; }
@@ -191,9 +245,34 @@
             </div>
         </div>
 
+        <!-- Monthly Budget -->
+        <div class="budget-card">
+            <h2>🎯 Monthly Budget</h2>
+            <div class="budget-input-row">
+                <span style="font-size:14px;color:var(--text-secondary);">$</span>
+                <input type="number" id="budget-input" placeholder="Set monthly budget (e.g. 500)" min="0" step="10">
+                <button onclick="saveBudget()">Set Budget</button>
+            </div>
+            <div id="budget-meter-section" style="display:none;">
+                <div class="budget-meter">
+                    <div class="budget-meter-fill" id="budget-meter-fill"></div>
+                </div>
+                <div class="budget-status" id="budget-status"></div>
+            </div>
+        </div>
+
+        <!-- Cost Projections -->
+        <div class="projection-card" id="projection-section">
+            <h2>📈 Cost Projections</h2>
+            <div class="projection-grid" id="projection-grid"></div>
+        </div>
+
         <!-- Spending History -->
         <div class="history-card">
-            <h2>📈 Spending History</h2>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+                <h2 style="margin-bottom:0;">📈 Spending History</h2>
+                <button class="export-btn" onclick="exportCSV()">📥 Export CSV</button>
+            </div>
             <div id="history-chart" class="chart-container"></div>
             <div id="history-list"></div>
         </div>
@@ -407,7 +486,135 @@
                 '</div></div>';
         }
         listEl.innerHTML = listHtml;
+
+        // Update budget meter and projections when history changes
+        renderBudgetMeter();
+        renderProjections();
     }
+
+    // === CSV Export ===
+    function exportCSV() {
+        var history = getHistory();
+        if (history.length === 0) return;
+        var csv = 'Date,Model,Provider,Input Tokens (M),Output Tokens (M),Monthly Cost ($)\n';
+        history.forEach(function(h) {
+            var d = new Date(h.date).toLocaleDateString('en-US');
+            csv += '"' + d + '","' + h.modelName + '","' + h.provider + '",' +
+                   h.inputM + ',' + h.outputM + ',' + h.cost.toFixed(2) + '\n';
+        });
+        var blob = new Blob([csv], { type: 'text/csv' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'apipulse-cost-history.csv';
+        a.click();
+        URL.revokeObjectURL(url);
+        if (window.trackEvent) window.trackEvent('dashboard_csv_exported', { entries: history.length });
+    }
+
+    // === Monthly Budget ===
+    var BUDGET_KEY = 'apipulse_dashboard_budget';
+
+    function getBudget() {
+        return parseFloat(localStorage.getItem(BUDGET_KEY)) || 0;
+    }
+
+    function saveBudget() {
+        var val = parseFloat(document.getElementById('budget-input').value) || 0;
+        if (val <= 0) {
+            localStorage.removeItem(BUDGET_KEY);
+        } else {
+            localStorage.setItem(BUDGET_KEY, val);
+        }
+        renderBudgetMeter();
+        if (window.trackEvent) window.trackEvent('dashboard_budget_set', { amount: val });
+    }
+
+    function renderBudgetMeter() {
+        var budget = getBudget();
+        var section = document.getElementById('budget-meter-section');
+        if (!budget) {
+            section.style.display = 'none';
+            return;
+        }
+        section.style.display = 'block';
+        document.getElementById('budget-input').value = budget;
+
+        var history = getHistory();
+        if (history.length === 0) {
+            section.style.display = 'none';
+            return;
+        }
+        var latest = history[history.length - 1].cost;
+        var pct = Math.min(Math.round((latest / budget) * 100), 100);
+        var fill = document.getElementById('budget-meter-fill');
+        var status = document.getElementById('budget-status');
+
+        fill.style.width = pct + '%';
+        var remaining = budget - latest;
+
+        if (pct < 70) {
+            fill.style.background = 'var(--green)';
+            fill.textContent = pct + '%';
+            status.className = 'budget-status budget-ok';
+            status.textContent = '✅ $' + remaining.toFixed(2) + ' remaining this month (' + (100 - pct) + '% of budget)';
+        } else if (pct < 100) {
+            fill.style.background = '#f59e0b';
+            fill.textContent = pct + '%';
+            status.className = 'budget-status budget-warn';
+            status.textContent = '⚠️ $' + remaining.toFixed(2) + ' left — watch your spending (' + pct + '% used)';
+        } else {
+            fill.style.background = 'var(--red)';
+            fill.textContent = '100%+';
+            status.className = 'budget-status budget-over';
+            status.textContent = '🚨 Over budget by $' + Math.abs(remaining).toFixed(2) + '! Consider switching to a cheaper model.';
+        }
+    }
+
+    // === Cost Projections ===
+    function renderProjections() {
+        var history = getHistory();
+        var grid = document.getElementById('projection-grid');
+        var section = document.getElementById('projection-section');
+
+        if (history.length === 0) {
+            section.style.display = 'none';
+            return;
+        }
+        section.style.display = 'block';
+
+        var latest = history[history.length - 1].cost;
+
+        // Calculate trend if we have 2+ entries
+        var monthlyGrowth = 0;
+        if (history.length >= 2) {
+            var first = history[0].cost;
+            var months = history.length;
+            monthlyGrowth = first > 0 ? (Math.pow(latest / first, 1 / (months - 1)) - 1) : 0;
+        }
+
+        var projections = [
+            { label: 'This Month', value: latest },
+            { label: '3 Months', value: latest * 3 * (1 + monthlyGrowth) },
+            { label: 'Annual (flat)', value: latest * 12 },
+            { label: 'Annual (trend)', value: latest * 12 * (1 + monthlyGrowth * 6) }
+        ];
+
+        var html = '';
+        projections.forEach(function(p) {
+            html += '<div class="projection-item">' +
+                '<div class="projection-value">$' + (p.value >= 1000 ? (p.value / 1000).toFixed(1) + 'k' : p.value.toFixed(0)) + '</div>' +
+                '<div class="projection-label">' + p.label + '</div>' +
+                '</div>';
+        });
+        grid.innerHTML = html;
+    }
+
+    // Initialize budget and projections on load
+    document.addEventListener('DOMContentLoaded', function() {
+        var budget = getBudget();
+        if (budget) document.getElementById('budget-input').value = budget;
+    });
     </script>
 </body>
 </html>
