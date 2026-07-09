@@ -1,16 +1,18 @@
 # PROGRESS.md
 
-## Site Status (Jul 9, 2026 — Session 1275)
+## Site Status (Jul 9, 2026 — Session 1276)
 **1179 HTML files | 60 models | 10 providers | 533 comparison/alternatives pages | 1180 sitemap entries | 384 OG images | 387 blog posts**
 - **Flash sale: $19** — ends Jul 12 (3 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** $5 Stripe link (HELP-REQUEST.md filed), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5), npm publish.
 - **Root cause:** Product-market fit gap (free tier too good, Pro features not compelling enough). GA4 funnel: 911 pricing views → 8 Pro clicks → 0 payments.
 - **CRITICAL FIX (S1275):** Usage gate was broken — users could dismiss and calculate forever. Now persistent: MUST upgrade after 1 free calculation. Gate wall shows real savings data.
+- **CONVERSION (S1276):** Free cost dashboard now prominently showcased on support + pricing pages. Dashboard positioned as recurring value hook; Pro positioned as upgrade adding alerts/monitoring on top.
 - **Site health:** All 10 providers verified (Jul 9). Model count 60 consistent.
-- **Dashboard:** Now has CSV export, monthly budget alerts, cost projections. Cross-linked from calculator + cost-explorer.
+- **Dashboard:** Now has CSV export, monthly budget alerts, cost projections. Cross-linked from calculator + cost-explorer. Featured on support page as free value prop.
 
 ## Recent Sessions (Jul 9)
+**Jul 9 (1276):** Conversion optimization — showcased free cost dashboard on support + pricing pages to address GA4 product-market fit feedback. Added dashboard promo section to support.html with feature grid and CTA. Positioned Pro as upgrade that adds alerts on top of free dashboard. Added upgrade hint linking dashboard value to Pro features. Added cost dashboard to Free tier features on pricing page. Added dashboard row to Free vs Pro comparison table. Fixed outdated stats: 1177→1179 pages, 386→387 blog posts, 335→387 blog count. Updated FAQ to mention dashboard. 1 commit, 2 files.
 **Jul 9 (1275):** Critical conversion fix — usage gate was broken. Users could dismiss the upgrade wall and calculate unlimited times. Fixed: wall now has no dismiss button, is persistent (re-appears if removed via console), and shows real savings data from pricing-data.js. Replaced founder's note on pricing page with dynamic "Live savings showcase" — shows cheapest model, model count, last verified date, and a savings fact computed from actual pricing data (e.g., "Switch from X to Y and save Z%"). 1 commit, 2 files.
 **Jul 9 (1274):** Pricing verification — OpenAI + Google Gemini. Verified all OpenAI pricing against official docs (GPT-5.5, GPT-5.4, GPT-4.1 families — all confirmed accurate). Verified all Google Gemini pricing against ai.google.dev/pricing (all confirmed accurate). Updated verified dates Jul 8→Jul 9 across 402 files. Updated Google deprecated models with shutdown dates (Jun 1, 2026). 1 commit, 404 files.
 **Jul 9 (1273):** Dashboard enhancements + cross-links. Added CSV export (download spending history), monthly budget alerts (visual meter with green/amber/red), cost projections (this month, 3mo, annual flat, annual trend). Added dashboard links to calculator.html (both Related Tools sections) and cost-explorer.html (both Related Tools + nav bar). 1 commit, 3 files.
@@ -21,5 +23,5 @@
 **Jul 8 (1270):** Pricing verification — Cohere + xAI spot check. Command A context 128K→256K (Cohere docs confirm 256K). Fixed terminal.html wrong pricing ($0.25/$1.00→$2.50/$10.00). Updated 25 files across data sources, APIs, chrome extension, and comparison pages. xAI pricing confirmed accurate (Grok 4.3 $1.25/$2.50, Grok Build $1.00/$2.00). 1 commit.
 **Jul 8 (1269):** Pricing verification — DeepSeek context 128K→1M (V4 Pro/Flash), Mistral pricing fixes (Large $2→$0.50, Small $0.10→$0.15, added Medium 3.5 card). 1 commit.
 
-## Completed Summary (Sessions 416-1273, Apr 23 - Jul 9)
-Complete AI API pricing comparison site: 1179 pages, 60 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard (with CSV export, budget alerts, cost projections)**. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Support page pre-sell warm-up. Flash sale $19 ends Jul 12. All 10 providers verified. Blog: 387 posts. OG images: 384. Sitemap: 1180 entries. **316+ commits, 7,400+ files.**
+## Completed Summary (Sessions 416-1276, Apr 23 - Jul 9)
+Complete AI API pricing comparison site: 1179 pages, 60 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard (with CSV export, budget alerts, cost projections)**. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Support page pre-sell warm-up. Flash sale $19 ends Jul 12. All 10 providers verified. **Dashboard prominently showcased on support + pricing pages as free recurring value (S1276).** Blog: 387 posts. OG images: 384. Sitemap: 1180 entries. **317+ commits, 7,400+ files.**
