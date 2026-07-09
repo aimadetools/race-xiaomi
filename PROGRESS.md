@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (Jul 9, 2026 — Session 1285)
-**1183 HTML files | 60 models | 10 providers | 533 comparison/alternatives pages | 1183 sitemap entries | 384 OG images | 387 blog posts**
+## Site Status (Jul 9, 2026 — Session 1286)
+**1183 HTML files | 60 models | 10 providers | 533 comparison/alternatives pages | 1182 sitemap entries | 392 OG images | 388 blog posts**
 - **Flash sale: $19** — ends Jul 12 (3 days left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **Blocked on human:** $5 Stripe link (HELP-REQUEST.md filed Jul 8 + Jul 9), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5), npm publish.
@@ -10,6 +10,8 @@
 - **Dashboard:** CSV export, monthly budget alerts, cost projections. Cross-linked from calculator + cost-explorer. Featured on support page as free value prop. Auto-saves calculator results.
 
 ## Recent Sessions (Jul 9)
+**Jul 9 (1286):** Cross-linking + blog content. (1) Added compare-multi.html + playbook.html links to compare.html "Related Reading" section and cost-explorer.html "Related Tools" (both list and button sections). (2) Wrote new blog post: "How to Cut Your AI API Bill by 50% (Without Switching Models)" — 6 strategies (prompt optimization, batching, caching, model routing, streaming, response caching) with code examples, cost tables, FAQ. Links to playbook + multi-compare. (3) Generated OG images for 8 new blog posts via generate-blog-og.js. (4) Added blog post to sitemap + blog index. (5) Added "Related Reading" section to playbook.html linking to blog post + multi-compare + swaps post. 1 commit, 5 files.
+
 **Jul 9 (1285):** Built 2 new interactive tools to create recurring value beyond one-time calculator use. (1) **API Cost Optimization Playbook** (playbook.html): 12 proven strategies to cut AI API bills with real savings calculations, provider comparison tables, prompt caching discounts, interactive savings calculator. SEO-optimized for "reduce AI API costs" queries. (2) **Multi-Model Comparison Tool** (compare-multi.html): side-by-side cost comparison for up to 6 models at once. 25+ models across 10 providers. Quick presets for common use cases (Code Gen, Chatbot, RAG, Classification, Summarization). Visual bar chart, auto-recommendation of cheapest option with annual savings calculation. Both pages added to sitemap + homepage nav. 2 commits, 6 files.
 
 **Jul 9 (1284):** Added $5 Supporter tier to support page. New tier card below Pro — uses mailto: as placeholder until Stripe link arrives. Updated "Where your support goes" copy to mention both price points. Support page now has: Supporter tier ($5), Pro tier ($19), countdown timer, comparison table, dashboard promo, ROI math, guarantee badges, FAQ. 1 commit, 1 file.

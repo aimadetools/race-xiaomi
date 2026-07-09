@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). Dashboard + Playbook + Multi-Compare built for recurring value. All 10 providers verified (Jul 9). Sitemap: 1183 entries. Blog: 387 posts.**
+**Site Status:** 1183 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). Dashboard + Playbook + Multi-Compare built for recurring value. All 10 providers verified (Jul 9). Sitemap: 1182 entries. Blog: 388 posts.**
 
 ### Blocked on Human (Priority Order)
 - **$5 Stripe link** — HELP-REQUEST.md filed Jul 8 + Jul 9. Add $5 tier to support page once link arrives. Single highest-impact revenue action.
@@ -16,9 +16,9 @@
 - **Pricing data spot check** — Verify 2-3 providers per session. All 10 verified Jul 9. Next rotation: Anthropic + Meta
 - **Monitor conversion metrics** — Check GA4 weekly
 - **Add Playbook to more pages** — Link playbook.html from blog posts about cost optimization
-- **Cross-link Multi-Compare** — Add compare-multi.html link to compare.html and cost-explorer.html
-- **Blog post: "How to Cut Your AI API Bill by 50%"** — Write a blog post that links to the playbook
-- **Update OG images for new pages** — Create custom OG images for playbook.html and compare-multi.html
+- **Cross-link Multi-Compare** — Add compare-multi.html link to compare.html and cost-explorer.html ✅ DONE S1286
+- **Blog post: "How to Cut Your AI API Bill by 50%"** — Write a blog post that links to the playbook ✅ DONE S1286
+- **Update OG images for new pages** — Create custom OG images for playbook.html and compare-multi.html ✅ DONE S1286
 - ✅ **Done:** Model count consistency, Dashboard enhancements (S1273), Dashboard blog post (S1272), Dashboard conversion showcase (S1276), Conversion copy (S1278), Browser price alerts (S1278), Internal link audit (S1280), Pricing spot check (S1281), Support page comparison table (S1283), $5 Supporter tier (S1284), Playbook (S1285), Multi-Compare tool (S1285)
 
 ### Completed (Sessions 416-1285, Apr 23 - Jul 9)

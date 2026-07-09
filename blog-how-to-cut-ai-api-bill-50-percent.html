@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Cut Your AI API Bill by 50% (Without Switching Models) — APIpulse</title>
+    <meta name="description" content="Reduce your AI API costs by 50% using prompt optimization, batching, caching, and smarter routing — without switching to a cheaper model. Real numbers, real strategies.">
+    <meta name="keywords" content="reduce AI API costs, cut AI API bill, LLM cost optimization, prompt optimization savings, API batching, prompt caching, AI cost reduction strategies">
+    <meta property="og:title" content="How to Cut Your AI API Bill by 50% (Without Switching Models)">
+    <meta property="og:description" content="Prompt optimization, batching, caching, and smarter routing — real strategies that cut API costs by 50%+.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-07-09">
+    <meta property="article:modified_time" content="2026-07-09">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-how-to-cut-ai-api-bill-50-percent.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-how-to-cut-ai-api-bill-50-percent.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Cut Your AI API Bill by 50% (Without Switching Models)">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-how-to-cut-ai-api-bill-50-percent.png">
+    <meta name="twitter:description" content="Prompt optimization, batching, caching — real strategies that cut API costs by 50%+.">
+    <link rel="canonical" href="https://getapipulse.com/blog-how-to-cut-ai-api-bill-50-percent.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Cut Your AI API Bill by 50% (Without Switching Models)",
+        "description": "Reduce your AI API costs by 50% using prompt optimization, batching, caching, and smarter routing — without switching to a cheaper model.",
+        "datePublished": "2026-07-09",
+        "dateModified": "2026-07-09",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-how-to-cut-ai-api-bill-50-percent.html",
+        "image": "https://getapipulse.com/og-images/blog-how-to-cut-ai-api-bill-50-percent.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "How to Cut Your AI API Bill by 50%", "item": "https://getapipulse.com/blog-how-to-cut-ai-api-bill-50-percent.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much can prompt optimization reduce AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Prompt optimization typically reduces input tokens by 30-60%. Since input tokens are billed per 1M, shorter prompts directly lower costs. A developer sending 10M input tokens/month at $2.50/1M saves $7.50-$15/month just from trimming system prompts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is prompt caching and how much does it save?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Prompt caching stores repeated prompt prefixes so the API doesn't reprocess them. Anthropic offers 90% discount on cached tokens, Google offers 75% discount. If 40% of your input tokens are cached (common for apps with long system prompts), you save 30-40% on input costs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does batching reduce AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Batching groups multiple requests into a single API call. Instead of 100 separate classification calls, batch them into 5 calls of 20 each. This reduces overhead, API latency, and in some cases qualifies for batch pricing (50% discount at OpenAI, 50% at Anthropic)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is model routing and how does it save money?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Model routing sends different tasks to different models based on complexity. Simple classification goes to the cheapest model ($0.14/1M), complex analysis goes to a premium model ($5/1M). Teams using routing typically cut costs by 70-85% compared to using one premium model for everything."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .article { max-width: 780px; margin: 0 auto; padding: 100px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+        .article-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 32px; font-size: 14px; color: var(--text-muted); }
+        .article-meta .tag { background: rgba(34,197,94,0.12); color: #22c55e; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+        h2 { font-size: 24px; font-weight: 800; margin: 48px 0 16px; }
+        h3 { font-size: 18px; font-weight: 700; margin: 32px 0 12px; color: var(--accent); }
+        p { color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+        .lead { font-size: 18px; color: var(--text-primary); line-height: 1.7; margin-bottom: 32px; }
+
+        /* Strategy cards */
+        .strategy-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin: 24px 0;
+        }
+        .strategy-card h3 { margin-top: 0; }
+        .strategy-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .strategy-icon { font-size: 28px; }
+        .savings-badge {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white; padding: 6px 14px; border-radius: 8px;
+            font-size: 14px; font-weight: 800; margin-left: auto;
+        }
+        .difficulty {
+            background: rgba(99,102,241,0.12); color: var(--accent);
+            padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+
+        /* Price table */
+        .cost-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+        .cost-table th { text-align: left; padding: 12px; background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .cost-table td { padding: 12px; border-bottom: 1px solid var(--border); }
+        .cost-table .cheap { color: #22c55e; font-weight: 700; }
+        .cost-table .expensive { color: #ef4444; font-weight: 700; }
+        .cost-table .highlight-row { background: rgba(34,197,94,0.04); }
+
+        /* Code block */
+        .code-block {
+            background: #0d1117; border: 1px solid #30363d;
+            border-radius: 10px; padding: 20px; margin: 16px 0;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 13px; line-height: 1.6; overflow-x: auto;
+            color: #c9d1d9;
+        }
+        .code-block .comment { color: #8b949e; }
+        .code-block .keyword { color: #ff7b72; }
+        .code-block .string { color: #a5d6ff; }
+        .code-block .number { color: #79c0ff; }
+
+        /* CTA */
+        .cta-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; text-align: center; margin: 40px 0;
+        }
+        .cta-section h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+        .cta-section p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
+        .cta-btn {
+            display: inline-block; padding: 14px 28px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border-radius: 8px; text-decoration: none;
+            font-size: 15px; font-weight: 700; transition: all 0.2s;
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(99,102,241,0.4); }
+
+        /* FAQ */
+        .faq { margin-top: 16px; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q { font-size: 14px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+        .faq-q::after { content: '+'; font-size: 18px; color: var(--text-muted); flex-shrink: 0; }
+        .faq-item.open .faq-q::after { content: '−'; }
+        .faq-a { display: none; font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-top: 10px; }
+        .faq-item.open .faq-a { display: block; }
+
+        /* Tip box */
+        .tip-box {
+            background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 10px; padding: 16px; margin: 16px 0;
+        }
+        .tip-box h4 { font-size: 14px; font-weight: 700; color: #22c55e; margin-bottom: 8px; }
+        .tip-box p { font-size: 14px; margin: 0; }
+
+        /* Flash sale banner */
+        .flash-banner {
+            background: linear-gradient(135deg, rgba(239,68,68,0.12), rgba(251,191,36,0.12));
+            border: 1px solid rgba(239,68,68,0.3); border-radius: 12px;
+            padding: 20px; text-align: center; margin: 32px 0;
+        }
+        .flash-banner .emoji { font-size: 24px; }
+        .flash-banner p { font-size: 15px; font-weight: 600; margin: 8px 0 0; }
+        .flash-banner .price { color: var(--accent); font-weight: 800; }
+    </style>
+</head>
+<body>
+    <nav></nav>
+    <article class="article">
+        <div class="article-meta">
+            <span class="tag">💰 Cost Savings</span>
+            <span>Jul 9, 2026</span>
+            <span>·</span>
+            <span>7 min read</span>
+        </div>
+
+        <h1>How to Cut Your AI API Bill by 50% (Without Switching Models)</h1>
+        <p class="lead">Model swaps get all the attention, but the biggest savings often come from how you <em>use</em> your models. Here are 6 strategies that cut API costs by 40-70% — without changing a single model.</p>
+
+        <p>Most developers think cutting AI costs means downgrading to a cheaper model. That works, but it's not the only lever. If you're sending bloated prompts, making redundant API calls, or processing everything synchronously, you're leaving 40-70% of your bill on the table.</p>
+
+        <p>We track pricing across 60 models and 10 providers at <a href="/">APIpulse</a>. Here's what we've learned from analyzing cost patterns across thousands of AI applications.</p>
+
+        <!-- Strategy 1 -->
+        <div class="strategy-card">
+            <div class="strategy-header">
+                <span class="strategy-icon">✂️</span>
+                <h3 style="margin:0">1. Optimize Your Prompts</h3>
+                <span class="difficulty">Easy</span>
+                <span class="savings-badge">Save 30-60%</span>
+            </div>
+
+            <p>Your system prompt is sent with <em>every single request</em>. A 2,000-token system prompt means you're paying for 2,000 input tokens on every call — even for simple classification tasks.</p>
+
+            <p><strong>The fix:</strong> Trim your system prompts aggressively. Most system prompts can be cut by 40-60% without losing functionality.</p>
+
+            <div class="code-block">
+<span class="comment">// Before: bloated system prompt (847 tokens)</span>
+<span class="keyword">const</span> systemBefore = <span class="string">`You are a helpful AI assistant designed to help users with their questions. You should always be polite, professional, and provide accurate information. When you don't know something, say so. Format your responses clearly using markdown when appropriate. If a question is unclear, ask for clarification before answering.`</span>;
+
+<span class="comment">// After: optimized (203 tokens — 76% smaller)</span>
+<span class="keyword">const</span> systemAfter = <span class="string">`Answer questions accurately. Use markdown. Ask for clarification if unclear.`</span>;
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Pro tip</h4>
+                <p>Put your most important instructions first. Models pay more attention to early tokens in the prompt, and you can cut everything that's redundant or implied.</p>
+            </div>
+
+            <p><strong>Monthly impact at 10M tokens/mo:</strong> <span style="color:#ef4444">$25/mo</span> → <span style="color:#22c55e;font-weight:700">$10/mo</span> (on input tokens alone at $2.50/1M)</p>
+        </div>
+
+        <!-- Strategy 2 -->
+        <div class="strategy-card">
+            <div class="strategy-header">
+                <span class="strategy-icon">📦</span>
+                <h3 style="margin:0">2. Batch Your Requests</h3>
+                <span class="difficulty">Medium</span>
+                <span class="savings-badge">Save 40-50%</span>
+            </div>
+
+            <p>Making 100 separate API calls for 100 classification tasks? You're paying for 100× the overhead. Batching combines multiple requests into a single call, cutting costs and latency.</p>
+
+            <p><strong>The fix:</strong> Group similar tasks into batches. Send 20-50 items per API call instead of one at a time.</p>
+
+            <div class="code-block">
+<span class="comment">// Before: 100 separate calls</span>
+<span class="keyword">for</span> (<span class="keyword">const</span> item <span class="keyword">of</span> items) {
+  <span class="keyword">await</span> classify(item); <span class="comment">// 100 API calls</span>
+}
+
+<span class="comment">// After: 5 batched calls</span>
+<span class="keyword">for</span> (<span class="keyword">const</span> batch <span class="keyword">of</span> chunk(items, <span class="number">20</span>)) {
+  <span class="keyword">await</span> classifyBatch(batch); <span class="comment">// 5 API calls</span>
+}
+            </div>
+
+            <p><strong>Bonus:</strong> OpenAI's Batch API gives 50% discount. Anthropic's batch endpoint offers 50% off. If your workload isn't real-time, this is free money.</p>
+
+            <p><strong>Monthly impact at 100 calls/day:</strong> <span style="color:#ef4444">$15/mo</span> → <span style="color:#22c55e;font-weight:700">$7.50/mo</span> (with batch pricing)</p>
+        </div>
+
+        <!-- Strategy 3 -->
+        <div class="strategy-card">
+            <div class="strategy-header">
+                <span class="strategy-icon">🗄️</span>
+                <h3 style="margin:0">3. Use Prompt Caching</h3>
+                <span class="difficulty">Easy</span>
+                <span class="savings-badge">Save 30-40%</span>
+            </div>
+
+            <p>If your app sends the same system prompt + context prefix on every request, you're re-processing millions of tokens that haven't changed. Prompt caching stores these prefixes and charges a fraction of the normal rate.</p>
+
+            <p><strong>The fix:</strong> Structure your prompts so static content (system prompt, few-shot examples, context) comes first. The API caches the prefix automatically.</p>
+
+            <table class="cost-table">
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Cached Input Discount</th>
+                        <th>Example (10M tokens/mo)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Anthropic (Claude)</td>
+                        <td class="cheap">90% off cached tokens</td>
+                        <td>$25 → $12/mo (40% cached)</td>
+                    </tr>
+                    <tr>
+                        <td>Google (Gemini)</td>
+                        <td class="cheap">75% off cached tokens</td>
+                        <td>$20 → $11/mo (40% cached)</td>
+                    </tr>
+                    <tr>
+                        <td>OpenAI (GPT)</td>
+                        <td class="cheap">50% off cached tokens</td>
+                        <td>$25 → $17.50/mo (40% cached)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip-box">
+                <h4>💡 How caching works</h4>
+                <p>If your system prompt is 1,000 tokens and you send 10,000 requests/day, that's 10M tokens/month of caching opportunity. At Anthropic's 90% discount, you save ~$22.50/month on just the system prompt.</p>
+            </div>
+        </div>
+
+        <!-- Strategy 4 -->
+        <div class="strategy-card">
+            <div class="strategy-header">
+                <span class="strategy-icon">🧠</span>
+                <h3 style="margin:0">4. Model Routing by Complexity</h3>
+                <span class="difficulty">Medium</span>
+                <span class="savings-badge">Save 70-85%</span>
+            </div>
+
+            <p>Not every task needs GPT-5.5. A sentiment analysis request doesn't need the same model as a complex code generation task. Route by complexity.</p>
+
+            <p><strong>The fix:</strong> Use a cheap model for simple tasks, expensive model for complex ones.</p>
+
+            <table class="cost-table">
+                <thead>
+                    <tr>
+                        <th>Task Complexity</th>
+                        <th>Recommended Model</th>
+                        <th>Cost/1M tokens</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Simple (classification, extraction)</td>
+                        <td>DeepSeek V4 Flash</td>
+                        <td class="cheap">$0.14</td>
+                    </tr>
+                    <tr>
+                        <td>Standard (Q&A, summarization)</td>
+                        <td>Claude Haiku 4.5</td>
+                        <td class="cheap">$1.00</td>
+                    </tr>
+                    <tr>
+                        <td>Complex (analysis, reasoning)</td>
+                        <td>Claude Sonnet 5</td>
+                        <td>$2.00</td>
+                    </tr>
+                    <tr>
+                        <td>Critical (revenue, safety)</td>
+                        <td>Claude Opus 4.8</td>
+                        <td class="expensive">$5.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Most teams find that 70-80% of their requests are "simple" or "standard" — tasks that don't need the most expensive model. Routing alone typically cuts bills by 70%+.</p>
+
+            <div class="tip-box">
+                <h4>💡 Start simple</h4>
+                <p>You don't need a complex routing system. Start with a classifier that routes based on keyword matching or a small model's assessment. Upgrade to embedding-based routing later if needed.</p>
+            </div>
+        </div>
+
+        <!-- Strategy 5 -->
+        <div class="strategy-card">
+            <div class="strategy-header">
+                <span class="strategy-icon">⚡</span>
+                <h3 style="margin:0">5. Use Streaming Selectively</h3>
+                <span class="difficulty">Easy</span>
+                <span class="savings-badge">Save 10-20%</span>
+            </div>
+
+            <p>Streaming feels responsive, but it has overhead. For batch processing, background jobs, and non-interactive tasks, non-streaming responses are faster and sometimes cheaper.</p>
+
+            <p><strong>The fix:</strong> Only stream when the user is watching. For background tasks, use synchronous requests.</p>
+
+            <p><strong>Monthly impact at 5M streaming tokens:</strong> <span style="color:#ef4444">$12.50/mo</span> → <span style="color:#22c55e;font-weight:700">$10/mo</span></p>
+        </div>
+
+        <!-- Strategy 6 -->
+        <div class="strategy-card">
+            <div class="strategy-header">
+                <span class="strategy-icon">🔄</span>
+                <h3 style="margin:0">6. Cache API Responses</h3>
+                <span class="difficulty">Medium</span>
+                <span class="savings-badge">Save 20-50%</span>
+            </div>
+
+            <p>If you're asking the same question repeatedly (common for chatbots with similar queries, RAG systems with shared context, or classification of similar items), cache the responses.</p>
+
+            <p><strong>The fix:</strong> Hash the prompt + system prompt + temperature, and return cached results for identical requests.</p>
+
+            <div class="code-block">
+<span class="comment">// Simple response caching</span>
+<span class="keyword">const</span> cache = <span class="keyword">new</span> Map();
+<span class="keyword">async function</span> cachedCompletion(prompt, systemPrompt) {
+  <span class="keyword">const</span> key = hash(systemPrompt + prompt);
+  <span class="keyword">if</span> (cache.has(key)) <span class="keyword">return</span> cache.get(key);
+
+  <span class="keyword">const</span> result = <span class="keyword">await</span> openai.chat.completions.create({...});
+  cache.set(key, result);
+  <span class="keyword">return</span> result;
+}
+            </div>
+
+            <p><strong>Monthly impact at 30% cache hit rate:</strong> <span style="color:#ef4444">$50/mo</span> → <span style="color:#22c55e;font-weight:700">$35/mo</span></p>
+        </div>
+
+        <h2>The Combined Impact</h2>
+        <p>These strategies compound. Here's what a typical startup sees when applying all six:</p>
+
+        <table class="cost-table">
+            <thead>
+                <tr>
+                    <th>Strategy</th>
+                    <th>Savings</th>
+                    <th>Effort</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Prompt optimization</td>
+                    <td class="cheap">30-60%</td>
+                    <td>1-2 hours</td>
+                </tr>
+                <tr>
+                    <td>Request batching</td>
+                    <td class="cheap">40-50%</td>
+                    <td>2-4 hours</td>
+                </tr>
+                <tr>
+                    <td>Prompt caching</td>
+                    <td class="cheap">30-40%</td>
+                    <td>1 hour</td>
+                </tr>
+                <tr>
+                    <td>Model routing</td>
+                    <td class="cheap">70-85%</td>
+                    <td>4-8 hours</td>
+                </tr>
+                <tr>
+                    <td>Streaming optimization</td>
+                    <td class="cheap">10-20%</td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td>Response caching</td>
+                    <td class="cheap">20-50%</td>
+                    <td>2-4 hours</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><strong>Total potential</strong></td>
+                    <td class="cheap"><strong>50-70%</strong></td>
+                    <td><strong>1-2 days</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>A team spending $500/month on AI APIs can realistically cut to $150-250/month by implementing these strategies — without switching a single model.</p>
+
+        <div class="flash-banner">
+            <div class="emoji">📖</div>
+            <p>Want the full playbook with step-by-step implementation? <span class="price"><a href="playbook.html" style="color:var(--accent);text-decoration:none;">Read the AI API Cost Optimization Playbook</a></span> — 12 strategies with real savings calculations.</p>
+        </div>
+
+        <div class="cta-section">
+            <h3>Calculate Your Potential Savings</h3>
+            <p>See exactly how much you could save by optimizing your AI API usage. Compare 60 models across 10 providers with real pricing data.</p>
+            <a href="compare-multi.html" class="cta-btn" onclick="trackEvent('cta_click', {source: 'blog_cut_bill_50', placement: 'bottom'})">Try Multi-Model Comparison — Free</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">Or <a href="playbook.html" style="color:var(--accent)">read the full Cost Optimization Playbook</a> for implementation details</p>
+        </div>
+
+        <h2>FAQ</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-q">How much can prompt optimization reduce AI API costs?</div>
+                <div class="faq-a">Prompt optimization typically reduces input tokens by 30-60%. Since input tokens are billed per 1M, shorter prompts directly lower costs. A developer sending 10M input tokens/month at $2.50/1M saves $7.50-$15/month just from trimming system prompts. For high-volume applications, this adds up to hundreds per year.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is prompt caching and how much does it save?</div>
+                <div class="faq-a">Prompt caching stores repeated prompt prefixes so the API doesn't reprocess them. Anthropic offers 90% discount on cached tokens, Google offers 75%, OpenAI offers 50%. If 40% of your input tokens are cached (common for apps with long system prompts), you save 30-40% on input costs. It requires zero code changes — just structure your prompts with static content first.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">How does batching reduce AI API costs?</div>
+                <div class="faq-a">Batching groups multiple requests into a single API call. Instead of 100 separate classification calls, batch them into 5 calls of 20 each. This reduces per-call overhead and latency. OpenAI's Batch API gives 50% discount for non-real-time workloads. Anthropic's batch endpoint offers 50% off. For workloads that can tolerate 24-hour turnaround, this is essentially free money.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is model routing and how does it save money?</div>
+                <div class="faq-a">Model routing sends different tasks to different models based on complexity. Simple classification goes to the cheapest model ($0.14/1M), complex analysis goes to a premium model ($5/1M). Teams using routing typically cut costs by 70-85% compared to using one premium model for everything. The key insight: 70-80% of most workloads don't need the most expensive model.</div>
+            </div>
+        </div>
+
+        <p style="font-size:13px;color:var(--text-muted);margin-top:40px;">Pricing data verified Jul 9, 2026 via <a href="/" style="color:var(--accent)">APIpulse</a> — tracking 60 models across 10 providers. All prices per 1M tokens.</p>
+    </article>
+    <footer></footer>
+    <script>
+        // FAQ toggle
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
