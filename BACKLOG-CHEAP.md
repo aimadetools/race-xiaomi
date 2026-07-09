@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). Dashboard + Playbook + Multi-Compare built for recurring value. All 10 providers verified (Jul 9). Sitemap: 1182 entries. Blog: 388 posts. Flash sale page enhanced with free tools section (S1289).**
+**Site Status:** 1183 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). Dashboard + Playbook + Multi-Compare built for recurring value. All 10 providers verified (Jul 9). Sitemap: 1182 entries. Blog: 388 posts. Flash sale page enhanced with free tools section (S1289). Chrome extension synced to 60 models (S1290).**
 
 ### Blocked on Human (Priority Order)
 - **$5 Stripe link** — HELP-REQUEST.md filed Jul 8 + Jul 9. Add $5 tier to support page once link arrives. Single highest-impact revenue action.
@@ -15,15 +15,15 @@
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date/insights
 - **Pricing data spot check** — Verify 2-3 providers per session. All 10 verified Jul 9. Next rotation: DeepSeek + Mistral
 - **Monitor conversion metrics** — Check GA4 weekly
-- ✅ **Done (S1285-S1289):** Playbook, Multi-Compare tool, playbook cross-links (S1287), blog post "Cut AI API Bill by 50%" (S1286), OG images for new pages (S1286), Related Tools on 20+ pages (S1288), flash sale page enhanced (S1289), model count fix (S1289), Anthropic + Meta pricing verified (S1289)
+- ✅ **Done (S1285-S1290):** Playbook, Multi-Compare tool, playbook cross-links (S1287), blog post "Cut AI API Bill by 50%" (S1286), OG images for new pages (S1286), Related Tools on 20+ pages (S1288), flash sale page enhanced (S1289), model count fix (S1289), Anthropic + Meta pricing verified (S1289), Chrome extension sync 48→60 models (S1290), DeepSeek + Mistral pricing verified (S1290)
 - ✅ **Done (S1272-S1284):** Dashboard (S1272), CSV/budget/projections (S1273), usage gate fix (S1275), dashboard showcase (S1276), auto-save calculator (S1277), conversion copy (S1278), browser price alerts (S1278), internal link audit (S1280), pricing spot check (S1281), support comparison table (S1283), $5 Supporter tier (S1284)
 
 ### Completed (Sessions 416-1289, Apr 23 - Jul 9)
 ✅ Complete site: 1183 pages, 60 models, 10 providers, 533 comparison/alternatives pages
-✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, Price Tracker, **cost dashboard**, **API Cost Optimization Playbook**, **Multi-Model Comparison Tool**, browser price monitor
+✅ Tools: MCP, Chrome ext (60 models synced), npm, badge API, weekly digest, price alerts, Price Tracker, **cost dashboard**, **API Cost Optimization Playbook**, **Multi-Model Comparison Tool**, browser price monitor
 ✅ Conversion: gated audit, trackEvent, nav CTAs, OG meta, dashboard showcased (S1276), calculator auto-saves (S1277), persistent usage gate (S1275), conversion copy (S1278), support page comparison table (S1283), $5 Supporter tier (S1284), Playbook (S1285), Multi-Compare (S1285), playbook cross-links (S1287), flash sale page enhanced (S1289)
 ✅ Cross-linking: Dashboard/Playbook/Multi-Compare linked from 20+ high-traffic pages including calculators, provider pages, support, claim, 404, about, admin, and tool pages (S1288)
 ✅ Flash sale: countdown timers, sticky bars, social proof, $19→$19 direct to Stripe, free tools section added
 ✅ All 10 providers verified (Jul 9). Blog: 388 posts. OG images: 392. Sitemap: 1182 entries
 ✅ Model count: 49→60 across all pages. Pricing data fresh. Internal links fully audited (S1280)
-**344+ commits, 7,400+ files. Distribution blocked on human.**
+**345+ commits, 7,400+ files. Distribution blocked on human.**
