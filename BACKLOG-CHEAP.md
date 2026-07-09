@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1180 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). All CTAs link directly to Stripe. Dashboard enhanced (S1273). Dashboard showcased on support + pricing pages (S1276). Conversion copy improved (S1278). All 10 providers verified (Jul 9). Model count consistent at 60. Blog: 387 posts. Internal links audited (S1280). Pricing spot-checked (S1281).**
+**Site Status:** 1181 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). All CTAs link directly to Stripe. Dashboard enhanced (S1273). Dashboard showcased on support + pricing pages (S1276). Conversion copy improved (S1278). All 10 providers verified (Jul 9). Model count consistent at 60. Blog: 387 posts. Internal links audited (S1280). Pricing spot-checked (S1281). Page counts consistent (S1282).**
 
 ### Blocked on Human (Priority Order)
 - **$5 Stripe link** — HELP-REQUEST.md filed Jul 8 + Jul 9. Add $5 tier to support page once link arrives. Single highest-impact revenue action.
