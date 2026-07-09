@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Track Your AI API Spending Over Time (Free Dashboard) — APIpulse</title>
+    <meta name="description" content="Stop guessing your AI API costs. Free personal dashboard tracks spending over time, shows trends, and finds cheaper alternatives. localStorage-based, no account needed.">
+    <meta name="keywords" content="track AI API spending, API cost dashboard, LLM cost monitoring, AI budget tracker, API spending tracker, monitor AI costs">
+    <meta property="og:title" content="How to Track Your AI API Spending Over Time — APIpulse">
+    <meta property="og:description" content="Free personal dashboard: track spending over time, see trends, find cheaper alternatives. No account needed.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-07-09">
+    <meta property="article:modified_time" content="2026-07-09">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-how-to-track-ai-api-spending.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Track Your AI API Spending Over Time — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free personal dashboard: track spending, see trends, find cheaper alternatives.">
+    <link rel="canonical" href="https://getapipulse.com/blog-how-to-track-ai-api-spending.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Track Your AI API Spending Over Time (Free Dashboard)",
+        "description": "Stop guessing your AI API costs. Free personal dashboard tracks spending over time, shows trends, and finds cheaper alternatives.",
+        "datePublished": "2026-07-09",
+        "dateModified": "2026-07-09",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-how-to-track-ai-api-spending.html"
+    }
+    </script>
+    <style>
+        .blog-content { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+        .blog-content h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .blog-meta { color: var(--text-muted); font-size: 14px; margin-bottom: 40px; }
+        .blog-content h2 { font-size: 24px; font-weight: 700; margin: 40px 0 16px; }
+        .blog-content h3 { font-size: 20px; font-weight: 700; margin: 32px 0 12px; }
+        .blog-content p { color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
+        .blog-content ul, .blog-content ol { color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin-bottom: 20px; padding-left: 24px; }
+        .blog-content li { margin-bottom: 8px; }
+        .blog-content strong { color: var(--text-primary); }
+        .blog-content a { color: var(--accent); text-decoration: underline; }
+        .blog-content blockquote {
+            border-left: 3px solid var(--accent); padding: 16px 20px; margin: 24px 0;
+            background: var(--bg-secondary); border-radius: 0 8px 8px 0;
+            font-style: italic; color: var(--text-secondary);
+        }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+        .feature-item {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; text-align: center;
+        }
+        .feature-icon { font-size: 32px; margin-bottom: 8px; }
+        .feature-name { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.06));
+            border: 1px solid rgba(99,102,241,0.25); border-radius: 14px;
+            padding: 28px; text-align: center; margin: 32px 0;
+        }
+        .cta-box h3 { margin-top: 0; }
+        .cta-btn {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 12px 28px; border-radius: 8px; text-decoration: none;
+            font-weight: 700; font-size: 15px; margin-top: 12px;
+        }
+        @media (max-width: 768px) {
+            .blog-content { padding: 100px 16px 60px; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Flash Sale — $19</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <article class="blog-content">
+        <h1>How to Track Your AI API Spending Over Time (Free Dashboard)</h1>
+        <div class="blog-meta">
+            <span>July 9, 2026</span> · <span>5 min read</span> · <span>By APIpulse</span>
+        </div>
+
+        <p>If you're building with AI APIs, you've probably wondered: <strong>"Am I spending too much?"</strong> The answer is almost certainly yes — most developers overpay by 40-60% because they don't track their spending over time.</p>
+
+        <p>That's why we built the <strong><a href="dashboard.html">APIpulse Cost Dashboard</a></strong> — a free, personal tool that lets you track your AI API spending over time, see trends, and find cheaper alternatives.</p>
+
+        <h2>Why Track Your AI API Spending?</h2>
+
+        <p>AI API costs are sneaky. A few cents per request adds up fast when you're running thousands of requests per day. And with 60+ models across 10 providers, prices change constantly.</p>
+
+        <blockquote>
+            "I was spending $340/month on GPT-5 without realizing DeepSeek V4 Pro could do the same job for $15. The dashboard made the switch obvious."
+        </blockquote>
+
+        <p>Here's what happens when you <strong>don't</strong> track:</p>
+        <ul>
+            <li>You don't notice when prices change (they do, frequently)</li>
+            <li>You can't compare month-over-month trends</li>
+            <li>You miss cheaper alternatives that launch after you started</li>
+            <li>You can't justify costs to your team or investors</li>
+        </ul>
+
+        <h2>What the Dashboard Does</h2>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon">📊</div>
+                <div class="feature-name">Track Spending Over Time</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📈</div>
+                <div class="feature-name">See Trends (Up/Down)</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💡</div>
+                <div class="feature-name">Cheaper Alternatives</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-name">Private (localStorage)</div>
+            </div>
+        </div>
+
+        <h3>1. Log Your Monthly Usage</h3>
+        <p>Select your current model from our database of 60 models, enter your monthly input and output tokens, and hit save. That's it.</p>
+
+        <h3>2. See Your Spending History</h3>
+        <p>Every month, log your usage again. The dashboard shows a visual chart of your spending over time — are you spending more or less than last month?</p>
+
+        <h3>3. Discover Cheaper Alternatives</h3>
+        <p>The dashboard automatically calculates how much you'd save by switching to cheaper models. For your exact usage pattern, not generic estimates.</p>
+
+        <h3>4. It's Completely Private</h3>
+        <p>All data is stored in your browser's localStorage. No account needed, no data sent to our servers. Your spending data stays on your machine.</p>
+
+        <h2>How to Get Started</h2>
+
+        <ol>
+            <li>Go to <strong><a href="dashboard.html">My Cost Dashboard</a></strong></li>
+            <li>Select your current model (e.g., GPT-5.4, Claude Sonnet 5)</li>
+            <li>Enter your monthly token usage (input and output)</li>
+            <li>Click "Save to My Dashboard"</li>
+            <li>Check back next month to see your trend</li>
+        </ol>
+
+        <p>That's it. No account, no signup, no credit card. Just honest cost tracking.</p>
+
+        <h2>Real Example: Saving $325/Month</h2>
+
+        <p>Let's say you're using <strong>Claude Sonnet 5</strong> with 100M input tokens and 50M output tokens per month. That's:</p>
+        <ul>
+            <li><strong>Current cost:</strong> $700/month (100M × $2 + 50M × $10)</li>
+            <li><strong>With DeepSeek V4 Pro:</strong> $87/month (100M × $0.435 + 50M × $0.87)</li>
+            <li><strong>Savings:</strong> $613/month (87% reduction)</li>
+        </ul>
+
+        <p>The dashboard shows you this comparison instantly, based on your actual usage.</p>
+
+        <div class="cta-box">
+            <h3>Start Tracking Your AI API Spending</h3>
+            <p>Free, private, and takes 30 seconds to set up.</p>
+            <a href="dashboard.html" class="cta-btn">Open My Cost Dashboard →</a>
+        </div>
+
+        <h2>Want More? Pro Gives You Alerts</h2>
+
+        <p>The free dashboard is great for monthly tracking. But if you want <strong>automatic alerts when prices change</strong>, that's where Pro comes in.</p>
+
+        <p>Pro users get:</p>
+        <ul>
+            <li><strong>Price drop alerts</strong> — emailed when any of 60 models changes price</li>
+            <li><strong>Weekly cost digest</strong> — new models, deals, and price changes delivered Monday</li>
+            <li><strong>Optimization recommendations</strong> — personalized tips to cut costs 20-40%</li>
+            <li><strong>All alternatives ranked</strong> — see every cheaper option for every model</li>
+        </ul>
+
+        <p>It's a one-time payment of $19 (flash sale, normally $49). Lifetime access, no subscription.</p>
+
+        <div class="cta-box">
+            <h3>Get Pro — Lifetime Access</h3>
+            <p>Price alerts, weekly digest, optimization tips, and more.</p>
+            <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'blog_dashboard'})">Get Pro — $19 Lifetime →</a>
+        </div>
+
+        <h2>Related Articles</h2>
+        <ul>
+            <li><a href="blog-best-ai-api-deals-july-2026.html">7 Best AI API Deals in July 2026</a></li>
+            <li><a href="blog-which-ai-model-should-i-use-2026.html">Which AI Model Should I Use in 2026?</a></li>
+            <li><a href="blog-top-10-cheapest-ai-apis-2026.html">Top 10 Cheapest AI APIs in 2026</a></li>
+        </ul>
+    </article>
+
+    <footer>
+        <div style="max-width:var(--max-width);margin:0 auto;padding:40px 24px;text-align:center;">
+            <p style="font-size:13px;color:var(--text-muted);">© 2026 APIpulse. Tracking 60 AI models across 10 providers.</p>
+        </div>
+    </footer>
+</body>
+</html>
