@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Optimization Playbook — 12 Strategies to Cut Your LLM Bill | APIpulse</title>
+    <meta name="description" content="The developer's playbook for reducing AI API costs. 12 proven strategies with real savings calculations. Model selection guide, prompt optimization, batching, caching, and provider switching analysis.">
+    <meta name="keywords" content="reduce AI API costs, LLM cost optimization, GPT cost reduction, Claude API savings, cheaper AI models, API budget optimization, LLM cost strategies">
+    <meta property="og:title" content="AI API Cost Optimization Playbook — 12 Strategies to Cut Your LLM Bill">
+    <meta property="og:description" content="Proven strategies with real savings calculations. Free interactive playbook for developers.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://getapipulse.com/playbook.html">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/playbook.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Cost Optimization Playbook — 12 Strategies to Cut Your LLM Bill",
+        "description": "The developer's playbook for reducing AI API costs with 12 proven strategies and real savings calculations.",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse" },
+        "url": "https://getapipulse.com/playbook.html",
+        "datePublished": "2026-07-09",
+        "dateModified": "2026-07-09"
+    }
+    </script>
+    <style>
+        .playbook { max-width: 860px; margin: 0 auto; padding: 100px 24px 80px; }
+
+        /* Hero */
+        .pb-hero { text-align: center; margin-bottom: 48px; }
+        .pb-hero .pill {
+            display: inline-block; background: rgba(99,102,241,0.12); color: var(--accent);
+            padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .pb-hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .pb-hero .subtitle { font-size: 18px; color: var(--text-secondary); line-height: 1.6; max-width: 600px; margin: 0 auto 24px; }
+
+        /* Stats row */
+        .pb-stats {
+            display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+            margin-bottom: 48px; padding: 24px;
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 14px;
+        }
+        .pb-stat { text-align: center; }
+        .pb-stat-num { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .pb-stat-label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+        /* TOC */
+        .toc {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 28px; margin-bottom: 48px;
+        }
+        .toc h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+        .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+        .toc a {
+            font-size: 14px; color: var(--text-secondary); padding: 4px 0;
+            display: flex; align-items: baseline; gap: 8px;
+        }
+        .toc a:hover { color: var(--accent); }
+        .toc a .num { color: var(--accent); font-weight: 700; font-size: 13px; min-width: 24px; }
+
+        /* Strategy section */
+        .strategy {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 32px; margin-bottom: 24px;
+            scroll-margin-top: 80px;
+        }
+        .strategy-header {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+        }
+        .strategy-num {
+            width: 44px; height: 44px; border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; font-weight: 800; color: white; flex-shrink: 0;
+        }
+        .strategy h2 { font-size: 22px; font-weight: 700; }
+        .strategy .impact {
+            display: inline-block; padding: 3px 10px; border-radius: 6px;
+            font-size: 12px; font-weight: 700; text-transform: uppercase;
+            margin-left: auto;
+        }
+        .impact-high { background: rgba(34,197,94,0.15); color: var(--green); }
+        .impact-med { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .impact-low { background: rgba(99,102,241,0.15); color: var(--accent); }
+
+        .strategy p { font-size: 15px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 16px; }
+        .strategy p strong { color: var(--text-primary); }
+
+        /* Savings callout */
+        .savings-box {
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.03));
+            border: 1px solid rgba(34,197,94,0.2); border-radius: 10px;
+            padding: 16px 20px; margin: 16px 0; display: flex; align-items: center; gap: 12px;
+        }
+        .savings-box .icon { font-size: 24px; }
+        .savings-box .text { font-size: 14px; color: var(--green); font-weight: 600; }
+
+        /* Comparison table */
+        .comp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+        .comp-table th {
+            text-align: left; padding: 10px 14px; font-weight: 600; font-size: 12px;
+            text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 2px solid var(--border);
+        }
+        .comp-table td {
+            padding: 10px 14px; border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .comp-table tr:last-child td { border-bottom: none; }
+        .comp-table .highlight { color: var(--green); font-weight: 600; }
+        .comp-table .dim { color: var(--text-muted); }
+
+        /* Code/tip blocks */
+        .tip {
+            background: var(--bg-card); border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 16px 0;
+            font-size: 14px; line-height: 1.7; color: var(--text-secondary);
+        }
+        .tip code {
+            background: rgba(99,102,241,0.12); color: var(--accent);
+            padding: 2px 6px; border-radius: 4px; font-size: 13px;
+        }
+
+        /* Interactive calculator */
+        .calc-box {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin: 16px 0;
+        }
+        .calc-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+        .calc-field { flex: 1; min-width: 180px; }
+        .calc-field label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .calc-field input, .calc-field select {
+            width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 14px;
+        }
+        .calc-field input:focus, .calc-field select:focus { outline: none; border-color: var(--accent); }
+        .calc-result {
+            text-align: center; padding: 20px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.03));
+            border: 1px solid rgba(34,197,94,0.2); border-radius: 10px;
+        }
+        .calc-result .big { font-size: 36px; font-weight: 800; color: var(--green); }
+        .calc-result .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        /* CTA */
+        .pb-cta {
+            text-align: center; padding: 48px 24px; margin-top: 48px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.05));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 16px;
+        }
+        .pb-cta h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+        .pb-cta p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
+        .pb-cta .btn {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 16px;
+        }
+        .pb-cta .btn:hover { background: var(--accent-hover); color: white; }
+
+        @media (max-width: 640px) {
+            .toc-grid { grid-template-columns: 1fr; }
+            .strategy-header { flex-wrap: wrap; }
+            .strategy .impact { margin-left: 0; margin-top: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="/#models">Models</a>
+                <a href="/calculator.html">Calculator</a>
+                <a href="/dashboard.html">Dashboard</a>
+                <a href="/playbook.html" style="color:var(--text-primary)">Playbook</a>
+                <a href="/support.html" class="nav-cta">Get Pro — $19</a>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+        </div>
+    </nav>
+
+    <main class="playbook">
+        <!-- Hero -->
+        <div class="pb-hero">
+            <span class="pill">Free Playbook — Updated Jul 2026</span>
+            <h1>12 Strategies to Cut Your AI API Bill</h1>
+            <p class="subtitle">A practical, no-BS guide with real savings calculations. Based on pricing data from 60 models across 10 providers.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="pb-stats">
+            <div class="pb-stat">
+                <div class="pb-stat-num">60</div>
+                <div class="pb-stat-label">Models analyzed</div>
+            </div>
+            <div class="pb-stat">
+                <div class="pb-stat-num">10</div>
+                <div class="pb-stat-label">Providers compared</div>
+            </div>
+            <div class="pb-stat">
+                <div class="pb-stat-num">93%</div>
+                <div class="pb-stat-label">Max savings possible</div>
+            </div>
+            <div class="pb-stat">
+                <div class="pb-stat-num">12</div>
+                <div class="pb-stat-label">Proven strategies</div>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>Contents</h2>
+            <div class="toc-grid">
+                <a href="#s1"><span class="num">01</span> Right-size your model</a>
+                <a href="#s2"><span class="num">02</span> Switch providers for the same model</a>
+                <a href="#s3"><span class="num">03</span> Batch your requests</a>
+                <a href="#s4"><span class="num">04</span> Cache aggressively</a>
+                <a href="#s5"><span class="num">05</span> Optimize your prompts</a>
+                <a href="#s6"><span class="num">06</span> Use structured outputs</a>
+                <a href="#s7"><span class="num">07</span> Monitor and set budgets</a>
+                <a href="#s8"><span class="num">08</span> Use streaming wisely</a>
+                <a href="#s9"><span class="num">09</span> Leverage prompt caching</a>
+                <a href="#s10"><span class="num">10</span> Consider open-weight models</a>
+                <a href="#s11"><span class="num">11</span> Negotiate volume discounts</a>
+                <a href="#s12"><span class="num">12</span> Audit quarterly</a>
+            </div>
+        </div>
+
+        <!-- Strategy 1 -->
+        <section class="strategy" id="s1">
+            <div class="strategy-header">
+                <div class="strategy-num">1</div>
+                <h2>Right-Size Your Model</h2>
+                <span class="impact impact-high">High Impact</span>
+            </div>
+            <p>The biggest cost lever is choosing the right model for each task. Most teams default to the most capable (and expensive) model for everything — a 400% overspend on average.</p>
+            <p><strong>The rule:</strong> use the cheapest model that produces acceptable quality for each specific task.</p>
+
+            <table class="comp-table">
+                <thead>
+                    <tr><th>Task Type</th><th>Recommended Tier</th><th>Example Models</th><th>Cost vs. Frontier</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Classification, tagging</td>
+                        <td>Small / Nano</td>
+                        <td>GPT-5 Nano, Haiku 4.5, Gemini 2.5 Flash Lite</td>
+                        <td class="highlight">90-95% cheaper</td>
+                    </tr>
+                    <tr>
+                        <td>Summarization, Q&A</td>
+                        <td>Mid-tier</td>
+                        <td>Sonnet 4.6, GPT-5 Mini, Gemini 2.5 Flash</td>
+                        <td class="highlight">60-80% cheaper</td>
+                    </tr>
+                    <tr>
+                        <td>Code generation, complex reasoning</td>
+                        <td>Frontier</td>
+                        <td>Opus 4.8, GPT-5, Gemini 2.5 Pro</td>
+                        <td>Baseline</td>
+                    </tr>
+                    <tr>
+                        <td>Embeddings, search</td>
+                        <td>Dedicated</td>
+                        <td>text-embedding-3-small, Cohere embed-v4</td>
+                        <td class="highlight">95-99% cheaper</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="savings-box">
+                <span class="icon">💰</span>
+                <span class="text">Typical savings: 40-70% of total API spend by routing tasks to appropriate model tiers</span>
+            </div>
+
+            <div class="tip">
+                <strong>Quick win:</strong> Log which tasks use your most expensive model. For each one, ask: "Would a cheaper model produce acceptable output?" Run an A/B test for a week — compare quality scores and costs.
+            </div>
+        </section>
+
+        <!-- Strategy 2 -->
+        <section class="strategy" id="s2">
+            <div class="strategy-header">
+                <div class="strategy-num">2</div>
+                <h2>Switch Providers for the Same Model</h2>
+                <span class="impact impact-high">High Impact</span>
+            </div>
+            <p>Many models are available from multiple providers at different prices. The same Llama 4 Scout can cost 3x more on one provider than another. Same weights, same quality, different bill.</p>
+
+            <table class="comp-table">
+                <thead>
+                    <tr><th>Model</th><th>Cheapest Provider</th><th>Most Expensive</th><th>Savings</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Llama 4 Scout</td>
+                        <td>Together AI ($0.08/M)</td>
+                        <td class="dim">Other hosts ($0.20/M+)</td>
+                        <td class="highlight">60%+</td>
+                    </tr>
+                    <tr>
+                        <td>DeepSeek V4</td>
+                        <td>DeepSeek direct ($0.14/M)</td>
+                        <td class="dim">Via proxy ($0.50/M+)</td>
+                        <td class="highlight">72%</td>
+                    </tr>
+                    <tr>
+                        <td>Mistral models</td>
+                        <td>Mistral direct</td>
+                        <td class="dim">Via Azure/AWS</td>
+                        <td class="highlight">30-50%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="savings-box">
+                <span class="icon">💰</span>
+                <span class="text">Use our <a href="/" style="color:var(--green)">comparison calculator</a> to find the cheapest provider for any model in 30 seconds</span>
+            </div>
+        </section>
+
+        <!-- Strategy 3 -->
+        <section class="strategy" id="s3">
+            <div class="strategy-header">
+                <div class="strategy-num">3</div>
+                <h2>Batch Your Requests</h2>
+                <span class="impact impact-med">Medium Impact</span>
+            </div>
+            <p>If you're making many independent API calls, batching them reduces overhead and often qualifies for batch pricing discounts. OpenAI offers 50% off for batch API. Anthropic has similar programs.</p>
+
+            <div class="tip">
+                <strong>Before:</strong> 1,000 individual API calls × $0.003 each = $3.00<br>
+                <strong>After:</strong> 1 batch of 1,000 items × $0.0015 (batch discount) = $1.50<br>
+                <strong>Savings: 50%</strong>
+            </div>
+
+            <p><strong>When to batch:</strong> data processing, content generation, classification jobs, evaluation runs, embedding generation. Basically anything that doesn't need real-time responses.</p>
+        </section>
+
+        <!-- Strategy 4 -->
+        <section class="strategy" id="s4">
+            <div class="strategy-header">
+                <div class="strategy-num">4</div>
+                <h2>Cache Aggressively</h2>
+                <span class="impact impact-high">High Impact</span>
+            </div>
+            <p>If you're sending the same (or similar) prompts repeatedly, you're paying for the same computation over and over. Implement caching at the application level.</p>
+
+            <table class="comp-table">
+                <thead>
+                    <tr><th>Caching Strategy</th><th>Best For</th><th>Savings</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Exact match cache</td>
+                        <td>FAQ bots, repeated queries</td>
+                        <td class="highlight">Up to 100% on cache hits</td>
+                    </tr>
+                    <tr>
+                        <td>Semantic similarity cache</td>
+                        <td>Customer support, search</td>
+                        <td class="highlight">30-60%</td>
+                    </tr>
+                    <tr>
+                        <td>Result memoization</td>
+                        <td>Deterministic tasks</td>
+                        <td class="highlight">20-40%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip">
+                <strong>Implementation:</strong> Start with a simple Redis/SQLite cache keyed by prompt hash. Set TTL based on how fresh results need to be. For semantic caching, use cosine similarity on embeddings with a threshold of 0.95+.
+            </div>
+        </section>
+
+        <!-- Strategy 5 -->
+        <section class="strategy" id="s5">
+            <div class="strategy-header">
+                <div class="strategy-num">5</div>
+                <h2>Optimize Your Prompts</h2>
+                <span class="impact impact-med">Medium Impact</span>
+            </div>
+            <p>You pay per token. Shorter prompts = lower costs. But "shorter" doesn't mean "less effective" — it means removing redundancy and being precise.</p>
+
+            <div class="tip">
+                <strong>Before (847 tokens):</strong><br>
+                "You are a helpful assistant. Please analyze the following text and provide a summary. Make sure to include the key points. The summary should be concise but comprehensive. Here is the text: [long passage]"<br><br>
+                <strong>After (312 tokens):</strong><br>
+                "Summarize key points concisely: [long passage]"<br><br>
+                <strong>Result: 63% fewer input tokens, same quality output.</strong>
+            </div>
+
+            <p><strong>Three prompt optimization techniques:</strong></p>
+            <p>1. <strong>Remove filler words</strong> — "please," "I would like you to," "make sure to" add tokens without changing behavior.<br>
+            2. <strong>Use system prompts</strong> — put instructions in the system message (cached by most providers) rather than repeating in every user message.<br>
+            3. <strong>Compress context</strong> — use summaries of long documents instead of passing full text. A 10K token document often compresses to 1K with no loss of task-relevant information.</p>
+        </section>
+
+        <!-- Strategy 6 -->
+        <section class="strategy" id="s6">
+            <div class="strategy-header">
+                <div class="strategy-num">6</div>
+                <h2>Use Structured Outputs</h2>
+                <span class="impact impact-low">Low Effort</span>
+            </div>
+            <p>When you need JSON or structured data, use the provider's structured output / JSON mode instead of asking the model to format output in a prompt. This eliminates retry loops from malformed responses and reduces output tokens.</p>
+
+            <div class="tip">
+                <strong>Without structured output:</strong> "Return a JSON object with fields: name (string), score (number from 1-10), tags (array of strings). Make sure it's valid JSON."<br>
+                → Model often adds explanation text before/after JSON, wasting tokens. 20% retry rate from malformed output.<br><br>
+                <strong>With structured output:</strong> Use response_format: { type: "json_object" } or tool_use with a schema.<br>
+                → Guaranteed valid JSON. Zero retries. 30-40% fewer output tokens.
+            </div>
+        </section>
+
+        <!-- Strategy 7 -->
+        <section class="strategy" id="s7">
+            <div class="strategy-header">
+                <div class="strategy-num">7</div>
+                <h2>Monitor and Set Budgets</h2>
+                <span class="impact impact-med">Medium Impact</span>
+            </div>
+            <p>You can't optimize what you don't measure. Set up cost monitoring before you need it — not after a surprise $2,000 bill.</p>
+
+            <p><strong>Essential monitoring:</strong></p>
+            <p>• <strong>Per-model cost tracking</strong> — know which models consume the most budget<br>
+            • <strong>Daily/weekly budget alerts</strong> — get notified before costs spike, not after<br>
+            • <strong>Per-feature cost attribution</strong> — tag API calls by feature to find expensive workflows<br>
+            • <strong>Anomaly detection</strong> — flag unusual spikes (often caused by bugs, not users)</p>
+
+            <div class="savings-box">
+                <span class="icon">📊</span>
+                <span class="text">Use our free <a href="/dashboard.html" style="color:var(--green)">Cost Dashboard</a> to track spending, set budgets, and get cost projections</span>
+            </div>
+        </section>
+
+        <!-- Strategy 8 -->
+        <section class="strategy" id="s8">
+            <div class="strategy-header">
+                <div class="strategy-num">8</div>
+                <h2>Use Streaming Wisely</h2>
+                <span class="impact impact-low">Low Effort</span>
+            </div>
+            <p>Streaming doesn't save money (you pay for all tokens regardless), but it affects your architecture costs. Use streaming for user-facing responses (better UX, lower perceived latency) and non-streaming for backend jobs (simpler error handling, easier retries).</p>
+
+            <div class="tip">
+                <strong>Cost impact:</strong> Neutral on API spend. But streaming enables earlier error detection — if the model starts generating garbage tokens, you can abort mid-stream instead of paying for a full bad response.
+            </div>
+        </section>
+
+        <!-- Strategy 9 -->
+        <section class="strategy" id="s9">
+            <div class="strategy-header">
+                <div class="strategy-num">9</div>
+                <h2>Leverage Provider Prompt Caching</h2>
+                <span class="impact impact-high">High Impact</span>
+            </div>
+            <p>Anthropic, OpenAI, and Google all offer automatic prompt caching for repeated prefixes. If your system prompt + context is long and stays consistent across requests, you get a significant discount on input tokens.</p>
+
+            <table class="comp-table">
+                <thead>
+                    <tr><th>Provider</th><th>Cache Discount</th><th>Min Cacheable Length</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Anthropic (Claude)</td>
+                        <td class="highlight">90% off cached tokens</td>
+                        <td>1,024 tokens (Sonnet), 2,048 (Opus)</td>
+                    </tr>
+                    <tr>
+                        <td>OpenAI</td>
+                        <td class="highlight">50% off cached tokens</td>
+                        <td>1,024 tokens</td>
+                    </tr>
+                    <tr>
+                        <td>Google (Gemini)</td>
+                        <td class="highlight">75% off cached context</td>
+                        <td>32,768 tokens</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="savings-box">
+                <span class="icon">💰</span>
+                <span class="text">If your system prompt is 5K+ tokens, prompt caching can cut input costs by 50-90% on repeat requests</span>
+            </div>
+        </section>
+
+        <!-- Strategy 10 -->
+        <section class="strategy" id="s10">
+            <div class="strategy-header">
+                <div class="strategy-num">10</div>
+                <h2>Consider Open-Weight Models</h2>
+                <span class="impact impact-high">High Impact</span>
+            </div>
+            <p>Llama 4 Scout, Mistral Small, DeepSeek V4 — these open-weight models now match or beat GPT-4 quality on many tasks at 80-95% lower cost. If you're not using them, you're likely overpaying.</p>
+
+            <div class="tip">
+                <strong>The open-weight advantage:</strong> Multiple competing hosts means price competition. You can switch providers instantly if one raises prices. No vendor lock-in. And for many tasks (classification, summarization, extraction), these models are indistinguishable from frontier models.
+            </div>
+
+            <p><strong>When NOT to use open-weight models:</strong> complex multi-step reasoning, tasks requiring very precise instruction following, or when you need the absolute best quality and cost is secondary.</p>
+        </section>
+
+        <!-- Strategy 11 -->
+        <section class="strategy" id="s11">
+            <div class="strategy-header">
+                <div class="strategy-num">11</div>
+                <h2>Negotiate Volume Discounts</h2>
+                <span class="impact impact-med">Medium Impact</span>
+            </div>
+            <p>If you're spending $500+/month on a single provider, you're likely eligible for volume pricing. Most providers offer 10-30% discounts at $1K+/month commitments.</p>
+
+            <p><strong>How to negotiate:</strong></p>
+            <p>1. Get quotes from 2-3 providers for your workload<br>
+            2. Show your current spend and growth trajectory<br>
+            3. Ask for committed-use pricing (you commit to a minimum, they give a discount)<br>
+            4. Start the conversation at 2x what you'd accept — there's always room</p>
+        </section>
+
+        <!-- Strategy 12 -->
+        <section class="strategy" id="s12">
+            <div class="strategy-header">
+                <div class="strategy-num">12</div>
+                <h2>Audit Quarterly</h2>
+                <span class="impact impact-med">Medium Impact</span>
+            </div>
+            <p>AI pricing changes fast. Models get cheaper. New models launch. Providers compete. What was the cheapest option 3 months ago may not be today.</p>
+
+            <p><strong>Quarterly audit checklist:</strong></p>
+            <p>1. ✅ Review which models you're using — any cheaper alternatives?<br>
+            2. ✅ Check provider pricing pages for new tiers or discounts<br>
+            3. ✅ Analyze cost per task — has any workflow gotten more expensive?<br>
+            4. ✅ Test new models on your benchmarks — often 80% quality at 20% cost<br>
+            5. ✅ Review cache hit rates — are you actually caching effectively?</p>
+
+            <div class="savings-box">
+                <span class="icon">📅</span>
+                <span class="text">Bookmark <a href="/" style="color:var(--green)">APIpulse</a> — we track pricing changes across all providers so you don't have to</span>
+            </div>
+        </section>
+
+        <!-- Interactive Savings Calculator -->
+        <section class="strategy" id="calculator">
+            <div class="strategy-header">
+                <div class="strategy-num">⚡</div>
+                <h2>Calculate Your Potential Savings</h2>
+            </div>
+            <p>Enter your current API usage to see how much you could save by applying these strategies:</p>
+
+            <div class="calc-box">
+                <div class="calc-row">
+                    <div class="calc-field">
+                        <label>Monthly API spend</label>
+                        <input type="number" id="pb-spend" value="100" min="1" step="1" placeholder="e.g. 500">
+                    </div>
+                    <div class="calc-field">
+                        <label>Primary model tier</label>
+                        <select id="pb-tier">
+                            <option value="frontier">Frontier (Opus, GPT-5)</option>
+                            <option value="mid" selected>Mid-tier (Sonnet, GPT-5 Mini)</option>
+                            <option value="small">Small (Haiku, Nano)</option>
+                        </select>
+                    </div>
+                    <div class="calc-field">
+                        <label>Caching enabled?</label>
+                        <select id="pb-cache">
+                            <option value="no" selected>No</option>
+                            <option value="partial">Partial</option>
+                            <option value="yes">Yes, aggressive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <div class="big" id="pb-savings">$0</div>
+                    <div class="label">Estimated monthly savings by applying top strategies</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="pb-cta">
+            <h2>Stop Overpaying for AI APIs</h2>
+            <p>APIpulse tracks real-time pricing across 60 models and 10 providers. Calculate your costs, compare alternatives, and find savings — all free.</p>
+            <a href="/" class="btn">Compare Prices Free →</a>
+            <div style="margin-top: 16px;">
+                <a href="/dashboard.html" style="font-size: 14px;">Or try the free Cost Dashboard →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="text-align:center; padding:40px 24px; color:var(--text-muted); font-size:13px; border-top:1px solid var(--border); margin-top:60px;">
+        <p>APIpulse — AI API pricing intelligence for developers. <a href="/">Compare prices</a> · <a href="/dashboard.html">Dashboard</a> · <a href="/support.html">Support</a></p>
+        <p style="margin-top:8px;">Pricing data updated regularly. Costs are estimates — check provider pricing for exact rates.</p>
+    </footer>
+
+    <script>
+        // Savings calculator
+        const spendEl = document.getElementById('pb-spend');
+        const tierEl = document.getElementById('pb-tier');
+        const cacheEl = document.getElementById('pb-cache');
+        const savingsEl = document.getElementById('pb-savings');
+
+        function calcSavings() {
+            const spend = parseFloat(spendEl.value) || 0;
+            const tier = tierEl.value;
+            const cache = cacheEl.value;
+
+            // Right-sizing savings
+            let rightSizeSave = 0;
+            if (tier === 'frontier') rightSizeSave = 0.45; // downgrading 60% of calls
+            else if (tier === 'mid') rightSizeSave = 0.20;
+
+            // Provider switching
+            let providerSave = 0.15; // avg 15% from switching
+
+            // Caching
+            let cacheSave = 0;
+            if (cache === 'no') cacheSave = 0.25; // implementing from scratch
+            else if (cache === 'partial') cacheSave = 0.10; // improving existing
+
+            // Prompt optimization
+            let promptSave = 0.10;
+
+            // Combined (multiplicative, not additive)
+            let totalSave = 1 - (1 - rightSizeSave) * (1 - providerSave) * (1 - cacheSave) * (1 - promptSave);
+            totalSave = Math.min(totalSave, 0.75); // cap at 75%
+
+            const saved = Math.round(spend * totalSave);
+            savingsEl.textContent = '$' + saved.toLocaleString();
+        }
+
+        spendEl.addEventListener('input', calcSavings);
+        tierEl.addEventListener('change', calcSavings);
+        cacheEl.addEventListener('change', calcSavings);
+        calcSavings();
+
+        // Track playbook engagement
+        if (typeof trackEvent === 'function') {
+            trackEvent('playbook_viewed', { page_location: window.location.href });
+        }
+    </script>
+</body>
+</html>
