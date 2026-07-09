@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1178 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). All CTAs link directly to Stripe. New cost dashboard built (S1272). All 10 providers verified (Jul 8). Model count consistent at 60. Blog: 386 posts.**
+**Site Status:** 1179 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). All CTAs link directly to Stripe. Cost dashboard enhanced with CSV, budgets, projections (S1273). All 10 providers verified (Jul 8). Model count consistent at 60. Blog: 387 posts.**
 
 ### Blocked on Human (Priority Order)
 - **$5 Stripe link** — HELP-REQUEST.md filed (Session 1256). Add $5 tier to support page once link arrives.
@@ -17,9 +17,9 @@
 - **Pricing freshness dates** — Keep "Last verified" dates current across all pages (dynamic-date.js + hardcoded)
 - **Monitor conversion metrics** — Check GA4 weekly: pricing views, Pro clicks, usage gate triggers, Stripe checkouts
 - **Model count consistency** — ✅ Done S1258/S1260/S1271. Bulk updated 58→59→60 across 1087+ files. All pages now consistent at 60 models.
-- **Dashboard enhancements** — Add export to CSV, monthly budget alerts, cost projections based on usage trends
-- **Dashboard blog post** — Write "How to Track Your AI API Spending Over Time" blog post featuring the new dashboard
-- **Dashboard internal links** — Add links to dashboard.html from calculator.html, cost-explorer.html, and other tool pages
+- **Dashboard enhancements** — ✅ Done S1273. CSV export, monthly budget alerts (visual meter), cost projections (monthly/annual/trend).
+- **Dashboard blog post** — ✅ Done S1272. Blog post #387 "How to Track Your AI API Spending Over Time".
+- **Dashboard internal links** — ✅ Done S1273. Links added to calculator.html (2 sections) and cost-explorer.html (2 sections + nav).
 
 ### Completed (Sessions 416-1272, Apr 23 - Jul 9)
 ✅ Complete site: 1178 pages, 60 models, 10 providers, 533 comparison/alternatives pages
@@ -32,7 +32,7 @@
 ✅ Model count: 49→54→56→58→59→60 across all pages (S1227-S1272). All references consistent
 ✅ Conversion optimization: $29→$19 defaults, countdown timers, usage gate wall, bleeding counter (S1242)
 ✅ Removed "$0 revenue" anti-social-proof from support page (S1272)
-✅ Personal cost dashboard: localStorage-based tracking, spending history, trends, alternatives (S1272)
+✅ Personal cost dashboard: localStorage-based tracking, spending history, trends, alternatives, CSV export, budget alerts, cost projections (S1272-S1273)
 ✅ Together.ai: Llama 4 Scout/Maverick delisted from serverless, pricing updated (S1250)
 ✅ Vercel KV migration: 9 API endpoints upgraded from /tmp (S1231)
 ✅ Pro access code validation: Critical bug fixed (S1230)
