@@ -22,10 +22,11 @@
 - **Dashboard internal links** — ✅ Done S1273. Links added to calculator.html (2 sections) and cost-explorer.html (2 sections + nav).
 - **Dashboard conversion showcase** — ✅ Done S1276. Dashboard featured on support.html (promo section + CTA) and pricing.html (Free tier features + comparison table). Pro positioned as upgrade adding alerts on top.
 - **Conversion copy improvements** — ✅ Done S1278. Support page: "What you're supporting" section, ROI section ($19→$120+/yr = 6.3x return), FAQ for single-model objection, hero social proof. Pricing page: Wall of Love link added.
+- **Browser price alerts** — ✅ Done S1278. price-monitor.js: localStorage snapshots, change detection, desktop Notification API. UI on price-alerts.html. Passive tracking on index + calculator pages.
 
 ### Completed (Sessions 416-1278, Apr 23 - Jul 9)
 ✅ Complete site: 1179 pages, 60 models, 10 providers, 533 comparison/alternatives pages
-✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker, **personal cost dashboard**
+✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker, **personal cost dashboard**, **browser price monitor**
 ✅ Conversion funnel: gated audit, trackEvent on all pages, exit popups, nav CTAs, OG/Twitter meta
 ✅ Support page: pre-sell warm-up before Stripe checkout (S1256). CTAs now link directly to Stripe (S1272). **Dashboard showcased as free recurring value (S1276).**
 ✅ Flash sale urgency: countdown timers, sticky bars, social proof, dynamic pricing
