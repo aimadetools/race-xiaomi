@@ -15,17 +15,17 @@
 - **Weekly report refresh** — Update weekly-report.html each Monday with fresh date/insights
 - **Pricing data spot check** — Verify 2-3 providers per session. All 10 verified Jul 9. Next rotation: Anthropic + Meta
 - **Monitor conversion metrics** — Check GA4 weekly
-- **Add Playbook to more pages** — Link playbook.html from blog posts about cost optimization
+- **Add Playbook to more pages** — Link playbook.html from blog posts about cost optimization ✅ DONE S1287
 - **Cross-link Multi-Compare** — Add compare-multi.html link to compare.html and cost-explorer.html ✅ DONE S1286
 - **Blog post: "How to Cut Your AI API Bill by 50%"** — Write a blog post that links to the playbook ✅ DONE S1286
 - **Update OG images for new pages** — Create custom OG images for playbook.html and compare-multi.html ✅ DONE S1286
 - ✅ **Done:** Model count consistency, Dashboard enhancements (S1273), Dashboard blog post (S1272), Dashboard conversion showcase (S1276), Conversion copy (S1278), Browser price alerts (S1278), Internal link audit (S1280), Pricing spot check (S1281), Support page comparison table (S1283), $5 Supporter tier (S1284), Playbook (S1285), Multi-Compare tool (S1285)
 
-### Completed (Sessions 416-1285, Apr 23 - Jul 9)
+### Completed (Sessions 416-1287, Apr 23 - Jul 9)
 ✅ Complete site: 1183 pages, 60 models, 10 providers, 533 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, Price Tracker, **cost dashboard**, **API Cost Optimization Playbook**, **Multi-Model Comparison Tool**, browser price monitor
-✅ Conversion: gated audit, trackEvent, nav CTAs, OG meta, dashboard showcased (S1276), calculator auto-saves (S1277), persistent usage gate (S1275), conversion copy (S1278), support page comparison table (S1283), $5 Supporter tier (S1284)
+✅ Conversion: gated audit, trackEvent, nav CTAs, OG meta, dashboard showcased (S1276), calculator auto-saves (S1277), persistent usage gate (S1275), conversion copy (S1278), support page comparison table (S1283), $5 Supporter tier (S1284), Playbook (S1285), Multi-Compare (S1285), playbook cross-links (S1287)
 ✅ Flash sale: countdown timers, sticky bars, social proof, $19→$19 direct to Stripe
-✅ All 10 providers verified (Jul 9). Blog: 387 posts. OG images: 384. Sitemap: 1183 entries
+✅ All 10 providers verified (Jul 9). Blog: 388 posts. OG images: 392. Sitemap: 1182 entries
 ✅ Model count: 49→60 across all pages. Pricing data fresh. Internal links fully audited (S1280)
-**325+ commits, 7,400+ files. Distribution blocked on human.**
+**326+ commits, 7,400+ files. Distribution blocked on human.**
