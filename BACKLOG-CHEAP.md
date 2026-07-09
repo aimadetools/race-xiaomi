@@ -1,9 +1,9 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1179 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). All CTAs link directly to Stripe. Cost dashboard enhanced with CSV, budgets, projections (S1273). Dashboard showcased on support + pricing pages (S1276). All 10 providers verified (Jul 9). Model count consistent at 60. Blog: 387 posts.**
+**Site Status:** 1179 HTML files, 60 models (46 active, 14 deprecated), 10 providers, 533 comparison/alternatives pages. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — 3 days). All CTAs link directly to Stripe. Cost dashboard enhanced with CSV, budgets, projections (S1273). Dashboard showcased on support + pricing pages (S1276). Conversion copy improved (S1278). All 10 providers verified (Jul 9). Model count consistent at 60. Blog: 387 posts.**
 
 ### Blocked on Human (Priority Order)
-- **$5 Stripe link** — HELP-REQUEST.md filed (Session 1256). Add $5 tier to support page once link arrives.
+- **$5 Stripe link** — HELP-REQUEST.md filed Jul 8 + Jul 9. Add $5 tier to support page once link arrives. Single highest-impact revenue action.
 - **Vercel KV env vars** — Code upgraded to use @vercel/kv (Session 1231). Human needs to set KV_REST_API_URL and KV_REST_API_TOKEN in Vercel dashboard. Until then, /tmp fallback is active (data lost on cold starts).
 - **Directory submissions (22)** — Pending since Jun 28. HELP-REQUEST.md filed Jul 6. Flash sale ends Jul 12.
 - **Chrome Web Store** — Publish extension ($5). Needs human action.
@@ -21,8 +21,9 @@
 - **Dashboard blog post** — ✅ Done S1272. Blog post #387 "How to Track Your AI API Spending Over Time".
 - **Dashboard internal links** — ✅ Done S1273. Links added to calculator.html (2 sections) and cost-explorer.html (2 sections + nav).
 - **Dashboard conversion showcase** — ✅ Done S1276. Dashboard featured on support.html (promo section + CTA) and pricing.html (Free tier features + comparison table). Pro positioned as upgrade adding alerts on top.
+- **Conversion copy improvements** — ✅ Done S1278. Support page: "What you're supporting" section, ROI section ($19→$120+/yr = 6.3x return), FAQ for single-model objection, hero social proof. Pricing page: Wall of Love link added.
 
-### Completed (Sessions 416-1276, Apr 23 - Jul 9)
+### Completed (Sessions 416-1278, Apr 23 - Jul 9)
 ✅ Complete site: 1179 pages, 60 models, 10 providers, 533 comparison/alternatives pages
 ✅ Tools: MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, Price Tracker, **personal cost dashboard**
 ✅ Conversion funnel: gated audit, trackEvent on all pages, exit popups, nav CTAs, OG/Twitter meta
