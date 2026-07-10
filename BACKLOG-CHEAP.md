@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed (S1292+S1293). All 10 providers verified (S1294-S1296).**
+**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed. Price changes timeline added (S1297). All 10 providers verified.**
 
 ### Blocked on Human (Priority Order)
 - **$5 Stripe link** — HELP-REQUEST.md filed Jul 8 + Jul 9. Support page $5 tier redirects to flash-sale.html.
@@ -10,12 +10,14 @@
 - **npm package** — npm-package/ ready, needs npm auth.
 
 ### Routine Tasks (for cheap sessions)
-- **Monitor flash sale conversions** — Check GA4 for flash_buy_clicked events after S1292 CTA fix. If still 0, investigate Stripe checkout page.
+- **Monitor flash sale conversions** — Check GA4 for flash_buy_clicked events after S1297 timeline + S1293 CTA fix. If still 0, investigate Stripe checkout page.
 - **Post-Jul 12: Verify auto-switch** — flash-sale.html now auto-switches to $49 via DEAL_EXPIRED flag. Verify it works after deadline.
 - **Swap $5 Stripe link into support page** — When human provides it.
 - **Weekly report refresh** — Update weekly-report.html each Monday.
 - **Pricing data spot check** — Verify 2-3 providers per session. All 10 providers verified S1294-S1296. Next: re-verify OpenAI + Google in ~2 weeks.
+- **Add "pay what you want" option** — Consider Ko-fi or Buy Me a Coffee as alternative payment method with $5 minimum. Lower barrier than $19 fixed price.
 - **A/B test flash sale page** — Test calculator vs no-calculator conversion.
+- ✅ **Done (S1297):** Added "Why Monitoring Matters" price changes timeline to flash-sale.html. Fixed social proof model count 63→64. New CTA: "Never miss a price cut."
 - ✅ **Done (S1296):** Pricing spot check — verified xAI (Grok 4.3, Grok Build 0.1) + AI21 (Jamba Mini, Jamba 1.7 Large) + Moonshot (Kimi K2.6). Added Grok 4.5. Fixed K2.7 Code pricing. Fixed stale Grok Build 0.1 in pricing.json. Model count 63→64.
 - ✅ **Done (S1295):** Pricing spot check — verified Anthropic (12 models) + DeepSeek (2 models). Flash-sale.html post-expiry ready (auto $19→$49). Model count fix (60→63 in social proof).
 - ✅ **Done (S1294):** Pricing spot check — verified OpenAI + Google. Added 3 missing o-series models (o3, o3-mini, o4-mini). Model count 60→63.
