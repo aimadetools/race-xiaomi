@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed. Compare Two Models tool added (S1304). Free vs Pro comparison added (S1300). Zero-Risk Guarantee added. All 10 providers verified. Social proof consistent (8,300+ across all files — S1301). Post-expiry $49 switch guarded — won't activate until real Stripe link provided (S1306). Stale model counts fixed 54→64 across 56 files + stale alternative counts 48/34→64 across 233 files (S1312). Flash sale final push: enhanced countdown urgency, rotating social proof, personal savings calculator (S1307).**
+**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed. PRO GATE OVERLAY (S1313): gated compare-multi, dashboard, playbook. begin_checkout tracking added to pricing + buy pages. 30-day guarantee. Social proof consistent (8,300+). Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
 
 ### Blocked on Human (Priority Order)
 - **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
@@ -12,7 +12,9 @@
 - **npm package** — npm-package/ ready, needs npm auth.
 
 ### Routine Tasks (for cheap sessions)
-- **Monitor flash sale conversions** — Check GA4 for flash_buy_clicked events after S1298 Ko-fi + S1297 timeline + S1293 CTA fix. If still 0, investigate Stripe checkout page.
+- **Monitor pro-gate conversions** — Check GA4 for pro_gate_cta_clicked and pro_gate_shown events after S1313 gate deployment. Track if gates increase begin_checkout events.
+- **Add pro-gate to more tools** — Consider gating: compare-two (1 free comparison), cost-explorer, calculator export. Use pro-gate-overlay.js.
+- **Monitor flash sale conversions** — Check GA4 for flash_buy_clicked events. If still 0 after gates, investigate Stripe checkout page.
 - **Post-Jul 12: Verify auto-switch** — flash-sale.html now auto-switches to $49 via DEAL_EXPIRED flag. Verify it works after deadline.
 - **Post-Jul 12: Create $49 Stripe link** — POST_EXPIRY_STRIPE_URL still points to $19 link. Need human to create $49 payment link for proper post-expiry pricing.
 - **Swap $49 Stripe link into shared.js** — When human provides it, update POST_EXPIRY_STRIPE_URL.
