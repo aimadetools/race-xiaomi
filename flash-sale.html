@@ -560,7 +560,7 @@
     <div class="social-proof">
         <div class="stats">
             <div class="stat">
-                <div class="number">60</div>
+                <div class="number">63</div>
                 <div class="label">AI Models</div>
             </div>
             <div class="stat">
@@ -638,6 +638,102 @@
 
     <script>
         if(window.trackEvent) window.trackEvent('flash_sale_page_view');
+
+        // Post-expiry: dynamically update page for $49 pricing (S1295)
+        // Runs after shared.js sets DEAL_EXPIRED. Hides countdown, updates copy.
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!window.DEAL_EXPIRED) return;
+
+            // Update page title and meta
+            document.title = 'APIpulse Pro — AI API Pricing Report, $49 Lifetime';
+            var ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) ogTitle.content = 'APIpulse Pro — AI API Pricing Report, $49 Lifetime';
+            var metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) metaDesc.content = 'APIpulse Pro: AI API pricing report for 63 models, price drop alerts, cost monitoring. $49 lifetime one-time payment.';
+            var ogDesc = document.querySelector('meta[property="og:description"]');
+            if (ogDesc) ogDesc.content = '63 models, 10 providers. Price alerts, cost monitoring, migration code. $49 lifetime.';
+            var twDesc = document.querySelector('meta[name="twitter:description"]');
+            if (twDesc) twDesc.content = '63 models, 10 providers. Price alerts, cost monitoring, migration code. $49 lifetime.';
+            var twTitle = document.querySelector('meta[name="twitter:title"]');
+            if (twTitle) twTitle.content = 'APIpulse Pro — AI API Pricing Report, $49 Lifetime';
+
+            // Update badge
+            var badge = document.querySelector('.hero .badge');
+            if (badge) { badge.textContent = '✅ One-Time Payment — No Subscription'; badge.style.borderColor = 'rgba(34,197,94,0.3)'; badge.style.color = '#22c55e'; badge.style.background = 'rgba(34,197,94,0.1)'; }
+
+            // Update hero headline
+            var h1 = document.querySelector('.hero h1');
+            if (h1) h1.innerHTML = 'Stop overpaying for AI APIs<br><span class="price-highlight">$49 lifetime</span>';
+
+            // Update sub
+            var sub = document.querySelector('.hero .sub');
+            if (sub) sub.textContent = '63 models. 10 providers. Price drop alerts, cost monitoring, migration code. One payment, forever.';
+
+            // Hide countdown
+            var countdown = document.querySelector('.countdown');
+            if (countdown) countdown.style.display = 'none';
+
+            // Update all CTA buttons text
+            document.querySelectorAll('a').forEach(function(a) {
+                if (a.textContent.includes('$19')) {
+                    a.textContent = a.textContent.replace(/\$19/g, '$49');
+                }
+            });
+
+            // Update text nodes containing $19
+            var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+                acceptNode: function(n) {
+                    return n.parentNode.tagName === 'SCRIPT' || n.parentNode.tagName === 'STYLE'
+                        ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+                }
+            });
+            var nodes = [];
+            while (walker.nextNode()) nodes.push(walker.currentNode);
+            nodes.forEach(function(node) {
+                var v = node.nodeValue;
+                if (v.indexOf('$19') !== -1) node.nodeValue = v.replace(/\$19/g, '$49');
+                if (v.indexOf('61% off') !== -1) node.nodeValue = v.replace(/61% off/gi, 'one-time payment');
+                if (v.indexOf('Flash sale') !== -1) node.nodeValue = v.replace(/Flash sale/gi, 'Limited time');
+                if (v.indexOf('Flash Sale') !== -1) node.nodeValue = v.replace(/Flash Sale/g, 'Limited Time');
+                if (v.indexOf('ends Jul 12') !== -1) node.nodeValue = v.replace(/ends Jul 12/gi, 'one-time payment');
+                if (v.indexOf('Ends Jul 12') !== -1) node.nodeValue = v.replace(/Ends Jul 12/g, 'One-Time Payment');
+                if (v.indexOf('price goes back to $49') !== -1) node.nodeValue = v.replace(/price goes back to \$49/gi, 'one-time payment');
+                if (v.indexOf('Then it\'s $49') !== -1) node.nodeValue = v.replace(/Then it's \$49/g, 'One-time payment.');
+                if (v.indexOf('Save $30 — 61% off') !== -1) node.nodeValue = v.replace(/Save \$30 — 61% off/g, 'One-time payment · Lifetime access');
+            });
+
+            // Update price-compare section
+            var was = document.querySelector('.price-compare .was');
+            if (was) was.textContent = 'Regular price: $99';
+            var savings = document.querySelector('.price-compare .savings');
+            if (savings) savings.textContent = 'One-time payment · Lifetime access';
+
+            // Update JSON-LD price
+            var ldScript = document.querySelector('script[type="application/ld+json"]');
+            if (ldScript) {
+                try {
+                    var ld = JSON.parse(ldScript.textContent);
+                    ld.price = '49.00';
+                    ld.name = 'APIpulse Pro Lifetime Access';
+                    ldScript.textContent = JSON.stringify(ld);
+                } catch(e) {}
+            }
+
+            // Update exit popup
+            var exitPopup = document.getElementById('exit-popup');
+            if (exitPopup) {
+                var exitBadge = exitPopup.querySelector('div[style*="linear-gradient"]');
+                if (exitBadge) { exitBadge.textContent = '✅ One-time payment'; exitBadge.style.background = 'linear-gradient(135deg,#16a34a,#15803d)'; }
+                var exitH3 = exitPopup.querySelector('h3');
+                if (exitH3) exitH3.textContent = 'Get APIpulse Pro — $49 lifetime';
+                var exitP = exitPopup.querySelector('p');
+                if (exitP) exitP.textContent = 'One-time payment, lifetime access. Most developers save $600–$2,400/yr.';
+            }
+
+            // Update calculator CTA text
+            var calcCta = document.querySelector('#savings-calc a[href*="stripe"]');
+            if (calcCta) calcCta.innerHTML = 'Get Pro for $49 — Save <span id="calc-cta-amount">$0</span>/yr →';
+        });
 
         // Countdown to Jul 12, 2026 23:59:59 UTC
         (function() {
@@ -791,11 +887,12 @@
 
                 document.getElementById('calc-savings-amount').textContent = '$' + Math.round(savingsAnnual).toLocaleString();
                 document.getElementById('calc-cta-amount').textContent = '$' + Math.round(savingsAnnual).toLocaleString();
+                var proPrice = window._abPrice || 49;
                 document.getElementById('calc-detail').innerHTML =
                     'Switch from <strong>' + model.name + '</strong> to <strong>' + alt.name + '</strong><br>' +
                     'Current: $' + currentCostMonthly.toFixed(0) + '/mo → Alternative: $' + altCostMonthly.toFixed(0) + '/mo<br>' +
-                    '<span style="color:#22c55e;font-weight:700;">Pro costs $19 once. Pays for itself in ' +
-                    Math.ceil(19 / savingsMonthly) + ' months.</span>';
+                    '<span style="color:#22c55e;font-weight:700;">Pro costs $' + proPrice + ' once. Pays for itself in ' +
+                    Math.ceil(proPrice / savingsMonthly) + ' months.</span>';
             }
 
             document.getElementById('calc-model').addEventListener('change', calculateSavings);
@@ -808,8 +905,14 @@
             var bar = document.createElement('div');
             bar.id = 'sticky-bar';
             bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:12px 20px;display:none;align-items:center;justify-content:center;gap:16px;z-index:9998;font-size:14px;font-weight:600;box-shadow:0 -4px 20px rgba(0,0,0,0.4);';
-            bar.innerHTML = '<span>⚡ Flash sale ends Jul 12 — <strong>$19 lifetime</strong></span>' +
-                '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="background:white;color:#dc2626;padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:19,location:\'sticky_bar\'});">Get Pro — $19 →</a>';
+            if (window.DEAL_EXPIRED) {
+                bar.innerHTML = '<span>✅ <strong>APIpulse Pro — $49 lifetime</strong></span>' +
+                    '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="background:white;color:#16a34a;padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:49,location:\'sticky_bar\'});">Get Pro — $49 →</a>';
+                bar.style.background = 'linear-gradient(135deg,#16a34a,#15803d)';
+            } else {
+                bar.innerHTML = '<span>⚡ Flash sale ends Jul 12 — <strong>$19 lifetime</strong></span>' +
+                    '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="background:white;color:#dc2626;padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:19,location:\'sticky_bar\'});">Get Pro — $19 →</a>';
+            }
             document.body.appendChild(bar);
 
             window.addEventListener('scroll', function() {
