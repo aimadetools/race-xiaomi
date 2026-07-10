@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed. Compare Two Models tool added (S1304). Free vs Pro comparison added (S1300). Zero-Risk Guarantee added. All 10 providers verified. Social proof consistent (8,300+ across all files — S1301). Post-expiry $49 switch guarded — won't activate until real Stripe link provided (S1306). Stale model counts fixed 56→64 in widgets/npm/docs (S1306). Flash sale final push: enhanced countdown urgency, rotating social proof, personal savings calculator (S1307).**
+**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed. Compare Two Models tool added (S1304). Free vs Pro comparison added (S1300). Zero-Risk Guarantee added. All 10 providers verified. Social proof consistent (8,300+ across all files — S1301). Post-expiry $49 switch guarded — won't activate until real Stripe link provided (S1306). Stale model counts fixed 54→64 across 56 files + stale alternative counts 48/34→64 across 233 files (S1312). Flash sale final push: enhanced countdown urgency, rotating social proof, personal savings calculator (S1307).**
 
 ### Blocked on Human (Priority Order)
 - **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
