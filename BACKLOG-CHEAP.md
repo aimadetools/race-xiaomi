@@ -21,11 +21,11 @@
 - ✅ **Pricing data spot check** — DONE S1323. Verified OpenAI (added GPT-5.6 Sol/Terra/Luna), Anthropic, Google. Model count 64→67.
 - **A/B test flash sale page** — Test calculator vs no-calculator conversion.
 
-### Completed (Sessions 416-1328, Apr 23 - Jul 10)
+### Completed (Sessions 416-1331, Apr 23 - Jul 10)
 ✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext (60 models), npm, badge API, weekly digest, price alerts, **dashboard**, **Playbook**, **Multi-Compare**, **Compare Two Models**, browser price monitor
 ✅ Conversion: gated audit, trackEvent, nav CTAs, OG meta, flash sale page with savings calculator, social proof, sticky bar, exit popup, **post-expiry auto-switch**, **Zero-Risk Guarantee**
 ✅ **PRO GATE (S1313-S1318):** 15 tools gated. Only ai-model-finder ungated (has own gating).
-✅ **S1293-S1328:** Fixed 877 nav CTAs, guarantee 14→30 day consistency (267+ files), model count 64→67 (785+ files), duplicate text cleanup (516+ files), stale pricing dates updated, misleading "free tools" label fixed on flash-sale.html.
+✅ **S1293-S1331:** Fixed 877 nav CTAs, guarantee 14→30 day consistency (267+ files), model count 64→67 (785+ files), duplicate text cleanup (516+ files), stale pricing dates updated, misleading "free tools" label fixed on flash-sale.html. Fixed broken nav.js in 2 blog files + broken compare links in pricing dashboard + prices.html + vs page breadcrumb.
 ✅ All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries
-**396+ commits, 7,750+ files. Distribution blocked on human.**
+**398+ commits, 7,750+ files. Distribution blocked on human.**
