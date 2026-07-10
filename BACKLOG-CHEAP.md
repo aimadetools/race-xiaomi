@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1186 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 23:59:59 UTC — ~48 hours). All CTAs fixed. PRO GATE OVERLAY (S1313-S1318): 15 tools gated. S1322: Final verification complete — site operational. S1323: Pricing verified, GPT-5.6 models added. S1324: Model count 64→67 fixed across 534 files, duplicate text cleaned up. S1325: Remaining 64→67 model count fixed in 3 HTML pages + 3 internal docs. S1326: Remaining 64→67 model count fixed in 7 blog pages. Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
+**Site Status:** 1186 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 23:59:59 UTC — ~48 hours). All CTAs fixed. PRO GATE OVERLAY (S1313-S1318): 15 tools gated. S1322: Final verification complete — site operational. S1323-S1327: Pricing verified, GPT-5.6 added, model count 64→67 fixed across 785+ files, duplicate text cleaned up, stale dates updated. S1328: Fixed misleading "free tools" label on flash-sale.html. Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
 
 ### Blocked on Human (Priority Order)
 - **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
@@ -21,15 +21,11 @@
 - ✅ **Pricing data spot check** — DONE S1323. Verified OpenAI (added GPT-5.6 Sol/Terra/Luna), Anthropic, Google. Model count 64→67.
 - **A/B test flash sale page** — Test calculator vs no-calculator conversion.
 
-### Completed (Sessions 416-1327, Apr 23 - Jul 10)
+### Completed (Sessions 416-1328, Apr 23 - Jul 10)
 ✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext (60 models), npm, badge API, weekly digest, price alerts, **dashboard**, **Playbook**, **Multi-Compare**, **Compare Two Models**, browser price monitor
 ✅ Conversion: gated audit, trackEvent, nav CTAs, OG meta, flash sale page with savings calculator, social proof, sticky bar, exit popup, **post-expiry auto-switch**, **Zero-Risk Guarantee**
 ✅ **PRO GATE (S1313-S1318):** 15 tools gated. Only ai-model-finder ungated (has own gating).
-✅ **CRITICAL FIX (S1293):** Fixed 877 nav CTAs — all 'Get Pro' buttons link directly to Stripe
-✅ **Guarantee consistency (S1314):** 14-day → 30-day across 267+ files
-✅ **Pricing data (S1323):** Verified OpenAI, Anthropic, Google. Added GPT-5.6 Sol/Terra/Luna. Model count 64→67.
-✅ **Model count fix (S1324):** Updated 64→67 across 534 files. Cleaned up duplicate FINAL 48 HOURS text in 516 files.
-✅ **Duplicate text cleanup (S1327):** Fixed 512 files with duplicate FINAL 48 HOURS text. Fixed stale Jul 4 verification date.
+✅ **S1293-S1328:** Fixed 877 nav CTAs, guarantee 14→30 day consistency (267+ files), model count 64→67 (785+ files), duplicate text cleanup (516+ files), stale pricing dates updated, misleading "free tools" label fixed on flash-sale.html.
 ✅ All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries
-**395+ commits, 7,750+ files. Distribution blocked on human.**
+**396+ commits, 7,750+ files. Distribution blocked on human.**
