@@ -23,11 +23,11 @@
 - ✅ **Done (S1285-S1291):** Playbook, Multi-Compare, cross-links, blog post, OG images, flash sale enhanced, Chrome extension sync, pricing verified, $5 tier redirect.
 - ✅ **Done (S1272-S1284):** Dashboard, CSV/budget/projections, usage gate, auto-save calculator, conversion copy, support comparison table, $5 Supporter tier.
 
-### Completed (Sessions 416-1293, Apr 23 - Jul 10)
-✅ Complete site: 1183 pages, 60 models, 10 providers, 533 comparison/alternatives pages
+### Completed (Sessions 416-1295, Apr 23 - Jul 10)
+✅ Complete site: 1183 pages, 63 models, 10 providers, 533 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext (60 models), npm, badge API, weekly digest, price alerts, **dashboard**, **Playbook**, **Multi-Compare**, browser price monitor
-✅ Conversion: gated audit, trackEvent, nav CTAs, OG meta, flash sale page with savings calculator (S1292), social proof (S1292), sticky bar, exit popup
+✅ Conversion: gated audit, trackEvent, nav CTAs, OG meta, flash sale page with savings calculator (S1292), social proof (S1292), sticky bar, exit popup, **post-expiry auto-switch (S1295)**
 ✅ **CRITICAL FIX (S1293):** Fixed 877 nav CTAs — all 'Get Pro' buttons link directly to Stripe (eliminated pricing.html middleman)
 ✅ **CRITICAL FIX (S1292):** All 'Get Pro' CTAs now link directly to Stripe checkout (were linking to support.html)
-✅ All 10 providers verified (Jul 9). Blog: 388 posts. OG images: 392. Sitemap: 1182 entries
-**351+ commits, 7,400+ files. Distribution blocked on human.**
+✅ All 10 providers verified (Jul 10). Pricing spot check: OpenAI, Google, Anthropic, DeepSeek, Mistral, Cohere all confirmed. Blog: 388 posts. OG images: 392. Sitemap: 1182 entries
+**355+ commits, 7,400+ files. Distribution blocked on human.**
