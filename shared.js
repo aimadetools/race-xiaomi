@@ -43,6 +43,9 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
     var GO_SKIP = location.pathname.indexOf('go.html') !== -1;
     var FLASH19_SKIP = location.pathname.indexOf('flash-19.html') !== -1;
     var CONFIRMED_STRIPE_LINK = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'; // $19 flash sale (ends Jul 12)
+    // POST-EXPIRY: Update this to the $49 Stripe payment link when human creates it.
+    // Currently falls back to $19 link so checkout still works. File HELP-REQUEST for $49 link.
+    window.POST_EXPIRY_STRIPE_URL = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'; // TODO: swap to $49 link
 
     // Post-expiry: $49; flash sale (before July 12): $19
     if (window.DEAL_EXPIRED) {
@@ -1314,8 +1317,9 @@ async function saveEmail(e) {
         var urgencyLabel = daysLeft <= 0 ? '⚡ Flash sale EXPIRED' :
             daysLeft <= 1 ? '⚡ FINAL HOURS — flash sale ends tonight!' :
             '⚡ Only ' + daysLeft + 'd ' + hoursLeft + 'h left — flash sale ends Jul 12';
+        var stickyBottomStripeUrl = window.POST_EXPIRY_STRIPE_URL || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
         bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">' + urgencyLabel + '</span>' +
-            '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
+            '<a href="' + stickyBottomStripeUrl + '" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
             '<button onclick="document.getElementById(\'sticky-bottom-bar\').remove();localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');if(window.trackEvent)window.trackEvent(\'sticky_bar_dismissed\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px;padding:4px 8px;line-height:1;" aria-label="Close">×</button>';
         document.body.appendChild(bar);
         if (window.trackEvent) window.trackEvent('sticky_bar_shown', { page: path, price: price });

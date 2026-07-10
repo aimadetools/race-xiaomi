@@ -673,10 +673,15 @@
             var countdown = document.querySelector('.countdown');
             if (countdown) countdown.style.display = 'none';
 
-            // Update all CTA buttons text
+            // Update all CTA buttons text AND swap Stripe hrefs to post-expiry link
+            var postExpiryUrl = window.POST_EXPIRY_STRIPE_URL || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
             document.querySelectorAll('a').forEach(function(a) {
                 if (a.textContent.includes('$19')) {
                     a.textContent = a.textContent.replace(/\$19/g, '$49');
+                }
+                // Swap Stripe checkout links from $19 flash sale to post-expiry URL
+                if (a.href && a.href.includes('buy.stripe.com/bJecN55OEa5g1VUbcreEo0i')) {
+                    a.href = postExpiryUrl;
                 }
             });
 
@@ -906,8 +911,9 @@
             bar.id = 'sticky-bar';
             bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:12px 20px;display:none;align-items:center;justify-content:center;gap:16px;z-index:9998;font-size:14px;font-weight:600;box-shadow:0 -4px 20px rgba(0,0,0,0.4);';
             if (window.DEAL_EXPIRED) {
+                var stickyExpiryUrl = window.POST_EXPIRY_STRIPE_URL || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
                 bar.innerHTML = '<span>✅ <strong>APIpulse Pro — $49 lifetime</strong></span>' +
-                    '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="background:white;color:#16a34a;padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:49,location:\'sticky_bar\'});">Get Pro — $49 →</a>';
+                    '<a href="' + stickyExpiryUrl + '" target="_blank" rel="noopener" style="background:white;color:#16a34a;padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:49,location:\'sticky_bar\'});">Get Pro — $49 →</a>';
                 bar.style.background = 'linear-gradient(135deg,#16a34a,#15803d)';
             } else {
                 bar.innerHTML = '<span>⚡ Flash sale ends Jul 12 — <strong>$19 lifetime</strong></span>' +

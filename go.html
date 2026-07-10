@@ -500,6 +500,38 @@
         })();
         </script>
 
+        <!-- Post-expiry: update go.html to $49 pricing (S1297) -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!window.DEAL_EXPIRED) return;
+            var postExpiryUrl = window.POST_EXPIRY_STRIPE_URL || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+            // Update Stripe link hrefs
+            document.querySelectorAll('a[href*="buy.stripe.com/bJecN55OEa5g1VUbcreEo0i"]').forEach(function(a) {
+                a.href = postExpiryUrl;
+            });
+            // Update CTA text
+            var ctaPrice = document.getElementById('cta-price');
+            if (ctaPrice) ctaPrice.textContent = '$49';
+            var ctaPriceBottom = document.getElementById('cta-price-bottom');
+            if (ctaPriceBottom) ctaPriceBottom.textContent = '$49';
+            // Remove "→ $49 Jul 12" urgency suffix from CTAs
+            document.querySelectorAll('#buy-cta span, #buy-cta-bottom span').forEach(function(s) {
+                if (s.textContent.indexOf('Jul 12') !== -1) s.style.display = 'none';
+            });
+            // Update price display
+            var priceDisplay = document.getElementById('price-display');
+            if (priceDisplay) priceDisplay.textContent = '$49';
+            // Hide countdown
+            var countdown = document.getElementById('go-countdown');
+            if (countdown) countdown.style.display = 'none';
+            // Update FAQ
+            var faqFuture = document.getElementById('faq-future-price');
+            if (faqFuture) faqFuture.parentElement.innerHTML = 'Yes. $49 gets you lifetime access — no subscription, no recurring fees. One-time payment.';
+            // Update page title
+            document.title = 'APIpulse Pro — AI API Pricing Report, $49 Lifetime';
+        });
+        </script>
+
         <!-- Urgency countdown -->
         <div id="go-countdown" style="background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:12px 16px;border-radius:10px;text-align:center;margin-bottom:20px;display:none;">
             <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;opacity:0.9;">⏰ Early adopter pricing ends in</div>
