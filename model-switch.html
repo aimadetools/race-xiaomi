@@ -33,6 +33,7 @@
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
     <script src="pro-features.js" defer></script>
+    <script src="pro-gate-overlay.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -680,6 +681,14 @@
                 target_model: targetId,
                 savings: savings.toFixed(2)
             });
+        }
+
+        // Pro gate: after first calculation, gate the results section
+        if (!window._switchGateShown && typeof showProGate === 'function') {
+            window._switchGateShown = true;
+            setTimeout(function() {
+                showProGate('#resultsCard', { showPreview: true });
+            }, 800); // Brief delay so user sees results starting to appear
         }
 
         // --- Migration Steps ---
