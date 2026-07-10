@@ -25,6 +25,7 @@
     </script>
     <script src="analytics.js" defer></script>
     <script src="shared.js" defer></script>
+    <script src="pro-gate-overlay.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -667,6 +668,33 @@
         if (typeof trackEvent === 'function') {
             trackEvent('playbook_viewed', { page_location: window.location.href });
         }
+
+        // Pro gate: gate content after scrolling past strategy 3
+        (function() {
+            if (typeof showProGate !== 'function') return;
+            if (localStorage.getItem('apipulse_pro') === 'true') return;
+            var s4 = document.getElementById('s4');
+            if (!s4) return;
+            var gateShown = false;
+            // Create a sentinel div right before strategy 4
+            var sentinel = document.createElement('div');
+            sentinel.id = 'playbook-gate-sentinel';
+            sentinel.style.cssText = 'height:1px;';
+            s4.parentNode.insertBefore(sentinel, s4);
+            // Use IntersectionObserver to detect when user scrolls to strategy 4
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting && !gateShown) {
+                        gateShown = true;
+                        observer.disconnect();
+                        // Gate the main content area
+                        var main = document.querySelector('main') || document.querySelector('.content') || document.body;
+                        showProGate('main', { showPreview: true });
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(sentinel);
+        })();
     </script>
 </body>
 </html>

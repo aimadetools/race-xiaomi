@@ -26,6 +26,7 @@
     <script src="analytics.js" defer></script>
     <script src="pricing-data.js" defer></script>
     <script src="shared.js" defer></script>
+    <script src="pro-gate-overlay.js" defer></script>
     <style>
         .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; text-align: center; margin-bottom: 12px; }
@@ -435,6 +436,14 @@
             btn.style.background = 'var(--accent)';
         }, 2000);
         if (window.trackEvent) window.trackEvent('dashboard_snapshot_saved', { model: modelId, cost: cost });
+
+        // Pro gate: after first save, gate the premium dashboard features
+        if (!window._dashboardGateShown && typeof showProGate === 'function') {
+            window._dashboardGateShown = true;
+            setTimeout(function() {
+                showProGate('.history-card', { showPreview: true });
+            }, 1200); // Let user see the "Saved!" feedback first
+        }
     }
 
     function deleteSnapshot(idx) {
