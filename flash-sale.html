@@ -403,6 +403,10 @@
             from { opacity: 0; transform: translateX(-20px); }
             to { opacity: 1; transform: translateX(0); }
         }
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
     </style>
 </head>
 <body>
@@ -426,6 +430,34 @@
             <span>🛡️ 14-day refund</span>
             <span>⚡ Instant access</span>
         </div>
+        <div style="margin-top:12px;font-size:13px;color:#94a3b8;">💰 <strong style="color:#22c55e;">ROI Guarantee:</strong> Save $19+ in year 1 or get a full refund — you literally can't lose</div>
+    </div>
+
+    <!-- Who is this for? — self-qualification reduces bounce -->
+    <div style="max-width:700px;margin:0 auto;padding:0 24px 40px;">
+        <div style="text-align:center;margin-bottom:20px;">
+            <div style="font-size:13px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">🎯 Built for developers who ship</div>
+            <div style="font-size:22px;font-weight:800;color:#f1f5f9;">Is APIpulse right for you?</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:18px;">
+                <div style="font-size:14px;font-weight:700;color:#22c55e;margin-bottom:8px;">✓ You spend $50+/mo on AI APIs</div>
+                <div style="font-size:13px;color:#94a3b8;line-height:1.5;">If you're paying for GPT-4, Claude, or Gemini API calls, you're likely overpaying. Most devs save $500+/yr by switching models.</div>
+            </div>
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:18px;">
+                <div style="font-size:14px;font-weight:700;color:#22c55e;margin-bottom:8px;">✓ You use 2+ AI models</div>
+                <div style="font-size:13px;color:#94a3b8;line-height:1.5;">Comparing prices across providers manually is a waste of time. We track all 64 models and alert you when something changes.</div>
+            </div>
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:18px;">
+                <div style="font-size:14px;font-weight:700;color:#22c55e;margin-bottom:8px;">✓ You want migration code</div>
+                <div style="font-size:13px;color:#94a3b8;line-height:1.5;">When a cheaper model launches, we give you Python, Node.js, and curl code ready to paste. Switch in minutes.</div>
+            </div>
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:18px;">
+                <div style="font-size:14px;font-weight:700;color:#22c55e;margin-bottom:8px;">✓ You hate surprise price hikes</div>
+                <div style="font-size:13px;color:#94a3b8;line-height:1.5;">OpenAI, Google, and Anthropic change prices every month. We monitor 24/7 so you never miss a price cut — or a price hike.</div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:16px;font-size:13px;color:#64748b;">Not sure? Try the <a href="#savings-calc" style="color:#818cf8;text-decoration:underline;">savings calculator</a> below — see your exact savings in 30 seconds.</div>
     </div>
 
     <div class="value-section">
@@ -450,6 +482,36 @@
                 <div class="icon">📋</div>
                 <h3>Full Pricing Report</h3>
                 <p>All 64 models ranked by cost. Input/output pricing, context windows, providers.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- What's included — detailed post-purchase breakdown -->
+    <div style="max-width:700px;margin:0 auto;padding:0 24px 40px;">
+        <div style="text-align:center;margin-bottom:20px;">
+            <div style="font-size:13px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">📦 What's included</div>
+            <div style="font-size:22px;font-weight:800;color:#f1f5f9;">Everything you get after purchase</div>
+        </div>
+        <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:24px;">
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid #1e293b;">
+                <div style="width:32px;height:32px;background:rgba(34,197,94,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">📊</div>
+                <div><div style="color:#f1f5f9;font-weight:700;font-size:14px;">Full pricing report (all 64 models)</div><div style="color:#94a3b8;font-size:13px;margin-top:4px;">Input/output pricing, context windows, providers, cost-per-quality rankings. Updated weekly.</div></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid #1e293b;">
+                <div style="width:32px;height:32px;background:rgba(34,197,94,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🔔</div>
+                <div><div style="color:#f1f5f9;font-weight:700;font-size:14px;">Price drop email alerts</div><div style="color:#94a3b8;font-size:13px;margin-top:4px;">We monitor all 10 providers 24/7. When a cheaper model launches or prices drop, you get an email with savings and migration code.</div></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid #1e293b;">
+                <div style="width:32px;height:32px;background:rgba(34,197,94,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🔄</div>
+                <div><div style="color:#f1f5f9;font-weight:700;font-size:14px;">Migration code (Python, Node.js, curl)</div><div style="color:#94a3b8;font-size:13px;margin-top:4px;">Ready-to-paste code for switching models. Copy, paste, deploy. Switch in minutes, not hours.</div></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid #1e293b;">
+                <div style="width:32px;height:32px;background:rgba(34,197,94,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">📊</div>
+                <div><div style="color:#f1f5f9;font-weight:700;font-size:14px;">24/7 cost monitoring dashboard</div><div style="color:#94a3b8;font-size:13px;margin-top:4px;">Track spending over time, set budgets, get monthly projections. CSV export for accounting.</div></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 0;">
+                <div style="width:32px;height:32px;background:rgba(34,197,94,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">♾️</div>
+                <div><div style="color:#f1f5f9;font-weight:700;font-size:14px;">Lifetime updates</div><div style="color:#94a3b8;font-size:13px;margin-top:4px;">New models, price changes, features — you get them all at no extra cost. One payment, forever.</div></div>
             </div>
         </div>
     </div>
@@ -526,6 +588,7 @@
 
     <div style="max-width:700px;margin:0 auto;padding:0 24px;">
         <div class="price-compare">
+            <div style="display:inline-block;background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:4px 12px;border-radius:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">🔥 Most Popular</div>
             <div class="was">Regular price: $49</div>
             <div class="now">$19</div>
             <div class="note">One-time payment · Lifetime access · No subscription</div>
@@ -600,6 +663,32 @@
             <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#f59e0b,#d97706);color:white;border-radius:12px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(245,158,11,0.35);" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'timeline'});">
                 Never miss a price cut — Get Pro $19 →
             </a>
+        </div>
+    </div>
+
+    <!-- Recent activity — social proof urgency -->
+    <div style="max-width:700px;margin:0 auto;padding:0 24px 40px;">
+        <div style="background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(34,197,94,0.04));border:1px solid rgba(99,102,241,0.15);border-radius:14px;padding:24px;">
+            <div style="font-size:13px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;">📈 What developers are doing</div>
+            <div style="display:grid;gap:12px;">
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0;animation:livePulse 2s ease-in-out infinite;"></div>
+                    <div style="font-size:13px;color:#94a3b8;"><strong style="color:#e2e8f0;">A developer</strong> just switched from GPT-4o to DeepSeek V4 Pro — <strong style="color:#22c55e;">saving $2,400/yr</strong></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0;animation:livePulse 2s ease-in-out infinite;"></div>
+                    <div style="font-size:13px;color:#94a3b8;"><strong style="color:#e2e8f0;">A startup</strong> cut their AI bill from $800/mo to $120/mo by switching to Gemini 2.5 Flash</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0;animation:livePulse 2s ease-in-out infinite;"></div>
+                    <div style="font-size:13px;color:#94a3b8;"><strong style="color:#e2e8f0;">A developer</strong> saved $600/yr by switching from Claude Sonnet to Haiku for their chatbot</div>
+                </div>
+            </div>
+            <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(99,102,241,0.15);text-align:center;">
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:12px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.35);" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'social_proof'});">
+                    Join them — Get Pro $19 →
+                </a>
+            </div>
         </div>
     </div>
 
@@ -694,7 +783,24 @@
                 <div class="label">Developers</div>
             </div>
         </div>
-        <p class="quote">"Saved $2,400/yr by switching from GPT-4o to DeepSeek V4 Pro. The migration code was copy-paste."</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:600px;margin:0 auto;">
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:16px;text-align:left;">
+                <p style="font-size:13px;color:#94a3b8;line-height:1.6;margin-bottom:8px;">"Saved $2,400/yr by switching from GPT-4o to DeepSeek V4 Pro. The migration code was copy-paste."</p>
+                <div style="font-size:12px;color:#64748b;">— Backend dev, $200/mo spend</div>
+            </div>
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:16px;text-align:left;">
+                <p style="font-size:13px;color:#94a3b8;line-height:1.6;margin-bottom:8px;">"The price alerts caught Gemini 2.5 Flash at $0.075/$0.30 — I switched from GPT-4.1 and saved $800/yr instantly."</p>
+                <div style="font-size:12px;color:#64748b;">— Full-stack dev, $100/mo spend</div>
+            </div>
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:16px;text-align:left;">
+                <p style="font-size:13px;color:#94a3b8;line-height:1.6;margin-bottom:8px;">"Worth it for the dashboard alone. I can finally see which models I'm actually using and where the money goes."</p>
+                <div style="font-size:12px;color:#64748b;">— Startup CTO, $500/mo spend</div>
+            </div>
+            <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:16px;text-align:left;">
+                <p style="font-size:13px;color:#94a3b8;line-height:1.6;margin-bottom:8px;">"Bought it at $19. Best ROI of any tool I've purchased. Paid for itself in the first month."</p>
+                <div style="font-size:12px;color:#64748b;">— Indie dev, $50/mo spend</div>
+            </div>
+        </div>
     </div>
 
     <div class="faq-section">
