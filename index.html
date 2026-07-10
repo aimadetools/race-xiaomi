@@ -773,7 +773,7 @@
                             <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px;box-shadow:0 4px 16px rgba(34,197,94,0.4);" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'post_calculator'})">⚡ Get Pro — $19 lifetime</a>
                             <a href="audit.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--bg-secondary);border:1px solid #334155;color:#94a3b8;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;" onclick="if(window.trackEvent)window.trackEvent('monitoring_cta_clicked',{source:'post_calculator'})">🔍 Free audit first</a>
                         </div>
-                        <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🛡️ 14-day refund · ⚡ Instant access · <span id="calc-countdown" style="color:#ef4444;font-weight:600;">Sale ends Jul 12</span></div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🛡️ 30-day refund · ⚡ Instant access · <span id="calc-countdown" style="color:#ef4444;font-weight:600;">Sale ends Jul 12</span></div>
                         <script>(function(){var e=new Date('2026-07-12T23:59:59'),c=document.getElementById('calc-countdown');function u(){var n=new Date(),d=e-n;if(d<=0){c.textContent='Sale ended';return}var dd=Math.floor(d/864e5),h=Math.floor((d%864e5)/36e5),m=Math.floor((d%36e5)/6e4);c.textContent=dd+'d '+h+'h '+m+'m left — price goes to $49';}u();setInterval(u,6e4);})();</script>
                     </div>
                     <p style="margin-top: 16px; font-size: 12px; color: var(--text-muted);">
@@ -1984,12 +1984,12 @@
                     <div style="font-size:clamp(36px,6vw,56px);font-weight:900;color:var(--green);font-family:monospace;line-height:1.1;">$${annualSavings.toFixed(0)}<span style="font-size:0.35em;color:var(--text-muted);">/year</span></div>
                     <div style="font-size:15px;color:var(--text-secondary);margin:10px 0 18px;">$19 Pro pays for itself in <strong style="color:var(--green);">${paybackText}</strong> — <strong style="color:var(--green);">${Math.round(annualSavings / 19)}x return</strong></div>
                     <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:16px 44px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:18px;font-weight:900;text-decoration:none;box-shadow:0 4px 24px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'calc_savings_card'})">⚡ Unlock $${annualSavings.toFixed(0)}/yr Savings — $19</a>
-                    <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🔒 Stripe secure · 14-day refund · Instant access · Sale ends Jul 12</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🔒 Stripe secure · 30-day refund · Instant access · Sale ends Jul 12</div>
                 </div>`;
                 html += '</div>';
                 savingsContainer.innerHTML = html;
             } else {
-                savingsContainer.innerHTML = '<div class="savings-badge">This is already the cheapest option for your usage!</div><div style="margin-top:12px;padding:16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;text-align:center;"><div style="font-size:14px;color:var(--text-secondary);margin-bottom:10px;">Pro helps you <strong>stay</strong> cheapest: migration code, price alerts, weekly reports tracking all 64 models.</div><a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:19,location:\'calc_cheapest\'})">⚡ Get Pro — $19 lifetime</a><div style="font-size:11px;color:var(--text-muted);margin-top:8px;">Sale ends Jul 12 · 14-day refund</div></div>';
+                savingsContainer.innerHTML = '<div class="savings-badge">This is already the cheapest option for your usage!</div><div style="margin-top:12px;padding:16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;text-align:center;"><div style="font-size:14px;color:var(--text-secondary);margin-bottom:10px;">Pro helps you <strong>stay</strong> cheapest: migration code, price alerts, weekly reports tracking all 64 models.</div><a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:19,location:\'calc_cheapest\'})">⚡ Get Pro — $19 lifetime</a><div style="font-size:11px;color:var(--text-muted);margin-top:8px;">Sale ends Jul 12 · 30-day refund</div></div>';
             }
 
             setTimeout(() => results.classList.remove('calculating'), 300);
@@ -2178,7 +2178,7 @@
                 <div style="font-size:13px;color:var(--text-muted);">✓ Instant access</div>
             </div>
             <a href="#" id="exit-popup-cta" style="display:inline-block;background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:14px 36px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(220,38,38,0.3);">Monitor 60 Models — $19</a>
-            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. No questions asked.</p>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">30-day money-back guarantee. No questions asked.</p>
         </div>
     </div>
     <script>
