@@ -48,7 +48,10 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
     window.POST_EXPIRY_STRIPE_URL = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'; // TODO: swap to $49 link
 
     // Post-expiry: $49; flash sale (before July 12): $19
-    if (window.DEAL_EXPIRED) {
+    // Guard: Only switch price if POST_EXPIRY_STRIPE_URL is a different link (not the $19 fallback)
+    // Otherwise pages show $49 but Stripe charges $19 — confusing for users.
+    var hasRealExpiryLink = window.POST_EXPIRY_STRIPE_URL && window.POST_EXPIRY_STRIPE_URL !== 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+    if (window.DEAL_EXPIRED && hasRealExpiryLink) {
         window._abPrice = 49;
     } else {
         window._abPrice = 19; // Session 984: flash sale price

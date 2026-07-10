@@ -110,7 +110,7 @@
       '    <div class="calc-result-amount" id="ap-calc-cost">$0.00</div>',
       '    <div class="calc-result-sub">Est. monthly cost at 1K req/day: <strong id="ap-calc-monthly">$0.00</strong></div>',
       '  </div>',
-      '  <a class="ap-calc-link" href="https://getapipulse.com/calculator.html?model=' + defaultModel + '" target="_blank" rel="noopener">Compare all 56 models →</a>',
+      '  <a class="ap-calc-link" href="https://getapipulse.com/calculator.html?model=' + defaultModel + '" target="_blank" rel="noopener">Compare all 64 models →</a>',
       '  <div class="calc-branding">Powered by APIpulse</div>',
       '</div>'
     ].join('\n');
@@ -222,7 +222,7 @@
       '      <div class="result-amount" id="fp-cost">$0.00</div>',
       '      <div class="result-sub">Monthly at 1K req/day: <strong id="fp-monthly">$0.00</strong></div>',
       '    </div>',
-      '    <a class="cta-link" href="https://getapipulse.com/calculator.html" target="_blank" rel="noopener">Compare all 56 models →</a>',
+      '    <a class="cta-link" href="https://getapipulse.com/calculator.html" target="_blank" rel="noopener">Compare all 64 models →</a>',
       '  </div>',
       '  <div class="branding">Powered by APIpulse</div>',
       '</div>'

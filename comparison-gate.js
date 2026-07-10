@@ -132,9 +132,10 @@
             gateCell.setAttribute('colspan', colCount);
             gateCell.style.cssText = 'text-align:center;padding:24px 16px;background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(99,102,241,0.02));border-top:2px dashed rgba(99,102,241,0.3);';
 
-            var link = window.DEAL_EXPIRED ? POST_EXPIRY_LINK : FLASH_LINK;
-            var price = window.DEAL_EXPIRED ? '$49' : '$19';
-            var priceLabel = window.DEAL_EXPIRED ? 'Pro' : 'Flash Sale';
+            var hasRealExpiryLink = window.POST_EXPIRY_STRIPE_URL && window.POST_EXPIRY_STRIPE_URL !== 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+            var link = (window.DEAL_EXPIRED && hasRealExpiryLink) ? POST_EXPIRY_LINK : FLASH_LINK;
+            var price = (window.DEAL_EXPIRED && hasRealExpiryLink) ? '$49' : '$19';
+            var priceLabel = (window.DEAL_EXPIRED && hasRealExpiryLink) ? 'Pro' : 'Flash Sale';
 
             var ctaText = activeVariant.text
                 .replace('{priceLabel}', priceLabel)
@@ -235,8 +236,9 @@
                     }
                 });
 
-                var link = window.DEAL_EXPIRED ? POST_EXPIRY_LINK : FLASH_LINK;
-                var price = window.DEAL_EXPIRED ? '$49' : '$19';
+                var hasRealExpiryLink2 = window.POST_EXPIRY_STRIPE_URL && window.POST_EXPIRY_STRIPE_URL !== 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+                var link = (window.DEAL_EXPIRED && hasRealExpiryLink2) ? POST_EXPIRY_LINK : FLASH_LINK;
+                var price = (window.DEAL_EXPIRED && hasRealExpiryLink2) ? '$49' : '$19';
 
                 var gateDiv = document.createElement('div');
                 gateDiv.className = 'calc-gate-cta';

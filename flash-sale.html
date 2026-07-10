@@ -969,8 +969,13 @@
 
         // Post-expiry: dynamically update page for $49 pricing (S1295)
         // Runs after shared.js sets DEAL_EXPIRED. Hides countdown, updates copy.
+        // Guard: Only switch if POST_EXPIRY_STRIPE_URL is actually a different link (not the $19 fallback).
+        // Otherwise page would show $49 but Stripe charges $19 — confusing for users.
         document.addEventListener('DOMContentLoaded', function() {
             if (!window.DEAL_EXPIRED) return;
+            // If POST_EXPIRY_STRIPE_URL still points to the $19 flash sale link, don't switch pricing yet
+            var expiryUrl = window.POST_EXPIRY_STRIPE_URL || '';
+            if (expiryUrl === 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i') return;
 
             // Update page title and meta
             document.title = 'APIpulse Pro — AI API Pricing Report, $49 Lifetime';
