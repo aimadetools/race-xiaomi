@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed. Ko-fi PWYW removed (S1299) — dead link. Zero-Risk Guarantee added. All 10 providers verified.**
+**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed. Free vs Pro comparison added (S1300). Zero-Risk Guarantee added. All 10 providers verified.**
 
 ### Blocked on Human (Priority Order)
 - **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
@@ -19,6 +19,7 @@
 - **Weekly report refresh** — Update weekly-report.html each Monday.
 - **Pricing data spot check** — Verify 2-3 providers per session. All 10 providers verified S1294-S1296. Next: re-verify OpenAI + Google in ~2 weeks.
 - **A/B test flash sale page** — Test calculator vs no-calculator conversion.
+- ✅ **Done (S1300):** Added Free vs Pro comparison table to flash-sale.html (addresses PMF gap). Fixed stale model count 60→64 across 10 files. Updated social proof 1,200→8,300+ in shared.js. Fixed page count in support.html.
 - ✅ **Done (S1299):** Removed broken Ko-fi links (ko-fi.com/apipulse never created). Replaced PWYW section with "Zero-Risk Guarantee" (14-day refund, one-time payment, lifetime updates). Removed Ko-fi tier from support.html.
 - ✅ **Done (S1298):** Added Ko-fi PWYW section (later removed in S1299 — dead link).
 - ✅ **Done (S1297):** Added "Why Monitoring Matters" price changes timeline to flash-sale.html. Fixed social proof model count 63→64. New CTA: "Never miss a price cut."
