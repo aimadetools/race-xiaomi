@@ -1,10 +1,13 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 10, 2026 (S1296: Verified xAI, AI21, Moonshot + added Grok 4.5. S1295: Verified Anthropic, DeepSeek, Mistral, Cohere. 64 entries, 50 active, 14 deprecated)
+// Last verified: Jul 10, 2026 (S1323: Verified OpenAI (added GPT-5.6 Sol/Terra/Luna), Anthropic, Google. S1296: Verified xAI, AI21, Moonshot + added Grok 4.5. 67 entries, 53 active, 14 deprecated)
 const PRICING_LAST_UPDATED = 'Jul 10, 2026';
 
 const API_MODELS = [
     // OpenAI
+    { id: 'openai-gpt56-sol', name: 'GPT-5.6 Sol', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 5.00, output: 30.00, context: '1.05M', verified: 'Jul 10, 2026' },
+    { id: 'openai-gpt56-terra', name: 'GPT-5.6 Terra', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 15.00, context: '1.05M', verified: 'Jul 10, 2026' },
+    { id: 'openai-gpt56-luna', name: 'GPT-5.6 Luna', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 1.00, output: 6.00, context: '1.05M', verified: 'Jul 10, 2026' },
     { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 5.00, output: 30.00, context: '1.05M', verified: 'Jul 9, 2026' },
     { id: 'openai-gpt55-pro', name: 'GPT-5.5 Pro', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 30.00, output: 180.00, context: '1.05M', verified: 'Jul 9, 2026' },
     { id: 'openai-gpt53-codex', name: 'GPT-5.3 Codex', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 1.75, output: 14.00, context: '400K', verified: 'Jul 9, 2026' },

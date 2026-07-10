@@ -1183,7 +1183,7 @@ async function saveEmail(e) {
     // A/B test variants
     var popupVariants = {
         A: { emoji: '🚀', headline: 'Get 40% off AI API costs', subtext: 'Join 8,300+ developers who use our free pricing data to optimize their AI spending. Get notified when prices change.', cta: 'Get Updates' },
-        B: { emoji: '🔔', headline: 'Never miss an AI price change', subtext: 'We track pricing across 64 models and 10 providers. Get instant alerts when costs shift — so you can switch before overpaying.', cta: 'Get Alerts' },
+        B: { emoji: '🔔', headline: 'Never miss an AI price change', subtext: 'We track pricing across 67 models and 10 providers. Get instant alerts when costs shift — so you can switch before overpaying.', cta: 'Get Alerts' },
         C: { emoji: '📊', headline: 'Join 8,300+ developers saving on AI', subtext: 'Our free calculator shows exactly what you\'ll pay per request. Compare Claude, GPT, Gemini, and 54 more models side by side.', cta: 'Start Saving' }
     };
 
@@ -1459,7 +1459,7 @@ document.addEventListener('DOMContentLoaded', function() {
     capture.style.cssText = 'max-width:720px;margin:0 auto 32px;padding:24px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;text-align:center;';
     capture.innerHTML =
         '<p style="font-size:16px;font-weight:700;margin-bottom:4px;">Get weekly AI pricing updates</p>' +
-        '<p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">Join 8,300+ developers. We track 64 models across 10 providers — you get notified when prices change.</p>' +
+        '<p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">Join 8,300+ developers. We track 67 models across 10 providers — you get notified when prices change.</p>' +
         '<form id="blog-email-capture" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">' +
         '<input type="email" id="blog-email-input" placeholder="your@email.com" required aria-label="Email address" style="flex:1;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;">' +
         '<button type="submit" style="padding:10px 16px;background:var(--green);color:white;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;">Subscribe</button>' +
@@ -1753,7 +1753,7 @@ var GO_MODEL_MAP = {
                 '<div style="background:var(--bg-card);border:2px solid var(--accent);border-radius:14px;padding:24px 20px;max-width:480px;margin:0 auto;">' +
                     '<div style="font-size:13px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🔒 Pro Feature</div>' +
                     '<div style="font-size:18px;font-weight:800;color:var(--text-primary);margin-bottom:6px;">Unlock ' + remaining + ' more models ranked by cost</div>' +
-                    '<div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.5;">See all 64 models compared, get migration code, PDF exports, and price alerts. One-time payment, lifetime access.</div>' +
+                    '<div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.5;">See all 67 models compared, get migration code, PDF exports, and price alerts. One-time payment, lifetime access.</div>' +
                     '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" ' +
                         'style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border-radius:10px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(99,102,241,0.4);transition:all 0.2s;" ' +
                         'onclick="if(window.trackEvent)window.trackEvent(\'results_gate_clicked\',{page:\'' + pageName + '\',total_rows:' + rows.length + ',free_rows:' + FREE_ROWS + ',price:' + price + '})">' +

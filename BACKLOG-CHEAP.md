@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 23:59:59 UTC — ~54 hours). All CTAs fixed. PRO GATE OVERLAY (S1313-S1318): 15 tools gated. S1322: Final verification complete — site operational. Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
+**Site Status:** 1186 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 23:59:59 UTC — ~54 hours). All CTAs fixed. PRO GATE OVERLAY (S1313-S1318): 15 tools gated. S1322: Final verification complete — site operational. Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
 
 ### Blocked on Human (Priority Order)
 - **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
@@ -23,7 +23,7 @@
 - **A/B test flash sale page** — Test calculator vs no-calculator conversion.
 
 ### Completed (Sessions 416-1318, Apr 23 - Jul 10)
-✅ Complete site: 1183 pages, 64 models, 10 providers, 540 comparison/alternatives pages
+✅ Complete site: 1186 pages, 67 models, 10 providers, 540 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext (60 models), npm, badge API, weekly digest, price alerts, **dashboard**, **Playbook**, **Multi-Compare**, **Compare Two Models**, browser price monitor
 ✅ Conversion: gated audit, trackEvent, nav CTAs, OG meta, flash sale page with savings calculator, social proof, sticky bar, exit popup, **post-expiry auto-switch**, **Zero-Risk Guarantee**
 ✅ **PRO GATE (S1313-S1318):** 15 tools gated (compare-multi, dashboard, playbook, cost-explorer, compare, model-switch, token-estimator, agent-cost-calculator, ai-api-cost-calculator, ai-chatbot-cost-calculator, ai-roi-calculator, ai-stack-builder, ai-model-quiz, cost-monitoring, migration-checklist). Only ai-model-finder ungated (has own gating).
