@@ -108,7 +108,7 @@
 
         wall.innerHTML = '<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:40px 36px;max-width:540px;width:calc(100% - 48px);text-align:center;box-shadow:0 24px 64px rgba(0,0,0,0.5);position:relative;">' +
             '<div style="font-size:14px;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;">⏰ Flash sale — ends Jul 12</div>' +
-            '<h2 style="font-size:22px;font-weight:800;margin-bottom:8px;line-height:1.3;">You\'ve used your free calculation.<br>Unlock <span style="color:#22c55e;">all 60 models</span> with Pro.</h2>' +
+            '<h2 style="font-size:22px;font-weight:800;margin-bottom:8px;line-height:1.3;">You\'ve used your free calculation.<br>Unlock <span style="color:#22c55e;">all 64 models</span> with Pro.</h2>' +
             '<p style="color:var(--text-secondary);font-size:14px;line-height:1.6;margin-bottom:16px;">Developers who compare 5+ models save an average of <strong>$2,400/yr</strong>. Pro ranks every model by cost for your exact workload — with migration code ready to paste.</p>' +
             savingsHtml +
             '<div style="background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.2);border-radius:10px;padding:14px 16px;margin-bottom:16px;text-align:left;">' +
@@ -117,7 +117,7 @@
                 '<div style="font-size:12px;color:var(--text-muted);margin-top:4px;">No signup required — data stays in your browser.</div>' +
             '</div>' +
             '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;text-align:left;">' +
-                '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 12px;font-size:12px;color:#94a3b8;"><span style="color:#22c55e;font-weight:700;">✓</span> All 60 models ranked by cost</div>' +
+                '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 12px;font-size:12px;color:#94a3b8;"><span style="color:#22c55e;font-weight:700;">✓</span> All 64 models ranked by cost</div>' +
                 '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 12px;font-size:12px;color:#94a3b8;"><span style="color:#22c55e;font-weight:700;">✓</span> Copy-paste migration code</div>' +
                 '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 12px;font-size:12px;color:#94a3b8;"><span style="color:#22c55e;font-weight:700;">✓</span> Price drop & deprecation alerts</div>' +
                 '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 12px;font-size:12px;color:#94a3b8;"><span style="color:#22c55e;font-weight:700;">✓</span> Weekly pricing digest</div>' +
