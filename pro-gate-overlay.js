@@ -73,7 +73,7 @@
         }
 
         html += '<div style="font-size:28px;font-weight:900;margin-bottom:10px;background:linear-gradient(135deg,#f1f5f9,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;">Unlock Full Access</div>';
-        html += '<div style="font-size:15px;color:#94a3b8;max-width:420px;line-height:1.5;margin-bottom:20px;margin-left:auto;margin-right:auto;">Get lifetime Pro for <strong style="color:#e2e8f0;">$' + PRICE + '</strong> — monitor 64 models, get alerts, export reports, save up to 40%.</div>';
+        html += '<div style="font-size:15px;color:#94a3b8;max-width:420px;line-height:1.5;margin-bottom:20px;margin-left:auto;margin-right:auto;">Get lifetime Pro for <strong style="color:#e2e8f0;">$' + PRICE + '</strong> (price goes to $49 after Jul 12) — monitor 64 models, get alerts, export reports, save up to 40%.</div>';
         html += '<a href="' + STRIPE_LINK + '" target="_blank" rel="noopener" ';
         html += 'onclick="if(window.trackEvent)window.trackEvent(\'pro_gate_cta_clicked\',{price:' + PRICE + ',page:\'' + location.pathname + '\'});if(window.trackBeginCheckout)window.trackBeginCheckout(' + PRICE + ',\'pro_gate_overlay\');" ';
         html += 'style="display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 24px rgba(34,197,94,0.4);">';
