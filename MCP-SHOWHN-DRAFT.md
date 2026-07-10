@@ -8,7 +8,7 @@ https://getapipulse.com/mcp.html
 
 ## Comment (first comment, post immediately after submission)
 
-I built an MCP server that gives your AI coding tools live pricing data for 48 LLM models across 10 providers.
+I built an MCP server that gives your AI coding tools live pricing data for 64 LLM models across 10 providers.
 
 Install one command:
 ```
