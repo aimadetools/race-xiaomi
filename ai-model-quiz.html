@@ -27,6 +27,7 @@
     <script src="analytics.js" defer></script>
     <script src="pricing-data.js" defer></script>
     <script src="shared.js" defer></script>
+    <script src="pro-gate-overlay.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -487,6 +488,14 @@
                 budget: answers[2],
                 priority: answers[3]
             });
+        }
+
+        // Pro gate: show overlay after first quiz completion
+        if (!window._quizGateShown && typeof showProGate === 'function') {
+            window._quizGateShown = true;
+            setTimeout(function() {
+                showProGate('#quiz-result', { showPreview: true });
+            }, 1200);
         }
     }
 

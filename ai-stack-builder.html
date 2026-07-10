@@ -212,6 +212,7 @@
         }
     </style>
     <script src="comparison-gate.js" defer></script>
+    <script src="pro-gate-overlay.js" defer></script>
 </head>
 <body>
     <!-- Deal urgency banner -->
@@ -727,6 +728,14 @@
                 volume: state.volume,
                 monthly_cost: totalMonthly.toFixed(2)
             });
+        }
+
+        // Pro gate: show overlay after first stack build
+        if (!window._stackGateShown && typeof showProGate === 'function') {
+            window._stackGateShown = true;
+            setTimeout(function() {
+                showProGate('#step4', { showPreview: true });
+            }, 1200);
         }
     }
     </script>
