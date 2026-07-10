@@ -509,7 +509,7 @@
 
             <div class="email-capture">
                 <h2>Get Weekly Cost Optimization Tips</h2>
-                <p>Join 1,200+ developers optimizing their AI API costs. Weekly tips on model routing, prompt optimization, and new pricing changes.</p>
+                <p>Join 8,300+ developers optimizing their AI API costs. Weekly tips on model routing, prompt optimization, and new pricing changes.</p>
                 <form class="email-form" onsubmit="event.preventDefault();fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:this.email.value})}).then(r=>r.json()).then(d=>{if(window.trackEvent)window.trackEvent('email_subscribe',{source:'post_migration_opt'});this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'}).catch(()=>{this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'})">
                     <input type="email" name="email" placeholder="your@email.com" required>
                     <button type="submit">Subscribe</button>

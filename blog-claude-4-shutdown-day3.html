@@ -398,7 +398,7 @@
 
         <div class="email-capture">
             <h2>Get Daily Migration Updates</h2>
-            <p>Join 1,200+ developers tracking the Claude 4 shutdown. Daily updates on alternatives, pricing changes, and migration tips.</p>
+            <p>Join 8,300+ developers tracking the Claude 4 shutdown. Daily updates on alternatives, pricing changes, and migration tips.</p>
             <form class="email-form" onsubmit="event.preventDefault();fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:this.email.value})}).then(r=>r.json()).then(d=>{if(window.trackEvent)window.trackEvent('email_subscribe',{source:'shutdown_day3'});this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'}).catch(()=>{this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'})">
                 <input type="email" name="email" placeholder="your@email.com" required>
                 <button type="submit">Subscribe</button>
