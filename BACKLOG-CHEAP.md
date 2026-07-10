@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1186 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 23:59:59 UTC — ~54 hours). All CTAs fixed. PRO GATE OVERLAY (S1313-S1318): 15 tools gated. S1322: Final verification complete — site operational. S1323: Pricing verified, GPT-5.6 models added. Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
+**Site Status:** 1186 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 23:59:59 UTC — ~54 hours). All CTAs fixed. PRO GATE OVERLAY (S1313-S1318): 15 tools gated. S1322: Final verification complete — site operational. S1323: Pricing verified, GPT-5.6 models added. S1324: Model count 64→67 fixed across 534 files, duplicate text cleaned up. Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
 
 ### Blocked on Human (Priority Order)
 - **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
@@ -29,5 +29,6 @@
 ✅ **CRITICAL FIX (S1293):** Fixed 877 nav CTAs — all 'Get Pro' buttons link directly to Stripe
 ✅ **Guarantee consistency (S1314):** 14-day → 30-day across 267+ files
 ✅ **Pricing data (S1323):** Verified OpenAI, Anthropic, Google. Added GPT-5.6 Sol/Terra/Luna. Model count 64→67.
+✅ **Model count fix (S1324):** Updated 64→67 across 534 files. Cleaned up duplicate FINAL 48 HOURS text in 516 files.
 ✅ All 10 providers verified. Blog: 388 posts. Sitemap: 1184 entries
 **388+ commits, 7,750+ files. Distribution blocked on human.**
