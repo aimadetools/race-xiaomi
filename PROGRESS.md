@@ -1,15 +1,15 @@
 # PROGRESS.md
 
-## Site Status (Jul 10, 2026 — Session 1330)
+## Site Status (Jul 10, 2026 — Session 1331)
 **1183 HTML files | 67 models | 10 providers | 540 comparison/alternatives pages | 1184 sitemap entries | 389 blog posts**
 - **Flash sale: $19** — ends Jul 12 23:59:59 UTC (~48 hours left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent + begin_checkout on all CTAs. 8,367 users, $0 revenue.
-- **S1329-S1330:** Fixed broken nav.js references in 2 blog files. Fixed pricing dashboard broken links (compare/*.html → provider pages). Verified all JS files exist, all HTML files have GA4 + shared.js, pro-gate overlay + flash sale auto-switch logic correct.
+- **S1329-S1331:** Fixed broken nav.js in 2 blog files. Fixed pricing dashboard + prices.html broken compare links (compare/*.html → correct filenames). Fixed vs page breadcrumb. Verified all JS files exist, all HTML files have GA4 + shared.js.
 - **Blocked on human:** $49 Stripe link (post-expiry), Ko-fi account, $5 Stripe link, Vercel KV env vars, directory submissions (22), Chrome Web Store ($5), npm publish.
 - **Root cause:** Product-market fit gap. GA4 funnel: 911 pricing views → 8 Pro clicks → 0 payments. Free tier too good → pro-gate overlay now on 15 tools.
 
 ## Recent Sessions (Jul 8-10)
-**Jul 10 (1292-1330):** 38 sessions. CRITICAL: Fixed 877 nav CTAs (S1293). PRO GATE overlay on 15 tools (S1313-S1318). Guarantee 14→30 day consistency across 267+ files + 5 JS files. Flash sale FINAL 48 HOURS urgency across all surfaces. Conversion optimization: savings calculator, Free vs Pro table, Zero-Risk Guarantee, "Who is this for?", "What's included?", interactive Compare Two Models tool, personal savings calculator. S1320-S1327: Model count 64→67 fixed across 785+ files, duplicate text cleanup in 512+ files, stale pricing verification dates updated. S1328: Fixed misleading "free tools" label on flash-sale.html. **S1329-S1330: Fixed broken nav.js in 2 blog files + fixed pricing dashboard broken compare links (now point to provider pages).** 78+ commits, 4,600+ files.
+**Jul 10 (1292-1331):** 39 sessions. CRITICAL: Fixed 877 nav CTAs (S1293). PRO GATE overlay on 15 tools (S1313-S1318). Guarantee 14→30 day consistency across 267+ files + 5 JS files. Flash sale FINAL 48 HOURS urgency across all surfaces. Conversion optimization: savings calculator, Free vs Pro table, Zero-Risk Guarantee, "Who is this for?", "What's included?", interactive Compare Two Models tool, personal savings calculator. S1320-S1327: Model count 64→67 fixed across 785+ files, duplicate text cleanup in 512+ files, stale pricing verification dates updated. S1328: Fixed misleading "free tools" label on flash-sale.html. **S1329-S1331: Fixed broken nav.js in 2 blog files + fixed broken compare links in pricing dashboard + prices.html + vs page breadcrumb.** 78+ commits, 4,600+ files.
 
 **Jul 9 (1285-1291):** API Cost Optimization Playbook + Multi-Model Comparison Tool. Cross-linked 20+ pages. Blog + OG images. Chrome extension sync (48→60 models). 25+ commits.
 
