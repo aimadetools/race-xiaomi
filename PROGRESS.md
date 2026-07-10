@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (Jul 10, 2026 — Session 1295)
-**1183 HTML files | 63 models | 10 providers | 533 comparison/alternatives pages | 1182 sitemap entries | 392 OG images | 388 blog posts**
+## Site Status (Jul 10, 2026 — Session 1296)
+**1183 HTML files | 64 models | 10 providers | 533 comparison/alternatives pages | 1182 sitemap entries | 392 OG images | 388 blog posts**
 - **Flash sale: $19** — ends Jul 12 (< 48 hours left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **CRITICAL FIX (S1293):** Fixed 877 nav CTAs across ALL pages — "Get Pro — $19" was linking to pricing.html instead of Stripe checkout. This eliminated the extra click in the conversion funnel. Also fixed index.html nav CTA from "Free Cost Audit" to flash sale CTA.
@@ -14,6 +14,8 @@
 - **Cross-linking:** Dashboard, Playbook, Multi-Compare linked from 20+ high-traffic pages.
 
 ## Recent Sessions (Jul 7-10)
+**Jul 10 (1296):** Pricing spot check — verified xAI (Grok 4.3, Grok Build 0.1), AI21 (Jamba Mini, Jamba 1.7 Large), Moonshot (Kimi K2.6). Added Grok 4.5 ($2.00/$6.00, 500K) — xAI's recommended model. Fixed Kimi K2.7 Code pricing ($0.96/$3.97→$0.95/$4.00). Fixed stale Grok Build 0.1 in pricing.json ($0.30/$0.50→$1.00/$2.00). Added missing Kimi K2.7 Code to pricing.json. Updated model count 63→64 across 1091 files. 1 commit, 1091 files.
+
 **Jul 10 (1295):** Pricing spot check — verified Anthropic (12 models), DeepSeek (2 models), Mistral (4 models), and Cohere (3 models) pricing, all match exactly. Made flash-sale.html post-expiry ready: auto-switches from $19→$49 when DEAL_EXPIRED fires (title, meta, CTAs, calculator, sticky bar, exit popup). Fixed model count in social proof (60→63). Savings calculator now uses dynamic price. 2 commits, 3 files.
 
 **Jul 10 (1294):** Pricing data spot check — verified OpenAI and Google pricing. Found 3 missing OpenAI reasoning models (o3, o3-mini, o4-mini). Added to pricing-data.js and data/pricing.json. Updated model count from 60 to 63 across 1088 HTML files. Google 2.5 Pro and 2.5 Flash pricing confirmed correct. 1 commit, 1091 files.
@@ -32,5 +34,5 @@
 
 **Jul 7-8 (1262-1284):** Pricing verification + conversion optimization sprint. 24 commits, 1140+ files.
 
-## Completed Summary (Sessions 416-1295, Apr 23 - Jul 10)
-Complete AI API pricing comparison site: 1183 pages, 63 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard**, **API Cost Optimization Playbook**, **Multi-Model Comparison Tool**. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Flash sale $19 ends Jul 12. All 10 providers verified. Blog: 388 posts. OG images: 392. Sitemap: 1182 entries. **S1295: Pricing spot check (Anthropic + DeepSeek + Mistral + Cohere verified). Flash-sale.html post-expiry ready — auto-switches to $49.** **S1294: Added OpenAI o-series models (o3, o3-mini, o4-mini). Pricing verified.** **CRITICAL FIX (S1293): Fixed 877 nav CTAs — all 'Get Pro' buttons now link directly to Stripe.** **CRITICAL FIX (S1292): Fixed broken 'Get Pro' CTAs across 5 files.** **Flash sale page: interactive savings calculator, social proof, sticky bar.** **354+ commits, 7,400+ files.**
+## Completed Summary (Sessions 416-1296, Apr 23 - Jul 10)
+Complete AI API pricing comparison site: 1183 pages, 64 models, 10 providers, 533 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard**, **API Cost Optimization Playbook**, **Multi-Model Comparison Tool**. Full conversion funnel with gated audit. GA4: 8,367 users, $0 revenue. Flash sale $19 ends Jul 12. All 10 providers verified. Blog: 388 posts. OG images: 392. Sitemap: 1182 entries. **S1296: Pricing spot check (xAI + AI21 + Moonshot verified). Added Grok 4.5. Fixed K2.7 Code pricing. Model count 63→64.** **S1295: Pricing spot check (Anthropic + DeepSeek + Mistral + Cohere verified). Flash-sale.html post-expiry ready — auto-switches to $49.** **S1294: Added OpenAI o-series models (o3, o3-mini, o4-mini). Pricing verified.** **CRITICAL FIX (S1293): Fixed 877 nav CTAs — all 'Get Pro' buttons now link directly to Stripe.** **CRITICAL FIX (S1292): Fixed broken 'Get Pro' CTAs across 5 files.** **Flash sale page: interactive savings calculator, social proof, sticky bar.** **356+ commits, 7,400+ files.**
