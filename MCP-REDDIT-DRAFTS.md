@@ -38,7 +38,7 @@ Full docs: https://getapipulse.com/mcp.html
 
 ## r/cursor
 
-**Title:** Free MCP server for AI API pricing — 51 models in Cursor
+**Title:** Free MCP server for AI API pricing — 64 models in Cursor
 
 **Body:**
 Built a free MCP server that lets Cursor (and Claude Code, Windsurf, etc.) query live AI API pricing data.
@@ -55,7 +55,7 @@ Built a free MCP server that lets Cursor (and Claude Code, Windsurf, etc.) query
 ```
 
 **What you get:**
-- Live pricing for 51 models (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, etc.)
+- Live pricing for 64 models (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, etc.)
 - 5 tools: get_pricing, compare_models, calculate_cost, find_cheapest, get_model_details
 - Deprecation tracking — know which models are sunsetting
 
@@ -69,10 +69,10 @@ Docs: https://getapipulse.com/mcp.html
 
 ## r/LocalLLaMA
 
-**Title:** Free MCP server for comparing AI API pricing — 51 models including Llama, DeepSeek, Mistral
+**Title:** Free MCP server for comparing AI API pricing — 64 models including Llama, DeepSeek, Mistral
 
 **Body:**
-Built a free MCP server that gives your AI coding tools live access to pricing data across 51 models — including Llama 4 Scout/Maverick, DeepSeek V4 Pro/Flash, Mistral Small/Large, and all the usual suspects.
+Built a free MCP server that gives your AI coding tools live access to pricing data across 64 models — including Llama 4 Scout/Maverick, DeepSeek V4 Pro/Flash, Mistral Small/Large, and all the usual suspects.
 
 **Install (Claude Code):**
 ```

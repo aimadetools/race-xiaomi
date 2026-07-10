@@ -131,7 +131,7 @@ Show only budget-friendly models:
 - **1-hour cache** — Uses localStorage to minimize requests
 - **Responsive** — Works on any screen size
 - **No API key needed** — Free for everyone
-- **51 models** across 10 providers
+- **64 models** across 10 providers
 
 ## Links
 
