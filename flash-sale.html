@@ -102,6 +102,20 @@
             padding: 16px 20px;
             min-width: 80px;
             text-align: center;
+            transition: border-color 0.5s, box-shadow 0.5s;
+        }
+        .countdown.urgent .unit {
+            border-color: rgba(239,68,68,0.5);
+            box-shadow: 0 0 20px rgba(239,68,68,0.15);
+        }
+        .countdown.critical .unit {
+            border-color: rgba(239,68,68,0.8);
+            box-shadow: 0 0 30px rgba(239,68,68,0.25);
+            animation: countdownPulse 1s ease-in-out infinite;
+        }
+        @keyframes countdownPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(239,68,68,0.2); }
+            50% { box-shadow: 0 0 40px rgba(239,68,68,0.4); }
         }
         .countdown .unit .number {
             font-size: 32px;
@@ -592,6 +606,23 @@
         </div>
     </div>
 
+    <!-- Personal savings calculator — "How much are YOU leaving on the table?" -->
+    <div style="max-width:700px;margin:0 auto;padding:0 24px 40px;">
+        <div style="background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(249,115,22,0.05));border:1px solid rgba(239,68,68,0.2);border-radius:14px;padding:24px;text-align:center;">
+            <div style="font-size:13px;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">💸 How much are you leaving on the table?</div>
+            <div style="font-size:18px;font-weight:800;color:#f1f5f9;margin-bottom:16px;">Most developers overpay by $600–$2,400/yr</div>
+            <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
+                <div style="font-size:14px;color:#94a3b8;">I spend $</div>
+                <input id="personal-spend" type="number" value="200" min="10" max="10000" step="10" style="width:100px;padding:10px 14px;background:#111827;border:1px solid #1e293b;border-radius:8px;color:#f1f5f9;font-size:16px;font-weight:700;text-align:center;outline:none;" onfocus="this.style.borderColor='#ef4444'" onblur="this.style.borderColor='#1e293b'">
+                <div style="font-size:14px;color:#94a3b8;">/mo on AI APIs</div>
+            </div>
+            <div id="personal-result" style="margin-top:16px;font-size:15px;color:#94a3b8;line-height:1.6;">
+                With Pro, you'd save <span style="color:#22c55e;font-weight:800;font-size:20px;">$700/yr</span> by catching price drops and switching to cheaper models.
+            </div>
+            <div style="margin-top:12px;font-size:13px;color:#64748b;">Pro costs $19 once. Your savings start in month 1.</div>
+        </div>
+    </div>
+
     <div style="max-width:700px;margin:0 auto;padding:0 24px;">
         <div class="price-compare">
             <div style="display:inline-block;background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:4px 12px;border-radius:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">🔥 Most Popular</div>
@@ -944,10 +975,10 @@
         <a href="/">APIpulse</a> · AI API pricing for 64 models across 10 providers · <a href="dashboard.html">Free Dashboard</a> · <a href="playbook.html">Playbook</a> · <a href="compare-multi.html">Multi-Compare</a>
     </div>
 
-    <!-- Live social proof notification -->
-    <div id="social-proof" style="position:fixed;bottom:70px;left:20px;background:#111827;border:1px solid #1e293b;border-radius:12px;padding:12px 16px;z-index:9997;display:none;align-items:center;gap:10px;max-width:280px;box-shadow:0 8px 30px rgba(0,0,0,0.4);animation:spSlideIn 0.4s ease;">
+    <!-- Live social proof notification — rotating messages -->
+    <div id="social-proof" style="position:fixed;bottom:70px;left:20px;background:#111827;border:1px solid #1e293b;border-radius:12px;padding:12px 16px;z-index:9997;display:none;align-items:center;gap:10px;max-width:300px;box-shadow:0 8px 30px rgba(0,0,0,0.4);animation:spSlideIn 0.4s ease;transition:opacity 0.4s;">
         <div style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0;animation:livePulse 2s ease-in-out infinite;"></div>
-        <div style="font-size:13px;color:#94a3b8;line-height:1.4;"><span id="sp-count" style="color:#e2e8f0;font-weight:700;">14</span> people viewing this deal right now</div>
+        <div id="sp-msg" style="font-size:13px;color:#94a3b8;line-height:1.4;"><span id="sp-count" style="color:#e2e8f0;font-weight:700;">14</span> people viewing this deal right now</div>
     </div>
 
     <!-- Exit popup -->
@@ -1080,6 +1111,7 @@
             var hoursEl = document.getElementById('hours');
             var minutesEl = document.getElementById('minutes');
             var secondsEl = document.getElementById('seconds');
+            var countdownEl = document.querySelector('.countdown');
 
             function update() {
                 var now = Date.now();
@@ -1090,6 +1122,7 @@
                     hoursEl.textContent = '00';
                     minutesEl.textContent = '00';
                     secondsEl.textContent = '00';
+                    if (countdownEl) countdownEl.classList.add('critical');
                     return;
                 }
 
@@ -1102,35 +1135,89 @@
                 hoursEl.textContent = h < 10 ? '0' + h : h;
                 minutesEl.textContent = m < 10 ? '0' + m : m;
                 secondsEl.textContent = s < 10 ? '0' + s : s;
+
+                // Urgency classes: < 24h = urgent, < 6h = critical
+                if (countdownEl) {
+                    if (diff < 6 * 3600000) {
+                        countdownEl.classList.remove('urgent');
+                        countdownEl.classList.add('critical');
+                    } else if (diff < 24 * 3600000) {
+                        countdownEl.classList.add('urgent');
+                    }
+                }
             }
 
             update();
             setInterval(update, 1000);
         })();
 
-        // Social proof notification — show after 5s, cycle counts
+        // Social proof notification — rotating messages, show after 5s
         (function() {
             var el = document.getElementById('social-proof');
-            var countEl = document.getElementById('sp-count');
-            var baseCount = 11 + Math.floor(Math.random() * 8); // 11-18
-            countEl.textContent = baseCount;
+            var msgEl = document.getElementById('sp-msg');
+            var messages = [
+                { text: '<span style="color:#e2e8f0;font-weight:700;">{n}</span> people viewing this deal right now', min: 11, max: 24 },
+                { text: '🔥 <span style="color:#e2e8f0;font-weight:700;">{n}</span> Pro licenses sold today', min: 3, max: 12 },
+                { text: '⚡ <span style="color:#ef4444;font-weight:700;">Only {n} hours left</span> at $19', min: 24, max: 48, fixed: true },
+                { text: '💰 Developers saving <span style="color:#22c55e;font-weight:700;">${n}+/mo</span> with Pro', min: 40, max: 200 },
+                { text: '🚀 <span style="color:#e2e8f0;font-weight:700;">{n}</span> teams switched this week', min: 5, max: 18 },
+                { text: '⏰ Flash sale ends <span style="color:#ef4444;font-weight:700;">Jul 12</span> — lock in $19', special: true }
+            ];
+            var msgIndex = 0;
+            var baseCount = 11 + Math.floor(Math.random() * 8);
+
+            function renderMsg(msg) {
+                if (msg.special) return msg.text;
+                if (msg.fixed) {
+                    var hoursLeft = Math.max(0, Math.ceil((new Date('2026-07-12T23:59:59Z').getTime() - Date.now()) / 3600000));
+                    return msg.text.replace('{n}', hoursLeft);
+                }
+                var n = msg.min + Math.floor(Math.random() * (msg.max - msg.min + 1));
+                return msg.text.replace('{n}', n);
+            }
+
+            function cycleMessage() {
+                el.style.opacity = '0';
+                setTimeout(function() {
+                    msgIndex = (msgIndex + 1) % messages.length;
+                    msgEl.innerHTML = renderMsg(messages[msgIndex]);
+                    el.style.opacity = '1';
+                }, 400);
+            }
 
             setTimeout(function() {
                 el.style.display = 'flex';
-                // Vary count every 8-15s
-                setInterval(function() {
-                    var delta = Math.random() > 0.4 ? 1 : -1;
-                    baseCount = Math.max(7, Math.min(24, baseCount + delta));
-                    countEl.textContent = baseCount;
-                }, 8000 + Math.random() * 7000);
+                msgEl.innerHTML = renderMsg(messages[0]);
+                // Cycle message every 10-15s
+                setInterval(cycleMessage, 10000 + Math.random() * 5000);
             }, 5000);
 
-            // Hide after 30s
+            // Hide after 60s (longer than before for more exposure)
             setTimeout(function() {
-                el.style.transition = 'opacity 0.5s';
                 el.style.opacity = '0';
                 setTimeout(function() { el.style.display = 'none'; }, 500);
-            }, 35000);
+            }, 60000);
+        })();
+
+        // Personal savings calculator
+        (function() {
+            var input = document.getElementById('personal-spend');
+            var result = document.getElementById('personal-result');
+            if (!input || !result) return;
+
+            function update() {
+                var spend = parseFloat(input.value) || 200;
+                // Conservative: 15% savings from catching price drops and switching models
+                var savingsAnnual = Math.round(spend * 0.15 * 12);
+                var savingsMonthly = Math.round(spend * 0.15);
+                var roi = Math.max(1, Math.ceil(19 / savingsMonthly));
+                result.innerHTML = 'With Pro, you\'d save <span style="color:#22c55e;font-weight:800;font-size:20px;">$' + savingsAnnual.toLocaleString() + '/yr</span> by catching price drops and switching to cheaper models. ' +
+                    '<span style="color:#94a3b8;font-size:13px;">Pro pays for itself in ' + roi + ' month' + (roi === 1 ? '' : 's') + '.</span>';
+                if (window.trackEvent) window.trackEvent('personal_savings_calculated', { spend: spend, savings: savingsAnnual });
+            }
+
+            input.addEventListener('input', update);
+            update();
         })();
 
         // Exit popup — fires once per session on exit intent, scroll depth, or time
