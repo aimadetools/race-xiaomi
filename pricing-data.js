@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 10, 2026 (S1294: Added OpenAI o-series reasoning models — o3, o3-mini, o4-mini. 63 entries, 49 active, 14 deprecated)
+// Last verified: Jul 10, 2026 (S1295: Verified Anthropic, DeepSeek, Mistral, Cohere. S1294: Added OpenAI o-series. 63 entries, 49 active, 14 deprecated)
 const PRICING_LAST_UPDATED = 'Jul 9, 2026';
 
 const API_MODELS = [
@@ -53,14 +53,14 @@ const API_MODELS = [
     { id: 'deepseek-v32', name: 'DeepSeek V3.2', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.23, output: 0.34, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-07-07', replacement: 'deepseek-v4-flash', note: 'No longer listed on DeepSeek pricing page; V4 Flash is the successor' },
     { id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.27, output: 1.10, context: '128K', verified: 'May 2026', deprecated: true, replacement: 'deepseek-v4-flash' },
     // Mistral
-    { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '262K', verified: 'Jul 2026' },
-    { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K', verified: 'Jul 2026' },
-    { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 2026' },
-    { id: 'codestral', name: 'Codestral', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 0.30, output: 0.90, context: '256K', verified: 'Jul 2026' },
+    { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '262K', verified: 'Jul 10, 2026' },
+    { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K', verified: 'Jul 10, 2026' },
+    { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 10, 2026' },
+    { id: 'codestral', name: 'Codestral', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 0.30, output: 0.90, context: '256K', verified: 'Jul 10, 2026' },
     // Cohere
-    { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '256K', verified: 'Jul 2026' },
-    { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jul 2026' },
-    { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', providerSlug: 'cohere', tier: 'Budget', input: 0.50, output: 1.50, context: '128K', verified: 'Jul 2026' },
+    { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '256K', verified: 'Jul 10, 2026' },
+    { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jul 10, 2026' },
+    { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', providerSlug: 'cohere', tier: 'Budget', input: 0.50, output: 1.50, context: '128K', verified: 'Jul 10, 2026' },
     // Meta (Together.ai)
     { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.18, output: 0.59, context: '1M', verified: 'Jun 2026', note: 'Delisted from Together.ai serverless Jul 2026 — may only be available via dedicated endpoints' },
     { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.27, output: 0.85, context: '1M', verified: 'Jun 2026', note: 'Delisted from Together.ai serverless Jul 2026 — may only be available via dedicated endpoints' },

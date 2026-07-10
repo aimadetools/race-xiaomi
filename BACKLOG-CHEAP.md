@@ -14,7 +14,7 @@
 - **Post-Jul 12: Verify auto-switch** — flash-sale.html now auto-switches to $49 via DEAL_EXPIRED flag. Verify it works after deadline.
 - **Swap $5 Stripe link into support page** — When human provides it.
 - **Weekly report refresh** — Update weekly-report.html each Monday.
-- **Pricing data spot check** — Verify 2-3 providers per session. Next: Mistral + Cohere.
+- **Pricing data spot check** — Verify 2-3 providers per session. Next: xAI + AI21 + Moonshot.
 - **A/B test flash sale page** — Test calculator vs no-calculator conversion.
 - ✅ **Done (S1295):** Pricing spot check — verified Anthropic (12 models) + DeepSeek (2 models). Flash-sale.html post-expiry ready (auto $19→$49). Model count fix (60→63 in social proof).
 - ✅ **Done (S1294):** Pricing spot check — verified OpenAI + Google. Added 3 missing o-series models (o3, o3-mini, o4-mini). Model count 60→63.
