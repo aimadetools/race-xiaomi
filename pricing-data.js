@@ -1,7 +1,7 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 10, 2026 (S1295: Verified Anthropic, DeepSeek, Mistral, Cohere. S1294: Added OpenAI o-series. 63 entries, 49 active, 14 deprecated)
-const PRICING_LAST_UPDATED = 'Jul 9, 2026';
+// Last verified: Jul 10, 2026 (S1296: Verified xAI, AI21, Moonshot + added Grok 4.5. S1295: Verified Anthropic, DeepSeek, Mistral, Cohere. 64 entries, 50 active, 14 deprecated)
+const PRICING_LAST_UPDATED = 'Jul 10, 2026';
 
 const API_MODELS = [
     // OpenAI
@@ -69,10 +69,11 @@ const API_MODELS = [
     { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.14, output: 0.14, context: '128K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-07-01', replacement: 'llama-33-70b' },
     // Moonshot (Kimi)
     { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K', verified: 'Jul 2026' },
-    { id: 'kimi-k27-code', name: 'Kimi K2.7 Code', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.96, output: 3.97, context: '256K', verified: 'Jul 2026' },
+    { id: 'kimi-k27-code', name: 'Kimi K2.7 Code', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K', verified: 'Jul 10, 2026' },
     // xAI
     { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 1.25, output: 2.50, context: '1M', verified: 'Jul 2026' },  // Was Grok 3 at $3/$15 — rebranded & repriced Jun 2026
     { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', providerSlug: 'xai', tier: 'Budget', input: 1.00, output: 2.00, context: '256K', verified: 'Jul 2026' },  // Code API pricing (was $0.30/$0.50)
+    { id: 'xai-grok45', name: 'Grok 4.5', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 2.00, output: 6.00, context: '500K', verified: 'Jul 10, 2026', note: "xAI's recommended model for most use cases" },
     // AI21
     { id: 'ai21-jamba-mini', name: 'Jamba Mini', provider: 'AI21', providerSlug: 'ai21', tier: 'Budget', input: 0.20, output: 0.40, context: '256K', verified: 'Jul 2026' },
     { id: 'ai21-jamba17', name: 'Jamba 1.7 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'Jul 2026' },
