@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 9, 2026 (S1274: OpenAI + Google Gemini verification — all prices confirmed against official docs. 60 entries, 46 active, 14 deprecated)
+// Last verified: Jul 10, 2026 (S1294: Added OpenAI o-series reasoning models — o3, o3-mini, o4-mini. 63 entries, 49 active, 14 deprecated)
 const PRICING_LAST_UPDATED = 'Jul 9, 2026';
 
 const API_MODELS = [
@@ -21,6 +21,9 @@ const API_MODELS = [
     { id: 'openai-gpt41', name: 'GPT-4.1', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.00, output: 8.00, context: '1M', verified: 'Jul 9, 2026' },
     { id: 'openai-gpt41-mini', name: 'GPT-4.1 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.40, output: 1.60, context: '1M', verified: 'Jul 9, 2026' },
     { id: 'openai-gpt41-nano', name: 'GPT-4.1 nano', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Jul 9, 2026', deprecated: true, deprecatedDate: '2026-10-23', replacement: 'openai-gpt54-nano', note: 'Deprecated; shutdown Oct 23 2026, replaced by GPT-5.4 nano' },
+    { id: 'openai-o3', name: 'o3', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.00, output: 8.00, context: '200K', verified: 'Jul 10, 2026', note: 'Reasoning model' },
+    { id: 'openai-o3-mini', name: 'o3-mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 1.10, output: 4.40, context: '200K', verified: 'Jul 10, 2026', note: 'Reasoning model' },
+    { id: 'openai-o4-mini', name: 'o4-mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 1.10, output: 4.40, context: '200K', verified: 'Jul 10, 2026', note: 'Reasoning model; latest in o-series' },
     // Anthropic
     { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jul 2026' },
     { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jul 2026' },

@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Site Status (Jul 10, 2026 — Session 1293)
-**1183 HTML files | 60 models | 10 providers | 533 comparison/alternatives pages | 1182 sitemap entries | 392 OG images | 388 blog posts**
+**1183 HTML files | 63 models | 10 providers | 533 comparison/alternatives pages | 1182 sitemap entries | 392 OG images | 388 blog posts**
 - **Flash sale: $19** — ends Jul 12 (< 48 hours left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
 - **CRITICAL FIX (S1293):** Fixed 877 nav CTAs across ALL pages — "Get Pro — $19" was linking to pricing.html instead of Stripe checkout. This eliminated the extra click in the conversion funnel. Also fixed index.html nav CTA from "Free Cost Audit" to flash sale CTA.

@@ -6,14 +6,14 @@
     <title>Prompt Cost Calculator — Paste Text, See Costs Across 54 AI Models | APIpulse</title>
     <meta name="description" content="Paste any prompt and instantly see costs across 54 AI models. Count tokens, compare prices from OpenAI, Anthropic, Google, DeepSeek, and more. Toggle standard vs streaming pricing. Free tool.">
     <meta property="og:title" content="Prompt Cost Calculator — See Costs Across 54 AI Models">
-    <meta property="og:description" content="Paste your prompt. See costs across 60 models instantly. Compare OpenAI, Anthropic, Google, DeepSeek pricing.">
+    <meta property="og:description" content="Paste your prompt. See costs across 63 models instantly. Compare OpenAI, Anthropic, Google, DeepSeek pricing.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/prompt-cost-calculator.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Prompt Cost Calculator — See Costs Across 54 AI Models">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
-    <meta name="twitter:description" content="Paste your prompt. See costs across 60 models instantly.">
+    <meta name="twitter:description" content="Paste your prompt. See costs across 63 models instantly.">
     <meta name="keywords" content="prompt cost calculator, AI API cost estimator, token counter, LLM pricing calculator, AI model cost comparison">
     <link rel="canonical" href="https://getapipulse.com/prompt-cost-calculator.html">
     <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
@@ -36,7 +36,7 @@
     window._resultsCtaConfig = {
         resultSelector: '.token-summary',
         toolName: 'Prompt Cost Calculator',
-        proFeatures: ['Full cost comparison across all 60 models', 'Copy-paste migration code for cheaper alternatives', 'PDF export for reports', 'Price change alerts']
+        proFeatures: ['Full cost comparison across all 63 models', 'Copy-paste migration code for cheaper alternatives', 'PDF export for reports', 'Price change alerts']
     };
     </script>
     <script src="results-cta.js" defer></script>
@@ -379,7 +379,7 @@
         <!-- Pro CTA after results -->
         <div id="proCta" style="display:none;background:var(--bg-secondary);border:1px solid var(--accent);border-radius:16px;padding:32px;margin-top:32px;text-align:center;">
             <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">🚀 Unlock Your Full Cost Report</h3>
-            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px;">You just compared <strong id="ctaModelCount">60 models</strong> — Pro shows you the complete optimization roadmap with migration code, batch strategies, and PDF export for your team.</p>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px;">You just compared <strong id="ctaModelCount">63 models</strong> — Pro shows you the complete optimization roadmap with migration code, batch strategies, and PDF export for your team.</p>
             <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
                 <span style="font-size:13px;color:var(--text-secondary);">✓ Migration code snippets</span>
                 <span style="font-size:13px;color:var(--text-secondary);">✓ Batch & caching strategies</span>
@@ -434,9 +434,9 @@
             <li><a href="ai-api-pricing-benchmark-2026.html">📊 2026 Pricing Benchmark</a> — Download the full pricing report with 37× price gap analysis</li>
             <li><a href="token-estimator.html">Token Estimator</a> — Count tokens and estimate costs</li>
             <li><a href="calculator.html">Cost Calculator</a> — Estimate monthly costs for any model</li>
-            <li><a href="cost-explorer.html">Cost Explorer</a> — See all 60 models ranked by cost</li>
+            <li><a href="cost-explorer.html">Cost Explorer</a> — See all 63 models ranked by cost</li>
             <li><a href="cheapest-ai-api.html">Cheapest AI API Finder</a> — Find the cheapest model</li>
-            <li><a href="monthly-spend-estimator.html">Monthly Spend Estimator</a> — Compare costs across all 60 models</li>
+            <li><a href="monthly-spend-estimator.html">Monthly Spend Estimator</a> — Compare costs across all 63 models</li>
         </ul>
     </section>
                     <!-- Post-Calculator Conversion CTA -->
@@ -519,7 +519,7 @@
         medium: "Write a Python function that takes a list of dictionaries and returns a new list sorted by a specified key. Include type hints, docstring, and handle edge cases like empty lists and missing keys.",
         long: "Analyze the following codebase architecture for a SaaS application: React frontend, Node.js API, PostgreSQL database, Redis cache, and AWS deployment. Identify potential bottlenecks, suggest improvements for scalability, estimate infrastructure costs at 10K, 100K, and 1M users, and recommend a monitoring strategy. Include specific tool recommendations and configuration suggestions.",
         system: "You are a senior software engineer with 15 years of experience. You write clean, well-documented code and always consider edge cases. When reviewing code, you focus on security, performance, and maintainability.\n\nUser: Review this Python function for potential issues:\ndef process_data(items):\n    results = []\n    for item in items:\n        results.append(item['value'] * 2)\n    return results",
-        rag: "Context: APIpulse is a tool that compares AI API pricing across 60 models from 10 providers. It was launched in April 2026 and has 241 blog posts, 60 interactive tools, and 12 API endpoints. The Pro tier costs $19 (monitor + save) and includes saved scenarios, PDF export, and optimization recommendations.\n\nQuestion: What makes APIpulse different from other AI API pricing tools, and what features are available in the free tier vs Pro tier?"
+        rag: "Context: APIpulse is a tool that compares AI API pricing across 63 models from 10 providers. It was launched in April 2026 and has 241 blog posts, 60 interactive tools, and 12 API endpoints. The Pro tier costs $19 (monitor + save) and includes saved scenarios, PDF export, and optimization recommendations.\n\nQuestion: What makes APIpulse different from other AI API pricing tools, and what features are available in the free tier vs Pro tier?"
     };
 
     function loadPreset(key) {
@@ -678,7 +678,7 @@
         const url = generateShareUrl();
         const cheapModel = lastResults[0]?.name || 'budget models';
         const cheapCost = lastResults[0] ? formatCost(lastResults[0].monthlyCost) + '/mo' : '';
-        const text = `I just compared AI API costs across 60 models. ${cheapModel} is the cheapest at ${cheapCost}. See the full breakdown:`;
+        const text = `I just compared AI API costs across 63 models. ${cheapModel} is the cheapest at ${cheapCost}. See the full breakdown:`;
 
         document.getElementById('shareUrl').value = url;
         document.getElementById('shareTwitter').href =
