@@ -636,18 +636,18 @@
             var providerClass = 'provider-' + m.providerSlug;
             var deprecatedTag = m.deprecated ? '<span class="deprecated-badge">Deprecated</span>' : '';
 
-            // Build compare link slug: provider-modelname
-            var slug = m.providerSlug + '-' + m.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
+            // Link to provider page (compare-*.html pages use vs format, not per-model)
+            var providerUrl = m.providerSlug + '.html';
 
             html += '<tr>' +
-                '<td class="model-name"><a href="compare/' + slug + '.html">' + m.name + '</a>' + deprecatedTag + '</td>' +
+                '<td class="model-name"><a href="' + providerUrl + '">' + m.name + '</a>' + deprecatedTag + '</td>' +
                 '<td><span class="provider-badge ' + providerClass + '">' + m.provider + '</span></td>' +
                 '<td><span class="tier-badge tier-' + m.tier + '">' + m.tier + '</span></td>' +
                 '<td class="' + inputClass + '">$' + m.input.toFixed(2) + '</td>' +
                 '<td class="' + outputClass + '">$' + m.output.toFixed(2) + '</td>' +
                 '<td>' + m.context + '</td>' +
                 '<td class="price-cell">$' + blended.toFixed(2) + '</td>' +
-                '<td><a href="compare/' + slug + '.html" class="compare-link">Compare →</a></td>' +
+                '<td><a href="' + providerUrl + '" class="compare-link">Details →</a></td>' +
                 '</tr>';
         });
 
