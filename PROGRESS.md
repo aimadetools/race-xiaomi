@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (Jul 10, 2026 — Session 1293)
+## Site Status (Jul 10, 2026 — Session 1294)
 **1183 HTML files | 63 models | 10 providers | 533 comparison/alternatives pages | 1182 sitemap entries | 392 OG images | 388 blog posts**
 - **Flash sale: $19** — ends Jul 12 (< 48 hours left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all pages. 8,367 users, $0 revenue.
@@ -13,6 +13,8 @@
 - **Cross-linking:** Dashboard, Playbook, Multi-Compare linked from 20+ high-traffic pages.
 
 ## Recent Sessions (Jul 7-10)
+**Jul 10 (1294):** Pricing data spot check — verified OpenAI and Google pricing. Found 3 missing OpenAI reasoning models (o3, o3-mini, o4-mini). Added to pricing-data.js and data/pricing.json. Updated model count from 60 to 63 across 1088 HTML files. Google 2.5 Pro and 2.5 Flash pricing confirmed correct. 1 commit, 1091 files.
+
 **Jul 10 (1293):** CRITICAL CONVERSION FIX — Fixed 877 nav CTAs across ALL pages. Nav "Get Pro — $19" buttons linked to pricing.html (extra click) instead of directly to Stripe checkout. Also fixed index.html nav CTA from "Free Cost Audit" to flash sale CTA. shared.js already had runtime rewriting, but HTML source fix eliminates race condition. 1 commit, 872 files.
 
 **Jul 10 (1292):** CRITICAL BUG FIX — Found and fixed broken "Get Pro" CTAs across 5 files (index.html, compare-multi.html, playbook.html, pricing.html). Buttons said "Get Pro — $19 lifetime" but linked to support.html instead of Stripe checkout. Likely a major cause of zero conversions. Also added interactive savings calculator to flash sale page (11 models, real-time annual savings display, personalized CTA). Added social proof notification. 2 commits, 5 files.
