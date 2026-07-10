@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed. PRO GATE OVERLAY (S1313-S1318): 15 tools gated. S1320: FINAL 48 HOURS urgency across 4 high-traffic pages. Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
+**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 23:59:59 UTC — ~54 hours). All CTAs fixed. PRO GATE OVERLAY (S1313-S1318): 15 tools gated. S1322: Final verification complete — site operational. Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
 
 ### Blocked on Human (Priority Order)
 - **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
