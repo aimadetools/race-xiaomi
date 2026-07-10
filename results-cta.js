@@ -97,7 +97,7 @@
             'onclick="if(window.trackEvent)window.trackEvent(\'results_cta_clicked\',{tool:\'' + toolName + '\',price:' + price + '})">' +
             '⚡ Get Pro — $' + price + ' lifetime</a>' +
             '</div>' +
-            '<div style="font-size:12px;color:var(--text-muted);margin-top:8px;">One-time payment · 14-day money-back guarantee · Instant access</div>' +
+            '<div style="font-size:12px;color:var(--text-muted);margin-top:8px;">One-time payment · 30-day money-back guarantee · Instant access</div>' +
             '</div>';
     }
 

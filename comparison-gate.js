@@ -151,7 +151,7 @@
                 (window.DEAL_EXPIRED ? '' : '<div style="margin-bottom:10px;font-size:11px;color:#a5b4fc;font-weight:600;">🎁 Includes 3 bonuses ($49 value) — bonus timer: <span class="gate-bonus-timer">loading...</span></div>') +
                 '<a href="' + link + '" target="_blank" rel="noopener" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" onclick="if(window.trackEvent)window.trackEvent(\'comparison_gate_clicked\',{variant:\'' + activeVariant.id + '\',page:location.pathname});">' +
                 ctaText + '</a>' +
-                '<div style="font-size:11px;color:#475569;margin-top:6px;">One-time payment · Lifetime access · 14-day refund</div>';
+                '<div style="font-size:11px;color:#475569;margin-top:6px;">One-time payment · Lifetime access · 30-day refund</div>';
 
             gateRow.appendChild(gateCell);
             table.querySelector('tbody').appendChild(gateRow);

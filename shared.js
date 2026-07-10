@@ -1024,7 +1024,7 @@ async function saveEmail(e) {
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings with Pro.</div>' +
                 '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:12px;margin-bottom:16px;font-size:14px;color:var(--green);font-weight:600;">' + popupHighlight + '</div>' +
                 '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" id="deprecation-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' on July 12 · 14-day money-back guarantee</p>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' on July 12 · 30-day money-back guarantee</p>' +
                 '</div>';
             overlay.appendChild(popup);
             document.body.appendChild(overlay);
@@ -1143,7 +1143,7 @@ async function saveEmail(e) {
                 '<div style="font-size:20px;font-weight:800;color:var(--green);">40%</div>' +
                 '<div style="font-size:11px;color:var(--text-muted);">avg. savings</div></div></div>' +
                 '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" id="pro-exit-cta" style="display:inline-block;background:' + btnColor.bg + ';color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px ' + btnColor.shadow + ';" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">' + cc.cta + '</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Flash sale ends Jul 12 — price goes to $' + futurePrice + ' · 14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Flash sale ends Jul 12 — price goes to $' + futurePrice + ' · 30-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
                 '</div>';
 
             overlay.appendChild(popup);
@@ -1755,7 +1755,7 @@ var GO_MODEL_MAP = {
                         'onclick="if(window.trackEvent)window.trackEvent(\'results_gate_clicked\',{page:\'' + pageName + '\',total_rows:' + rows.length + ',free_rows:' + FREE_ROWS + ',price:' + price + '})">' +
                         'Unlock All Models — $' + price + ' lifetime' +
                     '</a>' +
-                    '<div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🔒 Stripe secure · 🛡️ 14-day refund · ⚡ Instant access</div>' +
+                    '<div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🔒 Stripe secure · 🛡️ 30-day refund · ⚡ Instant access</div>' +
                 '</div>';
 
             parent.appendChild(gateEl);
@@ -1934,7 +1934,7 @@ var GO_MODEL_MAP = {
                 '<h3 style="font-size:20px;font-weight:800;color:#f1f5f9;margin-bottom:8px;">' + headline + '</h3>' +
                 '<p style="font-size:14px;color:#94a3b8;margin-bottom:16px;line-height:1.5;">' + subtext + '</p>' +
                 '<a href="' + ctaUrl + '" id="global-exit-cta" target="_blank" rel="noopener" style="display:block;width:100%;padding:16px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:12px;font-size:18px;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.3);">' + ctaText + '</a>' +
-                '<p style="font-size:12px;color:#475569;margin-top:12px;">🔒 Stripe secure · 🛡️ 14-day refund · ⚡ Instant access</p>' +
+                '<p style="font-size:12px;color:#475569;margin-top:12px;">🔒 Stripe secure · 🛡️ 30-day refund · ⚡ Instant access</p>' +
                 '<button id="global-exit-dismiss" style="display:block;margin:12px auto 0;background:none;border:none;color:#64748b;font-size:13px;cursor:pointer;">No thanks, I\\'ll pass on saving money</button>' +
             '</div>';
 

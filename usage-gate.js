@@ -124,7 +124,7 @@
             '</div>' +
             '<div style="background:rgba(220,38,38,0.06);border:1px solid rgba(220,38,38,0.2);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#dc2626;">Price goes to $49 on Jul 12 — <span id="gate-countdown" style="font-weight:700;font-variant-numeric:tabular-nums;"></span></div>' +
             '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:block;padding:16px 24px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:17px;font-weight:700;text-decoration:none;transition:transform 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.4);margin-bottom:8px;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'" onclick="if(window.trackEvent)window.trackEvent(\'usage_gate_upgrade_clicked\',{source:\'wall\',price:19})">⚡ Get Pro — $19 lifetime (was $49)</a>' +
-            '<p style="font-size:12px;color:var(--text-muted);margin-top:6px;">One-time payment · 14-day money-back guarantee · Instant access</p>' +
+            '<p style="font-size:12px;color:var(--text-muted);margin-top:6px;">One-time payment · 30-day money-back guarantee · Instant access</p>' +
         '</div>';
 
         document.body.appendChild(wall);

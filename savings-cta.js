@@ -95,7 +95,7 @@
                     '<div style="font-size:28px;">💰</div>' +
                     '<div>' +
                         '<div style="font-size:15px;font-weight:700;color:#e2e8f0;">You could save <span style="color:#22c55e;font-family:monospace;font-size:18px;">' + formatted + '/yr</span> by switching</div>' +
-                        '<div style="font-size:12px;color:#94a3b8;margin-top:2px;">$19 Pro pays for itself ' + payback + ' — 14-day refund guaranteed</div>' +
+                        '<div style="font-size:12px;color:#94a3b8;margin-top:2px;">$19 Pro pays for itself ' + payback + ' — 30-day refund guaranteed</div>' +
                     '</div>' +
                 '</div>' +
                 '<div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">' +
