@@ -42,6 +42,7 @@
     };
     </script>
     <script src="results-cta.js" defer></script>
+    <script src="pro-gate-overlay.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -580,6 +581,14 @@
                         tool: 'ai_roi_calculator'
                     });
                 }, 1000);
+            }
+
+            // Pro gate: show overlay after first calculation
+            if (!window._roiCalcGateShown && typeof showProGate === 'function') {
+                window._roiCalcGateShown = true;
+                setTimeout(function() {
+                    showProGate('.calc-results', { showPreview: true });
+                }, 1200);
             }
         }
 

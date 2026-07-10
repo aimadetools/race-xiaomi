@@ -40,6 +40,7 @@
     };
     </script>
     <script src="results-cta.js" defer></script>
+    <script src="pro-gate-overlay.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -453,6 +454,14 @@
                     conversations: convPerDay, inputTokens, outputTokens, useCase,
                     cheapestModel: cheapest.model.name, cheapestCost: totalCost.toFixed(2)
                 });
+            }
+
+            // Pro gate: show overlay after first calculation
+            if (!window._chatbotCalcGateShown && typeof showProGate === 'function') {
+                window._chatbotCalcGateShown = true;
+                setTimeout(function() {
+                    showProGate('.results-panel', { showPreview: true });
+                }, 1000);
             }
         }
 

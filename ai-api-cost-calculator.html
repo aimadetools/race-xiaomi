@@ -13,6 +13,7 @@
     <link rel="canonical" href="https://getapipulse.com/ai-api-cost-calculator.html">
     <script src="analytics.js" defer></script>
     <script src="shared.js" defer></script>
+    <script src="pro-gate-overlay.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -409,6 +410,14 @@
             } catch(e) {}
 
             if (window.trackEvent) window.trackEvent('cost_calculator_used', { model: modelId, total_cost: totalCost });
+
+            // Pro gate: show overlay after first calculation
+            if (!window._apiCalcGateShown && typeof showProGate === 'function') {
+                window._apiCalcGateShown = true;
+                setTimeout(function() {
+                    showProGate('.results', { showPreview: true });
+                }, 1000);
+            }
         };
 
         // Allow Enter key
