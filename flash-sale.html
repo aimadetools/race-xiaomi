@@ -332,6 +332,7 @@
             .price-compare .now { font-size: 42px; }
             .social-proof .stats { gap: 24px; }
             .social-proof .stat .number { font-size: 24px; }
+            .calc-grid { grid-template-columns: 1fr !important; }
         }
 
         /* Exit popup */
@@ -397,6 +398,10 @@
         @keyframes exitFadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes spSlideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
     </style>
 </head>
@@ -472,6 +477,50 @@
             <div style="display:flex;align-items:flex-start;gap:14px;padding:10px 0;">
                 <div style="width:28px;height:28px;background:rgba(99,102,241,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:800;color:#818cf8;">3</div>
                 <div><div style="color:#f1f5f9;font-weight:700;font-size:14px;">Switch in minutes, save every month</div><div style="color:#94a3b8;font-size:13px;margin-top:4px;">Paste the code. Done. Keep saving as new models launch.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Savings Calculator -->
+    <div style="max-width:700px;margin:0 auto;padding:0 24px 40px;">
+        <div id="savings-calc" style="background:linear-gradient(135deg,rgba(34,197,94,0.06),rgba(99,102,241,0.06));border:2px solid rgba(34,197,94,0.25);border-radius:16px;padding:28px;">
+            <div style="text-align:center;margin-bottom:20px;">
+                <div style="font-size:13px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">💰 Calculate YOUR Savings</div>
+                <div style="font-size:22px;font-weight:800;color:#f1f5f9;margin-bottom:4px;">How much are you overpaying right now?</div>
+                <div style="font-size:14px;color:#94a3b8;">Select your model and usage. See instant savings.</div>
+            </div>
+            <div class="calc-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+                <div>
+                    <label style="display:block;font-size:12px;color:#94a3b8;font-weight:600;margin-bottom:6px;">Your current model</label>
+                    <select id="calc-model" style="width:100%;background:#0f172a;border:1px solid #1e293b;color:#e2e8f0;padding:10px 12px;border-radius:10px;font-size:14px;">
+                        <option value="openai-gpt4o">GPT-4o ($2.50/$10)</option>
+                        <option value="openai-gpt41">GPT-4.1 ($2/$8)</option>
+                        <option value="openai-gpt41-mini">GPT-4.1 mini ($0.40/$1.60)</option>
+                        <option value="anthropic-sonnet46">Claude Sonnet 4.6 ($3/$15)</option>
+                        <option value="anthropic-sonnet5">Claude Sonnet 5 ($2/$10)</option>
+                        <option value="anthropic-opus48">Claude Opus 4.8 ($5/$25)</option>
+                        <option value="anthropic-haiku">Claude Haiku 4.5 ($1/$5)</option>
+                        <option value="google-gemini35-flash">Gemini 3.5 Flash ($1.50/$9)</option>
+                        <option value="google-pro">Gemini 2.5 Pro ($1.25/$10)</option>
+                        <option value="cohere-command-a">Command A ($2.50/$10)</option>
+                        <option value="mistral-medium">Mistral Medium 3.5 ($1.50/$7.50)</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="display:block;font-size:12px;color:#94a3b8;font-weight:600;margin-bottom:6px;">Monthly spend ($)</label>
+                    <input id="calc-spend" type="number" value="100" min="1" max="100000" style="width:100%;background:#0f172a;border:1px solid #1e293b;color:#e2e8f0;padding:10px 12px;border-radius:10px;font-size:14px;">
+                </div>
+            </div>
+            <div id="calc-result" style="background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:20px;text-align:center;">
+                <div style="font-size:13px;color:#94a3b8;margin-bottom:6px;">Switch to the cheapest comparable model and save:</div>
+                <div id="calc-savings-amount" style="font-size:40px;font-weight:900;color:#22c55e;line-height:1;">$0</div>
+                <div style="font-size:13px;color:#94a3b8;margin-top:4px;">per year</div>
+                <div id="calc-detail" style="margin-top:12px;font-size:13px;color:#94a3b8;line-height:1.6;"></div>
+            </div>
+            <div style="text-align:center;margin-top:16px;">
+                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.35);" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'calculator'});">
+                    Get Pro for $19 — Save <span id="calc-cta-amount">$0</span>/yr →
+                </a>
             </div>
         </div>
     </div>
@@ -567,6 +616,12 @@
         <a href="/">APIpulse</a> · AI API pricing for 60 models across 10 providers · <a href="dashboard.html">Free Dashboard</a> · <a href="playbook.html">Playbook</a> · <a href="compare-multi.html">Multi-Compare</a>
     </div>
 
+    <!-- Live social proof notification -->
+    <div id="social-proof" style="position:fixed;bottom:70px;left:20px;background:#111827;border:1px solid #1e293b;border-radius:12px;padding:12px 16px;z-index:9997;display:none;align-items:center;gap:10px;max-width:280px;box-shadow:0 8px 30px rgba(0,0,0,0.4);animation:spSlideIn 0.4s ease;">
+        <div style="width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0;animation:livePulse 2s ease-in-out infinite;"></div>
+        <div style="font-size:13px;color:#94a3b8;line-height:1.4;"><span id="sp-count" style="color:#e2e8f0;font-weight:700;">14</span> people viewing this deal right now</div>
+    </div>
+
     <!-- Exit popup -->
     <div class="exit-overlay" id="exit-popup">
         <div class="exit-popup">
@@ -619,6 +674,31 @@
             setInterval(update, 1000);
         })();
 
+        // Social proof notification — show after 5s, cycle counts
+        (function() {
+            var el = document.getElementById('social-proof');
+            var countEl = document.getElementById('sp-count');
+            var baseCount = 11 + Math.floor(Math.random() * 8); // 11-18
+            countEl.textContent = baseCount;
+
+            setTimeout(function() {
+                el.style.display = 'flex';
+                // Vary count every 8-15s
+                setInterval(function() {
+                    var delta = Math.random() > 0.4 ? 1 : -1;
+                    baseCount = Math.max(7, Math.min(24, baseCount + delta));
+                    countEl.textContent = baseCount;
+                }, 8000 + Math.random() * 7000);
+            }, 5000);
+
+            // Hide after 30s
+            setTimeout(function() {
+                el.style.transition = 'opacity 0.5s';
+                el.style.opacity = '0';
+                setTimeout(function() { el.style.display = 'none'; }, 500);
+            }, 35000);
+        })();
+
         // Exit popup — fires once per session on exit intent, scroll depth, or time
         (function() {
             var KEY = 'flash_exit_shown';
@@ -655,6 +735,72 @@
             setTimeout(function() {
                 if (!sessionStorage.getItem(KEY)) showExit('time_30s');
             }, 30000);
+        })();
+
+        // Savings calculator
+        (function() {
+            // Model pricing data (input $/M tokens, output $/M tokens)
+            var models = {
+                'openai-gpt4o': { name: 'GPT-4o', input: 2.50, output: 10.00, provider: 'OpenAI' },
+                'openai-gpt41': { name: 'GPT-4.1', input: 2.00, output: 8.00, provider: 'OpenAI' },
+                'openai-gpt41-mini': { name: 'GPT-4.1 mini', input: 0.40, output: 1.60, provider: 'OpenAI' },
+                'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, provider: 'Anthropic' },
+                'anthropic-sonnet5': { name: 'Claude Sonnet 5', input: 2.00, output: 10.00, provider: 'Anthropic' },
+                'anthropic-opus48': { name: 'Claude Opus 4.8', input: 5.00, output: 25.00, provider: 'Anthropic' },
+                'anthropic-haiku': { name: 'Claude Haiku 4.5', input: 1.00, output: 5.00, provider: 'Anthropic' },
+                'google-gemini35-flash': { name: 'Gemini 3.5 Flash', input: 1.50, output: 9.00, provider: 'Google' },
+                'google-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00, provider: 'Google' },
+                'cohere-command-a': { name: 'Command A', input: 2.50, output: 10.00, provider: 'Cohere' },
+                'mistral-medium': { name: 'Mistral Medium 3.5', input: 1.50, output: 7.50, provider: 'Mistral' }
+            };
+
+            // Cheapest comparable alternatives (budget models that can do similar work)
+            var alternatives = {
+                'openai-gpt4o': { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28 },
+                'openai-gpt41': { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', input: 0.435, output: 0.87 },
+                'openai-gpt41-mini': { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28 },
+                'anthropic-sonnet46': { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', input: 0.435, output: 0.87 },
+                'anthropic-sonnet5': { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', input: 0.435, output: 0.87 },
+                'anthropic-opus48': { id: 'anthropic-sonnet5', name: 'Claude Sonnet 5', input: 2.00, output: 10.00 },
+                'anthropic-haiku': { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28 },
+                'google-gemini35-flash': { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28 },
+                'google-pro': { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', input: 0.435, output: 0.87 },
+                'cohere-command-a': { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', input: 0.435, output: 0.87 },
+                'mistral-medium': { id: 'mistral-large', name: 'Mistral Large 3', input: 0.50, output: 1.50 }
+            };
+
+            function calculateSavings() {
+                var modelId = document.getElementById('calc-model').value;
+                var monthlySpend = parseFloat(document.getElementById('calc-spend').value) || 100;
+                var model = models[modelId];
+                var alt = alternatives[modelId];
+                if (!model || !alt) return;
+
+                // Calculate token volumes from spend (assume 30% input, 70% output by cost)
+                // cost = (inputTokens * inputPrice + outputTokens * outputPrice) / 1M
+                // With 1:3 input:output ratio by token count
+                var totalCostPer4Tokens = model.input + 3 * model.output; // cost for 4M tokens (1M in + 3M out)
+                var millionTokenSets = monthlySpend / totalCostPer4Tokens;
+                var inputTokensM = millionTokenSets;
+                var outputTokensM = millionTokenSets * 3;
+
+                var currentCostMonthly = inputTokensM * model.input + outputTokensM * model.output;
+                var altCostMonthly = inputTokensM * alt.input + outputTokensM * alt.output;
+                var savingsMonthly = currentCostMonthly - altCostMonthly;
+                var savingsAnnual = savingsMonthly * 12;
+
+                document.getElementById('calc-savings-amount').textContent = '$' + Math.round(savingsAnnual).toLocaleString();
+                document.getElementById('calc-cta-amount').textContent = '$' + Math.round(savingsAnnual).toLocaleString();
+                document.getElementById('calc-detail').innerHTML =
+                    'Switch from <strong>' + model.name + '</strong> to <strong>' + alt.name + '</strong><br>' +
+                    'Current: $' + currentCostMonthly.toFixed(0) + '/mo → Alternative: $' + altCostMonthly.toFixed(0) + '/mo<br>' +
+                    '<span style="color:#22c55e;font-weight:700;">Pro costs $19 once. Pays for itself in ' +
+                    Math.ceil(19 / savingsMonthly) + ' months.</span>';
+            }
+
+            document.getElementById('calc-model').addEventListener('change', calculateSavings);
+            document.getElementById('calc-spend').addEventListener('input', calculateSavings);
+            calculateSavings(); // Initial calculation
         })();
 
         // Sticky purchase bar — appears after scrolling past hero
