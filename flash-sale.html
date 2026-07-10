@@ -333,6 +333,8 @@
             .social-proof .stats { gap: 24px; }
             .social-proof .stat .number { font-size: 24px; }
             .calc-grid { grid-template-columns: 1fr !important; }
+            /* Mobile: stack all grids to single column */
+            .who-grid, .tools-grid, .testimonials-grid, .guarantee-grid { grid-template-columns: 1fr !important; }
         }
 
         /* Exit popup */
@@ -439,7 +441,7 @@
             <div style="font-size:13px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">🎯 Built for developers who ship</div>
             <div style="font-size:22px;font-weight:800;color:#f1f5f9;">Is APIpulse right for you?</div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="who-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
             <div style="background:#111827;border:1px solid #1e293b;border-radius:12px;padding:18px;">
                 <div style="font-size:14px;font-weight:700;color:#22c55e;margin-bottom:8px;">✓ You spend $50+/mo on AI APIs</div>
                 <div style="font-size:13px;color:#94a3b8;line-height:1.5;">If you're paying for GPT-4, Claude, or Gemini API calls, you're likely overpaying. Most devs save $500+/yr by switching models.</div>
