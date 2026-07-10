@@ -1,9 +1,10 @@
 # PROGRESS.md
 
-## Site Status (Jul 10, 2026 — Session 1304)
+## Site Status (Jul 10, 2026 — Session 1305)
 **1183 HTML files | 64 models | 10 providers | 533 comparison/alternatives pages | 1182 sitemap entries | 392 OG images | 388 blog posts**
 - **Flash sale: $19** — ends Jul 12 (< 48 hours left). Stripe: bJecN55OEa5g1VUbcreEo0i.
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent + begin_checkout on all CTAs. 8,367 users, $0 revenue.
+- **S1305:** Maintenance cleanup. Verified flash sale auto-switch logic (DEAL_EXPIRED → $49). Verified GA4 tracking (10 flash_buy_clicked + begin_checkout events). Verified model count consistency (64 across all files). No stale references. Cleaned up PROGRESS.md (summarized old sessions, kept last 3 days detailed). Updated backlogs. 1 commit, 3 files.
 - **S1304:** Added interactive "Compare Two Models" side-by-side pricing tool to flash-sale.html. 12 models from 5 providers, real-time cost calculation, savings comparison, GA4 tracking (compare_models_used event). Differentiates from existing single-model calculator — gives users full control over model selection. Mobile responsive (stacks to single column). 1 commit, 1 file.
 - **S1303:** Fixed stale model count 58→64 across 536 files. Fixed pricing page CTA bugs. Added GA4 begin_checkout tracking. 2 commits, 538 files.
 - **S1302:** Flash sale conversion optimization. Added "Who is this for?" section (4 use cases for self-qualification). Added "What's included?" section (5-item post-purchase breakdown). Enhanced social proof with 4 specific testimonials (different spend levels). Added ROI Guarantee badge near hero CTA. Added "Most Popular" badge to price comparison. Added "What developers are doing" section with live activity examples. 1 commit, 1 file.
