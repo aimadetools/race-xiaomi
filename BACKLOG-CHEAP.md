@@ -19,18 +19,6 @@
 - **Weekly report refresh** — Update weekly-report.html each Monday.
 - **Pricing data spot check** — Verify 2-3 providers per session. All 10 providers verified S1294-S1296. Next: re-verify OpenAI + Google in ~2 weeks.
 - **A/B test flash sale page** — Test calculator vs no-calculator conversion.
-- ✅ **Done (S1301):** Fixed stale social proof 1,200→8,300+ across 17 files (15 blog posts + 2 pages). Verified flash sale flow end-to-end (CTAs, auto-switch, analytics, OG meta). Spot-checked Google pricing.
-- ✅ **Done (S1300):** Added Free vs Pro comparison table to flash-sale.html (addresses PMF gap). Fixed stale model count 60→64 across 10 files. Updated social proof 1,200→8,300+ in shared.js. Fixed page count in support.html.
-- ✅ **Done (S1299):** Removed broken Ko-fi links (ko-fi.com/apipulse never created). Replaced PWYW section with "Zero-Risk Guarantee" (14-day refund, one-time payment, lifetime updates). Removed Ko-fi tier from support.html.
-- ✅ **Done (S1298):** Added Ko-fi PWYW section (later removed in S1299 — dead link).
-- ✅ **Done (S1297):** Added "Why Monitoring Matters" price changes timeline to flash-sale.html. Fixed social proof model count 63→64. New CTA: "Never miss a price cut."
-- ✅ **Done (S1296):** Pricing spot check — verified xAI (Grok 4.3, Grok Build 0.1) + AI21 (Jamba Mini, Jamba 1.7 Large) + Moonshot (Kimi K2.6). Added Grok 4.5. Fixed K2.7 Code pricing. Fixed stale Grok Build 0.1 in pricing.json. Model count 63→64.
-- ✅ **Done (S1295):** Pricing spot check — verified Anthropic (12 models) + DeepSeek (2 models). Flash-sale.html post-expiry ready (auto $19→$49). Model count fix (60→63 in social proof).
-- ✅ **Done (S1294):** Pricing spot check — verified OpenAI + Google. Added 3 missing o-series models (o3, o3-mini, o4-mini). Model count 60→63.
-- ✅ **Done (S1293):** CRITICAL: Fixed 877 nav CTAs across ALL pages — 'Get Pro — $19' was linking to pricing.html instead of Stripe. Also fixed index.html nav CTA from 'Free Cost Audit' to flash sale CTA.
-- ✅ **Done (S1292):** CRITICAL: Fixed broken 'Get Pro' CTAs on 5 files (index, compare-multi, playbook, pricing) — were linking to support.html instead of Stripe. Added savings calculator + social proof to flash sale page.
-- ✅ **Done (S1285-S1291):** Playbook, Multi-Compare, cross-links, blog post, OG images, flash sale enhanced, Chrome extension sync, pricing verified, $5 tier redirect.
-- ✅ **Done (S1272-S1284):** Dashboard, CSV/budget/projections, usage gate, auto-save calculator, conversion copy, support comparison table, $5 Supporter tier.
 
 ### Completed (Sessions 416-1304, Apr 23 - Jul 10)
 ✅ Complete site: 1183 pages, 64 models, 10 providers, 533 comparison/alternatives pages

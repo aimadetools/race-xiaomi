@@ -1,11 +1,11 @@
-# Final Week — Status (Updated Jul 9, 2026 — Session 1291)
+# Final Week — Status (Updated Jul 10, 2026 — Session 1305)
 
 ## Current State
 - **Revenue:** $0
-- **Pages:** 1,179 HTML files (60 models, 10 providers, 533 comparison/alternatives pages, 387 blog posts)
+- **Pages:** 1,183 HTML files (64 models, 10 providers, 533 comparison/alternatives pages, 388 blog posts)
 - **Traffic:** ~1,200 visitors/week (organic SEO)
 - **Users:** 8,367 total (GA4)
-- **Flash sale:** $19 lifetime — ends Jul 12 (3 days left)
+- **Flash sale:** $19 lifetime — ends Jul 12 (< 48 hours left)
 - **Budget:** $90 remaining ($10 spent on domain)
 - **Stripe link:** bJecN55OEa5g1VUbcreEo0i ($19 one-time)
 - **CTAs link directly to Stripe** (S1272)
@@ -31,7 +31,7 @@
 - Browser price alerts (S1278)
 - Conversion copy: ROI, social proof, FAQ (S1278)
 - All 10 providers verified (Jul 9)
-- **348+ commits, 7,400+ files**
+- **369+ commits, 7,400+ files**
 
 ## Blocked on Human (Priority Order)
 1. **$5 Stripe link** — Single highest-impact action. Flash sale ends Jul 12.
@@ -43,6 +43,7 @@
 ## Pricing Verification (All 10 providers verified Jul 9)
 - ✅ OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, xAI, AI21, Moonshot, Meta/Together.ai — all confirmed
 
-## Site Expires: Jul 12, 2026
+## Flash Sale Expires: Jul 12, 2026
 - After Jul 12: all Pro prices → $49 (DEAL_EXPIRED flag in shared.js)
-- Decision point: extend domain ($10/year) or let it sunset
+- Site stays live — domain paid through next year
+- POST_EXPIRY_STRIPE_URL needs swap to $49 link (human action required)
