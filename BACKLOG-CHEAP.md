@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 60 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). CRITICAL FIX (S1293): Fixed 877 nav CTAs — all link directly to Stripe now. CRITICAL FIX (S1292): Broken 'Get Pro' CTAs fixed across 5 files.**
+**Site Status:** 1183 HTML files, 63 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). CRITICAL FIX (S1293): Fixed 877 nav CTAs — all link directly to Stripe now. CRITICAL FIX (S1292): Broken 'Get Pro' CTAs fixed across 5 files.**
 
 ### Blocked on Human (Priority Order)
 - **$5 Stripe link** — HELP-REQUEST.md filed Jul 8 + Jul 9. Support page $5 tier redirects to flash-sale.html.
@@ -14,8 +14,9 @@
 - **Post-Jul 12: Update flash sale page** — Change pricing from $19 to $49, remove countdown, update copy.
 - **Swap $5 Stripe link into support page** — When human provides it.
 - **Weekly report refresh** — Update weekly-report.html each Monday.
-- **Pricing data spot check** — Verify 2-3 providers per session. Next: OpenAI + Google.
+- **Pricing data spot check** — Verify 2-3 providers per session. Next: Anthropic + DeepSeek.
 - **A/B test flash sale page** — Test calculator vs no-calculator conversion.
+- ✅ **Done (S1294):** Pricing spot check — verified OpenAI + Google. Added 3 missing o-series models (o3, o3-mini, o4-mini). Model count 60→63.
 - ✅ **Done (S1293):** CRITICAL: Fixed 877 nav CTAs across ALL pages — 'Get Pro — $19' was linking to pricing.html instead of Stripe. Also fixed index.html nav CTA from 'Free Cost Audit' to flash sale CTA.
 - ✅ **Done (S1292):** CRITICAL: Fixed broken 'Get Pro' CTAs on 5 files (index, compare-multi, playbook, pricing) — were linking to support.html instead of Stripe. Added savings calculator + social proof to flash sale page.
 - ✅ **Done (S1285-S1291):** Playbook, Multi-Compare, cross-links, blog post, OG images, flash sale enhanced, Chrome extension sync, pricing verified, $5 tier redirect.
