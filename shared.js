@@ -517,7 +517,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Pre-expiry: $19 flash sale (Session 980)
             banner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
-            var urgencyText = window.DEAL_DAYS_LEFT <= 1 ? 'FINAL DAY' : window.DEAL_DAYS_LEFT + ' days left';
+            var urgencyText = window.DEAL_DAYS_LEFT <= 0 ? 'EXPIRED' :
+                window.DEAL_DAYS_LEFT <= 1 ? '⚡ ENDS TONIGHT — FINAL HOURS!' :
+                window.DEAL_DAYS_LEFT <= 2 ? '⚡ LAST 48 HOURS — ALMOST GONE!' :
+                window.DEAL_DAYS_LEFT + ' days left';
             banner.innerHTML = '<span>⚡ FLASH SALE: Pro lifetime access <strong>$19</strong> — <strong>' + urgencyText + '</strong></span>' +
                 '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="color:white;text-decoration:underline;font-weight:700;" onclick="if(window.trackEvent)window.trackEvent(\'deal_banner_clicked\',{source:\'deprecation_banner\'});">Get $19 deal →</a>' +
                 '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
@@ -1317,8 +1320,9 @@ async function saveEmail(e) {
         var diff = deadline - Date.now();
         var daysLeft = diff > 0 ? Math.ceil(diff / 86400000) : 0;
         var hoursLeft = diff > 0 ? Math.floor((diff % 86400000) / 3600000) : 0;
-        var urgencyLabel = daysLeft <= 0 ? '⚡ Flash sale EXPIRED' :
-            daysLeft <= 1 ? '⚡ FINAL HOURS — flash sale ends tonight!' :
+        var urgencyLabel = daysLeft <= 0 ? '⚡ Flash sale EXPIRED — price is now $49' :
+            daysLeft <= 1 ? '⚡ FINAL HOURS — flash sale ends TONIGHT! Price goes to $49' :
+            daysLeft <= 2 ? '⚡ LAST 48 HOURS — flash sale almost gone! Price goes to $49' :
             '⚡ Only ' + daysLeft + 'd ' + hoursLeft + 'h left — flash sale ends Jul 12';
         var stickyBottomStripeUrl = window.POST_EXPIRY_STRIPE_URL || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
         bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">' + urgencyLabel + '</span>' +

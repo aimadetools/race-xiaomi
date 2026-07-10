@@ -62,8 +62,12 @@
 
         var html = '';
         if (showUrgency && timeLeft > 0) {
-            var timeStr = hoursLeft < 24
-                ? hoursLeft + 'h ' + (Math.floor((timeLeft % 3600000) / 60000)) + 'm left'
+            var timeStr = hoursLeft < 12
+                ? hoursLeft + 'h ' + (Math.floor((timeLeft % 3600000) / 60000)) + 'm left — ENDS TONIGHT!'
+                : hoursLeft < 24
+                ? hoursLeft + 'h left — FINAL DAY!'
+                : daysLeft <= 2
+                ? 'LAST ' + (daysLeft === 2 ? '48' : '24') + ' HOURS!'
                 : daysLeft + ' day' + (daysLeft !== 1 ? 's' : '') + ' left';
             html += '<div style="background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(249,115,22,0.1));border:1px solid rgba(239,68,68,0.3);color:#ef4444;font-size:13px;font-weight:700;padding:8px 18px;border-radius:20px;display:inline-block;margin-bottom:16px;letter-spacing:0.5px;">⚡ FLASH SALE — ' + timeStr + '</div>';
         }
