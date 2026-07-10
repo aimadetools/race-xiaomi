@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed. Free vs Pro comparison added (S1300). Zero-Risk Guarantee added. All 10 providers verified. Social proof consistent (8,300+ across all files — S1301).**
+**Site Status:** 1183 HTML files, 64 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 — < 48 hours). All CTAs fixed. Compare Two Models tool added (S1304). Free vs Pro comparison added (S1300). Zero-Risk Guarantee added. All 10 providers verified. Social proof consistent (8,300+ across all files — S1301).**
 
 ### Blocked on Human (Priority Order)
 - **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
