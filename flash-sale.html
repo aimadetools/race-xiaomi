@@ -1171,11 +1171,11 @@
             if (window.DEAL_EXPIRED) {
                 var stickyExpiryUrl = window.POST_EXPIRY_STRIPE_URL || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
                 bar.innerHTML = '<span>✅ <strong>APIpulse Pro — $49 lifetime</strong></span>' +
-                    '<a href="' + stickyExpiryUrl + '" target="_blank" rel="noopener" style="background:white;color:#16a34a;padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:49,location:\'sticky_bar\'});">Get Pro — $49 →</a>';
+                    '<a href="' + stickyExpiryUrl + '" target="_blank" rel="noopener" style="background:white;color:#16a34a;padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:49,location:\'sticky_bar\'});if(window.trackBeginCheckout)window.trackBeginCheckout(49,\'flash_sale_sticky_bar\');">Get Pro — $49 →</a>';
                 bar.style.background = 'linear-gradient(135deg,#16a34a,#15803d)';
             } else {
                 bar.innerHTML = '<span>⚡ Flash sale ends Jul 12 — <strong>$19 lifetime</strong></span>' +
-                    '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="background:white;color:#dc2626;padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:19,location:\'sticky_bar\'});">Get Pro — $19 →</a>';
+                    '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="background:white;color:#dc2626;padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'flash_buy_clicked\',{price:19,location:\'sticky_bar\'});if(window.trackBeginCheckout)window.trackBeginCheckout(19,\'flash_sale_sticky_bar\');">Get Pro — $19 →</a>';
             }
             document.body.appendChild(bar);
 
