@@ -13,7 +13,7 @@
 | r/MachineLearning | ML engineers | Pricing data, cost optimization | Research/data posts |
 
 ### Hacker News
-- **Show HN**: "Show HN: Free AI API cost calculator — 64 models, 10 providers"
+- **Show HN**: "Show HN: Free AI API cost calculator — 67 models, 10 providers"
 - **Best timing**: Tuesday-Thursday, 9-11am ET
 - **Angle**: Technical depth, no marketing fluff
 
@@ -51,7 +51,7 @@
 - Link: https://getapipulse.com/cost-optimizer.html
 
 ### 5. Tool Announcements
-**Hook**: "Free tool: Compare AI API costs across 64 models"
+**Hook**: "Free tool: Compare AI API costs across 67 models"
 - Direct value proposition
 - Works on: r/webdev, r/SaaS
 
@@ -78,10 +78,10 @@ The tool is free: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm
 Happy to answer questions about the build process or the PH launch.
 
 ### Reddit r/webdev — Tool Announcement
-**Title**: "Free tool: AI API cost calculator — compare 64 models from OpenAI, Anthropic, Google, and more"
+**Title**: "Free tool: AI API cost calculator — compare 67 models from OpenAI, Anthropic, Google, and more"
 
 I built a calculator that lets you estimate monthly AI API costs across providers. Features:
-- 64 models, 10 providers
+- 67 models, 10 providers
 - **Cost per request** and **cost per 1K requests** — the metrics developers actually budget against
 - Request-type presets: chat message, code gen, doc analysis, RAG query, content writer
 - **Batch vs streaming toggle** — see how streaming overhead (+10% tokens) or Batch API discounts (-50%) affect your costs
@@ -105,7 +105,7 @@ The LLM API market has shifted massively in 2025-2026:
 - Claude Sonnet 5: $2/$10 intro pricing through Aug 31 (regular $3/$15)
 - Grok 4.3: $1.25/$2.50 with 1M context (was $3/$15 — rebranded & repriced)
 
-I built APIpulse to help developers navigate this. It's a free, static tool that compares 64 models across 10 providers with interactive calculators.
+I built APIpulse to help developers navigate this. It's a free, static tool that compares 67 models across 10 providers with interactive calculators.
 
 Key pages:
 - /calculator — cost per request, cost per 1K requests, monthly total. Request-type presets (chat, code gen, doc analysis, RAG, content writer). New: batch vs streaming toggle (streaming +10% tokens, Batch API -50% cost)
@@ -138,7 +138,7 @@ Budget models are now production-viable:
 
 I built a free tool to track all this: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_artificial_pricing
 
-Full comparison of 64 models across 10 providers. Would be curious to hear what models everyone's actually using in production.
+Full comparison of 67 models across 10 providers. Would be curious to hear what models everyone's actually using in production.
 
 ### Reddit r/LocalLLaMA — Open-Source vs Commercial
 **Title**: "Open-source vs commercial AI APIs in 2026 — cost comparison with real numbers"
@@ -169,7 +169,7 @@ Full comparison: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_
 
 I'm 12 weeks into a 12-week challenge: build a real startup with only $100.
 
-What I built: APIpulse — a free tool that compares AI API pricing across 64 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, cost optimizer, and 369 blog guides.
+What I built: APIpulse — a free tool that compares AI API pricing across 67 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, cost optimizer, and 369 blog guides.
 
 Week 1-2: Built the entire site (174 pages, 120 blog posts). Launched on Product Hunt.
 Week 3: Distribution push. Added savings calculator, exit popup A/B test, community engagement.
@@ -198,7 +198,7 @@ The tool: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaig
 Happy to share specifics about the build process, tech stack, or PH launch strategy.
 
 ### Reddit r/MachineLearning — Data-Driven Analysis
-**Title**: "AI API pricing analysis: 64 models, 10 providers — who's actually cheapest in 2026?"
+**Title**: "AI API pricing analysis: 67 models, 10 providers — who's actually cheapest in 2026?"
 
 I analyzed current AI API pricing across all major providers. Key findings:
 
@@ -259,7 +259,7 @@ The optimal strategy in 2026: multi-model pipelines.
 Average: under $1/1M tokens.
 
 **Tweet 6:**
-I built a free tool to track all of this — 64 models, 10 providers, interactive calculators.
+I built a free tool to track all of this — 67 models, 10 providers, interactive calculators.
 
 Calculate your exact monthly cost: https://getapipulse.com/?utm_source=x&utm_medium=thread&utm_campaign=pricing_changes
 
@@ -298,18 +298,18 @@ I built a free calculator that models all of these strategies:
 
 https://getapipulse.com/?utm_source=x&utm_medium=thread&utm_campaign=cost_optimization
 
-64 models, 10 providers. See your exact savings.
+67 models, 10 providers. See your exact savings.
 
 ---
 
 ## Newsletter Pitches
 
 ### TLDR Newsletter
-**Subject**: Free tool: Compare AI API pricing across 64 models
+**Subject**: Free tool: Compare AI API pricing across 67 models
 
 Hi TLDR team,
 
-I built APIpulse — a free tool that helps developers compare AI API costs across 64 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, and more.
+I built APIpulse — a free tool that helps developers compare AI API costs across 67 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, and more.
 
 Key data points for your readers:
 - Claude Sonnet 5 launched at intro pricing $2/$10 through Aug 31
@@ -330,7 +330,7 @@ Hey Bytes team,
 
 The AI API pricing landscape has shifted massively in 2025-2026. I built APIpulse to help developers navigate it:
 
-- 64 models across 10 providers
+- 67 models across 10 providers
 - Interactive savings calculator
 - Pricing trends with every major price move
 - 369 comparison blog posts

@@ -13,14 +13,14 @@ Submit the APIpulse MCP server to these directories. Each is a web form or GitHu
 - **License:** CC-BY-4.0
 - **Hosting:** Remote (Vercel serverless)
 - **Language:** JavaScript (Node.js)
-- **Description:** Free MCP server for AI API pricing data. Compare costs across 64 models from 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, Cohere, xAI, Moonshot, AI21). Get live pricing, calculate monthly costs, find cheapest models. No API key required. Rate limited to 60 req/min.
+- **Description:** Free MCP server for AI API pricing data. Compare costs across 67 models from 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, Cohere, xAI, Moonshot, AI21). Get live pricing, calculate monthly costs, find cheapest models. No API key required. Rate limited to 60 req/min.
 
 ## Submissions
 
 ### 1. awesome-mcp-servers (GitHub)
 - **URL:** https://github.com/punkpeye/awesome-mcp-servers
 - **How:** Fork → add to README.md → PR
-- **Entry format:** `- [APIpulse](https://getapipulse.com/mcp.html) — AI API pricing data for 64 models across 10 providers. Compare costs, calculate monthly spend, find cheapest models.`
+- **Entry format:** `- [APIpulse](https://getapipulse.com/mcp.html) — AI API pricing data for 67 models across 10 providers. Compare costs, calculate monthly spend, find cheapest models.`
 - **Category:** Search & Data (or Developer Tools)
 
 ### 2. Glama MCP Directory
