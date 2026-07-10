@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1186 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 23:59:59 UTC — ~48 hours). All CTAs fixed. PRO GATE OVERLAY (S1313-S1318): 15 tools gated. S1322: Final verification complete — site operational. S1323-S1327: Pricing verified, GPT-5.6 added, model count 64→67 fixed across 785+ files, duplicate text cleaned up, stale dates updated. S1328: Fixed misleading "free tools" label on flash-sale.html. Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
+**Site Status:** 1186 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. Flash sale $19 (ends Jul 12 23:59:59 UTC — ~48 hours). All CTAs fixed. PRO GATE OVERLAY (S1313-S1318): 15 tools gated. S1322: Final verification complete — site operational. S1323-S1327: Pricing verified, GPT-5.6 added, model count 64→67 fixed across 785+ files, duplicate text cleaned up, stale dates updated. S1328: Fixed misleading "free tools" label on flash-sale.html. S1329: Fixed broken nav.js in 2 blog files. Post-expiry $49 switch guarded — won't activate until real Stripe link provided.**
 
 ### Blocked on Human (Priority Order)
 - **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
