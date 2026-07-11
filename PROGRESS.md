@@ -3,7 +3,7 @@
 ## Site Status (Jul 11, 2026 — Session 1358)
 **1184 HTML files | 67 models | 10 providers | 470 comparisons | 162 tools | 388 blog posts**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1358: Stale reference cleanup — 13 files, fixed blog/tool/API counts, removed stale $49 strikethrough prices, cleaned "Pay once" references, fixed FAQ.**
+- **S1358: Stale reference cleanup — 19 files, fixed blog/tool/API counts, removed stale $49 prices, cleaned "Pay once" references, removed refund references, fixed FAQ.**
   - Fixed 241→388 blog count in changelog, community (2x), launch, prompt-cost-calculator
   - Fixed 60→162 tool count, 12→21 API endpoint count in prompt-cost-calculator
   - Fixed 1183→1184 page count, 540→470 comparison count in FINAL-2-WEEKS.md, BACKLOG-CHEAP.md, BACKLOG-PREMIUM.md
@@ -11,9 +11,9 @@
   - Fixed "No subscription. Pay once, use forever." → "100% free. No signup required." in 6 blog/tool pages
   - Fixed "Pay once, use forever" in about.html, pricing.html (subtitle + FAQ)
   - Fixed double question mark in pricing FAQ
-  - Removed stale "30 days refund" FAQ (everything is free)
+  - Removed stale "30 days refund" from pricing FAQ, audit, compare-plans, deprecation-tracker, pricing-grade
   - Fixed JSON-LD schema FAQ in pricing.html
-- **ZERO active purchase CTAs. ZERO flash sale references. ZERO A/B test code. ZERO stale Pro references. ZERO stale payment references.**
+- **ZERO active purchase CTAs. ZERO flash sale references. ZERO A/B test code. ZERO stale Pro references. ZERO stale payment references. ZERO stale refund references.**
 - **Blocked on human:** npm publish (5 min), Ko-fi account (5 min), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 9-11)
