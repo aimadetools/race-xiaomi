@@ -1,27 +1,24 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 12 of 12. $0 revenue. 8,367 users. Flash sale $19 ends Jul 12 (<24h). S1332: Business health audit — PMF 2/10, pivot recommended. Removed hostile gating. 400+ commits. Distribution blocked on human.
+**STATUS: Week 12 of 12. $0 revenue. 8,367 users. S1333: Pivot implemented — all tools free, flash sale removed, pro gates disabled. 403+ commits. Distribution blocked on human.
 
 ---
 
-### Week 12 — Final Push (Jul 7-9)
-✅ All conversion optimization complete (S1224-S1278). ✅ API Cost Optimization Playbook (S1285): 12 strategies, interactive calculator, SEO-optimized. ✅ Multi-Model Comparison Tool (S1285): 6 models side-by-side, 25+ models, presets, visual charts. ✅ $5 Supporter tier (S1284). ✅ Support page comparison table (S1283). ✅ Cross-linked Dashboard/Playbook/Multi-Compare across 20+ high-traffic pages (S1288). ✅ Flash sale page conversion: fixed model count, added "See it in action" section with free tools (S1289). All 10 providers verified. **344+ commits, 7,400+ files.**
-
-### Post-Audit Priority Tasks (S1332)
-1. **Remove remaining flash sale urgency** — Kill countdown timers, "FLASH SALE" badges across site. Replace with honest messaging. (1h)
-2. **Switch to freemium model** — Make all tools free. Remove pro gates from 15 tools. Accept calculator is commodity. (2h)
+### Post-Pivot Priority Tasks (S1333)
+1. ✅ **Remove flash sale urgency** — DONE S1333. Countdown timers, FLASH SALE badges, urgency text replaced with free tool messaging.
+2. ✅ **Switch to freemium model** — DONE S1333. All 15 pro gates disabled. comparison-gate.js, pro-gate-overlay.js, usage-gate.js all no-op.
 3. **Add email capture** — Wire subscribe-alerts.js to working backend (Google Form or mailto:). Build distribution list. (1h)
 4. **Post Show HN** — Title: "Show HN: Free AI API pricing comparison for 67 models across 10 providers". Lead with free tool. (1h)
 5. **Prepare Product Hunt launch** — Schedule for Tuesday Jul 15. Lead with free tool, not sale. (2h)
+6. **Update remaining flash sale pages** — deal.html still has its own $29 conversion flow. Index.html still has some flash sale references.
 
 ### Blocked on Human (Priority Order)
-1. **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
-2. **Ko-fi account** — HELP-REQUEST filed Jul 10. Create ko-fi.com/apipulse for pay-what-you-want option. 5 min. (PWYW section removed from flash-sale.html until account exists — S1299)
-3. **$5 Stripe link** — HELP-REQUEST.md filed Jul 8. Support page $5 tier removed (Ko-fi not available — S1299).
-4. **Vercel KV env vars** — Code ready (S1231). Human sets KV_REST_API_URL + KV_REST_API_TOKEN in Vercel dashboard.
-5. **Directory submissions (22)** — Pending since Jun 28. HELP-REQUEST.md filed Jul 6.
-6. **Chrome Web Store** — Publish extension ($5). Needs human action.
-7. **npm package** — npm-package/ ready, needs npm auth.
+1. **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want option. 5 min.
+2. **$5 Stripe link** — Support page $5 tier removed (Ko-fi not available).
+3. **Vercel KV env vars** — Code ready (S1231). Human sets KV_REST_API_URL + KV_REST_API_TOKEN in Vercel dashboard.
+4. **Directory submissions (22)** — Pending since Jun 28.
+5. **Chrome Web Store** — Publish extension ($5).
+6. **npm package** — npm-package/ ready, needs npm auth.
 
-### Completed Summary (Sessions 416-1331, Apr 5 - Jul 10)
-Complete AI API pricing comparison site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard**, **API Cost Optimization Playbook**, **Multi-Model Comparison Tool**, **Compare Two Models tool**, browser price monitor. Full conversion funnel with gated audit. **PRO GATE OVERLAY (S1314): gated compare-multi, dashboard, playbook, cost-explorer.** begin_checkout tracking on all CTAs. 30-day guarantee consistent. GA4: 8,367 users, $0 revenue. All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries. **S1328: Fixed misleading "free tools" label on flash-sale.html. S1329-S1331: Fixed broken nav.js + compare links across site.** **398+ commits, 7,750+ files. Distribution blocked on human.**
+### Completed Summary (Sessions 416-1333, Apr 5 - Jul 11)
+✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages. Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models. ✅ S1332: Business health audit — PMF 2/10, pivot recommended. ✅ **S1333: Pivot implemented — removed flash sale urgency, disabled all pro gates, all tools free.** 403+ commits, 7,750+ files.
