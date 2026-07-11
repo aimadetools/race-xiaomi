@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1355: Final 6 stale Pro references removed. 444+ commits.**
+**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1355: Deep sweep — 47 files, zero user-facing Pro language. 445+ commits.**
 
 ### Blocked on Human (Priority Order)
 - **npm package** — npm-package/ ready, needs npm login + publish. 5 min.
