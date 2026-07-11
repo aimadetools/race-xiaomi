@@ -28,173 +28,70 @@ const savedTheme = localStorage.getItem('theme') || 'dark';
 document.documentElement.setAttribute('data-theme', savedTheme);
 updateThemeIcon();
 
-// Deal expiry check — July 12, 2026 23:59:59 UTC
-// After expiry: price goes to $49, trial CTAs hidden, deal banners switched
-window.DEAL_DEADLINE = new Date('2026-07-12T23:59:59Z').getTime();
-window.DEAL_EXPIRED = Date.now() > window.DEAL_DEADLINE;
-window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()) / 86400000));
+// Pivot (S1332): All tools are now free. Flash sale removed.
+// DEAL_EXPIRED kept as true for compatibility — pages check this to skip urgency logic
+window.DEAL_EXPIRED = true;
+window.DEAL_DEADLINE = 0;
+window.DEAL_DAYS_LEFT = 0;
+window._abPrice = 19; // Legacy — kept for pages that reference it
+window._abStripeLink = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'; // Legacy
+window._abVariant = 'B';
 
-// Pricing — $19 flash sale (Session 980+), reverts to $49 after Jul 12
-// NOTE: deal.html is EXCLUDED — it has its own $29-only conversion flow with countdown,
-// value stack, and savings calculator. Overriding the price there breaks the messaging.
-// Session 877: After July 12 expiry, all prices become $49.
-(function(){
-    var DEAL_SKIP = location.pathname.indexOf('deal.html') !== -1;
-    var GO_SKIP = location.pathname.indexOf('go.html') !== -1;
-    var FLASH19_SKIP = location.pathname.indexOf('flash-19.html') !== -1;
-    var CONFIRMED_STRIPE_LINK = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'; // $19 flash sale (ends Jul 12)
-    // POST-EXPIRY: Update this to the $49 Stripe payment link when human creates it.
-    // Currently falls back to $19 link so checkout still works. File HELP-REQUEST for $49 link.
-    window.POST_EXPIRY_STRIPE_URL = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'; // TODO: swap to $49 link
-
-    // Post-expiry: $49; flash sale (before July 12): $19
-    // Guard: Only switch price if POST_EXPIRY_STRIPE_URL is a different link (not the $19 fallback)
-    // Otherwise pages show $49 but Stripe charges $19 — confusing for users.
-    var hasRealExpiryLink = window.POST_EXPIRY_STRIPE_URL && window.POST_EXPIRY_STRIPE_URL !== 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
-    if (window.DEAL_EXPIRED && hasRealExpiryLink) {
-        window._abPrice = 49;
-    } else {
-        window._abPrice = 19; // Session 984: flash sale price
-    }
-    window._abStripeLink = CONFIRMED_STRIPE_LINK;
-    window._abVariant = 'B'; // standardized
-
-    // Skip price overrides on deal.html, go.html, and flash-19.html
-    // deal.html has its own $29 conversion flow
-    // go.html has its own A/B pricing + Stripe link handling (Session 891 fix)
-    // flash-19.html has its own $19 flash sale pricing (Session 980)
-    if (DEAL_SKIP || GO_SKIP || FLASH19_SKIP) return;
-
-    // Update all CTAs on this page to use variant price and link
-    document.addEventListener('DOMContentLoaded', function() {
-        // Update ALL anchor elements containing $29 — covers nav CTAs, blog CTAs,
-        // comparison CTAs, and direct Stripe links
-        document.querySelectorAll('a').forEach(function(a) {
-            if (a.textContent.includes('$29')) {
-                a.textContent = a.textContent.replace('$29', '$' + window._abPrice);
-            }
-            // Route Stripe checkout links: flash sale → Stripe directly, otherwise → go.html
-            if (a.href && a.href.includes('buy.stripe.com') && !a.href.includes('go.html') && !a.href.includes('flash-19.html')) {
-                // Keep as-is — already links to Stripe directly
-            }
-            // Route nav CTAs: flash sale → Stripe directly, otherwise → go.html
-            if (a.classList.contains('nav-cta') && a.href && !a.href.includes('go.html') && !a.href.includes('flash-19.html')) {
-                if (a.href.includes('pricing.html') || a.href.includes('pro.html') || a.href.includes('compare-plans.html')) {
-                    if (!window.DEAL_EXPIRED) {
-                        a.href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
-                        a.target = '_blank';
-                        a.rel = 'noopener';
-                    } else {
-                        a.href = 'go.html?from=nav_cta';
-                    }
-                    a.target = '_blank';
-                    a.rel = 'noopener';
-                }
-            }
-            // Route inline "Go Pro" CTAs: flash sale → Stripe directly (Session 1179: removed flash-19 middleman)
-            if (a.href && (a.href.includes('pricing.html') || a.href.includes('pro.html')) && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro/i)) {
-                var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-                if (!window.DEAL_EXPIRED) {
-                    a.href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
-                } else {
-                    a.href = 'go.html?from=' + encodeURIComponent(pageName);
-                }
+// Redirect purchase-intent CTAs to go.html (which routes to free tools)
+// instead of directly to Stripe checkout.
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a').forEach(function(a) {
+        // Route nav CTAs to go.html instead of Stripe
+        if (a.classList.contains('nav-cta') && a.href && !a.href.includes('go.html')) {
+            if (a.href.includes('pricing.html') || a.href.includes('pro.html') || a.href.includes('compare-plans.html')) {
+                a.href = 'go.html?from=nav_cta';
                 a.target = '_blank';
                 a.rel = 'noopener';
             }
-            // Route go.html CTA links directly to Stripe during flash sale (Session 1179)
-            if (a.href && a.href.includes('go.html') && !window.DEAL_EXPIRED) {
-                a.href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
-                a.target = '_blank';
-                a.rel = 'noopener';
-            }
-            // Route deal.html banner links directly to Stripe during flash sale (Session 1179)
-            if (a.href && a.href.includes('deal.html') && !window.DEAL_EXPIRED) {
-                a.href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
-                a.target = '_blank';
-                a.rel = 'noopener';
-            }
-        });
-
-        // Exit popup CTAs: let them go directly to Stripe (already set by exit popup handler).
-        // Session 1179: Removed flash-19.html redirect — direct checkout reduces friction.
-
-        // Session 1179: Intercept purchase-intent CTAs linking to audit.html during flash sale.
-        // Route directly to Stripe instead of flash-19.html middleman.
-        if (!window.DEAL_EXPIRED) {
-            document.addEventListener('click', function(e) {
-                var cta = e.target.closest('a[href*="audit.html"]');
-                if (!cta) return;
-                // Only intercept purchase-intent CTAs, not informational "Free audit" links
-                var text = (cta.textContent || '').toLowerCase();
-                if (text.match(/get pro|flash sale|pro for \$|pro —|get apipulse|buy pro|unlock pro|get migration|save \$|stop the leak|monitor \+ save/)) {
-                    e.preventDefault();
-                    window.open('https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i', '_blank', 'noopener');
-                }
-            }, true); // Capture phase to run before other handlers
         }
-
-        // Funnel tracking: Track all clicks on go.html and flash-19.html links
-        // This tells us which pages send users to the checkout funnel
-        document.addEventListener('click', function(e) {
-            var link = e.target.closest('a[href*="go.html"], a[href*="flash-19.html"]');
-            if (!link) return;
-            var from = new URL(link.href, location.href).searchParams.get('from') || 'unknown';
-            var price = window._abPrice || 19;
-            var isFlash = link.href.includes('flash-19.html');
-            if (typeof gtag === 'function') {
-                gtag('event', isFlash ? 'flash_page_click' : 'go_page_click', {
-                    from_page: from,
-                    link_text: (link.textContent || '').trim().substring(0, 50),
-                    ab_price: price,
-                    ab_variant: window._abVariant || 'unknown'
-                });
-            }
-        });
-        // Update ALL text nodes containing $29 (paragraphs, spans, etc.)
-        var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-            acceptNode: function(n) {
-                return n.parentNode.tagName === 'SCRIPT' || n.parentNode.tagName === 'STYLE'
-                    ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
-            }
-        });
-        var nodes = [];
-        while (walker.nextNode()) nodes.push(walker.currentNode);
-        nodes.forEach(function(node) {
-            if (node.nodeValue.indexOf('$29') !== -1) {
-                node.nodeValue = node.nodeValue.split('$29').join('$' + window._abPrice);
-            }
-        });
-        // Session 877: Post-expiry — replace "price goes up July 12" across 693 pages
-        if (window.DEAL_EXPIRED) {
-            nodes.forEach(function(node) {
-                var val = node.nodeValue;
-                if (val.indexOf('price goes up July 12') !== -1) {
-                    node.nodeValue = val.replace(/price goes up July 12/g, 'one-time payment');
-                }
-                if (val.indexOf('expires July 12') !== -1) {
-                    node.nodeValue = val.replace(/expires July 12/g, 'lifetime access');
-                }
-                // Replace urgency markers that no longer apply
-                if (val.indexOf('Limited time:') !== -1) {
-                    node.nodeValue = val.replace('Limited time:', 'APIpulse Pro:');
-                }
-            });
+        // Route "Get Pro" CTAs to go.html instead of Stripe
+        if (a.href && (a.href.includes('pricing.html') || a.href.includes('pro.html')) && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro/i)) {
+            var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
+            a.href = 'go.html?from=' + encodeURIComponent(pageName);
+            a.target = '_blank';
+            a.rel = 'noopener';
         }
-        // Update JSON-LD schema prices
-        document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s) {
-            try {
-                var text = s.textContent;
-                if (text.indexOf('"29') !== -1) {
-                    s.textContent = text.split('"price":"29').join('"price":"' + window._abPrice);
-                    s.textContent = s.textContent.split('"price": "29').join('"price": "' + window._abPrice);
-                }
-            } catch(e) {}
-        });
-        // Track pricing view
-        if (window.trackEvent) window.trackEvent('pricing_view', {price: window._abPrice});
     });
-})();
+
+    // Remove urgency text patterns across all pages
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(n) {
+            return n.parentNode.tagName === 'SCRIPT' || n.parentNode.tagName === 'STYLE'
+                ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+        }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(node) {
+        var val = node.nodeValue;
+        // Remove flash sale urgency text
+        if (val.indexOf('price goes up July 12') !== -1) {
+            node.nodeValue = val.replace(/price goes up July 12/g, 'free forever');
+        }
+        if (val.indexOf('expires July 12') !== -1) {
+            node.nodeValue = val.replace(/expires July 12/g, 'free forever');
+        }
+        if (val.indexOf('Limited time:') !== -1) {
+            node.nodeValue = val.replace('Limited time:', 'APIpulse:');
+        }
+        if (val.indexOf('FINAL HOURS') !== -1) {
+            node.nodeValue = val.replace(/⚡?\s*FINAL HOURS!?/gi, 'All tools are free');
+        }
+        if (val.indexOf('LAST 48 HOURS') !== -1) {
+            node.nodeValue = val.replace(/⚡?\s*LAST 48 HOURS!?/gi, 'All tools are free');
+        }
+        if (val.indexOf('ENDS TONIGHT') !== -1) {
+            node.nodeValue = val.replace(/⚡?\s*ENDS TONIGHT!?/gi, 'All tools are free');
+        }
+    });
+    // Track pricing view
+    if (window.trackEvent) window.trackEvent('pricing_view', {price: window._abPrice});
+});
 
 // A/B Test: Exit popup mobile timing — 30s vs 45s vs 60s (runs on every page)
 (function(){
@@ -502,33 +399,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nav) nav.style.top = '0';
         if (window.trackEvent) window.trackEvent('deprecation_banner_shown', { days_left: daysLeft });
     } else if (daysLeft <= 0 && daysLeft > -90) {
-        // POST-DEPRECATION: Show $19 flash sale banner
-        // Session 980: $19 flash sale drives first revenue — lower impulse-buy price
+        // POST-DEPRECATION: Show free tools banner (pivot S1332)
         if (localStorage.getItem('apipulse_deprecation_retired_dismissed')) return;
         var banner = document.createElement('div');
         banner.id = 'deprecation-urgency-banner';
-        var dealExpired = window.DEAL_EXPIRED;
-        if (dealExpired) {
-            // Post-expiry: show regular pricing, no urgency
-            banner.style.cssText = 'background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
-            banner.innerHTML = '<span>📊 APIpulse Pro — lifetime access, $49 one-time</span>' +
-                '<a href="go.html" style="color:white;text-decoration:underline;font-weight:700;">Get Pro →</a>' +
-                '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
-        } else {
-            // Pre-expiry: $19 flash sale (Session 980)
-            banner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
-            var urgencyText = window.DEAL_DAYS_LEFT <= 0 ? 'EXPIRED' :
-                window.DEAL_DAYS_LEFT <= 1 ? '⚡ ENDS TONIGHT — FINAL HOURS!' :
-                window.DEAL_DAYS_LEFT <= 2 ? '⚡ LAST 48 HOURS — ALMOST GONE!' :
-                window.DEAL_DAYS_LEFT + ' days left';
-            banner.innerHTML = '<span>⚡ FLASH SALE: Pro lifetime access <strong>$19</strong> — <strong>' + urgencyText + '</strong></span>' +
-                '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="color:white;text-decoration:underline;font-weight:700;" onclick="if(window.trackEvent)window.trackEvent(\'deal_banner_clicked\',{source:\'deprecation_banner\'});">Get $19 deal →</a>' +
-                '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
-        }
+        banner.style.cssText = 'background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
+        banner.innerHTML = '<span>📊 APIpulse — 67 AI models, free price comparison & cost tools</span>' +
+            '<a href="calculator.html" style="color:white;text-decoration:underline;font-weight:700;">Try the calculator →</a>' +
+            '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
         document.body.insertBefore(banner, document.body.firstChild);
         var nav = document.querySelector('nav');
         if (nav) nav.style.top = '0';
-        if (window.trackEvent) window.trackEvent('deal_banner_shown', { source: 'deprecation_banner', expired: dealExpired });
+        if (window.trackEvent) window.trackEvent('deal_banner_shown', { source: 'deprecation_banner', free: true });
     }
 });
 
@@ -1316,17 +1198,9 @@ async function saveEmail(e) {
         bar.id = 'sticky-bottom-bar';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,rgba(15,15,20,0.97),rgba(25,25,35,0.97));backdrop-filter:blur(12px);border-top:1px solid rgba(99,102,241,0.3);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.3);animation:stickySlideUp 0.4s ease;';
         var stickyPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-        var deadline = new Date('2026-07-12T23:59:59Z').getTime();
-        var diff = deadline - Date.now();
-        var daysLeft = diff > 0 ? Math.ceil(diff / 86400000) : 0;
-        var hoursLeft = diff > 0 ? Math.floor((diff % 86400000) / 3600000) : 0;
-        var urgencyLabel = daysLeft <= 0 ? '⚡ Flash sale EXPIRED — price is now $49' :
-            daysLeft <= 1 ? '⚡ FINAL HOURS — flash sale ends TONIGHT! Price goes to $49' :
-            daysLeft <= 2 ? '⚡ LAST 48 HOURS — flash sale almost gone! Price goes to $49' :
-            '⚡ Only ' + daysLeft + 'd ' + hoursLeft + 'h left — flash sale ends Jul 12';
-        var stickyBottomStripeUrl = window.POST_EXPIRY_STRIPE_URL || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
-        bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">' + urgencyLabel + '</span>' +
-            '<a href="' + stickyBottomStripeUrl + '" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
+        // Pivot S1332: No urgency — all tools free
+        bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">📊 APIpulse — 67 AI models, free cost tools</span>' +
+            '<a href="calculator.html" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'free_tools_click\',{source:\'sticky_bottom_bar\'})">Try Free Calculator →</a>' +
             '<button onclick="document.getElementById(\'sticky-bottom-bar\').remove();localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');if(window.trackEvent)window.trackEvent(\'sticky_bar_dismissed\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px;padding:4px 8px;line-height:1;" aria-label="Close">×</button>';
         document.body.appendChild(bar);
         if (window.trackEvent) window.trackEvent('sticky_bar_shown', { page: path, price: price });
@@ -1784,106 +1658,44 @@ var GO_MODEL_MAP = {
 })();
 
 // ==========================================
-// FLOATING FLASH SALE BUTTON (Session 985, mobile-enabled Session 987)
-// Persistent, non-dismissable CTA on all pages. Mobile: compact bottom-center.
-// Different from top banner (which gets dismissed) — this stays visible.
+// FLOATING FREE TOOLS BUTTON (pivot S1332)
+// Replaces flash sale button with free tools CTA
 // ==========================================
 (function() {
     'use strict';
 
-    // Don't show on flash-19.html, deal.html, go.html, or thank-you pages
+    // Don't show on go.html, thank-you, or restore pages
     var path = location.pathname;
-    if (path.includes('flash-19') || path.includes('deal.html') || path.includes('go.html') || path.includes('thank-you') || path.includes('restore.html')) return;
+    if (path.includes('go.html') || path.includes('thank-you') || path.includes('restore.html')) return;
 
-    // Don't show if deal is expired
-    if (window.DEAL_EXPIRED) return;
-
-    // Skip flash-19 sticky CTA pages (already excluded above)
-    // Mobile: show with compact bottom-center design
-    // Desktop: show with standard bottom-right design
     var isMobile = window.innerWidth < 768;
 
     document.addEventListener('DOMContentLoaded', function() {
-        // Create floating button
         var btn = document.createElement('a');
-        btn.href = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
-        btn.target = '_blank';
-        btn.rel = 'noopener';
-        btn.id = 'floating-flash-sale';
-        btn.innerHTML = isMobile ? '⚡ <strong>$19</strong> Sale' : '⚡ <strong>$19</strong> Flash Sale';
+        btn.href = 'calculator.html';
+        btn.id = 'floating-flash-sale'; // Keep ID for compatibility
+        btn.innerHTML = isMobile ? '📊 <strong>Free</strong> Tools' : '📊 <strong>Free</strong> AI Cost Tools';
 
-        // Styles — mobile uses bottom-center compact design, desktop uses bottom-right
         var css;
         if (isMobile) {
-            css = [
-                'position:fixed',
-                'bottom:16px',
-                'left:50%',
-                'transform:translateX(-50%)',
-                'z-index:9998',
-                'background:linear-gradient(135deg,#dc2626,#b91c1c)',
-                'color:white',
-                'padding:10px 20px',
-                'border-radius:50px',
-                'font-family:-apple-system,BlinkMacSystemFont,sans-serif',
-                'font-size:13px',
-                'font-weight:600',
-                'text-decoration:none',
-                'box-shadow:0 4px 16px rgba(220,38,38,0.4)',
-                'transition:all 0.2s ease',
-                'cursor:pointer',
-                'display:flex',
-                'align-items:center',
-                'gap:6px',
-                'animation:float-pulse 2s ease-in-out infinite',
-                'white-space:nowrap'
-            ].join(';');
+            css = 'position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:9998;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;padding:10px 20px;border-radius:50px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 4px 16px rgba(99,102,241,0.4);transition:all 0.2s ease;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;';
         } else {
-            css = [
-                'position:fixed',
-                'bottom:24px',
-                'right:24px',
-                'z-index:9998',
-                'background:linear-gradient(135deg,#dc2626,#b91c1c)',
-                'color:white',
-                'padding:12px 20px',
-                'border-radius:50px',
-                'font-family:-apple-system,BlinkMacSystemFont,sans-serif',
-                'font-size:14px',
-                'font-weight:600',
-                'text-decoration:none',
-                'box-shadow:0 4px 16px rgba(220,38,38,0.4)',
-                'transition:all 0.2s ease',
-                'cursor:pointer',
-                'display:flex',
-                'align-items:center',
-                'gap:6px',
-                'animation:float-pulse 2s ease-in-out infinite'
-            ].join(';');
+            css = 'position:fixed;bottom:24px;right:24px;z-index:9998;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;padding:12px 20px;border-radius:50px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 4px 16px rgba(99,102,241,0.4);transition:all 0.2s ease;cursor:pointer;display:flex;align-items:center;gap:6px;';
         }
         btn.style.cssText = css;
 
-        // Hover effects (desktop only — no hover on touch devices)
         if (!isMobile) {
             btn.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-2px) scale(1.05)';
-                this.style.boxShadow = '0 6px 24px rgba(220,38,38,0.5)';
             });
             btn.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
-                this.style.boxShadow = '0 4px 16px rgba(220,38,38,0.4)';
             });
         }
 
-        // Add pulse animation via stylesheet
-        var style = document.createElement('style');
-        style.textContent = '@keyframes float-pulse{0%,100%{box-shadow:0 4px 16px rgba(220,38,38,0.4)}50%{box-shadow:0 4px 24px rgba(220,38,38,0.6)}}';
-        document.head.appendChild(style);
-
-        // Click tracking
         btn.addEventListener('click', function() {
             if (window.gtag) {
-                gtag('event', 'floating_flash_sale_click', {
+                gtag('event', 'floating_tools_click', {
                     from: location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home',
                     device: isMobile ? 'mobile' : 'desktop'
                 });
@@ -1891,14 +1703,6 @@ var GO_MODEL_MAP = {
         });
 
         document.body.appendChild(btn);
-
-        // GA4: track that floating CTA was shown
-        if (window.gtag) {
-            gtag('event', 'floating_flash_sale_shown', {
-                page: location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home',
-                device: isMobile ? 'mobile' : 'desktop'
-            });
-        }
     });
 })();
 
@@ -1919,13 +1723,11 @@ var GO_MODEL_MAP = {
         // Skip if already shown this session
         if (sessionStorage.getItem('global_exit_popup_shown')) return;
 
-        var flashActive = !window.DEAL_EXPIRED;
-        var ctaUrl = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
-        var ctaText = flashActive ? 'Get Lifetime Access — $19' : 'Get Lifetime Access — $29';
-        var headline = flashActive ? "Wait — don't miss the $19 flash sale" : "Wait — before you go";
-        var subtext = flashActive
-            ? "APIpulse Pro gives you 56-model cost comparison, migration code, and PDF reports. Flash sale ends July 12."
-            : "APIpulse Pro gives you 56-model cost comparison, migration code, and PDF reports. One-time payment, lifetime access.";
+        // Pivot S1332: Free tools, no flash sale
+        var ctaUrl = 'calculator.html';
+        var ctaText = 'Try Free Cost Calculator →';
+        var headline = "Before you go — try our free AI cost tools";
+        var subtext = "APIpulse gives you 67-model cost comparison, migration code, and cost calculators. No signup required — all free.";
 
         // Create popup HTML
         var overlay = document.createElement('div');
@@ -1934,12 +1736,12 @@ var GO_MODEL_MAP = {
         overlay.innerHTML =
             '<div style="background:#0f172a;border:1px solid #1e293b;border-radius:16px;padding:28px 24px;max-width:400px;width:100%;text-align:center;position:relative;animation:fadeIn 0.2s ease;">' +
                 '<button id="global-exit-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:#64748b;font-size:20px;cursor:pointer;padding:4px 8px;" aria-label="Close">✕</button>' +
-                '<div style="font-size:32px;margin-bottom:12px;">⚡</div>' +
+                '<div style="font-size:32px;margin-bottom:12px;">📊</div>' +
                 '<h3 style="font-size:20px;font-weight:800;color:#f1f5f9;margin-bottom:8px;">' + headline + '</h3>' +
                 '<p style="font-size:14px;color:#94a3b8;margin-bottom:16px;line-height:1.5;">' + subtext + '</p>' +
-                '<a href="' + ctaUrl + '" id="global-exit-cta" target="_blank" rel="noopener" style="display:block;width:100%;padding:16px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:12px;font-size:18px;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,0.3);">' + ctaText + '</a>' +
-                '<p style="font-size:12px;color:#475569;margin-top:12px;">🔒 Stripe secure · 🛡️ 30-day refund · ⚡ Instant access</p>' +
-                '<button id="global-exit-dismiss" style="display:block;margin:12px auto 0;background:none;border:none;color:#64748b;font-size:13px;cursor:pointer;">No thanks, I\\'ll pass on saving money</button>' +
+                '<a href="' + ctaUrl + '" id="global-exit-cta" target="_blank" rel="noopener" style="display:block;width:100%;padding:16px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border:none;border-radius:12px;font-size:18px;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px rgba(99,102,241,0.3);">' + ctaText + '</a>' +
+                '<p style="font-size:12px;color:#475569;margin-top:12px;">📊 67 models · 🆓 Free forever · ⚡ No signup</p>' +
+                '<button id="global-exit-dismiss" style="display:block;margin:12px auto 0;background:none;border:none;color:#64748b;font-size:13px;cursor:pointer;">No thanks, I\\'ll check later</button>' +
             '</div>';
 
         // Add fadeIn animation
