@@ -6,7 +6,6 @@
     'use strict';
 
     var STRIPE_LINK = 'index.html#free-tools';
-    var PRICE = 19;
 
     // Animate a number counting up
     function animateNumber(el, target, duration, prefix, suffix) {
@@ -40,13 +39,13 @@
         container.innerHTML =
             '<div style="text-align:center;margin-bottom:20px;">' +
                 '<div style="font-size:13px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">📈 Your Savings Multiply</div>' +
-                '<div style="font-size:14px;color:#94a3b8;">$19 today → ongoing savings every month as prices change</div>' +
+                '<div style="font-size:14px;color:#94a3b8;">Free tools → ongoing savings every month as prices change</div>' +
             '</div>' +
             '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;margin-bottom:20px;">' +
                 '<div style="background:rgba(0,0,0,0.2);border-radius:12px;padding:16px 8px;">' +
                     '<div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Month 1</div>' +
                     '<div id="sm-month1" style="font-size:24px;font-weight:900;color:#22c55e;font-family:monospace;">$0</div>' +
-                    '<div style="font-size:11px;color:#94a3b8;margin-top:4px;">pays back $19</div>' +
+                    '<div style="font-size:11px;color:#94a3b8;margin-top:4px;">savings start today</div>' +
                 '</div>' +
                 '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.15);border-radius:12px;padding:16px 8px;">' +
                     '<div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Month 12</div>' +
@@ -60,9 +59,9 @@
                 '</div>' +
             '</div>' +
             '<div style="text-align:center;padding:12px;background:rgba(34,197,94,0.06);border-radius:10px;border:1px solid rgba(34,197,94,0.1);">' +
-                '<span style="font-size:14px;color:#e2e8f0;">ROI: </span>' +
-                '<span id="sm-roi" style="font-size:20px;font-weight:900;color:#22c55e;font-family:monospace;">0x</span>' +
-                '<span style="font-size:14px;color:#94a3b8;"> return on your $19 — and it keeps growing</span>' +
+                '<span style="font-size:14px;color:#e2e8f0;">Annual savings: </span>' +
+                '<span id="sm-roi" style="font-size:20px;font-weight:900;color:#22c55e;font-family:monospace;">$0</span>' +
+                '<span style="font-size:14px;color:#94a3b8;"> savings vs. overpaying — and it keeps growing</span>' +
             '</div>';
 
         return { container: container, savingsPerMonth: savingsPerMonth, annualSavings: annualSavings, threeYearSavings: threeYearSavings };
@@ -139,8 +138,7 @@
             if (month12El) animateNumber(month12El, data.annualSavings, 1500);
             if (year3El) animateNumber(year3El, data.threeYearSavings, 1800);
             if (roiEl) {
-                var roi = Math.round(data.annualSavings / PRICE);
-                animateNumber(roiEl, roi, 1500, '', 'x');
+                animateNumber(roiEl, data.annualSavings, 1500, '$');
             }
         }, 800);
 

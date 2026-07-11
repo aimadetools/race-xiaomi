@@ -368,24 +368,5 @@
         </div>
     </div>
 
-    <script>
-        // Countdown to July 12, 2026
-        (function() {
-            var target = new Date('2026-07-12T23:59:59Z').getTime();
-            function tick() {
-                var d = target - new Date().getTime();
-                if (d <= 0) {
-                    document.getElementById('countdown').textContent = 'EXPIRED';
-                    return;
-                }
-                var dd = Math.floor(d / 86400000);
-                var hh = Math.floor((d % 86400000) / 3600000);
-                var mm = Math.floor((d % 3600000) / 60000);
-                document.getElementById('countdown').textContent = dd + 'd ' + hh + 'h ' + mm + 'm';
-            }
-            tick();
-            setInterval(tick, 60000);
-        })();
-    </script>
 </body>
 </html>
