@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1335: All stale Pro/flash sale references removed from index.html. 409+ commits.**
+**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1336: Final index.html cleanup — removed all remaining Pro/flash sale references. 410+ commits.**
 
 ### Blocked on Human (Priority Order)
 - **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want option. 5 min.
