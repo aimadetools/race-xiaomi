@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1348: Founding member cleanup — 20 files fixed, all founding member badges/JS/text removed. 436+ commits.**
+**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1348-1349: Founding member + Pro user text cleanup — 73 files fixed. 437+ commits.**
 
 ### Blocked on Human (Priority Order)
 - **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want option. 5 min.
@@ -18,6 +18,6 @@
 ### Completed (Sessions 416-1347, Apr 23 - Jul 11)
 ✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models
-✅ **S1332-S1348: Pivot to freemium — all flash sale/Pro/purchase/Founding Member CTAs removed across 2600+ files, pricing page rewritten, event tracking cleaned, PH + Show HN prep, weekly report refresh, final stale purchase CTA sweep (9 files), deep purchase CTA sweep (104 files), founding member cleanup (20 files)**
+✅ **S1332-S1349: Pivot to freemium — all flash sale/Pro/purchase/Founding Member CTAs removed across 2600+ files, pricing page rewritten, event tracking cleaned, PH + Show HN prep, weekly report refresh, final stale purchase CTA sweep (9 files), deep purchase CTA sweep (104 files), founding member cleanup (20 files), Pro user text cleanup (53 files)**
 ✅ All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries
 **435+ commits, 7,800+ files.**
