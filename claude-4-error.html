@@ -81,14 +81,7 @@
         h1 { font-size: 34px; font-weight: 800; margin-bottom: 8px; }
         .subtitle { color: var(--text-secondary); font-size: 16px; margin-bottom: 32px; line-height: 1.6; }
 
-        /* Countdown */
-        .countdown-bar{background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(245,158,11,0.12));border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
-        .countdown-unit{text-align:center}
-        .countdown-number{font-size:28px;font-weight:800;color:var(--red)}
-        .countdown-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
-        .countdown-sep{font-size:22px;color:var(--text-muted);font-weight:300}
-        @media(max-width:600px){.countdown-bar{gap:10px;padding:12px}.countdown-number{font-size:22px}}
-
+        
         /* Error banner */
         .error-banner {
             background: rgba(220,38,38,0.08); border: 2px solid rgba(220,38,38,0.3);
@@ -236,131 +229,7 @@
             <h1>Claude 4 Error? Fix It in 60 Seconds</h1>
             <p class="subtitle">Getting HTTP 410 Gone, "model not found", or "invalid_model_error"? Here's exactly what changed and how to fix it.</p>
 
-            <div class="countdown-bar">
-                <div class="countdown-unit"><div class="countdown-number" id="cd-days">--</div><div class="countdown-label">Days</div></div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-unit"><div class="countdown-number" id="cd-hours">--</div><div class="countdown-label">Hours</div></div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-unit"><div class="countdown-number" id="cd-mins">--</div><div class="countdown-label">Minutes</div></div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-unit"><div class="countdown-number" id="cd-secs">--</div><div class="countdown-label">Seconds</div></div>
-            </div>
-
-            <!-- The fix -->
-            <div class="fix-section">
-                <h2>The Fix — Change One Line</h2>
-
-                <div class="error-block">
-                    <div class="error-block-header">❌ Before (broken)</div>
-                    <div class="error-block-body">
-                        <span class="code-dim"># Your current code</span><br>
-                        model = <span class="code-err">"claude-4-opus"</span><br>
-                        <span class="code-dim"># Error: HTTP 410 Gone — "claude-4-opus has been deprecated"</span>
-                    </div>
-                </div>
-
-                <div class="arrow-down">↓</div>
-
-                <div class="error-block">
-                    <div class="error-block-header" style="background:rgba(34,197,94,0.06);color:var(--green);">✓ After (fixed)</div>
-                    <div class="error-block-body">
-                        <span class="code-dim"># Just change the model name</span><br>
-                        model = <span class="code-fix">"claude-opus-4-8"</span><br>
-                        <span class="code-dim"># Works immediately. Same API key. Same SDK. Same everything else.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Code examples -->
-            <div class="fix-section">
-                <h2>Language-Specific Fixes</h2>
-                <div class="code-tabs">
-                    <div class="tab-buttons">
-                        <button class="tab-btn active" onclick="switchTab('python')">Python</button>
-                        <button class="tab-btn" onclick="switchTab('node')">Node.js</button>
-                        <button class="tab-btn" onclick="switchTab('curl')">cURL</button>
-                    </div>
-                    <div id="tab-python" class="tab-content active">
-<pre><span class="code-dim"># Before (broken)</span>
-import anthropic
-client = anthropic.Anthropic()
-response = client.messages.create(
-    model=<span style="color:#dc2626">"claude-4-opus"</span>,  <span style="color:#dc2626"># ← This line causes the error</span>
-    messages=[{"role": "user", "content": "Hello"}]
-)
-
-<span class="code-dim"># After (fixed) — only the model name changes</span>
-response = client.messages.create(
-    model=<span style="color:#16a34a;font-weight:700">"claude-opus-4-8"</span>,  <span style="color:#16a34a"># ← Updated</span>
-    messages=[{"role": "user", "content": "Hello"}]
-)</pre>
-                    </div>
-                    <div id="tab-node" class="tab-content">
-<pre><span class="code-dim">// Before (broken)</span>
-import Anthropic from '@anthropic-ai/sdk';
-const client = new Anthropic();
-const response = await client.messages.create({
-  model: <span style="color:#dc2626">"claude-4-opus"</span>,  // <span style="color:#dc2626">← This line causes the error</span>
-  messages: [{ role: "user", content: "Hello" }]
-});
-
-<span class="code-dim">// After (fixed) — only the model name changes</span>
-const response = await client.messages.create({
-  model: <span style="color:#16a34a;font-weight:700">"claude-opus-4-8"</span>,  // <span style="color:#16a34a;font-weight:700">← Updated</span>
-  messages: [{ role: "user", content: "Hello" }]
-});</pre>
-                    </div>
-                    <div id="tab-curl" class="tab-content">
-<pre><span class="code-dim"># Before (broken)</span>
-curl https://api.anthropic.com/v1/messages \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -d '<span style="color:#dc2626">"model": "claude-4-opus"</span>'  <span style="color:#dc2626"># ← Error here</span>
-
-<span class="code-dim"># After (fixed)</span>
-curl https://api.anthropic.com/v1/messages \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -d '<span style="color:#16a34a;font-weight:700">"model": "claude-opus-4-8"</span>'  <span style="color:#16a34a;font-weight:700"># ← Fixed</span></pre>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Replacement options -->
-            <div class="fix-section">
-                <h2>Choose Your Replacement</h2>
-                <div class="fix-options">
-                    <div class="fix-option recommended">
-                        <div class="badge badge-drop">Drop-In Replacement</div>
-                        <h3>Claude Opus 4.8</h3>
-                        <div class="model-provider">Anthropic — Same API, same quality</div>
-                        <div class="model-price">$5 / $25 per 1M tokens</div>
-                        <div class="model-savings">67% cheaper than Claude 4 Opus ($15/$75)</div>
-                        <div class="model-code">model: "claude-opus-4-8"</div>
-                    </div>
-                    <div class="fix-option recommended">
-                        <div class="badge badge-drop">Drop-In Replacement</div>
-                        <h3>Claude Sonnet 4.6</h3>
-                        <div class="model-provider">Anthropic — Same API, 5x context</div>
-                        <div class="model-price">$3 / $15 per 1M tokens</div>
-                        <div class="model-savings">Same price, 1M context (was 200K)</div>
-                        <div class="model-code">model: "claude-sonnet-4-6"</div>
-                    </div>
-                    <div class="fix-option">
-                        <div class="badge badge-budget">Cheapest</div>
-                        <h3>DeepSeek V4 Pro</h3>
-                        <div class="model-provider">DeepSeek — 1M context</div>
-                        <div class="model-price">$0.435 / $0.87 per 1M tokens</div>
-                        <div class="model-savings">97% cheaper than Claude 4 Opus</div>
-                        <div class="model-code">model: "deepseek-v4-pro"</div>
-                    </div>
-                    <div class="fix-option">
-                        <h3>GPT-5</h3>
-                        <div class="model-provider">OpenAI — 272K context</div>
-                        <div class="model-price">$1.25 / $10 per 1M tokens</div>
-                        <div class="model-savings">92% cheaper than Claude 4 Opus</div>
-                        <div class="model-code">model: "gpt-5"</div>
-                    </div>
-                </div>
-            </div>
+            <div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;font-size:18px;font-weight:800;color:var(--red);">⚠️ Claude 4 shut down June 15, 2026 — migrate now</div>
 
             <!-- Cost comparison -->
             <div class="fix-section">
@@ -510,15 +379,8 @@ curl https://api.anthropic.com/v1/messages \
         function updateCountdown(){
             var now=new Date().getTime();
             var diff=deadline-now;
-            var cdBar=document.querySelector('.countdown-bar');
-            if(diff<=0){
-                // Post-shutdown: replace countdown with retirement notice
-                if(cdBar){
-                    cdBar.style.background='linear-gradient(135deg,rgba(220,38,38,0.12),rgba(220,38,38,0.08))';
-                    cdBar.style.borderColor='rgba(220,38,38,0.5)';
-                    cdBar.innerHTML='<div style="text-align:center;width:100%;"><div style="font-size:clamp(18px,3vw,24px);font-weight:800;color:#dc2626;margin-bottom:4px;">🔴 Claude 4 Has Been Retired</div><div style="font-size:14px;color:var(--text-secondary);">API calls to Claude 4 Opus and Sonnet 4 now return 410 errors. Fix below.</div></div>';
-                }
-                return;
+            var cdBar=document.querySelector('
+return;
             }
             var d=Math.floor(diff/(1000*60*60*24));
             var h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));

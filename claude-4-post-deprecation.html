@@ -89,14 +89,7 @@
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; line-height: 1.6; }
 
-        /* Countdown */
-        .countdown-bar{background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(245,158,11,0.12));border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
-        .countdown-unit{text-align:center}
-        .countdown-number{font-size:28px;font-weight:800;color:var(--red)}
-        .countdown-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
-        .countdown-sep{font-size:22px;color:var(--text-muted);font-weight:300}
-        @media(max-width:600px){.countdown-bar{gap:10px;padding:12px}.countdown-number{font-size:22px}}
-
+        
         /* Urgency banner */
         .urgency-banner {
             background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(239,68,68,0.05));
@@ -216,57 +209,7 @@
         <h1>Claude 4 Is Deprecated — Here's What to Do</h1>
         <p class="subtitle">Claude 4 Opus and Claude Sonnet 4 were retired on June 15, 2026. If your code still uses these models, your API calls are failing. Here's how to fix it — and save 67-97% in the process.</p>
 
-        <div class="countdown-bar">
-            <div class="countdown-unit"><div class="countdown-number" id="cd-days">--</div><div class="countdown-label">Days</div></div>
-            <div class="countdown-sep">:</div>
-            <div class="countdown-unit"><div class="countdown-number" id="cd-hours">--</div><div class="countdown-label">Hours</div></div>
-            <div class="countdown-sep">:</div>
-            <div class="countdown-unit"><div class="countdown-number" id="cd-mins">--</div><div class="countdown-label">Minutes</div></div>
-            <div class="countdown-sep">:</div>
-            <div class="countdown-unit"><div class="countdown-number" id="cd-secs">--</div><div class="countdown-label">Seconds</div></div>
-        </div>
-
-        <div class="urgency-banner">
-            <div class="urgency-icon">🚨</div>
-            <div class="urgency-text">
-                <strong>Claude 4 Opus and Sonnet 4 are no longer available.</strong> API calls to these models return errors after June 15, 2026. You need to update your model name to Claude Opus 4.8 or Claude Sonnet 4.6. The fix is a one-line change.
-            </div>
-        </div>
-
-        <div class="migration-steps">
-            <h2>Migration in 3 Steps</h2>
-
-            <div class="step-card">
-                <div class="step-num">1</div>
-                <div>
-                    <div class="step-title">Find your Claude 4 model references</div>
-                    <div class="step-desc">Search your codebase for <code>claude-4-opus</code>, <code>claude-opus-4</code>, <code>claude-sonnet-4</code>, or <code>claude-4-sonnet</code>. These are the deprecated model names.</div>
-                </div>
-            </div>
-
-            <div class="step-card">
-                <div class="step-num">2</div>
-                <div>
-                    <div class="step-title">Replace with the new model name</div>
-                    <div class="step-desc">The API format is identical — just change the model parameter:</div>
-                    <div class="code-block">
-                        <span class="old">- model: "claude-4-opus"</span><br>
-                        <span class="new">+ model: "claude-opus-4-8"</span><br>
-                        <br>
-                        <span class="old">- model: "claude-sonnet-4"</span><br>
-                        <span class="new">+ model: "claude-sonnet-4-6"</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step-card">
-                <div class="step-num">3</div>
-                <div>
-                    <div class="step-title">Test and deploy</div>
-                    <div class="step-desc">Your existing prompts, system messages, and API format work without changes. Deploy the update and verify your API calls succeed.</div>
-                </div>
-            </div>
-        </div>
+        <div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;font-size:18px;font-weight:800;color:var(--red);">⚠️ Claude 4 shut down June 15, 2026 — migrate now</div>
 
         <div class="quick-links">
             <h3>Tools & Resources</h3>

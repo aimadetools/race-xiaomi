@@ -463,24 +463,8 @@
             color: #cbd5e1;
         }
         .included-item .check { color: #22c55e; font-weight: 700; }
-        /* Countdown */
-        .countdown-bar {
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 24px;
-            font-weight: 600;
-            font-size: 15px;
-        }
-        .countdown-bar .time {
-            font-family: monospace;
-            font-size: 20px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-        /* Footer */
+
+/* Footer */
         .demo-footer {
             text-align: center;
             font-size: 12px;
@@ -660,27 +644,7 @@
             </div>
 
             <!-- CTA -->
-            <div class="countdown-bar">
-                ⏰ All tools are free — no signup required
-            </div>
-
-            <div class="cta-section">
-                <h2>This is just ONE comparison.</h2>
-                <p class="sub">APIpulse gives you <strong>all 67 models across 265 comparisons</strong>, with migration code for every switch. Plus PDF reports, price alerts, and lifetime updates.</p>
-
-                <div class="price-tag">
-                    <span class="now">FREE</span>
-                    <span class="detail">no signup required</span>
-                </div>
-
-                <div class="included-grid">
-                    <div class="included-item"><span class="check">✓</span> All 67 models ranked by cost</div>
-                    <div class="included-item"><span class="check">✓</span> 265 comparison pages</div>
-                    <div class="included-item"><span class="check">✓</span> Migration code (Python, Node, curl)</div>
-                    <div class="included-item"><span class="check">✓</span> PDF report export</div>
-                    <div class="included-item"><span class="check">✓</span> Price change email alerts</div>
-                    <div class="included-item"><span class="check">✓</span> Lifetime updates</div>
-                </div>
+            <div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;font-size:18px;font-weight:800;color:var(--red);">⚠️ Claude 4 shut down June 15, 2026 — migrate now</div>
 
                 <a href="index.html#free-tools" class="cta-button" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{});">
                     Get Free Access
@@ -956,26 +920,7 @@
         });
     }
 
-    // Countdown
-    (function() {
-        var deadline = new Date('2026-07-12T23:59:59Z');
-        function update() {
-            var diff = deadline - new Date();
-            if (diff <= 0) {
-                document.getElementById('countdown').textContent = 'EXPIRED';
-                return;
-            }
-            var d = Math.floor(diff / 86400000);
-            var h = Math.floor((diff % 86400000) / 3600000);
-            var m = Math.floor((diff % 3600000) / 60000);
-            var s = Math.floor((diff % 60000) / 1000);
-            document.getElementById('countdown').textContent =
-                d + 'd ' + h.toString().padStart(2,'0') + 'h ' +
-                m.toString().padStart(2,'0') + 'm ' + s.toString().padStart(2,'0') + 's';
-        }
-        update();
-        setInterval(update, 1000);
-    })();
-    </script>
+    
+</script>
 </body>
 </html>

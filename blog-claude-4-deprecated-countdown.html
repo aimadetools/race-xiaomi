@@ -127,18 +127,9 @@
         .callout p { margin: 0; color: var(--text-primary); }
         .callout strong { color: var(--accent); }
 
-        .countdown-bar {
-            display: flex; justify-content: center; gap: 24px; margin: 32px 0;
-            flex-wrap: wrap;
-        }
-        .countdown-item {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 12px; padding: 16px 24px; text-align: center; min-width: 100px;
-        }
-        .countdown-item .num { font-size: 32px; font-weight: 800; color: #ef4444; }
-        .countdown-item .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
 
-        table {
+
+table {
             width: 100%; border-collapse: collapse; margin: 24px 0;
             background: var(--bg-secondary); border-radius: 8px; overflow: hidden;
         }
@@ -276,49 +267,7 @@
             })();
         </script>
 
-        <div class="countdown-bar">
-            <div class="countdown-item">
-                <div class="num" id="cd-days">--</div>
-                <div class="label">Days Left</div>
-            </div>
-            <div class="countdown-item">
-                <div class="num">June 15</div>
-                <div class="label">Deadline</div>
-            </div>
-            <div class="countdown-item">
-                <div class="num">67%</div>
-                <div class="label">Cost Savings</div>
-            </div>
-        </div>
-        <script>
-            (function(){
-                var dep = new Date('2026-06-15T00:00:00');
-                var now = new Date();
-                var diff = dep - now;
-                var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
-                var el = document.getElementById('cd-days');
-                if (el) el.textContent = diff > 0 ? days : 'EXPIRED';
-                if (diff <= 0) {
-                    var h1 = document.querySelector('h1');
-                    if (h1) h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">What You Need to Know</span>';
-                    var subtitle = document.querySelector('.subtitle');
-                    if (subtitle) subtitle.innerHTML = 'Claude 4 Opus and Claude Sonnet 4 were <strong>retired on June 15, 2026</strong>. API calls to these model IDs now return errors. Here\'s how to migrate.';
-                    var cta = document.getElementById('ctaDeadline');
-                    if (cta) cta.textContent = 'Claude 4 was deprecated on June 15 — migrate now';
-                    var faq = document.getElementById('faqDaysText');
-                    if (faq) faq.textContent = 'Claude 4 Opus and Claude Sonnet 4 were retired on June 15, 2026. API calls to these model IDs now return errors. Migrate to Claude Opus 4.8 or Claude Sonnet 4.6.';
-                    var alert = document.querySelector('.alert p');
-                    if (alert) alert.innerHTML = '<strong>Claude 4 is now deprecated:</strong> API calls to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> now return errors. Your API key still works — update the model name string.';
-                    var label = document.querySelector('.countdown-item .label');
-                    if (label && label.textContent === 'Days Left') label.textContent = 'Status';
-                } else {
-                    var cta = document.getElementById('ctaDeadline');
-                    if (cta) cta.textContent = 'Deadline: June 15 — ' + days + ' days left';
-                    var faq = document.getElementById('faqDaysText');
-                    if (faq) faq.textContent = 'Claude 4 Opus and Claude Sonnet 4 stopped working on June 15, 2026. You have ' + days + ' days to complete your migration.';
-                }
-            })();
-        </script>
+        <div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;font-size:18px;font-weight:800;color:var(--red);">⚠️ Claude 4 shut down June 15, 2026 — migrate now</div>
 
         <div class="alert">
             <p><strong>Claude 4 retired June 15:</strong> API calls to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> return errors after June 15. Your API key still works — update the model name string now.</p>

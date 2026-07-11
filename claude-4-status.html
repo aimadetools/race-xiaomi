@@ -117,18 +117,7 @@
         .status-badge.deprecated { background: rgba(220,38,38,0.15); color: #dc2626; }
         .status-badge.active { background: rgba(22,163,74,0.15); color: #16a34a; }
 
-        /* Countdown */
-        .countdown-card {
-            background: linear-gradient(135deg, rgba(220,38,38,0.08), rgba(245,158,11,0.08));
-            border: 1px solid rgba(220,38,38,0.2); border-radius: 12px;
-            padding: 24px; text-align: center; margin-bottom: 32px;
-        }
-        .countdown-card h2 { font-size: 18px; margin-bottom: 12px; }
-        .countdown-timer { display: flex; justify-content: center; gap: 16px; margin-bottom: 12px; }
-        .countdown-unit { text-align: center; }
-        .countdown-number { font-size: 36px; font-weight: 800; color: var(--red); display: block; }
-        .countdown-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-
+        
         /* Error codes */
         .error-section { margin-bottom: 32px; }
         .error-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
@@ -214,8 +203,7 @@
             h1 { font-size: 28px; }
             .status-card { padding: 24px; }
             .alt-grid { grid-template-columns: 1fr; }
-            .countdown-number { font-size: 28px; }
-        }
+}
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -258,23 +246,7 @@
             <div id="countdown-section" class="countdown-card" style="display:none;">
                 <h2>⏰ Claude 4 Retirement Countdown</h2>
                 <div class="countdown-timer">
-                    <div class="countdown-unit">
-                        <span id="cd-days" class="countdown-number">--</span>
-                        <span class="countdown-label">Days</span>
-                    </div>
-                    <div class="countdown-unit">
-                        <span id="cd-hours" class="countdown-number">--</span>
-                        <span class="countdown-label">Hours</span>
-                    </div>
-                    <div class="countdown-unit">
-                        <span id="cd-mins" class="countdown-number">--</span>
-                        <span class="countdown-label">Minutes</span>
-                    </div>
-                    <div class="countdown-unit">
-                        <span id="cd-secs" class="countdown-number">--</span>
-                        <span class="countdown-label">Seconds</span>
-                    </div>
-                </div>
+                    
                 <p style="font-size:14px;color:var(--text-secondary);">Claude 4 Opus and Sonnet 4 stopped accepting API calls on June 15, 2026.</p>
             </div>
 

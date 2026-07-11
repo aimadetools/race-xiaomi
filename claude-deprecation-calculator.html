@@ -89,18 +89,10 @@
         .hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
         .hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
         .hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
-        .countdown-bar {
-            display: flex; justify-content: center; gap: 24px; margin: 32px 0;
-            flex-wrap: wrap;
-        }
-        .countdown-item {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 12px; padding: 16px 24px; text-align: center; min-width: 100px;
-        }
-        .countdown-item .num { font-size: 32px; font-weight: 800; color: var(--accent); }
-        .countdown-item .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
 
-        .calc-container { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+
+
+.calc-container { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
         .calc-card {
             background: var(--bg-secondary); border: 1px solid var(--border);
             border-radius: 16px; padding: 32px; margin-bottom: 24px;
@@ -253,10 +245,9 @@
             .result-grid { grid-template-columns: 1fr; }
             .code-compare { grid-template-columns: 1fr; }
             .model-selector { flex-direction: column; }
-            .countdown-bar { gap: 12px; }
-            .countdown-item { min-width: 80px; padding: 12px 16px; }
-            .countdown-item .num { font-size: 24px; }
-        }
+
+
+}
     </style>
     <meta name="theme-color" content="#6366f1">
     <script src="comparison-gate.js" defer></script>
@@ -288,11 +279,7 @@
     <section class="hero">
         <h1>Claude 4 Deprecation Calculator</h1>
         <p>Claude 4 Opus and Sonnet 4 retire <strong>June 15, 2026</strong>. Enter your current usage to see exactly what you'll pay after migration — and how much you'll save.</p>
-        <div class="countdown-bar" id="countdown">
-            <div class="countdown-item"><div class="num" id="cd-days">--</div><div class="label">Days</div></div>
-            <div class="countdown-item"><div class="num" id="cd-hours">--</div><div class="label">Hours</div></div>
-            <div class="countdown-item"><div class="num" id="cd-mins">--</div><div class="label">Minutes</div></div>
-        </div>
+        <div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;font-size:18px;font-weight:800;color:var(--red);">⚠️ Claude 4 shut down June 15, 2026 — migrate now</div>
     </section>
 
     <div class="calc-container">
@@ -510,41 +497,8 @@
             }
         };
 
-        // Countdown
-        function updateCountdown() {
-            var dep = new Date('2026-06-15T00:00:00');
-            var now = new Date();
-            var diff = dep - now;
-            if (diff <= 0) {
-                document.getElementById('cd-days').textContent = 'RETIRED';
-                document.getElementById('cd-hours').textContent = 'June 15';
-                document.getElementById('cd-mins').textContent = '2026';
-                return;
-            }
-            var days = Math.floor(diff / 86400000);
-            var hours = Math.floor((diff % 86400000) / 3600000);
-            var mins = Math.floor((diff % 3600000) / 60000);
-            document.getElementById('cd-days').textContent = days;
-            document.getElementById('cd-hours').textContent = hours;
-            document.getElementById('cd-mins').textContent = mins;
-        }
-        updateCountdown();
-        setInterval(updateCountdown, 60000);
-
-        // Update CTA deadline text
-        (function(){
-            var dep = new Date('2026-06-15T00:00:00');
-            var diff = dep - new Date();
-            var el = document.getElementById('ctaDeadline');
-            if (diff <= 0) {
-                if (el) { el.textContent = 'Claude 4 has been retired — migrate now'; el.style.background = 'var(--red)'; }
-            } else {
-                var days = Math.ceil(diff / 86400000);
-                if (el) el.textContent = 'Deadline: June 15 — ' + days + ' days left';
-            }
-        })();
-
-        window.selectModel = function(model) {
+        
+window.selectModel = function(model) {
             selectedModel = model;
             document.querySelectorAll('.model-option').forEach(function(el) {
                 el.classList.toggle('selected', el.dataset.model === model);

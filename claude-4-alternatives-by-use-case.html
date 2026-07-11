@@ -84,63 +84,7 @@
         h1 { font-size: 34px; font-weight: 800; margin-bottom: 8px; }
         .subtitle { color: var(--text-secondary); font-size: 16px; margin-bottom: 40px; line-height: 1.6; }
 
-        /* Countdown */
-        .countdown-bar{background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(245,158,11,0.12));border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
-        .countdown-unit{text-align:center}
-        .countdown-number{font-size:28px;font-weight:800;color:var(--red)}
-        .countdown-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
-        .countdown-sep{font-size:22px;color:var(--text-muted);font-weight:300}
-        @media(max-width:600px){.countdown-bar{gap:10px;padding:12px}.countdown-number{font-size:22px}}
-
-        .usecase-card {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 16px; padding: 28px; margin-bottom: 24px;
-        }
-        .usecase-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-        .usecase-icon { font-size: 28px; }
-        .usecase-header h2 { font-size: 20px; font-weight: 700; margin: 0; }
-        .usecase-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; }
-        .usecase-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
-        .usecase-table th, .usecase-table td {
-            padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border);
-            font-size: 13px;
-        }
-        .usecase-table th {
-            background: var(--bg-card); font-weight: 700; font-size: 11px;
-            text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary);
-        }
-        .usecase-table td { color: var(--text-secondary); }
-        .usecase-table .best { color: var(--green); font-weight: 700; }
-        .usecase-table .budget { color: #d97706; font-weight: 600; }
-        .usecase-table .dropin { color: var(--accent); font-weight: 600; }
-        .usecase-badge {
-            display: inline-block; padding: 2px 8px; border-radius: 4px;
-            font-size: 10px; font-weight: 700; text-transform: uppercase;
-        }
-        .badge-recommended { background: rgba(34,197,94,0.15); color: var(--green); }
-        .badge-budget { background: rgba(245,158,11,0.15); color: #d97706; }
-        .badge-dropin { background: rgba(99,102,241,0.15); color: var(--accent); }
-        .usecase-tip {
-            background: var(--bg-card); border-radius: 8px; padding: 12px 16px;
-            font-size: 13px; color: var(--text-secondary); line-height: 1.5;
-        }
-        .usecase-tip strong { color: var(--text-primary); }
-
-        .cta-box {
-            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
-            border: 1px solid var(--accent); border-radius: 16px;
-            padding: 32px; text-align: center; margin: 40px 0;
-        }
-        .cta-box h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-        .cta-box p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
-
-        @media (max-width: 768px) {
-            .usecase-page { padding: 100px 16px 60px; }
-            h1 { font-size: 26px; }
-            .usecase-table { font-size: 12px; }
-            .usecase-table th, .usecase-table td { padding: 8px 6px; }
-        }
-
+        
         /* Sticky bottom CTA bar */
         .sticky-cta-bar {
             display: none;
@@ -223,15 +167,7 @@
             <h1>Claude 4 Alternatives by Use Case</h1>
             <p class="subtitle">Claude 4 retired on June 15, 2026. Find the best replacement for YOUR specific workload — matched by use case with exact pricing and migration notes.</p>
 
-            <div class="countdown-bar">
-                <div class="countdown-unit"><div class="countdown-number" id="cd-days">--</div><div class="countdown-label">Days</div></div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-unit"><div class="countdown-number" id="cd-hours">--</div><div class="countdown-label">Hours</div></div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-unit"><div class="countdown-number" id="cd-mins">--</div><div class="countdown-label">Minutes</div></div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-unit"><div class="countdown-number" id="cd-secs">--</div><div class="countdown-label">Seconds</div></div>
-            </div>
+            <div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;font-size:18px;font-weight:800;color:var(--red);">⚠️ Claude 4 shut down June 15, 2026 — migrate now</div>
 
             <!-- Code Generation -->
             <div class="usecase-card">
@@ -451,31 +387,6 @@
     </footer>
 
     <script>
-    // Countdown to Claude 4 deadline
-    (function(){
-        function updateCountdown(){
-            var deadline=new Date('2026-06-15T00:00:00-07:00').getTime();
-            var now=new Date().getTime();
-            var diff=deadline-now;
-            if(diff<=0){
-                document.getElementById('cd-days').textContent='EXPIRED';
-                document.getElementById('cd-hours').textContent='—';
-                document.getElementById('cd-mins').textContent='—';
-                document.getElementById('cd-secs').textContent='—';
-                return;
-            }
-            var d=Math.floor(diff/(1000*60*60*24));
-            var h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-            var m=Math.floor((diff%(1000*60*60))/(1000*60));
-            var s=Math.floor((diff%(1000*60))/1000);
-            document.getElementById('cd-days').textContent=d;
-            document.getElementById('cd-hours').textContent=h.toString().padStart(2,'0');
-            document.getElementById('cd-mins').textContent=m.toString().padStart(2,'0');
-            document.getElementById('cd-secs').textContent=s.toString().padStart(2,'0');
-        }
-        updateCountdown();
-        setInterval(updateCountdown,1000);
-    })();
     </script>
 
     <script>

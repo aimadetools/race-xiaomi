@@ -92,13 +92,8 @@
         h1 { font-size: 34px; font-weight: 800; margin-bottom: 8px; }
         .subtitle { color: var(--text-secondary); font-size: 16px; margin-bottom: 40px; line-height: 1.6; max-width: 700px; }
 
-        /* Countdown */
-        .countdown-bar{background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(245,158,11,0.12));border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
-        .countdown-unit{text-align:center}
-        .countdown-number{font-size:28px;font-weight:800;color:var(--red)}
-        .countdown-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
-        .countdown-sep{font-size:22px;color:var(--text-muted);font-weight:300}
-        @media(max-width:600px){.countdown-bar{gap:10px;padding:12px}.countdown-number{font-size:22px}}
+        /* Status banner */
+        .status-banner{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;font-size:18px;font-weight:800;color:var(--red)}
 
         /* Hero */
         .hero-stats { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
@@ -222,15 +217,7 @@
             <p class="subtitle">Claude 4 retired on June 15, 2026. Every alternative, every price, every tradeoff — in one page. Compare 10 models side by side and find your cheapest migration path in 2 minutes.</p>
             <p style="margin-bottom:32px;"><a href="claude-4-best-replacement.html" style="color:var(--accent);font-weight:600;font-size:15px;">Want the TL;DR? See our ranked Best Claude 4 Replacement guide →</a></p>
 
-            <div class="countdown-bar">
-                <div class="countdown-unit"><div class="countdown-number" id="cd-days">--</div><div class="countdown-label">Days</div></div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-unit"><div class="countdown-number" id="cd-hours">--</div><div class="countdown-label">Hours</div></div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-unit"><div class="countdown-number" id="cd-mins">--</div><div class="countdown-label">Minutes</div></div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-unit"><div class="countdown-number" id="cd-secs">--</div><div class="countdown-label">Seconds</div></div>
-            </div>
+            <div class="status-banner">⚠️ Claude 4 shut down June 15, 2026 — migrate now</div>
 
             <!-- Quick Stats -->
             <div class="hero-stats">
@@ -720,37 +707,6 @@ const response = await anthropic.messages.create({
             </div>
         </div>
     </footer>
-
-    <script>
-    // Countdown to Claude 4 shutdown (June 15, 2026)
-    (function(){
-        const target = new Date('2026-06-15T00:00:00Z').getTime();
-        function update(){
-            const now = Date.now();
-            const diff = target - now;
-            if(diff <= 0){
-                document.getElementById('cd-days').textContent = '—';
-                document.getElementById('cd-hours').textContent = '—';
-                document.getElementById('cd-mins').textContent = '—';
-                document.getElementById('cd-secs').textContent = '—';
-                document.querySelectorAll('.countdown-label').forEach(function(el){ el.textContent = ''; });
-                var bar = document.querySelector('.countdown-bar');
-                if(bar) bar.insertAdjacentHTML('afterbegin', '<div style="width:100%;text-align:center;font-size:18px;font-weight:800;color:var(--red);">DEADLINE PASSED — MIGRATE NOW</div>');
-                return;
-            }
-            const d = Math.floor(diff / 86400000);
-            const h = Math.floor((diff % 86400000) / 3600000);
-            const m = Math.floor((diff % 3600000) / 60000);
-            const s = Math.floor((diff % 60000) / 1000);
-            document.getElementById('cd-days').textContent = d;
-            document.getElementById('cd-hours').textContent = h;
-            document.getElementById('cd-mins').textContent = m;
-            document.getElementById('cd-secs').textContent = s;
-        }
-        update();
-        setInterval(update, 1000);
-    })();
-    </script>
 
     <script>
     // Sticky bottom CTA bar

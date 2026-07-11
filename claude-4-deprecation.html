@@ -99,18 +99,7 @@
         .hero h1 .highlight { color: var(--red); }
         .hero .subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; }
 
-        /* Countdown */
-        .countdown-bar {
-            background: linear-gradient(135deg, rgba(239,68,68,0.12), rgba(245,158,11,0.12));
-            border: 1px solid rgba(239,68,68,0.3); border-radius: 12px;
-            padding: 20px; margin-bottom: 32px; display: flex;
-            align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;
-        }
-        .countdown-unit { text-align: center; }
-        .countdown-number { font-size: 36px; font-weight: 800; color: var(--red); }
-        .countdown-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-        .countdown-sep { font-size: 28px; color: var(--text-muted); font-weight: 300; }
-
+        
         /* Key facts */
         .facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
         .fact-card {
@@ -199,9 +188,8 @@
 
         @media (max-width: 768px) {
             .hero { padding: 80px 16px 24px; }
-            .countdown-bar { gap: 12px; padding: 16px; }
-            .countdown-number { font-size: 28px; }
-            .calc-grid { grid-template-columns: 1fr; }
+
+.calc-grid { grid-template-columns: 1fr; }
             .code-tabs { flex-wrap: wrap; }
             .alt-table { font-size: 12px; }
             .alt-table th, .alt-table td { padding: 8px 10px; }
@@ -246,79 +234,7 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="countdown-bar">
-            <div class="countdown-unit">
-                <div class="countdown-number" id="cd-days">--</div>
-                <div class="countdown-label">Days</div>
-            </div>
-            <div class="countdown-sep">:</div>
-            <div class="countdown-unit">
-                <div class="countdown-number" id="cd-hours">--</div>
-                <div class="countdown-label">Hours</div>
-            </div>
-            <div class="countdown-sep">:</div>
-            <div class="countdown-unit">
-                <div class="countdown-number" id="cd-mins">--</div>
-                <div class="countdown-label">Minutes</div>
-            </div>
-            <div class="countdown-sep">:</div>
-            <div class="countdown-unit">
-                <div class="countdown-number" id="cd-secs">--</div>
-                <div class="countdown-label">Seconds</div>
-            </div>
-        </div>
-        <h1>Claude 4 <span class="highlight">Retired June 15</span></h1>
-        <p class="subtitle">Claude 4 Opus and Sonnet 4 have been shut down. Here are 67 alternatives — with exact cost comparisons so you can pick the cheapest replacement.</p>
-    </section>
-
-    <!-- KEY FACTS -->
-    <section style="max-width:800px;margin:0 auto 40px;padding:0 24px;">
-        <div class="facts-grid">
-            <div class="fact-card">
-                <div class="fact-number">34</div>
-                <div class="fact-label">Alternatives Compared</div>
-            </div>
-            <div class="fact-card">
-                <div class="fact-number" style="color:var(--green);">97%</div>
-                <div class="fact-label">Max Savings vs Claude 4</div>
-            </div>
-            <div class="fact-card">
-                <div class="fact-number">10</div>
-                <div class="fact-label">API Providers</div>
-            </div>
-            <div class="fact-card">
-                <div class="fact-number" style="color:var(--orange);">&lt; 1hr</div>
-                <div class="fact-label">Migration Time</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHAT'S HAPPENING -->
-    <section style="max-width:800px;margin:0 auto 40px;padding:0 24px;">
-        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;">
-            <h2 style="font-size:22px;font-weight:700;margin-bottom:16px;">What's Being Retired</h2>
-            <div style="display:grid;gap:12px;">
-                <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--bg-card);border:1px solid rgba(239,68,68,0.2);border-radius:10px;">
-                    <div>
-                        <div style="font-weight:700;font-size:15px;">Claude 4 Opus</div>
-                        <div style="font-size:13px;color:var(--text-muted);">$15 / $75 per 1M tokens &middot; 200K context</div>
-                    </div>
-                    <div style="text-align:right;">
-                        <div style="font-size:12px;color:var(--red);font-weight:600;">RETIRES JUNE 15</div>
-                        <div style="font-size:12px;color:var(--text-muted);">→ Claude Opus 4.8 ($5/$25)</div>
-                    </div>
-                </div>
-                <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--bg-card);border:1px solid rgba(239,68,68,0.2);border-radius:10px;">
-                    <div>
-                        <div style="font-weight:700;font-size:15px;">Claude Sonnet 4</div>
-                        <div style="font-size:13px;color:var(--text-muted);">$3 / $15 per 1M tokens &middot; 200K context</div>
-                    </div>
-                    <div style="text-align:right;">
-                        <div style="font-size:12px;color:var(--red);font-weight:600;">RETIRES JUNE 15</div>
-                        <div style="font-size:12px;color:var(--text-muted);">→ Claude Sonnet 4.6 ($3/$15)</div>
-                    </div>
-                </div>
-            </div>
+        <div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;font-size:18px;font-weight:800;color:var(--red);">⚠️ Claude 4 shut down June 15, 2026 — migrate now</div>
             <p style="font-size:13px;color:var(--text-muted);margin-top:16px;text-align:center;">After June 15, API calls to these models return errors. Your API key still works — only the model name changes.</p>
         </div>
     </section>
