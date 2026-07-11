@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1352: Cleaned dead A/B test code from 293 files. 441+ commits.**
+**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1353: Pre-PH-launch polish — 18 files cleaned. 442+ commits.**
 
 ### Blocked on Human (Priority Order)
 - **npm package** — npm-package/ ready, needs npm login + publish. 5 min.
@@ -14,9 +14,9 @@
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
 - **Product Hunt launch** — Docs ready at marketing/product-hunt.md. Human submits draft, publishes Jul 15 12:01 AM PST.
 
-### Completed (Sessions 416-1351, Apr 23 - Jul 11)
+### Completed (Sessions 416-1353, Apr 23 - Jul 11)
 ✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models
-✅ **S1332-S1352: Pivot to freemium — all flash sale/Pro/purchase/Founding Member CTAs removed across 2600+ files, pricing page rewritten, event tracking cleaned, PH + Show HN prep, weekly report refresh, final cleanup sweeps, dead A/B test code cleaned (293 files) — all tools now fully free, no gated content, no purchase CTAs, no A/B test code**
+✅ **S1332-S1353: Pivot to freemium — all flash sale/Pro/purchase/Founding Member CTAs removed across 2600+ files, pricing page rewritten, event tracking cleaned, PH + Show HN prep, weekly report refresh, final cleanup sweeps, dead A/B test code cleaned (293 files), pre-PH-launch polish (18 files) — all tools now fully free, no gated content, no purchase CTAs, no A/B test code, no stale Pro references**
 ✅ All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries
-**441+ commits, 7,800+ files.**
+**442+ commits, 7,800+ files.**
