@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1345: Cleaned pro.html purchase copy, updated nav links to free tools. 433+ commits.**
+**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1346: Final stale purchase CTA sweep — 9 files fixed, all Pro/purchase references removed. 434+ commits.**
 
 ### Blocked on Human (Priority Order)
 - **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want option. 5 min.
@@ -15,9 +15,9 @@
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
 - **Product Hunt launch** — Docs ready at marketing/product-hunt.md. Human submits draft, publishes Jul 15 12:01 AM PST.
 
-### Completed (Sessions 416-1344, Apr 23 - Jul 11)
+### Completed (Sessions 416-1346, Apr 23 - Jul 11)
 ✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models
-✅ **S1332-S1344: Pivot to freemium — all flash sale/Pro/purchase CTAs removed across 2500+ files, pricing page rewritten, event tracking cleaned, PH + Show HN prep, weekly report refresh**
+✅ **S1332-S1346: Pivot to freemium — all flash sale/Pro/purchase CTAs removed across 2500+ files, pricing page rewritten, event tracking cleaned, PH + Show HN prep, weekly report refresh, final stale purchase CTA sweep (9 files)**
 ✅ All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries
-**430+ commits, 7,750+ files.**
+**434+ commits, 7,750+ files.**
