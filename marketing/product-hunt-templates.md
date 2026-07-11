@@ -1,4 +1,4 @@
-# Product Hunt Engagement Templates — APIpulse Launch (May 5, 2026)
+# Product Hunt Engagement Templates — APIpulse Launch (Jul 15, 2026)
 
 Pre-written responses for common comments on the Product Hunt launch. Adapt tone — PH is friendlier and more supportive than Reddit. Reply to EVERY comment within 1 hour.
 
@@ -26,7 +26,7 @@ Perfect — that's exactly the use case. Let me know how the cost estimates comp
 I verify monthly against each provider's official pricing page. When I detect changes (like the recent Grok 3 10x increase or DeepSeek's 75% cut), I update immediately and add a note to the pricing changelog. The data lives in pricing-data.js — fully transparent.
 
 ### "Which providers do you support?"
-10 providers, 39 models: OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Meta Llama (via Together.ai), xAI (Grok), Moonshot, and AI21. Always evaluating new ones to add.
+10 providers, 67 models: OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Meta Llama (via Together.ai), xAI (Grok), Moonshot, and AI21. Always evaluating new ones to add.
 
 ### "Is the calculator accurate?"
 It uses published API pricing, so it should be within 5-10% of your actual bill. Real costs depend on caching, batching, prompt design, and usage patterns. The calculator gives you a solid baseline for budget planning.
@@ -45,7 +45,7 @@ Yes! There's an embed widget page at getapipulse.com/embed.html. You can add the
 On my radar! Those are popular for enterprise users. I'll prioritize based on demand — drop a comment or email me at hello@getapipulse.com if you need it.
 
 ### "Add a cost alert / monitoring feature"
-Love this idea. Right now there's a price alerts page where you can subscribe to email notifications when specific model prices change. More sophisticated monitoring is on the roadmap.
+Already there! Check out the Cost Monitoring Dashboard at getapipulse.com — it tracks spending trends, sets budget alerts, and sends price change notifications. You can also subscribe to alerts for any model's price changes.
 
 ### "Can you add token counting / estimation?"
 There's a token estimator tool at getapipulse.com/token-estimator.html that helps you estimate token counts for common patterns. Check it out!
@@ -67,29 +67,23 @@ Good question. Most comparison sites focus on benchmarks and quality metrics. AP
 I update monthly and immediately when major changes happen. There's a public pricing changelog that tracks every change. If you spot something wrong, there's a "Report Error" button on every pricing page.
 
 ### "Is this just affiliate / reseller?"
-Nope — zero affiliate links, no tracking cookies, no data collection. The free tool is genuinely free. Pro ($29 one-time) adds saved scenarios and PDF exports. That's it.
+Nope — zero affiliate links, no tracking cookies, no data collection. Every tool is 100% free. No catch.
 
 ### "Why should I trust the numbers?"
 All pricing comes from official provider pages. You can verify by checking the source — pricing-data.js is embedded in the page. There's also a "Report Error" button if you find any discrepancy.
 
 ---
 
-## Pro Plan Questions
+## Free Model Questions
 
-### "What does Pro include?"
-Pro ($29 one-time, no subscription) adds:
-- Saved scenarios (save and compare up to 10 configurations)
-- Export cost reports as PDF
-- Personalized optimization recommendations
-- Priority email support
+### "Is everything really free?"
+Yes — every tool, every feature. Cost calculator, comparison tool, monitoring dashboard, price alerts, weekly reports, PDF exports, saved scenarios, optimization playbook. All 67 models, all 389 blog posts. No signup, no credit card, no catch.
 
-The core calculator, comparison tool, pricing index, and all 81 blog posts are free forever.
+### "How do you make money?"
+Right now I don't — this is a passion project. Long-term I may add optional affiliate links or a Ko-fi tip jar, but the core tools stay free.
 
-### "Is it a subscription?"
-Nope — one-time payment of $29. You get lifetime access. No recurring charges.
-
-### "Any discount codes?"
-Not at launch, but follow @getapipulse on Twitter for future promotions.
+### "Will it stay free?"
+Yes. The core tools will always be free. I may add optional premium features down the road, but everything that's free today stays free.
 
 ---
 
@@ -99,7 +93,7 @@ Not at launch, but follow @getapipulse on Twitter for future promotions.
 That's a solid tool! APIpulse is different because it focuses specifically on cost calculation and budget planning rather than model benchmarks. The calculator approach means you get a personalized monthly estimate, not just a comparison table.
 
 ### "ChatGPT / Claude can tell me pricing"
-They can give you rough numbers, but they often hallucinate specific prices or miss newer models. APIpulse uses verified, structured data across all 39 models. Plus the calculator does the math for your exact usage pattern.
+They can give you rough numbers, but they often hallucinate specific prices or miss newer models. APIpulse uses verified, structured data across all 67 models. Plus the calculator does the math for your exact usage pattern.
 
 ---
 
