@@ -31,26 +31,27 @@ A single, interactive tool that:
 
 ## Pricing Tiers
 
-### Free — $0
-- Basic cost calculator (input/output tokens)
-- Pricing comparison table (4 providers)
-- Simple cost estimation
+### Free — $0 (all tools)
+- Interactive cost calculator (67 models, 10 providers)
+- Side-by-side provider comparison
+- Personal cost dashboard with spending trends
+- Price drop & deprecation alerts
+- Weekly pricing digest
+- Save & compare 10 scenarios
+- Export professional cost reports (PDF)
+- Personalized optimization tips
+- 470 head-to-head comparisons
+- 389 blog posts
 
-### Pro — $29 (one-time, lifetime access)
-- All free features
-- Saved scenarios (compare up to 10 configurations)
-- PDF export of cost reports
-- Optimization recommendations (save up to 40%)
-- Historical pricing tracker
-- Cost alerts when prices change
-- Priority access to new features
+### Support (pay what you want)
+- Ko-fi tip jar (ko-fi.com/apipulse)
+- No mandatory payments
 
 ## Revenue Model
 
-- **Type:** One-time purchase (no subscriptions)
-- **Payment:** Stripe Payment Links
-- **Delivery:** Instant access after payment
-- **Target:** 10 sales in first month = $290
+- **Type:** Freemium — all tools free, optional support tips
+- **Payment:** Ko-fi (pay what you want)
+- **Target:** Build user base, explore monetization post-race
 
 ## User Acquisition Plan
 
