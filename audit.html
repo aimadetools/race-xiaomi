@@ -99,26 +99,17 @@
             line-height: 1.6;
         }
 
-        /* Countdown banner */
-        .countdown-banner {
-            background: linear-gradient(135deg, rgba(239,68,68,0.12), rgba(249,115,22,0.08));
-            border: 1px solid rgba(239,68,68,0.25);
+        /* Info banner */
+        .info-banner {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
             border-radius: 12px;
             padding: 14px 20px;
             text-align: center;
             margin-bottom: 20px;
             font-size: 14px;
-            color: #94a3b8;
-        }
-        .countdown-banner .time-left {
-            color: #ef4444;
-            font-weight: 800;
-            font-family: monospace;
-            font-size: 16px;
-        }
-        .countdown-banner .deal-text {
-            color: #f1f5f9;
-            font-weight: 700;
+            color: #22c55e;
+            font-weight: 600;
         }
 
         /* Form */
@@ -574,7 +565,7 @@
         </div>
 
         <!-- Free banner -->
-        <div class="countdown-banner" id="countdown-banner" style="background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.3);color:#22c55e;">
+        <div class="info-banner" id="info-banner">
             ✅ All tools are free — no signup, no credit card
         </div>
 
@@ -1276,25 +1267,10 @@
             document.getElementById('audit-count').textContent = count;
         })();
 
-        // Flash sale expired — all tools free
+        // All tools free — no countdown needed
         (function() {
-            var el = document.getElementById('audit-countdown');
-            var banner = document.getElementById('countdown-banner');
-            var resultsEl = document.getElementById('results-countdown');
-            function update() {
-                    if (el) el.textContent = 'FREE';
-                    if (banner) banner.innerHTML = '✅ All tools are free — no signup required';
-                    if (resultsEl) resultsEl.textContent = 'FREE';
-                    return;
-                }
-                var d = Math.floor(diff / 86400000);
-                var h = Math.floor((diff % 86400000) / 3600000);
-                var m = Math.floor((diff % 3600000) / 60000);
-                el.textContent = d + 'd ' + h + 'h ' + m + 'm';
-                if (resultsEl) resultsEl.textContent = d + 'd ' + h + 'h ' + m + 'm';
-            }
-            update();
-            setInterval(update, 60000);
+            var banner = document.getElementById('info-banner');
+            if (banner) banner.innerHTML = '✅ All tools are free — no signup required';
         })();
 
         // Exit popup — show once, context-aware (different CTA if audit already completed)

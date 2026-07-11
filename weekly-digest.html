@@ -318,21 +318,11 @@
             </div>
         </div>
 
-        <!-- All tools free — no countdown needed -->
+        <!-- All tools free -->
         <script>
         (function(){
             var el = document.getElementById('digest-countdown');
-            function update() {
-                    if (el) { el.textContent = 'FREE'; el.style.color='#22c55e'; }
-                    return;
-                var d = Math.floor(diff / 86400000);
-                var h = Math.floor((diff % 86400000) / 3600000);
-                var m = Math.floor((diff % 3600000) / 60000);
-                el.textContent = d + 'd ' + h + 'h ' + m + 'm';
-                if (d <= 2) el.style.color = '#ef4444';
-            }
-            update();
-            setInterval(update, 60000);
+            if (el) { el.textContent = 'FREE'; el.style.color='#22c55e'; }
         })();
         </script>
 

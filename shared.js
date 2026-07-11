@@ -397,138 +397,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })();
 
-// Claude 4 Deprecation Banner (pre-deprecation countdown + post-deprecation notice)
+// Post-deprecation free tools banner (S1332 pivot — shows for 90 days post-June 15)
 document.addEventListener('DOMContentLoaded', () => {
     var deprecationDate = new Date('2026-06-15T00:00:00Z');
     var now = new Date();
-    var daysLeft = Math.ceil((deprecationDate - now) / (1000 * 60 * 60 * 24));
+    var daysSince = Math.floor((now - deprecationDate) / (1000 * 60 * 60 * 24));
+    if (daysSince <= 0 || daysSince > 90) return;
 
     // Don't show on deprecation/migration/emergency pages (they have their own urgency)
     var path = window.location.pathname;
     if (path.includes('deprecation') || path.includes('migration') || path.includes('claude-4-is-down') || path.includes('deal.html') || path.includes('go.html') || path.includes('flash-19.html')) return;
 
-    if (daysLeft > 0 && daysLeft <= 14) {
-        // PRE-DEPRECATION: Show countdown banner
-        if (localStorage.getItem('apipulse_deprecation_banner_dismissed')) return;
-        var urgencyText = daysLeft <= 1 ? 'FINAL DAY' : daysLeft + ' days left';
-        var urgencyColor = daysLeft <= 3 ? '#dc2626' : daysLeft <= 7 ? '#ea580c' : '#d97706';
-        var bannerLink = daysLeft <= 5 ? 'claude-4-last-chance.html' : 'claude-4-deprecation.html';
-        var bannerLinkText = daysLeft <= 5 ? 'Act now — see what to do →' : 'See migration guide →';
-        var banner = document.createElement('div');
-        banner.id = 'deprecation-urgency-banner';
-        banner.style.cssText = 'background:' + urgencyColor + ';color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
-        banner.innerHTML = '<span>⚠️ Claude 4 Opus & Sonnet retire June 15 — <strong>' + urgencyText + '</strong></span>' +
-            '<a href="' + bannerLink + '" style="color:white;text-decoration:underline;font-weight:700;">' + bannerLinkText + '</a>' +
-            '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_banner_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
-        document.body.insertBefore(banner, document.body.firstChild);
-        var nav = document.querySelector('nav');
-        if (nav) nav.style.top = '0';
-        if (window.trackEvent) window.trackEvent('deprecation_banner_shown', { days_left: daysLeft });
-    } else if (daysLeft <= 0 && daysLeft > -90) {
-        // POST-DEPRECATION: Show free tools banner (pivot S1332)
-        if (localStorage.getItem('apipulse_deprecation_retired_dismissed')) return;
-        var banner = document.createElement('div');
-        banner.id = 'deprecation-urgency-banner';
-        banner.style.cssText = 'background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
-        banner.innerHTML = '<span>📊 APIpulse — 67 AI models, free price comparison & cost tools</span>' +
-            '<a href="calculator.html" style="color:white;text-decoration:underline;font-weight:700;">Try the calculator →</a>' +
-            '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
-        document.body.insertBefore(banner, document.body.firstChild);
-        var nav = document.querySelector('nav');
-        if (nav) nav.style.top = '0';
-        if (window.trackEvent) window.trackEvent('deal_banner_shown', { source: 'deprecation_banner', free: true });
-    }
+    if (localStorage.getItem('apipulse_deprecation_retired_dismissed')) return;
+    var banner = document.createElement('div');
+    banner.id = 'deprecation-urgency-banner';
+    banner.style.cssText = 'background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
+    banner.innerHTML = '<span>📊 APIpulse — 67 AI models, free price comparison & cost tools</span>' +
+        '<a href="calculator.html" style="color:white;text-decoration:underline;font-weight:700;">Try the calculator →</a>' +
+        '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
+    document.body.insertBefore(banner, document.body.firstChild);
+    var nav = document.querySelector('nav');
+    if (nav) nav.style.top = '0';
+    if (window.trackEvent) window.trackEvent('deal_banner_shown', { source: 'deprecation_banner', free: true });
 });
 
-// Claude 4 Dynamic Countdown — replaces hardcoded "N days left" with live calculation
-// Runs BEFORE auto-tense-flip so countdowns are correct, then tense-flip handles post-June 15
-document.addEventListener('DOMContentLoaded', function() {
-    var deadline = new Date('2026-06-15T00:00:00Z');
-    var now = new Date();
-    var daysLeft = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
-    if (daysLeft <= 0) {
-        // Post-deadline: replace countdown elements without inline JS handlers
-        // Elements with id="countdown-display" have their own JS — skip those
-        document.querySelectorAll('.countdown:not(#countdown-display)').forEach(function(el) {
-            el.textContent = 'DEADLINE PASSED';
-            el.style.color = '#94a3b8';
-        });
-        return;
-    }
-
-    // Replace countdown class elements: <span class="countdown">N days left</span>
-    document.querySelectorAll('.countdown').forEach(function(el) {
-        el.textContent = daysLeft + ' day' + (daysLeft === 1 ? '' : 's') + ' left';
-    });
-
-    // Replace hardcoded countdown patterns in all text nodes (skip script/style)
-    // Skip elements with id="daysLeft", "daysLeftText", "ctaDeadline" — those have inline JS
-    var SKIP_IDS = {'daysLeft':1, 'daysLeftText':1, 'ctaDeadline':1};
-    var patterns = [
-        [/You have (\d+) days/gi, 'You have ' + daysLeft + ' days'],
-        [/(\d+) days left/gi, daysLeft + ' days left'],
-        [/(\d+) DAYS LEFT/g, daysLeft + ' DAYS LEFT'],
-        [/(\d+) days until deadline/gi, daysLeft + ' days until deadline'],
-        [/(\d+) days until Claude 4/gi, daysLeft + ' days until Claude 4'],
-        [/(\d+) days until the/gi, daysLeft + ' days until the'],
-        [/(\d+) days until/gi, daysLeft + ' days until'],
-        [/retires? in (\d+) days/gi, 'retire' + (daysLeft === 1 ? 's' : '') + ' in ' + daysLeft + ' days'],
-        [/deprecates? in (\d+) days/gi, 'deprecate' + (daysLeft === 1 ? 's' : '') + ' in ' + daysLeft + ' days'],
-        [/just (\d+) days from now/gi, 'just ' + daysLeft + ' days from now'],
-        [/(\d+) days from now/gi, daysLeft + ' days from now'],
-        [/(\d+) days away/gi, daysLeft + ' days away'],
-        [/(\d+) days to Claude 4/gi, daysLeft + ' days to Claude 4'],
-        [/(\d+) days to deprecation/gi, daysLeft + ' days to deprecation'],
-        [/- (\d+) days left:/gi, '- ' + daysLeft + ' days left:'],
-        [/- (\d+) days until deadline:/gi, '- ' + daysLeft + ' days until deadline:'],
-        [/(\d+) days from June/gi, daysLeft + ' days remaining'],
-        [/If you're reading this on June \d+, you have (\d+) days/gi, 'You have ' + daysLeft + ' days remaining'],
-    ];
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-        acceptNode: function(n) {
-            if (n.parentNode.tagName === 'SCRIPT' || n.parentNode.tagName === 'STYLE')
-                return NodeFilter.FILTER_REJECT;
-            // Skip elements with IDs already handled by inline JS
-            var p = n.parentNode;
-            while (p && p !== document.body) {
-                if (p.id && SKIP_IDS[p.id]) return NodeFilter.FILTER_REJECT;
-                p = p.parentNode;
-            }
-            return NodeFilter.FILTER_ACCEPT;
-        }
-    });
-    var nodes = [];
-    while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach(function(node) {
-        var text = node.nodeValue;
-        var changed = false;
-        patterns.forEach(function(p) {
-            if (p[0].test(text)) { text = text.replace(p[0], p[1]); changed = true; }
-        });
-        if (changed) node.nodeValue = text;
-    });
-    // Also update JSON-LD structured data
-    document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s) {
-        try {
-            var text = s.textContent;
-            var changed = false;
-            patterns.forEach(function(p) {
-                if (p[0].test(text)) { text = text.replace(p[0], p[1]); changed = true; }
-            });
-            if (changed) s.textContent = text;
-        } catch(e) {}
-    });
-    // Update meta tags (not caught by TreeWalker — they're in <head>)
-    document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"], meta[property="og:title"], meta[name="twitter:title"]').forEach(function(m) {
-        var content = m.getAttribute('content');
-        if (!content) return;
-        var changed = false;
-        patterns.forEach(function(p) {
-            if (p[0].test(content)) { content = content.replace(p[0], p[1]); changed = true; }
-        });
-        if (changed) m.setAttribute('content', content);
-    });
-});
 
 // Claude 4 Deprecation Text Auto-Transition (flips future→past tense on June 15)
 // Runs on ALL pages — replacements are string-match based and harmless on pages without deprecation text
@@ -1530,7 +1422,7 @@ var GO_MODEL_MAP = {
 // Ranking tables show all rows. No gating.
 (function() {
     // All tools are free — no gating needed.
-})();();
+})();
 
 // ==========================================
 // FLOATING FREE TOOLS BUTTON (pivot S1332)

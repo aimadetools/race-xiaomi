@@ -212,21 +212,17 @@
             color: #64748b;
         }
 
-        /* Flash sale countdown */
-        .countdown {
-            background: linear-gradient(135deg, rgba(239,68,68,0.08), rgba(249,115,22,0.06));
-            border: 1px solid rgba(239,68,68,0.2);
+        /* Info banner */
+        .info-banner {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
             border-radius: 12px;
             padding: 14px 20px;
             text-align: center;
             margin-bottom: 20px;
             font-size: 14px;
-            color: #94a3b8;
-        }
-        .countdown .time {
-            color: #ef4444;
-            font-weight: 800;
-            font-family: monospace;
+            color: #22c55e;
+            font-weight: 600;
         }
 
         /* Back link */
@@ -282,8 +278,8 @@
             </div>
         </div>
 
-        <!-- Countdown -->
-        <div class="countdown">
+        <!-- Info banner -->
+        <div class="info-banner">
             ✅ All tools free — No signup required
         </div>
 
@@ -334,16 +330,8 @@
             }
         })();
 
-        // Flash sale expired — all tools free
-        (function() {
-            var el = document.getElementById('claim-countdown');
-            function update() {
-                    if (el) el.textContent = 'FREE';
-                    return;
-            }
-            update();
-            setInterval(update, 60000);
-        })();
+        // All tools free
+        (function() {})();
     </script>
 
     <!-- Related Tools -->

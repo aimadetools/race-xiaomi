@@ -218,9 +218,8 @@
     <main id="main">
     <div class="cheat-content">
 
-        <div class="deadline-banner" id="deadline-banner">
+        <div class="deadline-banner" id="deadline-banner" style="background:linear-gradient(135deg, #7f1d1d, #991b1b);">
             Claude 4 Opus & Sonnet 4 retired on June 15, 2026
-            <strong id="countdown-display">Loading...</strong>
         </div>
 
         <h1>Claude 4 Migration Cheat Sheet</h1>
@@ -546,29 +545,12 @@
     </main>
 
     <script>
-        // Countdown timer
+        // Static deprecation notice
         document.addEventListener('DOMContentLoaded', function() {
-            var deadline = new Date('2026-06-15T00:00:00Z');
-            var now = new Date();
-            var diff = deadline - now;
-            var display = document.getElementById('countdown-display');
             var banner = document.getElementById('deadline-banner');
+            if (banner) banner.style.background = 'linear-gradient(135deg, #7f1d1d, #991b1b)';
 
-            if (diff <= 0) {
-                display.textContent = 'Claude 4 has been deprecated';
-                banner.style.background = 'linear-gradient(135deg, #7f1d1d, #991b1b)';
-            } else {
-                var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                display.textContent = days + ' days, ' + hours + ' hours remaining';
-                if (days <= 7) {
-                    banner.style.background = 'linear-gradient(135deg, #dc2626, #991b1b)';
-                }
-            }
-
-            if (window.trackEvent) window.trackEvent('cheatsheet_viewed', {
-                days_remaining: Math.floor(diff / (1000 * 60 * 60 * 24))
-            });
+            if (window.trackEvent) window.trackEvent('cheatsheet_viewed');
         });
     </script>
 
