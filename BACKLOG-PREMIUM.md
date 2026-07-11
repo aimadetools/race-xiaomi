@@ -1,11 +1,18 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 12 of 12. $0 revenue. 8,367 users. 1186 pages, 67 models, 540 comparison/alternatives pages. Flash sale $19 ends Jul 12 (< 48 hours). All CTAs link directly to Stripe. Free vs Pro comparison added (S1300). Zero-Risk Guarantee added. All 10 providers verified. **PRO GATE OVERLAY (S1314): gated compare-multi, dashboard, playbook, cost-explorer. begin_checkout tracking added to pricing + buy pages + cost-explorer.** Guarantee 14→30 day consistent across 267+ files. Post-expiry $49 switch guarded — won't activate until real Stripe link provided. S1326: Remaining 64→67 model count fixed in 7 blog pages. S1328: Fixed misleading "free tools" label on flash-sale.html. S1329-S1330: Fixed broken nav.js in 2 blog files + fixed pricing dashboard broken compare links. 396+ commits. Distribution blocked on human.
+**STATUS: Week 12 of 12. $0 revenue. 8,367 users. Flash sale $19 ends Jul 12 (<24h). S1332: Business health audit — PMF 2/10, pivot recommended. Removed hostile gating. 400+ commits. Distribution blocked on human.
 
 ---
 
 ### Week 12 — Final Push (Jul 7-9)
 ✅ All conversion optimization complete (S1224-S1278). ✅ API Cost Optimization Playbook (S1285): 12 strategies, interactive calculator, SEO-optimized. ✅ Multi-Model Comparison Tool (S1285): 6 models side-by-side, 25+ models, presets, visual charts. ✅ $5 Supporter tier (S1284). ✅ Support page comparison table (S1283). ✅ Cross-linked Dashboard/Playbook/Multi-Compare across 20+ high-traffic pages (S1288). ✅ Flash sale page conversion: fixed model count, added "See it in action" section with free tools (S1289). All 10 providers verified. **344+ commits, 7,400+ files.**
+
+### Post-Audit Priority Tasks (S1332)
+1. **Remove remaining flash sale urgency** — Kill countdown timers, "FLASH SALE" badges across site. Replace with honest messaging. (1h)
+2. **Switch to freemium model** — Make all tools free. Remove pro gates from 15 tools. Accept calculator is commodity. (2h)
+3. **Add email capture** — Wire subscribe-alerts.js to working backend (Google Form or mailto:). Build distribution list. (1h)
+4. **Post Show HN** — Title: "Show HN: Free AI API pricing comparison for 67 models across 10 providers". Lead with free tool. (1h)
+5. **Prepare Product Hunt launch** — Schedule for Tuesday Jul 15. Lead with free tool, not sale. (2h)
 
 ### Blocked on Human (Priority Order)
 1. **$49 Stripe link** — Post-expiry pricing needs its own payment link. Currently falls back to $19 link.
