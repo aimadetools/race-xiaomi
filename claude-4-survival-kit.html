@@ -311,10 +311,6 @@
                                     <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Pro shows the optimal model for YOUR workload</div>
                                 </div>
                             </div>
-                            <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-top:16px;font-size:13px;color:#d97706;display:inline-flex;align-items:center;gap:8px;">
-                                <span style="font-size:16px;">🔥</span>
-                                <span><strong class="founding-spots">73</strong>/100 founding spots claimed</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -360,26 +356,6 @@
     document.addEventListener('DOMContentLoaded', function() {
         if (window.trackEvent) window.trackEvent('page_view', { page: 'claude-4-survival-kit' });
 
-        // Founding Member counter
-        (function(){
-            var KEY='apipulse_founding_spots',MAX=100;
-            var stored=localStorage.getItem(KEY);
-            var claimed;
-            if(stored){claimed=parseInt(stored);}
-            else{
-                var base=73;var daysSinceLaunch=Math.floor((Date.now()-new Date('2026-04-21').getTime())/86400000);
-                claimed=Math.min(base+Math.floor(daysSinceLaunch/2.5),94);
-                localStorage.setItem(KEY,claimed);
-            }
-            var els=document.querySelectorAll('.founding-spots');
-            els.forEach(function(el){el.textContent=claimed;});
-            if(claimed>=MAX){
-                document.querySelectorAll('.founding-spots').forEach(function(el){
-                    var parent=el.closest('[style*="border: 1px solid rgba(245,158,11"]');
-                    if(parent)parent.style.display='none';
-                });
-            }
-        })();
     });
     </script>
 

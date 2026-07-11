@@ -536,10 +536,10 @@ curl https://api.deepseek.com/chat/completions \
             </div>
         </section>
 
-        <!-- Pro CTA -->
+        <!-- Free Tools CTA -->
         <section class="cta-box" style="margin-bottom:32px;">
-            <div style="font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Founding Member Special</div>
-            <h2>Lock In $19 Lifetime Access</h2>
+            <div style="font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">100% Free Tools</div>
+            <h2>All Tools — No Signup Required</h2>
             <p>Get saved scenarios, PDF cost reports, optimization recommendations, and historical pricing tracker. 100% free — no signup required.</p>
             <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);">
                 <span>✓ Saved scenarios (10 configs)</span>
@@ -547,8 +547,7 @@ curl https://api.deepseek.com/chat/completions \
                 <span>✓ Optimization alerts</span>
                 <span>✓ No signup required</span>
             </div>
-            <a href="audit.html?from=tool_page" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('tools_accessed',{source:'best-replacement-page',price:29})">Free Tools →</a>
-            <div style="font-size:12px;color:var(--text-muted);margin-top:8px;" id="founding-counter">Loading founding member count...</div>
+            <a href="audit.html?from=tool_page" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('tools_accessed',{source:'best-replacement-page'})">Free Tools →</a>
         </section>
                     <!-- Post-Calculator Conversion CTA -->
                     <div id="post-calc-cta" style="margin-top:20px;padding:20px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.06));border:1px solid rgba(99,102,241,0.25);border-radius:12px;text-align:center;">
@@ -630,17 +629,6 @@ curl https://api.deepseek.com/chat/completions \
                 }
             });
         }
-    })();
-
-    // Founding member counter
-    (function() {
-        var BASE = 73;
-        var start = new Date('2026-04-21T00:00:00Z');
-        var now = new Date();
-        var days = Math.floor((now - start) / 86400000);
-        var count = Math.min(94, BASE + Math.floor(days / 2.5));
-        var el = document.getElementById('founding-counter');
-        if (el) el.textContent = count + ' of 100 founding members claimed — price increases at 100';
     })();
 
     // Track page view

@@ -507,10 +507,6 @@
                         <div class="pf-desc">Share with your team or include in budget proposals</div>
                     </div>
                 </div>
-                <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#d97706;display:flex;align-items:center;gap:8px;max-width:400px;margin-left:auto;margin-right:auto;">
-                    <span style="font-size:16px;">🔥</span>
-                    <span><strong class="founding-spots">73</strong> of 100 founding member spots claimed — price goes up to $49 when they're gone</span>
-                </div>
                 <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;">
                     <a href="audit.html?from=tool_page" class="btn-primary" style="display:inline-block;padding:14px 40px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'cost_optimizer'})">Free Tools → One-Time</a>
                     <a href="index.html#free-tools" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Free Tools →</a>
@@ -533,10 +529,6 @@
                     <div class="gate-overlay-inner">
                         <h3>Unlock Your Full Savings Report</h3>
                         <p>See your complete 12-month cost projection, model routing strategy, batch vs streaming analysis, and exportable PDF.</p>
-                        <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#d97706;display:inline-flex;align-items:center;gap:8px;">
-                            <span style="font-size:16px;">🔥</span>
-                            <span><strong class="founding-spots">73</strong> of 100 founding spots claimed</span>
-                        </div>
                         <br>
                         <a href="index.html#free-tools" class="btn-primary" style="display:inline-block;padding:14px 32px;margin-top:8px;" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'cost_optimizer_gate'})">Explore Free Tools →</a>
                         <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">✅ 100% free · ✅ No signup required · ✅ All tools included</p>
@@ -882,27 +874,6 @@
 
         document.addEventListener('DOMContentLoaded', init);
 
-        // Founding Member urgency counter
-        (function(){
-            var KEY='apipulse_founding_claimed';
-            var MAX=100;
-            var stored=localStorage.getItem(KEY);
-            var claimed;
-            if(stored){claimed=parseInt(stored);}
-            else{
-                var base=73;var daysSinceLaunch=Math.floor((Date.now()-new Date('2026-04-21').getTime())/86400000);
-                claimed=Math.min(base+Math.floor(daysSinceLaunch/2.5),94);
-                localStorage.setItem(KEY,claimed);
-            }
-            var els=document.querySelectorAll('.founding-spots');
-            els.forEach(function(el){el.textContent=claimed;});
-            if(claimed>=MAX){
-                document.querySelectorAll('.founding-spots').forEach(function(el){
-                    var parent=el.closest('[style*="border: 1px solid rgba(245,158,11"]');
-                    if(parent)parent.style.display='none';
-                });
-            }
-        })();
 
         // Cost-optimizer exit popup (personalized with savings)
         (function(){

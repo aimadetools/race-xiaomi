@@ -897,27 +897,6 @@
             if(window.trackEvent)window.trackEvent('roi_calculator_used',{monthly_spend:spend});
         }
 
-        // Founding Member urgency counter — deterministic, matches inline counter
-        (function(){
-            var KEY='apipulse_founding_spots';
-            var MAX=100;
-            var stored=localStorage.getItem(KEY);
-            var claimed;
-            if(stored){claimed=parseInt(stored);}
-            else{
-                var base=73;var daysSinceLaunch=Math.floor((Date.now()-new Date('2026-04-21').getTime())/86400000);
-                claimed=Math.min(base+Math.floor(daysSinceLaunch/2.5),94);
-                localStorage.setItem(KEY,claimed);
-            }
-            var el=document.getElementById('founding-spots');
-            if(el){el.textContent=claimed;}
-            // Hide urgency section if somehow full
-            if(claimed>=MAX){
-                var urg=document.getElementById('founding-urgency');
-                if(urg){urg.style.display='none';}
-            }
-            if(window.trackEvent)window.trackEvent('feature_shown',{spots_claimed:claimed});
-        })();
 
         // A/B Test: Disabled — all tools now free (S1341)
         // Previously tested $19/$19/$39 price points. No longer relevant.

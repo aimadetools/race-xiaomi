@@ -368,10 +368,6 @@
             <div class="cta-box">
                 <h3>Save this pipeline for later</h3>
                 <p>APIpulse lets you save up to 10 cost scenarios, export PDF reports, and get optimization recommendations.</p>
-                <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#d97706;display:inline-flex;align-items:center;gap:8px;">
-                    <span style="font-size:16px;">🔥</span>
-                    <span><strong class="founding-spots">73</strong>/100 founding spots claimed</span>
-                </div>
                 <a href="audit.html?from=tool_page" class="btn-primary" style="display:inline-block;padding:12px 28px;" target="_blank" rel="noopener">Free Tools →</a>
             </div>
             <div class="share-row">
@@ -724,18 +720,6 @@
     // Initialize with empty state
     renderSteps();
     </script>
-    <script>
-    // Founding Member urgency counter — deterministic, matches pricing.html
-    (function(){
-        var KEY='apipulse_founding_spots',MAX=100;
-        var stored=localStorage.getItem(KEY);
-        var claimed;
-        if(stored){claimed=parseInt(stored);}
-        else{var base=73;var daysSinceLaunch=Math.floor((Date.now()-new Date('2026-04-21').getTime())/86400000);claimed=Math.min(base+Math.floor(daysSinceLaunch/2.5),94);localStorage.setItem(KEY,claimed);}
-        document.querySelectorAll('.founding-spots').forEach(function(el){el.textContent=claimed;});
-        if(claimed>=MAX)document.querySelectorAll('.founding-spots').forEach(function(el){var p=el.closest('[style*="border: 1px solid rgba(245,158,11"]');if(p)p.style.display='none';});
-        if(window.trackEvent)window.trackEvent('feature_shown',{spots_claimed:claimed});
-    })();
     // Exit popup
     (function(){
         var shown=false;
