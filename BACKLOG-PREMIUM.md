@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 12 of 12. $0 revenue. 8,367 users. S1339: Event tracking + text cleanup — 943 files, all Pro/flash sale event names and UI text replaced. 416+ commits. Distribution blocked on human.
+**STATUS: Week 12 of 12. $0 revenue. 8,367 users. S1340: Pre-PH-launch cleanup — disabled trial lockout, removed Pro badge and $19 refs. 417+ commits. Distribution blocked on human.
 
 ---
 
@@ -14,6 +14,7 @@
 7. ✅ **Complete popup/CTA cleanup** — DONE S1337.
 8. ✅ **Massive source-level cleanup** — DONE S1338. 1128 files, ZERO Stripe/Pro/flash sale refs. Nav simplified to 6 links. PH page updated.
 9. ✅ **Event tracking + text cleanup** — DONE S1339. 943 files, all Pro/flash sale event names and UI text replaced.
+10. ✅ **Pre-PH-launch cleanup** — DONE S1340. Disabled trial lockout, removed Pro badge and $19 refs. 4 files.
 
 ### Blocked on Human (Priority Order)
 1. **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want option. 5 min.
@@ -23,5 +24,5 @@
 5. **Chrome Web Store** — Publish extension ($5).
 6. **npm package** — npm-package/ ready, needs npm auth.
 
-### Completed Summary (Sessions 416-1339, Apr 5 - Jul 11)
-✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages. Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models. ✅ S1332: Business health audit — PMF 2/10, pivot recommended. ✅ **S1333: Pivot — all tools free.** ✅ **S1334: Flash sale cleanup — 1015 files.** ✅ **S1335: PH + Show HN prep.** ✅ **S1336: index.html cleanup.** ✅ **S1337: Popup/CTA cleanup.** ✅ **S1338: Massive source-level cleanup — 1128 files, ZERO Stripe/Pro/flash sale refs. Nav simplified to 6 links. PH page updated.** ✅ **S1339: Event tracking + text cleanup — 943 files, all Pro/flash sale event names and UI text replaced.** 416+ commits, 7,750+ files.
+### Completed Summary (Sessions 416-1340, Apr 5 - Jul 11)
+✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages. Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models. ✅ S1332: Business health audit — PMF 2/10, pivot recommended. ✅ **S1333: Pivot — all tools free.** ✅ **S1334: Flash sale cleanup — 1015 files.** ✅ **S1335: PH + Show HN prep.** ✅ **S1336: index.html cleanup.** ✅ **S1337: Popup/CTA cleanup.** ✅ **S1338: Massive source-level cleanup — 1128 files, ZERO Stripe/Pro/flash sale refs.** ✅ **S1339: Event tracking + text cleanup — 943 files.** ✅ **S1340: Pre-PH-launch cleanup — disabled trial lockout, removed Pro badge and $19 refs.** 417+ commits, 7,750+ files.
