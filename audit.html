@@ -1276,19 +1276,15 @@
             document.getElementById('audit-count').textContent = count;
         })();
 
-        // Countdown timer to Jul 12, 2026 23:59:59 UTC
+        // Flash sale expired — all tools free
         (function() {
-            var deadline = new Date('2026-07-12T23:59:59Z').getTime();
             var el = document.getElementById('audit-countdown');
             var banner = document.getElementById('countdown-banner');
             var resultsEl = document.getElementById('results-countdown');
             function update() {
-                var now = Date.now();
-                var diff = deadline - now;
-                if (diff <= 0) {
-                    el.textContent = 'EXPIRED';
-                    banner.innerHTML = '✅ All tools are free — no signup required';
-                    if (resultsEl) resultsEl.textContent = 'EXPIRED';
+                    if (el) el.textContent = 'FREE';
+                    if (banner) banner.innerHTML = '✅ All tools are free — no signup required';
+                    if (resultsEl) resultsEl.textContent = 'FREE';
                     return;
                 }
                 var d = Math.floor(diff / 86400000);
