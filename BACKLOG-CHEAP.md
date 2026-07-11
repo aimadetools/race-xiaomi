@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1342: Final purchase CTA cleanup — pricing page rewritten, 200+ files cleaned. 426+ commits.**
+**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1343: Final stale CTA cleanup — 13 files, all flash sale/$49/Pro refs removed. 429+ commits.**
 
 ### Blocked on Human (Priority Order)
 - **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want option. 5 min.
@@ -21,5 +21,6 @@
 ✅ S1332: Business health audit — PMF 2/10, pivot recommended
 ✅ **S1333-S1341: Complete pivot — all flash sale/Pro/purchase CTAs removed across 1128+ files**
 ✅ **S1342: Final purchase CTA cleanup — pricing page rewritten, 200+ files cleaned, ZERO purchase CTAs remain**
+✅ **S1343: Final stale CTA cleanup — 13 files, all flash sale/$49/Pro refs removed, weekly report refreshed**
 ✅ All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries
-**426+ commits, 7,750+ files.**
+**429+ commits, 7,750+ files.**
