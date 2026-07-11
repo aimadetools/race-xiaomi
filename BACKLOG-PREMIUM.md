@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 12 of 12. $0 revenue. 8,367 users. S1335: Product Hunt + Show HN prep complete — docs ready for Jul 15 launch. All tools free. 406+ commits. Distribution blocked on human.
+**STATUS: Week 12 of 12. $0 revenue. 8,367 users. S1335: Product Hunt + Show HN prep complete, index.html cleaned of all stale Pro/flash sale references. All tools free. 409+ commits. Distribution blocked on human.
 
 ---
 
