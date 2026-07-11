@@ -300,7 +300,7 @@
                             style="text-transform:uppercase;" aria-label="Access code">
                         <button class="btn-primary" onclick="submitCode()">Unlock</button>
                     </div>
-                    <p id="gate-error" class="gate-error">Invalid access code. Check your purchase confirmation email.</p>
+                    <p id="gate-error" class="gate-error">Invalid access code. All tools are free — no code needed.</p>
                 </div>
             </div>
         </div>
@@ -508,7 +508,7 @@
         }
 
         function unlockWithoutCode() {
-            if (confirm('Did you purchase APIpulse? Click OK to unlock your features.')) {
+            if (confirm('All tools are free. Click OK to continue.')) {
                 localStorage.setItem('apipulse_pro', 'true');
                 localStorage.setItem('apipulse_pro_date', new Date().toISOString());
                 unlockProFeatures();
