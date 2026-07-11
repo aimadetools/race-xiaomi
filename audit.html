@@ -785,14 +785,14 @@
             </div>
 
             <!-- Flash sale reminder -->
-            <div style="background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(249,115,22,0.06));border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:14px 20px;text-align:center;margin-bottom:20px;font-size:14px;color:#94a3b8;">
-                ⏰ <span style="color:#f1f5f9;font-weight:700;">Flash sale ends in <span style="color:#ef4444;font-weight:800;font-family:monospace;" id="results-countdown">--d --h --m</span></span> — then it's $49
+            <div style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(99,102,241,0.06));border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:14px 20px;text-align:center;margin-bottom:20px;font-size:14px;color:#94a3b8;">
+                ✅ <span style="color:#f1f5f9;font-weight:700;">All tools are free — no signup required</span>
             </div>
 
             <!-- ROI section -->
             <div style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(99,102,241,0.06));border:1px solid rgba(34,197,94,0.2);border-radius:14px;padding:20px 24px;margin-bottom:20px;text-align:center;">
                 <div style="font-size:13px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Your ROI</div>
-                <div style="font-size:14px;color:#94a3b8;margin-bottom:8px;">$19 investment → <strong style="color:#22c55e;font-size:18px;" id="roi-amount">$0/yr</strong> in savings</div>
+                <div style="font-size:14px;color:#94a3b8;margin-bottom:8px;">Free tool → <strong style="color:#22c55e;font-size:18px;" id="roi-amount">$0/yr</strong> in savings</div>
                 <div style="font-size:13px;color:#64748b;">That's <strong style="color:#f1f5f9;" id="roi-multiplier">0x</strong> return in the first year alone — plus ongoing monitoring forever.</div>
             </div>
 
@@ -827,8 +827,8 @@
                     <div style="font-size:13px;color:#94a3b8;line-height:1.5;">Every tool is free — no signup, no credit card, no catch.</div>
                 </div>
                 <div class="trust-row">
-                    <span>🔒 Stripe secure</span>
-                    <span>🛡️ 30-day refund</span>
+                    <span>🔒 No signup required</span>
+                    <span>🆓 100% free</span>
                     <span>⚡ Instant access</span>
                 </div>
             </div>
@@ -1287,7 +1287,7 @@
                 var diff = deadline - now;
                 if (diff <= 0) {
                     el.textContent = 'EXPIRED';
-                    banner.innerHTML = '⏰ Flash sale has ended — Pro is now <span style="color:#f1f5f9;font-weight:800;">$49</span>';
+                    banner.innerHTML = '✅ All tools are free — no signup required';
                     if (resultsEl) resultsEl.textContent = 'EXPIRED';
                     return;
                 }
@@ -1325,7 +1325,7 @@
                     } else {
                         // User hasn't run audit — promote free audit
                         document.getElementById('exit-title').textContent = 'Wait — your audit is free';
-                        document.getElementById('exit-desc').innerHTML = 'See exactly how much you\'re overpaying on AI APIs. Takes 30 seconds, costs nothing. <strong style="color:#ef4444;">Flash sale ends Jul 12 — FINAL 48 HOURS</strong> — then it\'s $49.';
+                        document.getElementById('exit-desc').innerHTML = 'See exactly how much you're overpaying on AI APIs. Takes 30 seconds, costs nothing. <strong style="color:#22c55e;">All tools are free — no signup required</strong>.';
                         document.getElementById('exit-cta').textContent = 'Run My Free Audit →';
                         document.getElementById('exit-cta').href = '#';
                         document.getElementById('exit-cta').onclick = function() {
@@ -1399,7 +1399,7 @@
     <div class="exit-overlay" id="exit-popup" onclick="if(event.target===this)this.classList.remove('show')">
         <div class="exit-modal">
             <h3 id="exit-title">Wait — your audit is free</h3>
-            <p id="exit-desc">See exactly how much you're overpaying on AI APIs. It takes 30 seconds and costs nothing. The $19 Pro deal expires Jul 12.</p>
+            <p id="exit-desc">See exactly how much you're overpaying on AI APIs. It takes 30 seconds and costs nothing.</p>
             <a href="#" class="exit-cta" id="exit-cta" onclick="document.getElementById('exit-popup').classList.remove('show');document.getElementById('audit-form').style.display='block';document.getElementById('results').classList.remove('visible');document.getElementById('audit-form').scrollIntoView({behavior:'smooth',block:'center'});return false;">Run My Free Audit →</a>
             <button class="exit-dismiss" id="exit-dismiss" onclick="document.getElementById('exit-popup').classList.remove('show')">No thanks, I like overpaying</button>
         </div>
