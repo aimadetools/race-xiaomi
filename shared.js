@@ -37,24 +37,26 @@ window._abPrice = 19; // Legacy — kept for pages that reference it
 window._abStripeLink = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'; // Legacy
 window._abVariant = 'B';
 
-// Redirect purchase-intent CTAs to go.html (which routes to free tools)
-// instead of directly to Stripe checkout.
+// Pivot (S1333): All tools are free. Rewrite all purchase CTAs to free tools.
 document.addEventListener('DOMContentLoaded', function() {
+    var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
     document.querySelectorAll('a').forEach(function(a) {
-        // Route nav CTAs to go.html instead of Stripe
-        if (a.classList.contains('nav-cta') && a.href && !a.href.includes('go.html')) {
-            if (a.href.includes('pricing.html') || a.href.includes('pro.html') || a.href.includes('compare-plans.html')) {
-                a.href = 'go.html?from=nav_cta';
-                a.target = '_blank';
-                a.rel = 'noopener';
+        // Rewrite ALL nav CTAs to free tools — flash sale is over
+        if (a.classList.contains('nav-cta')) {
+            a.href = 'index.html#free-tools';
+            a.textContent = 'Free Tools →';
+            a.removeAttribute('target');
+            a.removeAttribute('rel');
+            // Remove inline onclick handlers that tracked purchase events
+            if (a.getAttribute('onclick') && a.getAttribute('onclick').indexOf('flash_buy') !== -1) {
+                a.removeAttribute('onclick');
             }
         }
-        // Route "Get Pro" CTAs to go.html instead of Stripe
-        if (a.href && (a.href.includes('pricing.html') || a.href.includes('pro.html')) && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro/i)) {
-            var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-            a.href = 'go.html?from=' + encodeURIComponent(pageName);
-            a.target = '_blank';
-            a.rel = 'noopener';
+        // Route "Get Pro" and Stripe CTAs to free tools
+        if (a.href && (a.href.includes('buy.stripe.com') || a.href.includes('pricing.html') || a.href.includes('pro.html')) && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro|Flash Sale|\$19/i)) {
+            a.href = 'index.html#free-tools';
+            a.target = '';
+            a.rel = '';
         }
     });
 
@@ -76,8 +78,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (val.indexOf('expires July 12') !== -1) {
             node.nodeValue = val.replace(/expires July 12/g, 'free forever');
         }
+        if (val.indexOf('Sale ends Jul 12') !== -1) {
+            node.nodeValue = val.replace(/Sale ends Jul 12[^·]*/g, 'All tools are free');
+        }
+        if (val.indexOf('flash sale ends Jul 12') !== -1) {
+            node.nodeValue = val.replace(/flash sale ends Jul 12[^.]*/g, 'All tools are now free.');
+        }
         if (val.indexOf('Limited time:') !== -1) {
             node.nodeValue = val.replace('Limited time:', 'APIpulse:');
+        }
+        if (val.indexOf('FINAL 48 HOURS') !== -1) {
+            node.nodeValue = val.replace(/⏰?\s*FINAL 48 HOURS\s*[—-]?\s*/gi, '');
         }
         if (val.indexOf('FINAL HOURS') !== -1) {
             node.nodeValue = val.replace(/⚡?\s*FINAL HOURS!?/gi, 'All tools are free');
@@ -87,6 +98,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (val.indexOf('ENDS TONIGHT') !== -1) {
             node.nodeValue = val.replace(/⚡?\s*ENDS TONIGHT!?/gi, 'All tools are free');
+        }
+        if (val.indexOf('Price goes to $49') !== -1) {
+            node.nodeValue = val.replace(/Price goes to \$49/gi, 'All tools are free');
+        }
+        if (val.indexOf('price goes to $49') !== -1) {
+            node.nodeValue = val.replace(/price goes to \$49/gi, 'all tools are free');
+        }
+    });
+
+    // Hide flash sale boxes and urgency elements
+    document.querySelectorAll('[style*="background:linear-gradient(135deg,#dc2626"], [style*="background:linear-gradient(135deg, #dc2626"]').forEach(function(el) {
+        // Flash sale boxes with red gradient backgrounds
+        if (el.textContent.indexOf('Flash Sale') !== -1 || el.textContent.indexOf('FINAL 48') !== -1) {
+            el.style.display = 'none';
         }
     });
     // Track pricing view

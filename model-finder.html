@@ -162,7 +162,7 @@
                 <a href="/switch-and-save.html">Switch & Save</a>
                 <a href="/compare.html">Compare</a>
                 <a href="/blog.html">Blog</a>
-                <a href="/audit.html" class="nav-cta">🔥 Pro $19</a>
+                <a href="/audit.html" class="nav-cta">Free Tools →</a>
             </div>
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
                 <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -179,7 +179,7 @@
         <a href="/switch-and-save.html">Switch & Save</a>
         <a href="/compare.html">Compare</a>
         <a href="/blog.html">Blog</a>
-        <a href="/audit.html">🔥 Pro $19</a>
+        <a href="/audit.html">Free Tools →</a>
     </div>
 
     <main class="finder-page">
@@ -354,15 +354,15 @@
 
         function showResults() {
             // A/B test: CTA button text
-            // Variant A: "Get Pro — $19 (Flash Sale)" (control)
-            // Variant B: "Start Monitoring — $19 (Flash Sale)"
+            // Variant A: "Free Tools →" (control)
+            // Variant B: "Try Free Tools →"
             const STORAGE_KEY = 'finder_cta_variant';
             let ctaVariant = localStorage.getItem(STORAGE_KEY);
             if (!ctaVariant) {
                 ctaVariant = Math.random() < 0.5 ? 'A' : 'B';
                 localStorage.setItem(STORAGE_KEY, ctaVariant);
             }
-            const ctaText = ctaVariant === 'B' ? 'Start Monitoring — $19 (Flash Sale)' : 'Get Pro — $19 (Flash Sale)';
+            const ctaText = 'Free Tools →';
 
             window.trackEvent('finder_completed', { useCase: answers.useCase, volume: answers.volume, priority: answers.priority, context: answers.context, budget: answers.budget, cta_variant: ctaVariant });
 
@@ -418,7 +418,7 @@
                         <div style="font-size:18px;font-weight:800;margin-bottom:8px;">🔓 Unlock Your Full Recommendation</div>
                         <div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">See your top model match + 3 runners-up with pricing, migration code, and cost projections.</div>
                         <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-block;padding:16px 44px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:18px;font-weight:900;text-decoration:none;box-shadow:0 4px 24px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'model_finder_results'})">⚡ Get Pro — $19 lifetime</a>
-                        <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🔒 Stripe secure · 30-day refund · Instant access · Sale ends Jul 12 — FINAL 48 HOURS</div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🔒 Stripe secure · 30-day refund · Instant access · All tools are free</div>
                     </div>
 
                     <div style="text-align:center;">
