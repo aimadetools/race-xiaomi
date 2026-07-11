@@ -783,12 +783,6 @@
             renderSavingsEstimator();
         }
         applyProGating();
-        // Re-check when localStorage changes (trial started/expired in another tab)
-        window.addEventListener('storage', function(e) {
-            if (e.key === 'apipulse_pro' || e.key === 'apipulse_pro_trial_expiry') {
-                applyProGating();
-            }
-        });
 
         // ---- GA4 events ----
         function trackEvent(name, params) {

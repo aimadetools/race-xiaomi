@@ -67,7 +67,7 @@ window.trackEvent = logEvent;
 // 3. CTA button hover tracking (for high-intent signals)
 (function() {
     document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('a[href*="buy.stripe.com"], a[href*="pricing"], a[href*="go.html"], button[onclick*="startTrial"]').forEach(function(el) {
+        document.querySelectorAll('a[href*="dashboard"], a[href*="compare"], a[href*="calculator"], a[href*="playbook"]').forEach(function(el) {
             var tracked = false;
             el.addEventListener('mouseenter', function() {
                 if (!tracked) {
