@@ -1741,7 +1741,7 @@ var GO_MODEL_MAP = {
                 '<p style="font-size:14px;color:#94a3b8;margin-bottom:16px;line-height:1.5;">' + subtext + '</p>' +
                 '<a href="' + ctaUrl + '" id="global-exit-cta" target="_blank" rel="noopener" style="display:block;width:100%;padding:16px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border:none;border-radius:12px;font-size:18px;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 4px 20px rgba(99,102,241,0.3);">' + ctaText + '</a>' +
                 '<p style="font-size:12px;color:#475569;margin-top:12px;">📊 67 models · 🆓 Free forever · ⚡ No signup</p>' +
-                '<button id="global-exit-dismiss" style="display:block;margin:12px auto 0;background:none;border:none;color:#64748b;font-size:13px;cursor:pointer;">No thanks, I\\'ll check later</button>' +
+                '<button id="global-exit-dismiss" style="display:block;margin:12px auto 0;background:none;border:none;color:#64748b;font-size:13px;cursor:pointer;">No thanks, I\'ll check later</button>' +
             '</div>';
 
         // Add fadeIn animation
