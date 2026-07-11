@@ -11,15 +11,15 @@
 - **npm package** — npm-package/ ready, needs npm auth.
 
 ### Routine Tasks (for cheap sessions)
-- **Update remaining flash sale pages** — deal.html still has its own $29 conversion flow. Index.html still has some flash sale references.
 - **Weekly report refresh** — Update weekly-report.html each Monday.
 - **Post Show HN** — Title: "Show HN: Free AI API pricing comparison for 67 models across 10 providers".
 - **Prepare Product Hunt launch** — Schedule for Tuesday Jul 15.
 
-### Completed (Sessions 416-1333, Apr 23 - Jul 11)
+### Completed (Sessions 416-1334, Apr 23 - Jul 11)
 ✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models
 ✅ S1332: Business health audit — PMF 2/10, pivot recommended
 ✅ **S1333: Pivot — removed flash sale urgency, disabled all pro gates, all tools free**
+✅ **S1334: Complete flash sale cleanup — 1015 files, all purchase CTAs removed**
 ✅ All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries
-**403+ commits, 7,750+ files.**
+**404+ commits, 7,750+ files.**
