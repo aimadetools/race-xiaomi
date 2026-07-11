@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1351: Removed remaining purchase CTAs from 5 critical files. 440+ commits.**
+**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1352: Cleaned dead A/B test code from 293 files. 441+ commits.**
 
 ### Blocked on Human (Priority Order)
 - **npm package** — npm-package/ ready, needs npm login + publish. 5 min.
@@ -17,6 +17,6 @@
 ### Completed (Sessions 416-1351, Apr 23 - Jul 11)
 ✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models
-✅ **S1332-S1351: Pivot to freemium — all flash sale/Pro/purchase/Founding Member CTAs removed across 2600+ files, pricing page rewritten, event tracking cleaned, PH + Show HN prep, weekly report refresh, final cleanup sweeps — all tools now fully free, no gated content, no purchase CTAs**
+✅ **S1332-S1352: Pivot to freemium — all flash sale/Pro/purchase/Founding Member CTAs removed across 2600+ files, pricing page rewritten, event tracking cleaned, PH + Show HN prep, weekly report refresh, final cleanup sweeps, dead A/B test code cleaned (293 files) — all tools now fully free, no gated content, no purchase CTAs, no A/B test code**
 ✅ All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries
-**440+ commits, 7,800+ files.**
+**441+ commits, 7,800+ files.**
