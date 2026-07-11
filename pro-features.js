@@ -1,6 +1,5 @@
-// APIpulse — Access code validation and feature access
-// Access codes are distributed manually by the APIpulse team after purchase.
-// Codes are stored as SHA-256 hashes to prevent casual extraction from source.
+// APIpulse — Feature access and saved scenarios
+// S1333 pivot: all tools are free. Legacy access code validation retained for compatibility.
 
 function escapeHtml(str) {
     const div = document.createElement('div');
@@ -59,22 +58,8 @@ async function validateCode(code) {
 }
 
 function isProUser() {
-    if (localStorage.getItem('apipulse_pro') === 'true') {
-        // Check if trial has expired
-        const trialExpiry = localStorage.getItem('apipulse_pro_trial_expiry');
-        if (trialExpiry) {
-            const expiry = new Date(trialExpiry);
-            if (new Date() > expiry) {
-                // Trial expired — lock and clear
-                localStorage.removeItem('apipulse_pro');
-                localStorage.removeItem('apipulse_pro_trial_expiry');
-                localStorage.removeItem('apipulse_pro_trial');
-                return false;
-            }
-        }
-        return true;
-    }
-    return false;
+    // S1333 pivot: all tools are free, everyone is a "Pro" user
+    return true;
 }
 
 function isTrialUser() {
@@ -445,44 +430,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                     content.insertBefore(banner, content.firstChild);
                 }
-                // Auto-lock when trial expires — redirect to conversion page
-                setTimeout(() => {
-                    localStorage.removeItem('apipulse_pro');
-                    localStorage.removeItem('apipulse_pro_trial');
-                    localStorage.removeItem('apipulse_pro_trial_expiry');
-                    localStorage.setItem('apipulse_trial_expired', '1');
-                    lockProFeatures();
-                    if (window.trackEvent) window.trackEvent('trial_expired');
-                    // Redirect to trial-expired conversion page
-                    window.location.href = 'trial-expired.html?from=trial_expired';
-                }, remaining.ms);
-
-                // Urgency banner when < 2 hours remain
-                if (remaining.ms < 2 * 60 * 60 * 1000) {
-                    var urgencyBanner = document.createElement('div');
-                    urgencyBanner.id = 'trial-urgency-banner';
-                    var minsLeft = Math.ceil(remaining.ms / 60000);
-                    var price = window._abPrice || 19;
-                    urgencyBanner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:12px 20px;border-radius:12px;margin-bottom:16px;text-align:center;font-size:14px;font-weight:600;';
-                    urgencyBanner.innerHTML = '🎉 All tools are free — <a href="/#free-tools" style="color:white;text-decoration:underline;">Explore now →</a>';
-                    content.insertBefore(urgencyBanner, content.firstChild);
-                    if (window.trackEvent) window.trackEvent('trial_urgency_shown', { minutes_left: minsLeft, price: price });
-                }
+                // S1333 pivot: all tools are free — no trial expiration or urgency needed
+                // Clean up old trial state so returning users aren't confused
+                localStorage.removeItem('apipulse_pro_trial');
+                localStorage.removeItem('apipulse_pro_trial_expiry');
+                localStorage.removeItem('apipulse_trial_expired');
             }
         }
     }
     renderScenarios();
 });
 
-// Returning expired trial users — redirect to conversion page (once per session)
+// S1333 pivot: all tools are free — no trial expiration redirects needed
+// Clean up any leftover trial-expired state from before the pivot
 document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem('apipulse_trial_expired') !== '1') return;
-    if (typeof isProUser === 'function' && isProUser()) { localStorage.removeItem('apipulse_trial_expired'); return; }
-    // Don't redirect if already on trial-expired page
-    if (window.location.pathname.indexOf('trial-expired') !== -1) return;
-    // Don't redirect if user already dismissed this session
-    if (sessionStorage.getItem('trial_expired_redirect_shown')) return;
-    sessionStorage.setItem('trial_expired_redirect_shown', '1');
-    if (window.trackEvent) window.trackEvent('trial_return_redirect', { page: window.location.pathname });
-    window.location.href = 'trial-expired.html?from=trial_return';
+    localStorage.removeItem('apipulse_trial_expired');
+    sessionStorage.removeItem('trial_expired_redirect_shown');
 });

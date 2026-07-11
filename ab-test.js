@@ -56,7 +56,7 @@
             });
         });
 
-        // Track Pro button clicks
+        // Track pricing/tool link clicks
         var proBtns = document.querySelectorAll('a[href*="pricing"], a[href*="pro"]');
         proBtns.forEach(function(btn) {
             btn.addEventListener('click', function() {

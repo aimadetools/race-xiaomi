@@ -33,7 +33,7 @@ updateThemeIcon();
 window.DEAL_EXPIRED = true;
 window.DEAL_DEADLINE = 0;
 window.DEAL_DAYS_LEFT = 0;
-window._abPrice = 19; // Legacy — kept for pages that reference it
+window._abPrice = 0; // S1333 pivot: all tools free
 window._abStripeLink = 'index.html#free-tools'; // Redirected — all tools free
 window._abVariant = 'B';
 
@@ -1160,14 +1160,12 @@ async function saveEmail(e) {
 (function() {
     if (localStorage.getItem('apipulse_sticky_bar_dismissed')) return;
     if (localStorage.getItem('apipulse_pro_cta_dismissed')) return; // Session 902: unified dismiss
-    if (typeof isProUser === 'function' && isProUser()) return;
     var path = window.location.pathname;
     // Skip high-intent pages (they already have strong CTAs) and admin pages
     var skipPages = ['pricing', 'pro', 'thank-you', 'checkout', 'admin', 'embed', 'unsubscribe', 'go', 'deal'];
     for (var i = 0; i < skipPages.length; i++) {
         if (path.indexOf(skipPages[i]) !== -1) return;
     }
-    var price = window._abPrice || 19;
     setTimeout(function() {
         if (localStorage.getItem('apipulse_sticky_bar_dismissed')) return;
         if (localStorage.getItem('apipulse_pro_cta_dismissed')) return; // Session 902: unified dismiss
@@ -1177,25 +1175,20 @@ async function saveEmail(e) {
         bar.id = 'sticky-bottom-bar';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,rgba(15,15,20,0.97),rgba(25,25,35,0.97));backdrop-filter:blur(12px);border-top:1px solid rgba(99,102,241,0.3);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.3);animation:stickySlideUp 0.4s ease;';
         var stickyPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-        // Pivot S1332: No urgency — all tools free
         bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">📊 APIpulse — 67 AI models, free cost tools</span>' +
             '<a href="calculator.html" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'free_tools_click\',{source:\'sticky_bottom_bar\'})">Try Free Calculator →</a>' +
             '<button onclick="document.getElementById(\'sticky-bottom-bar\').remove();localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');if(window.trackEvent)window.trackEvent(\'sticky_bar_dismissed\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px;padding:4px 8px;line-height:1;" aria-label="Close">×</button>';
         document.body.appendChild(bar);
-        if (window.trackEvent) window.trackEvent('sticky_bar_shown', { page: path, price: price });
+        if (window.trackEvent) window.trackEvent('sticky_bar_shown', { page: path });
     }, 45000);
 })();
 
-// Pro badge in nav — show "Pro ✓" indicator for returning Pro users
+// S1333 pivot: all tools are free — no Pro badge needed
+// Clean up old Pro badge state for returning users
 document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem('apipulse_pro') !== 'true') return;
-    var navCta = document.querySelector('.nav-cta');
-    if (!navCta) return;
-    navCta.textContent = 'Pro ✓';
-    navCta.href = 'pro.html';
-    navCta.style.background = 'rgba(34,197,94,0.15)';
-    navCta.style.borderColor = 'var(--green)';
-    navCta.style.color = 'var(--green)';
+    localStorage.removeItem('apipulse_pro');
+    localStorage.removeItem('apipulse_pro_code');
+    localStorage.removeItem('apipulse_pro_date');
 });
 
 // Pricing freshness badge — renders "Updated May 5, 2026" badge into target element
@@ -1253,14 +1246,12 @@ function renderPricingFreshness(containerId) {
     });
 })();
 
-// Blog Pro upsell — inject a Pro CTA after the inline CTA on blog post pages
+// Blog free tools upsell — inject a free tools CTA after the inline CTA on blog post pages
 document.addEventListener('DOMContentLoaded', function() {
     if (!window.location.pathname.includes('blog-')) return;
-    if (localStorage.getItem('apipulse_pro') === 'true') return;
     var cta = document.querySelector('.cta-inline');
     if (!cta) return;
     var upsell = document.createElement('div');
-    var price = window._abPrice || 19;
     upsell.style.cssText = 'text-align:center;margin-top:12px;padding:12px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:8px;font-size:13px;color:var(--text-secondary);';
     var blogPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'blog';
     // Detect model from blog post filename for pre-fill

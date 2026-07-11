@@ -1,5 +1,5 @@
 // APIpulse — Cost Tracker (Session 1062)
-// localStorage-based cost tracking for Pro users.
+// localStorage-based cost tracking for all users (free since S1333 pivot).
 // Tracks API spending over time, shows trends, and highlights savings opportunities.
 // Usage: <script src="cost-tracker.js" defer></script>
 
