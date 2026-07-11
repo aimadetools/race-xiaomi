@@ -493,14 +493,6 @@
             </tr>`;
         }).join('');
 
-        // Pro gate: show overlay after first calculation
-        if (!window._agentCalcGateShown && typeof showProGate === 'function') {
-            window._agentCalcGateShown = true;
-            setTimeout(function() {
-                showProGate('.results-section', { showPreview: true });
-            }, 1000);
-        }
-
         if (window.trackEvent) window.trackEvent('agent_calc_calculated', { tasksPerDay, stepsPerTask, models: results.length, api_mode: currentApiMode });
     }
 

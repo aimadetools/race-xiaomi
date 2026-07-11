@@ -908,26 +908,8 @@ print(response.choices[0].message.content)</code></pre>
         document.querySelectorAll('.fw-ab-price').forEach(function(el) { el.textContent = price; });
 
         // Update Stripe links
-        var stripeLink = window._abStripeLink || 'audit.html?from=tool_page';
-        var bottomCta = document.getElementById('fw-bottom-pro-cta');
-        if (bottomCta) bottomCta.href = stripeLink;
-
-        if (isProUser()) {
-            unlockFrameworkGates();
-            return; // No upsells needed for Pro users
-        }
-
-        // Show early upsell for non-Pro users
-        var upsell = document.getElementById('early-framework-upsell');
-        if (upsell) upsell.style.display = 'block';
-
-        // Bind all Pro CTA links
-        document.querySelectorAll('.fw-pro-cta-link').forEach(function(link) {
-            link.href = stripeLink;
-            link.addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'framework_gate_overlay', page: 'framework-migration-guide' });
-            });
-        });
+        // All tools are free — unlock all framework gates
+        unlockFrameworkGates();
 
         // Bind early upsell Pro CTA
         var earlyCta = document.getElementById('fw-early-pro-cta');

@@ -1347,14 +1347,6 @@
                     cost_a: costA.total.toFixed(2), cost_b: costB.total.toFixed(2)
                 });
             }
-
-            // Pro gate: after first comparison, gate the results section
-            if (!window._compareGateShown && typeof showProGate === 'function') {
-                window._compareGateShown = true;
-                setTimeout(function() {
-                    showProGate('.compare-grid', { showPreview: true });
-                }, 800); // Brief delay so user sees results starting to appear
-            }
         }
 
         // URL state: encode all inputs for sharing

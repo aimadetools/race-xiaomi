@@ -736,29 +736,16 @@
                 return;
             }
 
-            // Pro upsell — show EARLY, right after summary (only for non-Pro users)
-            if (results.critical > 0 && !isProUser()) {
-                var frameworkName = results.frameworks.length > 0 ? results.frameworks[0].name : 'your framework';
-                earlyProEl.innerHTML = renderEarlyProUpsell(results, frameworkName);
-                // Bind pro CTA
-                var cta = document.getElementById('scanner-pro-cta-early');
-                if (cta) {
-                    cta.href = window._abStripeLink || 'audit.html?from=tool_page';
-                    cta.addEventListener('click', function() {
-                        if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'scanner_early_upsell', page: 'claude-4-migration-scanner', email_ab_variant: window._emailAbVariant || 'unknown' });
-                    });
-                }
-            }
+            // All tools are free — always show full fixes
 
             var html = '<h3 style="font-size:16px;margin-bottom:12px;">Findings (' + results.findings.length + ' issues)</h3>';
-            var isPro = isProUser();
 
             results.findings.forEach(function(f, idx) {
                 var icon = f.severity === 'critical' ? '🔴' : f.severity === 'warning' ? '⚠️' : 'ℹ️';
                 var fixHtml = '';
 
-                if (isPro && f.replacement) {
-                    // You see full fix
+                if (f.replacement) {
+                    // Always show full fix
                     fixHtml = '<div class="finding-code">' +
                         '<span class="old">' + escapeHtml(f.match) + '</span> → ' +
                         '<span class="new">' + escapeHtml(f.replacement) + '</span>' +

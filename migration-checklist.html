@@ -817,13 +817,11 @@
             '<span class="comment"># Make your first API call</span>\n' +
             to.call + '</div>';
 
-        // Unlock code for Pro users
-        if (typeof isProUser === 'function' && isProUser()) {
-            var gate = document.getElementById('step4-gate');
-            if (gate) gate.style.display = 'none';
-            var codeEl = document.querySelector('#step4-code-area .migrate-code');
-            if (codeEl) { codeEl.style.filter = 'none'; codeEl.style.userSelect = 'auto'; codeEl.style.pointerEvents = 'auto'; }
-        }
+        // All tools are free — always unlock code
+        var gate = document.getElementById('step4-gate');
+        if (gate) gate.style.display = 'none';
+        var codeEl = document.querySelector('#step4-code-area .migrate-code');
+        if (codeEl) { codeEl.style.filter = 'none'; codeEl.style.userSelect = 'auto'; codeEl.style.pointerEvents = 'auto'; }
 
         // Step 5: Test
         document.getElementById('step5-test-code').innerHTML =

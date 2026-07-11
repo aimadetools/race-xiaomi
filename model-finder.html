@@ -369,107 +369,51 @@
             const recommendations = getRecommendations(answers);
             const topPick = recommendations[0];
             const runners = recommendations.slice(1, 4);
-            const isPro = typeof isProUser === 'function' ? isProUser() : false;
 
             document.querySelector('.progress-bar').style.display = 'none';
 
-            let html;
-            if (!isPro) {
-                // Gated: show blurred results with Stripe CTA
-                html = `
-                <div class="results-container">
-                    <div style="text-align:center;margin-bottom:28px;">
-                        <h2 style="font-size:24px;font-weight:800;margin-bottom:6px;">We Found Your Match</h2>
-                        <p style="color:var(--text-secondary);font-size:15px;">Based on your ${answers.useCase} use case, ${answers.volume} requests/mo, ${answers.priority} priority</p>
-                    </div>
-
-                    <div class="result-card top-pick" style="position:relative;overflow:hidden;">
-                        <span class="pick-badge">🏆 Best Match</span>
-                        <div style="filter:blur(6px);user-select:none;pointer-events:none;">
-                            <h3>${topPick.name}</h3>
-                            <div class="provider">${topPick.provider} · ${topPick.tier} tier</div>
-                            <div class="price-row">
-                                <div class="price-item">Input: <strong>$${topPick.input.toFixed(2)}/1M tokens</strong></div>
-                                <div class="price-item">Output: <strong>$${topPick.output.toFixed(2)}/1M tokens</strong></div>
-                                <div class="price-item">Context: <strong>${topPick.context}</strong></div>
-                            </div>
-                            <div class="score-bar"><div class="score-fill" style="width:${topPick.score}%"></div></div>
-                            <div class="score-label">Match score: ${topPick.score}%</div>
-                        </div>
-                        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--accent);background:rgba(0,0,0,0.35);backdrop-filter:blur(2px);">✨ Free — click to see your match</div>
-                    </div>
-
-                    ${runners.map((r, i) => `
-                        <div class="result-card" style="position:relative;overflow:hidden;">
-                            <div style="filter:blur(6px);user-select:none;pointer-events:none;">
-                                <h3>${r.name}</h3>
-                                <div class="provider">${r.provider} · ${r.tier} tier</div>
-                                <div class="price-row">
-                                    <div class="price-item">Input: <strong>$${r.input.toFixed(2)}/1M tokens</strong></div>
-                                    <div class="price-item">Output: <strong>$${r.output.toFixed(2)}/1M tokens</strong></div>
-                                    <div class="price-item">Context: <strong>${r.context}</strong></div>
-                                </div>
-                            </div>
-                            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--accent);background:rgba(0,0,0,0.3);backdrop-filter:blur(2px);">✨ Free — click to see</div>
-                        </div>
-                    `).join('')}
-
-                    <div style="margin:24px 0;padding:28px;background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.03));border:2px solid rgba(34,197,94,0.4);border-radius:14px;text-align:center;">
-                        <div style="font-size:18px;font-weight:800;margin-bottom:8px;">🔓 Unlock Your Full Recommendation</div>
-                        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">See your top model match + 3 runners-up with pricing, migration code, and cost projections.</div>
-                        <a href="index.html#free-tools" style="display:inline-block;padding:16px 44px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:18px;font-weight:900;text-decoration:none;box-shadow:0 4px 24px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Free Tools →</a>
-                        <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🔒 No signup required · 30-day refund · Instant access · All tools are free</div>
-                    </div>
-
-                    <div style="text-align:center;">
-                        <button class="restart-btn" onclick="location.reload()">🔄 Start Over</button>
-                    </div>
+            // All tools are free — always show full results
+            let html = `
+            <div class="results-container">
+                <div style="text-align:center;margin-bottom:28px;">
+                    <h2 style="font-size:24px;font-weight:800;margin-bottom:6px;">Your Top Recommendation</h2>
+                    <p style="color:var(--text-secondary);font-size:15px;">Based on your ${answers.useCase} use case, ${answers.volume} requests/mo, ${answers.priority} priority</p>
                 </div>
-                `;
-            } else {
-                // You see full results
-                html = `
-                <div class="results-container">
-                    <div style="text-align:center;margin-bottom:28px;">
-                        <h2 style="font-size:24px;font-weight:800;margin-bottom:6px;">Your Top Recommendation</h2>
-                        <p style="color:var(--text-secondary);font-size:15px;">Based on your ${answers.useCase} use case, ${answers.volume} requests/mo, ${answers.priority} priority</p>
-                    </div>
 
-                    <div class="result-card top-pick">
-                        <span class="pick-badge">🏆 Best Match</span>
-                        <h3>${topPick.name}</h3>
-                        <div class="provider">${topPick.provider} · ${topPick.tier} tier</div>
+                <div class="result-card top-pick">
+                    <span class="pick-badge">🏆 Best Match</span>
+                    <h3>${topPick.name}</h3>
+                    <div class="provider">${topPick.provider} · ${topPick.tier} tier</div>
+                    <div class="price-row">
+                        <div class="price-item">Input: <strong>$${topPick.input.toFixed(2)}/1M tokens</strong></div>
+                        <div class="price-item">Output: <strong>$${topPick.output.toFixed(2)}/1M tokens</strong></div>
+                        <div class="price-item">Context: <strong>${topPick.context}</strong></div>
+                    </div>
+                    <div class="score-bar"><div class="score-fill" style="width:${topPick.score}%"></div></div>
+                    <div class="score-label">Match score: ${topPick.score}%</div>
+                    <div class="why">${topPick.why}</div>
+                </div>
+
+                ${runners.map((r, i) => `
+                    <div class="result-card">
+                        <h3>${r.name}</h3>
+                        <div class="provider">${r.provider} · ${r.tier} tier</div>
                         <div class="price-row">
-                            <div class="price-item">Input: <strong>$${topPick.input.toFixed(2)}/1M tokens</strong></div>
-                            <div class="price-item">Output: <strong>$${topPick.output.toFixed(2)}/1M tokens</strong></div>
-                            <div class="price-item">Context: <strong>${topPick.context}</strong></div>
+                            <div class="price-item">Input: <strong>$${r.input.toFixed(2)}/1M tokens</strong></div>
+                            <div class="price-item">Output: <strong>$${r.output.toFixed(2)}/1M tokens</strong></div>
+                            <div class="price-item">Context: <strong>${r.context}</strong></div>
                         </div>
-                        <div class="score-bar"><div class="score-fill" style="width:${topPick.score}%"></div></div>
-                        <div class="score-label">Match score: ${topPick.score}%</div>
-                        <div class="why">${topPick.why}</div>
+                        <div class="score-bar"><div class="score-fill" style="width:${r.score}%"></div></div>
+                        <div class="score-label">Match score: ${r.score}%</div>
+                        <div class="why">${r.why}</div>
                     </div>
+                `).join('')}
 
-                    ${runners.map((r, i) => `
-                        <div class="result-card">
-                            <h3>${r.name}</h3>
-                            <div class="provider">${r.provider} · ${r.tier} tier</div>
-                            <div class="price-row">
-                                <div class="price-item">Input: <strong>$${r.input.toFixed(2)}/1M tokens</strong></div>
-                                <div class="price-item">Output: <strong>$${r.output.toFixed(2)}/1M tokens</strong></div>
-                                <div class="price-item">Context: <strong>${r.context}</strong></div>
-                            </div>
-                            <div class="score-bar"><div class="score-fill" style="width:${r.score}%"></div></div>
-                            <div class="score-label">Match score: ${r.score}%</div>
-                            <div class="why">${r.why}</div>
-                        </div>
-                    `).join('')}
-
-                    <div style="text-align:center;">
-                        <button class="restart-btn" onclick="location.reload()">🔄 Start Over</button>
-                    </div>
+                <div style="text-align:center;">
+                    <button class="restart-btn" onclick="location.reload()">🔄 Start Over</button>
                 </div>
-                `;
-            }
+            </div>
+            `;
             document.getElementById('quizContent').innerHTML = html;
         }
 

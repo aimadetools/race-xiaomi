@@ -754,43 +754,35 @@
             document.getElementById('budget-input').value = budget;
         }
 
-        // ---- Pro Gating ----
-        var userIsPro = (typeof isProUser === 'function' && isProUser());
+        // ---- All tools are free — show everything ----
         function applyProGating() {
-            userIsPro = (typeof isProUser === 'function' && isProUser());
-            // Hide Pro upsell banner for Pro users
+            // Hide Pro upsell banner
             var banner = document.getElementById('pro-upsell-banner');
-            if (banner) banner.style.display = userIsPro ? 'none' : 'flex';
-            // CSV export gating
+            if (banner) banner.style.display = 'none';
+            // Show CSV export buttons
             var csvGateChart = document.getElementById('csv-gate-chart');
             var csvBtnChart = document.getElementById('csv-btn-chart');
             var csvGateHistory = document.getElementById('csv-gate-history');
             var csvBtnHistory = document.getElementById('csv-btn-history');
-            if (csvGateChart) csvGateChart.style.display = userIsPro ? 'none' : 'block';
-            if (csvBtnChart) csvBtnChart.style.display = userIsPro ? 'inline-block' : 'none';
-            if (csvGateHistory) csvGateHistory.style.display = userIsPro ? 'none' : 'block';
-            if (csvBtnHistory) csvBtnHistory.style.display = userIsPro ? 'inline-block' : 'none';
-            // Price alerts gating
+            if (csvGateChart) csvGateChart.style.display = 'none';
+            if (csvBtnChart) csvBtnChart.style.display = 'inline-block';
+            if (csvGateHistory) csvGateHistory.style.display = 'none';
+            if (csvBtnHistory) csvBtnHistory.style.display = 'inline-block';
+            // Show price alerts
             var alertsGate = document.getElementById('alerts-pro-gate');
             var alertsList = document.getElementById('alerts-list');
-            if (alertsGate) alertsGate.style.display = userIsPro ? 'none' : 'block';
-            if (alertsList) alertsList.style.display = userIsPro ? 'block' : 'none';
-            // Savings estimator gating
+            if (alertsGate) alertsGate.style.display = 'none';
+            if (alertsList) alertsList.style.display = 'block';
+            // Show savings estimator
             var savingsEstimator = document.getElementById('savings-estimator');
             var savingsProGate = document.getElementById('savings-pro-gate');
             var savingsProBadge = document.getElementById('savings-pro-badge');
             if (savingsEstimator) savingsEstimator.style.display = 'block';
-            if (savingsProGate) savingsProGate.style.display = userIsPro ? 'none' : 'block';
-            if (savingsProBadge) savingsProBadge.style.display = userIsPro ? 'none' : 'inline';
-            if (userIsPro) renderSavingsEstimator();
-            // Track gate impressions for non-Pro users
-            if (!userIsPro && typeof gtag === 'function') {
-                window.trackEvent('feature_shown', { page: 'cost_monitoring' });
-            }
+            if (savingsProGate) savingsProGate.style.display = 'none';
+            if (savingsProBadge) savingsProBadge.style.display = 'none';
+            renderSavingsEstimator();
         }
         applyProGating();
-        // Re-check after pro-features.js loads (it sets localStorage)
-        window.addEventListener('load', function() { setTimeout(applyProGating, 100); });
         // Re-check when localStorage changes (trial started/expired in another tab)
         window.addEventListener('storage', function(e) {
             if (e.key === 'apipulse_pro' || e.key === 'apipulse_pro_trial_expiry') {

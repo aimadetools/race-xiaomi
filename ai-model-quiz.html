@@ -489,14 +489,6 @@
                 priority: answers[3]
             });
         }
-
-        // Pro gate: show overlay after first quiz completion
-        if (!window._quizGateShown && typeof showProGate === 'function') {
-            window._quizGateShown = true;
-            setTimeout(function() {
-                showProGate('#quiz-result', { showPreview: true });
-            }, 1200);
-        }
     }
 
     function getModel(id) {

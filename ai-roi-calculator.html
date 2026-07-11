@@ -582,14 +582,6 @@
                     });
                 }, 1000);
             }
-
-            // Pro gate: show overlay after first calculation
-            if (!window._roiCalcGateShown && typeof showProGate === 'function') {
-                window._roiCalcGateShown = true;
-                setTimeout(function() {
-                    showProGate('.calc-results', { showPreview: true });
-                }, 1200);
-            }
         }
 
         function renderComparison(inputTokens, outputTokens, requestsMonth, manualCost, timeSaved, hourlyRate, implCost, currentModelId) {

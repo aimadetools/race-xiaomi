@@ -428,39 +428,6 @@
             </div>
         </section>
 
-        <!-- Pro gate (shown when locked target selected) -->
-        <section class="qs-pro-gate" id="qs-pro-gate">
-            <div class="qs-pro-gate-inner">
-                <h3>🔒 Unlock Migration Code for All Targets</h3>
-                <p>You're viewing the free preview (Claude Opus 4.8 only). Pro unlocks code generation for all 6 targets — including DeepSeek at 99% savings.</p>
-                <div class="pro-compare">
-                    <div class="with-pro">
-                        <div class="label">✅ With Pro</div>
-                        <ul>
-                            <li>✅ All 6 target models unlocked</li>
-                            <li>✅ 5 languages × 6 targets = 30 combos</li>
-                            <li>✅ Framework-specific migration code</li>
-                            <li>✅ Cost comparison for your usage</li>
-                        </ul>
-                    </div>
-                    <div class="without-pro">
-                        <div class="label">❌ Free (Current)</div>
-                        <ul>
-                            <li>❌ Only Claude Opus 4.8 target</li>
-                            <li>❌ Can't generate DeepSeek code</li>
-                            <li>❌ Can't generate GPT-5 code</li>
-                            <li>❌ No cost comparison</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;">
-                    <a href="#" id="qs-gate-pro-cta" class="pro-cta-btn">Unlock All Targets — $<span class="ab-price">29</span></a>
-                    <a href="index.html#free-tools" style="color:#22c55e;font-weight:700;">Free Tools →</a>
-                </div>
-                <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">No signup required · 100% free</p>
-            </div>
-        </section>
-
         <!-- Pro upsell -->
         <section class="qs-pro">
             <div class="qs-pro-inner">
@@ -507,24 +474,14 @@
     <script>
     var selectedLang = 'python';
     var selectedTarget = 'opus48';
-    var FREE_TARGETS = ['opus48'];
+    var FREE_TARGETS = ['opus48', 'sonnet46', 'gpt5', 'gemini', 'deepseek', 'deepseek-flash'];
 
     function isLockedTarget(target) {
-        return FREE_TARGETS.indexOf(target) === -1 && !isProUser();
+        return false; // All targets are free
     }
 
     function updateProHint() {
-        var hint = document.getElementById('pro-hint');
-        if (!hint) return;
-        hint.style.display = isProUser() ? 'none' : 'block';
-        // Remove locked class from all pills if Pro
-        if (isProUser()) {
-            document.querySelectorAll('#target-pills .pill.locked').forEach(function(p) {
-                p.classList.remove('locked');
-                var badge = p.querySelector('.lock-badge');
-                if (badge) badge.style.display = 'none';
-            });
-        }
+        // All targets are free — no hint needed
     }
 
     function selectLang(el, lang) {
@@ -536,16 +493,6 @@
         document.querySelectorAll('#target-pills .pill').forEach(function(p) { p.classList.remove('selected'); });
         el.classList.add('selected');
         selectedTarget = target;
-
-        // Show/hide Pro gate
-        var gate = document.getElementById('qs-pro-gate');
-        var output = document.getElementById('qs-output');
-        if (isLockedTarget(target)) {
-            if (gate) gate.classList.add('visible');
-            if (output) output.classList.remove('visible');
-        } else {
-            if (gate) gate.classList.remove('visible');
-        }
     }
 
     var MODELS = {
@@ -832,16 +779,6 @@
     };
 
     function generateCode() {
-        // Pro gate: block locked targets for non-Pro users
-        if (isLockedTarget(selectedTarget)) {
-            var gate = document.getElementById('qs-pro-gate');
-            if (gate) {
-                gate.classList.add('visible');
-                gate.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-            if (window.trackEvent) window.trackEvent('feature_shown', { source: 'quick_switch', target: selectedTarget });
-            return;
-        }
 
         var m = MODELS[selectedTarget];
         var langCode = CODE[selectedLang];

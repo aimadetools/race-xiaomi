@@ -729,14 +729,6 @@
                 monthly_cost: totalMonthly.toFixed(2)
             });
         }
-
-        // Pro gate: show overlay after first stack build
-        if (!window._stackGateShown && typeof showProGate === 'function') {
-            window._stackGateShown = true;
-            setTimeout(function() {
-                showProGate('#step4', { showPreview: true });
-            }, 1200);
-        }
     }
     </script>
 

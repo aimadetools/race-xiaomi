@@ -404,14 +404,14 @@
             color: #94a3b8;
         }
 
-        /* Pro gate */
+        /* Free tools promotion */
         .pro-gate {
-            border: 2px solid #a78bfa;
+            border: 2px solid #34d399;
             border-radius: 12px;
             padding: 2rem;
             text-align: center;
             margin-top: 2rem;
-            background: linear-gradient(135deg, rgba(167,139,250,0.05), rgba(96,165,250,0.05));
+            background: linear-gradient(135deg, rgba(34,197,94,0.05), rgba(16,163,74,0.05));
             position: relative;
             overflow: hidden;
         }
@@ -932,18 +932,9 @@
             </div>`;
         }
 
-        // Pro gate — personalized with A/B variant price
-        var proPrice = window._abPrice || 19;
-        var proPayback = totalSavings > 0 ? Math.ceil(proPrice / totalSavings) : 0;
-        var paybackText = '';
-        if (totalSavings > 0) {
-            if (proPayback <= 1) paybackText = '<div style="color:#34d399;font-weight:600;margin-bottom:0.5rem;">⚡ Pro pays for itself in under 1 day</div>';
-            else if (proPayback <= 30) paybackText = '<div style="color:#34d399;font-weight:600;margin-bottom:0.5rem;">⚡ Pro pays for itself in ' + proPayback + ' day' + (proPayback > 1 ? 's' : '') + '</div>';
-            else paybackText = '<div style="color:#94a3b8;font-size:0.85rem;margin-bottom:0.5rem;">Pro pays for itself in ' + Math.ceil(proPayback / 30) + ' month' + (Math.ceil(proPayback / 30) > 1 ? 's' : '') + '</div>';
-        }
+        // Free tools promotion
         html += `<div class="pro-gate">
-            <h3>Unlock Full Optimization Report</h3>
-            ${paybackText}
+            <h3>Full Optimization Report — Free</h3>
             <p>See batch processing savings, caching opportunities, model routing strategies, and a downloadable PDF report.</p>
             <ul class="pro-features-list">
                 <li>Batch processing recommendations (save 20-50%)</li>
@@ -954,7 +945,7 @@
                 <li>Saved scenarios — compare unlimited configurations</li>
             </ul>
             <div style="margin-bottom:0.5rem;">
-                <span style="font-size:1.5rem;font-weight:700;color:#a78bfa;">$${proPrice}</span>
+                <span style="font-size:1.5rem;font-weight:700;color:#34d399;">FREE</span>
                 <span style="color:#94a3b8;font-size:0.9rem;"> 100% free · no signup required</span>
             </div>
             <a href="index.html#free-tools" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Free Tools →</a>

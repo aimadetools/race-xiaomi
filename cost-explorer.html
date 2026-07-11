@@ -538,14 +538,6 @@
             });
             list.innerHTML = html;
 
-            // Pro gate: show overlay on model list after first render
-            if (!window._explorerGateShown && typeof showProGate === 'function') {
-                window._explorerGateShown = true;
-                setTimeout(function() {
-                    showProGate('.results-section', { showPreview: true });
-                }, 1000);
-            }
-
             // Update URL
             const params = new URLSearchParams();
             params.set('i', inputTokens);

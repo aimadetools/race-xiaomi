@@ -436,14 +436,6 @@
             btn.style.background = 'var(--accent)';
         }, 2000);
         if (window.trackEvent) window.trackEvent('dashboard_snapshot_saved', { model: modelId, cost: cost });
-
-        // Pro gate: after first save, gate the premium dashboard features
-        if (!window._dashboardGateShown && typeof showProGate === 'function') {
-            window._dashboardGateShown = true;
-            setTimeout(function() {
-                showProGate('.history-card', { showPreview: true });
-            }, 1200); // Let user see the "Saved!" feedback first
-        }
     }
 
     function deleteSnapshot(idx) {

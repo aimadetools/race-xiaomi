@@ -460,7 +460,6 @@
     // ========== RENDER MODELS ==========
     function renderModels(gridId, type) {
         const grid = document.getElementById(gridId);
-        const isPro = typeof isProUser === 'function' ? isProUser() : false;
         grid.innerHTML = '';
 
         // Filter to non-deprecated models
@@ -468,9 +467,7 @@
 
         models.forEach(m => {
             const btn = document.createElement('div');
-            const isFree = FREE_MODEL_IDS.has(m.id);
-            const locked = !isFree && !isPro && type === 'target';
-            btn.className = 'model-btn' + (locked ? ' locked' : '');
+            btn.className = 'model-btn';
             btn.dataset.id = m.id;
 
             const provClass = m.providerSlug.replace(/[^a-z]/g, '');
@@ -479,11 +476,6 @@
                 '<div class="m-price">$' + m.input.toFixed(2) + ' / $' + m.output.toFixed(2) + ' per 1M tokens</div>';
 
             btn.addEventListener('click', function() {
-                if (locked) {
-                    // Show Pro upsell
-                    window.location.href = 'pricing.html';
-                    return;
-                }
                 handleModelSelect(type, m.id);
             });
 
@@ -551,23 +543,14 @@
         // Cost comparison
         renderComparison(source, target);
 
-        // Check if this pair requires Pro
-        const isFree = FREE_MODEL_IDS.has(selectedSource) && FREE_MODEL_IDS.has(selectedTarget);
-        const isPro = typeof isProUser === 'function' ? isProUser() : false;
-
-        if (!isFree && !isPro) {
-            // Show gated notice
-            document.getElementById('gated-notice').style.display = '';
-            document.querySelector('.code-section').style.display = 'none';
-        } else {
-            document.getElementById('gated-notice').style.display = 'none';
-            document.querySelector('.code-section').style.display = '';
-            // Generate code
-            generatePythonCode(source, target, srcConfig, tgtConfig);
-            generateNodeCode(source, target, srcConfig, tgtConfig);
-            generateCurlCode(source, target, srcConfig, tgtConfig);
-            generateEnvFile(source, target, srcConfig, tgtConfig);
-        }
+        // All tools are free — always show code
+        document.getElementById('gated-notice').style.display = 'none';
+        document.querySelector('.code-section').style.display = '';
+        // Generate code
+        generatePythonCode(source, target, srcConfig, tgtConfig);
+        generateNodeCode(source, target, srcConfig, tgtConfig);
+        generateCurlCode(source, target, srcConfig, tgtConfig);
+        generateEnvFile(source, target, srcConfig, tgtConfig);
 
         // Track
         if (window.trackEvent) {
