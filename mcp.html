@@ -92,7 +92,7 @@
                 "name": "What's the difference between the MCP server and APIpulse?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The MCP server gives you pricing data in your AI tools. APIpulse ($19 lifetime) adds migration code templates, cost optimization reports, and provider-specific guides for all 67 models."
+                    "text": "The MCP server gives you pricing data in your AI tools. APIpulse (100% free) adds migration code templates, cost optimization reports, and provider-specific guides for all 67 models."
                 }
             }
         ]
@@ -447,7 +447,7 @@
                 <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px">No — it's a hosted HTTP endpoint. Your AI tool needs internet access.</p>
 
                 <p style="font-weight:700;margin-bottom:4px">What about Pro features?</p>
-                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px">The MCP server gives you pricing data. <a href="/audit.html">APIpulse ($19)</a> adds migration code, cost optimization reports, and provider-specific guides.</p>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px">The MCP server gives you pricing data. <a href="/audit.html">APIpulse</a> adds free migration code, cost optimization reports, and provider-specific guides.</p>
             </div>
         </div>
 
@@ -823,7 +823,7 @@
                 if (outputPrice) {
                     titleText = `💡 ${name} costs $${outputPrice}/1M output tokens`;
                     bodyText = `Switching from GPT-4o ($10/1M) to ${name} could save you 80%+ on your API bill. Pro includes copy-paste migration code to switch in 5 minutes.`;
-                    ctaText = 'Get migration code — $19 →';
+                    ctaText = 'Get free migration code →';
                     showSavings = true;
                     savingsTitleText = `Save up to 80% on your AI API bill`;
                     savingsBodyText = `Most developers spending $500+/month on GPT-4o or Claude can cut costs to under $100/month by switching to equivalent budget models. Pro shows you exactly which models match your quality needs.`;
@@ -844,7 +844,7 @@
                     const ratio = price1 < price2 ? (price2/price1).toFixed(1) : (price1/price2).toFixed(1);
                     titleText = `⚡ ${cheaper} is ${ratio}× cheaper than ${expensive}`;
                     bodyText = `Pro gives you migration code to switch providers, plus a full savings report showing all 67 models ranked by cost.`;
-                    ctaText = 'Get full comparison + migration code — $19 →';
+                    ctaText = 'Get full comparison + free migration code →';
                     showSavings = true;
                     savingsTitleText = `${ratio}× price difference between models`;
                     savingsBodyText = `On a $500/month spend, switching to the cheaper model saves you $${Math.round(500 * (1 - 1/ratio))}/month ($${Math.round(500 * (1 - 1/ratio) * 12)}/year). Pro includes the exact migration code.`;
@@ -856,11 +856,11 @@
             if (monthly) {
                 const annual = (monthly * 12).toFixed(0);
                 titleText = `💰 ${model} costs $${typeof monthly === 'number' ? monthly.toFixed(2) : monthly}/month`;
-                bodyText = `That's $${annual}/year. Pro shows you every cheaper alternative and includes migration code — most users save $720+/year.`;
-                ctaText = 'See cheaper alternatives — $19 →';
+                bodyText = `That's $${annual}/year. Free tools show you every cheaper alternative and include migration code — most users save $720+/year.`;
+                ctaText = 'See cheaper alternatives — free →';
                 showSavings = true;
-                savingsTitleText = `$19 Pro pays for itself in days`;
-                savingsBodyText = `At $${typeof monthly === 'number' ? monthly.toFixed(0) : monthly}/month spend, even a 10% optimization saves you $${Math.round(monthly * 0.1 * 12)}/year. That's ${Math.round(monthly * 0.1 * 12 / 19)}× return on your $19 Pro purchase.`;
+                savingsTitleText = `Free tools pay for themselves instantly`;
+                savingsBodyText = `At $${typeof monthly === 'number' ? monthly.toFixed(0) : monthly}/month spend, even a 10% optimization saves you $${Math.round(monthly * 0.1 * 12)}/year. All tools are 100% free.`;
             }
         } else if (tool === 'get_model_details' && data) {
             const deprecated = data.deprecated || data.is_deprecated || data.status === 'deprecated';
@@ -871,21 +871,21 @@
                 bodyText = replacement
                     ? `The recommended replacement is ${replacement}. Pro includes migration code to switch seamlessly.`
                     : `This model may be removed soon. Pro helps you find the best replacement with migration code included.`;
-                ctaText = 'Get migration code — $19 →';
+                ctaText = 'Get free migration code →';
                 showSavings = true;
                 savingsTitleText = 'Don\'t get caught by a model shutdown';
                 savingsBodyText = 'Providers deprecate models with short notice. Pro gives you migration code ready to deploy instantly when the time comes.';
             } else {
                 titleText = `📊 Detailed pricing for ${modelName}`;
                 bodyText = `Pro gives you a complete savings report comparing this model against all 67 alternatives, with migration code for each.`;
-                ctaText = 'Get full savings report — $19 →';
+                ctaText = 'Get free savings report →';
             }
         } else if (tool === 'get_pricing' && data) {
             const models = Array.isArray(data) ? data : (data.models || data.pricing || []);
             const count = models.length || '42';
             titleText = `📊 ${count} models compared — find your savings`;
             bodyText = `Pro ranks all models by cost for your specific use case, with migration code to switch in minutes. Most users save $720+/year.`;
-            ctaText = 'Get personalized savings report — $19 →';
+            ctaText = 'Get free personalized savings report →';
             showSavings = true;
             savingsTitleText = '67 models, 10 providers — one place';
             savingsBodyText = 'The cheapest model for your use case could save you $720-2,400/year. Pro finds it and gives you migration code to switch in minutes.';
