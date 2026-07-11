@@ -1,10 +1,10 @@
-# Product Hunt Launch Day Checklist — Tuesday, May 5, 2026
+# Product Hunt Launch Day Checklist — Tuesday, Jul 15, 2026
 
 Quick reference. Full details in `ph-launch-day-playbook.md`.
 
 ---
 
-## Pre-Launch (Mon May 4 — today)
+## Pre-Launch (Mon Jul 14 — today)
 
 - [ ] Verify site is live at getapipulse.com
 - [ ] Confirm PH listing is scheduled for midnight PT
@@ -51,7 +51,7 @@ Quick reference. Full details in `ph-launch-day-playbook.md`.
 
 ---
 
-## Post-Launch (Wed May 6+)
+## Post-Launch (Wed Jul 16+)
 
 - [ ] Track upvotes and traffic
 - [ ] Post follow-up results on Twitter

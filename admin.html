@@ -135,7 +135,7 @@
         document.getElementById('summary-cards').innerHTML =
             card('Page Views', pageViews, uniquePages + ' unique pages') +
             card('Email Signups', signups, 'across all sources') +
-            card('Pro Clicks', proClicks, 'CTA + popup clicks') +
+            card('CTA Clicks', proClicks, 'CTA + popup clicks') +
             card('Full Reads', scrollFull, '100% scroll depth') +
             card('Engaged (2min+)', time120, 'stayed 120s+');
 
@@ -186,7 +186,7 @@
                 {label: 'launch', count: heroCounts.launch, total: totalHero, cls: 'bar-b'}
             ]) : '<p class="empty">No hero variant assignments yet</p>';
 
-        // --- A/B Email Capture vs Pro CTA Test (Emergency Page) ---
+        // --- A/B Email Capture vs CTA Test (Emergency Page) ---
         // Session 685: Variant B changed from 'email_hidden' to 'pro_cta'
         var emailAbPageViews = events.filter(e => e.name === 'claude4_is_down_page_view');
         var emailAbVisible = emailAbPageViews.filter(e => e.props.email_ab_variant === 'email_visible');
@@ -194,7 +194,7 @@
         var emailAbLegacyHidden = emailAbPageViews.filter(e => e.props.email_ab_variant === 'email_hidden');
         var emailAbUnknown = emailAbPageViews.filter(e => !e.props.email_ab_variant || e.props.email_ab_variant === 'unknown');
 
-        // Pro clicks per variant (on emergency page only)
+        // CTA clicks per variant (on emergency page only)
         var emergencyProClicks = events.filter(e => e.name === 'free_tools_clicked' && e.page === '/claude-4-is-down.html');
         var proClicksVisible = emergencyProClicks.filter(e => e.props.email_ab_variant === 'email_visible');
         var proClicksProCta = emergencyProClicks.filter(e => e.props.email_ab_variant === 'pro_cta');
@@ -215,16 +215,16 @@
             emailAbHtml += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;">';
             emailAbHtml += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span class="variant-tag variant-a">A</span><span style="font-weight:700;">Email Form Visible</span></div>';
             emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">Visitors</div><div style="font-size:28px;font-weight:800;color:#6366f1;">' + emailAbVisible.length + '</div>';
-            emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Pro Clicks</div><div style="font-size:28px;font-weight:800;color:var(--green);">' + proClicksVisible.length + '</div>';
+            emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">CTA Clicks</div><div style="font-size:28px;font-weight:800;color:var(--green);">' + proClicksVisible.length + '</div>';
             emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Conversion Rate</div><div style="font-size:24px;font-weight:800;color:var(--accent);">' + convRateVisible + '%</div>';
             emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Email Signups</div><div style="font-size:20px;font-weight:700;">' + emailSignupsVisible.length + '</div>';
             emailAbHtml += '</div>';
 
-            // Variant B: Pro CTA Replacement
+            // Variant B: CTA Replacement
             emailAbHtml += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;">';
-            emailAbHtml += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span class="variant-tag variant-b">B</span><span style="font-weight:700;">Pro CTA Replacement</span></div>';
+            emailAbHtml += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span class="variant-tag variant-b">B</span><span style="font-weight:700;">CTA Replacement</span></div>';
             emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">Visitors</div><div style="font-size:28px;font-weight:800;color:#22c55e;">' + emailAbProCta.length + '</div>';
-            emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Pro Clicks</div><div style="font-size:28px;font-weight:800;color:var(--green);">' + proClicksProCta.length + '</div>';
+            emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">CTA Clicks</div><div style="font-size:28px;font-weight:800;color:var(--green);">' + proClicksProCta.length + '</div>';
             emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Conversion Rate</div><div style="font-size:24px;font-weight:800;color:var(--accent);">' + convRateProCta + '%</div>';
             emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Email Signups</div><div style="font-size:20px;font-weight:700;">N/A</div>';
             emailAbHtml += '</div>';
@@ -235,7 +235,7 @@
             var diff = parseFloat(convRateProCta) - parseFloat(convRateVisible);
             if (totalEmailAb >= 20) {
                 if (diff > 2) {
-                    emailAbHtml += '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:12px;font-size:14px;"><strong>📈 Early signal:</strong> Pro CTA replacement improves conversions by ' + diff.toFixed(1) + ' percentage points. Consider replacing email form with Pro CTA.</div>';
+                    emailAbHtml += '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:12px;font-size:14px;"><strong>📈 Early signal:</strong> CTA replacement improves conversions by ' + diff.toFixed(1) + ' percentage points. Consider replacing email form with CTA.</div>';
                 } else if (diff < -2) {
                     emailAbHtml += '<div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;padding:12px;font-size:14px;"><strong>📈 Early signal:</strong> Email form improves conversions by ' + Math.abs(diff).toFixed(1) + ' percentage points. Keep the email form.</div>';
                 } else {
@@ -270,7 +270,7 @@
             {name: 'Stayed 120s+', count: time120},
             {name: 'CTA Hover', count: events.filter(e => e.name === 'cta_hover').length},
             {name: 'Email Signup', count: signups},
-            {name: 'Pro Click', count: proClicks}
+            {name: 'CTA Click', count: proClicks}
         ];
         var maxFunnel = Math.max(...funnel.map(f => f.count), 1);
         document.getElementById('funnel-content').innerHTML = '<table><tr><th>Stage</th><th>Count</th><th>% of Views</th><th></th></tr>' +
@@ -311,7 +311,7 @@
             scanHtml += '<div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">Scans Run</div>';
             scanHtml += '<div style="font-size:32px;font-weight:800;color:#22c55e;margin-top:4px;">' + scannerScans + '</div></div>';
             scanHtml += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">';
-            scanHtml += '<div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">Pro Clicks</div>';
+            scanHtml += '<div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">CTA Clicks</div>';
             scanHtml += '<div style="font-size:32px;font-weight:800;color:#f59e0b;margin-top:4px;">' + scannerProTotal + '</div></div>';
             scanHtml += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">';
             scanHtml += '<div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">Scan→Click Rate</div>';
@@ -323,13 +323,13 @@
             scanHtml += '<table><tr><th>Funnel Stage</th><th>Count</th><th>% of Page Views</th><th></th></tr>';
             scanHtml += funnelRow('Page View', scannerPageViews, scannerPageViews, maxScanFunnel);
             scanHtml += funnelRow('Scan Completed', scannerScans, scannerPageViews, maxScanFunnel);
-            scanHtml += funnelRow('Pro CTA Clicked', scannerProTotal, scannerPageViews, maxScanFunnel);
+            scanHtml += funnelRow('CTA Clicked', scannerProTotal, scannerPageViews, maxScanFunnel);
             scanHtml += '</table>';
 
-            // Pro click source breakdown
+            // CTA click source breakdown
             if (scannerProTotal > 0) {
                 scanHtml += '<div style="margin-top:16px;">';
-                scanHtml += '<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text-secondary);">Pro Click Sources</div>';
+                scanHtml += '<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text-secondary);">CTA Click Sources</div>';
                 scanHtml += '<div style="display:flex;gap:16px;flex-wrap:wrap;">';
                 if (scannerEarlyUpsell > 0) scanHtml += '<div style="font-size:13px;"><span style="color:var(--text-muted);">Early Upsell:</span> <strong>' + scannerEarlyUpsell + '</strong></div>';
                 if (scannerInline > 0) scanHtml += '<div style="font-size:13px;"><span style="color:var(--text-muted);">Inline CTA:</span> <strong>' + scannerInline + '</strong></div>';
@@ -370,7 +370,7 @@
 
         document.getElementById('popup-content').innerHTML = '<table><tr><th>Popup Type</th><th>Shown</th><th>Dismissed</th><th>CTA/Signup</th><th>Engagement</th></tr>' +
             popupRow('Deprecation (post-shutdown)', depShown, depDismissed, depCTA) +
-            popupRow('Pro Exit (high-intent)', proShown, proDismissed, 0) +
+            popupRow('CTA Exit (high-intent)', proShown, proDismissed, 0) +
             popupRow('Email Exit (generic)', exitShown, exitDismissed, exitSignup) +
             popupRow('Content Pages (exit intent)', contentExitShown, contentExitDismissed, contentExitCTA) +
             '</table>';

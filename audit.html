@@ -719,9 +719,9 @@
                 <div id="top3-alternatives"></div>
             </div>
 
-            <!-- What you're missing without Pro — cost of inaction -->
+            <!-- What you're missing — cost of inaction -->
             <div style="background:linear-gradient(135deg,rgba(239,68,68,0.06),rgba(249,115,22,0.04));border:1px solid rgba(239,68,68,0.2);border-radius:14px;padding:20px 24px;margin-bottom:20px;">
-                <div style="font-size:13px;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">⚠️ Without Pro, you're stuck with:</div>
+                <div style="font-size:13px;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">⚠️ Without our tools, you're stuck with:</div>
                 <div style="display:flex;flex-direction:column;gap:10px;">
                     <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#94a3b8;">
                         <span style="color:#ef4444;font-size:16px;">✗</span>
@@ -742,7 +742,7 @@
                 </div>
             </div>
 
-            <!-- Pro upsell — gate migration code + monitoring, not model names -->
+            <!-- Upsell — gate migration code + monitoring, not model names -->
             <div class="locked-rec" style="border-color:rgba(34,197,94,0.3);">
                 <div class="lock-label" style="color:#22c55e;">Switch to <span id="locked-model" style="color:#22c55e;">—</span> and start saving</div>
                 <div style="font-size:15px;color:#94a3b8;margin-bottom:16px;line-height:1.6;" id="locked-details">—</div>
@@ -836,7 +836,7 @@
             <!-- Free price alert capture (moved below CTA to avoid competing with buy button) -->
             <div style="background:#111827;border:1px solid #1e293b;border-radius:14px;padding:20px 24px;margin-bottom:20px;text-align:center;">
                 <div style="font-size:13px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Not ready yet? Get free price alerts</div>
-                <p style="font-size:14px;color:#94a3b8;margin-bottom:14px;line-height:1.5;">Get emailed the instant a cheaper model launches for <strong style="color:#f1f5f9;" id="alert-model-name">your use case</strong>. Free forever — no Pro required.</p>
+                <p style="font-size:14px;color:#94a3b8;margin-bottom:14px;line-height:1.5;">Get emailed the instant a cheaper model launches for <strong style="color:#f1f5f9;" id="alert-model-name">your use case</strong>. Free forever.</p>
                 <div style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
                     <input type="email" id="audit-alert-email" placeholder="you@company.com" style="flex:1;padding:12px 14px;background:#0f172a;border:1px solid #334155;border-radius:10px;color:#f1f5f9;font-size:14px;outline:none;">
                     <button onclick="subscribeAuditAlert()" style="padding:12px 20px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;">🔔 Alert me</button>
@@ -863,7 +863,7 @@
 
             <!-- What you get -->
             <div class="features-list">
-                <h4>What's included with Pro:</h4>
+                <h4>What's included — all free:</h4>
                 <div class="feat"><span class="check">✓</span> <strong>Price drop alerts</strong> — instant email when a cheaper model launches for your use case</div>
                 <div class="feat"><span class="check">✓</span> <strong>Cost monitoring dashboard</strong> — track spending trends, spot waste, forecast budgets</div>
                 <div class="feat"><span class="check">✓</span> <strong>Migration code</strong> — Python, Node.js, curl snippets ready to paste for any model switch</div>
@@ -876,7 +876,7 @@
             <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.06));border:2px solid rgba(99,102,241,0.25);border-radius:14px;padding:20px 24px;margin-bottom:20px;">
                 <div style="text-align:center;margin-bottom:14px;">
                     <div style="font-size:11px;font-weight:700;color:#818cf8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">This isn't just a one-time calculator</div>
-                    <div style="font-size:16px;font-weight:800;color:#f1f5f9;">Pro keeps working after you buy</div>
+                    <div style="font-size:16px;font-weight:800;color:#f1f5f9;">Tools keep working for you</div>
                 </div>
                 <div style="display:grid;grid-template-columns:1fr;gap:10px;">
                     <div style="display:flex;align-items:center;gap:12px;background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:12px 14px;">
@@ -1125,7 +1125,7 @@
             document.getElementById('cheapest-annual').textContent = fmtFull(cheapestAnnual);
             document.getElementById('savings-amount').textContent = fmtFull(savingsAnnual);
 
-            // Pro upsell section — show recommendation name + details
+            // Upsell section — show recommendation name + details
             document.getElementById('locked-model').textContent = cheapest.model.name + ' (' + cheapest.model.provider + ')';
             document.getElementById('locked-details').innerHTML =
                 'At <strong style="color:#f1f5f9;">$' + cheapest.model.input + '/M input</strong> · <strong style="color:#f1f5f9;">$' + cheapest.model.output + '/M output</strong>, you\'d pay just <strong style="color:#22c55e;">' + fmt(cheapest.monthlyCost) + '/mo</strong> instead of <strong style="color:#ef4444;">' + fmt(monthlySpend) + '/mo</strong>.';

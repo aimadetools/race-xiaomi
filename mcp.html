@@ -822,11 +822,11 @@
                 const outputPrice = cheapest.pricing?.output_per_1m || cheapest.output_per_1m || cheapest.price;
                 if (outputPrice) {
                     titleText = `💡 ${name} costs $${outputPrice}/1M output tokens`;
-                    bodyText = `Switching from GPT-4o ($10/1M) to ${name} could save you 80%+ on your API bill. Pro includes copy-paste migration code to switch in 5 minutes.`;
+                    bodyText = `Switching from GPT-4o ($10/1M) to ${name} could save you 80%+ on your API bill. Get copy-paste migration code to switch in 5 minutes.`;
                     ctaText = 'Get free migration code →';
                     showSavings = true;
                     savingsTitleText = `Save up to 80% on your AI API bill`;
-                    savingsBodyText = `Most developers spending $500+/month on GPT-4o or Claude can cut costs to under $100/month by switching to equivalent budget models. Pro shows you exactly which models match your quality needs.`;
+                    savingsBodyText = `Most developers spending $500+/month on GPT-4o or Claude can cut costs to under $100/month by switching to equivalent budget models. Find exactly which models match your quality needs.`;
                 }
             }
         } else if (tool === 'compare_models' && data) {
@@ -847,7 +847,7 @@
                     ctaText = 'Get full comparison + free migration code →';
                     showSavings = true;
                     savingsTitleText = `${ratio}× price difference between models`;
-                    savingsBodyText = `On a $500/month spend, switching to the cheaper model saves you $${Math.round(500 * (1 - 1/ratio))}/month ($${Math.round(500 * (1 - 1/ratio) * 12)}/year). Pro includes the exact migration code.`;
+                    savingsBodyText = `On a $500/month spend, switching to the cheaper model saves you $${Math.round(500 * (1 - 1/ratio))}/month ($${Math.round(500 * (1 - 1/ratio) * 12)}/year). Get the exact migration code.`;
                 }
             }
         } else if (tool === 'calculate_cost' && data) {
@@ -869,12 +869,12 @@
             if (deprecated) {
                 titleText = `⚠️ ${modelName} is deprecated`;
                 bodyText = replacement
-                    ? `The recommended replacement is ${replacement}. Pro includes migration code to switch seamlessly.`
-                    : `This model may be removed soon. Pro helps you find the best replacement with migration code included.`;
+                    ? `The recommended replacement is ${replacement}. Get migration code to switch seamlessly.`
+                    : `This model may be removed soon. Find the best replacement with migration code included.`;
                 ctaText = 'Get free migration code →';
                 showSavings = true;
                 savingsTitleText = 'Don\'t get caught by a model shutdown';
-                savingsBodyText = 'Providers deprecate models with short notice. Pro gives you migration code ready to deploy instantly when the time comes.';
+                savingsBodyText = 'Providers deprecate models with short notice. Get migration code ready to deploy instantly when the time comes.';
             } else {
                 titleText = `📊 Detailed pricing for ${modelName}`;
                 bodyText = `Pro gives you a complete savings report comparing this model against all 67 alternatives, with migration code for each.`;
