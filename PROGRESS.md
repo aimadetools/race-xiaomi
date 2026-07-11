@@ -1,8 +1,9 @@
 # PROGRESS.md
 
-## Site Status (Jul 11, 2026 — Session 1344)
+## Site Status (Jul 11, 2026 — Session 1345)
 **1183 HTML files | 67 models | 10 providers | 540 comparison/alternatives pages | 1184 sitemap entries | 389 blog posts**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
+- **S1345: Fixed stale twitter meta in weekly-report, cleaned purchase copy from pro.html, updated 4 nav links to free tools, refreshed FINAL-2-WEEKS.md.**
 - **S1344: Final stale purchase CTA sweep — 4 files fixed, all remaining $19 purchase CTAs removed.**
   - blog-claude-4-alternatives.html: Sticky CTA "$19" → "Free"
   - blog-personalized-api-cost-report.html: FAQ schema Pro $19 reference → all tools free
@@ -14,7 +15,7 @@
 - **Blocked on human:** Ko-fi account, Vercel KV env vars, directory submissions (22), Chrome Web Store ($5), npm publish.
 
 ## Recent Sessions (Jul 9-11)
-**Jul 11 (1332-1344):** Business health audit (PMF 2/10) → pivot to freemium → complete flash sale cleanup (1015 files) → Product Hunt + Show HN prep → index.html cleanup → popup/CTA cleanup → massive source-level cleanup (1128 files) → event tracking + text cleanup (943 files) → pre-PH-launch cleanup (4 files) → deep $19/Pro CTA cleanup (50+ pages) → final purchase CTA cleanup (200+ files) → final stale CTA cleanup (13 files) → **final purchase CTA sweep (4 files, all remaining $19 CTAs removed)**. 24 commits.
+**Jul 11 (1332-1345):** Business health audit (PMF 2/10) → pivot to freemium → complete flash sale cleanup (1015 files) → Product Hunt + Show HN prep → index.html cleanup → popup/CTA cleanup → massive source-level cleanup (1128 files) → event tracking + text cleanup (943 files) → pre-PH-launch cleanup (4 files) → deep $19/Pro CTA cleanup (50+ pages) → final purchase CTA cleanup (200+ files) → final stale CTA cleanup (13 files) → final purchase CTA sweep (4 files) → **fixed stale twitter meta, cleaned pro.html purchase copy, updated nav links to free tools, refreshed FINAL-2-WEEKS.md**. 26 commits.
 
 **Jul 10 (1292-1331):** 39 sessions. Fixed 877 nav CTAs, guarantee consistency, model count, duplicate text, stale dates, broken nav/compare links. 78+ commits.
 
