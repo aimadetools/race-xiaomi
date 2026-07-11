@@ -644,8 +644,6 @@ curl https://api.anthropic.com/v1/messages \<br>
             sessionStorage.setItem('exit_popup_shown', '1');
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Get Your Migration Plan — $' + window._abPrice;
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'what-replaced-claude-4' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

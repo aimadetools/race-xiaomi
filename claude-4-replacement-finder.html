@@ -469,8 +469,8 @@
         if(out) out.addEventListener('input', updateCurrentCost);
         updateCurrentCost();
 
-        var stripeLink = window._abStripeLink || 'audit.html?from=tool_page';
-        var price = window._abPrice || 19;
+        var stripeLink = 'audit.html?from=tool_page';
+        var price = 0;
         var proLink = document.getElementById('pro-cta-link');
         if(proLink) {
             proLink.href = stripeLink;
@@ -606,8 +606,6 @@
             sessionStorage.setItem('exit_popup_shown', '1');
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Free Tools →';
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'replacement_finder' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

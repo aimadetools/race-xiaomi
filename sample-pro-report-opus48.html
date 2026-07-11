@@ -645,15 +645,6 @@ response = client.chat.completions.create(
     </footer>
 
     <script>
-        // A/B pricing
-        (function(){
-            var ab = Math.random() < 0.5 ? 19 : 29;
-            window._abPrice = ab;
-            var el = document.getElementById('pro-price');
-            if(el) el.textContent = '$' + ab;
-            var btn = document.getElementById('pro-cta-btn');
-            if(btn) btn.href = 'go.html?from=sample-report&price=' + ab;
-        })();
 
         // GA4 tracking
         if(typeof gtag === 'function'){
@@ -666,7 +657,7 @@ response = client.chat.completions.create(
                 cta.addEventListener('click', function(){
                     window.trackEvent('sample_report_cta_clicked', {
                         report_type: 'opus48',
-                        price: window._abPrice || 19
+                        price: 0
                     });
                 });
             }

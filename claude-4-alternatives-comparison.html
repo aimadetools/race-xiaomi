@@ -759,8 +759,8 @@ const response = await anthropic.messages.create({
         var stickyBtn = document.getElementById('sticky-cta-btn');
         var hero = document.querySelector('.comp-page') || document.querySelector('.hero');
         if (stickyBar && stickyBtn) {
-            stickyBtn.href = window._abStripeLink || 'audit.html?from=tool_page';
-            var price = window._abPrice || 19;
+            stickyBtn.href = 'audit.html?from=tool_page';
+            var price = 0;
             stickyBtn.textContent = 'Free Tools →';
             var heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400;
             var stickyVisible = false;
@@ -804,8 +804,6 @@ const response = await anthropic.messages.create({
             sessionStorage.setItem('exit_popup_shown', '1');
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Get Your Migration Plan — $' + window._abPrice;
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'alternatives-comparison' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

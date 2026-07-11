@@ -656,14 +656,11 @@
             document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Set Pro CTA link from A/B variant
         document.addEventListener('DOMContentLoaded', function() {
             var proCta = document.getElementById('pro-cta');
-            if (proCta && window._abStripeLink) {
-                proCta.href = window._abStripeLink;
-            }
-            if (proCta && window._abPrice) {
-                proCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
+            if (proCta) {
+                proCta.href = 'audit.html?from=tool_page';
+                proCta.textContent = 'Free Tools →';
             }
         });
 
@@ -698,8 +695,6 @@
             sessionStorage.setItem('exit_popup_shown', '1');
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Get Your Migration Plan — $' + window._abPrice;
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'migration-cost-calculator' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

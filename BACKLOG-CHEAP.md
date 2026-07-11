@@ -10,7 +10,6 @@
 - **Chrome Web Store** — Publish extension ($5).
 
 ### Routine Tasks (for cheap sessions)
-- **Clean dead A/B test code** — 64 files still reference _abPrice/_abStripeLink/_abVariant. Harmless (values set to 0/free) but dead code.
 - **Weekly report refresh** — Update weekly-report.html each Monday.
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
 - **Product Hunt launch** — Docs ready at marketing/product-hunt.md. Human submits draft, publishes Jul 15 12:01 AM PST.

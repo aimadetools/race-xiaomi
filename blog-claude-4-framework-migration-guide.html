@@ -903,9 +903,7 @@ print(response.choices[0].message.content)</code></pre>
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-        var price = window._abPrice || 19;
-        // Update all A/B prices
-        document.querySelectorAll('.fw-ab-price').forEach(function(el) { el.textContent = price; });
+        document.querySelectorAll('.fw-ab-price').forEach(function(el) { el.textContent = 'Free'; });
 
         // Update Stripe links
         // All tools are free — unlock all framework gates
@@ -947,8 +945,6 @@ print(response.choices[0].message.content)</code></pre>
             triggered = true;
             sessionStorage.setItem('exit_popup_shown', '1');
             document.getElementById('exit-popup').style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Free Tools →';
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'framework-migration-guide' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

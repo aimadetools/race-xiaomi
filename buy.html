@@ -21,21 +21,17 @@
     <!-- Buy page tracking -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // Capture UTM/source params for A/B test tracking
         var params = new URLSearchParams(window.location.search);
         var fromParam = params.get('from') || 'direct';
-        var abVariant = params.get('variant') || 'none';
 
-        // Track page view with source
         if (typeof gtag === 'function') {
-          window.trackEvent('buy_page_viewed', {page: 'buy.html', from: fromParam, variant: abVariant});
+          window.trackEvent('buy_page_viewed', {page: 'buy.html', from: fromParam});
         }
 
-        // Track CTA clicks with source
         document.querySelectorAll('.buy-cta').forEach(function(btn, i) {
           btn.addEventListener('click', function() {
             if (typeof gtag === 'function') {
-              window.trackEvent('buy_cta_clicked', {location: i === 0 ? 'top' : 'bottom', price: 19, from: fromParam, variant: abVariant});
+              window.trackEvent('buy_cta_clicked', {location: i === 0 ? 'top' : 'bottom', from: fromParam});
             }
           });
         });

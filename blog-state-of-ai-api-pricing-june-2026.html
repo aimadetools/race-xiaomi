@@ -829,13 +829,6 @@
             tbody.appendChild(tr);
         });
 
-        // Bind A/B Stripe link to Pro CTA
-        if (window._abStripeLink) {
-            document.getElementById('pro-cta-link').href = window._abStripeLink;
-        }
-        if (window._abPrice) {
-            document.getElementById('pro-cta-link').textContent = 'Get Your Migration Plan — $' + window._abPrice;
-        }
     });
     </script>
 
@@ -865,8 +858,6 @@
             sessionStorage.setItem('exit_popup_shown', '1');
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Get Your Migration Plan — $' + window._abPrice;
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'state-of-pricing' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

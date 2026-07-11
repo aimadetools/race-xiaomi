@@ -470,17 +470,13 @@ Content-Type: application/json
     </footer>
 
     <script>
-        // CTA tracking + A/B variant Stripe link
+        // CTA tracking
         (function() {
             var cta = document.getElementById('blog-cta');
-            if (cta && window._abStripeLink) {
-                cta.href = window._abStripeLink;
-            }
             if (cta) {
                 cta.addEventListener('click', function() {
                     window.trackEvent('free_tools_clicked', {
-                        page: 'blog-410-fix',
-                        variant: window._abPriceVariant || 'default'
+                        page: 'blog-410-fix'
                     });
                 });
             }
@@ -518,8 +514,6 @@ Content-Type: application/json
             sessionStorage.setItem('exit_popup_shown', '1');
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Get Your Migration Plan — $' + window._abPrice;
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: '410-error-fix' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

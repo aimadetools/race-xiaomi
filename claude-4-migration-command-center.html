@@ -882,8 +882,8 @@ response = client.chat.completions.create(
 
     // Sticky bottom CTA (appears after scrolling 500px)
     (function() {
-        var price = window._abPrice || 19;
-        var stripeLink = window._abStripeLink || 'audit.html?from=tool_page';
+        var price = 0;
+        var stripeLink = 'audit.html?from=tool_page';
         var sticky = document.createElement('div');
         sticky.id = 'sticky-cta';
         sticky.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1e1b4b,#312e81);padding:12px 20px;display:none;align-items:center;justify-content:center;gap:16px;z-index:9999;border-top:2px solid var(--accent);';

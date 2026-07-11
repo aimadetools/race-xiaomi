@@ -887,14 +887,6 @@
             tbody.appendChild(tr);
         });
 
-        // Bind A/B Stripe link to Pro CTA
-        if (window._abStripeLink) {
-            document.getElementById('pro-cta-link').href = window._abStripeLink;
-        }
-        if (window._abPrice) {
-            document.getElementById('pro-cta-link').textContent = 'Get Your Migration Plan — $' + window._abPrice;
-        }
-
         // GA4 tracking
         if (typeof trackEvent === 'function') {
             trackEvent('blog_post_viewed', {

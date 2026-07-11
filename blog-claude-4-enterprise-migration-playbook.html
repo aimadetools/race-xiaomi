@@ -939,8 +939,6 @@ ai = AIProvider(provider=<span class="code-string">"anthropic"</span>, model=<sp
             triggered = true;
             sessionStorage.setItem('exit_popup_shown', '1');
             document.getElementById('exit-popup').style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Free Tools →';
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'enterprise-migration-playbook' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

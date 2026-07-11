@@ -835,7 +835,7 @@
         document.getElementById('savings-amount').textContent = '$' + savings.toFixed(2) + '/mo';
 
         // Update Pro ROI
-        var price = window._abPrice || 19;
+        var price = 0;
         var proPayback = savings > 0 ? Math.ceil(price / (savings / 30)) : '—';
         var roiEl = document.getElementById('dynamic-pro-roi');
         if (roiEl) {
@@ -847,19 +847,11 @@
     document.getElementById('calc-output').addEventListener('input', updateCalc);
     updateCalc();
 
-    // A/B price display
+    // Track page view
     document.addEventListener('DOMContentLoaded', function() {
-        if (window._abPrice) {
-            document.querySelectorAll('.ab-price-display').forEach(function(el) {
-                el.textContent = '$' + window._abPrice;
-            });
-            // Update Pro button link
-            var proBtn = document.querySelector('.pro-btn');
-            if (proBtn && window._abStripeLink) {
-                proBtn.href = window._abStripeLink;
-            }
-        }
-        // Track page view
+        document.querySelectorAll('.ab-price-display').forEach(function(el) {
+            el.textContent = 'Free';
+        });
         if (window.trackEvent) window.trackEvent('last_chance_page_viewed');
     });
     </script>

@@ -731,7 +731,7 @@
         document.getElementById('result-new-cost').textContent = formatMoney(cheapest.newCost);
 
         // Pro payback in days (using dynamic price)
-        var paybackDays = Math.max(1, Math.ceil((window._abPrice || 19) / (maxSavings / 30)));
+        var paybackDays = Math.max(1, Math.ceil((0) / (maxSavings / 30)));
         document.getElementById('result-payback').textContent =
             paybackDays <= 1 ? '< 1 day' : paybackDays + ' days';
 
@@ -813,8 +813,6 @@
             triggered = true;
             sessionStorage.setItem('exit_popup_shown', '1');
             document.getElementById('exit-popup').style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Free Tools →';
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'migration-advisor' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

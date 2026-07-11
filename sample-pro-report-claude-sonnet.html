@@ -646,10 +646,9 @@ response = client.chat.completions.create(
     </footer>
 
     <script>
-        // A/B pricing
         document.addEventListener('DOMContentLoaded', function() {
-            var price = window._abPrice || 19;
-            document.getElementById('pro-price').textContent = '$' + price;
+            var priceEl = document.getElementById('pro-price');
+            if (priceEl) priceEl.textContent = 'Free';
             document.getElementById('pro-cta-btn').href = 'go.html?from=sample-report-sonnet&savings=210&alts=15';
         });
     </script>

@@ -333,8 +333,8 @@
             <div class="cta-section">
                 <h2>Unlock all 67 models + migration code</h2>
                 <p>Pro gives you cost comparisons across every provider, migration code snippets (Python, Node, curl), PDF reports, price change alerts, and the Cost Monitoring Dashboard. One-time purchase — no subscription.</p>
-                <a href="audit.html?from=switch_save" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'switch_save',cta_variant:window.__ssCtaVariant||'A'})">
-                    Free Tools → (was $49) →
+                <a href="audit.html?from=switch_save" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'switch_save'})">
+                    Free Tools →
                 </a>
                 <p class="cta-trust">⭐ No signup required · 100% free</p>
             </div>
@@ -355,31 +355,8 @@
     </footer>
 
     <script>
-    // A/B test: CTA button text
-    // Variant A: "Show Me The Savings →" (control)
-    // Variant B: "Find Cheaper Alternatives →"
-    (function() {
-        const STORAGE_KEY = 'ss_cta_variant';
-        let variant = localStorage.getItem(STORAGE_KEY);
-        if (!variant) {
-            variant = Math.random() < 0.5 ? 'A' : 'B';
-            localStorage.setItem(STORAGE_KEY, variant);
-        }
-        window.__ssCtaVariant = variant;
-    })();
-
-    // Wait for pricing-data.js to load
     document.addEventListener('DOMContentLoaded', function() {
-        // Apply A/B test variant
-        const btn = document.querySelector('.calculate-btn');
-        if (btn && window.__ssCtaVariant === 'B') {
-            btn.textContent = 'Find Cheaper Alternatives →';
-        }
-
-        // Track page view with variant
-        if (window.trackEvent) window.trackEvent('switch_save_page_viewed', {
-            cta_variant: window.__ssCtaVariant
-        });
+        if (window.trackEvent) window.trackEvent('switch_save_page_viewed');
     });
 
     function calculateSavings() {
@@ -396,11 +373,9 @@
             return;
         }
 
-        // Track the calculation with A/B variant
         if (window.trackEvent) window.trackEvent('switch_save_calculated', {
             provider: provider,
-            monthly_spend: monthlySpend,
-            cta_variant: window.__ssCtaVariant || 'A'
+            monthly_spend: monthlySpend
         });
 
         // Find the most popular (mid-tier) model from the current provider

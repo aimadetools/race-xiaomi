@@ -336,7 +336,7 @@
         var spend = parseInt(document.getElementById('roi-spend').value) || 200;
         var savings = Math.round(spend * 0.30);
         var annual = savings * 12;
-        var price = window._abPrice || 19;
+        var price = 0;
         var paybackMonths = Math.ceil(price / savings);
 
         document.getElementById('roi-current').textContent = '$' + spend.toLocaleString();

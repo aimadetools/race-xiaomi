@@ -736,8 +736,8 @@ Content-Type: application/json
         var stickyBtn = document.getElementById('sticky-cta-btn');
         var heroSection = document.querySelector('.hero');
         if (stickyBar && stickyBtn) {
-            stickyBtn.href = window._abStripeLink || 'audit.html?from=tool_page';
-            var price = window._abPrice || 19;
+            stickyBtn.href = 'audit.html?from=tool_page';
+            var price = 0;
             stickyBtn.textContent = 'Free Tools →';
             var heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 400;
             var stickyVisible = false;

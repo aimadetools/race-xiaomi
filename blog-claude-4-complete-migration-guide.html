@@ -728,19 +728,16 @@ Content-Type: application/json
     </footer>
 
     <script>
-        // Set Pro CTA links from A/B variant
         document.addEventListener('DOMContentLoaded', function() {
             var ctaLinks = document.querySelectorAll('.inline-pro-cta-link');
-            var stripeLink = window._abStripeLink || 'audit.html?from=tool_page';
-            var price = window._abPrice || 19;
+            var stripeLink = 'audit.html?from=tool_page';
             ctaLinks.forEach(function(link) {
                 link.href = stripeLink;
-                link.textContent = 'Get Your Migration Plan — $' + price;
+                link.textContent = 'Free Tools →';
                 link.addEventListener('click', function() {
                     if (window.trackEvent) window.trackEvent('free_tools_clicked', {
                         source: 'blog_complete_guide',
-                        page: 'blog-claude-4-complete-migration-guide',
-                        email_ab_variant: window._emailAbVariant || 'unknown'
+                        page: 'blog-claude-4-complete-migration-guide'
                     });
                 });
             });
@@ -772,8 +769,6 @@ Content-Type: application/json
             sessionStorage.setItem('exit_popup_shown', '1');
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Get Your Migration Plan — $' + window._abPrice;
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'complete-migration-guide' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

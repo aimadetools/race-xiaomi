@@ -663,7 +663,7 @@
         }
 
         function renderEarlyProUpsell(results, frameworkName) {
-            var price = window._abPrice || 19;
+            var price = 0;
             return '<div class="pro-upsell-result" style="margin-bottom:20px;border-color:var(--accent);">' +
                 '<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">' +
                     '<div style="background:var(--accent);color:white;font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px;text-transform:uppercase;">Recommended</div>' +
@@ -785,14 +785,14 @@
                 html += '<div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(99,102,241,0.03));border:1px solid var(--accent);border-radius:12px;padding:20px;margin-top:16px;text-align:center;">' +
                     '<div style="font-size:14px;font-weight:700;margin-bottom:6px;">🔒 ' + (results.critical - 1) + ' more fix' + (results.critical - 1 > 1 ? 'es' : '') + ' locked</div>' +
                     '<div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">The first fix is free. Unlock all replacements + framework-specific migration code.</div>' +
-                    '<a href="#" id="scanner-inline-pro-cta" style="display:inline-block;background:var(--accent);color:white;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">Unlock All Fixes — $' + (window._abPrice || 19) + '</a>' +
+                    '<a href="#" id="scanner-inline-pro-cta" style="display:inline-block;background:var(--accent);color:white;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">Unlock All Fixes — $' + (0) + '</a>' +
                 '</div>';
                 // Bind inline CTA
                 var inlineCta = document.getElementById('scanner-inline-pro-cta');
                 if (inlineCta) {
-                    inlineCta.href = window._abStripeLink || 'audit.html?from=tool_page';
+                    inlineCta.href = 'audit.html?from=tool_page';
                     inlineCta.addEventListener('click', function() {
-                        if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'scanner_inline', page: 'claude-4-migration-scanner', email_ab_variant: window._emailAbVariant || 'unknown' });
+                        if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'scanner_inline', page: 'claude-4-migration-scanner' });
                     });
                 }
             }
@@ -802,7 +802,7 @@
             // Bottom Pro upsell — show if there are critical issues (only if early upsell wasn't shown or user is Pro)
             if (results.critical > 0 && !isPro) {
                 var frameworkName = results.frameworks.length > 0 ? results.frameworks[0].name : 'your framework';
-                var price = window._abPrice || 19;
+                var price = 0;
 
                 var proHtml = '<div class="pro-upsell-result" style="margin-top:24px;">' +
                     '<h3>📋 Complete Migration Package — $' + price + '</h3>' +
@@ -839,7 +839,7 @@
                 // Set CTA link
                 var cta = document.getElementById('scanner-pro-cta');
                 if (cta) {
-                    cta.href = window._abStripeLink || 'audit.html?from=tool_page';
+                    cta.href = 'audit.html?from=tool_page';
                     cta.addEventListener('click', function() {
                         if (window.trackEvent) window.trackEvent('free_tools_clicked', {
                             source: 'migration_scanner',
@@ -895,8 +895,6 @@
             triggered = true;
             sessionStorage.setItem('scanner_exit_popup', '1');
             document.getElementById('exit-popup').style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Unlock All Fixes — $' + window._abPrice;
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'scanner' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) show(); });

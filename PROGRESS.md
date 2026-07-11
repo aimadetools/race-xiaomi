@@ -1,20 +1,20 @@
 # PROGRESS.md
 
-## Site Status (Jul 11, 2026 — Session 1351)
+## Site Status (Jul 11, 2026 — Session 1352)
 **1183 HTML files | 67 models | 10 providers | 540 comparison/alternatives pages | 1184 sitemap entries | 389 blog posts**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1351: Removed remaining purchase CTAs from 5 critical files.**
-  - calculator.html: removed exit popup with "$19 lifetime" CTA, fixed upsell section
-  - pricing.html: removed deprecation banner with "$19 lifetime", fixed ROI calculator, fixed bleeding counter
-  - claude-4-deprecation.html: removed Pro price reference from savings message
-  - api-cost-score.html: changed Pro price display to "Free"
-  - pro.html: removed exit popup purchase CTA, fixed ROI calculator, removed A/B price updater
-  - Created final week help request: npm publish + Ko-fi setup
-- **ZERO active purchase CTAs. ZERO flash sale references. ZERO founding member references. ZERO Pro-tier text. ZERO $49/$19 purchase pricing in any HTML. ZERO Pro gates. ZERO isProUser checks.**
+- **S1352: Cleaned dead A/B test code from 64 files.**
+  - Removed `_abPrice`, `_abStripeLink`, `_abVariant`, `_abPriceVariant`, `_emailAbVariant` variables
+  - Removed A/B pricing IIFE blocks from sample reports and tool pages
+  - Removed CTA button text A/B tests (switch-and-save, model-finder)
+  - Replaced all `$0` price displays with "Free"
+  - Cleaned A/B variant references from event tracking calls
+  - Updated buy.html, cost-optimizer, migration tools, blog posts, comparison pages
+- **ZERO active purchase CTAs. ZERO flash sale references. ZERO A/B test code. ZERO $0 price displays.**
 - **Blocked on human:** npm publish (5 min), Ko-fi account (5 min), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 9-11)
-**Jul 11 (1332-1351):** Pivot to freemium (PMF 2/10) → flash sale cleanup (1015 files) → PH + Show HN prep → massive source-level cleanup (1128 files) → event tracking cleanup (943 files) → deep CTA cleanup (250+ files) → final purchase CTA sweep → **S1346-1349: Final cleanup sweep — founding member badges/JS/text (20 files), Pro user text (53 files), all stale purchase-era references removed** → **S1350: Pro gate + isProUser cleanup (32 files) — all tools now fully free, no gated content** → **S1351: Removed remaining purchase CTAs from 5 critical files (calculator, pricing, deprecation, cost-score, pro)**. 33 commits.
+**Jul 11 (1332-1352):** Pivot to freemium (PMF 2/10) → flash sale cleanup (1015 files) → PH + Show HN prep → massive source-level cleanup (1128 files) → event tracking cleanup (943 files) → deep CTA cleanup (250+ files) → final purchase CTA sweep → **S1346-1349: Final cleanup sweep — founding member badges/JS/text (20 files), Pro user text (53 files), all stale purchase-era references removed** → **S1350: Pro gate + isProUser cleanup (32 files) — all tools now fully free, no gated content** → **S1351: Removed remaining purchase CTAs from 5 critical files** → **S1352: Cleaned dead A/B test code from 64 files — removed _abPrice/_abStripeLink/_abVariant variables, CTA A/B tests, $0→Free price displays**. 34 commits.
 
 **Jul 10 (1292-1331):** 39 sessions. Fixed 877 nav CTAs, guarantee consistency, model count, duplicate text, stale dates, broken nav/compare links. 78+ commits.
 

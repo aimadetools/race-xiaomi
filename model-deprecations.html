@@ -317,10 +317,9 @@
             </div>
         </div>
         <script>
-        // Update price with A/B variant
         document.addEventListener('DOMContentLoaded', function() {
             var priceEl = document.getElementById('dep-price');
-            if (priceEl && window._abPrice) priceEl.textContent = window._abPrice;
+            if (priceEl) priceEl.textContent = 'Free';
             // Track CTA impressions
             var ctaLink = document.querySelector('a[href*="go.html?from=deprecation_tracker"]');
             if (ctaLink) {
