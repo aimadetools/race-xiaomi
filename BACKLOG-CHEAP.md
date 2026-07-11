@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1348-1349: Founding member + Pro user text cleanup — 73 files fixed. 437+ commits.**
+**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1350: Pro gate + isProUser cleanup — 32 files fixed. 438+ commits.**
 
 ### Blocked on Human (Priority Order)
 - **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want option. 5 min.
@@ -15,9 +15,9 @@
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
 - **Product Hunt launch** — Docs ready at marketing/product-hunt.md. Human submits draft, publishes Jul 15 12:01 AM PST.
 
-### Completed (Sessions 416-1347, Apr 23 - Jul 11)
+### Completed (Sessions 416-1350, Apr 23 - Jul 11)
 ✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models
-✅ **S1332-S1349: Pivot to freemium — all flash sale/Pro/purchase/Founding Member CTAs removed across 2600+ files, pricing page rewritten, event tracking cleaned, PH + Show HN prep, weekly report refresh, final stale purchase CTA sweep (9 files), deep purchase CTA sweep (104 files), founding member cleanup (20 files), Pro user text cleanup (53 files)**
+✅ **S1332-S1350: Pivot to freemium — all flash sale/Pro/purchase/Founding Member CTAs removed across 2600+ files, pricing page rewritten, event tracking cleaned, PH + Show HN prep, weekly report refresh, final stale purchase CTA sweep (9 files), deep purchase CTA sweep (104 files), founding member cleanup (20 files), Pro user text cleanup (53 files), Pro gate + isProUser cleanup (32 files) — all tools now fully free, no gated content**
 ✅ All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries
-**435+ commits, 7,800+ files.**
+**438+ commits, 7,800+ files.**
