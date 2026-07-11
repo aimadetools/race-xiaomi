@@ -615,14 +615,14 @@ Content-Type: application/json
                     <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Get personalized optimization recommendations</li>
                     <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Cost alerts when provider prices change</li>
                 </ul>
-                <div class="price"><span id="ab-pro-price">$19</span> <span style="font-size:14px;color:var(--text-muted);font-weight:400;">one-time · lifetime</span></div>
+                <div class="price"><span id="ab-pro-price">Free</span> <span style="font-size:14px;color:var(--text-muted);font-weight:400;">one-time · lifetime</span></div>
                 <!-- Live cost-of-inaction ticker -->
                 <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:12px 16px;margin-bottom:12px;text-align:center;">
                     <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">⏱️ Money leaking since shutdown</div>
                     <div id="cost-ticker-amount" style="font-size:22px;font-weight:800;color:#ef4444;font-variant-numeric:tabular-nums;">$0.00</div>
                     <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">based on $500/mo Claude 4 spend</div>
                 </div>
-                <a href="#" class="cta" id="ab-pro-cta">Get Pro — Lifetime Access</a>
+                <a href="#" class="cta" id="ab-pro-cta">Free Tools →</a>
                 <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">30-day money-back guarantee · No subscription — ever</p>
             </div>
         </section>
@@ -738,7 +738,7 @@ Content-Type: application/json
         if (stickyBar && stickyBtn) {
             stickyBtn.href = window._abStripeLink || 'audit.html?from=tool_page';
             var price = window._abPrice || 19;
-            stickyBtn.textContent = 'Get Pro — $' + price + ' lifetime';
+            stickyBtn.textContent = 'Free Tools →';
             var heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 400;
             var stickyVisible = false;
             window.addEventListener('scroll', function() {

@@ -303,7 +303,7 @@
                 <a href="claude-4-is-down.html" style="color:var(--red);font-weight:700;">🔴 Claude 4 Retired</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-                <a href="audit.html?from=pro_page" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Free Tools →</a>
+                <a href="audit.html?from=pro_page" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
@@ -648,7 +648,7 @@ response = client.chat.completions.create(
         <div class="pro-cta">
             <h2>Get optimization recommendations for your specific usage</h2>
             <p>Pro users get personalized cost optimization tips, saved scenarios, and PDF reports. $19 (monitor + save), lifetime access.</p>
-            <a href="audit.html?from=tool_page" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'command-center'})">Free Tools →</a>
+            <a href="audit.html?from=tool_page" class="btn-primary">Free Tools →</a>
         </div>
 
         <!-- SHARE -->
@@ -717,7 +717,7 @@ response = client.chat.completions.create(
                         <div style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:6px;">This was a snapshot. What about next month?</div>
                         <div style="font-size:13px;color:var(--text-secondary);margin-bottom:14px;line-height:1.5;">Prices change. New models launch. Pro catches what a one-time calculation can't — and saves you money every month.</div>
                         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-                            <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px;box-shadow:0 4px 16px rgba(99,102,241,0.4);" onclick="if(window.trackEvent)window.trackEvent('flash_buy_clicked',{price:19,location:'post_calculator'})">⚡ Get Pro — $19 lifetime</a>
+                            <a href="index.html#free-tools" style="display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px;box-shadow:0 4px 16px rgba(99,102,241,0.4);">Free Tools →</a>
                             <a href="audit.html?from=calculator" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--bg-secondary);border:1px solid #334155;color:#94a3b8;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;" onclick="if(window.trackEvent)window.trackEvent('monitoring_cta_clicked',{source:'post_calculator'})">🔍 Free audit first</a>
                         </div>
                     </div>
@@ -887,8 +887,8 @@ response = client.chat.completions.create(
         var sticky = document.createElement('div');
         sticky.id = 'sticky-cta';
         sticky.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1e1b4b,#312e81);padding:12px 20px;display:none;align-items:center;justify-content:center;gap:16px;z-index:9999;border-top:2px solid var(--accent);';
-        sticky.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">🎯 Claude 4 retired June 15 — get optimization recommendations with Pro</span>' +
-            '<a href="' + stripeLink + '" target="_blank" rel="noopener" style="background:var(--accent);color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky-banner\'})">Get Pro — $' + price + '</a>' +
+        sticky.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">🎯 Claude 4 retired June 15 — get free optimization recommendations</span>' +
+            '<a href="index.html#free-tools" style="background:var(--green);color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;">Free Tools →</a>' +
             '<button onclick="document.getElementById(\'sticky-cta\').style.display=\'none\'" style="background:none;border:none;color:white;cursor:pointer;font-size:18px;padding:0 4px;opacity:0.7;" aria-label="Dismiss">✕</button>';
         document.body.appendChild(sticky);
         window.addEventListener('scroll', function() {

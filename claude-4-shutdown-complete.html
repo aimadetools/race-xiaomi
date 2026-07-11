@@ -140,7 +140,7 @@
                 <a href="compare.html">Compare</a>
                 <a href="blog.html">Blog</a>
                 <a href="about.html">About</a>
-                <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Free Tools →</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
@@ -346,7 +346,7 @@ model = "claude-sonnet-4-6-20260115"</code>
             sessionStorage.setItem('exit_popup_shown', '1');
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Get Pro — $' + window._abPrice;
+            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Free Tools →';
             if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'shutdown_complete' });
         }

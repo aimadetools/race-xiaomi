@@ -430,8 +430,8 @@ print(response.choices[0].message.content)</pre>
                     <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Get personalized optimization recommendations</li>
                     <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Cost alerts when provider prices change</li>
                 </ul>
-                <div class="price"><span id="ab-pro-price">$19</span> <span style="font-size:14px;color:var(--text-muted);font-weight:400;">one-time · lifetime</span></div>
-                <a href="#" class="cta" id="ab-pro-cta">Get Pro — Lifetime Access</a>
+                <div class="price"><span id="ab-pro-price">Free</span> <span style="font-size:14px;color:var(--text-muted);font-weight:400;">one-time · lifetime</span></div>
+                <a href="#" class="cta" id="ab-pro-cta">Free Tools →</a>
                 <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">30-day money-back guarantee · No subscription — ever</p>
             </div>
         </section>
@@ -461,7 +461,7 @@ print(response.choices[0].message.content)</pre>
                     <p>Find the best model for your use case</p>
                 </a>
                 <a href="audit.html?from=gpt5nanovsmistralsmall4" class="related-card">
-                    <h3>🚀 Get Pro</h3>
+                    <h3>🚀 Free Tools</h3>
                     <p>67-model comparison, migration tools, PDF reports</p>
                 </a>
             </div>
@@ -507,7 +507,7 @@ print(response.choices[0].message.content)</pre>
             <button onclick="closeExitPopup()" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;padding:4px 8px;">✕</button>
             <div style="font-size:48px;margin-bottom:12px;">💸</div>
             <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Ultra-budget models compared — now optimize</h2>
-            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.5;">You've compared GPT-5.4 nano vs Mistral Small 4. Get Pro to access migration tools, cost calculators, and optimization guides for all 67 models.</p>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.5;">You've compared GPT-5.4 nano vs Mistral Small 4. Try the free tools to access migration tools, cost calculators, and optimization guides for all 67 models.</p>
             <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
                 <div style="font-size:13px;color:var(--text-muted);">✓ 67 models compared</div>
                 <div style="font-size:13px;color:var(--text-muted);">✓ Migration tools</div>
@@ -526,7 +526,7 @@ print(response.choices[0].message.content)</pre>
             triggered = true;
             sessionStorage.setItem('exit_popup_shown', '1');
             document.getElementById('exit-popup').style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Get Pro — $' + window._abPrice + ' lifetime';
+            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Free Tools →';
             if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'gpt5nano-vs-mistralsmall4' });
         }

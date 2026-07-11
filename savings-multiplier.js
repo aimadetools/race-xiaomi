@@ -5,7 +5,7 @@
 (function() {
     'use strict';
 
-    var STRIPE_LINK = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+    var STRIPE_LINK = 'index.html#free-tools';
     var PRICE = 19;
 
     // Animate a number counting up

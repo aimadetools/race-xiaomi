@@ -11,7 +11,7 @@
 (function() {
     'use strict';
 
-    var STRIPE_LINK = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+    var STRIPE_LINK = 'index.html#free-tools';
     var PRICE = 19;
     var SHOWN_KEY = 'apipulse_savings_cta_dismissed';
     var CALC_KEY = 'apipulse_last_calc';

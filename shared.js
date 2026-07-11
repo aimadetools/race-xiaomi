@@ -34,7 +34,7 @@ window.DEAL_EXPIRED = true;
 window.DEAL_DEADLINE = 0;
 window.DEAL_DAYS_LEFT = 0;
 window._abPrice = 19; // Legacy — kept for pages that reference it
-window._abStripeLink = 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'; // Legacy
+window._abStripeLink = 'index.html#free-tools'; // Redirected — all tools free
 window._abVariant = 'B';
 
 // Pivot (S1333): All tools are free. Rewrite all purchase CTAs to free tools.
