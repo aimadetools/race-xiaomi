@@ -264,29 +264,19 @@
 
             <!-- Trust -->
             <p class="trust">
-                Your Pro access is saved in this browser. Bookmark this site to access your features anytime.<br>
+                All tools are free — no signup required. Bookmark this site to access your features anytime.<br>
                 Questions? Email <a href="mailto:support@getapipulse.com">support@getapipulse.com</a>
             </p>
         </div>
     </main>
 
     <script>
-        // Auto-unlock Pro features on payment confirmation
-        localStorage.setItem('apipulse_pro', 'true');
-        localStorage.setItem('apipulse_pro_date', new Date().toISOString());
+        // Track page visit
+        if (window.trackEvent) window.trackEvent('page_view', { page: 'thank_you' });
 
-        // Track purchase event
-        if (window.trackEvent) window.trackEvent('tools_accessed', {
-            ab_variant: localStorage.getItem('ab_pricing_variant') || 'unknown',
-            price: window._abPrice || 19
-        });
-
-        // GA4 standard ecommerce purchase event — shows in Monetization reports
-        if (window.trackPurchase) {
-            window.trackPurchase(window._abPrice || 19, 'thank_you_page');
-        } else if (typeof gtag === 'function') {
-            window.trackEvent('purchase', {
-                transaction_id: 'txn_' + Date.now(),
+        // GA4 standard page view
+        if (typeof gtag === 'function') {
+            gtag('event', 'page_view', { page_title: 'Thank You' });
                 currency: 'USD',
                 value: window._abPrice || 19,
                 items: [{ item_id: 'apipulse_pro', item_name: 'APIpulse Lifetime', price: window._abPrice || 19, quantity: 1 }]
