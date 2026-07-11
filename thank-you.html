@@ -158,7 +158,7 @@
             <div class="hero">
                 <div class="checkmark">✓</div>
                 <h1>Welcome to APIpulse!</h1>
-                <p class="subtitle">Your payment was successful. You now have <strong>lifetime access</strong> to all Pro features.</p>
+                <p class="subtitle">All tools are <strong>100% free</strong> — no signup, no paywall. Start comparing costs now.</p>
             </div>
 
             <!-- Quick-start: first action -->
@@ -189,10 +189,10 @@
                     <span class="check-label">Get a model recommendation<small>4-step wizard picks the best model for your use case</small></span>
                     <span class="check-link">Open →</span>
                 </a>
-                <a href="pro.html" class="check-item" data-step="save" onclick="completeStep('save')">
+                <a href="pricing-index.html" class="check-item" data-step="save" onclick="completeStep('save')">
                     <span class="check-box" id="check-save"></span>
-                    <span class="check-label">Save a cost scenario<small>Bookmark configurations for side-by-side comparison</small></span>
-                    <span class="check-link">Open Pro →</span>
+                    <span class="check-label">Browse pricing index<small>See all 67 models with prices at a glance</small></span>
+                    <span class="check-link">Open →</span>
                 </a>
                 <a href="migration-code.html" class="check-item" data-step="migration" onclick="completeStep('migration')">
                     <span class="check-box" id="check-migration"></span>
@@ -201,24 +201,24 @@
                 </a>
             </div>
 
-            <!-- Pro features recap -->
+            <!-- Features recap -->
             <div class="features">
-                <h3>What's included with Pro:</h3>
+                <h3>Everything is free — here's what you can do:</h3>
                 <ul style="list-style:none;padding:0;">
-                    <li>Save & compare up to <strong>10 cost scenarios</strong> side by side</li>
-                    <li>Export <strong>professional cost reports</strong> for your team or investors</li>
-                    <li><strong>Personalized optimization tips</strong> — save up to 40% on API costs</li>
+                    <li><strong>Cost calculator</strong> — estimate monthly spend for 67 models across 10 providers</li>
+                    <li><strong>Side-by-side comparison</strong> — compare any two models with winner highlighting</li>
+                    <li><strong>Pricing index</strong> — sortable table of all models and prices</li>
                     <li><strong>Migration code generator</strong> — switch providers with copy-paste code</li>
-                    <li><strong>Cost Efficiency Score</strong> — all alternatives ranked, not just the top 1</li>
-                    <li><strong>Priority email support</strong> & early access to new features</li>
-                    <li><strong>Cost alerts</strong> when pricing changes across providers</li>
+                    <li><strong>Cost Monitoring Dashboard</strong> — spending trends and budget alerts</li>
+                    <li><strong>Price change alerts</strong> — get notified when a model's pricing changes</li>
+                    <li><strong>389 blog posts</strong> — real cost breakdowns and comparison guides</li>
                 </ul>
             </div>
 
             <!-- Action buttons -->
             <div class="actions">
-                <a href="pro.html" class="btn-primary" style="display:inline-block;padding:14px 32px;" onclick="if(window.trackEvent)window.trackEvent('thankyou_cta_clicked',{action:'pro_dashboard'})">Open Pro Dashboard</a>
-                <a href="calculator.html" class="btn-secondary" style="display:inline-block;padding:14px 32px;" onclick="if(window.trackEvent)window.trackEvent('thankyou_cta_clicked',{action:'calculator'})">Try the Calculator</a>
+                <a href="calculator.html" class="btn-primary" style="display:inline-block;padding:14px 32px;" onclick="if(window.trackEvent)window.trackEvent('thankyou_cta_clicked',{action:'calculator'})">Open the Calculator →</a>
+                <a href="compare.html" class="btn-secondary" style="display:inline-block;padding:14px 32px;" onclick="if(window.trackEvent)window.trackEvent('thankyou_cta_clicked',{action:'compare'})">Compare Models</a>
             </div>
 
             <!-- Share / Refer -->
@@ -277,16 +277,10 @@
         // GA4 standard page view
         if (typeof gtag === 'function') {
             gtag('event', 'page_view', { page_title: 'Thank You' });
-                currency: 'USD',
-                value: window._abPrice || 19,
-                items: [{ item_id: 'apipulse_pro', item_name: 'APIpulse Lifetime', price: window._abPrice || 19, quantity: 1 }]
-            });
         }
 
         // Track thank-you page view
         if (window.trackEvent) window.trackEvent('thankyou_page_viewed', {
-            ab_variant: localStorage.getItem('ab_pricing_variant') || 'unknown',
-            price: window._abPrice || 19,
             referrer: document.referrer || 'direct'
         });
 
@@ -337,7 +331,7 @@
         updateChecklistUI();
 
         // === SOCIAL SHARING ===
-        var shareText = 'I just got APIpulse — compare AI API pricing across 67 models and 10 providers. Worth it if you\'re spending on LLM APIs.';
+        var shareText = 'Check out APIpulse — compare AI API pricing across 67 models and 10 providers. 100% free, no signup.';
         var shareUrl = 'https://getapipulse.com';
 
         function shareTwitter() {
@@ -354,7 +348,7 @@
 
         function copyShareLink() {
             var btn = document.getElementById('share-copy');
-            navigator.clipboard.writeText(shareUrl + '?ref=pro-share').then(function() {
+            navigator.clipboard.writeText(shareUrl).then(function() {
                 btn.classList.add('copied');
                 btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
                 setTimeout(function() {
