@@ -12,8 +12,8 @@
 
 ### Routine Tasks (for cheap sessions)
 - **Weekly report refresh** — Update weekly-report.html each Monday.
-- **Post Show HN** — Title: "Show HN: Free AI API pricing comparison for 67 models across 10 providers".
-- **Prepare Product Hunt launch** — Schedule for Tuesday Jul 15.
+- **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
+- **Product Hunt launch** — Docs ready at marketing/product-hunt.md. Human submits draft, publishes Jul 15 12:01 AM PST.
 
 ### Completed (Sessions 416-1334, Apr 23 - Jul 11)
 ✅ Complete site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages
