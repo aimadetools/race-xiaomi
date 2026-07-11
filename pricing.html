@@ -374,18 +374,15 @@
                 </div>
             </div>
             <div id="pricing-bleed-payback" style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Start saving today — <strong style="color:var(--green);">100% free</strong></div>
-            <a href="index.html#free-tools" class="btn-primary" style="display:inline-block;padding:14px 40px;text-align:center;font-size:16px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'pricing_bleeding_counter'})">Stop the Leak — Free Tools →</a>
+            <a href="index.html#free-tools" class="btn-primary" style="display:inline-block;padding:14px 40px;text-align:center;font-size:16px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'pricing_bleeding_counter'})">Explore Free Tools →</a>
             <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">100% free. No signup. No credit card.</div>
         </div>
         <script>
+        // S1351: Bleeding counter simplified — all tools are free
         (function(){
-            var price = window._abPrice || 19;
             var dailyWaste = 3.33; // ~$100/mo average overpay
             var startTime = Date.now();
-            // Update A/B price in counter CTA
-            var bleedPriceEls = document.querySelectorAll('.ab-bleed-price');
-            bleedPriceEls.forEach(function(el){ el.textContent = '$' + price; });
-            // Show counter immediately — urgency from first second
+            // Show counter immediately
             (function(){
                 var el = document.getElementById('pricing-bleeding');
                 if(el) el.style.display = 'block';
@@ -400,15 +397,8 @@
             }
             setInterval(updateBleed, 1000);
             updateBleed();
-            // Dynamic payback text
-            var paybackDays = Math.ceil(price / dailyWaste);
-            var paybackEl = document.getElementById('pricing-bleed-payback');
-            if(paybackEl){
-                if(paybackDays <= 1) paybackEl.innerHTML = 'Your savings in <strong style="color:var(--green);">less than 1 day</strong> of savings';
-                else paybackEl.innerHTML = 'Your savings in <strong style="color:var(--green);">' + paybackDays + ' days</strong> of savings';
-            }
             // Track view
-            if(window.trackEvent) window.trackEvent('pricing_bleeding_counter_shown', {price: price});
+            if(window.trackEvent) window.trackEvent('pricing_bleeding_counter_shown');
         })();
         </script>
 
@@ -887,13 +877,9 @@
         function updateRoi(){
             var spend=parseFloat(document.getElementById('roi-spend').value)||0;
             var savings=Math.round(spend*0.30);
-            var proPrice=window._abPrice||19;
-            var payback=savings>0?Math.ceil(proPrice/savings):0;
             document.getElementById('roi-savings').textContent='$'+savings;
             var paybackEl=document.getElementById('roi-payback');
-            if(payback<=1){paybackEl.textContent='< 1 month';}
-            else if(payback<=12){paybackEl.textContent=payback+' months';}
-            else{paybackEl.textContent='1+ year';}
+            paybackEl.textContent='Instant — it\'s free';
             if(window.trackEvent)window.trackEvent('roi_calculator_used',{monthly_spend:spend});
         }
 
@@ -930,45 +916,13 @@
                 if(a.textContent.includes('$19')) a.textContent = a.textContent.replace(/\$19/g, 'Free');
             });
 
-            // Track CTA clicks with variant
-            document.querySelectorAll('a[href*="stripe"]').forEach(function(a){
-                a.addEventListener('click', function(){
-                    if(window.trackEvent) window.trackEvent('ab_pricing_cta_clicked', {variant: variant, price: price, source: a.closest('.pricing-card') ? 'card' : 'other'});
-                });
-            });
+            // S1351: Removed Stripe link tracking — all tools are free
         })();
 
 
         // Exit popup removed — was causing decision fatigue without converting
 
-        // Show deprecation urgency banner when Claude 4 deadline is near or passed
-        (function(){
-            var deadline = new Date('2026-06-15T00:00:00Z');
-            var now = new Date();
-            var daysLeft = Math.ceil((deadline - now) / 86400000);
-            var el = document.getElementById('deprecation-pricing-urgency');
-            if (!el) return;
-            if (daysLeft > 0 && daysLeft <= 14) {
-                // Pre-deprecation: countdown
-                var daysEl = document.getElementById('deprecation-days-left');
-                if (daysEl) daysEl.textContent = daysLeft <= 1 ? 'TOMORROW' : 'in ' + daysLeft + ' days';
-                el.style.display = 'block';
-                if (window.trackEvent) window.trackEvent('deprecation_pricing_urgency_shown', { days_left: daysLeft });
-            } else if (daysLeft <= 0 && daysLeft > -90) {
-                // Post-deprecation: retired notice
-                var stripeLink = window._abStripeLink || 'index.html#free-tools';
-                var price = window._abPrice || 19;
-                el.innerHTML = '<div style="font-size:32px;margin-bottom:8px;">🔴</div>' +
-                    '<h2 style="font-size:20px;font-weight:800;margin-bottom:8px;color:var(--red);">Claude 4 Was Retired June 15 — Your API Is Failing</h2>' +
-                    '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">It shows you the cheapest replacement for <strong>your exact workload</strong> — most devs save 67-97%. Pay once, use forever.</p>' +
-                    '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">' +
-                    '<a href="' + stripeLink + '" style="display:inline-block;background:var(--accent);color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;" target="_blank" rel="noopener">Stop Losing Money — $' + price + ' lifetime</a>' +
-                    '<a href="claude-4-migration-checklist.html" style="display:inline-block;background:transparent;color:var(--text-primary);padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid var(--border);">Print checklist →</a>' +
-                    '</div>';
-                el.style.display = 'block';
-                if (window.trackEvent) window.trackEvent('deprecation_pricing_urgency_shown', { post_shutdown: true });
-            }
-        })();
+        // S1351: Removed deprecation urgency banner — all tools are free, no purchase CTAs
     </script>
 
     <footer>

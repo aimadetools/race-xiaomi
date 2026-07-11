@@ -771,19 +771,11 @@ curl https://api.anthropic.com/v1/messages \
         document.getElementById('result-deepseek').textContent = '$' + deepseekCost.toFixed(2) + '/mo';
         document.getElementById('result-savings').textContent = '$' + (oldCost - deepseekCost).toFixed(2) + '/mo';
 
-        // Dynamic Pro ROI message
+        // S1351: Dynamic savings message — all tools are free
         var savings = oldCost - deepseekCost;
-        var proPrice = window._abPrice || 19;
         var roiEl = document.getElementById('dynamic-pro-roi');
         if (roiEl && savings > 0) {
-            var paybackDays = Math.ceil(proPrice / savings * 30);
-            if (paybackDays <= 1) {
-                roiEl.textContent = 'Your migration saves $' + savings.toFixed(0) + '/mo — Pro pays for itself in under a day';
-            } else if (paybackDays <= 30) {
-                roiEl.textContent = 'Your migration saves $' + savings.toFixed(0) + '/mo — Pro ($' + proPrice + ') pays for itself in ' + paybackDays + ' days';
-            } else {
-                roiEl.textContent = 'Your migration saves $' + savings.toFixed(0) + '/mo — that\'s $' + (savings * 12).toFixed(0) + '/year';
-            }
+            roiEl.textContent = 'Your migration saves $' + savings.toFixed(0) + '/mo — that\'s $' + (savings * 12).toFixed(0) + '/year';
         }
 
         if (window.trackEvent) window.trackEvent('deprecation_calculator_used', { input_m: inputM, output_m: outputM });

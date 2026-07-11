@@ -469,28 +469,16 @@
             document.getElementById('monthly-total').textContent = '$' + (inputCost + outputCost).toFixed(2);
         }
 
-        // ROI Calculator — shows payback period for Pro
+        // S1351: ROI Calculator — shows savings (all tools are free)
         function updateROI() {
             var spend = parseInt(document.getElementById('roi-spend').value) || 200;
-            var price = window._abPrice || 19;
             var savingsRate = 0.40; // 40% avg savings
             var monthlySavings = Math.round(spend * savingsRate);
-            var paybackDays = Math.ceil(price / (monthlySavings / 30));
-            var annualSavings = monthlySavings * 12 - price;
+            var annualSavings = monthlySavings * 12;
             document.getElementById('roi-savings').textContent = '$' + monthlySavings.toLocaleString();
-            document.getElementById('roi-payback').textContent = paybackDays <= 1 ? 'Same day' : paybackDays + ' days';
-            var msg;
-            if (paybackDays <= 1) {
-                msg = 'Pro pays for itself on day one. That\'s $' + annualSavings.toLocaleString() + '/yr back in your pocket.';
-            } else if (paybackDays <= 7) {
-                msg = 'Pro pays for itself in ' + paybackDays + ' days. That\'s $' + annualSavings.toLocaleString() + '/yr back in your pocket.';
-            } else if (paybackDays <= 30) {
-                msg = 'Pro pays for itself in ' + paybackDays + ' days. That\'s $' + annualSavings.toLocaleString() + '/yr back in your pocket.';
-            } else {
-                msg = 'At $' + monthlySavings + '/mo savings, Pro pays for itself in ' + paybackDays + ' days.';
-            }
-            document.getElementById('roi-message').textContent = msg;
-            if (window.trackEvent) window.trackEvent('roi_calculator_used', { spend: spend, monthly_savings: monthlySavings, payback_days: paybackDays });
+            document.getElementById('roi-payback').textContent = 'Instant — it\'s free';
+            document.getElementById('roi-message').textContent = 'All tools are free. That\'s $' + annualSavings.toLocaleString() + '/yr in savings with zero cost.';
+            if (window.trackEvent) window.trackEvent('roi_calculator_used', { spend: spend, monthly_savings: monthlySavings });
         }
         // Initialize ROI on load
         document.addEventListener('DOMContentLoaded', updateROI);
@@ -518,20 +506,10 @@
         }
     </script>
     <script>
-    // Update Pro page prices to match A/B variant
+    // S1351: All tools are free — no price updates needed
     document.addEventListener('DOMContentLoaded', function() {
-        var price = window._abPrice || 19;
         var priceText = document.getElementById('pro-price-text');
-        if (priceText) priceText.textContent = '$' + price;
-        // Update Product schema
-        var schema = document.getElementById('pro-schema');
-        if (schema) {
-            try {
-                var data = JSON.parse(schema.textContent);
-                data.offers.price = price + '.00';
-                schema.textContent = JSON.stringify(data, null, 4);
-            } catch(e) {}
-        }
+        if (priceText) priceText.textContent = 'Free';
     });
     </script>
     <!-- Exit Intent Popup -->
@@ -559,8 +537,6 @@
             triggered = true;
             sessionStorage.setItem('exit_popup_shown', '1');
             document.getElementById('exit-popup').style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Stop the Leak — $' + window._abPrice + ' lifetime';
-            if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'pro' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });

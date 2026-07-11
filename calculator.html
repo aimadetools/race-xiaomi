@@ -940,15 +940,14 @@
                     window._bleedingStartMs = window._bleedingStartMs || Date.now();
                     bleedingEl.style.display = 'block';
                     document.getElementById('bleeding-rate').innerHTML = '$' + dailyWaste.toFixed(2) + '<span style="font-size:12px;font-weight:600;">/day</span>';
-                    // Payback calculation
-                    var price = window._abPrice || 19;
-                    var paybackDays = dailyWaste > 0 ? Math.ceil(price / dailyWaste) : 999;
-                    document.getElementById('bleeding-payback').textContent = paybackDays <= 1 ? 'less than 1 day' : paybackDays + ' days';
-                    // Update CTA with A/B variant link and price
+                    // S1351: All tools are free — show savings without purchase CTA
+                    var paybackDays = dailyWaste > 0 ? Math.ceil(0 / dailyWaste) : 999;
+                    document.getElementById('bleeding-payback').textContent = 'Instant — it\'s free';
+                    // Update CTA to free tools
                     var bleedingCta = document.getElementById('bleeding-cta-btn');
                     if (bleedingCta) {
-                        bleedingCta.href = window._abStripeLink || 'audit.html?from=tool_page';
-                        bleedingCta.textContent = 'Stop the Bleeding — $' + price;
+                        bleedingCta.href = 'index.html#free-tools';
+                        bleedingCta.textContent = 'Explore Free Tools →';
                     }
                     // Start counter if not already running
                     if (!window._bleedingInterval) {
@@ -1013,7 +1012,7 @@
                     var annualSavingsEl = document.getElementById('upsell-annual-savings');
                     var annualWasteEl = document.getElementById('upsell-annual-waste');
                     var proMultiplierEl = document.getElementById('upsell-pro-multiplier');
-                    var price = window._abPrice || 19;
+                    // S1351: All tools are free — no purchase price
                     var savings = totalCost - cheapestCost;
                     var annualSavings = savings * 12;
                     var efficiency = (cheapestCost / totalCost * 100);
@@ -1026,14 +1025,13 @@
                     if (gradeTextEl) gradeTextEl.textContent = gradeLetter;
                     if (annualSavingsEl) annualSavingsEl.textContent = '$' + annualSavings.toFixed(0) + '/year';
                     if (annualWasteEl) annualWasteEl.textContent = '$' + annualSavings.toFixed(0) + '/year';
-                    if (proMultiplierEl) proMultiplierEl.textContent = (annualSavings / price).toFixed(0) + 'x';
+                    if (proMultiplierEl) proMultiplierEl.textContent = savings > 0 ? Math.round(annualSavings / 10) + 'x' : '—';
                     if (paybackEl) {
-                        var months = savings > 0 ? Math.ceil(price / savings) : 0;
-                        paybackEl.textContent = months <= 1 ? 'Less than 1 month' : months + ' months';
+                        paybackEl.textContent = 'Instant — it\'s free';
                     }
                     if (ctaBtn) {
-                        ctaBtn.textContent = 'Stop the Leak — $' + price + ' One-Time';
-                        ctaBtn.href = window._abStripeLink || 'audit.html?from=tool_page';
+                        ctaBtn.textContent = 'Explore Free Tools →';
+                        ctaBtn.href = 'index.html#free-tools';
                     }
                 }
             }
@@ -1067,7 +1065,7 @@
                 }
                 if (gateIndicator) {
                     if (remaining <= 0) {
-                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="index.html#free-tools" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Free Tools →</a> or <a href="pricing.html" style="color:var(--text-muted);text-decoration:underline;">buy $' + (window._abPrice || 19) + '</a>';
+                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="index.html#free-tools" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Free Tools →</a>';
                     } else if (remaining <= 2) {
                         gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left — <a href="index.html#free-tools" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Free Tools →</a>';
                     }
@@ -1229,45 +1227,7 @@
     </script>
     <script>document.addEventListener('DOMContentLoaded', function() { renderPricingFreshness('pricing-freshness'); });</script>
 
-    // Exit popup for calculator — shows personalized savings with efficiency score
-    (function(){
-        var shown=false;
-        var price=window._abPrice||19;
-        var stripeLink=window._abStripeLink||'audit.html?from=tool_page';
-        document.addEventListener('mouseleave',function(e){
-            if(shown||e.clientY>0)return;
-            // Only show if user has done a calculation
-            var upsell=document.getElementById('pro-upsell');
-            if(!upsell||upsell.style.display==='none')return;
-            shown=true;
-            var spendEl=document.getElementById('upsell-spend');
-            var wasteEl=document.getElementById('upsell-annual-waste');
-            var gradeEl=document.getElementById('upsell-grade-text');
-            var spendText=spendEl?spendEl.textContent:'$0';
-            var wasteText=wasteEl?wasteEl.textContent:'$0/year';
-            var gradeText=gradeEl?gradeEl.textContent:'C';
-            var overlay=document.createElement('div');
-            overlay.id='calc-exit-popup';
-            overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;';
-            overlay.innerHTML='<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;text-align:center;margin:20px;">' +
-                '<div style="font-size:40px;margin-bottom:12px;">⚠️</div>' +
-                '<h3 style="font-size:22px;margin-bottom:8px;">Your Cost Efficiency: <span style="color:var(--accent);">'+gradeText+'</span></h3>' +
-                '<p style="color:var(--text-secondary);margin-bottom:12px;">You\'re spending <strong>'+spendText+'/month</strong> on AI APIs.</p>' +
-                '<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;padding:12px;margin-bottom:16px;font-size:16px;font-weight:700;color:var(--red);">Wasting '+wasteText+'</div>' +
-                '<p style="color:var(--text-secondary);margin-bottom:20px;font-size:14px;">Pro shows you exactly which models to use and how to optimize your stack. One-time $'+price+' — pays for itself in weeks.</p>' +
-                '<a href="'+stripeLink+'" id="calc-exit-cta" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;" target="_blank" rel="noopener">Stop the Leak — $'+price+' lifetime</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">No signup required · <a href="#" onclick="document.getElementById(\'calc-exit-popup\').remove();return false;" style="color:var(--text-muted);">No thanks, I\'ll keep overpaying</a></p>' +
-                '</div>';
-            overlay.addEventListener('click',function(ev){
-                if(ev.target===overlay)overlay.remove();
-            });
-            document.body.appendChild(overlay);
-            document.getElementById('calc-exit-cta').addEventListener('click',function(){
-                if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'exit_popup_calculator',variant:window._abVariant,price:price,timing_variant:window._abPopupTimingVariant});
-            });
-            if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'calculator',variant:window._abVariant,timing_variant:window._abPopupTimingVariant});
-        });
-    })();
+    // S1351: Removed exit popup — all tools are free, no purchase CTAs
     </script>
     <script>
     function calcEmailSubscribe() {

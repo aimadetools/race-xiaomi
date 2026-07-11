@@ -814,10 +814,9 @@
         document.getElementById('tweet-btn').href = tweetUrl;
         document.getElementById('linkedin-btn').href = linkedinUrl;
 
-        // Pro CTA with savings context
+        // S1351: Free tools CTA — all tools are free
         document.getElementById('pro-cta-btn').href = 'go.html?from=cost-score&savings=' + Math.round(effectiveCost - cheapest.cost) + '&alts=' + alternatives.length;
-        var proPrice = window._abPrice || 19;
-        document.getElementById('pro-price').textContent = '$' + proPrice;
+        document.getElementById('pro-price').textContent = 'Free';
 
         // Show results
         document.getElementById('quiz-card').style.display = 'none';
