@@ -53,12 +53,6 @@
                 "name": "Free",
                 "price": "0",
                 "priceCurrency": "USD"
-            },
-            {
-                "@type": "Offer",
-                "name": "Pro",
-                "price": "19",
-                "priceCurrency": "USD"
             }
         ]
     }
@@ -89,7 +83,7 @@
                 "name": "What do I get with the free tools?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "All tools are now free — full 67-model cost comparison, migration code snippets, PDF report export, 10 saved scenarios, and ongoing monitoring features — Cost Monitoring Dashboard with spending trends and budget alerts, unlimited price change alerts (free is limited to 3 models), weekly pricing report with PDF export, and lifetime updates as new models launch. No payment required."
+                    "text": "All tools are free — full 67-model cost comparison, migration code snippets, PDF report export, 10 saved scenarios, Cost Monitoring Dashboard with spending trends and budget alerts, unlimited price change alerts, weekly pricing report with PDF export, and lifetime updates as new models launch. No signup, no credit card, no catch."
                 }
             },
             {
@@ -105,7 +99,7 @@
                 "name": "Is APIpulse free to use?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes! The cost calculator, provider comparison table, and all blog content are completely free. You can also try the Cost Monitoring Dashboard and set up to 3 price change alerts for free. All 67 models are now free, migration code, PDF export, unlimited price alerts, and full monitoring features — but the core tools are free forever."
+                    "text": "Yes! Every tool is 100% free — the cost calculator, provider comparison table, Cost Monitoring Dashboard, unlimited price alerts, weekly reports, migration code, PDF export, and all 389 blog posts. No signup, no credit card, no catch."
                 }
             },
             {
@@ -476,7 +470,7 @@
                 <a href="pipeline.html">Pipeline</a>
                 <a href="model-switch.html">Switch</a>
                 <a href="cost-scenarios.html">Scenarios</a>
-                <a href="pricing.html">Pricing</a>
+                <a href="index.html#free-tools">Free Tools</a>
                 <a href="use-cases.html">Use Cases</a>
                 <a href="industry-guides.html">Industry</a>
                 <a href="about.html">About</a>
@@ -515,34 +509,13 @@
         if (localStorage.getItem('apipulse_whats_new_dismissed')) return;
         var banner = document.getElementById('whats-new-banner');
         if (!banner) return;
-        // Session 877: Post-expiry — switch banner messaging
-        if (window.DEAL_EXPIRED) {
-            var txt = document.getElementById('whats-new-text');
-            if (txt) {
-                txt.innerHTML = '<strong style="color:#6366f1;">📊 APIpulse Pro:</strong> <a href="audit.html" style="color:#6366f1;font-weight:700;text-decoration:none;">Free Tools →</a>';
-            }
-            banner.style.background = 'linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,247,0.06))';
-            banner.style.borderBottom = '1px solid rgba(99,102,241,0.2)';
+        var txt = document.getElementById('whats-new-text');
+        if (txt) {
+            txt.innerHTML = '<strong style="color:#22c55e;">📊 All tools free:</strong> <a href="index.html#free-tools" style="color:#22c55e;font-weight:700;text-decoration:none;">Explore Free Tools →</a>';
         }
+        banner.style.background = 'linear-gradient(135deg,rgba(34,197,94,0.08),rgba(22,163,74,0.06))';
+        banner.style.borderBottom = '1px solid rgba(34,197,94,0.2)';
         banner.style.display = 'block';
-    })();
-    </script>
-    <script>
-    (function(){
-        var deadline = new Date('2026-07-12T23:59:59Z').getTime();
-        function update(){
-            var el = document.getElementById('hero-countdown');
-            if(!el) return;
-            var diff = deadline - Date.now();
-            if(diff <= 0){ el.textContent = 'EXPIRED'; return; }
-            var d = Math.floor(diff / 86400000);
-            var h = Math.floor((diff % 86400000) / 3600000);
-            var m = Math.floor((diff % 3600000) / 60000);
-            var s = Math.floor((diff % 60000) / 1000);
-            el.textContent = (d > 0 ? d + 'd ' : '') + h + 'h ' + m + 'm ' + s + 's left';
-        }
-        update();
-        setInterval(update, 1000);
     })();
     </script>
 
@@ -900,7 +873,7 @@
     })();
     </script>
 
-    <!-- Pro Demo Section — Try Before You Buy -->
+    <!-- Demo Section — Try Before You Buy -->
     <section style="max-width:900px;margin:0 auto;padding:40px 24px;">
         <div style="background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.06));border:1px solid rgba(99,102,241,0.25);border-radius:16px;padding:40px 32px;text-align:center;position:relative;overflow:hidden;">
             <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(99,102,241,0.15),transparent);border-radius:50%;"></div>
@@ -1890,7 +1863,7 @@
 
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
-        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="support.html" style="color:#ef4444;font-weight:700;">❤️ Support</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="ai-model-deprecation-tracker.html">Deprecation Tracker</a> &middot; <a href="wall-of-love.html">Testimonials</a> &middot; <a href="chrome-extension.html">Chrome Extension</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="compare-plans.html">Free vs Pro</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="budget-planner.html">Budget Planner</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="switch-and-save.html">Switch & Save</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="support.html" style="color:#ef4444;font-weight:700;">❤️ Support</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="ai-model-deprecation-tracker.html">Deprecation Tracker</a> &middot; <a href="wall-of-love.html">Testimonials</a> &middot; <a href="chrome-extension.html">Chrome Extension</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="index.html#free-tools">Free Tools</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="budget-planner.html">Budget Planner</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="switch-and-save.html">Switch & Save</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
     </footer>
 
     <script>
@@ -2020,11 +1993,9 @@
                 }
                 if (gateIndicator) {
                     if (remaining <= 0) {
-                        var gateLink = !window.DEAL_EXPIRED ? 'audit.html?from=gate_limit' : 'pricing.html';
-                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="' + gateLink + '" style="color:var(--accent);text-decoration:underline;">Get unlimited with Pro</a>';
+                        gateIndicator.innerHTML = '<span style="color:var(--green);font-weight:600;">✨ All tools are free!</span> — <a href="index.html#free-tools" style="color:var(--green);text-decoration:underline;">Explore Free Tools →</a>';
                     } else if (remaining <= 2) {
-                        var gateLink = !window.DEAL_EXPIRED ? 'audit.html?from=gate_remaining' : 'pricing.html';
-                        gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left this session — <a href="' + gateLink + '" style="color:var(--accent);text-decoration:underline;">Get unlimited →</a>';
+                        gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left this session — <a href="index.html#free-tools" style="color:var(--green);text-decoration:underline;">All tools are free →</a>';
                     }
                 }
                 if (hitLimit) {
@@ -2177,18 +2148,13 @@
             sessionStorage.setItem('exit_popup_shown', '1');
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Stop the Leak — $' + window._abPrice + ' lifetime';
-            // S1333: All tools are free
-            if (!window.DEAL_EXPIRED) {
-                document.getElementById('exit-popup-cta').href = 'audit.html?from=exit_popup';
-            } else if (window._abStripeLink) {
-                document.getElementById('exit-popup-cta').href = window._abStripeLink;
-            }
+            document.getElementById('exit-popup-cta').textContent = 'Explore Free Tools →';
+            document.getElementById('exit-popup-cta').href = 'index.html#free-tools';
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'index' });
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });
         document.getElementById('exit-popup-cta').addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', page: 'index' });
+            if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'exit_popup', page: 'index' });
         });
         document.getElementById('exit-popup').addEventListener('click', function(e) { if (e.target === this) closeExitPopup(); });
     })();
