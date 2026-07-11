@@ -12,52 +12,11 @@
   - shared.js: updated blog upsell comment, removed Pro check
   - ab-test.js, cost-tracker.js: updated stale Pro comments
   - 4 files changed, 23 insertions, 71 deletions
-- **S1339: Complete event tracking and text cleanup — removed ALL remaining Pro/flash sale event names and text across 943 files.**
-  - Replaced 761 pro_button_clicked events with free_tools_clicked
-  - Replaced 9 pro_cta_clicked and 5 flash_buy_clicked events with free_tools_clicked
-  - Updated all other stale event names (pro_access_granted, pro_trial_started, founding_member_seen, etc.)
-  - Replaced 661 'APIpulse Pro' references with 'APIpulse'
-  - Replaced 'Unlock Pro' and 'Get Pro' button text with 'Free Tools'
-  - Updated $19 pricing references in CTAs and descriptions
-  - Updated analytics.js checkout/purchase tracking (now tracks free tool engagement)
-  - Rewrote savings-cta.js to promote free tools instead of $19 Pro
-  - Updated API email templates (stripe-webhook.js, restore-access.js, send-drip.js)
-  - Updated funnel.html and admin.html analytics tracking
-  - 943 files changed, zero Pro/flash sale references remain in event tracking or UI text
-- **S1338: Massive source-level cleanup — removed ALL remaining Stripe links, Get Pro text, and flash sale references across 1128 files.**
-  - Replaced 990 buy.stripe.com URLs with index.html#free-tools in raw HTML
-  - Removed target=_blank rel=noopener from internal links
-  - Replaced all 'Get Pro — $19' button text with 'Free Tools →'
-  - Fixed exit popup CTAs, sticky banners, and JS dynamically-generated text
-  - Removed flash_buy_clicked and pro_button_clicked onclick handlers
-  - Fixed 'APIpulse Pro ($19)' descriptions to 'free' messaging
-  - Cleaned up savings-cta.js and savings-multiplier.js Stripe references
-  - Updated shared.js legacy _abStripeLink to redirect to free tools
-  - Updated ph.html: 67 models, removed Pro pricing, all tools free
-  - Zero Stripe, Pro pricing, or flash sale references remain in HTML source
-  - 3 commits, 1130 files changed
-- **S1337: Complete flash sale popup/CTA cleanup — removed all remaining Pro upsell popups and CTAs.**
-  - Rewrote api/subscribe.js welcome email: replaced $19 flash sale banner + Stripe CTA with free tools messaging
-  - Rewrote deprecation exit popup in shared.js: was $19 urgency popup with Stripe, now promotes free tools
-  - Rewrote high-intent Pro exit popup in shared.js: was $19 lifetime upsell with A/B variants, now free tools
-  - Fixed generic email popup hint text: removed "with Pro" reference
-  - Rewrote sticky Pro CTA bar: was flash sale bar with Stripe link, now free tools bar
-  - Disabled Pro feature gate: was gating ranking tables behind paywall, now shows all rows free
-  - Fixed blog Pro upsell: was $19 upgrade CTA, now free tools link
-  - Rewrote results-cta.js: was Pro conversion widget with Stripe links, now free tools widget
-  - Fixed pro-features.js: removed Stripe links and $19 pricing from trial banners
-- **S1336: Final index.html cleanup — removed all remaining Pro/flash sale references.**
-- **S1334: Complete flash sale cleanup — 1015 files changed.**
-  - Rewrote deal.html as free tools landing page (was flash sale page)
-  - Rewrote go.html as free tools redirect (was Stripe checkout)
-  - Converted flash-19.html, flash-9.html, flash-sale.html to free tools redirects
-  - Updated shared.js: ALL nav CTAs rewritten to "Free Tools →" pointing to index.html#free-tools
-  - Expanded shared.js urgency text replacement, hides flash sale boxes
-  - Bulk replaced flash sale nav CTAs across 737+ HTML files
-  - Fixed all inline flash sale sections, countdown timers, urgency text
-  - Updated index.html: removed all $19 purchase CTAs, fixed FAQ structured data
-  - Updated pro.html: removed flash sale meta tags and CTAs
-  - All Stripe links now route to free tools via shared.js
+- **S1339: Event tracking + text cleanup — 943 files, all Pro/flash sale event names and UI text replaced.** Zero stale references remain.
+- **S1338: Massive source-level cleanup — 1128 files, ZERO Stripe/Pro/flash sale references in HTML source.** 3 commits.
+- **S1337: Complete popup/CTA cleanup — rewrote all Pro upsell popups, exit popups, sticky bars, blog CTAs.**
+- **S1336: Final index.html cleanup.**
+- **S1334: Complete flash sale cleanup — 1015 files, all purchase CTAs removed, deal/flash pages → free tools.**
 - **S1333: Pivot implementation — removed flash sale urgency, disabled pro gates, made all tools free.**
 - **Blocked on human:** Ko-fi account, Vercel KV env vars, directory submissions (22), Chrome Web Store ($5), npm publish.
 - **Root cause (confirmed):** PMF 2/10. OpenRouter does same thing free. Pivot to freemium + affiliate model.
