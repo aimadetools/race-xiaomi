@@ -128,7 +128,7 @@
         var pageViews = events.filter(e => e.name === 'page_view').length;
         var uniquePages = new Set(events.filter(e => e.name === 'page_view').map(e => e.props.page_path)).size;
         var signups = events.filter(e => e.name === 'email_signup' || e.name === 'email_subscribe' || e.name === 'exit_popup_signup').length;
-        var proClicks = events.filter(e => e.name === 'pro_button_clicked' || e.name === 'deprecation_popup_cta_clicked').length;
+        var proClicks = events.filter(e => e.name === 'free_tools_clicked' || e.name === 'deprecation_popup_cta_clicked').length;
         var scrollFull = events.filter(e => e.name === 'scroll_depth' && e.props.depth === 100).length;
         var time120 = events.filter(e => e.name === 'time_on_page' && e.props.seconds === 120).length;
 
@@ -195,7 +195,7 @@
         var emailAbUnknown = emailAbPageViews.filter(e => !e.props.email_ab_variant || e.props.email_ab_variant === 'unknown');
 
         // Pro clicks per variant (on emergency page only)
-        var emergencyProClicks = events.filter(e => e.name === 'pro_button_clicked' && e.page === '/claude-4-is-down.html');
+        var emergencyProClicks = events.filter(e => e.name === 'free_tools_clicked' && e.page === '/claude-4-is-down.html');
         var proClicksVisible = emergencyProClicks.filter(e => e.props.email_ab_variant === 'email_visible');
         var proClicksProCta = emergencyProClicks.filter(e => e.props.email_ab_variant === 'pro_cta');
         var proClicksLegacyHidden = emergencyProClicks.filter(e => e.props.email_ab_variant === 'email_hidden');
@@ -283,7 +283,7 @@
         // --- Scanner Funnel ---
         var scannerPageViews = events.filter(e => e.name === 'migration_scanner_page_view').length;
         var scannerScans = events.filter(e => e.name === 'migration_scan_completed').length;
-        var scannerProClicks = events.filter(e => e.name === 'pro_button_clicked' &&
+        var scannerProClicks = events.filter(e => e.name === 'free_tools_clicked' &&
             (e.props.source === 'scanner_early_upsell' || e.props.source === 'scanner_inline' || e.props.source === 'migration_scanner'));
         var scannerProTotal = scannerProClicks.length;
 
@@ -366,7 +366,7 @@
         // Content page exit popups (Session 703+)
         var contentExitShown = events.filter(e => e.name === 'exit_popup_shown').length;
         var contentExitDismissed = events.filter(e => e.name === 'exit_popup_dismissed' && e.props && e.props.page).length;
-        var contentExitCTA = events.filter(e => e.name === 'pro_button_clicked' && e.props && e.props.source === 'exit_popup').length;
+        var contentExitCTA = events.filter(e => e.name === 'free_tools_clicked' && e.props && e.props.source === 'exit_popup').length;
 
         document.getElementById('popup-content').innerHTML = '<table><tr><th>Popup Type</th><th>Shown</th><th>Dismissed</th><th>CTA/Signup</th><th>Engagement</th></tr>' +
             popupRow('Deprecation (post-shutdown)', depShown, depDismissed, depCTA) +

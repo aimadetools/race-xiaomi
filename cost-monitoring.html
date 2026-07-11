@@ -61,7 +61,7 @@
                 "name": "Is the cost monitoring dashboard free?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes — basic cost logging, spending charts, and model breakdowns are completely free. Pro features like CSV export, price change alerts, and the savings estimator are included with APIpulse Pro ($19 lifetime)."
+                    "text": "Yes — basic cost logging, spending charts, and model breakdowns are completely free. Pro features like CSV export, price change alerts, and the savings estimator are included with APIpulse ($19 lifetime)."
                 }
             },
             {
@@ -475,10 +475,10 @@
         <!-- Pro Upsell Banner (hidden for Pro users) -->
         <div class="pro-banner" id="pro-upsell-banner">
             <div class="text">
-                <h3>🚀 Unlock Pro Monitoring</h3>
+                <h3>🚀 Free Monitoring Tools</h3>
                 <p>CSV exports, budget alerts, price change detection, and unlimited history — all free with Pro.</p>
             </div>
-            <a href="/audit.html?from=cost_monitoring" class="btn-pro" onclick="if(window.trackEvent) trackEvent('pro_banner_clicked', {source:'cost_monitoring'})">Free Tools →</a>
+            <a href="/audit.html?from=cost_monitoring" class="btn-pro" onclick="if(window.trackEvent) trackEvent('free_tools_clicked', {source:'cost_monitoring'})">Free Tools →</a>
         </div>
 
         <!-- Summary Stats -->
@@ -785,7 +785,7 @@
             if (userIsPro) renderSavingsEstimator();
             // Track gate impressions for non-Pro users
             if (!userIsPro && typeof gtag === 'function') {
-                window.trackEvent('pro_gate_impressed', { page: 'cost_monitoring' });
+                window.trackEvent('feature_shown', { page: 'cost_monitoring' });
             }
         }
         applyProGating();

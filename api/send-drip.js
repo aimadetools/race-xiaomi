@@ -5,7 +5,7 @@
 // Drip sequence:
 //   Day 0: Welcome email (sent by subscribe.js)
 //   Day 2: "5 Tips to Cut Your AI API Bill" — value-add
-//   Day 7: "Unlock Pro Features" — conversion
+//   Day 7: "All tools are free" — engagement
 //   Day 14: "What's New at APIpulse" — re-engagement
 //
 // Uses Vercel KV (Upstash Redis) when KV_REST_API_URL is set
@@ -137,39 +137,28 @@ const DRIP_TEMPLATES = {
   },
 
   day7: {
-    subject: 'Your APIpulse Pro preview (before everyone else)',
+    subject: 'All APIpulse tools are free — here\'s what you can do',
     html: `
 <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:20px;background:#0f172a;color:#e2e8f0;">
-  <h1 style="color:#818cf8;font-size:22px;margin-bottom:16px;">Your APIpulse Pro preview</h1>
+  <h1 style="color:#818cf8;font-size:22px;margin-bottom:16px;">All tools are free</h1>
   <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">
-    You've been using APIpulse for a week now. Here's what Pro unlocks
-    if you're doing regular cost planning:
+    You've been using APIpulse for a week now. Good news: all tools are free — no signup required.
   </p>
 
   <div style="background:#1e293b;border-radius:8px;padding:20px;margin:20px 0;">
-    <h2 style="color:#818cf8;font-size:17px;margin-bottom:12px;">What you get for $49 (one-time)</h2>
+    <h2 style="color:#818cf8;font-size:17px;margin-bottom:12px;">What's available (free)</h2>
     <ul style="padding-left:20px;line-height:2;">
-      <li><strong style="color:#22c55e;">Saved scenarios</strong> — compare up to 10 configurations side-by-side</li>
-      <li><strong style="color:#22c55e;">Export cost reports</strong> — PDF-ready reports for your team or budget meetings</li>
-      <li><strong style="color:#22c55e;">Optimization recommendations</strong> — personalized tips based on your usage patterns</li>
-      <li><strong style="color:#22c55e;">Priority email support</strong> — get answers within 24 hours</li>
+      <li><strong style="color:#22c55e;">Cost Calculator</strong> — 67 models across 10 providers</li>
+      <li><strong style="color:#22c55e;">Compare Two Models</strong> — side-by-side cost analysis</li>
+      <li><strong style="color:#22c55e;">Pricing Index</strong> — sortable table of all models</li>
+      <li><strong style="color:#22c55e;">Cost Monitoring Dashboard</strong> — spending trends and budget alerts</li>
+      <li><strong style="color:#22c55e;">Price Alerts</strong> — get notified when prices change</li>
+      <li><strong style="color:#22c55e;">389 Blog Posts</strong> — detailed model comparisons</li>
     </ul>
-    <p style="font-size:13px;color:#94a3b8;margin-top:12px;">
-      No subscription. No recurring fees. Pay once, use forever.
-    </p>
   </div>
 
-  <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">
-    Quick math: if Pro helps you save just 10% on a $500/month API bill,
-    it pays for itself in the first week.
-  </p>
-
   <p style="text-align:center;margin:24px 0;">
-    <a href="https://getapipulse.com/pricing.html" style="background:#818cf8;color:#0f172a;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;">See Pro Features</a>
-  </p>
-
-  <p style="font-size:14px;color:#94a3b8;text-align:center;margin-top:8px;">
-    Not ready yet? No worries. The free calculator keeps working forever.
+    <a href="https://getapipulse.com/index.html#free-tools" style="background:#818cf8;color:#0f172a;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;">Explore Free Tools</a>
   </p>
 
   <hr style="border:none;border-top:1px solid #334155;margin:24px 0;">

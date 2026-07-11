@@ -101,60 +101,33 @@ async function sendPurchaseEmail(email, accessCode, amount) {
             body: JSON.stringify({
                 from,
                 to: [email],
-                subject: 'Your APIpulse Pro Access Code',
+                subject: 'Welcome to APIpulse — All Tools Free',
                 html: `
 <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:20px;background:#0f172a;color:#e2e8f0;">
-  <h1 style="color:#818cf8;font-size:24px;margin-bottom:16px;">Welcome to APIpulse Pro! 🎉</h1>
+  <h1 style="color:#818cf8;font-size:24px;margin-bottom:16px;">Welcome to APIpulse! 🎉</h1>
   <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">
-    Thanks for your purchase of <strong>$${amount}</strong>. Your Pro access is ready.
+    Thanks for your support! All APIpulse tools are now free — no signup required.
   </p>
 
-  <div style="background:#1e293b;border-radius:12px;padding:24px;margin:24px 0;text-align:center;">
-    <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin-bottom:8px;">Your Access Code</div>
-    <div style="font-size:28px;font-weight:800;color:#22c55e;font-family:monospace;letter-spacing:2px;padding:12px;background:rgba(34,197,94,0.1);border-radius:8px;border:2px dashed rgba(34,197,94,0.3);">
-      ${accessCode}
-    </div>
-    <p style="font-size:13px;color:#94a3b8;margin-top:12px;">
-      Save this code — you'll need it if you ever need to restore access.
-    </p>
-  </div>
-
   <div style="background:#1e293b;border-radius:8px;padding:20px;margin:20px 0;">
-    <h2 style="color:#818cf8;font-size:17px;margin-bottom:12px;">How to activate Pro</h2>
-    <ol style="padding-left:20px;line-height:2;">
-      <li>Go to <a href="https://getapipulse.com/pro.html" style="color:#818cf8;">getapipulse.com/pro.html</a></li>
-      <li>Click "Already have a code? Enter it here"</li>
-      <li>Paste your access code above</li>
-      <li>Pro features are now unlocked!</li>
-    </ol>
-    <p style="font-size:13px;color:#94a3b8;margin-top:12px;">
-      Your access is also saved in this browser automatically.
-      If you clear your browser data, use the code above to restore access.
-    </p>
-  </div>
-
-  <div style="background:#1e293b;border-radius:8px;padding:20px;margin:20px 0;">
-    <h2 style="color:#818cf8;font-size:17px;margin-bottom:12px;">What's included</h2>
+    <h2 style="color:#818cf8;font-size:17px;margin-bottom:12px;">What's included (free)</h2>
     <ul style="padding-left:20px;line-height:2;">
-      <li><strong style="color:#22c55e;">Saved scenarios</strong> — compare up to 10 configurations side-by-side</li>
-      <li><strong style="color:#22c55e;">Export cost reports</strong> — professional reports for your team or investors</li>
-      <li><strong style="color:#22c55e;">Optimization tips</strong> — personalized recommendations to save 20-40%</li>
-      <li><strong style="color:#22c55e;">Cost Efficiency Score</strong> — all alternatives ranked</li>
-      <li><strong style="color:#22c55e;">Priority support</strong> — email support for any questions</li>
+      <li><strong style="color:#22c55e;">Cost Calculator</strong> — 67 models across 10 providers</li>
+      <li><strong style="color:#22c55e;">Compare Two Models</strong> — side-by-side cost analysis</li>
+      <li><strong style="color:#22c55e;">Pricing Index</strong> — sortable table of all models</li>
+      <li><strong style="color:#22c55e;">Cost Monitoring Dashboard</strong> — spending trends and budget alerts</li>
+      <li><strong style="color:#22c55e;">Price Alerts</strong> — get notified when prices change</li>
+      <li><strong style="color:#22c55e;">Weekly Reports</strong> — pricing digest with PDF export</li>
+      <li><strong style="color:#22c55e;">389 Blog Posts</strong> — detailed model comparisons</li>
     </ul>
   </div>
 
   <p style="text-align:center;margin:24px 0;">
-    <a href="https://getapipulse.com/pro.html" style="background:#818cf8;color:#0f172a;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;">Open Pro Dashboard →</a>
+    <a href="https://getapipulse.com/index.html#free-tools" style="background:#818cf8;color:#0f172a;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;">Explore Free Tools →</a>
   </p>
 
   <p style="font-size:14px;color:#94a3b8;margin-top:16px;">
     Questions? Reply to this email or visit <a href="https://getapipulse.com/about.html" style="color:#818cf8;">our about page</a>.
-  </p>
-
-  <hr style="border:none;border-top:1px solid #334155;margin:24px 0;">
-  <p style="font-size:12px;color:#64748b;">
-    You're receiving this because you purchased APIpulse Pro at getapipulse.com.
   </p>
 </div>`
             })

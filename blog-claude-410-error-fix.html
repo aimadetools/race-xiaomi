@@ -459,7 +459,7 @@ Content-Type: application/json
             <h3>🎯 API Cost Score</h3>
             <p>Rate your API setup — get a letter grade in 30 seconds</p>
         </a>
-                <a href="audit.html?from=blog_post">Pro</a>
+                <a href="index.html#free-tools">Free Tools</a>
         <a href="api-cost-score.html" class="related-card">
             <h3>🎯 API Cost Score</h3>
             <p>Rate your API setup — get a letter grade in 30 seconds</p>
@@ -478,7 +478,7 @@ Content-Type: application/json
             }
             if (cta) {
                 cta.addEventListener('click', function() {
-                    window.trackEvent('pro_cta_clicked', {
+                    window.trackEvent('free_tools_clicked', {
                         page: 'blog-410-fix',
                         variant: window._abPriceVariant || 'default'
                     });
@@ -524,7 +524,7 @@ Content-Type: application/json
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });
         document.getElementById('exit-popup-cta').addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', page: '410-error-fix' });
+            if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'exit_popup', page: '410-error-fix' });
         });
         document.getElementById('exit-popup').addEventListener('click', function(e) { if (e.target === this) closeExitPopup(); });
     })();

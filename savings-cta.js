@@ -1,4 +1,4 @@
-// savings-cta.js — Personalized Pro conversion widget
+// savings-cta.js — Free tools promotion widget
 // Shows a contextual savings message based on the current page's calculator results
 // Include on any page with a calculator: <script src="savings-cta.js" defer></script>
 //
@@ -11,8 +11,6 @@
 (function() {
     'use strict';
 
-    var STRIPE_LINK = 'index.html#free-tools';
-    var PRICE = 19;
     var SHOWN_KEY = 'apipulse_savings_cta_dismissed';
     var CALC_KEY = 'apipulse_last_calc';
 
@@ -69,20 +67,11 @@
         return '$' + Math.round(amount).toLocaleString();
     }
 
-    function calculatePayback(savings) {
-        if (savings <= 0) return 'today';
-        var days = Math.ceil(PRICE / (savings / 365));
-        if (days <= 1) return 'in 1 day';
-        if (days <= 7) return 'in ' + days + ' days';
-        return 'in ' + Math.ceil(days / 7) + ' weeks';
-    }
-
     function injectCTA(data) {
         // Don't inject if already exists
         if (document.getElementById('savings-cta-bar')) return;
 
         var annualSavings = data.savings;
-        var payback = calculatePayback(annualSavings);
         var formatted = formatSavings(annualSavings);
 
         var bar = document.createElement('div');
@@ -95,11 +84,11 @@
                     '<div style="font-size:28px;">💰</div>' +
                     '<div>' +
                         '<div style="font-size:15px;font-weight:700;color:#e2e8f0;">You could save <span style="color:#22c55e;font-family:monospace;font-size:18px;">' + formatted + '/yr</span> by switching</div>' +
-                        '<div style="font-size:12px;color:#94a3b8;margin-top:2px;">$19 Pro pays for itself ' + payback + ' — 30-day refund guaranteed</div>' +
+                        '<div style="font-size:12px;color:#94a3b8;margin-top:2px;">Explore all 67 models and find the best fit — 100% free</div>' +
                     '</div>' +
                 '</div>' +
                 '<div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">' +
-                    '<a href="' + STRIPE_LINK + '" target="_blank" rel="noopener" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none;white-space:nowrap;box-shadow:0 4px 12px rgba(34,197,94,0.3);" onclick="if(typeof gtag===\'function\')gtag(\'event\',\'pro_button_clicked\',{source:\'savings_cta\'});">⚡ Get Pro — $19</a>' +
+                    '<a href="index.html#free-tools" style="display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:800;text-decoration:none;white-space:nowrap;box-shadow:0 4px 12px rgba(34,197,94,0.3);" onclick="if(window.trackEvent)window.trackEvent(\'free_tools_clicked\',{source:\'savings_cta\'});">Free Tools →</a>' +
                     '<button onclick="dismissSavingsCTA()" style="background:none;border:none;color:#64748b;cursor:pointer;font-size:18px;padding:4px 8px;" aria-label="Close">✕</button>' +
                 '</div>' +
             '</div>';
@@ -165,7 +154,7 @@
         // Try to get savings data
         var data = getSavingsData();
 
-        if (data && data.savings >= 12) { // Only show if savings > $12/yr (makes $19 seem worth it)
+        if (data && data.savings >= 12) { // Only show if savings > $12/yr
             // Show after user has had time to read results
             setTimeout(function() { injectCTA(data); }, 3000);
         }

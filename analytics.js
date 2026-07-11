@@ -82,51 +82,21 @@ window.trackEvent = logEvent;
 
 // 4. GA4 Ecommerce helpers — standard events for Monetization reports
 // Usage: trackBeginCheckout(price, source) / trackPurchase(price, source)
+// Note: All tools are now free. These track engagement events, not actual purchases.
 
 function trackBeginCheckout(price, source) {
-    price = price || window._abPrice || 19;
     source = source || location.pathname;
-    // GA4 standard ecommerce event
-    if (typeof gtag === 'function') {
-        gtag('event', 'begin_checkout', {
-            currency: 'USD',
-            value: price,
-            items: [{
-                item_id: 'apipulse_pro',
-                item_name: 'APIpulse Pro Lifetime',
-                price: price,
-                quantity: 1
-            }],
-            source: source
-        });
-    }
-    // Also log to our custom events
-    logEvent('begin_checkout', { value: price, currency: 'USD', source: source });
+    // Track engagement with free tools
+    logEvent('begin_checkout', { value: 0, currency: 'USD', source: source });
 }
 
 function trackPurchase(price, source, transactionId) {
-    price = price || window._abPrice || 19;
     source = source || 'thank_you_page';
     transactionId = transactionId || 'txn_' + Date.now();
-    // GA4 standard ecommerce event
-    if (typeof gtag === 'function') {
-        gtag('event', 'purchase', {
-            transaction_id: transactionId,
-            currency: 'USD',
-            value: price,
-            items: [{
-                item_id: 'apipulse_pro',
-                item_name: 'APIpulse Pro Lifetime',
-                price: price,
-                quantity: 1
-            }],
-            source: source
-        });
-    }
-    // Also log to our custom events
+    // Track free tool access
     logEvent('purchase', {
         transaction_id: transactionId,
-        value: price,
+        value: 0,
         currency: 'USD',
         source: source
     });

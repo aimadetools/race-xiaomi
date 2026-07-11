@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to APIpulse Pro!</title>
+    <title>Welcome to APIpulse!</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
@@ -157,7 +157,7 @@
             <!-- Hero -->
             <div class="hero">
                 <div class="checkmark">✓</div>
-                <h1>Welcome to APIpulse Pro!</h1>
+                <h1>Welcome to APIpulse!</h1>
                 <p class="subtitle">Your payment was successful. You now have <strong>lifetime access</strong> to all Pro features.</p>
             </div>
 
@@ -276,7 +276,7 @@
         localStorage.setItem('apipulse_pro_date', new Date().toISOString());
 
         // Track purchase event
-        if (window.trackEvent) window.trackEvent('pro_purchase_completed', {
+        if (window.trackEvent) window.trackEvent('tools_accessed', {
             ab_variant: localStorage.getItem('ab_pricing_variant') || 'unknown',
             price: window._abPrice || 19
         });
@@ -289,7 +289,7 @@
                 transaction_id: 'txn_' + Date.now(),
                 currency: 'USD',
                 value: window._abPrice || 19,
-                items: [{ item_id: 'apipulse_pro', item_name: 'APIpulse Pro Lifetime', price: window._abPrice || 19, quantity: 1 }]
+                items: [{ item_id: 'apipulse_pro', item_name: 'APIpulse Lifetime', price: window._abPrice || 19, quantity: 1 }]
             });
         }
 
@@ -347,7 +347,7 @@
         updateChecklistUI();
 
         // === SOCIAL SHARING ===
-        var shareText = 'I just got APIpulse Pro — compare AI API pricing across 67 models and 10 providers. Worth it if you\'re spending on LLM APIs.';
+        var shareText = 'I just got APIpulse — compare AI API pricing across 67 models and 10 providers. Worth it if you\'re spending on LLM APIs.';
         var shareUrl = 'https://getapipulse.com';
 
         function shareTwitter() {

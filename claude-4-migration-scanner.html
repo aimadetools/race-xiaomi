@@ -435,7 +435,7 @@
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="blog.html">Blog</a>
-                <a href="audit.html?from=pro_page">Pro</a>
+                <a href="index.html#free-tools">Free Tools</a>
             </div>
             <p class="footer-copy">© 2026 APIpulse · <a href="mailto:support@getapipulse.com">support@getapipulse.com</a> · <a href="price-alerts.html" style="color:var(--accent);">🔔 Price Alerts</a></p>
         </div>
@@ -745,7 +745,7 @@
                 if (cta) {
                     cta.href = window._abStripeLink || 'audit.html?from=tool_page';
                     cta.addEventListener('click', function() {
-                        if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'scanner_early_upsell', page: 'claude-4-migration-scanner', email_ab_variant: window._emailAbVariant || 'unknown' });
+                        if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'scanner_early_upsell', page: 'claude-4-migration-scanner', email_ab_variant: window._emailAbVariant || 'unknown' });
                     });
                 }
             }
@@ -775,7 +775,7 @@
                         '</div>';
                     } else {
                         fixHtml = '<div class="finding-code">' +
-                            '<span class="locked">🔒 Unlock Pro to see the exact replacement code</span>' +
+                            '<span class="locked">🔒 Free Tools — see the exact replacement code</span>' +
                         '</div>';
                     }
                 }
@@ -805,7 +805,7 @@
                 if (inlineCta) {
                     inlineCta.href = window._abStripeLink || 'audit.html?from=tool_page';
                     inlineCta.addEventListener('click', function() {
-                        if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'scanner_inline', page: 'claude-4-migration-scanner', email_ab_variant: window._emailAbVariant || 'unknown' });
+                        if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'scanner_inline', page: 'claude-4-migration-scanner', email_ab_variant: window._emailAbVariant || 'unknown' });
                     });
                 }
             }
@@ -854,7 +854,7 @@
                 if (cta) {
                     cta.href = window._abStripeLink || 'audit.html?from=tool_page';
                     cta.addEventListener('click', function() {
-                        if (window.trackEvent) window.trackEvent('pro_button_clicked', {
+                        if (window.trackEvent) window.trackEvent('free_tools_clicked', {
                             source: 'migration_scanner',
                             findings: results.findings.length,
                             critical: results.critical,
@@ -914,7 +914,7 @@
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) show(); });
         document.getElementById('exit-popup-cta').addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'scanner_exit_popup' });
+            if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'scanner_exit_popup' });
         });
         document.getElementById('exit-popup').addEventListener('click', function(e) {
             if (e.target === this) this.style.display = 'none';

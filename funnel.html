@@ -190,19 +190,19 @@
                         <br><code>Step 1:</code> Event: <code>page_view</code> (all pages)
                         <br><code>Step 2:</code> Event: <code>calculator_used</code> OR <code>model_switch_calculated</code> OR <code>pipeline_calculated</code> OR <code>budget_planner_complete</code> OR <code>agent_calc_calculated</code> OR <code>cost_optimizer_used</code>
                         <br><code>Step 3:</code> Event: <code>pricing_page_viewed</code>
-                        <br><code>Step 4:</code> Event: <code>pro_button_clicked</code>
-                        <br><code>Step 5:</code> Event: <code>pro_purchase_completed</code>
+                        <br><code>Step 4:</code> Event: <code>free_tools_clicked</code>
+                        <br><code>Step 5:</code> Event: <code>tools_accessed</code>
                     </li>
-                    <li>Add <strong>Segment comparisons</strong>: by <code>source</code> parameter on pro_button_clicked (nav, blog_post, calculator_upsell, sticky_bar, exit_popup_pricing)</li>
+                    <li>Add <strong>Segment comparisons</strong>: by <code>source</code> parameter on free_tools_clicked (nav, blog_post, calculator_upsell, sticky_bar, exit_popup_pricing)</li>
                     <li>Add <strong>Breakdown</strong>: <code>Event parameter → variant</code> for A/B test analysis</li>
                     <li>Set date range to <strong>Last 30 days</strong> for meaningful data</li>
                 </ol>
                 <h3 style="margin-top:20px;">Key Metrics to Track in GA4:</h3>
                 <ol>
-                    <li><strong>Calculator → Pro Click rate</strong> — Are calculators driving upgrades?</li>
-                    <li><strong>Pro Click → Purchase rate</strong> — Is the Stripe flow converting?</li>
+                    <li><strong>Calculator → Free Tools Click rate</strong> — Are calculators driving engagement?</li>
+                    <li><strong>Free Tools Click → Usage rate</strong> — Are users exploring more tools?</li>
                     <li><strong>Exit popup variant performance</strong> — Which A/B variant wins?</li>
-                    <li><strong>Top pro_button_clicked sources</strong> — Which CTAs are most effective?</li>
+                    <li><strong>Top free_tools_clicked sources</strong> — Which CTAs are most effective?</li>
                     <li><strong>Cost optimizer → Pro conversion</strong> — Does personalized savings drive upgrades?</li>
                 </ol>
             </div>
@@ -284,7 +284,7 @@
             var calcEvents = filteredEvents.filter(function(e) {
                 return ['calculator_used','model_switch_calculated','pipeline_calculated','budget_planner_complete','agent_calc_calculated','cost_optimizer_used'].indexOf(e.name) >= 0;
             }).length;
-            var proClicks = countEvents('pro_button_clicked');
+            var proClicks = countEvents('free_tools_clicked');
             var purchases = countEvents('pro_purchase_completed');
 
             var steps = [
@@ -322,7 +322,7 @@
             var pageViews = filteredEvents.filter(function(e) { return e.name === 'page_view'; }).length;
             var uniquePages = {};
             filteredEvents.filter(function(e) { return e.name === 'page_view'; }).forEach(function(e) { uniquePages[e.page] = true; });
-            var proClicks = countEvents('pro_button_clicked');
+            var proClicks = countEvents('free_tools_clicked');
             var purchases = countEvents('pro_purchase_completed');
             var exitShown = countEvents('exit_popup_variant_shown');
             var exitSignup = countEvents('exit_popup_signup');
@@ -386,7 +386,7 @@
 
         function renderProSources() {
             var tbody = document.querySelector('#pro-source-table tbody');
-            var proClicks = filteredEvents.filter(function(e) { return e.name === 'pro_button_clicked'; });
+            var proClicks = filteredEvents.filter(function(e) { return e.name === 'free_tools_clicked'; });
             var sources = {};
             proClicks.forEach(function(e) {
                 var src = (e.props || {}).source || 'unknown';

@@ -752,7 +752,7 @@ response = client.chat.completions.create(
         <div class="cta-box">
             <h2>Get Your Personalized Migration Plan</h2>
             <p>Tell us your current model and monthly usage — Pro shows you the exact model, provider, and cost for YOUR workload. Includes PDF cost report and migration checklist.</p>
-            <a href="pricing.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'blog_alternatives'})">Free Tools →</a>
+            <a href="pricing.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'blog_alternatives'})">Free Tools →</a>
         </div>
 
         <!-- Common Mistakes -->
@@ -890,7 +890,7 @@ response = client.chat.completions.create(
     <!-- Sticky CTA bar -->
     <div class="sticky-cta-bar" id="stickyBar">
         <div class="sticky-msg">Claude 4 is dead — migrate & <span>save 67-97%</span></div>
-        <a href="claude-4-migration-cost-calculator.html" class="sticky-btn" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'sticky_alternatives'})">Get Migration Plan — $19</a>
+        <a href="claude-4-migration-cost-calculator.html" class="sticky-btn" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'sticky_alternatives'})">Get Migration Plan — $19</a>
     </div>
 
     <script>
@@ -997,7 +997,7 @@ response = client.chat.completions.create(
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });
         document.getElementById('exit-popup-cta').addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', page: 'blog-alternatives' });
+            if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'exit_popup', page: 'blog-alternatives' });
         });
         document.getElementById('exit-popup').addEventListener('click', function(e) { if (e.target === this) closeExitPopup(); });
     })();

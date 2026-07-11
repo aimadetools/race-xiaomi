@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro Features — All Tools Free | APIpulse</title>
-    <meta name="description" content="APIpulse Pro: 67-model comparison, saved scenarios, cost report export, and optimization recommendations. All tools are now free.">
-    <meta name="keywords" content="AI API cost calculator, LLM pricing, API budget planner, cost optimization, APIpulse Pro">
-    <meta property="og:title" content="APIpulse Pro — All Tools Free">
+    <meta name="description" content="APIpulse: 67-model comparison, saved scenarios, cost report export, and optimization recommendations. All tools are now free.">
+    <meta name="keywords" content="AI API cost calculator, LLM pricing, API budget planner, cost optimization, APIpulse">
+    <meta property="og:title" content="APIpulse — All Tools Free">
     <meta property="og:description" content="67-model comparison, saved scenarios, cost report export, optimization recommendations. All tools are now free.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/pro.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="APIpulse Pro — All Tools Free">
+    <meta name="twitter:title" content="APIpulse — All Tools Free">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
     <meta name="twitter:description" content="67-model comparison, saved scenarios, cost report export, optimization recommendations. All tools are now free.">
     <link rel="canonical" href="https://getapipulse.com/pro.html">
@@ -36,7 +36,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Product",
-        "name": "APIpulse Pro",
+        "name": "APIpulse",
         "description": "Premium features for APIpulse — saved scenarios, cost report export, and optimization recommendations for AI API cost planning.",
         "brand": { "@type": "Organization", "name": "APIpulse" },
         "url": "https://getapipulse.com/pro.html",
@@ -288,7 +288,7 @@
                         <span style="font-size:12px;color:var(--text-muted);font-weight:500;">or buy lifetime access</span>
                         <div style="flex:1;height:1px;background:var(--border);"></div>
                     </div>
-                    <a id="pro-stripe-btn" href="index.html#free-tools" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pro_gate_checkout'})" style="display:block;width:100%;padding:14px 24px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                    <a id="pro-stripe-btn" href="index.html#free-tools" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'pro_gate_checkout'})" style="display:block;width:100%;padding:14px 24px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
                         Free Tools →
                     </a>
                     <p style="font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center;">⚡ Founding member price — increases after the race ends</p>
@@ -506,20 +506,20 @@
             if (await validateCode(code)) {
                 unlockProFeatures();
                 calculate();
-                if (window.trackEvent) window.trackEvent('pro_access_granted');
+                if (window.trackEvent) window.trackEvent('access_granted');
             } else {
                 document.getElementById('gate-error').style.display = 'block';
-                if (window.trackEvent) window.trackEvent('pro_access_failed');
+                if (window.trackEvent) window.trackEvent('access_failed');
             }
         }
 
         function unlockWithoutCode() {
-            if (confirm('Did you purchase APIpulse Pro? Click OK to unlock your features.')) {
+            if (confirm('Did you purchase APIpulse? Click OK to unlock your features.')) {
                 localStorage.setItem('apipulse_pro', 'true');
                 localStorage.setItem('apipulse_pro_date', new Date().toISOString());
                 unlockProFeatures();
                 calculate();
-                if (window.trackEvent) window.trackEvent('pro_unlocked_without_code');
+                if (window.trackEvent) window.trackEvent('access_unlocked');
             }
         }
     </script>
@@ -571,7 +571,7 @@
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });
         document.getElementById('exit-popup-cta').addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', page: 'pro' });
+            if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'exit_popup', page: 'pro' });
         });
         document.getElementById('exit-popup').addEventListener('click', function(e) { if (e.target === this) closeExitPopup(); });
     })();

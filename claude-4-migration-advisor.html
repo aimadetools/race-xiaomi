@@ -638,7 +638,7 @@
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="blog.html">Blog</a>
-                <a href="audit.html?from=pro_page">Pro</a>
+                <a href="index.html#free-tools">Free Tools</a>
                 <a href="about.html">About</a>
             </div>
             <p class="footer-copy">© 2026 APIpulse. All rights reserved. · <a href="price-alerts.html" style="color:var(--accent);">🔔 Price Alerts</a></p>
@@ -784,7 +784,7 @@
         <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(168,85,247,0.08));border:1px solid rgba(99,102,241,0.25);border-radius:16px;padding:40px;text-align:center;">
             <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get Personalized Migration Recommendations</h2>
             <p style="font-size:15px;color:var(--text-secondary);margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto;">Pro users get optimization recommendations based on their exact usage patterns — most save 40% more than the free calculator shows.</p>
-            <a href="audit.html?from=tool_page" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'migration_advisor_cta'})" style="display:inline-block;padding:14px 36px;background:var(--accent);color:white;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Free Tools →</a>
+            <a href="audit.html?from=tool_page" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'migration_advisor_cta'})" style="display:inline-block;padding:14px 36px;background:var(--accent);color:white;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Free Tools →</a>
             <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">One-time payment · Lifetime access · 30-day money-back guarantee</p>
         </div>
     </div>
@@ -819,7 +819,7 @@
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });
         document.getElementById('exit-popup-cta').addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', page: 'migration-advisor' });
+            if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'exit_popup', page: 'migration-advisor' });
         });
         document.getElementById('exit-popup').addEventListener('click', function(e) { if (e.target === this) closeExitPopup(); });
     })();

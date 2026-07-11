@@ -1016,7 +1016,7 @@ claude-sonnet-4-6</code>
                             <div style="width:10px;height:10px;border-radius:50%;background:#f85149;"></div>
                             <div style="width:10px;height:10px;border-radius:50%;background:#d29922;"></div>
                             <div style="width:10px;height:10px;border-radius:50%;background:#3fb950;"></div>
-                            <span style="margin-left:8px;font-size:11px;color:#8b949e;font-family:monospace;">APIpulse Pro — Cost Calculator</span>
+                            <span style="margin-left:8px;font-size:11px;color:#8b949e;font-family:monospace;">APIpulse — Cost Calculator</span>
                         </div>
                         <!-- Mockup content -->
                         <div style="padding:16px;">
@@ -1228,7 +1228,7 @@ claude-sonnet-4-6</code>
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="blog.html">Blog</a>
-                <a href="audit.html?from=pro_page">Pro</a>
+                <a href="index.html#free-tools">Free Tools</a>
             </div>
             <p class="footer-copy">© 2026 APIpulse · <a href="mailto:support@getapipulse.com">support@getapipulse.com</a> · <a href="price-alerts.html" style="color:var(--accent);">🔔 Price Alerts</a></p>
         </div>
@@ -1295,7 +1295,7 @@ claude-sonnet-4-6</code>
                 whatHappensCta.href = window._abStripeLink || 'audit.html?from=tool_page';
                 if (window._abPrice) whatHappensCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
                 whatHappensCta.addEventListener('click', function() {
-                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'what_happens_section', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
+                    if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'what_happens_section', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                 });
             }
 
@@ -1305,7 +1305,7 @@ claude-sonnet-4-6</code>
                 midProCta.href = window._abStripeLink || 'audit.html?from=tool_page';
                 if (window._abPrice) midProCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
                 midProCta.addEventListener('click', function() {
-                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'mid_page_upsell', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
+                    if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'mid_page_upsell', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                 });
             }
 
@@ -1357,7 +1357,7 @@ claude-sonnet-4-6</code>
                 var previewObserver = new IntersectionObserver(function(entries) {
                     if (entries[0].isIntersecting && !previewSeen) {
                         previewSeen = true;
-                        window.trackEvent('pro_preview_seen', { page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
+                        window.trackEvent('preview_seen', { page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                         previewObserver.disconnect();
                     }
                 }, { threshold: 0.5 });
@@ -1463,7 +1463,7 @@ claude-sonnet-4-6</code>
 
                 // Track sticky CTA clicks
                 stickyBtn.addEventListener('click', function() {
-                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'sticky_cta_bar', price: stickyPrice, page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
+                    if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'sticky_cta_bar', price: stickyPrice, page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                 });
             }
         });
@@ -1713,7 +1713,7 @@ claude-sonnet-4-6</code>
                 inactionCta.href = window._abStripeLink || 'audit.html?from=tool_page';
                 if (window._abPrice) inactionCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
                 inactionCta.addEventListener('click', function() {
-                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'inaction_calculator', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
+                    if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'inaction_calculator', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                 });
             }
         });
@@ -1785,7 +1785,7 @@ claude-sonnet-4-6</code>
         });
         // CTA click tracking
         document.getElementById('exit-popup-cta').addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', page: 'claude-4-is-down' });
+            if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'exit_popup', page: 'claude-4-is-down' });
         });
         // Close on backdrop click
         document.getElementById('exit-popup').addEventListener('click', function(e) {

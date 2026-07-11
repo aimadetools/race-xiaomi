@@ -1,4 +1,4 @@
-// APIpulse Pro — Access code validation and premium features
+// APIpulse — Access code validation and feature access
 // Access codes are distributed manually by the APIpulse team after purchase.
 // Codes are stored as SHA-256 hashes to prevent casual extraction from source.
 
@@ -39,7 +39,7 @@ async function validateCode(code) {
             if (data.valid) {
                 localStorage.setItem('apipulse_pro', 'true');
                 localStorage.setItem('apipulse_pro_code', normalized);
-                if (window.trackEvent) window.trackEvent('pro_code_validated', { source: data.source });
+                if (window.trackEvent) window.trackEvent('code_validated', { source: data.source });
                 return true;
             }
         }
@@ -99,7 +99,7 @@ function startTrial() {
     localStorage.setItem('apipulse_pro_date', new Date().toISOString());
     try { unlockProFeatures(); } catch(e) {}
     if (typeof calculate === 'function') calculate();
-    if (window.trackEvent) window.trackEvent('pro_trial_started');
+    if (window.trackEvent) window.trackEvent('tools_accessed');
     // Show trial activated message
     showTrialMessage();
 }
@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.removeItem('apipulse_pro_trial_expiry');
                     localStorage.setItem('apipulse_trial_expired', '1');
                     lockProFeatures();
-                    if (window.trackEvent) window.trackEvent('pro_trial_expired');
+                    if (window.trackEvent) window.trackEvent('trial_expired');
                     // Redirect to trial-expired conversion page
                     window.location.href = 'trial-expired.html?from=trial_expired';
                 }, remaining.ms);

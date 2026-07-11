@@ -925,7 +925,7 @@ print(response.choices[0].message.content)</code></pre>
         document.querySelectorAll('.fw-pro-cta-link').forEach(function(link) {
             link.href = stripeLink;
             link.addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'framework_gate_overlay', page: 'framework-migration-guide' });
+                if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'framework_gate_overlay', page: 'framework-migration-guide' });
             });
         });
 
@@ -934,7 +934,7 @@ print(response.choices[0].message.content)</code></pre>
         if (earlyCta) {
             earlyCta.href = stripeLink;
             earlyCta.addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'framework_early_upsell', page: 'framework-migration-guide' });
+                if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'framework_early_upsell', page: 'framework-migration-guide' });
             });
         }
 
@@ -971,7 +971,7 @@ print(response.choices[0].message.content)</code></pre>
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });
         document.getElementById('exit-popup-cta').addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', page: 'framework-migration-guide' });
+            if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'exit_popup', page: 'framework-migration-guide' });
         });
         document.getElementById('exit-popup').addEventListener('click', function(e) { if (e.target === this) closeExitPopup(); });
     })();

@@ -85,12 +85,12 @@ async function sendRestoreEmail(email, accessCode) {
             body: JSON.stringify({
                 from,
                 to: [email],
-                subject: 'Your APIpulse Pro Access Code',
+                subject: 'Your APIpulse Access Code',
                 html: `
 <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:20px;background:#0f172a;color:#e2e8f0;">
   <h1 style="color:#818cf8;font-size:24px;margin-bottom:16px;">Here's your access code</h1>
   <p style="font-size:16px;line-height:1.6;margin-bottom:16px;">
-    You requested your APIpulse Pro access code. Here it is:
+    You requested your APIpulse access code. Here it is:
   </p>
 
   <div style="background:#1e293b;border-radius:12px;padding:24px;margin:24px 0;text-align:center;">

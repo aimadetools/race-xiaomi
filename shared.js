@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 a.removeAttribute('onclick');
             }
         }
-        // Route "Get Pro" and Stripe CTAs to free tools
-        if (a.href && (a.href.includes('buy.stripe.com') || a.href.includes('pricing.html') || a.href.includes('pro.html')) && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro|Flash Sale|\$19/i)) {
+        // Route any remaining legacy CTAs to free tools
+        if (a.href && (a.href.includes('buy.stripe.com') || a.href.includes('pricing.html') || a.href.includes('pro.html')) && a.textContent.match(/Get Pro|Unlock Pro|Buy Pro|Flash Sale|\$19/i)) {
             a.href = 'index.html#free-tools';
             a.textContent = 'Free Tools →';
             a.target = '';

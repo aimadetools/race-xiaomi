@@ -405,7 +405,7 @@
                         <div class="pill locked" data-target="deepseek" onclick="selectTarget(this,'deepseek')"><span class="lock-badge">PRO</span>DeepSeek V4 Pro<span class="pill-sub">$0.44/$0.87 · 97% cheaper</span></div>
                         <div class="pill locked" data-target="deepseek-flash" onclick="selectTarget(this,'deepseek-flash')"><span class="lock-badge">PRO</span>DeepSeek V4 Flash<span class="pill-sub">$0.14/$0.28 · 99% cheaper</span></div>
                     </div>
-                    <p id="pro-hint" style="display:none;font-size:12px;color:var(--accent);margin-top:8px;font-weight:600;">🔒 Opus 4.8 is free. Unlock Pro to generate code for all 6 targets.</p>
+                    <p id="pro-hint" style="display:none;font-size:12px;color:var(--accent);margin-top:8px;font-weight:600;">🔒 Opus 4.8 is free. Free Tools — generate code for all 6 targets.</p>
                 </div>
 
                 <button class="qs-btn" onclick="generateCode()">⚡ Generate My Migration Code</button>
@@ -497,7 +497,7 @@
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="blog.html">Blog</a>
-                <a href="audit.html?from=pro_page">Pro</a>
+                <a href="index.html#free-tools">Free Tools</a>
                 <a href="about.html">About</a>
             </div>
             <p class="footer-copy">© 2026 APIpulse. All rights reserved. · <a href="price-alerts.html" style="color:var(--accent);">🔔 Price Alerts</a></p>
@@ -839,7 +839,7 @@
                 gate.classList.add('visible');
                 gate.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
-            if (window.trackEvent) window.trackEvent('pro_gate_shown', { source: 'quick_switch', target: selectedTarget });
+            if (window.trackEvent) window.trackEvent('feature_shown', { source: 'quick_switch', target: selectedTarget });
             return;
         }
 
@@ -911,7 +911,7 @@
         if (gateProCta) {
             gateProCta.href = stripeLink;
             gateProCta.addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'quick_switch_gate', page: 'claude-4-quick-switch' });
+                if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'quick_switch_gate', page: 'claude-4-quick-switch' });
             });
         }
 
@@ -958,7 +958,7 @@
         }
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });
         document.getElementById('exit-popup-cta').addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', page: 'quick-switch' });
+            if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'exit_popup', page: 'quick-switch' });
         });
         document.getElementById('exit-popup').addEventListener('click', function(e) { if (e.target === this) closeExitPopup(); });
     })();
