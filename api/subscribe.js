@@ -119,26 +119,19 @@ async function sendWelcomeEmail(email) {
             <p style="font-size: 16px; line-height: 1.6; margin-bottom: 16px;">
               Thanks for subscribing. You'll get weekly updates on AI API pricing changes, new models, and cost-saving tips.
             </p>
-            <div style="background: linear-gradient(135deg, #7c3aed, #818cf8); border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
-              <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #e2e8f0; margin-bottom: 8px;">⚡ Flash Sale — Limited Time</p>
-              <h2 style="color: white; font-size: 22px; margin-bottom: 8px;">Pro Lifetime Access — $19</h2>
-              <p style="color: #e2e8f0; font-size: 14px; margin-bottom: 16px;">67 models, 10 providers. Real-time pricing. One payment, forever. <s style="color: #c4b5fd;">$49</s></p>
-              <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" style="display: inline-block; background: white; color: #7c3aed; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px;">Claim Your Deal →</a>
+            <div style="background: linear-gradient(135deg, #059669, #10b981); border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center;">
+              <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #e2e8f0; margin-bottom: 8px;">🎉 All Tools — 100% Free</p>
+              <h2 style="color: white; font-size: 22px; margin-bottom: 8px;">67 Models. 10 Providers. No Signup.</h2>
+              <p style="color: #d1fae5; font-size: 14px; margin-bottom: 16px;">Compare pricing, track costs, get migration code — all free, forever.</p>
+              <a href="https://getapipulse.com/#free-tools" style="display: inline-block; background: white; color: #059669; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px;">Explore Free Tools →</a>
             </div>
             <div style="background: #1e293b; border-radius: 8px; padding: 20px; margin: 20px 0;">
-              <h2 style="color: #818cf8; font-size: 18px; margin-bottom: 12px;">Your Migration Checklist</h2>
-              <p style="margin-bottom: 12px;">Here's the print-ready cheat sheet you signed up for:</p>
-              <p style="margin-bottom: 16px;">
-                <a href="https://getapipulse.com/claude-4-migration-checklist.html" style="display: inline-block; background: #818cf8; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">📋 Open Migration Checklist →</a>
-              </p>
-              <p style="margin-bottom: 8px; font-size: 14px; color: #94a3b8;">Includes: model IDs, pricing comparison, copy-paste code snippets, framework fixes, and post-migration checklist.</p>
-              <hr style="border: none; border-top: 1px solid #334155; margin: 16px 0;">
               <h2 style="color: #818cf8; font-size: 18px; margin-bottom: 12px;">Quick Start</h2>
               <p style="margin-bottom: 8px;">Here's what you can do right now:</p>
               <ul style="padding-left: 20px; line-height: 1.8;">
-                <li><a href="https://getapipulse.com/claude-4-migration-scanner.html" style="color: #818cf8;">Scan your code for deprecated Claude 4 references</a> — free, instant, private</li>
                 <li><a href="https://getapipulse.com/calculator.html" style="color: #818cf8;">Estimate your AI costs</a> — 67 models across 10 providers</li>
                 <li><a href="https://getapipulse.com/compare.html" style="color: #818cf8;">Compare models side-by-side</a> — find the cheapest option</li>
+                <li><a href="https://getapipulse.com/price-alerts.html" style="color: #818cf8;">Set price alerts</a> — get notified when rates drop</li>
                 <li><a href="https://getapipulse.com/pricing-index.html" style="color: #818cf8;">Browse all pricing</a> — sortable reference table</li>
               </ul>
             </div>

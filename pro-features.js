@@ -109,7 +109,7 @@ function showTrialMessage() {
     var msg = document.createElement('div');
     msg.id = 'trial-activated-msg';
     msg.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#22c55e,#16a34a);color:white;padding:16px 28px;border-radius:12px;font-size:15px;font-weight:700;z-index:10000;box-shadow:0 8px 30px rgba(34,197,94,0.4);animation:fadeIn 0.3s ease;max-width:90vw;text-align:center;';
-    msg.innerHTML = '✅ Free trial activated! Pro features unlocked for 24 hours. <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="color:white;text-decoration:underline;">Get lifetime access →</a>';
+    msg.innerHTML = '✅ All tools are free — no trial needed! Explore 67 models across 10 providers. <a href="/#free-tools" style="color:white;text-decoration:underline;">See all tools →</a>';
     document.body.appendChild(msg);
     setTimeout(function() { msg.style.opacity = '0'; msg.style.transition = 'opacity 0.5s'; setTimeout(function() { msg.remove(); }, 500); }, 5000);
 }
@@ -440,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     banner.innerHTML = `
                         <div>
                             <div style="font-weight:700;font-size:15px;">Free Trial Active</div>
-                            <div style="font-size:13px;color:var(--text-secondary);">Expires in ${remaining.hours}h ${remaining.mins}m · <a href="go.html?from=trial_banner" style="color:var(--accent);font-weight:600;">Get lifetime access for $${window._abPrice || 19}</a></div>
+                            <div style="font-size:13px;color:var(--text-secondary);">All tools are free — <a href="/#free-tools" style="color:var(--green);font-weight:600;">Explore all tools →</a></div>
                         </div>
                     `;
                     content.insertBefore(banner, content.firstChild);
@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     var minsLeft = Math.ceil(remaining.ms / 60000);
                     var price = window._abPrice || 19;
                     urgencyBanner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:12px 20px;border-radius:12px;margin-bottom:16px;text-align:center;font-size:14px;font-weight:600;';
-                    urgencyBanner.innerHTML = '⏰ Trial expires in <strong>' + minsLeft + ' minutes</strong> — <a href="go.html?from=trial_urgency" style="color:white;text-decoration:underline;">Lock in Pro for $' + price + ' lifetime →</a>';
+                    urgencyBanner.innerHTML = '🎉 All tools are free — <a href="/#free-tools" style="color:white;text-decoration:underline;">Explore now →</a>';
                     content.insertBefore(urgencyBanner, content.firstChild);
                     if (window.trackEvent) window.trackEvent('trial_urgency_shown', { minutes_left: minsLeft, price: price });
                 }

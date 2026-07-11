@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Route "Get Pro" and Stripe CTAs to free tools
         if (a.href && (a.href.includes('buy.stripe.com') || a.href.includes('pricing.html') || a.href.includes('pro.html')) && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro|Flash Sale|\$19/i)) {
             a.href = 'index.html#free-tools';
+            a.textContent = 'Free Tools →';
             a.target = '';
             a.rel = '';
         }
@@ -899,60 +900,48 @@ async function saveEmail(e) {
     for (var i = 0; i < skipPages.length; i++) { if (pathname.includes(skipPages[i])) return; }
     if (localStorage.getItem('apipulse_popup_dismissed')) return;
 
-    // Limited-time pricing exit popup (replaces stale deprecation popup)
+        // Deprecation page exit popup — promote free tools (S1333 pivot: all tools free)
     var isDeprecationPage = window.location.pathname.includes('deprecation') || window.location.pathname.includes('migration') || window.location.pathname.includes('last-chance') || window.location.pathname.includes('survival') || window.location.pathname.includes('claude-4') || window.location.pathname.includes('shutdown');
-    var dealDeadline = new Date('2026-07-12T23:59:59Z');
-    var daysUntilDealEnd = Math.ceil((dealDeadline - new Date()) / 86400000);
 
-    if (isDeprecationPage && daysUntilDealEnd > 0) {
+    if (isDeprecationPage) {
         if (localStorage.getItem('apipulse_deprecation_popup_dismissed')) return;
         var depPopupShown = false;
         function showDeprecationPopup() {
             if (depPopupShown || localStorage.getItem('apipulse_deprecation_popup_dismissed')) return;
             depPopupShown = true;
-            if (window.trackEvent) window.trackEvent('urgency_popup_shown', { days_left: daysUntilDealEnd, timing_variant: window._abPopupTimingVariant });
-
-            var price = window._abPrice || 19;
-            var futurePrice = Math.round(price * 1.7);
-            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
+            if (window.trackEvent) window.trackEvent('free_tools_popup_shown', { page: location.pathname, timing_variant: window._abPopupTimingVariant });
 
             var overlay = document.createElement('div');
             overlay.id = 'exit-popup-overlay';
             overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.3s ease;';
             var popup = document.createElement('div');
-            popup.style.cssText = 'background:var(--bg-card);border:1px solid var(--red);border-radius:16px;padding:40px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
-            var popupTitle, popupIcon, popupDesc, popupHighlight;
-            popupIcon = '⏰';
-            popupTitle = daysUntilDealEnd + ' Day' + (daysUntilDealEnd === 1 ? '' : 's') + ' Left at Early Adopter Price';
-            popupDesc = 'Early adopter pricing ends July 12. Pro shows you the cheapest model for your exact workload — most devs save 40-80% on their AI API costs.';
-            popupHighlight = 'Get lifetime access at $' + price + ' before the price increases to $' + futurePrice;
-            popup.innerHTML = '<button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color=\'var(--text-primary)\'" onmouseout="this.style.color=\'var(--text-muted)\'">&times;</button>' +
+            popup.style.cssText = 'background:var(--bg-card);border:1px solid var(--green);border-radius:16px;padding:40px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
+            popup.innerHTML = '<button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color=\'var(--text-primary)\'" onmouseout="this.style.color=\'var(--text-muted)\'">×</button>' +
                 '<div style="text-align:center;">' +
-                '<div style="font-size:40px;margin-bottom:16px;">' + popupIcon + '</div>' +
-                '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;color:var(--red);">' + popupTitle + '</h3>' +
-                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">' + popupDesc + '</p>' +
-                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings with Pro.</div>' +
-                '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:12px;margin-bottom:16px;font-size:14px;color:var(--green);font-weight:600;">' + popupHighlight + '</div>' +
-                '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" id="deprecation-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' on July 12 · 30-day money-back guarantee</p>' +
+                '<div style="font-size:40px;margin-bottom:16px;">\ud83c\udf89</div>' +
+                '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;color:var(--green);">All Tools Are Free</h3>' +
+                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">Compare 67 models across 10 providers. Get migration code, track costs, set price alerts. All free, no signup.</p>' +
+                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings.</div>' +
+                '<a href="/#free-tools" id="deprecation-popup-cta" style="display:inline-block;background:var(--green);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(34,197,94,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Explore Free Tools →</a>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">No signup, no credit card — just use them.</p>' +
                 '</div>';
             overlay.appendChild(popup);
             document.body.appendChild(overlay);
 
             document.getElementById('exit-popup-close').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('urgency_popup_dismissed', { days_left: daysUntilDealEnd, timing_variant: window._abPopupTimingVariant });
+                if (window.trackEvent) window.trackEvent('free_tools_popup_dismissed', { page: location.pathname, timing_variant: window._abPopupTimingVariant });
                 overlay.remove();
                 localStorage.setItem('apipulse_deprecation_popup_dismissed', '1');
             });
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) {
-                    if (window.trackEvent) window.trackEvent('urgency_popup_dismissed', { days_left: daysUntilDealEnd, timing_variant: window._abPopupTimingVariant });
+                    if (window.trackEvent) window.trackEvent('free_tools_popup_dismissed', { page: location.pathname, timing_variant: window._abPopupTimingVariant });
                     overlay.remove();
                     localStorage.setItem('apipulse_deprecation_popup_dismissed', '1');
                 }
             });
             document.getElementById('deprecation-popup-cta').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('urgency_popup_cta_clicked', { days_left: daysUntilDealEnd, price: price, timing_variant: window._abPopupTimingVariant });
+                if (window.trackEvent) window.trackEvent('free_tools_popup_cta_clicked', { page: location.pathname, timing_variant: window._abPopupTimingVariant });
             });
         }
 
@@ -984,7 +973,7 @@ async function saveEmail(e) {
         localStorage.setItem('apipulse_copy_variant', copyVariant);
     }
 
-    // High-intent pages: show Pro CTA instead of email capture
+        // High-intent pages: show free tools CTA on exit
     var isHighIntent = window.location.pathname.includes('compare') || window.location.pathname.includes('cost-') || window.location.pathname.includes('model-') || window.location.pathname.includes('cheapest') || window.location.pathname.includes('pricing') || window.location.pathname.includes('switch') || window.location.pathname.includes('optimizer') || window.location.pathname.includes('explorer') || window.location.pathname.includes('finder');
 
     if (isHighIntent) {
@@ -993,92 +982,57 @@ async function saveEmail(e) {
             if (proPopupShown || localStorage.getItem('apipulse_popup_dismissed')) return;
             proPopupShown = true;
 
-            var price = window._abPrice || 19;
-            var futurePrice = Math.round(price * 1.7);
-            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
-            var variant = window._abVariant || 'B';
-
-            // Copy variant content — loss-framed vs social-proof
-            var copyContent = {
-                loss: {
-                    emoji: '💸',
-                    headline: 'You\'re losing money every day you wait',
-                    desc: 'Most developers overpay 40-80% on AI APIs. Pro shows you exactly which model to switch to — with migration code, cost projections, and a personalized optimization plan.',
-                    cta: 'Stop the leak — $' + price + ' lifetime'
-                },
-                social: {
-                    emoji: '🚀',
-                    headline: 'Join 8,300+ developers saving on AI',
-                    desc: 'See exactly which model to switch to — with migration code, cost projections, and a personalized optimization plan. Used by developers at startups and enterprises worldwide.',
-                    cta: 'Get Pro Access — $' + price + ' lifetime'
-                }
-            };
-            // Add personalized savings estimate based on page context
-            var pagePath = location.pathname;
-            var savingsHint = '';
-            if (pagePath.includes('claude') || pagePath.includes('anthropic')) {
-                savingsHint = '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--green);font-weight:600;text-align:center;">💡 Claude users save $60–200/mo by routing to cheaper models for 80% of tasks</div>';
-            } else if (pagePath.includes('gpt') || pagePath.includes('openai')) {
-                savingsHint = '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--green);font-weight:600;text-align:center;">💡 GPT users save $50–180/mo by switching simple tasks to GPT-5 Mini or DeepSeek</div>';
-            } else if (pagePath.includes('gemini') || pagePath.includes('google')) {
-                savingsHint = '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--green);font-weight:600;text-align:center;">💡 Gemini users save $40–150/mo by using Flash for simple tasks and Pro for complex ones</div>';
-            } else if (pagePath.includes('deepseek')) {
-                savingsHint = '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--green);font-weight:600;text-align:center;">💡 Already using DeepSeek? Pro can still save 20-40% with routing & caching strategies</div>';
-            } else if (pagePath.includes('compare')) {
-                savingsHint = '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--green);font-weight:600;text-align:center;">💡 Pro shows your exact savings with migration code for the switch you\'re considering</div>';
-            }
-            var cc = copyContent[copyVariant] || copyContent.loss;
-
-            if (window.trackEvent) window.trackEvent('pro_exit_popup_shown', { variant: variant, price: price, page: location.pathname, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant, copy_variant: copyVariant });
+            if (window.trackEvent) window.trackEvent('free_exit_popup_shown', { page: location.pathname });
 
             var overlay = document.createElement('div');
             overlay.id = 'exit-popup-overlay';
             overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.3s ease;';
 
             var popup = document.createElement('div');
-            popup.style.cssText = 'background:var(--bg-card);border:1px solid var(--accent);border-radius:16px;padding:40px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
+            popup.style.cssText = 'background:var(--bg-card);border:1px solid var(--green);border-radius:16px;padding:40px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
 
-            popup.innerHTML = '<button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color=\'var(--text-primary)\'" onmouseout="this.style.color=\'var(--text-muted)\'">&times;</button>' +
+            popup.innerHTML = '<button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color=\'var(--text-primary)\'" onmouseout="this.style.color=\'var(--text-muted)\'">×</button>' +
                 '<div style="text-align:center;">' +
-                '<div style="font-size:40px;margin-bottom:16px;">' + cc.emoji + '</div>' +
-                '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">' + cc.headline + '</h3>' +
-                savingsHint +
-                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">' + cc.desc + '</p>' +
-                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings with Pro.</div>' +
-                '<div style="display:flex;gap:12px;justify-content:center;margin-bottom:16px;">' +
+                '<div style="font-size:40px;margin-bottom:16px;">🎉</div>' +
+                '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;color:var(--green);">All Tools Are Free</h3>' +
+                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Compare 67 models across 10 providers. Get migration code, track costs, set price alerts. No signup required.</p>' +
+                '<div style="display:flex;gap:12px;justify-content:center;margin-bottom:20px;">' +
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
-                '<div style="font-size:20px;font-weight:800;color:var(--accent);">$' + price + '</div>' +
-                '<div style="font-size:11px;color:var(--text-muted);">one-time</div></div>' +
+                '<div style="font-size:20px;font-weight:800;color:var(--green);">67</div>' +
+                '<div style="font-size:11px;color:var(--text-muted);">models</div></div>' +
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
-                '<div style="font-size:20px;font-weight:800;color:var(--green);">40%</div>' +
-                '<div style="font-size:11px;color:var(--text-muted);">avg. savings</div></div></div>' +
-                '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" id="pro-exit-cta" style="display:inline-block;background:' + btnColor.bg + ';color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px ' + btnColor.shadow + ';" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">' + cc.cta + '</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Flash sale ends Jul 12 — price goes to $' + futurePrice + ' · 30-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
+                '<div style="font-size:20px;font-weight:800;color:var(--green);">10</div>' +
+                '<div style="font-size:11px;color:var(--text-muted);">providers</div></div>' +
+                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
+                '<div style="font-size:20px;font-weight:800;color:var(--green);">$0</div>' +
+                '<div style="font-size:11px;color:var(--text-muted);">forever</div></div></div>' +
+                '<a href="/#free-tools" id="pro-exit-cta" style="display:inline-block;background:var(--green);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(34,197,94,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Explore Free Tools →</a>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">No signup, no credit card · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
                 '</div>';
 
             overlay.appendChild(popup);
             document.body.appendChild(overlay);
 
             document.getElementById('exit-popup-close').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant, copy_variant: copyVariant });
+                if (window.trackEvent) window.trackEvent('free_exit_popup_dismissed', { page: location.pathname });
                 overlay.remove();
                 localStorage.setItem('apipulse_popup_dismissed', '1');
             });
             document.getElementById('pro-exit-dismiss').addEventListener('click', function(e) {
                 e.preventDefault();
-                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant, copy_variant: copyVariant });
+                if (window.trackEvent) window.trackEvent('free_exit_popup_dismissed', { page: location.pathname });
                 overlay.remove();
                 localStorage.setItem('apipulse_popup_dismissed', '1');
             });
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) {
-                    if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant, copy_variant: copyVariant });
+                    if (window.trackEvent) window.trackEvent('free_exit_popup_dismissed', { page: location.pathname });
                     overlay.remove();
                     localStorage.setItem('apipulse_popup_dismissed', '1');
                 }
             });
             document.getElementById('pro-exit-cta').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', variant: variant, price: price, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant, copy_variant: copyVariant });
+                if (window.trackEvent) window.trackEvent('free_exit_popup_cta_clicked', { page: location.pathname });
             });
         }
 
@@ -1123,7 +1077,7 @@ async function saveEmail(e) {
                 <div style="font-size:40px;margin-bottom:16px;">${v.emoji}</div>
                 <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">${v.headline}</h3>
                 <p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">${v.subtext}</p>
-                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings with Pro.</div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings.</div>
                 <form id="exit-popup-form" style="display:flex;gap:8px;margin-bottom:12px;">
                     <input type="email" id="exit-popup-email" placeholder="you@company.com" required aria-label="Email address"
                         style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
@@ -1254,18 +1208,12 @@ function renderPricingFreshness(containerId) {
 }
 
 
-// Sticky Pro CTA bar — shows on scroll for non-pricing pages (respects A/B price variant)
-// Session 902: Uses unified dismiss state with sticky-bottom-bar to prevent stacking
+// Sticky free-tools CTA bar — shows on scroll (S1333 pivot: all tools free)
 (function() {
     var path = window.location.pathname;
     if (path.includes('pricing.html') || path.includes('pro.html') || path.includes('thank-you.html') || path.includes('launch.html') || path.includes('compare-plans.html') || path.includes('go.html') || path.includes('deal.html')) return;
     if (localStorage.getItem('apipulse_pro_cta_dismissed')) return;
-    if (localStorage.getItem('apipulse_sticky_bar_dismissed')) return; // Session 902: unified dismiss
-    if (localStorage.getItem('apipulse_pro') === 'true') return;
-
-    var price = window._abPrice || 19;
-    var futurePrice = Math.round(price * 1.7);
-    var variant = window._abVariant || 'B';
+    if (localStorage.getItem('apipulse_sticky_bar_dismissed')) return;
 
     var shown = false;
     window.addEventListener('scroll', function() {
@@ -1274,42 +1222,34 @@ function renderPricingFreshness(containerId) {
         if (scrollPct < 0.3) return;
         shown = true;
 
-        // Session 902: Remove sticky-bottom-bar if it exists (prevent stacking)
         var existingBottomBar = document.getElementById('sticky-bottom-bar');
         if (existingBottomBar) existingBottomBar.remove();
 
         var bar = document.createElement('div');
         bar.id = 'sticky-pro-cta';
-        bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#4f46e5,#6366f1);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);transform:translateY(100%);transition:transform 0.3s ease;';
+        bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#059669,#10b981);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);transform:translateY(100%);transition:transform 0.3s ease;';
         var isDepPage = path.includes('deprecation') || path.includes('migration') || path.includes('last-chance') || path.includes('shutdown') || path.includes('claude-4') || path.includes('survival');
         var isCalcPage = path.includes('calculator');
         var isComparePage = path.includes('compare');
         var isCostPage = path.includes('cost-') || path.includes('optimizer') || path.includes('explorer') || path.includes('finder');
-        var barMsg, ctaContext;
+        var barMsg;
         if (isDepPage) {
-            var postDep = new Date() >= new Date('2026-06-15T00:00:00Z');
-            barMsg = postDep ? 'Claude 4 is down — Pro finds your cheapest replacement in 30 seconds' : 'Migrating off Claude 4? Pro shows the cheapest path';
-            ctaContext = 'sticky_bar_deprecation';
+            barMsg = 'All migration tools are free — compare models, get code, switch providers';
         } else if (isCalcPage) {
-            barMsg = 'Done calculating? Pro shows how to cut those costs by 40%';
-            ctaContext = 'sticky_bar_calculator';
+            barMsg = 'Compare costs across 67 models — all free, no signup';
         } else if (isComparePage) {
-            barMsg = 'Comparing models? Pro picks the cheapest for your exact workload';
-            ctaContext = 'sticky_bar_compare';
+            barMsg = 'All 67 models unlocked — compare pricing, get migration code';
         } else if (isCostPage) {
-            barMsg = 'Stop guessing — Pro gives data-driven cost optimization';
-            ctaContext = 'sticky_bar_cost_tools';
+            barMsg = 'All cost tools are free — track, compare, and optimize';
         } else {
-            barMsg = '⚡ Flash sale: Pro for $' + price + ' one-time <span style="opacity:0.7;font-weight:400;font-size:12px;">(ends Jul 12 — then $' + futurePrice + ')</span>';
-            ctaContext = 'sticky_bar_default';
+            barMsg = '🎉 All tools free — 67 models, 10 providers, $0 forever';
         }
-        var stickyProPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
         bar.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">' + barMsg + '</span>' +
-            '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'' + ctaContext + '\',variant:\'' + variant + '\',price:' + price + '})">Get Pro — $' + price + ' one-time</a>' +
-            '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
+            '<a href="/#free-tools" style="background:white;color:#059669;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'free_tools_cta_clicked\',{source:\'sticky_bar\'})">Explore Free Tools →</a>' +
+            '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">×</button>';
         document.body.appendChild(bar);
         requestAnimationFrame(function() { bar.style.transform = 'translateY(0)'; });
-        if(window.trackEvent) window.trackEvent('sticky_cta_shown', {variant: variant, price: price, context: ctaContext});
+        if(window.trackEvent) window.trackEvent('sticky_cta_shown', {context: 'free_tools_bar'});
     });
 })();
 
@@ -1339,7 +1279,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'blog_inline_upsell\'})">Upgrade to Pro — $' + price + ' one-time</a>';
+    upsell.innerHTML = 'Compare all 67 models, get migration code, and set price alerts — <a href="/#free-tools" style="color:var(--green);font-weight:600;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'free_tools_cta_clicked\',{source:\'blog_inline_upsell\'})">all free →</a>';
     cta.parentNode.insertBefore(upsell, cta.nextSibling);
 });
 
@@ -1595,92 +1535,11 @@ var GO_MODEL_MAP = {
 // Addresses root cause: "Free tier too generous — visitors get
 // what they need without paying." (Session 969 diagnosis)
 //
-// Gates ranking tables: show top N rows free, blur next M rows
-// as a teaser, then gate the rest behind a Pro CTA overlay.
-// ============================================================
+// Pro feature gate — DISABLED (S1333 pivot: all tools free)
+// Ranking tables show all rows. No gating.
 (function() {
-    var FREE_ROWS = 5;
-    var BLUR_ROWS = 3; // blurred preview rows below the free ones
-    var gateShown = false;
-
-    function applyResultsGate() {
-        // Skip if Pro user (trial or paid)
-        if (localStorage.getItem('apipulse_pro') === 'true') return;
-
-        // Find all ranking tables
-        var tables = document.querySelectorAll('.ranking-table');
-        if (!tables.length) return;
-
-        tables.forEach(function(table) {
-            var tbody = table.querySelector('tbody');
-            if (!tbody) return;
-            var rows = Array.from(tbody.querySelectorAll('tr'));
-            if (rows.length <= FREE_ROWS + BLUR_ROWS) return; // not enough rows to gate
-
-            // Already gated? Skip
-            if (table.dataset.gated === '1') return;
-            table.dataset.gated = '1';
-
-            var parent = table.parentElement;
-            // Ensure parent is positioned for overlay
-            var computedPos = getComputedStyle(parent).position;
-            if (computedPos === 'static') parent.style.position = 'relative';
-
-            // Apply blur to teaser rows
-            for (var i = FREE_ROWS; i < FREE_ROWS + BLUR_ROWS && i < rows.length; i++) {
-                rows[i].style.filter = 'blur(4px)';
-                rows[i].style.opacity = '0.5';
-                rows[i].style.userSelect = 'none';
-                rows[i].style.pointerEvents = 'none';
-            }
-
-            // Hide remaining rows
-            for (var j = FREE_ROWS + BLUR_ROWS; j < rows.length; j++) {
-                rows[j].style.display = 'none';
-            }
-
-            // Add the gate overlay after the table
-            var price = window._abPrice || 19;
-            var gateEl = document.createElement('div');
-            gateEl.className = 'results-gate-overlay';
-            gateEl.style.cssText = 'text-align:center;padding:28px 20px;margin-top:-4px;background:linear-gradient(to bottom, transparent, var(--bg-secondary) 30%);position:relative;z-index:2;';
-
-            var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
-            var remaining = rows.length - FREE_ROWS;
-
-            gateEl.innerHTML =
-                '<div style="background:var(--bg-card);border:2px solid var(--accent);border-radius:14px;padding:24px 20px;max-width:480px;margin:0 auto;">' +
-                    '<div style="font-size:13px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🔒 Pro Feature</div>' +
-                    '<div style="font-size:18px;font-weight:800;color:var(--text-primary);margin-bottom:6px;">Unlock ' + remaining + ' more models ranked by cost</div>' +
-                    '<div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.5;">See all 67 models compared, get migration code, PDF exports, and price alerts. One-time payment, lifetime access.</div>' +
-                    '<a href="https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i" target="_blank" rel="noopener" ' +
-                        'style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border-radius:10px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(99,102,241,0.4);transition:all 0.2s;" ' +
-                        'onclick="if(window.trackEvent)window.trackEvent(\'results_gate_clicked\',{page:\'' + pageName + '\',total_rows:' + rows.length + ',free_rows:' + FREE_ROWS + ',price:' + price + '})">' +
-                        'Unlock All Models — $' + price + ' lifetime' +
-                    '</a>' +
-                    '<div style="font-size:12px;color:var(--text-muted);margin-top:10px;">🔒 Stripe secure · 🛡️ 30-day refund · ⚡ Instant access</div>' +
-                '</div>';
-
-            parent.appendChild(gateEl);
-
-            // Track impression
-            if (window.trackEvent && !gateShown) {
-                gateShown = true;
-                window.trackEvent('results_gate_shown', {
-                    page: pageName,
-                    total_rows: rows.length,
-                    free_rows: FREE_ROWS,
-                    blur_rows: BLUR_ROWS
-                });
-            }
-        });
-    }
-
-    // Run after calculator has populated the table (inline JS uses DOMContentLoaded)
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(applyResultsGate, 500);
-    });
-})();
+    // All tools are free — no gating needed.
+})();();
 
 // ==========================================
 // FLOATING FREE TOOLS BUTTON (pivot S1332)

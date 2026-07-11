@@ -1,6 +1,6 @@
-// results-cta.js — Reusable Pro conversion widget
+// results-cta.js — Reusable free-tools conversion widget
 // Injects a personalized CTA after users get results from free tools
-// Shows savings amount + Pro features + direct link to go.html
+// Shows savings amount + free features + link to more tools
 //
 // Usage: Include this script on any tool page. It auto-detects results
 // by watching for DOM changes in result containers.
@@ -10,7 +10,7 @@
 //     resultSelector: '.result-container',  // CSS selector for results area
 //     savingsSelector: '.savings-amount',    // CSS selector for savings text (optional)
 //     toolName: 'Savings Calculator',        // Name shown in CTA
-//     proFeatures: ['Full report', 'Migration code', 'PDF export']  // Features to highlight
+//     freeFeatures: ['Full report', 'Migration code', 'PDF export']  // Features to highlight
 //   };
 
 (function() {
@@ -20,8 +20,8 @@
     var resultSelector = config.resultSelector || null;
     var savingsSelector = config.savingsSelector || null;
     var toolName = config.toolName || 'this tool';
-    var proFeatures = config.proFeatures || [
-        'All 15 alternatives ranked by cost',
+    var freeFeatures = config.freeFeatures || [
+        'All 67 models across 10 providers',
         'Copy-paste migration code',
         'PDF report export',
         'Price change alerts'
@@ -30,18 +30,8 @@
     var ctaInjected = false;
     var ctaElement = null;
 
-    // Get current A/B price
-    function getPrice() {
-        return window._abPrice || 19;
-    }
-
-    function getStripeLink() {
-        return window._abStripeLink || 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i';
-    }
-
     // Extract savings from page if available
     function detectSavings() {
-        // Try configured selector first
         if (savingsSelector) {
             var el = document.querySelector(savingsSelector);
             if (el) {
@@ -49,7 +39,6 @@
                 if (match) return match[0];
             }
         }
-        // Try common patterns
         var patterns = [
             '.savings-amount', '.savings-value', '.save-amount',
             '[data-savings]', '.result-savings', '.annual-savings'
@@ -66,38 +55,30 @@
 
     // Build the CTA HTML
     function buildCtaHtml(savingsText) {
-        var price = getPrice();
-        var stripeLink = getStripeLink();
         var fromPage = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
 
-        var featuresHtml = proFeatures.map(function(f) {
+        var featuresHtml = freeFeatures.map(function(f) {
             return '<li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);">' +
                 '<span style="color:var(--green);font-size:14px;">✓</span> ' + f + '</li>';
         }).join('');
 
         var savingsLine = savingsText
             ? '<div style="font-size:20px;font-weight:800;color:var(--green);font-family:monospace;margin-bottom:4px;">You could save ' + savingsText + '/yr</div>' +
-              '<div style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Pro shows you exactly how — with migration code for each alternative</div>'
+              '<div style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">All tools are free — get migration code for each alternative</div>'
             : '<div style="font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:16px;">See the full analysis with all alternatives ranked by cost</div>';
 
-        // Session 1175: Route directly to Stripe — no intermediate pages during flash sale
-        // Removed "Try Free for 24 Hours" trial — it was a conversion leak (users got their answer for free)
-        var buyLink = (!window.DEAL_EXPIRED)
-            ? 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i'
-            : stripeLink;
-
-        return '<div id="results-pro-cta" style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));border:2px solid var(--accent);border-radius:16px;padding:28px 24px;margin:24px 0;text-align:center;animation:fadeIn 0.4s ease;">' +
-            '<div style="font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🔓 Unlock the full ' + toolName + '</div>' +
+        return '<div id="results-pro-cta" style="background:linear-gradient(135deg, rgba(34,197,94,0.08), rgba(16,185,129,0.08));border:2px solid var(--green);border-radius:16px;padding:28px 24px;margin:24px 0;text-align:center;animation:fadeIn 0.4s ease;">' +
+            '<div style="font-size:14px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🎉 All Tools Free — No Signup</div>' +
             savingsLine +
             '<ul style="list-style:none;margin:0 0 20px;padding:0;text-align:left;max-width:360px;margin-left:auto;margin-right:auto;">' + featuresHtml + '</ul>' +
             '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">' +
-            '<a href="' + buyLink + '" target="_blank" rel="noopener" ' +
+            '<a href="/#free-tools" ' +
             'style="display:inline-block;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;padding:16px 40px;border-radius:10px;font-size:17px;font-weight:800;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(34,197,94,0.3);" ' +
             'onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'" ' +
-            'onclick="if(window.trackEvent)window.trackEvent(\'results_cta_clicked\',{tool:\'' + toolName + '\',price:' + price + '})">' +
-            '⚡ Get Pro — $' + price + ' lifetime</a>' +
+            'onclick="if(window.trackEvent)window.trackEvent(\'results_cta_clicked\',{tool:\'' + toolName + '\'})">' +
+            'Explore Free Tools →</a>' +
             '</div>' +
-            '<div style="font-size:12px;color:var(--text-muted);margin-top:8px;">One-time payment · 30-day money-back guarantee · Instant access</div>' +
+            '<div style="font-size:12px;color:var(--text-muted);margin-top:8px;">No signup · No credit card · 67 models, 10 providers</div>' +
             '</div>';
     }
 
@@ -105,14 +86,12 @@
     function injectCta(savingsText) {
         if (ctaInjected) return;
 
-        // Find insertion point
         var insertAfter = null;
 
         if (resultSelector) {
             insertAfter = document.querySelector(resultSelector);
         }
 
-        // Fallback: find the last major result element
         if (!insertAfter) {
             var candidates = [
                 'table', '.result', '.results', '.recommendation',
@@ -127,17 +106,14 @@
             }
         }
 
-        // Last fallback: insert before footer or at end of main
         if (!insertAfter) {
             insertAfter = document.querySelector('footer') || document.querySelector('main') || document.body;
         }
 
-        // Create and insert
         var wrapper = document.createElement('div');
         wrapper.innerHTML = buildCtaHtml(savingsText);
         ctaElement = wrapper.firstElementChild;
 
-        // Insert after the target element
         if (insertAfter.nextSibling) {
             insertAfter.parentNode.insertBefore(ctaElement, insertAfter.nextSibling);
         } else {
@@ -146,40 +122,34 @@
 
         ctaInjected = true;
 
-        // Track impression
         if (window.trackEvent) {
             window.trackEvent('results_cta_shown', {
                 tool: toolName,
                 savings: savingsText || 'none',
-                price: getPrice(),
                 page: location.pathname
             });
         }
         if (typeof gtag === 'function') {
             gtag('event', 'results_cta_shown', {
                 tool_name: toolName,
-                has_savings: !!savingsText,
-                price: getPrice()
+                has_savings: !!savingsText
             });
         }
 
-        // Track CTA click (Session 1182: also match Stripe links since flash sale routes direct)
-        var ctaLink = ctaElement.querySelector('a[href*="go.html"], a[href*="buy.stripe.com"]');
+        var ctaLink = ctaElement.querySelector('a[href*="#free-tools"]');
         if (ctaLink) {
             ctaLink.addEventListener('click', function() {
                 if (window.trackEvent) {
                     window.trackEvent('results_cta_clicked', {
                         tool: toolName,
                         savings: savingsText || 'none',
-                        price: getPrice(),
                         page: location.pathname
                     });
                 }
                 if (typeof gtag === 'function') {
                     gtag('event', 'results_cta_clicked', {
                         tool_name: toolName,
-                        has_savings: !!savingsText,
-                        price: getPrice()
+                        has_savings: !!savingsText
                     });
                 }
             });
@@ -188,22 +158,19 @@
 
     // Watch for results appearing via DOM changes
     function watchForResults() {
-        // Try configured selector
         if (resultSelector) {
             var target = document.querySelector(resultSelector);
             if (target) {
-                // Check if results already visible
                 if (target.offsetHeight > 0 && target.textContent.trim().length > 50) {
                     injectCta(detectSavings());
                     return;
                 }
-                // Watch for changes
                 var observer = new MutationObserver(function() {
                     if (target.offsetHeight > 0 && target.textContent.trim().length > 50) {
                         observer.disconnect();
                         setTimeout(function() {
                             injectCta(detectSavings());
-                        }, 300); // Small delay for animation
+                        }, 300);
                     }
                 });
                 observer.observe(target, { childList: true, subtree: true, attributes: true });
@@ -211,7 +178,6 @@
             }
         }
 
-        // Fallback: watch for any result-like elements appearing
         var checkInterval = setInterval(function() {
             var resultEls = document.querySelectorAll('table, .result, .results, .recommendation, .savings-result');
             for (var i = 0; i < resultEls.length; i++) {
@@ -226,16 +192,13 @@
             }
         }, 1000);
 
-        // Stop checking after 15 seconds
         setTimeout(function() { clearInterval(checkInterval); }, 15000);
     }
 
-    // Also allow manual trigger: window.showResultsCta(savingsAmount)
     window.showResultsCta = function(savingsText) {
         injectCta(savingsText);
     };
 
-    // Initialize
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', watchForResults);
     } else {
