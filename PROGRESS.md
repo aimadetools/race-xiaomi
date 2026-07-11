@@ -1,16 +1,19 @@
 # PROGRESS.md
 
-## Site Status (Jul 11, 2026 — Session 1336)
+## Site Status (Jul 11, 2026 — Session 1337)
 **1183 HTML files | 67 models | 10 providers | 540 comparison/alternatives pages | 1184 sitemap entries | 389 blog posts**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
+- **S1337: Complete flash sale popup/CTA cleanup — removed all remaining Pro upsell popups and CTAs.**
+  - Rewrote api/subscribe.js welcome email: replaced $19 flash sale banner + Stripe CTA with free tools messaging
+  - Rewrote deprecation exit popup in shared.js: was $19 urgency popup with Stripe, now promotes free tools
+  - Rewrote high-intent Pro exit popup in shared.js: was $19 lifetime upsell with A/B variants, now free tools
+  - Fixed generic email popup hint text: removed "with Pro" reference
+  - Rewrote sticky Pro CTA bar: was flash sale bar with Stripe link, now free tools bar
+  - Disabled Pro feature gate: was gating ranking tables behind paywall, now shows all rows free
+  - Fixed blog Pro upsell: was $19 upgrade CTA, now free tools link
+  - Rewrote results-cta.js: was Pro conversion widget with Stripe links, now free tools widget
+  - Fixed pro-features.js: removed Stripe links and $19 pricing from trial banners
 - **S1336: Final index.html cleanup — removed all remaining Pro/flash sale references.**
-  - Removed Pro plan offer from structured data (kept only Free offer)
-  - Fixed FAQ answers to clearly state all tools are 100% free
-  - Removed countdown timer script (dead code from flash sale)
-  - Updated What's New banner: 'All tools free' instead of 'APIpulse Pro'
-  - Updated gating logic: 'All tools are free' instead of 'Get unlimited with Pro'
-  - Updated exit popup: 'Explore Free Tools' instead of 'Stop the Leak — $X lifetime'
-  - Removed 'Free vs Pro' link from footer, updated to 'Free Tools'
 - **S1334: Complete flash sale cleanup — 1015 files changed.**
   - Rewrote deal.html as free tools landing page (was flash sale page)
   - Rewrote go.html as free tools redirect (was Stripe checkout)
@@ -31,6 +34,8 @@
 **Strategic recommendation:** Make everything free. Monetize through affiliate links + email list. Stop conversion optimization.
 
 ## Recent Sessions (Jul 8-11)
+**Jul 11 (1337):** Complete flash sale popup/CTA cleanup — rewrote all exit popups (deprecation, high-intent, generic email), sticky Pro CTA bar, blog upsell, results-cta.js widget, pro-features.js trial banners. Disabled Pro feature gate. Removed all Stripe links and $19 pricing from popups/CTAs. 1 commit.
+
 **Jul 11 (1336):** Final index.html cleanup — removed all remaining Pro/flash sale references: structured data Pro offer, FAQ contradictions, countdown timer script, What's New banner 'APIpulse Pro', gating logic 'Get unlimited with Pro', exit popup Stripe links, footer 'Free vs Pro' link. 1 commit.
 
 **Jul 11 (1335):** Product Hunt launch prep + index.html cleanup — updated product-hunt.md (67 models, all tools free, Jul 15 launch), updated templates (removed Pro plan Q&A, added free model Q&A). Created Show HN post draft. Removed ALL stale Pro/flash sale references from index.html: rewrote pricing section, fixed CTAs, removed countdown timer, replaced Stripe links with free tools links. 3 commits.
@@ -47,5 +52,5 @@
 
 **Jul 8 (1262-1284):** Pricing verification sprint + conversion optimization. 24 commits.
 
-## Completed Summary (Sessions 416-1336, Apr 23 - Jul 11)
-Complete AI API pricing comparison site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard**, **API Cost Optimization Playbook**, **Multi-Model Comparison Tool**, **Compare Two Models tool**. Full conversion funnel with gated audit. **S1332: Business health audit — PMF score 2/10.** **S1333: Pivot to freemium — removed all flash sale urgency, disabled pro gates, all tools free.** **S1334: Complete flash sale cleanup — 1015 files, all purchase CTAs removed.** **S1335: Product Hunt + Show HN prep — docs updated, removed all stale Pro/flash sale references from index.html.** **S1336: Final index.html cleanup — removed all remaining Pro/flash sale references from structured data, FAQs, banners, gating logic, exit popup, footer.** GA4: 8,367 users, $0 revenue. All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries. **410+ commits, 7,750+ files.**
+## Completed Summary (Sessions 416-1337, Apr 23 - Jul 11)
+Complete AI API pricing comparison site: 1183 pages, 67 models, 10 providers, 540 comparison/alternatives pages, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard**, **API Cost Optimization Playbook**, **Multi-Model Comparison Tool**, **Compare Two Models tool**. Full conversion funnel with gated audit. **S1332: Business health audit — PMF score 2/10.** **S1333: Pivot to freemium — removed all flash sale urgency, disabled pro gates, all tools free.** **S1334: Complete flash sale cleanup — 1015 files, all purchase CTAs removed.** **S1335: Product Hunt + Show HN prep — docs updated, removed all stale Pro/flash sale references from index.html.** **S1336: Final index.html cleanup — removed all remaining Pro/flash sale references from structured data, FAQs, banners, gating logic, exit popup, footer.** **S1337: Complete popup/CTA cleanup — rewrote all exit popups, sticky bars, results-cta.js, pro-features.js trial banners. Disabled Pro feature gate.** GA4: 8,367 users, $0 revenue. All 10 providers verified. Blog: 389 posts. Sitemap: 1184 entries. **412+ commits, 7,750+ files.**
