@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1183 HTML files, 67 models, 10 providers. **8,367 users, $0 revenue. S1355: Deep sweep — 47 files, zero user-facing Pro language. 445+ commits.**
+**Site Status:** 1184 HTML files, 67 models, 10 providers, 470 comparisons, 162 tools. **8,367 users, $0 revenue. S1357: Stale count cleanup — 18 files, pricing API synced to 67 models. 449+ commits.**
 
 ### Blocked on Human (Priority Order)
 - **npm package** — npm-package/ ready, needs npm login + publish. 5 min.
