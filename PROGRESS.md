@@ -1,16 +1,19 @@
 # PROGRESS.md
 
-## Site Status (Jul 12, 2026 — Session 1373)
+## Site Status (Jul 12, 2026 — Session 1374)
 **1185 HTML files | 67 models | 10 providers | 470 comparisons | 162 tools | 388 blog posts**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1373: Post-PH thank you page — created ph-thank-you.html with social follow + newsletter signup for PH visitors.**
-  - Dedicated landing page for Product Hunt visitors with X/LinkedIn follow buttons, newsletter signup form, quick-start tool grid (6 tools), social share buttons.
-  - GA4 events: ph_thankyou_viewed, ph_follow_clicked, newsletter_subscribe, ph_ty_tool_clicked, ph_share_clicked.
-  - 1 commit, 1 new file (355 lines).
+- **S1374: Pre-PH-launch page optimization — social proof + structured data on ph.html.**
+  - Added "Join 8,367 developers" social proof badge with avatar stack to PH hero.
+  - Replaced blog article count with user count in hero stats + social proof section (more compelling for conversion).
+  - Added SoftwareApplication JSON-LD structured data to ph.html for rich search results.
+  - Fixed sitemap: removed noindex ph-thank-you.html (1184 indexable entries correct).
+  - 2 commits, 2 files changed.
 - **PH launch is Jul 15 (3 days). Site is fully clean and ready. Banner auto-deploys. Weekly report is fresh.**
 - **Blocked on human:** npm publish (5 min), Ko-fi account (5 min), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 9-12)
+**Jul 12 (1374):** Pre-PH-launch page optimization — added "Join 8,367 developers" social proof badge to PH hero, replaced blog count with user count in hero stats + social proof, added SoftwareApplication JSON-LD structured data, fixed sitemap (removed noindex page). 2 commits, 2 files.
 **Jul 12 (1373):** Post-PH thank you page — created ph-thank-you.html, a dedicated landing page for Product Hunt visitors with X/LinkedIn social follow buttons, weekly newsletter signup form (stores to localStorage, ready for Vercel KV), quick-start tool grid (6 key tools), social share buttons for viral loop. Full GA4 event tracking. 1 commit, 1 new file.
 **Jul 12 (1372):** Nav standardization + viral share button — standardized nav to 9 focused links across ALL 1067 HTML pages (was 5-18+ inconsistent links per page with middot separators and emoji prefixes). Removed stale 🔥 Deal/urgency banners from 234 files. Added "Share your savings" X/Twitter button to PH page calculator — visitors can tweet their cost savings with one click, creating a viral loop. 3 commits, 1067 files changed.
 **Jul 12 (1371):** Stale 'Tell Pro' + 'priority support' cleanup — replaced 5x 'Tell Pro' product references and 'priority support' feature claims with free calculator language across 4 blog/tool pages. All CTAs now accurately describe the free tool offering. 4 files, 1 commit.
@@ -27,5 +30,5 @@
 
 **Jul 9 (1285-1291):** API Cost Optimization Playbook + Multi-Model Comparison Tool. 25+ commits.
 
-## Completed Summary (Sessions 416-1373, Apr 23 - Jul 12)
-Complete AI API pricing comparison site: 1185 pages, 67 models, 10 providers, 470 comparisons, 162 tools, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, cost dashboard, API Cost Optimization Playbook, Multi-Model Comparison Tool, Compare Two Models tool. **S1332-S1373: Pivot to freemium (PMF 2/10), removed all Pro/purchase/flash-sale CTAs across 2600+ files, dead JS cleanup (5 files deleted, 2269 lines), nav standardization (1067 files), PH launch prep (materials, banner, link audit, weekly report refresh, viral share button, thank-you page). All tools now fully free, zero purchase CTAs, zero stale Pro references. PH launch fully prepped.** GA4: 8,367 users, $0 revenue. **473+ commits, 7,800+ files.**
+## Completed Summary (Sessions 416-1374, Apr 23 - Jul 12)
+Complete AI API pricing comparison site: 1185 pages, 67 models, 10 providers, 470 comparisons, 162 tools, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, cost dashboard, API Cost Optimization Playbook, Multi-Model Comparison Tool, Compare Two Models tool. **S1332-S1374: Pivot to freemium (PMF 2/10), removed all Pro/purchase/flash-sale CTAs across 2600+ files, dead JS cleanup (5 files deleted, 2269 lines), nav standardization (1067 files), PH launch prep (materials, banner, link audit, weekly report refresh, viral share button, thank-you page, social proof, structured data). All tools now fully free, zero purchase CTAs, zero stale Pro references. PH launch fully prepped.** GA4: 8,367 users, $0 revenue. **475+ commits, 7,800+ files.**
