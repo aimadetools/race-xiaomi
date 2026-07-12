@@ -18,7 +18,7 @@
   - **Tagline:** Know your AI API costs before you commit
   - **Description:** Free AI API cost calculator and budget planner. Compare pricing across 67 models from 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, AI21). Calculate monthly spend, find the cheapest model for your use case, and optimize costs by up to 40%.
   - **Category:** Developer Tools
-  - **Pricing:** Free / $29 one-time Pro
+  - **Pricing:** Free (all tools)
 
 ### 2. Toolify.ai
 - **URL:** https://www.toolify.ai/submit
@@ -208,7 +208,7 @@
 - **URL:** https://news.ycombinator.com/submit
 - **Title:** Show HN: APIpulse – Free AI API cost calculator (67 models, 10 providers)
 - **URL:** https://getapipulse.com
-- **Comment:** I built APIpulse to help developers compare LLM API pricing across providers. It has 67 models from 10 providers, interactive cost calculators, and budget planning tools. Free to use, Pro is $29 one-time. Happy to answer questions about the pricing data.
+- **Comment:** I built APIpulse to help developers compare LLM API pricing across providers. It has 67 models from 10 providers, interactive cost calculators, and budget planning tools. All tools are completely free, no signup required. Happy to answer questions about the pricing data.
 
 ### 21. RapidAPI Hub
 - **URL:** https://rapidapi.com/hub

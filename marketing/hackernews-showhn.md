@@ -39,7 +39,7 @@ Would appreciate feedback on:
 Pricing data is verified against each provider's official pricing page as of April 2026. I plan to update monthly. If you spot an error, please let me know — accuracy is the #1 priority.
 
 **If someone asks about monetization:**
-There's a $29 one-time Pro tier with saved scenarios, PDF export, and optimization recommendations. The core calculator is and will remain free.
+All tools are completely free — no Pro tier, no paywall, no catch. There's a Ko-fi tip jar if people want to support the project, but everything works without paying.
 
 **If someone compares to ArtificialAnalysis:**
 ArtificialAnalysis focuses on benchmarks and inference speed. APIpulse focuses specifically on cost planning and budget optimization — different use cases. Their data is great for performance comparisons; mine is for figuring out what you'll actually pay.
