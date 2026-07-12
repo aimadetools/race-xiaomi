@@ -421,6 +421,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.trackEvent) window.trackEvent('deal_banner_shown', { source: 'deprecation_banner', free: true });
 });
 
+// Product Hunt Launch Banner (Jul 15-17, 2026)
+document.addEventListener('DOMContentLoaded', () => {
+    var launchStart = new Date('2026-07-15T00:00:00-07:00'); // Jul 15 midnight PT
+    var launchEnd   = new Date('2026-07-18T00:00:00-07:00'); // Jul 18 midnight PT (end of Jul 17)
+    var now = new Date();
+    if (now < launchStart || now >= launchEnd) return;
+
+    var path = window.location.pathname;
+    if (path.includes('ph.html')) return; // don't show on the PH page itself
+    if (localStorage.getItem('apipulse_ph_banner_dismissed')) return;
+
+    var banner = document.createElement('div');
+    banner.id = 'ph-launch-banner';
+    banner.style.cssText = 'background:linear-gradient(135deg,#ff6154,#ee4d2d);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:10000;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
+    banner.innerHTML = '<span>🚀 We\'re live on Product Hunt today! Check us out and leave a review</span>' +
+        '<a href="ph.html" style="color:white;text-decoration:underline;font-weight:700;">See our PH page →</a>' +
+        '<button onclick="document.getElementById(\'ph-launch-banner\').remove();localStorage.setItem(\'apipulse_ph_banner_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
+    document.body.insertBefore(banner, document.body.firstChild);
+    if (window.trackEvent) window.trackEvent('ph_banner_shown', { source: 'ph_launch', date: now.toISOString().slice(0,10) });
+});
 
 // Claude 4 Deprecation Text Auto-Transition (flips future→past tense on June 15)
 // Runs on ALL pages — replacements are string-match based and harmless on pages without deprecation text
