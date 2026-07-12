@@ -1893,9 +1893,7 @@
             if (recs.length > 0) {
                 const bestSavings = recs[0].savings;
                 const annualSavings = bestSavings * 12;
-                const paybackDays = Math.max(1, Math.ceil(19 / (bestSavings / 30)));
-                const paybackText = paybackDays <= 1 ? '1 day' : paybackDays <= 7 ? paybackDays + ' days' : Math.ceil(paybackDays / 7) + ' weeks';
-                // Session 1175: Show savings amount (creates desire) but gate model names (requires payment)
+                // Show savings amount to drive engagement, blur model names to encourage tool usage
                 let html = '<div class="recommendations"><h3>You\'re Overpaying</h3>';
                 // Show blurred/gated recs — user knows they can save but not exactly which model
                 html += `<div style="display:flex;flex-direction:column;gap:8px;margin:12px 0;">`;
@@ -1907,7 +1905,7 @@
                 html += `<div style="margin-top:16px;padding:24px;background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.03));border:2px solid rgba(34,197,94,0.4);border-radius:14px;text-align:center;">
                     <div style="font-size:14px;color:var(--text-secondary);margin-bottom:4px;">💰 Your annual savings potential</div>
                     <div style="font-size:clamp(36px,6vw,56px);font-weight:900;color:var(--green);font-family:monospace;line-height:1.1;">$${annualSavings.toFixed(0)}<span style="font-size:0.35em;color:var(--text-muted);">/year</span></div>
-                    <div style="font-size:15px;color:var(--text-secondary);margin:10px 0 18px;">The tool pays for itself in <strong style="color:var(--green);">${paybackText}</strong> — <strong style="color:var(--green);">${Math.round(annualSavings / 19)}x return</strong></div>
+                    <div style="font-size:15px;color:var(--text-secondary);margin:10px 0 18px;">Switch to the cheapest model and save <strong style="color:var(--green);">$${bestSavings.toFixed(2)}/month</strong> — all tools are free</div>
                     <a href="deal.html" style="display:inline-block;padding:16px 44px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:12px;font-size:18px;font-weight:900;text-decoration:none;box-shadow:0 4px 24px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">See All Free Tools →</a>
                     <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">✅ 100% free · No signup required · All 67 models</div>
                 </div>`;
