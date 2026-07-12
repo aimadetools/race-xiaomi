@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1185 HTML files, 67 models, 10 providers, 470 comparisons, 162 tools. **8,367 users, $0 revenue. S1374: Pre-PH social proof + structured data. 475+ commits. PH launch Jul 15 (3 days).**
+**Site Status:** 1184 HTML files, 67 models, 10 providers, 470 comparisons, 162 tools. **8,367 users, $0 revenue. S1375: Stale $19/Priority support cleanup. 476+ commits. PH launch Jul 15 (3 days).**
 
 ### Blocked on Human (Priority Order)
 - **npm package** — npm-package/ ready, needs npm login + publish. 5 min.
