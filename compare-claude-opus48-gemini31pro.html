@@ -175,59 +175,22 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="compare-hero">
-        <span class="tier-badge tier-premium">Premium</span> <span class="tier-badge tier-mid">Mid Tier</span>
-        <h1>Claude Opus 4.8 <span class="vs">vs</span> Gemini 3.1 Pro</h1>
-        <p class="subtitle">Anthropic's flagship model meets Google's latest Pro. Same 1M context, different price tiers — find out which delivers better value for your workload.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Claude Opus 4.8 (Anthropic)</th><th>Gemini 3.1 Pro (Google)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$5.00</td><td class="cheaper">$2.00</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$25.00</td><td class="cheaper">$12.00</td></tr>
-                <tr><td>Context Window</td><td class="same">1M tokens</td><td class="same">1M tokens</td></tr>
-                <tr><td>Tier</td><td>Premium</td><td>Mid</td></tr>
-                <tr><td>Provider</td><td>Anthropic</td><td>Google</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Premium vs Mid-tier with the same context window — see the real cost difference.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('research')">Research Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('complex-code')">Complex Coding</button>
-            <button class="preset-btn" onclick="applyPreset('long-doc')">Long Document</button>
-            <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
-            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
             <div>
                 <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
                 <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>

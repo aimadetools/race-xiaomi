@@ -160,116 +160,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-budget">Budget</span> <span class="tier-badge tier-mid">Mid-Tier</span>
-        <h1>GPT-5 Mini <span class="vs">vs</span> Grok 4.3</h1>
-        <p class="subtitle">OpenAI's budget workhorse vs xAI's mid-tier contender. GPT-5 Mini is 80% cheaper on input, but Grok 4.3 offers 3.7x the context window — which tradeoff matters for your workload?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5 Mini (OpenAI)</th><th>Grok 4.3 (xAI)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="cheaper">$0.25</td><td class="pricier">$1.25</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$2.00</td><td class="pricier">$2.50</td></tr>
-                <tr><td>Context Window</td><td>272K tokens</td><td class="cheaper">1M tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Mid-Tier</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>xAI</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Budget pricing vs mid-tier quality with a massive context window — see the real tradeoff for your workload.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('code-assist')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('summarization')">Summarization</button>
-            <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
-            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="4000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gpt">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5 Mini</div>
-                <div id="winner-badge-gpt" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-grok">
-                <div class="provider">xAI</div><div class="model-name">Grok 4.3</div>
-                <div id="winner-badge-grok" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-grok">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-grok"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Chatbots & Virtual Assistants</h3><p>High-volume conversational interfaces. GPT-5 Mini's 80% cheaper input pricing makes it the clear winner for chat applications where cost per message matters most.</p><div class="recommendation"><span class="pick-gpt">Better value: GPT-5 Mini</span></div></div>
-            <div class="use-case-card"><h3>Long Document Processing</h3><p>Processing legal contracts, research papers, or codebases. Grok 4.3's 1M context window handles documents 3.7x larger than GPT-5 Mini's 272K limit — essential for true long-context work.</p><div class="recommendation"><span class="pick-grok">Larger context: Grok 4.3</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, marketing copy, product descriptions. GPT-5 Mini's budget pricing handles high-volume output at 20% lower cost per token. Good enough quality for most content needs.</p><div class="recommendation"><span class="pick-gpt">Better value: GPT-5 Mini</span></div></div>
-            <div class="use-case-card"><h3>AI Agents & Autonomous Tasks</h3><p>Multi-step autonomous workflows. Output-heavy by nature — GPT-5 Mini's 20% cheaper output pricing adds up at scale. For reasoning-heavy agents, Grok 4.3's mid-tier quality may be worth the premium.</p><div class="recommendation"><span class="pick-gpt">Value: GPT-5 Mini</span> | <span class="pick-grok">Quality: Grok 4.3</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Need to compare more models?</h2>
-        <p>APIpulse gives you migration code, cost comparisons, and optimization tips for all 67 models.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Migration code</strong> snippets included</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Save up to 95%</strong> on API costs</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is GPT-5 Mini than Grok 4.3?</h3><p>GPT-5 Mini costs $0.25/$2.00 per 1M tokens. Grok 4.3 costs $1.25/$2.50 per 1M tokens. GPT-5 Mini is 80% cheaper on input and 20% cheaper on output — a 50% overall savings for most workloads.</p></div>
-        <div class="faq-item"><h3>Which has a larger context window?</h3><p>Grok 4.3 has a 1M token context window, while GPT-5 Mini has a 272K token context window. Grok offers 3.7x the context — important if you process long documents or need extensive conversation history.</p></div>
-        <div class="faq-item"><h3>When should I choose GPT-5 Mini over Grok 4.3?</h3><p>Choose GPT-5 Mini when cost is your primary concern — it's 80% cheaper on input tokens, making it ideal for high-volume, input-heavy workloads. Choose Grok 4.3 when you need a larger context window or mid-tier reasoning quality.</p></div>
-        <div class="faq-item"><h3>Is GPT-5 Mini good enough to replace Grok 4.3?</h3><p>For many budget-conscious use cases — yes. GPT-5 Mini handles chatbots, content generation, and code assistance at 50-80% lower cost. However, Grok 4.3 may outperform on complex reasoning and offers a much larger context window.</p></div>
-    </div>
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <a href="pricing-dashboard.html" style="display:block;padding:16px;border-radius:12px;border:1px solid rgba(34,197,94,0.3);background:rgba(34,197,94,0.05);text-decoration:none;transition:all 0.2s;margin-bottom:20px;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='rgba(34,197,94,0.3)'">
             <div style="font-size:14px;font-weight:700;color:var(--green);">📋 Full Pricing Dashboard →</div>

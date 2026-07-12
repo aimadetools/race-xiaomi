@@ -711,10 +711,17 @@
             const savingsEl = document.getElementById('ph-savings');
             if (savingsEl && savings > 0) {
                 const pct = ((savings / mostExpensive.totalCost) * 100).toFixed(0);
+                const shareText = encodeURIComponent('I could save $' + savings.toFixed(0) + '/mo by switching from ' + mostExpensive.name + ' to ' + cheapest.name + ' — that\'s $' + savingsYearly.toFixed(0) + '/year. Find your cheapest AI model: https://getapipulse.com/ph.html');
                 savingsEl.innerHTML = '<div class="savings-hero">' +
                     '<div class="amount">$' + savings.toFixed(2) + '/mo</div>' +
                     '<div class="label">Switch from <strong>' + mostExpensive.name + '</strong> to <strong>' + cheapest.name + '</strong> and save ' + pct + '%</div>' +
                     '<div class="yearly">That\'s <strong>$' + savingsYearly.toFixed(2) + '/year</strong> back in your budget. <a href="calculator.html" style="color:var(--accent);text-decoration:underline;font-weight:600;">See full breakdown →</a></div>' +
+                    '<div style="margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">' +
+                    '<a href="https://twitter.com/intent/tweet?text=' + shareText + '" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent(\'ph_share_clicked\',{platform:\'x\',savings:' + savings.toFixed(2) + '})" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:linear-gradient(135deg,#1da1f2,#0d8bd9);color:white;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:transform 0.15s;" onmouseover="this.style.transform=\'scale(1.05)\'" onmouseout="this.style.transform=\'scale(1)\'">' +
+                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>' +
+                    'Share your savings</a>' +
+                    '<a href="calculator.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--bg-card);border:1px solid var(--accent);color:var(--accent);border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.15s;" onmouseover="this.style.background=\'var(--accent)\';this.style.color=\'white\'" onmouseout="this.style.background=\'var(--bg-card)\';this.style.color=\'var(--accent)\'">Try full calculator →</a>' +
+                    '</div>' +
                     '</div>';
             }
 

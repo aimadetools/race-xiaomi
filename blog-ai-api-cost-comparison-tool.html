@@ -143,21 +143,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -166,123 +160,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">AI API Cost Comparison Tool</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Guide</span>
-            <span>May 10, 2026</span>
-        </div>
-        <h1>AI API Cost Comparison Tool: Find the Best Model for Your Budget (2026)</h1>
-
-        <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-            <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-        </div>
-    <div style="padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;margin:16px 0 24px;">
-        <p style="margin:0;font-size:14px;"><strong>💰 Save money:</strong> Use our <a href="claude-4-is-down.html" style="color:#16a34a;font-weight:600;">free Claude Deprecation Calculator</a> to see exactly what you'll pay after migrating to a replacement model.</p>
-    </div>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>There are now 67+ AI API models from 10 providers, ranging from $0.075 to $180 per million tokens. Choosing the wrong one can cost you 2,400x more than necessary. Our free AI API cost comparison tool shows you exactly which models fit your workload and budget.</p>
-
-        <p>Here's how to use it — and what the numbers reveal.</p>
-
-        <h2>Why Most Developers Overpay for AI APIs</h2>
-
-        <p>Most teams default to GPT-4 or Claude Sonnet because they're the most well-known models. But for 80% of production workloads, a cheaper model delivers the same quality at a fraction of the cost:</p>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Workload Type</th>
-                    <th>Default (Overpaying)</th>
-                    <th>Optimized Choice</th>
-                    <th>Monthly Savings</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Chatbot (10K req/day)</td>
-                    <td>GPT-4o ($2.50/$10)</td>
-                    <td class="winner">GPT-5 mini ($0.25/$2)</td>
-                    <td class="winner">-$615/mo (90%)</td>
-                </tr>
-                <tr>
-                    <td>Classification (50K req/day)</td>
-                    <td>Claude Sonnet 4.6 ($3/$15)</td>
-                    <td class="winner">DeepSeek V4 Flash ($0.14/$0.28)</td>
-                    <td class="winner">-$6,300/mo (98%)</td>
-                </tr>
-                <tr>
-                    <td>Content generation (5K req/day)</td>
-                    <td>GPT-5 ($1.25/$10)</td>
-                    <td class="winner">GPT-5 mini ($0.25/$2)</td>
-                    <td class="winner">-$270/mo (80%)</td>
-                </tr>
-                <tr>
-                    <td>Data extraction (20K req/day)</td>
-                    <td>Claude Opus 4.7 ($5/$25)</td>
-                    <td class="winner">Gemini 2.5 Flash-Lite ($0.10/$0.40)</td>
-                    <td class="winner">-$2,880/mo (97%)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>The pattern is consistent: <strong>developers overpay by 80-98% because they don't know cheaper alternatives exist</strong> — or don't trust them.</p>
-
-        <h2>How the APIpulse Cost Comparison Tool Works</h2>
-
-        <p>Our tool compares all 67 models across 10 providers in four ways:</p>
-
-        <h3>1. Side-by-Side Calculator</h3>
-        <p>Enter your monthly requests and average tokens per request. The calculator shows the exact monthly cost for every model. No estimation needed — real numbers based on verified Jul 2026 pricing.</p>
-
-        <h3>2. Cost Efficiency Score</h3>
-        <p>See your <strong>Cost Efficiency Score</strong> — an A-F grade that compares your current model cost to the cheapest available alternative. An A grade means you're already cost-efficient. An F grade means you could save 70%+ by switching. The score comes with a visual progress bar and specific savings recommendations.</p>
-
-        <h3>3. Use Case Presets</h3>
-        <p>Not sure how many tokens your workload uses? Our presets for coding, research, customer support, and data analysis automatically estimate token counts and show which models work best.</p>
-
-        <h3>4. Model Comparison Matrix</h3>
-        <p>See every model's input/output price, context window, and tier side by side. Sort by price, provider, or context length to find exactly what you need.</p>
-
-        <div class="cost-box">
-            <h3>Quick Comparison: 5 Use Cases, Optimized Models</h3>
-            <div class="cost-row">
-                <span>Chatbot → GPT-5 mini</span>
-                <span>$13.50/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Code completion → DeepSeek V4 Flash</span>
-                <span>$12.60/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Document analysis → Gemini 2.5 Flash-Lite</span>
-                <span>$22.50/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Complex reasoning → GPT-5</span>
-                <span>$165/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Mass classification → Gemini Flash Lite</span>
-                <span>$6.75/mo</span>
-            </div>
-        </div>
 
         <h2>What the Numbers Reveal</h2>
 

@@ -285,17 +285,13 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
-                <a href="agent-cost-calculator.html">Agents</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
-                <a href="tools.html">Tools</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
@@ -306,45 +302,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="coding-hero">
-        <h1>Cheapest AI API for Coding</h1>
-        <p>Compare all 67 AI models ranked by code generation cost. Adjust token counts and requests per day to find the cheapest API for your exact coding workload.</p>
-    </div>
-
-    <!-- Interactive Calculator -->
-    <section class="calculator-section">
-        <div class="calculator" role="form" aria-label="Coding cost calculator">
-            <div class="presets">
-                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Coding task:</span>
-                <button class="preset-btn" onclick="applyPreset('completion', event)">Code completion</button>
-                <button class="preset-btn active-preset" onclick="applyPreset('generation', event)">Code generation</button>
-                <button class="preset-btn" onclick="applyPreset('review', event)">Code review</button>
-                <button class="preset-btn" onclick="applyPreset('debugging', event)">Debugging</button>
-                <button class="preset-btn" onclick="applyPreset('refactoring', event)">Refactoring</button>
-            </div>
-            <div class="calc-grid">
-                <div class="calc-inputs">
-                    <div class="input-group">
-                        <label for="input-tokens">Input tokens per request</label>
-                        <input type="number" id="input-tokens" value="2000" min="0" step="100" oninput="calculate()">
-                    </div>
-                    <div class="input-group">
-                        <label for="output-tokens">Output tokens per request</label>
-                        <input type="number" id="output-tokens" value="800" min="0" step="100" oninput="calculate()">
-                    </div>
-                    <div class="input-group">
-                        <label for="requests-day">Requests per day</label>
-                        <input type="number" id="requests-day" value="1000" min="0" step="100" oninput="calculate()">
-                    </div>
-                </div>
                 <div class="calc-results" role="region" aria-label="Cost results" aria-live="polite">
                     <h3 style="margin-bottom: 16px; font-size: 16px;">Cheapest Model</h3>
                     <div class="result-item">

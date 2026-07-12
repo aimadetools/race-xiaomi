@@ -201,17 +201,13 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
-                <a href="agent-cost-calculator.html">Agents</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
-                <a href="tools.html">Tools</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
@@ -221,62 +217,7 @@
         </div>
     </nav>
 
-    <main>
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="hero">
-        <h1>Cheapest AI Embedding API</h1>
-        <p>Find the cheapest embedding model for your use case. 6 models ranked by cost with an interactive calculator. From $0.02/1M tokens — or free.</p>
-    </div>
-
-    <!-- Calculator -->
-    <section class="calc-section">
-        <div class="calculator" role="form" aria-label="Embedding cost calculator">
-            <div class="presets">
-                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Use case:</span>
-                <button class="preset-btn" onclick="applyPreset('rag')">RAG search</button>
-                <button class="preset-btn" onclick="applyPreset('semantic')">Semantic search</button>
-                <button class="preset-btn" onclick="applyPreset('classification')">Classification</button>
-                <button class="preset-btn" onclick="applyPreset('clustering')">Clustering</button>
-            </div>
-            <div class="presets">
-                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Scale:</span>
-                <button class="preset-btn" onclick="applyPreset('small')">Small (1K docs)</button>
-                <button class="preset-btn" onclick="applyPreset('medium')">Medium (100K docs)</button>
-                <button class="preset-btn" onclick="applyPreset('large')">Large (10M docs)</button>
-            </div>
-            <div class="calc-grid">
-                <div class="calc-inputs">
-                    <div class="input-group">
-                        <label for="tokens-per-doc">Tokens per document</label>
-                        <input type="number" id="tokens-per-doc" value="500" min="1" step="50" onchange="calculate()" oninput="calculate()">
-                        <span class="hint">~375 words per 500 tokens</span>
-                    </div>
-                    <div class="input-group">
-                        <label for="num-documents">Number of documents</label>
-                        <input type="number" id="num-documents" value="10000" min="1" step="1000" onchange="calculate()" oninput="calculate()">
-                    </div>
-                    <div class="input-group">
-                        <label for="queries-day">Queries per day</label>
-                        <input type="number" id="queries-day" value="500" min="0" step="100" onchange="calculate()" oninput="calculate()">
-                    </div>
-                    <div class="input-group">
-                        <label for="reembed-freq">Re-embedding frequency</label>
-                        <select id="reembed-freq" onchange="calculate()">
-                            <option value="0">Never (static docs)</option>
-                            <option value="1">Monthly</option>
-                            <option value="12" selected>Yearly</option>
-                            <option value="52">Weekly</option>
-                        </select>
-                        <span class="hint">How often documents change</span>
-                    </div>
-                </div>
+    <main id="main">
                 <div class="calc-results" role="region" aria-label="Cost results" aria-live="polite">
                     <h3 style="margin-bottom: 16px; font-size: 16px;">Cheapest Embedding Models</h3>
                     <div id="ranking-results"></div>

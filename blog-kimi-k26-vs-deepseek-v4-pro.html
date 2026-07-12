@@ -149,12 +149,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -162,94 +166,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">Kimi K2.6 vs DeepSeek V4 Pro</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Comparison</span>
-            <span>Jun 7, 2026</span>
-        </div>
-        <h1>Kimi K2.6 vs DeepSeek V4 Pro: Chinese AI Budget Showdown</h1>
-
-        <p>Kimi K2.6 ($0.95/$4.00 per million tokens) and DeepSeek V4 Pro ($0.435/$0.87) are both budget-tier Chinese AI APIs, but they offer very different value propositions. DeepSeek V4 Pro is dramatically cheaper across the board and offers 4x the context window. Kimi K2.6, from Moonshot, may offer different model capabilities or Chinese language optimization.</p>
-
-        <p>This comparison breaks down standard pricing, cost per request across workload types, monthly cost scenarios, and when you'd choose each model.</p>
-
-        <h2>Head-to-Head: Pricing Comparison</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>Kimi K2.6 (Moonshot)</th>
-                    <th>DeepSeek V4 Pro (DeepSeek)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Input ($/1M tokens)</strong></td>
-                    <td>$0.95</td>
-                    <td class="winner">$0.435</td>
-                </tr>
-                <tr>
-                    <td><strong>Output ($/1M tokens)</strong></td>
-                    <td>$4.00</td>
-                    <td class="winner">$0.87</td>
-                </tr>
-                <tr>
-                    <td><strong>Context Window</strong></td>
-                    <td>256K tokens</td>
-                    <td class="winner">1M tokens</td>
-                </tr>
-                <tr>
-                    <td><strong>Tier</strong></td>
-                    <td>Budget</td>
-                    <td>Budget</td>
-                </tr>
-                <tr>
-                    <td><strong>Input cost vs competitor</strong></td>
-                    <td>118% more expensive</td>
-                    <td class="winner">54% cheaper</td>
-                </tr>
-                <tr>
-                    <td><strong>Output cost vs competitor</strong></td>
-                    <td>360% more expensive</td>
-                    <td class="winner">78% cheaper</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>DeepSeek V4 Pro wins on every pricing metric.</strong> It's 54% cheaper on input, 78% cheaper on output, and has 4x the context window. The only reason to choose Kimi K2.6 would be if Moonshot's model offers specific capabilities you need — like Chinese language optimization or different reasoning patterns.</p>
-
-        <h2>Monthly Cost Scenarios</h2>
-
-        <h3>Small App: 100 requests/day, 2K tokens avg (500 in / 1.5K out)</h3>
-        <div class="cost-box">
-            <div class="cost-row">
-                <span>Kimi K2.6</span>
-                <span>$34.20/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>DeepSeek V4 Pro</span>
-                <span class="cost-total">$6.61/mo</span>
-            </div>
-            <div class="cost-row">
-                <span><strong>Savings with DeepSeek</strong></span>
-                <span class="winner">$27.59/mo (81%)</span>
-            </div>
-        </div>
 
         <h3>Medium App: 1K requests/day, 3K tokens avg (1K in / 2K out)</h3>
         <div class="cost-box">

@@ -214,21 +214,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -237,72 +231,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-claude-sonnet-vs-gpt4o">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-                <a href="quiz.html">Quiz</a>
-            <span class="separator">›</span>
-            <span class="current">Claude 4 Sonnet vs GPT-4o: The Developer's Choice</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Comparison</span>
-            <span class="tier-badge tier-mid">Mid</span>
-            <span>April 25, 2026</span>
-            <span>11 min read</span>
-        </div>
-        <h1>Claude 4 Sonnet vs GPT-4o: The Developer's Choice</h1>
-
-        <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-            <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-        </div>
-
-        <div style="padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;margin:16px 0 24px;">
-            <p style="margin:0;font-size:14px;"><strong>💰 Save money:</strong> Use our <a href="claude-4-is-down.html" style="color:#16a34a;font-weight:600;">free Claude Deprecation Calculator</a> to see exactly what you'll pay after migrating to a replacement model.</p>
-        </div>
-            <div style="padding:16px 20px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🔄 Migration tool:</strong> Use our <a href="claude-4-migration-tool.html" style="color:#6366f1;font-weight:600;">free Claude 4 Migration Tool</a> to compare all 67 alternatives, get exact costs, and see the one-line code change.</p>
-            </div>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>For developers building with AI APIs, the choice between Claude 4 Sonnet and GPT-4o comes down to more than just price. Both are capable models, but they differ in pricing structure, context window, code quality, and ecosystem support. This guide breaks down every dimension that matters so you can make the right call for your specific use case.</p>
-
-        <h2>Pricing Comparison: Claude Sonnet 4.6 vs GPT-4o</h2>
-        <p>As of April 2026, the pricing for both models is:</p>
-        <ul>
-            <li><strong>Claude 4 Sonnet:</strong> $3.00 per 1M input tokens, $15.00 per 1M output tokens</li>
-            <li><strong>GPT-4o:</strong> $2.50 per 1M input tokens, $10.00 per 1M output tokens</li>
-        </ul>
-        <p>GPT-4o is 17% cheaper on input and 33% cheaper on output. That cost advantage scales significantly at higher volumes, making GPT-4o the default choice for cost-sensitive workloads. However, raw pricing does not tell the full story — output quality, context limits, and task-specific performance all influence the effective cost per result.</p>
-
-        <h2>Context Window: 200K vs 128K</h2>
-        <p>One area where Claude 4 Sonnet has a clear edge is context window size:</p>
-        <ul>
-            <li><strong>Claude 4 Sonnet:</strong> 200,000 tokens</li>
-            <li><strong>GPT-4o:</strong> 128,000 tokens</li>
-        </ul>
-        <p>Claude's 200K context window means you can process roughly 56% more text in a single request. For document analysis, long-codebase refactoring, or multi-file understanding, this eliminates the need for chunking and reassembly — reducing both complexity and total token spend.</p>
-
-        <h2>Use Case Cost Breakdown</h2>
-
-        <h3>1. Chatbot (Short Q&A)</h3>
-        <p>A typical customer support chatbot processes around 500 input tokens and 200 output tokens per request.</p>
-        <div class="cost-example">
-            <div class="label">Per Request Cost</div>
-            <div class="cost-row"><span class="name">GPT-4o</span><span class="value">$0.00135</span></div>
-            <div class="cost-row"><span class="name">Claude 4 Sonnet</span><span class="value">$0.00180</span></div>
-            <div class="cost-row cost-total"><span class="name">Monthly @ 10K req/day</span><span class="value">GPT-4o: $405 · Claude: $540</span></div>
-        </div>
         <p>GPT-4o wins on pure cost by 25%. For straightforward Q&A tasks where output quality differences are minimal, GPT-4o is the more economical choice.</p>
 
         <h3>2. Code Generation</h3>

@@ -94,117 +94,24 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button><div class="nav-links"><a href="calculator.html">Calculator</a><a href="compare.html">Compare</a><a href="cost-explorer.html">Explorer</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="index.html#free-tools" class="nav-cta">Free Tools →</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button></div></div></nav>
+    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
 
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;"><strong style="color:#dc2626;">🔥 Limited time:</strong> <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a></p>
-    </div>
 
-    <div class="compare-hero">
-        <h1>GPT-5 <span class="vs">vs</span> Claude Fable 5</h1>
-        <p class="subtitle">Premium models, different price points — find the best value.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5</th><th>Claude Fable 5</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="cheaper">$1.25</td><td class="pricier">$10.00</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$10.00</td><td class="pricier">$50.00</td></tr>
-                <tr><td>Context Window</td><td>272K</td><td>1M</td></tr>
-                <tr><td>Tier</td><td>Premium</td><td>Premium</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>Anthropic</td></tr>
-                <tr><td>Input Savings</td><td class="cheaper">88% cheaper</td><td class="pricier">Baseline</td></tr>
-                <tr><td>Output Savings</td><td class="cheaper">80% cheaper</td><td class="pricier">Baseline</td></tr>
-                <tr><td>Cost at 1M input + 500K output</td><td class="cheaper">$6.25</td><td class="pricier">$35.00</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Enter your usage to see a precise cost comparison for both models.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('coding')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('rag')">RAG Pipeline</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
-            <button class="preset-btn" onclick="applyPreset('heavy')">Heavy Usage</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="1500" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="800" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="500" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-a">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5</div>
-                <div id="winner-badge-a" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-a">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-a"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-a"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-a"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-a"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-b">
-                <div class="provider">Anthropic</div><div class="model-name">Claude Fable 5</div>
-                <div id="winner-badge-b" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-b">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-b"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-b"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-b"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-b"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="use-cases"><h2>Which Model for Which Use Case?</h2><div class="use-case-grid"><div class="use-case-card">
-                <h3>Cost Optimization</h3>
-                <p>At $1.25/$10.00 per 1M, GPT-5 is the clear winner. Claude Fable 5 at $10.00/$50.00 per 1M costs more but has its own strengths.</p>
-                <div class="recommendation"><span class="pick-a">Best value: GPT-5 (82% cheaper at scale)</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Quality vs Cost</h3>
-                <p>GPT-5 (premium) and Claude Fable 5 (premium) both deliver strong results. Test with your specific workload to find the best fit.</p>
-                <div class="recommendation"><span class="pick-b">Both viable — test with your workload</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Enterprise Scale</h3>
-                <p>At 10M input + 5M output/month, the cost difference is $287.50/mo ($3450/year). Significant savings with GPT-5.</p>
-                <div class="recommendation"><span class="pick-a">Enterprise: GPT-5 saves $3450/year</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Startup & Prototyping</h3>
-                <p>Building an MVP? GPT-5 at $6.25/mo saves $28.75 compared to Claude Fable 5 at $35.00/mo.</p>
-                <div class="recommendation"><span class="pick-a">MVPs: GPT-5 at $6.25/mo</span></div>
-            </div></div></div>
-
-    <div class="pro-upsell">
-        <h2>Need deeper cost analysis?</h2>
-        <p>APIpulse lets you compare all 67 models, save scenarios, and export PDF reports.</p>
-        <div class="features"><div class="feature"><strong>67 models</strong> across 10 providers</div><div class="feature"><strong>Save</strong> up to 10 scenarios</div><div class="feature"><strong>Export</strong> PDF cost reports</div><div class="feature"><strong>Optimize</strong> — save up to 40%</div></div>
-        <a href="audit.html?from=tool_page" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>Are GPT-5 and Claude Fable 5 the same price?</h3><p>No. GPT-5: $1.25/M input, $10.00/M output. Claude Fable 5: $10.00/M input, $50.00/M output.</p></div>
-        <div class="faq-item"><h3>Which is better for coding — GPT-5 or Claude Fable 5?</h3><p>Both are capable for coding. GPT-5 (premium tier) at $10.00/M output vs Claude Fable 5 (premium tier) at $50.00/M output.</p></div>
-        <div class="faq-item"><h3>How much would I save using GPT-5 instead of Claude Fable 5?</h3><p>At 1M input + 500K output/month: GPT-5 costs $6.25 vs Claude Fable 5's $35.00 — saving $28.75/mo. At scale (10M+5M): save $287.50/mo ($3450/year).</p></div>
-        <div class="faq-item"><h3>When should I choose Claude Fable 5 over GPT-5?</h3><p>Choose Claude Fable 5 when you need its specific capabilities or ecosystem. Choose GPT-5 for better value (82% cheaper at scale).</p></div>
-    </div>
 
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">Related Comparisons</h2>

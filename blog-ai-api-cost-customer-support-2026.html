@@ -173,15 +173,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -189,103 +190,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">&rsaquo;</span>
-            <span class="current">AI API Cost for Customer Support</span>
-        </nav>
-        <a href="blog.html" class="back-link">&larr; Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Guides</span>
-            <span>June 8, 2026</span>
-            <span>&middot; 12 min read</span>
-        </div>
-        <h1>AI API Cost for Customer Support 2026 — Real Pricing, Chatbot Cost Breakdown</h1>
-        <p class="subtitle">How much does it actually cost to run an AI customer support chatbot? We break down cost-per-conversation, monthly scenarios for small to enterprise, and show how multi-tier routing can cut your bill by 70%.</p>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <p>Customer support is the most common production use case for AI APIs in 2026. Every day, thousands of companies deploy chatbots to handle FAQs, troubleshoot issues, and route tickets. But most teams still have no idea what these chatbots actually cost to run.</p>
-
-        <p>We did the math. Across 7 major models, at every volume level from 500 to 50,000 conversations per month, here is the real cost of running an AI customer support chatbot — no marketing fluff, just token prices and conversation counts.</p>
-
-        <h2>The Quick Answer: $1.28 to $48.75 Per Month for 500 Conversations</h2>
-
-        <p>For a small business handling <strong>500 conversations per month</strong> (roughly 16-17 per day), your AI API bill ranges from <strong>$1.28/month</strong> with DeepSeek V4 Flash to <strong>$48.75/month</strong> with Claude Sonnet 4.6. That's less than a single lunch for most teams — and it handles every customer query automatically.</p>
-
-        <p>At the enterprise level with <strong>50,000 conversations per month</strong>, costs range from <strong>$128/month</strong> (DeepSeek V4 Flash) to <strong>$4,875/month</strong> (Claude Sonnet 4.6). Compare that to a human support team of 10 agents at $40,000/month total — the savings are staggering.</p>
-
-        <h2>How to Calculate Cost Per Conversation</h2>
-
-        <p>Every AI API charges per token. A "token" is roughly 3/4 of a word. Here's the formula:</p>
-
-        <pre><code>Cost per conversation = (input tokens x input price) + (output tokens x output price)
-
-Example: DeepSeek V4 Flash, 750 input tokens, 2,000 output tokens
-  Input:  750 x $0.00000014 = $0.000105
-  Output: 2000 x $0.00000028 = $0.000560
-  Total:  $0.000665 per conversation</code></pre>
-
-        <p>A typical customer support conversation involves <strong>5-10 messages</strong> with <strong>500-1,000 tokens each</strong>. The customer asks a question (100-300 tokens), the bot responds (200-500 tokens), and this cycles back and forth until resolution. We use <strong>750 input tokens</strong> and <strong>2,000 output tokens</strong> as our baseline for all calculations below — accounting for the full conversation history plus the system prompt.</p>
-
-        <h2>Model Pricing for Customer Support</h2>
-
-        <p>Here are the 7 models compared, with their per-conversation cost at our baseline:</p>
-
-        <table class="comparison-table">
-            <thead>
-                <tr><th>Model</th><th>Input / M</th><th>Output / M</th><th>Cost / Conversation</th><th>Best For</th></tr>
-            </thead>
-            <tbody>
-                <tr><td class="winner">DeepSeek V4 Flash</td><td>$0.14</td><td>$0.28</td><td class="winner">$0.000665</td><td>Budget support, high volume</td></tr>
-                <tr><td class="winner">Gemini 2.5 Flash-Lite</td><td>$0.10</td><td>$0.40</td><td class="winner">$0.000875</td><td>FAQ-heavy, fast responses</td></tr>
-                <tr><td>GPT-5 mini</td><td>$0.25</td><td>$2.00</td><td>$0.004188</td><td>Balanced quality and cost</td></tr>
-                <tr><td>DeepSeek V4 Pro</td><td>$0.435</td><td>$0.87</td><td>$0.002076</td><td>Near-premium at budget price</td></tr>
-                <tr><td>Claude Haiku 4.5</td><td>$1.00</td><td>$5.00</td><td>$0.010750</td><td>Complex support, best quality</td></tr>
-                <tr><td>GPT-5</td><td>$1.25</td><td>$10.00</td><td>$0.020938</td><td>Enterprise, multi-step reasoning</td></tr>
-                <tr><td>Claude Sonnet 4.6</td><td>$3.00</td><td>$15.00</td><td>$0.032250</td><td>Premium support, compliance</td></tr>
-            </tbody>
-        </table>
-        <p><em>Based on 750 input tokens + 2,000 output tokens per conversation. <a href="calculator.html">Calculate your exact costs &rarr;</a></em></p>
-
-        <h2>Monthly Cost Scenarios by Business Size</h2>
-
-        <h3>Small Business: 500 conversations/month</h3>
-        <p>A typical small business — a SaaS startup, e-commerce store, or local service company — handles around 500 support conversations per month. That's roughly 16-17 per day.</p>
-
-        <div class="cost-box">
-            <h3>Monthly cost at 500 conversations</h3>
-            <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$1.28/mo</span></div>
-            <div class="cost-row"><span>Gemini 2.5 Flash-Lite</span><span>$1.75/mo</span></div>
-            <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$4.15/mo</span></div>
-            <div class="cost-row"><span>GPT-5 mini</span><span>$8.38/mo</span></div>
-            <div class="cost-row"><span>Claude Haiku 4.5</span><span>$21.50/mo</span></div>
-            <div class="cost-row"><span>GPT-5</span><span>$41.88/mo</span></div>
-            <div class="cost-row"><span>Claude Sonnet 4.6</span><span>$48.75/mo</span></div>
-        </div>
         <p>At this volume, even the most expensive model costs less than a Netflix subscription. Most small businesses should start with DeepSeek V4 Flash or Gemini Flash and upgrade only if conversation quality requires it.</p>
 
         <h3>Mid-Market: 5,000 conversations/month</h3>

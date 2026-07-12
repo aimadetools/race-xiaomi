@@ -160,116 +160,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-budget">Budget</span> <span class="tier-badge tier-mid">Mid-Tier</span>
-        <h1>GPT-5 Mini <span class="vs">vs</span> GPT-4o</h1>
-        <p class="subtitle">OpenAI's new budget model vs the established workhorse. GPT-5 Mini is 90% cheaper with 2x the context — should you upgrade from GPT-4o?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5 Mini (OpenAI)</th><th>GPT-4o (OpenAI)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="cheaper">$0.25</td><td class="pricier">$2.50</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$2.00</td><td class="pricier">$10.00</td></tr>
-                <tr><td>Context Window</td><td class="cheaper">272K tokens</td><td>128K tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Mid-Tier</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>OpenAI</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Same provider, 90% price difference — see how much you'd save by upgrading from GPT-4o.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('code-assist')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('summarization')">Summarization</button>
-            <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
-            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="4000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-mini">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5 Mini</div>
-                <div id="winner-badge-mini" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-mini">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-mini"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-4o">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-4o</div>
-                <div id="winner-badge-4o" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-4o">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-4o"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-4o"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-4o"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-4o"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Chatbots & Virtual Assistants</h3><p>High-volume conversational interfaces. GPT-5 Mini's 90% cheaper input pricing makes it the clear winner — you save 83% vs GPT-4o at scale.</p><div class="recommendation"><span class="pick-mini">Better value: GPT-5 Mini</span></div></div>
-            <div class="use-case-card"><h3>Legacy GPT-4o Integrations</h3><p>Existing apps built on GPT-4o's specific behavior. If your system is tuned for GPT-4o's response patterns, the migration cost may outweigh savings. Test GPT-5 Mini first.</p><div class="recommendation"><span class="pick-4o">Legacy: GPT-4o</span> | <span class="pick-mini">New builds: GPT-5 Mini</span></div></div>
-            <div class="use-case-card"><h3>Long Document Processing</h3><p>Processing large documents or codebases. GPT-5 Mini's 272K context handles documents 2.1x larger than GPT-4o's 128K limit — a significant upgrade.</p><div class="recommendation"><span class="pick-mini">Larger context: GPT-5 Mini</span></div></div>
-            <div class="use-case-card"><h3>Budget-Conscious Startups</h3><p>Startups watching every dollar. GPT-5 Mini delivers 83-90% cost savings with better specs. The clear choice for MVPs and cost-sensitive production.</p><div class="recommendation"><span class="pick-mini">Better value: GPT-5 Mini</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Need to compare more models?</h2>
-        <p>APIpulse gives you migration code, cost comparisons, and optimization tips for all 67 models.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Migration code</strong> snippets included</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Save up to 95%</strong> on API costs</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is GPT-5 Mini than GPT-4o?</h3><p>GPT-5 Mini costs $0.25/$2.00 per 1M tokens. GPT-4o costs $2.50/$10.00 per 1M tokens. GPT-5 Mini is 90% cheaper on input and 80% cheaper on output — an 83% overall savings for most workloads.</p></div>
-        <div class="faq-item"><h3>Which has a larger context window?</h3><p>GPT-5 Mini has a 272K token context window, while GPT-4o has a 128K token context window. GPT-5 Mini offers 2.1x the context — a significant upgrade for long-context workloads.</p></div>
-        <div class="faq-item"><h3>Should I upgrade from GPT-4o to GPT-5 Mini?</h3><p>For most use cases — yes. GPT-5 Mini is 83-90% cheaper with 2x the context window. It handles chatbots, content generation, and code assistance at a fraction of the cost. Test on your workload first to ensure quality meets your needs.</p></div>
-        <div class="faq-item"><h3>Is GPT-5 Mini better than GPT-4o for coding?</h3><p>GPT-5 Mini is a newer model with improved capabilities over GPT-4o. For coding tasks, it offers better performance at 90% lower input cost and 80% lower output cost. The larger 272K context window also helps with large codebases.</p></div>
-    </div>
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <a href="pricing-dashboard.html" style="display:block;padding:16px;border-radius:12px;border:1px solid rgba(34,197,94,0.3);background:rgba(34,197,94,0.05);text-decoration:none;transition:all 0.2s;margin-bottom:20px;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='rgba(34,197,94,0.3)'">
             <div style="font-size:14px;font-weight:700;color:var(--green);">📋 Full Pricing Dashboard →</div>

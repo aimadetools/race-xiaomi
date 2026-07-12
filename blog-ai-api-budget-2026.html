@@ -197,21 +197,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -220,66 +214,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-ai-api-budget-2026">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">How to Budget for AI APIs in 2026</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Guide</span>
-            <span>April 30, 2026</span>
-        </div>
-        <h1>How to Budget for AI APIs in 2026: A Practical Guide</h1>
-
-        <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-            <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-        </div>
-    <div style="padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;margin:16px 0 24px;">
-        <p style="margin:0;font-size:14px;"><strong>💰 Save money:</strong> Use our <a href="claude-4-is-down.html" style="color:#16a34a;font-weight:600;">free Claude Deprecation Calculator</a> to see exactly what you'll pay after migrating to a replacement model.</p>
-    </div>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>Most teams start using AI APIs without a budget. They pick a provider, send a few requests, and watch the bill grow. By the time they realize they're spending $2,000/month on GPT-4 calls that could cost $200 on a cheaper model, it's too late — they've already built their entire stack around one provider.</p>
-
-        <p>This guide gives you a framework for budgeting AI API costs <strong>before</strong> you commit. We'll use real pricing data from 10 providers and 67 models to show you exactly what to expect.</p>
-
-        <h2>The Three Questions Every Team Must Answer</h2>
-
-        <p>Before you look at a single price tag, answer these:</p>
-
-        <ol>
-            <li><strong>What are you building?</strong> — Chatbot, code assistant, RAG pipeline, content generator, data analyst? Each use case has a completely different cost profile.</li>
-            <li><strong>How much traffic?</strong> — 100 requests/day vs 100,000 requests/day changes everything. Volume determines whether you need batch pricing or real-time inference.</li>
-            <li><strong>What's your quality threshold?</strong> — Does every response need to be perfect (customer-facing), or is "good enough" acceptable (internal tools)?</li>
-        </ol>
-
-        <h2>Real Budget Scenarios</h2>
-
-        <p>Let's look at three realistic scenarios with actual pricing.</p>
-
-        <h3>Scenario 1: Early-Stage Startup (10K requests/month)</h3>
-        <p>You're building an AI-powered feature for your SaaS. Low volume, quality matters.</p>
-
-        <div class="cost-example">
-            <div class="label">Monthly Cost Estimate — Startup Tier</div>
-            <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$15/mo</span></div>
-            <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">$25/mo</span></div>
-            <div class="cost-row"><span class="name">Gemini 2.5 Flash-Lite</span><span class="value">$12/mo</span></div>
-            <div class="cost-row"><span class="name">Mistral Small 4</span><span class="value">$8/mo</span></div>
-            <div class="cost-row cost-total"><span class="name">Best value pick</span><span class="value" style="color:var(--green);">$8-25/mo</span></div>
-        </div>
 
         <p><strong>Recommendation:</strong> Start with Mistral Small 4 or Gemini 2.5 Flash-Lite. Upgrade to GPT-4o mini only if quality is insufficient.</p>
 

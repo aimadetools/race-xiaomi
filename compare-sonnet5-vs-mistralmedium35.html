@@ -133,115 +133,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-mid">Mid</span> <span class="tier-badge tier-mid">Mid</span>
-        <h1>Claude Sonnet 5 <span class="vs">vs</span> Mistral Medium 3.5</h1>
-        <p class="subtitle">Same tier, different providers. Mistral Medium at $1.50/$7.50 is 50% cheaper than Sonnet 5 at $3/$15 — but Sonnet 5 offers 8x larger context (1M vs 128K). Which mid-tier model gives you the best value?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Claude Sonnet 5 (Anthropic)</th><th>Mistral Medium 3.5 (Mistral)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$3.00</td><td class="cheaper">$1.50</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$15.00</td><td class="cheaper">$7.50</td></tr>
-                <tr><td>Context Window</td><td class="cheaper">1M tokens</td><td class="pricier">128K tokens</td></tr>
-                <tr><td>Tier</td><td>Mid</td><td>Mid</td></tr>
-                <tr><td>Provider</td><td>Anthropic</td><td>Mistral</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">See how much you can save with Mistral Medium — or whether Sonnet 5's 8x larger context justifies 2x higher cost.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('agentic')">Agentic Tasks</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-sonnet5">
-                <div class="provider">Anthropic</div><div class="model-name">Claude Sonnet 5</div>
-                <div id="winner-badge-sonnet5" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-sonnet5">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-sonnet5"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-mistral">
-                <div class="provider">Mistral</div><div class="model-name">Mistral Medium 3.5</div>
-                <div id="winner-badge-mistral" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-mistral">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-mistral"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-mistral"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-mistral"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-mistral"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Budget-Conscious Workloads</h3><p>High-volume batch processing, data extraction, content moderation. Mistral Medium at $1.50/$7.50 is 50% cheaper, making it the clear winner for cost-sensitive workloads.</p><div class="recommendation"><span class="pick-mistral">Better value: Mistral Medium</span></div></div>
-            <div class="use-case-card"><h3>Long Context Tasks</h3><p>Processing large documents, codebases, or multi-file analysis. Sonnet 5's 1M context is 8x larger than Mistral's 128K, making it essential for tasks that need massive context windows.</p><div class="recommendation"><span class="pick-sonnet5">Better value: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Code Generation</h3><p>Writing, debugging, refactoring code. Both models produce excellent code. Mistral Medium at $1.50/$7.50 is 50% cheaper, but Sonnet 5's larger context helps with complex multi-file projects.</p><div class="recommendation"><span class="pick-mistral">Simple tasks: Mistral</span> | <span class="pick-sonnet5">Complex projects: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, documentation, marketing copy. Both models produce excellent content. Mistral Medium at $1.50/$7.50 is 50% cheaper, making it the better value for content-heavy workloads.</p><div class="recommendation"><span class="pick-mistral">Better value: Mistral Medium</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Choosing between Anthropic and Mistral?</h2>
-        <p>APIpulse lets you compare all 67 models including Sonnet 5 ($3/$15) and Mistral Medium ($1.50/$7.50), save scenarios, and export cost reports.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 40%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is Mistral Medium 3.5?</h3><p>Mistral Medium costs $1.50/$7.50 per 1M tokens vs Sonnet 5 at $3/$15 — 50% cheaper on both input and output. At 1M input + 500K output tokens/month, that's $5.25 vs $10.50, saving $5.25/month.</p></div>
-        <div class="faq-item"><h3>Is Sonnet 5 worth 2x the cost of Mistral Medium?</h3><p>Sonnet 5 at $3/$15 offers Anthropic's latest model quality with 1M context (8x larger than Mistral's 128K). For tasks requiring massive context windows or Anthropic's specific model strengths, the 2x premium may be justified.</p></div>
-        <div class="faq-item"><h3>When should I use Mistral Medium over Sonnet 5?</h3><p>Choose Mistral Medium 3.5 ($1.50/$7.50) for budget-conscious workloads where 128K context is sufficient. Choose Sonnet 5 ($3/$15) for tasks requiring 1M context or when Anthropic's model quality is preferred.</p></div>
-    </div>
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

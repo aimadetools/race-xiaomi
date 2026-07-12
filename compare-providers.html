@@ -332,12 +332,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -345,58 +349,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="compare-hero">
-        <h1>AI Provider <span class="vs">vs</span> AI Provider</h1>
-        <p class="subtitle">Compare AI API providers side by side. See models, pricing, context windows, and features across all major providers. Find the cheapest option for your exact workload.</p>
-        <p class="last-updated">Pricing data verified: <span class="verified-date"></span></p>
-    </div>
-
-    <!-- Provider Selector -->
-    <div class="provider-selector">
-        <select class="provider-select" id="providerA" onchange="updateComparison()">
-            <option value="openai">OpenAI</option>
-            <option value="anthropic">Anthropic</option>
-            <option value="google">Google</option>
-            <option value="deepseek">DeepSeek</option>
-            <option value="mistral">Mistral</option>
-            <option value="cohere">Cohere</option>
-            <option value="together">Meta (Together.ai)</option>
-            <option value="xai">xAI</option>
-            <option value="moonshot">Moonshot</option>
-            <option value="ai21">AI21</option>
-        </select>
-        <div class="vs-badge">VS</div>
-        <select class="provider-select" id="providerB" onchange="updateComparison()">
-            <option value="openai">OpenAI</option>
-            <option value="anthropic">Anthropic</option>
-            <option value="google" selected>Google</option>
-            <option value="deepseek">DeepSeek</option>
-            <option value="mistral">Mistral</option>
-            <option value="cohere">Cohere</option>
-            <option value="together">Meta (Together.ai)</option>
-            <option value="xai">xAI</option>
-            <option value="moonshot">Moonshot</option>
-            <option value="ai21">AI21</option>
-        </select>
-    </div>
-
-    <!-- Provider Overview Cards -->
-    <div class="provider-overview" id="providerOverview"></div>
-
-    <!-- Models Comparison -->
-    <div class="models-comparison">
-        <h2>Models by Provider</h2>
-        <p class="section-sub">Every model from each provider with pricing and tier information.</p>
-        <div class="models-grid" id="modelsGrid"></div>
-    </div>
 
     <!-- Calculator Section -->
     <div class="calculator-section">

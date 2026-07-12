@@ -194,12 +194,18 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">⚡ APIpulse</a>
-            <div class="nav-links">
-                <a href="/pricing.html">Pricing</a>
-                <a href="/calculator.html">Calculator</a>
-                <a href="/tools.html">Tools</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/compare-plans.html" class="nav-cta">Compare Plans</a>
+                        <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -208,49 +214,7 @@
         <a href="/blog.html" class="back-link">← Back to Blog</a>
 
         <article class="article">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-            <h1>Best AI Embedding APIs 2026: All Models Ranked by Quality & Cost</h1>
-            <p class="subtitle">Embedding models are the foundation of semantic search, RAG, recommendation systems, and clustering. We compared every major embedding API on quality (MTEB benchmarks), pricing, dimensions, and real-world performance. Here are the best options for every use case and budget.</p>
-
-            <p>Embeddings convert text into numerical vectors that capture meaning — enabling semantic search, document clustering, classification, and RAG. Unlike generation models, embedding models are cheap (typically 2-5% of your total AI budget). But choosing the right one matters: a 5% improvement in retrieval quality can dramatically improve your downstream application.</p>
-
-            <p>We evaluated embedding models across five dimensions: <strong>quality</strong> (MTEB benchmark scores — the industry standard), <strong>price</strong> (cost per million tokens), <strong>dimensions</strong> (vector size — affects storage and search speed), <strong>max tokens</strong> (how long can input be?), and <strong>multilingual support</strong> (does it work across languages?). Here's what we found.</p>
-
-            <!-- What to Look For -->
-            <h2>What Matters for Embedding APIs</h2>
-            <p>Embedding model selection depends on your specific use case:</p>
-            <ul>
-                <li><strong>MTEB score:</strong> The Massive Text Embedding Benchmark is the industry standard for measuring embedding quality. Higher scores mean better retrieval accuracy. A 2-3 point MTEB improvement can translate to 5-10% better search relevance.</li>
-                <li><strong>Dimensions:</strong> Larger vectors (3,072) capture more nuance but require more storage and slower search. Smaller vectors (768) are faster and cheaper to store. Most production systems use 768-1,536 dimensions.</li>
-                <li><strong>Max input tokens:</strong> How long can the input text be? 8,192 tokens handles most documents. 32,768 tokens handles long articles and chapters. If you're embedding long documents, this matters.</li>
-                <li><strong>Price:</strong> Embedding costs range from $0.02 to $0.13 per million tokens. At scale (100M tokens/month), the difference between cheapest and most expensive is $11/month — usually not worth optimizing over quality.</li>
-                <li><strong>Multilingual support:</strong> If your application handles multiple languages, look for models with strong multilingual MTEB scores. Cohere and BGE-M3 excel here.</li>
-                <li><strong>Dimensionality reduction:</strong> OpenAI and some providers let you truncate dimensions (e.g., 3,072 → 256) to save storage with minimal quality loss. This can cut storage costs by 90%.</li>
-            </ul>
-
-            <!-- Top Picks -->
-            <h2>Best Embedding APIs</h2>
-
-            <div class="model-card">
-                <span class="tier-badge tier-premium">Best Overall</span>
-                <h3>1. OpenAI text-embedding-3-large — Best Overall Quality</h3>
-                <div class="price-line"><strong>$0.13</strong> per 1M tokens | <strong>3,072</strong> dimensions | <strong>8,192</strong> max tokens</div>
-                <p>OpenAI's flagship embedding model offers the best balance of quality and ecosystem support. It scores 64.6 on MTEB benchmarks — among the highest for commercial models. The 3,072-dimensional vectors capture rich semantic meaning, and OpenAI's API supports dimensionality reduction (truncate to 256 dimensions) for storage-constrained applications. Best of all, the OpenAI ecosystem means seamless integration with GPT-5 for RAG pipelines.</p>
-                <ul>
-                    <li><strong>Quality:</strong> MTEB 64.6 — top-3 among commercial models</li>
-                    <li><strong>Flexibility:</strong> Supports dimensionality reduction (3,072 → 256) with minimal quality loss</li>
-                    <li><strong>Ecosystem:</strong> Best SDK support, documentation, and vector store integrations</li>
-                    <li><strong>Weakness:</strong> $0.13/1M is 6.5x more expensive than budget options; 8,192 token limit</li>
-                </ul>
-                <div class="best-for"><strong>Best for:</strong> Production semantic search, RAG pipelines, recommendation systems, and any application where retrieval quality is critical.</div>
-            </div>
 
             <div class="model-card">
                 <span class="tier-badge tier-premium">Highest MTEB</span>

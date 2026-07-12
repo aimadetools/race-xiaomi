@@ -203,12 +203,18 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">⚡ APIpulse</a>
-            <div class="nav-links">
-                <a href="/prices.html">Pricing</a>
-                <a href="/calculator.html">Calculator</a>
-                <a href="/tools.html">Tools</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/deal.html" class="nav-cta">Free Tools →</a>
+                        <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -217,208 +223,7 @@
         <a href="/blog.html" class="back-link">← Back to Blog</a>
 
         <article class="article">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="deal.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-            <h1>Cheapest AI API July 2026: 59 Models Ranked by Price</h1>
-            <p class="subtitle">We track every major AI API price in real-time. Here are the cheapest models in July 2026 — and how much you can save by switching from premium providers.</p>
-
-            <p><strong>Last updated:</strong> July 7, 2026. All prices verified against official provider pages. We track 67 models from 10 providers.</p>
-
-            <!-- TL;DR -->
-            <div style="padding:20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;margin:24px 0;">
-                <p style="margin:0 0 12px;font-weight:700;color:var(--text-primary);">TL;DR — Cheapest AI APIs right now:</p>
-                <ul style="margin:0;padding-left:20px;">
-                    <li><strong>Cheapest overall:</strong> Gemini 2.0 Flash Lite — $0.075/$0.30 per 1M tokens</li>
-                    <li><strong>Cheapest with 1M context:</strong> Gemini 2.5 Flash-Lite — $0.10/$0.40</li>
-                    <li><strong>Cheapest "smart" model:</strong> Claude Sonnet 5 — $2/$10 (intro pricing through Aug 31)</li>
-                    <li><strong>Best value premium:</strong> Gemini 2.5 Pro — $1.25/$10</li>
-                </ul>
-            </div>
-
-            <h2>The 10 Cheapest AI APIs in July 2026</h2>
-            <p>Ranked by output price (the cost that matters most for generation-heavy workloads):</p>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Model</th>
-                        <th>Provider</th>
-                        <th>Input/1M</th>
-                        <th>Output/1M</th>
-                        <th>Context</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td><strong>Gemini 2.0 Flash Lite</strong></td><td>Google</td><td>$0.075</td><td>$0.30</td><td>1M</td></tr>
-                    <tr><td>2</td><td><strong>GPT-oss 20B</strong></td><td>OpenAI</td><td>$0.08</td><td>$0.35</td><td>128K</td></tr>
-                    <tr><td>3</td><td><strong>Gemini 2.5 Flash-Lite</strong></td><td>Google</td><td>$0.10</td><td>$0.40</td><td>1M</td></tr>
-                    <tr><td>4</td><td><strong>Llama 3.1 8B</strong></td><td>Meta (Together.ai)</td><td>$0.10</td><td>$0.10</td><td>128K</td></tr>
-                    <tr><td>5</td><td><strong>DeepSeek V4 Flash</strong></td><td>DeepSeek</td><td>$0.14</td><td>$0.28</td><td>1M</td></tr>
-                    <tr><td>6</td><td><strong>GPT-oss 120B</strong></td><td>OpenAI</td><td>$0.15</td><td>$0.60</td><td>128K</td></tr>
-                    <tr><td>7</td><td><strong>Mistral Small 4</strong></td><td>Mistral</td><td>$0.15</td><td>$0.60</td><td>128K</td></tr>
-                    <tr><td>8</td><td><strong>GPT-4o mini</strong></td><td>OpenAI</td><td>$0.15</td><td>$0.60</td><td>128K</td></tr>
-                    <tr><td>9</td><td><strong>Llama 4 Scout</strong></td><td>Meta (Together.ai)</td><td>$0.18</td><td>$0.59</td><td>1M</td></tr>
-                    <tr><td>10</td><td><strong>GPT-5.4 nano</strong></td><td>OpenAI</td><td>$0.20</td><td>$1.25</td><td>400K</td></tr>
-                </tbody>
-            </table>
-
-            <p><strong>Key insight:</strong> The cheapest models are 40-100x less expensive than premium models. If you're using GPT-5.5 ($5/$30) for tasks that Gemini 2.0 Flash Lite ($0.075/$0.30) can handle, you're overpaying by 97%.</p>
-
-            <div class="cta-inline">
-                <p style="margin:0 0 12px;color:var(--text-primary);font-weight:600;">Calculate exactly how much you could save</p>
-                <p style="margin:0 0 16px;color:var(--text-secondary);">Enter your current usage and see savings with cheaper models</p>
-                <a href="/calculator.html" style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-weight:600;text-decoration:none;">Open Free Calculator →</a>
-            </div>
-
-            <h2>Cheapest by Category</h2>
-
-            <h3>Budget Tier (under $1/1M output)</h3>
-            <p>Best for: high-volume classification, extraction, simple Q&A, embeddings-style tasks</p>
-            <ul>
-                <li><strong>Gemini 2.0 Flash Lite</strong> — $0.075/$0.30 — Absolute cheapest, great for high-volume</li>
-                <li><strong>DeepSeek V4 Flash</strong> — $0.14/$0.28 — Best budget model with 1M context</li>
-                <li><strong>Gemini 2.5 Flash-Lite</strong> — $0.10/$0.40 — Best value with 1M context</li>
-                <li><strong>Mistral Small 4</strong> — $0.15/$0.60 — Open-source, Apache 2.0 license</li>
-            </ul>
-
-            <h3>Mid Tier ($1-10/1M output)</h3>
-            <p>Best for: coding, reasoning, summarization, most production workloads</p>
-            <ul>
-                <li><strong>Claude Sonnet 5</strong> — $2/$10 — Best quality-per-dollar (intro pricing through Aug 31)</li>
-                <li><strong>Gemini 2.5 Pro</strong> — $1.25/$10 — Best value mid-tier with 1M context</li>
-                <li><strong>GPT-5.4 mini</strong> — $0.75/$4.50 — Good balance of speed and quality</li>
-                <li><strong>Mistral Large 3</strong> — $0.50/$1.50 — Cheapest mid-tier option</li>
-            </ul>
-
-            <h3>Premium Tier ($10+/1M output)</h3>
-            <p>Best for: complex agentic work, research, tasks requiring the highest capability</p>
-            <ul>
-                <li><strong>Claude Opus 4.8</strong> — $5/$25 — Top-tier for coding and enterprise</li>
-                <li><strong>Claude Fable 5</strong> — $10/$50 — Most capable widely-released model</li>
-                <li><strong>GPT-5.5</strong> — $5/$30 — OpenAI's flagship</li>
-                <li><strong>GPT-5.5 Pro</strong> — $30/$180 — Highest tier for specialized work</li>
-            </ul>
-
-            <h2>Real-World Savings Examples</h2>
-
-            <div class="cost-example">
-                <div class="scenario">Scenario 1: Chatbot handling 10K conversations/day</div>
-                <p style="margin:0;color:var(--text-secondary);">~500 input + 200 output tokens per conversation = 5M input + 2M output tokens/day</p>
-                <table class="comparison-table" style="margin:12px 0 0;">
-                    <tr><th>Model</th><th>Monthly Cost</th></tr>
-                    <tr><td>GPT-5.5</td><td><strong>$2,550</strong></td></tr>
-                    <tr><td>Claude Sonnet 5</td><td><strong>$700</strong></td></tr>
-                    <tr><td>Gemini 2.5 Pro</td><td><strong>$638</strong></td></tr>
-                    <tr><td>DeepSeek V4 Flash</td><td><strong>$227</strong></td></tr>
-                    <tr><td>Gemini 2.0 Flash Lite</td><td><strong>$129</strong></td></tr>
-                </table>
-                <p style="margin:12px 0 0;font-size:13px;color:var(--accent);">Savings: up to $2,421/month (95%) by using Gemini 2.0 Flash Lite instead of GPT-5.5</p>
-            </div>
-
-            <div class="cost-example">
-                <div class="scenario">Scenario 2: Code generation tool (500 users, 20 requests/day each)</div>
-                <p style="margin:0;color:var(--text-secondary);">~1000 input + 500 output tokens per request = 10M input + 5M output tokens/day</p>
-                <table class="comparison-table" style="margin:12px 0 0;">
-                    <tr><th>Model</th><th>Monthly Cost</th></tr>
-                    <tr><td>GPT-5.5</td><td><strong>$6,000</strong></td></tr>
-                    <tr><td>Claude Opus 4.8</td><td><strong>$4,500</strong></td></tr>
-                    <tr><td>Claude Sonnet 5</td><td><strong>$1,650</strong></td></tr>
-                    <tr><td>Gemini 2.5 Pro</td><td><strong>$1,500</strong></td></tr>
-                    <tr><td>DeepSeek V4 Flash</td><td><strong>$462</strong></td></tr>
-                </table>
-                <p style="margin:12px 0 0;font-size:13px;color:var(--accent);">Savings: up to $5,538/month (92%) by using DeepSeek V4 Flash</p>
-            </div>
-
-            <div class="cta-inline">
-                <p style="margin:0 0 12px;color:var(--text-primary);font-weight:600;">What's your exact savings potential?</p>
-                <p style="margin:0 0 16px;color:var(--text-secondary);">Use our calculator with your real usage numbers</p>
-                <a href="/calculator.html" style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-weight:600;text-decoration:none;">Calculate My Savings →</a>
-            </div>
-
-            <h2>Cheapest by Use Case</h2>
-
-            <h3>Best for high-volume classification/extraction</h3>
-            <p><strong>Gemini 2.0 Flash Lite</strong> ($0.075/$0.30) — Unbeatable price for straightforward tasks. If you're running sentiment analysis, entity extraction, or content moderation at scale, this is your model.</p>
-
-            <h3>Best for coding assistants</h3>
-            <p><strong>Claude Sonnet 5</strong> ($2/$10 intro) — Best quality-per-dollar for code generation. The introductory pricing runs through August 31, 2026, making it even more competitive. After that, it goes to $3/$15 — still excellent value.</p>
-
-            <h3>Best for long-context analysis</h3>
-            <p><strong>DeepSeek V4 Flash</strong> ($0.14/$0.28) — 1M context at budget pricing. Perfect for document analysis, codebase review, or any task that needs to process large amounts of text.</p>
-
-            <h3>Best for RAG applications</h3>
-            <p><strong>Gemini 2.5 Flash-Lite</strong> ($0.10/$0.40) — 1M context with good quality at a budget price. The large context window means you can stuff more retrieved documents into each call.</p>
-
-            <h3>Best all-around value</h3>
-            <p><strong>Gemini 2.5 Pro</strong> ($1.25/$10) — Strong reasoning, 1M context, and pricing that's 2-3x cheaper than comparable models from OpenAI and Anthropic.</p>
-
-            <h2>July 2026 Pricing Changes</h2>
-            <p>Notable changes since last month:</p>
-            <ul>
-                <li><strong>Claude Sonnet 5 launched</strong> with introductory pricing at $2/$10 (regular $3/$15 starting September 2026)</li>
-                <li><strong>Mistral Small 4</strong> added at $0.15/$0.60 — open-source with Apache 2.0 license</li>
-                <li><strong>Grok Build 0.1</strong> repriced to $1/$2 (was $1.00/$2.00 for code API)</li>
-                <li><strong>Deprecation watch:</strong> Claude 4 Opus and Claude Sonnet 4 retired June 15. GPT-4o mini deprecated.</li>
-            </ul>
-
-            <h2>How to Choose the Right Cheap Model</h2>
-            <p>The cheapest model isn't always the best choice. Here's our framework:</p>
-            <ol>
-                <li><strong>Start with your quality requirements.</strong> If a budget model produces acceptable output for your use case, use it.</li>
-                <li><strong>Consider context window needs.</strong> Models with 1M context (Gemini, DeepSeek) cost more per token but save money by reducing the number of API calls needed.</li>
-                <li><strong>Factor in latency.</strong> Budget models are often faster, which means better user experience and lower compute costs for real-time applications.</li>
-                <li><strong>Check deprecation status.</strong> Don't build on models that are being retired. See our <a href="/claude-4-migration-hub.html">migration hub</a> for deprecated model alternatives.</li>
-            </ol>
-
-            <div class="cta-inline">
-                <p style="margin:0 0 12px;color:var(--text-primary);font-weight:600;">Compare all 67 models side-by-side</p>
-                <p style="margin:0 0 16px;color:var(--text-secondary);">Interactive pricing table with filters, sorting, and export</p>
-                <a href="/prices.html" style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-weight:600;text-decoration:none;">View Full Pricing Table →</a>
-            </div>
-
-            <h2>FAQ</h2>
-
-            <h3>What is the cheapest AI API in July 2026?</h3>
-            <p>Gemini 2.0 Flash Lite at $0.075/1M input tokens and $0.30/1M output tokens. It's the absolute cheapest option for straightforward tasks like classification, extraction, and simple Q&A.</p>
-
-            <h3>How much can I save by switching from GPT-5.5?</h3>
-            <p>Up to 99%. GPT-5.5 costs $5/$30 per 1M tokens. DeepSeek V4 Flash costs $0.14/$0.28 — that's a 97% savings on input and 99% on output tokens. For a typical workload processing 10M tokens/month, you'd save ~$2,300/month.</p>
-
-            <h3>Are cheap AI APIs as good as expensive ones?</h3>
-            <p>For many tasks, yes. Budget models excel at classification, extraction, simple Q&A, and high-volume generation. For complex reasoning, coding, or creative work, mid-tier models like Claude Sonnet 5 ($2/$10) offer better quality per dollar. The key is matching the model to your specific use case.</p>
-
-            <h3>What's the cheapest AI API with 1M context?</h3>
-            <p>DeepSeek V4 Flash at $0.14/$0.28 per 1M tokens with 1M context. Gemini 2.5 Flash-Lite ($0.10/$0.40) is also competitive. Both offer massive context windows at budget pricing.</p>
-
-            <!-- Share -->
-            <div class="share-section">
-                <p>Found this helpful? Share it with your team:</p>
-                <a href="https://twitter.com/intent/tweet?text=Cheapest+AI+APIs+July+2026:+51+models+ranked+by+price.+Save+up+to+98%25+by+switching+providers.&url=https://getapipulse.com/blog-cheapest-ai-api-july-2026.html" class="share-btn" target="_blank" rel="noopener">Share on Twitter</a>
-            </div>
-
-            <!-- Related tools -->
-            <h3 style="margin-top:40px;">Related Tools</h3>
-            <div class="related-tools">
-                <div class="related-tool">
-                    <a href="/calculator.html">Cost Calculator</a>
-                    <p>Calculate your exact savings</p>
-                </div>
-                <div class="related-tool">
-                    <a href="/prices.html">Pricing Table</a>
-                    <p>All 67 models compared</p>
-                </div>
-                <div class="related-tool">
-                    <a href="/deal.html">Free Tools →</a>
-                    <p>All tools free — no payment required</p>
-                </div>
-            </div>
         </article>
     </div>
 

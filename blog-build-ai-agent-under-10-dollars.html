@@ -172,12 +172,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -185,71 +189,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">&rsaquo;</span>
-            <span class="current">Build an AI Agent for Under $10/Month</span>
-        </nav>
-        <a href="blog.html" class="back-link">&larr; Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Guide</span>
-            <span>June 8, 2026</span>
-        </div>
-        <h1>Build an AI Agent for Under $10/Month</h1>
-        <p class="subtitle">Everyone says AI agents are expensive. They're wrong. With the right model and a few cost tricks, you can build a fully functional autonomous agent for less than your Netflix subscription. Here's the real math, the best cheap models, and working code.</p>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <h2>What Actually Is an AI Agent?</h2>
-        <p>An AI agent isn't just a chatbot. A chatbot takes an input and returns a response. An AI agent <strong>takes an input, reasons about it, calls tools, evaluates results, and decides what to do next</strong> — all without human intervention between steps.</p>
-        <p>The key components:</p>
-        <ul>
-            <li><strong>Reasoning loop:</strong> The model decides the next action based on the current state</li>
-            <li><strong>Tool calling:</strong> The agent can invoke external tools (APIs, databases, web searches)</li>
-            <li><strong>State management:</strong> The agent tracks what it's done and what it still needs to do</li>
-            <li><strong>Termination logic:</strong> The agent knows when it has enough information to produce a final answer</li>
-        </ul>
-        <p>A research agent might search the web, read 3 pages, synthesize findings, check for contradictions, and write a summary. That's <strong>5-10 turns</strong> through the reasoning loop, each one a separate API call with growing context.</p>
-        <p>This is where cost awareness matters most. Every turn sends the full conversation history back to the model. Turn 5 sends 5x the tokens of turn 1. Turn 10 sends 10x. The costs compound fast if you're not careful.</p>
-
-        <h2>The Real Cost Formula</h2>
-        <p>Forget the per-token price. What matters is <strong>cost per task</strong>:</p>
-        <blockquote><strong>Cost per task = (Turns x Avg input tokens x Input price) + (Turns x Avg output tokens x Output price)</strong></blockquote>
-        <p>Let's break this down with real numbers for a typical agent doing web research:</p>
-
-        <div class="cost-box">
-            <h3>Single task breakdown (8 turns, 2K input, 500 output per turn)</h3>
-            <div class="cost-row"><span>Input tokens total</span><span>16,000 tokens</span></div>
-            <div class="cost-row"><span>Output tokens total</span><span>4,000 tokens</span></div>
-            <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$0.00336</span></div>
-            <div class="cost-row"><span>Gemini 2.5 Flash-Lite</span><span>$0.00320</span></div>
-            <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$0.01064</span></div>
-            <div class="cost-row"><span>GPT-5 mini</span><span>$0.01200</span></div>
-            <div class="cost-row"><span>GPT-5</span><span>$0.06000</span></div>
-        </div>
 
         <p>That single task costs less than a penny on the cheap models. But multiply by volume and the story changes.</p>
 

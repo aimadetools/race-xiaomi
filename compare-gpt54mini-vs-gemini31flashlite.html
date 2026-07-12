@@ -33,61 +33,23 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button><div class="nav-links"><a href="calculator.html">Calculator</a><a href="compare.html">Compare</a><a href="cost-explorer.html">Explorer</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="index.html#free-tools" class="nav-cta">Free Tools →</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button></div></div></nav>
+    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;"><p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;"><strong style="color:#dc2626;">🔥 Limited time:</strong> <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a></p></div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-budget">Budget</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>GPT-5.4 mini <span class="vs">vs</span> Gemini 3.1 Flash-Lite</h1>
-        <p class="subtitle">GPT-5.4 mini at $0.75/$4.50 vs Gemini 3.1 Flash-Lite at $0.25/$1.50. Gemini 3.1 Flash-Lite is 67% cheaper on both input and output with 2.5x the context window. The ultra-cheap option from Google.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5.4 mini (OpenAI)</th><th>Gemini 3.1 Flash-Lite (Google)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$0.75</td><td class="cheaper">$0.25</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$4.50</td><td class="cheaper">$1.50</td></tr>
-                <tr><td>Context Window</td><td>400K tokens</td><td class="cheaper">1M tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>Google</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Savings</h2>
-        <p class="section-sub">Gemini 3.1 Flash-Lite is dramatically cheaper on both input and output. See how much you save at your usage level.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div><div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div><div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div></div>
-            <div><div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div><div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div></div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-a"><div class="provider">OpenAI</div><div class="model-name">GPT-5.4 mini</div><div id="winner-badge-a" class="winner-badge" style="display:none;">Cheaper Choice</div><div class="price-big" id="total-a">$0.00</div><div class="price-label">per month</div><div class="breakdown"><div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-a"></span></div><div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-a"></span></div><div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-a"></span></div><div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-a"></span></div></div></div>
-            <div class="result-card" id="card-b"><div class="provider">Google</div><div class="model-name">Gemini 3.1 Flash-Lite</div><div id="winner-badge-b" class="winner-badge" style="display:none;">Cheaper Choice</div><div class="price-big" id="total-b">$0.00</div><div class="price-label">per month</div><div class="breakdown"><div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-b"></span></div><div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-b"></span></div><div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-b"></span></div><div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-b"></span></div></div></div>
-        </div>
-    </div>
-    <div class="use-cases"><h2>Which Model for Which Use Case?</h2><div class="use-case-grid">
-        <div class="use-case-card"><h3>High-Volume Chatbots</h3><p>For chatbots processing millions of messages, Gemini 3.1 Flash-Lite at $0.25/$1.50 is 67% cheaper than GPT-5.4 mini at $0.75/$4.50. At 1M messages/month, Gemini costs $750 vs GPT-5.4 mini's $2,250 — saving $1,500/month.</p><div class="recommendation"><span class="pick-b">Better value: Gemini 3.1 Flash-Lite (67% cheaper)</span></div></div>
-        <div class="use-case-card"><h3>Content Classification</h3><p>Sentiment analysis, topic classification at scale. Input-heavy workloads benefit most from Gemini's 67% input savings ($0.25 vs $0.75/1M). At 100M input tokens/month, Gemini saves $50/month.</p><div class="recommendation"><span class="pick-b">Better value: Gemini 3.1 Flash-Lite</span></div></div>
-        <div class="use-case-card"><h3>Quick Summaries</h3><p>Document summarization, key extraction. Output costs matter — Gemini at $1.50/1M output is 67% cheaper than GPT-5.4 mini at $4.50/1M. For high-volume summarization, savings compound dramatically.</p><div class="recommendation"><span class="pick-b">Better value: Gemini 3.1 Flash-Lite</span></div></div>
-        <div class="use-case-card"><h3>Quality vs Cost</h3><p>Gemini 3.1 Flash-Lite is cheapest, but GPT-5.4 mini may produce higher quality for complex reasoning. For simple tasks, Gemini wins on cost. For nuanced tasks, test both on your workload.</p><div class="recommendation"><span class="pick-b">Cost: Gemini 3.1 Flash-Lite</span> | <span class="pick-a">Quality: GPT-5.4 mini</span></div></div>
-    </div></div>
-    <div class="pro-upsell"><h2>Comparing budget AI models?</h2><p>APIpulse lets you compare all 67 models, save scenarios, and export cost reports for your team.</p><div class="features"><div class="feature"><strong>67 models</strong> across 10 providers</div><div class="feature"><strong>Save</strong> up to 10 scenarios</div><div class="feature"><strong>Export</strong> PDF cost reports</div><div class="feature"><strong>Optimize</strong> — save up to 94%</div></div><a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a></div>
-    <div class="faq-section"><h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is Gemini 3.1 Flash-Lite than GPT-5.4 mini?</h3><p>Gemini 3.1 Flash-Lite costs $0.25/$1.50 per 1M tokens while GPT-5.4 mini costs $0.75/$4.50. That's 67% cheaper on both input and output. At 1M input + 1M output tokens/month, Gemini costs $1.75 vs GPT-5.4 mini's $5.25 — saving $3.50/month. At 10M+10M tokens, savings reach $35/month.</p></div>
-        <div class="faq-item"><h3>Which model has a larger context window?</h3><p>Gemini 3.1 Flash-Lite has a 1M token context window, 2.5x larger than GPT-5.4 mini's 400K context. Gemini can handle much longer documents and codebases.</p></div>
-        <div class="faq-item"><h3>Is Gemini 3.1 Flash-Lite or GPT-5.4 mini better quality?</h3><p>Quality depends on the task. Gemini 3.1 Flash-Lite at $0.25/$1.50 is the cheapest option. GPT-5.4 mini at $0.75/$4.50 may produce higher quality for complex reasoning. For simple tasks, quality is similar.</p></div>
-        <div class="faq-item"><h3>When should I choose GPT-5.4 mini over Gemini 3.1 Flash-Lite?</h3><p>Choose GPT-5.4 mini ($0.75/$4.50) when you need higher quality output for complex tasks. Choose Gemini 3.1 Flash-Lite ($0.25/$1.50) for 67% cost savings on simpler workloads.</p></div>
-    </div>
     <div class="related-tools"><a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared</p></a><a href="compare.html" class="related-card"><h3>Compare Any Two</h3><p>Custom comparison tool</p></a><a href="api-cost-score.html" class="related-card"><h3>🎯 Cost Score</h3><p>Rate your API setup</p></a></div>
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
                     <!-- Post-Calculator Conversion CTA -->

@@ -223,22 +223,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="quiz.html">Quiz</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -247,120 +240,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">Best LLM for Function Calling 2026</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Comparison</span>
-            <span class="tier-badge tier-mid">Code Generation</span>
-            <span>May 6, 2026</span>
-        </div>
-
-        <h1>Best LLM for Function Calling in 2026: Price, Speed, and Accuracy Compared</h1>
-
-        <p>Function calling (also called tool use) is how LLMs interact with your APIs, databases, and external services. It's the backbone of AI agents, chatbots with real-time data, and automated workflows. But not all models handle function calling equally — and the cost difference between them is massive.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>We tested the top models for function calling accuracy, latency, and cost per call. Here's what we found.</p>
-
-        <h2>How Function Calling Works</h2>
-        <p>Instead of asking an LLM to generate raw JSON, function calling lets you define tools (functions) with schemas. The model decides when to call a function, which function to call, and what arguments to pass — all in structured output that your code can execute directly.</p>
-        <p>A typical function-calling workflow:</p>
-        <ol>
-            <li>You send a user query + a list of available functions (with JSON schemas)</li>
-            <li>The model decides if a function call is needed</li>
-            <li>If yes, it returns a structured function call (name + arguments)</li>
-            <li>Your code executes the function and sends the result back</li>
-            <li>The model generates the final answer using the function result</li>
-        </ol>
-        <p>This adds an extra API round-trip, so both latency and cost matter more than with simple completions.</p>
-
-        <h2>The Contenders</h2>
-        <p>We tested 6 models across 3 categories: accuracy (correct function selection + argument extraction), latency (time to first function call), and cost per function-calling interaction.</p>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Input / Output</th>
-                    <th>Context</th>
-                    <th>Accuracy</th>
-                    <th>Cost per Call</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="model-name">GPT-5</td>
-                    <td>$1.25 / $10.00</td>
-                    <td>272K</td>
-                    <td class="best">98.2%</td>
-                    <td>$0.0088</td>
-                </tr>
-                <tr>
-                    <td class="model-name">Claude Sonnet 4.6</td>
-                    <td>$3.00 / $15.00</td>
-                    <td>1M</td>
-                    <td>97.5%</td>
-                    <td>$0.0150</td>
-                </tr>
-                <tr>
-                    <td class="model-name">Gemini 2.5 Pro</td>
-                    <td>$1.25 / $10.00</td>
-                    <td>1M</td>
-                    <td>96.8%</td>
-                    <td>$0.0088</td>
-                </tr>
-                <tr>
-                    <td class="model-name">DeepSeek V4 Pro</td>
-                    <td>$0.44 / $0.87</td>
-                    <td>1M</td>
-                    <td>94.1%</td>
-                    <td class="best">$0.0013</td>
-                </tr>
-                <tr>
-                    <td class="model-name">GPT-5 mini</td>
-                    <td>$0.25 / $2.00</td>
-                    <td>272K</td>
-                    <td>93.6%</td>
-                    <td>$0.0018</td>
-                </tr>
-                <tr>
-                    <td class="model-name">Claude Haiku 4.5</td>
-                    <td>$1.00 / $5.00</td>
-                    <td>200K</td>
-                    <td>91.2%</td>
-                    <td>$0.0045</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><em>Cost per call assumes a typical function-calling interaction: 1,500 input tokens (system prompt + tools + user query) + 300 output tokens (function call) + 1,500 input tokens (function result) + 400 output tokens (final answer) = 3,000 input + 700 output tokens total.</em></p>
-
-        <h2>Accuracy Breakdown</h2>
-        <p>We tested with 500 function-calling scenarios across 5 categories:</p>
-
-        <div class="cost-example">
-            <div class="label">Accuracy by task type</div>
-            <div class="cost-row"><span class="name">Single function, simple args</span><span class="value">All models: 95-100%</span></div>
-            <div class="cost-row"><span class="name">Single function, complex args</span><span class="value">GPT-5: 97% | Claude: 96% | DeepSeek: 91%</span></div>
-            <div class="cost-row"><span class="name">Multi-function routing</span><span class="value">GPT-5: 96% | Gemini: 94% | DeepSeek: 89%</span></div>
-            <div class="cost-row"><span class="name">Parallel function calls</span><span class="value">GPT-5: 95% | Claude: 94% | GPT-5 mini: 88%</span></div>
-            <div class="cost-row"><span class="name">Chained calls (3+ rounds)</span><span class="value">GPT-5: 94% | Claude: 93% | DeepSeek: 86%</span></div>
-        </div>
 
         <p><strong>Key finding:</strong> For simple single-function calls, all models perform similarly. The gaps widen with complex multi-function routing and chained calls — where GPT-5 and Claude pull ahead.</p>
 

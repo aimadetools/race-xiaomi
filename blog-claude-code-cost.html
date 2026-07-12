@@ -138,14 +138,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
-                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="tools.html">Tools</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -153,54 +154,7 @@
         </div>
     </nav>
 
-    <main>
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">Claude Code Cost Calculator</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Deep Dive</span>
-            <span>May 8, 2026</span>
-        </div>
-        <h1>Claude Code Cost Calculator: How Much Does AI Coding Really Cost in 2026?</h1>
-
-        <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-            <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-        </div>
-
-        <div style="padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;margin:16px 0 24px;">
-            <p style="margin:0;font-size:14px;"><strong>💰 Save money:</strong> Use our <a href="claude-4-is-down.html" style="color:#16a34a;font-weight:600;">free Claude Deprecation Calculator</a> to see exactly what you'll pay after migrating to a replacement model.</p>
-        </div>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>Claude Code has become the go-to AI coding assistant for thousands of developers. But how much does it actually cost to use? We break down the real numbers — and show you how to cut your AI coding bill by up to 60%.</p>
-
-        <h2>What Is Claude Code?</h2>
-        <p>Claude Code is Anthropic's agentic coding tool that lives in your terminal. It reads your codebase, writes code, runs tests, and fixes bugs — all through natural language. Unlike traditional code completion, Claude Code takes multi-step actions: it can plan, implement, test, and iterate.</p>
-        <p>The catch? Every action costs API tokens. And those tokens add up fast.</p>
-
-        <h2>Claude Code Cost Breakdown</h2>
-        <p>Claude Code uses <strong>Claude Sonnet 4.6</strong> (or Claude Opus 4.7 for complex tasks). Here's what that costs per 1M tokens:</p>
-
-        <div class="cost-example">
-            <div class="label">Claude Sonnet 4.6 — Per 1M Tokens</div>
-            <div class="cost-row"><span class="name">Input tokens</span><span class="value">$3.00</span></div>
-            <div class="cost-row"><span class="name">Output tokens</span><span class="value">$15.00</span></div>
-            <div class="cost-row"><span class="name">Context window</span><span class="value">200K tokens</span></div>
-        </div>
+    <main id="main">
 
         <div class="cost-example">
             <div class="label">Claude Opus 4.7 — Per 1M Tokens</div>

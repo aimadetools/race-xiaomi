@@ -85,78 +85,22 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <article style="max-width:var(--max-width);margin:0 auto;padding:120px 24px 60px;">
-        <div style="text-align:center;margin-bottom:40px;">
-            <p style="color:var(--accent);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Blog &middot; Jun 7, 2026</p>
-            <h1 style="font-size:clamp(28px,4.5vw,42px);font-weight:800;line-height:1.2;margin-bottom:16px;">Mistral Medium 3.5 vs Claude Sonnet 4.6: Europe's Mid-Tier Bid</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-            <p style="font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto;">Mistral Medium 3.5 costs exactly half of Claude Sonnet 4.6 on both input and output — with European data sovereignty. Is the trade-off worth it?</p>
-        </div>
-
-        <div style="max-width:780px;margin:0 auto;">
-            <h2 style="font-size:24px;font-weight:800;margin:32px 0 16px;">The Clean 50/50 Split</h2>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px;">Mistral Medium 3.5 enters the mid-tier at $1.50/$7.50 per 1M tokens. Claude Sonnet 4.6 sits at $3.00/$15.00. That's exactly 50% cheaper on both input and output — a rare clean price ratio.</p>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">Both are mid-tier models targeting similar use cases. The question is whether Claude's quality advantage justifies paying 2x.</p>
-
-            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:32px;">
-                <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">Monthly Cost at Scale</h3>
-                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">1,000 requests/day, 1,000 input tokens, 500 output tokens per request:</p>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                    <div style="padding:16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);">
-                        <p style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Mistral Medium 3.5</p>
-                        <p style="font-size:28px;font-weight:800;color:var(--green);margin-bottom:4px;">$90.00/mo</p>
-                        <p style="font-size:13px;color:var(--text-muted);">Input: $45.00 &middot; Output: $45.00</p>
-                    </div>
-                    <div style="padding:16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);">
-                        <p style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Claude Sonnet 4.6</p>
-                        <p style="font-size:28px;font-weight:800;color:var(--orange);margin-bottom:4px;">$180.00/mo</p>
-                        <p style="font-size:13px;color:var(--text-muted);">Input: $90.00 &middot; Output: $90.00</p>
-                    </div>
-                </div>
                 <p style="text-align:center;margin-top:16px;font-size:15px;font-weight:700;color:var(--green);">Save $90.00/mo with Mistral Medium 3.5 (50% cheaper)</p>
             </div>
 

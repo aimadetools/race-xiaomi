@@ -255,13 +255,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
-                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-                <a href="industry-guides.html">Industry</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -269,39 +272,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content">
-        <h1>Claude API Alternatives Calculator</h1>
-        <p class="subtitle">Enter your Claude usage below. See exactly what you'd pay at every other provider — with savings highlighted.</p>
-
-        <div class="calc-card">
-            <h2>Your Current Claude Usage</h2>
-            <p class="card-desc">Select your Claude model and monthly token usage. We'll show you every cheaper alternative.</p>
-
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="claudeModel">Current Claude Model</label>
-                    <select id="claudeModel">
-                        <option value="">Select model...</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="requestsPerDay">Requests per Day</label>
-                    <input type="number" id="requestsPerDay" placeholder="e.g. 10000" min="0" step="100">
-                    <div class="preset-btns">
-                        <button class="preset-btn" onclick="setRequests(1000)">1K</button>
-                        <button class="preset-btn" onclick="setRequests(10000)">10K</button>
-                        <button class="preset-btn" onclick="setRequests(50000)">50K</button>
-                        <button class="preset-btn" onclick="setRequests(100000)">100K</button>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label for="avgInputTokens">Avg Input Tokens per Request</label>
                     <input type="number" id="avgInputTokens" placeholder="e.g. 500" min="0" step="50">

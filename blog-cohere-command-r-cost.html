@@ -167,21 +167,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -190,102 +184,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">Cohere Command R+ API Cost</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Pricing</span>
-            <span>May 30, 2026</span>
-        </div>
-        <h1>Cohere Command R+ API Cost: Complete Pricing Guide 2026</h1>
-
-        <p>Cohere's Command R+ is priced at <strong>$2.50/$10.00 per 1M tokens</strong> (input/output) — <strong>50% cheaper than GPT-5.5</strong> ($5/$30) and <strong>50% cheaper than Claude Opus 4.8</strong> ($5/$25). The lighter Command R model is even cheaper at <strong>$0.50/$1.50 per 1M tokens</strong>, making it one of the most affordable enterprise-grade models available.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>Cohere stands out for RAG-optimized workloads with built-in grounding, citation support, and tool use. This guide breaks down Cohere's real-world costs, compares both models to every competitor, and shows you when Cohere is the smartest choice.</p>
-
-        <h2>Cohere API Pricing at a Glance</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Input (per 1M tokens)</th>
-                    <th>Output (per 1M tokens)</th>
-                    <th>Context Window</th>
-                    <th>Tier</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Command R+</strong></td>
-                    <td>$2.50</td>
-                    <td>$10.00</td>
-                    <td>128K</td>
-                    <td>Mid</td>
-                </tr>
-                <tr>
-                    <td><strong>Command R</strong></td>
-                    <td>$0.50</td>
-                    <td>$1.50</td>
-                    <td>128K</td>
-                    <td>Budget</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>Key insight:</strong> Command R is 80% cheaper on input and 85% cheaper on output than Command R+. For simple RAG queries, data extraction, and chatbots, Command R is usually sufficient. Only upgrade to Command R+ when you need stronger reasoning or complex tool use.</p>
-
-        <h2>Real-World Cohere Cost Scenarios</h2>
-
-        <h3>Scenario 1: Enterprise RAG Pipeline (2,000 queries/day)</h3>
-        <p>Average: 4,000 input tokens (retrieved context + query), 600 output tokens per query. 30 days/month.</p>
-
-        <div class="cost-box">
-            <h3>Monthly RAG Cost</h3>
-            <div class="cost-row">
-                <span>Cohere Command R+</span>
-                <span>$612.00/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Cohere Command R</span>
-                <span class="cost-total">$174.00/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>GPT-5.5</span>
-                <span>$2,340.00/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Claude Opus 4.8</span>
-                <span>$2,100.00/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>GPT-5</span>
-                <span>$780.00/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Gemini 2.5 Pro</span>
-                <span>$660.00/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>DeepSeek V4 Pro</span>
-                <span>$197.60/mo</span>
-            </div>
-        </div>
 
         <p><strong>Verdict:</strong> For RAG workloads, Command R is 78% cheaper than Command R+, 93% cheaper than GPT-5.5, and 41% cheaper than DeepSeek V4 Pro. Cohere's built-in grounding and citation support add enterprise value that generic models lack.</p>
 

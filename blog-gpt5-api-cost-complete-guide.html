@@ -171,21 +171,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -194,132 +188,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">GPT-5 API Cost Complete Guide</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Pricing</span>
-            <span>June 8, 2026</span>
-        </div>
-        <h1>GPT-5 API Cost: Complete Pricing Guide 2026</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <p>GPT-5 is OpenAI's most capable general-purpose model, priced at <strong>$1.25/M input tokens and $10.00/M output tokens</strong>. That's 50% cheaper on input than GPT-4o ($2.50/M) and 75% cheaper than GPT-5.5 ($5/M) -- with a 272K token context window that handles the vast majority of production workloads.</p>
-
-        <p>Whether you're building a chatbot, a code assistant, a RAG pipeline, or an enterprise document processor, this guide covers everything you need to know about GPT-5 API costs: all five GPT-5 family models, real-world cost scenarios, head-to-head comparisons with Claude Sonnet 4.6, Gemini 3.1 Pro, and DeepSeek V4 Pro, and five proven strategies to cut your API bill.</p>
-
-        <h2>GPT-5 Family: Complete Pricing Breakdown</h2>
-
-        <p>OpenAI currently offers five GPT-5 series models. Here's how they compare on price, context, and capabilities:</p>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Input (per 1M tokens)</th>
-                    <th>Output (per 1M tokens)</th>
-                    <th>Context Window</th>
-                    <th>Tier</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>GPT-5</strong></td>
-                    <td>$1.25</td>
-                    <td>$10.00</td>
-                    <td>272K</td>
-                    <td>Mid-Premium</td>
-                </tr>
-                <tr>
-                    <td><strong>GPT-5 mini</strong></td>
-                    <td class="winner">$0.25</td>
-                    <td class="winner">$2.00</td>
-                    <td>272K</td>
-                    <td>Budget</td>
-                </tr>
-                <tr>
-                    <td><strong>GPT-5.5</strong></td>
-                    <td>$5.00</td>
-                    <td>$30.00</td>
-                    <td>1.05M</td>
-                    <td>Premium</td>
-                </tr>
-                <tr>
-                    <td><strong>GPT-5.5 Pro</strong></td>
-                    <td>$30.00</td>
-                    <td>$180.00</td>
-                    <td>1.05M</td>
-                    <td>Ultra-Premium</td>
-                </tr>
-                <tr>
-                    <td><strong>GPT-5.3 Codex</strong></td>
-                    <td>$1.75</td>
-                    <td>$14.00</td>
-                    <td>400K</td>
-                    <td>Code Specialist</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>Key insight:</strong> GPT-5 and GPT-5 mini share the same 272K context window. GPT-5.5 and GPT-5.5 Pro share a 1.05M window. GPT-5.3 Codex sits in between at 400K, optimized specifically for code generation tasks. The cost difference between models is dramatic: GPT-5.5 Pro is 24x more expensive on input than GPT-5.</p>
-
-        <h2>Real-World GPT-5 Cost Scenarios</h2>
-
-        <p>Abstract per-token pricing is hard to translate into real budgets. Here are four concrete scenarios showing exactly what you'll pay.</p>
-
-        <h3>Scenario 1: Customer Support Chatbot (5,000 messages/day)</h3>
-        <p>Average per message: 1,500 input tokens, 500 output tokens. 30 days/month.</p>
-
-        <div class="cost-box">
-            <h3>Monthly Chatbot Cost</h3>
-            <div class="cost-row">
-                <span>GPT-5</span>
-                <span>$562.50/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>GPT-5 mini</span>
-                <span class="cost-total">$112.50/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Claude Sonnet 4.6</span>
-                <span>$900.00/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Gemini 3.1 Pro</span>
-                <span>$675.00/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>DeepSeek V4 Pro</span>
-                <span>$122.25/mo</span>
-            </div>
-        </div>
 
         <p><strong>Verdict:</strong> GPT-5 mini at $112.50/mo is the best value for chatbots -- 80% cheaper than GPT-5 and 88% cheaper than Claude Sonnet 4.6. If you need GPT-5's quality, it's still 37% cheaper than Claude Sonnet 4.6.</p>
 

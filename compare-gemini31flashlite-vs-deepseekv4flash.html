@@ -33,61 +33,23 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button><div class="nav-links"><a href="calculator.html">Calculator</a><a href="compare.html">Compare</a><a href="cost-explorer.html">Explorer</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="index.html#free-tools" class="nav-cta">Free Tools →</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button></div></div></nav>
+    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;"><p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;"><strong style="color:#dc2626;">🔥 Limited time:</strong> <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a></p></div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-budget">Budget</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>Gemini 3.1 Flash-Lite <span class="vs">vs</span> DeepSeek V4 Flash</h1>
-        <p class="subtitle">Gemini 3.1 Flash-Lite at $0.25/$1.50 vs DeepSeek V4 Flash at $0.14/$0.28. DeepSeek V4 Flash is 44% cheaper on input and 81% cheaper on output. The cheapest models available from major providers.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Gemini 3.1 Flash-Lite (Google)</th><th>DeepSeek V4 Flash (DeepSeek)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$0.25</td><td class="cheaper">$0.14</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$1.50</td><td class="cheaper">$0.28</td></tr>
-                <tr><td>Context Window</td><td>1M tokens</td><td>1M tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>Google</td><td>DeepSeek</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Savings</h2>
-        <p class="section-sub">DeepSeek V4 Flash is dramatically cheaper on both input and output. See the ultra-low costs at your usage level.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div><div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div><div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div></div>
-            <div><div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div><div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div></div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-a"><div class="provider">Google</div><div class="model-name">Gemini 3.1 Flash-Lite</div><div id="winner-badge-a" class="winner-badge" style="display:none;">Cheaper Choice</div><div class="price-big" id="total-a">$0.00</div><div class="price-label">per month</div><div class="breakdown"><div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-a"></span></div><div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-a"></span></div><div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-a"></span></div><div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-a"></span></div></div></div>
-            <div class="result-card" id="card-b"><div class="provider">DeepSeek</div><div class="model-name">DeepSeek V4 Flash</div><div id="winner-badge-b" class="winner-badge" style="display:none;">Cheaper Choice</div><div class="price-big" id="total-b">$0.00</div><div class="price-label">per month</div><div class="breakdown"><div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-b"></span></div><div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-b"></span></div><div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-b"></span></div><div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-b"></span></div></div></div>
-        </div>
-    </div>
-    <div class="use-cases"><h2>Which Model for Which Use Case?</h2><div class="use-case-grid">
-        <div class="use-case-card"><h3>Ultra-High-Volume Processing</h3><p>When you need to process billions of tokens monthly, DeepSeek V4 Flash at $0.14/$0.28 is the cheapest option. At 100M input + 100M output tokens, DeepSeek costs $42 vs Gemini's $175 — saving $133/month.</p><div class="recommendation"><span class="pick-b">Better value: DeepSeek V4 Flash (44-81% cheaper)</span></div></div>
-        <div class="use-case-card"><h3>Cost-Sensitive Chatbots</h3><p>For chatbots where every fraction of a cent matters, DeepSeek V4 Flash at $0.14/$0.28 offers the lowest cost per conversation. At 1M messages, DeepSeek costs $0.56 vs Gemini's $2.00.</p><div class="recommendation"><span class="pick-b">Better value: DeepSeek V4 Flash</span></div></div>
-        <div class="use-case-card"><h3>Data Processing Pipelines</h3><p>ETL pipelines, data transformation. DeepSeek's 44% input savings and 81% output savings make it the clear winner for data-heavy pipelines. Both handle structured data well.</p><div class="recommendation"><span class="pick-b">Better value: DeepSeek V4 Flash</span></div></div>
-        <div class="use-case-card"><h3>Quality vs Cost</h3><p>DeepSeek V4 Flash is cheapest, but Gemini 3.1 Flash-Lite may produce higher quality for complex tasks. Google's training may give Gemini an edge on benchmarks. Test both on your workload.</p><div class="recommendation"><span class="pick-b">Cost: DeepSeek V4 Flash</span> | <span class="pick-a">Quality: Gemini 3.1 Flash-Lite</span></div></div>
-    </div></div>
-    <div class="pro-upsell"><h2>Comparing budget AI models?</h2><p>APIpulse lets you compare all 67 models, save scenarios, and export cost reports for your team.</p><div class="features"><div class="feature"><strong>67 models</strong> across 10 providers</div><div class="feature"><strong>Save</strong> up to 10 scenarios</div><div class="feature"><strong>Export</strong> PDF cost reports</div><div class="feature"><strong>Optimize</strong> — save up to 94%</div></div><a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a></div>
-    <div class="faq-section"><h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is DeepSeek V4 Flash than Gemini 3.1 Flash-Lite?</h3><p>DeepSeek V4 Flash costs $0.14/$0.28 per 1M tokens while Gemini 3.1 Flash-Lite costs $0.25/$1.50. That's 44% cheaper on input and 81% cheaper on output. At 1M input + 1M output tokens/month, DeepSeek costs $0.42 vs Gemini's $1.75 — saving $1.33/month. At 100M+100M tokens, savings reach $133/month.</p></div>
-        <div class="faq-item"><h3>Which model has a larger context window?</h3><p>Both models have 1M token context windows. They're equal in context capacity, handling extremely long documents and codebases. Context is not a differentiator between these two models.</p></div>
-        <div class="faq-item"><h3>Is DeepSeek V4 Flash or Gemini 3.1 Flash-Lite better quality?</h3><p>Quality depends on the task. DeepSeek V4 Flash at $0.14/$0.28 is the cheapest option. Gemini 3.1 Flash-Lite at $0.25/$1.50 may produce higher quality for complex reasoning. For simple tasks, quality is similar.</p></div>
-        <div class="faq-item"><h3>When should I choose Gemini 3.1 Flash-Lite over DeepSeek V4 Flash?</h3><p>Choose Gemini 3.1 Flash-Lite ($0.25/$1.50) when you need Google ecosystem integration or find Gemini produces better quality for your tasks. Choose DeepSeek V4 Flash ($0.14/$0.28) for 44-81% cost savings on high-volume workloads.</p></div>
-    </div>
     <div class="related-tools"><a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared</p></a><a href="compare.html" class="related-card"><h3>Compare Any Two</h3><p>Custom comparison tool</p></a><a href="api-cost-score.html" class="related-card"><h3>🎯 Cost Score</h3><p>Rate your API setup</p></a></div>
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
                     <!-- Post-Calculator Conversion CTA -->

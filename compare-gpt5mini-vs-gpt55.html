@@ -159,12 +159,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -172,160 +176,7 @@
     </nav>
 
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <h1>GPT-5 mini <span class="vs">vs</span> GPT-5.5</h1>
-        <p class="subtitle">OpenAI budget vs premium showdown — GPT-5 mini is 95% cheaper on input and 93% cheaper on output. When does the premium upgrade make sense?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead>
-                <tr><th>Specification</th><th>GPT-5 mini</th><th>GPT-5.5</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="cheaper">$0.25</td><td class="pricier">$5.00</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$2.00</td><td class="pricier">$30.00</td></tr>
-                <tr><td>Context Window</td><td>272K tokens</td><td>1.05M tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Premium</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>OpenAI</td></tr>
-                <tr><td>Input Savings</td><td class="cheaper">95% cheaper</td><td class="pricier">Baseline</td></tr>
-                <tr><td>Output Savings</td><td class="cheaper">93% cheaper</td><td class="pricier">Baseline</td></tr>
-                <tr><td>Cost at 1M input + 500K output</td><td class="cheaper">$1.25</td><td class="pricier">$20.00</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Enter your usage to see a precise cost comparison for both models.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('coding')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('rag')">RAG Pipeline</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
-            <button class="preset-btn" onclick="applyPreset('heavy')">Heavy Usage</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group">
-                    <label for="input-tokens">Input Tokens per Request</label>
-                    <input type="number" id="input-tokens" value="1500" min="1" oninput="calculate()">
-                </div>
-                <div class="input-group">
-                    <label for="output-tokens">Output Tokens per Request</label>
-                    <input type="number" id="output-tokens" value="800" min="1" oninput="calculate()">
-                </div>
-            </div>
-            <div>
-                <div class="input-group">
-                    <label for="requests-day">Requests per Day</label>
-                    <input type="number" id="requests-day" value="500" min="1" oninput="calculate()">
-                </div>
-                <div class="input-group">
-                    <label for="days-month">Days per Month</label>
-                    <input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()">
-                </div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;">
-            <div class="amount" id="savings-amount"></div>
-            <div class="detail" id="savings-detail"></div>
-        </div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gpt5mini">
-                <div class="provider">OpenAI</div>
-                <div class="model-name">GPT-5 mini</div>
-                <div id="winner-badge-gpt5mini" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt5mini">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt5mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt5mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt5mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt5mini"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-gpt55">
-                <div class="provider">OpenAI</div>
-                <div class="model-name">GPT-5.5</div>
-                <div id="winner-badge-gpt55" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt55">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt55"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card">
-                <h3>Cost-Effective Production</h3>
-                <p>GPT-5 mini at $0.25/$2 per million tokens delivers excellent quality at 93-95% lower cost than GPT-5.5. For most production workloads including chatbots, code assistants, and content generation, GPT-5 mini is the clear winner on cost.</p>
-                <div class="recommendation"><span class="pick-gpt5mini">Best value: GPT-5 mini (93-95% cheaper)</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Maximum Quality</h3>
-                <p>GPT-5.5 delivers premium output quality for complex tasks that demand the highest accuracy and nuance. If your use case requires the best possible output and cost is secondary, GPT-5.5 is the right choice.</p>
-                <div class="recommendation"><span class="pick-gpt55">Best quality: GPT-5.5</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Context Window Needs</h3>
-                <p>GPT-5.5 offers 1.05M context vs GPT-5 mini's 272K — 3.9x more. If your application needs long document processing or large codebase analysis, GPT-5.5 gives you significantly more context per request.</p>
-                <div class="recommendation"><span class="pick-gpt55">Long context: GPT-5.5 (1.05M vs 272K)</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Enterprise Scale</h3>
-                <p>At 1M input + 500K output tokens/month, GPT-5 mini costs $1.25 vs GPT-5.5's $20 — saving $18.75/month. For enterprise-scale deployments, the 93-95% cost difference translates to $2,250/year in savings.</p>
-                <div class="recommendation"><span class="pick-gpt5mini">Enterprise: GPT-5 mini saves $2,250/year</span></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pro-upsell">
-        <h2>Need deeper cost analysis?</h2>
-        <p>APIpulse lets you compare all 67 models, save scenarios, and export PDF reports.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 40%</div>
-        </div>
-        <a href="audit.html?from=tool_page" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>Is GPT-5 mini cheaper than GPT-5.5?</h3>
-            <p>Yes — GPT-5 mini is dramatically cheaper. GPT-5 mini costs $0.25/M input and $2/M output, while GPT-5.5 costs $5/M input and $30/M output. That's 95% cheaper on input and 93% cheaper on output.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Which is better for chatbots — GPT-5 mini or GPT-5.5?</h3>
-            <p>For most chatbot use cases, GPT-5 mini is the better choice due to its 93-95% lower cost. GPT-5.5 makes sense when you need premium output quality or the larger 1.05M context window for complex conversations.</p>
-        </div>
-        <div class="faq-item">
-            <h3>How much would I save using GPT-5 mini instead of GPT-5.5?</h3>
-            <p>For a workload of 1M input + 500K output tokens/month, GPT-5 mini costs $1.25/month vs GPT-5.5's $20/month — saving $18.75/month (94%). At scale (10M input + 5M output), you save $187.50/month — $2,250/year.</p>
-        </div>
-        <div class="faq-item">
-            <h3>When should I choose GPT-5.5 over GPT-5 mini?</h3>
-            <p>Choose GPT-5.5 when: (1) you need premium output quality for complex tasks, (2) you need the larger 1.05M context window (vs GPT-5 mini's 272K), (3) cost is not a primary concern and quality is paramount. For everything else, GPT-5 mini delivers excellent value at 93-95% lower cost.</p>
-        </div>
-    </div>
 
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">Related Comparisons</h2>

@@ -135,115 +135,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-premium">Premium</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>GPT-5.5 Pro <span class="vs">vs</span> DeepSeek V4 Pro</h1>
-        <p class="subtitle">OpenAI's most powerful model vs DeepSeek's budget champion. GPT-5.5 Pro at $30/$180 costs 68x more than DeepSeek V4 Pro at $0.435/$0.87 — with comparable 1M context. Is OpenAI's premium quality worth the massive price gap?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5.5 Pro (OpenAI)</th><th>DeepSeek V4 Pro (DeepSeek)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$30.00</td><td class="cheaper">$0.435</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$180.00</td><td class="cheaper">$0.87</td></tr>
-                <tr><td>Context Window</td><td class="same">1.05M tokens</td><td class="same">1M tokens</td></tr>
-                <tr><td>Tier</td><td>Premium</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>DeepSeek</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">See how much you can save with DeepSeek V4 Pro — or whether GPT-5.5 Pro's premium quality justifies 68x higher cost.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('agentic')">Agentic Tasks</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gpt55pro">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5.5 Pro</div>
-                <div id="winner-badge-gpt55pro" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt55pro">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt55pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt55pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt55pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt55pro"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-deepseekv4pro">
-                <div class="provider">DeepSeek</div><div class="model-name">DeepSeek V4 Pro</div>
-                <div id="winner-badge-deepseekv4pro" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-deepseekv4pro">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-deepseekv4pro"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Complex Reasoning</h3><p>Multi-step analysis, research synthesis. GPT-5.5 Pro at $30/$180 is OpenAI's most powerful model. DeepSeek V4 Pro at $0.435/$0.87 delivers excellent quality at 99% lower cost with comparable 1M context.</p><div class="recommendation"><span class="pick-deepseek">Most tasks: DeepSeek V4 Pro</span> | <span class="pick-gpt55pro">Peak reasoning: GPT-5.5 Pro</span></div></div>
-            <div class="use-case-card"><h3>Code Generation</h3><p>Writing, debugging, refactoring code. Both models produce excellent code. DeepSeek V4 Pro at $0.435/$0.87 is 68x cheaper, making it the clear winner for code-heavy workloads.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Pro</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, documentation, marketing copy. DeepSeek V4 Pro at $0.435/$0.87 is 200x cheaper on output, making it the clear winner for content-heavy workloads.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Pro</span></div></div>
-            <div class="use-case-card"><h3>High-Volume Batch Processing</h3><p>At scale, the 68x cost difference is enormous. 10M input + 5M output tokens/month costs $13.05 with DeepSeek V4 Pro vs $1,200 with GPT-5.5 Pro — saving $1,186.95/month.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Pro</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Choosing between OpenAI and DeepSeek?</h2>
-        <p>APIpulse lets you compare all 67 models including GPT-5.5 Pro ($30/$180) and DeepSeek V4 Pro ($0.435/$0.87), save scenarios, and export cost reports.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 40%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is DeepSeek V4 Pro?</h3><p>DeepSeek V4 Pro costs $0.435/$0.87 per 1M tokens vs GPT-5.5 Pro at $30/$180 — 99% cheaper on input and 99.5% cheaper on output. At 1M input + 500K output tokens/month, that's $0.87 vs $120, saving $119.13/month.</p></div>
-        <div class="faq-item"><h3>Is GPT-5.5 Pro worth 68x the cost?</h3><p>GPT-5.5 Pro at $30/$180 is OpenAI's most powerful model with 1.05M context. For the absolute most complex reasoning, the 68x premium may justify itself. For most production workloads, DeepSeek V4 Pro at $0.435/$0.87 offers unbeatable value.</p></div>
-        <div class="faq-item"><h3>When should I use DeepSeek V4 Pro over GPT-5.5 Pro?</h3><p>Choose DeepSeek V4 Pro ($0.435/$0.87) for virtually all production workloads — it's 68x cheaper with comparable 1M context. Choose GPT-5.5 Pro ($30/$180) only for the absolute most complex reasoning tasks where OpenAI's premium quality justifies 68x higher cost.</p></div>
-    </div>
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

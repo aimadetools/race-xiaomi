@@ -160,12 +160,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -173,104 +177,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="blog-hero">
-        <div class="category">Model Comparison</div>
-        <h1>Claude 4 Opus vs Claude Opus 4.8 — <span style="color:var(--green)">What Changed?</span></h1>
-        <p class="subtitle">Claude 4 Opus is dead. Claude Opus 4.8 is the official successor — 67% cheaper with better performance. Here's everything you need to know.</p>
-        <p class="meta">Published Jun 12, 2026 · 6 min read</p>
-    </div>
-
-    <div class="blog-content">
-        <p><strong>Claude 4 Opus was retired on June 15, 2026.</strong> If you're still using it, your API calls are returning 404 errors. The good news: Claude Opus 4.8 is the official successor, it's 67% cheaper, and migration takes 30 minutes.</p>
-
-        <p>This comparison covers everything that changed between Claude 4 Opus and Claude Opus 4.8 — pricing, performance, context window, and how to migrate.</p>
-
-        <h2>Quick Comparison</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>Claude 4 Opus <span style="color:#ef4444">(DEAD)</span></th>
-                    <th>Claude Opus 4.8 <span style="color:var(--green)">(SUCCESSOR)</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Status</strong></td>
-                    <td class="dead">Retired June 15, 2026</td>
-                    <td class="winner">Active — current flagship</td>
-                </tr>
-                <tr>
-                    <td><strong>Input Cost</strong></td>
-                    <td class="dead">$15 / 1M tokens</td>
-                    <td class="winner">$5 / 1M tokens (67% cheaper)</td>
-                </tr>
-                <tr>
-                    <td><strong>Output Cost</strong></td>
-                    <td class="dead">$75 / 1M tokens</td>
-                    <td class="winner">$25 / 1M tokens (67% cheaper)</td>
-                </tr>
-                <tr>
-                    <td><strong>Context Window</strong></td>
-                    <td>100K tokens</td>
-                    <td class="winner">200K tokens (2x larger)</td>
-                </tr>
-                <tr>
-                    <td><strong>API Format</strong></td>
-                    <td>Messages API</td>
-                    <td>Messages API (identical)</td>
-                </tr>
-                <tr>
-                    <td><strong>Model ID</strong></td>
-                    <td class="dead"><code>claude-4-opus</code></td>
-                    <td class="winner"><code>claude-opus-4-8</code></td>
-                </tr>
-                <tr>
-                    <td><strong>Reasoning</strong></td>
-                    <td>Good</td>
-                    <td class="winner">Improved</td>
-                </tr>
-                <tr>
-                    <td><strong>Coding</strong></td>
-                    <td>Good</td>
-                    <td class="winner">Better</td>
-                </tr>
-                <tr>
-                    <td><strong>Math</strong></td>
-                    <td>Good</td>
-                    <td class="winner">Better</td>
-                </tr>
-                <tr>
-                    <td><strong>Speed</strong></td>
-                    <td>Standard</td>
-                    <td class="winner">Faster</td>
-                </tr>
-                <tr>
-                    <td><strong>Availability</strong></td>
-                    <td class="dead">None — 404 errors</td>
-                    <td class="winner">100% uptime SLA</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>Pricing Breakdown</h2>
-        <p>Here's the cost difference per 1M tokens:</p>
-
-        <div class="cost-comparison">
-            <div class="cost-card dead">
-                <div class="label">Claude 4 Opus (DEAD)</div>
-                <div class="price">$15 / $75</div>
-                <div class="detail">Input / Output — 404 ERROR</div>
-            </div>
             <div class="cost-card winner">
                 <div class="label">Claude Opus 4.8</div>
                 <div class="price">$5 / $25</div>

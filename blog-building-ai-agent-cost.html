@@ -130,74 +130,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
-                <a href="agent-cost-calculator.html">Agents</a>
-                <a href="audit.html">Pricing</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="tools.html">Tools</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
-                <a href="audit.html" class="nav-cta">Free Tools →</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
 
-    <main>
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">Building an AI Agent? Here's What It Actually Costs</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Analysis</span>
-            <span>May 8, 2026</span>
-        </div>
-        <h1>Building an AI Agent? Here's What It Actually Costs in 2026</h1>
-
-        <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-            <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-        </div>
-    <div style="padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;margin:16px 0 24px;">
-        <p style="margin:0;font-size:14px;"><strong>💰 Save money:</strong> Use our <a href="claude-4-is-down.html" style="color:#16a34a;font-weight:600;">free Claude Deprecation Calculator</a> to see exactly what you'll pay after migrating to a replacement model.</p>
-    </div>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>Everyone's building AI agents in 2026. But most developers have no idea what the API costs will be until they get their first bill. We crunched the numbers across all 67 models from 10 providers so you don't have to.</p>
-
-        <h2>The Agent Cost Formula</h2>
-        <p>AI agent cost isn't just about which model you pick. It's about <strong>how many steps your agent takes per task</strong>. A simple chatbot might make 1-2 API calls per request. An autonomous coding agent might make 10-20.</p>
-        <p>The formula:</p>
-        <blockquote><strong>Monthly Cost = Tasks/day × Steps/task × (Input tokens × Input price + Output tokens × Output price) / 1,000,000 × 30</strong></blockquote>
-        <p>Let's apply this to real agent types.</p>
-
-        <h2>Cost by Agent Type</h2>
-
-        <h3>1. Customer Support Agent</h3>
-        <p>Handles incoming tickets, answers questions, escalates complex issues. High volume, short interactions.</p>
-        <div class="cost-example">
-            <div class="label">Assumptions: 500 tasks/day, 3 steps/task, 1.5K input, 400 output tokens</div>
-            <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$12/mo</span></div>
-            <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">$35/mo</span></div>
-            <div class="cost-row"><span class="name">Gemini 2.5 Flash-Lite</span><span class="value">$8/mo</span></div>
-            <div class="cost-row"><span class="name">DeepSeek V4 Flash</span><span class="value">$5/mo</span></div>
-            <div class="cost-row"><span class="name">Claude Sonnet 4.6</span><span class="value">$105/mo</span></div>
-            <div class="cost-total"><span class="name">Best value: Gemini 2.5 Flash-Lite at $8/mo</span><span class="value">vs $105 for Sonnet</span></div>
-        </div>
+    <main id="main">
 
         <h3>2. Coding Agent (Claude Code-style)</h3>
         <p>Reads codebases, writes code, runs tests, fixes bugs. Complex multi-step workflows.</p>

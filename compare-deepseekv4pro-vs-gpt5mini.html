@@ -183,125 +183,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-budget">Budget</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>DeepSeek V4 Pro <span class="vs">vs</span> GPT-5 Mini</h1>
-        <p class="subtitle">Two budget champions, different strengths. GPT-5 Mini is 43% cheaper on input ($0.25 vs $0.44) but DeepSeek V4 Pro is 57% cheaper on output ($0.87 vs $2.00). DeepSeek also has 3.7x the context window (1M vs 272K). Which budget model wins for your workload?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>DeepSeek V4 Pro (DeepSeek)</th><th>GPT-5 Mini (OpenAI)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$0.44</td><td class="cheaper">$0.25</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$0.87</td><td class="pricier">$2.00</td></tr>
-                <tr><td>Context Window</td><td class="cheaper">1M tokens</td><td>272K tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>DeepSeek</td><td>OpenAI</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">GPT-5 Mini wins on input-heavy workloads. DeepSeek V4 Pro wins on output-heavy. Enter your usage to find the cheaper model for you.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-deepseekv4pro">
-                <div class="provider">DeepSeek</div><div class="model-name">DeepSeek V4 Pro</div>
-                <div id="winner-badge-deepseekv4pro" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-deepseekv4pro">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-deepseekv4pro"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-gpt5mini">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5 Mini</div>
-                <div id="winner-badge-gpt5mini" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt5mini">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt5mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt5mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt5mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt5mini"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="also-premium">
-        <h2>Other Budget and Mid-Tier Models</h2>
-        <div class="premium-grid">
-            <div class="premium-card"><div class="name">Gemini 3.5 Flash</div><div class="provider">Google</div><div class="price">$0.075 / $0.30 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="premium-card"><div class="name">GPT-5.4</div><div class="provider">OpenAI</div><div class="price">$2.50 / $15.00 per 1M</div><div class="ctx">400K context</div></div>
-            <div class="premium-card"><div class="name">Claude Sonnet 5</div><div class="provider">Anthropic</div><div class="price">$3.00 / $15 per 1M</div><div class="ctx">1M context</div></div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Code Generation</h3><p>Both are budget powerhouses for coding. GPT-5 Mini ($0.25/$2.00) is cheaper when you paste large codebases as input for small edits. DeepSeek V4 Pro ($0.44/$0.87) is cheaper when generating large amounts of code output. For most coding workflows that generate more output than input, DeepSeek V4 Pro offers better value.</p><div class="recommendation"><span class="pick-deepseek">Output-heavy coding: DeepSeek V4 Pro</span> | <span class="pick-gpt5mini">Input-heavy review: GPT-5 Mini</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, marketing copy, and documentation all produce large output tokens. At $0.87/1M output, DeepSeek V4 Pro is 57% cheaper than GPT-5 Mini ($2.00/1M) for generation tasks. For a 3000-word article (~4K output tokens), DeepSeek V4 Pro costs $0.0035 vs GPT-5 Mini's $0.008 — small per-article but massive at scale.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Pro</span></div></div>
-            <div class="use-case-card"><h3>Long-Context Processing</h3><p>DeepSeek V4 Pro's 1M context window is 3.7x larger than GPT-5 Mini's 272K. If your workload involves long documents, large codebases, or extended conversations exceeding 272K tokens, DeepSeek V4 Pro is the only viable option between these two budget models.</p><div class="recommendation"><span class="pick-deepseek">3.7x more context: DeepSeek V4 Pro</span></div></div>
-            <div class="use-case-card"><h3>Input-Heavy Batch Processing</h3><p>When you're feeding massive datasets for classification, extraction, or analysis with relatively little output, GPT-5 Mini's $0.25 input price shines. At 10M input + 1M output, GPT-5 Mini costs $4.50 vs DeepSeek V4 Pro's $5.27. For input-dominated workloads, GPT-5 Mini saves $0.77 per batch.</p><div class="recommendation"><span class="pick-gpt5mini">Input-heavy batches: GPT-5 Mini</span> | <span class="pick-deepseek">Output-heavy batches: DeepSeek V4 Pro</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Comparing budget AI models?</h2>
-        <p>APIpulse lets you compare all 67 models including DeepSeek V4 Pro ($0.44/$0.87) and GPT-5 Mini ($0.25/$2.00), save scenarios, and export cost reports for your team.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 94%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>Which is cheaper, DeepSeek V4 Pro or GPT-5 Mini?</h3><p>It depends on your workload mix. GPT-5 Mini is cheaper on input at $0.25/1M vs DeepSeek V4 Pro's $0.44/1M (43% cheaper). But DeepSeek V4 Pro is cheaper on output at $0.87/1M vs GPT-5 Mini's $2.00/1M (57% cheaper). For a balanced 1M input + 1M output workload, DeepSeek V4 Pro costs $1.31 vs GPT-5 Mini's $2.25 — DeepSeek saves $0.94. For input-heavy workloads (10M input + 1M output), GPT-5 Mini costs $4.50 vs DeepSeek's $5.27 — GPT-5 Mini saves $0.77.</p></div>
-        <div class="faq-item"><h3>Which has a larger context window?</h3><p>DeepSeek V4 Pro has a much larger context at 1M tokens vs GPT-5 Mini's 272K tokens — 3.7x more context. If your workload involves long documents, large codebases, or extended conversations, DeepSeek V4 Pro is the clear winner on both context size and output cost.</p></div>
-        <div class="faq-item"><h3>When should I use GPT-5 Mini over DeepSeek V4 Pro?</h3><p>Choose GPT-5 Mini ($0.25/$2.00) when your workload is input-heavy — lots of context or prompts with relatively little output. At 10M input + 1M output, GPT-5 Mini costs $4.50 vs DeepSeek V4 Pro's $5.27, saving $0.77. GPT-5 Mini also benefits from OpenAI's ecosystem integration and tooling.</p></div>
-        <div class="faq-item"><h3>When should I use DeepSeek V4 Pro over GPT-5 Mini?</h3><p>Choose DeepSeek V4 Pro ($0.44/$0.87) when your workload is output-heavy — content generation, code generation, summarization, or any task producing large amounts of text. At 1M input + 10M output, DeepSeek V4 Pro costs $9.14 vs GPT-5 Mini's $20.25, saving $11.11. DeepSeek V4 Pro also offers a 3.7x larger context window (1M vs 272K).</p></div>
-        <div class="faq-item"><h3>Are both models budget-tier?</h3><p>Yes, both DeepSeek V4 Pro and GPT-5 Mini are classified as budget-tier models — the cheapest from their respective providers. But the pricing structure is very different: GPT-5 Mini has a low input price but higher output price ($0.25/$2.00), while DeepSeek V4 Pro has higher input but much lower output ($0.44/$0.87). The "cheapest" model depends entirely on your input/output ratio.</p></div>
-    </div>
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

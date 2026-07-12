@@ -130,56 +130,23 @@
     <nav>
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="tools.html">Tools</a>
-                <a href="widget.html">Widgets</a>
+                        <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
 
-    <main class="content">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-        <h1>🧮 Free AI Cost Calculator Widget</h1>
-        <p class="subtitle">Add an interactive AI API cost calculator to any website with one script tag. Your visitors calculate costs instantly — zero dependencies, free forever.</p>
-
-        <!-- Live demo: floating -->
-        <div class="demo-section">
-            <h2>Live Demo — Floating Widget</h2>
-            <p style="text-align:center;color:var(--text-secondary);margin-bottom:16px;">Click the green button in the bottom-right corner ↓</p>
-        </div>
-
-        <!-- Installation code -->
-        <div class="demo-section">
-            <h2>One-Line Install</h2>
-            <div class="code-block">
-                <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent||this.parentElement.querySelector('code')?.textContent||'');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
-                <code>&lt;script src="https://getapipulse.com/widget/calc-embed.js" defer&gt;&lt;/script&gt;</code>
-            </div>
-            <p style="font-size:14px;color:var(--text-secondary);text-align:center;">Drop this before &lt;/body&gt; — a floating calculator appears in the bottom-right corner.</p>
-        </div>
-
-        <!-- Inline embed -->
-        <div class="demo-section">
-            <h2>Inline Embed</h2>
-            <p style="text-align:center;color:var(--text-secondary);margin-bottom:16px;">Embed directly in your content:</p>
-            <div class="code-block">
-                <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent||this.parentElement.querySelector('code')?.textContent||'');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
-                <code>&lt;div id="apipulse-calc" data-model="openai-gpt4o" data-tokens="100000"&gt;&lt;/div&gt;
-&lt;script src="https://getapipulse.com/widget/calc-embed.js" defer&gt;&lt;/script&gt;</code>
-            </div>
-            <div class="inline-demo">
-                <div id="apipulse-calc" data-model="openai-gpt4o" data-tokens="100000"></div>
-            </div>
+    <main id="main">
         </div>
 
         <!-- Features -->

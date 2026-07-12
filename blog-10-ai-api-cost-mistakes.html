@@ -218,17 +218,13 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
-                <a href="agent-cost-calculator.html">Agents</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="tools.html">Tools</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
@@ -238,39 +234,7 @@
         </div>
     </nav>
 
-    <main class="content" id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-        <a href="blog.html" class="back-link">← Back to Blog</a>
-
-        <h1>10 AI API Cost Mistakes That Are Draining Your Budget (And How to Fix Them)</h1>
-        <p class="subtitle">Stop overpaying for AI APIs. These 10 mistakes cost developers $500-5,000/month — and most are easy to fix.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <div class="article">
-            <p>AI API costs can spiral fast. A team spending $2,000/month on OpenAI might be paying $6,000/month without realizing it — because of a handful of fixable mistakes. After analyzing billing data across hundreds of AI applications, here are the 10 most expensive mistakes we see, with exact fixes for each.</p>
-
-            <!-- Mistake 1 -->
-            <div class="mistake-card">
-                <div class="mistake-number">1</div>
-                <h3>Using GPT-5.5 or Claude Opus for Everything</h3>
-                <div class="impact">Cost impact: 80-95% overspend</div>
-                <p>The most expensive mistake is reaching for the most powerful model for every task. GPT-5.5 costs <strong>$5/$30 per 1M tokens</strong>. But 80% of API calls are simple tasks — FAQ answers, data extraction, classification — that a budget model handles just as well.</p>
-                <p><strong>Example:</strong> A customer support chatbot sends 5,000 messages/day. Using GPT-5.5 for all of them costs ~<strong>$4,500/month</strong>. Routing simple questions to GPT-5 mini and complex ones to GPT-5 cuts that to ~<strong>$450/month</strong>.</p>
-                <div class="cost-example">
-                    <div class="label">Monthly cost comparison (5,000 messages/day)</div>
-                    <div class="cost-row"><span class="name">GPT-5.5 for everything</span><span class="value">$4,500/mo</span></div>
-                    <div class="cost-row"><span class="name">GPT-5 mini + GPT-5 routing</span><span class="value">$450/mo</span></div>
-                    <div class="cost-row cost-total"><span class="name">Monthly savings</span><span class="value">$4,050/mo (90%)</span></div>
-                </div>
+    <main id="main">
                 <div class="fix-box">
                     <div class="fix-label">How to fix it</div>
                     <p>Use <strong>model routing</strong>: classify task complexity first, then route to the cheapest model that can handle it. Simple tasks (FAQ, classification, extraction) → budget model. Complex tasks (analysis, code generation, creative writing) → mid-tier. Only use premium for the hardest problems.</p>

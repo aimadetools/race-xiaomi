@@ -182,12 +182,18 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">⚡ APIpulse</a>
-            <div class="nav-links">
-                <a href="/pricing.html">Pricing</a>
-                <a href="/calculator.html">Calculator</a>
-                <a href="/tools.html">Tools</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/compare-plans.html" class="nav-cta">Compare Plans</a>
+                        <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -196,58 +202,7 @@
         <a href="/blog.html" class="back-link">← Back to Blog</a>
 
         <article class="article">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-            <h1>AI API Cost Optimization Checklist: 15 Ways to Cut Your LLM Bill</h1>
-            <p class="subtitle">A practical, prioritized checklist to reduce your AI API spending by 40-70% without sacrificing quality. Each item includes expected savings and implementation difficulty.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-            <p>Most developers overpay for AI APIs by 2-5x. Not because the prices are wrong, but because they're using the same model for everything, sending bloated prompts, and not monitoring their spending. This checklist fixes that.</p>
-
-            <p>We've helped teams save <strong>$2,000-$15,000/month</strong> on their AI API bills using these exact strategies. Work through them in order — the first 5 items typically deliver 60% of the savings.</p>
-
-            <!-- Tier 1: Quick Wins -->
-            <h2>Tier 1: Quick Wins (Do These First — 60% of Savings)</h2>
-
-            <div class="checklist-item">
-                <span class="impact high">HIGH IMPACT</span>
-                <h3>1. Right-Size Your Models</h3>
-                <p>You don't need GPT-5 for every task. Most requests can be handled by smaller, cheaper models with identical output quality.</p>
-                <ul>
-                    <li><strong>Classification tasks:</strong> Use GPT-5 Mini ($0.15/1M input) instead of GPT-5 ($1.25/1M input) — <strong>94% cheaper</strong></li>
-                    <li><strong>Summarization:</strong> Claude Haiku 4.5 often matches Sonnet quality at 1/5 the cost</li>
-                    <li><strong>Simple Q&A:</strong> Gemini 2.5 Flash-Lite at $0.0375/1M tokens handles most chatbot use cases</li>
-                </ul>
-                <div class="savings-example">
-                    <strong>Example:</strong> A customer support bot handling 10K requests/day<br>
-                    <span class="before">All GPT-5: $750/month</span> → <span class="after">GPT-5 Mini for simple + GPT-5 for complex: $120/month</span>
-                </div>
-                <p><strong>Tool:</strong> Use the <a href="/calculator.html">API Cost Calculator</a> to compare costs across all 67 models for your specific workload.</p>
-            </div>
-
-            <div class="checklist-item">
-                <span class="impact high">HIGH IMPACT</span>
-                <h3>2. Optimize Your Prompts</h3>
-                <p>Prompt bloat is the #1 hidden cost. Every token in your prompt is charged at input rates — and most prompts are 3-5x longer than they need to be.</p>
-                <ul>
-                    <li><strong>Remove system prompt padding:</strong> "You are a helpful, friendly, professional assistant who..." → just state the task</li>
-                    <li><strong>Cut examples:</strong> One good example beats three mediocre ones</li>
-                    <li><strong>Use structured output:</strong> JSON mode reduces output tokens by 40-60% vs. natural language</li>
-                    <li><strong>Truncate history:</strong> Keep last 3-5 messages, not 20</li>
-                </ul>
-                <div class="savings-example">
-                    <strong>Example:</strong> RAG pipeline with 2K context tokens per request<br>
-                    <span class="before">Bloated prompt (1,800 tokens): $0.54/1K requests</span> → <span class="after">Optimized prompt (600 tokens): $0.18/1K requests</span>
-                </div>
-            </div>
 
             <div class="checklist-item">
                 <span class="impact high">HIGH IMPACT</span>

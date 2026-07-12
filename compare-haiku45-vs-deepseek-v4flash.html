@@ -166,12 +166,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -179,59 +183,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="compare-hero">
-        <h1>Claude Haiku 4.5 <span class="vs">vs</span> DeepSeek V4 Flash</h1>
-        <p class="subtitle">Ultra-budget vs budget — DeepSeek V4 Flash is 86% cheaper on input and 94% cheaper on output. The cheapest production-ready model on the market.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead>
-                <tr><th>Specification</th><th>Claude Haiku 4.5</th><th>DeepSeek V4 Flash</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$1.00</td><td class="cheaper">$0.14</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$5.00</td><td class="cheaper">$0.28</td></tr>
-                <tr><td>Context Window</td><td>200K tokens</td><td>128K tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Ultra-Budget</td></tr>
-                <tr><td>Provider</td><td>Anthropic</td><td>DeepSeek</td></tr>
-                <tr><td>Input Savings</td><td class="pricier">Baseline</td><td class="cheaper">86% cheaper</td></tr>
-                <tr><td>Output Savings</td><td class="pricier">Baseline</td><td class="cheaper">94% cheaper</td></tr>
-                <tr><td>Cost at 1M input + 500K output</td><td class="pricier">$3.50</td><td class="cheaper">$0.28</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Enter your usage to see a precise cost comparison for both models.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('coding')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('rag')">RAG Pipeline</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
-            <button class="preset-btn" onclick="applyPreset('heavy')">Heavy Usage</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group">
-                    <label for="input-tokens">Input Tokens per Request</label>
-                    <input type="number" id="input-tokens" value="1500" min="1" oninput="calculate()">
-                </div>
-                <div class="input-group">
-                    <label for="output-tokens">Output Tokens per Request</label>
-                    <input type="number" id="output-tokens" value="800" min="1" oninput="calculate()">
-                </div>
-            </div>
             <div>
                 <div class="input-group">
                     <label for="requests-day">Requests per Day</label>

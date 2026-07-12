@@ -206,21 +206,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -229,84 +223,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-xai-grok-vs-gpt4o">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-                <a href="quiz.html">Quiz</a>
-            <span class="separator">›</span>
-            <span class="current">xAI Grok vs GPT-4o: Is Grok Worth It?</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Comparison</span>
-            <span class="tier-badge tier-mid">Mid</span>
-            <span>April 27, 2026</span>
-            <span>10 min read</span>
-        </div>
-        <h1>xAI Grok vs GPT-4o: Is Grok Worth It?</h1>
-
-        <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.3);border-radius:8px;padding:16px;margin:20px 0;font-size:15px;">
-            <strong>Updated Jul 9, 2026:</strong> xAI rebranded Grok 3 → <strong>Grok 4.3</strong> ($1.25/$2.50) and Grok 3 Mini → <strong>Grok Build 0.1</strong> ($1.00/$2.00). Grok 4.3 is now cheaper than GPT-4o ($2.50/$10) on both input and output. The cost scenarios below reflect the original April 2026 pricing — see <a href="xai.html">our xAI page</a> for current data.
-        </div>
-
-        <p>xAI's Grok has positioned itself as the anti-establishment alternative to OpenAI's GPT-4o. With real-time data access from X/Twitter, a less restrictive content policy, and competitive pricing, Grok is attracting developers who want something different from the OpenAI ecosystem. But is it actually worth switching? This Grok vs GPT-4o comparison breaks down pricing, features, and real-world cost scenarios to help you decide.</p>
-
-        <h2>Grok vs GPT-4o: Pricing Comparison</h2>
-        <p>As of April 2026, here is how the pricing stacks up across both providers:</p>
-        <ul>
-            <li><strong>Grok 3:</strong> $3.00 per 1M input tokens, $15.00 per 1M output tokens, 128K context</li>
-            <li><strong>Grok 3 Mini:</strong> $1.00 per 1M input tokens, $2.00 per 1M output tokens, 128K context</li>
-            <li><strong>GPT-4o:</strong> $2.50 per 1M input tokens, $10.00 per 1M output tokens, 128K context</li>
-            <li><strong>GPT-4o mini:</strong> $0.15 per 1M input tokens, $0.60 per 1M output tokens, 128K context</li>
-        </ul>
-        <p>GPT-4o is 17% cheaper on input and 33% cheaper on output compared to Grok 3. In the budget tier, GPT-4o mini is 50% cheaper on input, though Grok 3 Mini is 17% cheaper on output. Both providers offer 128K context windows, so there is no advantage there. The pricing picture is nuanced: GPT-4o wins on flagship input costs, while Grok 3 Mini has a slight edge on budget output.</p>
-
-        <h2>Where Grok Wins</h2>
-
-        <h3>Real-Time Data Access</h3>
-        <p>Grok's biggest differentiator is its direct access to real-time data from X (formerly Twitter). While GPT-4o relies on its training data cutoff and requires browsing tools for current information, Grok can pull live posts, trending topics, and breaking news natively. For applications that need up-to-the-minute social data, this is a significant advantage that GPT-4o cannot match without additional tooling.</p>
-
-        <h3>X/Twitter Integration</h3>
-        <p>If your application involves social media monitoring, sentiment analysis, or content aggregation from X, Grok has a structural advantage. Its native integration with the X platform means faster data access, richer context, and no need for separate API integrations. For social media analytics platforms, this can reduce both development complexity and latency.</p>
-
-        <h3>Unfiltered Responses</h3>
-        <p>Grok is marketed as a less restrictive model that provides more unfiltered responses. For research applications, creative writing, and use cases where content moderation filters are more of a hindrance than a help, Grok's approach can produce more useful outputs. This is a deliberate design choice by xAI, though it comes with the tradeoff of requiring more careful output handling in production environments.</p>
-
-        <h2>Where GPT-4o Wins</h2>
-
-        <h3>Ecosystem and Tooling</h3>
-        <p>OpenAI's ecosystem is far more mature. GPT-4o integrates with thousands of third-party tools, has extensive SDK support across Python, Node.js, and other languages, and benefits from a massive community. xAI's ecosystem is growing but still significantly smaller. If you need plug-and-play integrations, GPT-4o is the safer bet.</p>
-
-        <h3>Reliability and Uptime</h3>
-        <p>OpenAI has a longer track record of production-grade API reliability. GPT-4o's API has been battle-tested across millions of production deployments. xAI's API is newer, and while it has improved rapidly, it has not yet matched OpenAI's consistency at scale. For mission-critical applications where downtime costs real money, GPT-4o's maturity matters.</p>
-
-        <h3>Cheaper Budget Option</h3>
-        <p>At the budget tier, GPT-4o mini at $0.15/$0.60 per 1M tokens undercuts Grok 3 Mini's $1.00/$2.00 on input pricing. For high-volume, cost-sensitive workloads where input tokens dominate (such as classification or extraction), GPT-4o mini offers better economics.</p>
-
-        <h3>Broader Model Family</h3>
-        <p>OpenAI offers a wider range of models for different needs: GPT-4o for flagship tasks, GPT-4o mini for budget workloads, o1 for reasoning, and DALL-E for image generation. xAI's model lineup is more limited, which can be a constraint if you need specialized models for different parts of your application.</p>
-
-        <h2>Use Case Cost Breakdowns</h2>
-        <p>Let's look at three real-world scenarios to see how Grok vs GPT-4o costs play out at different usage levels.</p>
-
-        <h3>1. Chatbot (1,000 requests/day)</h3>
-        <p>A typical customer support chatbot with 500 input tokens and 1,500 output tokens per request.</p>
-        <div class="cost-example">
-            <div class="label">Monthly Cost (30 days)</div>
-            <div class="cost-row"><span class="name">GPT-4o</span><span class="value">$487.50</span></div>
-            <div class="cost-row"><span class="name">Grok 3</span><span class="value">$720.00</span></div>
-            <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$19.25</span></div>
-            <div class="cost-row"><span class="name">Grok 3 Mini</span><span class="value">$27.00</span></div>
-            <div class="cost-row cost-total"><span class="name">Grok 3 vs GPT-4o</span><span class="value">Grok is 48% more expensive</span></div>
-        </div>
         <p>For chatbot workloads with high output ratios, GPT-4o's cheaper output pricing ($10 vs $15) creates a meaningful cost gap. However, in the budget tier, Grok 3 Mini's lower output cost ($0.50 vs $0.60) makes it slightly cheaper overall.</p>
 
         <h3>2. Code Generation (500 requests/day)</h3>

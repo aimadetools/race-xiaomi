@@ -132,136 +132,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
 
-    <main class="blog-content">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-        <h1>The Cheapest AI Models in 2026: Complete Pricing Guide</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <div class="blog-meta">
-            Published Jun 8, 2026 · Updated Jul 9, 2026 · By APIpulse · 8 min read
-        </div>
-
-        <p>AI API pricing has dropped dramatically in 2026. The cheapest models now cost less than $0.10 per million tokens — making it possible to run AI-powered features for under $1/month. But with 67 models across 10 providers, finding the cheapest option for your specific use case isn't straightforward.</p>
-
-        <p>This guide ranks every major AI model by cost, shows real monthly estimates for common workloads, and helps you pick the cheapest model that actually fits your needs.</p>
-
-        <div class="cta-inline">
-            <h3>Find the Cheapest Model for Your Use Case</h3>
-            <p>Answer 3 questions and get an instant recommendation with cost estimates.</p>
-            <a href="cheapest-model-finder.html" class="btn-primary" style="display:inline-block;padding:10px 24px;font-size:14px;">Try the Model Finder →</a>
-        </div>
-            <p style="margin-top:8px;font-size:14px;"> — See if you're overpaying for AI APIs</p>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        
-
-        <h2>Every AI Model Ranked by Cost (June 2026)</h2>
-
-        <p>Here's every major AI API model ranked from cheapest to most expensive, based on <strong>input + output cost per 1M tokens</strong>:</p>
-
-        <table class="cost-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Model</th>
-                    <th>Provider</th>
-                    <th>Input/1M</th>
-                    <th>Output/1M</th>
-                    <th>Context</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="cheapest"><td>1</td><td><strong>Gemini 2.5 Flash-Lite</strong></td><td>Google</td><td class="price">$0.075</td><td class="price">$0.30</td><td>1M</td></tr>
-                <tr class="cheapest"><td>2</td><td><strong>Llama 3.1 8B</strong></td><td>Meta (Together.ai)</td><td class="price">$0.10</td><td class="price">$0.10</td><td>128K</td></tr>
-                <tr class="cheapest"><td>3</td><td><strong>Gemini 2.5 Flash-Lite</strong></td><td>Google</td><td class="price">$0.10</td><td class="price">$0.40</td><td>1M</td></tr>
-                <tr><td>4</td><td><strong>DeepSeek V4 Flash</strong></td><td>DeepSeek</td><td class="price">$0.14</td><td class="price">$0.28</td><td>1M</td></tr>
-                <tr><td>5</td><td><strong>GPT-oss 20B</strong></td><td>OpenAI</td><td class="price">$0.08</td><td class="price">$0.35</td><td>128K</td></tr>
-                <tr><td>6</td><td><strong>GPT-oss 120B</strong></td><td>OpenAI</td><td class="price">$0.15</td><td class="price">$0.60</td><td>128K</td></tr>
-                <tr><td>7</td><td><strong>GPT-4o mini</strong></td><td>OpenAI</td><td class="price">$0.15</td><td class="price">$0.60</td><td>128K</td></tr>
-                <tr><td>8</td><td><strong>Mistral Small 4</strong></td><td>Mistral</td><td class="price">$0.10</td><td class="price">$0.30</td><td>128K</td></tr>
-                <tr><td>9</td><td><strong>Llama 4 Scout</strong></td><td>Meta (Together.ai)</td><td class="price">$0.18</td><td class="price">$0.59</td><td>1M</td></tr>
-                <tr><td>10</td><td><strong>DeepSeek V3.2</strong></td><td>DeepSeek</td><td class="price">$0.23</td><td class="price">$0.34</td><td>128K</td></tr>
-                <tr><td>11</td><td><strong>GPT-5 mini</strong></td><td>OpenAI</td><td class="price">$0.25</td><td class="price">$2.00</td><td>272K</td></tr>
-                <tr><td>12</td><td><strong>Grok Build 0.1</strong></td><td>xAI</td><td class="price">$1.00</td><td>$2.00</td><td>256K</td></tr>
-                <tr><td>13</td><td><strong>DeepSeek V4 Pro</strong></td><td>DeepSeek</td><td class="price">$0.44</td><td class="price">$0.87</td><td>1M</td></tr>
-                <tr><td>14</td><td><strong>Mistral Large 3</strong></td><td>Mistral</td><td class="price">$0.50</td><td class="price">$1.50</td><td>262K</td></tr>
-                <tr><td>15</td><td><strong>Command R</strong></td><td>Cohere</td><td class="price">$0.50</td><td class="price">$1.50</td><td>128K</td></tr>
-                <tr><td>16</td><td><strong>Llama 3.1 70B</strong></td><td>Meta (Together.ai)</td><td class="price">$0.88</td><td class="price">$0.88</td><td>128K</td></tr>
-                <tr><td>17</td><td><strong>Grok 4.3</strong></td><td>xAI</td><td class="price">$1.25</td><td class="price">$2.50</td><td>1M</td></tr>
-                <tr><td>18</td><td><strong>GPT-5</strong></td><td>OpenAI</td><td class="price">$1.25</td><td class="price">$10.00</td><td>272K</td></tr>
-                <tr><td>19</td><td><strong>Gemini 2.5 Pro</strong></td><td>Google</td><td class="price">$1.25</td><td class="price">$10.00</td><td>1M</td></tr>
-                <tr><td>20</td><td><strong>Mistral Medium 3.5</strong></td><td>Mistral</td><td class="price">$1.50</td><td class="price">$7.50</td><td>128K</td></tr>
-                <tr><td>21</td><td><strong>Gemini 3.5 Flash</strong></td><td>Google</td><td class="price">$1.50</td><td class="price">$9.00</td><td>1M</td></tr>
-                <tr><td>22</td><td><strong>GPT-5.3 Codex</strong></td><td>OpenAI</td><td class="price">$1.75</td><td class="price">$14.00</td><td>400K</td></tr>
-                <tr><td>23</td><td><strong>Jamba 1.5 Large</strong></td><td>AI21</td><td class="price">$2.00</td><td class="price">$8.00</td><td>256K</td></tr>
-                <tr><td>24</td><td><strong>Jamba 1.7 Large</strong></td><td>AI21</td><td class="price">$2.00</td><td class="price">$8.00</td><td>256K</td></tr>
-                <tr><td>25</td><td><strong>Gemini 3.1 Pro</strong></td><td>Google</td><td class="price">$2.00</td><td class="price">$12.00</td><td>1M</td></tr>
-                <tr><td>26</td><td><strong>GPT-4o</strong></td><td>OpenAI</td><td class="price">$2.50</td><td class="price">$10.00</td><td>128K</td></tr>
-                <tr><td>27</td><td><strong>Command R+</strong></td><td>Cohere</td><td class="price">$2.50</td><td class="price">$10.00</td><td>128K</td></tr>
-                <tr><td>28</td><td><strong>Command A</strong></td><td>Cohere</td><td class="price">$2.50</td><td class="price">$10.00</td><td>256K</td></tr>
-                <tr><td>29</td><td><strong>Claude Sonnet 4.6</strong></td><td>Anthropic</td><td class="price">$3.00</td><td class="price">$15.00</td><td>200K</td></tr>
-                <tr><td>30</td><td><strong>Claude Sonnet 4.6</strong></td><td>Anthropic</td><td class="price">$3.00</td><td class="price">$15.00</td><td>1M</td></tr>
-                <tr><td>31</td><td><strong>Claude Haiku 4.5</strong></td><td>Anthropic</td><td class="price">$1.00</td><td class="price">$5.00</td><td>200K</td></tr>
-                <tr><td>32</td><td><strong>Kimi K2.6</strong></td><td>Moonshot</td><td class="price">$0.95</td><td class="price">$4.00</td><td>256K</td></tr>
-                <tr><td>33</td><td><strong>GPT-5.5</strong></td><td>OpenAI</td><td class="price">$5.00</td><td class="price">$30.00</td><td>1.05M</td></tr>
-                <tr><td>34</td><td><strong>Claude Opus 4.7</strong></td><td>Anthropic</td><td class="price">$5.00</td><td class="price">$25.00</td><td>1M</td></tr>
-                <tr><td>35</td><td><strong>Claude Opus 4.8</strong></td><td>Anthropic</td><td class="price">$5.00</td><td class="price">$25.00</td><td>1M</td></tr>
-                <tr><td>36</td><td><strong>Claude 4 Opus</strong></td><td>Anthropic</td><td class="price">$15.00</td><td class="price">$75.00</td><td>200K</td></tr>
-                <tr><td>37</td><td><strong>GPT-5.5 Pro</strong></td><td>OpenAI</td><td class="price">$30.00</td><td class="price">$180.00</td><td>1.05M</td></tr>
-            </tbody>
-        </table>
-
-        <p style="font-size:13px;color:var(--text-muted);">Prices per 1M tokens. Data from APIpulse, verified Jun 7, 2026. <a href="pricing-index.html">Full pricing index →</a></p>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-
-        <h2>Real Monthly Costs by Workload</h2>
-
-        <p>Raw per-token prices don't tell the whole story. Here's what you'd actually pay per month for common workloads (2,000 input tokens, 500 output tokens per request):</p>
-
-        <div class="scenario-grid">
-            <div class="scenario-card">
-                <h4>Side Project (100 req/day)</h4>
-                <div class="scenario-cost">$0.08 – $3.75</div>
-                <div class="scenario-model">Gemini Flash Lite to GPT-4o mini</div>
-                <div class="scenario-desc">Personal tools, MVPs, prototyping. Cheapest option: Gemini Flash Lite at 8 cents/month.</div>
-            </div>
+    <main id="main">
             <div class="scenario-card">
                 <h4>Startup (1K req/day)</h4>
                 <div class="scenario-cost">$0.79 – $37.50</div>

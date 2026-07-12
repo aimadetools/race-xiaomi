@@ -194,12 +194,18 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">⚡ APIpulse</a>
-            <div class="nav-links">
-                <a href="/pricing.html">Pricing</a>
-                <a href="/calculator.html">Calculator</a>
-                <a href="/tools.html">Tools</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/compare-plans.html" class="nav-cta">Compare Plans</a>
+                        <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -208,53 +214,7 @@
         <a href="/blog.html" class="back-link">← Back to Blog</a>
 
         <article class="article">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-            <h1>Best AI APIs for Vision 2026: Image Understanding Models Ranked by Cost & Quality</h1>
-            <p class="subtitle">Building an app that needs to "see"? We compared all major AI vision APIs on the metrics that matter — image understanding accuracy, OCR quality, document parsing, latency, and cost per image. Here are the best options for every budget and use case.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-            <p>Vision AI has gone from a novelty to a production necessity. Whether you're building document processing, image search, quality inspection, or visual Q&A, the vision model you choose determines both accuracy and cost. And unlike text-only APIs, vision APIs have a hidden cost multiplier: <strong>image tokens</strong>.</p>
-
-            <p>A single 1024x1024 image can consume 765+ tokens — equivalent to ~500 words of text. Process 10,000 images a day and you're looking at 7.65M tokens daily just for images, before the text prompt and response. We evaluated models across five critical vision requirements: <strong>image understanding</strong> (does it correctly describe what it sees?), <strong>OCR quality</strong> (can it read text in images?), <strong>document parsing</strong> (can it extract structured data from forms and receipts?), <strong>latency</strong> (how fast does it process images?), and <strong>cost per image</strong> (what's the real bill at scale?).</p>
-
-            <!-- What to Look For -->
-            <h2>What Matters for Vision APIs</h2>
-            <p>Vision API requirements differ significantly from text-only use cases:</p>
-            <ul>
-                <li><strong>Image understanding accuracy:</strong> Can the model correctly identify objects, scenes, text, and relationships in images? Some models excel at photos but struggle with diagrams or charts.</li>
-                <li><strong>OCR quality:</strong> Can it accurately extract text from images, screenshots, and documents? This matters for document processing, receipt scanning, and accessibility tools.</li>
-                <li><strong>Token cost per image:</strong> Images are tokenized differently by each provider. A 1024x1024 image costs ~765 tokens on most APIs, but 4K images can cost 3,000+ tokens. Some providers offer lower-resolution modes that reduce cost.</li>
-                <li><strong>Multi-image support:</strong> Can you send multiple images in one request? This is critical for comparing images, processing document pages, or building image galleries.</li>
-                <li><strong>Latency:</strong> Vision requests are inherently slower than text-only. Time-to-first-token (TTFT) for image processing ranges from 500ms to 3+ seconds depending on model and resolution.</li>
-                <li><strong>Video and PDF support:</strong> Some models can process video frames and PDF pages natively — no need to extract images first. This can simplify your pipeline significantly.</li>
-            </ul>
-
-            <!-- Top Picks -->
-            <h2>Top AI Vision APIs</h2>
-
-            <div class="model-card">
-                <span class="tier-badge tier-premium">Best Overall</span>
-                <h3>1. Gemini 3.1 Pro — Best Overall Vision API</h3>
-                <div class="price-line"><strong>$2.00</strong> per 1M input tokens / <strong>$12.00</strong> per 1M output tokens</div>
-                <div class="price-line">Context window: 1M tokens | Native multimodal</div>
-                <p>Gemini 3.1 Pro is the best overall vision API in 2026. Unlike competitors that bolted vision onto text models, Gemini was built multimodal from the ground up. It natively processes images, video, PDFs, and audio in a single API call — no preprocessing needed. Its 1M context window means you can send dozens of high-resolution images in a single request for comparison or batch analysis.</p>
-                <ul>
-                    <li><strong>Native multimodal:</strong> Built for vision from day one — not retrofitted</li>
-                    <li><strong>Video and PDF:</strong> Process video frames and PDF pages natively without extraction</li>
-                    <li><strong>Multi-image:</strong> Send 100+ images in one request with 1M context</li>
-                    <li><strong>Weakness:</strong> Slightly less detailed OCR than GPT-5 on small text</li>
-                </ul>
-                <div class="best-for"><strong>Best for:</strong> Document processing, video analysis, multi-image comparison, PDF parsing, and any vision task where native multimodal support matters.</div>
-            </div>
 
             <div class="model-card">
                 <span class="tier-badge tier-premium">Best OCR</span>

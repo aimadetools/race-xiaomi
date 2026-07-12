@@ -159,21 +159,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -182,115 +176,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">GPT-5.3 Codex API Cost</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Pricing</span>
-            <span>May 30, 2026</span>
-        </div>
-        <h1>GPT-5.3 Codex API Cost: OpenAI's Coding Model Pricing Guide 2026</h1>
-
-        <p>GPT-5.3 Codex is OpenAI's specialized coding model, priced at <strong>$1.75/$14.00 per 1M tokens</strong> (input/output). That's <strong>42% cheaper on input than Claude Sonnet 4.6</strong> ($3/$15) and <strong>30% cheaper on input than GPT-5</strong> ($1.25/$10) — with a 400K token context window optimized for code.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>Codex is the model developers should reach for when the task is purely code. It's trained specifically on code generation, completion, debugging, and refactoring — producing more accurate, idiomatic output than general-purpose models. This guide breaks down GPT-5.3 Codex's real-world costs and compares it to every alternative.</p>
-
-        <h2>OpenAI Coding Model Pricing at a Glance</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Input (per 1M tokens)</th>
-                    <th>Output (per 1M tokens)</th>
-                    <th>Context Window</th>
-                    <th>Tier</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>GPT-5.3 Codex</strong></td>
-                    <td>$1.75</td>
-                    <td>$14.00</td>
-                    <td>400K</td>
-                    <td>Mid</td>
-                </tr>
-                <tr>
-                    <td><strong>GPT-5</strong></td>
-                    <td>$1.25</td>
-                    <td>$10.00</td>
-                    <td>272K</td>
-                    <td>Premium</td>
-                </tr>
-                <tr>
-                    <td><strong>GPT-5 mini</strong></td>
-                    <td>$0.25</td>
-                    <td>$2.00</td>
-                    <td>272K</td>
-                    <td>Budget</td>
-                </tr>
-                <tr>
-                    <td><strong>GPT-5.5</strong></td>
-                    <td>$5.00</td>
-                    <td>$30.00</td>
-                    <td>1M</td>
-                    <td>Premium</td>
-                </tr>
-                <tr>
-                    <td><strong>GPT-4o</strong></td>
-                    <td>$2.50</td>
-                    <td>$10.00</td>
-                    <td>128K</td>
-                    <td>Mid</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>Key insight:</strong> GPT-5.3 Codex sits between GPT-5 ($1.25/$10) and GPT-4o ($2.50/$10) on input price, but its output price ($14) is higher than both. This reflects its coding specialization — it generates more code output per request, so OpenAI prices output tokens higher. The 400K context window is larger than GPT-5's 272K, making it better for analyzing large codebases.</p>
-
-        <h2>Real-World GPT-5.3 Codex Cost Scenarios</h2>
-
-        <h3>Scenario 1: Code Completion Tool (5,000 requests/day)</h3>
-        <p>Average: 1,500 input tokens, 300 output tokens per completion. 30 days/month.</p>
-
-        <div class="cost-box">
-            <h3>Monthly Code Completion Cost</h3>
-            <div class="cost-row">
-                <span>GPT-5.3 Codex</span>
-                <span>$1,023.75/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>GPT-5</span>
-                <span>$731.25/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Claude Sonnet 4.6</span>
-                <span>$1,350.00/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>DeepSeek V4 Pro</span>
-                <span>$136.80/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>GPT-5 mini</span>
-                <span class="cost-total">$146.25/mo</span>
-            </div>
-        </div>
 
         <p><strong>Verdict:</strong> For high-volume code completion, Codex is 24% cheaper than Claude Sonnet 4.6 but 40% more expensive than GPT-5. However, Codex's code-specific training means fewer retries and better first-attempt accuracy — which can reduce effective cost by 15-30%.</p>
 

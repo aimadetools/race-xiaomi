@@ -264,17 +264,13 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
-                <a href="agent-cost-calculator.html">Agents</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
-                <a href="tools.html">Tools</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
@@ -285,54 +281,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="comparison-hero">
-        <h1>AI API Pricing Comparison 2026</h1>
-        <p>Every major AI API provider, ranked by cost. Compare GPT-5, Claude, Gemini, DeepSeek, Llama, Mistral, xAI, and Cohere side by side. Find the cheapest model for your workload.</p>
-    </div>
-
-    <!-- Interactive Calculator -->
-    <section class="section-container">
-        <div class="calculator" role="form" aria-label="AI API Cost Calculator">
-            <div class="presets">
-                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Quick scenario:</span>
-                <button class="preset-btn" onclick="applyPreset('chat')">Chatbot</button>
-                <button class="preset-btn" onclick="applyPreset('code')">Code gen</button>
-                <button class="preset-btn" onclick="applyPreset('analysis')">Analysis</button>
-                <button class="preset-btn" onclick="applyPreset('rag')">RAG</button>
-            </div>
-            <div class="presets">
-                <span style="font-size:13px;color:var(--text-muted);align-self:center;">By scale:</span>
-                <button class="preset-btn" onclick="applyPreset('hobby')">Hobby (100/day)</button>
-                <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K/day)</button>
-                <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K/day)</button>
-            </div>
-            <div class="calc-grid">
-                <div class="calc-inputs">
-                    <div class="input-group">
-                        <label for="model">AI Model</label>
-                        <select id="model" onchange="calculate()" aria-label="Select AI model"></select>
-                    </div>
-                    <div class="input-group">
-                        <label for="input-tokens">Input tokens per request</label>
-                        <input type="number" id="input-tokens" value="1500" min="0" step="100" onchange="calculate()" oninput="calculate()">
-                    </div>
-                    <div class="input-group">
-                        <label for="output-tokens">Output tokens per request</label>
-                        <input type="number" id="output-tokens" value="400" min="0" step="100" onchange="calculate()" oninput="calculate()">
-                    </div>
-                    <div class="input-group">
-                        <label for="requests-day">Requests per day</label>
-                        <input type="number" id="requests-day" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()">
-                    </div>
-                </div>
                 <div class="calc-results" role="region" aria-label="Cost results" aria-live="polite">
                     <h3 style="margin-bottom: 16px; font-size: 16px;">Cost Estimate</h3>
                     <div class="result-item">

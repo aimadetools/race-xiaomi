@@ -142,21 +142,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -165,155 +159,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-                <a href="quiz.html">Quiz</a>
-            <span class="separator">›</span>
-            <span class="current">The True Cost of RAG: LLM Pricing for Retrieval-Augmented Generation</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Guide</span>
-            <span>April 25, 2026</span>
-        </div>
-        <h1>The True Cost of RAG: LLM Pricing for Retrieval-Augmented Generation</h1>
-
-        <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-            <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-        </div>
-    <div style="padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;margin:16px 0 24px;">
-        <p style="margin:0;font-size:14px;"><strong>💰 Save money:</strong> Use our <a href="claude-4-is-down.html" style="color:#16a34a;font-weight:600;">free Claude Deprecation Calculator</a> to see exactly what you'll pay after migrating to a replacement model.</p>
-    </div>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>Retrieval-Augmented Generation (RAG) has become the standard architecture for building AI applications that need to reference specific documents, knowledge bases, or real-time data. But RAG pipelines have multiple cost components — and most developers only think about the generation step.</p>
-
-        <p>Let's break down the <strong>total cost of a RAG pipeline</strong> and compare pricing across providers.</p>
-
-        <h2>The RAG Pipeline: 3 Cost Centers</h2>
-
-        <div class="pipeline-diagram">
-            User Query → <strong>Embedding</strong> → Vector Search → <strong>Context Assembly</strong> → <strong>Generation</strong> → Response<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$$$
-        </div>
-
-        <p>Every RAG query involves three billable steps:</p>
-
-        <ol>
-            <li><strong>Embedding:</strong> Convert the user's query (and your documents) into vectors</li>
-            <li><strong>Vector search:</strong> Find the most relevant documents (usually self-hosted or fixed cost)</li>
-            <li><strong>Generation:</strong> Use the retrieved context to generate an answer</li>
-        </ol>
-
-        <p>Let's price each component.</p>
-
-        <h2>1. Embedding Costs</h2>
-
-        <p>You need embeddings for two things: indexing your documents (one-time) and embedding each user query (per-request).</p>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Cost per 1M tokens</th>
-                    <th>Dimensions</th>
-                    <th>Best For</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>OpenAI text-embedding-3-small</strong></td>
-                    <td class="winner">$0.02</td>
-                    <td>1536</td>
-                    <td>Budget, high-volume</td>
-                </tr>
-                <tr>
-                    <td><strong>OpenAI text-embedding-3-large</strong></td>
-                    <td>$0.13</td>
-                    <td>3072</td>
-                    <td>Higher accuracy</td>
-                </tr>
-                <tr>
-                    <td><strong>Cohere embed-v4</strong></td>
-                    <td>$0.10</td>
-                    <td>1024</td>
-                    <td>Multilingual</td>
-                </tr>
-                <tr>
-                    <td><strong>Google text-embedding-005</strong></td>
-                    <td class="winner">$0.02</td>
-                    <td>768</td>
-                    <td>Google ecosystem</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>Key insight:</strong> Embedding is cheap. At $0.02 per 1M tokens, embedding 1M tokens of documents costs just $0.02. Even embedding 1,000 queries per day (at 500 tokens each) costs only <strong>$0.30/month</strong>.</p>
-
-        <h2>2. Vector Search Costs</h2>
-
-        <p>Vector search costs depend on your infrastructure:</p>
-
-        <ul>
-            <li><strong>Pinecone:</strong> Free tier (100K vectors), $70/mo for 1M vectors</li>
-            <li><strong>Weaviate Cloud:</strong> Free tier (100K vectors), $25/mo for 1M vectors</li>
-            <li><strong>Qdrant Cloud:</strong> Free tier (1GB), $25/mo for 1GB+</li>
-            <li><strong>Self-hosted (pgvector):</strong> Free (just your server costs)</li>
-        </ul>
-
-        <p>For most startups, the free tier is sufficient initially. At scale, vector search typically costs <strong>$25-70/month</strong> — a fixed cost regardless of query volume.</p>
-
-        <h2>3. Generation Costs (The Big One)</h2>
-
-        <p>Generation is where most of your RAG budget goes. A typical RAG query sends:</p>
-
-        <ul>
-            <li><strong>System prompt:</strong> ~500 tokens</li>
-            <li><strong>Retrieved context:</strong> 3-5 chunks × ~300 tokens = ~1,200 tokens</li>
-            <li><strong>User query:</strong> ~100 tokens</li>
-            <li><strong>Total input:</strong> ~1,800 tokens per query</li>
-            <li><strong>Output:</strong> ~300-500 tokens per response</li>
-        </ul>
-
-        <h2>Total RAG Cost Comparison</h2>
-
-        <p>Let's calculate the total monthly cost for a RAG application serving <strong>1,000 queries per day</strong> (30,000/month).</p>
-
-        <div class="cost-box">
-            <h3>Monthly RAG Cost — 1,000 queries/day (Budget Setup)</h3>
-            <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Embedding: text-embedding-3-small | Generation: Budget model | Vector search: Free tier</p>
-            <div class="cost-row">
-                <span>Embedding (30K queries × 500 tokens)</span>
-                <span>$0.00</span>
-            </div>
-            <div class="cost-row">
-                <span>Vector search (free tier)</span>
-                <span>$0.00</span>
-            </div>
-            <div class="cost-row">
-                <span>Generation — Gemini 2.5 Flash-Lite</span>
-                <span class="cost-total">$1.08/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Generation — GPT-4o mini</span>
-                <span>$1.62/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Generation — Claude Haiku 4.5</span>
-                <span>$10.80/mo</span>
-            </div>
-        </div>
 
         <div class="cost-box">
             <h3>Monthly RAG Cost — 1,000 queries/day (Quality Setup)</h3>

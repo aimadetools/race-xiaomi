@@ -191,12 +191,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -204,229 +208,7 @@
     </nav>
 
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,.08),rgba(239,68,68,.06));border-bottom:1px solid rgba(220,38,38,.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <h1>Claude Sonnet 5 <span class="vs">vs</span> Gemini 3 Flash — Mid-Tier vs Budget</h1>
-        <p class="subtitle">Gemini 3 Flash is 83% cheaper on input ($0.50 vs $3). Same 1M context. Is Sonnet 5's premium worth it?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-
-    <div class="summary-cards">
-        <div class="summary-card">
-            <div class="label">Cheaper Input</div>
-            <div class="value winner">Gemini 3 Flash</div>
-            <div class="detail">83% cheaper ($0.50 vs $3)</div>
-        </div>
-        <div class="summary-card">
-            <div class="label">Context Window</div>
-            <div class="value highlight">Tie</div>
-            <div class="detail">Both have 1M tokens</div>
-        </div>
-        <div class="summary-card">
-            <div class="label">Cheaper Output</div>
-            <div class="value winner">Gemini 3 Flash</div>
-            <div class="detail">80% cheaper ($3 vs $15)</div>
-        </div>
-    </div>
-
-    <div class="quick-comparison">
-        <h2>Head-to-Head Comparison</h2>
-        <p class="section-sub">Mid-tier capability vs budget pricing — both with 1M context.</p>
-        <table class="quick-table">
-            <thead>
-                <tr><th>Model</th><th>Provider</th><th>Tier</th><th>Input (per 1M)</th><th>Output (per 1M)</th><th>Context</th></tr>
-            </thead>
-            <tbody>
-                <tr style="background:rgba(66,133,244,.05);">
-                    <td class="model-name">Gemini 3 Flash</td>
-                    <td><span class="provider-badge badge-google">Google</span></td>
-                    <td><span class="tier-badge tier-budget">Budget</span></td>
-                    <td class="cheaper">$0.50</td>
-                    <td class="cheaper">$3.00</td>
-                    <td>1M</td>
-                </tr>
-                <tr>
-                    <td class="model-name">DeepSeek V4 Pro</td>
-                    <td><span class="provider-badge badge-google">DeepSeek</span></td>
-                    <td><span class="tier-badge tier-budget">Budget</span></td>
-                    <td>$0.435</td>
-                    <td>$0.87</td>
-                    <td>1M</td>
-                </tr>
-                <tr style="background:rgba(217,119,87,.05);">
-                    <td class="model-name">Claude Sonnet 5</td>
-                    <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
-                    <td><span class="tier-badge tier-mid">Mid</span></td>
-                    <td>$3.00</td>
-                    <td>$15.00</td>
-                    <td>1M</td>
-                </tr>
-                <tr>
-                    <td class="model-name">GPT-5.4</td>
-                    <td><span class="provider-badge badge-anthropic">OpenAI</span></td>
-                    <td><span class="tier-badge tier-mid">Mid</span></td>
-                    <td>$2.50</td>
-                    <td>$15.00</td>
-                    <td>400K</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">See the cost difference between these two models for your workload.</p>
-
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('research')">Research</button>
-            <button class="preset-btn" onclick="applyPreset('coding')">Complex Coding</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
-            <button class="preset-btn" onclick="applyPreset('heavy')">Heavy Usage</button>
-        </div>
-
-        <div class="model-select-row">
-            <div class="select-group">
-                <label>Anthropic Model</label>
-                <select id="anthropicModel">
-                    <option value="anthropic-sonnet5" selected>Claude Sonnet 5 ($3.00/$15.00)</option>
-                </select>
-            </div>
-            <div class="vs-divider">vs</div>
-            <div class="select-group">
-                <label>Google Model</label>
-                <select id="googleModel">
-                    <option value="google-gemini3-flash" selected>Gemini 3 Flash ($0.50/$3.00)</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="calc-grid">
-            <div class="input-group">
-                <label>Input Tokens per Request</label>
-                <input type="number" id="inputTokens" value="5000" min="100" step="100">
-            </div>
-            <div class="input-group">
-                <label>Output Tokens per Request</label>
-                <input type="number" id="outputTokens" value="2000" min="50" step="50">
-            </div>
-            <div class="input-group">
-                <label>Requests per Day</label>
-                <input type="number" id="requestsPerDay" value="1000" min="1" step="100">
-            </div>
-            <div class="input-group">
-                <label>Days per Month</label>
-                <input type="number" id="daysPerMonth" value="30" min="1" max="31">
-            </div>
-        </div>
-
-        <div class="results-grid">
-            <div class="result-card" id="anthropicResult">
-                <div class="provider">Anthropic</div>
-                <div class="model-name" id="anthropicModelName">Claude Sonnet 5</div>
-                <div class="price-big" id="anthropicPrice">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="anthropicInput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="anthropicOutput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Per request</span><span class="val" id="anthropicPerReq">$0.00</span></div>
-                </div>
-            </div>
-            <div class="result-card" id="googleResult">
-                <div class="provider">Google</div>
-                <div class="model-name" id="googleModelName">Gemini 3 Flash</div>
-                <div class="price-big" id="googlePrice">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="googleInput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="googleOutput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Per request</span><span class="val" id="googlePerReq">$0.00</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="savings-banner" id="savingsBanner">
-            <div class="amount" id="savingsAmount">—</div>
-            <div class="detail" id="savingsDetail">Enter your usage above to see savings.</div>
-        </div>
-    </div>
-
-    <div class="use-cases">
-        <h2>Which Should You Choose?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card">
-                <h3>High-Volume APIs</h3>
-                <p>Processing millions of tokens per day in production.</p>
-                <div class="recommendation"><span class="pick-flash">Pick Gemini 3 Flash:</span> At 83% lower cost, Gemini 3 Flash is the clear choice for high-volume production. Sonnet 5's premium adds up fast at scale.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Complex Reasoning</h3>
-                <p>Multi-step analysis, research, advanced code generation.</p>
-                <div class="recommendation"><span class="pick-sonnet">Pick Sonnet 5:</span> Anthropic's mid-tier model excels at complex reasoning. The 6x price premium is justified for tasks requiring higher accuracy.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Startup Budgets</h3>
-                <p>Early-stage teams watching every dollar.</p>
-                <div class="recommendation"><span class="pick-flash">Pick Gemini 3 Flash:</span> 83% savings means you can run 6x more queries for the same budget. Start here and upgrade to Sonnet 5 when you need higher accuracy.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Code Generation</h3>
-                <p>Complex code, architecture decisions, debugging.</p>
-                <div class="recommendation"><span class="pick-sonnet">Pick Sonnet 5:</span> Anthropic's models excel at code generation. The higher accuracy justifies the 6x price premium for production code.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Content Generation</h3>
-                <p>Blog posts, marketing copy, general writing.</p>
-                <div class="recommendation"><span class="pick-flash">Pick Gemini 3 Flash:</span> For content generation, Gemini 3 Flash delivers good quality at 83% lower cost. Save Sonnet 5 for tasks requiring higher accuracy.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Enterprise Scale</h3>
-                <p>Production workloads with cost sensitivity.</p>
-                <div class="recommendation"><span class="pick-flash">Pick Gemini 3 Flash:</span> At $0.50 input, Gemini 3 Flash is the clear enterprise choice for cost-sensitive workloads. Use Sonnet 5 only for high-stakes tasks.</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pro-upsell">
-        <h2>Save More with APIpulse</h2>
-        <p>Get personalized cost optimization recommendations for your specific workload.</p>
-        <div class="features">
-            <div class="feature"><strong>Save scenarios</strong> — compare up to 10 configs</div>
-            <div class="feature"><strong>Export reports</strong> — PDF cost analysis</div>
-            <div class="feature"><strong>Optimization tips</strong> — save up to 40%</div>
-        </div>
-        <a href="audit.html?from=tool_page" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'sonnet5_vs_gemini3flash'})">Free Tools →</a>
-    </div>
-
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>Is Claude Sonnet 5 or Gemini 3 Flash cheaper?</h3>
-            <p>Gemini 3 Flash is much cheaper. It costs $0.50/$3.00 per 1M tokens while Sonnet 5 costs $3.00/$15.00. That's 83% cheaper on input and 80% cheaper on output. Both have 1M context windows.</p>
-        </div>
-        <div class="faq-item">
-            <h3>What is Claude Sonnet 5 used for?</h3>
-            <p>Claude Sonnet 5 at $3/$15 is Anthropic's mid-tier model, designed for complex reasoning, code generation, analysis, and tasks requiring high accuracy. It has a 1M token context window and is considered more capable than budget models.</p>
-        </div>
-        <div class="faq-item">
-            <h3>When should I use Sonnet 5 vs Gemini 3 Flash?</h3>
-            <p>Sonnet 5 ($3/$15) is better for tasks requiring higher accuracy, complex reasoning, or Anthropic's specific capabilities. Gemini 3 Flash ($0.50/$3) is better for high-volume, cost-sensitive workloads where good-enough capability at 83% lower cost is the priority.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Do both models have the same context window?</h3>
-            <p>Yes. Both Sonnet 5 and Gemini 3 Flash have 1M token context windows. The difference is in capability and price, not context size.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Can I use both models together?</h3>
-            <p>Yes! A cost-effective pattern: use Gemini 3 Flash ($0.50/$3) for 80% of tasks and route complex reasoning or high-accuracy tasks to Sonnet 5 ($3/$15). This gives you Anthropic's premium capability where needed while keeping costs 70%+ lower.</p>
-        </div>
-    </div>
 
     <div class="share-section">
         <h2>Share This Comparison</h2>

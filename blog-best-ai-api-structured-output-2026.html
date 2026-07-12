@@ -194,12 +194,18 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">⚡ APIpulse</a>
-            <div class="nav-links">
-                <a href="/pricing.html">Pricing</a>
-                <a href="/calculator.html">Calculator</a>
-                <a href="/tools.html">Tools</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/compare-plans.html" class="nav-cta">Compare Plans</a>
+                        <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -208,53 +214,7 @@
         <a href="/blog.html" class="back-link">← Back to Blog</a>
 
         <article class="article">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-            <h1>Best AI APIs for Structured Output 2026: JSON Mode & Function Calling Compared</h1>
-            <p class="subtitle">Which model returns the most reliable JSON, the best function calling, and the cleanest structured data? We compared 8 leading APIs on real structured output tasks — from simple JSON extraction to complex multi-tool orchestration — and ranked them by reliability, accuracy, and price.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-            <p>Structured output is the backbone of production AI applications. Every chatbot that calls a database, every agent that invokes APIs, every data pipeline that extracts entities — they all depend on getting data back in a predictable format. A model that returns malformed JSON or hallucinated function names isn't just annoying; it breaks your entire pipeline.</p>
-
-            <p>We evaluated models across four critical structured output capabilities: <strong>JSON reliability</strong> (does it always return valid JSON?), <strong>function calling accuracy</strong> (does it call the right function with the right parameters?), <strong>schema adherence</strong> (does it respect your JSON schema exactly?), and <strong>cost per structured request</strong>. Here's what we found.</p>
-
-            <!-- What to Look For -->
-            <h2>What Matters for Structured Output APIs</h2>
-            <p>Structured output has different requirements than free-form text generation. Here's what to prioritize:</p>
-            <ul>
-                <li><strong>JSON validity rate:</strong> Does the model always return parseable JSON? A 95% validity rate means 1 in 20 requests will break your parser — unacceptable at scale. Look for 99%+ validity.</li>
-                <li><strong>Schema enforcement:</strong> Can you pass a JSON schema and get back data that exactly matches it? Some models support native schema enforcement; others rely on prompting and hope.</li>
-                <li><strong>Function calling accuracy:</strong> For tool-use applications, does the model call the correct function with the correct parameters? Incorrect function calls waste API calls and can trigger unintended side effects.</li>
-                <li><strong>Nested structure support:</strong> Can the model handle deeply nested JSON, arrays of objects, optional fields, and complex types? Simple flat JSON is easy; production schemas are not.</li>
-                <li><strong>Token overhead:</strong> Structured output adds formatting tokens. JSON mode adds ~15% overhead; function calling adds ~20% for tool definitions. This affects cost.</li>
-                <li><strong>Latency:</strong> Schema enforcement adds processing time. For real-time applications, the overhead matters.</li>
-            </ul>
-
-            <!-- Top Picks -->
-            <h2>Top AI APIs for Structured Output</h2>
-
-            <div class="model-card">
-                <span class="tier-badge tier-premium">Best Overall</span>
-                <h3>1. GPT-5 — Best Native Structured Output</h3>
-                <div class="price-line"><strong>$1.25</strong> per 1M input tokens / <strong>$10.00</strong> per 1M output tokens</div>
-                <div class="price-line">Context window: 272K tokens</div>
-                <p>GPT-5 is the gold standard for structured output in 2026. OpenAI's Structured Outputs feature lets you pass a JSON Schema and get back data that exactly matches it — no prompting tricks required. With a 99.2% valid JSON rate and native schema enforcement, it's the most reliable choice for production applications where every response must be parseable.</p>
-                <ul>
-                    <li><strong>JSON reliability:</strong> 99.2% valid JSON — highest in class</li>
-                    <li><strong>Schema enforcement:</strong> Native support — pass a JSON Schema, get exact matches</li>
-                    <li><strong>Function calling:</strong> 98.5% accuracy on multi-tool selection</li>
-                    <li><strong>Weakness:</strong> 272K context; $10/1M output is expensive for high-volume extraction</li>
-                </ul>
-                <div class="best-for"><strong>Best for:</strong> Production data extraction, API integrations, form parsing, and any application where JSON validity is non-negotiable.</div>
-            </div>
 
             <div class="model-card">
                 <span class="tier-badge tier-premium">Best Tool Use</span>

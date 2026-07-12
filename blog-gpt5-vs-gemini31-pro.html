@@ -151,21 +151,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -174,110 +168,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">GPT-5 vs Gemini 3.1 Pro</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Comparison</span>
-            <span>May 10, 2026</span>
-        </div>
-        <h1>GPT-5 vs Gemini 3.1 Pro: Complete Pricing & Performance Comparison (May 2026)</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <p>OpenAI's GPT-5 and Google's Gemini 3.1 Pro are the two most popular mid-tier flagship models in 2026. Both offer strong reasoning, large context windows, and competitive pricing — but they're priced differently and optimized for different workloads.</p>
-
-        <p>We compare every dimension that matters: input/output cost, context window, speed, quality, and real-world monthly spend across common workload sizes.</p>
-
-        <h2>Head-to-Head: Pricing Comparison</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>GPT-5 (OpenAI)</th>
-                    <th>Gemini 3.1 Pro (Google)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Input ($/1M tokens)</strong></td>
-                    <td class="winner">$1.25</td>
-                    <td>$2.00</td>
-                </tr>
-                <tr>
-                    <td><strong>Output ($/1M tokens)</strong></td>
-                    <td class="winner">$10.00</td>
-                    <td>$12.00</td>
-                </tr>
-                <tr>
-                    <td><strong>Context Window</strong></td>
-                    <td>272K tokens</td>
-                    <td class="winner">1M tokens</td>
-                </tr>
-                <tr>
-                    <td><strong>Tier</strong></td>
-                    <td>Premium</td>
-                    <td>Mid</td>
-                </tr>
-                <tr>
-                    <td><strong>Input cost vs competitor</strong></td>
-                    <td>37% cheaper</td>
-                    <td>60% more expensive</td>
-                </tr>
-                <tr>
-                    <td><strong>Context vs competitor</strong></td>
-                    <td>3.7x smaller</td>
-                    <td>3.7x larger</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>GPT-5 costs 37% less on input tokens and 17% less on output tokens.</strong> But Gemini 3.1 Pro offers 3.7x more context (1M vs 272K). The right choice depends on whether you prioritize cost or context length.</p>
-
-        <h2>Monthly Cost Scenarios</h2>
-
-        <h3>Small App: 1K requests/day, 2K tokens avg</h3>
-        <div class="cost-box">
-            <div class="cost-row">
-                <span>GPT-5</span>
-                <span class="cost-total">$67.50/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Gemini 3.1 Pro</span>
-                <span>$108.00/mo</span>
-            </div>
-            <div class="cost-row">
-                <span><strong>Savings with GPT-5</strong></span>
-                <span class="winner">$40.50/mo (37%)</span>
-            </div>
-        </div>
 
         <h3>Medium App: 10K requests/day, 3K tokens avg</h3>
         <div class="cost-box">

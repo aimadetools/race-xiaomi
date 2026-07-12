@@ -128,143 +128,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="pricing-trends.html">Trends</a>
                 <a href="blog.html">Blog</a>
-                <a href="about.html">About</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
 
-    <main id="main" class="content">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-        <div class="breadcrumb"><a href="blog.html">Blog</a> / AI Fine-Tuning Costs 2026</div>
-        <div class="post-meta">
-            <span>May 15, 2026</span>
-            <span>·</span>
-            <span>12 min read</span>
-        </div>
-        <h1>AI API Fine-Tuning Costs in 2026: Who's Actually Worth It?</h1>
-        <p class="subtitle">Fine-tuning costs range from $3 to $30 per million training tokens. Here's the full picture — and a framework for deciding when it makes financial sense.</p>
-
-        <h2>The Short Answer</h2>
-        <p>Fine-tuning is worth it when you have <strong>high volume</strong> (100M+ tokens/month), <strong>specific formatting requirements</strong>, or <strong>domain-specific accuracy</strong> that prompt engineering can't achieve. For most use cases, a well-crafted prompt with a capable base model is cheaper and more flexible.</p>
-
-        <div class="highlight-box">
-            <h3>Key Takeaway</h3>
-            <p>A GPT-4o mini fine-tuned model costs $0.30/1M inference tokens — 2x the base model price. But if it replaces GPT-4o ($2.50/1M) for your specific task, you save 88% per request. The math only works at scale.</p>
-        </div>
-
-        <h2>Fine-Tuning Training Costs by Provider</h2>
-        <p>Training costs are one-time per model update. These are the prices per million training tokens:</p>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Provider / Model</th>
-                    <th>Training ($/1M tokens)</th>
-                    <th>Inference Input ($/1M)</th>
-                    <th>Inference Output ($/1M)</th>
-                    <th>Min Training Cost</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>OpenAI GPT-4o</strong></td>
-                    <td>$25.00</td>
-                    <td>$3.75</td>
-                    <td>$15.00</td>
-                    <td>$25.00 (1M tokens)</td>
-                </tr>
-                <tr class="cheapest">
-                    <td><strong>OpenAI GPT-4o mini</strong></td>
-                    <td>$3.00</td>
-                    <td>$0.30</td>
-                    <td>$1.20</td>
-                    <td>$3.00 (1M tokens)</td>
-                </tr>
-                <tr>
-                    <td><strong>OpenAI GPT-3.5 Turbo</strong></td>
-                    <td>$8.00</td>
-                    <td>$0.003</td>
-                    <td>$0.006</td>
-                    <td>$8.00 (1M tokens)</td>
-                </tr>
-                <tr>
-                    <td><strong>Google Gemini 1.5 Pro</strong></td>
-                    <td>$0.025</td>
-                    <td>$1.25</td>
-                    <td>$5.00</td>
-                    <td>$0.025 (1M tokens)</td>
-                </tr>
-                <tr class="cheapest">
-                    <td><strong>Google Gemini 1.5 Flash</strong></td>
-                    <td>$0.025</td>
-                    <td>$0.075</td>
-                    <td>$0.30</td>
-                    <td>$0.025 (1M tokens)</td>
-                </tr>
-                <tr>
-                    <td><strong>Mistral Large 3</strong></td>
-                    <td>$0.008</td>
-                    <td>$0.50</td>
-                    <td>$1.50</td>
-                    <td>$0.008 (1M tokens)</td>
-                </tr>
-                <tr>
-                    <td><strong>Mistral Small 4</strong></td>
-                    <td>$0.003</td>
-                    <td>$0.15</td>
-                    <td>$0.60</td>
-                    <td>$0.003 (1M tokens)</td>
-                </tr>
-                <tr>
-                    <td><strong>Cohere Command R+</strong></td>
-                    <td>$0.004</td>
-                    <td>$2.50</td>
-                    <td>$10.00</td>
-                    <td>$0.004 (1M tokens)</td>
-                </tr>
-                <tr>
-                    <td><strong>Llama 3.1 8B (Together.ai)</strong></td>
-                    <td>Free</td>
-                    <td>$0.10</td>
-                    <td>$0.10</td>
-                    <td>$0 (training)</td>
-                </tr>
-                <tr>
-                    <td><strong>Llama 3.1 70B (Together.ai)</strong></td>
-                    <td>Free</td>
-                    <td>$0.88</td>
-                    <td>$0.88</td>
-                    <td>$0 (training)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><em>Note: OpenAI charges $0.50/hour for training compute (billed separately). Google, Mistral, and Cohere include compute in the training token price. Open-source models via Together.ai offer free fine-tuning with hosted inference.</em></p>
-
-        <h2>Training Cost Scenarios</h2>
-        <p>How much does it actually cost to fine-tune a model? Here are realistic training dataset sizes:</p>
-
-        <div class="cost-box">
-            <div class="cost-card">
-                <div class="model-name">Small Dataset</div>
-                <div class="price">$3 – $25</div>
-                <div class="price-label">1M training tokens (1,000–5,000 examples)</div>
-            </div>
+    <main id="main">
             <div class="cost-card">
                 <div class="model-name">Medium Dataset</div>
                 <div class="price">$15 – $125</div>

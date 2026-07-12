@@ -206,21 +206,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -229,139 +223,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-gpt4o-mini-vs-haiku">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-                <a href="quiz.html">Quiz</a>
-            <span class="separator">›</span>
-            <span class="current">GPT-4o mini vs Claude Haiku 4.5: The Budget Model Showdown</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Comparison</span>
-            <span class="tier-badge tier-budget">Budget</span>
-            <span>April 23, 2026</span>
-        </div>
-        <h1>GPT-4o mini vs Claude Haiku 4.5: The Budget Model Showdown</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <p>Not every task needs a flagship model. For chatbots, classification, summarization, and simple code tasks, budget models deliver 90% of the quality at a fraction of the cost. The two leading options? OpenAI's GPT-4o mini and Anthropic's Claude Haiku 4.5. Here's how they compare.</p>
-
-        <h2>Pricing at a Glance</h2>
-        <p>As of May 2026:</p>
-        <ul>
-            <li><strong>GPT-4o mini:</strong> $0.15 per 1M input tokens, $0.60 per 1M output tokens</li>
-            <li><strong>Claude Haiku 4.5:</strong> $1.00 per 1M input tokens, $5.00 per 1M output tokens</li>
-        </ul>
-        <p>GPT-4o mini is <strong>7x cheaper on input</strong> and <strong>8x cheaper on output</strong>. That's a massive gap for models in the same tier.</p>
-
-        <h2>Context Window</h2>
-        <ul>
-            <li><strong>GPT-4o mini:</strong> 128K tokens</li>
-            <li><strong>Claude Haiku 4.5:</strong> 200K tokens</li>
-        </ul>
-        <p>Claude Haiku wins here. Its 200K context window means you can feed it entire codebases, long documents, or large conversation histories without chunking. If your use case involves long inputs, this matters.</p>
-
-        <h2>Use Case 1: Customer Support Chatbot</h2>
-        <p>Typical request: ~500 input tokens, ~200 output tokens.</p>
-        <ul>
-            <li><strong>GPT-4o mini:</strong> $0.000195 per request → <strong>$5.85/month</strong> at 1K req/day</li>
-            <li><strong>Claude Haiku 4.5:</strong> $0.00150 per request → <strong>$45.00/month</strong> at 1K req/day</li>
-        </ul>
-        <p>GPT-4o mini costs 87% less. For a high-volume chatbot, that's the difference between $6 and $45 per month.</p>
-
-        <h2>Use Case 2: Code Generation</h2>
-        <p>Typical request: ~1,000 input tokens, ~1,500 output tokens.</p>
-        <ul>
-            <li><strong>GPT-4o mini:</strong> $0.00105 per request → <strong>$31.50/month</strong> at 1K req/day</li>
-            <li><strong>Claude Haiku 4.5:</strong> $0.00850 per request → <strong>$255.00/month</strong> at 1K req/day</li>
-        </ul>
-        <p>The output cost difference really shows here. Claude Haiku is 8x more expensive for code-heavy tasks.</p>
-
-        <h2>Use Case 3: Document Summarization</h2>
-        <p>Typical request: ~10,000 input tokens, ~500 output tokens.</p>
-        <ul>
-            <li><strong>GPT-4o mini:</strong> $0.0045 per request → <strong>$135/month</strong> at 1K req/day</li>
-            <li><strong>Claude Haiku 4.5:</strong> $0.0125 per request → <strong>$375/month</strong> at 1K req/day</li>
-        </ul>
-        <p>Here the gap narrows because input tokens dominate. But GPT-4o mini is still 64% cheaper. And if your documents exceed 128K tokens, Claude Haiku's 200K window becomes the deciding factor.</p>
-
-        <h2>Quality Comparison</h2>
-        <p>Pricing isn't everything. Here's where each model tends to excel:</p>
-        <ul>
-            <li><strong>GPT-4o mini:</strong> Strong at structured output, function calling, and following complex instructions. Excellent for classification and extraction tasks.</li>
-            <li><strong>Claude Haiku 4.5:</strong> Better at nuanced reasoning, longer context retention, and producing natural-sounding text. Stronger on open-ended generation.</li>
-        </ul>
-        <p>For simple, well-defined tasks (classification, formatting, extraction), GPT-4o mini is hard to beat on price. For tasks requiring more judgment or long-context understanding, Claude Haiku may justify its premium.</p>
-
-        <h2>The Verdict</h2>
-        <blockquote>GPT-4o mini wins on price across every use case. Claude Haiku 4.5 wins on context window and nuanced reasoning. Choose based on whether your task is cost-sensitive or quality-sensitive.</blockquote>
-        <p>For most budget-conscious developers, GPT-4o mini is the default choice. Reserve Claude Haiku for tasks where you need the extra context or where output quality directly impacts your product.</p>
-        <p>Use our <a href="calculator.html">cost calculator</a> to model your specific usage and see exactly how much you'd save with each model.</p>
-
-        <div class="cta-inline">
-            <p><strong>Calculate your exact costs across budget models.</strong></p>
-            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
-        </div>
-            <p style="margin-top:8px;font-size:14px;"> — See if you're overpaying for AI APIs</p>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        
-
-        <div class="cta-box" style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border-color:rgba(34,197,94,0.3);">
-            <h3>🎯 Rate Your API Setup in 30 Seconds</h3>
-            <p>Get an A+ to F grade on your AI API costs. See how you compare and find cheaper alternatives instantly.</p>
-            <a href="api-cost-score.html" class="btn" style="background:var(--green);color:white;">Get Your Cost Score →</a>
-        </div>
-        <div class="cta-box" style="background:linear-gradient(135deg,var(--accent-bg),rgba(99,102,241,0.02));border-color:rgba(99,102,241,0.3);">
-            <h3>📊 Generate Your Personalized API Cost Report</h3>
-            <p>Select your model, enter your monthly spend, and get a custom savings report with cheaper alternatives — free, in 60 seconds.</p>
-        </div>
-        <div class="share-section">
-            <p>Found this useful? Share it:</p>
-            <a href="https://twitter.com/intent/tweet?text=GPT-4o+mini+vs+Claude+Haiku+3.5%3A+The+Budget+Model+Showdown&url=https%3A%2F%2Fgetapipulse.com%2Fblog-gpt4o-mini-vs-haiku.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-gpt4o-mini-vs-haiku.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
-        </div>
-
-        <div style="margin-top:40px;padding:24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
-            <h3 style="font-size:16px;margin-bottom:12px;">Related Reading</h3>
-            <ul style="list-style:none;padding:0;">
-                <li style="margin-bottom:8px;"><a href="blog-chatbot-budget.html">How to Build a Chatbot on a $50/Month API Budget</a></li>
-                <li style="margin-bottom:8px;"><a href="blog-reduce-costs.html">How to Reduce Your AI API Costs by 40%</a></li>
-                <li><a href="compare.html">Compare any two models side by side →</a></li>
-                                            <li style="margin-bottom:8px;"><a href="agent-cost-calculator.html">AI Agent Cost Calculator — Estimate Your Agent's Spend →</a></li>
-</ul>
-        </div>
-    </div>
 
     <div style="max-width:600px;margin:48px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
         <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>

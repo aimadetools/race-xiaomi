@@ -181,134 +181,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-        <article class="article">
-            <!-- Urgency Banner -->
-            <div class="urgency-banner">
-                <div class="emoji">🔴</div>
-                <h2>Claude 4 Is Down — For Good</h2>
-                <p>Claude 4 Opus and Claude 4 Sonnet were permanently retired on June 15, 2026. API calls return HTTP 410 Gone.</p>
-            </div>
-
-            <h1>Claude 4 Down? Fix It in 60 Seconds — Change One Line</h1>
-            <p class="article-meta">Published June 15, 2026 · 3 min read · Updated in real-time</p>
-
-            <p><strong>If your Claude 4 API calls just started failing, you're not alone.</strong> Thousands of developers woke up today to HTTP 410 errors, "model not found" messages, and broken applications. Claude 4 Opus and Claude 4 Sonnet were permanently retired on June 15, 2026.</p>
-
-            <p>The good news? <strong>You can fix this in 60 seconds</strong> by changing one line of code. And while you're at it, you'll save 67-97% on your API costs.</p>
-
-            <!-- The Fix -->
-            <div class="fix-box">
-                <h3>⚡ The One-Line Fix</h3>
-                <div class="fix-label before">❌ Before (broken — you're seeing this now)</div>
-                <div class="fix-before">
-model = <span style="text-decoration:line-through">"claude-4-opus"</span>  // or "claude-4-sonnet"<br>
-<span style="color:var(--text-muted)">// → HTTP 410 Gone: "claude-4-opus has been deprecated"</span>
-                </div>
-                <div class="fix-label after">✅ After (fixed — works immediately)</div>
-                <div class="fix-after">
-model = <span style="font-weight:700">"claude-opus-4-8"</span>  // or "claude-sonnet-4-6"<br>
-<span style="color:var(--text-muted)">// → Works. Same API key. Same SDK. Just a new model name.</span>
-                </div>
-                <p style="font-size:14px;color:var(--text-secondary);margin:0;">That's it. No new API key. No SDK update. No configuration change. Just the model name string.</p>
-            </div>
-
-            <!-- Language-specific fixes -->
-            <h2>Code Fixes by Language</h2>
-
-            <div class="code-tabs">
-                <div class="tab-buttons">
-                    <button class="tab-btn active" onclick="switchTab('python')">Python</button>
-                    <button class="tab-btn" onclick="switchTab('node')">Node.js</button>
-                    <button class="tab-btn" onclick="switchTab('curl')">cURL</button>
-                    <button class="tab-btn" onclick="switchTab('typescript')">TypeScript</button>
-                </div>
-                <div id="tab-python" class="tab-content active">
-<pre><span style="color:var(--text-muted)"># Before (broken)</span>
-import anthropic
-client = anthropic.Anthropic()
-response = client.messages.create(
-    model=<span class="code-old">"claude-4-opus"</span>,
-    messages=[{"role": "user", "content": "Hello"}]
-)
-
-<span style="color:var(--text-muted)"># After (fixed) — only the model name changes</span>
-response = client.messages.create(
-    model=<span class="code-new">"claude-opus-4-8"</span>,
-    messages=[{"role": "user", "content": "Hello"}]
-)</pre>
-                </div>
-                <div id="tab-node" class="tab-content">
-<pre><span style="color:var(--text-muted)">// Before (broken)</span>
-import Anthropic from '@anthropic-ai/sdk';
-const client = new Anthropic();
-const response = await client.messages.create({
-  model: <span class="code-old">"claude-4-opus"</span>,
-  messages: [{ role: "user", content: "Hello" }]
-});
-
-<span style="color:var(--text-muted)">// After (fixed) — only the model name changes</span>
-const response = await client.messages.create({
-  model: <span class="code-new">"claude-opus-4-8"</span>,
-  messages: [{ role: "user", content: "Hello" }]
-});</pre>
-                </div>
-                <div id="tab-curl" class="tab-content">
-<pre><span style="color:var(--text-muted)"># Before (broken)</span>
-curl https://api.anthropic.com/v1/messages \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -d '"model": <span class="code-old">"claude-4-opus"</span>'
-
-<span style="color:var(--text-muted)"># After (fixed)</span>
-curl https://api.anthropic.com/v1/messages \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -d '"model": <span class="code-new">"claude-opus-4-8"</span>'</pre>
-                </div>
-                <div id="tab-typescript" class="tab-content">
-<pre><span style="color:var(--text-muted)">// Before (broken)</span>
-import Anthropic from '@anthropic-ai/sdk';
-const client = new Anthropic();
-
-const message = await client.messages.create({
-  model: <span class="code-old">"claude-4-opus"</span>,
-  max_tokens: 1024,
-  messages: [{ role: "user", content: "Hello" }]
-});
-
-<span style="color:var(--text-muted)">// After (fixed)</span>
-const message = await client.messages.create({
-  model: <span class="code-new">"claude-opus-4-8"</span>,
-  max_tokens: 1024,
-  messages: [{ role: "user", content: "Hello" }]
-});</pre>
-                </div>
-            </div>
 
             <!-- The savings -->
             <h2>You're About to Save a Lot of Money</h2>

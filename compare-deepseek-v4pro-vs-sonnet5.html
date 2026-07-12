@@ -190,12 +190,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -203,229 +207,7 @@
     </nav>
 
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,.08),rgba(239,68,68,.06));border-bottom:1px solid rgba(220,38,38,.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <h1>DeepSeek V4 Pro <span class="vs">vs</span> Claude Sonnet 5 — Budget vs Mid-Tier</h1>
-        <p class="subtitle">DeepSeek V4 Pro is 85.5% cheaper on input ($0.435 vs $3.00) with the same 1M context window. The ultimate budget vs mid-tier comparison.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-
-    <div class="summary-cards">
-        <div class="summary-card">
-            <div class="label">Cheaper on Input</div>
-            <div class="value winner">DeepSeek V4 Pro</div>
-            <div class="detail">85.5% cheaper ($0.435 vs $3.00)</div>
-        </div>
-        <div class="summary-card">
-            <div class="label">Cheaper on Output</div>
-            <div class="value winner">DeepSeek V4 Pro</div>
-            <div class="detail">94.2% cheaper ($0.87 vs $15.00)</div>
-        </div>
-        <div class="summary-card">
-            <div class="label">Context Window</div>
-            <div class="value" style="color:var(--text-primary)">Tied</div>
-            <div class="detail">Both have 1M tokens</div>
-        </div>
-    </div>
-
-    <div class="quick-comparison">
-        <h2>Head-to-Head Comparison</h2>
-        <p class="section-sub">Budget champion vs mid-tier powerhouse — the price gap is massive.</p>
-        <table class="quick-table">
-            <thead>
-                <tr><th>Model</th><th>Provider</th><th>Tier</th><th>Input (per 1M)</th><th>Output (per 1M)</th><th>Context</th></tr>
-            </thead>
-            <tbody>
-                <tr style="background:rgba(59,130,246,.05);">
-                    <td class="model-name">DeepSeek V4 Pro</td>
-                    <td><span class="provider-badge badge-deepseek">DeepSeek</span></td>
-                    <td><span class="tier-badge tier-budget">Budget</span></td>
-                    <td class="cheaper">$0.435</td>
-                    <td class="cheaper">$0.87</td>
-                    <td>1M</td>
-                </tr>
-                <tr>
-                    <td class="model-name">DeepSeek V4 Flash</td>
-                    <td><span class="provider-badge badge-deepseek">DeepSeek</span></td>
-                    <td><span class="tier-badge tier-budget">Budget</span></td>
-                    <td>$0.14</td>
-                    <td>$0.28</td>
-                    <td>1M</td>
-                </tr>
-                <tr>
-                    <td class="model-name">Claude Sonnet 4.6</td>
-                    <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
-                    <td><span class="tier-badge tier-mid">Mid</span></td>
-                    <td>$3.00</td>
-                    <td>$15.00</td>
-                    <td>1M</td>
-                </tr>
-                <tr style="background:rgba(217,119,87,.05);">
-                    <td class="model-name">Claude Sonnet 5</td>
-                    <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
-                    <td><span class="tier-badge tier-mid">Mid</span></td>
-                    <td>$3.00</td>
-                    <td>$15.00</td>
-                    <td>1M</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">See the massive cost difference between budget and mid-tier for your workload.</p>
-
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
-            <button class="preset-btn" onclick="applyPreset('heavy')">Heavy Usage</button>
-        </div>
-
-        <div class="model-select-row">
-            <div class="select-group">
-                <label>DeepSeek Model</label>
-                <select id="deepseekModel">
-                    <option value="deepseek-v4pro" selected>DeepSeek V4 Pro ($0.435/$0.87)</option>
-                </select>
-            </div>
-            <div class="vs-divider">vs</div>
-            <div class="select-group">
-                <label>Anthropic Model</label>
-                <select id="anthropicModel">
-                    <option value="anthropic-sonnet5" selected>Claude Sonnet 5 ($3.00/$15.00)</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="calc-grid">
-            <div class="input-group">
-                <label>Input Tokens per Request</label>
-                <input type="number" id="inputTokens" value="5000" min="100" step="100">
-            </div>
-            <div class="input-group">
-                <label>Output Tokens per Request</label>
-                <input type="number" id="outputTokens" value="2000" min="50" step="50">
-            </div>
-            <div class="input-group">
-                <label>Requests per Day</label>
-                <input type="number" id="requestsPerDay" value="1000" min="1" step="100">
-            </div>
-            <div class="input-group">
-                <label>Days per Month</label>
-                <input type="number" id="daysPerMonth" value="30" min="1" max="31">
-            </div>
-        </div>
-
-        <div class="results-grid">
-            <div class="result-card" id="deepseekResult">
-                <div class="provider">DeepSeek</div>
-                <div class="model-name" id="deepseekModelName">DeepSeek V4 Pro</div>
-                <div class="price-big" id="deepseekPrice">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="deepseekInput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="deepseekOutput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Per request</span><span class="val" id="deepseekPerReq">$0.00</span></div>
-                </div>
-            </div>
-            <div class="result-card" id="anthropicResult">
-                <div class="provider">Anthropic</div>
-                <div class="model-name" id="anthropicModelName">Claude Sonnet 5</div>
-                <div class="price-big" id="anthropicPrice">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="anthropicInput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="anthropicOutput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Per request</span><span class="val" id="anthropicPerReq">$0.00</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="savings-banner" id="savingsBanner">
-            <div class="amount" id="savingsAmount">—</div>
-            <div class="detail" id="savingsDetail">Enter your usage above to see savings.</div>
-        </div>
-    </div>
-
-    <div class="use-cases">
-        <h2>Which Should You Choose?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card">
-                <h3>High-Volume Production</h3>
-                <p>APIs processing millions of tokens daily, chatbots, and batch processing.</p>
-                <div class="recommendation"><span class="pick-deepseek">Pick DeepSeek V4 Pro:</span> At $0.435/$0.87 it's 85.5% cheaper on input than Sonnet 5. Same 1M context. The clear winner for high-volume workloads.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Complex Coding Tasks</h3>
-                <p>Code generation, debugging, refactoring, and multi-file editing.</p>
-                <div class="recommendation"><span class="pick-sonnet">Pick Sonnet 5:</span> Anthropic's strongest mid-tier coder. If coding quality is your top priority, the 6.9x price premium may be justified.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Startup Budgets</h3>
-                <p>Early-stage teams watching every dollar.</p>
-                <div class="recommendation"><span class="pick-deepseek">Pick DeepSeek V4 Pro:</span> 85.5% savings means 6.9x more queries for the same budget. Start here and upgrade only when needed.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Advanced Reasoning</h3>
-                <p>Multi-step analysis, research, and complex decision-making.</p>
-                <div class="recommendation"><span class="pick-sonnet">Pick Sonnet 5:</span> Anthropic's models excel at nuanced reasoning. If accuracy on complex tasks matters more than cost, Sonnet 5 is the better choice.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Large Document Processing</h3>
-                <p>Summarization, Q&A, and analysis of long documents.</p>
-                <div class="recommendation"><span class="pick-deepseek">Pick DeepSeek V4 Pro:</span> Both have 1M context, but DeepSeek is 85.5% cheaper on input. For document-heavy workloads, the savings are massive.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Enterprise Scale</h3>
-                <p>Production workloads with cost sensitivity.</p>
-                <div class="recommendation"><span class="pick-deepseek">Pick DeepSeek V4 Pro:</span> At 85.5% cheaper input, DeepSeek V4 Pro saves tens of thousands per month at enterprise scale. The quality gap rarely justifies 6.9x the cost.</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pro-upsell">
-        <h2>Save More with APIpulse</h2>
-        <p>Get personalized cost optimization recommendations for your specific workload.</p>
-        <div class="features">
-            <div class="feature"><strong>Save scenarios</strong> — compare up to 10 configs</div>
-            <div class="feature"><strong>Export reports</strong> — PDF cost analysis</div>
-            <div class="feature"><strong>Optimization tips</strong> — save up to 40%</div>
-        </div>
-        <a href="audit.html?from=tool_page" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'deepseekv4pro_vs_sonnet5'})">Free Tools →</a>
-    </div>
-
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>Is DeepSeek V4 Pro or Claude Sonnet 5 cheaper?</h3>
-            <p>DeepSeek V4 Pro is dramatically cheaper. It costs $0.435/$0.87 per 1M tokens while Sonnet 5 costs $3.00/$15.00. That's 85.5% cheaper on input and 94.2% cheaper on output. At 1M tokens/month, DeepSeek V4 Pro costs $1.31 vs Sonnet 5's $18.00.</p>
-        </div>
-        <div class="faq-item">
-            <h3>What is Claude Sonnet 5 used for?</h3>
-            <p>Claude Sonnet 5 at $3.00/$15.00 is Anthropic's mid-tier model, excelling at coding, analysis, writing, and complex reasoning. It's 6.9x more expensive than DeepSeek V4 Pro on input.</p>
-        </div>
-        <div class="faq-item">
-            <h3>When should I use DeepSeek V4 Pro vs Sonnet 5?</h3>
-            <p>DeepSeek V4 Pro ($0.435/$0.87) is ideal for high-volume production and cost-sensitive workloads. Sonnet 5 ($3.00/$15.00) is preferred for complex coding and nuanced reasoning where Anthropic's capabilities matter.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Do DeepSeek V4 Pro and Sonnet 5 have the same context window?</h3>
-            <p>Yes! Both have 1M token context windows. They're directly comparable for large document processing and context-heavy tasks. The key difference is price — DeepSeek is 85.5% cheaper on input.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Can I use both models together?</h3>
-            <p>Yes! A cost-effective pattern: use DeepSeek V4 Pro ($0.435/$0.87) for 90% of tasks and route only complex coding or reasoning tasks to Sonnet 5 ($3.00/$15.00). This gives you 85%+ savings on bulk work.</p>
-        </div>
-    </div>
 
     <div class="share-section">
         <h2>Share This Comparison</h2>

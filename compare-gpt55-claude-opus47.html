@@ -268,12 +268,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -281,85 +285,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="compare-hero">
-        <div class="premium-badge">Premium Tier Comparison</div>
-        <h1>GPT-5.5 <span class="vs">vs</span> Claude Opus 4.7</h1>
-        <p class="subtitle">The most capable models from OpenAI and Anthropic, head to head. Compare pricing, context windows, and find the best value for demanding workloads.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-
-    <!-- Quick Comparison Table -->
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead>
-                <tr>
-                    <th>Specification</th>
-                    <th>GPT-5.5 (OpenAI)</th>
-                    <th>Claude Opus 4.7 (Anthropic)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Input Price (per 1M tokens)</td>
-                    <td class="same">$5.00</td>
-                    <td class="same">$5.00</td>
-                </tr>
-                <tr>
-                    <td>Output Price (per 1M tokens)</td>
-                    <td class="pricier">$30.00</td>
-                    <td class="cheaper">$25.00</td>
-                </tr>
-                <tr>
-                    <td>Context Window</td>
-                    <td>1M tokens</td>
-                    <td>1M tokens</td>
-                </tr>
-                <tr>
-                    <td>Tier</td>
-                    <td>Premium</td>
-                    <td>Premium</td>
-                </tr>
-                <tr>
-                    <td>Provider</td>
-                    <td>OpenAI</td>
-                    <td>Anthropic</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Interactive Calculator -->
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Premium models for demanding workloads — see the real cost difference for your usage.</p>
-
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('research')">Research Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('complex-code')">Complex Coding</button>
-            <button class="preset-btn" onclick="applyPreset('long-doc')">Long Document</button>
-            <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
-            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise</button>
-        </div>
-
-        <div class="calc-grid">
-            <div>
-                <div class="input-group">
-                    <label for="input-tokens">Input Tokens per Request</label>
-                    <input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()">
-                </div>
-                <div class="input-group">
-                    <label for="output-tokens">Output Tokens per Request</label>
-                    <input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()">
-                </div>
-            </div>
             <div>
                 <div class="input-group">
                     <label for="requests-day">Requests per Day</label>

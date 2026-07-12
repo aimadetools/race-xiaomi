@@ -183,125 +183,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-premium">Premium</span> <span class="tier-badge tier-mid">Mid</span>
-        <h1>GPT-5.5 <span class="vs">vs</span> Claude Sonnet 5</h1>
-        <p class="subtitle">Premium vs mid-tier: GPT-5.5 at $5/$30 vs Sonnet 5 at $3/$15. Sonnet 5 is 40% cheaper on input, 50% cheaper on output — similar context windows. Save up to $320/month at scale.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5.5 (OpenAI)</th><th>Claude Sonnet 5 (Anthropic)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$5.00</td><td class="cheaper">$3.00</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$30.00</td><td class="cheaper">$15.00</td></tr>
-                <tr><td>Context Window</td><td class="cheaper">1.05M tokens</td><td>1M tokens</td></tr>
-                <tr><td>Tier</td><td>Premium</td><td>Mid</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>Anthropic</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Savings</h2>
-        <p class="section-sub">Sonnet 5 is dramatically cheaper on both input and output. See exactly how much you save at your usage level.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gpt55">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5.5</div>
-                <div id="winner-badge-gpt55" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt55">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt55"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-sonnet5">
-                <div class="provider">Anthropic</div><div class="model-name">Claude Sonnet 5</div>
-                <div id="winner-badge-sonnet5" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-sonnet5">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-sonnet5"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="also-premium">
-        <h2>Other Mid-Tier Models</h2>
-        <div class="premium-grid">
-            <div class="premium-card"><div class="name">Claude Opus 4.8</div><div class="provider">Anthropic</div><div class="price">$5.00 / $25 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="premium-card"><div class="name">GPT-5.4</div><div class="provider">OpenAI</div><div class="price">$2.50 / $15 per 1M</div><div class="ctx">400K context</div></div>
-            <div class="premium-card"><div class="name">Gemini 3.1 Pro</div><div class="provider">Google</div><div class="price">$2.00 / $12 per 1M</div><div class="ctx">1M context</div></div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Code Generation</h3><p>GPT-5.5 ($5/$30) is OpenAI's premium coding model with top-tier code generation, debugging, and refactoring. Sonnet 5 ($3/$15) offers strong coding at 40% less input cost and 50% less output cost. For most coding tasks, Sonnet 5 delivers excellent results at a fraction of the cost.</p><div class="recommendation"><span class="pick-sonnet">Cost efficiency: Sonnet 5</span> | <span class="pick-gpt55">OpenAI ecosystem: GPT-5.5</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, marketing copy, documentation. GPT-5.5 at $30/1M output vs Sonnet 5 at $15/1M output means Sonnet saves 50% on every output token. For high-volume content generation, this compounds to massive monthly savings.</p><div class="recommendation"><span class="pick-sonnet">Better value: Sonnet 5 (50% cheaper output)</span></div></div>
-            <div class="use-case-card"><h3>Long-Context Processing</h3><p>GPT-5.5's 1.05M context is marginally larger than Sonnet 5's 1M context — a 5% difference that's negligible for most workloads. Both handle extremely long documents, large codebases, and extended conversation histories. Context size is not a meaningful differentiator between these two models.</p><div class="recommendation"><span class="pick-sonnet">Similar context: Tie — Sonnet 5 is cheaper</span></div></div>
-            <div class="use-case-card"><h3>High-Volume Batch Processing</h3><p>At scale, Sonnet 5's savings compound dramatically. At 10M input + 10M output tokens/month, Sonnet 5 costs $180 vs GPT-5.5's $350 — saving $170/month. For batch workloads with heavy output, Sonnet 5 delivers strong results at nearly half the cost.</p><div class="recommendation"><span class="pick-sonnet">Savings at scale: Sonnet 5 ($170/month at 10M+10M)</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Comparing premium and mid-tier models?</h2>
-        <p>APIpulse lets you compare all 67 models including GPT-5.5 ($5/$30) and Sonnet 5 ($3/$15), save scenarios, and export cost reports for your team.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 94%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is Claude Sonnet 5 than GPT-5.5?</h3><p>Claude Sonnet 5 costs $3.00/$15.00 per 1M tokens while GPT-5.5 costs $5.00/$30.00 per 1M tokens. Sonnet 5 is 40% cheaper on input and 50% cheaper on output. At 1M input + 1M output tokens/month, Sonnet 5 costs $18 vs GPT-5.5's $35, saving $17/month. At 10M input + 10M output, savings reach $320/month. The output price difference is even larger — 50% cheaper — making Sonnet 5 exceptionally cost-effective for output-heavy workloads.</p></div>
-        <div class="faq-item"><h3>Which model has a larger context window?</h3><p>GPT-5.5 has a slightly larger context at 1.05M tokens vs Claude Sonnet 5's 1M tokens — a 5% difference that is negligible for virtually all workloads. Both handle extremely long documents, large codebases, and extended conversation histories. Context window is not a meaningful differentiator between these two models.</p></div>
-        <div class="faq-item"><h3>Is Claude Sonnet 5 good enough to replace GPT-5.5?</h3><p>Claude Sonnet 5 at $3/$15 is a strong mid-tier model that handles most tasks well — code generation, content creation, analysis, and chatbot applications. GPT-5.5 at $5/$30 is a premium model with potentially stronger reasoning and OpenAI ecosystem integration. For cost-sensitive workloads where 80-90% of the quality is acceptable, Sonnet 5 offers dramatically better value at 40% less input and 50% less output cost.</p></div>
-        <div class="faq-item"><h3>When should I choose GPT-5.5 over Claude Sonnet 5?</h3><p>Choose GPT-5.5 ($5/$30) for mission-critical tasks requiring the highest quality, OpenAI ecosystem integration (Assistants API, function calling), or when output quality directly impacts your product. Choose Claude Sonnet 5 ($3/$15) for cost-sensitive workloads, high-volume batch processing, or when you need 40% cheaper input costs and 50% cheaper output costs with acceptable quality. Both have similar context windows (~1M tokens).</p></div>
-        <div class="faq-item"><h3>Are both models in the same pricing tier?</h3><p>No. GPT-5.5 is in the Premium tier ($5/$30) while Claude Sonnet 5 is in the Mid tier ($3/$15). GPT-5.5 is 1.67x more expensive on input and 2x more expensive on output. The tier difference reflects the intended use cases — GPT-5.5 for premium tasks requiring top quality, Sonnet 5 for cost-effective mid-tier workloads. Both have similar context windows (~1M tokens).</p></div>
-    </div>
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

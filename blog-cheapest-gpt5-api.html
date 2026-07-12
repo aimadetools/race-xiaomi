@@ -143,21 +143,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -166,160 +160,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">Cheapest GPT-5 API: Complete Cost Breakdown</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Pricing</span>
-            <span>May 10, 2026</span>
-        </div>
-        <h1>Cheapest GPT-5 API: Complete Cost Breakdown (May 2026)</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <p>OpenAI's GPT-5 family now spans six models from $0.08 to $30 per million tokens. If you're looking for the cheapest GPT-5 API, you have more options than ever — but picking the wrong one can cost you 375x more than necessary.</p>
-
-        <p>We break down every GPT-5 family model by price, quality, and use case so you can find the cheapest option that actually works for your workload.</p>
-
-        <h2>Every GPT-5 Family Model, Ranked by Price</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Input ($/1M tokens)</th>
-                    <th>Output ($/1M tokens)</th>
-                    <th>Context</th>
-                    <th>Tier</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><span class="winner">GPT-oss 20B</span></td>
-                    <td class="winner">$0.08</td>
-                    <td>$0.35</td>
-                    <td>128K</td>
-                    <td>Budget</td>
-                </tr>
-                <tr>
-                    <td>GPT-oss 120B</td>
-                    <td>$0.15</td>
-                    <td>$0.60</td>
-                    <td>128K</td>
-                    <td>Budget</td>
-                </tr>
-                <tr>
-                    <td>GPT-4o mini</td>
-                    <td>$0.15</td>
-                    <td>$0.60</td>
-                    <td>128K</td>
-                    <td>Budget</td>
-                </tr>
-                <tr>
-                    <td>GPT-5 mini</td>
-                    <td>$0.25</td>
-                    <td>$2.00</td>
-                    <td>272K</td>
-                    <td>Budget</td>
-                </tr>
-                <tr>
-                    <td>GPT-5</td>
-                    <td>$1.25</td>
-                    <td>$10.00</td>
-                    <td>272K</td>
-                    <td>Premium</td>
-                </tr>
-                <tr>
-                    <td>GPT-5.3 Codex</td>
-                    <td>$1.75</td>
-                    <td>$14.00</td>
-                    <td>400K</td>
-                    <td>Mid</td>
-                </tr>
-                <tr>
-                    <td>GPT-5.5</td>
-                    <td>$5.00</td>
-                    <td>$30.00</td>
-                    <td>1M</td>
-                    <td>Premium</td>
-                </tr>
-                <tr>
-                    <td>GPT-5.5 Pro</td>
-                    <td>$30.00</td>
-                    <td>$180.00</td>
-                    <td>1M</td>
-                    <td>Premium</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>The cheapest GPT-5 model (GPT-oss 20B at $0.08) costs 375x less than the most expensive (GPT-5.5 Pro at $30).</strong> That's the difference between $7/month and $2,625/month for a 10M token workload.</p>
-
-        <h2>The Four Budget Tiers</h2>
-
-        <h3>Ultra-Budget: GPT-oss 20B ($0.08/$0.35)</h3>
-        <p>OpenAI's open-weight model is the absolute cheapest GPT-5 option. At $0.08 per million input tokens, it costs less than a penny per request. Best for high-volume, simple tasks: classification, extraction, sentiment analysis, chatbot routing.</p>
-
-        <h3>Budget: GPT-oss 120B / GPT-4o mini ($0.15/$0.60)</h3>
-        <p>Both priced identically, these are workhorses for everyday tasks. GPT-oss 120B runs on open weights (self-host or via providers like Together.ai), while GPT-4o mini is a hosted API with built-in safety. Good for summarization, Q&A, content generation.</p>
-
-        <h3>Mid-Range: GPT-5 mini ($0.25/$2.00)</h3>
-        <p>The sweet spot for most developers. GPT-5 mini offers near-GPT-5 quality at a fraction of the cost. With 272K context, it handles complex multi-turn conversations and code generation. 67% cheaper than GPT-5.</p>
-
-        <h3>Premium: GPT-5 ($1.25/$10.00)</h3>
-        <p>Full GPT-5 for when you need maximum reasoning. Reserve this for the 10-20% of requests that genuinely require it — not every API call.</p>
-
-        <h2>Monthly Cost Scenarios</h2>
-
-        <div class="cost-box">
-            <h3>Small App (1K requests/day, 2K tokens avg)</h3>
-            <div class="cost-row">
-                <span>GPT-oss 20B</span>
-                <span class="cost-total">$1.80/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>GPT-oss 120B</span>
-                <span>$3.60/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>GPT-5 mini</span>
-                <span>$13.50/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>GPT-5</span>
-                <span>$67.50/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>GPT-5.5</span>
-                <span>$180.00/mo</span>
-            </div>
-        </div>
 
         <div class="cost-box">
             <h3>Scale App (50K requests/day, 2K tokens avg)</h3>

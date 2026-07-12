@@ -192,21 +192,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -215,90 +209,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-ai-api-security">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-                <a href="quiz.html">Quiz</a>
-            <span class="separator">›</span>
-            <span class="current">AI API Security Best Practices for Production</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="tier-badge guide">Guide</span>
-            <span class="post-tag">Security</span>
-            <span>April 26, 2026</span>
-        </div>
-        <h1>AI API Security Best Practices for Production</h1>
-
-        <p>When you put an LLM in front of users, you're opening a two-way channel between the public and your backend. Without proper security, that channel can be exploited for data leakage, prompt injection, cost attacks, and more. Here's how to secure your AI API integration for production.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <h2>1. API Key Management</h2>
-        <p>Your API key is the single most sensitive credential in your AI integration. Treat it like a database password.</p>
-
-        <h3>Never Expose Keys Client-Side</h3>
-        <ul>
-            <li><strong>Always proxy requests through your backend</strong> — never call AI APIs directly from the browser</li>
-            <li>Store keys in environment variables, not in code or config files</li>
-            <li>Use secrets managers (AWS Secrets Manager, HashiCorp Vault) for production</li>
-            <li>Never commit keys to git — use <code>.env</code> files with <code>.gitignore</code></li>
-        </ul>
-
-        <h3>Key Rotation</h3>
-        <ul>
-            <li>Rotate API keys every <strong>90 days</strong> minimum</li>
-            <li>Rotate immediately if a key is suspected compromised</li>
-            <li>Use separate keys for development, staging, and production</li>
-            <li>Most providers let you create multiple keys — use them</li>
-        </ul>
-
-        <h3>Least Privilege</h3>
-        <ul>
-            <li>Use the most restrictive permissions available</li>
-            <li>If your provider supports scoping keys to specific models, do it</li>
-            <li>Disable any API capabilities you don't use</li>
-        </ul>
-
-        <h2>2. Input Validation & Sanitization</h2>
-        <p>Users will send unexpected, malicious, and adversarial inputs. Validate everything.</p>
-
-        <h3>Prompt Injection Defense</h3>
-        <p>Prompt injection is the #1 security risk for LLM applications. Attackers embed instructions in user input that override your system prompt:</p>
-        <ul>
-            <li><strong>System prompt isolation:</strong> Never concatenate user input directly into the system prompt. Use the API's message format to separate system, user, and assistant messages</li>
-            <li><strong>Input length limits:</strong> Cap input at a reasonable length (e.g., 8,000 tokens) to prevent token-flooding attacks</li>
-            <li><strong>Content filtering:</strong> Use provider-provided content filters (OpenAI, Anthropic, Google all offer them)</li>
-            <li><strong>Output monitoring:</strong> Log and review outputs for signs of successful injection</li>
-        </ul>
-
-        <h3>Input Sanitization Checklist</h3>
-        <ul>
-            <li>Strip or escape HTML/JS from user inputs</li>
-            <li>Validate input length before sending to API</li>
-            <li>Reject or sanitize special characters in structured outputs</li>
-            <li>Rate-limit per-user input to prevent abuse</li>
-        </ul>
-
-        <h2>3. Output Filtering</h2>
-        <p>LLM outputs can contain harmful content, PII, or sensitive data. Filter before returning to users.</p>
-
-        <div class="cost-example">
-            <div class="label">Output filtering layers</div>
-            <div class="cost-row"><span class="name">Provider content filter (built-in)</span><span class="value">Free</span></div>
-            <div class="cost-row"><span class="name">Custom regex for PII (emails, SSNs)</span><span class="value">~0ms overhead</span></div>
-            <div class="cost-row"><span class="name">Second LLM call for moderation</span><span class="value">$0.001–0.005/call</span></div>
-            <div class="cost-row"><span class="name">Human review queue (high-risk content)</span><span class="value">Manual</span></div>
-        </div>
 
         <ul>
             <li><strong>Always enable provider content filters</strong> — they're free and catch most issues</li>

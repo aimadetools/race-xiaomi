@@ -86,144 +86,22 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <article style="max-width:var(--max-width);margin:0 auto;padding:120px 24px 60px;">
-        <div style="text-align:center;margin-bottom:40px;">
-            <p style="color:var(--accent);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Blog &middot; Jun 12, 2026</p>
-            <h1 style="font-size:clamp(28px,4.5vw,42px);font-weight:800;line-height:1.2;margin-bottom:16px;">3 New Gemini Models: Flash-Lite, 3 Flash &amp; 2.5 Flash-Lite — Pricing &amp; Comparison</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-            <p style="font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto;">Google dropped 3 new Gemini models this week — all with 1M context windows, all cheaper than you'd expect. Here's what each one costs and when to use it.</p>
-        </div>
-
-        <div style="max-width:780px;margin:0 auto;">
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">Google quietly released three new Gemini API models in July 2026, bringing the total Gemini lineup to <strong>8 models</strong>. The big news: all three have <strong>1M token context windows</strong> and aggressive budget pricing. If you're still using Gemini 2.0 Flash (now deprecated), it's time to upgrade.</p>
-
-            <h2 style="font-size:24px;font-weight:800;margin:32px 0 16px;">The 3 New Models at a Glance</h2>
-
-            <div style="overflow-x:auto;margin-bottom:32px;">
-                <table style="width:100%;border-collapse:collapse;font-size:14px;">
-                    <thead>
-                        <tr style="border-bottom:2px solid var(--border);">
-                            <th style="text-align:left;padding:12px 8px;font-weight:700;">Model</th>
-                            <th style="text-align:left;padding:12px 8px;font-weight:700;">Tier</th>
-                            <th style="text-align:right;padding:12px 8px;font-weight:700;">Input</th>
-                            <th style="text-align:right;padding:12px 8px;font-weight:700;">Output</th>
-                            <th style="text-align:right;padding:12px 8px;font-weight:700;">Context</th>
-                            <th style="text-align:left;padding:12px 8px;font-weight:700;">Replaces</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom:1px solid var(--border);">
-                            <td style="padding:12px 8px;font-weight:600;">Gemini 2.5 Flash-Lite</td>
-                            <td style="padding:12px 8px;"><span style="background:rgba(34,197,94,0.1);color:var(--green);padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">Budget</span></td>
-                            <td style="padding:12px 8px;text-align:right;color:var(--green);font-weight:700;">$0.10</td>
-                            <td style="padding:12px 8px;text-align:right;color:var(--green);font-weight:700;">$0.40</td>
-                            <td style="padding:12px 8px;text-align:right;color:var(--accent);font-weight:700;">1M</td>
-                            <td style="padding:12px 8px;font-size:13px;color:var(--text-muted);">Gemini 2.5 Flash-Lite</td>
-                        </tr>
-                        <tr style="border-bottom:1px solid var(--border);">
-                            <td style="padding:12px 8px;font-weight:600;">Gemini 3.1 Flash-Lite</td>
-                            <td style="padding:12px 8px;"><span style="background:rgba(34,197,94,0.1);color:var(--green);padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">Budget</span></td>
-                            <td style="padding:12px 8px;text-align:right;color:var(--green);font-weight:700;">$0.25</td>
-                            <td style="padding:12px 8px;text-align:right;color:var(--green);font-weight:700;">$1.50</td>
-                            <td style="padding:12px 8px;text-align:right;color:var(--accent);font-weight:700;">1M</td>
-                            <td style="padding:12px 8px;font-size:13px;color:var(--text-muted);">—</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:12px 8px;font-weight:600;">Gemini 3 Flash</td>
-                            <td style="padding:12px 8px;"><span style="background:rgba(34,197,94,0.1);color:var(--green);padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;">Budget</span></td>
-                            <td style="padding:12px 8px;text-align:right;">$0.50</td>
-                            <td style="padding:12px 8px;text-align:right;">$3.00</td>
-                            <td style="padding:12px 8px;text-align:right;color:var(--accent);font-weight:700;">1M</td>
-                            <td style="padding:12px 8px;font-size:13px;color:var(--text-muted);">Gemini 2.5 Flash-Lite</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p style="font-size:13px;color:var(--text-muted);margin-bottom:32px;">All prices per 1M tokens. Verified Jun 12, 2026. Gemini 2.0 Flash and Gemini 2.5 Flash-Lite are now deprecated by Google.</p>
-
-            <h2 style="font-size:24px;font-weight:800;margin:32px 0 16px;">1. Gemini 2.5 Flash-Lite — The Cheapest Option</h2>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px;">At <strong>$0.10/$0.40 per 1M tokens</strong>, this is the cheapest Gemini model ever — and one of the cheapest LLM APIs on the market. It matches the deprecated Gemini 2.0 Flash pricing but adds a massive <strong>1M token context window</strong> (up from 1M on 2.0 Flash, same size but newer architecture).</p>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px;"><strong>Best for:</strong> High-volume classification, content moderation, chatbot backends, embeddings preprocessing — anything where you're processing millions of tokens and cost is the primary concern.</p>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px;"><strong>Trade-off:</strong> As a "Lite" model, it may not handle complex reasoning as well as Gemini 3 Flash or Gemini 2.5 Pro. Use it for simple, high-volume tasks.</p>
-
-            <h2 style="font-size:24px;font-weight:800;margin:32px 0 16px;">2. Gemini 3.1 Flash-Lite — The Production Budget Pick</h2>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px;">At <strong>$0.25/$1.50 per 1M tokens</strong>, Gemini 3.1 Flash-Lite sits in a sweet spot: 2.5x more expensive than 2.5 Flash-Lite on input, but with better quality output (1.50 vs 0.40 — that's 3.75x more, reflecting better generation quality). The 1M context window handles long documents and codebases with ease.</p>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px;"><strong>Best for:</strong> Production workloads that need good quality at low cost — chatbots, content generation, summarization, RAG pipelines. The go-to replacement for deprecated Gemini 2.5 Flash-Lite.</p>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px;"><strong>Trade-off:</strong> Output at $1.50/M is 3.75x the input cost. For output-heavy workloads, Gemini 2.5 Flash-Lite ($0.40 output) is cheaper — but lower quality.</p>
-
-            <h2 style="font-size:24px;font-weight:800;margin:32px 0 16px;">3. Gemini 3 Flash — The Speed Demon</h2>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px;">At <strong>$0.50/$3.00 per 1M tokens</strong>, Gemini 3 Flash is the replacement for deprecated Gemini 2.0 Flash. It's 5x more expensive on input ($0.50 vs $0.10) but brings the Gemini 3 architecture: faster inference, better multimodal support, and the full 1M context window.</p>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px;"><strong>Best for:</strong> Applications that need speed + quality at a reasonable price. Great for real-time chat, code generation, multimodal tasks (image + text), and Google Cloud workloads.</p>
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px;"><strong>Trade-off:</strong> 5x the cost of Gemini 2.5 Flash-Lite. If you don't need the Gemini 3 architecture improvements, the cheaper models are fine.</p>
-
-            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:32px;">
-                <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">Monthly Cost at 1,000 Requests/Day</h3>
-                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Assuming 1,000 input tokens and 500 output tokens per request:</p>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:12px;">
-                    <div style="padding:12px;border-radius:8px;border:1px solid var(--green);background:rgba(34,197,94,0.05);text-align:center;">
-                        <p style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">2.5 Flash-Lite</p>
-                        <p style="font-size:24px;font-weight:800;color:var(--green);">$4.00</p>
-                    </div>
-                    <div style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);text-align:center;">
-                        <p style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">3.1 Flash-Lite</p>
-                        <p style="font-size:24px;font-weight:800;">$22.50</p>
-                    </div>
-                    <div style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);text-align:center;">
-                        <p style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">3 Flash</p>
-                        <p style="font-size:24px;font-weight:800;">$45.00</p>
-                    </div>
-                    <div style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);text-align:center;">
-                        <p style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Claude Haiku 4.5</p>
-                        <p style="font-size:24px;font-weight:800;">$35.00</p>
-                    </div>
-                    <div style="padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);text-align:center;">
-                        <p style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">GPT-4o mini</p>
-                        <p style="font-size:24px;font-weight:800;">$9.00</p>
-                    </div>
-                </div>
             </div>
 
             <h2 style="font-size:24px;font-weight:800;margin:32px 0 16px;">How These Compare to the Competition</h2>

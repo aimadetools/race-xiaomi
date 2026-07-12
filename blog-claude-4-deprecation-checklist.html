@@ -236,13 +236,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="claude-4-is-down.html" style="color:var(--red);">Deprecation Guide</a>
-                <a href="claude-4-migration-tool.html">Migration Tool</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -250,80 +253,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-            <span class="separator">›</span>
-            <span class="current">Claude 4 Deprecation Checklist</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        <div class="post-meta">
-            <span class="post-tag">Deprecation</span>
-            <span>June 2, 2026</span>
-            <span>·</span>
-            <span>10 min read</span>
-        </div>
-        <h1>Claude 4 Deprecation Checklist: Step-by-Step Migration Before June 15</h1>
-        <p class="subtitle">Claude 4 Opus and Claude Sonnet 4 retire on <strong>June 15, 2026</strong>. <span id="daysLeftText">You had 10 days</span>. This checklist walks you through every step — from auditing your codebase to deploying the migration. Follow it top to bottom.</p>
-        <script>
-            (function(){
-                var dep = new Date('2026-06-15T00:00:00');
-                var now = new Date();
-                var diff = dep - now;
-                var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
-                var el = document.getElementById('daysLeftText');
-                if (diff <= 0) {
-                    if (el) el.textContent = 'Claude 4 was deprecated on June 15, 2026.';
-                    var h1 = document.querySelector('h1');
-                    if (h1) h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">Migration Checklist</span>';
-                    var subtitle = document.querySelector('.subtitle');
-                    if (subtitle) subtitle.innerHTML = 'Claude 4 Opus and Claude Sonnet 4 were <strong>retired on June 15, 2026</strong>. API calls to these model IDs now return errors. This checklist walks you through every step to migrate — it\'s not too late.';
-                } else {
-                    if (el) el.textContent = 'You have ' + days + ' days';
-                }
-            })();
-        </script>
-
-        <div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;font-size:18px;font-weight:800;color:var(--red);">⚠️ Claude 4 shut down June 15, 2026 — migrate now</div>
-        <script>
-            (function(){
-                var dep = new Date('2026-06-15T00:00:00');
-                var now = new Date();
-                var diff = dep - now;
-                var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
-                var el = document.getElementById('cd-days');
-                if (el) el.textContent = diff > 0 ? days : 'EXPIRED';
-                if (diff <= 0) {
-                    var label = el ? el.parentElement.querySelector('.label') : null;
-                    if (label) label.textContent = 'Status';
-                }
-            })();
-        </script>
-
-        <div class="alert">
-            <p><strong>Quick summary:</strong> Search your code for <code>claude-4-opus</code> and <code>claude-sonnet-4</code>. Replace with <code>claude-opus-4-8</code> and <code>claude-sonnet-4-6</code>. Test. Deploy. You're done — and you save up to 67%.</p>
-        </div>
-
-        <!-- Progress tracker -->
-        <div class="progress-bar">
-            <div class="label">Migration Progress: <span id="progressText">0 / 8 steps</span></div>
-            <div class="bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
         </div>
 
         <h2>The Complete Checklist</h2>

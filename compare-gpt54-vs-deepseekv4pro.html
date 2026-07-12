@@ -183,125 +183,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-mid">Mid</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>GPT-5.4 <span class="vs">vs</span> DeepSeek V4 Pro</h1>
-        <p class="subtitle">OpenAI's mid-tier at $2.50/$15 vs DeepSeek's budget powerhouse at $0.435/$0.87. DeepSeek V4 Pro is 83% cheaper on input, 94% cheaper on output, and has 2.5x the context window. The savings are massive — but is OpenAI's ecosystem worth the premium?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5.4 (OpenAI)</th><th>DeepSeek V4 Pro (DeepSeek)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$2.50</td><td class="cheaper">$0.435</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$15.00</td><td class="cheaper">$0.87</td></tr>
-                <tr><td>Context Window</td><td>400K tokens</td><td class="cheaper">1M tokens</td></tr>
-                <tr><td>Tier</td><td>Mid</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>DeepSeek</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Savings</h2>
-        <p class="section-sub">See exactly how much you save with DeepSeek V4 Pro — the numbers are dramatic. 83% off input, 94% off output.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gpt54">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5.4</div>
-                <div id="winner-badge-gpt54" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt54">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt54"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt54"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt54"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt54"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-deepseekv4pro">
-                <div class="provider">DeepSeek</div><div class="model-name">DeepSeek V4 Pro</div>
-                <div id="winner-badge-deepseekv4pro" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-deepseekv4pro">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-deepseekv4pro"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="also-premium">
-        <h2>Other Budget and Mid-Tier Models</h2>
-        <div class="premium-grid">
-            <div class="premium-card"><div class="name">Gemini 3.5 Flash</div><div class="provider">Google</div><div class="price">$0.075 / $0.30 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="premium-card"><div class="name">Claude Sonnet 5</div><div class="provider">Anthropic</div><div class="price">$3.00 / $15 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="premium-card"><div class="name">GPT-5.5</div><div class="provider">OpenAI</div><div class="price">$5.00 / $30 per 1M</div><div class="ctx">1.05M context</div></div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Code Generation</h3><p>DeepSeek V4 Pro at $0.435/$0.87 is a coding powerhouse — excellent at code generation, debugging, and refactoring at a fraction of the cost. GPT-5.4 at $2.50/$15 delivers strong OpenAI quality with ecosystem integration. For most coding tasks, DeepSeek V4 Pro saves 90%+ with comparable quality.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Pro</span> | <span class="pick-gpt54">OpenAI ecosystem: GPT-5.4</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, marketing copy, documentation, creative writing. DeepSeek V4 Pro at $0.435/$0.87 produces high-quality content at 94% lower output cost than GPT-5.4 ($2.50/$15). For bulk content generation, DeepSeek V4 Pro's savings are massive — you can generate 17x more output for the same price.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Pro</span></div></div>
-            <div class="use-case-card"><h3>Long-Context Processing</h3><p>DeepSeek V4 Pro's 1M context window (2.5x GPT-5.4's 400K) makes it the clear choice for long-document analysis, large codebase processing, and extended conversation history — all at dramatically lower cost. If your workload exceeds 400K tokens, DeepSeek V4 Pro is the only option between these two.</p><div class="recommendation"><span class="pick-deepseek">Larger context + cheaper: DeepSeek V4 Pro</span></div></div>
-            <div class="use-case-card"><h3>High-Volume Batch Processing</h3><p>At scale, the 83-94% cost difference is transformative. 10M input + 5M output tokens/month costs $138.50 with DeepSeek V4 Pro vs $100 with GPT-5.4 — wait, let's recalculate: GPT-5.4 costs $100, DeepSeek V4 Pro costs $8.72. That's $91.28/month in savings. For batch workloads, DeepSeek V4 Pro is the undisputed champion.</p><div class="recommendation"><span class="pick-deepseek">Massive savings: DeepSeek V4 Pro</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Comparing OpenAI and DeepSeek models?</h2>
-        <p>APIpulse lets you compare all 67 models including GPT-5.4 ($2.50/$15) and DeepSeek V4 Pro ($0.435/$0.87), save scenarios, and export cost reports for your team.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 94%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is DeepSeek V4 Pro than GPT-5.4?</h3><p>DeepSeek V4 Pro costs $0.435/$0.87 per 1M tokens vs GPT-5.4 at $2.50/$15 — 83% cheaper on input, 94% cheaper on output. At 1M input + 500K output tokens/month, that's $0.87 vs $10, saving $9.13/month. At 10M input + 5M output, savings reach $91.28/month. The output cost difference is especially dramatic: DeepSeek charges $0.87/1M vs OpenAI's $15/1M — a 17x price difference.</p></div>
-        <div class="faq-item"><h3>Is GPT-5.4 worth 17x more on output?</h3><p>GPT-5.4 at $2.50/$15 offers OpenAI ecosystem integration (Assistants API, function calling, ChatGPT plugins) and potentially better quality on the most complex multi-step reasoning tasks. DeepSeek V4 Pro at $0.435/$0.87 delivers competitive quality for most use cases. Choose GPT-5.4 when you need OpenAI ecosystem features or the highest quality on edge-case reasoning. For 90%+ of production workloads, DeepSeek V4 Pro offers dramatically better value.</p></div>
-        <div class="faq-item"><h3>Which has a larger context window?</h3><p>DeepSeek V4 Pro has a much larger context at 1M tokens vs GPT-5.4's 400K tokens — 2.5x more context at a fraction of the price. If your workload involves long documents, large codebases, or extended conversations, DeepSeek V4 Pro is the clear winner on both context size and cost.</p></div>
-        <div class="faq-item"><h3>When should I use GPT-5.4 over DeepSeek V4 Pro?</h3><p>Choose GPT-5.4 ($2.50/$15) when you need OpenAI ecosystem integration (Assistants API, function calling, ChatGPT plugins), compliance requirements favoring OpenAI's enterprise agreements, or the absolute highest quality on complex multi-step reasoning. Choose DeepSeek V4 Pro ($0.435/$0.87) for everything else — batch processing, content generation, code assistance, chatbots, and any high-volume workload where 83-94% savings matter.</p></div>
-        <div class="faq-item"><h3>Can DeepSeek V4 Pro really match GPT-5.4 quality?</h3><p>For most production workloads, DeepSeek V4 Pro delivers competitive quality at a fraction of the cost. It excels at coding, content generation, and general reasoning. GPT-5.4 may have an edge on the most complex multi-step reasoning tasks and benefits from OpenAI's mature tooling ecosystem. The quality gap has narrowed dramatically — but the price gap remains massive. For 90%+ of use cases, DeepSeek V4 Pro offers better value per dollar spent.</p></div>
-    </div>
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

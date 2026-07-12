@@ -159,116 +159,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-budget">Budget</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>Kimi K2.6 <span class="vs">vs</span> DeepSeek V4 Flash</h1>
-        <p class="subtitle">Two budget contenders from Chinese AI labs. DeepSeek V4 Flash is 85% cheaper on input and 93% cheaper on output — with 4x the context window. Is Kimi's ecosystem worth the premium?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Kimi K2.6 (Moonshot)</th><th>DeepSeek V4 Flash (DeepSeek)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$0.95</td><td class="cheaper">$0.14</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$4.00</td><td class="cheaper">$0.28</td></tr>
-                <tr><td>Context Window</td><td>256K tokens</td><td class="cheaper">1M tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>Moonshot</td><td>DeepSeek</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Budget vs ultra-budget — see the massive savings difference for your workload.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('code-assist')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('summarization')">Summarization</button>
-            <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
-            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="4000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-kimi">
-                <div class="provider">Moonshot</div><div class="model-name">Kimi K2.6</div>
-                <div id="winner-badge-kimi" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-kimi">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-kimi"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-kimi"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-kimi"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-kimi"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-deepseek">
-                <div class="provider">DeepSeek</div><div class="model-name">DeepSeek V4 Flash</div>
-                <div id="winner-badge-deepseek" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-deepseek">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-deepseek"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Chatbots & Virtual Assistants</h3><p>High-volume conversational interfaces. DeepSeek V4 Flash's 93% cheaper output pricing makes it the clear winner for chat applications where cost per message matters most.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Flash</span></div></div>
-            <div class="use-case-card"><h3>Chinese Language Processing</h3><p>Natural Chinese language understanding and generation. Kimi K2.6 is specifically optimized for Chinese text — if your primary audience is Chinese-speaking, the quality advantage may justify the 91% cost premium.</p><div class="recommendation"><span class="pick-kimi">Better quality: Kimi K2.6</span></div></div>
-            <div class="use-case-card"><h3>Long Document Processing</h3><p>Processing research papers, legal contracts, or technical documentation. DeepSeek V4 Flash's 1M context window (vs Kimi's 256K) handles 4x longer documents while costing 91% less.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Flash</span></div></div>
-            <div class="use-case-card"><h3>AI Agents & Autonomous Tasks</h3><p>Multi-step autonomous workflows. Output-heavy by nature — DeepSeek V4 Flash's 93% cheaper output pricing makes a massive difference at scale. Kimi may be worth it for Chinese-market agents.</p><div class="recommendation"><span class="pick-deepseek">Value: DeepSeek V4 Flash</span> | <span class="pick-kimi">Chinese market: Kimi K2.6</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Switching to save on API costs?</h2>
-        <p>APIpulse shows you migration code, cost comparisons, and optimization tips for all 67 models.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Migration code</strong> snippets included</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Save up to 95%</strong> on API costs</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is DeepSeek V4 Flash than Kimi K2.6?</h3><p>DeepSeek V4 Flash costs $0.14/$0.28 per 1M tokens. Kimi K2.6 costs $0.95/$4.00 per 1M tokens. DeepSeek is 85% cheaper on input and 93% cheaper on output — a 91% overall savings for most workloads.</p></div>
-        <div class="faq-item"><h3>Which has a larger context window?</h3><p>DeepSeek V4 Flash has a 1M token context window, while Kimi K2.6 has a 256K token context window. DeepSeek offers 3.9x the context at a fraction of the price.</p></div>
-        <div class="faq-item"><h3>When should I choose Kimi K2.6 over DeepSeek V4 Flash?</h3><p>Choose Kimi K2.6 when you need Moonshot's specific capabilities — particularly strong Chinese language processing or ecosystem integrations. Choose DeepSeek V4 Flash when cost is your primary concern — it's 85-93% cheaper with a 4x larger context window.</p></div>
-        <div class="faq-item"><h3>Is DeepSeek V4 Flash good enough to replace Kimi K2.6?</h3><p>For most budget-conscious use cases — yes. DeepSeek V4 Flash handles chatbots, code generation, and content creation at 91% lower cost with a larger context window. However, Kimi K2.6 may have advantages for Chinese-language tasks.</p></div>
-    </div>
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <a href="pricing-dashboard.html" style="display:block;padding:16px;border-radius:12px;border:1px solid rgba(34,197,94,0.3);background:rgba(34,197,94,0.05);text-decoration:none;transition:all 0.2s;margin-bottom:20px;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='rgba(34,197,94,0.3)'">
             <div style="font-size:14px;font-weight:700;color:var(--green);">📋 Full Pricing Dashboard →</div>

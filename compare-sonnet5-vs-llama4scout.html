@@ -113,109 +113,23 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button><div class="nav-links"><a href="calculator.html">Calculator</a><a href="compare.html">Compare</a><a href="cost-explorer.html">Explorer</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="index.html#free-tools" class="nav-cta">Free Tools →</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button></div></div></nav>
+    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;"><strong style="color:#dc2626;">🔥 Limited time:</strong> <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a></p>
-    </div>
-    <div class="compare-hero">
-        <span class="tier-badge tier-mid">Mid</span> <span class="tier-badge tier-open">Open-Weight</span>
-        <h1>Claude Sonnet 5 <span class="vs">vs</span> Llama 4 Scout</h1>
-        <p class="subtitle">Anthropic's premium mid-tier vs Meta's open-weight budget king. Llama 4 Scout at $0.18/$0.59 is 94% cheaper on input and 96% cheaper on output than Sonnet 5 at $3/$15 — with a massive 10M context window.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Claude Sonnet 5 (Anthropic)</th><th>Llama 4 Scout (Meta)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$3.00</td><td class="cheaper">$0.18</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$15.00</td><td class="cheaper">$0.59</td></tr>
-                <tr><td>Context Window</td><td>1M tokens</td><td class="cheaper">10M tokens</td></tr>
-                <tr><td>Tier</td><td>Mid</td><td>Open-Weight</td></tr>
-                <tr><td>Provider</td><td>Anthropic</td><td>Meta</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Llama is 94% cheaper on input — how much would you save switching?</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-sonnet5">
-                <div class="provider">Anthropic</div><div class="model-name">Claude Sonnet 5</div>
-                <div id="winner-badge-sonnet5" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-sonnet5">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-sonnet5"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-llama4scout">
-                <div class="provider">Meta</div><div class="model-name">Llama 4 Scout</div>
-                <div id="winner-badge-llama4scout" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-llama4scout">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-llama4scout"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-llama4scout"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-llama4scout"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-llama4scout"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="also-premium">
-        <h2>Other Open-Weight Models</h2>
-        <div class="premium-grid">
-            <div class="premium-card"><div class="name">Llama 4 Scout</div><div class="provider">Meta</div><div class="price">$0.18 / $0.59 per 1M</div><div class="ctx">10M context</div></div>
-            <div class="premium-card"><div class="name">DeepSeek V4 Pro</div><div class="provider">DeepSeek</div><div class="price">$0.27 / $1.10 per 1M</div><div class="ctx">128K context</div></div>
-            <div class="premium-card"><div class="name">Qwen 3 235B</div><div class="provider">Alibaba</div><div class="price">$0.20 / $0.80 per 1M</div><div class="ctx">128K context</div></div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Code Generation</h3><p>Sonnet 5 at $3/$15 produces higher-quality code with better reasoning. Llama 4 Scout at $0.18/$0.59 handles standard code tasks at 94% lower input cost — ideal for boilerplate, utility scripts, and high-volume code assistance.</p><div class="recommendation"><span class="pick-llama">Budget code: Llama 4 Scout</span> | <span class="pick-sonnet5">Complex code: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Llama 4 Scout dominates on cost with 96% cheaper output. At 1M input + 500K output, Llama costs $0.48 vs Sonnet 5's $10.50. Perfect for blogs, marketing copy, and high-volume content where quality is "good enough."</p><div class="recommendation"><span class="pick-llama">Better value: Llama 4 Scout</span></div></div>
-            <div class="use-case-card"><h3>Data Analysis</h3><p>Llama 4 Scout's 10M context window is 10x larger than Sonnet 5's 1M — enabling massive document analysis at a fraction of the cost. Sonnet 5 still wins on reasoning quality for complex multi-step analysis.</p><div class="recommendation"><span class="pick-llama">Huge docs: Llama 4 Scout</span> | <span class="pick-sonnet5">Complex reasoning: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Batch Processing</h3><p>For high-volume batch workloads, Llama 4 Scout's 94-96% cost savings are transformative. At 10K requests/day, Llama saves $3,006/month vs Sonnet 5. The quality trade-off is almost always acceptable for batch jobs.</p><div class="recommendation"><span class="pick-llama">Better value: Llama 4 Scout</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Comparing cloud vs open-weight?</h2>
-        <p>APIpulse lets you compare all 67 models including Sonnet 5 ($3/$15) and Llama 4 Scout ($0.18/$0.59), save scenarios, and export cost reports for your team.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 96%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is Llama 4 Scout than Sonnet 5?</h3><p>Llama 4 Scout costs $0.18/$0.59 per 1M tokens vs Sonnet 5 at $3.00/$15.00 — 94% cheaper on input and 96% cheaper on output. At 1M input + 500K output tokens/month, Llama costs $0.48 vs Sonnet 5's $10.50, saving $10.02/month ($120.24/year).</p></div>
-        <div class="faq-item"><h3>Is Sonnet 5 better than Llama 4 Scout?</h3><p>Sonnet 5 ($3/$15) excels at complex reasoning, code generation, and nuanced analysis. Llama 4 Scout ($0.18/$0.59) is an open-weight model with 10M context that's 94-96% cheaper — excellent for high-volume tasks, budget-constrained projects, and workloads where cost dominates the decision.</p></div>
-        <div class="faq-item"><h3>When should I choose Llama 4 Scout over Sonnet 5?</h3><p>Choose Llama 4 Scout for high-volume batch processing, budget-constrained projects, tasks requiring massive context (up to 10M tokens), and workloads where 94-96% cost savings outweigh the quality gap. Choose Sonnet 5 for complex code generation, deep reasoning, and tasks requiring peak performance.</p></div>
-    </div>
+
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

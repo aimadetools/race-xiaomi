@@ -130,20 +130,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
-                <a href="tools.html">Tools</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-                <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -152,118 +147,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="blog-hero">
-        <p class="blog-meta">May 31, 2026 · 12 min read</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-        <h1>How to Price AI Features in Your SaaS: Cost Per User Breakdown</h1>
-        <p>Every SaaS founder adding AI features faces the same question: how much will it cost, and what should I charge? Here's the real math with 2026 pricing data.</p>
-    </div>
-
-    <article class="blog-content">
-        <h2>The Real Cost of AI Per User</h1>
-        <p>Let's cut through the hype. If you're adding AI features to your SaaS, you need to know exactly what each user interaction costs before you can price it profitably. Here's what the numbers actually look like in 2026.</p>
-
-        <p>Consider a typical SaaS AI feature: <strong>10 interactions per user per day</strong>, with <strong>500 input tokens</strong> (system prompt + context + user message) and <strong>200 output tokens</strong> (AI response). That's a reasonable baseline for an AI assistant, search, or content generation feature.</p>
-
-        <p>Here's what that costs per user per month across different model tiers:</p>
-
-        <table class="cost-table">
-            <thead>
-                <tr>
-                    <th>Model Tier</th>
-                    <th>Example Model</th>
-                    <th>Cost/User/Month</th>
-                    <th>Annual per 1K Users</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Budget</strong></td>
-                    <td>GPT-4o mini ($0.15/$0.60)</td>
-                    <td>$0.07</td>
-                    <td>$840</td>
-                </tr>
-                <tr>
-                    <td><strong>Budget</strong></td>
-                    <td>Gemini 2.5 Flash-Lite ($0.075/$0.30)</td>
-                    <td>$0.03</td>
-                    <td>$360</td>
-                </tr>
-                <tr>
-                    <td><strong>Budget</strong></td>
-                    <td>DeepSeek V4 Flash ($0.14/$0.28)</td>
-                    <td>$0.05</td>
-                    <td>$600</td>
-                </tr>
-                <tr>
-                    <td><strong>Mid-tier</strong></td>
-                    <td>GPT-5 ($1.25/$10.00)</td>
-                    <td>$0.90</td>
-                    <td>$10,800</td>
-                </tr>
-                <tr>
-                    <td><strong>Mid-tier</strong></td>
-                    <td>Claude Sonnet 4.6 ($3.00/$15.00)</td>
-                    <td>$1.80</td>
-                    <td>$21,600</td>
-                </tr>
-                <tr>
-                    <td><strong>Premium</strong></td>
-                    <td>GPT-5.5 ($5.00/$30.00)</td>
-                    <td>$4.50</td>
-                    <td>$54,000</td>
-                </tr>
-                <tr>
-                    <td><strong>Premium</strong></td>
-                    <td>Claude Opus 4.8 ($5.00/$25.00)</td>
-                    <td>$3.75</td>
-                    <td>$45,000</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>The spread is enormous: <strong>$0.03 to $4.50 per user per month</strong> for the exact same workload. Your model choice is the single biggest cost lever.</p>
-
-        <h2>The 3-5x Pricing Rule</h2>
-        <p>Most successful AI SaaS companies price their AI features at <strong>3-5x their API cost</strong> to maintain healthy margins. Here's why:</p>
-
-        <div class="pricing-grid">
-            <div class="pricing-option">
-                <h4>Conservative (3x markup)</h4>
-                <p>API cost: $1.00/user/mo → Charge: $3.00/user/mo<br>
-                <strong>Margin: 67%</strong><br>
-                Best for: High-volume, price-sensitive markets</p>
-            </div>
-            <div class="pricing-option">
-                <h4>Standard (4x markup)</h4>
-                <p>API cost: $1.00/user/mo → Charge: $4.00/user/mo<br>
-                <strong>Margin: 75%</strong><br>
-                Best for: Most SaaS products</p>
-            </div>
-            <div class="pricing-option">
-                <h4>Premium (5x markup)</h4>
-                <p>API cost: $1.00/user/mo → Charge: $5.00/user/mo<br>
-                <strong>Margin: 80%</strong><br>
-                Best for: Enterprise, niche verticals</p>
-            </div>
-            <div class="pricing-option">
-                <h4>Value-based</h4>
-                <p>Price based on ROI delivered, not cost.<br>
-                If AI saves users 10 hours/mo → charge $50/mo<br>
-                <strong>Margin: 90%+</strong><br>
-                Best for: B2B productivity tools</p>
-            </div>
-        </div>
 
         <h2>Real Pricing Models That Work</h2>
 

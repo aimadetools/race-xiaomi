@@ -143,172 +143,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-                <a href="api-docs.html">API</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
 
-    <main id="main" class="content">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-        <a href="blog.html" class="back-link">← Back to Blog</a>
-
-        <div class="post-meta">
-            <span class="post-tag">Developer Tools</span>
-            <span>Jun 3, 2026</span>
-            <span>4 min read</span>
-        </div>
-
-        <h1>Add Live AI API Pricing Badges to Your README</h1>
-        <p class="subtitle">Show current AI API costs in your GitHub README, documentation, or blog with a single line of markdown. Free, auto-updating SVG badges for 67 models.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <div class="badge-preview">
-            <p style="margin-bottom:12px;font-size:14px;color:var(--text-muted);">Live badges — these update automatically when prices change:</p>
-            <img src="/api/badge?model=openai-gpt5" alt="GPT-5 Pricing">
-            <img src="/api/badge?model=anthropic-sonnet" alt="Claude Sonnet Pricing">
-            <img src="/api/badge?model=google-flash" alt="Gemini Flash Pricing">
-            <img src="/api/badge?model=deepseek-v4-pro" alt="DeepSeek V4 Pro Pricing">
-            <img src="/api/badge?model=mistral-large" alt="Mistral Large Pricing">
-            <img src="/api/badge?model=llama-4-scout" alt="Llama 4 Scout Pricing">
-        </div>
-
-        <h2>Why Pricing Badges?</h2>
-        <p>If you're building with AI APIs, your README probably mentions which models you use. But pricing changes fast — GPT-5 launched at different prices than GPT-4o, DeepSeek V4 undercut everyone, and providers adjust pricing regularly.</p>
-        <p>A <strong>live pricing badge</strong> keeps your documentation accurate without manual updates. When a provider changes their prices, your badge reflects it automatically.</p>
-
-        <h2>One Line of Markdown</h2>
-        <p>Add a pricing badge to any GitHub README, GitLab docs, or markdown file:</p>
-        <pre><code>[![GPT-5 Pricing](https://getapipulse.com/api/badge?model=openai-gpt5)](https://getapipulse.com)</code></pre>
-        <p>That's it. The badge shows the model name and current input/output pricing per 1M tokens. Clicking it takes visitors to APIpulse for full details.</p>
-
-        <h2>Available Models</h2>
-        <p>All 67 models across 10 providers have badges. Here are the most popular:</p>
-        <ul>
-            <li><code>openai-gpt5</code> — GPT-5</li>
-            <li><code>openai-gpt5-mini</code> — GPT-5 mini</li>
-            <li><code>openai-gpt4o-mini</code> — GPT-4o mini</li>
-            <li><code>anthropic-sonnet46</code> — Claude Sonnet 4.6</li>
-            <li><code>anthropic-haiku</code> — Claude Haiku 4.5</li>
-            <li><code>google-flash</code> — Gemini 2.5 Flash-Lite</li>
-            <li><code>deepseek-v4-pro</code> — DeepSeek V4 Pro</li>
-            <li><code>deepseek-v4-flash</code> — DeepSeek V4 Flash</li>
-            <li><code>mistral-large</code> — Mistral Large 3</li>
-            <li><code>llama-4-scout</code> — Llama 4 Scout</li>
-        </ul>
-        <p>See the <a href="api-docs.html" style="color:var(--accent);">full API docs</a> for all 51 model IDs.</p>
-
-        <h2>Embed in HTML</h2>
-        <p>For documentation sites, blogs, or any HTML page:</p>
-        <pre><code>&lt;a href="https://getapipulse.com"&gt;
-  &lt;img src="https://getapipulse.com/api/badge?model=openai-gpt5" alt="GPT-5 Pricing"&gt;
-&lt;/a&gt;</code></pre>
-
-        <h2>Multiple Badges</h2>
-        <p>Show pricing for all the models your project supports:</p>
-        <pre><code>## Supported Models
-[![GPT-5](https://getapipulse.com/api/badge?model=openai-gpt5)](https://getapipulse.com)
-[![Claude Sonnet](https://getapipulse.com/api/badge?model=anthropic-sonnet)](https://getapipulse.com)
-[![Gemini Flash](https://getapipulse.com/api/badge?model=google-flash)](https://getapipulse.com)</code></pre>
-
-        <h2>Programmatic Access</h2>
-        <p>Need the badge data as JSON for your own tools? Use the <code>format</code> parameter:</p>
-        <pre><code># Get embed code as JSON
-curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
-
-# Response:
-{
-  "model": "GPT-5",
-  "provider": "OpenAI",
-  "pricing": { "input_per_1m": 1.25, "output_per_1m": 10.00 },
-  "badge_url": "https://getapipulse.com/api/badge?model=openai-gpt5",
-  "embed": {
-    "markdown": "[![GPT-5 Pricing](https://getapipulse.com/api/badge?model=openai-gpt5)](https://getapipulse.com)",
-    "html": "&lt;a href=\"https://getapipulse.com\"&gt;&lt;img src=\"...\"&gt;&lt;/a&gt;"
-  }
-}</code></pre>
-        <p>You can also get just the markdown (<code>format=md</code>) or just the URL (<code>format=url</code>).</p>
-
-        <h2>How It Works</h2>
-        <p>The badge endpoint is a <a href="https://vercel.com/docs/functions" style="color:var(--accent);">Vercel Serverless Function</a> that:</p>
-        <ol>
-            <li>Looks up the model's current pricing from our database</li>
-            <li>Generates an SVG badge with the model name and prices</li>
-            <li>Returns it as an <code>image/svg+xml</code> response</li>
-            <li>Caches for 24 hours (badges update daily)</li>
-        </ol>
-        <p>The badge colors match each provider's brand — green for OpenAI, orange for Anthropic, blue for Google, etc.</p>
-
-        <h2>Use Cases</h2>
-        <ul>
-            <li><strong>Open-source AI projects</strong> — Show which models your tool supports with current pricing</li>
-            <li><strong>API wrapper libraries</strong> — Display cost info for each supported provider</li>
-            <li><strong>Documentation sites</strong> — Keep pricing accurate without manual updates</li>
-            <li><strong>Blog posts</strong> — Add visual pricing context to comparison articles</li>
-            <li><strong>Internal wikis</strong> — Help your team track which models you're using and their costs</li>
-        </ul>
-
-        <div class="cta-inline">
-            <p><strong>Explore all 67 models and their pricing</strong></p>
-            <a href="api-docs.html" class="btn-primary">View API Documentation</a>
-        </div>
-            <p style="margin-top:8px;font-size:14px;"> — See if you're overpaying for AI APIs</p>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        
-
-        <h2>Full API</h2>
-        <p>The badge endpoint is part of the <a href="api-docs.html" style="color:var(--accent);">APIpulse LLM Pricing API</a> — a free, no-auth-required API for AI pricing data. Other endpoints include:</p>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        <ul>
-            <li><code>/api/pricing</code> — Get all 67 models with pricing data</li>
-            <li><code>/api/calculate</code> — Calculate costs for your specific usage</li>
-            <li><code>/api/cheapest</code> — Find the cheapest model for your use case</li>
-            <li><code>/api/badge</code> — SVG pricing badges (this post)</li>
-        </ul>
-
-        <div class="related">
-            <h3>Related</h3>
-            <a href="api-docs.html">LLM Pricing API — Full Documentation</a>
-            <a href="blog-ai-api-cost-comparison-tool.html">AI API Cost Comparison Tool</a>
-            <a href="blog-cost-per-request.html">AI API Cost Per Request Calculator</a>
-            <a href="calculator.html">Interactive Cost Calculator</a>
-        </div>
-
-        <div class="cta-box" style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border-color:rgba(34,197,94,0.3);">
-            <h3>🎯 Rate Your API Setup in 30 Seconds</h3>
-            <p>Get an A+ to F grade on your AI API costs. See how you compare and find cheaper alternatives instantly.</p>
-            <a href="api-cost-score.html" class="btn" style="background:var(--green);color:white;">Get Your Cost Score →</a>
-        </div>
-        <div class="cta-box" style="background:linear-gradient(135deg,var(--accent-bg),rgba(99,102,241,0.02));border-color:rgba(99,102,241,0.3);">
-            <h3>📊 Generate Your Personalized API Cost Report</h3>
-            <p>Select your model, enter your monthly spend, and get a custom savings report with cheaper alternatives — free, in 60 seconds.</p>
-        </div>
-        <div class="share-section">
-            <p>Found this useful? Share it with your team:</p>
-            <a href="https://twitter.com/intent/tweet?text=Add%20live%20AI%20API%20pricing%20badges%20to%20your%20README%20%E2%80%94%20free%20SVG%20badges%20for%2034%20models%20%F0%9F%94%A5&url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-pricing-badges.html" class="share-btn" target="_blank" rel="noopener">Share on X</a>
-        </div>
-    <div style="max-width:700px;margin:0 auto 32px;padding:0 24px;"><div style="padding:20px;border-radius:12px;border:1px solid var(--green);background:rgba(0,200,120,0.05);"><div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:4px;">💸 Looking for DeepSeek V4 Flash Alternatives?</div><div style="font-size:14px;color:var(--text-secondary);margin-bottom:8px;">5 models ranked by cost — some offer better quality at similar prices.</div><a href="deepseekv4flash-alternatives.html" style="font-size:14px;color:var(--accent);font-weight:600;text-decoration:none;">See 5 DeepSeek V4 Flash Alternatives →</a></div></div>
+    <main id="main">
 <div style="max-width:700px;margin:0 auto 32px;padding:0 24px;"><div style="padding:20px;border-radius:12px;border:1px solid var(--green);background:rgba(0,200,120,0.05);"><div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:4px;">💸 Looking for Sonnet 4.6 Alternatives?</div><div style="font-size:14px;color:var(--text-secondary);margin-bottom:8px;">5 models ranked by cost — some are 90% cheaper.</div><a href="sonnet46-alternatives.html" style="font-size:14px;color:var(--accent);font-weight:600;text-decoration:none;">See 5 Sonnet 4.6 Alternatives →</a></div></div>
 <div style="max-width:700px;margin:0 auto 32px;padding:0 24px;"><div style="padding:20px;border-radius:12px;border:1px solid var(--green);background:rgba(0,200,120,0.05);"><div style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:4px;">💸 Looking for Llama 4 Scout Alternatives?</div><div style="font-size:14px;color:var(--text-secondary);margin-bottom:8px;">5 models ranked by cost — some are 95% cheaper.</div><a href="llama4scout-alternatives.html" style="font-size:14px;color:var(--accent);font-weight:600;text-decoration:none;">See 5 Llama 4 Scout Alternatives →</a></div></div>
 

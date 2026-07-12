@@ -183,125 +183,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-mid">Mid</span> <span class="tier-badge tier-premium">Premium</span>
-        <h1>GPT-5.4 <span class="vs">vs</span> GPT-5.5</h1>
-        <p class="subtitle">OpenAI's mid-tier at $2.50/$15 vs premium at $5/$30. GPT-5.5 is 2x more expensive but offers 2.6x the context window (1.05M vs 400K). Is the premium worth it for your workload?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5.4 (OpenAI)</th><th>GPT-5.5 (OpenAI)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="cheaper">$2.50</td><td class="pricier">$5.00</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$15.00</td><td class="pricier">$30.00</td></tr>
-                <tr><td>Context Window</td><td>400K tokens</td><td class="cheaper">1.05M tokens</td></tr>
-                <tr><td>Tier</td><td>Mid</td><td>Premium</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>OpenAI</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">See the real price difference between GPT-5.4 and GPT-5.5 for your specific workload.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gpt54">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5.4</div>
-                <div id="winner-badge-gpt54" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt54">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt54"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt54"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt54"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt54"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-gpt55">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5.5</div>
-                <div id="winner-badge-gpt55" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt55">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt55"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="also-premium">
-        <h2>Other OpenAI Models</h2>
-        <div class="premium-grid">
-            <div class="premium-card"><div class="name">GPT-5</div><div class="provider">OpenAI</div><div class="price">$1.25 / $10 per 1M</div><div class="ctx">272K context</div></div>
-            <div class="premium-card"><div class="name">GPT-5.5 Pro</div><div class="provider">OpenAI</div><div class="price">$30 / $180 per 1M</div><div class="ctx">1.05M context</div></div>
-            <div class="premium-card"><div class="name">GPT-5 mini</div><div class="provider">OpenAI</div><div class="price">$0.25 / $2 per 1M</div><div class="ctx">272K context</div></div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Long-Document Processing</h3><p>GPT-5.5's 1.05M context window (2.6x GPT-5.4's 400K) makes it the clear choice for processing long documents, legal contracts, research papers, and large codebases. If your workload consistently exceeds 400K tokens, GPT-5.5 is your only option — the 2x price premium is justified by the context requirement.</p><div class="recommendation"><span class="pick-gpt55">Larger context: GPT-5.5</span></div></div>
-            <div class="use-case-card"><h3>Code Generation & Debugging</h3><p>Both models handle coding tasks well. GPT-5.4 at $2.50/$15 delivers strong code quality for most development workflows. GPT-5.5 at $5/$30 may have an edge on the most complex multi-file refactoring tasks. For most coding work where context stays under 400K, GPT-5.4 offers better value at half the price.</p><div class="recommendation"><span class="pick-gpt54">Better value: GPT-5.4</span> | <span class="pick-gpt55">Complex refactoring: GPT-5.5</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, marketing copy, documentation, creative writing. GPT-5.4 at $2.50/$15 produces high-quality content at half the output cost of GPT-5.5 ($30/1M). For bulk content generation where context stays manageable, GPT-5.4's 50% savings on output tokens add up quickly at scale.</p><div class="recommendation"><span class="pick-gpt54">Better value: GPT-5.4</span></div></div>
-            <div class="use-case-card"><h3>Complex Reasoning & Analysis</h3><p>Multi-step reasoning, research synthesis, nuanced analysis. GPT-5.5's premium tier may deliver meaningfully better quality on the most complex tasks. If your use case demands the absolute best reasoning (financial analysis, medical research, legal reasoning), the 2x premium may be justified. For standard analysis tasks, GPT-5.4 is sufficient.</p><div class="recommendation"><span class="pick-gpt55">Peak quality: GPT-5.5</span> | <span class="pick-gpt54">Standard analysis: GPT-5.4</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Comparing OpenAI models?</h2>
-        <p>APIpulse lets you compare all 67 models including GPT-5.4 ($2.50/$15) and GPT-5.5 ($5/$30), save scenarios, and export cost reports for your team.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 50%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much more expensive is GPT-5.5 than GPT-5.4?</h3><p>GPT-5.5 costs $5.00/$30.00 per 1M tokens vs GPT-5.4 at $2.50/$15.00 — exactly 2x more on both input and output. For a typical workload of 1M input + 500K output tokens/month, GPT-5.4 costs $10 vs GPT-5.5's $20, a $10/month difference. At 10M input + 5M output, the gap grows to $100/month. The price difference is consistent and predictable.</p></div>
-        <div class="faq-item"><h3>Is GPT-5.5 worth 2x the price?</h3><p>It depends on your needs. GPT-5.5 offers a 1.05M context window (2.6x GPT-5.4's 400K) and premium-tier quality. If you need the larger context for long documents or the highest quality on complex reasoning, the 2x premium is justified. For most production workloads where 400K context suffices, GPT-5.4 at half the price offers better value.</p></div>
-        <div class="faq-item"><h3>Which has a larger context window?</h3><p>GPT-5.5 has a much larger context at 1.05M tokens vs GPT-5.4's 400K tokens — 2.6x more context. If your workload involves long documents, large codebases, or extended conversations exceeding 400K tokens, GPT-5.5 is your only option between these two. The context difference is the primary justification for the 2x price premium.</p></div>
-        <div class="faq-item"><h3>When should I use GPT-5.4 over GPT-5.5?</h3><p>Choose GPT-5.4 ($2.50/$15) for most production workloads — content generation, code assistance, chatbots, data analysis, and any task where 400K context is sufficient. You get strong mid-tier quality at half the price. Choose GPT-5.5 ($5/$30) when you need the 1.05M context window, require the absolute best reasoning quality, or want premium-tier capabilities.</p></div>
-        <div class="faq-item"><h3>Can GPT-5.4 handle the same tasks as GPT-5.5?</h3><p>For most production workloads, GPT-5.4 delivers competitive quality at half the price. It handles coding, content generation, analysis, and general reasoning well. GPT-5.5 excels on the most complex multi-step reasoning tasks and offers 2.6x more context. The quality gap is meaningful but not dramatic — the price gap is exactly 2x. For 80%+ of use cases, GPT-5.4 offers better value per dollar spent.</p></div>
-    </div>
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

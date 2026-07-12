@@ -215,11 +215,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -227,152 +232,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-        <div class="content">
-            <a href="blog.html" class="back-link">← Back to Blog</a>
-            <div class="post-meta">
-                <span class="post-tag">Guide</span>
-                <span>May 11, 2026</span>
-                <span>8 min read</span>
-            </div>
-            <div class="article">
-                <h1>How to Set Up AI API Cost Alerts: Never Get Surprise Bills Again</h1>
-                <p class="subtitle">A $2,400 surprise bill taught this lesson the hard way. Here's how to set up cost alerts, budget limits, and real-time monitoring so it never happens to you.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-                <p>One indie hacker's GPT-4 bill hit $2,400 in a weekend because a loop in their code kept calling the API. Another team's chatbot went viral on Reddit and ran up $800 in 24 hours before they noticed. These aren't hypotheticals — they're real stories from the AI developer community.</p>
-
-                <p>The problem isn't that AI APIs are expensive. It's that <strong>most providers don't warn you until the bill arrives</strong>. By then, the damage is done. The fix is simple: set up cost alerts before you need them.</p>
-
-                <h2>Why Default Billing Notifications Aren't Enough</h2>
-
-                <p>Every major AI provider has some form of billing notification, but they're all inadequate:</p>
-
-                <table class="alert-table">
-                    <thead>
-                        <tr>
-                            <th>Provider</th>
-                            <th>Default Alert</th>
-                            <th>Problem</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>OpenAI</td>
-                            <td>Email at $100, $500, $1000</td>
-                            <td>Fixed thresholds, no custom limits</td>
-                        </tr>
-                        <tr>
-                            <td>Anthropic</td>
-                            <td>Email at usage milestones</td>
-                            <td>Delayed by 24-48 hours</td>
-                        </tr>
-                        <tr>
-                            <td>Google</td>
-                            <td>Budget alerts in Cloud Console</td>
-                            <td>Requires manual setup, no real-time</td>
-                        </tr>
-                        <tr>
-                            <td>DeepSeek</td>
-                            <td>Balance notifications</td>
-                            <td>Prepaid model — alerts when balance drops</td>
-                        </tr>
-                        <tr>
-                            <td>Mistral</td>
-                            <td>Usage dashboard only</td>
-                            <td>No email alerts on most plans</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p>The gap: <strong>none of these alert you in real-time when a spike happens</strong>. By the time you get an email, the damage is already done. You need alerts that fire within minutes, not hours.</p>
-
-                <h2>The Three-Layer Alert Strategy</h2>
-
-                <p>The most effective cost monitoring uses three layers, each catching a different type of problem:</p>
-
-                <div class="verdict-box">
-                    <div class="verdict-label">The Three Layers</div>
-                    <ul style="color:var(--text-secondary);margin:0;">
-                        <li><strong>Layer 1: Daily budget cap</strong> — Hard stop when daily spending exceeds your limit</li>
-                        <li><strong>Layer 2: Rate spike detection</strong> — Alert when hourly spending jumps 3x above average</li>
-                        <li><strong>Layer 3: Monthly ceiling</strong> — Final safety net before the bill arrives</li>
-                    </ul>
-                </div>
-
-                <h3>Layer 1: Daily budget cap</h3>
-                <p>Set a hard daily limit. If your app typically spends $5/day, set a cap at $15 — enough headroom for normal variance, but not enough to cause a disaster.</p>
-
-                <p>OpenAI lets you set this in the billing settings. For Anthropic and Google, you'll need to implement it in code:</p>
-
-                <pre><code>// Simple daily budget tracker
-const DAILY_BUDGET = 15.00; // $15/day max
-let dailySpend = 0;
-
-async function callWithBudgetCheck(model, prompt) {
-  const estimatedCost = estimateCost(model, prompt);
-
-  if (dailySpend + estimatedCost > DAILY_BUDGET) {
-    // Log the blocked request
-    window.trackEvent('budget_limit_hit', {
-      model, estimated_cost: estimatedCost,
-      daily_spend: dailySpend
-    });
-    throw new Error('Daily budget limit reached');
-  }
-
-  const result = await callLLM(model, prompt);
-  dailySpend += result.cost;
-  return result;
-}
-
-// Reset at midnight UTC
-const msUntilMidnight = getMsUntilMidnight();
-setTimeout(() => { dailySpend = 0; }, msUntilMidnight);</code></pre>
-
-                <h3>Layer 2: Rate spike detection</h3>
-                <p>This catches the "code loop" scenario — where a bug causes your app to hammer the API. Track your average hourly spend and alert when it spikes:</p>
-
-                <pre><code>// Hourly spike detection
-const hourlyHistory = [];
-const SPIKE_MULTIPLIER = 3; // Alert if 3x above average
-
-function checkForSpike(currentHourSpend) {
-  hourlyHistory.push(currentHourSpend);
-  if (hourlyHistory.length > 24) hourlyHistory.shift();
-
-  const avgSpend = hourlyHistory.reduce((a, b) => a + b, 0) / hourlyHistory.length;
-
-  if (currentHourSpend > avgSpend * SPIKE_MULTIPLIER) {
-    // Send alert (email, Slack, webhook, etc.)
-    sendAlert({
-      type: 'spike_detected',
-      current: currentHourSpend,
-      average: avgSpend,
-      multiplier: (currentHourSpend / avgSpend).toFixed(1)
-    });
-  }
-}</code></pre>
-
-                <h3>Layer 3: Monthly ceiling</h3>
-                <p>Your final safety net. Set this 20% above your expected monthly budget. If Layer 1 and Layer 2 both fail, this catches it:</p>
-
-                <div class="cost-example">
-                    <div class="label">Recommended Monthly Ceilings by App Type</div>
-                    <div class="cost-row"><span class="name">Side project / MVP</span><span class="value">$50/month</span></div>
-                    <div class="cost-row"><span class="name">Small SaaS (early stage)</span><span class="value">$200/month</span></div>
-                    <div class="cost-row"><span class="name">Growing SaaS (post-PMF)</span><span class="value">$1,000/month</span></div>
-                    <div class="cost-row"><span class="name">Enterprise / high-volume</span><span class="value">$5,000+/month</span></div>
-                </div>
 
                 <h2>Provider-Specific Alert Setup</h2>
 

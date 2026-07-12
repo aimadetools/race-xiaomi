@@ -271,13 +271,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -285,113 +288,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="compare-hero">
-        <h1>Open Source vs Commercial LLM <span class="vs">Cost</span> Comparison</h1>
-        <p class="subtitle">Self-hosted Llama 4, Mistral, DeepSeek vs OpenAI, Anthropic, Google APIs — GPU costs, break-even analysis, and which saves you more at every scale.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-
-    <div class="deprecation-banner">
-        <strong>⚠️ Note:</strong> Claude 4 Opus and Claude Sonnet 4 were retired on June 15, 2026. Prices shown for reference only — <a href="claude-4-is-down.html" style="color:#ef4444;font-weight:600;">see migration alternatives →</a>
-    </div>
-
-    <!-- Quick Comparison Table -->
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Type</th>
-                    <th>API Cost (per 1M tokens)</th>
-                    <th>Self-Host Cost (per 1M tokens)</th>
-                    <th>GPU Required</th>
-                    <th>Break-Even</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="model-name">Llama 4 Scout 17B</td>
-                    <td>Open Source</td>
-                    <td class="cheapest">$0.11 in / $0.34 out (via Together)</td>
-                    <td class="cheapest">$0.06 in / $0.08 out</td>
-                    <td>1x H100</td>
-                    <td>~30M tokens/mo</td>
-                </tr>
-                <tr>
-                    <td class="model-name">Mistral Large</td>
-                    <td>Open Source</td>
-                    <td>$2/$6 (via Mistral API)</td>
-                    <td>$0.30/$0.45</td>
-                    <td>2x H100</td>
-                    <td>~60M tokens/mo</td>
-                </tr>
-                <tr>
-                    <td class="model-name">DeepSeek V4 Pro</td>
-                    <td>Open Source</td>
-                    <td>$0.44/$0.87 (DeepSeek API)</td>
-                    <td>$0.15/$0.22</td>
-                    <td>1x H100</td>
-                    <td>~40M tokens/mo</td>
-                </tr>
-                <tr>
-                    <td class="model-name">GPT-4o-mini</td>
-                    <td class="pricier">Commercial</td>
-                    <td>$0.15/$0.60</td>
-                    <td>N/A</td>
-                    <td>API only</td>
-                    <td>N/A — cheapest at low volume</td>
-                </tr>
-                <tr>
-                    <td class="model-name">Claude Sonnet 4 <span style="color:#ef4444;font-size:12px;font-weight:600;">(Retired)</span></td>
-                    <td class="pricier">Commercial</td>
-                    <td>$3/$15</td>
-                    <td>N/A</td>
-                    <td>API only</td>
-                    <td>N/A</td>
-                </tr>
-                <tr>
-                    <td class="model-name">GPT-4o</td>
-                    <td class="pricier">Commercial</td>
-                    <td>$2.50/$10</td>
-                    <td>N/A</td>
-                    <td>API only</td>
-                    <td>N/A</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Interactive Calculator -->
-    <div class="calculator-section">
-        <h2>Self-Hosted vs API Cost Calculator</h2>
-        <p class="section-sub">Enter your expected usage to see whether self-hosting or API makes more sense for your budget.</p>
-
-        <div class="usage-presets">
-            <button class="preset-btn active" onclick="setPreset('startup')">Startup MVP</button>
-            <button class="preset-btn" onclick="setPreset('growth')">Growth Stage</button>
-            <button class="preset-btn" onclick="setPreset('scale')">Scaling Up</button>
-            <button class="preset-btn" onclick="setPreset('enterprise')">Enterprise</button>
-        </div>
-
-        <div class="calc-grid">
-            <div>
-                <div class="input-group">
-                    <label>Input tokens per month</label>
-                    <input type="number" id="input-tokens" value="10000000" step="1000000">
-                </div>
-                <div class="input-group">
-                    <label>Output tokens per month</label>
-                    <input type="number" id="output-tokens" value="3000000" step="1000000">
-                </div>
-            </div>
             <div>
                 <div class="input-group">
                     <label>Open Source Model</label>

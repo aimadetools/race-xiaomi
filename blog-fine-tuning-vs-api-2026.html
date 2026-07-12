@@ -140,196 +140,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
-                <a href="tools.html">Tools</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
 
-    <main class="content">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-        <div class="breadcrumb"><a href="blog.html">Blog</a> / Fine-Tuning vs API 2026</div>
-        <div class="post-meta">
-            <span>Published May 27, 2026</span>
-            <span>·</span>
-            <span>8 min read</span>
-        </div>
-
-        <h1>Fine-Tuning vs API Calls: When Does Fine-Tuning Actually Save Money?</h1>
-        <p class="subtitle">Everyone says fine-tuning saves money. But do the math before you commit $1,000+ to training — the answer might surprise you.</p>
-
-        <h2>The Fine-Tuning Promise (and Reality)</h2>
-        <p>Fine-tuning sounds like a no-brainer: train a model on your data, get better outputs, pay less per call. But the economics are more nuanced than the pitch. Fine-tuning costs $100-$5,000+ upfront, and the savings per call are often pennies. The question isn't "can I fine-tune?" — it's "does fine-tuning pay for itself at my usage level?"</p>
-
-        <p>We built a <a href="fine-tuning-calculator.html">Fine-Tuning vs API Calculator</a> that does the exact math for your workload. But first, here's the framework to understand the numbers.</p>
-
-        <h2>The Break-Even Formula</h2>
-        <div class="highlight-box">
-            <h3>Break-Even Months = Training Cost / Monthly API Savings</h3>
-            <p>Where <strong>Monthly API Savings</strong> = (API cost without fine-tuning) − (Fine-tuned model cost including premium)</p>
-            <p>If break-even > 12 months, fine-tuning probably isn't worth it for cost alone. If break-even < 6 months, it's a clear win.</p>
-        </div>
-
-        <p>Let's plug in real numbers. Say you use GPT-5 mini ($0.25/$2.00 per 1M tokens) and make 50,000 API calls per month with 800 input tokens and 400 output tokens.</p>
-
-        <table class="comparison-table">
-            <thead>
-                <tr><th>Scenario</th><th>Monthly API Cost</th><th>Monthly Fine-Tuned Cost</th><th>Monthly Savings</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>10K calls/mo</td><td>$480</td><td>$520 (with 2x premium)</td><td class="cheapest">−$40 (API wins)</td></tr>
-                <tr><td>50K calls/mo</td><td>$2,400</td><td>$1,760</td><td class="cheapest">$640</td></tr>
-                <tr><td>100K calls/mo</td><td>$4,800</td><td>$3,200</td><td class="cheapest">$1,600</td></tr>
-                <tr><td>500K calls/mo</td><td>$24,000</td><td>$16,000</td><td class="cheapest">$8,000</td></tr>
-            </tbody>
-        </table>
-        <p>At 50K calls/mo with a $500 training cost, break-even is under 1 month. At 10K calls/mo, fine-tuning actually <em>costs more</em> because the output premium outweighs the token reduction.</p>
-
-        <h2>The Three Variables That Matter</h2>
-
-        <h3>1. Volume (Calls per Month)</h3>
-        <p>This is the #1 factor. Fine-tuning is a fixed cost (training) that unlocks per-call savings. The more calls you make, the faster you recoup. Below 10K calls/mo, fine-tuning almost never saves money on cost alone.</p>
-
-        <h3>2. Output Token Reduction</h3>
-        <p>Fine-tuned models produce shorter, more targeted outputs because they're trained on your specific format. A 30% output reduction is typical for classification tasks. For open-ended generation, expect 10-20%. This reduction is where the real savings come from — it cuts both output cost and latency.</p>
-
-        <h3>3. Fine-Tuning Inference Premium</h3>
-        <p>Fine-tuned models cost more per token than the base model. OpenAI charges roughly 2x for fine-tuned GPT-4o mini. Open-source models you host yourself have 0% premium (but you pay for compute). This premium partially offsets your output token savings.</p>
-
-        <h2>Fine-Tuning Costs by Provider (2026)</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr><th>Model</th><th>Training Cost</th><th>Inference Premium</th><th>Fine-Tuning Available?</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>GPT-4o mini</td><td>$100-500</td><td>~2x</td><td>Yes (OpenAI)</td></tr>
-                <tr><td>GPT-5 mini</td><td>$300-1,500</td><td>~2x</td><td>Yes (OpenAI)</td></tr>
-                <tr><td>GPT-5</td><td>$1,000-5,000</td><td>~2x</td><td>Yes (OpenAI)</td></tr>
-                <tr><td>GPT-5.5</td><td>$5,000+</td><td>~2x</td><td>Yes (OpenAI)</td></tr>
-                <tr><td>DeepSeek V4</td><td>$50-500</td><td>0% (self-host)</td><td>Yes (Together.ai)</td></tr>
-                <tr><td>Llama 4</td><td>$50-500</td><td>0% (self-host)</td><td>Yes (Together.ai)</td></tr>
-                <tr class="cheapest"><td>Claude (any)</td><td>N/A</td><td>N/A</td><td>No</td></tr>
-                <tr class="cheapest"><td>Gemini (any)</td><td>N/A</td><td>N/A</td><td>No</td></tr>
-            </tbody>
-        </table>
-
-        <p><strong>Claude and Gemini don't offer fine-tuning.</strong> If you're using these models, your options are RAG, prompt engineering, or switching to an OpenAI/open-source model.</p>
-
-        <h2>When Fine-Tuning Wins</h2>
-        <ul>
-            <li><strong>High volume (100K+ calls/mo)</strong> — The per-call savings compound fast</li>
-            <li><strong>Consistent prompt structure</strong> — Same format every time (classification, extraction, structured output)</li>
-            <li><strong>Output-heavy workloads</strong> — Fine-tuning reduces output tokens by 30-60%, which is where most of the cost is</li>
-            <li><strong>Quality matters more than cost</strong> — A fine-tuned model that's 30% better may be worth the premium even if it costs more</li>
-            <li><strong>Latency requirements</strong> — Fewer output tokens = faster responses</li>
-        </ul>
-
-        <h2>When the API Wins</h2>
-        <ul>
-            <li><strong>Low volume (under 50K calls/mo)</strong> — Training cost takes too long to recoup</li>
-            <li><strong>Variable prompts</strong> — Wide variety of inputs, changing formats</li>
-            <li><strong>Using Claude or Gemini</strong> — No fine-tuning available, so use RAG instead</li>
-            <li><strong>Rapidly evolving requirements</strong> — Fine-tuned models are static; APIs are always updated</li>
-            <li><strong>Budget constraints</strong> — If you can't afford $500+ upfront training cost</li>
-        </ul>
-
-        <h2>The Decision Framework</h2>
-
-        <div class="highlight-box">
-            <h3>Ask these 5 questions:</h3>
-            <ol>
-                <li>Do I make 50K+ API calls per month? (If no → stick with API)</li>
-                <li>Is my prompt structure consistent? (If no → RAG or prompt engineering)</li>
-                <li>Does fine-tuning reduce my output tokens by 20%+? (If no → minimal savings)</li>
-                <li>Am I using a model that supports fine-tuning? (OpenAI or open-source only)</li>
-                <li>Can I afford the upfront training cost? (If no → start with API, fine-tune later)</li>
-            </ol>
-        </div>
-
-        <h2>The Hybrid Approach</h2>
-        <p>You don't have to choose one or the other. Many teams use a <strong>tiered approach</strong>:</p>
-        <ul>
-            <li><strong>Simple tasks</strong> → Cheap API calls (Flash, GPT-4o mini) — no fine-tuning needed</li>
-            <li><strong>Moderate tasks</strong> → Fine-tuned small model (GPT-4o mini fine-tune) — 30% cost reduction</li>
-            <li><strong>Complex tasks</strong> → Premium API (GPT-5, Claude Sonnet) — quality matters most</li>
-        </ul>
-        <p>This routing strategy can save 40-60% compared to using a single premium model for everything.</p>
-
-        <h2>Try the Calculator</h2>
-        <p>Plug in your actual numbers and see if fine-tuning saves money for your workload:</p>
-
-        <div class="cta-box">
-            <h3>Fine-Tuning vs API Calculator</h3>
-            <p>Enter your model, call volume, and token counts. Get an instant break-even analysis with 12-month savings projection.</p>
-            <a href="fine-tuning-calculator.html">Calculate Your Break-Even →</a>
-        </div>
-
-        <h2>Bottom Line</h2>
-        <p>Fine-tuning is a powerful tool, but it's not a cost-saving silver bullet. At high volumes (100K+ calls/mo), it can save thousands per month. At low volumes, it costs more than it saves. Do the math first — use our <a href="fine-tuning-calculator.html">calculator</a> — then decide based on numbers, not hype.</p>
-
-        <p style="margin-top:40px;"><strong>Related tools:</strong>
-            <a href="calculator.html">Cost Calculator</a> ·
-            <a href="model-switch.html">Model Switch Calculator</a> ·
-            <a href="cost-optimizer.html">Cost Optimizer</a> ·
-            <a href="pipeline.html">Pipeline Calculator</a> ·
-            <a href="token-counter.html">Token Counter</a> ·
-            <a href="roi-calculator.html">ROI Calculator</a>
-        </p>
-            <div class="cta-box" style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border-color:rgba(34,197,94,0.3);">
-            <h3>🎯 Rate Your API Setup in 30 Seconds</h3>
-            <p>Get an A+ to F grade on your AI API costs. See how you compare and find cheaper alternatives instantly.</p>
-            <a href="api-cost-score.html" class="btn" style="background:var(--green);color:white;">Get Your Cost Score →</a>
-        </div>
-        <div class="cta-box" style="background:linear-gradient(135deg,var(--accent-bg),rgba(99,102,241,0.02));border-color:rgba(99,102,241,0.3);">
-            <h3>📊 Generate Your Personalized API Cost Report</h3>
-            <p>Select your model, enter your monthly spend, and get a custom savings report with cheaper alternatives — free, in 60 seconds.</p>
-        </div>
-        <div class="social-share">
-            <a href="https://twitter.com/intent/tweet?text=Fine-Tuning%20vs%20API%20Calls%3A%20When%20Does%20Fine-Tuning%20Actually%20Save%20Money%3F%20%E2%80%94%20APIpulse&url=https%3A%2F%2Fgetapipulse.com%2Fblog-fine-tuning-vs-api-2026.html" target="_blank" rel="noopener" class="share-twitter">Share on X</a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgetapipulse.com%2Fblog-fine-tuning-vs-api-2026.html&title=Fine-Tuning%20vs%20API%20Calls%3A%20When%20Does%20Fine-Tuning%20Actually%20Save%20Money%3F%20%E2%80%94%20APIpulse" target="_blank" rel="noopener" class="share-linkedin">Share on LinkedIn</a>
-            <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgetapipulse.com%2Fblog-fine-tuning-vs-api-2026.html&title=Fine-Tuning+vs+API+Calls%3A+When+Does+Fine-Tuning+Actually+Save+Money%3F+%E2%80%94+APIpulse" target="_blank" rel="noopener" class="share-reddit">Share on Reddit</a>
-        </div>
-
-            <div style="max-width:720px;margin:0 auto 32px;padding:24px;background:var(--bg-secondary);border:1px solid var(--accent);border-radius:12px;text-align:center;">
-                <p style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--text-primary);">Want to optimize your AI API costs?</p>
-                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">APIpulse includes free cost comparisons, exports, and recommendations that can save you up to 40%.</p>
-                <a href="audit.html?from=blog_post" style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:all 0.2s;" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'blog_post'})">Free Cost Audit →</a>
-            </div>
-
-<div style="max-width:700px;margin:0 auto 32px;padding:0 24px;">
-    <div style="padding:20px;border-radius:12px;border:1px solid var(--accent);background:rgba(99,102,241,0.05);">
-        <div style="font-size:16px;font-weight:700;color:var(--accent);margin-bottom:4px;">🔧 Free Embeddable Pricing Widget</div>
-        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:8px;">Add live AI API pricing to your docs, blog, or README with one script tag. 67 models, auto-updating.</div>
-        <a href="widget.html" style="font-size:14px;color:var(--accent);font-weight:600;text-decoration:none;">Get the Free Widget →</a>
-        <a href="mcp.html" style="font-size:14px;color:var(--accent);font-weight:600;text-decoration:none;">Free MCP Server →</a>
-    </div>
-</div>
+    <main id="main">
 
 </main>
 

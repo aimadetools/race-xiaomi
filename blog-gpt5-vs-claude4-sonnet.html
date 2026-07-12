@@ -203,22 +203,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="quiz.html">Quiz</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -227,68 +220,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">GPT-5 vs Claude 4 Sonnet</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Comparison</span>
-            <span class="tier-badge tier-flagship">Flagship</span>
-            <span>May 13, 2026</span>
-        </div>
-
-        <h1>GPT-5 vs Claude 4 Sonnet: Which Flagship Model Should You Use in Production?</h1>
-
-        <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-            <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-        </div>
-
-    <div style="padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;margin:16px 0 24px;">
-        <p style="margin:0;font-size:14px;"><strong>💰 Save money:</strong> Use our <a href="claude-4-is-down.html" style="color:#16a34a;font-weight:600;">free Claude Deprecation Calculator</a> to see exactly what you'll pay after migrating to a replacement model.</p>
-    </div>
-            <div style="padding:16px 20px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🔄 Migration tool:</strong> Use our <a href="claude-4-migration-tool.html" style="color:#6366f1;font-weight:600;">free Claude 4 Migration Tool</a> to compare all 67 alternatives, get exact costs, and see the one-line code change.</p>
-            </div>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>OpenAI's GPT-5 and Anthropic's Claude 4 Sonnet are the two most popular flagship models for production AI applications in 2026. Both offer strong reasoning, code generation, and tool use — but they differ significantly in price, context window, and where each excels. Here's a detailed comparison with real cost breakdowns.</p>
-
-        <h2>Pricing at a Glance</h2>
-        <p>As of May 2026:</p>
-        <ul>
-            <li><strong>GPT-5:</strong> $1.25 per 1M input tokens, $10.00 per 1M output tokens</li>
-            <li><strong>Claude 4 Sonnet:</strong> $3.00 per 1M input tokens, $15.00 per 1M output tokens</li>
-        </ul>
-        <p>GPT-5 is <strong>2.4x cheaper on input</strong> and <strong>1.5x cheaper on output</strong>. For production workloads processing millions of tokens daily, that gap translates to thousands of dollars per month.</p>
-
-        <h2>Context Window</h2>
-        <ul>
-            <li><strong>GPT-5:</strong> 272K tokens</li>
-            <li><strong>Claude 4 Sonnet:</strong> 200K tokens</li>
-        </ul>
-        <p>GPT-5 offers 36% more context. For long documents, codebases, or multi-turn conversations with large histories, GPT-5 gives you more room without chunking. Claude 4 Sonnet's 200K is still generous, but the gap matters for certain workloads.</p>
-
-        <h2>Use Case 1: Production Chatbot</h2>
-        <p>Typical request: ~800 input tokens, ~400 output tokens. At 5,000 requests/day:</p>
-        <div class="cost-example">
-            <div class="label">Monthly cost breakdown</div>
-            <div class="cost-row"><span class="name">GPT-5</span><span class="value">$222.50/mo</span></div>
-            <div class="cost-row"><span class="name">Claude 4 Sonnet</span><span class="value">$480.00/mo</span></div>
-            <div class="cost-row cost-total"><span class="name">Savings with GPT-5</span><span class="value" style="color:var(--green);">$257.50/mo (54%)</span></div>
-        </div>
         <p>At 5K requests/day — a realistic production volume for a mid-size chatbot — GPT-5 saves over $250/month. Scale to 50K requests/day and you're saving $2,575/month ($30,900/year).</p>
 
         <h2>Use Case 2: Code Generation</h2>

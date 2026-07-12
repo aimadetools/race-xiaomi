@@ -141,21 +141,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -164,156 +158,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">Best AI API for Summarization 2026: Quality vs Cost</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Use Cases</span>
-            <span>May 10, 2026</span>
-            <span>9 min read</span>
-        </div>
-        <h1>Best AI API for Summarization 2026: Quality vs Cost</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <p>Text summarization is one of the most common AI API use cases — from condensing news articles to summarizing legal documents, support tickets, and research papers. But not all models are equal at this task, and the price difference between them can be 50x.</p>
-
-        <p>We tested every major LLM API on real-world summarization tasks to find the sweet spot between quality and cost. Here's what we found.</p>
-
-        <h2>The Complete Ranking: Summarization APIs Ranked by Value</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Rank</th>
-                    <th>Model</th>
-                    <th>Input (per 1M)</th>
-                    <th>Output (per 1M)</th>
-                    <th>Quality</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><span class="rank-badge">1</span></td>
-                    <td><strong>Gemini 2.5 Flash-Lite</strong></td>
-                    <td class="winner">$0.10</td>
-                    <td>$0.40</td>
-                    <td>Good</td>
-                </tr>
-                <tr>
-                    <td><span class="rank-badge">2</span></td>
-                    <td><strong>DeepSeek V4 Flash</strong></td>
-                    <td>$0.14</td>
-                    <td class="winner">$0.28</td>
-                    <td>Good</td>
-                </tr>
-                <tr>
-                    <td><span class="rank-badge">3</span></td>
-                    <td><strong>Mistral Small 4</strong></td>
-                    <td>$0.15</td>
-                    <td>$0.60</td>
-                    <td>Good</td>
-                </tr>
-                <tr>
-                    <td><span class="rank-badge">4</span></td>
-                    <td><strong>GPT-4o mini</strong></td>
-                    <td>$0.15</td>
-                    <td>$0.60</td>
-                    <td>Good</td>
-                </tr>
-                <tr>
-                    <td><span class="rank-badge">5</span></td>
-                    <td><strong>GPT-5 mini</strong></td>
-                    <td>$0.25</td>
-                    <td>$2.00</td>
-                    <td>Very Good</td>
-                </tr>
-                <tr>
-                    <td><span class="rank-badge">6</span></td>
-                    <td><strong>Claude Haiku 4.5</strong></td>
-                    <td>$1.00</td>
-                    <td>$5.00</td>
-                    <td>Excellent</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>Detailed Breakdown: Top Picks by Use Case</h2>
-
-        <h3><span class="rank-badge">1</span> Gemini 2.5 Flash-Lite — Best Overall Value</h3>
-        <p>At <strong>$0.10/$0.40 per 1M tokens</strong>, Gemini Flash delivers the best quality-to-cost ratio for summarization. It handles articles, reports, and multi-document summaries with clean, accurate output.</p>
-        <ul>
-            <li><strong>Best for:</strong> High-volume summarization, news aggregation, document condensation</li>
-            <li><strong>Context window:</strong> 1M tokens — can summarize massive documents</li>
-            <li><strong>Quality:</strong> Produces clear, accurate summaries with good compression ratios</li>
-            <li><strong>Monthly cost at 1K summaries/day:</strong> ~$1.50</li>
-        </ul>
-
-        <h3><span class="rank-badge">2</span> DeepSeek V4 Flash — Cheapest Output</h3>
-        <p>At <strong>$0.14/$0.28 per 1M tokens</strong>, DeepSeek has the cheapest output pricing of any model in this comparison. For summarization — an output-heavy task — this matters significantly.</p>
-        <ul>
-            <li><strong>Best for:</strong> Budget-conscious summarization, batch processing</li>
-            <li><strong>Context window:</strong> 1M tokens</li>
-            <li><strong>Quality:</strong> Solid summaries, occasionally misses nuance on complex topics</li>
-            <li><strong>Monthly cost at 1K summaries/day:</strong> ~$1.26</li>
-        </ul>
-
-        <h3><span class="rank-badge">3</span> GPT-5 mini — Best Quality Budget Option</h3>
-        <p>At <strong>$0.25/$2.00 per 1M tokens</strong>, GPT-5 mini costs more than Flash but delivers noticeably better summaries. It captures nuance, handles ambiguity better, and produces more readable output.</p>
-        <ul>
-            <li><strong>Best for:</strong> Customer-facing summaries, executive briefings, high-stakes condensation</li>
-            <li><strong>Context window:</strong> 272K tokens</li>
-            <li><strong>Quality:</strong> Excellent compression with good preservation of key points</li>
-            <li><strong>Monthly cost at 1K summaries/day:</strong> ~$6.75</li>
-        </ul>
-
-        <h3><span class="rank-badge">4</span> Claude Haiku 4.5 — Best for Nuanced Content</h3>
-        <p>At <strong>$1.00/$5.00 per 1M tokens</strong>, Claude Haiku is the premium pick. It excels at summarizing complex, nuanced content — legal documents, research papers, and technical documentation.</p>
-        <ul>
-            <li><strong>Best for:</strong> Legal summarization, research papers, technical documentation</li>
-            <li><strong>Context window:</strong> 200K tokens</li>
-            <li><strong>Quality:</strong> Excellent at preserving nuance and technical accuracy</li>
-            <li><strong>Monthly cost at 1K summaries/day:</strong> ~$18.00</li>
-        </ul>
-
-        <h2>Cost Comparison: Summarizing 1,000 Articles/Day</h2>
-        <p>Assuming each article is ~2,000 input tokens and the summary is ~200 output tokens:</p>
-
-        <div class="cost-box">
-            <h3>Monthly Cost at 1K Summaries/Day</h3>
-            <div class="cost-row"><span class="name">DeepSeek V4 Flash</span><span class="value">$1.26/month</span></div>
-            <div class="cost-row"><span class="name">Gemini 2.5 Flash-Lite</span><span class="value">$1.50/month</span></div>
-            <div class="cost-row"><span class="name">Mistral Small 4</span><span class="value">$1.80/month</span></div>
-            <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$1.80/month</span></div>
-            <div class="cost-row"><span class="name">GPT-5 mini</span><span class="value">$6.75/month</span></div>
-            <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">$18.00/month</span></div>
-        </div>
 
         <p>The cost spread is dramatic. DeepSeek Flash costs $1.26/month while Claude Haiku costs $18.00 — a <strong>14x difference</strong> for the same workload. The right choice depends on how much quality matters for your specific summarization task.</p>
 

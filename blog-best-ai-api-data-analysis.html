@@ -146,23 +146,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
-                <a href="model-switch.html">Switch</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="quiz.html">Quiz</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -171,127 +163,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content">
-        <h1>Best AI APIs for Data Analysis 2026</h1>
-        <p class="subtitle">Real cost breakdowns for GPT-5, Gemini 3.1 Pro, Claude Sonnet 4.6, and DeepSeek V4 Pro — including monthly costs for 100, 1K, and 10K analysis tasks.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-            <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-                <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-            </div>
-
-        <div class="post-meta">
-            <span class="post-tag">Guide</span>
-            <span>May 15, 2026</span>
-        </div>
-
-        <p>Data analysis is one of the highest-value use cases for LLMs. From summarizing CSVs to generating insights from database queries, AI APIs can replace hours of manual analysis. But the cost varies wildly depending on which model you use — and data analysis workloads are uniquely expensive because they involve <strong>large inputs</strong> (datasets, schemas, documentation) and <strong>moderate outputs</strong> (summaries, charts, recommendations).</p>
-
-        <p>This guide compares the best AI APIs for data analysis with real cost math based on typical analysis task sizes, and a decision framework for choosing the right model at each scale.</p>
-
-        <div class="callout">
-            <p><strong>Bottom line:</strong> For most data analysis tasks, <strong>DeepSeek V4 Pro ($0.44/$0.87)</strong> delivers 90% of GPT-5's quality at 13% of the cost. For complex multi-step analysis requiring strong reasoning, <strong>GPT-5 ($1.25/$10.00)</strong> remains the gold standard. For massive datasets, <strong>Gemini 3.1 Pro ($2.00/$12.00)</strong> wins with its 1M context window.</p>
-        </div>
-
-        <h2>Why Data Analysis Is Expensive (and How to Fix It)</h2>
-
-        <p>Data analysis workloads have a unique cost profile compared to other LLM use cases:</p>
-
-        <ul>
-            <li><strong>Large inputs</strong> — a typical analysis task sends 5K-50K tokens (dataset schema, sample rows, column descriptions, instructions)</li>
-            <li><strong>Moderate outputs</strong> — analysis results are usually 500-2K tokens (summaries, insights, code)</li>
-            <li><strong>Input-heavy cost ratio</strong> — unlike chatbots (output-heavy), data analysis costs are dominated by input tokens</li>
-            <li><strong>Batch-friendly</strong> — most analysis tasks aren't time-sensitive, making them ideal for Batch API discounts (-50%)</li>
-            <li><strong>Context window matters</strong> — larger datasets need larger context windows (100K+ for real-world data)</li>
-        </ul>
-
-        <p>The good news: because analysis tasks are input-heavy, models with cheap input pricing (like DeepSeek V4 Pro at $0.44/1M) offer outsized savings. And because most analysis is batchable, you can halve costs with OpenAI's Batch API or Google's batch pricing.</p>
-
-        <h2>The Top 4 AI APIs for Data Analysis</h2>
-
-        <h3>1. GPT-5 — <span class="tier-premium">Premium</span> Best Overall for Complex Analysis</h3>
-        <p>OpenAI's GPT-5 is the strongest model for multi-step data analysis: it writes SQL, interprets results, generates visualizations, and explains findings in plain language. The Code Interpreter tool makes it a complete analysis environment.</p>
-
-        <table class="comparison-table">
-            <tr><th>Pricing</th><th>Value</th></tr>
-            <tr><td>Input</td><td>$1.25 / 1M tokens</td></tr>
-            <tr><td>Output</td><td>$10.00 / 1M tokens</td></tr>
-            <tr><td>Context</td><td>272K tokens</td></tr>
-            <tr><td>Batch API</td><td>50% off ($0.625/$5.00)</td></tr>
-            <tr><td>Avg analysis task</td><td>~10K input, ~1K output tokens</td></tr>
-        </table>
-
-        <p><strong>Why it wins:</strong> Best code generation for SQL and Python. Strongest multi-step reasoning. Code Interpreter can execute code, create charts, and iterate on results. 272K context handles most datasets.</p>
-
-        <p><strong>Limitations:</strong> Most expensive option. Output tokens are costly ($10/1M). Batch API cuts cost in half but adds latency.</p>
-
-        <h3>2. DeepSeek V4 Pro — <span class="tier-budget">Budget</span> Best Value</h3>
-        <p>DeepSeek's flagship model offers near-GPT-5 quality at a fraction of the cost. At $0.44/$0.87, it's the cheapest model that handles complex data analysis reliably.</p>
-
-        <table class="comparison-table">
-            <tr><th>Pricing</th><th>Value</th></tr>
-            <tr><td>Input</td><td>$0.44 / 1M tokens</td></tr>
-            <tr><td>Output</td><td>$0.87 / 1M tokens</td></tr>
-            <tr><td>Context</td><td>1M tokens</td></tr>
-            <tr><td>Avg analysis task</td><td>~10K input, ~1K output tokens</td></tr>
-        </table>
-
-        <p><strong>Why it's great:</strong> 78% cheaper on input and 91% cheaper on output vs GPT-5. 1M context window handles massive datasets. Strong at SQL generation, data interpretation, and code output. Excellent for batch analysis pipelines.</p>
-
-        <p><strong>Limitations:</strong> Slightly weaker on complex multi-step reasoning. No built-in code execution (you run the generated code yourself). Tool use is less mature than GPT-5.</p>
-
-        <h3>3. Gemini 3.1 Pro — <span class="tier-mid">Mid-Tier</span> Best for Large Datasets</h3>
-        <p>Google's Gemini 3.1 Pro shines when your analysis requires loading entire databases or large document sets into context. The 1M context window is unmatched.</p>
-
-        <table class="comparison-table">
-            <tr><th>Pricing</th><th>Value</th></tr>
-            <tr><td>Input</td><td>$2.00 / 1M tokens</td></tr>
-            <tr><td>Output</td><td>$12.00 / 1M tokens</td></tr>
-            <tr><td>Context</td><td>1M tokens</td></tr>
-            <tr><td>Avg analysis task</td><td>~10K input, ~1K output tokens</td></tr>
-        </table>
-
-        <p><strong>Why it's great:</strong> 1M context means you can load entire database schemas, multiple CSVs, and documentation in one prompt. Strong at structured data interpretation. Google's data analysis tooling integrates well with BigQuery and Colab.</p>
-
-        <p><strong>Limitations:</strong> More expensive than DeepSeek V4 Pro on both input and output. Output quality on complex reasoning is slightly below GPT-5. 1M context is overkill for most analysis tasks — you're paying for capacity you may not use.</p>
-
-        <h3>4. Claude Sonnet 4.6 — <span class="tier-mid">Mid-Tier</span> Best for Structured Outputs</h3>
-        <p>Anthropic's Sonnet excels at producing clean, structured outputs — JSON, tables, Markdown reports. Ideal when your analysis pipeline needs machine-readable results.</p>
-
-        <table class="comparison-table">
-            <tr><th>Pricing</th><th>Value</th></tr>
-            <tr><td>Input</td><td>$3.00 / 1M tokens</td></tr>
-            <tr><td>Output</td><td>$15.00 / 1M tokens</td></tr>
-            <tr><td>Context</td><td>200K tokens</td></tr>
-            <tr><td>Avg analysis task</td><td>~10K input, ~1K output tokens</td></tr>
-        </table>
-
-        <p><strong>Why it's great:</strong> Most consistent structured output quality. Excellent at following complex formatting instructions. Strong at SQL generation with high accuracy. Best choice when output goes directly into dashboards or reports.</p>
-
-        <p><strong>Limitations:</strong> Most expensive option per token. 200K context vs 272K-1M for competitors. Output-heavy tasks (which data analysis rarely is) get expensive fast.</p>
-
-        <h2>Cost Comparison: Real Data Analysis Tasks</h2>
-
-        <p>Let's calculate actual costs for three common data analysis scenarios. We'll use realistic token counts based on real-world usage patterns.</p>
-
-        <div class="cost-box">
-            <h3>Scenario 1: SQL Query Analysis (10K input, 1K output tokens)</h3>
-            <p>A typical task: send a database schema, sample data, and a question. Get back SQL query + explanation.</p>
-            <div class="cost-row"><span>GPT-5</span><span class="cost-highlight">$0.0225 per task</span></div>
-            <div class="cost-row"><span>DeepSeek V4 Pro</span><span class="cost-highlight">$0.0053 per task</span></div>
-            <div class="cost-row"><span>Gemini 3.1 Pro</span><span class="cost-highlight">$0.032 per task</span></div>
-            <div class="cost-row"><span>Claude Sonnet 4.6</span><span class="cost-highlight">$0.045 per task</span></div>
-        </div>
 
         <div class="cost-box">
             <h3>Scenario 2: Dataset Summary (50K input, 2K output tokens)</h3>

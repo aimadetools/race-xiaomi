@@ -206,21 +206,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -229,145 +223,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-claude-vs-gemini">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-                <a href="quiz.html">Quiz</a>
-            <span class="separator">›</span>
-            <span class="current">Claude vs Gemini: Which AI API Gives You More for Less?</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Comparison</span>
-            <span class="tier-badge tier-mid">Mid</span>
-            <span>April 23, 2026</span>
-        </div>
-        <h1>Claude vs Gemini: Which AI API Gives You More for Less?</h1>
-
-        <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-            <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-        </div>
-
-        <div style="padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;margin:16px 0 24px;">
-            <p style="margin:0;font-size:14px;"><strong>💰 Save money:</strong> Use our <a href="claude-4-is-down.html" style="color:#16a34a;font-weight:600;">free Claude Deprecation Calculator</a> to see exactly what you'll pay after migrating to a replacement model.</p>
-        </div>
-            <div style="padding:16px 20px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🔄 Migration tool:</strong> Use our <a href="claude-4-migration-tool.html" style="color:#6366f1;font-weight:600;">free Claude 4 Migration Tool</a> to compare all 67 alternatives, get exact costs, and see the one-line code change.</p>
-            </div>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>OpenAI gets most of the headlines, but the real competition in 2026 is between Anthropic's Claude and Google's Gemini. Both offer compelling pricing, massive context windows, and strong reasoning. Here's how they stack up — and which one saves you money.</p>
-
-        <h2>Pricing Overview</h2>
-        <p>Both providers offer a premium and budget model:</p>
-        <ul>
-            <li><strong>Claude Sonnet 4.6:</strong> $3.00 per 1M input tokens, $15.00 per 1M output tokens</li>
-            <li><strong>Claude Haiku 4.5:</strong> $1.00 per 1M input tokens, $5.00 per 1M output tokens</li>
-            <li><strong>Gemini 2.5 Pro:</strong> $1.25 per 1M input tokens, $10.00 per 1M output tokens</li>
-            <li><strong>Gemini 2.5 Flash-Lite:</strong> $0.10 per 1M input tokens, $0.40 per 1M output tokens</li>
-        </ul>
-        <p>Gemini is cheaper in both tiers. Gemini 2.5 Pro costs <strong>58% less on input</strong> and <strong>33% less on output</strong> than Claude Sonnet 4.6. At the budget tier, Gemini Flash is <strong>8x cheaper on input</strong> and <strong>10x cheaper on output</strong> than Claude Haiku.</p>
-
-        <h2>Context Window</h2>
-        <ul>
-            <li><strong>Claude Sonnet 4.6 / Haiku 4.5:</strong> 1M tokens</li>
-            <li><strong>Gemini 2.5 Pro / Flash-Lite:</strong> 1,000K tokens (1M)</li>
-        </ul>
-        <p>Gemini's 1M context window is 5x larger than Claude's. For tasks involving massive documents, full codebases, or long conversation histories, this is a significant advantage. You can process entire books, legal contracts, or large repos without chunking.</p>
-
-        <h2>Use Case 1: Customer Support Chatbot</h2>
-        <p>Typical request: ~500 input tokens, ~200 output tokens, 1K requests/day.</p>
-        <ul>
-            <li><strong>Claude Sonnet 4.6:</strong> $27.00/month</li>
-            <li><strong>Gemini 2.5 Pro:</strong> $9.75/month</li>
-            <li><strong>Claude Haiku 4.5:</strong> $36.00/month</li>
-            <li><strong>Gemini 2.5 Flash-Lite:</strong> $3.90/month</li>
-        </ul>
-        <p>Gemini 2.5 Pro is 64% cheaper than Claude Sonnet 4.6 for chatbots. If you need budget pricing, Gemini Flash at $3.90/month is hard to beat.</p>
-
-        <h2>Use Case 2: Document Analysis (Long Context)</h2>
-        <p>Processing a 500-page document: ~100,000 input tokens, ~2,000 output tokens.</p>
-        <ul>
-            <li><strong>Claude Sonnet 4.6:</strong> $0.33 per document</li>
-            <li><strong>Gemini 2.5 Pro:</strong> $0.145 per document</li>
-        </ul>
-        <p>Gemini is 56% cheaper per document. And with its 1M context window, you can process documents that would require chunking on Claude.</p>
-
-        <h2>Use Case 3: Code Generation</h2>
-        <p>Typical request: ~1,000 input tokens, ~2,000 output tokens, 500 requests/day.</p>
-        <ul>
-            <li><strong>Claude Sonnet 4.6:</strong> $495.00/month</li>
-            <li><strong>Gemini 2.5 Pro:</strong> $337.50/month</li>
-        </ul>
-        <p>Gemini saves $157.50/month on code generation workloads. The gap widens further at higher volumes.</p>
-
-        <h2>Quality & Capabilities</h2>
-        <p>Price isn't everything. Here's where each model excels:</p>
-        <ul>
-            <li><strong>Claude:</strong> Known for nuanced reasoning, instruction following, and natural-sounding output. Stronger at complex multi-step tasks and creative writing. Better at refusing harmful requests.</li>
-            <li><strong>Gemini:</strong> Native multi-modal support (text, image, video, audio). Larger context window. Strong at structured data extraction and summarization. Tight integration with Google Cloud ecosystem.</li>
-        </ul>
-        <p>Claude tends to produce more polished, human-like text. Gemini handles raw data volume better and offers more modalities out of the box.</p>
-
-        <h2>The Verdict</h2>
-        <blockquote>Gemini wins on price and context window. Claude wins on output quality and reasoning depth. For cost-sensitive workloads, Gemini is the clear choice. For quality-sensitive tasks where output matters, Claude justifies its premium.</blockquote>
-        <p>The smartest approach: use Gemini for high-volume, cost-sensitive tasks (chatbots, classification, extraction) and Claude for tasks where output quality directly impacts your product (writing, complex reasoning, customer-facing responses).</p>
-        <p>Use our <a href="calculator.html">cost calculator</a> to model your specific usage across both providers.</p>
-
-        <div class="cta-inline">
-            <p><strong>Compare Claude and Gemini costs for your exact workload.</strong></p>
-            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
-        </div>
-            <p style="margin-top:8px;font-size:14px;"> — See if you're overpaying for AI APIs</p>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        
-
-        <div class="cta-box" style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border-color:rgba(34,197,94,0.3);">
-            <h3>🎯 Rate Your API Setup in 30 Seconds</h3>
-            <p>Get an A+ to F grade on your AI API costs. See how you compare and find cheaper alternatives instantly.</p>
-            <a href="api-cost-score.html" class="btn" style="background:var(--green);color:white;">Get Your Cost Score →</a>
-        </div>
-        <div class="cta-box" style="background:linear-gradient(135deg,var(--accent-bg),rgba(99,102,241,0.02));border-color:rgba(99,102,241,0.3);">
-            <h3>📊 Generate Your Personalized API Cost Report</h3>
-            <p>Select your model, enter your monthly spend, and get a custom savings report with cheaper alternatives — free, in 60 seconds.</p>
-        </div>
-        <div class="share-section">
-            <p>Found this useful? Share it:</p>
-            <a href="https://twitter.com/intent/tweet?text=Claude+vs+Gemini%3A+Which+AI+API+Gives+You+More+for+Less%3F&url=https%3A%2F%2Fgetapipulse.com%2Fblog-claude-vs-gemini.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-claude-vs-gemini.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
-        </div>
-
-        <div style="margin-top:40px;padding:24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
-            
-            <a href="claude-alternatives.html" style="display:inline-block;padding:10px 16px;border-radius:8px;border:2px solid var(--green);background:rgba(0,200,120,0.08);text-decoration:none;font-weight:700;color:var(--green);margin-bottom:8px;">5 Cheaper Claude Alternatives → Save 60-98%</a>
-            <ul style="list-style:none;padding:0;">
-                <li style="margin-bottom:8px;"><a href="blog-gemini-vs-gpt4o.html">Gemini 2.5 Pro vs GPT-4o: Price, Performance, and Value Compared</a></li>
-                <li style="margin-bottom:8px;"><a href="blog-openai-vs-anthropic-vs-google.html">OpenAI vs Anthropic vs Google: Complete Pricing Breakdown</a></li>
-                <li style="margin-bottom:8px;"><a href="compare-claude-sonnet4-gemini25pro.html">Claude Sonnet 4.6 vs Gemini 2.5 Pro: Interactive Pricing Comparison →</a></li>
-                <li style="margin-bottom:8px;"><a href="compare-anthropic-vs-google.html">Anthropic vs Google — All 9 Models Compared →</a></li>
-                <li><a href="compare.html">Compare any two models side by side →</a></li>
-                                            <li style="margin-bottom:8px;"><a href="agent-cost-calculator.html">AI Agent Cost Calculator — Estimate Your Agent's Spend →</a></li>
-                                            <li style="margin-bottom:8px;"><a href="claude-4-is-down.html">AI Model Deprecation Guide: What's Retiring in 2026</a></li>
-</ul>
-        </div>
-    </div>
 
     <div style="max-width:600px;margin:48px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
         <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>

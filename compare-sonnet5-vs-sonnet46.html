@@ -117,114 +117,23 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button><div class="nav-links"><a href="calculator.html">Calculator</a><a href="compare.html">Compare</a><a href="cost-explorer.html">Explorer</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="index.html#free-tools" class="nav-cta">Free Tools →</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button></div></div></nav>
+    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;"><strong style="color:#dc2626;">🔥 Limited time:</strong> <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a></p>
-    </div>
-    <div class="compare-hero">
-        <span class="tier-badge tier-mid">Mid</span> <span class="tier-badge tier-deprecated">Deprecated</span>
-        <h1>Claude Sonnet 5 <span class="vs">vs</span> Sonnet 4.6</h1>
-        <p class="subtitle">Same price — but Sonnet 5 has 5x the context window and better reasoning. Sonnet 4.6 is approaching end-of-life. Should you migrate?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="deprecated-banner">
-        <h3>⚠️ Sonnet 4.6 is Deprecated</h3>
-        <p>Sonnet 4.6 is approaching sunset. Migrate to Sonnet 5 now — it's a drop-in replacement with 5x context and better reasoning at the same price.</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Claude Sonnet 5 (Anthropic)</th><th>Claude Sonnet 4.6 (Anthropic) <span class="deprecated-note">DEPRECATED</span></th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="same">$3.00</td><td class="same">$3.00</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="same">$15.00</td><td class="same">$15.00</td></tr>
-                <tr><td>Intro Price (through Aug 2026)</td><td class="cheaper">$2.00 / $10.00</td><td>N/A</td></tr>
-                <tr><td>Context Window</td><td class="cheaper">1M tokens</td><td>200K tokens</td></tr>
-                <tr><td>Tier</td><td>Mid</td><td>Mid (deprecated)</td></tr>
-                <tr><td>Provider</td><td>Anthropic</td><td>Anthropic</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Same price at standard rates — but Sonnet 5 has an intro price of $2/$10 through August 2026</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-sonnet5">
-                <div class="provider">Anthropic</div><div class="model-name">Claude Sonnet 5</div>
-                <div id="winner-badge-sonnet5" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-sonnet5">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-sonnet5"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-sonnet46">
-                <div class="provider">Anthropic</div><div class="model-name">Claude Sonnet 4.6 <span style="color:#dc2626;font-size:12px;font-weight:700;">DEPRECATED</span></div>
-                <div id="winner-badge-sonnet46" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-sonnet46">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-sonnet46"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-sonnet46"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-sonnet46"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-sonnet46"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="also-premium">
-        <h2>Other Anthropic Models</h2>
-        <div class="premium-grid">
-            <div class="premium-card"><div class="name">Claude Opus 4.8</div><div class="provider">Anthropic</div><div class="price">$5 / $25 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="premium-card"><div class="name">Claude Sonnet 5</div><div class="provider">Anthropic</div><div class="price">$3 / $15 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="premium-card"><div class="name">Claude Haiku 4.5</div><div class="provider">Anthropic</div><div class="price">$1 / $5 per 1M</div><div class="ctx">200K context</div></div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Code Generation</h3><p>Sonnet 5 produces higher-quality code with better reasoning than Sonnet 4.6 — at the same price. With the intro pricing at $2/$10, it's actually 33% cheaper. There's no reason to stay on Sonnet 4.6 for code tasks.</p><div class="recommendation"><span class="pick-sonnet5">Better quality: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Sonnet 5 handles content generation as well as or better than Sonnet 4.6. Same pricing, better output quality, and 5x the context window for processing long documents. Upgrade is a no-brainer.</p><div class="recommendation"><span class="pick-sonnet5">Better quality: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Data Analysis</h3><p>Sonnet 5's 1M context window (vs Sonnet 4.6's 200K) is a game-changer for data analysis. You can process 5x more data in a single request. Combined with better reasoning, Sonnet 5 dominates here.</p><div class="recommendation"><span class="pick-sonnet5">1M context wins: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Migration</h3><p>Sonnet 5 is a drop-in replacement for Sonnet 4.6. Just change the model name in your API calls. Same pricing, same API format, better results. With Sonnet 4.6 approaching sunset, migrate now to avoid disruption.</p><div class="recommendation"><span class="pick-sonnet5">Drop-in replacement: Sonnet 5</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Planning your migration?</h2>
-        <p>APIpulse lets you compare all 67 models, save cost scenarios, and export migration-ready reports for your team.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Migration</strong> code snippets</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>Do Sonnet 5 and Sonnet 4.6 cost the same?</h3><p>Yes, both are priced at $3.00/$15.00 per 1M tokens at standard rates. Anthropic is also offering an introductory price of $2.00/$10.00 for Sonnet 5 through August 2026, making it actually cheaper than Sonnet 4.6 during the promo period.</p></div>
-        <div class="faq-item"><h3>Should I migrate from Sonnet 4.6 to Sonnet 5?</h3><p>Yes. Sonnet 5 is a drop-in replacement for Sonnet 4.6 — same API, same pricing, but with 5x the context window (1M vs 200K) and significantly better reasoning. There is no reason to stay on Sonnet 4.6. Migration requires only changing the model name in your API calls.</p></div>
-        <div class="faq-item"><h3>What happens when Sonnet 4.6 is deprecated?</h3><p>Sonnet 4.6 is approaching end-of-life. Anthropic will sunset the model and all API calls to it will fail. You should migrate to Sonnet 5 now to avoid disruption. Since Sonnet 5 is a drop-in replacement, migration is trivial — just update your model parameter.</p></div>
-    </div>
+
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

@@ -154,23 +154,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
-                <a href="quiz.html">Quiz</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -178,164 +171,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content">
-
-        <div class="breadcrumb"><a href="blog.html">Blog</a> &rsaquo; How to Choose the Right Embedding Model for RAG</div>
-
-        <div class="post-meta">
-            <span class="tier-badge tier-mid">Guide</span>
-            <span>April 27, 2026</span>
-            <span>10 min read</span>
-        </div>
-
-        <h1>How to Choose the Right Embedding Model for RAG</h1>
-        <p class="subtitle">Your embedding model choice affects retrieval quality, storage costs, and query latency. Here's how to pick the right one for your RAG pipeline — with real cost comparisons.</p>
-
-        <h2>Why Your Embedding Model Matters</h2>
-        <p>In a RAG (Retrieval-Augmented Generation) pipeline, the embedding model converts your documents and queries into vector representations. The quality of these embeddings directly determines whether your system retrieves the right context — and whether your LLM generates accurate answers.</p>
-
-        <p>A poor embedding choice means:</p>
-        <ul>
-            <li><strong>Irrelevant retrieval:</strong> Wrong documents fed to the LLM, leading to hallucinations</li>
-            <li><strong>Higher costs:</strong> Larger dimensions = more storage, more compute, higher vector DB bills</li>
-            <li><strong>Slower queries:</strong> Larger embeddings take longer to compute and search</li>
-        </ul>
-
-        <h2>Embedding Models Compared</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Provider</th>
-                    <th>Cost/1M tokens</th>
-                    <th>Dimensions</th>
-                    <th>Max Tokens</th>
-                    <th>Best For</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="winner">
-                    <td>text-embedding-3-small</td>
-                    <td>OpenAI</td>
-                    <td>$0.02</td>
-                    <td>1536</td>
-                    <td>8191</td>
-                    <td>Best value</td>
-                </tr>
-                <tr>
-                    <td>text-embedding-3-large</td>
-                    <td>OpenAI</td>
-                    <td>$0.13</td>
-                    <td>3072</td>
-                    <td>8191</td>
-                    <td>Highest quality</td>
-                </tr>
-                <tr>
-                    <td>embed-english-v3.0</td>
-                    <td>Cohere</td>
-                    <td>$0.10</td>
-                    <td>1024</td>
-                    <td>512</td>
-                    <td>Search & clustering</td>
-                </tr>
-                <tr>
-                    <td>embed-multilingual-v3.0</td>
-                    <td>Cohere</td>
-                    <td>$0.10</td>
-                    <td>1024</td>
-                    <td>512</td>
-                    <td>Multilingual</td>
-                </tr>
-                <tr>
-                    <td>embedding-001</td>
-                    <td>Google</td>
-                    <td>$0.00</td>
-                    <td>768</td>
-                    <td>2048</td>
-                    <td>Free tier</td>
-                </tr>
-                <tr>
-                    <td>Llama Embed</td>
-                    <td>Together.ai</td>
-                    <td>$0.00</td>
-                    <td>4096</td>
-                    <td>512</td>
-                    <td>Self-hosted</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>Cost Analysis: Embedding 1M Documents</h2>
-        <p>Let's calculate the cost to embed 1 million documents averaging 500 tokens each (500M total tokens):</p>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Cost per 1M tokens</th>
-                    <th>Cost for 500M tokens</th>
-                    <th>Storage (1M docs)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="winner">
-                    <td>OpenAI small</td>
-                    <td>$0.02</td>
-                    <td><strong>$10.00</strong></td>
-                    <td>~6 GB</td>
-                </tr>
-                <tr>
-                    <td>Cohere</td>
-                    <td>$0.10</td>
-                    <td><strong>$50.00</strong></td>
-                    <td>~4 GB</td>
-                </tr>
-                <tr>
-                    <td>OpenAI large</td>
-                    <td>$0.13</td>
-                    <td><strong>$65.00</strong></td>
-                    <td>~12 GB</td>
-                </tr>
-                <tr>
-                    <td>Google</td>
-                    <td>$0.00</td>
-                    <td><strong>$0.00</strong></td>
-                    <td>~3 GB</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>Key insight:</strong> OpenAI's text-embedding-3-small at $0.02/1M tokens is the best value for most use cases. Google's embedding-001 is free but has a smaller context window (2048 tokens).</p>
-
-        <h2>Quality vs Cost: When Does It Matter?</h2>
-
-        <div class="decision-matrix">
-            <div class="decision-card">
-                <h4>Use OpenAI small ($0.02) when:</h4>
-                <p>You want the best balance of quality and cost. 1536 dimensions handles most RAG tasks well. Perfect for chatbots, Q&A, and document search.</p>
-            </div>
-            <div class="decision-card">
-                <h4>Use OpenAI large ($0.13) when:</h4>
-                <p>Retrieval quality is critical. Legal, medical, or financial RAG where wrong context = real consequences. 3072 dimensions capture more nuance.</p>
-            </div>
-            <div class="decision-card">
-                <h4>Use Cohere ($0.10) when:</h4>
-                <p>You need built-in search optimization or multilingual support. Cohere's models are specifically tuned for search and clustering tasks.</p>
-            </div>
-            <div class="decision-card">
-                <h4>Use Google ($0.00) when:</h4>
-                <p>Budget is the top priority and your documents are short (<2048 tokens). Good for prototyping and low-stakes applications.</p>
-            </div>
-        </div>
 
         <h2>Total RAG Cost: Embeddings + Vector DB + Generation</h2>
         <p>Embeddings are just one part of your RAG pipeline cost. Here's a full breakdown for a system processing 10,000 queries/day:</p>

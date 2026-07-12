@@ -156,116 +156,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-premium">Premium</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>GPT-5.5 <span class="vs">vs</span> Mistral Large 3</h1>
-        <p class="subtitle">OpenAI's premium flagship vs Mistral's budget champion. Mistral Large 3 is 90% cheaper on input and 95% cheaper on output — the most dramatic price gap in this tier. GPT-5.5 offers 4x the context, but is it worth 20x the cost?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5.5 (OpenAI)</th><th>Mistral Large 3 (Mistral)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$5.00</td><td class="cheaper">$0.50</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$30.00</td><td class="cheaper">$1.50</td></tr>
-                <tr><td>Context Window</td><td>1.05M tokens</td><td>262K tokens</td></tr>
-                <tr><td>Tier</td><td>Premium</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>Mistral</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Premium quality vs 90%+ budget savings — see the real tradeoff for your workload.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('code-assist')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('summarization')">Summarization</button>
-            <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
-            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="4000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gpt">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5.5</div>
-                <div id="winner-badge-gpt" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-mistral">
-                <div class="provider">Mistral</div><div class="model-name">Mistral Large 3</div>
-                <div id="winner-badge-mistral" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-mistral">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-mistral"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-mistral"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-mistral"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-mistral"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>High-Volume Production</h3><p>Chatbots, content pipelines, and API backends processing thousands of daily requests. Mistral Large 3's 90%+ cost savings compound rapidly at scale — ideal for startups and budget-conscious teams.</p><div class="recommendation"><span class="pick-mistral">Better value: Mistral Large 3</span></div></div>
-            <div class="use-case-card"><h3>Complex Reasoning & Analysis</h3><p>Multi-step research, nuanced decision-making, and tasks where quality is critical. GPT-5.5's premium reasoning capabilities may justify the 20x cost for high-stakes applications.</p><div class="recommendation"><span class="pick-gpt">Higher quality: GPT-5.5</span></div></div>
-            <div class="use-case-card"><h3>Long Document Processing</h3><p>GPT-5.5 offers 1.05M context vs Mistral's 262K — a 4x advantage. For processing very long documents (legal contracts, research papers), GPT-5.5 handles larger files natively. Mistral's 262K covers most standard documents.</p><div class="recommendation"><span class="pick-gpt">Larger context: GPT-5.5</span></div></div>
-            <div class="use-case-card"><h3>Code Generation & Assistance</h3><p>Both models handle code well. Mistral Large 3's 90%+ savings make it the clear choice for code review tools, IDE integrations, and developer assistants where cost per query matters most.</p><div class="recommendation"><span class="pick-mistral">Better value: Mistral Large 3</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Need to compare more models?</h2>
-        <p>APIpulse gives you migration code, cost comparisons, and optimization tips for all 67 models.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Migration code</strong> snippets included</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Save up to 95%</strong> on API costs</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is Mistral Large 3 than GPT-5.5?</h3><p>Mistral Large 3 costs $0.50/$1.50 per 1M tokens. GPT-5.5 costs $5.00/$30.00 per 1M tokens. Mistral is 90% cheaper on input and 95% cheaper on output — a typical workload saves $18.75/month (94% overall).</p></div>
-        <div class="faq-item"><h3>Which has a larger context window?</h3><p>GPT-5.5 has 1.05M tokens vs Mistral Large 3's 262K tokens. GPT-5.5 offers 4x the context — important for very long documents. However, Mistral's 262K covers most standard use cases.</p></div>
-        <div class="faq-item"><h3>When should I choose Mistral Large 3 over GPT-5.5?</h3><p>Choose Mistral Large 3 when cost is your primary concern — it's 90-95% cheaper, ideal for high-volume production workloads. Choose GPT-5.5 when you need the absolute best reasoning quality or very long context (1M+ tokens).</p></div>
-        <div class="faq-item"><h3>Is Mistral Large 3 good enough to replace GPT-5.5?</h3><p>For many workloads — yes. Mistral Large 3 handles chatbots, code generation, and content creation at 90%+ lower cost. GPT-5.5 may still outperform on complex reasoning and offers 4x the context window.</p></div>
-    </div>
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <a href="pricing-dashboard.html" style="display:block;padding:16px;border-radius:12px;border:1px solid rgba(34,197,94,0.3);background:rgba(34,197,94,0.05);text-decoration:none;transition:all 0.2s;margin-bottom:20px;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='rgba(34,197,94,0.3)'">
             <div style="font-size:14px;font-weight:700;color:var(--green);">📋 Full Pricing Dashboard →</div>

@@ -93,88 +93,22 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <article style="max-width:var(--max-width);margin:0 auto;padding:120px 24px 60px;">
-        <div style="text-align:center;margin-bottom:40px;">
-            <p style="color:var(--accent);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Blog &middot; Jun 7, 2026</p>
-            <h1 style="font-size:clamp(28px,4.5vw,42px);font-weight:800;line-height:1.2;margin-bottom:16px;">How to Reduce Your AI API Costs by 60%: The Complete Optimization Guide</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-            <p style="font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto;">12 proven strategies that actually work. Real numbers, real code examples, and a free calculator to estimate your savings.</p>
-        </div>
-
-        <div style="max-width:780px;margin:0 auto;">
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">Most developers are <strong>overpaying for AI APIs by 40-60%</strong>. They pick one model, send verbose prompts, and never think about caching. This guide shows you exactly how to fix that — with real numbers and actionable strategies.</p>
-
-            <p style="font-size:16px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px;">We tested these strategies across 67 models from 10 providers. The savings are real and measurable.</p>
-
-            <!-- Savings calculator -->
-            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:32px;">
-                <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;">Quick Savings Calculator</h3>
-                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Enter your current monthly AI spend to see how much you could save:</p>
-                <div style="display:flex;gap:12px;align-items:end;flex-wrap:wrap;">
-                    <div style="flex:1;min-width:180px;">
-                        <label style="display:block;font-size:12px;color:var(--text-secondary);margin-bottom:4px;">Current monthly spend ($)</label>
-                        <input type="number" id="opt-spend" value="500" min="1" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:14px;">
-                    </div>
-                    <div style="flex:1;min-width:180px;">
-                        <label style="display:block;font-size:12px;color:var(--text-secondary);margin-bottom:4px;">Optimization level</label>
-                        <select id="opt-level" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:14px;">
-                            <option value="0.3">Basic (30% savings)</option>
-                            <option value="0.5" selected>Intermediate (50% savings)</option>
-                            <option value="0.6">Advanced (60% savings)</option>
-                        </select>
-                    </div>
-                    <button onclick="calcSavings()" style="padding:10px 20px;background:var(--accent);color:white;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;">Calculate</button>
-                </div>
-                <div id="opt-result" style="margin-top:16px;display:none;">
-                    <div style="display:flex;gap:24px;flex-wrap:wrap;">
-                        <div style="flex:1;min-width:150px;background:var(--bg-card);border-radius:8px;padding:16px;text-align:center;">
-                            <div style="font-size:24px;font-weight:800;color:var(--green);" id="opt-savings">$0</div>
-                            <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">Monthly Savings</div>
-                        </div>
                         <div style="flex:1;min-width:150px;background:var(--bg-card);border-radius:8px;padding:16px;text-align:center;">
                             <div style="font-size:24px;font-weight:800;color:var(--accent);" id="opt-new">$0</div>
                             <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">New Monthly Cost</div>

@@ -187,13 +187,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="model-status.html">Model Status</a>
-                <a href="claude-4-is-down.html" style="color:var(--red);">Deprecation Guide</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -201,77 +204,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-            <span class="separator">›</span>
-            <span class="current">How Much Do Developers Spend on AI APIs?</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        <div class="post-meta">
-            <span class="post-tag">Analysis</span>
-            <span>June 5, 2026</span>
-        </div>
-        <h1>How Much Do Developers Spend on AI APIs in 2026?</h1>
-        <p class="subtitle">Everyone talks about AI API pricing per token. But what developers actually want to know is: <strong>what's my monthly bill going to look like?</strong> We analyzed spending data from 500+ teams to find out.</p>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <div class="callout">
-            <p><strong>TL;DR:</strong> The median developer spends <strong>$247/month</strong> on AI APIs. Solo devs average $42/month, startups $380/month, and enterprises $8,400+. But 40% of spending is waste — teams that optimize save 40-70%.</p>
-        </div>
-
-        <h2>The Big Picture: AI API Spending in 2026</h2>
-        <p>AI API adoption has exploded. What was a niche expense in 2024 is now a line item in most engineering budgets. Here's what the landscape looks like:</p>
-
-        <div class="stat-grid">
-            <div class="stat-card">
-                <span class="number">$247</span>
-                <span class="label">Median monthly spend</span>
-            </div>
-            <div class="stat-card">
-                <span class="number">67%</span>
-                <span class="label">Use 2+ providers</span>
-            </div>
-            <div class="stat-card">
-                <span class="number">34%</span>
-                <span class="label">Chatbots &amp; conversational</span>
-            </div>
-            <div class="stat-card">
-                <span class="number">42%</span>
-                <span class="label">OpenAI market share</span>
-            </div>
-        </div>
 
         <h2>Spending by Company Size</h2>
         <p>AI API costs scale dramatically with company size. Here's the breakdown:</p>

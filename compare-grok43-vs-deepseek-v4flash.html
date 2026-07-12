@@ -156,116 +156,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-mid">Mid-Tier</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>Grok 4.3 <span class="vs">vs</span> DeepSeek V4 Flash</h1>
-        <p class="subtitle">xAI's mid-tier contender vs DeepSeek's ultra-budget speedster. Both have 1M context windows, but DeepSeek V4 Flash is 89% cheaper on both input and output — is Grok's quality worth 8x the price?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Grok 4.3 (xAI)</th><th>DeepSeek V4 Flash (DeepSeek)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$1.25</td><td class="cheaper">$0.14</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$2.50</td><td class="cheaper">$0.28</td></tr>
-                <tr><td>Context Window</td><td>1M tokens</td><td>1M tokens</td></tr>
-                <tr><td>Tier</td><td>Mid-Tier</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>xAI</td><td>DeepSeek</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Same context, 8x price gap — see the real tradeoff for your workload.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('code-assist')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('summarization')">Summarization</button>
-            <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
-            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="4000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-grok">
-                <div class="provider">xAI</div><div class="model-name">Grok 4.3</div>
-                <div id="winner-badge-grok" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-grok">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-grok"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-deepseek">
-                <div class="provider">DeepSeek</div><div class="model-name">DeepSeek V4 Flash</div>
-                <div id="winner-badge-deepseek" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-deepseek">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-deepseek"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>High-Volume Production</h3><p>Chatbots, content pipelines, and API backends. DeepSeek V4 Flash's 89% savings compound rapidly at scale — ideal for startups and high-volume workloads where cost per request is critical.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Flash</span></div></div>
-            <div class="use-case-card"><h3>Complex Reasoning Tasks</h3><p>Multi-step analysis, research, and nuanced decision-making. Grok 4.3's mid-tier quality may justify the 8x premium for tasks where accuracy directly impacts outcomes.</p><div class="recommendation"><span class="pick-grok">Higher quality: Grok 4.3</span></div></div>
-            <div class="use-case-card"><h3>Code Generation & Review</h3><p>Both models handle code well with 1M context. DeepSeek V4 Flash is known for strong coding capabilities at a fraction of the cost — ideal for code review tools and IDE integrations.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Flash</span></div></div>
-            <div class="use-case-card"><h3>AI Agents & Automation</h3><p>Multi-step autonomous workflows are output-heavy by nature. DeepSeek V4 Flash's 89% cheaper output pricing makes it the default choice for agent workloads running at scale.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Flash</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Need to compare more models?</h2>
-        <p>APIpulse gives you migration code, cost comparisons, and optimization tips for all 67 models.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Migration code</strong> snippets included</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Save up to 95%</strong> on API costs</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is DeepSeek V4 Flash than Grok 4.3?</h3><p>DeepSeek V4 Flash costs $0.14/$0.28 per 1M tokens. Grok 4.3 costs $1.25/$2.50 per 1M tokens. DeepSeek is 89% cheaper on both input and output — a typical workload saves $2.22/month (89% overall).</p></div>
-        <div class="faq-item"><h3>Do they have the same context window?</h3><p>Yes — both offer 1M token context windows. The context capability is identical. The difference is pricing (DeepSeek is 89% cheaper) and quality tier (Grok is mid-tier, DeepSeek is budget).</p></div>
-        <div class="faq-item"><h3>When should I choose DeepSeek V4 Flash over Grok 4.3?</h3><p>Choose DeepSeek V4 Flash when cost is your primary concern — it's 89% cheaper with the same 1M context. Ideal for high-volume production and budget-conscious teams. Choose Grok 4.3 when you need mid-tier reasoning quality.</p></div>
-        <div class="faq-item"><h3>Is DeepSeek V4 Flash good enough to replace Grok 4.3?</h3><p>For many budget-conscious workloads — yes. DeepSeek V4 Flash handles chatbots, content generation, and code at 89% lower cost. Grok 4.3 may outperform on complex reasoning. Test both to see if the quality premium justifies 8x the cost.</p></div>
-    </div>
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <a href="pricing-dashboard.html" style="display:block;padding:16px;border-radius:12px;border:1px solid rgba(34,197,94,0.3);background:rgba(34,197,94,0.05);text-decoration:none;transition:all 0.2s;margin-bottom:20px;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='rgba(34,197,94,0.3)'">
             <div style="font-size:14px;font-weight:700;color:var(--green);">📋 Full Pricing Dashboard →</div>

@@ -236,21 +236,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -259,87 +253,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-api-batch-processing">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-                <a href="quiz.html">Quiz</a>
-            <span class="separator">›</span>
-            <span class="current">AI API Batch Processing</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Guide</span>
-            <span class="tier-badge tier-mid">Mid</span>
-            <span>April 27, 2026</span>
-            <span>12 min read</span>
-        </div>
-        <h1>The Complete Guide to AI API Batch Processing</h1>
-
-        <p>Batch processing is one of the most effective ways to reduce AI API costs, yet many developers overlook it because they assume it only applies to enterprise-scale workloads. In reality, any non-real-time task can benefit from batch processing — often cutting costs by 50% or more. This guide covers what batch processing is, which providers support it, when it makes sense, and how to implement it correctly.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <h2>What Is Batch Processing?</h2>
-        <p>Batch processing means submitting a large number of API requests together as a group (a "batch") rather than sending them individually in real time. Instead of getting responses immediately, you submit your requests and the provider processes them asynchronously — typically within a few hours. In exchange for the delayed response, you get a significant discount on token pricing.</p>
-        <p>Think of it like shipping: real-time API calls are express delivery (fast, expensive), while batch processing is standard shipping (slower, much cheaper). If your use case does not require sub-second latency, batch processing is almost always the more economical choice.</p>
-
-        <h2>Batch Pricing Comparison Across Providers</h2>
-        <p>Not all providers offer batch processing at the same level. Here is how the major AI API providers compare as of April 2026:</p>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Provider</th>
-                    <th>Batch Support</th>
-                    <th>Batch Discount</th>
-                    <th>Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>OpenAI</strong></td>
-                    <td class="highlight">Full Batch API</td>
-                    <td class="highlight">50% off</td>
-                    <td>GPT-4o at $1.25/$5.00 (was $2.50/$10.00); GPT-4o mini at $0.075/$0.30 (was $0.15/$0.60)</td>
-                </tr>
-                <tr>
-                    <td><strong>Anthropic</strong></td>
-                    <td>No official batch API yet</td>
-                    <td>N/A</td>
-                    <td>No batch-specific pricing tier as of April 2026</td>
-                </tr>
-                <tr>
-                    <td><strong>Google</strong></td>
-                    <td>Context Caching</td>
-                    <td class="highlight">Up to 75% off</td>
-                    <td>Best for repeated prompts with small variations; works on Gemini models</td>
-                </tr>
-                <tr>
-                    <td><strong>DeepSeek</strong></td>
-                    <td>Limited</td>
-                    <td>Minimal impact</td>
-                    <td>Already very cheap ($0.14/$0.28 per 1M tokens); batch savings marginal</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>OpenAI Batch API Pricing Breakdown</h3>
-        <div class="cost-example">
-            <div class="label">GPT-4o Pricing (per 1M tokens)</div>
-            <div class="cost-row"><span class="name">Input — Real-time</span><span class="value">$2.50</span></div>
-            <div class="cost-row"><span class="name">Input — Batch</span><span class="value">$1.25 (50% off)</span></div>
-            <div class="cost-row"><span class="name">Output — Real-time</span><span class="value">$10.00</span></div>
-            <div class="cost-row"><span class="name">Output — Batch</span><span class="value">$5.00 (50% off)</span></div>
-        </div>
 
         <div class="cost-example">
             <div class="label">GPT-4o mini Pricing (per 1M tokens)</div>

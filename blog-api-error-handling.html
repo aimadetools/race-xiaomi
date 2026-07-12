@@ -215,11 +215,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -227,167 +232,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-        <div class="content">
-            <a href="blog.html" class="back-link">← Back to Blog</a>
-            <div class="post-meta">
-                <span class="post-tag">Guide</span>
-                <span>May 11, 2026</span>
-                <span>7 min read</span>
-            </div>
-            <div class="article">
-                <h1>LLM API Error Handling and Retry Strategies: Avoid Wasting Money on Failed Requests</h1>
-                <p class="subtitle">Failed API requests cost you tokens without results. Here's how to handle errors properly, retry intelligently, and stop wasting money on requests that don't need to fail.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-                <p>Every failed LLM API request is wasted money. You paid for input tokens, waited for a response, and got an error. If you're not handling this correctly, <strong>5-15% of your API spend</strong> could be going to requests that fail and shouldn't have — or succeed but get retried anyway.</p>
-
-                <p>This guide covers error handling across all 10 major providers, retry strategies that actually save money, and the code patterns that prevent common failures.</p>
-
-                <h2>Every Error Code and What It Means</h2>
-
-                <p>Not all errors are equal. Some are retryable, some are not, and some will cost you money if you retry them. Here's the breakdown:</p>
-
-                <table class="error-table">
-                    <thead>
-                        <tr>
-                            <th>Error Code</th>
-                            <th>Name</th>
-                            <th>Retryable?</th>
-                            <th>Cost Impact</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>429</code></td>
-                            <td>Rate Limit / Too Many Requests</td>
-                            <td><span class="retry-badge yes">Yes</span></td>
-                            <td>Input tokens billed, no output</td>
-                        </tr>
-                        <tr>
-                            <td><code>500</code></td>
-                            <td>Internal Server Error</td>
-                            <td><span class="retry-badge yes">Yes</span></td>
-                            <td>Usually no charge</td>
-                        </tr>
-                        <tr>
-                            <td><code>502</code></td>
-                            <td>Bad Gateway</td>
-                            <td><span class="retry-badge yes">Yes</span></td>
-                            <td>Usually no charge</td>
-                        </tr>
-                        <tr>
-                            <td><code>503</code></td>
-                            <td>Service Unavailable</td>
-                            <td><span class="retry-badge yes">Yes</span></td>
-                            <td>Usually no charge</td>
-                        </tr>
-                        <tr>
-                            <td><code>408</code></td>
-                            <td>Request Timeout</td>
-                            <td><span class="retry-badge depends">Depends</span></td>
-                            <td>Input tokens may be billed</td>
-                        </tr>
-                        <tr>
-                            <td><code>401</code></td>
-                            <td>Unauthorized</td>
-                            <td><span class="retry-badge no">No</span></td>
-                            <td>No charge</td>
-                        </tr>
-                        <tr>
-                            <td><code>403</code></td>
-                            <td>Forbidden</td>
-                            <td><span class="retry-badge no">No</span></td>
-                            <td>No charge</td>
-                        </tr>
-                        <tr>
-                            <td><code>400</code></td>
-                            <td>Bad Request</td>
-                            <td><span class="retry-badge no">No</span></td>
-                            <td>No charge</td>
-                        </tr>
-                        <tr>
-                            <td><code>404</code></td>
-                            <td>Model Not Found</td>
-                            <td><span class="retry-badge no">No</span></td>
-                            <td>No charge</td>
-                        </tr>
-                        <tr>
-                            <td><code>413</code></td>
-                            <td>Payload Too Large</td>
-                            <td><span class="retry-badge no">No</span></td>
-                            <td>No charge</td>
-                        </tr>
-                        <tr>
-                            <td><code>529</code></td>
-                            <td>Overloaded (Anthropic)</td>
-                            <td><span class="retry-badge yes">Yes</span></td>
-                            <td>Usually no charge</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>The cost trap: 429 errors</h3>
-                <p>Rate limit errors are the sneakiest. OpenAI and Anthropic both <strong>bill you for input tokens even on 429 errors</strong> in some cases — especially if the request was partially processed before being rejected. If you send a 10K token request and hit a rate limit, you might still be charged for those input tokens with no output to show for it.</p>
-
-                <p>Google's Gemini and DeepSeek are generally more generous — 429 errors typically don't incur charges. But don't assume: always check your billing after a spike in rate limit errors.</p>
-
-                <h2>The Exponential Backoff Pattern</h2>
-
-                <p>The standard retry strategy for LLM APIs is exponential backoff with jitter. Here's the pattern that works across all providers:</p>
-
-                <pre><code>async function callWithRetry(fn, maxRetries = 3) {
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    try {
-      return await fn();
-    } catch (error) {
-      if (attempt === maxRetries) throw error;
-      if (!isRetryable(error.status)) throw error;
-
-      const baseDelay = Math.pow(2, attempt) * 1000; // 1s, 2s, 4s
-      const jitter = Math.random() * 1000;            // 0-1s random
-      const delay = baseDelay + jitter;
-
-      await new Promise(r => setTimeout(r, delay));
-    }
-  }
-}
-
-function isRetryable(status) {
-  return [429, 500, 502, 503, 529].includes(status);
-}</code></pre>
-
-                <p>Key points:</p>
-                <ul>
-                    <li><strong>Only retry on retryable errors</strong> — 400, 401, 403, 404 should never be retried</li>
-                    <li><strong>Add jitter</strong> — Without jitter, all clients retry at the same time, causing a thundering herd</li>
-                    <li><strong>Cap retries at 3</strong> — If 3 retries fail, the problem is likely persistent</li>
-                    <li><strong>Respect Retry-After headers</strong> — Some providers include them in 429 responses</li>
-                </ul>
-
-                <h2>Provider-Specific Error Behavior</h2>
-
-                <p>Each provider handles errors differently. Here's what you need to know:</p>
-
-                <div class="cost-example">
-                    <div class="label">Provider Error Behavior Comparison</div>
-                    <div class="cost-row"><span class="name">OpenAI — 429</span><span class="value">Bills input tokens on partial processing. Use Retry-After header.</span></div>
-                    <div class="cost-row"><span class="name">OpenAI — 500/502/503</span><span class="value">No charge. Safe to retry immediately.</span></div>
-                    <div class="cost-row"><span class="name">Anthropic — 429</span><span class="value">No charge on 429. Has built-in retry in SDK.</span></div>
-                    <div class="cost-row"><span class="name">Anthropic — 529</span><span class="value">Overloaded. No charge. Retry with backoff.</span></div>
-                    <div class="cost-row"><span class="name">Google Gemini — 429</span><span class="value">No charge. Generous default quotas.</span></div>
-                    <div class="cost-row"><span class="name">DeepSeek — 429</span><span class="value">No charge. Aggressive rate limits on free tier.</span></div>
-                    <div class="cost-row"><span class="name">Mistral — 429</span><span class="value">No charge. Limits based on subscription tier.</span></div>
-                </div>
 
                 <h2>Common Failure Patterns and Fixes</h2>
 

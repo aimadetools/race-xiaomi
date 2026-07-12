@@ -213,12 +213,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -226,102 +230,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content">
-        <a href="blog.html" class="back-link">← Back to Blog</a>
-        <h1>How to Choose the Right AI Model for Your Project in 2026</h1>
-        <p class="subtitle">With 67 models across 10 providers, picking the right one is overwhelming. Here's a practical 5-step framework to match your needs to the perfect model — without overspending.</p>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <div class="article">
-
-            <p>The AI model landscape in 2026 is both incredible and confusing. You have <strong>GPT-5 at $1.25/M</strong>, <strong>Claude Opus 4.8 at $5/M</strong>, <strong>DeepSeek V4 Pro at $0.44/M</strong>, and dozens more. Each claims to be the best. How do you actually choose?</p>
-
-            <p>I've analyzed pricing data for all 67 models across 10 providers. Here's the exact framework I use to match projects to models — and how you can save 60-80% by picking strategically.</p>
-
-            <h2>The 5-Step Model Selection Framework</h2>
-
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Define Your Task Type</h3>
-                <p>Different models excel at different tasks. Start here:</p>
-                <table class="decision-table">
-                    <thead>
-                        <tr><th>Task</th><th>Best Models</th><th>Why</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><strong>Chatbot / Customer Support</strong></td><td class="pick">GPT-5 mini, DeepSeek V4 Flash, Gemini Flash</td><td>High volume, short responses, cost-sensitive</td></tr>
-                        <tr><td><strong>Code Generation</strong></td><td class="pick">Claude Sonnet 4.6, GPT-5.3 Codex, GPT-5</td><td>Complex reasoning, syntax accuracy</td></tr>
-                        <tr><td><strong>Content Writing</strong></td><td class="pick">Claude Sonnet 4.6, GPT-5, Gemini 3.1 Pro</td><td>Creative output, tone control</td></tr>
-                        <tr><td><strong>RAG / Search</strong></td><td class="pick">GPT-5, Gemini 3.1 Pro, Claude Haiku 4.5</td><td>Large context inputs, fast response</td></tr>
-                        <tr><td><strong>Data Analysis</strong></td><td class="pick">Claude Opus 4.8, GPT-5.5, Gemini 3.1 Pro</td><td>Complex reasoning, structured output</td></tr>
-                        <tr><td><strong>Translation</strong></td><td class="pick">DeepSeek V4 Pro, Gemini 3.1 Pro, GPT-5</td><td>Multi-language, cost-effective at volume</td></tr>
-                        <tr><td><strong>Long Documents</strong></td><td class="pick">Gemini 3.1 Pro, Claude Opus 4.8, Grok 4.3</td><td>1M context window needed</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h3>Set Your Budget Tier</h3>
-                <p>Your monthly budget determines which tier you can afford. Here's what each tier gets you:</p>
-
-                <div class="tier-grid">
-                    <div class="tier-card">
-                        <h4>Budget</h4>
-                        <div class="price-range">$0.08 - $0.60/M</div>
-                        <ul>
-                            <li>DeepSeek V4 Flash ($0.14/$0.28)</li>
-                            <li>Gemini 2.5 Flash-Lite ($0.10/$0.40)</li>
-                            <li>Llama 4 Scout ($0.18/$0.59)</li>
-                            <li>GPT-oss 20B ($0.08/$0.35)</li>
-                            <li><strong>Best for:</strong> High-volume, simple tasks</li>
-                        </ul>
-                    </div>
-                    <div class="tier-card">
-                        <h4>Mid-Tier</h4>
-                        <div class="price-range">$1.25 - $3.00/M</div>
-                        <ul>
-                            <li>GPT-5 ($1.25/$10)</li>
-                            <li>Grok 4.3 ($1.25/$2.50)</li>
-                            <li>Claude Sonnet 4.6 ($3/$15)</li>
-                            <li>DeepSeek V4 Pro ($0.44/$0.87)</li>
-                            <li><strong>Best for:</strong> Production apps, balanced cost/quality</li>
-                        </ul>
-                    </div>
-                    <div class="tier-card">
-                        <h4>Premium</h4>
-                        <div class="price-range">$5 - $30/M</div>
-                        <ul>
-                            <li>Claude Opus 4.8 ($5/$25)</li>
-                            <li>GPT-5.5 ($5/$30)</li>
-                            <li>GPT-5.5 Pro ($30/$180)</li>
-                            <li><strong>Best for:</strong> Complex reasoning, research</li>
-                        </ul>
-                    </div>
-                </div>
 
                 <p><strong>Pro tip:</strong> Don't default to premium. A chatbot using DeepSeek V4 Flash costs <strong>$2.19/month</strong> for 1,000 daily requests. The same workload on GPT-5.5 costs <strong>$169/month</strong> — that's 77x more for marginal quality gains on simple tasks.</p>
             </div>

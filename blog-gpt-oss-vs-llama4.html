@@ -141,21 +141,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -164,95 +158,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">GPT-oss vs Llama 4: Open-Source LLM API Showdown 2026</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Comparison</span>
-            <span>May 10, 2026</span>
-            <span>10 min read</span>
-        </div>
-        <h1>GPT-oss vs Llama 4: Open-Source LLM API Showdown 2026</h1>
-
-        <p>The open-source LLM landscape has never been more competitive. OpenAI entered the game with GPT-oss, while Meta doubled down with Llama 4. Both offer powerful models at a fraction of proprietary pricing — but which one gives you the best bang for your buck?</p>
-
-        <p>We compared every variant head-to-head on pricing, context windows, quality, and real-world performance to help you pick the right open-source API for your workload.</p>
-
-        <h2>Model Lineup: GPT-oss vs Llama 4</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Provider</th>
-                    <th>Input (per 1M)</th>
-                    <th>Output (per 1M)</th>
-                    <th>Context</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>GPT-oss 120B</strong></td>
-                    <td>OpenAI</td>
-                    <td>$0.15</td>
-                    <td>$0.60</td>
-                    <td>128K</td>
-                </tr>
-                <tr>
-                    <td><strong>GPT-oss 20B</strong></td>
-                    <td>OpenAI</td>
-                    <td class="winner">$0.08</td>
-                    <td>$0.35</td>
-                    <td>128K</td>
-                </tr>
-                <tr>
-                    <td><strong>Llama 4 Scout</strong></td>
-                    <td>Meta (Together.ai)</td>
-                    <td>$0.18</td>
-                    <td class="winner">$0.34</td>
-                    <td class="winner">10M</td>
-                </tr>
-                <tr>
-                    <td><strong>Llama 4 Maverick</strong></td>
-                    <td>Meta (Together.ai)</td>
-                    <td>$0.20</td>
-                    <td>$0.60</td>
-                    <td>1M</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>Both families offer a small and large variant. GPT-oss comes in 20B and 120B sizes. Llama 4 offers Scout (smaller, optimized for long context) and Maverick (larger, optimized for quality).</p>
-
-        <h2>Pricing: Head-to-Head</h2>
-
-        <h3>Budget Tier: GPT-oss 20B vs Llama 4 Scout</h3>
-        <p>Both are priced aggressively for high-volume workloads:</p>
-        <ul>
-            <li><strong>GPT-oss 20B:</strong> $0.08 input / $0.35 output per 1M tokens</li>
-            <li><strong>Llama 4 Scout:</strong> $0.18 input / $0.34 output per 1M tokens</li>
-        </ul>
-        <p>GPT-oss 20B is 27% cheaper on input, while Llama 4 Scout is 3% cheaper on output. For input-heavy workloads (classification, extraction, embeddings), GPT-oss wins. For output-heavy workloads (generation, summarization), Scout edges ahead.</p>
-
-        <div class="cost-box">
-            <h3>Monthly Cost: Budget Models at 10K Requests/Day</h3>
-            <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">Assuming 500 input tokens, 200 output tokens per request</p>
-            <div class="cost-row"><span class="name">GPT-oss 20B</span><span class="value">$17.25/month</span></div>
-            <div class="cost-row"><span class="name">Llama 4 Scout</span><span class="value">$17.40/month</span></div>
-            <div class="cost-row"><span class="cost-total"><span class="name">Difference</span><span class="value">~$0.15/month (negligible)</span></span></div>
-        </div>
 
         <p>At this usage level, the cost difference is negligible. The decision comes down to quality and context window, not price.</p>
 

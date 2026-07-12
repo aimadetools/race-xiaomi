@@ -112,109 +112,23 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button><div class="nav-links"><a href="calculator.html">Calculator</a><a href="compare.html">Compare</a><a href="cost-explorer.html">Explorer</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="index.html#free-tools" class="nav-cta">Free Tools →</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button></div></div></nav>
+    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;"><strong style="color:#dc2626;">🔥 Limited time:</strong> <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a></p>
-    </div>
-    <div class="compare-hero">
-        <span class="tier-badge tier-mid">Mid</span> <span class="tier-badge tier-mid">Mid</span>
-        <h1>Claude Sonnet 5 <span class="vs">vs</span> Kimi K2.6</h1>
-        <p class="subtitle">Anthropic's mid-tier vs Moonshot's best. Kimi K2.6 at $0.95/$4.00 is 68% cheaper on input and 73% cheaper on output than Sonnet 5 at $3/$15 — with strong Chinese content capabilities.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Claude Sonnet 5 (Anthropic)</th><th>Kimi K2.6 (Moonshot)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$3.00</td><td class="cheaper">$0.95</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$15.00</td><td class="cheaper">$4.00</td></tr>
-                <tr><td>Context Window</td><td class="cheaper">1M tokens</td><td>128K tokens</td></tr>
-                <tr><td>Tier</td><td>Mid</td><td>Mid</td></tr>
-                <tr><td>Provider</td><td>Anthropic</td><td>Moonshot</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Kimi is 68% cheaper on input — how much would you save switching?</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-sonnet5">
-                <div class="provider">Anthropic</div><div class="model-name">Claude Sonnet 5</div>
-                <div id="winner-badge-sonnet5" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-sonnet5">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-sonnet5"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-sonnet5"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-kimik26">
-                <div class="provider">Moonshot</div><div class="model-name">Kimi K2.6</div>
-                <div id="winner-badge-kimik26" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-kimik26">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-kimik26"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-kimik26"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-kimik26"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-kimik26"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="also-premium">
-        <h2>Other Mid-Tier Models</h2>
-        <div class="premium-grid">
-            <div class="premium-card"><div class="name">Claude Sonnet 5</div><div class="provider">Anthropic</div><div class="price">$3 / $15 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="premium-card"><div class="name">Kimi K2.6</div><div class="provider">Moonshot</div><div class="price">$0.95 / $4.00 per 1M</div><div class="ctx">256K context</div></div>
-            <div class="premium-card"><div class="name">Gemini 3.1 Pro</div><div class="provider">Google</div><div class="price">$1.25 / $5.00 per 1M</div><div class="ctx">1M context</div></div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Code Generation</h3><p>Sonnet 5 at $3/$15 produces higher-quality code with better reasoning for complex tasks. Kimi K2.6 at $0.95/$4.00 handles standard code well at 68% lower input cost — great for utility scripts and boilerplate.</p><div class="recommendation"><span class="pick-kimi">Budget code: Kimi K2.6</span> | <span class="pick-sonnet5">Complex code: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Kimi K2.6 excels at Chinese content generation and is 73% cheaper on output. At 1M input + 500K output, Kimi costs $2.95 vs Sonnet 5's $10.50. Perfect for multilingual content, especially Chinese-market blogs and marketing copy.</p><div class="recommendation"><span class="pick-kimi">Chinese content: Kimi K2.6</span> | <span class="pick-sonnet5">English content: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Data Analysis</h3><p>Sonnet 5's 1M context window and stronger reasoning give it an edge for complex multi-document analysis. Kimi K2.6's 256K context is sufficient for most standard analysis tasks at a fraction of the cost.</p><div class="recommendation"><span class="pick-sonnet5">Deep analysis: Sonnet 5</span> | <span class="pick-kimi">Standard analysis: Kimi</span></div></div>
-            <div class="use-case-card"><h3>Batch Processing</h3><p>For high-volume batch workloads, Kimi K2.6's 68-73% cost savings add up fast. At 10K requests/day, Kimi saves $1,812/month vs Sonnet 5. The quality trade-off is usually acceptable for batch jobs.</p><div class="recommendation"><span class="pick-kimi">Better value: Kimi K2.6</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Comparing mid-tier models?</h2>
-        <p>APIpulse lets you compare all 67 models including Sonnet 5 ($3/$15) and Kimi K2.6 ($0.95/$4.00), save scenarios, and export cost reports for your team.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 73%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is Kimi K2.6 than Sonnet 5?</h3><p>Kimi K2.6 costs $0.95/$4.00 per 1M tokens vs Sonnet 5 at $3.00/$15.00 — 68% cheaper on input and 73% cheaper on output. At 1M input + 500K output tokens/month, Kimi costs $2.95 vs Sonnet 5's $10.50, saving $7.55/month ($90.60/year).</p></div>
-        <div class="faq-item"><h3>Is Sonnet 5 better than Kimi K2.6?</h3><p>Sonnet 5 ($3/$15) generally scores higher on complex reasoning, code generation, and nuanced analysis with its 1M context window. Kimi K2.6 ($0.95/$4.00) is a strong mid-tier option from Moonshot at 68-73% lower cost — excellent for Chinese content, standard analysis, and cost-sensitive workloads.</p></div>
-        <div class="faq-item"><h3>When should I choose Kimi K2.6 over Sonnet 5?</h3><p>Choose Kimi K2.6 for Chinese content generation, standard analysis, batch processing, and cost-sensitive workloads where 68-73% savings justify a slight quality trade-off. Choose Sonnet 5 for complex code generation, deep reasoning, nuanced English analysis, and tasks requiring the 1M context window.</p></div>
-    </div>
+
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

@@ -168,124 +168,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-mid">Mid Tier</span>
-        <h1>Gemini 3.1 Pro <span class="vs">vs</span> Grok 4.3</h1>
-        <p class="subtitle">Google.s mid-tier Pro meets xAI.s value contender. Same 1M context window, very different price points — find out which delivers better value for your workload.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Gemini 3.1 Pro (Google)</th><th>Grok 4.3 (xAI)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$2.00</td><td class="cheaper">$1.25</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$12.00</td><td class="cheaper">$2.50</td></tr>
-                <tr><td>Context Window</td><td class="same">1M tokens</td><td class="same">1M tokens</td></tr>
-                <tr><td>Tier</td><td>Mid</td><td>Mid</td></tr>
-                <tr><td>Provider</td><td>Google</td><td>xAI</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Same tier, same context — Grok has a major output price advantage for your usage.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('code-assist')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('summarization')">Summarization</button>
-            <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
-            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="3000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="1500" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="150" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gemini31">
-                <div class="provider">Google</div><div class="model-name">Gemini 3.1 Pro</div>
-                <div id="winner-badge-gemini31" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gemini31">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gemini31"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gemini31"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gemini31"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gemini31"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-grok">
-                <div class="provider">xAI</div><div class="model-name">Grok 4.3</div>
-                <div id="winner-badge-grok" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-grok">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-grok"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="also-mid">
-        <h2>Other Mid-Tier Models</h2>
-        <div class="mid-grid">
-            <div class="mid-card"><div class="name">Gemini 3.5 Flash</div><div class="provider">Google</div><div class="price">$1.50 / $9.00 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="mid-card"><div class="name">GPT-5</div><div class="provider">OpenAI</div><div class="price">$1.25 / $10.00 per 1M</div><div class="ctx">272K context</div></div>
-            <div class="mid-card"><div class="name">Mistral Medium 3.5</div><div class="provider">Mistral</div><div class="price">$1.50 / $7.50 per 1M</div><div class="ctx">128K context</div></div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Chatbots & Virtual Assistants</h3><p>Conversational interfaces that need natural responses. Grok 4.3's 83% cheaper output pricing makes it the clear winner for high-volume chat applications.</p><div class="recommendation"><span class="pick-grok">Better value: Grok 4.3</span></div></div>
-            <div class="use-case-card"><h3>Code Generation & Review</h3><p>Writing, reviewing, and debugging code. Gemini 3.1 Pro's instruction-following precision may edge out for complex architectural tasks, but Grok 4.3 costs 76% less overall.</p><div class="recommendation"><span class="pick-sonnet">Precision: Sonnet 4.6</span> | <span class="pick-grok">Value: Grok 4.3</span></div></div>
-            <div class="use-case-card"><h3>Content Summarization</h3><p>Processing and summarizing long documents. Both have 1M context. For summarization-heavy workloads, Grok 4.3's lower pricing makes it the clear value winner.</p><div class="recommendation"><span class="pick-grok">Better value: Grok 4.3</span></div></div>
-            <div class="use-case-card"><h3>AI Agents & Autonomous Tasks</h3><p>Multi-step autonomous workflows. Output-heavy by nature — Grok 4.3's 83% cheaper output pricing makes a massive difference at scale.</p><div class="recommendation"><span class="pick-grok">Better value: Grok 4.3</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Comparing mid-tier workloads?</h2>
-        <p>APIpulse lets you compare all 67 models, save scenarios, and export cost reports for your team.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 40%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>Is Gemini 3.1 Pro more expensive than Grok 4.3?</h3><p>Yes. Gemini 3.1 Pro costs $3/$15 per 1M tokens. Grok 4.3 costs $1.25/$2.50 per 1M tokens. Grok is 37% cheaper on input and 79% cheaper on output — a massive difference for output-heavy workloads.</p></div>
-        <div class="faq-item"><h3>Which has a larger context window?</h3><p>Both Gemini 3.1 Pro and Grok 4.3 offer 1M token context windows. They're equally capable for processing very long documents, codebases, or extended conversations.</p></div>
-        <div class="faq-item"><h3>When should I choose Gemini 3.1 Pro over Grok 4.3?</h3><p>Choose Gemini 3.1 Pro when you need Google's strong instruction-following, nuanced reasoning, or proven track record in production environments. Choose Grok 4.3 when cost is a primary concern — it's 37-79% cheaper while still offering 1M context.</p></div>
-        <div class="faq-item"><h3>How do these compare to Gemini 3.5 Flash?</h3><p>Gemini 3.5 Flash costs $1.50/$9 per 1M tokens — between the two on input but closer to Sonnet on output. Grok 4.3 is cheapest at $1.25/$2.50. All three have 1M context windows. Grok 4.3 offers the best value for output-heavy workloads.</p></div>
-    </div>
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">Related Comparisons</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">

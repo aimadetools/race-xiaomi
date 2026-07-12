@@ -33,61 +33,23 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button><div class="nav-links"><a href="calculator.html">Calculator</a><a href="compare.html">Compare</a><a href="cost-explorer.html">Explorer</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="index.html#free-tools" class="nav-cta">Free Tools →</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button></div></div></nav>
+    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;"><p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;"><strong style="color:#dc2626;">🔥 Limited time:</strong> <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a></p></div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-budget">Budget</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>GPT-5.4 mini <span class="vs">vs</span> Claude Haiku 4.5</h1>
-        <p class="subtitle">GPT-5.4 mini at $0.75/$4.50 vs Claude Haiku 4.5 at $1.00/$5.00. GPT-5.4 mini is 25% cheaper on input and 10% cheaper on output with 2x the context window. The new budget king from OpenAI.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5.4 mini (OpenAI)</th><th>Claude Haiku 4.5 (Anthropic)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="cheaper">$0.75</td><td class="pricier">$1.00</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$4.50</td><td class="pricier">$5.00</td></tr>
-                <tr><td>Context Window</td><td class="cheaper">400K tokens</td><td>200K tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>Anthropic</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Savings</h2>
-        <p class="section-sub">GPT-5.4 mini is cheaper on both input and output. See exactly how much you save at your usage level.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div><div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div><div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div></div>
-            <div><div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div><div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div></div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-a"><div class="provider">OpenAI</div><div class="model-name">GPT-5.4 mini</div><div id="winner-badge-a" class="winner-badge" style="display:none;">Cheaper Choice</div><div class="price-big" id="total-a">$0.00</div><div class="price-label">per month</div><div class="breakdown"><div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-a"></span></div><div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-a"></span></div><div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-a"></span></div><div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-a"></span></div></div></div>
-            <div class="result-card" id="card-b"><div class="provider">Anthropic</div><div class="model-name">Claude Haiku 4.5</div><div id="winner-badge-b" class="winner-badge" style="display:none;">Cheaper Choice</div><div class="price-big" id="total-b">$0.00</div><div class="price-label">per month</div><div class="breakdown"><div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-b"></span></div><div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-b"></span></div><div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-b"></span></div><div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-b"></span></div></div></div>
-        </div>
-    </div>
-    <div class="use-cases"><h2>Which Model for Which Use Case?</h2><div class="use-case-grid">
-        <div class="use-case-card"><h3>Chatbots & Customer Support</h3><p>Both are budget-tier models ideal for high-volume chatbot deployments. GPT-5.4 mini at $0.75/$4.50 costs 25% less on input and 10% less on output than Haiku 4.5 at $1.00/$5.00. At 500K messages/month, GPT-5.4 mini saves ~$125/month.</p><div class="recommendation"><span class="pick-a">Better value: GPT-5.4 mini</span></div></div>
-        <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, social media copy, email sequences. GPT-5.4 mini's 10% output savings compounds at scale. The 400K context also handles longer conversations and content better than Haiku 4.5's 200K.</p><div class="recommendation"><span class="pick-a">Better value: GPT-5.4 mini</span></div></div>
-        <div class="use-case-card"><h3>Data Extraction & Classification</h3><p>Structured data extraction, sentiment analysis. Input costs matter more here. GPT-5.4 mini's 25% input savings ($0.75 vs $1.00/1M) makes it the clear winner for input-heavy workloads.</p><div class="recommendation"><span class="pick-a">Better value: GPT-5.4 mini (25% cheaper input)</span></div></div>
-        <div class="use-case-card"><h3>Code Review & Debugging</h3><p>Lightweight code review, bug detection. Both handle code well at budget prices. GPT-5.4 mini's lower cost on both dimensions and larger context window make it more economical.</p><div class="recommendation"><span class="pick-a">Better value: GPT-5.4 mini</span></div></div>
-    </div></div>
-    <div class="pro-upsell"><h2>Comparing budget AI models?</h2><p>APIpulse lets you compare all 67 models, save scenarios, and export cost reports for your team.</p><div class="features"><div class="feature"><strong>67 models</strong> across 10 providers</div><div class="feature"><strong>Save</strong> up to 10 scenarios</div><div class="feature"><strong>Export</strong> PDF cost reports</div><div class="feature"><strong>Optimize</strong> — save up to 94%</div></div><a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a></div>
-    <div class="faq-section"><h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is GPT-5.4 mini than Claude Haiku 4.5?</h3><p>GPT-5.4 mini costs $0.75/$4.50 per 1M tokens while Claude Haiku 4.5 costs $1.00/$5.00. That's 25% cheaper on input and 10% cheaper on output. At 1M input + 1M output tokens/month, GPT-5.4 mini costs $5.25 vs Haiku 4.5's $6.00 — saving $0.75/month. At 10M+10M tokens, savings reach $7.50/month.</p></div>
-        <div class="faq-item"><h3>Which model has a larger context window?</h3><p>GPT-5.4 mini has a 400K token context window, double Claude Haiku 4.5's 200K context. This means GPT-5.4 mini can handle longer documents, larger codebases, and more extended conversation histories.</p></div>
-        <div class="faq-item"><h3>Is GPT-5.4 mini or Claude Haiku 4.5 better for chatbots?</h3><p>Both are excellent budget models for chatbots. GPT-5.4 mini at $0.75/$4.50 is 25% cheaper on input and 10% cheaper on output than Haiku 4.5 at $1.00/$5.00, making it more economical for high-volume deployments.</p></div>
-        <div class="faq-item"><h3>When should I choose Claude Haiku 4.5 over GPT-5.4 mini?</h3><p>Choose Claude Haiku 4.5 ($1.00/$5.00) when you need Anthropic's safety-focused approach or specific ecosystem integration. Choose GPT-5.4 mini ($0.75/$4.50) for lower costs and 2x the context window.</p></div>
-    </div>
     <div class="related-tools"><a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared</p></a><a href="compare.html" class="related-card"><h3>Compare Any Two</h3><p>Custom comparison tool</p></a><a href="api-cost-score.html" class="related-card"><h3>🎯 Cost Score</h3><p>Rate your API setup</p></a></div>
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
                     <!-- Post-Calculator Conversion CTA -->

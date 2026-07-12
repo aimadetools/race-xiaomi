@@ -159,12 +159,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -172,160 +176,7 @@
     </nav>
 
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <h1>GPT-5 mini <span class="vs">vs</span> Opus 4.8</h1>
-        <p class="subtitle">Budget vs Premium cross-provider showdown — GPT-5 mini is 95% cheaper on input and 92% cheaper on output. When does the premium Opus quality justify the cost?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead>
-                <tr><th>Specification</th><th>GPT-5 mini</th><th>Opus 4.8</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="cheaper">$0.25</td><td class="pricier">$5.00</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$2.00</td><td class="pricier">$25.00</td></tr>
-                <tr><td>Context Window</td><td>272K tokens</td><td>1M tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Premium</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>Anthropic</td></tr>
-                <tr><td>Input Savings</td><td class="cheaper">95% cheaper</td><td class="pricier">Baseline</td></tr>
-                <tr><td>Output Savings</td><td class="cheaper">92% cheaper</td><td class="pricier">Baseline</td></tr>
-                <tr><td>Cost at 1M input + 500K output</td><td class="cheaper">$1.25</td><td class="pricier">$17.50</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Enter your usage to see a precise cost comparison for both models.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('coding')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('rag')">RAG Pipeline</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
-            <button class="preset-btn" onclick="applyPreset('heavy')">Heavy Usage</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group">
-                    <label for="input-tokens">Input Tokens per Request</label>
-                    <input type="number" id="input-tokens" value="1500" min="1" oninput="calculate()">
-                </div>
-                <div class="input-group">
-                    <label for="output-tokens">Output Tokens per Request</label>
-                    <input type="number" id="output-tokens" value="800" min="1" oninput="calculate()">
-                </div>
-            </div>
-            <div>
-                <div class="input-group">
-                    <label for="requests-day">Requests per Day</label>
-                    <input type="number" id="requests-day" value="500" min="1" oninput="calculate()">
-                </div>
-                <div class="input-group">
-                    <label for="days-month">Days per Month</label>
-                    <input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()">
-                </div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;">
-            <div class="amount" id="savings-amount"></div>
-            <div class="detail" id="savings-detail"></div>
-        </div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gpt5mini">
-                <div class="provider">OpenAI</div>
-                <div class="model-name">GPT-5 mini</div>
-                <div id="winner-badge-gpt5mini" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt5mini">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt5mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt5mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt5mini"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt5mini"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-opus48">
-                <div class="provider">Anthropic</div>
-                <div class="model-name">Opus 4.8</div>
-                <div id="winner-badge-opus48" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-opus48">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-opus48"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-opus48"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-opus48"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-opus48"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card">
-                <h3>Cost-Effective Production</h3>
-                <p>GPT-5 mini delivers excellent quality at $0.25/$2 per million tokens — 95% cheaper on input and 92% cheaper on output than Opus 4.8. For most production workloads including chatbots, code assistants, and content generation, GPT-5 mini is the clear winner.</p>
-                <div class="recommendation"><span class="pick-gpt5mini">Best value: GPT-5 mini (92-95% cheaper)</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Maximum Reasoning Quality</h3>
-                <p>Opus 4.8 delivers best-in-class reasoning and chain-of-thought capabilities. If your use case demands the absolute highest quality for complex multi-step tasks and cost is secondary, Opus 4.8 delivers premium performance.</p>
-                <div class="recommendation"><span class="pick-opus48">Best reasoning: Opus 4.8</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Context Window Needs</h3>
-                <p>Opus 4.8 offers 1M context vs GPT-5 mini's 272K — 3.7x more. If your application needs long document processing or large codebase analysis, Opus 4.8 gives you significantly more context, though at 95x the input cost.</p>
-                <div class="recommendation"><span class="pick-opus48">Long context: Opus 4.8 (1M vs 272K)</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Enterprise Scale</h3>
-                <p>At 1M requests/month with 500K output tokens, GPT-5 mini saves $16.25/month compared to Opus 4.8. For enterprise-scale deployments, the 92-95% cost difference translates to $195/year in savings.</p>
-                <div class="recommendation"><span class="pick-gpt5mini">Enterprise: GPT-5 mini saves $195/year</span></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pro-upsell">
-        <h2>Need deeper cost analysis?</h2>
-        <p>APIpulse lets you compare all 67 models, save scenarios, and export PDF reports.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 40%</div>
-        </div>
-        <a href="audit.html?from=tool_page" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>Is GPT-5 mini cheaper than Opus 4.8?</h3>
-            <p>Yes — GPT-5 mini is dramatically cheaper. GPT-5 mini costs $0.25/M input and $2.00/M output, while Opus 4.8 costs $5.00/M input and $25.00/M output. That's 95% cheaper on input and 92% cheaper on output.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Which is better for coding — GPT-5 mini or Opus 4.8?</h3>
-            <p>Opus 4.8 excels at complex reasoning and multi-step coding tasks, while GPT-5 mini offers excellent value at 92-95% lower cost. For most coding work, GPT-5 mini is the better choice unless you need Opus 4.8's superior reasoning for complex multi-step problems.</p>
-        </div>
-        <div class="faq-item">
-            <h3>How much would I save using GPT-5 mini instead of Opus 4.8?</h3>
-            <p>For a workload of 1M input + 500K output tokens/month, GPT-5 mini costs $1.25/month vs Opus 4.8's $17.50/month — saving $16.25/month (93%). At scale (10M input + 5M output), you save $162.50/month — $1,950/year.</p>
-        </div>
-        <div class="faq-item">
-            <h3>When should I choose Opus 4.8 over GPT-5 mini?</h3>
-            <p>Choose Opus 4.8 when: (1) you need the best reasoning quality and chain-of-thought capabilities, (2) you need 1M context window for large documents or codebases, (3) cost is secondary to output quality. For everything else, GPT-5 mini delivers excellent value at 92-95% lower cost.</p>
-        </div>
-    </div>
 
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">Related Comparisons</h2>

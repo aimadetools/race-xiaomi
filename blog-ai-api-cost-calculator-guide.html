@@ -140,12 +140,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -153,162 +157,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content">
-        <a href="blog.html" class="back-link">← Back to Blog</a>
-        <h1>AI API Cost Calculator: How to Estimate Your Monthly Spend in 2026</h1>
-        <p class="subtitle">Stop guessing. Learn the exact formula to calculate your AI API costs and use our free calculator to model any scenario.</p>
-
-        <div class="article">
-            <p>Whether you're building a chatbot, RAG pipeline, or AI-powered SaaS, knowing your API costs upfront is critical. A miscalculation can turn a profitable feature into a money pit. This guide shows you exactly how to calculate AI API costs, with real examples across GPT-5, Claude, Gemini, DeepSeek, and 48 other models.</p>
-
-        <div class="cta-box" style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border-color:rgba(34,197,94,0.3);">
-            <h3>🎯 Rate Your API Setup in 30 Seconds</h3>
-            <p>Get an A+ to F grade on your AI API costs. See how you compare and find cheaper alternatives instantly.</p>
-            <a href="api-cost-score.html" class="btn" style="background:var(--green);color:white;">Get Your Cost Score →</a>
-        </div>
-        <div class="cta-box" style="background:linear-gradient(135deg,var(--accent-bg),rgba(99,102,241,0.02));border-color:rgba(99,102,241,0.3);">
-            <h3>📊 Generate Your Personalized API Cost Report</h3>
-            <p>Select your model, enter your monthly spend, and get a custom savings report with cheaper alternatives — free, in 60 seconds.</p>
-        </div>
-
-            <div class="cta-inline">
-                <p><strong>Try our free AI API Cost Calculator</strong></p>
-                <p>Get instant cost estimates for 67 models across 10 providers. See your <strong>Cost Efficiency Score</strong> (A-F grade) and discover how much you could save. No signup required.</p>
-                <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'blog_cost_calculator_guide'})">Open Calculator →</a>
-            </div>
-            <p style="margin-top:8px;font-size:14px;"> — See if you're overpaying for AI APIs</p>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        
-
-            <h2>The Core Formula</h2>
-            <p>Every AI API provider charges based on two metrics: <strong>input tokens</strong> (text you send) and <strong>output tokens</strong> (text the model generates). Prices are quoted per 1 million tokens.</p>
-
-            <div class="formula-box">
-                <code>Monthly Cost = (Input Tokens × Input Price × Requests × Days ÷ 1,000,000) + (Output Tokens × Output Price × Requests × Days ÷ 1,000,000)</code>
-            </div>
-
-            <p>Simplified:</p>
-            <div class="formula-box">
-                <code>Monthly Cost = (Total Input Tokens × Input Price per 1M) + (Total Output Tokens × Output Price per 1M)</code>
-            </div>
-
-            <h2>Step-by-Step Calculation</h2>
-
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Know Your Token Counts</h3>
-                <p>A token is roughly 4 characters or 0.75 words. A typical chat message is 50-100 tokens. Code is more token-dense. Use a <a href="token-estimator.html">token estimator</a> to get accurate counts for your specific content.</p>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-            </div>
-
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h3>Check the Model's Pricing</h3>
-                <p>Each model has separate input and output prices. Here's a quick reference for popular models:</p>
-                <table class="example-table">
-                    <thead><tr><th>Model</th><th>Input (per 1M)</th><th>Output (per 1M)</th><th>Context</th></tr></thead>
-                    <tbody>
-                        <tr><td>GPT-5</td><td>$1.25</td><td>$10.00</td><td>272K</td></tr>
-                        <tr><td>GPT-5 Mini</td><td>$0.40</td><td>$1.60</td><td>128K</td></tr>
-                        <tr><td>Claude Sonnet 4.6</td><td>$3.00</td><td>$15.00</td><td>200K</td></tr>
-                        <tr><td>Claude Opus 4.8</td><td>$5.00</td><td>$25.00</td><td>1M</td></tr>
-                        <tr><td>Gemini 3.1 Pro</td><td>$1.25</td><td>$10.00</td><td>1M</td></tr>
-                        <tr><td>DeepSeek V4 Pro</td><td>$0.44</td><td>$0.87</td><td>1M</td></tr>
-                        <tr><td>Grok 4.3</td><td>$1.25</td><td>$2.50</td><td>1M</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <h3>Estimate Your Daily Requests</h3>
-                <p>Think about your expected traffic: A small chatbot might handle 100-500 requests/day. A production SaaS might handle 1,000-10,000/day. An enterprise pipeline might handle 50,000+/day.</p>
-            </div>
-
-            <div class="step-card">
-                <div class="step-number">4</div>
-                <h3>Calculate Monthly Volume</h3>
-                <p>Multiply daily requests by 30 (days/month). This gives your total monthly request count. Then multiply by your average tokens per request to get total tokens.</p>
-            </div>
-
-            <div class="step-card">
-                <div class="step-number">5</div>
-                <h3>Plug Into the Formula</h3>
-                <p>Apply the formula above, or use our <a href="calculator.html">free calculator</a> for instant results across all 67 models.</p>
-            </div>
-
-            <h2>Real-World Examples</h2>
-
-            <h3>Example 1: Small Chatbot (GPT-5)</h3>
-            <p><strong>Input:</strong> 1,500 tokens/request &middot; <strong>Output:</strong> 800 tokens/request &middot; <strong>Requests:</strong> 200/day</p>
-            <table class="example-table">
-                <thead><tr><th>Metric</th><th>Calculation</th><th>Result</th></tr></thead>
-                <tbody>
-                    <tr><td>Monthly input tokens</td><td>1,500 × 200 × 30</td><td>9,000,000</td></tr>
-                    <tr><td>Monthly output tokens</td><td>800 × 200 × 30</td><td>4,800,000</td></tr>
-                    <tr><td>Input cost</td><td>9M × $1.25/M</td><td class="cost">$11.25</td></tr>
-                    <tr><td>Output cost</td><td>4.8M × $10/M</td><td class="cost">$48.00</td></tr>
-                    <tr><td><strong>Total monthly cost</strong></td><td></td><td class="cost"><strong>$59.25</strong></td></tr>
-                </tbody>
-            </table>
-
-            <h3>Example 2: Same Workload on DeepSeek V4 Pro</h3>
-            <table class="example-table">
-                <thead><tr><th>Metric</th><th>Calculation</th><th>Result</th></tr></thead>
-                <tbody>
-                    <tr><td>Input cost</td><td>9M × $0.44/M</td><td class="cost">$3.96</td></tr>
-                    <tr><td>Output cost</td><td>4.8M × $0.87/M</td><td class="cost">$4.18</td></tr>
-                    <tr><td><strong>Total monthly cost</strong></td><td></td><td class="cost"><strong>$8.14</strong></td></tr>
-                    <tr><td><strong>Savings vs GPT-5</strong></td><td></td><td class="cost"><strong>$51.11 (86%)</strong></td></tr>
-                </tbody>
-            </table>
-            <p>Same workload, same quality tier — but <strong>86% cheaper</strong>. That's why choosing the right model matters.</p>
-
-            <h2>5 Ways to Reduce Your AI API Costs</h2>
-
-            <ol>
-                <li><strong>Multi-model routing:</strong> Use budget models (DeepSeek V4 Flash at $0.14/M) for simple tasks and premium models for complex reasoning. Can reduce costs by 60-80%.</li>
-                <li><strong>Prompt caching:</strong> Many providers offer cache discounts for repeated prompts. Send the same system prompt once, cache it, and only pay for new content.</li>
-                <li><strong>Output length limits:</strong> Set <code>max_tokens</code> to prevent runaway output costs. Most responses don't need 4,096 tokens — 512 is often enough.</li>
-                <li><strong>Batch processing:</strong> Non-time-sensitive tasks can use batch APIs at 50% discount from OpenAI and similar providers.</li>
-                <li><strong>Monitor and alert:</strong> Track your daily spend. Set alerts at 50% and 80% of your budget to catch overspending early. Use APIpulse's <strong>Cost Efficiency Score</strong> to see at a glance how cost-efficient your setup is (A = great, F = overpaying).</li>
-            </ol>
-
-            <div class="cta-inline">
-                <p><strong>Ready to optimize your costs?</strong></p>
-                <p>Our free calculator models all 67 AI models with your exact usage pattern. Get your <strong>Cost Efficiency Score</strong> and find the cheapest option for your workload in seconds.</p>
-                <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'blog_cost_calculator_guide_bottom'})">Calculate Your Costs →</a>
-            </div>
-
-            <h2>Quick Cost Reference by Use Case</h2>
-            <table class="example-table">
-                <thead><tr><th>Use Case</th><th>Avg Tokens/Req</th><th>Requests/Day</th><th>Cheapest Model</th><th>Monthly Cost</th></tr></thead>
-                <tbody>
-                    <tr><td>Customer Support Bot</td><td>800 in / 400 out</td><td>1,000</td><td>DeepSeek V4 Pro</td><td class="cost">$1.72</td></tr>
-                    <tr><td>Code Assistant</td><td>3,000 in / 1,500 out</td><td>100</td><td>Grok 4.3</td><td class="cost">$1.50</td></tr>
-                    <tr><td>RAG Pipeline</td><td>8,000 in / 500 out</td><td>500</td><td>GPT-5 Mini</td><td class="cost">$11.40</td></tr>
-                    <tr><td>Content Generation</td><td>500 in / 2,000 out</td><td>50</td><td>DeepSeek V4 Pro</td><td class="cost">$1.84</td></tr>
-                    <tr><td>Complex Analysis</td><td>10,000 in / 3,000 out</td><td>50</td><td>GPT-5</td><td class="cost">$3.81</td></tr>
-                </tbody>
-            </table>
-
-            <p>The right model for your use case can mean the difference between $1.72/month and $59/month for the same workload. Use our <a href="calculator.html">cost calculator</a> to find your optimal model.</p>
-        </div>
-    </div>
 
 <div style="max-width:700px;margin:0 auto 32px;padding:0 24px;">
     <div style="padding:20px;border-radius:12px;border:1px solid #f59e0b;background:rgba(245,158,11,0.05);">

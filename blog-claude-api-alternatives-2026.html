@@ -142,21 +142,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -165,182 +159,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">Claude API Alternatives</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Guides</span>
-            <span>June 4, 2026</span>
-        </div>
-        <h1>Claude API Alternatives: 7 Cheaper Options That Save Up to 97% (June 2026)</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <p>Anthropic's Claude Sonnet 4 costs $3 per million input tokens — great quality, but not the cheapest option. If you're spending more than $50/month on Claude's API, there are 7 alternatives that can save you 40-93% while maintaining quality for most workloads.</p>
-
-        <p>We ranked every major Claude alternative by cost, quality, and use case so you can find the right fit without sacrificing performance.</p>
-
-        <h2>The Complete Ranking: Claude Alternatives by Cost</h2>
-
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Rank</th>
-                    <th>Model</th>
-                    <th>Provider</th>
-                    <th>Input ($/1M)</th>
-                    <th>Output ($/1M)</th>
-                    <th>Savings vs Claude Sonnet 4</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="winner">1</td>
-                    <td class="winner">Gemini 2.5 Flash-Lite</td>
-                    <td>Google</td>
-                    <td class="winner">$0.075</td>
-                    <td>$0.30</td>
-                    <td class="winner">97% cheaper</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Gemini 2.5 Flash-Lite</td>
-                    <td>Google</td>
-                    <td>$0.10</td>
-                    <td>$0.40</td>
-                    <td>93% cheaper</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>DeepSeek V4 Flash</td>
-                    <td>DeepSeek</td>
-                    <td>$0.14</td>
-                    <td>$0.28</td>
-                    <td>91% cheaper</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>GPT-5 mini</td>
-                    <td>OpenAI</td>
-                    <td>$0.25</td>
-                    <td>$2.00</td>
-                    <td>73% cheaper</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>DeepSeek V4 Pro</td>
-                    <td>DeepSeek</td>
-                    <td>$0.44</td>
-                    <td>$0.87</td>
-                    <td>43% cheaper</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Mistral Large 3</td>
-                    <td>Mistral</td>
-                    <td>$0.50</td>
-                    <td>$1.50</td>
-                    <td>50% cheaper</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Claude Haiku 4.5</td>
-                    <td>Anthropic</td>
-                    <td>$1.00</td>
-                    <td>$5.00</td>
-                    <td>33% cheaper</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>The cheapest Claude alternative (Gemini Flash Lite at $0.075) costs 97% less than Claude Sonnet 4 on output tokens.</strong> Even Anthropic's own Haiku 4.5 saves 33% on input costs.</p>
-
-        <h2>Detailed Breakdown: Each Alternative</h2>
-
-        <h3>1. Google Gemini 2.5 Flash-Lite — $0.075/$0.30</h3>
-        <p>The absolute cheapest API available. Google's Flash Lite is optimized for speed and cost, not depth. Best for: classification, sentiment analysis, simple Q&A, content moderation, high-volume routing. Quality is good for simple tasks but drops off for complex reasoning.</p>
-
-        <h3>2. Google Gemini 2.5 Flash-Lite — $0.10/$0.40</h3>
-        <p>The sweet spot for Google's budget tier. Flash offers significantly better quality than Flash Lite while staying under $0.10 input. With 1M context, it handles long documents easily. Best for: summarization, content generation, chatbots, code review.</p>
-
-        <h3>3. DeepSeek V4 Flash — $0.14/$0.28</h3>
-        <p>DeepSeek's fastest model with excellent quality-per-dollar. 1M context, strong at coding and math. Best for: code generation, mathematical reasoning, technical analysis, high-volume production APIs.</p>
-
-        <h3>4. OpenAI GPT-5 mini — $0.25/$2.00</h3>
-        <p>OpenAI's budget flagship. GPT-5 mini delivers solid performance across general tasks at a fraction of Claude's cost. Best for: general-purpose chatbots, content generation, translation, summarization.</p>
-
-        <h3>5. DeepSeek V4 Pro — $0.44/$0.87</h3>
-        <p>DeepSeek's flagship model. Approaches Claude quality at 43% lower cost. Best for: complex reasoning, code generation, research tasks where quality matters but budget is tight.</p>
-
-        <h3>6. Mistral Large 3 — $0.50/$1.50</h3>
-        <p>Mistral's latest large model. Strong multilingual capabilities and good at structured output. Best for: European language tasks, structured data extraction, function calling.</p>
-
-        <h3>7. Claude Haiku 4.5 — $1.00/$5.00</h3>
-        <p>If you want to stay in the Anthropic ecosystem, Haiku 4.5 is 33% cheaper than Sonnet 4 with surprisingly good quality. Best for: chatbots, code completion, summarization, tasks where Claude's reasoning style matters.</p>
-
-        <h2>Monthly Cost Comparison: 10K Requests/Day</h2>
-
-        <div class="cost-box">
-            <h3>Workload: 10K requests/day, 2K tokens avg (input), 500 tokens avg (output)</h3>
-            <div class="cost-row">
-                <span>Claude Sonnet 4 (Anthropic)</span>
-                <span>$2,400/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Claude Haiku 4.5 (Anthropic)</span>
-                <span>$650/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>DeepSeek V4 Pro</span>
-                <span>$270/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>GPT-5 mini (OpenAI)</span>
-                <span>$240/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>DeepSeek V4 Flash</span>
-                <span>$125/mo</span>
-            </div>
-            <div class="cost-row">
-                <span>Gemini 2.5 Flash-Lite</span>
-                <span>$90/mo</span>
-            </div>
-            <div class="cost-row">
-                <span class="winner">Gemini Flash Lite</span>
-                <span class="cost-total">$68/mo</span>
-            </div>
-            <div class="cost-row">
-                <span><strong>Savings (Flash Lite vs Claude Sonnet 4)</strong></span>
-                <span class="winner">$2,332/mo (97%)</span>
-            </div>
-        </div>
 
         <p>At 10K requests/day, <strong>switching from Claude Sonnet 4 to Gemini Flash Lite saves $27,984 per year.</strong> Even switching to Claude Haiku saves $21,000/year.</p>
 

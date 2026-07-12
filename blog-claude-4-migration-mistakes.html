@@ -156,79 +156,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="blog-hero">
-        <div class="category">⚠️ MIGRATION GUIDE</div>
-        <h1>5 Costly Claude 4 Migration Mistakes <span style="color:#f59e0b">(And How to Avoid Them)</span></h1>
-        <p class="subtitle">Claude 4 is retired. Don't waste money or break your app with these common migration traps. Each one costs developers hours of debugging — or hundreds of dollars in overpayment.</p>
-        <p class="meta">Published Jun 14, 2026 · 8 min read</p>
-    </div>
-
-    <div class="blog-content">
-
-        <p>Claude 4 Opus and Sonnet 4 returned their last API responses on June 15, 2026. If you're reading this, your code is probably broken right now.</p>
-
-        <p>Before you start frantically changing model IDs, stop. We've analyzed hundreds of post-shutdown migration attempts and found <strong>5 expensive mistakes</strong> that developers keep making. Each one wastes time, money, or both.</p>
-
-        <p>Avoid these traps and you'll be migrated in under 15 minutes. Make them and you'll be debugging for hours — or silently overpaying for months.</p>
-
-        <!-- Mistake 1 -->
-        <div class="mistake-card">
-            <div class="mistake-number">1</div>
-            <h3>Using the Wrong Model ID</h3>
-            <p>This is the #1 mistake. Developers see <code>claude-4-opus</code> is dead and try to guess the replacement name. Common wrong guesses:</p>
-            <div class="wrong">
-                <div class="label">❌ Wrong</div>
-                <code>claude-4-opus-2</code>, <code>claude-opus-new</code>, <code>claude-4-opus-next</code>, <code>claude-opus-latest</code>
-            </div>
-            <div class="right">
-                <div class="label">✅ Correct</div>
-                <code>claude-opus-4-8</code> (Opus) or <code>claude-sonnet-4-6</code> (Sonnet)
-            </div>
-            <p>Using the wrong ID returns <code>model_not_found</code> or <code>410 Gone</code> — and you'll waste hours thinking your API key is broken when it's just the model name.</p>
-            <p><strong>Fix:</strong> Use the exact model IDs from <a href="claude-4-410-fix.html">our 410 fix guide</a>. It's 1 line of code.</p>
-        </div>
-
-        <!-- Mistake 2 -->
-        <div class="mistake-card">
-            <div class="mistake-number">2</div>
-            <h3>Defaulting to Claude Opus 4.8 (And Overpaying by 90%)</h3>
-            <p>When Claude 4 dies, the natural instinct is to upgrade to the newest Anthropic model. But Claude Opus 4.8 at <strong>$5/$25 per 1M tokens</strong> is the MOST EXPENSIVE option.</p>
-            <p>For most use cases, you can get the same quality for a fraction of the cost:</p>
-            <div class="cost-comparison">
-                <div class="cost-card">
-                    <div class="label">Claude Opus 4.8</div>
-                    <div class="price" style="color:var(--text-primary)">$5 / $25</div>
-                    <div class="detail">Per 1M tokens (input/output)</div>
-                </div>
                 <div class="cost-card winner">
                     <div class="label">DeepSeek V4 Pro</div>
                     <div class="price">$0.44 / $0.87</div>

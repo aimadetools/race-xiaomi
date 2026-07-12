@@ -149,15 +149,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -166,74 +166,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-ai-discord-bot-cost">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">AI Discord Bot Cost 2026</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Guide</span>
-            <span>Jun 5, 2026</span>
-            <span>· 10 min read</span>
-        </div>
-        <h1>How Much Does It Cost to Build an AI Discord Bot in 2026?</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <p>Discord bots with AI capabilities are exploding — from moderation helpers to coding assistants to customer support bots. But the biggest question most builders have is: <strong>how much will the API calls actually cost?</strong></p>
-
-        <p>The answer depends on your model choice, message volume, and response length. A small hobby bot can run for under $5/month. A large community bot with thousands of users can cost $500+/month. Here's the real breakdown.</p>
-
-        <h2>Cost by Bot Size</h2>
-        <p>Here's what you can expect to pay monthly based on your bot's usage:</p>
-
-        <div class="cost-example">
-            <div class="label">Monthly API costs by bot size (budget model)</div>
-            <div class="cost-row">
-                <span class="name">Tiny (50 users, 200 msgs/day)</span>
-                <span class="value">$1-3/mo</span>
-            </div>
-            <div class="cost-row">
-                <span class="name">Small (200 users, 1,000 msgs/day)</span>
-                <span class="value">$5-15/mo</span>
-            </div>
-            <div class="cost-row">
-                <span class="name">Medium (1,000 users, 5,000 msgs/day)</span>
-                <span class="value">$25-75/mo</span>
-            </div>
-            <div class="cost-row">
-                <span class="name">Large (5,000 users, 20,000 msgs/day)</span>
-                <span class="value">$100-300/mo</span>
-            </div>
-            <div class="cost-row">
-                <span class="name">Massive (20,000+ users, 100K msgs/day)</span>
-                <span class="value">$500-2,000/mo</span>
-            </div>
-        </div>
 
         <p>These estimates assume <strong>budget models</strong> (DeepSeek V4 Flash, GPT-4o mini, Gemini Flash). Using premium models like GPT-5 or Claude Opus will multiply costs by 10-50x.</p>
 

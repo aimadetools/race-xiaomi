@@ -200,21 +200,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -223,66 +217,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="pricing.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-mistral-small4-vs-deepseek-v4-flash">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">Mistral Small 4 vs DeepSeek V4 Flash</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Comparison</span>
-            <span class="tier-badge tier-budget">Budget</span>
-            <span>July 8, 2026</span>
-            <span>8 min read</span>
-        </div>
-        <h1>Mistral Small 4 vs DeepSeek V4 Flash: Which Budget AI API Wins in July 2026?</h1>
-
-        <p>When you're building on a budget, every fraction of a cent matters. Mistral Small 4 and DeepSeek V4 Flash are two of the cheapest AI APIs available in July 2026 — but they target different use cases and have very different tradeoffs. This comparison breaks down the real costs, context windows, and performance characteristics so you can pick the right one for your workload.</p>
-
-        <h2>Pricing at a Glance</h2>
-        <p>Both models are firmly in the budget tier, but DeepSeek undercuts Mistral on both input and output:</p>
-        <ul>
-            <li><strong>Mistral Small 4:</strong> $0.15 per 1M input tokens, $0.60 per 1M output tokens, 128K context</li>
-            <li><strong>DeepSeek V4 Flash:</strong> $0.14 per 1M input tokens, $0.28 per 1M output tokens, 1M context</li>
-        </ul>
-        <p>On input tokens, the difference is negligible — about 7%. But on output tokens, <strong>DeepSeek is 53% cheaper</strong>. For workloads that generate long responses (summarization, code generation, content creation), this adds up fast.</p>
-
-        <div class="cost-example">
-            <div class="label">Monthly Cost Comparison — 10M Input + 5M Output Tokens</div>
-            <div class="cost-row">
-                <span class="name">Mistral Small 4 input</span>
-                <span class="value">$1.50</span>
-            </div>
-            <div class="cost-row">
-                <span class="name">Mistral Small 4 output</span>
-                <span class="value">$3.00</span>
-            </div>
-            <div class="cost-row cost-total">
-                <span class="name">Mistral Small 4 total</span>
-                <span class="value">$4.50/mo</span>
-            </div>
-            <div class="cost-row" style="border-top:2px solid var(--border);padding-top:12px;margin-top:4px;">
-                <span class="name">DeepSeek V4 Flash input</span>
-                <span class="value">$1.40</span>
-            </div>
-            <div class="cost-row">
-                <span class="name">DeepSeek V4 Flash output</span>
-                <span class="value">$1.40</span>
-            </div>
-            <div class="cost-row cost-total">
-                <span class="name">DeepSeek V4 Flash total</span>
-                <span class="value">$2.80/mo</span>
-            </div>
-        </div>
         <p>At 10M input + 5M output tokens per month, <strong>DeepSeek saves you $1.70/mo (38%)</strong> compared to Mistral Small 4. Scale that to 100M tokens and the savings become $17/mo — still modest, but real money for indie developers and startups watching every dollar.</p>
 
         <h2>Context Window: 8x Difference</h2>

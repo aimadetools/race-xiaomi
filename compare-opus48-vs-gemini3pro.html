@@ -183,125 +183,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-premium">Premium</span> <span class="tier-badge tier-mid">Mid</span>
-        <h1>Claude Opus 4.8 <span class="vs">vs</span> Gemini 3.1 Pro</h1>
-        <p class="subtitle">Premium vs mid-tier: Opus 4.8 at $5/$25 vs Gemini 3.1 Pro at $2/$12. Gemini 3.1 Pro is 60% cheaper on input, 52% cheaper on output — same 1M context window. Save up to $210/month at scale.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Claude Opus 4.8 (Anthropic)</th><th>Gemini 3.1 Pro (Google)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$5.00</td><td class="cheaper">$2.00</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$25.00</td><td class="cheaper">$12.00</td></tr>
-                <tr><td>Context Window</td><td class="same">1M tokens</td><td class="same">1M tokens</td></tr>
-                <tr><td>Tier</td><td>Premium</td><td>Mid</td></tr>
-                <tr><td>Provider</td><td>Anthropic</td><td>Google</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Savings</h2>
-        <p class="section-sub">Gemini 3.1 Pro is dramatically cheaper on both input and output. See exactly how much you save at your usage level.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-opus48">
-                <div class="provider">Anthropic</div><div class="model-name">Claude Opus 4.8</div>
-                <div id="winner-badge-opus48" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-opus48">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-opus48"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-opus48"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-opus48"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-opus48"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-gemini3pro">
-                <div class="provider">Google</div><div class="model-name">Gemini 3.1 Pro</div>
-                <div id="winner-badge-gemini3pro" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gemini3pro">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gemini3pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gemini3pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gemini3pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gemini3pro"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="also-premium">
-        <h2>Other Mid-Tier Models</h2>
-        <div class="premium-grid">
-            <div class="premium-card"><div class="name">Claude Sonnet 5</div><div class="provider">Anthropic</div><div class="price">$3.00 / $15 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="premium-card"><div class="name">GPT-5</div><div class="provider">OpenAI</div><div class="price">$1.25 / $10 per 1M</div><div class="ctx">272K context</div></div>
-            <div class="premium-card"><div class="name">Gemini 3.5 Flash</div><div class="provider">Google</div><div class="price">$1.50 / $9 per 1M</div><div class="ctx">1M context</div></div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Code Generation</h3><p>Opus 4.8 ($5/$25) is Anthropic's premium coding model with top-tier code generation, debugging, and refactoring. Gemini 3.1 Pro ($2/$12) offers strong coding at 60% less input cost. For most coding tasks, Gemini 3.1 Pro delivers excellent results at a fraction of the cost.</p><div class="recommendation"><span class="pick-gemini">Cost efficiency: Gemini 3.1 Pro</span> | <span class="pick-opus">Max quality: Opus 4.8</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, marketing copy, documentation. Opus 4.8 at $25/1M output vs Gemini 3.1 Pro at $12/1M output means Gemini saves 52% on every output token. For high-volume content generation, this compounds to massive monthly savings.</p><div class="recommendation"><span class="pick-gemini">Better value: Gemini 3.1 Pro (52% cheaper output)</span></div></div>
-            <div class="use-case-card"><h3>Long-Context Processing</h3><p>Both models have 1M token context windows — identical capacity for long documents, large codebases, and extended conversations. Neither has an advantage for context length. Pick based on price and quality preferences.</p><div class="recommendation"><span class="pick-gemini">Same context: Tie — Gemini 3.1 Pro is cheaper</span></div></div>
-            <div class="use-case-card"><h3>High-Volume Batch Processing</h3><p>At scale, Gemini 3.1 Pro's savings compound dramatically. At 10M input + 10M output tokens/month, Gemini 3.1 Pro costs $140 vs Opus 4.8's $300 — saving $160/month. For batch workloads, Gemini 3.1 Pro delivers strong results at less than half the cost.</p><div class="recommendation"><span class="pick-gemini">Savings at scale: Gemini 3.1 Pro ($160/month at 10M+10M)</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Comparing premium and mid-tier models?</h2>
-        <p>APIpulse lets you compare all 67 models including Opus 4.8 ($5/$25) and Gemini 3.1 Pro ($2/$12), save scenarios, and export cost reports for your team.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 94%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is Gemini 3.1 Pro than Claude Opus 4.8?</h3><p>Gemini 3.1 Pro costs $2.00/$12.00 per 1M tokens while Claude Opus 4.8 costs $5.00/$25.00 per 1M tokens. Gemini 3.1 Pro is 60% cheaper on input and 52% cheaper on output. At 1M input + 1M output tokens/month, Gemini 3.1 Pro costs $14 vs Opus 4.8's $30, saving $16/month. At 10M input + 10M output, savings reach $210/month. The input price difference is even larger — 60% cheaper — making Gemini 3.1 Pro exceptionally cost-effective for input-heavy workloads.</p></div>
-        <div class="faq-item"><h3>Which model has a larger context window?</h3><p>Both Claude Opus 4.8 and Gemini 3.1 Pro have identical 1M token context windows. Neither has an advantage for long-document processing. Both handle extremely long documents, large codebases, and extended conversation histories with ease. Context window is not a differentiator between these two models.</p></div>
-        <div class="faq-item"><h3>Is Gemini 3.1 Pro good enough to replace Claude Opus 4.8?</h3><p>Gemini 3.1 Pro at $2/$12 is a strong mid-tier model that handles most tasks well — code generation, content creation, analysis, and chatbot applications. Claude Opus 4.8 at $5/$25 is a premium model with potentially stronger reasoning and safety alignment. For cost-sensitive workloads where 80-90% of the quality is acceptable, Gemini 3.1 Pro offers dramatically better value. For mission-critical tasks requiring the highest quality, Opus 4.8 may justify its 2.5x premium on input and 2.1x premium on output.</p></div>
-        <div class="faq-item"><h3>When should I choose Claude Opus 4.8 over Gemini 3.1 Pro?</h3><p>Choose Claude Opus 4.8 ($5/$25) for mission-critical tasks requiring the highest quality reasoning, Anthropic's safety-focused approach, or when output quality directly impacts your product. Choose Gemini 3.1 Pro ($2/$12) for cost-sensitive workloads, high-volume batch processing, or when you need 60% cheaper input costs and 52% cheaper output costs with acceptable quality. Both have identical 1M context windows.</p></div>
-        <div class="faq-item"><h3>Are both models in the same pricing tier?</h3><p>No. Claude Opus 4.8 is in the Premium tier ($5/$25) while Gemini 3.1 Pro is in the Mid tier ($2/$12). Opus 4.8 is 2.5x more expensive on input and 2.1x more expensive on output. The tier difference reflects the intended use cases — Opus 4.8 for premium tasks requiring top quality, Gemini 3.1 Pro for cost-effective mid-tier workloads. Both share identical 1M context windows.</p></div>
-    </div>
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

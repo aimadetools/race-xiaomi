@@ -203,22 +203,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="quiz.html">Quiz</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -227,70 +220,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">GPT-5 mini vs Claude Haiku 4.5</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Comparison</span>
-            <span class="tier-badge tier-budget">Budget</span>
-            <span>May 6, 2026</span>
-        </div>
-
-        <h1>GPT-5 mini vs Claude Haiku 4.5: Which Budget Model Should You Use?</h1>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <p>The budget AI model tier has gotten <em>really</em> interesting in 2026. OpenAI's GPT-5 mini launched at a price point that makes GPT-4o look expensive, while Anthropic's Claude Haiku 4.5 remains the go-to for developers who need Claude's reasoning quality at a lower cost. Here's a detailed breakdown of pricing, capabilities, and real-world costs.</p>
-
-        <h2>Pricing at a Glance</h2>
-        <p>As of May 2026:</p>
-        <ul>
-            <li><strong>GPT-5 mini:</strong> $0.25 per 1M input tokens, $2.00 per 1M output tokens</li>
-            <li><strong>Claude Haiku 4.5:</strong> $1.00 per 1M input tokens, $5.00 per 1M output tokens</li>
-        </ul>
-        <p>GPT-5 mini is <strong>4x cheaper on input</strong> and <strong>2.5x cheaper on output</strong>. For high-volume applications, this gap adds up fast.</p>
-
-        <h2>Context Window</h2>
-        <ul>
-            <li><strong>GPT-5 mini:</strong> 272K tokens</li>
-            <li><strong>Claude Haiku 4.5:</strong> 200K tokens</li>
-        </ul>
-        <p>GPT-5 mini wins here too. Its 272K context window is 36% larger than Haiku's 200K. For long documents, codebases, or conversation histories, GPT-5 mini gives you more room to work with.</p>
-
-        <h2>Use Case 1: Customer Support Chatbot</h2>
-        <p>Typical request: ~500 input tokens, ~200 output tokens. At 1,000 requests/day:</p>
-        <div class="cost-example">
-            <div class="label">Monthly cost breakdown</div>
-            <div class="cost-row"><span class="name">GPT-5 mini</span><span class="value">$15.00/mo</span></div>
-            <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">$45.00/mo</span></div>
-            <div class="cost-row cost-total"><span class="name">Savings with GPT-5 mini</span><span class="value" style="color:var(--green);">$30.00/mo (67%)</span></div>
-        </div>
         <p>For a chatbot handling 1K requests/day, GPT-5 mini saves $360/year. Scale to 10K requests/day and you're saving $3,600/year.</p>
 
         <h2>Use Case 2: Code Generation</h2>

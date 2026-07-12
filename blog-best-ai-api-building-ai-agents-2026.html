@@ -202,12 +202,18 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">⚡ APIpulse</a>
-            <div class="nav-links">
-                <a href="/pricing.html">Pricing</a>
-                <a href="/calculator.html">Calculator</a>
-                <a href="/tools.html">Tools</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/compare-plans.html" class="nav-cta">Compare Plans</a>
+                        <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -216,52 +222,7 @@
         <a href="/blog.html" class="back-link">← Back to Blog</a>
 
         <article class="article">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-            <h1>Best AI APIs for Building AI Agents 2026: Cost, Reliability & Tool Use Compared</h1>
-            <p class="subtitle">Which model gives you the most reliable tool-calling at the lowest cost? We tested 8 leading APIs on real agent workflows — from multi-step research to code execution — and ranked them by agent-specific performance.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-            <p>AI agents are the hottest application category in 2026. But building a reliable agent requires more than just a smart model — you need consistent tool-calling, low-latency responses, large context windows for long conversations, and pricing that doesn't explode when your agent loops 20 times to complete a task.</p>
-
-            <p>We benchmarked models across four critical agent capabilities: <strong>tool-calling accuracy</strong>, <strong>multi-step planning</strong>, <strong>context retention</strong>, and <strong>cost per agent task</strong>. Here's what we found.</p>
-
-            <!-- What to Look For -->
-            <h2>What Matters for AI Agent APIs</h2>
-            <p>Building agents has different requirements than building chatbots. Here's what to prioritize:</p>
-            <ul>
-                <li><strong>Tool-calling reliability:</strong> Can the model consistently call the right function with correct arguments? A single hallucinated parameter breaks the entire agent loop.</li>
-                <li><strong>Multi-step planning:</strong> Agents chain 5-20 tool calls per task. The model needs to plan, execute, observe results, and adjust — without losing track of the original goal.</li>
-                <li><strong>Context window:</strong> Agent conversations grow fast. A 128K window handles simple agents; 1M+ windows support complex research agents with extensive tool output.</li>
-                <li><strong>Cost per agent task:</strong> Unlike simple chat, agent tasks consume 10-50x more tokens per interaction. Output pricing (where tool calls are generated) matters more than input.</li>
-                <li><strong>Structured output:</strong> Clean JSON tool calls with no formatting errors. Parsing failures mean retry loops and wasted tokens.</li>
-            </ul>
-
-            <!-- Top Picks -->
-            <h2>Top AI APIs for Building AI Agents</h2>
-
-            <div class="model-card">
-                <span class="tier-badge tier-premium">Premium</span>
-                <h3>1. Claude Opus 4.7 — Best Overall for Agent Reliability</h3>
-                <div class="price-line"><strong>$5.00</strong> per 1M input tokens / <strong>$25.00</strong> per 1M output tokens</div>
-                <div class="price-line">Context window: 1M tokens</div>
-                <p>Claude Opus 4.7 is the most reliable model for building production agents. It scores 96% on tool-calling accuracy — the highest of any model — and handles complex multi-step workflows with minimal drift. Its 1M context window means your agent never runs out of room, even on long research tasks.</p>
-                <ul>
-                    <li><strong>Tool-calling accuracy:</strong> 96% — lowest hallucination rate on function calls</li>
-                    <li><strong>Multi-step planning:</strong> Handles 20+ step workflows without losing context</li>
-                    <li><strong>Context:</strong> 1M tokens — handles the longest agent conversations</li>
-                    <li><strong>Weakness:</strong> Premium pricing adds up for high-frequency agents</li>
-                </ul>
-                <div class="best-for"><strong>Best for:</strong> Production agents where reliability is critical — customer support bots, research assistants, and complex automation workflows.</div>
-            </div>
 
             <div class="model-card">
                 <span class="tier-badge tier-premium">Premium</span>

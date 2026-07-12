@@ -149,21 +149,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -172,87 +166,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content">
-
-        <div class="breadcrumb"><a href="blog.html">Blog</a>
-                <a href="quiz.html">Quiz</a> &rsaquo; DeepSeek V4 API Pricing</div>
-
-        <div class="post-meta">
-            <span class="tier-badge tier-premium">Premium</span>
-            <span>April 26, 2026</span>
-            <span>7 min read</span>
-        </div>
-
-        <h1>DeepSeek V4 API Pricing: The Cheapest AI API?</h1>
-        <p class="subtitle">DeepSeek just launched V4 with two tiers: a Pro model at $0.435/$0.87 and a Flash model at just $0.14/$0.28 per 1M tokens. That Flash price undercuts nearly every competitor. Let's break down what you actually get.</p>
-
-            <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-                <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-            </div>
-    <div style="padding:16px 20px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;margin:16px 0 24px;">
-        <p style="margin:0;font-size:14px;"><strong>💰 Save money:</strong> Use our <a href="claude-4-is-down.html" style="color:#16a34a;font-weight:600;">free Claude Deprecation Calculator</a> to see exactly what you'll pay after migrating to a replacement model.</p>
-    </div>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.3);border-radius:8px;padding:16px;margin:20px 0;font-size:15px;">
-            <strong>Update (May 2, 2026):</strong> DeepSeek V4 Pro has dropped by 75% — now just <strong>$0.44/$0.87</strong> per 1M tokens. Read our <a href="blog-may-2026-pricing-shakeup.html">May 2026 Pricing Shakeup</a> analysis.
-        </div>
-
-        <h2>The Full DeepSeek V4 Lineup</h2>
-<div id="try-it-live" style="margin:32px 0;padding:28px;background:var(--bg-secondary,#1a1a2e);border:2px solid var(--accent,#646cff);border-radius:12px;">
-    <h3 style="margin:0 0 4px;font-size:18px;color:var(--text-primary,#fff);">Try It Live — Instant Cost Calculator</h3>
-    <p style="margin:0 0 16px;font-size:13px;color:var(--text-secondary,#aaa);">See exactly what this model costs for your workload. No signup needed.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:end;">
-        <div style="flex:1;min-width:180px;">
-            <label style="display:block;font-size:12px;color:var(--text-secondary,#aaa);margin-bottom:4px;">Model</label>
-            <select id="ilc-model" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border,#333);background:var(--bg-primary,#0d0d1a);color:var(--text-primary,#fff);font-size:14px;">
-                <option value="0">GPT-5.5 — $5.00/$30.00</option>
-                <option value="1">GPT-5.5 Pro — $30.00/$180.00</option>
-                <option value="2">GPT-5.3 Codex — $1.75/$14.00</option>
-                <option value="3">GPT-5 — $1.25/$10.00</option>
-                <option value="4" selected>GPT-5 mini — $0.25/$2.00</option>
-                <option value="5">GPT-4o — $2.50/$10.00</option>
-                <option value="6">GPT-4o mini — $0.15/$0.60</option>
-                <option value="7">Claude Opus 4.8 — $5.00/$25.00</option>
-                <option value="8">Claude Opus 4.7 — $5.00/$25.00</option>
-                <option value="9">Claude Sonnet 4.6 — $3.00/$15.00</option>
-                <option value="10">Claude Haiku 4.5 — $1.00/$5.00</option>
-                <option value="11">Gemini 3.1 Pro — $2.00/$12.00</option>
-                <option value="12">Gemini 2.5 Pro — $1.25/$10.00</option>
-                <option value="13">Gemini 2.5 Flash-Lite — $0.10/$0.40</option>
-                <option value="14">Gemini 2.5 Flash-Lite — $0.075/$0.30</option>
-                <option value="15">DeepSeek V4 Pro — $0.435/$0.87</option>
-                <option value="16">DeepSeek V4 Flash — $0.14/$0.28</option>
-                <option value="17">Mistral Large 3 — $0.50/$1.50</option>
-                <option value="18">Mistral Small 4 — $0.15/$0.60</option>
-                <option value="19">Command R+ — $2.50/$10.00</option>
-                <option value="20">Llama 4 Scout — $0.18/$0.59</option>
-                <option value="21">Llama 4 Maverick — $0.20/$0.60</option>
-                <option value="22">Grok 4.3 — $1.25/$2.50</option>
-            </select>
-        </div>
-        <div style="flex:0 0 120px;">
-            <label style="display:block;font-size:12px;color:var(--text-secondary,#aaa);margin-bottom:4px;">Tokens/req</label>
-            <input type="number" id="ilc-tokens" value="2000" min="1" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border,#333);background:var(--bg-primary,#0d0d1a);color:var(--text-primary,#fff);font-size:14px;">
-        </div>
-        <div style="flex:0 0 120px;">
-            <label style="display:block;font-size:12px;color:var(--text-secondary,#aaa);margin-bottom:4px;">Requests/day</label>
-            <input type="number" id="ilc-reqs" value="1000" min="1" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border,#333);background:var(--bg-primary,#0d0d1a);color:var(--text-primary,#fff);font-size:14px;">
-        </div>
-        <div style="flex:0 0 100px;">
-            <button onclick="ilcCalc()" style="width:100%;padding:10px;border-radius:8px;border:none;background:var(--accent,#646cff);color:#fff;font-size:14px;font-weight:600;cursor:pointer;">Calculate</button>
-        </div>
-    </div>
     <div id="ilc-result" style="margin-top:16px;padding:16px;background:var(--bg-primary,#0d0d1a);border-radius:8px;display:none;">
         <div style="display:flex;flex-wrap:wrap;gap:24px;">
             <div><span style="font-size:12px;color:var(--text-secondary,#aaa);display:block;">Daily cost</span><span id="ilc-daily" style="font-size:22px;font-weight:700;color:var(--green,#4ade80);">$0.00</span></div>

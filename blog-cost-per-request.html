@@ -172,11 +172,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="blog.html" style="color:var(--accent);font-weight:600;">Blog</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -184,55 +189,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content">
-        <a href="blog.html" class="back-link">← Back to Blog</a>
-
-        <article class="article">
-            <h1>AI API Cost Per Request: The Metric Developers Actually Need</h1>
-            <p class="subtitle">Token-based pricing is confusing. Here's how to think about LLM costs in terms developers actually use — cost per API call.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-            <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-                <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-            </div>
-
-            <p><em>Published: May 13, 2026 &middot; 6 min read</em></p>
-
-            <p>When you're budgeting for an AI-powered feature, nobody asks "how many tokens will this use?" They ask: <strong>"How much does each API call cost?"</strong></p>
-
-            <p>Yet every LLM provider prices by tokens — millions of them. That's like a gas station selling fuel by the milliliter. Technically accurate, but not how people think.</p>
-
-            <p>Let's fix that.</p>
-
-            <h2>What Is Cost Per Request?</h2>
-
-            <p>Cost per request is the total price of a single API call to an LLM. It's calculated from two things:</p>
-
-            <ul>
-                <li><strong>Input tokens</strong> — what you send to the model (your prompt, system instructions, context)</li>
-                <li><strong>Output tokens</strong> — what the model generates back (the response)</li>
-            </ul>
-
-            <p>The formula is straightforward:</p>
-
-            <p><code>cost = (input_tokens / 1,000,000) × input_price + (output_tokens / 1,000,000) × output_price</code></p>
-
-            <p>For example, a typical chat request with 500 input tokens and 300 output tokens on GPT-4o mini ($0.15/$0.60 per 1M):</p>
-
-            <div class="cost-callout">
-                <div class="big-number">$0.00026</div>
-                <div class="label">per request — or $0.26 per 1,000 requests</div>
-            </div>
 
             <p>That's the number that matters when you're planning a feature. Not "tokens per million" — but "dollars per call."</p>
 

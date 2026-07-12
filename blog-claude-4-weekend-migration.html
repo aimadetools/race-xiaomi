@@ -203,13 +203,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="claude-4-is-down.html" style="color:var(--red);">Deprecation Guide</a>
-                <a href="claude-4-migration-tool.html">Migration Tool</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -217,92 +220,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-            <span class="separator">›</span>
-            <span class="current">Claude 4 Weekend Migration</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        <div class="post-meta">
-            <span class="post-tag">Urgent</span>
-            <span>June 5, 2026</span>
-            <span>·</span>
-            <span>5 min read</span>
-        </div>
-        <h1>Claude 4 Deprecation: 5 Things to Do This Weekend</h1>
-        <p class="subtitle">Claude 4 Opus and Claude Sonnet 4 retire on <strong>June 15, 2026</strong> — that's <span id="daysLeftText">10 days</span> away. If you haven't started migrating yet, this weekend is your window. The good news: it takes about 2 hours total, and you'll save 67% on API costs.</p>
-        <script>
-            (function(){
-                var dep = new Date('2026-06-15T00:00:00');
-                var now = new Date();
-                var diff = dep - now;
-                var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
-                var el = document.getElementById('daysLeftText');
-                if (diff <= 0) {
-                    if (el) el.textContent = 'Claude 4 was deprecated on June 15, 2026.';
-                    var h1 = document.querySelector('h1');
-                    if (h1) h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">What to Do Now</span>';
-                    var subtitle = document.querySelector('.subtitle');
-                    if (subtitle) subtitle.innerHTML = 'Claude 4 Opus and Claude Sonnet 4 were <strong>retired on June 15, 2026</strong>. API calls to these model IDs now return errors. Here\'s how to fix your code and save 67% on API costs.';
-                } else {
-                    if (el) el.textContent = days + ' days';
-                }
-            })();
-        </script>
-
-        <div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;font-size:18px;font-weight:800;color:var(--red);">⚠️ Claude 4 shut down June 15, 2026 — migrate now</div>
-        <script>
-            (function(){
-                var dep = new Date('2026-06-15T00:00:00');
-                var now = new Date();
-                var diff = dep - now;
-                var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
-                var el = document.getElementById('cd-days');
-                if (el) el.textContent = diff > 0 ? days : 'EXPIRED';
-                if (diff <= 0) {
-                    var label = el ? el.parentElement.querySelector('.label') : null;
-                    if (label) label.textContent = 'Status';
-                }
-            })();
-        </script>
-
-        <div class="alert">
-            <p><strong>The bottom line:</strong> This is a model name change, not a platform migration. Your API key, SDK, and endpoint stay the same. You're just updating a string in your code.</p>
-        </div>
-
-        <h2>Why This Weekend Matters</h2>
-        <p>After June 15, every API call to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> returns errors. If your app uses these models, it broke. But the fix is trivial — and the replacement models are actually better:</p>
-        <ul>
-            <li><strong>Claude Opus 4.8</strong> replaces Claude 4 Opus — 67% cheaper, 5x context window</li>
-            <li><strong>Claude Sonnet 4.6</strong> replaces Claude Sonnet 4 — same price, 5x context window</li>
-        </ul>
-        <p>You're not downgrading. You're upgrading — and saving money doing it.</p>
-
-        <h2>The 5 Things to Do This Weekend</h2>
-
-        <div class="step">
-            <div class="step-header">
-                <div class="step-num">1</div>
-                <div class="step-title">Find Every Claude 4 Reference in Your Code</div>
-                <div class="step-time">~10 min</div>
-            </div>
             <p>Search your entire codebase for these model IDs:</p>
 <pre><code># Search for Claude 4 model references
 grep -r "claude-4-opus" . --include="*.py" --include="*.js" --include="*.ts" --include="*.json"

@@ -194,12 +194,18 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">⚡ APIpulse</a>
-            <div class="nav-links">
-                <a href="/pricing.html">Pricing</a>
-                <a href="/calculator.html">Calculator</a>
-                <a href="/tools.html">Tools</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/compare-plans.html" class="nav-cta">Compare Plans</a>
+                        <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -208,52 +214,7 @@
         <a href="/blog.html" class="back-link">← Back to Blog</a>
 
         <article class="article">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-            <h1>Best AI APIs for RAG 2026: Embedding + Generation Models Ranked</h1>
-            <p class="subtitle">RAG (Retrieval-Augmented Generation) requires two models — an embedding model to index your data and a generation model to answer questions. We compared every combination across 67 models to find the best RAG setups for every budget.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-            <p>RAG is the most cost-effective way to give AI access to your data without fine-tuning. But it's also a two-model system: you need an <strong>embedding model</strong> to convert your documents into vectors, and a <strong>generation model</strong> to answer questions using the retrieved context. The wrong pairing can cost 10x more than necessary — or return garbage answers.</p>
-
-            <p>We evaluated RAG setups across five dimensions: <strong>embedding quality</strong> (how well does it find relevant chunks?), <strong>generation quality</strong> (how well does it answer with retrieved context?), <strong>context window</strong> (how many chunks can you fit?), <strong>cost per query</strong> (embedding + retrieval + generation), and <strong>latency</strong> (how fast is the full pipeline?). Here's what we found.</p>
-
-            <!-- What to Look For -->
-            <h2>What Matters for RAG APIs</h2>
-            <p>RAG has unique requirements that differ from standard LLM usage:</p>
-            <ul>
-                <li><strong>Embedding quality:</strong> The embedding model determines whether your retrieval finds the right chunks. A 5% improvement in retrieval quality can dramatically improve answer accuracy. Look for models with strong MTEB benchmark scores.</li>
-                <li><strong>Context window:</strong> RAG typically retrieves 3-10 chunks (1,500-5,000 tokens). The generation model needs enough context to hold the system prompt + retrieved chunks + conversation history. 128K is usually sufficient; 1M is overkill for most RAG.</li>
-                <li><strong>Long-context performance:</strong> Some models degrade with long contexts even within their window. For RAG, you need a model that performs well at 2K-8K context lengths — not just at the maximum.</li>
-                <li><strong>Cost per query:</strong> A typical RAG query costs $0.001-$0.01. The generation model accounts for 95-98% of the cost; embedding is cheap. Optimize the generation model first.</li>
-                <li><strong>Latency:</strong> RAG adds latency from embedding the query + vector search + generation. Total latency of 1-3 seconds is acceptable; over 5 seconds feels slow. Streaming responses help perceived latency.</li>
-                <li><strong>Citation quality:</strong> Good RAG models cite their sources and indicate which chunks they used. This is critical for trust and debugging.</li>
-            </ul>
-
-            <!-- Top Picks -->
-            <h2>Best RAG Setups (Embedding + Generation)</h2>
-
-            <div class="model-card">
-                <span class="tier-badge tier-premium">Best Overall</span>
-                <h3>1. OpenAI RAG — Best Overall Quality</h3>
-                <div class="price-line"><strong>Embedding:</strong> text-embedding-3-large ($0.13/1M tokens) | <strong>Generation:</strong> GPT-5 ($1.25/$10.00 per 1M tokens)</div>
-                <p>OpenAI's RAG stack is the gold standard. text-embedding-3-large offers the best balance of embedding quality and cost — it's the top-performing embedding model on MTEB benchmarks under $1/1M tokens. Paired with GPT-5, you get the best overall RAG quality: excellent retrieval, strong reasoning over context, and reliable citations.</p>
-                <ul>
-                    <li><strong>Embedding quality:</strong> Top-3 on MTEB benchmarks, excellent retrieval accuracy</li>
-                    <li><strong>Generation quality:</strong> GPT-5 is best at synthesizing answers from multiple retrieved chunks</li>
-                    <li><strong>Ecosystem:</strong> Best SDK support, vector store integrations, and documentation</li>
-                    <li><strong>Weakness:</strong> $10/1M output is expensive for high-volume RAG; no native multimodal RAG</li>
-                </ul>
-                <div class="best-for"><strong>Best for:</strong> Production RAG systems, customer-facing Q&A, knowledge bases, and any RAG where answer quality is critical.</div>
-            </div>
 
             <div class="model-card">
                 <span class="tier-badge tier-premium">Best Value</span>

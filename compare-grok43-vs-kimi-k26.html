@@ -159,12 +159,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -172,160 +176,7 @@
     </nav>
 
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <h1>Grok 4.3 <span class="vs">vs</span> Kimi K2.6</h1>
-        <p class="subtitle">xAI vs Moonshot AI — Both under $5/M tokens. Grok 4.3 has 4x more context; Kimi K2.6 has cheaper input. Which emerging provider wins?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead>
-                <tr><th>Specification</th><th>Grok 4.3</th><th>Kimi K2.6</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$1.25</td><td class="cheaper">$0.95</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$2.50</td><td class="pricier">$4.00</td></tr>
-                <tr><td>Context Window</td><td class="cheaper">1M tokens</td><td class="pricier">256K tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>xAI</td><td>Moonshot AI</td></tr>
-                <tr><td>Input Savings</td><td class="pricier">Baseline</td><td class="cheaper">24% cheaper</td></tr>
-                <tr><td>Output Savings</td><td class="cheaper">37% cheaper</td><td class="pricier">Baseline</td></tr>
-                <tr><td>Cost at 1M input + 500K output</td><td class="cheaper">$2.50</td><td class="pricier">$2.95</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Enter your usage to see a precise cost comparison for both models.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('coding')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('rag')">RAG Pipeline</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
-            <button class="preset-btn" onclick="applyPreset('heavy')">Heavy Usage</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group">
-                    <label for="input-tokens">Input Tokens per Request</label>
-                    <input type="number" id="input-tokens" value="1500" min="1" oninput="calculate()">
-                </div>
-                <div class="input-group">
-                    <label for="output-tokens">Output Tokens per Request</label>
-                    <input type="number" id="output-tokens" value="800" min="1" oninput="calculate()">
-                </div>
-            </div>
-            <div>
-                <div class="input-group">
-                    <label for="requests-day">Requests per Day</label>
-                    <input type="number" id="requests-day" value="500" min="1" oninput="calculate()">
-                </div>
-                <div class="input-group">
-                    <label for="days-month">Days per Month</label>
-                    <input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()">
-                </div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;">
-            <div class="amount" id="savings-amount"></div>
-            <div class="detail" id="savings-detail"></div>
-        </div>
-        <div class="results-grid">
-            <div class="result-card" id="card-grok">
-                <div class="provider">xAI</div>
-                <div class="model-name">Grok 4.3</div>
-                <div id="winner-badge-grok" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-grok">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-grok"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-grok"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-kimi">
-                <div class="provider">Moonshot AI</div>
-                <div class="model-name">Kimi K2.6</div>
-                <div id="winner-badge-kimi" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-kimi">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-kimi"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-kimi"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-kimi"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-kimi"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card">
-                <h3>Output-Heavy Workloads</h3>
-                <p>Grok 4.3's $2.50/M output is 37% cheaper than Kimi K2.6's $4.00/M. For content generation, code assistants, and chatbots that produce long responses, Grok 4.3 is the better value.</p>
-                <div class="recommendation"><span class="pick-grok">Output-heavy: Grok 4.3 (37% cheaper output)</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Input-Heavy Workloads</h3>
-                <p>Kimi K2.6's $0.95/M input is 24% cheaper than Grok 4.3's $1.25/M. For RAG pipelines, document analysis, and tasks with lots of context but short outputs, Kimi K2.6 is the better choice.</p>
-                <div class="recommendation"><span class="pick-kimi">Input-heavy: Kimi K2.6 (24% cheaper input)</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Long Context Needs</h3>
-                <p>Grok 4.3 offers 1M context vs Kimi K2.6's 256K — almost 4x more. If your application needs to process long documents, large codebases, or extended conversations, Grok 4.3 is the clear winner.</p>
-                <div class="recommendation"><span class="pick-grok">Long context: Grok 4.3 (1M vs 256K)</span></div>
-            </div>
-            <div class="use-case-card">
-                <h3>Budget-Conscious Startups</h3>
-                <p>Both models are under $5/M tokens — among the cheapest available. For a typical startup workload (500K input + 200K output/day), Grok 4.3 costs ~$34/month vs Kimi K2.6's ~$38/month. Both are excellent budget options.</p>
-                <div class="recommendation"><span class="pick-grok">Budget: Grok 4.3 ($34/mo vs $38/mo)</span></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pro-upsell">
-        <h2>Need deeper cost analysis?</h2>
-        <p>APIpulse lets you compare all 67 models, save scenarios, and export PDF reports.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 40%</div>
-        </div>
-        <a href="audit.html?from=tool_page" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>Is Grok 4.3 cheaper than Kimi K2.6?</h3>
-            <p>It depends on your usage pattern. Grok 4.3 costs $1.25/M input and $2.50/M output, while Kimi K2.6 costs $0.95/M input and $4.00/M output. Kimi is 24% cheaper on input but 60% more expensive on output. For output-heavy workloads, Grok 4.3 is cheaper overall.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Which has a larger context window — Grok 4.3 or Kimi K2.6?</h3>
-            <p>Grok 4.3 has a 1M token context window, while Kimi K2.6 has 256K. That's almost 4x more context for Grok 4.3. If your application needs long document processing, Grok 4.3 is the better choice.</p>
-        </div>
-        <div class="faq-item">
-            <h3>How much would I save using Kimi K2.6 instead of Grok 4.3?</h3>
-            <p>For input-heavy workloads (1M input + 100K output/month), Kimi K2.6 costs $1.35 vs Grok 4.3's $1.50 — saving $0.15/month (10%). For output-heavy workloads (100K input + 1M output), Grok 4.3 costs $2.63 vs Kimi K2.6's $4.10 — saving $1.47/month (36%).</p>
-        </div>
-        <div class="faq-item">
-            <h3>When should I choose Kimi K2.6 over Grok 4.3?</h3>
-            <p>Choose Kimi K2.6 when: (1) your workload is input-heavy (lots of context, short outputs), (2) you need Moonshot AI's specific capabilities, (3) you want the cheapest possible input price. Choose Grok 4.3 when: (1) you need 1M context, (2) your workload is output-heavy, (3) you want xAI ecosystem integration.</p>
-        </div>
-    </div>
 
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">Related Comparisons</h2>

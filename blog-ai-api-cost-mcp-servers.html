@@ -152,14 +152,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
-                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="tools.html">Tools</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -167,47 +168,7 @@
         </div>
     </nav>
 
-    <main>
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">The Real Cost of Running MCP Servers</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta">
-            <span class="post-tag">Analysis</span>
-            <span>May 30, 2026</span>
-        </div>
-        <h1>The Real Cost of Running MCP Servers in 2026</h1>
-
-        <p>MCP (Model Context Protocol) has become the standard way to connect AI models to external tools and data sources. But most developers building MCP servers have no idea what they actually cost — because the token overhead is invisible until you get the bill.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <p>Here's the uncomfortable truth: <strong>tool schema overhead alone can account for 20-40% of your MCP server's API costs</strong>. And most teams only discover this after their first month of production traffic.</p>
-
-        <h2>What MCP Actually Costs Per Query</h2>
-
-        <p>Every time a user sends a query to your MCP server, the API call includes far more than just the user's question. Here's what gets sent:</p>
-
-        <div class="cost-example">
-            <div class="label">Token Breakdown — Single MCP Tool Call</div>
-            <div class="cost-row"><span class="name">Tool schemas (10 tools × 200 tokens)</span><span class="value">2,000 tokens</span></div>
-            <div class="cost-row"><span class="name">System prompt</span><span class="value">500 tokens</span></div>
-            <div class="cost-row"><span class="name">User query</span><span class="value">~200 tokens</span></div>
-            <div class="cost-row"><span class="name">Tool result (1 call × 800 tokens)</span><span class="value">800 tokens</span></div>
-            <div class="cost-row cost-total"><span class="name">Total input</span><span class="value">3,500 tokens</span></div>
-        </div>
+    <main id="main">
 
         <p>That's 3,500 input tokens <strong>before the model even generates a response</strong>. And if your MCP server chains multiple tool calls (which most do), each step adds more tokens from previous results.</p>
 

@@ -182,125 +182,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-premium">Premium</span> <span class="tier-badge tier-premium">Premium</span>
-        <h1>Claude Opus 4.8 <span class="vs">vs</span> GPT-5.5</h1>
-        <p class="subtitle">Both premium models at $5 input — Opus 4.8 at $25 output vs GPT-5.5 at $30 output. Opus 4.8 is 20% cheaper on output tokens with similar context windows. Same input price, but Opus 4.8 saves $5/month at 1M tokens — scaling to $50/month at 10M tokens.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Claude Opus 4.8 (Anthropic)</th><th>GPT-5.5 (OpenAI)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="same">$5.00</td><td class="same">$5.00</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$25.00</td><td class="pricier">$30.00</td></tr>
-                <tr><td>Context Window</td><td>1M tokens</td><td class="cheaper">1.05M tokens</td></tr>
-                <tr><td>Tier</td><td>Premium</td><td>Premium</td></tr>
-                <tr><td>Provider</td><td>Anthropic</td><td>OpenAI</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Savings</h2>
-        <p class="section-sub">Same input price, 20% cheaper output with Opus 4.8. See exactly how much you save at your usage level.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-opus48">
-                <div class="provider">Anthropic</div><div class="model-name">Claude Opus 4.8</div>
-                <div id="winner-badge-opus48" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-opus48">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-opus48"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-opus48"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-opus48"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-opus48"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-gpt55">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5.5</div>
-                <div id="winner-badge-gpt55" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt55">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt55"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt55"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="also-premium">
-        <h2>Other Premium Models</h2>
-        <div class="premium-grid">
-            <div class="premium-card"><div class="name">Claude Sonnet 5</div><div class="provider">Anthropic</div><div class="price">$3.00 / $15 per 1M</div><div class="ctx">1M context</div></div>
-            <div class="premium-card"><div class="name">GPT-5.4</div><div class="provider">OpenAI</div><div class="price">$2.50 / $15 per 1M</div><div class="ctx">400K context</div></div>
-            <div class="premium-card"><div class="name">Gemini 3.5 Pro</div><div class="provider">Google</div><div class="price">$2.50 / $10 per 1M</div><div class="ctx">2M context</div></div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Code Generation</h3><p>Both Opus 4.8 ($5/$25) and GPT-5.5 ($5/$30) are elite at code generation, debugging, and refactoring. With identical input prices, Opus 4.8's 20% lower output cost makes it more economical for code-heavy workloads where output volume is high. GPT-5.5 offers strong OpenAI ecosystem integration.</p><div class="recommendation"><span class="pick-opus">Better value: Opus 4.8</span> | <span class="pick-gpt55">OpenAI ecosystem: GPT-5.5</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, marketing copy, documentation, creative writing. Both models produce premium-quality output. Opus 4.8 at $25/1M output vs GPT-5.5 at $30/1M output means Opus saves 20% on every output token. For high-volume content generation, this compounds to significant monthly savings.</p><div class="recommendation"><span class="pick-opus">Better value: Opus 4.8 (20% cheaper output)</span></div></div>
-            <div class="use-case-card"><h3>Long-Context Processing</h3><p>GPT-5.5's 1.05M context is marginally larger than Opus 4.8's 1M context — a 5% difference that's negligible for most workloads. Both handle extremely long documents, large codebases, and extended conversation histories. Context size is not a meaningful differentiator between these two models.</p><div class="recommendation"><span class="pick-opus">Similar context: Tie — pick on price</span></div></div>
-            <div class="use-case-card"><h3>High-Volume Batch Processing</h3><p>At scale, Opus 4.8's 20% output savings compound quickly. At 10M input + 10M output tokens/month, Opus 4.8 costs $300 vs GPT-5.5's $350 — saving $50/month. For batch workloads with heavy output, Opus 4.8 delivers the same premium quality at a lower total cost.</p><div class="recommendation"><span class="pick-opus">Savings at scale: Opus 4.8 ($50/month at 10M+10M)</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Comparing premium AI models?</h2>
-        <p>APIpulse lets you compare all 67 models including Opus 4.8 ($5/$25) and GPT-5.5 ($5/$30), save scenarios, and export cost reports for your team.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 94%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is Claude Opus 4.8 than GPT-5.5?</h3><p>Both models cost $5.00/1M input tokens, but Opus 4.8 costs $25/1M output vs GPT-5.5 at $30/1M — 20% cheaper on output. At 1M input + 1M output tokens/month, Opus 4.8 costs $30 vs GPT-5.5's $35, saving $5/month. At 10M input + 10M output, savings reach $50/month. The input cost is identical, so the savings come entirely from the output price difference.</p></div>
-        <div class="faq-item"><h3>Which model has a larger context window?</h3><p>GPT-5.5 has a slightly larger context at 1.05M tokens vs Claude Opus 4.8's 1M tokens — a 5% difference that is negligible for virtually all workloads. Both handle extremely long documents, large codebases, and extended conversation histories. Context window is not a meaningful differentiator between these two models.</p></div>
-        <div class="faq-item"><h3>Is Claude Opus 4.8 or GPT-5.5 better for coding?</h3><p>Both are elite coding models. Claude Opus 4.8 at $5/$25 excels at code generation, debugging, and refactoring with Anthropic's safety-focused approach. GPT-5.5 at $5/$30 offers OpenAI ecosystem integration and competitive coding performance. With identical input prices, Opus 4.8's 20% lower output cost makes it more economical for code-heavy workloads where output volume is high.</p></div>
-        <div class="faq-item"><h3>When should I choose GPT-5.5 over Claude Opus 4.8?</h3><p>Choose GPT-5.5 ($5/$30) when you need OpenAI ecosystem integration (Assistants API, function calling, ChatGPT plugins), slightly larger context (1.05M vs 1M), or compliance requirements favoring OpenAI's enterprise agreements. Choose Claude Opus 4.8 ($5/$25) for 20% lower output costs, Anthropic's safety-focused approach, and better value at scale. Both are premium tier — the quality difference depends on your specific use case.</p></div>
-        <div class="faq-item"><h3>Are both models in the same pricing tier?</h3><p>Yes, both Claude Opus 4.8 and GPT-5.5 are in the Premium tier with identical $5.00/1M input pricing. The only pricing difference is output: Opus 4.8 at $25/1M vs GPT-5.5 at $30/1M. This makes them direct competitors in the premium AI space. The quality difference depends on the specific use case rather than a clear tier separation — both are top-tier models from leading providers.</p></div>
-    </div>
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

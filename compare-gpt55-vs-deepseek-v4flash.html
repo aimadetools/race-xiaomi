@@ -160,116 +160,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-premium">Premium</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>GPT-5.5 <span class="vs">vs</span> DeepSeek V4 Flash</h1>
-        <p class="subtitle">OpenAI's flagship model vs DeepSeek's ultra-budget contender. DeepSeek is 89-97% cheaper with a larger context window — but does the quality tradeoff work for your use case?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>GPT-5.5 (OpenAI)</th><th>DeepSeek V4 Flash (DeepSeek)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$5.00</td><td class="cheaper">$0.14</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$30.00</td><td class="cheaper">$0.28</td></tr>
-                <tr><td>Context Window</td><td class="pricier">1.05M tokens</td><td class="cheaper">1M tokens</td></tr>
-                <tr><td>Tier</td><td>Premium</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>OpenAI</td><td>DeepSeek</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Premium quality vs ultra-budget pricing — see the real savings for your workload.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('code-assist')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('summarization')">Summarization</button>
-            <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
-            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="4000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gpt">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5.5</div>
-                <div id="winner-badge-gpt" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gpt">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gpt"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gpt"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gpt"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gpt"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-deepseek">
-                <div class="provider">DeepSeek</div><div class="model-name">DeepSeek V4 Flash</div>
-                <div id="winner-badge-deepseek" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-deepseek">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-deepseek"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Chatbots & Virtual Assistants</h3><p>High-volume conversational interfaces. DeepSeek V4 Flash's 97% cheaper output pricing makes it the clear winner for chat applications where cost per message matters most.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Flash</span></div></div>
-            <div class="use-case-card"><h3>Complex Code Generation</h3><p>Architectural decisions, multi-file refactoring, debugging complex systems. GPT-5's premium reasoning may edge out for the most complex tasks, but DeepSeek handles most coding work at 95% lower cost.</p><div class="recommendation"><span class="pick-gpt">Quality: GPT-5</span> | <span class="pick-deepseek">Value: DeepSeek V4 Flash</span></div></div>
-            <div class="use-case-card"><h3>Text Summarization & Processing</h3><p>Processing and summarizing documents. DeepSeek V4 Flash's 1M context window (vs GPT-5's 272K) handles longer documents while costing 95% less. Clear winner.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Flash</span></div></div>
-            <div class="use-case-card"><h3>AI Agents & Autonomous Tasks</h3><p>Multi-step autonomous workflows. Output-heavy by nature — DeepSeek V4 Flash's 97% cheaper output pricing makes a massive difference at scale. GPT-5 may be worth it for the most critical reasoning chains.</p><div class="recommendation"><span class="pick-deepseek">Value: DeepSeek V4 Flash</span> | <span class="pick-gpt">Critical paths: GPT-5</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Switching from GPT-5 to save money?</h2>
-        <p>APIpulse shows you migration code, cost comparisons, and optimization tips for all 67 models.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Migration code</strong> snippets included</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Save up to 95%</strong> on API costs</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is DeepSeek V4 Flash than GPT-5?</h3><p>DeepSeek V4 Flash costs $0.14/$0.28 per 1M tokens. GPT-5 costs $5.00/$10 per 1M tokens. DeepSeek is 89% cheaper on input and 97% cheaper on output — a 95% overall savings for most workloads.</p></div>
-        <div class="faq-item"><h3>Which has a larger context window?</h3><p>DeepSeek V4 Flash has a 1M token context window, while GPT-5.5 has a 1.05M token context window. Both have ~1M context windows, but DeepSeek costs 97-99% less.</p></div>
-        <div class="faq-item"><h3>When should I choose GPT-5 over DeepSeek V4 Flash?</h3><p>Choose GPT-5.5 when you need OpenAI.s strongest reasoning, complex multi-step problem solving, or specific capabilities where GPT-5 excels. Choose DeepSeek V4 Flash when cost is a primary concern — it's 89-97% cheaper with a larger context window.</p></div>
-        <div class="faq-item"><h3>Is DeepSeek V4 Flash good enough to replace GPT-5?</h3><p>For many use cases — yes. DeepSeek V4 Flash handles chatbots, summarization, classification, and code generation well at 95% lower cost. However, GPT-5 may still outperform on complex reasoning and nuanced creative tasks. Test both on your specific workload.</p></div>
-    </div>
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <a href="pricing-dashboard.html" style="display:block;padding:16px;border-radius:12px;border:1px solid rgba(34,197,94,0.3);background:rgba(34,197,94,0.05);text-decoration:none;transition:all 0.2s;margin-bottom:20px;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='rgba(34,197,94,0.3)'">
             <div style="font-size:14px;font-weight:700;color:var(--green);">📋 Full Pricing Dashboard →</div>

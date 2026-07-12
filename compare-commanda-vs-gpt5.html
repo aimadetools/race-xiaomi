@@ -84,74 +84,23 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
-    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button><div class="nav-links"><a href="calculator.html">Calculator</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="index.html#free-tools" class="nav-cta">Free Tools →</a><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button></div></div></nav>
+    <nav><div class="nav-inner"><a href="index.html" class="logo">API<span>pulse</span></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;"><p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;"><strong style="color:#dc2626;">🔥 Limited time:</strong> <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a></p></div>
-    <div class="compare-hero">
-        <span class="tier-badge tier-mid">Mid</span> <span class="tier-badge tier-premium">Premium</span>
-        <h1>Command A <span class="vs">vs</span> GPT-5</h1>
-        <p class="subtitle">Cohere's enterprise model vs OpenAI's premium. Command A at $2.50/$10 vs GPT-5 at $1.25/$10 — GPT-5 is 50% cheaper on input with same output price. Both have 256K+ context.</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Command A (Cohere)</th><th>GPT-5 (OpenAI)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$2.50</td><td class="cheaper">$1.25</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="same">$10.00</td><td class="same">$10.00</td></tr>
-                <tr><td>Context Window</td><td class="same">128K tokens</td><td class="cheaper">272K tokens</td></tr>
-                <tr><td>Tier</td><td>Mid</td><td>Premium</td></tr>
-                <tr><td>Provider</td><td>Cohere</td><td>OpenAI</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">See how much you can save with GPT-5 — or whether Command A's RAG-optimized features justify 2x input cost.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content</button>
-            <button class="preset-btn" onclick="applyPreset('rag')">RAG</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests/Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days/Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-commanda">
-                <div class="provider">Cohere</div><div class="model-name">Command A</div>
-                <div id="winner-badge-commanda" class="winner-badge" style="display:none;">Cheaper</div>
-                <div class="price-big" id="total-commanda">$0.00</div><div class="price-label">/month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input</span><span class="val" id="input-cost-commanda"></span></div>
-                    <div class="breakdown-row"><span class="label">Output</span><span class="val" id="output-cost-commanda"></span></div>
-                    <div class="breakdown-row"><span class="label">Per request</span><span class="val" id="cpr-commanda"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-gpt5">
-                <div class="provider">OpenAI</div><div class="model-name">GPT-5</div>
-                <div id="winner-badge-gpt5" class="winner-badge" style="display:none;">Cheaper</div>
-                <div class="price-big" id="total-gpt5">$0.00</div><div class="price-label">/month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input</span><span class="val" id="input-cost-gpt5"></span></div>
-                    <div class="breakdown-row"><span class="label">Output</span><span class="val" id="output-cost-gpt5"></span></div>
-                    <div class="breakdown-row"><span class="label">Per request</span><span class="val" id="cpr-gpt5"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is GPT-5?</h3><p>GPT-5 costs $1.25/$10 vs Command A at $2.50/$10 — 50% cheaper on input, same on output. At 1M input + 500K output/month, that's $6.25 vs $7.50, saving $1.25/month.</p></div>
-        <div class="faq-item"><h3>When should I use Command A over GPT-5?</h3><p>Choose Command A ($2.50/$10) for Cohere's RAG-optimized capabilities and enterprise features. Choose GPT-5 ($1.25/$10) for 50% cheaper input pricing and OpenAI's ecosystem.</p></div>
-    </div>
+
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Models</h3><p>Custom comparison tool</p></a>

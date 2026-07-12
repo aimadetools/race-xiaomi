@@ -136,186 +136,22 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="blog-hero">
-        <div class="breadcrumb"><a href="blog.html">Blog</a> &rsaquo; Claude 4 to Opus 4.8 Migration</div>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        <div class="deprecation-alert"><strong>⏰ 5 DAYS LEFT:</strong> Claude 4 Opus and Claude 4 Sonnet shut down on <strong>June 15, 2026</strong>. After this date, all API calls return HTTP 410 Gone errors. Migrate now to avoid downtime.</div>
-        <h1>Claude 4 to Opus 4.8 Migration: Cost & Code Changes</h1>
-        <p class="meta">Published Jun 10, 2026 &middot; 8 min read &middot; By APIpulse</p>
-    </div>
-    <div class="blog-content">
-        <p>Claude 4 Opus and Claude 4 Sonnet shut down on June 15, 2026. If you're still using these models, you need to migrate — and the good news is it's fast, free, and actually saves you money.</p>
-
-        <p>Claude Opus 4.8 is Anthropic's direct replacement for Claude 4 Opus. It's <strong>67% cheaper</strong>, has a <strong>5x larger context window</strong> (1M vs 200K), and matches or exceeds Claude 4 Opus on every benchmark. Here's exactly what changes and what it costs.</p>
-
-        <h2>The Cost Difference: You'll Save 67%</h2>
-
-        <table class="cost-comparison">
-            <thead>
-                <tr><th>Model</th><th>Input (per 1M tokens)</th><th>Output (per 1M tokens)</th><th>Context</th><th>Monthly Cost*</th></tr>
-            </thead>
-            <tbody>
-                <tr><td><strong>Claude 4 Opus</strong> (deprecated)</td><td class="old">$15.00</td><td class="old">$75.00</td><td>200K</td><td class="old">$112.50</td></tr>
-                <tr><td><strong>Claude Opus 4.8</strong> (replacement)</td><td class="savings">$5.00</td><td class="savings">$25.00</td><td>1M</td><td class="savings">$37.50</td></tr>
-            </tbody>
-        </table>
-        <p style="font-size:13px;color:var(--text-muted);margin-top:-8px">*Based on 1M input + 500K output tokens/month.</p>
-
-        <p>That's a <strong>$75/month saving</strong> for the same workload — or 67% less. At higher volumes, the savings are even more dramatic:</p>
-
-        <table class="cost-comparison">
-            <thead>
-                <tr><th>Monthly Usage</th><th>Claude 4 Opus</th><th>Claude Opus 4.8</th><th>Savings</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Light (1M input + 500K output)</td><td class="old">$112.50</td><td>$37.50</td><td class="savings">$75.00/mo</td></tr>
-                <tr><td>Moderate (5M input + 2M output)</td><td class="old">$450.00</td><td>$150.00</td><td class="savings">$300.00/mo</td></tr>
-                <tr><td>Heavy (20M input + 10M output)</td><td class="old">$1,800.00</td><td>$600.00</td><td class="savings">$1,200.00/mo</td></tr>
-                <tr><td>Enterprise (100M input + 50M output)</td><td class="old">$9,000.00</td><td>$3,000.00</td><td class="savings">$6,000.00/mo</td></tr>
-            </tbody>
-        </table>
-
-        <h2>The Code Change: One Line</h2>
-
-        <p>The migration is a one-line change. Here's the diff:</p>
-
-        <pre><code>// Before (Claude 4 Opus — broke June 15)
-const response = await anthropic.messages.create({
-  model: "claude-opus-4-20250514",  // ← CHANGE THIS
-  max_tokens: 4096,
-  messages: [{ role: "user", content: "Hello" }]
-});
-
-// After (Claude Opus 4.8 — works immediately)
-const response = await anthropic.messages.create({
-  model: "claude-opus-4-8-20260101",  // ← NEW MODEL ID
-  max_tokens: 4096,
-  messages: [{ role: "user", content: "Hello" }]
-});</code></pre>
-
-        <p>That's it. The API endpoint, parameters, response format, streaming behavior, and tool use are all identical. No other code changes needed.</p>
-
-        <h2>Model ID Reference</h2>
-
-        <table class="cost-comparison">
-            <thead>
-                <tr><th>Deprecated Model</th><th>Replacement</th><th>Model ID</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Claude 4 Opus</td><td>Claude Opus 4.8</td><td><code>claude-opus-4-8-20260101</code></td></tr>
-                <tr><td>Claude 4 Sonnet</td><td>Claude Sonnet 4.6</td><td><code>claude-sonnet-4-6-20260101</code></td></tr>
-            </tbody>
-        </table>
-
-        <h2>Step-by-Step Migration Checklist</h2>
-
-        <ol class="migration-steps">
-            <li><strong>Search your codebase</strong> for the deprecated model IDs: <code>claude-opus-4-20250514</code>, <code>claude-sonnet-4-20250514</code>, or any <code>claude-opus-4</code> / <code>claude-sonnet-4</code> references.</li>
-            <li><strong>Update the model ID</strong> in each location. Use the replacement IDs from the table above.</li>
-            <li><strong>Test your application</strong> with the new model. The response format is identical, but run your test suite to be sure.</li>
-            <li><strong>Update your cost estimates</strong> — you're now paying 67% less. Use the <a href="calculator.html">APIpulse Calculator</a> to recalculate your monthly budget.</li>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-            <li><strong>Deploy to production</strong> by June 15. After that date, the old model IDs return HTTP 410 Gone errors immediately.</li>
-        </ol>
-
-        <h2>Why Opus 4.8 Is Actually Better</h2>
-
-        <p>This isn't just a cost reduction — Claude Opus 4.8 is a strict upgrade:</p>
-
-        <ul>
-            <li><strong>5x larger context:</strong> 1M tokens vs 200K. Process entire codebases, long documents, or extended conversations without chunking.</li>
-            <li><strong>Same or better quality:</strong> Matches Claude 4 Opus on all benchmarks, with improvements in coding, analysis, and instruction-following.</li>
-            <li><strong>67% cheaper:</strong> $5/$25 vs $15/$75 per 1M tokens.</li>
-            <li><strong>Identical API:</strong> Drop-in replacement. Change the model ID and everything else stays the same.</li>
-        </ul>
-
-        <div class="cta-box">
-            <h3>Calculate Your Migration Savings</h3>
-            <p>See exactly how much you'll save by switching from Claude 4 to Opus 4.8 for your specific workload.</p>
-            <a href="calculator.html">Try the Calculator →</a>
-        </div>
-
-        <h2>Beyond Opus 4.8: Other Alternatives</h2>
-
-        <p>If you want to explore alternatives outside the Anthropic ecosystem, here are the top options:</p>
-
-        <table class="cost-comparison">
-            <thead>
-                <tr><th>Model</th><th>Input/Output</th><th>Context</th><th>Best For</th></tr>
-            </thead>
-            <tbody>
-                <tr><td><strong>GPT-5</strong> (OpenAI)</td><td>$1.25/$10</td><td>272K</td><td>General purpose, strong coding</td></tr>
-                <tr><td><strong>Gemini 3.1 Pro</strong> (Google)</td><td>$2/$12</td><td>1M</td><td>Long documents, value premium</td></tr>
-                <tr><td><strong>DeepSeek V4 Pro</strong></td><td>$0.435/$0.87</td><td>1M</td><td>Budget premium quality</td></tr>
-                <tr><td><strong>GPT-5 mini</strong> (OpenAI)</td><td>$0.25/$2</td><td>272K</td><td>Budget workloads</td></tr>
-                <tr><td><strong>Llama 4 Maverick</strong></td><td>$0.27/$0.85</td><td>1M</td><td>Cheapest 1M context</td></tr>
-            </tbody>
-        </table>
-
-        <h2>Frequently Asked Questions</h2>
-
-        <h3>What happens if I don't migrate by June 15?</h3>
-        <p>All API calls using Claude 4 model IDs return HTTP 410 Gone errors immediately. There is no grace period, no partial shutdown, and no extensions. Your application broke.</p>
-
-        <h3>Can I use Claude Opus 4.8 as a drop-in replacement?</h3>
-        <p>Yes. Change the model ID and everything else stays the same. The API, parameters, response format, streaming, and tool use are all identical.</p>
-
-        <h3>Will my prompts produce the same results?</h3>
-        <p>For most use cases, yes. Claude Opus 4.8 matches or exceeds Claude 4 Opus on all benchmarks. You may see slightly different outputs due to model improvements, but quality will be equal or better.</p>
-
-        <h3>What about Claude Sonnet 4?</h3>
-        <p>Claude Sonnet 4 is also deprecated on June 15. Its replacement is Claude Sonnet 4.6 ($3/$15 per 1M tokens, 1M context). The migration is the same one-line model ID change.</p>
-
-        <h3>Is there a migration cost?</h3>
-        <p>No. Changing the model ID is free. In fact, you'll save money immediately — Claude Opus 4.8 is 67% cheaper than Claude 4 Opus.</p>
-    </div>
-
-    <div class="related-posts">
-        <h2>Related Posts</h2>
-                <ul style="list-style:none;padding:0;margin:0 0 16px 0;">
-                    <li style="padding:8px 0;"><a href="claude-4-is-down.html" style="color:#ef4444;text-decoration:none;font-weight:700;">🚨 Claude 4 Is Down — 5-Minute Fix Guide</a></li>
-                </ul>
-        <div class="related-grid">
-            <a href="blog-claude-4-deprecation-faq-5-days.html" class="related-card"><div class="title">Claude 4 Deprecation FAQ — 5 Days Left</div><div class="desc">Every question answered about the June 15 shutdown</div></a>
-            <a href="blog-claude-4-cost-calculator.html" class="related-card"><div class="title">Claude 4 Deprecation Cost Calculator</div><div class="desc">Calculate exact migration costs and savings</div></a>
-            <a href="blog-claude-4-deprecated-migration-guide.html" class="related-card"><div class="title">Complete Migration Guide</div><div class="desc">Step-by-step with code samples and alternatives</div></a>
-            <a href="compare-claude-opus48-deepseek-v4pro.html" class="related-card"><div class="title">Opus 4.8 vs DeepSeek V4 Pro</div><div class="desc">Premium vs budget alternative comparison</div></a>
-        </div>
-    </div>
 
     <div style="max-width:700px;margin:0 auto 24px;padding:0 24px;display:flex;gap:8px;">
         <a id="share-x" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>Share on X</a>

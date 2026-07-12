@@ -189,12 +189,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -202,229 +206,7 @@
     </nav>
 
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,.08),rgba(239,68,68,.06));border-bottom:1px solid rgba(220,38,38,.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <h1>Gemini 2.5 Pro <span class="vs">vs</span> Claude Sonnet 5 — Mid-Tier Showdown</h1>
-        <p class="subtitle">Gemini 2.5 Pro is 58% cheaper on input ($1.25 vs $3.00) with the same 1M context window. Compare Google vs Anthropic's mid-tier champions.</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-
-    <div class="summary-cards">
-        <div class="summary-card">
-            <div class="label">Cheaper on Input</div>
-            <div class="value winner">Gemini 2.5 Pro</div>
-            <div class="detail">58% cheaper ($1.25 vs $3.00)</div>
-        </div>
-        <div class="summary-card">
-            <div class="label">Cheaper on Output</div>
-            <div class="value winner">Gemini 2.5 Pro</div>
-            <div class="detail">33% cheaper ($10.00 vs $15.00)</div>
-        </div>
-        <div class="summary-card">
-            <div class="label">Context Window</div>
-            <div class="value" style="color:var(--text-primary)">Tied</div>
-            <div class="detail">Both have 1M tokens</div>
-        </div>
-    </div>
-
-    <div class="quick-comparison">
-        <h2>Head-to-Head Comparison</h2>
-        <p class="section-sub">Google vs Anthropic — two mid-tier models, different price points.</p>
-        <table class="quick-table">
-            <thead>
-                <tr><th>Model</th><th>Provider</th><th>Tier</th><th>Input (per 1M)</th><th>Output (per 1M)</th><th>Context</th></tr>
-            </thead>
-            <tbody>
-                <tr style="background:rgba(66,133,244,.05);">
-                    <td class="model-name">Gemini 2.5 Pro</td>
-                    <td><span class="provider-badge badge-google">Google</span></td>
-                    <td><span class="tier-badge tier-mid">Mid</span></td>
-                    <td class="cheaper">$1.25</td>
-                    <td class="cheaper">$10.00</td>
-                    <td>1M</td>
-                </tr>
-                <tr>
-                    <td class="model-name">Gemini 3.1 Pro</td>
-                    <td><span class="provider-badge badge-google">Google</span></td>
-                    <td><span class="tier-badge tier-mid">Mid</span></td>
-                    <td>$2.00</td>
-                    <td>$12.00</td>
-                    <td>1M</td>
-                </tr>
-                <tr>
-                    <td class="model-name">Claude Sonnet 4.6</td>
-                    <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
-                    <td><span class="tier-badge tier-mid">Mid</span></td>
-                    <td>$3.00</td>
-                    <td>$15.00</td>
-                    <td>1M</td>
-                </tr>
-                <tr style="background:rgba(217,119,87,.05);">
-                    <td class="model-name">Claude Sonnet 5</td>
-                    <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
-                    <td><span class="tier-badge tier-mid">Mid</span></td>
-                    <td>$3.00</td>
-                    <td>$15.00</td>
-                    <td>1M</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">See how much you save with Gemini 2.5 Pro vs Sonnet 5 for your workload.</p>
-
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
-            <button class="preset-btn" onclick="applyPreset('heavy')">Heavy Usage</button>
-        </div>
-
-        <div class="model-select-row">
-            <div class="select-group">
-                <label>Google Model</label>
-                <select id="googleModel">
-                    <option value="google-gemini25pro" selected>Gemini 2.5 Pro ($1.25/$10.00)</option>
-                </select>
-            </div>
-            <div class="vs-divider">vs</div>
-            <div class="select-group">
-                <label>Anthropic Model</label>
-                <select id="anthropicModel">
-                    <option value="anthropic-sonnet5" selected>Claude Sonnet 5 ($3.00/$15.00)</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="calc-grid">
-            <div class="input-group">
-                <label>Input Tokens per Request</label>
-                <input type="number" id="inputTokens" value="5000" min="100" step="100">
-            </div>
-            <div class="input-group">
-                <label>Output Tokens per Request</label>
-                <input type="number" id="outputTokens" value="2000" min="50" step="50">
-            </div>
-            <div class="input-group">
-                <label>Requests per Day</label>
-                <input type="number" id="requestsPerDay" value="1000" min="1" step="100">
-            </div>
-            <div class="input-group">
-                <label>Days per Month</label>
-                <input type="number" id="daysPerMonth" value="30" min="1" max="31">
-            </div>
-        </div>
-
-        <div class="results-grid">
-            <div class="result-card" id="googleResult">
-                <div class="provider">Google</div>
-                <div class="model-name" id="googleModelName">Gemini 2.5 Pro</div>
-                <div class="price-big" id="googlePrice">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="googleInput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="googleOutput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Per request</span><span class="val" id="googlePerReq">$0.00</span></div>
-                </div>
-            </div>
-            <div class="result-card" id="anthropicResult">
-                <div class="provider">Anthropic</div>
-                <div class="model-name" id="anthropicModelName">Claude Sonnet 5</div>
-                <div class="price-big" id="anthropicPrice">$0.00</div>
-                <div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="anthropicInput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="anthropicOutput">$0.00</span></div>
-                    <div class="breakdown-row"><span class="label">Per request</span><span class="val" id="anthropicPerReq">$0.00</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="savings-banner" id="savingsBanner">
-            <div class="amount" id="savingsAmount">—</div>
-            <div class="detail" id="savingsDetail">Enter your usage above to see savings.</div>
-        </div>
-    </div>
-
-    <div class="use-cases">
-        <h2>Which Should You Choose?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card">
-                <h3>Cost-Sensitive Production</h3>
-                <p>High-volume APIs, chatbots, and batch processing where every cent counts.</p>
-                <div class="recommendation"><span class="pick-gemini">Pick Gemini 2.5 Pro:</span> At $1.25/$10.00 it's 58% cheaper on input than Sonnet 5. Same 1M context. The clear winner for cost-sensitive workloads.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Complex Coding Tasks</h3>
-                <p>Code generation, debugging, refactoring, and multi-file editing.</p>
-                <div class="recommendation"><span class="pick-sonnet">Pick Sonnet 5:</span> Anthropic's strongest mid-tier coder. If coding quality is your top priority, the 2.4x price premium may be worth it.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Large Document Processing</h3>
-                <p>Summarization, Q&A, and analysis of long documents.</p>
-                <div class="recommendation"><span class="pick-gemini">Pick Gemini 2.5 Pro:</span> Both have 1M context, but Gemini is 58% cheaper on input. For document-heavy workloads, the savings add up fast.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Advanced Reasoning</h3>
-                <p>Multi-step analysis, research, and complex decision-making.</p>
-                <div class="recommendation"><span class="pick-sonnet">Pick Sonnet 5:</span> Anthropic's models excel at nuanced reasoning. If accuracy on complex tasks matters more than cost, Sonnet 5 is the better choice.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Startup MVPs</h3>
-                <p>Early-stage products where budget is tight.</p>
-                <div class="recommendation"><span class="pick-gemini">Pick Gemini 2.5 Pro:</span> 58% input savings means more runway. Start with Gemini 2.5 Pro and upgrade to Sonnet 5 only when you need Anthropic-specific capabilities.</div>
-            </div>
-            <div class="use-case-card">
-                <h3>Enterprise Scale</h3>
-                <p>Production workloads processing millions of tokens daily.</p>
-                <div class="recommendation"><span class="pick-gemini">Pick Gemini 2.5 Pro:</span> At 58% cheaper input, Gemini 2.5 Pro saves thousands per month at scale. The quality gap doesn't justify 2.4x the cost for most enterprise tasks.</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pro-upsell">
-        <h2>Save More with APIpulse</h2>
-        <p>Get personalized cost optimization recommendations for your specific workload.</p>
-        <div class="features">
-            <div class="feature"><strong>Save scenarios</strong> — compare up to 10 configs</div>
-            <div class="feature"><strong>Export reports</strong> — PDF cost analysis</div>
-            <div class="feature"><strong>Optimization tips</strong> — save up to 40%</div>
-        </div>
-        <a href="audit.html?from=tool_page" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'gemini25pro_vs_sonnet5'})">Free Tools →</a>
-    </div>
-
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>Is Gemini 2.5 Pro or Claude Sonnet 5 cheaper?</h3>
-            <p>Gemini 2.5 Pro is significantly cheaper. It costs $1.25/$10.00 per 1M tokens while Sonnet 5 costs $3.00/$15.00. That's 58% cheaper on input and 33% cheaper on output. At 1M tokens/month, Gemini 2.5 Pro costs $11.25 vs Sonnet 5's $18.00.</p>
-        </div>
-        <div class="faq-item">
-            <h3>What is Claude Sonnet 5 used for?</h3>
-            <p>Claude Sonnet 5 at $3.00/$15.00 is Anthropic's mid-tier model, designed for a balance of capability and cost. It excels at coding, analysis, writing, and complex reasoning tasks. It has a 1M token context window.</p>
-        </div>
-        <div class="faq-item">
-            <h3>When should I use Gemini 2.5 Pro vs Sonnet 5?</h3>
-            <p>Gemini 2.5 Pro ($1.25/$10.00) is ideal for cost-sensitive production workloads and high-volume APIs. Sonnet 5 ($3.00/$15.00) is preferred when you need Anthropic's strongest mid-tier model for coding or complex reasoning.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Do Gemini 2.5 Pro and Sonnet 5 have the same context window?</h3>
-            <p>Yes! Both have 1M token context windows. They're directly comparable for large document processing, codebase analysis, and other context-heavy tasks. The key difference is price.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Can I use both models together?</h3>
-            <p>Yes! A common pattern: use Gemini 2.5 Pro ($1.25/$10.00) for high-volume, cost-sensitive tasks and route complex coding or analysis tasks to Sonnet 5 ($3.00/$15.00). This gives you 58% input savings on bulk work.</p>
-        </div>
-    </div>
 
     <div class="share-section">
         <h2>Share This Comparison</h2>

@@ -141,15 +141,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
-                <a href="tools.html">Tools</a>
                 <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -157,51 +157,7 @@
         </div>
     </nav>
 
-    <main>
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="page-hero">
-        <h1>Cheapest AI API for Fine-Tuning</h1>
-        <p>Find the cheapest AI API for fine-tuning and custom models. Compare 67 models for training and inference costs.</p>
-    </div>
-
-    <div class="content-section">
-        <!-- Interactive Calculator -->
-        <h2>Calculate Your Fine-Tuning Cost</h2>
-        <p>Enter your fine-tuning workload to see the cheapest models for training and inference.</p>
-        <div class="calculator">
-            <div class="presets">
-                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Use case:</span>
-                <button class="preset-btn active-preset" onclick="applyPreset('classification')">Classification</button>
-                <button class="preset-btn" onclick="applyPreset('domain')">Domain Adaptation</button>
-                <button class="preset-btn" onclick="applyPreset('chat')">Chat Fine-Tuning</button>
-                <button class="preset-btn" onclick="applyPreset('extraction')">Data Extraction</button>
-            </div>
-            <div class="calc-grid">
-                <div class="calc-inputs">
-                    <div class="input-group">
-                        <label for="training-tokens">Training tokens (millions)</label>
-                        <input type="number" id="training-tokens" value="10" min="0.1" step="1" onchange="calculate()" oninput="calculate()">
-                    </div>
-                    <div class="input-group">
-                        <label for="epochs">Training epochs</label>
-                        <input type="number" id="epochs" value="3" min="1" step="1" onchange="calculate()" oninput="calculate()">
-                    </div>
-                    <div class="input-group">
-                        <label for="inference-tokens">Monthly inference tokens (millions)</label>
-                        <input type="number" id="inference-tokens" value="50" min="1" step="10" onchange="calculate()" oninput="calculate()">
-                    </div>
-                    <div class="input-group">
-                        <label for="input-ratio">Input / Output ratio (%)</label>
-                        <input type="number" id="input-ratio" value="70" min="10" max="95" step="5" onchange="calculate()" oninput="calculate()">
-                    </div>
-                </div>
+    <main id="main">
                 <div id="results" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;">
                     <!-- Results populated by JS -->
                 </div>

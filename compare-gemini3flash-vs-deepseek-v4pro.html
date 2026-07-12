@@ -155,116 +155,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-budget">Budget</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>Gemini 3 Flash <span class="vs">vs</span> DeepSeek V4 Pro</h1>
-        <p class="subtitle">Two budget champions with 1M context windows. DeepSeek V4 Pro is 71% cheaper on output tokens — the deciding factor for most workloads. Which budget 1M-context model wins?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>Gemini 3 Flash (Google)</th><th>DeepSeek V4 Pro (DeepSeek)</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$0.50</td><td class="cheaper">$0.435</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$3.00</td><td class="cheaper">$0.87</td></tr>
-                <tr><td>Context Window</td><td>1M tokens</td><td>1M tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>Google</td><td>DeepSeek</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">Both offer 1M context at budget prices — see which saves more for your specific workload.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
-            <button class="preset-btn" onclick="applyPreset('code-assist')">Code Assistant</button>
-            <button class="preset-btn" onclick="applyPreset('summarization')">Summarization</button>
-            <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
-            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="4000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-gemini">
-                <div class="provider">Google</div><div class="model-name">Gemini 3 Flash</div>
-                <div id="winner-badge-gemini" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-gemini">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-gemini"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-gemini"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-gemini"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-gemini"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-deepseek">
-                <div class="provider">DeepSeek</div><div class="model-name">DeepSeek V4 Pro</div>
-                <div id="winner-badge-deepseek" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-deepseek">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-deepseek"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-deepseek"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, marketing copy, product descriptions. Output-heavy by nature — DeepSeek V4 Pro's 71% cheaper output pricing makes it the clear winner for content pipelines.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Pro</span></div></div>
-            <div class="use-case-card"><h3>Code Completion & Generation</h3><p>Code is inherently output-heavy. DeepSeek V4 Pro's output pricing ($0.87/M) is 71% cheaper than Gemini ($3.00/M). DeepSeek is also known for strong coding capabilities.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Pro</span></div></div>
-            <div class="use-case-card"><h3>Google Cloud Integration</h3><p>If you're already in Google's ecosystem (Vertex AI, BigQuery, etc.), Gemini 3 Flash integrates natively. The ecosystem value may outweigh the per-token savings with DeepSeek.</p><div class="recommendation"><span class="pick-gemini">Ecosystem: Gemini 3 Flash</span></div></div>
-            <div class="use-case-card"><h3>AI Agents & Autonomous Tasks</h3><p>Multi-step autonomous workflows generate lots of output tokens. DeepSeek V4 Pro's 71% output savings add up quickly for agent workloads running hundreds of steps daily.</p><div class="recommendation"><span class="pick-deepseek">Better value: DeepSeek V4 Pro</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Need to compare more models?</h2>
-        <p>APIpulse gives you migration code, cost comparisons, and optimization tips for all 67 models.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Migration code</strong> snippets included</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Save up to 95%</strong> on API costs</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'comparison_page'})">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is DeepSeek V4 Pro than Gemini 3 Flash?</h3><p>DeepSeek V4 Pro costs $0.435/$0.87 per 1M tokens. Gemini 3 Flash costs $0.50/$3.00 per 1M tokens. DeepSeek is 13% cheaper on input and 71% cheaper on output — a typical workload saves $1.13/month (57% overall).</p></div>
-        <div class="faq-item"><h3>Do they have the same context window?</h3><p>Yes — both offer 1M token context windows. This makes them two of the cheapest ways to access 1M context in 2026. The context capability is equivalent.</p></div>
-        <div class="faq-item"><h3>When should I choose DeepSeek V4 Pro over Gemini 3 Flash?</h3><p>Choose DeepSeek V4 Pro when output cost matters most — it's 71% cheaper on output tokens, ideal for content generation and code completion. Choose Gemini 3 Flash for Google ecosystem integration or multimodal tasks.</p></div>
-        <div class="faq-item"><h3>Is DeepSeek V4 Pro as good as Gemini 3 Flash?</h3><p>Both are strong budget models with 1M context. DeepSeek excels at coding and technical tasks. Gemini benefits from Google's ecosystem. For most text-based workloads, quality is comparable — making DeepSeek's 57% savings hard to beat.</p></div>
-    </div>
     <div style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
         <a href="pricing-dashboard.html" style="display:block;padding:16px;border-radius:12px;border:1px solid rgba(34,197,94,0.3);background:rgba(34,197,94,0.05);text-decoration:none;transition:all 0.2s;margin-bottom:20px;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='rgba(34,197,94,0.3)'">
             <div style="font-size:14px;font-weight:700;color:var(--green);">📋 Full Pricing Dashboard →</div>

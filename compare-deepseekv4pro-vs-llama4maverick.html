@@ -134,115 +134,23 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
     <main id="main">
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-    <div class="compare-hero">
-        <span class="tier-badge tier-budget">Budget</span> <span class="tier-badge tier-budget">Budget</span>
-        <h1>DeepSeek V4 Pro <span class="vs">vs</span> Llama 4 Maverick</h1>
-        <p class="subtitle">The budget showdown. DeepSeek V4 Pro at $0.435/$0.87 vs Llama 4 Maverick at $0.27/$0.85 — both offer 1M context. Which budget model delivers the best value?</p>
-        <p class="last-updated">Pricing data verified: Jul 9, 2026</p>
-    </div>
-    <div class="quick-comparison">
-        <table class="quick-table">
-            <thead><tr><th>Specification</th><th>DeepSeek V4 Pro (DeepSeek)</th><th>Llama 4 Maverick (Meta (Together.ai))</th></tr></thead>
-            <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$0.435</td><td class="cheaper">$0.270</td></tr>
-                <tr><td>Output Price (per 1M tokens)</td><td class="pricier">$0.870</td><td class="cheaper">$0.850</td></tr>
-                <tr><td>Context Window</td><td class="same">1M tokens</td><td class="same">1M tokens</td></tr>
-                <tr><td>Tier</td><td>Budget</td><td>Budget</td></tr>
-                <tr><td>Provider</td><td>DeepSeek</td><td>Meta (Together.ai)</td></tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="calculator-section">
-        <h2>Calculate Your Exact Costs</h2>
-        <p class="section-sub">See how much you can save with Llama 4 Maverick — or whether DeepSeek V4 Pro's quality justifies higher cost.</p>
-        <div class="usage-presets">
-            <button class="preset-btn" onclick="applyPreset('coding')">Coding</button>
-            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
-            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
-            <button class="preset-btn" onclick="applyPreset('agentic')">Agentic Tasks</button>
-            <button class="preset-btn" onclick="applyPreset('batch')">Batch Processing</button>
-        </div>
-        <div class="calc-grid">
-            <div>
-                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="5000" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="2000" min="1" oninput="calculate()"></div>
-            </div>
-            <div>
-                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="200" min="1" oninput="calculate()"></div>
-                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
-            </div>
-        </div>
-        <div id="savings-banner" class="savings-banner" style="display:none;"><div class="amount" id="savings-amount"></div><div class="detail" id="savings-detail"></div></div>
-        <div class="results-grid">
-            <div class="result-card" id="card-deepseekv4pro">
-                <div class="provider">DeepSeek</div><div class="model-name">DeepSeek V4 Pro</div>
-                <div id="winner-badge-deepseekv4pro" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-deepseekv4pro">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-deepseekv4pro"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-deepseekv4pro"></span></div>
-                </div>
-            </div>
-            <div class="result-card" id="card-llama4maverick">
-                <div class="provider">Meta (Together.ai)</div><div class="model-name">Llama 4 Maverick</div>
-                <div id="winner-badge-llama4maverick" class="winner-badge" style="display:none;">Cheaper Choice</div>
-                <div class="price-big" id="total-llama4maverick">$0.00</div><div class="price-label">per month</div>
-                <div class="breakdown">
-                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-llama4maverick"></span></div>
-                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-llama4maverick"></span></div>
-                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-llama4maverick"></span></div>
-                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-llama4maverick"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="use-cases">
-        <h2>Which Model for Which Use Case?</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card"><h3>Complex Reasoning</h3><p>Multi-step analysis, research synthesis. GPT-5.4 Pro at $30/$180 is OpenAI's premium model. Sonnet 5 at $3/$15 delivers excellent quality at 90% lower cost for most reasoning tasks.</p><div class="recommendation"><span class="pick-sonnet5">Most tasks: Sonnet 5</span> | <span class="pick-gpt54pro">Peak reasoning: GPT-5.4 Pro</span></div></div>
-            <div class="use-case-card"><h3>Code Generation</h3><p>Writing, debugging, refactoring code. Both models produce excellent code. Sonnet 5 at $3/$15 is 10x cheaper, making it the clear winner for code-heavy workloads.</p><div class="recommendation"><span class="pick-sonnet5">Better value: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>Content Generation</h3><p>Blog posts, documentation, marketing copy. Sonnet 5 at $3/$15 is 10x cheaper on output, making it the clear winner for content-heavy workloads.</p><div class="recommendation"><span class="pick-sonnet5">Better value: Sonnet 5</span></div></div>
-            <div class="use-case-card"><h3>High-Volume Batch Processing</h3><p>At scale, the 10x cost difference is enormous. 10M input + 5M output tokens/month costs $105 with Sonnet 5 vs $1,050 with GPT-5.4 Pro — saving $945/month.</p><div class="recommendation"><span class="pick-sonnet5">Better value: Sonnet 5</span></div></div>
-        </div>
-    </div>
-    <div class="pro-upsell">
-        <h2>Choosing between Anthropic and OpenAI?</h2>
-        <p>APIpulse lets you compare all 67 models including DeepSeek V4 Pro and Llama 4 Maverick, save scenarios, and export cost reports.</p>
-        <div class="features">
-            <div class="feature"><strong>67 models</strong> across 10 providers</div>
-            <div class="feature"><strong>Save</strong> up to 10 scenarios</div>
-            <div class="feature"><strong>Export</strong> PDF cost reports</div>
-            <div class="feature"><strong>Optimize</strong> — save up to 40%</div>
-        </div>
-        <a href="audit.html?from=compare_cta" class="btn-primary">Free Tools →</a>
-    </div>
-    <div class="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>How much cheaper is Llama 4 Maverick?</h3><p>Llama 4 Maverick costs $0.27/$0.85 per 1M tokens vs DeepSeek V4 Pro at $0.435/$0.87 — 38% cheaper on input and 2% cheaper on output. At 1M input + 500K output tokens/month, that's $0.70 vs $0.87, saving $0.17/month.</p></div>
-        <div class="faq-item"><h3>Is DeepSeek V4 Pro worth more than Llama 4 Maverick?</h3><p>Both are excellent budget models with 1M context. DeepSeek V4 Pro at $0.435/$0.87 has slightly higher input cost but similar output cost. Llama 4 Maverick at $0.27/$0.85 is marginally cheaper. Choose based on quality preferences for your use case.</p></div>
-        <div class="faq-item"><h3>When should I use Llama 4 Maverick over DeepSeek V4 Pro?</h3><p>Choose Llama 4 Maverick ($0.27/$0.85) if you want the absolute cheapest option and prefer Meta's open-source ecosystem. Choose DeepSeek V4 Pro ($0.435/$0.87) if you prefer DeepSeek's model quality or need specific DeepSeek optimizations.</p></div>
-    </div>
     <div class="related-tools">
         <a href="pricing-hub.html" class="related-card"><h3>💰 Pricing Hub</h3><p>All 67 models compared — find the cheapest</p></a>
         <a href="compare.html" class="related-card"><h3>Compare Any Two Models</h3><p>Custom model comparison tool</p></a>

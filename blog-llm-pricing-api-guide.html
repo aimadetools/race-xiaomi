@@ -158,182 +158,22 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
                 <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
-    <main>
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <article class="content">
-        <span class="badge">Developer Guide</span>
-        <h1>How to Use a Free LLM Pricing API in Your Projects</h1>
-        <p class="subtitle">Fetch real-time pricing for 67 AI models from 10 providers. Build cost dashboards, CI/CD budget checks, and internal tools — no API key needed.</p>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <p>If you're building with AI APIs, you need to track pricing. Models get repriced constantly (DeepSeek dropped 90% in 6 months), new models launch weekly, and deprecated models stop working without warning.</p>
-
-        <p>Instead of manually checking 10 provider pricing pages, you can pull structured data from a single API endpoint. Here's how.</p>
-
-        <h2>The API: 6 Endpoints, Zero Auth</h2>
-        <p>The APIpulse LLM Pricing API is free, CORS-enabled, and requires no API key. It covers 67 models across 10 providers with verified pricing data updated regularly.</p>
-
-        <div class="endpoint-card">
-            <span class="endpoint-method">GET</span>
-            <span class="endpoint-path">/api/pricing</span>
-            <p class="endpoint-desc">Returns all 67 models with pricing, context windows, tier, and provider info. Supports filtering by provider, tier, or individual model.</p>
-            <a href="https://getapipulse.com/api/pricing" target="_blank" class="try-it">Try it live →</a>
-        </div>
-        <div class="cta-box" style="background:linear-gradient(135deg,var(--accent-bg),rgba(99,102,241,0.02));border-color:rgba(99,102,241,0.3);">
-            <h3>📊 Generate Your Personalized API Cost Report</h3>
-            <p>Select your model, enter your monthly spend, and get a custom savings report with cheaper alternatives — free, in 60 seconds.</p>
-        </div>
-
-        <div class="endpoint-card">
-            <span class="endpoint-method">GET</span>
-            <span class="endpoint-path">/api/calculate</span>
-            <p class="endpoint-desc">Calculate monthly cost for a specific model based on your usage (tokens per request, requests per day).</p>
-            <a href="https://getapipulse.com/api/calculate?model=openai-gpt4o-mini&input_tokens=1000&output_tokens=500&requests=1000" target="_blank" class="try-it">Try it live →</a>
-        </div>
-
-        <div class="endpoint-card">
-            <span class="endpoint-method">GET</span>
-            <span class="endpoint-path">/api/cheapest</span>
-            <p class="endpoint-desc">Find the cheapest model for your workload. Returns top 5 cheapest options ranked by total monthly cost.</p>
-            <a href="https://getapipulse.com/api/cheapest?input_tokens=1000&output_tokens=500&requests=1000" target="_blank" class="try-it">Try it live →</a>
-        </div>
-
-        <div class="endpoint-card">
-            <span class="endpoint-method">GET</span>
-            <span class="endpoint-path">/api/compare</span>
-            <p class="endpoint-desc">Compare multiple models side by side. Pass comma-separated model IDs for a detailed cost breakdown.</p>
-            <a href="https://getapipulse.com/api/compare?models=openai-gpt5,anthropic-sonnet46,google-gemini35-flash" target="_blank" class="try-it">Try it live →</a>
-        </div>
-
-        <div class="endpoint-card">
-            <span class="endpoint-method">GET</span>
-            <span class="endpoint-path">/api/badge</span>
-            <p class="endpoint-desc">Get an SVG pricing badge for any model. Embed in READMEs, docs, or dashboards. Auto-updates when prices change.</p>
-            <a href="https://getapipulse.com/api/badge?model=openai-gpt5" target="_blank" class="try-it">Try it live →</a>
-        </div>
-
-        <div class="endpoint-card">
-            <span class="endpoint-method">GET</span>
-            <span class="endpoint-path">/api/recommend</span>
-            <p class="endpoint-desc">Get model recommendations based on use case and budget. Returns ranked suggestions with cost estimates.</p>
-            <a href="https://getapipulse.com/api/recommend?use_case=chatbot&budget=50" target="_blank" class="try-it">Try it live →</a>
-        </div>
-
-        <h2>Quick Start: Fetch Pricing in JavaScript</h2>
-        <p>Here's the simplest possible integration — fetch all models and display the cheapest option:</p>
-
-        <div class="code-block">
-            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)">Copy</button>
-<pre><code>// Fetch all LLM pricing data
-const res = await fetch('https://getapipulse.com/api/pricing');
-const { models, meta } = await res.json();
-
-console.log(`Tracking ${meta.count} models across ${meta.providers.length} providers`);
-// → Tracking 67 models across 10 providers
-
-// Find cheapest model
-const sorted = models
-  .filter(m => !m.deprecated)
-  .sort((a, b) => a.input - b.input);
-
-console.log(`Cheapest: ${sorted[0].name} at $${sorted[0].input}/M input`);
-// → Cheapest: Gemini 2.5 Flash-Lite at $0.075/M input</code></pre>
-        </div>
-
-        <h2>Quick Start: Python</h2>
-        <div class="code-block">
-            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)">Copy</button>
-<pre><code>import requests
-
-# Fetch pricing for a specific provider
-res = requests.get('https://getapipulse.com/api/pricing', params={'provider': 'openai'})
-data = res.json()
-
-for model in data['models']:
-    print(f"{model['name']}: ${model['input']}/M in, ${model['output']}/M out")
-
-# Output:
-# GPT-5.5: $5.0/M in, $30.0/M out
-# GPT-5: $1.25/M in, $10.0/M out
-# GPT-5 mini: $0.25/M in, $2.0/M out
-# ...</code></pre>
-        </div>
-
-        <h2>Quick Start: cURL</h2>
-        <div class="code-block">
-            <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)">Copy</button>
-<pre><code># Get cheapest model for 1000 requests/day
-curl "https://getapipulse.com/api/cheapest?input_tokens=1000&output_tokens=500&requests=1000"
-
-# Compare GPT-5 vs Claude Sonnet 4.6
-curl "https://getapipulse.com/api/compare?models=openai-gpt5,anthropic-sonnet46"
-
-# Get a pricing badge (SVG)
-curl "https://getapipulse.com/api/badge?model=openai-gpt5"</code></pre>
-        </div>
-
-        <h2>5 Things You Can Build</h2>
-        <div class="use-case-grid">
-            <div class="use-case-card">
-                <h4>Cost Dashboard</h4>
-                <p>Display live pricing for your team's models. Auto-updates when providers change prices.</p>
-            </div>
-            <div class="use-case-card">
-                <h4>CI/CD Budget Check</h4>
-                <p>Add a pre-deploy check that flags if your model choice exceeds budget thresholds.</p>
-            </div>
-            <div class="use-case-card">
-                <h4>README Badges</h4>
-                <p>Embed pricing badges in your repo. Shows current cost per 1M tokens — auto-updates.</p>
-            </div>
-            <div class="use-case-card">
-                <h4>Cost Alert System</h4>
-                <p>Poll the API daily, compare to yesterday's prices, alert your team when costs change.</p>
-            </div>
-            <div class="use-case-card">
-                <h4>Model Advisor</h4>
-                <p>Given a use case and budget, recommend the best model. Use /api/recommend endpoint.</p>
-            </div>
-        </div>
+    <main id="main">
 
         <h2>Example: CI/CD Budget Gate</h2>
         <p>Add this to your GitHub Actions to block deploys that use models exceeding your budget:</p>

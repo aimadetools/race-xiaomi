@@ -239,21 +239,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -262,99 +256,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-ai-api-caching-strategies">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-            <span class="separator">›</span>
-            <span class="current">AI API Caching Strategies</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Guide</span>
-            <span>May 6, 2026</span>
-            <span>· 12 min read</span>
-        </div>
-        <h1>AI API Caching Strategies: Reduce LLM Costs by 60%+</h1>
-
-        <p>Caching is the highest-ROI cost optimization technique for AI APIs. A well-implemented cache can eliminate 30-70% of your API calls entirely — zero cost, zero latency penalty on cache hits. This guide covers three caching strategies with real implementation examples and cost breakdowns.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-        <h2>Why Caching Works So Well for LLMs</h2>
-        <p>Most AI API workloads have significant request overlap. A customer support bot sees the same questions repeatedly. A content generator processes similar prompts. A classification pipeline handles recurring patterns. Every duplicate request that hits your cache instead of the API is pure savings.</p>
-
-        <blockquote>A SaaS company processing 15,000 chat requests/day implemented exact-match caching and immediately reduced their API bill from $450/month to $210/month — a 53% reduction with zero quality loss.</blockquote>
-
-        <p>The key insight: LLM APIs charge per token. If you can serve a response from cache, you pay nothing for that request. Even a 30% cache hit rate means 30% of your costs disappear overnight.</p>
-
-        <h2>Strategy 1: Exact-Match Caching</h2>
-        <p>The simplest and most reliable caching approach. Store the full prompt + response. If the exact same request comes in again, return the cached result without calling the API.</p>
-
-        <h3>How it works</h3>
-        <ol>
-            <li>Hash the request (system prompt + user message + model + parameters)</li>
-            <li>Check if hash exists in your cache store (Redis, SQLite, or even a dictionary)</li>
-            <li>On hit: return cached response immediately</li>
-            <li>On miss: call the API, store the response with the hash, return it</li>
-        </ol>
-
-        <pre><code>import hashlib, json, redis
-
-r = redis.Redis()
-
-def cached_completion(messages, model="gpt-4o-mini", **kwargs):
-    # Create a cache key from the full request
-    cache_input = json.dumps({"messages": messages, "model": model, **kwargs}, sort_keys=True)
-    cache_key = f"llm:{hashlib.sha256(cache_input.encode()).hexdigest()}"
-
-    # Check cache
-    cached = r.get(cache_key)
-    if cached:
-        return json.loads(cached)
-
-    # Cache miss — call the API
-    response = openai.chat.completions.create(messages=messages, model=model, **kwargs)
-    result = response.model_dump()
-
-    # Store in cache (expire after 24 hours)
-    r.setex(cache_key, 86400, json.dumps(result))
-    return result</code></pre>
-
-        <h3>When exact-match caching works best</h3>
-        <ul>
-            <li><strong>FAQ chatbots</strong> — same questions asked repeatedly (40-60% hit rates common)</li>
-            <li><strong>Template-based generation</strong> — same inputs produce same outputs</li>
-            <li><strong>Classification pipelines</strong> — identical documents reclassified</li>
-            <li><strong>Code completion</strong> — same context triggers same suggestions</li>
-        </ul>
-
-        <h3>When it falls short</h3>
-        <p>Exact-match requires identical inputs. If users phrase the same question differently ("What's the price?" vs "How much does it cost?"), they won't match. That's where semantic caching comes in.</p>
-
-        <div class="cost-example">
-            <div class="label">Exact-match caching impact</div>
-            <div class="cost-row">
-                <span class="name">10,000 requests/day, GPT-4o mini</span>
-                <span class="value">$45/mo</span>
-            </div>
-            <div class="cost-row">
-                <span class="name">With 35% exact-match hit rate</span>
-                <span class="value">$19/mo</span>
-            </div>
-            <div class="cost-row cost-total">
-                <span class="name">Monthly savings</span>
-                <span class="value" style="color:var(--green);">$16/mo (35% reduction)</span>
-            </div>
-        </div>
 
         <h2>Strategy 2: Semantic Caching</h2>
         <p>Semantic caching matches requests by meaning, not exact text. "How do I reset my password?" and "I forgot my password, how do I fix it?" would both hit the same cache entry because they're semantically equivalent.</p>

@@ -194,12 +194,18 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">⚡ APIpulse</a>
-            <div class="nav-links">
-                <a href="/pricing.html">Pricing</a>
-                <a href="/calculator.html">Calculator</a>
-                <a href="/tools.html">Tools</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/compare-plans.html" class="nav-cta">Compare Plans</a>
+                        <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -208,57 +214,7 @@
         <a href="/blog.html" class="back-link">← Back to Blog</a>
 
         <article class="article">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
 
-            <h1>Best AI APIs for Code Generation 2026: Accuracy, Speed & Cost Compared</h1>
-            <p class="subtitle">Which model writes the most accurate code at the lowest cost? We compared 8 leading APIs on real coding tasks — from boilerplate generation to complex algorithm implementation — and ranked them by accuracy, speed, and price.</p>
-            <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
-                <p style="margin:0;font-size:14px;"><strong>🚨 Claude 4 retired June 15:</strong> See all 67 alternatives, calculate your savings, and get migration code on our <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">Claude 4 Migration Hub</a>.</p>
-            </div>
-
-            <div style="padding:16px 20px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;margin-bottom:24px;">
-                <p style="margin:0;font-size:14px;"><strong>⚠️ Deprecation alert:</strong> Claude 4 Opus and Claude Sonnet 4 retired on <strong>June 15, 2026</strong>. If you're using these models, see our <a href="claude-4-is-down.html" style="color:var(--accent);">migration guide</a> for step-by-step instructions.</p>
-            </div>
-
-            <p>Code generation is the most commercially valuable LLM use case in 2026. Every developer tool, IDE plugin, and coding assistant relies on an API that can generate syntactically correct, functionally accurate code. But not all models are equal — some excel at Python but struggle with Rust, some are fast but sloppy, and some are accurate but prohibitively expensive.</p>
-
-            <p>We evaluated models across four critical code generation capabilities: <strong>code accuracy</strong> (does it compile and pass tests?), <strong>multi-language support</strong>, <strong>latency</strong> (how fast does it return code?), and <strong>cost per 1,000 lines generated</strong>. Here's what we found.</p>
-
-            <!-- What to Look For -->
-            <h2>What Matters for Code Generation APIs</h2>
-            <p>Code generation has different requirements than general chat or content writing. Here's what to prioritize:</p>
-            <ul>
-                <li><strong>Code accuracy:</strong> Does the generated code compile, run, and pass test cases? A model that's 95% accurate still means 1 in 20 code blocks needs manual fixes — that adds up fast at scale.</li>
-                <li><strong>Multi-language proficiency:</strong> Most codebases use 2-4 languages. You need a model that performs well across Python, JavaScript/TypeScript, Java, Go, Rust, and SQL — not just one.</li>
-                <li><strong>Latency:</strong> For IDE autocomplete, sub-500ms response is critical. For batch code generation, you can trade latency for accuracy. Know your use case.</li>
-                <li><strong>Context window:</strong> Code generation requires understanding existing codebase context. A 128K window handles single-file generation; 1M+ windows support multi-file refactoring and codebase-aware generation.</li>
-                <li><strong>Structured output:</strong> Clean code with proper indentation, no markdown formatting errors, and correct syntax for the target language. Models that wrap code in unnecessary explanations waste tokens.</li>
-                <li><strong>Cost per 1K lines:</strong> Code generation is output-heavy. Output token pricing (where the actual code lives) matters 5-10x more than input pricing.</li>
-            </ul>
-
-            <!-- Top Picks -->
-            <h2>Top AI APIs for Code Generation</h2>
-
-            <div class="model-card">
-                <span class="tier-badge tier-premium">Code-Specific</span>
-                <h3>1. GPT-5.3 Codex — Best Dedicated Code Model</h3>
-                <div class="price-line"><strong>$1.75</strong> per 1M input tokens / <strong>$14.00</strong> per 1M output tokens</div>
-                <div class="price-line">Context window: 400K tokens</div>
-                <p>GPT-5.3 Codex is OpenAI's purpose-built code generation model. Trained specifically on code repositories, it delivers the highest accuracy across all major programming languages. It scores 97% on Python, 95% on JavaScript/TypeScript, and 93% on Rust — consistently outperforming general-purpose models on code-specific benchmarks.</p>
-                <ul>
-                    <li><strong>Code accuracy:</strong> 97% Python, 95% JS/TS, 93% Rust — highest overall</li>
-                    <li><strong>Multi-language:</strong> Excels across 20+ languages including niche ones (Haskell, Elixir)</li>
-                    <li><strong>Structured output:</strong> Clean code with minimal formatting errors</li>
-                    <li><strong>Weakness:</strong> 400K context limits large codebase refactoring; $14/1M output is steep for high-volume use</li>
-                </ul>
-                <div class="best-for"><strong>Best for:</strong> IDE plugins, coding assistants, automated test generation, and developer tools where code accuracy is the top priority.</div>
-            </div>
 
             <div class="model-card">
                 <span class="tier-badge tier-premium">Premium</span>

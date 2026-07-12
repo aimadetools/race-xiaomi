@@ -187,13 +187,16 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="model-status.html">Model Status</a>
-                <a href="claude-4-is-down.html" style="color:var(--red);">Deprecation Guide</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -201,86 +204,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-            <span class="separator">›</span>
-            <span class="current">AI API Cost Per Task: What 10 Common Tasks Actually Cost</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        <div class="post-meta">
-            <span class="post-tag">Analysis</span>
-            <span>June 5, 2026</span>
-        </div>
-        <h1>AI API Cost Per Task: What 10 Common Tasks Actually Cost in 2026</h1>
-        <p class="subtitle">Most developers think in "cost per token." But what you really want to know is: <strong>how much does it cost to actually do the thing?</strong> Here are real costs for 10 common AI tasks — with exact token counts and dollar amounts across every major provider.</p>
-            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-4-is-down.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
-            </div>
-            <script>
-            (function(){
-                var deadline=new Date('2026-06-15T00:00:00Z');
-                var now=new Date();
-                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
-                var el=document.getElementById('deprecation-days');
-                if(el){
-                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
-                    else if(diff===0) el.textContent='TODAY';
-                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
-                }
-            })();
-            </script>
-
-        <div class="callout">
-            <p><strong>TL;DR:</strong> The cheapest provider for any task costs 10-50x less than the most expensive. For most tasks, Gemini Flash or DeepSeek V4 Flash costs fractions of a cent per operation. At scale, the difference between providers is thousands of dollars per month.</p>
-        </div>
-
-        <h2>How to Read These Numbers</h2>
-        <p>Each task below shows:</p>
-        <ul>
-            <li><strong>Typical token count</strong> — how many input/output tokens the task uses</li>
-            <li><strong>Cost per operation</strong> — what one task costs on each provider</li>
-            <li><strong>Monthly estimate</strong> — what it costs at common volume levels</li>
-        </ul>
-        <p>Token counts are based on real-world usage patterns. 1 token ≈ 4 characters of English text.</p>
-
-        <!-- Task 1: Document Summarization -->
-        <div class="task-card">
-            <h3>1. Document Summarization</h3>
-            <span class="tokens">~5,000 input tokens → ~500 output tokens</span>
-            <p>Summarize a 10-page document (meeting notes, report, article) into 3-5 bullet points.</p>
-            <table>
-                <thead>
-                    <tr><th>Model</th><th>Cost per Summary</th><th>1,000/month</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Gemini 2.5 Flash-Lite</td><td class="price cheapest">$0.00075</td><td class="price">$0.75</td></tr>
-                    <tr><td>DeepSeek V4 Flash</td><td class="price">$0.00109</td><td class="price">$1.09</td></tr>
-                    <tr><td>GPT-4o mini</td><td class="price">$0.00285</td><td class="price">$2.85</td></tr>
-                    <tr><td>Claude Sonnet 4.6</td><td class="price">$0.0225</td><td class="price">$22.50</td></tr>
-                    <tr><td>Claude Opus 4.8</td><td class="price expensive">$0.0375</td><td class="price expensive">$37.50</td></tr>
-                </tbody>
-            </table>
-            <div class="monthly-est">
-                <strong>Best choice:</strong> Gemini Flash at $0.75/month for 1K summaries. Claude Opus costs 50x more for the same task.
-            </div>
-        </div>
 
         <!-- Task 2: Code Generation -->
         <div class="task-card">

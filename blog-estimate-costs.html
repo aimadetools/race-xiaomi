@@ -206,21 +206,15 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-            <div class="nav-links">
+                        <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="about.html">About</a>
-                <a href="blog.html" class="active">Blog</a>
+                <a href="blog.html">Blog</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -229,134 +223,6 @@
     </nav>
 
     <main id="main">
-    <!-- Deal urgency banner -->
-    <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.06));border-bottom:1px solid rgba(220,38,38,0.2);padding:10px 24px;text-align:center;">
-        <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:#dc2626;">🔥 Limited time:</strong>
-            <a href="audit.html" style="color:#dc2626;font-weight:700;text-decoration:none;">All tools are free — compare 67 models →</a>
-        </p>
-    </div>
-
-    <div class="content article" id="post-estimate-costs">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="blog.html">Blog</a>
-                <a href="quiz.html">Quiz</a>
-            <span class="separator">›</span>
-            <span class="current">How to Estimate Your Monthly AI API Costs (Step-by-Step)</span>
-        </nav>
-        <a href="blog.html" class="back-link">← Back to blog</a>
-        <div class="post-meta" style="margin-bottom: 24px;">
-            <span class="post-tag">Guide</span>
-            <span class="tier-badge" style="background:rgba(99,102,241,0.15);color:var(--accent);">Guide</span>
-            <span>April 23, 2026</span>
-        </div>
-        <h1>How to Estimate Your Monthly AI API Costs (Step-by-Step)</h1>
-
-        <p>Getting a surprise $2,000 API bill is every developer's nightmare. Here's a practical framework to forecast your LLM costs before you ship.</p>
-
-        <h2>Step 1: Map Your API Calls</h2>
-        <p>Start by listing every place your application calls an LLM API. For each call, note:</p>
-        <ul>
-            <li><strong>Purpose:</strong> What does this call do? (chat, summarize, generate, classify)</li>
-            <li><strong>Frequency:</strong> How many times per day will it run?</li>
-            <li><strong>Input size:</strong> Average number of input tokens</li>
-            <li><strong>Output size:</strong> Average number of output tokens</li>
-            <li><strong>Model:</strong> Which model are you using?</li>
-        </ul>
-
-        <h2>Step 2: Calculate Per-Request Cost</h2>
-        <p>For each API call type, calculate the cost per request:</p>
-        <p><code>cost = (input_tokens / 1,000,000 × input_price) + (output_tokens / 1,000,000 × output_price)</code></p>
-        <p>Example: A chatbot call with 800 input tokens and 300 output tokens using GPT-4o:</p>
-        <ul>
-            <li>Input cost: 800 / 1,000,000 × $2.50 = $0.002</li>
-            <li>Output cost: 300 / 1,000,000 × $10.00 = $0.003</li>
-            <li><strong>Total per request: $0.005</strong></li>
-        </ul>
-
-        <h2>Step 3: Scale to Monthly Volume</h2>
-        <p>Multiply each per-request cost by daily volume, then by 30:</p>
-        <p><code>monthly_cost = per_request_cost × daily_requests × 30</code></p>
-        <p>Example: 5,000 chatbot calls/day × $0.005 × 30 = <strong>$750/month</strong></p>
-
-        <h2>Step 4: Add a Safety Buffer</h2>
-        <p>LLM usage is rarely predictable. Add a <strong>20-30% buffer</strong> for:</p>
-        <ul>
-            <li>Traffic spikes (launches, viral moments)</li>
-            <li>Longer-than-average conversations</li>
-            <li>Retries and error handling</li>
-            <li>New features that increase API usage</li>
-        </ul>
-        <p>Our example with a 25% buffer: $750 × 1.25 = <strong>$937.50/month</strong></p>
-
-        <h2>Step 5: Compare Provider Costs</h2>
-        <p>Now that you have your usage profile, compare costs across providers. The same workload can cost dramatically different amounts:</p>
-        <ul>
-            <li><strong>GPT-4o:</strong> $937.50/month (our example)</li>
-            <li><strong>Gemini 2.5 Pro:</strong> ~$750/month (20% cheaper)</li>
-            <li><strong>GPT-4o mini:</strong> ~$94/month (90% cheaper)</li>
-        </ul>
-        <p>Switching to a smaller model for simple tasks is often the biggest cost saver.</p>
-
-        <h2>Step 6: Set Up Monitoring</h2>
-        <p>Once you're live, track actual usage against your estimates:</p>
-        <ul>
-            <li>Set up billing alerts at 50%, 75%, and 90% of your budget</li>
-            <li>Log token counts per request for analysis</li>
-            <li>Review usage weekly for the first month</li>
-            <li>Adjust your estimates based on real data</li>
-        </ul>
-
-        <h2>Common Estimation Mistakes</h2>
-        <ul>
-            <li><strong>Forgetting output tokens:</strong> Output tokens are typically 3-5x more expensive than input tokens</li>
-            <li><strong>Underestimating retries:</strong> Plan for 5-10% retry rate</li>
-            <li><strong>Ignoring context growth:</strong> Conversations get longer over time, increasing costs</li>
-            <li><strong>Not comparing providers:</strong> The same task can cost 10x less with a different model</li>
-        </ul>
-
-        <div class="cta-inline">
-            <p><strong>Calculate your monthly costs in seconds.</strong></p>
-            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
-        </div>
-            <p style="margin-top:8px;font-size:14px;"> — See if you're overpaying for AI APIs</p>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-        
-
-        <div class="cta-box" style="background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border-color:rgba(34,197,94,0.3);">\
-            <h3>🎯 Rate Your API Setup in 30 Seconds</h3>
-            <p>Get an A+ to F grade on your AI API costs. See how you compare and find cheaper alternatives instantly.</p>
-            <a href="api-cost-score.html" class="btn" style="background:var(--green);color:white;">Get Your Cost Score →</a>
-        </div>
-        <div class="cta-box" style="background:linear-gradient(135deg,var(--accent-bg),rgba(99,102,241,0.02));border-color:rgba(99,102,241,0.3);">
-            <h3>📊 Generate Your Personalized API Cost Report</h3>
-            <p>Select your model, enter your monthly spend, and get a custom savings report with cheaper alternatives — free, in 60 seconds.</p>
-        </div>
-
-        <div class="share-section">
-            <p>Found this useful? Share it:</p>
-            <a href="https://twitter.com/intent/tweet?text=How+to+Estimate+Your+Monthly+AI+API+Costs&url=https%3A%2F%2Fgetapipulse.com%2Fblog-estimate-costs.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
-        <a href="api-cost-score.html" class="related-card">
-            <h3>🎯 API Cost Score</h3>
-            <p>Rate your API setup — get a letter grade in 30 seconds</p>
-        </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-estimate-costs.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
-        </div>
-
-        <div style="margin-top:40px;padding:24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
-            <h3 style="font-size:16px;margin-bottom:12px;">Related Reading</h3>
-            <ul style="list-style:none;padding:0;">
-                <li style="margin-bottom:8px;"><a href="blog-reduce-costs.html">How to Reduce Your AI API Costs by 40%</a></li>
-                <li style="margin-bottom:8px;"><a href="blog-pricing-cheat-sheet.html">LLM API Pricing Cheat Sheet: Every Model, Every Provider</a></li>
-                <li><a href="compare.html">Compare any two models side by side →</a></li>
-                                            <li style="margin-bottom:8px;"><a href="agent-cost-calculator.html">AI Agent Cost Calculator — Estimate Your Agent's Spend →</a></li>
-                <li><a href="blog-cheapest-ai-api-june-2026.html">Cheapest AI API in July 2026 — All 59 Models Ranked →</a></li>
-            </ul>
-        </div>
-    </div>
 
     <div style="max-width:600px;margin:48px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
         <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>
