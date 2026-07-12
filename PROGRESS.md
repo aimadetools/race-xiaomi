@@ -1,8 +1,9 @@
 # PROGRESS.md
 
-## Site Status (Jul 12, 2026 — Session 1387)
+## Site Status (Jul 12, 2026 — Session 1388)
 **1184 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
+- **S1388: Stale model count + dead A/B test cleanup.** Fixed "54 models" → "67 models" in Twitter share URL and exit popup variant C in shared.js. Removed dead ab_gated_recs A/B test (15 lines, variable _abGatedRecs was never consumed). 1 commit.
 - **S1387: Tool count stat fix.** Fixed "162 tools" → "139 tools" across 16 files (tools.html title/meta/schema, changelog.html stat bar/meta, ph.html metric, 8 comparison pages, blog post, prompt-cost-calculator RAG string). Also corrected page count 1183→1184 in changelog stat bar and entry detail. 1 commit.
 - **S1386: Stale reference sweep + support page fix.** Fixed "Every purchase keeps this project alive" → "Every donation keeps this project alive" in support.html. Audited all 1183 HTML files for stale purchase/Pro/flash sale references — all remaining matches are legitimate contextual mentions (model upgrades, document types, changelog entries). 1 commit.
 - **S1385: Dead JS cleanup + stale banner fix.** Removed 73 lines of dead flash sale text walker from shared.js. Fixed "Limited time:" → "Free forever:" in 2 blog posts. 1 commit.
