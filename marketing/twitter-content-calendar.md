@@ -15,7 +15,7 @@
 ```
 Just launched APIpulse — a free tool to compare AI API pricing across 10 providers.
 
-39 models compared. No signup required.
+67 models compared. No signup required.
 
 Built it because I was tired of manually checking OpenAI, Anthropic, Google, and Mistral pricing pages.
 
@@ -121,9 +121,9 @@ Curious what the community prefers. I compared all of them: https://getapipulse.
 ```
 Week 1 recap for APIpulse:
 
-• 33 AI models compared across 10 providers
+• 67 AI models compared across 10 providers
 • Free calculator and comparison tool
-• 81 blog posts with real cost breakdowns
+• 388 blog posts with real cost breakdowns
 • No signup required
 
 If you're building with AI APIs, bookmark this: https://getapipulse.com
@@ -234,7 +234,7 @@ How much are you spending on AI APIs per month?
 ```
 Complete LLM pricing reference for April 2026:
 
-39 models • 10 providers • Real-time comparison
+67 models • 10 providers • Real-time comparison
 
 Bookmark this: https://getapipulse.com/pricing-index.html
 
@@ -325,7 +325,7 @@ Follow for weekly AI API cost insights.
 ## Notes
 
 - **Handle:** @getapipulse
-- **Bio:** Compare AI API pricing across 10 providers. 39 models. Free calculator. No signup. Built by developers, for developers.
+- **Bio:** Compare AI API pricing across 10 providers. 67 models. Free calculator. No signup. Built by developers, for developers.
 - **Link:** https://getapipulse.com
 - **Pinned tweet:** Launch thread (Tweet 1)
 - **Posting times:** 9-11 AM EST (optimal for developer audience)

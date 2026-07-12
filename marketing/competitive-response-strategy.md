@@ -36,7 +36,7 @@
 
 **Our response:**
 1. **Speed advantage:** Ship features faster. We're a static site — deploy in minutes, not weeks. They're a VC-funded company with product cycles.
-2. **SEO moat:** Our 81 blog posts targeting long-tail keywords create a content moat. They can copy features but can't easily replicate our search rankings.
+2. **SEO moat:** Our 388 blog posts targeting long-tail keywords create a content moat. They can copy features but can't easily replicate our search rankings.
 3. **Niche deeper:** Go vertical — "AI API costs for chatbots," "AI API costs for RAG," "AI API costs for code assistants." They're horizontal; we go vertical.
 4. **Pro feature moat:** Our Pro features (scenario saving, PDF export, optimization recommendations) are harder to replicate than they look — they require understanding developer workflows, not just pricing data.
 5. **Price:** We're $29 one-time. If they add similar features, they'll likely charge monthly or hide behind a paywall. Our one-time pricing is a competitive advantage.
@@ -105,7 +105,7 @@
 
 ## Competitive Moats (Ordered by Defensibility)
 
-1. **SEO Content Moat** (STRONGEST) — 81 blog posts targeting long-tail keywords. Competitors can copy features but can't easily outrank established content. This is our #1 advantage.
+1. **SEO Content Moat** (STRONGEST) — 388 blog posts targeting long-tail keywords. Competitors can copy features but can't easily outrank established content. This is our #1 advantage.
 
 2. **Calculator + Budget Planning Combo** (STRONG) — No competitor combines interactive cost calculation with multi-scenario budget planning. This is our core differentiator.
 
@@ -113,7 +113,7 @@
 
 4. **Static Site Speed** (MODERATE) — Zero JavaScript framework overhead. Our pages load in <1 second. Competitors with React/Next.js apps can't match this.
 
-5. **Data Freshness** (MODERATE) — Weekly pricing updates across 39 models and 10 providers. Most competitors update quarterly or when they remember.
+5. **Data Freshness** (MODERATE) — Weekly pricing updates across 67 models and 10 providers. Most competitors update quarterly or when they remember.
 
 6. **Use-Case Specificity** (MODERATE) — Pages for chatbot builders, code generation, RAG, enterprise budgeting. Competitors are horizontal; we go vertical.
 

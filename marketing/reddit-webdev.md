@@ -10,13 +10,13 @@ Hey r/webdev,
 I got tired of manually comparing pricing across OpenAI, Anthropic, Google, and Mistral every time I started a new AI project. So I built APIpulse — a free tool that lets you:
 
 - **Calculate monthly costs** for any combination of input/output tokens and requests
-- **Compare 39 models** across 10 providers side-by-side
+- **Compare 67 models** across 10 providers side-by-side
 - **Use presets** for common scenarios (startup, scale-up, enterprise)
 - **Find the cheapest model** for your specific use case
 
 The calculator is completely free and runs entirely in the browser — no signup, no API keys, no tracking.
 
-I also wrote 81 blog posts comparing specific models (GPT-4o vs Claude Sonnet 4, Gemini vs GPT-5, cheapest chatbot options, etc.) with real cost breakdowns.
+I also wrote 388 blog posts comparing specific models (GPT-4o vs Claude Sonnet 4, Gemini vs GPT-5, cheapest chatbot options, etc.) with real cost breakdowns.
 
 Would love feedback on:
 1. Are the pricing numbers accurate for your use case?

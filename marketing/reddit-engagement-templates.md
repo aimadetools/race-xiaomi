@@ -10,7 +10,7 @@ Pre-written responses for common comments on the r/webdev post. Adapt as needed 
 Thanks! Glad it's helpful. If there's a model or provider you want added, let me know — I update the pricing data regularly.
 
 ### "Nice project, how long did it take?"
-About 3 weeks of evenings/weekends. The calculator itself was the easy part — maintaining accurate pricing across 10 providers and 39 models is the ongoing work.
+About 3 weeks of evenings/weekends. The calculator itself was the easy part — maintaining accurate pricing across 10 providers and 67 models is the ongoing work.
 
 ### "Love that it's free and no signup"
 That was the whole point. I got tired of signing up for tools just to compare prices. Everything runs in the browser, no data leaves your machine.
@@ -61,7 +61,7 @@ You can! But if you're comparing across 3-4 providers, you end up with 4 browser
 I update monthly. Pricing changes are usually announced with some lead time. The blog has a pricing changes tracker too.
 
 ### "This is just a reseller / affiliate thing"
-Nope — no affiliate links, no tracking, no data collection. Just a free tool I built because I needed it myself. The Pro plan is a one-time $29 purchase for extra features.
+Nope — no affiliate links, no tracking, no data collection. Just a free tool I built because I needed it myself. Everything is 100% free.
 
 ### "GPT-5 isn't even out yet / prices are wrong"
 Some models are listed with their published pricing (which may be subject to change). I note when data is from official sources vs estimates. If you see something wrong, please let me know and I'll fix it.
@@ -81,13 +81,13 @@ Appreciate it! Every upvote helps get this in front of more developers.
 
 ---
 
-## Pro Plan Questions
+## Free Model Questions
 
-### "What do you get with Pro?"
-Pro ($29 one-time, no subscription) adds: saved scenarios (compare up to 10 configurations), export cost reports as PDF, and personalized optimization recommendations. Plus priority email support.
+### "Is everything really free?"
+Yes — every tool, every feature. Cost calculator, comparison tool, monitoring dashboard, price alerts, weekly reports, PDF exports, saved scenarios, optimization playbook. All 67 models, all 388 blog posts. No signup, no credit card, no catch.
 
-### "Is Pro worth it?"
-Depends on how often you compare pricing. If you're just checking once, the free version is fine. If you're doing regular budget planning or need to share cost reports with your team, Pro saves time.
+### "How do you make money?"
+Right now I don't — this is a passion project. Long-term I may add optional affiliate links or a Ko-fi tip jar, but the core tools stay free.
 
 ---
 
