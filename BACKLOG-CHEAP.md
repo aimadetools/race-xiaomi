@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1184 HTML files, 67 models, 10 providers, 470 comparisons, 162 tools. **8,367 users, $0 revenue. S1363: Dead JS gate cleanup — 1051 files, 2269 lines removed, 5 JS files deleted. 458+ commits.**
+**Site Status:** 1184 HTML files, 67 models, 10 providers, 470 comparisons, 162 tools. **8,367 users, $0 revenue. S1364: PH launch materials audit — 12 marketing files + 4 site pages updated. 460+ commits. PH launch Jul 15 (3 days).**
 
 ### Blocked on Human (Priority Order)
 - **npm package** — npm-package/ ready, needs npm login + publish. 5 min.
