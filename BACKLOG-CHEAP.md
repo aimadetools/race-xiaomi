@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1184 HTML files, 67 models, 10 providers, 470 comparisons, 139 tools. **8,367 users, $0 revenue. 488+ commits. PH launch Jul 15 (3 days). Site 100% ready.**
+**Site Status:** 1184 HTML files, 67 models, 10 providers, 470 comparisons, 139 tools. **8,367 users, $0 revenue. 491+ commits. PH launch Jul 15 (3 days). Site 100% ready.**
 
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
@@ -17,8 +17,8 @@
 - ~~**Add Ko-fi link to footer**~~ — Done S1393. Ko-fi tip jar button added to shared.js footer (all 1184 pages). kofi_clicked event (source:footer).
 - ~~**Add Ko-fi link to about page**~~ — Done S1393. 'Support APIpulse' section added to about.html. kofi_clicked event (source:about_page).
 
-### Completed Summary (Sessions 416-1391, Apr 23 - Jul 12)
+### Completed Summary (Sessions 416-1393, Apr 23 - Jul 12)
 ✅ Complete site: 1184 pages, 67 models, 10 providers, 470 comparisons, 139 tools. 388 blog posts.
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models.
-✅ **S1332-S1391: Pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed across 2600+ files, dead JS cleanup (5 files deleted, 2269+ lines), nav standardization (1067 files), PH launch fully prepped and audited, changelog updated. All tools free, zero purchase CTAs, zero stale references. Blog banners fixed ("Limited time:" → "Free forever:"). Support page purchase→donation fix. Tool count corrected 162→139. Stale model count 54→67 in shared.js. Dead ab_gated_recs A/B test removed. Sitemap lastmod refreshed, structured data added to compare-multi.html + 10 more pages (1137/1184, 96% coverage).**
-**488+ commits, 7,800+ files.**
+✅ **S1332-S1393: Pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed across 2600+ files, dead JS cleanup (5 files deleted, 2269+ lines), nav standardization (1067 files), PH launch fully prepped and audited, changelog updated, blog banners fixed, support page purchase→donation fix, tool count corrected 162→139, stale model count 54→67, dead A/B test removed, sitemap refreshed, structured data (1137/1184, 96%), Ko-fi tip jar on support/footer/about pages, 37 stale trial refs removed. All tools free, zero purchase CTAs.**
+**491+ commits, 7,800+ files.**
