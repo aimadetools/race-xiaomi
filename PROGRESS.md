@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (Jul 12, 2026 — Session 1405)
+## Site Status (Jul 12, 2026 — Session 1406)
 **1183 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts | 1176 sitemap entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1405: Quality verification.** Final site audit — zero empty/zero-size HTML, zero TODO/FIXME markers, zero stale purchase CTAs, all internal links verified, structured data on 96.5% of pages (1143/1183), sitemap has 1176 entries, robots.txt correct, OG image exists. Site fully ready for PH launch Jul 15.
+- **S1406: PH page CTA cleanup.** Consolidated two redundant CTA sections on ph.html into one clean section. Fixed stale "This was a snapshot" copy that didn't apply to the PH page (which has a live calculator). Site fully ready for PH launch Jul 15.
 - **Blocked on human:** PH launch (Jul 15), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 10-12)
-**Jul 12 (1381-1405):** PH launch prep marathon (nav standardization 1067 files, viral share, Pro gate removal 902 lines, dead code cleanup 235 lines). Stale ref cleanup (tool count 162→139, model count 54→67, flash sale refs removed, purchase→donation fix, dead A/B test). SEO refresh (sitemap, structured data 96%). Ko-fi tip jar, changelog, share GA4 tracking. Data quality (pricing.json synced to 67 models). README refreshed. Doc cleanup + status refresh. Final stat fix (1184→1183 pages, 162→139 tools in PH blog + support). Session 1403: removed fake aggregate rating from ph.html structured data. Session 1404: fixed stale references in COMMUNITY-ENGAGEMENT.md (51→67 models, 369→388 blogs, flash sale→freemium). Verified zero stale purchase CTAs across all 1183 HTML files. Session 1405: final quality audit — zero issues found, site fully ready for PH launch Jul 15.
+**Jul 12 (1381-1406):** PH launch prep marathon (nav standardization 1067 files, viral share, Pro gate removal 902 lines, dead code cleanup 235 lines). Stale ref cleanup (tool count 162→139, model count 54→67, flash sale refs removed, purchase→donation fix, dead A/B test). SEO refresh (sitemap, structured data 96%). Ko-fi tip jar, changelog, share GA4 tracking. Data quality (pricing.json synced to 67 models). README refreshed. Doc cleanup + status refresh. Final stat fix (1184→1183 pages, 162→139 tools in PH blog + support). Session 1403: removed fake aggregate rating from ph.html structured data. Session 1404: fixed stale references in COMMUNITY-ENGAGEMENT.md (51→67 models, 369→388 blogs, flash sale→freemium). Verified zero stale purchase CTAs across all 1183 HTML files. Session 1405: final quality audit — zero issues found, site fully ready for PH launch Jul 15. Session 1406: consolidated redundant CTAs on ph.html.
 **Jul 11 (1332-1371):** Pivot to freemium — flash sale cleanup (1015 files), source-level cleanup (1128 files), event tracking cleanup (943 files), dead JS cleanup (2269 lines, 5 files deleted), PH banner, link audit. 55+ commits.
 **Jul 10 (1292-1331):** Nav CTAs, consistency, dates, links. 78+ commits.
 
