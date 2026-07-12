@@ -626,12 +626,12 @@
         </p>
     </section>
 
-    <!-- PRO CTA -->
+    <!-- Free Tools CTA -->
     <section class="pro-cta-urgency">
         <h2>Optimize Your Migration — Free</h2>
-        <p class="subtitle">You get personalized model routing strategies, saved cost scenarios, and exportable reports. Your migration savings pay for Pro on day one.</p>
+        <p class="subtitle">You get personalized model routing strategies, saved cost scenarios, and exportable reports. All tools are 100% free — no signup required.</p>
         <div class="pro-roi-box" id="dynamic-pro-roi">
-            If you save $193/mo, Pro ($19) pays for itself in 2 days
+            All tools are free — no signup, no credit card, no limits
         </div>
         <ul class="pro-benefits">
             <li>Personalized model recommendations for your workload</li>
@@ -786,12 +786,10 @@
         document.getElementById('result-flash').textContent = '$' + flashCost.toFixed(2) + '/mo';
         document.getElementById('savings-amount').textContent = '$' + savings.toFixed(2) + '/mo';
 
-        // Update Pro ROI
-        var price = 0;
-        var proPayback = savings > 0 ? Math.ceil(price / (savings / 30)) : '—';
+        // Update free tools ROI
         var roiEl = document.getElementById('dynamic-pro-roi');
         if (roiEl) {
-            roiEl.textContent = 'If you save $' + savings.toFixed(0) + '/mo, Pro ($' + price + ') pays for itself in ' + proPayback + ' day' + (proPayback === 1 ? '' : 's');
+            roiEl.textContent = 'Save $' + savings.toFixed(0) + '/mo with free tools — no signup, no credit card';
         }
     }
 
