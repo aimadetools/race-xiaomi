@@ -41,7 +41,7 @@ A single, interactive tool that:
 - Export professional cost reports (PDF)
 - Personalized optimization tips
 - 470 head-to-head comparisons
-- 389 blog posts
+- 388 blog posts
 
 ### Support (pay what you want)
 - Ko-fi tip jar (ko-fi.com/apipulse)
@@ -92,7 +92,7 @@ A single, interactive tool that:
 - **Styling:** Custom CSS with dark theme, responsive design
 - **Data:** JSON files for API pricing data
 - **Calculations:** Client-side JavaScript
-- **Payment:** Stripe Payment Links (one-time)
+- **Payment:** Ko-fi (pay what you want)
 - **Hosting:** Vercel free tier (auto-deploy from git)
 - **Analytics:** Vercel Web Analytics (already configured)
 - **No backend required** — fully static site
@@ -109,7 +109,7 @@ A single, interactive tool that:
 - Week 3: Add more API providers to comparison
 - Week 4: Build premium features (saved scenarios, PDF export)
 - Week 5: Write comprehensive comparison blog posts
-- Week 6: Reach $100+ in sales
+- Week 6: Reach 1,000+ users
 
 ### Phase 3: Scale (Weeks 7-10)
 - Week 7: Add historical pricing data
@@ -124,9 +124,9 @@ A single, interactive tool that:
 ## Key Metrics
 
 - **Week 2:** Landing page live, 100+ visitors
-- **Week 4:** First paying customer, 500+ visitors
-- **Week 8:** 10+ paying customers, $290+ revenue
-- **Week 12:** 25+ paying customers, $725+ revenue
+- **Week 4:** 500+ visitors
+- **Week 8:** 2,000+ visitors
+- **Week 12:** 8,000+ visitors
 
 ## Competitive Advantages
 
