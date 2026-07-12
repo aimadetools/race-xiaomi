@@ -1,14 +1,14 @@
 # PROGRESS.md
 
-## Site Status (Jul 12, 2026 — Session 1395)
-**1184 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts**
+## Site Status (Jul 12, 2026 — Session 1396)
+**1184 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts | 1175 sitemap entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1395: Pre-launch audit — site clean, ready for PH.** Final audit before Jul 15 launch: verified Ko-fi links (3 pages, all pointing to ko-fi.com/apipulse), no TODOs/FIXMEs in shared.js/index.html, no stale purchase/Pro CTAs (remaining matches are changelog history only), PH banner configured for Jul 15-17, PH page (ph.html) has proper OG/GA4/meta tags, sitemap consistent (388 blogs, 1184 pages). All technical tasks complete — remaining work blocked on human.
-- **S1394: Changelog catchup + share link GA4 tracking.** Added 3 missing Jul 12 changelog entries for S1384-S1393. Added share_clicked GA4 event tracking to footer Twitter/LinkedIn share links for PH viral loop measurement. 1 commit.
-- **S1393: Ko-fi tip jar to footer + about page + stale trial cleanup.** Ko-fi button in footer (all 1184 pages) + about page. Removed 37 stale trial refs. 2 commits.
+- **S1396: Sitemap cleanup + structured data boost.** Removed 10 noindex/redirect pages from sitemap (1185→1175) for cleaner crawl budget. Added noindex to deal.html, go.html. Added JSON-LD structured data to 5 pages: embed-report (WebApplication), support, privacy, terms, contact (WebPage/ContactPage). Coverage: 1137→1142/1184 (96.5%). Remaining 41 without are all redirects/admin/embed utility. 1 commit.
+- **S1395: Pre-launch audit — site clean, ready for PH.** Verified Ko-fi links, no TODOs/FIXMEs, no stale purchase CTAs, PH banner configured, PH page meta tags good. All technical tasks complete — remaining work blocked on human.
+- **S1394: Changelog catchup + share link GA4 tracking.** 1 commit.
+- **S1393: Ko-fi tip jar to footer + about page + stale trial cleanup.** 2 commits.
 - **S1392: Ko-fi tip jar on support page.** 1 commit.
-- **S1391: Structured data coverage (1137/1184, 96%).** 1 commit.
-- **S1384-S1390: Cleanup marathon.** Tool count fix, stale reference sweep, dead JS removal, blog CTA cleanup, SEO refresh, sitemap update. 8 commits.
+- **S1384-S1391: Cleanup marathon + structured data.** Tool count fix, stale sweep, dead JS removal, blog CTA cleanup, SEO refresh, sitemap update, structured data (96%). 9 commits.
 - **Blocked on human:** PH launch (Jul 15), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 10-12)
