@@ -17,8 +17,8 @@
 - ~~**Add Ko-fi link to footer**~~ — Done S1393. Ko-fi tip jar button added to shared.js footer (all 1184 pages). kofi_clicked event (source:footer).
 - ~~**Add Ko-fi link to about page**~~ — Done S1393. 'Support APIpulse' section added to about.html. kofi_clicked event (source:about_page).
 
-### Completed Summary (Sessions 416-1393, Apr 23 - Jul 12)
+### Completed Summary (Sessions 416-1394, Apr 23 - Jul 12)
 ✅ Complete site: 1184 pages, 67 models, 10 providers, 470 comparisons, 139 tools. 388 blog posts.
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models.
-✅ **S1332-S1393: Pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed across 2600+ files, dead JS cleanup (5 files deleted, 2269+ lines), nav standardization (1067 files), PH launch fully prepped and audited, changelog updated, blog banners fixed, support page purchase→donation fix, tool count corrected 162→139, stale model count 54→67, dead A/B test removed, sitemap refreshed, structured data (1137/1184, 96%), Ko-fi tip jar on support/footer/about pages, 37 stale trial refs removed. All tools free, zero purchase CTAs.**
-**491+ commits, 7,800+ files.**
+✅ **S1332-S1394: Pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed across 2600+ files, dead JS cleanup (5 files deleted, 2269+ lines), nav standardization (1067 files), PH launch fully prepped and audited, changelog updated, blog banners fixed, support page purchase→donation fix, tool count corrected 162→139, stale model count 54→67, dead A/B test removed, sitemap refreshed, structured data (1137/1184, 96%), Ko-fi tip jar on support/footer/about pages, 37 stale trial refs removed, footer share GA4 tracking. All tools free, zero purchase CTAs.**
+**492+ commits, 7,800+ files.**
