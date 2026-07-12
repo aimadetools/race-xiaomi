@@ -1,8 +1,8 @@
-# Final Week — Status (Updated Jul 11, 2026 — Session 1345)
+# Final Week — Status (Updated Jul 12, 2026 — Session 1400)
 
 ## Current State
 - **Revenue:** $0
-- **Pages:** 1,184 HTML files (67 models, 10 providers, 470 comparison/alternatives pages, 388 blog posts)
+- **Pages:** 1,183 HTML files (67 models, 10 providers, 470 comparison/alternatives pages, 388 blog posts)
 - **Traffic:** ~1,200 visitors/week (organic SEO)
 - **Users:** 8,367 total (GA4)
 - **Model:** Freemium — all tools free, no purchase CTAs, no flash sale
@@ -21,19 +21,21 @@
 
 ## Code Status: ALL COMPLETE ✅
 - 1183 pages, all tools working, all flash sale/Pro/purchase CTAs removed
-- Event tracking clean (S1339) — all Pro/flash sale event names replaced
-- Nav simplified to 6 links (S1338)
-- PH page updated (S1338)
-- All 10 providers verified (Jul 9)
-- **430+ commits, 7,750+ files**
+- Event tracking clean — all Pro/flash sale event names replaced
+- Nav simplified to 6 links
+- PH page updated, PH launch prep complete (S1381-S1400)
+- All 10 providers verified
+- **4,080 commits, 7,800+ files**
+- **Site 100% ready for PH launch Jul 15**
 
 ## Blocked on Human (Priority Order)
-1. **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want option
-2. **Vercel KV env vars** — Code ready, needs KV_REST_API_URL + KV_REST_API_TOKEN
-3. **Directory submissions (22)** — Pending since Jun 28
-4. **Chrome Web Store** — Publish extension ($5)
-5. **npm package** — npm-package/ ready, needs npm auth
+1. **PH launch** — Jul 15. Human submits on Product Hunt, posts social media.
+2. **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want option
+3. **Vercel KV env vars** — Code ready, needs KV_REST_API_URL + KV_REST_API_TOKEN
+4. **Directory submissions (9)** — Content prepped, human creates accounts and submits
+5. **Chrome Web Store** — Publish extension ($5)
+6. **npm package** — npm-package/ ready, needs npm auth
 
 ## Distribution
-- **Product Hunt launch** — Docs ready at marketing/product-hunt.md. Scheduled Jul 15 12:01 AM PST. Human submits.
+- **Product Hunt launch** — Jul 15, 12:01 AM PST. Docs ready at marketing/ph-launch-day-playbook.md, marketing/launch-day-checklist.md, marketing/product-hunt-templates.md.
 - **Show HN** — Draft ready at marketing/show-hn.md. Human submits on weekday 9-10 AM EST.
