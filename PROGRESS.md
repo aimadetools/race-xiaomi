@@ -1,17 +1,20 @@
 # PROGRESS.md
 
-## Site Status (Jul 12, 2026 — Session 1366)
+## Site Status (Jul 12, 2026 — Session 1367)
 **1184 HTML files | 67 models | 10 providers | 470 comparisons | 162 tools | 388 blog posts**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1366: Pre-PH-launch final fixes.**
-  - Fixed IDENTITY.md: blog count 389→388, removed stale Stripe payment reference, updated revenue targets to visitor-based
-  - Rewrote blog-launching-on-product-hunt.html: was fictional May 5 retrospective, now accurate Jul 15 prep guide with real stats (1,184 pages, 388 blogs, 162 tools)
-  - Verified no flash sale / Pro / Founding Member / Stripe purchase references remain in site HTML
-  - All key pages (ph.html, index.html, weekly-report.html) verified correct
-- **PH launch is Jul 15 (3 days). Site is fully clean and ready.**
+- **S1367: Added PH launch banner to shared.js.**
+  - New auto-banner in shared.js: shows on all pages Jul 15-17 (midnight PT to end of Jul 17)
+  - Orange/red gradient with PH branding, "We're live on Product Hunt!" CTA → ph.html
+  - Dismissible with localStorage persistence, tracks ph_banner_shown GA4 event
+  - Skips ph.html page itself to avoid self-linking
+  - Verified weekly-report.html is fresh (Jul 11, accurate data), no update needed until Monday
+  - Verified ph.html page fully ready: live calculator, correct stats, all marketing copy aligned
+- **PH launch is Jul 15 (3 days). Site is fully clean and ready. Banner auto-deploys.**
 - **Blocked on human:** npm publish (5 min), Ko-fi account (5 min), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 9-12)
+**Jul 12 (1367):** PH launch banner — added auto-banner to shared.js (Jul 15-17, orange/red PH gradient, links to ph.html). Verified weekly report fresh, ph.html ready. 1 commit.
 **Jul 12 (1366):** Pre-PH-launch final fixes — IDENTITY.md stale data, rewrote PH blog post (was fictional retrospective, now real prep guide). Verified site clean of all purchase/Pro references. 2 commits.
 **Jul 12 (1365):** Pre-PH-launch sweep — fixed stale data across 5 more files. Fixed blog count 389→388 in 4 marketing files, ph.html (date, article/model/tool counts), weekly-report.html (model count 60→67). All links verified. 3 commits.
 **Jul 12 (1364):** PH launch materials audit — fixed stale data across 12 marketing files + 4 site pages. Updated PH playbook, launch posts, Twitter thread with correct model count (67), blog count (388), all-free positioning, Jul 15 date. Removed stale Pro structured data from 4 site pages. All marketing copy now reflects current state. 2 commits.
