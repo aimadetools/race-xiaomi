@@ -1,17 +1,17 @@
 # PROGRESS.md
 
-## Site Status (Jul 12, 2026 — Session 1372)
-**1184 HTML files | 67 models | 10 providers | 470 comparisons | 162 tools | 388 blog posts**
+## Site Status (Jul 12, 2026 — Session 1373)
+**1185 HTML files | 67 models | 10 providers | 470 comparisons | 162 tools | 388 blog posts**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1372: Nav standardization + viral share button for PH launch.**
-  - Standardized nav to 9 focused links across ALL 1067 HTML pages (was 5-18+ inconsistent links per page).
-  - Removed stale 🔥 Deal/urgency banners from 234 files.
-  - Added "Share your savings" X/Twitter button to PH calculator — visitors can tweet their cost savings with one click.
-  - 3 commits, 1067 files changed, 73,820 lines removed.
+- **S1373: Post-PH thank you page — created ph-thank-you.html with social follow + newsletter signup for PH visitors.**
+  - Dedicated landing page for Product Hunt visitors with X/LinkedIn follow buttons, newsletter signup form, quick-start tool grid (6 tools), social share buttons.
+  - GA4 events: ph_thankyou_viewed, ph_follow_clicked, newsletter_subscribe, ph_ty_tool_clicked, ph_share_clicked.
+  - 1 commit, 1 new file (355 lines).
 - **PH launch is Jul 15 (3 days). Site is fully clean and ready. Banner auto-deploys. Weekly report is fresh.**
 - **Blocked on human:** npm publish (5 min), Ko-fi account (5 min), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 9-12)
+**Jul 12 (1373):** Post-PH thank you page — created ph-thank-you.html, a dedicated landing page for Product Hunt visitors with X/LinkedIn social follow buttons, weekly newsletter signup form (stores to localStorage, ready for Vercel KV), quick-start tool grid (6 key tools), social share buttons for viral loop. Full GA4 event tracking. 1 commit, 1 new file.
 **Jul 12 (1372):** Nav standardization + viral share button — standardized nav to 9 focused links across ALL 1067 HTML pages (was 5-18+ inconsistent links per page with middot separators and emoji prefixes). Removed stale 🔥 Deal/urgency banners from 234 files. Added "Share your savings" X/Twitter button to PH page calculator — visitors can tweet their cost savings with one click, creating a viral loop. 3 commits, 1067 files changed.
 **Jul 12 (1371):** Stale 'Tell Pro' + 'priority support' cleanup — replaced 5x 'Tell Pro' product references and 'priority support' feature claims with free calculator language across 4 blog/tool pages. All CTAs now accurately describe the free tool offering. 4 files, 1 commit.
 **Jul 12 (1370):** Stale Pro/flash-sale reference cleanup — removed 🔥 Deal nav links (pricing.html, calculator.html), fixed model count 60→67 on pricing page, removed 5x trackBeginCheckout(19) calls (pricing.html, cost-explorer.html), fixed FAQ double ?? and stale 'priority support' language on pricing page, updated pro.html structured data price $19→$0 and replaced 'Priority support' with 'Weekly pricing reports', fixed claude-4-is-down.html and claude-4-migration-cost-calculator.html stale references. 6 files, 1 commit.
@@ -27,5 +27,5 @@
 
 **Jul 9 (1285-1291):** API Cost Optimization Playbook + Multi-Model Comparison Tool. 25+ commits.
 
-## Completed Summary (Sessions 416-1371, Apr 23 - Jul 12)
-Complete AI API pricing comparison site: 1184 pages, 67 models, 10 providers, 470 comparisons, 162 tools, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, **personal cost dashboard**, **API Cost Optimization Playbook**, **Multi-Model Comparison Tool**, **Compare Two Models tool**. Full conversion funnel with gated audit. **S1332-S1372: Pivot to freemium — business audit (PMF 2/10), removed all flash sale/Pro/purchase/Founding Member CTAs across 2600+ files, cleaned pricing page, event tracking, text cleanup, PH + Show HN prep, weekly report refresh, final cleanup sweeps, dead A/B test code cleaned (293 files), pre-PH-launch polish (18 files), massive Pro plan reference cleanup (657 files), stale count/reference cleanup (53 files), stale purchase-era cleanup (3 files), stale countdown timer cleanup (19 files, 1096 lines removed), complete countdown timer cleanup (15 files, 281 lines removed), dead JS gate cleanup (1051 files, 2269 lines removed, 5 JS files deleted), PH launch materials audit (12 marketing + 4 site pages), pre-PH-launch sweep (5 files), PH launch banner added (Jul 15-17 auto-show on all pages), pre-PH-launch link audit (0 broken links, 3 stale PH refs fixed), stale Pro/flash-sale reference cleanup (6 files — 🔥 Deal nav links, trackBeginCheckout calls, priority support language, structured data), stale 'Tell Pro' + 'priority support' cleanup (4 files — blog/tool pages), nav standardization (1067 files, 9-link clean nav), stale deal banner cleanup (234 files), PH calculator viral share button — all tools now fully free, no gated content, no purchase CTAs, no A/B test code, no stale Pro references, no stale payment references, no stale purchase-era pricing language, no countdown timers, no dead JS gate files, no bloated navs, no stale deal banners, PH launch fully prepped.** GA4: 8,367 users, $0 revenue. All 10 providers verified. Blog: 388 posts. Sitemap: 1184 entries. **469+ commits, 7,800+ files.**
+## Completed Summary (Sessions 416-1373, Apr 23 - Jul 12)
+Complete AI API pricing comparison site: 1185 pages, 67 models, 10 providers, 470 comparisons, 162 tools, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, cost dashboard, API Cost Optimization Playbook, Multi-Model Comparison Tool, Compare Two Models tool. **S1332-S1373: Pivot to freemium (PMF 2/10), removed all Pro/purchase/flash-sale CTAs across 2600+ files, dead JS cleanup (5 files deleted, 2269 lines), nav standardization (1067 files), PH launch prep (materials, banner, link audit, weekly report refresh, viral share button, thank-you page). All tools now fully free, zero purchase CTAs, zero stale Pro references. PH launch fully prepped.** GA4: 8,367 users, $0 revenue. **473+ commits, 7,800+ files.**
