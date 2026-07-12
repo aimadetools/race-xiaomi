@@ -1,7 +1,7 @@
 # Twitter/X Launch Thread
 
 ## Tweet 1 (Hook)
-I compared pricing for 33 AI models across 10 providers.
+I compared pricing for 67 AI models across 10 providers.
 
 Here's what I found that could save you 40-60% on your AI API costs:
 
@@ -12,7 +12,7 @@ Most developers pick an AI API provider and stick with it.
 
 But pricing varies WILDLY:
 
-• GPT-4o: $2.50/$10 per 1M tokens
+• GPT-5: $2.50/$10 per 1M tokens
 • Gemini 2.5 Pro: $1.25/$10 per 1M tokens
 • Claude Haiku 4.5: $1.00/$5.00 per 1M tokens
 
@@ -21,7 +21,7 @@ Same capabilities. Very different prices.
 ## Tweet 3 (Key Finding #1)
 Finding 1: Google Gemini is consistently 30-50% cheaper than OpenAI for equivalent tasks.
 
-Gemini 2.5 Pro input tokens cost HALF of GPT-4o.
+Gemini 2.5 Pro input tokens cost HALF of GPT-5.
 
 If you're processing lots of input (document analysis, summarization), this adds up fast.
 
@@ -42,12 +42,13 @@ Unless you're doing document analysis, a 32K-128K window is plenty.
 ## Tweet 6 (The Tool)
 I built APIpulse to make these comparisons instant.
 
-• 39 models, 10 providers
+• 67 models, 10 providers
 • Interactive cost calculator
 • Side-by-side comparison tool
-• 81 blog posts with real cost breakdowns
+• Cost Monitoring Dashboard
+• 388 blog posts with real cost breakdowns
 
-Free, no signup: https://getapipulse.com
+100% free, no signup: https://getapipulse.com
 
 ## Tweet 7 (CTA)
 If you're building with AI APIs, check your costs.
