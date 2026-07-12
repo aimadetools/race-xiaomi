@@ -1282,9 +1282,8 @@
                     shown = true;
                     var resultsVisible = document.getElementById('results').classList.contains('visible');
                     if (resultsVisible) {
-                        // User already ran audit — push purchase with ROI guarantee
+                        // User already ran audit — push free tools
                         var wasteAmt = document.getElementById('waste-amount').textContent;
-                        var roiX = window._auditSavings ? Math.round(window._auditSavings / 19) : 0;
                         document.getElementById('exit-title').textContent = 'Your savings are real — don\'t walk away';
                         document.getElementById('exit-desc').innerHTML = 'You\'re overpaying <strong style="color:#ef4444;">' + wasteAmt + '</strong>. Get your free migration plan and start saving today.';
                         document.getElementById('exit-cta').textContent = 'Save ' + wasteAmt + ' — Free Tools →';
