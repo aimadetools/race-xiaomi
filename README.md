@@ -1,6 +1,6 @@
 # APIpulse — AI API Cost Calculator & Budget Planner
 
-> Know your AI API costs before you commit.
+> Know your AI API costs before you commit. **100% free.**
 
 Compare LLM API pricing across 67 models from 10 providers. Calculate monthly spend, find the cheapest model, and optimize costs by up to 98%.
 
@@ -11,9 +11,6 @@ Compare LLM API pricing across 67 models from 10 providers. Calculate monthly sp
 ## Live Site
 
 **[getapipulse.com](https://getapipulse.com)** — deployed on Vercel
-
-### 🔥 Flash Sale — $19 (was $29, goes to $49 Jul 12)
-Lifetime access to all 67 models, migration code, PDF reports, and price alerts. **[Get it now →](https://getapipulse.com/flash-19.html)**
 
 ## What is APIpulse?
 
@@ -28,15 +25,14 @@ APIpulse helps developers make smart decisions about AI API costs:
 
 | Metric | Count |
 |--------|-------|
-| HTML pages | 954 |
-| Blog posts | 361 |
-| AI models tracked | 48 |
+| HTML pages | 1,183 |
+| Blog posts | 388 |
+| AI models tracked | 67 |
 | API providers | 10 |
-| Interactive tools | 157 |
-| API endpoints | 17 |
+| Interactive tools | 139 |
+| API endpoints | 21 |
 | Embeddable widgets | 4 |
-| Sitemap URLs | 918 |
-| FAQPage schema pages | ~258 |
+| Sitemap URLs | 1,176 |
 
 ## Live Pricing Badge
 
@@ -77,19 +73,16 @@ Options: `data-theme="light|dark"`, `data-count="N"`, `data-models="GPT-5,Claude
 - **AI Pricing Badge** (`badge.js`) — live pricing badge for any website
 - **Cost Calculator Widget** (`widget.js`) — embeddable cost calculator
 
-### Pro Features ($19 flash sale — ends Jul 12, then $49)
-- Full 48-model comparison (not just top 3)
+### All Tools Free
+- Full 67-model comparison
 - Migration code for every provider switch (Python, Node.js, cURL)
-- PDF cost report export for teams
 - Price change email alerts
-- 10 saved comparison scenarios
 - Lifetime updates as new models launch
 
 ## Tech Stack
 
 - **Frontend:** Static HTML/CSS/JS (no framework, no build step)
 - **Hosting:** Vercel (free tier)
-- **Payment:** Stripe Payment Links (one-time $29)
 - **Analytics:** GA4 (G-0CEP7S9Y3J) + Vercel Analytics
 - **Email:** Resend (newsletter, drip campaigns)
 - **Data:** Centralized `pricing-data.js` (single source of truth)
@@ -101,8 +94,6 @@ Options: `data-theme="light|dark"`, `data-count="N"`, `data-models="GPT-5,Claude
 ├── calculator.html         # Standalone cost calculator
 ├── compare.html            # Model comparison tool
 ├── pricing-index.html      # All 67 models in sortable table
-├── pricing.html            # Free vs Pro pricing
-├── pro.html                # Pro access gate
 ├── model-decision-tree.html # Interactive quiz
 ├── ai-stack-cost-optimizer.html
 ├── llm-pricing-trends-2026.html
@@ -111,7 +102,6 @@ Options: `data-theme="light|dark"`, `data-count="N"`, `data-models="GPT-5,Claude
 ├── claude-4-migration-tool.html
 ├── claude-4-migration-checklist.html
 ├── cheapest-llm-api-2026.html
-├── flash-19.html           # $19 flash sale landing page
 ├── embed-badge.html        # Badge customization & embed code
 ├── api-docs.html           # API documentation
 ├── badges.html             # Embeddable widgets showcase
@@ -119,9 +109,9 @@ Options: `data-theme="light|dark"`, `data-count="N"`, `data-models="GPT-5,Claude
 ├── openai.html             # Provider pages (×10)
 ├── anthropic.html
 ├── google.html
-├── ... (954 total pages)
-├── blog-*.html             # 361 SEO-optimized blog posts
-├── api/                    # 17 Vercel serverless functions
+├── ... (1,183 total pages)
+├── blog-*.html             # 388 SEO-optimized blog posts
+├── api/                    # 21 Vercel serverless functions
 │   ├── pricing.js
 │   ├── calculate.js
 │   ├── compare.js
@@ -133,8 +123,8 @@ Options: `data-theme="light|dark"`, `data-count="N"`, `data-models="GPT-5,Claude
 ├── styles.css              # Global stylesheet
 ├── widget.js               # Embeddable pricing widget
 ├── badge.js                # Embeddable pricing badge (<2KB)
-├── sitemap.xml             # 918 URLs
-├── rss.xml                 # 794 items
+├── sitemap.xml             # 1,176 URLs
+├── rss.xml
 └── robots.txt
 ```
 
@@ -143,9 +133,9 @@ Options: `data-theme="light|dark"`, `data-count="N"`, `data-models="GPT-5,Claude
 This project is built by an AI agent (Xiaomi MiMo V2.5 Pro) competing in The $100 AI Startup Race — a competition where 7 AI agents each get $100 and 12 weeks to build a real startup.
 
 - **Budget:** $100 total ($10 domain, $90 remaining)
-- **Week:** 11 of 12
-- **Revenue:** $0 (1,200 visitors/week — distribution is the bottleneck)
-- **Strategy:** SEO content (361 blog posts) + tools (157) + API (17 endpoints) + widgets (4) + flash sale conversion
+- **Week:** 12 of 12
+- **Revenue:** $0 (8,367 users — all tools free)
+- **Strategy:** SEO content (388 blog posts) + tools (139) + API (21 endpoints) + widgets (4)
 
 ## Running Locally
 
