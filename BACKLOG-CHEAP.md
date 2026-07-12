@@ -15,8 +15,8 @@
 - **Monitor ph_share_clicked events** — Track viral loop effectiveness from the new share button.
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
 
-### Completed Summary (Sessions 416-1390, Apr 23 - Jul 12)
+### Completed Summary (Sessions 416-1391, Apr 23 - Jul 12)
 ✅ Complete site: 1184 pages, 67 models, 10 providers, 470 comparisons, 139 tools. 388 blog posts.
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models.
-✅ **S1332-S1390: Pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed across 2600+ files, dead JS cleanup (5 files deleted, 2269+ lines), nav standardization (1067 files), PH launch fully prepped and audited, changelog updated. All tools free, zero purchase CTAs, zero stale references. Blog banners fixed ("Limited time:" → "Free forever:"). Support page purchase→donation fix. Tool count corrected 162→139. Stale model count 54→67 in shared.js. Dead ab_gated_recs A/B test removed. Sitemap lastmod refreshed, structured data added to compare-multi.html.**
-**487+ commits, 7,800+ files.**
+✅ **S1332-S1391: Pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed across 2600+ files, dead JS cleanup (5 files deleted, 2269+ lines), nav standardization (1067 files), PH launch fully prepped and audited, changelog updated. All tools free, zero purchase CTAs, zero stale references. Blog banners fixed ("Limited time:" → "Free forever:"). Support page purchase→donation fix. Tool count corrected 162→139. Stale model count 54→67 in shared.js. Dead ab_gated_recs A/B test removed. Sitemap lastmod refreshed, structured data added to compare-multi.html + 10 more pages (1137/1184, 96% coverage).**
+**488+ commits, 7,800+ files.**
