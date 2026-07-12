@@ -18,7 +18,7 @@ Hey HN! I built APIpulse because I kept wasting time manually comparing AI API p
 - Price change alerts (get notified when a model's price changes)
 - Weekly pricing reports with PDF export
 - API Cost Optimization Playbook
-- 389 blog posts comparing model pairs with real cost breakdowns
+- 388 blog posts comparing model pairs with real cost breakdowns
 
 **Everything is 100% free.** No signup, no paywall, no credit card.
 
