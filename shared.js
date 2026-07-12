@@ -61,60 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Remove urgency text patterns across all pages
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-        acceptNode: function(n) {
-            return n.parentNode.tagName === 'SCRIPT' || n.parentNode.tagName === 'STYLE'
-                ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
-        }
-    });
-    var nodes = [];
-    while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach(function(node) {
-        var val = node.nodeValue;
-        // Remove flash sale urgency text
-        if (val.indexOf('price goes up July 12') !== -1) {
-            node.nodeValue = val.replace(/price goes up July 12/g, 'free forever');
-        }
-        if (val.indexOf('expires July 12') !== -1) {
-            node.nodeValue = val.replace(/expires July 12/g, 'free forever');
-        }
-        if (val.indexOf('Sale ends Jul 12') !== -1) {
-            node.nodeValue = val.replace(/Sale ends Jul 12[^·]*/g, 'All tools are free');
-        }
-        if (val.indexOf('flash sale ends Jul 12') !== -1) {
-            node.nodeValue = val.replace(/flash sale ends Jul 12[^.]*/g, 'All tools are now free.');
-        }
-        if (val.indexOf('Limited time:') !== -1) {
-            node.nodeValue = val.replace('Limited time:', 'APIpulse:');
-        }
-        if (val.indexOf('FINAL 48 HOURS') !== -1) {
-            node.nodeValue = val.replace(/⏰?\s*FINAL 48 HOURS\s*[—-]?\s*/gi, '');
-        }
-        if (val.indexOf('FINAL HOURS') !== -1) {
-            node.nodeValue = val.replace(/⚡?\s*FINAL HOURS!?/gi, 'All tools are free');
-        }
-        if (val.indexOf('LAST 48 HOURS') !== -1) {
-            node.nodeValue = val.replace(/⚡?\s*LAST 48 HOURS!?/gi, 'All tools are free');
-        }
-        if (val.indexOf('ENDS TONIGHT') !== -1) {
-            node.nodeValue = val.replace(/⚡?\s*ENDS TONIGHT!?/gi, 'All tools are free');
-        }
-        if (val.indexOf('Price goes to $49') !== -1) {
-            node.nodeValue = val.replace(/Price goes to \$49/gi, 'All tools are free');
-        }
-        if (val.indexOf('price goes to $49') !== -1) {
-            node.nodeValue = val.replace(/price goes to \$49/gi, 'all tools are free');
-        }
-    });
-
-    // Hide flash sale boxes and urgency elements
-    document.querySelectorAll('[style*="background:linear-gradient(135deg,#dc2626"], [style*="background:linear-gradient(135deg, #dc2626"]').forEach(function(el) {
-        // Flash sale boxes with red gradient backgrounds
-        if (el.textContent.indexOf('Flash Sale') !== -1 || el.textContent.indexOf('FINAL 48') !== -1) {
-            el.style.display = 'none';
-        }
-    });
     // Track pricing view
     if (window.trackEvent) window.trackEvent('pricing_view', {price: window._abPrice});
 });
@@ -1095,14 +1041,6 @@ async function saveEmail(e) {
     }, 45000);
 })();
 
-// S1333 pivot: all tools are free — no Pro badge needed
-// Clean up old Pro badge state for returning users
-document.addEventListener('DOMContentLoaded', function() {
-    localStorage.removeItem('apipulse_pro');
-    localStorage.removeItem('apipulse_pro_code');
-    localStorage.removeItem('apipulse_pro_date');
-});
-
 // Pricing freshness badge — renders "Updated May 5, 2026" badge into target element
 function renderPricingFreshness(containerId) {
     var container = document.getElementById(containerId);
@@ -1431,17 +1369,6 @@ var GO_MODEL_MAP = {
             prefillFromPageContext();
         }, 300);
     });
-})();
-
-// ============================================================
-// Strategic Content Gate — Session 970
-// Addresses root cause: "Free tier too generous — visitors get
-// what they need without paying." (Session 969 diagnosis)
-//
-// Pro feature gate — DISABLED (S1333 pivot: all tools free)
-// Ranking tables show all rows. No gating.
-(function() {
-    // All tools are free — no gating needed.
 })();
 
 // ==========================================
