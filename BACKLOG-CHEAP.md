@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1184 HTML files, 67 models, 10 providers, 470 comparisons, 162 tools. **8,367 users, $0 revenue. S1372: Nav standardization + viral share button. 472+ commits. PH launch Jul 15 (3 days).**
+**Site Status:** 1185 HTML files, 67 models, 10 providers, 470 comparisons, 162 tools. **8,367 users, $0 revenue. S1374: Pre-PH social proof + structured data. 475+ commits. PH launch Jul 15 (3 days).**
 
 ### Blocked on Human (Priority Order)
 - **npm package** — npm-package/ ready, needs npm login + publish. 5 min.
@@ -15,6 +15,7 @@
 - **Product Hunt launch** — Docs ready at marketing/product-hunt.md. Human submits draft, publishes Jul 15 12:01 AM PST.
 - **Post-PH analytics review** — After Jul 15, check GA4 for PH traffic patterns, top pages, bounce rate.
 - ~~**Post-PH thank you page** — DONE S1373. ph-thank-you.html created with social follow + newsletter signup.~~
+- ~~**PH page social proof** — DONE S1374. "Join 8,367 developers" badge + JSON-LD structured data added to ph.html.~~
 - **Monitor ph_share_clicked events** — Track viral loop effectiveness from the new share button.
 
 ### Completed (Sessions 416-1373, Apr 23 - Jul 12)
