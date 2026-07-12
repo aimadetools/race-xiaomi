@@ -285,14 +285,12 @@
                 return ['calculator_used','model_switch_calculated','pipeline_calculated','budget_planner_complete','agent_calc_calculated','cost_optimizer_used'].indexOf(e.name) >= 0;
             }).length;
             var proClicks = countEvents('free_tools_clicked');
-            var purchases = countEvents('pro_purchase_completed');
 
             var steps = [
                 { name: 'Page Views', desc: 'All tracked page views', count: pageViews, color: '#6366f1' },
                 { name: 'Calculator Usage', desc: 'Used any calculator or tool', count: calcEvents, color: '#8b5cf6' },
                 { name: 'Pricing Page Views', desc: 'Visited pricing page', count: pricingViews, color: '#06b6d4' },
-                { name: 'Pro Button Clicks', desc: 'Clicked any CTA', count: proClicks, color: '#f59e0b' },
-                { name: 'Purchases', desc: 'Completed Stripe payment', count: purchases, color: '#22c55e' }
+                { name: 'CTA Clicks', desc: 'Clicked any CTA', count: proClicks, color: '#f59e0b' }
             ];
 
             var html = '';
@@ -323,19 +321,16 @@
             var uniquePages = {};
             filteredEvents.filter(function(e) { return e.name === 'page_view'; }).forEach(function(e) { uniquePages[e.page] = true; });
             var proClicks = countEvents('free_tools_clicked');
-            var purchases = countEvents('pro_purchase_completed');
             var exitShown = countEvents('exit_popup_variant_shown');
             var exitSignup = countEvents('exit_popup_signup');
             var stickyShown = countEvents('sticky_cta_shown');
             var priceAlerts = countEvents('price_alert_subscribe') + countEvents('price_alert_subscribe_local');
 
-            var conversionRate = proClicks > 0 ? ((purchases / proClicks) * 100).toFixed(1) : '0.0';
             var popupRate = exitShown > 0 ? ((exitSignup / exitShown) * 100).toFixed(1) : '0.0';
 
             var metrics = [
                 { value: pageViews, label: 'Total Page Views', sub: Object.keys(uniquePages).length + ' unique pages' },
-                { value: proClicks, label: 'Pro Button Clicks', sub: conversionRate + '% → purchase' },
-                { value: purchases, label: 'Purchases', sub: '$' + (purchases * 29) + ' revenue tracked' },
+                { value: proClicks, label: 'CTA Clicks', sub: 'Free tool clicks' },
                 { value: exitShown, label: 'Exit Popups Shown', sub: popupRate + '% signup rate' },
                 { value: stickyShown, label: 'Sticky CTA Shown', sub: 'Scroll-triggered' },
                 { value: exitSignup, label: 'Exit Popup Signups', sub: 'Email captures' },
