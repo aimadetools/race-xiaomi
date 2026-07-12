@@ -148,60 +148,6 @@
         .share-btn { display: inline-block; padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; }
         .share-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-        /* Free tools promotion */
-        .pro-gate-banner {
-            display: none;
-            background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(16,163,74,0.08));
-            border: 1px solid rgba(34,197,94,0.3);
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin-top: 12px;
-            text-align: center;
-        }
-        .pro-gate-banner p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-        .pro-gate-banner p strong { color: var(--text-primary); }
-        .pro-gate-btn {
-            display: inline-block;
-            padding: 10px 24px;
-            background: linear-gradient(135deg, var(--accent), #8b5cf6);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .pro-gate-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(99,102,241,0.3); }
-        .model-checkbox.pro-locked {
-            opacity: 0.45;
-            pointer-events: none;
-            position: relative;
-        }
-        .model-checkbox.pro-locked::after {
-            content: 'PRO';
-            position: absolute;
-            top: 4px;
-            right: 6px;
-            font-size: 9px;
-            font-weight: 800;
-            background: var(--accent);
-            color: white;
-            padding: 1px 5px;
-            border-radius: 3px;
-            letter-spacing: 0.5px;
-        }
-        .free-limit-note {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 8px;
-        }
-        .free-limit-note strong { color: var(--accent); }
 
         @media (max-width: 768px) {
             .page-header { padding: 100px 16px 32px; }
@@ -259,7 +205,6 @@
                         <button class="select-all-btn" onclick="selectAll('none')">Clear All</button>
                     </div>
                     <div class="model-grid" id="model-grid"></div>
-                    <p class="free-limit-note" id="freeLimitNote" style="display:none;">Select up to <strong>3 models</strong>. <span id="selectedCount">0</span>/3 selected.</p>
                 </div>
 
                 <div class="form-group">
@@ -428,32 +373,8 @@
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&uarr;</button>
 
     <script>
-    const FREE_MODEL_LIMIT = 3;
-    const isPro = localStorage.getItem('apipulse_pro') === 'true';
-
     function updateSelectedCount() {
-        const count = document.querySelectorAll('.model-checkbox.checked').length;
-        const note = document.getElementById('freeLimitNote');
-        const banner = document.getElementById('proGateBanner');
-        const counter = document.getElementById('selectedCount');
-        if (isPro) {
-            if (note) note.style.display = 'none';
-            if (banner) banner.style.display = 'none';
-            return;
-        }
-        if (counter) counter.textContent = count;
-        if (count >= FREE_MODEL_LIMIT) {
-            if (banner) banner.style.display = 'block';
-            // Lock unchecked models
-            document.querySelectorAll('.model-checkbox:not(.checked)').forEach(el => {
-                el.classList.add('pro-locked');
-            });
-        } else {
-            if (banner) banner.style.display = 'none';
-            document.querySelectorAll('.model-checkbox.pro-locked').forEach(el => {
-                el.classList.remove('pro-locked');
-            });
-        }
+        // No-op: all models are free
     }
 
     function initModelGrid() {
@@ -476,38 +397,13 @@
     }
 
     function toggleModel(el) {
-        // If clicking an unchecked model and at limit, block
-        if (!isPro && !el.classList.contains('checked')) {
-            const count = document.querySelectorAll('.model-checkbox.checked').length;
-            if (count >= FREE_MODEL_LIMIT) {
-                // Show gate, don't toggle
-                if (window.trackEvent) window.trackEvent('alert_gate_hit', { count });
-                document.getElementById('proGateBanner').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                return;
-            }
-        }
         el.classList.toggle('checked');
         const cb = el.querySelector('input');
         cb.checked = !cb.checked;
         saveSelectedModels();
-        updateSelectedCount();
     }
 
     function selectAll(tier) {
-        if (!isPro && tier === 'all') {
-            // Limit to first 3 for free users
-            let count = 0;
-            document.querySelectorAll('.model-checkbox').forEach(el => {
-                if (count < FREE_MODEL_LIMIT) {
-                    el.classList.add('checked');
-                    el.querySelector('input').checked = true;
-                    count++;
-                }
-            });
-            saveSelectedModels();
-            updateSelectedCount();
-            return;
-        }
         document.querySelectorAll('.model-checkbox').forEach(el => {
             const match = tier === 'all' || (tier === 'none') || el.dataset.tier === tier;
             if (tier === 'none') {
@@ -518,19 +414,7 @@
                 el.querySelector('input').checked = true;
             }
         });
-        // Enforce limit for free users
-        if (!isPro) {
-            let count = 0;
-            document.querySelectorAll('.model-checkbox.checked').forEach(el => {
-                count++;
-                if (count > FREE_MODEL_LIMIT) {
-                    el.classList.remove('checked');
-                    el.querySelector('input').checked = false;
-                }
-            });
-        }
         saveSelectedModels();
-        updateSelectedCount();
     }
 
     function saveSelectedModels() {

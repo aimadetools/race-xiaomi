@@ -1241,7 +1241,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Session 1177: Removed auto-inject trial buttons — they were a conversion leak.
-// Trial gave away free Pro access, removing the reason to pay $19.
+// All tools are now free.
 
 // Live cost-of-inaction ticker — auto-initializes on any page with #cost-ticker-amount
 // Shows money lost per second since Claude 4 shutdown (based on $500/mo default spend)

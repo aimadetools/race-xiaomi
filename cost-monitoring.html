@@ -370,90 +370,6 @@
             transform: translateY(0);
             opacity: 1;
         }
-        .pro-gate-overlay {
-            position: relative;
-            border: 1px dashed rgba(99,102,241,0.4);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .pro-gate-overlay::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(10,10,15,0.7);
-            backdrop-filter: blur(4px);
-            pointer-events: none;
-            border-radius: 12px;
-        }
-        .pro-gate-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 28px 20px;
-        }
-        .pro-gate-content .icon { font-size: 28px; margin-bottom: 8px; }
-        .pro-gate-content h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #f1f5f9;
-            margin-bottom: 6px;
-        }
-        .pro-gate-content p {
-            font-size: 13px;
-            color: #94a3b8;
-            margin-bottom: 14px;
-            max-width: 360px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .pro-gate-content .btn-pro {
-            display: inline-block;
-            padding: 10px 24px;
-            background: linear-gradient(135deg, #6366f1, #4f46e5);
-            color: white;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .pro-gate-content .btn-pro:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(99,102,241,0.4);
-        }
-        .pro-banner {
-            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(34,197,94,0.05));
-            border: 1px solid rgba(99,102,241,0.3);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .pro-banner .text h3 {
-            font-size: 15px;
-            font-weight: 700;
-            color: #f1f5f9;
-            margin-bottom: 4px;
-        }
-        .pro-banner .text p {
-            font-size: 13px;
-            color: #94a3b8;
-        }
-        .pro-banner .btn-pro {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            color: white;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
-            white-space: nowrap;
-        }
         @media (max-width: 640px) {
             .dashboard { padding: 24px 16px 60px; }
             .dash-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
@@ -469,15 +385,6 @@
         <div class="dash-header">
             <h1>📊 API Cost Monitoring</h1>
             <p>Track your AI API spending over time. Log costs, set budgets, detect price changes, and optimize your spend.</p>
-        </div>
-
-        <!-- Free Tools Banner -->
-        <div class="pro-banner" id="pro-upsell-banner">
-            <div class="text">
-                <h3>🚀 Free Monitoring Tools</h3>
-                <p>CSV exports, budget alerts, price change detection, and unlimited history — all free, no signup required.</p>
-            </div>
-            <a href="/audit.html?from=cost_monitoring" class="btn-pro" onclick="if(window.trackEvent) trackEvent('free_tools_clicked', {source:'cost_monitoring'})">Free Tools →</a>
         </div>
 
         <!-- Summary Stats -->
@@ -577,14 +484,6 @@
             <!-- Chart Tab -->
             <div class="tab-content active" id="tab-chart">
                 <div class="export-bar" id="chart-export-gate">
-                    <div class="pro-gate-overlay" id="csv-gate-chart" style="display:none;">
-                        <div class="pro-gate-content">
-                            <div class="icon">📥</div>
-                            <h3>CSV Export</h3>
-                            <p>Export your spending history as CSV for spreadsheets and reports.</p>
-                            <a href="/audit.html?from=cost_monitoring_csv" class="btn-pro" onclick="if(window.trackEvent) trackEvent('csv_gate_clicked', {source:'chart'})">Free — Unlock Now</a>
-                        </div>
-                    </div>
                     <button class="btn btn-outline" id="csv-btn-chart" onclick="exportCSV()">📥 Export CSV</button>
                 </div>
                 <div class="chart-container">
@@ -599,14 +498,6 @@
             <!-- History Tab -->
             <div class="tab-content" id="tab-history">
                 <div class="export-bar" id="history-export-gate">
-                    <div class="pro-gate-overlay" id="csv-gate-history" style="display:none;">
-                        <div class="pro-gate-content">
-                            <div class="icon">📥</div>
-                            <h3>CSV Export</h3>
-                            <p>Export your full spending history for analysis.</p>
-                            <a href="/audit.html?from=cost_monitoring_csv" class="btn-pro" onclick="if(window.trackEvent) trackEvent('csv_gate_clicked', {source:'history'})">Free — Unlock Now</a>
-                        </div>
-                    </div>
                     <button class="btn btn-outline" id="csv-btn-history" onclick="exportCSV()">📥 Export CSV</button>
                     <button class="btn btn-danger" onclick="clearAll()">🗑 Clear All</button>
                 </div>
@@ -631,13 +522,6 @@
                     <div style="background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:16px;">
                         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
                             <h3 style="font-size:14px;font-weight:700;color:#f1f5f9;">💰 Savings Estimator</h3>
-                            <span id="savings-pro-badge" style="display:none;background:rgba(99,102,241,0.15);color:#818cf8;font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;">PRO</span>
-                        </div>
-                        <div id="savings-pro-gate" style="display:none;">
-                            <div style="text-align:center;padding:16px;">
-                                <p style="font-size:13px;color:#94a3b8;margin-bottom:12px;">See how much you could save by optimizing your model mix.</p>
-                                <a href="/audit.html?from=cost_monitoring_savings" class="btn-pro" style="display:inline-block;padding:8px 16px;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;" onclick="if(window.trackEvent) trackEvent('savings_gate_clicked')">Free — Unlock Now</a>
-                            </div>
                         </div>
                         <div id="savings-results"></div>
                     </div>
@@ -646,16 +530,6 @@
 
             <!-- Alerts Tab -->
             <div class="tab-content" id="tab-alerts">
-                <div id="alerts-pro-gate" style="display:none;">
-                    <div class="pro-gate-overlay">
-                        <div class="pro-gate-content">
-                            <div class="icon">🔔</div>
-                            <h3>Price Change Alerts</h3>
-                            <p>Get notified when AI model prices change. Track price trends across 67 models and never miss a cost-saving opportunity.</p>
-                            <a href="/audit.html?from=cost_monitoring_alerts" class="btn-pro" onclick="if(window.trackEvent) trackEvent('alerts_gate_clicked')">Free — Unlock Now</a>
-                        </div>
-                    </div>
-                </div>
                 <div id="alerts-list">
                     <div class="empty-state" id="alerts-empty">
                         <div class="icon">🔔</div>
@@ -753,35 +627,8 @@
             document.getElementById('budget-input').value = budget;
         }
 
-        // ---- All tools are free — show everything ----
-        function applyProGating() {
-            // Hide Pro upsell banner
-            var banner = document.getElementById('pro-upsell-banner');
-            if (banner) banner.style.display = 'none';
-            // Show CSV export buttons
-            var csvGateChart = document.getElementById('csv-gate-chart');
-            var csvBtnChart = document.getElementById('csv-btn-chart');
-            var csvGateHistory = document.getElementById('csv-gate-history');
-            var csvBtnHistory = document.getElementById('csv-btn-history');
-            if (csvGateChart) csvGateChart.style.display = 'none';
-            if (csvBtnChart) csvBtnChart.style.display = 'inline-block';
-            if (csvGateHistory) csvGateHistory.style.display = 'none';
-            if (csvBtnHistory) csvBtnHistory.style.display = 'inline-block';
-            // Show price alerts
-            var alertsGate = document.getElementById('alerts-pro-gate');
-            var alertsList = document.getElementById('alerts-list');
-            if (alertsGate) alertsGate.style.display = 'none';
-            if (alertsList) alertsList.style.display = 'block';
-            // Show savings estimator
-            var savingsEstimator = document.getElementById('savings-estimator');
-            var savingsProGate = document.getElementById('savings-pro-gate');
-            var savingsProBadge = document.getElementById('savings-pro-badge');
-            if (savingsEstimator) savingsEstimator.style.display = 'block';
-            if (savingsProGate) savingsProGate.style.display = 'none';
-            if (savingsProBadge) savingsProBadge.style.display = 'none';
-            renderSavingsEstimator();
-        }
-        applyProGating();
+        document.getElementById('savings-estimator').style.display = 'block';
+        renderSavingsEstimator();
 
         // ---- GA4 events ----
         function trackEvent(name, params) {

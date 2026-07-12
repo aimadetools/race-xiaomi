@@ -264,89 +264,12 @@
         }
         .qs-pro-inner .pro-cta:hover { transform: translateY(-2px); }
 
-        .pill.locked {
-            opacity: 0.55;
-            cursor: pointer;
-            position: relative;
-        }
-        .pill.locked:hover { border-color: var(--accent); opacity: 0.75; }
-        .pill .lock-badge {
-            display: none;
-            position: absolute;
-            top: -6px;
-            right: -6px;
-            background: var(--accent);
-            color: white;
-            font-size: 10px;
-            font-weight: 800;
-            padding: 2px 6px;
-            border-radius: 8px;
-        }
-        .pill.locked .lock-badge { display: inline-block; }
-
-        .qs-pro-gate {
-            display: none;
-            max-width: 700px;
-            margin: 0 auto 48px;
-            padding: 0 24px;
-        }
-        .qs-pro-gate.visible { display: block; }
-        .qs-pro-gate-inner {
-            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1));
-            border: 2px solid var(--accent);
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-        }
-        .qs-pro-gate-inner h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
-        .qs-pro-gate-inner p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .qs-pro-gate-inner .pro-compare {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 16px 0;
-            text-align: left;
-        }
-        .qs-pro-gate-inner .pro-compare > div {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 14px;
-        }
-        .qs-pro-gate-inner .pro-compare .label { font-size: 12px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .qs-pro-gate-inner .pro-compare ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
-        .qs-pro-gate-inner .pro-compare li { padding: 3px 0; }
-        .qs-pro-gate-inner .pro-compare .with-pro .label { color: var(--green); }
-        .qs-pro-gate-inner .pro-compare .without-pro .label { color: #ef4444; }
-        .qs-pro-gate-inner .pro-cta-btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s;
-            box-shadow: 0 4px 20px rgba(99,102,241,0.3);
-        }
-        .qs-pro-gate-inner .pro-cta-btn:hover { transform: translateY(-2px); }
-        .qs-pro-gate-inner .trial-link {
-            display: inline-block;
-            color: var(--accent);
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: underline;
-            margin-top: 10px;
-            cursor: pointer;
-        }
 
         @media (max-width: 640px) {
             .qs-hero h1 { font-size: 26px; }
             .pill-group { flex-direction: column; }
             .pill { width: 100%; }
             .related-grid { grid-template-columns: 1fr !important; }
-            .qs-pro-gate-inner .pro-compare { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -398,13 +321,12 @@
                     <label>2. What do you want to switch to?</label>
                     <div class="pill-group" id="target-pills">
                         <div class="pill selected" data-target="opus48" onclick="selectTarget(this,'opus48')">Claude Opus 4.8<span class="pill-sub">$5/$25 · 67% cheaper</span></div>
-                        <div class="pill locked" data-target="sonnet46" onclick="selectTarget(this,'sonnet46')"><span class="lock-badge">PRO</span>Claude Sonnet 4.6<span class="pill-sub">$3/$15 · 80% cheaper</span></div>
-                        <div class="pill locked" data-target="gpt5" onclick="selectTarget(this,'gpt5')"><span class="lock-badge">PRO</span>GPT-5<span class="pill-sub">$1.25/$10 · 92% cheaper</span></div>
-                        <div class="pill locked" data-target="gemini" onclick="selectTarget(this,'gemini')"><span class="lock-badge">PRO</span>Gemini 2.5 Pro<span class="pill-sub">$1.25/$10 · 92% cheaper</span></div>
-                        <div class="pill locked" data-target="deepseek" onclick="selectTarget(this,'deepseek')"><span class="lock-badge">PRO</span>DeepSeek V4 Pro<span class="pill-sub">$0.44/$0.87 · 97% cheaper</span></div>
-                        <div class="pill locked" data-target="deepseek-flash" onclick="selectTarget(this,'deepseek-flash')"><span class="lock-badge">PRO</span>DeepSeek V4 Flash<span class="pill-sub">$0.14/$0.28 · 99% cheaper</span></div>
+                        <div class="pill" data-target="sonnet46" onclick="selectTarget(this,'sonnet46')">Claude Sonnet 4.6<span class="pill-sub">$3/$15 · 80% cheaper</span></div>
+                        <div class="pill" data-target="gpt5" onclick="selectTarget(this,'gpt5')">GPT-5<span class="pill-sub">$1.25/$10 · 92% cheaper</span></div>
+                        <div class="pill" data-target="gemini" onclick="selectTarget(this,'gemini')">Gemini 2.5 Pro<span class="pill-sub">$1.25/$10 · 92% cheaper</span></div>
+                        <div class="pill" data-target="deepseek" onclick="selectTarget(this,'deepseek')">DeepSeek V4 Pro<span class="pill-sub">$0.44/$0.87 · 97% cheaper</span></div>
+                        <div class="pill" data-target="deepseek-flash" onclick="selectTarget(this,'deepseek-flash')">DeepSeek V4 Flash<span class="pill-sub">$0.14/$0.28 · 99% cheaper</span></div>
                     </div>
-                    <p id="pro-hint" style="display:none;font-size:12px;color:var(--accent);margin-top:8px;font-weight:600;">🔒 Opus 4.8 is free. Free Tools — generate code for all 6 targets.</p>
                 </div>
 
                 <button class="qs-btn" onclick="generateCode()">⚡ Generate My Migration Code</button>
@@ -474,14 +396,6 @@
     var selectedLang = 'python';
     var selectedTarget = 'opus48';
     var FREE_TARGETS = ['opus48', 'sonnet46', 'gpt5', 'gemini', 'deepseek', 'deepseek-flash'];
-
-    function isLockedTarget(target) {
-        return false; // All targets are free
-    }
-
-    function updateProHint() {
-        // All targets are free — no hint needed
-    }
 
     function selectLang(el, lang) {
         document.querySelectorAll('#lang-pills .pill').forEach(function(p) { p.classList.remove('selected'); });
@@ -829,28 +743,14 @@
         });
     }
 
-    // Init: Pro gating + A/B pricing
+    // Init: set CTA links
     document.addEventListener('DOMContentLoaded', function() {
-        updateProHint();
-
-        // Update A/B prices in all .ab-price spans
-        var price = 0;
-        document.querySelectorAll('.ab-price').forEach(function(el) { el.textContent = price; });
-
-        // Update CTA links to use A/B variant Stripe link
+        // Update CTA links
         var stripeLink = 'audit.html?from=tool_page';
         var proCta = document.getElementById('qs-pro-cta');
         if (proCta) proCta.href = stripeLink;
         var bottomCta = document.getElementById('qs-bottom-cta');
         if (bottomCta) bottomCta.href = stripeLink;
-        var gateProCta = document.getElementById('qs-gate-pro-cta');
-        if (gateProCta) {
-            gateProCta.href = stripeLink;
-            gateProCta.addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('free_tools_clicked', { source: 'quick_switch_gate', page: 'claude-4-quick-switch' });
-            });
-        }
-
     });
     </script>
 

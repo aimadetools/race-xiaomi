@@ -211,20 +211,6 @@
             margin-top: 8px;
         }
 
-        /* Gated Pro Recommendations */
-        .pro-gated-rec {
-            background: var(--bg-card); border: 1px dashed var(--accent);
-            border-radius: 8px; padding: 14px; margin-top: 10px; text-align: center;
-            cursor: pointer; transition: all 0.2s;
-        }
-        .pro-gated-rec:hover { border-style: solid; background: rgba(99,102,241,0.05); }
-        .pro-gated-rec .gated-count {
-            font-size: 15px; font-weight: 700; color: var(--accent); margin-bottom: 4px;
-        }
-        .pro-gated-rec .gated-text {
-            font-size: 12px; color: var(--text-muted);
-        }
-
         /* Pro Tip Teasers */
         .pro-tips { margin-top: 20px; display: none; }
         .pro-tips h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
@@ -296,8 +282,6 @@
             .efficiency-grade { width: 36px; height: 36px; font-size: 18px; }
             .efficiency-label { font-size: 12px; }
             .efficiency-message { font-size: 12px; }
-            .pro-gated-rec { padding: 12px; }
-            .pro-gated-rec .gated-count { font-size: 14px; }
         }
         @media print {
             nav, .theme-toggle, .back-to-top, .presets { display: none !important; }
@@ -1036,29 +1020,6 @@
                 }, 1000);
             }
 
-            // Usage gate: track unique model calculations, show wall at limit
-            if (window.APIpulseGate && totalCost > 0) {
-                var hitLimit = window.APIpulseGate.track(provider);
-                var remaining = window.APIpulseGate.getRemaining();
-                var gateIndicator = document.getElementById('gate-remaining');
-                if (!gateIndicator && remaining < Infinity && remaining > 0) {
-                    gateIndicator = document.createElement('div');
-                    gateIndicator.id = 'gate-remaining';
-                    gateIndicator.style.cssText = 'margin-top:12px;padding:8px 14px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:8px;font-size:13px;color:var(--text-secondary);text-align:center;';
-                    var resultsEl = document.querySelector('.calc-results');
-                    if (resultsEl) resultsEl.appendChild(gateIndicator);
-                }
-                if (gateIndicator) {
-                    if (remaining <= 0) {
-                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="index.html#free-tools" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Free Tools →</a>';
-                    } else if (remaining <= 2) {
-                        gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left — <a href="index.html#free-tools" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Free Tools →</a>';
-                    }
-                }
-                if (hitLimit) {
-                    setTimeout(function() { window.APIpulseGate.showWall(); }, 800);
-                }
-            }
         }
 
         function copyResults() {

@@ -403,56 +403,7 @@
             color: #94a3b8;
         }
 
-        /* Free tools promotion */
-        .pro-gate {
-            border: 2px solid #34d399;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 2rem;
-            background: linear-gradient(135deg, rgba(34,197,94,0.05), rgba(16,163,74,0.05));
-            position: relative;
-            overflow: hidden;
-        }
-        .pro-gate::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 4px,
-                rgba(167,139,250,0.03) 4px,
-                rgba(167,139,250,0.03) 5px
-            );
-            pointer-events: none;
-        }
-        .pro-gate h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #a78bfa;
-        }
-        .pro-gate p {
-            color: #94a3b8;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        .pro-features-list {
-            text-align: left;
-            max-width: 400px;
-            margin: 0 auto 1.5rem;
-        }
-        .pro-features-list li {
-            padding: 0.3rem 0;
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            list-style: none;
-        }
-        .pro-features-list li::before {
-            content: '✓ ';
-            color: #a78bfa;
-            font-weight: 700;
-        }
+        /* Free tools promotion — styles removed, site is 100% free */
 
         /* Buttons */
         .btn {
@@ -482,16 +433,6 @@
         .btn-secondary:hover {
             border-color: #475569;
             background: #334155;
-        }
-        .btn-pro {
-            background: linear-gradient(135deg, #a78bfa, #818cf8);
-            color: white;
-            font-size: 1rem;
-            padding: 0.85rem 2rem;
-        }
-        .btn-pro:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(167,139,250,0.4);
         }
         .btn-row {
             display: flex;
@@ -929,27 +870,6 @@
                 <div style="font-size:2rem;font-weight:700;color:#34d399;font-family:'JetBrains Mono',monospace;">$${formatCost(totalSavings * 12)}/year</div>
             </div>`;
         }
-
-        // Free tools promotion
-        html += `<div class="pro-gate">
-            <h3>Full Optimization Report — Free</h3>
-            <p>See batch processing savings, caching opportunities, model routing strategies, and a downloadable PDF report.</p>
-            <ul class="pro-features-list">
-                <li>Batch processing recommendations (save 20-50%)</li>
-                <li>Response caching analysis (save 30-60% on repeated queries)</li>
-                <li>Smart model routing (right model for each task)</li>
-                <li>Downloadable PDF cost report for your team</li>
-                <li>Monthly cost alerts when prices change</li>
-                <li>Saved scenarios — compare unlimited configurations</li>
-            </ul>
-            <div style="margin-bottom:0.5rem;">
-                <span style="font-size:1.5rem;font-weight:700;color:#34d399;">FREE</span>
-                <span style="color:#94a3b8;font-size:0.9rem;"> 100% free · no signup required</span>
-            </div>
-            <a href="index.html#free-tools" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(34,197,94,0.4);transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Free Tools →</a>
-            <a href="calculator.html" style="display:inline-block;padding:12px 20px;font-size:13px;font-weight:600;border:2px solid rgba(34,197,94,0.3);background:transparent;color:var(--green);border-radius:10px;text-decoration:none;margin-top:8px;">Open the Calculator →</a>
-            <div style="margin-top:0.75rem;font-size:0.78rem;color:#64748b;">100% free. No signup required.</div>
-        </div>`;
 
         container.innerHTML = html;
     }
