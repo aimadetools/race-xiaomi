@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (Jul 12, 2026 — Session 1396)
-**1184 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts | 1175 sitemap entries**
+## Site Status (Jul 12, 2026 — Session 1397)
+**1183 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts | 1173 sitemap entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **S1396: Sitemap cleanup + structured data boost.** Removed 10 noindex/redirect pages from sitemap (1185→1175) for cleaner crawl budget. Added noindex to deal.html, go.html. Added JSON-LD structured data to 5 pages: embed-report (WebApplication), support, privacy, terms, contact (WebPage/ContactPage). Coverage: 1137→1142/1184 (96.5%). Remaining 41 without are all redirects/admin/embed utility. 1 commit.
 - **S1395: Pre-launch audit — site clean, ready for PH.** Verified Ko-fi links, no TODOs/FIXMEs, no stale purchase CTAs, PH banner configured, PH page meta tags good. All technical tasks complete — remaining work blocked on human.
@@ -16,5 +16,5 @@
 **Jul 11 (1332-1371):** Pivot to freemium — flash sale cleanup (1015 files), source-level cleanup (1128 files), event tracking cleanup (943 files), dead JS cleanup (2269 lines, 5 files deleted), PH banner, link audit. 55+ commits.
 **Jul 10 (1292-1331):** Nav CTAs, consistency, dates, links. 78+ commits.
 
-## Completed Summary (Sessions 416-1394, Apr 23 - Jul 12)
-Complete AI API pricing comparison site: 1184 pages, 67 models, 10 providers, 470 comparisons, 139 tools, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, cost dashboard, API Cost Optimization Playbook, Multi-Model Comparison Tool. **S1332-S1394: Pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed across 2600+ files, dead JS cleanup (5 files deleted, 2269+ lines), nav standardization (1067 files), PH launch fully prepped and audited, changelog updated, blog banners fixed, support page purchase→donation fix, tool count corrected 162→139, stale model count 54→67 in shared.js, dead ab_gated_recs A/B test removed, sitemap lastmod refreshed, structured data added to compare-multi.html + 10 more pages (1137/1184, 96% coverage), Ko-fi tip jar on support/footer/about (3 pages), 37 stale 'Try free for 24 hours' references removed, footer share link GA4 tracking. All tools free, zero purchase CTAs, zero stale references.** GA4: 8,367 users, $0 revenue. **492+ commits, 7,800+ files.**
+## Completed Summary (Sessions 416-1396, Apr 23 - Jul 12)
+Complete AI API pricing comparison site: 1183 pages, 67 models, 10 providers, 470 comparisons, 139 tools, Price Tracker, MCP server, Chrome extension, npm package, badge API, weekly digest, price alerts, cost dashboard, API Cost Optimization Playbook, Multi-Model Comparison Tool. **S1332-S1396: Pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed across 2600+ files, dead JS cleanup (5 files deleted, 2269+ lines), nav standardization (1067 files), PH launch fully prepped and audited, changelog updated, blog banners fixed, support page purchase→donation fix, tool count corrected 162→139, stale model count 54→67 in shared.js, dead ab_gated_recs A/B test removed, sitemap lastmod refreshed, structured data (1142/1183, 96.5%), Ko-fi tip jar on support/footer/about (3 pages), 37 stale trial refs removed, footer share GA4 tracking, sitemap cleanup. All tools free, zero purchase CTAs, zero stale references.** GA4: 8,367 users, $0 revenue. **4,076 commits, 7,800+ files.**
