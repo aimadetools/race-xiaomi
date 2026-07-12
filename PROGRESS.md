@@ -1,16 +1,17 @@
 # PROGRESS.md
 
-## Site Status (Jul 12, 2026 — Session 1376)
+## Site Status (Jul 12, 2026 — Session 1377)
 **1184 HTML files | 67 models | 10 providers | 470 comparisons | 162 tools | 388 blog posts**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1376: Pre-PH-launch dead code cleanup — removed stale A/B test sections and purchase metrics from internal dashboards.**
-  - Cleaned admin.html: removed 6 dead A/B test sections (pricing $19/$39, popup timing, gated recs, hero, email capture, scanner funnel) + Stripe payment links. 228 lines removed.
-  - Cleaned funnel.html: removed 'Purchases' step + '$29 revenue tracked' references. Renamed 'Pro Button Clicks' → 'CTA Clicks'.
-  - 2 commits, 2 files changed (admin.html, funnel.html), 235 lines removed.
+- **S1377: Final pre-PH-launch stale \$19 Pro price cleanup.**
+  - claude-4-last-chance.html: removed "Pro (\$19) pays for itself" → "All tools are 100% free". Updated dynamic ROI JS.
+  - index.html calculator: removed paybackDays/paybackText (\$19 divisor) → replaced with free savings message. Removed "requires payment" comment.
+  - 2 commits, 2 files changed (claude-4-last-chance.html, index.html).
 - **PH launch is Jul 15 (3 days). Site is fully clean and ready. Banner auto-deploys. Weekly report is fresh.**
 - **Blocked on human:** npm publish (5 min), Ko-fi account (5 min), Vercel KV env vars, directory submissions (22), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 9-12)
+**Jul 12 (1377):** Final pre-PH-launch stale \$19 Pro price cleanup — fixed claude-4-last-chance.html (Pro \$19 payback text + JS), index.html calculator (removed \$19 divisor payback/ROI calculation, replaced with free savings message). 2 commits, 2 files.
 **Jul 12 (1376):** Pre-PH-launch dead code cleanup — removed 6 dead A/B test sections from admin.html (pricing, popup timing, gated recs, hero, email capture, scanner funnel) + Stripe payment links. Cleaned funnel.html stale purchase metrics. 2 commits, 2 files, 235 lines removed.
 **Jul 12 (1375):** Stale $19/Priority support cleanup — fixed 4 blog posts with "$19 one-time" CTAs, rewrote startup blog as pivot-to-free story, removed Priority support from 4 pages, fixed audit/recommend stale pricing, deleted orphan why-pro.html. 1 commit, 12 files, 386 lines removed.
 **Jul 12 (1374):** Pre-PH-launch page optimization — added "Join 8,367 developers" social proof badge to PH hero, replaced blog count with user count in hero stats + social proof, added SoftwareApplication JSON-LD structured data, fixed sitemap (removed noindex page). 2 commits, 2 files.
