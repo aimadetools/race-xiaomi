@@ -9,7 +9,7 @@
 
 ### Blocked on Human (Priority Order)
 1. **PH launch** — Jul 15. Human submits on Product Hunt, posts social media.
-2. **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want option. 5 min.
+2. **Ko-fi account** — Create ko-fi.com/apipulse. Tip jar section already on support.html with tracking. 5 min.
 3. **Vercel KV env vars** — Code ready (S1231). Human sets KV_REST_API_URL + KV_REST_API_TOKEN.
 4. **Directory submissions (22)** — Pending since Jun 28.
 5. **Chrome Web Store** — Publish extension ($5).

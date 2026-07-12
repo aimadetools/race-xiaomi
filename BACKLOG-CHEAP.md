@@ -5,7 +5,7 @@
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
 - **npm package** — npm-package/ ready, needs npm login + publish. 5 min.
-- **Ko-fi account** — Create ko-fi.com/apipulse for pay-what-you-want. 5 min.
+- **Ko-fi account** — Create ko-fi.com/apipulse. Tip jar section already on support.html with tracking. 5 min.
 - **Vercel KV env vars** — Code ready. Human sets KV_REST_API_URL + KV_REST_API_TOKEN.
 - **Directory submissions (22)** — Pending since Jun 28.
 - **Chrome Web Store** — Publish extension ($5).
@@ -14,6 +14,8 @@
 - **Post-PH analytics review** — Check GA4 for PH traffic patterns, top pages, bounce rate.
 - **Monitor ph_share_clicked events** — Track viral loop effectiveness from the new share button.
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
+- **Add Ko-fi link to footer** — Once Ko-fi account exists, add tip jar link to site-wide footer in shared.js.
+- **Add Ko-fi link to about page** — Link to ko-fi.com/apipulse from about.html.
 
 ### Completed Summary (Sessions 416-1391, Apr 23 - Jul 12)
 ✅ Complete site: 1184 pages, 67 models, 10 providers, 470 comparisons, 139 tools. 388 blog posts.
