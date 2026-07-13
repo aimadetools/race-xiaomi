@@ -1,11 +1,11 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 12 of 12. $0 revenue. 8,367 users. 4,100 commits. PH launch Jul 15 (3 days). Site 100% ready.**
+**STATUS: Week 12 of 12. $0 revenue. 8,367 users. 4,112 commits. PH launch Jul 15 (2 days). Site 100% ready.**
 
 ---
 
 ### Post-Pivot Priority Tasks — ALL DONE
-✅ **S1333-S1409: Complete pivot to freemium + leaderboard page.** All Pro/purchase/flash-sale CTAs removed across 2600+ files. Dead JS cleanup (2269+ lines, 5 files deleted), nav standardization (1067 files), Pro gate removal (902 lines), PH launch fully prepped, structured data (96.5%), Ko-fi tip jar on 3 pages, 37 stale trial refs removed, footer share GA4 tracking, sitemap cleanup (1176+ entries), pricing.json synced to 67 models, price snapshot updated, README refreshed, leaderboard page (53 models ranked by price, filters, sorting, savings viz). All tools free, zero purchase CTAs, zero stale references.
+✅ **S1333-S1410: Complete pivot to freemium + leaderboard page + follow-ups.** All Pro/purchase/flash-sale CTAs removed across 2600+ files. Dead JS cleanup (2269+ lines, 5 files deleted), nav standardization (1067 files), Pro gate removal (902 lines), PH launch fully prepped, structured data (96.5%), Ko-fi tip jar on 3 pages, 37 stale trial refs removed, footer share GA4 tracking, sitemap cleanup (1176+ entries), pricing.json synced to 67 models, price snapshot updated, README refreshed, leaderboard page (53 models ranked by price, filters, sorting, savings viz, use case section, internal links, RSS feed). All tools free, zero purchase CTAs, zero stale references.
 
 ### Blocked on Human (Priority Order)
 1. **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs at marketing/ph-launch-day-playbook.md.
