@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheapest AI API Models 2026: Full Ranking — APIpulse</title>
+    <meta name="description" content="Every AI API model ranked by price. Find the cheapest LLM for your use case — from $0.08/M input tokens. 53 active models across 10 providers compared.">
+    <meta property="og:title" content="Cheapest AI API Models 2026: Full Ranking — APIpulse">
+    <meta property="og:description" content="Every AI API model ranked by price. Find the cheapest LLM for your use case — from $0.08/M input tokens.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/leaderboard.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cheapest AI API Models 2026: Full Ranking">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Every AI API model ranked by price. Find the cheapest LLM for your use case.">
+    <meta name="keywords" content="cheapest AI API, cheapest LLM, cheapest GPT alternative, cheapest Claude alternative, AI API ranking, lowest cost AI model, budget AI API">
+    <link rel="canonical" href="https://getapipulse.com/leaderboard.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Cheapest AI API Models 2026: Full Ranking",
+        "description": "Every AI API model ranked by price. Find the cheapest LLM for your use case.",
+        "url": "https://getapipulse.com/leaderboard.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "dateModified": "2026-07-12"
+    }
+    </script>
+    <style>
+        .content { max-width: 1000px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; margin-bottom: 12px; text-align: center; line-height: 1.15; }
+        .subtitle { color: var(--text-secondary); font-size: 17px; margin-bottom: 12px; text-align: center; max-width: 650px; margin-left: auto; margin-right: auto; }
+        .last-updated { text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 32px; }
+        .last-updated span { color: var(--accent); font-weight: 600; }
+
+        /* Key stats */
+        .stats-bar {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px; margin-bottom: 40px;
+        }
+        .stat-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 20px; text-align: center;
+        }
+        .stat-value { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+        /* Filters */
+        .filters {
+            display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap;
+            justify-content: center;
+        }
+        .filter-btn {
+            padding: 8px 18px; border-radius: 100px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-secondary);
+            font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .filter-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+        .filter-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+
+        /* Sort */
+        .sort-bar {
+            display: flex; gap: 12px; align-items: center; justify-content: center;
+            margin-bottom: 20px; font-size: 13px; color: var(--text-secondary);
+        }
+        .sort-btn {
+            padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-secondary);
+            font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .sort-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+        .sort-btn.active { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
+
+        /* Table */
+        .leaderboard-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: var(--radius);
+            overflow: hidden; border: 1px solid var(--border);
+        }
+        .leaderboard-table th {
+            background: var(--bg-card); padding: 14px 16px;
+            text-align: left; font-size: 11px; font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.8px; position: sticky; top: 64px; z-index: 10;
+            cursor: pointer; user-select: none; transition: color 0.2s;
+        }
+        .leaderboard-table th:hover { color: var(--accent); }
+        .leaderboard-table th .sort-arrow { font-size: 10px; margin-left: 4px; opacity: 0.5; }
+        .leaderboard-table th.sorted .sort-arrow { opacity: 1; color: var(--accent); }
+        .leaderboard-table td {
+            padding: 14px 16px; border-bottom: 1px solid var(--border);
+            font-size: 14px; vertical-align: middle;
+        }
+        .leaderboard-table tr:last-child td { border-bottom: none; }
+        .leaderboard-table tr:hover td { background: var(--bg-card-hover); }
+
+        /* Rank */
+        .rank {
+            font-size: 16px; font-weight: 800; color: var(--text-muted);
+            min-width: 32px; text-align: center;
+        }
+        .rank.top1 { color: #fbbf24; }
+        .rank.top2 { color: #94a3b8; }
+        .rank.top3 { color: #cd7f32; }
+
+        /* Model info */
+        .model-info { display: flex; flex-direction: column; gap: 2px; }
+        .model-name { font-weight: 700; color: var(--text-primary); font-size: 14px; }
+        .model-provider { font-size: 12px; color: var(--text-secondary); }
+
+        /* Tier badge */
+        .tier-badge {
+            display: inline-block; padding: 3px 10px; border-radius: 100px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .tier-budget { background: rgba(34,197,94,0.1); color: var(--green); }
+        .tier-mid { background: rgba(99,102,241,0.1); color: var(--accent); }
+        .tier-premium { background: rgba(239,68,68,0.1); color: var(--red); }
+
+        /* Price */
+        .price { font-weight: 700; font-variant-numeric: tabular-nums; }
+        .price-input { color: var(--accent); }
+        .price-output { color: var(--green); }
+
+        /* Savings bar */
+        .savings-cell { min-width: 120px; }
+        .savings-bar-wrap {
+            background: var(--bg-card); border-radius: 4px; height: 6px;
+            overflow: hidden; margin-bottom: 4px;
+        }
+        .savings-bar {
+            height: 100%; border-radius: 4px;
+            background: linear-gradient(90deg, var(--green), var(--accent));
+            transition: width 0.4s ease;
+        }
+        .savings-pct { font-size: 12px; font-weight: 700; color: var(--green); }
+
+        /* Context */
+        .context-badge {
+            font-size: 12px; color: var(--text-secondary);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* CTA section */
+        .cta-section {
+            text-align: center; padding: 60px 24px 40px;
+            max-width: 600px; margin: 0 auto;
+        }
+        .cta-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .cta-section p { color: var(--text-secondary); margin-bottom: 24px; }
+        .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .cta-actions a {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; border-radius: 10px; font-size: 15px; font-weight: 700;
+            transition: all 0.2s;
+        }
+        .cta-primary { background: var(--accent); color: white; }
+        .cta-primary:hover { background: var(--accent-hover); color: white; }
+        .cta-secondary { border: 1px solid var(--border); color: var(--text-primary); }
+        .cta-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Share */
+        .share-bar {
+            display: flex; gap: 8px; justify-content: center;
+            margin-top: 24px; flex-wrap: wrap;
+        }
+        .share-btn {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-secondary);
+            font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+        }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .leaderboard-table { font-size: 13px; }
+            .leaderboard-table th, .leaderboard-table td { padding: 10px 8px; }
+            .hide-mobile { display: none; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .stats-bar { grid-template-columns: 1fr 1fr; }
+            .stat-value { font-size: 22px; }
+        }
+
+        /* Insight boxes */
+        .insights {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px; margin: 40px 0;
+        }
+        .insight-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px;
+        }
+        .insight-card h3 {
+            font-size: 14px; font-weight: 700; color: var(--accent);
+            margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .insight-card .highlight {
+            font-size: 32px; font-weight: 800; color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .insight-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+        /* Deprecation notice */
+        .dep-notice {
+            background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
+            border-radius: var(--radius); padding: 16px 20px;
+            margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
+            font-size: 13px; color: var(--orange);
+        }
+        .dep-notice a { color: var(--accent); font-weight: 600; }
+    </style>
+</head>
+<body>
+    <nav></nav>
+
+    <div class="content">
+        <h1>Cheapest AI API Models<br>Ranked by Price</h1>
+        <p class="subtitle">Every active LLM model ranked by output cost per million tokens. Find the cheapest option for your use case.</p>
+        <p class="last-updated">Data verified: <span id="lastUpdated"></span> · Updated regularly</p>
+
+        <!-- Key Stats -->
+        <div class="stats-bar" id="statsBar"></div>
+
+        <!-- Insights -->
+        <div class="insights" id="insights"></div>
+
+        <!-- Filters -->
+        <div class="filters" id="filters"></div>
+
+        <!-- Sort -->
+        <div class="sort-bar">
+            <span>Sort by:</span>
+            <button class="sort-btn active" data-sort="output" onclick="sortBy('output',this)">Output Price</button>
+            <button class="sort-btn" data-sort="input" onclick="sortBy('input',this)">Input Price</button>
+            <button class="sort-btn" data-sort="blended" onclick="sortBy('blended',this)">Blended (3:1)</button>
+            <button class="sort-btn" data-sort="context" onclick="sortBy('context',this)">Context Window</button>
+        </div>
+
+        <!-- Table -->
+        <table class="leaderboard-table" id="table">
+            <thead>
+                <tr>
+                    <th style="width:50px">#</th>
+                    <th>Model</th>
+                    <th>Tier</th>
+                    <th>Input <span style="font-weight:400;font-size:10px">$/1M</span></th>
+                    <th>Output <span style="font-weight:400;font-size:10px">$/1M</span></th>
+                    <th class="hide-mobile">Context</th>
+                    <th class="hide-mobile">vs. Most Expensive</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Calculate Your Exact Cost</h2>
+            <p>Enter your token counts and see what you'd pay across every model. Free, instant, no signup.</p>
+            <div class="cta-actions">
+                <a href="calculator.html" class="cta-primary" onclick="trackEvent('leaderboard_cta_calculator')">Open Calculator →</a>
+                <a href="compare.html" class="cta-secondary" onclick="trackEvent('leaderboard_cta_compare')">Compare Models</a>
+            </div>
+            <div class="share-bar">
+                <a href="https://twitter.com/intent/tweet?text=Every+AI+API+model+ranked+by+price.+Find+the+cheapest+LLM+for+your+use+case+%E2%80%94+from+%240.08%2FM+input+tokens.%0A%0Ahttps%3A%2F%2Fgetapipulse.com%2Fleaderboard.html" target="_blank" class="share-btn" onclick="trackEvent('share_twitter',{page:'leaderboard'})">𝕏 Share</a>
+                <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>this.textContent='✓ Copied!')">🔗 Copy Link</button>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') return;
+
+        // Set last updated
+        document.getElementById('lastUpdated').textContent = PRICING_LAST_UPDATED;
+
+        // Get active models only
+        var active = API_MODELS.filter(function(m) { return !m.deprecated; });
+
+        // Most expensive output for savings calc
+        var maxOutput = Math.max.apply(null, active.map(function(m) { return m.output; }));
+        var maxInput = Math.max.apply(null, active.map(function(m) { return m.input; }));
+
+        // Stats
+        var cheapestInput = active.reduce(function(a, b) { return a.input < b.input ? a : b; });
+        var cheapestOutput = active.reduce(function(a, b) { return a.output < b.output ? a : b; });
+        var providers = new Set(active.map(function(m) { return m.providerSlug; })).size;
+        var avgBlended = (active.reduce(function(s, m) { return s + (m.input * 0.25 + m.output * 0.75); }, 0) / active.length).toFixed(2);
+
+        document.getElementById('statsBar').innerHTML =
+            '<div class="stat-card"><div class="stat-value">' + active.length + '</div><div class="stat-label">Active Models</div></div>' +
+            '<div class="stat-card"><div class="stat-value">' + providers + '</div><div class="stat-label">Providers</div></div>' +
+            '<div class="stat-card"><div class="stat-value">$' + cheapestInput.input.toFixed(2) + '</div><div class="stat-label">Cheapest Input/M</div></div>' +
+            '<div class="stat-card"><div class="stat-value">$' + cheapestOutput.output.toFixed(2) + '</div><div class="stat-label">Cheapest Output/M</div></div>';
+
+        // Insights
+        var priceRange = (maxOutput / cheapestOutput.output).toFixed(0);
+        document.getElementById('insights').innerHTML =
+            '<div class="insight-card">' +
+                '<h3>Price Range</h3>' +
+                '<div class="highlight">' + priceRange + 'x</div>' +
+                '<p>The most expensive model costs <strong>' + priceRange + 'x more</strong> than the cheapest. Choosing the right model matters.</p>' +
+            '</div>' +
+            '<div class="insight-card">' +
+                '<h3>Best Value</h3>' +
+                '<div class="highlight">' + cheapestOutput.name + '</div>' +
+                '<p>' + cheapestOutput.provider + ' at $' + cheapestOutput.output.toFixed(2) + '/M output — the cheapest available API.</p>' +
+            '</div>' +
+            '<div class="insight-card">' +
+                '<h3>Cheapest Premium</h3>' +
+                '<div class="highlight">' + active.filter(function(m){return m.tier==='Premium';}).reduce(function(a,b){return a.output<b.output?a:b;}).name + '</div>' +
+                '<p>The most affordable Premium-tier model, if you need top-tier quality.</p>' +
+            '</div>';
+
+        // Filter buttons
+        var tiers = ['All', 'Budget', 'Mid', 'Premium'];
+        var filterHTML = '';
+        tiers.forEach(function(t) {
+            filterHTML += '<button class="filter-btn' + (t==='All' ? ' active' : '') + '" onclick="filterTier(\'' + t + '\', this)">' + t + (t==='All' ? ' (' + active.length + ')' : '') + '</button>';
+        });
+        document.getElementById('filters').innerHTML = filterHTML;
+
+        // Render table
+        window._activeModels = active;
+        window._currentSort = 'output';
+        window._currentFilter = 'All';
+        renderTable(active, 'output');
+    });
+
+    function parseContext(ctx) {
+        if (!ctx) return 0;
+        ctx = ctx.replace(/,/g, '');
+        if (ctx.endsWith('M')) return parseFloat(ctx) * 1000000;
+        if (ctx.endsWith('K')) return parseFloat(ctx) * 1000;
+        return parseInt(ctx) || 0;
+    }
+
+    function sortBy(key, btn) {
+        document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        window._currentSort = key;
+        filterAndRender();
+    }
+
+    function filterTier(tier, btn) {
+        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        window._currentFilter = tier;
+        filterAndRender();
+    }
+
+    function filterAndRender() {
+        var models = window._activeModels;
+        if (window._currentFilter !== 'All') {
+            models = models.filter(function(m) { return m.tier === window._currentFilter; });
+        }
+        renderTable(models, window._currentSort);
+    }
+
+    function renderTable(models, sortKey) {
+        var maxOutput = Math.max.apply(null, window._activeModels.map(function(m) { return m.output; }));
+        var sorted = models.slice().sort(function(a, b) {
+            if (sortKey === 'context') return parseContext(b.context) - parseContext(a.context);
+            if (sortKey === 'blended') return (a.input * 0.25 + a.output * 0.75) - (b.input * 0.25 + b.output * 0.75);
+            if (sortKey === 'input') return a.input - b.input;
+            return a.output - b.output;
+        });
+
+        var html = '';
+        sorted.forEach(function(m, i) {
+            var savingsPct = maxOutput > 0 ? ((1 - m.output / maxOutput) * 100).toFixed(0) : 0;
+            var rankClass = i < 3 ? ' top' + (i + 1) : '';
+            html += '<tr>' +
+                '<td class="rank' + rankClass + '">' + (i + 1) + '</td>' +
+                '<td><div class="model-info"><span class="model-name">' + m.name + '</span><span class="model-provider">' + m.provider + '</span></div></td>' +
+                '<td><span class="tier-badge tier-' + m.tier.toLowerCase() + '">' + m.tier + '</span></td>' +
+                '<td class="price price-input">$' + m.input.toFixed(2) + '</td>' +
+                '<td class="price price-output">$' + m.output.toFixed(2) + '</td>' +
+                '<td class="hide-mobile"><span class="context-badge">' + m.context + '</span></td>' +
+                '<td class="hide-mobile savings-cell">' +
+                    '<div class="savings-bar-wrap"><div class="savings-bar" style="width:' + savingsPct + '%"></div></div>' +
+                    '<span class="savings-pct">' + savingsPct + '% cheaper</span>' +
+                '</td>' +
+            '</tr>';
+        });
+        document.getElementById('tbody').innerHTML = html;
+
+        // Track view
+        if (typeof trackEvent === 'function') trackEvent('leaderboard_viewed', { count: sorted.length, sort: sortKey, filter: window._currentFilter });
+    }
+    </script>
+</body>
+</html>

@@ -204,6 +204,18 @@ document.addEventListener('DOMContentLoaded', () => {
             dashboardLinkEl.parentNode.insertBefore(priceTrackerLink, dashboardLinkEl.nextSibling);
         }
     }
+
+    // Add Leaderboard link after Pricing Index link
+    var hasLeaderboard = navLinks.querySelector('a[href="leaderboard.html"]');
+    if (!hasLeaderboard) {
+        var pricingIndexLink = navLinks.querySelector('a[href="pricing-index.html"]');
+        if (pricingIndexLink) {
+            var leaderboardLink = document.createElement('a');
+            leaderboardLink.href = 'leaderboard.html';
+            leaderboardLink.textContent = 'Leaderboard';
+            pricingIndexLink.parentNode.insertBefore(leaderboardLink, pricingIndexLink.nextSibling);
+        }
+    }
 });
 
 // Close mobile nav when clicking a link
