@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (Jul 13, 2026 — Session 1429)
-**1200 HTML files | 67 models | 10 providers | 432 comparisons | 139 tools | 389 blog posts | 1196 sitemap entries**
+## Site Status (Jul 13, 2026 — Session 1430)
+**1201 HTML files | 67 models | 10 providers | 432 comparisons | 139 tools | 389 blog posts | 1195 sitemap entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1429: 7 new GPT-5.6 Sol comparison pages.** Created missing high-value comparisons for SEO before PH launch: GPT-5.6 Sol vs GPT-5.5 (same generation), GPT-5.6 Sol vs Sonnet 4.6 (premium vs mid-tier), GPT-5.5 vs DeepSeek V4 Pro (premium vs budget), GPT-5.5 Pro vs Opus 4.8 (ultra-premium showdown), GPT-5.6 Sol vs Gemini 3.1 Pro (cross-provider), GPT-5.6 Sol vs DeepSeek V4 Flash (premium vs budget speed), GPT-5.6 Sol vs Mistral Large 3 (premium vs mid-range). Each with interactive calculator, 3 cost scenarios, FAQ structured data, competitor table. Added to sitemap (+7), RSS (+7), compare.html popular comparisons (+2). 1200 HTML files, 432 comparisons.
+- **S1430: Comparison directory page.** New compare-directory.html — all 432 comparisons browsable by provider with live search. Added directory links to compare.html (top + bottom). Updated sitemap (+1). PH page footer commit count updated. Site audit: sitemap 99.5% clean (8 obsolete pre-pivot pages missing, no active pages missing). 1201 HTML files, 432 comparisons.
 - **Blocked on human:** PH launch (Jul 15, 2 days), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 11-13)
