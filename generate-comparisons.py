@@ -12,11 +12,15 @@ models = {m['id']: m for m in pricing.get('models', [])}
 
 # Define comparisons to create: (model_a_id, model_b_id, tier_badge, slug)
 COMPARISONS = [
-    ("openai-gpt56-sol", "openai-gpt55", "Same Generation", "gpt56sol-vs-gpt55"),
-    ("openai-gpt56-sol", "anthropic-sonnet46", "Premium vs Mid-Tier", "gpt56sol-vs-sonnet46"),
-    ("openai-gpt55", "deepseek-v4-pro", "Premium vs Budget", "gpt55-vs-deepseekv4pro"),
-    ("openai-gpt55-pro", "anthropic-opus48", "Premium Showdown", "gpt55pro-vs-opus48"),
-    ("openai-gpt56-sol", "google-gemini3-pro", "Cross-Provider Premium", "gpt56sol-vs-gemini31pro"),
+    # Batch 1 (already created)
+    # ("openai-gpt56-sol", "openai-gpt55", "Same Generation", "gpt56sol-vs-gpt55"),
+    # ("openai-gpt56-sol", "anthropic-sonnet46", "Premium vs Mid-Tier", "gpt56sol-vs-sonnet46"),
+    # ("openai-gpt55", "deepseek-v4-pro", "Premium vs Budget", "gpt55-vs-deepseekv4pro"),
+    # ("openai-gpt55-pro", "anthropic-opus48", "Premium Showdown", "gpt55pro-vs-opus48"),
+    # ("openai-gpt56-sol", "google-gemini3-pro", "Cross-Provider Premium", "gpt56sol-vs-gemini31pro"),
+    # Batch 2 (only truly missing)
+    ("openai-gpt56-sol", "deepseek-v4-flash", "Premium vs Budget Speed", "gpt56sol-vs-deepseekv4flash"),
+    ("openai-gpt56-sol", "mistral-large", "Premium vs Mid-Range", "gpt56sol-vs-mistral-large3"),
 ]
 
 def fmt_price(p):
