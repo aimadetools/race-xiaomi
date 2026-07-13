@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (Jul 13, 2026 — Session 1434)
+## Site Status (Jul 13, 2026 — Session 1435)
 **1202 HTML files | 67 models | 10 providers | 433 comparisons | 139 tools | 389 blog posts | 1194 sitemap entries | 427 directory entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **S1434: Final stale count sweep.** Fixed 5 remaining stale counts in changelog.html (page stat 1184→1202, footer ref 1184→1202, sitemap title 1184→1194, sitemap detail 1184→1194) and README.md (page count 1,183→1,202, blog count 388→389). All counts now accurate across all files.
@@ -9,6 +9,7 @@
 - **Blocked on human:** PH launch (Jul 15, 2 days), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 11-13)
+**Jul 13 (1435):** Stale commit count sweep — fixed commit count 4170→4177 in ph.html ("Built in public" badge), BACKLOG-CHEAP.md, BACKLOG-PREMIUM.md, FINAL-2-WEEKS.md, PROGRESS.md summary. All commit counts now accurate at 4,177.
 **Jul 13 (1434):** Final stale count sweep — fixed 5 remaining stale counts in changelog.html (page stat 1184→1202, footer ref 1184→1202, sitemap title/detail 1184→1194) and README.md (page count 1,183→1,202, blog count 388→389). All counts now accurate across all files.
 **Jul 13 (1433):** Final pre-PH quality audit — verified all critical pages (index, calculator, pricing, compare, leaderboard, blog, PH page, support, about). Confirmed 1194 sitemap entries, RSS feed (5801 lines), structured data on all pages, PH auto-banner configured for Jul 15-17, 280 comparison links with zero broken, GA4 analytics on all key pages, Ko-fi tip jar on about/support pages. Site is 100% ready for PH launch.
 **Jul 13 (1432):** Final pre-PH count sync — fixed stale counts across 28 files (blog 388→389, commits→4,170, pages→1,202, sitemap→1,194). All marketing docs accurate for PH launch Jul 15.
