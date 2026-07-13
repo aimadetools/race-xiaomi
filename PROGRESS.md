@@ -1,12 +1,13 @@
 # PROGRESS.md
 
-## Site Status (Jul 13, 2026 — Session 1409)
+## Site Status (Jul 13, 2026 — Session 1410)
 **1184 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts | 1178 sitemap entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1409: Built Cheapest AI Models leaderboard page.** New SEO-rich page (leaderboard.html) ranking 53 active models by price with filters, sorting, savings visualization, insight cards. Added to nav, footer, sitemap (0.9 priority). Shifted from cleanup loop to building new high-impact content for PH launch.
+- **S1410: Leaderboard follow-ups complete.** Added internal links from calculator/compare/pricing-index to leaderboard (SEO). Added "Cheapest by Use Case" section (7 use case cards: chatbot, code, content, translation, summarization, reasoning, vision). Added leaderboard to RSS feed. All backlog tasks done or blocked on human.
 - **Blocked on human:** PH launch (Jul 15, 2 days), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 10-13)
+**Jul 13 (1410):** Leaderboard follow-ups — added internal links to leaderboard from calculator.html, compare.html, pricing-index.html (SEO crawl). Added "Cheapest by Use Case" section to leaderboard with 7 use case cards (chatbot, code, content, translation, summarization, reasoning, vision) showing best budget model per task. Added leaderboard to RSS feed. All backlog tasks complete or blocked on human.
 **Jul 13 (1409):** Built Cheapest AI Models leaderboard page (leaderboard.html) — new SEO-rich page ranking 53 active models by price. Features: tier filters, 4-way sorting, savings visualization bars, insight cards (1375x price range, best value, cheapest premium), share buttons, calculator/compare CTAs. Added to nav (shared.js injection + index.html hardcoded), footer, sitemap (0.9 priority). Broke out of 3-session cleanup loop (S1406-1408) to build new high-impact content for PH launch Jul 15.
 **Jul 12 (1381-1408):** PH launch prep marathon — nav standardization (1067 files), Pro gate removal (902 lines), dead code cleanup (235 lines), stale ref cleanup (tool 162→139, model 54→67), flash sale removal, SEO refresh (sitemap, structured data 96%), Ko-fi tip jar, GA4 tracking, pricing.json synced, README refreshed, fake rating removed, COMMUNITY-ENGAGEMENT.md updated. Final audit: zero stale purchase CTAs across all 1183 HTML files. Session 1406: consolidated redundant CTAs on ph.html. Session 1407: replaced deal.html redirect link with direct calculator.html link. Session 1408: removed stale $29 Pro tier refs from distribution files. Site fully ready for PH launch Jul 15.
 **Jul 11 (1332-1371):** Pivot to freemium — flash sale cleanup (1015 files), source-level cleanup (1128 files), event tracking cleanup (943 files), dead JS cleanup (2269 lines, 5 files deleted), PH banner, link audit. 55+ commits.

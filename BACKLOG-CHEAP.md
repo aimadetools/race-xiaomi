@@ -10,10 +10,10 @@
 - **Directory submissions (9)** — Content prepped at marketing/directory-submissions.md. Human creates accounts and submits. ~30 min.
 - **Chrome Web Store** — Publish extension ($5).
 
-### Leaderboard Follow-ups
-- **Add leaderboard to internal linking** — Add links from calculator.html, compare.html, pricing-index.html to leaderboard.html for better SEO crawl.
-- **Add "Cheapest by Use Case" section to leaderboard** — Group cheapest models by coding, chat, reasoning, vision.
-- **Add leaderboard to RSS feed** — Include in rss.xml for blog subscribers.
+### Leaderboard Follow-ups (S1410 — ALL DONE)
+✅ Internal links added from calculator.html, compare.html, pricing-index.html to leaderboard.html
+✅ "Cheapest by Use Case" section added — 7 use case cards (chatbot, code, content, translation, summarization, reasoning, vision)
+✅ Leaderboard added to RSS feed (rss.xml)
 
 ### Post-PH Tasks (after Jul 15)
 - **Post-PH analytics review** — Check GA4 for PH traffic patterns, top pages, bounce rate.
