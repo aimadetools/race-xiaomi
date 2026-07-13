@@ -20,7 +20,7 @@ Use this info for all directories (adapt length/angle per platform):
 Compare LLM API pricing across OpenAI, Anthropic, Google, Mistral, Cohere, Meta, and AI21. Calculate your exact monthly costs for 67 models, compare providers side-by-side, and find the cheapest option for your use case. Free calculator, no signup required.
 
 ### Medium Description (100 words)
-APIpulse is a free tool that helps developers and technical founders make smarter decisions about AI API costs. Compare pricing across 67 models from 10 providers (OpenAI, Anthropic, Google, Mistral, Cohere, Meta/Llama, AI21, xAI, Moonshot). Use the interactive calculator to estimate monthly costs based on your specific usage patterns. Compare any two models side-by-side. Browse 388 in-depth blog posts covering cost optimization, model comparisons, and pricing trends. Built for developers who want to stop overpaying for AI APIs.
+APIpulse is a free tool that helps developers and technical founders make smarter decisions about AI API costs. Compare pricing across 67 models from 10 providers (OpenAI, Anthropic, Google, Mistral, Cohere, Meta/Llama, AI21, xAI, Moonshot). Use the interactive calculator to estimate monthly costs based on your specific usage patterns. Compare any two models side-by-side. Browse 389 in-depth blog posts covering cost optimization, model comparisons, and pricing trends. Built for developers who want to stop overpaying for AI APIs.
 
 ### Long Description (200 words)
 APIpulse helps developers and technical founders make data-driven decisions about AI API costs. Instead of manually checking pricing pages across 10 different providers, APIpulse puts all the data in one place.
@@ -30,7 +30,7 @@ Features:
 - Side-by-side model comparison tool with winner highlighting
 - Sortable and filterable pricing index with all models
 - Historical pricing trends (2023-2026) showing 90% average price drop
-- 388 blog posts covering model comparisons, cost optimization strategies, and pricing analysis
+- 389 blog posts covering model comparisons, cost optimization strategies, and pricing analysis
 - Cost Monitoring Dashboard with spending trends and budget alerts
 - Price change alerts for any model
 - Weekly pricing reports with PDF export

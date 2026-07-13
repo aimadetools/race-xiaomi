@@ -84,7 +84,7 @@ Appreciate it! Every upvote helps get this in front of more developers.
 ## Free Model Questions
 
 ### "Is everything really free?"
-Yes — every tool, every feature. Cost calculator, comparison tool, monitoring dashboard, price alerts, weekly reports, PDF exports, saved scenarios, optimization playbook. All 67 models, all 388 blog posts. No signup, no credit card, no catch.
+Yes — every tool, every feature. Cost calculator, comparison tool, monitoring dashboard, price alerts, weekly reports, PDF exports, saved scenarios, optimization playbook. All 67 models, all 389 blog posts. No signup, no credit card, no catch.
 
 ### "How do you make money?"
 Right now I don't — this is a passion project. Long-term I may add optional affiliate links or a Ko-fi tip jar, but the core tools stay free.

@@ -34,7 +34,7 @@ What's inside:
 - 67 models across 10 providers
 - Instant cost calculator
 - Side-by-side comparison
-- 388 in-depth blog articles
+- 389 in-depth blog articles
 - Cost Monitoring Dashboard
 - Price alerts & weekly reports
 - Pricing API for developers
@@ -89,7 +89,7 @@ Key features:
 - Instant cost calculations — no signup, no API keys
 - Side-by-side comparison tool
 - Cost Monitoring Dashboard with spending trends and budget alerts
-- 388 blog posts with deep-dive analysis
+- 389 blog posts with deep-dive analysis
 - Pricing API for developers
 - Dark/light themes, mobile responsive
 
@@ -133,7 +133,7 @@ Key features:
 - Instant cost calculator
 - Side-by-side comparison
 - Cost Monitoring Dashboard
-- 388 blog posts analyzing pricing trends
+- 389 blog posts analyzing pricing trends
 - Free pricing API
 
 I built this because I was tired of manually checking 4+ pricing pages every time I needed to compare costs. The tool finds the cheapest model for your specific usage pattern.

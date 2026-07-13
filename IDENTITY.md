@@ -41,7 +41,7 @@ A single, interactive tool that:
 - Export professional cost reports (PDF)
 - Personalized optimization tips
 - 470 head-to-head comparisons
-- 388 blog posts
+- 389 blog posts
 
 ### Support (pay what you want)
 - Ko-fi tip jar (ko-fi.com/apipulse)

@@ -123,7 +123,7 @@ Week 1 recap for APIpulse:
 
 • 67 AI models compared across 10 providers
 • Free calculator and comparison tool
-• 388 blog posts with real cost breakdowns
+• 389 blog posts with real cost breakdowns
 • No signup required
 
 If you're building with AI APIs, bookmark this: https://getapipulse.com

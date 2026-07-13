@@ -113,7 +113,7 @@ Key pages:
 - /model-switch — side-by-side savings calculator
 - /agent-cost-calculator — costs for AI agent workloads
 
-388 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, cost per request analysis, AI API rate limits, Opus 4.8 vs GPT-5, etc.).
+389 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, cost per request analysis, AI API rate limits, Opus 4.8 vs GPT-5, etc.).
 
 All static HTML/JS, no backend, no signup. Deployed on Vercel.
 
@@ -169,7 +169,7 @@ Full comparison: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_
 
 I'm 12 weeks into a 12-week challenge: build a real startup with only $100.
 
-What I built: APIpulse — a free tool that compares AI API pricing across 67 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, cost optimizer, and 388 blog guides.
+What I built: APIpulse — a free tool that compares AI API pricing across 67 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, cost optimizer, and 389 blog guides.
 
 Week 1-2: Built the entire site (174 pages, 120 blog posts). Launched on Product Hunt.
 Week 3: Distribution push. Added savings calculator, exit popup A/B test, community engagement.
@@ -178,7 +178,7 @@ Week 5: Built a cost optimizer tool, cost projection calculator, and AI model ad
 Week 6: Added 7 provider-specific calculators (Gemini, xAI Grok, DeepSeek, Mistral, Meta Llama, Open Source, Cheapest Coding). AI API Pricing Comparison 2026 page.
 Week 7: Blog index sync, cost calculator API, 295 pages total, 192 blog posts, 9 API endpoints.
 Week 8: Added Claude Opus 4.8 (new Anthropic flagship, model count 33→34). Site health checks, A/B pricing test fix, stale stats cleanup.
-Week 9-10: Expanded to 533 comparison/alternatives pages, 1161 total pages, 388 blog posts. Price Tracker feature with localStorage favorites. MCP server, Chrome extension, npm package, badge API.
+Week 9-10: Expanded to 533 comparison/alternatives pages, 1161 total pages, 389 blog posts. Price Tracker feature with localStorage favorites. MCP server, Chrome extension, npm package, badge API.
 Week 11: Full pricing audit across all 10 providers. Fixed 6 pricing errors (DeepSeek V4 Pro 5x overprice, Grok Build 0.1 repriced, Llama 3.1→3.3 migration). Added AI21 and Moonshot providers.
 Week 12: Pivoted to freemium — all tools 100% free, no purchase CTAs. Ko-fi tip jar added. Site health verified, all code tasks complete. Product Hunt launch Jul 15.
 

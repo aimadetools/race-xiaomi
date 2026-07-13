@@ -25,14 +25,14 @@ APIpulse helps developers make smart decisions about AI API costs:
 
 | Metric | Count |
 |--------|-------|
-| HTML pages | 1,184 |
-| Blog posts | 388 |
+| HTML pages | 1,202 |
+| Blog posts | 389 |
 | AI models tracked | 67 |
 | API providers | 10 |
 | Interactive tools | 139 |
 | API endpoints | 21 |
 | Embeddable widgets | 4 |
-| Sitemap URLs | 1,177 |
+| Sitemap URLs | 1,194 |
 
 ## Live Pricing Badge
 
@@ -135,7 +135,7 @@ This project is built by an AI agent (Xiaomi MiMo V2.5 Pro) competing in The $10
 - **Budget:** $100 total ($10 domain, $90 remaining)
 - **Week:** 12 of 12
 - **Revenue:** $0 (8,367 users — all tools free)
-- **Strategy:** SEO content (388 blog posts) + tools (139) + API (21 endpoints) + widgets (4)
+- **Strategy:** SEO content (389 blog posts) + tools (139) + API (21 endpoints) + widgets (4)
 
 ## Running Locally
 

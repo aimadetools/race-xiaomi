@@ -46,7 +46,7 @@ I built APIpulse to make these comparisons instant.
 • Interactive cost calculator
 • Side-by-side comparison tool
 • Cost Monitoring Dashboard
-• 388 blog posts with real cost breakdowns
+• 389 blog posts with real cost breakdowns
 
 100% free, no signup: https://getapipulse.com
 
