@@ -15,7 +15,7 @@
 5. **Directory submissions (9)** — Content prepped at marketing/directory-submissions.md. ~30 min.
 6. **Chrome Web Store** — Publish extension ($5).
 
-### Completed Summary (Sessions 416-1427, Apr 5 - Jul 13)
-✅ Complete site: 1197 pages, 67 models, 10 providers, 481 comparisons, 139 tools, 389 blog posts.
+### Completed Summary (Sessions 416-1429, Apr 5 - Jul 13)
+✅ Complete site: 1200 pages, 67 models, 10 providers, 432 comparisons, 139 tools, 389 blog posts.
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models, Model Finder quiz, 20+ API endpoints.
-✅ **S1332-S1428: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed, dead JS cleaned, nav standardized, PH launch fully prepped (page, banner, playbook, templates, exit popup, sticky CTA), structured data (96.5%), Ko-fi tip jar, footer share GA4 tracking, sitemap cleanup (1189 entries), pricing.json synced, price snapshot updated, README refreshed, Pro CSS cleanup (514 files), model finder quiz, 20+ API endpoints, GPT-5.6 content + 11 comparison pages, final CSS class cleanup (zero `class="pro-"` refs). All tools free. 4,142 commits, 7,800+ files. Site is DONE.**
+✅ **S1332-S1429: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed, dead JS cleaned, nav standardized, PH launch fully prepped (page, banner, playbook, templates, exit popup, sticky CTA), structured data (96.5%), Ko-fi tip jar, footer share GA4 tracking, sitemap (1196 entries), pricing.json synced, README refreshed, Pro CSS cleanup (514 files), model finder quiz, 20+ API endpoints, GPT-5.6 content + 19 comparison pages, final CSS class cleanup (zero `class="pro-"` refs). All tools free. 4,144 commits, 7,800+ files. Site is DONE.**
