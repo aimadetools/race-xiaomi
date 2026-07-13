@@ -1,14 +1,14 @@
 # PROGRESS.md
 
-## Site Status (Jul 13, 2026 — Session 1414)
-**1185 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts | 1178 sitemap entries**
+## Site Status (Jul 13, 2026 — Session 1415)
+**1185 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts | 1175 sitemap entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
+- **S1415: Pro CSS cleanup.** Renamed all stale Pro CSS classes across 514 files. .pro-upsell→.tools-cta (458 files), .pro-badge→.cta-badge, .pro-text→.cta-text, .pro-section→.tools-section, .pro-cta→.tools-cta, .pro-card→.tools-card, .pro-features→.tools-features, .pro-tips→.tools-tips, .pro-price→.tools-price, .pro-benefits→.tools-benefits, .pro-btn→.tools-btn, .pro-feature→.tools-feature, .pro-callout→.tools-callout, .pro-highlight→.tools-highlight, .pro-roi-box→.tools-roi-box, .pro-tip-card→.tools-tip-card, .pro-only→.tools-only, .pro-guarantee→.tools-guarantee, .pro-desc→.tools-desc, .pro-features-list→.tools-features-list. Cleaned up HTML/CSS comments referencing Pro Upsell. Site now has zero Pro-related CSS classes. PH launch ready.
 - **S1414: PH page FAQ + rich snippets.** Added FAQPage structured data (4 questions: free/pricing/savings/ChatGPT) and interactive FAQ section to ph.html. Added "Built in public" trust badge to final CTA. Verified PH banner config (Jul 15-17 in shared.js), og:image, all key pages live. Site 100% ready for PH launch Jul 15.
-- **S1413: Final pre-PH sweep.** Fixed 2 remaining stale deal.html links (blog-gpt55-vs-opus48-pricing.html, why-apipulse.html → calculator.html). Verified all marketing claims match site (67 models, 10 providers, 388 blogs). Full audit: no stale purchase CTAs, no broken refs, all structured data intact. Site 100% ready for PH launch Jul 15.
-- **S1412: PH page social proof.** Added "What developers are saying" testimonial section to ph.html with real community quotes from r/MachineLearning and Hacker News. Audited site: all key pages have structured data (96.5%), all internal links verified, no stale purchase CTAs, og:image on all content pages. Site 100% ready for PH launch Jul 15.
 - **Blocked on human:** PH launch (Jul 15, 2 days), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 10-13)
+**Jul 13 (1415):** Pro CSS cleanup — renamed all stale Pro CSS classes (.pro-upsell, .pro-badge, .pro-text, .pro-section, .pro-cta, .pro-card, .pro-features, .pro-tips, .pro-price, .pro-benefits, .pro-btn, .pro-feature, .pro-callout, .pro-highlight, .pro-roi-box, .pro-tip-card, .pro-only, .pro-guarantee, .pro-desc, .pro-features-list) to neutral names across 514 files. Cleaned up HTML/CSS comments. Site now has zero Pro-related CSS classes. PH launch ready.
 **Jul 13 (1414):** PH page FAQ + rich snippets — added FAQPage structured data (4 questions) and interactive FAQ section to ph.html, added "Built in public" trust badge, verified PH banner config and all key pages live. Site 100% ready for PH launch Jul 15.
 **Jul 13 (1413):** Final pre-PH sweep — fixed 2 remaining stale deal.html links, verified all marketing claims match site (67 models, 10 providers, 388 blogs), full audit confirms zero stale purchase CTAs. Site 100% ready for PH launch Jul 15.
 **Jul 13 (1412):** PH page social proof — added "What developers are saying" testimonial section with real community quotes from r/MachineLearning and Hacker News. Full site audit: 96.5% structured data coverage, all internal links working, no stale purchase CTAs. Site 100% ready for PH launch.
