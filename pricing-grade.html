@@ -262,8 +262,8 @@
         }
         .share-btn:hover { border-color: var(--accent); }
 
-        /* Pro upsell */
-        .pro-upsell {
+        /* Tools CTA */
+        .tools-cta {
             background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));
             border: 2px solid rgba(99,102,241,0.25);
             border-radius: 16px;
@@ -271,24 +271,24 @@
             text-align: center;
             margin-bottom: 20px;
         }
-        .pro-upsell h3 { font-size: 18px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
-        .pro-upsell p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
-        .pro-features {
+        .tools-cta h3 { font-size: 18px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
+        .tools-cta p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+        .tools-features {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 8px;
             margin-bottom: 16px;
             text-align: left;
         }
-        .pro-feature {
+        .tools-feature {
             display: flex;
             align-items: center;
             gap: 6px;
             font-size: 13px;
             color: var(--text-secondary);
         }
-        .pro-feature .check { color: #22c55e; font-weight: 700; }
-        .pro-cta-btn {
+        .tools-feature .check { color: #22c55e; font-weight: 700; }
+        .tools-cta-btn {
             display: inline-block;
             padding: 14px 32px;
             background: linear-gradient(135deg, #22c55e, #16a34a);
@@ -301,13 +301,13 @@
             box-shadow: 0 4px 20px rgba(34,197,94,0.3);
             transition: all 0.2s;
         }
-        .pro-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,197,94,0.4); }
+        .tools-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,197,94,0.4); }
 
         @media (max-width: 480px) {
             .grade-page { padding: 24px 16px 60px; }
             .grade-circle { width: 110px; height: 110px; }
             .grade-letter { font-size: 42px; }
-            .pro-features { grid-template-columns: 1fr; }
+            .tools-features { grid-template-columns: 1fr; }
             .form-row { flex-direction: column; }
         }
     </style>
@@ -420,19 +420,19 @@
             <div id="copy-confirm" style="display:none;margin-top:10px;font-size:13px;color:#22c55e;font-weight:600;">✓ Copied to clipboard!</div>
         </div>
 
-        <!-- Pro Upsell -->
-        <div class="pro-upsell" id="pro-upsell" style="display:none;">
+        <!-- Tools CTA -->
+        <div class="tools-cta" id="tools-cta" style="display:none;">
             <h3>Unlock Your Full Report</h3>
             <p>See all 67 models ranked by cost, get migration code, and track prices over time.</p>
-            <div class="pro-features">
-                <div class="pro-feature"><span class="check">✓</span> All 67 models ranked</div>
-                <div class="pro-feature"><span class="check">✓</span> Migration code snippets</div>
-                <div class="pro-feature"><span class="check">✓</span> PDF report export</div>
-                <div class="pro-feature"><span class="check">✓</span> Cost monitoring dashboard</div>
-                <div class="pro-feature"><span class="check">✓</span> Unlimited price alerts</div>
-                <div class="pro-feature"><span class="check">✓</span> Weekly pricing report</div>
+            <div class="tools-features">
+                <div class="tools-feature"><span class="check">✓</span> All 67 models ranked</div>
+                <div class="tools-feature"><span class="check">✓</span> Migration code snippets</div>
+                <div class="tools-feature"><span class="check">✓</span> PDF report export</div>
+                <div class="tools-feature"><span class="check">✓</span> Cost monitoring dashboard</div>
+                <div class="tools-feature"><span class="check">✓</span> Unlimited price alerts</div>
+                <div class="tools-feature"><span class="check">✓</span> Weekly pricing report</div>
             </div>
-            <a href="audit.html?from=grade" class="pro-cta-btn" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'pricing_grade'});">
+            <a href="audit.html?from=grade" class="tools-cta-btn" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{source:'pricing_grade'});">
                 Free Tools →
             </a>
             <div style="font-size:12px;color:var(--text-muted);margin-top:10px;">
@@ -696,7 +696,7 @@
         document.getElementById('savings-card').style.display = 'block';
         document.getElementById('factors-card').style.display = 'block';
         document.getElementById('share-section').style.display = 'block';
-        document.getElementById('pro-upsell').style.display = 'block';
+        document.getElementById('tools-cta').style.display = 'block';
 
         // Scroll to results
         document.getElementById('grade-result').scrollIntoView({ behavior: 'smooth', block: 'center' });

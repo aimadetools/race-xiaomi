@@ -187,14 +187,14 @@
         }
 
         /* CTA */
-        .pro-cta {
+        .tools-cta {
             background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
             border: 2px solid var(--accent); border-radius: 16px;
             padding: 32px; text-align: center; margin-bottom: 24px;
         }
-        .pro-cta h2 { font-size: 24px; font-weight: 900; margin-bottom: 8px; }
-        .pro-cta .subtitle { font-size: 16px; color: var(--text-secondary); margin-bottom: 20px; }
-        .pro-cta .cta-btn {
+        .tools-cta h2 { font-size: 24px; font-weight: 900; margin-bottom: 8px; }
+        .tools-cta .subtitle { font-size: 16px; color: var(--text-secondary); margin-bottom: 20px; }
+        .tools-cta .cta-btn {
             display: inline-block; padding: 18px 40px;
             background: linear-gradient(135deg, var(--accent), #8b5cf6);
             color: white; border: none; border-radius: 12px;
@@ -202,8 +202,8 @@
             text-decoration: none; transition: all 0.2s;
             box-shadow: 0 4px 20px rgba(99,102,241,0.4);
         }
-        .pro-cta .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.5); }
-        .pro-cta .cta-sub { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
+        .tools-cta .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.5); }
+        .tools-cta .cta-sub { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
 
         /* What you get */
         .features-grid {
@@ -560,7 +560,7 @@ response = client.chat.completions.create(
         </div>
 
         <!-- CTA -->
-        <div class="pro-cta">
+        <div class="tools-cta">
             <h2>Get YOUR Personalized Report</h2>
             <p class="subtitle">This sample shows Claude Sonnet 4.6. The tool analyzes YOUR model, YOUR spend, YOUR use case — in 60 seconds.</p>
 
@@ -587,7 +587,7 @@ response = client.chat.completions.create(
                 </div>
             </div>
 
-            <a id="pro-cta-btn" href="audit.html?from=sample-report-sonnet" class="cta-btn" target="_blank" rel="noopener">
+            <a id="tools-cta-btn" href="audit.html?from=sample-report-sonnet" class="cta-btn" target="_blank" rel="noopener">
                 All tools are free — <span id="pro-price">Free</span>
             </a>
             <p class="cta-sub">✅ 100% free · ✅ No signup required · ✅ Instant access</p>
@@ -655,7 +655,7 @@ response = client.chat.completions.create(
         document.addEventListener('DOMContentLoaded', function() {
             var priceEl = document.getElementById('pro-price');
             if (priceEl) priceEl.textContent = 'Free';
-            document.getElementById('pro-cta-btn').href = 'go.html?from=sample-report-sonnet&savings=210&alts=15';
+            document.getElementById('tools-cta-btn').href = 'go.html?from=sample-report-sonnet&savings=210&alts=15';
         });
     </script>
     <script src="results-cta.js" defer></script>

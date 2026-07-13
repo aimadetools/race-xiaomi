@@ -252,19 +252,19 @@
         .share-btn.linkedin:hover { background: #006097; }
 
         /* CTA */
-        .pro-cta {
+        .tools-cta {
             background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
             border: 2px solid var(--accent); border-radius: 16px;
             padding: 32px; text-align: center; margin-bottom: 24px;
         }
-        .pro-cta h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
-        .pro-cta p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; }
-        .pro-features { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; }
-        .pro-features span {
+        .tools-cta h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .tools-cta p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .tools-features { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; }
+        .tools-features span {
             background: rgba(99,102,241,0.1); color: var(--accent);
             padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;
         }
-        .pro-cta .cta-btn {
+        .tools-cta .cta-btn {
             display: inline-block; padding: 16px 40px;
             background: linear-gradient(135deg, var(--accent), #8b5cf6);
             color: white; border: none; border-radius: 12px;
@@ -272,8 +272,8 @@
             text-decoration: none; transition: all 0.2s;
             box-shadow: 0 4px 20px rgba(99,102,241,0.4);
         }
-        .pro-cta .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.5); }
-        .pro-cta .cta-sub {
+        .tools-cta .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.5); }
+        .tools-cta .cta-sub {
             font-size: 13px; color: var(--text-muted); margin-top: 12px;
         }
 
@@ -458,17 +458,17 @@
             </div>
 
             <!-- CTA -->
-            <div class="pro-cta">
+            <div class="tools-cta">
                 <h3>🔓 Unlock Your Full Optimization Report</h3>
                 <p>See ALL cheaper alternatives ranked by cost, get migration code snippets, and save your report for your team.</p>
-                <div class="pro-features">
+                <div class="tools-features">
                     <span>All alternatives ranked</span>
                     <span>Migration code</span>
                     <span>PDF export</span>
                     <span>10 saved scenarios</span>
                     <span>Price alerts</span>
                 </div>
-                <a id="pro-cta-btn" href="audit.html?from=cost-score" class="cta-btn" target="_blank" rel="noopener">
+                <a id="tools-cta-btn" href="audit.html?from=cost-score" class="cta-btn" target="_blank" rel="noopener">
                     All tools are free — <span id="pro-price">Free</span>
                 </a>
                 <p class="cta-sub">✅ 100% free · ✅ No signup required · ✅ Instant access</p>
@@ -798,7 +798,7 @@
         document.getElementById('linkedin-btn').href = linkedinUrl;
 
         // S1351: Free tools CTA — all tools are free
-        document.getElementById('pro-cta-btn').href = 'go.html?from=cost-score&savings=' + Math.round(effectiveCost - cheapest.cost) + '&alts=' + alternatives.length;
+        document.getElementById('tools-cta-btn').href = 'go.html?from=cost-score&savings=' + Math.round(effectiveCost - cheapest.cost) + '&alts=' + alternatives.length;
         document.getElementById('pro-price').textContent = 'Free';
 
         // Show results

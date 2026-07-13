@@ -125,13 +125,13 @@
         .migration-step .step-number{flex-shrink:0;width:36px;height:36px;background:var(--accent);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
         .migration-step h3{margin:0 0 8px;font-size:16px}
         .migration-step p{margin:0;font-size:14px;color:var(--text-secondary)}
-        .pro-upsell{display:flex;align-items:center;gap:16px;padding:20px;background:var(--bg-card);border:1px solid var(--accent);border-radius:var(--radius);margin:24px 0}
-        .pro-upsell .pro-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
-        .pro-upsell .pro-text{flex:1}
-        .pro-upsell .pro-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
-        .pro-upsell .pro-text p{font-size:14px;color:var(--text-secondary);margin:0}
-        .pro-upsell a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
-        .pro-upsell a:hover{text-decoration:underline}
+        .tools-cta{display:flex;align-items:center;gap:16px;padding:20px;background:var(--bg-card);border:1px solid var(--accent);border-radius:var(--radius);margin:24px 0}
+        .tools-cta .cta-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
+        .tools-cta .cta-text{flex:1}
+        .tools-cta .cta-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
+        .tools-cta .cta-text p{font-size:14px;color:var(--text-secondary);margin:0}
+        .tools-cta a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
+        .tools-cta a:hover{text-decoration:underline}
         .decision-tree{background:var(--bg-secondary);border:2px solid var(--border);border-radius:var(--radius);padding:28px;margin:24px 0}
         .decision-tree h3{margin-top:0;font-size:20px}
         .decision-node{padding:16px;margin-bottom:12px;border-radius:8px;border-left:4px solid var(--accent);background:var(--bg-card)}
@@ -161,7 +161,7 @@
         .email-form input:focus{outline:2px solid var(--accent);outline-offset:2px}
         .email-form button{padding:10px 20px;border-radius:8px;background:var(--accent);color:white;border:none;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
         .email-form button:hover{opacity:0.9}
-        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.pro-upsell{flex-direction:column;text-align:center}.migration-step{flex-direction:column}.playbook-step{padding-left:24px}.playbook-step .step-badge{position:static;margin-bottom:12px}}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.tools-cta{flex-direction:column;text-align:center}.migration-step{flex-direction:column}.playbook-step{padding-left:24px}.playbook-step .step-badge{position:static;margin-bottom:12px}}
     </style>
     <meta name="theme-color" content="#f59e0b">
 </head>
@@ -351,9 +351,9 @@ curl https://api.deepseek.com/v1/chat/completions \
             <p><strong>Pro tip:</strong> Run the new provider in parallel with your old code for a few hours. Route 10% of traffic to the new provider, 90% to the old (if it was still working). Gradually increase as confidence builds.</p>
         </div>
 
-        <div class="pro-upsell">
-            <div class="pro-badge">💡 APIpulse</div>
-            <div class="pro-text">
+        <div class="tools-cta">
+            <div class="cta-badge">💡 APIpulse</div>
+            <div class="cta-text">
                 <h3>Calculate your exact new costs</h3>
                 <p>See what you'll pay with Opus 4.8, DeepSeek, GPT-5, or Gemini — modeled against your actual usage. Free calculator.</p>
             </div>

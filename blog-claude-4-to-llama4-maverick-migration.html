@@ -131,13 +131,13 @@
         .email-form input:focus{outline:2px solid var(--accent);outline-offset:2px}
         .email-form button{padding:10px 20px;border-radius:8px;background:var(--accent);color:white;border:none;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
         .email-form button:hover{opacity:0.9}
-        .pro-upsell{max-width:780px;margin:0 auto 40px;padding:24px 32px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:var(--radius);display:flex;align-items:center;gap:20px}
-        .pro-upsell .pro-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
-        .pro-upsell .pro-text{flex:1}
-        .pro-upsell .pro-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
-        .pro-upsell .pro-text p{font-size:14px;color:var(--text-secondary);margin:0}
-        .pro-upsell a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
-        .pro-upsell a:hover{text-decoration:underline}
+        .tools-cta{max-width:780px;margin:0 auto 40px;padding:24px 32px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:var(--radius);display:flex;align-items:center;gap:20px}
+        .tools-cta .cta-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
+        .tools-cta .cta-text{flex:1}
+        .tools-cta .cta-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
+        .tools-cta .cta-text p{font-size:14px;color:var(--text-secondary);margin:0}
+        .tools-cta a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
+        .tools-cta a:hover{text-decoration:underline}
         .faq-item{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px}
         .faq-item h3{font-size:18px;font-weight:700;margin:0 0 12px;color:var(--text-primary)}
         .faq-item p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0}
@@ -147,7 +147,7 @@
         .savings-highlight{background:rgba(34,197,94,0.1);border:2px solid rgba(34,197,94,0.3);border-radius:var(--radius);padding:32px;text-align:center;margin:32px 0}
         .savings-highlight .big-number{font-size:64px;font-weight:800;color:var(--green)}
         .savings-highlight .label{font-size:16px;color:var(--text-secondary);margin-top:8px}
-        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.pro-upsell{flex-direction:column;text-align:center}}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.tools-cta{flex-direction:column;text-align:center}}
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -432,9 +432,9 @@ chat = ChatOpenAI(
             </tbody>
         </table>
 
-        <div class="pro-upsell">
-            <span class="pro-badge">💡 Tip</span>
-            <div class="pro-text">
+        <div class="tools-cta">
+            <span class="cta-badge">💡 Tip</span>
+            <div class="cta-text">
                 <h3>Optimize your migration with APIpulse</h3>
                 <p>Get personalized model recommendations, save migration scenarios, and export cost reports — so you always pick the cheapest model for each task.</p>
             </div>

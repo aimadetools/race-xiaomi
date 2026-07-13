@@ -236,7 +236,7 @@
             font-size: 13px;
         }
 
-        /* Pro upsell */
+        /* Tools CTA */
         .qs-pro {
             max-width: 700px;
             margin: 0 auto 48px;
@@ -251,7 +251,7 @@
         }
         .qs-pro-inner h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
         .qs-pro-inner p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px; max-width: 480px; margin-left: auto; margin-right: auto; }
-        .qs-pro-inner .pro-cta {
+        .qs-pro-inner .tools-cta {
             display: inline-block;
             background: var(--accent);
             color: white;
@@ -262,7 +262,7 @@
             text-decoration: none;
             transition: all 0.2s;
         }
-        .qs-pro-inner .pro-cta:hover { transform: translateY(-2px); }
+        .qs-pro-inner .tools-cta:hover { transform: translateY(-2px); }
 
 
         @media (max-width: 640px) {
@@ -349,7 +349,7 @@
             </div>
         </section>
 
-        <!-- Pro upsell -->
+        <!-- Tools CTA -->
         <section class="qs-pro">
             <div class="qs-pro-inner">
                 <h3>🚀 Need Help Choosing?</h3>
@@ -357,7 +357,7 @@
                     Our tools compare all 67 models against YOUR exact usage.
                     See which model saves you the most — with cost reports and optimization recommendations.
                 </p>
-                <a href="#" id="qs-pro-cta" class="pro-cta">Free Tools →</a>
+                <a href="#" id="qs-tools-cta" class="tools-cta">Free Tools →</a>
             </div>
         </section>
 
@@ -747,7 +747,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         // Update CTA links
         var stripeLink = 'audit.html?from=tool_page';
-        var proCta = document.getElementById('qs-pro-cta');
+        var proCta = document.getElementById('qs-tools-cta');
         if (proCta) proCta.href = stripeLink;
         var bottomCta = document.getElementById('qs-bottom-cta');
         if (bottomCta) bottomCta.href = stripeLink;

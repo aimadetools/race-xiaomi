@@ -431,7 +431,7 @@
                     <pre id="demo-result" style="margin-top:8px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-family:'SF Mono',Monaco,'Cascadia Code',monospace;font-size:12px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;color:var(--text-primary);"></pre>
                 </details>
                 <pre id="demo-result-fallback" style="display:none;margin-top:16px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;font-family:'SF Mono',Monaco,'Cascadia Code',monospace;font-size:12px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;color:var(--text-primary);"></pre>
-                <div id="demo-pro-upsell" style="display:none;margin-top:16px;padding:16px 20px;background:linear-gradient(135deg,rgba(var(--accent-rgb,99,102,241),0.08),rgba(var(--accent-rgb,99,102,241),0.03));border:1px solid rgba(var(--accent-rgb,99,102,241),0.2);border-radius:10px;">
+                <div id="demo-tools-cta" style="display:none;margin-top:16px;padding:16px 20px;background:linear-gradient(135deg,rgba(var(--accent-rgb,99,102,241),0.08),rgba(var(--accent-rgb,99,102,241),0.03));border:1px solid rgba(var(--accent-rgb,99,102,241),0.2);border-radius:10px;">
                     <p id="demo-upsell-title" style="font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Need migration code for these models?</p>
                     <p id="demo-upsell-body" style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">APIpulse includes ready-to-use migration templates, cost optimization reports, and provider guides for all 67 models.</p>
                     <a id="demo-upsell-cta" href="/audit.html" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:all 0.2s;" onclick="if(window.trackEvent)window.trackEvent('mcp_upsell_click',{tool:document.getElementById('demo-tool').value});">Free Tools →</a>
@@ -588,7 +588,7 @@
         document.getElementById('demo-visual-result').style.display = 'none';
         document.getElementById('demo-json-toggle').style.display = 'none';
         document.getElementById('demo-result-fallback').style.display = 'none';
-        document.getElementById('demo-pro-upsell').style.display = 'none';
+        document.getElementById('demo-tools-cta').style.display = 'none';
         document.getElementById('demo-savings-highlight').style.display = 'none';
 
         const startTime = Date.now();
@@ -799,7 +799,7 @@
 
     // ─── Personalized Upsell Engine ──────────────────────────────
     function showPersonalizedUpsell(tool, args, display) {
-        const upsell = document.getElementById('demo-pro-upsell');
+        const upsell = document.getElementById('demo-tools-cta');
         const title = document.getElementById('demo-upsell-title');
         const body = document.getElementById('demo-upsell-body');
         const cta = document.getElementById('demo-upsell-cta');

@@ -217,30 +217,30 @@
         .tip-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
         .tip-savings { font-size: 13px; color: var(--green); font-weight: 600; margin-top: 4px; }
 
-        /* Pro upsell */
-        .pro-upsell {
+        /* Tools CTA */
+        .tools-cta {
             background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));
             border: 2px solid var(--accent); border-radius: 16px;
             padding: 40px; text-align: center; margin-bottom: 32px;
         }
-        .pro-upsell h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
-        .pro-upsell p { color: var(--text-secondary); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .tools-cta h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .tools-cta p { color: var(--text-secondary); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
         .social-proof { display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
         .social-proof .proof-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); }
         .social-proof .proof-item strong { color: var(--text-primary); }
         .testimonial { font-style: italic; color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; padding: 16px 24px; background: var(--bg-card); border-radius: 10px; border-left: 3px solid var(--accent); max-width: 500px; margin-left: auto; margin-right: auto; }
         .testimonial cite { display: block; font-style: normal; font-size: 12px; color: var(--text-muted); margin-top: 8px; }
-        .pro-features-grid {
+        .tools-features-grid {
             display: grid; grid-template-columns: repeat(3, 1fr);
             gap: 16px; margin-bottom: 24px;
         }
-        .pro-feature {
+        .tools-feature {
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: 10px; padding: 16px; text-align: center;
         }
-        .pro-feature .pf-icon { font-size: 24px; margin-bottom: 8px; }
-        .pro-feature .pf-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
-        .pro-feature .pf-desc { font-size: 12px; color: var(--text-muted); }
+        .tools-feature .pf-icon { font-size: 24px; margin-bottom: 8px; }
+        .tools-feature .pf-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+        .tools-feature .pf-desc { font-size: 12px; color: var(--text-muted); }
 
         /* Full report */
         .report-gate {
@@ -268,7 +268,7 @@
             .comparison-row { grid-template-columns: 1fr; }
             .arrow-icon { transform: rotate(90deg); justify-self: center; }
             .savings-hero .amount { font-size: 48px; }
-            .pro-features-grid { grid-template-columns: 1fr; }
+            .tools-features-grid { grid-template-columns: 1fr; }
             .alt-table { font-size: 12px; }
             .alt-table th, .alt-table td { padding: 8px 10px; }
             .efficiency-score { padding: 12px; }
@@ -311,7 +311,7 @@
         }
 
         @media print {
-            nav, .cta-inline, .theme-toggle, .back-to-top, .pro-upsell { display: none !important; }
+            nav, .cta-inline, .theme-toggle, .back-to-top, .tools-cta { display: none !important; }
             body { background: white; color: black; }
             .content { padding: 0; max-width: 100%; }
         }
@@ -478,8 +478,8 @@
                 <div id="tips-container"></div>
             </div>
 
-            <!-- Pro Upsell -->
-            <div class="pro-upsell">
+            <!-- Tools CTA -->
+            <div class="tools-cta">
                 <h3>Unlock Your Full Optimization Report</h3>
                 <p>Get the complete breakdown: detailed cost projections, model routing strategy, batch vs streaming analysis, and exportable PDF report.</p>
                 <div class="social-proof">
@@ -492,17 +492,17 @@
                     <cite>— Developer, SaaS startup</cite>
                 </div>
                 <div class="pro-features-grid">
-                    <div class="pro-feature">
+                    <div class="tools-feature">
                         <div class="pf-icon">📊</div>
                         <div class="pf-title">Full Report</div>
                         <div class="pf-desc">Detailed cost breakdown by model, provider, and workload</div>
                     </div>
-                    <div class="pro-feature">
+                    <div class="tools-feature">
                         <div class="pf-icon">🔄</div>
                         <div class="pf-title">Model Routing</div>
                         <div class="pf-desc">Multi-model strategy to minimize costs across tasks</div>
                     </div>
-                    <div class="pro-feature">
+                    <div class="tools-feature">
                         <div class="pf-icon">📥</div>
                         <div class="pf-title">Export PDF</div>
                         <div class="pf-desc">Share with your team or include in budget proposals</div>

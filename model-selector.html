@@ -175,12 +175,12 @@
         .cost-table .total { font-weight: 700; color: var(--accent); }
 
         /* CTA */
-        .pro-cta { background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1)); border: 2px solid var(--accent); border-radius: 16px; padding: 40px; text-align: center; margin-top: 40px; }
-        .pro-cta h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
-        .pro-cta p { color: var(--text-secondary); margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .pro-features { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
-        .pro-feature { font-size: 14px; color: var(--text-secondary); }
-        .pro-feature::before { content: '✓ '; color: var(--green); font-weight: 700; }
+        .tools-cta { background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1)); border: 2px solid var(--accent); border-radius: 16px; padding: 40px; text-align: center; margin-top: 40px; }
+        .tools-cta h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .tools-cta p { color: var(--text-secondary); margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .tools-features { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
+        .tools-feature { font-size: 14px; color: var(--text-secondary); }
+        .tools-feature::before { content: '✓ '; color: var(--green); font-weight: 700; }
 
         /* Responsive */
         @media (max-width: 640px) {
@@ -188,7 +188,7 @@
             .budget-tier-cards { grid-template-columns: 1fr; }
             .priority-grid { grid-template-columns: 1fr; }
             .result-stats { grid-template-columns: repeat(2, 1fr); }
-            .pro-features { flex-direction: column; align-items: center; gap: 8px; }
+            .tools-features { flex-direction: column; align-items: center; gap: 8px; }
         }
     </style>
     <script>window._resultsCtaConfig={resultSelector:".results-container",toolName:"Model Selector",proFeatures:["All 15 alternatives ranked","Copy-paste migration code","PDF report export","Price change alerts"]};</script>
@@ -376,14 +376,14 @@
                         <tbody id="costTableBody"></tbody>
                     </table>
                 </div>
-                <div class="pro-cta">
+                <div class="tools-cta">
                     <h3>Want to save this comparison?</h3>
                     <p>You can save scenarios, export PDF reports, and get alerts when prices change.</p>
-                    <div class="pro-features">
-                        <span class="pro-feature">Save 10 scenarios</span>
-                        <span class="pro-feature">PDF export</span>
-                        <span class="pro-feature">Price alerts</span>
-                        <span class="pro-feature">Optimization tips</span>
+                    <div class="tools-features">
+                        <span class="tools-feature">Save 10 scenarios</span>
+                        <span class="tools-feature">PDF export</span>
+                        <span class="tools-feature">Price alerts</span>
+                        <span class="tools-feature">Optimization tips</span>
                     </div>
                     <a href="#" id="proCtaLink" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;border-radius:8px;font-weight:700;text-decoration:none">Free Tools →</a>
                 </div>

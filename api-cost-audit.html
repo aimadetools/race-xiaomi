@@ -142,15 +142,15 @@
         }
 
         /* Upsell */
-        .pro-upsell { background: linear-gradient(135deg, var(--bg-card), rgba(99,102,241,0.08)); border: 2px solid var(--accent); border-radius: 16px; padding: 28px; margin-top: 28px; text-align: center; }
-        .pro-upsell h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
-        .pro-upsell p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; }
-        .pro-features { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; text-align: left; }
-        .pro-features span { font-size: 13px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; }
-        .pro-features span::before { content: '✓'; color: var(--green); font-weight: 700; }
-        @media (max-width: 500px) { .pro-features { grid-template-columns: 1fr; } }
-        .pro-btn { display: inline-block; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 14px 36px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(34,197,94,0.35); }
-        .pro-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(34,197,94,0.45); }
+        .tools-cta { background: linear-gradient(135deg, var(--bg-card), rgba(99,102,241,0.08)); border: 2px solid var(--accent); border-radius: 16px; padding: 28px; margin-top: 28px; text-align: center; }
+        .tools-cta h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .tools-cta p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; }
+        .tools-features { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; text-align: left; }
+        .tools-features span { font-size: 13px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; }
+        .tools-features span::before { content: '✓'; color: var(--green); font-weight: 700; }
+        @media (max-width: 500px) { .tools-features { grid-template-columns: 1fr; } }
+        .tools-btn { display: inline-block; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 14px 36px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(34,197,94,0.35); }
+        .tools-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(34,197,94,0.45); }
 
         /* Social proof */
         .social-strip { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
@@ -228,16 +228,16 @@
                 <p id="auditShareConfirm" style="font-size:12px;color:var(--green);margin-top:8px;display:none;">✅ Copied to clipboard!</p>
             </div>
 
-            <div class="pro-upsell" id="proUpsell">
+            <div class="tools-cta" id="proUpsell">
                 <h3 id="proUpsellTitle">Want the full migration code?</h3>
                 <p id="proUpsellDesc">Get ready-to-paste migration snippets for every alternative, plus PDF reports, price alerts, and 67-model comparisons.</p>
-                <div class="pro-features">
+                <div class="tools-features">
                     <span>Migration code for every model</span>
                     <span>PDF savings reports</span>
                     <span>Real-time price alerts</span>
                     <span>67-model comparison tables</span>
                 </div>
-                <a href="audit.html?from=audit_upsell" class="pro-btn" id="proUpsellBtn" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{price:19,location:'audit_upsell'});">Free Tools →</a>
+                <a href="audit.html?from=audit_upsell" class="tools-btn" id="proUpsellBtn" onclick="if(window.trackEvent)window.trackEvent('free_tools_clicked',{price:19,location:'audit_upsell'});">Free Tools →</a>
                 <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">✨ No signup required · All tools free · Instant access</p>
                 <div class="social-strip">
                     <div class="stat"><div class="stat-num">49</div><div class="stat-label">Models</div></div>

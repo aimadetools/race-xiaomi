@@ -152,11 +152,11 @@
         .toc a{color:var(--accent);text-decoration:none}
         .toc a:hover{text-decoration:underline}
         /* Pro upsell in content */
-        .inline-pro-cta{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(168,85,247,0.1));border:1px solid var(--accent);border-radius:12px;padding:24px;margin:32px 0;text-align:center}
-        .inline-pro-cta h3{font-size:20px;font-weight:800;margin:0 0 8px}
-        .inline-pro-cta p{font-size:14px;color:var(--text-secondary);margin:0 0 16px}
-        .inline-pro-cta a{display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(99,102,241,0.3)}
-        .inline-pro-cta a:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(99,102,241,0.4)}
+        .inline-tools-cta{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(168,85,247,0.1));border:1px solid var(--accent);border-radius:12px;padding:24px;margin:32px 0;text-align:center}
+        .inline-tools-cta h3{font-size:20px;font-weight:800;margin:0 0 8px}
+        .inline-tools-cta p{font-size:14px;color:var(--text-secondary);margin:0 0 16px}
+        .inline-tools-cta a{display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(99,102,241,0.3)}
+        .inline-tools-cta a:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(99,102,241,0.4)}
         /* Related posts */
         .related-section{max-width:800px;margin:0 auto 48px;padding:0 24px}
         .related-section h2{font-size:20px;font-weight:700;margin-bottom:16px}
@@ -353,10 +353,10 @@ Content-Type: application/json
                 <p><strong>Key insight:</strong> Most developers save 67-97% by migrating. The cheapest option (DeepSeek V4 Flash) is 99% cheaper than Claude 4 Opus.</p>
 
                 <!-- Inline CTA #1 -->
-                <div class="inline-pro-cta">
+                <div class="inline-tools-cta">
                     <h3>📊 Want YOUR Exact Savings Calculated?</h3>
                     <p>Enter your current model and monthly spend — the free calculator shows the exact cost for YOUR workload across all 67 models in 60 seconds.</p>
-                    <a href="#" class="inline-pro-cta-link">See Free Migration Plan →</a>
+                    <a href="#" class="inline-tools-cta-link">See Free Migration Plan →</a>
                 </div>
 
                 <h2 id="code">4. Code Snippets for Every Provider</h2>
@@ -519,10 +519,10 @@ Content-Type: application/json
                 <p><strong>Recommendation:</strong> If quality is critical and you're already on Anthropic, <strong>Opus 4.8 is the safest choice</strong> — 97% quality parity, same API key, zero code changes beyond the model name.</p>
 
                 <!-- Inline CTA #2 -->
-                <div class="inline-pro-cta">
+                <div class="inline-tools-cta">
                     <h3>🎯 Not Sure Which Provider to Pick?</h3>
                     <p>Pro analyzes YOUR specific workload and recommends the exact model and provider for YOUR use case. Takes 60 seconds.</p>
-                    <a href="#" class="inline-pro-cta-link">See Free Migration Plan →</a>
+                    <a href="#" class="inline-tools-cta-link">See Free Migration Plan →</a>
                 </div>
 
                 <h2 id="decision">8. Decision Guide: Which Provider Should You Pick?</h2>
@@ -589,10 +589,10 @@ Content-Type: application/json
                 <p>Yes! Many developers use a tiered approach: Opus 4.8 for complex tasks, Sonnet 4.6 for standard tasks, and Haiku 4.5 or DeepSeek for simple tasks. This optimizes both cost and quality.</p>
 
                 <!-- Final CTA -->
-                <div class="inline-pro-cta" style="margin-top:48px;">
+                <div class="inline-tools-cta" style="margin-top:48px;">
                     <h3>🚀 Get Your Personalized Migration Plan</h3>
                     <p>Enter your current model and monthly spend — the free calculator shows the exact cost for YOUR workload across all 67 models in 60 seconds.</p>
-                    <a href="#" class="inline-pro-cta-link">See Free Migration Plan →</a>
+                    <a href="#" class="inline-tools-cta-link">See Free Migration Plan →</a>
                     <p style="font-size:12px;color:var(--text-muted);margin-top:12px;margin-bottom:0;">No signup required · Instant access · No subscription — ever</p>
                 </div>
 
@@ -690,7 +690,7 @@ Content-Type: application/json
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var ctaLinks = document.querySelectorAll('.inline-pro-cta-link');
+            var ctaLinks = document.querySelectorAll('.inline-tools-cta-link');
             var stripeLink = 'audit.html?from=tool_page';
             ctaLinks.forEach(function(link) {
                 link.href = stripeLink;

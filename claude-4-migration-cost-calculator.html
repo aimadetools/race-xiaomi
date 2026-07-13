@@ -245,8 +245,8 @@
             font-weight: 600;
         }
 
-        /* Pro upsell */
-        .pro-upsell {
+        /* Tools CTA */
+        .tools-cta {
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
             border: 1px solid var(--accent);
             border-radius: 12px;
@@ -254,17 +254,17 @@
             text-align: center;
             margin-top: 24px;
         }
-        .pro-upsell h3 {
+        .tools-cta h3 {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 8px;
         }
-        .pro-upsell p {
+        .tools-cta p {
             color: var(--text-secondary);
             font-size: 14px;
             margin-bottom: 16px;
         }
-        .pro-upsell .cta {
+        .tools-cta .cta {
             display: inline-block;
             background: var(--accent);
             color: white;
@@ -276,7 +276,7 @@
             transition: all 0.2s;
             box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
         }
-        .pro-upsell .cta:hover {
+        .tools-cta .cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 24px rgba(99, 102, 241, 0.4);
         }
@@ -442,11 +442,11 @@
                         </table>
                     </div>
 
-                    <!-- Pro upsell -->
-                    <div class="pro-upsell">
+                    <!-- Tools CTA -->
+                    <div class="tools-cta">
                         <h3>🚀 Get Your Personalized Migration Plan</h3>
                         <p>This calculator shows generic savings. See the <strong>exact model for YOUR specific workload</strong> — with saved scenarios, PDF reports, and weekly pricing updates.</p>
-                        <a href="#" class="cta" id="pro-cta">See Free Migration Plan →</a>
+                        <a href="#" class="cta" id="tools-cta">See Free Migration Plan →</a>
                         <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">No signup required · Instant access · 100% free</p>
                     </div>
                 </div>
@@ -630,8 +630,8 @@
             document.getElementById('results').style.display = 'block';
 
             // CTA
-            if (!document.getElementById('migration-pro-cta')) {
-                var ctaHtml = '<div id="migration-pro-cta" style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.05));border:2px solid rgba(220,38,38,0.3);border-radius:16px;padding:28px 24px;margin:24px 0;text-align:center;">' +
+            if (!document.getElementById('migration-tools-cta')) {
+                var ctaHtml = '<div id="migration-tools-cta" style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.05));border:2px solid rgba(220,38,38,0.3);border-radius:16px;padding:28px 24px;margin:24px 0;text-align:center;">' +
                     '<div style="font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🔓 Get migration code for your switch</div>' +
                     '<div style="font-size:15px;color:var(--text-secondary);margin-bottom:16px;">Get copy-paste code to migrate from Claude 4 to any alternative. Plus full savings reports for all 15 alternatives ranked by cost.</div>' +
                     '<a href="audit.html?from=claude4_migration_calc" target="_blank" rel="noopener" ' +
@@ -657,7 +657,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            var proCta = document.getElementById('pro-cta');
+            var proCta = document.getElementById('tools-cta');
             if (proCta) {
                 proCta.href = 'audit.html?from=tool_page';
                 proCta.textContent = 'Free Tools →';

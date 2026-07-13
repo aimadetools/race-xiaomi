@@ -154,13 +154,13 @@
         .email-form input:focus{outline:2px solid var(--accent);outline-offset:2px}
         .email-form button{padding:10px 20px;border-radius:8px;background:var(--accent);color:white;border:none;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
         .email-form button:hover{opacity:0.9}
-        .pro-upsell{max-width:780px;margin:0 auto 40px;padding:24px 32px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:var(--radius);display:flex;align-items:center;gap:20px}
-        .pro-upsell .pro-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
-        .pro-upsell .pro-text{flex:1}
-        .pro-upsell .pro-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
-        .pro-upsell .pro-text p{font-size:14px;color:var(--text-secondary);margin:0}
-        .pro-upsell a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
-        .pro-upsell a:hover{text-decoration:underline}
+        .tools-cta{max-width:780px;margin:0 auto 40px;padding:24px 32px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:var(--radius);display:flex;align-items:center;gap:20px}
+        .tools-cta .cta-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
+        .tools-cta .cta-text{flex:1}
+        .tools-cta .cta-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
+        .tools-cta .cta-text p{font-size:14px;color:var(--text-secondary);margin:0}
+        .tools-cta a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
+        .tools-cta a:hover{text-decoration:underline}
         .checklist{list-style:none;padding:0;margin-bottom:24px}
         .checklist li{padding:12px 16px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:15px;color:var(--text-secondary);display:flex;align-items:center;gap:12px}
         .checklist li .check{color:var(--green);font-size:18px;flex-shrink:0}
@@ -191,7 +191,7 @@
         .migration-guide-card .title{font-size:16px;font-weight:700;color:var(--text-primary);margin-bottom:4px}
         .migration-guide-card .savings{font-size:14px;color:var(--green);font-weight:600}
         .migration-guide-card .price{font-size:13px;color:var(--text-secondary);margin-top:4px}
-        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.pro-upsell{flex-direction:column;text-align:center}.migration-guide-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.tools-cta{flex-direction:column;text-align:center}.migration-guide-grid{grid-template-columns:1fr}}
     </style>
     <meta name="theme-color" content="#dc2626">
 </head>
@@ -349,9 +349,9 @@ console.log(response.content[0].text);
             <p>If the test succeeds, deploy. Your app is ready for the shutdown.</p>
         </div>
 
-        <div class="pro-upsell">
-            <div class="pro-badge">💡 APIpulse</div>
-            <div class="pro-text">
+        <div class="tools-cta">
+            <div class="cta-badge">💡 APIpulse</div>
+            <div class="cta-text">
                 <h3>Calculate your new costs in 30 seconds</h3>
                 <p>See exactly what you'll pay with Claude Opus 4.8, Sonnet 4.6, or any alternative. Free calculator — upgrade for alerts.</p>
             </div>
@@ -602,9 +602,9 @@ const response = await client.models.generateContent({
 });
 console.log(response.text);</code></pre>
 
-        <div class="pro-upsell">
-            <div class="pro-badge">🚀 APIpulse</div>
-            <div class="pro-text">
+        <div class="tools-cta">
+            <div class="cta-badge">🚀 APIpulse</div>
+            <div class="cta-text">
                 <h3>Don't just migrate — optimize</h3>
                 <p>Most devs pick the first replacement. You get personalized routing: cheap models for 80% of tasks, premium for 20%. <strong style="color:var(--green);">Save an extra 40%.</strong></p>
             </div>

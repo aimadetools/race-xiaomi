@@ -143,13 +143,13 @@
         .email-form input:focus{outline:2px solid var(--accent);outline-offset:2px}
         .email-form button{padding:10px 20px;border-radius:8px;background:var(--accent);color:white;border:none;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
         .email-form button:hover{opacity:0.9}
-        .pro-upsell{max-width:780px;margin:0 auto 40px;padding:24px 32px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:var(--radius);display:flex;align-items:center;gap:20px}
-        .pro-upsell .pro-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
-        .pro-upsell .pro-text{flex:1}
-        .pro-upsell .pro-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
-        .pro-upsell .pro-text p{font-size:14px;color:var(--text-secondary);margin:0}
-        .pro-upsell a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
-        .pro-upsell a:hover{text-decoration:underline}
+        .tools-cta{max-width:780px;margin:0 auto 40px;padding:24px 32px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:var(--radius);display:flex;align-items:center;gap:20px}
+        .tools-cta .cta-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
+        .tools-cta .cta-text{flex:1}
+        .tools-cta .cta-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
+        .tools-cta .cta-text p{font-size:14px;color:var(--text-secondary);margin:0}
+        .tools-cta a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
+        .tools-cta a:hover{text-decoration:underline}
         .checklist{list-style:none;padding:0;margin-bottom:24px}
         .checklist li{padding:12px 16px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:15px;color:var(--text-secondary);display:flex;align-items:center;gap:12px}
         .checklist li .check{color:var(--green);font-size:18px;flex-shrink:0}
@@ -159,7 +159,7 @@
         .faq-item{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px}
         .faq-item h3{font-size:18px;font-weight:700;margin:0 0 12px;color:var(--text-primary)}
         .faq-item p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0}
-        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.pro-upsell{flex-direction:column;text-align:center}}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.tools-cta{flex-direction:column;text-align:center}}
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -276,9 +276,9 @@ model: "claude-opus-4-8"</code></pre>
             </div>
         </div>
 
-        <div class="pro-upsell">
-            <div class="pro-badge">⚡ Free</div>
-            <div class="pro-text">
+        <div class="tools-cta">
+            <div class="cta-badge">⚡ Free</div>
+            <div class="cta-text">
                 <h3>Calculate Your Exact Savings</h3>
                 <p>Enter your monthly token usage and see exactly how much you'll save by migrating off Claude 4.</p>
             </div>
@@ -348,9 +348,9 @@ llm = Anthropic(model="claude-opus-4-8")  # was "claude-4-opus"</code></pre>
             </form>
         </div>
 
-        <div class="pro-upsell">
-            <div class="pro-badge">Pro</div>
-            <div class="pro-text">
+        <div class="tools-cta">
+            <div class="cta-badge">Pro</div>
+            <div class="cta-text">
                 <h3>Track All Model Deprecations Automatically</h3>
                 <p>APIpulse monitors 67 models across 10 providers and alerts you before any price change or deprecation.</p>
             </div>

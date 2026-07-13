@@ -219,14 +219,14 @@
         .str { color: #98c379; }
         .fn { color: #61afef; }
 
-        /* Pro upsell */
-        .pro-upsell {
+        /* Tools CTA */
+        .tools-cta {
             background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(99,102,241,0.04));
             border: 1px solid rgba(99,102,241,0.25); border-radius: 16px;
             padding: 36px; text-align: center; margin: 32px 0;
             position: relative; overflow: hidden;
         }
-        .pro-upsell::before {
+        .tools-cta::before {
             content: ''; position: absolute; top: -50%; left: -50%;
             width: 200%; height: 200%;
             background: radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%);
@@ -236,23 +236,23 @@
             0%, 100% { transform: scale(1); opacity: 0.5; }
             50% { transform: scale(1.1); opacity: 1; }
         }
-        .pro-upsell h3 { font-size: 22px; margin: 0 0 8px; position: relative; }
-        .pro-upsell p { color: var(--text-secondary); margin: 0 0 20px; font-size: 15px; position: relative; }
-        .pro-upsell .features {
+        .tools-cta h3 { font-size: 22px; margin: 0 0 8px; position: relative; }
+        .tools-cta p { color: var(--text-secondary); margin: 0 0 20px; font-size: 15px; position: relative; }
+        .tools-cta .features {
             display: flex; justify-content: center; gap: 24px; margin-bottom: 24px;
             flex-wrap: wrap; position: relative;
         }
-        .pro-upsell .feature {
+        .tools-cta .feature {
             display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-secondary);
         }
-        .pro-upsell .feature::before { content: '✓'; color: var(--green); font-weight: 700; }
-        .pro-upsell .cta-btn {
+        .tools-cta .feature::before { content: '✓'; color: var(--green); font-weight: 700; }
+        .tools-cta .cta-btn {
             display: inline-block; background: var(--accent); color: white;
             padding: 14px 36px; border-radius: 10px; font-weight: 700; font-size: 16px;
             text-decoration: none; transition: all 0.2s; position: relative;
         }
-        .pro-upsell .cta-btn:hover { opacity: 0.9; text-decoration: none; transform: translateY(-1px); }
-        .pro-upsell .price-note { font-size: 13px; color: var(--text-muted); margin-top: 12px; position: relative; }
+        .tools-cta .cta-btn:hover { opacity: 0.9; text-decoration: none; transform: translateY(-1px); }
+        .tools-cta .price-note { font-size: 13px; color: var(--text-muted); margin-top: 12px; position: relative; }
 
         /* Alert banner */
         .alert-banner {
@@ -316,7 +316,7 @@
             .related-links { grid-template-columns: 1fr; }
             .alt-table { font-size: 12px; }
             .alt-table th, .alt-table td { padding: 8px 10px; }
-            .pro-upsell .features { flex-direction: column; align-items: center; }
+            .tools-cta .features { flex-direction: column; align-items: center; }
         }
     </style>
     <meta name="theme-color" content="#6366f1">
@@ -481,7 +481,7 @@
         </div>
 
         <!-- PRO UPSELL -->
-        <div class="pro-upsell">
+        <div class="tools-cta">
             <h3>Save Your Migration Plan</h3>
             <p>Export your cost comparison as a PDF report to share with your team. Save multiple scenarios to compare providers over time.</p>
             <div class="features">
