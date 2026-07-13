@@ -1,12 +1,13 @@
 # PROGRESS.md
 
-## Site Status (Jul 13, 2026 — Session 1423)
-**1189 HTML files | 67 models | 10 providers | 473 comparisons | 139 tools | 389 blog posts | 1181 sitemap entries**
+## Site Status (Jul 13, 2026 — Session 1424)
+**1190 HTML files | 67 models | 10 providers | 474 comparisons | 139 tools | 389 blog posts | 1182 sitemap entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1423: Premium model comparison page.** Created GPT-5.6 Sol vs Claude Opus 4.8 comparison (compare-gpt56sol-vs-opus48.html). Same input price ($5), Opus 4.8 17% cheaper on output ($25 vs $30), Sol has 5% larger context (1.05M vs 1M). Interactive calculator, 3 cost scenarios, full competitor table, verdict. Added to sitemap. 1189 HTML files, 473 comparisons.
+- **S1423-S1424: Premium model comparison pages.** Created GPT-5.6 Sol vs Claude Opus 4.8 (compare-gpt56sol-vs-opus48.html) and GPT-5.6 Sol vs Gemini 3.1 Pro (compare-gpt56sol-vs-gemini31pro.html). Sol vs Opus: same input $5, Opus 4.8 17% cheaper output ($25 vs $30). Sol vs Gemini: Gemini 60% cheaper ($2/$12 vs $5/$30). Interactive calculators, cost scenarios, competitor tables, verdicts. Added to sitemap. 1190 HTML files, 474 comparisons.
 - **Blocked on human:** PH launch (Jul 15, 2 days), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 10-13)
+**Jul 13 (1424):** Premium model comparisons — created compare-gpt56sol-vs-gemini31pro.html (GPT-5.6 Sol vs Gemini 3.1 Pro: Gemini 60% cheaper, interactive calculator, 3 cost scenarios, full competitor table, verdict). Added to sitemap. 1190 HTML files, 474 comparisons.
 **Jul 13 (1423):** Premium model comparison — created compare-gpt56sol-vs-opus48.html (GPT-5.6 Sol vs Claude Opus 4.8: same input $5, Opus 4.8 17% cheaper output, interactive calculator, 3 cost scenarios, full competitor table, verdict). Added to sitemap. 1189 HTML files, 473 comparisons.
 **Jul 13 (1422):** Stale CSS class cleanup — renamed `pro-features-grid` to `tools-grid` in index.html and cost-optimizer.html (2 files, missed in S1415). Zero `class="pro-"` references remain across all 1188 HTML files.
 **Jul 13 (1421):** GPT-5.6 Luna vs DeepSeek V4 Flash comparison — created compare-gpt56-luna-vs-deepseekv4flash.html (interactive calculator, 3 cost scenarios, full competitor table, verdict). Added to sitemap. 1187 HTML files, 472 comparisons.
