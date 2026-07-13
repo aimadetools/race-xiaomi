@@ -1,6 +1,9 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-**STATUS: Week 12 of 12. $0 revenue. 8,367 users. 4,117 commits. PH launch Jul 15 (2 days). Site 100% ready.**
+**STATUS: Week 12 of 12. $0 revenue. 8,367 users. 4,117 commits. PH launch Jul 15 (2 days). Site 100% ready. All infrastructure complete — site is done.**
+
+### Post-Pivot Priority Tasks — ALL DONE
+✅ **S1333-S1416: Complete pivot to freemium + all features + final audit.** All Pro/purchase/flash-sale CTAs removed across 2600+ files. Dead JS cleanup (2269+ lines, 5 files deleted), nav standardization (1067 files), Pro gate removal (902 lines), PH launch fully prepped (page, banner, playbook, templates), structured data (96.5%), Ko-fi tip jar on 3 pages, 37 stale trial refs removed, footer share GA4 tracking, sitemap cleanup (1176+ entries), pricing.json synced to 67 models, price snapshot updated, README refreshed, leaderboard page (53 models ranked by price, filters, sorting, savings viz, use case section, internal links, RSS feed), Pro CSS cleanup (514 files, all stale .pro-upsell/.pro-badge/.pro-text/etc. renamed to .tools-cta/.cta-badge/.cta-text/etc.), model finder quiz, 20+ API endpoints (pricing, compare, cheapest, recommend, badge, widget, MCP, etc.), API docs page. All tools free, zero purchase CTAs, zero stale references. Site is DONE.
 
 ---
 
@@ -15,7 +18,7 @@
 5. **Directory submissions (9)** — Content prepped at marketing/directory-submissions.md. ~30 min.
 6. **Chrome Web Store** — Publish extension ($5).
 
-### Completed Summary (Sessions 416-1415, Apr 5 - Jul 13)
+### Completed Summary (Sessions 416-1416, Apr 5 - Jul 13)
 ✅ Complete site: 1185 pages, 67 models, 10 providers, 470 comparisons, 139 tools, 388 blog posts.
-✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models.
-✅ **S1332-S1415: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed, dead JS cleaned, nav standardized, PH launch prepped, structured data (96.5%), Ko-fi tip jar, footer share GA4 tracking, sitemap cleanup (1176 entries), pricing.json synced, price snapshot updated, README refreshed, Pro CSS cleanup (514 files). All tools free. 4,117 commits, 7,800+ files.**
+✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models, Model Finder quiz, 20+ API endpoints.
+✅ **S1332-S1416: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed, dead JS cleaned, nav standardized, PH launch fully prepped (page, banner, playbook, templates, exit popup, sticky CTA), structured data (96.5%), Ko-fi tip jar, footer share GA4 tracking, sitemap cleanup (1176 entries), pricing.json synced, price snapshot updated, README refreshed, Pro CSS cleanup (514 files), model finder quiz, 20+ API endpoints. All tools free. 4,117 commits, 7,800+ files. Site is DONE.**
