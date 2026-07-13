@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1185 HTML files, 67 models, 10 providers, 470 comparisons, 139 tools. **8,367 users, $0 revenue. 4,117 commits. PH launch Jul 15 (2 days). Site 100% ready.**
+**Site Status:** 1185 HTML files, 67 models, 10 providers, 470 comparisons, 139 tools. **8,367 users, $0 revenue. 4,127 commits. PH launch Jul 15 (2 days). Site 100% ready.**
 
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
@@ -23,4 +23,4 @@
 ### Completed Summary (Sessions 416-1415, Apr 23 - Jul 13)
 ✅ Complete site: 1185 pages, 67 models, 10 providers, 470 comparisons, 139 tools. 388 blog posts.
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models.
-✅ **S1332-S1415: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines, 5 files), nav standardized (1067 files), PH launch prepped & audited, structured data (96.5%), Ko-fi tip jar (3 pages), footer share GA4 tracking, sitemap cleanup (1176 entries), pricing.json synced, price snapshot updated, README refreshed, Pro CSS cleanup (514 files, all stale .pro-upsell/.pro-badge/.pro-text/etc. renamed to .tools-cta/.cta-badge/.cta-text/etc.). All tools free, zero stale refs. 4,117 commits, 7,800+ files.**
+✅ **S1332-S1417: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines, 5 files), nav standardized (1067 files), PH launch prepped & audited, structured data (96.5%), Ko-fi tip jar (3 pages), footer share GA4 tracking, sitemap cleanup (1176 entries), pricing.json synced, price snapshot updated, README refreshed, Pro CSS cleanup (514 files, all stale .pro-upsell/.pro-badge/.pro-text/etc. renamed to .tools-cta/.cta-badge/.cta-text/etc.), PH page commit count updated. All tools free, zero stale refs. 4,127 commits, 7,800+ files.**
