@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1202 HTML files, 67 models, 10 providers, 430 comparisons, 139 tools. **8,367 users, $0 revenue. 4,143 commits. PH launch Jul 15 (2 days). Site 100% ready.**
+**Site Status:** 1202 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,152 commits. PH launch Jul 15 (2 days). Site 100% ready.**
 
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
@@ -16,6 +16,6 @@
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
 
 ### Completed Summary (Sessions 416-1429, Apr 23 - Jul 13)
-✅ Complete site: 1200 pages, 67 models, 10 providers, 432 comparisons, 139 tools. 389 blog posts.
+✅ Complete site: 1202 pages, 67 models, 10 providers, 433 comparisons, 139 tools. 389 blog posts.
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models.
-✅ **S1332-S1429: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines, 5 files), nav standardized (1067 files), PH launch prepped & audited, structured data (96.5%), Ko-fi tip jar (3 pages), footer share GA4 tracking, sitemap (1196 entries), pricing.json synced, README refreshed, Pro CSS cleanup (514 files), GPT-5.6 content + calculator update, GPT-5.6 comparison pages (19 total: Terra vs Sonnet 5, Luna vs DeepSeek V4 Flash, Sol vs Opus 4.8, Sol vs Gemini 3.1 Pro, Sol vs Terra, Sol vs Sonnet 5, Luna vs Gemini 3.5 Flash, Sol vs GPT-5.4 Pro, Sol vs DeepSeek V4 Pro, Luna vs Mistral Small 4, Sol vs Claude Haiku 4.5, Sol vs GPT-5.5, Sol vs Sonnet 4.6, GPT-5.5 vs DeepSeek V4 Pro, GPT-5.5 Pro vs Opus 4.8, Sol vs Gemini 3.1 Pro, Sol vs DeepSeek V4 Flash, Sol vs Mistral Large 3), final CSS class cleanup (zero `class="pro-"` refs). All tools free, zero stale refs. 4,144 commits, 7,800+ files.**
+✅ **S1332-S1431: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines, 5 files), nav standardized (1067 files), PH launch prepped & audited, structured data (96.5%), Ko-fi tip jar (3 pages), footer share GA4 tracking, sitemap deduplicated (1194 entries), pricing.json synced, README refreshed, Pro CSS cleanup (514 files), GPT-5.6 content + 19 comparison pages, final CSS class cleanup (zero `class="pro-"` refs), comparison directory expanded (427 entries). All tools free, zero stale refs. 4,152 commits, 7,800+ files.**
