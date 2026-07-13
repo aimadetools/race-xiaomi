@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All 432 AI Model Comparisons — Browse by Provider | APIpulse</title>
+    <meta name="description" content="Browse all 432 AI model comparisons. Compare GPT-5, Claude 4, Gemini 3, DeepSeek, Mistral, Llama, and more. Find the cheapest model for your use case.">
+    <meta property="og:title" content="All 432 AI Model Comparisons — Browse by Provider">
+    <meta property="og:description" content="Compare pricing across every major AI model. GPT-5 vs Claude, Gemini vs DeepSeek, and 430+ more.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/compare-directory.html">
+    <link rel="canonical" href="https://getapipulse.com/compare-directory.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+      window.trackEvent = function(name, params) { if (typeof gtag === 'function') gtag('event', name, params); };
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <style>
+        .dir-hero {
+            max-width: 900px; margin: 0 auto; padding: 100px 24px 40px; text-align: center;
+        }
+        .dir-hero h1 {
+            font-size: clamp(28px, 4.5vw, 48px); font-weight: 800;
+            line-height: 1.15; margin-bottom: 16px;
+        }
+        .dir-hero h1 .accent { color: var(--accent); }
+        .dir-hero p {
+            font-size: 17px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px;
+        }
+        .dir-search {
+            max-width: 500px; margin: 0 auto 12px;
+        }
+        .dir-search input {
+            width: 100%; padding: 14px 20px; border-radius: 12px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 16px; font-family: inherit;
+        }
+        .dir-search input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .dir-count { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+
+        .dir-filters {
+            max-width: 900px; margin: 0 auto 32px; padding: 0 24px;
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+        }
+        .dir-filter-btn {
+            padding: 7px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-secondary); cursor: pointer; transition: all 0.15s;
+        }
+        .dir-filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .dir-filter-btn.active {
+            background: var(--accent); color: white; border-color: var(--accent);
+        }
+
+        .dir-section {
+            max-width: 900px; margin: 0 auto; padding: 0 24px 40px;
+        }
+        .dir-provider {
+            margin-bottom: 32px;
+        }
+        .dir-provider h2 {
+            font-size: 20px; font-weight: 700; margin-bottom: 12px;
+            padding-bottom: 8px; border-bottom: 2px solid var(--border);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .dir-provider h2 .badge {
+            font-size: 12px; font-weight: 600; color: var(--text-muted);
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 2px 8px; border-radius: 10px;
+        }
+        .dir-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px;
+        }
+        .dir-item {
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 14px; border-radius: 10px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            text-decoration: none; transition: all 0.15s;
+        }
+        .dir-item:hover {
+            border-color: var(--accent); transform: translateY(-1px);
+            box-shadow: 0 2px 12px rgba(99,102,241,0.1);
+        }
+        .dir-item .versus {
+            font-size: 11px; font-weight: 700; color: var(--accent);
+            background: var(--accent-glow); padding: 2px 6px; border-radius: 4px;
+            flex-shrink: 0;
+        }
+        .dir-item .names {
+            font-size: 14px; font-weight: 600; color: var(--text-primary);
+            line-height: 1.3;
+        }
+        .dir-item .names .vs-text { color: var(--text-muted); font-weight: 400; }
+
+        .dir-empty {
+            text-align: center; padding: 60px 24px; color: var(--text-muted);
+        }
+        .dir-empty p { font-size: 16px; margin-bottom: 8px; }
+
+        @media (max-width: 768px) {
+            .dir-hero { padding: 80px 20px 30px; }
+            .dir-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="index.html#free-tools" class="nav-cta">Free Tools →</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="dir-hero">
+            <h1>All <span class="accent">432</span> AI Model Comparisons</h1>
+            <p>Browse every comparison by provider, model, or search. Find the cheapest model for your exact use case.</p>
+            <div class="dir-search">
+                <input type="text" id="dir-search" placeholder="Search models... (e.g. GPT-5, Claude, cheapest, premium)" autocomplete="off">
+            </div>
+            <div class="dir-count" id="dir-count">Showing 432 comparisons</div>
+        </section>
+
+        <section class="dir-filters" id="dir-filters">
+            <button class="dir-filter-btn active" data-filter="all">All</button>
+            <button class="dir-filter-btn" data-filter="openai">OpenAI</button>
+            <button class="dir-filter-btn" data-filter="anthropic">Anthropic</button>
+            <button class="dir-filter-btn" data-filter="google">Google</button>
+            <button class="dir-filter-btn" data-filter="deepseek">DeepSeek</button>
+            <button class="dir-filter-btn" data-filter="mistral">Mistral</button>
+            <button class="dir-filter-btn" data-filter="meta">Meta</button>
+            <button class="dir-filter-btn" data-filter="xai">xAI</button>
+            <button class="dir-filter-btn" data-filter="cohere">Cohere</button>
+            <button class="dir-filter-btn" data-filter="moonshot">Moonshot</button>
+            <button class="dir-filter-btn" data-filter="ai21">AI21</button>
+        </section>
+
+        <section class="dir-section" id="dir-section">
+            <!-- Populated by JS -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="compare.html">Compare</a> · <a href="calculator.html">Calculator</a> · <a href="pricing-index.html">Pricing Index</a> · <a href="leaderboard.html">Leaderboard</a> · <a href="blog.html">Blog</a> · <a href="api-docs.html">API</a> · <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a></p>
+    </footer>
+
+    <script>
+    // All comparison pages, grouped by primary provider
+    const COMPARISONS = [
+        // === OpenAI vs Others ===
+        { slug: 'gpt5-vs-opus48', a: 'GPT-5', b: 'Claude Opus 4.8', p: 'openai' },
+        { slug: 'gpt5-vs-sonnet46', a: 'GPT-5', b: 'Claude Sonnet 4.6', p: 'openai' },
+        { slug: 'gpt5-vs-sonnet5', a: 'GPT-5', b: 'Claude Sonnet 5', p: 'openai' },
+        { slug: 'gpt5-vs-deepseek-v4pro', a: 'GPT-5', b: 'DeepSeek V4 Pro', p: 'openai' },
+        { slug: 'gpt5-vs-deepseek-v4flash', a: 'GPT-5', b: 'DeepSeek V4 Flash', p: 'openai' },
+        { slug: 'gpt5-vs-gemini31pro', a: 'GPT-5', b: 'Gemini 3.1 Pro', p: 'openai' },
+        { slug: 'gpt5-vs-gemini35flash', a: 'GPT-5', b: 'Gemini 3.5 Flash', p: 'openai' },
+        { slug: 'gpt5-vs-gemini25pro', a: 'GPT-5', b: 'Gemini 2.5 Pro', p: 'openai' },
+        { slug: 'gpt5-vs-gemini3flash', a: 'GPT-5', b: 'Gemini 3 Flash', p: 'openai' },
+        { slug: 'gpt5-vs-mistral-large3', a: 'GPT-5', b: 'Mistral Large 3', p: 'openai' },
+        { slug: 'gpt5-vs-mistral-small4', a: 'GPT-5', b: 'Mistral Small 4', p: 'openai' },
+        { slug: 'gpt5-vs-grok43', a: 'GPT-5', b: 'Grok 4.3', p: 'openai' },
+        { slug: 'gpt5-vs-kimi-k26', a: 'GPT-5', b: 'Kimi K2.6', p: 'openai' },
+        { slug: 'gpt5-vs-llama4-scout', a: 'GPT-5', b: 'Llama 4 Scout', p: 'openai' },
+        { slug: 'gpt5-vs-fable5', a: 'GPT-5', b: 'Fable 5', p: 'openai' },
+        { slug: 'gpt5-vs-deepseek-v32', a: 'GPT-5', b: 'DeepSeek V3.2', p: 'openai' },
+        { slug: 'gpt5-vs-gpt5mini', a: 'GPT-5', b: 'GPT-5 Mini', p: 'openai' },
+
+        { slug: 'gpt55-vs-opus48', a: 'GPT-5.5', b: 'Claude Opus 4.8', p: 'openai' },
+        { slug: 'gpt55-vs-sonnet46', a: 'GPT-5.5', b: 'Claude Sonnet 4.6', p: 'openai' },
+        { slug: 'gpt55-vs-sonnet5', a: 'GPT-5.5', b: 'Claude Sonnet 5', p: 'openai' },
+        { slug: 'gpt55-vs-deepseekv4pro', a: 'GPT-5.5', b: 'DeepSeek V4 Pro', p: 'openai' },
+        { slug: 'gpt55-vs-deepseek-v4flash', a: 'GPT-5.5', b: 'DeepSeek V4 Flash', p: 'openai' },
+        { slug: 'gpt55-vs-gemini31pro', a: 'GPT-5.5', b: 'Gemini 3.1 Pro', p: 'openai' },
+        { slug: 'gpt55-vs-gemini35flash', a: 'GPT-5.5', b: 'Gemini 3.5 Flash', p: 'openai' },
+        { slug: 'gpt55-vs-gpt55pro', a: 'GPT-5.5', b: 'GPT-5.5 Pro', p: 'openai' },
+        { slug: 'gpt55-vs-gpt54pro', a: 'GPT-5.5', b: 'GPT-5.4 Pro', p: 'openai' },
+        { slug: 'gpt55-vs-mistrallarge3', a: 'GPT-5.5', b: 'Mistral Large 3', p: 'openai' },
+        { slug: 'gpt55-vs-mistralsmall4', a: 'GPT-5.5', b: 'Mistral Small 4', p: 'openai' },
+        { slug: 'gpt55-vs-grok43', a: 'GPT-5.5', b: 'Grok 4.3', p: 'openai' },
+        { slug: 'gpt55-vs-kimi-k26', a: 'GPT-5.5', b: 'Kimi K2.6', p: 'openai' },
+        { slug: 'gpt55-vs-llama4maverick', a: 'GPT-5.5', b: 'Llama 4 Maverick', p: 'openai' },
+        { slug: 'gpt55-vs-llama4-scout', a: 'GPT-5.5', b: 'Llama 4 Scout', p: 'openai' },
+        { slug: 'gpt55-vs-haiku45', a: 'GPT-5.5', b: 'Claude Haiku 4.5', p: 'openai' },
+        { slug: 'gpt55-claude-opus47', a: 'GPT-5.5', b: 'Claude Opus 4.7', p: 'openai' },
+        { slug: 'gpt55-claude-opus48', a: 'GPT-5.5', b: 'Claude Opus 4.8', p: 'openai' },
+
+        { slug: 'gpt55pro-vs-opus48', a: 'GPT-5.5 Pro', b: 'Claude Opus 4.8', p: 'openai' },
+        { slug: 'gpt55pro-vs-sonnet46', a: 'GPT-5.5 Pro', b: 'Claude Sonnet 4.6', p: 'openai' },
+        { slug: 'gpt55pro-vs-deepseekv4pro', a: 'GPT-5.5 Pro', b: 'DeepSeek V4 Pro', p: 'openai' },
+        { slug: 'gpt55pro-vs-gemini31pro', a: 'GPT-5.5 Pro', b: 'Gemini 3.1 Pro', p: 'openai' },
+        { slug: 'gpt55pro-vs-gemini35flash', a: 'GPT-5.5 Pro', b: 'Gemini 3.5 Flash', p: 'openai' },
+        { slug: 'gpt55pro-vs-grok43', a: 'GPT-5.5 Pro', b: 'Grok 4.3', p: 'openai' },
+        { slug: 'gpt55pro-vs-llama4maverick', a: 'GPT-5.5 Pro', b: 'Llama 4 Maverick', p: 'openai' },
+        { slug: 'gpt55pro-vs-fable5', a: 'GPT-5.5 Pro', b: 'Fable 5', p: 'openai' },
+
+        { slug: 'gpt54pro-vs-opus48', a: 'GPT-5.4 Pro', b: 'Claude Opus 4.8', p: 'openai' },
+        { slug: 'gpt54pro-vs-sonnet46', a: 'GPT-5.4 Pro', b: 'Claude Sonnet 4.6', p: 'openai' },
+        { slug: 'gpt54pro-vs-sonnet5', a: 'GPT-5.4 Pro', b: 'Claude Sonnet 5', p: 'openai' },
+        { slug: 'gpt54pro-vs-deepseek-v4pro', a: 'GPT-5.4 Pro', b: 'DeepSeek V4 Pro', p: 'openai' },
+        { slug: 'gpt54pro-vs-gemini31pro', a: 'GPT-5.4 Pro', b: 'Gemini 3.1 Pro', p: 'openai' },
+        { slug: 'gpt54pro-vs-gemini35flash', a: 'GPT-5.4 Pro', b: 'Gemini 3.5 Flash', p: 'openai' },
+        { slug: 'gpt54pro-vs-mistralmedium35', a: 'GPT-5.4 Pro', b: 'Mistral Medium 3.5', p: 'openai' },
+
+        { slug: 'gpt54-vs-opus48', a: 'GPT-5.4', b: 'Claude Opus 4.8', p: 'openai' },
+        { slug: 'gpt54-vs-sonnet46', a: 'GPT-5.4', b: 'Claude Sonnet 4.6', p: 'openai' },
+        { slug: 'gpt54-vs-sonnet5', a: 'GPT-5.4', b: 'Claude Sonnet 5', p: 'openai' },
+        { slug: 'gpt54-vs-deepseekv4pro', a: 'GPT-5.4', b: 'DeepSeek V4 Pro', p: 'openai' },
+        { slug: 'gpt54-vs-gemini31pro', a: 'GPT-5.4', b: 'Gemini 3.1 Pro', p: 'openai' },
+        { slug: 'gpt54-vs-gpt55', a: 'GPT-5.4', b: 'GPT-5.5', p: 'openai' },
+
+        { slug: 'gpt54mini-vs-haiku45', a: 'GPT-5.4 Mini', b: 'Claude Haiku 4.5', p: 'openai' },
+        { slug: 'gpt54mini-vs-deepseekv4flash', a: 'GPT-5.4 Mini', b: 'DeepSeek V4 Flash', p: 'openai' },
+        { slug: 'gpt54mini-vs-mistralsmall4', a: 'GPT-5.4 Mini', b: 'Mistral Small 4', p: 'openai' },
+        { slug: 'gpt54mini-vs-gemini31flashlite', a: 'GPT-5.4 Mini', b: 'Gemini 3.1 Flash Lite', p: 'openai' },
+        { slug: 'gpt54mini-vs-gpt4omini', a: 'GPT-5.4 Mini', b: 'GPT-4o Mini', p: 'openai' },
+
+        { slug: 'gpt54nano-vs-deepseekv4flash', a: 'GPT-5.4 Nano', b: 'DeepSeek V4 Flash', p: 'openai' },
+        { slug: 'gpt54nano-vs-gemini25flashlite', a: 'GPT-5.4 Nano', b: 'Gemini 2.5 Flash Lite', p: 'openai' },
+        { slug: 'gpt54nano-vs-mistralsmall4', a: 'GPT-5.4 Nano', b: 'Mistral Small 4', p: 'openai' },
+        { slug: 'gpt54nano-vs-gptoss20b', a: 'GPT-5.4 Nano', b: 'GPT-OSS 20B', p: 'openai' },
+        { slug: 'gpt54nano-vs-llama318b', a: 'GPT-5.4 Nano', b: 'Llama 3.1 8B', p: 'openai' },
+
+        { slug: 'gpt5mini-vs-opus48', a: 'GPT-5 Mini', b: 'Claude Opus 4.8', p: 'openai' },
+        { slug: 'gpt5mini-vs-sonnet46', a: 'GPT-5 Mini', b: 'Claude Sonnet 4.6', p: 'openai' },
+        { slug: 'gpt5mini-vs-deepseekv4flash', a: 'GPT-5 Mini', b: 'DeepSeek V4 Flash', p: 'openai' },
+        { slug: 'gpt5mini-vs-deepseek-v4pro', a: 'GPT-5 Mini', b: 'DeepSeek V4 Pro', p: 'openai' },
+        { slug: 'gpt5mini-vs-gemini31pro', a: 'GPT-5 Mini', b: 'Gemini 3.1 Pro', p: 'openai' },
+        { slug: 'gpt5mini-vs-gemini35flash', a: 'GPT-5 Mini', b: 'Gemini 3.5 Flash', p: 'openai' },
+        { slug: 'gpt5mini-vs-gemini3flash', a: 'GPT-5 Mini', b: 'Gemini 3 Flash', p: 'openai' },
+        { slug: 'gpt5mini-vs-haiku45', a: 'GPT-5 Mini', b: 'Claude Haiku 4.5', p: 'openai' },
+        { slug: 'gpt5mini-vs-mistralsmall4', a: 'GPT-5 Mini', b: 'Mistral Small 4', p: 'openai' },
+        { slug: 'gpt5mini-vs-grok43', a: 'GPT-5 Mini', b: 'Grok 4.3', p: 'openai' },
+        { slug: 'gpt5mini-vs-llama4maverick', a: 'GPT-5 Mini', b: 'Llama 4 Maverick', p: 'openai' },
+        { slug: 'gpt5mini-vs-gpt4o', a: 'GPT-5 Mini', b: 'GPT-4o', p: 'openai' },
+        { slug: 'gpt5mini-vs-gpt55', a: 'GPT-5 Mini', b: 'GPT-5.5', p: 'openai' },
+        { slug: 'gpt5mini-vs-gpt55pro', a: 'GPT-5 Mini', b: 'GPT-5.5 Pro', p: 'openai' },
+
+        { slug: 'gpt4o-vs-sonnet46', a: 'GPT-4o', b: 'Claude Sonnet 4.6', p: 'openai' },
+        { slug: 'gpt4o-vs-deepseek-v4pro', a: 'GPT-4o', b: 'DeepSeek V4 Pro', p: 'openai' },
+        { slug: 'gpt4o-vs-gemini31pro', a: 'GPT-4o', b: 'Gemini 3.1 Pro', p: 'openai' },
+        { slug: 'gpt4o-vs-mistral-medium35', a: 'GPT-4o', b: 'Mistral Medium 3.5', p: 'openai' },
+
+        { slug: 'gpt53codex-vs-opus48', a: 'GPT-5.3 Codex', b: 'Claude Opus 4.8', p: 'openai' },
+        { slug: 'gpt53codex-vs-sonnet46', a: 'GPT-5.3 Codex', b: 'Claude Sonnet 4.6', p: 'openai' },
+        { slug: 'gpt53codex-vs-deepseek-v4pro', a: 'GPT-5.3 Codex', b: 'DeepSeek V4 Pro', p: 'openai' },
+
+        // GPT-5.6 Sol
+        { slug: 'gpt56sol-vs-opus48', a: 'GPT-5.6 Sol', b: 'Claude Opus 4.8', p: 'openai' },
+        { slug: 'gpt56sol-vs-sonnet46', a: 'GPT-5.6 Sol', b: 'Claude Sonnet 4.6', p: 'openai' },
+        { slug: 'gpt56sol-vs-sonnet5', a: 'GPT-5.6 Sol', b: 'Claude Sonnet 5', p: 'openai' },
+        { slug: 'gpt56sol-vs-deepseekv4pro', a: 'GPT-5.6 Sol', b: 'DeepSeek V4 Pro', p: 'openai' },
+        { slug: 'gpt56sol-vs-deepseekv4flash', a: 'GPT-5.6 Sol', b: 'DeepSeek V4 Flash', p: 'openai' },
+        { slug: 'gpt56sol-vs-gemini31pro', a: 'GPT-5.6 Sol', b: 'Gemini 3.1 Pro', p: 'openai' },
+        { slug: 'gpt56sol-vs-gpt54pro', a: 'GPT-5.6 Sol', b: 'GPT-5.4 Pro', p: 'openai' },
+        { slug: 'gpt56sol-vs-gpt55', a: 'GPT-5.6 Sol', b: 'GPT-5.5', p: 'openai' },
+        { slug: 'gpt56sol-vs-gpt56terra', a: 'GPT-5.6 Sol', b: 'GPT-5.6 Terra', p: 'openai' },
+        { slug: 'gpt56sol-vs-haiku45', a: 'GPT-5.6 Sol', b: 'Claude Haiku 4.5', p: 'openai' },
+        { slug: 'gpt56sol-vs-mistral-large3', a: 'GPT-5.6 Sol', b: 'Mistral Large 3', p: 'openai' },
+
+        { slug: 'gpt56-terra-vs-sonnet5', a: 'GPT-5.6 Terra', b: 'Claude Sonnet 5', p: 'openai' },
+
+        { slug: 'gpt56-luna-vs-deepseekv4flash', a: 'GPT-5.6 Luna', b: 'DeepSeek V4 Flash', p: 'openai' },
+        { slug: 'gpt56luna-vs-gemini35flash', a: 'GPT-5.6 Luna', b: 'Gemini 3.5 Flash', p: 'openai' },
+        { slug: 'gpt56luna-vs-mistralsmall4', a: 'GPT-5.6 Luna', b: 'Mistral Small 4', p: 'openai' },
+
+        // GPT-OSS
+        { slug: 'gptoss120b-vs-deepseekv4flash', a: 'GPT-OSS 120B', b: 'DeepSeek V4 Flash', p: 'openai' },
+        { slug: 'gptoss120b-vs-gemini25flashlite', a: 'GPT-OSS 120B', b: 'Gemini 2.5 Flash Lite', p: 'openai' },
+        { slug: 'gptoss120b-vs-mistralsmall4', a: 'GPT-OSS 120B', b: 'Mistral Small 4', p: 'openai' },
+        { slug: 'gptoss120b-vs-llama318b', a: 'GPT-OSS 120B', b: 'Llama 3.1 8B', p: 'openai' },
+        { slug: 'gptoss120b-vs-gptoss20b', a: 'GPT-OSS 120B', b: 'GPT-OSS 20B', p: 'openai' },
+        { slug: 'gpt-oss120b-vs-llama4maverick', a: 'GPT-OSS 120B', b: 'Llama 4 Maverick', p: 'openai' },
+        { slug: 'gpt-oss-120b-vs-llama4-scout', a: 'GPT-OSS 120B', b: 'Llama 4 Scout', p: 'openai' },
+        { slug: 'gptoss20b-vs-deepseekv4flash', a: 'GPT-OSS 20B', b: 'DeepSeek V4 Flash', p: 'openai' },
+        { slug: 'gptoss20b-vs-gemini25flashlite', a: 'GPT-OSS 20B', b: 'Gemini 2.5 Flash Lite', p: 'openai' },
+        { slug: 'gptoss20b-vs-gemini31flashlite', a: 'GPT-OSS 20B', b: 'Gemini 3.1 Flash Lite', p: 'openai' },
+        { slug: 'gptoss20b-vs-gpt4omini', a: 'GPT-OSS 20B', b: 'GPT-4o Mini', p: 'openai' },
+        { slug: 'gptoss20b-vs-llama318b', a: 'GPT-OSS 20B', b: 'Llama 3.1 8B', p: 'openai' },
+        { slug: 'gptoss20b-vs-mistralsmall4', a: 'GPT-OSS 20B', b: 'Mistral Small 4', p: 'openai' },
+
+        // === Anthropic vs Others ===
+        { slug: 'opus48-vs-deepseek-v4pro', a: 'Claude Opus 4.8', b: 'DeepSeek V4 Pro', p: 'anthropic' },
+        { slug: 'opus48-vs-deepseek-v4flash', a: 'Claude Opus 4.8', b: 'DeepSeek V4 Flash', p: 'anthropic' },
+        { slug: 'opus48-vs-gemini31pro', a: 'Claude Opus 4.8', b: 'Gemini 3.1 Pro', p: 'anthropic' },
+        { slug: 'opus48-vs-gemini35flash', a: 'Claude Opus 4.8', b: 'Gemini 3.5 Flash', p: 'anthropic' },
+        { slug: 'opus48-vs-gemini25pro', a: 'Claude Opus 4.8', b: 'Gemini 2.5 Pro', p: 'anthropic' },
+        { slug: 'opus48-vs-gemini3flash', a: 'Claude Opus 4.8', b: 'Gemini 3 Flash', p: 'anthropic' },
+        { slug: 'opus48-vs-gpt5', a: 'Claude Opus 4.8', b: 'GPT-5', p: 'anthropic' },
+        { slug: 'opus48-vs-gpt55', a: 'Claude Opus 4.8', b: 'GPT-5.5', p: 'anthropic' },
+        { slug: 'opus48-vs-gpt55pro', a: 'Claude Opus 4.8', b: 'GPT-5.5 Pro', p: 'anthropic' },
+        { slug: 'opus48-vs-grok43', a: 'Claude Opus 4.8', b: 'Grok 4.3', p: 'anthropic' },
+        { slug: 'opus48-vs-kimik26', a: 'Claude Opus 4.8', b: 'Kimi K2.6', p: 'anthropic' },
+        { slug: 'opus48-vs-llama4-maverick', a: 'Claude Opus 4.8', b: 'Llama 4 Maverick', p: 'anthropic' },
+        { slug: 'opus48-vs-mistral-large3', a: 'Claude Opus 4.8', b: 'Mistral Large 3', p: 'anthropic' },
+        { slug: 'opus48-vs-mistralsmall4', a: 'Claude Opus 4.8', b: 'Mistral Small 4', p: 'anthropic' },
+        { slug: 'opus48-vs-sonnet46', a: 'Claude Opus 4.8', b: 'Claude Sonnet 4.6', p: 'anthropic' },
+        { slug: 'opus48-vs-sonnet5', a: 'Claude Opus 4.8', b: 'Claude Sonnet 5', p: 'anthropic' },
+
+        { slug: 'sonnet46-vs-deepseek-v4pro', a: 'Claude Sonnet 4.6', b: 'DeepSeek V4 Pro', p: 'anthropic' },
+        { slug: 'sonnet46-vs-deepseek-v4flash', a: 'Claude Sonnet 4.6', b: 'DeepSeek V4 Flash', p: 'anthropic' },
+        { slug: 'sonnet46-vs-gemini31pro', a: 'Claude Sonnet 4.6', b: 'Gemini 3.1 Pro', p: 'anthropic' },
+        { slug: 'sonnet46-vs-gemini35flash', a: 'Claude Sonnet 4.6', b: 'Gemini 3.5 Flash', p: 'anthropic' },
+        { slug: 'sonnet46-vs-gemini25pro', a: 'Claude Sonnet 4.6', b: 'Gemini 2.5 Pro', p: 'anthropic' },
+        { slug: 'sonnet46-vs-gemini3flash', a: 'Claude Sonnet 4.6', b: 'Gemini 3 Flash', p: 'anthropic' },
+        { slug: 'sonnet46-vs-gpt5', a: 'Claude Sonnet 4.6', b: 'GPT-5', p: 'anthropic' },
+        { slug: 'sonnet46-vs-gpt55', a: 'Claude Sonnet 4.6', b: 'GPT-5.5', p: 'anthropic' },
+        { slug: 'sonnet46-vs-gpt5mini', a: 'Claude Sonnet 4.6', b: 'GPT-5 Mini', p: 'anthropic' },
+        { slug: 'sonnet46-vs-grok43', a: 'Claude Sonnet 4.6', b: 'Grok 4.3', p: 'anthropic' },
+        { slug: 'sonnet46-vs-haiku45', a: 'Claude Sonnet 4.6', b: 'Claude Haiku 4.5', p: 'anthropic' },
+        { slug: 'sonnet46-vs-kimi-k26', a: 'Claude Sonnet 4.6', b: 'Kimi K2.6', p: 'anthropic' },
+        { slug: 'sonnet46-vs-llama4-scout', a: 'Claude Sonnet 4.6', b: 'Llama 4 Scout', p: 'anthropic' },
+        { slug: 'sonnet46-vs-mistral-large3', a: 'Claude Sonnet 4.6', b: 'Mistral Large 3', p: 'anthropic' },
+        { slug: 'sonnet46-vs-mistralsmall4', a: 'Claude Sonnet 4.6', b: 'Mistral Small 4', p: 'anthropic' },
+
+        { slug: 'sonnet5-vs-opus48', a: 'Claude Sonnet 5', b: 'Claude Opus 4.8', p: 'anthropic' },
+        { slug: 'sonnet5-vs-sonnet46', a: 'Claude Sonnet 5', b: 'Claude Sonnet 4.6', p: 'anthropic' },
+        { slug: 'sonnet5-vs-deepseekv4pro', a: 'Claude Sonnet 5', b: 'DeepSeek V4 Pro', p: 'anthropic' },
+        { slug: 'sonnet5-vs-deepseekv4flash', a: 'Claude Sonnet 5', b: 'DeepSeek V4 Flash', p: 'anthropic' },
+        { slug: 'sonnet5-vs-gemini31pro', a: 'Claude Sonnet 5', b: 'Gemini 3.1 Pro', p: 'anthropic' },
+        { slug: 'sonnet5-vs-gemini35flash', a: 'Claude Sonnet 5', b: 'Gemini 3.5 Flash', p: 'anthropic' },
+        { slug: 'sonnet5-vs-gemini3flash', a: 'Claude Sonnet 5', b: 'Gemini 3 Flash', p: 'anthropic' },
+        { slug: 'sonnet5-vs-gpt5', a: 'Claude Sonnet 5', b: 'GPT-5', p: 'anthropic' },
+        { slug: 'sonnet5-vs-gpt54', a: 'Claude Sonnet 5', b: 'GPT-5.4', p: 'anthropic' },
+        { slug: 'sonnet5-vs-gpt54pro', a: 'Claude Sonnet 5', b: 'GPT-5.4 Pro', p: 'anthropic' },
+        { slug: 'sonnet5-vs-gpt55', a: 'Claude Sonnet 5', b: 'GPT-5.5', p: 'anthropic' },
+        { slug: 'sonnet5-vs-gpt55pro', a: 'Claude Sonnet 5', b: 'GPT-5.5 Pro', p: 'anthropic' },
+        { slug: 'sonnet5-vs-gpt5mini', a: 'Claude Sonnet 5', b: 'GPT-5 Mini', p: 'anthropic' },
+        { slug: 'sonnet5-vs-grok43', a: 'Claude Sonnet 5', b: 'Grok 4.3', p: 'anthropic' },
+        { slug: 'sonnet5-vs-haiku45', a: 'Claude Sonnet 5', b: 'Claude Haiku 4.5', p: 'anthropic' },
+        { slug: 'sonnet5-vs-kimik26', a: 'Claude Sonnet 5', b: 'Kimi K2.6', p: 'anthropic' },
+        { slug: 'sonnet5-vs-llama4maverick', a: 'Claude Sonnet 5', b: 'Llama 4 Maverick', p: 'anthropic' },
+        { slug: 'sonnet5-vs-llama4scout', a: 'Claude Sonnet 5', b: 'Llama 4 Scout', p: 'anthropic' },
+        { slug: 'sonnet5-vs-mistrallarge3', a: 'Claude Sonnet 5', b: 'Mistral Large 3', p: 'anthropic' },
+        { slug: 'sonnet5-vs-mistralmedium35', a: 'Claude Sonnet 5', b: 'Mistral Medium 3.5', p: 'anthropic' },
+        { slug: 'sonnet5-vs-mythos5', a: 'Claude Sonnet 5', b: 'Mythos 5', p: 'anthropic' },
+
+        { slug: 'haiku45-vs-deepseek-v4pro', a: 'Claude Haiku 4.5', b: 'DeepSeek V4 Pro', p: 'anthropic' },
+        { slug: 'haiku45-vs-deepseek-v4flash', a: 'Claude Haiku 4.5', b: 'DeepSeek V4 Flash', p: 'anthropic' },
+        { slug: 'haiku45-vs-gemini31pro', a: 'Claude Haiku 4.5', b: 'Gemini 3.1 Pro', p: 'anthropic' },
+        { slug: 'haiku45-vs-gemini35flash', a: 'Claude Haiku 4.5', b: 'Gemini 3.5 Flash', p: 'anthropic' },
+        { slug: 'haiku45-vs-gpt5mini', a: 'Claude Haiku 4.5', b: 'GPT-5 Mini', p: 'anthropic' },
+        { slug: 'haiku45-vs-mistral-large3', a: 'Claude Haiku 4.5', b: 'Mistral Large 3', p: 'anthropic' },
+        { slug: 'haiku45-vs-mistralsmall4', a: 'Claude Haiku 4.5', b: 'Mistral Small 4', p: 'anthropic' },
+        { slug: 'haiku45-vs-llama4-scout', a: 'Claude Haiku 4.5', b: 'Llama 4 Scout', p: 'anthropic' },
+
+        // === Google vs Others ===
+        { slug: 'gemini31pro-vs-opus48', a: 'Gemini 3.1 Pro', b: 'Claude Opus 4.8', p: 'google' },
+        { slug: 'gemini31pro-vs-sonnet5', a: 'Gemini 3.1 Pro', b: 'Claude Sonnet 5', p: 'google' },
+        { slug: 'gemini31pro-vs-deepseekv4pro', a: 'Gemini 3.1 Pro', b: 'DeepSeek V4 Pro', p: 'google' },
+        { slug: 'gemini31pro-vs-gpt5', a: 'Gemini 3.1 Pro', b: 'GPT-5', p: 'google' },
+        { slug: 'gemini31pro-vs-grok43', a: 'Gemini 3.1 Pro', b: 'Grok 4.3', p: 'google' },
+        { slug: 'gemini31pro-vs-kimi-k26', a: 'Gemini 3.1 Pro', b: 'Kimi K2.6', p: 'google' },
+        { slug: 'gemini31pro-vs-llama4maverick', a: 'Gemini 3.1 Pro', b: 'Llama 4 Maverick', p: 'google' },
+        { slug: 'gemini31pro-vs-mistrallarge3', a: 'Gemini 3.1 Pro', b: 'Mistral Large 3', p: 'google' },
+        { slug: 'gemini31pro-vs-mistralsmall4', a: 'Gemini 3.1 Pro', b: 'Mistral Small 4', p: 'google' },
+
+        { slug: 'gemini35flash-vs-opus48', a: 'Gemini 3.5 Flash', b: 'Claude Opus 4.8', p: 'google' },
+        { slug: 'gemini35flash-vs-deepseek-v4pro', a: 'Gemini 3.5 Flash', b: 'DeepSeek V4 Pro', p: 'google' },
+        { slug: 'gemini35flash-vs-deepseek-v4flash', a: 'Gemini 3.5 Flash', b: 'DeepSeek V4 Flash', p: 'google' },
+        { slug: 'gemini35flash-vs-gpt5', a: 'Gemini 3.5 Flash', b: 'GPT-5', p: 'google' },
+        { slug: 'gemini35flash-vs-gpt55', a: 'Gemini 3.5 Flash', b: 'GPT-5.5', p: 'google' },
+        { slug: 'gemini35flash-vs-gpt5mini', a: 'Gemini 3.5 Flash', b: 'GPT-5 Mini', p: 'google' },
+        { slug: 'gemini35flash-vs-grok43', a: 'Gemini 3.5 Flash', b: 'Grok 4.3', p: 'google' },
+        { slug: 'gemini35flash-vs-haiku45', a: 'Gemini 3.5 Flash', b: 'Claude Haiku 4.5', p: 'google' },
+        { slug: 'gemini35flash-vs-kimi-k26', a: 'Gemini 3.5 Flash', b: 'Kimi K2.6', p: 'google' },
+        { slug: 'gemini35flash-vs-llama4-scout', a: 'Gemini 3.5 Flash', b: 'Llama 4 Scout', p: 'google' },
+        { slug: 'gemini35flash-vs-mistral-large3', a: 'Gemini 3.5 Flash', b: 'Mistral Large 3', p: 'google' },
+        { slug: 'gemini35flash-vs-mistral-medium35', a: 'Gemini 3.5 Flash', b: 'Mistral Medium 3.5', p: 'google' },
+        { slug: 'gemini35flash-vs-mistralsmall4', a: 'Gemini 3.5 Flash', b: 'Mistral Small 4', p: 'google' },
+        { slug: 'gemini35flash-vs-jamba17', a: 'Gemini 3.5 Flash', b: 'Jamba 1.7', p: 'google' },
+
+        { slug: 'gemini3flash-vs-deepseekv4flash', a: 'Gemini 3 Flash', b: 'DeepSeek V4 Flash', p: 'google' },
+        { slug: 'gemini3flash-vs-deepseek-v4pro', a: 'Gemini 3 Flash', b: 'DeepSeek V4 Pro', p: 'google' },
+        { slug: 'gemini3flash-vs-gemini31flashlite', a: 'Gemini 3 Flash', b: 'Gemini 3.1 Flash Lite', p: 'google' },
+        { slug: 'gemini3flash-vs-gemini35flash', a: 'Gemini 3 Flash', b: 'Gemini 3.5 Flash', p: 'google' },
+        { slug: 'gemini3flash-vs-gpt4omini', a: 'Gemini 3 Flash', b: 'GPT-4o Mini', p: 'google' },
+        { slug: 'gemini3flash-vs-haiku45', a: 'Gemini 3 Flash', b: 'Claude Haiku 4.5', p: 'google' },
+        { slug: 'gemini3flash-vs-mistralsmall4', a: 'Gemini 3 Flash', b: 'Mistral Small 4', p: 'google' },
+
+        { slug: 'gemini25pro-vs-sonnet46', a: 'Gemini 2.5 Pro', b: 'Claude Sonnet 4.6', p: 'google' },
+        { slug: 'gemini25pro-vs-sonnet5', a: 'Gemini 2.5 Pro', b: 'Claude Sonnet 5', p: 'google' },
+
+        { slug: 'gemini25flashlite-vs-deepseekv4flash', a: 'Gemini 2.5 Flash Lite', b: 'DeepSeek V4 Flash', p: 'google' },
+        { slug: 'gemini25flashlite-vs-gemini31flashlite', a: 'Gemini 2.5 Flash Lite', b: 'Gemini 3.1 Flash Lite', p: 'google' },
+        { slug: 'gemini25flashlite-vs-gptoss20b', a: 'Gemini 2.5 Flash Lite', b: 'GPT-OSS 20B', p: 'google' },
+        { slug: 'gemini25flashlite-vs-llama318b', a: 'Gemini 2.5 Flash Lite', b: 'Llama 3.1 8B', p: 'google' },
+        { slug: 'gemini25flashlite-vs-mistralsmall4', a: 'Gemini 2.5 Flash Lite', b: 'Mistral Small 4', p: 'google' },
+
+        { slug: 'gemini31flashlite-vs-deepseekv4flash', a: 'Gemini 3.1 Flash Lite', b: 'DeepSeek V4 Flash', p: 'google' },
+
+        // === DeepSeek vs Others ===
+        { slug: 'deepseek-v4pro-vs-opus48', a: 'DeepSeek V4 Pro', b: 'Claude Opus 4.8', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-sonnet46', a: 'DeepSeek V4 Pro', b: 'Claude Sonnet 4.6', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-sonnet5', a: 'DeepSeek V4 Pro', b: 'Claude Sonnet 5', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-gemini31pro', a: 'DeepSeek V4 Pro', b: 'Gemini 3.1 Pro', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-gemini25pro', a: 'DeepSeek V4 Pro', b: 'Gemini 2.5 Pro', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-gpt5', a: 'DeepSeek V4 Pro', b: 'GPT-5', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-gpt54pro', a: 'DeepSeek V4 Pro', b: 'GPT-5.4 Pro', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-gpt55', a: 'DeepSeek V4 Pro', b: 'GPT-5.5', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-gpt55pro', a: 'DeepSeek V4 Pro', b: 'GPT-5.5 Pro', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-grok43', a: 'DeepSeek V4 Pro', b: 'Grok 4.3', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-llama4maverick', a: 'DeepSeek V4 Pro', b: 'Llama 4 Maverick', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-mistral-large3', a: 'DeepSeek V4 Pro', b: 'Mistral Large 3', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-mistralsmall4', a: 'DeepSeek V4 Pro', b: 'Mistral Small 4', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-commanda', a: 'DeepSeek V4 Pro', b: 'Command A', p: 'deepseek' },
+        { slug: 'deepseek-v4pro-vs-gemini3flash', a: 'DeepSeek V4 Pro', b: 'Gemini 3 Flash', p: 'deepseek' },
+
+        { slug: 'deepseek-v4flash-vs-mistralsmall4', a: 'DeepSeek V4 Flash', b: 'Mistral Small 4', p: 'deepseek' },
+        { slug: 'deepseek-v4flash-vs-gemini35flash', a: 'DeepSeek V4 Flash', b: 'Gemini 3.5 Flash', p: 'deepseek' },
+
+        { slug: 'deepseekv32-vs-deepseekv4flash', a: 'DeepSeek V3.2', b: 'DeepSeek V4 Flash', p: 'deepseek' },
+        { slug: 'deepseekv32-vs-deepseekv4pro', a: 'DeepSeek V3.2', b: 'DeepSeek V4 Pro', p: 'deepseek' },
+        { slug: 'deepseekv32-vs-gemini25flashlite', a: 'DeepSeek V3.2', b: 'Gemini 2.5 Flash Lite', p: 'deepseek' },
+        { slug: 'deepseekv32-vs-mistralsmall4', a: 'DeepSeek V3.2', b: 'Mistral Small 4', p: 'deepseek' },
+
+        // === Mistral vs Others ===
+        { slug: 'mistral-large3-vs-opus48', a: 'Mistral Large 3', b: 'Claude Opus 4.8', p: 'mistral' },
+        { slug: 'mistrallarge3-vs-sonnet46', a: 'Mistral Large 3', b: 'Claude Sonnet 4.6', p: 'mistral' },
+        { slug: 'mistrallarge3-vs-deepseekv4flash', a: 'Mistral Large 3', b: 'DeepSeek V4 Flash', p: 'mistral' },
+        { slug: 'mistral-large3-vs-deepseek-v4pro', a: 'Mistral Large 3', b: 'DeepSeek V4 Pro', p: 'mistral' },
+        { slug: 'mistrallarge3-vs-gemini35flash', a: 'Mistral Large 3', b: 'Gemini 3.5 Flash', p: 'mistral' },
+        { slug: 'mistrallarge3-vs-gpt4o', a: 'Mistral Large 3', b: 'GPT-4o', p: 'mistral' },
+        { slug: 'mistrallarge3-vs-mistralmedium35', a: 'Mistral Large 3', b: 'Mistral Medium 3.5', p: 'mistral' },
+
+        { slug: 'mistral-medium35-vs-sonnet46', a: 'Mistral Medium 3.5', b: 'Claude Sonnet 4.6', p: 'mistral' },
+        { slug: 'mistral-medium35-vs-gemini31pro', a: 'Mistral Medium 3.5', b: 'Gemini 3.1 Pro', p: 'mistral' },
+        { slug: 'mistral-medium35-vs-gemini35flash', a: 'Mistral Medium 3.5', b: 'Gemini 3.5 Flash', p: 'mistral' },
+        { slug: 'mistralmedium35-vs-gpt4o', a: 'Mistral Medium 3.5', b: 'GPT-4o', p: 'mistral' },
+        { slug: 'mistral-medium35-vs-grok43', a: 'Mistral Medium 3.5', b: 'Grok 4.3', p: 'mistral' },
+        { slug: 'mistral-medium35-vs-kimi-k26', a: 'Mistral Medium 3.5', b: 'Kimi K2.6', p: 'mistral' },
+        { slug: 'mistralmedium35-vs-mistrallarge3', a: 'Mistral Medium 3.5', b: 'Mistral Large 3', p: 'mistral' },
+
+        { slug: 'mistralsmall4-vs-gemini31flashlite', a: 'Mistral Small 4', b: 'Gemini 3.1 Flash Lite', p: 'mistral' },
+
+        // === xAI vs Others ===
+        { slug: 'grok43-vs-deepseek-v4flash', a: 'Grok 4.3', b: 'DeepSeek V4 Flash', p: 'xai' },
+        { slug: 'grok43-vs-gemini31pro', a: 'Grok 4.3', b: 'Gemini 3.1 Pro', p: 'xai' },
+        { slug: 'grok43-vs-gemini3flash', a: 'Grok 4.3', b: 'Gemini 3 Flash', p: 'xai' },
+        { slug: 'grok43-vs-gpt5', a: 'Grok 4.3', b: 'GPT-5', p: 'xai' },
+        { slug: 'grok43-vs-kimi-k26', a: 'Grok 4.3', b: 'Kimi K2.6', p: 'xai' },
+        { slug: 'grok43-vs-llama4scout', a: 'Grok 4.3', b: 'Llama 4 Scout', p: 'xai' },
+        { slug: 'grok43-vs-sonnet46', a: 'Grok 4.3', b: 'Claude Sonnet 4.6', p: 'xai' },
+        { slug: 'grok-build01-vs-gpt5mini', a: 'Grok Build 0.1', b: 'GPT-5 Mini', p: 'xai' },
+
+        // === Cohere vs Others ===
+        { slug: 'commandrplus-vs-sonnet46', a: 'Command R+', b: 'Claude Sonnet 4.6', p: 'cohere' },
+        { slug: 'commandrplus-vs-deepseekv4pro', a: 'Command R+', b: 'DeepSeek V4 Pro', p: 'cohere' },
+        { slug: 'commandrplus-vs-gemini31pro', a: 'Command R+', b: 'Gemini 3.1 Pro', p: 'cohere' },
+        { slug: 'commandrplus-vs-gpt4o', a: 'Command R+', b: 'GPT-4o', p: 'cohere' },
+        { slug: 'commandrplus-vs-commanda', a: 'Command R+', b: 'Command A', p: 'cohere' },
+        { slug: 'commanda-vs-gpt5', a: 'Command A', b: 'GPT-5', p: 'cohere' },
+        { slug: 'commanda-vs-mistralmedium35', a: 'Command A', b: 'Mistral Medium 3.5', p: 'cohere' },
+        { slug: 'commanda-vs-sonnet5', a: 'Command A', b: 'Claude Sonnet 5', p: 'cohere' },
+        { slug: 'commandr-vs-commanda', a: 'Command R', b: 'Command A', p: 'cohere' },
+        { slug: 'commandr-vs-deepseekv4flash', a: 'Command R', b: 'DeepSeek V4 Flash', p: 'cohere' },
+        { slug: 'commandr-vs-gemini25flashlite', a: 'Command R', b: 'Gemini 2.5 Flash Lite', p: 'cohere' },
+        { slug: 'commandr-vs-gpt4omini', a: 'Command R', b: 'GPT-4o Mini', p: 'cohere' },
+        { slug: 'commandr-vs-mistrallarge3', a: 'Command R', b: 'Mistral Large 3', p: 'cohere' },
+
+        // === Moonshot vs Others ===
+        { slug: 'kimi-k26-vs-sonnet46', a: 'Kimi K2.6', b: 'Claude Sonnet 4.6', p: 'moonshot' },
+        { slug: 'kimi-k26-vs-deepseek-v4pro', a: 'Kimi K2.6', b: 'DeepSeek V4 Pro', p: 'moonshot' },
+        { slug: 'kimi-k26-vs-gemini35flash', a: 'Kimi K2.6', b: 'Gemini 3.5 Flash', p: 'moonshot' },
+        { slug: 'kimi-k26-vs-gpt5', a: 'Kimi K2.6', b: 'GPT-5', p: 'moonshot' },
+        { slug: 'kimi-k26-vs-mistral-large3', a: 'Kimi K2.6', b: 'Mistral Large 3', p: 'moonshot' },
+        { slug: 'kimik26-vs-deepseekv4flash', a: 'Kimi K2.6', b: 'DeepSeek V4 Flash', p: 'moonshot' },
+        { slug: 'kimik26-vs-gemini25flashlite', a: 'Kimi K2.6', b: 'Gemini 2.5 Flash Lite', p: 'moonshot' },
+        { slug: 'kimik26-vs-gpt4omini', a: 'Kimi K2.6', b: 'GPT-4o Mini', p: 'moonshot' },
+        { slug: 'kimik26-vs-mistralsmall4', a: 'Kimi K2.6', b: 'Mistral Small 4', p: 'moonshot' },
+
+        // === Meta vs Others ===
+        { slug: 'llama4-maverick-vs-deepseek-v4pro', a: 'Llama 4 Maverick', b: 'DeepSeek V4 Pro', p: 'meta' },
+        { slug: 'llama4-maverick-vs-gpt5', a: 'Llama 4 Maverick', b: 'GPT-5', p: 'meta' },
+        { slug: 'llama4-maverick-vs-kimi-k26', a: 'Llama 4 Maverick', b: 'Kimi K2.6', p: 'meta' },
+        { slug: 'llama4-maverick-vs-mistral-large3', a: 'Llama 4 Maverick', b: 'Mistral Large 3', p: 'meta' },
+        { slug: 'llama4maverick-vs-mistralsmall4', a: 'Llama 4 Maverick', b: 'Mistral Small 4', p: 'meta' },
+        { slug: 'llama4-scout-vs-deepseek-v4flash', a: 'Llama 4 Scout', b: 'DeepSeek V4 Flash', p: 'meta' },
+        { slug: 'llama4-scout-vs-mistralsmall4', a: 'Llama 4 Scout', b: 'Mistral Small 4', p: 'meta' },
+        { slug: 'llama3170b-vs-deepseekv4flash', a: 'Llama 3.1 70B', b: 'DeepSeek V4 Flash', p: 'meta' },
+        { slug: 'llama3170b-vs-gpt4omini', a: 'Llama 3.1 70B', b: 'GPT-4o Mini', p: 'meta' },
+        { slug: 'llama3170b-vs-llama4maverick', a: 'Llama 3.1 70B', b: 'Llama 4 Maverick', p: 'meta' },
+        { slug: 'llama3170b-vs-llama4scout', a: 'Llama 3.1 70B', b: 'Llama 4 Scout', p: 'meta' },
+        { slug: 'llama3170b-vs-mistrallarge3', a: 'Llama 3.1 70B', b: 'Mistral Large 3', p: 'meta' },
+        { slug: 'llama318b-vs-deepseekv4flash', a: 'Llama 3.1 8B', b: 'DeepSeek V4 Flash', p: 'meta' },
+        { slug: 'llama318b-vs-gemini25flashlite', a: 'Llama 3.1 8B', b: 'Gemini 2.5 Flash Lite', p: 'meta' },
+        { slug: 'llama318b-vs-gptoss20b', a: 'Llama 3.1 8B', b: 'GPT-OSS 20B', p: 'meta' },
+        { slug: 'llama318b-vs-llama4scout', a: 'Llama 3.1 8B', b: 'Llama 4 Scout', p: 'meta' },
+        { slug: 'llama318b-vs-mistralsmall4', a: 'Llama 3.1 8B', b: 'Mistral Small 4', p: 'meta' },
+
+        // === AI21 vs Others ===
+        { slug: 'jamba17-vs-deepseekv4pro', a: 'Jamba 1.7', b: 'DeepSeek V4 Pro', p: 'ai21' },
+        { slug: 'jamba17-vs-gemini31pro', a: 'Jamba 1.7', b: 'Gemini 3.1 Pro', p: 'ai21' },
+        { slug: 'jamba17-vs-gpt4o', a: 'Jamba 1.7', b: 'GPT-4o', p: 'ai21' },
+        { slug: 'jamba17-vs-mistralmedium35', a: 'Jamba 1.7', b: 'Mistral Medium 3.5', p: 'ai21' },
+        { slug: 'jamba17-vs-sonnet46', a: 'Jamba 1.7', b: 'Claude Sonnet 4.6', p: 'ai21' },
+
+        // === Special / Cross-provider ===
+        { slug: 'codex53-vs-sonnet46', a: 'Codex 5.3', b: 'Claude Sonnet 4.6', p: 'openai' },
+        { slug: 'mythos5-vs-opus48', a: 'Mythos 5', b: 'Claude Opus 4.8', p: 'other' },
+        { slug: 'mythos5-vs-sonnet46', a: 'Mythos 5', b: 'Claude Sonnet 4.6', p: 'other' },
+        { slug: 'mythos5-vs-sonnet5', a: 'Mythos 5', b: 'Claude Sonnet 5', p: 'other' },
+        { slug: 'mythos5-vs-gpt5', a: 'Mythos 5', b: 'GPT-5', p: 'other' },
+        { slug: 'mythos5-vs-gpt55', a: 'Mythos 5', b: 'GPT-5.5', p: 'other' },
+        { slug: 'mythos5-vs-gpt55pro', a: 'Mythos 5', b: 'GPT-5.5 Pro', p: 'other' },
+        { slug: 'mythos5-vs-deepseek-v4pro', a: 'Mythos 5', b: 'DeepSeek V4 Pro', p: 'other' },
+        { slug: 'mythos5-vs-gemini31pro', a: 'Mythos 5', b: 'Gemini 3.1 Pro', p: 'other' },
+        { slug: 'mythos5-vs-fable5', a: 'Mythos 5', b: 'Fable 5', p: 'other' },
+        { slug: 'fable5-vs-opus48', a: 'Fable 5', b: 'Claude Opus 4.8', p: 'other' },
+        { slug: 'fable5-vs-sonnet46', a: 'Fable 5', b: 'Claude Sonnet 4.6', p: 'other' },
+        { slug: 'fable5-vs-sonnet5', a: 'Fable 5', b: 'Claude Sonnet 5', p: 'other' },
+        { slug: 'fable5-vs-deepseek-v4pro', a: 'Fable 5', b: 'DeepSeek V4 Pro', p: 'other' },
+        { slug: 'fable5-vs-gemini31pro', a: 'Fable 5', b: 'Gemini 3.1 Pro', p: 'other' },
+        { slug: 'fable5-vs-gpt55', a: 'Fable 5', b: 'GPT-5.5', p: 'other' },
+        { slug: 'fable5-vs-llama4scout', a: 'Fable 5', b: 'Llama 4 Scout', p: 'other' },
+
+        // Provider-level comparisons
+        { slug: 'openai-vs-anthropic', a: 'OpenAI', b: 'Anthropic', p: 'openai' },
+        { slug: 'openai-vs-google', a: 'OpenAI', b: 'Google', p: 'openai' },
+        { slug: 'openai-vs-deepseek', a: 'OpenAI', b: 'DeepSeek', p: 'openai' },
+        { slug: 'openai-vs-mistral', a: 'OpenAI', b: 'Mistral', p: 'openai' },
+        { slug: 'anthropic-vs-google', a: 'Anthropic', b: 'Google', p: 'anthropic' },
+        { slug: 'anthropic-vs-deepseek', a: 'Anthropic', b: 'DeepSeek', p: 'anthropic' },
+        { slug: 'gemini-vs-chatgpt', a: 'Gemini', b: 'ChatGPT', p: 'google' },
+        { slug: 'gemini-vs-claude', a: 'Gemini', b: 'Claude', p: 'google' },
+        { slug: 'gemini-vs-deepseek', a: 'Gemini', b: 'DeepSeek', p: 'google' },
+        { slug: 'claude-vs-chatgpt', a: 'Claude', b: 'ChatGPT', p: 'anthropic' },
+        { slug: 'claude-vs-deepseek', a: 'Claude', b: 'DeepSeek', p: 'anthropic' },
+        { slug: 'chatgpt-vs-deepseek', a: 'ChatGPT', b: 'DeepSeek', p: 'openai' },
+        { slug: 'mistral-vs-anthropic', a: 'Mistral', b: 'Anthropic', p: 'mistral' },
+        { slug: 'mistral-vs-deepseek', a: 'Mistral', b: 'DeepSeek', p: 'mistral' },
+        { slug: 'mistral-vs-google', a: 'Mistral', b: 'Google', p: 'mistral' },
+        { slug: 'xai-vs-google', a: 'xAI', b: 'Google', p: 'xai' },
+        { slug: 'xai-vs-mistral', a: 'xAI', b: 'Mistral', p: 'xai' },
+        { slug: 'xai-vs-openai', a: 'xAI', b: 'OpenAI', p: 'xai' },
+
+        // Special topic comparisons
+        { slug: 'gpt5-vs-claude-vs-gemini', a: 'GPT-5', b: 'Claude vs Gemini', p: 'openai' },
+        { slug: 'gpt-oss-vs-llama4', a: 'GPT-OSS', b: 'Llama 4', p: 'openai' },
+        { slug: 'gpt-oss-vs-llama4-scout', a: 'GPT-OSS', b: 'Llama 4 Scout', p: 'openai' },
+        { slug: 'premium-ai-models', a: 'Premium', b: 'AI Models', p: 'other' },
+        { slug: 'open-source-vs-commercial-llm', a: 'Open Source', b: 'vs Commercial', p: 'other' },
+        { slug: 'opus47-vs-gpt55', a: 'Claude Opus 4.7', b: 'GPT-5.5', p: 'anthropic' },
+    ];
+
+    const PROVIDER_NAMES = {
+        openai: 'OpenAI', anthropic: 'Anthropic', google: 'Google',
+        deepseek: 'DeepSeek', mistral: 'Mistral', meta: 'Meta',
+        xai: 'xAI', cohere: 'Cohere', moonshot: 'Moonshot',
+        ai21: 'AI21', other: 'Other'
+    };
+
+    function renderDirectory(filter, search) {
+        const section = document.getElementById('dir-section');
+        const countEl = document.getElementById('dir-count');
+        let items = COMPARISONS;
+
+        if (filter && filter !== 'all') {
+            items = items.filter(c => c.p === filter);
+        }
+        if (search) {
+            const q = search.toLowerCase();
+            items = items.filter(c =>
+                c.a.toLowerCase().includes(q) ||
+                c.b.toLowerCase().includes(q) ||
+                c.slug.toLowerCase().includes(q)
+            );
+        }
+
+        // Group by provider
+        const groups = {};
+        items.forEach(c => {
+            if (!groups[c.p]) groups[c.p] = [];
+            groups[c.p].push(c);
+        });
+
+        const order = ['openai', 'anthropic', 'google', 'deepseek', 'mistral', 'xai', 'cohere', 'moonshot', 'meta', 'ai21', 'other'];
+        let html = '';
+        let total = 0;
+
+        order.forEach(p => {
+            if (!groups[p]) return;
+            const comps = groups[p];
+            total += comps.length;
+            html += '<div class="dir-provider"><h2>' + PROVIDER_NAMES[p] + ' <span class="badge">' + comps.length + '</span></h2><div class="dir-grid">';
+            comps.forEach(c => {
+                html += '<a href="compare-' + c.slug + '.html" class="dir-item">' +
+                    '<span class="versus">VS</span>' +
+                    '<span class="names">' + c.a + ' <span class="vs-text">vs</span> ' + c.b + '</span></a>';
+            });
+            html += '</div></div>';
+        });
+
+        if (total === 0) {
+            html = '<div class="dir-empty"><p>No comparisons found.</p><p>Try a different search term.</p></div>';
+        }
+
+        section.innerHTML = html;
+        countEl.textContent = 'Showing ' + total + ' of ' + COMPARISONS.length + ' comparisons';
+
+        if (window.trackEvent) {
+            window.trackEvent('directory_search', { query: search || '', filter: filter || 'all', results: total });
+        }
+    }
+
+    // Init
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    document.querySelectorAll('.dir-filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.dir-filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFilter = this.dataset.filter;
+            renderDirectory(currentFilter, currentSearch);
+        });
+    });
+
+    document.getElementById('dir-search').addEventListener('input', function() {
+        currentSearch = this.value;
+        renderDirectory(currentFilter, currentSearch);
+    });
+
+    renderDirectory('all', '');
+    </script>
+</body>
+</html>
