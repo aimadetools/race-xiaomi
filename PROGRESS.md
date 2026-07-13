@@ -1,12 +1,13 @@
 # PROGRESS.md
 
-## Site Status (Jul 13, 2026 — Session 1418)
-**1184 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts | 1177 sitemap entries**
+## Site Status (Jul 13, 2026 — Session 1419)
+**1185 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 389 blog posts | 1178 sitemap entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1418: Pre-PH count audit.** Verified all counts (HTML 1184, sitemap 1177, blogs 388). Fixed stale counts in README (1183→1184, 1176→1177) and PROGRESS.md. Full site sweep confirms zero actionable tasks — all blocked on human. Site 100% ready for Jul 15 PH launch.
+- **S1419: GPT-5.6 content + calculator update.** Created blog-gpt56-pricing-guide.html (Sol/Terra/Luna pricing, competitor comparisons, cost scenarios). Added GPT-5.6 Sol/Terra/Luna to calculator dropdowns (index.html, calculator.html). Updated RSS feed, sitemap, blog index, openai.html provider page, "What's New" section. Site 1185 HTML files, 389 blog posts.
 - **Blocked on human:** PH launch (Jul 15, 2 days), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 10-13)
+**Jul 13 (1419):** GPT-5.6 content + calculator update — created blog-gpt56-pricing-guide.html (Sol/Terra/Luna pricing breakdown, 3 cost scenarios, competitor comparison table, 5 cost reduction tips). Added GPT-5.6 models to calculator dropdowns (index.html, calculator.html). Updated RSS feed, sitemap, blog index, openai.html, "What's New" section. 1185 HTML files, 389 blog posts.
 **Jul 13 (1418):** Pre-PH count audit — verified all counts (HTML 1184, sitemap 1177, blogs 388). Fixed stale counts in README and PROGRESS.md. Full site sweep confirms zero actionable tasks, all blocked on human. Site 100% ready for Jul 15 PH launch.
 **Jul 13 (1417):** Pre-PH final polish — fixed stale commit count on ph.html footer (4,115→4,126+). Full site sweep confirms zero actionable tasks, all blocked on human. Site ready for Jul 15 PH launch.
 **Jul 13 (1416):** Final pre-PH audit — verified all launch infrastructure exists and is complete: model-finder.html (interactive quiz), PH page (full marketing page with testimonials, FAQ, structured data, exit popup, sticky CTA, live calculator), PH banner (auto-shows Jul 15-17), PH playbook + comment templates, 20+ API endpoints, API docs. Confirmed site is genuinely done — no new features needed. Updated context files.

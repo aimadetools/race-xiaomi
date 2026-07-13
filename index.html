@@ -549,13 +549,13 @@
                 <a href="/weekly-digest.html" style="font-size:13px;font-weight:600;color:var(--accent);">Full digest →</a>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
-                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+                <a href="blog-gpt56-pricing-guide.html" style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-decoration:none;display:block;">
                     <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
                         <span style="background:rgba(34,197,94,0.15);color:var(--green);padding:2px 8px;border-radius:8px;font-size:11px;font-weight:700;">NEW</span>
-                        <span style="font-size:13px;font-weight:600;">GPT-5.4 mini</span>
+                        <span style="font-size:13px;font-weight:600;color:var(--text-primary);">GPT-5.6 Sol/Terra/Luna</span>
                     </div>
-                    <p style="font-size:13px;color:var(--text-secondary);margin:0;">$0.75/$4.50 per 1M tokens — latest OpenAI budget model</p>
-                </div>
+                    <p style="font-size:13px;color:var(--text-secondary);margin:0;">$1-$5 input, 1.05M context — <span style="color:var(--accent);font-weight:600;">full pricing guide →</span></p>
+                </a>
                 <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
                     <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
                         <span style="background:rgba(239,68,68,0.15);color:var(--red);padding:2px 8px;border-radius:8px;font-size:11px;font-weight:700;">ALERT</span>
@@ -604,6 +604,9 @@
                     <div class="input-group">
                         <label for="provider">Provider</label>
                         <select id="provider" onchange="calculate()" aria-label="Select API provider">
+                            <option value="openai-gpt56-sol">OpenAI — GPT-5.6 Sol</option>
+                            <option value="openai-gpt56-terra">OpenAI — GPT-5.6 Terra</option>
+                            <option value="openai-gpt56-luna">OpenAI — GPT-5.6 Luna</option>
                             <option value="openai-gpt55">OpenAI — GPT-5.5</option>
                             <option value="openai-gpt55-pro">OpenAI — GPT-5.5 Pro</option>
                             <option value="openai-gpt53-codex">OpenAI — GPT-5.3 Codex</option>
