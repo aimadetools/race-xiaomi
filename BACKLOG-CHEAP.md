@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1187 HTML files, 67 models, 10 providers, 472 comparisons, 139 tools. **8,367 users, $0 revenue. 4,132 commits. PH launch Jul 15 (2 days). Site 100% ready.**
+**Site Status:** 1188 HTML files, 67 models, 10 providers, 472 comparisons, 139 tools. **8,367 users, $0 revenue. 4,133 commits. PH launch Jul 15 (2 days). Site 100% ready.**
 
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
@@ -20,7 +20,7 @@
 - **Monitor ph_share_clicked events** — Track viral loop effectiveness from the new share button.
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
 
-### Completed Summary (Sessions 416-1421, Apr 23 - Jul 13)
-✅ Complete site: 1187 pages, 67 models, 10 providers, 472 comparisons, 139 tools. 389 blog posts.
+### Completed Summary (Sessions 416-1422, Apr 23 - Jul 13)
+✅ Complete site: 1188 pages, 67 models, 10 providers, 472 comparisons, 139 tools. 389 blog posts.
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models.
-✅ **S1332-S1421: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines, 5 files), nav standardized (1067 files), PH launch prepped & audited, structured data (96.5%), Ko-fi tip jar (3 pages), footer share GA4 tracking, sitemap cleanup (1180 entries), pricing.json synced, price snapshot updated, README refreshed, Pro CSS cleanup (514 files, all stale .pro-upsell/.pro-badge/.pro-text/etc. renamed to .tools-cta/.cta-badge/.cta-text/etc.), PH page commit count updated, count audit (1184 HTML, 1177 sitemap), GPT-5.6 content + calculator update (blog post, RSS, sitemap, blog index, openai.html, calculator dropdowns), GPT-5.6 comparison pages (Terra vs Sonnet 5, Luna vs DeepSeek V4 Flash). All tools free, zero stale refs. 4,132 commits, 7,800+ files.**
+✅ **S1332-S1422: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines, 5 files), nav standardized (1067 files), PH launch prepped & audited, structured data (96.5%), Ko-fi tip jar (3 pages), footer share GA4 tracking, sitemap cleanup (1180 entries), pricing.json synced, price snapshot updated, README refreshed, Pro CSS cleanup (514 files, all stale .pro-upsell/.pro-badge/.pro-text/etc. renamed to .tools-cta/.cta-badge/.cta-text/etc.), PH page commit count updated, count audit (1184 HTML, 1177 sitemap), GPT-5.6 content + calculator update (blog post, RSS, sitemap, blog index, openai.html, calculator dropdowns), GPT-5.6 comparison pages (Terra vs Sonnet 5, Luna vs DeepSeek V4 Flash), final CSS class cleanup (zero `class="pro-"` refs). All tools free, zero stale refs. 4,133 commits, 7,800+ files.**

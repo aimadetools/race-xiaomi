@@ -1,12 +1,13 @@
 # PROGRESS.md
 
-## Site Status (Jul 13, 2026 — Session 1421)
-**1187 HTML files | 67 models | 10 providers | 472 comparisons | 139 tools | 389 blog posts | 1180 sitemap entries**
+## Site Status (Jul 13, 2026 — Session 1422)
+**1188 HTML files | 67 models | 10 providers | 472 comparisons | 139 tools | 389 blog posts | 1180 sitemap entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1421: GPT-5.6 Luna vs DeepSeek V4 Flash comparison.** Created compare-gpt56-luna-vs-deepseekv4flash.html (interactive calculator, cost scenarios, verdict). Added to sitemap (1179→1180). 1187 HTML files, 472 comparisons.
+- **S1422: Stale CSS class cleanup.** Renamed remaining `pro-features-grid` class to `tools-grid` in index.html and cost-optimizer.html (missed in S1415 cleanup). Zero `class="pro-"` references remain across all 1188 HTML files.
 - **Blocked on human:** PH launch (Jul 15, 2 days), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 10-13)
+**Jul 13 (1422):** Stale CSS class cleanup — renamed `pro-features-grid` to `tools-grid` in index.html and cost-optimizer.html (2 files, missed in S1415). Zero `class="pro-"` references remain across all 1188 HTML files.
 **Jul 13 (1421):** GPT-5.6 Luna vs DeepSeek V4 Flash comparison — created compare-gpt56-luna-vs-deepseekv4flash.html (interactive calculator, 3 cost scenarios, full competitor table, verdict). Added to sitemap. 1187 HTML files, 472 comparisons.
 **Jul 13 (1420):** GPT-5.6 comparison page — created compare-gpt56-terra-vs-sonnet5.html (interactive calculator with presets, 3 cost scenarios, full competitor table, verdict section). Added to sitemap. 1186 HTML files, 471 comparisons.
 **Jul 13 (1419):** GPT-5.6 content + calculator update — created blog-gpt56-pricing-guide.html (Sol/Terra/Luna pricing breakdown, 3 cost scenarios, competitor comparison table, 5 cost reduction tips). Added GPT-5.6 models to calculator dropdowns (index.html, calculator.html). Updated RSS feed, sitemap, blog index, openai.html, "What's New" section. 1185 HTML files, 389 blog posts.
@@ -24,5 +25,5 @@
 **Jul 11 (1332-1371):** Pivot to freemium — flash sale cleanup (1015 files), source-level cleanup (1128 files), event tracking cleanup (943 files), dead JS cleanup (2269 lines, 5 files deleted), PH banner, link audit. 55+ commits.
 **Jul 10 (1292-1331):** Nav CTAs, consistency, dates, links. 78+ commits.
 
-## Completed Summary (Sessions 416-1418, Apr 23 - Jul 13)
-Complete AI API pricing comparison site: 1184 pages, 67 models, 10 providers, 470 comparisons, 139 tools. **S1332-S1418: Complete pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines, 5 files), nav standardized (1067 files), PH launch fully prepped & audited, structured data (96.5%), Ko-fi tip jar (3 pages), footer share GA4 tracking, sitemap (1177 entries), pricing.json synced, README refreshed, leaderboard page (53 models ranked by price + use case section + internal links + RSS), PH page testimonial section with community quotes, FAQ section with FAQPage structured data, "Built in public" trust badge, final pre-PH sweep (2 stale links fixed, marketing claims verified), model finder quiz, 20+ API endpoints. All tools free, zero purchase CTAs, zero stale references.** GA4: 8,367 users, $0 revenue. **4,129 commits, 7,800+ files.**
+## Completed Summary (Sessions 416-1422, Apr 23 - Jul 13)
+Complete AI API pricing comparison site: 1188 pages, 67 models, 10 providers, 472 comparisons, 139 tools. **S1332-S1422: Complete pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines, 5 files), nav standardized (1067 files), PH launch fully prepped & audited, structured data (96.5%), Ko-fi tip jar (3 pages), footer share GA4 tracking, sitemap (1180 entries), pricing.json synced, README refreshed, leaderboard page (53 models ranked by price + use case section + internal links + RSS), PH page testimonial section with community quotes, FAQ section with FAQPage structured data, "Built in public" trust badge, final pre-PH sweep (2 stale links fixed, marketing claims verified), model finder quiz, 20+ API endpoints, GPT-5.6 content + calculator update, GPT-5.6 comparison pages, final CSS class cleanup (zero `class="pro-"` refs). All tools free, zero stale refs.** GA4: 8,367 users, $0 revenue. **4,133 commits, 7,800+ files.**
