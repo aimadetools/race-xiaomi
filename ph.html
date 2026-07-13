@@ -380,6 +380,46 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is APIpulse really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. All tools — cost calculator, model comparison, pricing index, PDF export, saved scenarios — are 100% free. No signup, no credit card, no freemium gates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often is the pricing data updated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pricing data is verified against provider pages regularly. We track 67 models across 10 providers including OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, and more."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching AI models?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Users typically save 40-90% on API costs by switching to a cheaper model that fits their use case. The calculator shows your exact savings instantly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What makes APIpulse different from ChatGPT for pricing info?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ChatGPT gives outdated guesses. APIpulse has live, verified pricing across all 67 models from 10 providers with exact cost calculations based on your actual token usage."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <nav>
@@ -650,11 +690,35 @@
             </div>
         </section>
 
+        <!-- FAQ -->
+        <section style="max-width:700px;margin:0 auto;padding:60px 24px;">
+            <h2 style="text-align:center;font-size:28px;font-weight:700;margin-bottom:32px;">Frequently asked questions</h2>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+                <details style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;cursor:pointer;">
+                    <summary style="font-size:16px;font-weight:700;color:var(--text-primary);list-style:none;display:flex;justify-content:space-between;align-items:center;">Is APIpulse really free?<span style="font-size:20px;color:var(--text-muted);transition:transform 0.2s;">+</span></summary>
+                    <p style="font-size:15px;color:var(--text-secondary);line-height:1.7;margin-top:12px;">Yes. All tools — cost calculator, model comparison, pricing index, PDF export, saved scenarios — are 100% free. No signup, no credit card, no freemium gates.</p>
+                </details>
+                <details style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;cursor:pointer;">
+                    <summary style="font-size:16px;font-weight:700;color:var(--text-primary);list-style:none;display:flex;justify-content:space-between;align-items:center;">How often is pricing data updated?<span style="font-size:20px;color:var(--text-muted);transition:transform 0.2s;">+</span></summary>
+                    <p style="font-size:15px;color:var(--text-secondary);line-height:1.7;margin-top:12px;">Pricing data is verified against provider pages regularly. We track 67 models across 10 providers including OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, and more.</p>
+                </details>
+                <details style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;cursor:pointer;">
+                    <summary style="font-size:16px;font-weight:700;color:var(--text-primary);list-style:none;display:flex;justify-content:space-between;align-items:center;">How much can I save by switching models?<span style="font-size:20px;color:var(--text-muted);transition:transform 0.2s;">+</span></summary>
+                    <p style="font-size:15px;color:var(--text-secondary);line-height:1.7;margin-top:12px;">Users typically save 40-90% on API costs by switching to a cheaper model that fits their use case. The calculator shows your exact savings instantly — try it above.</p>
+                </details>
+                <details style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;cursor:pointer;">
+                    <summary style="font-size:16px;font-weight:700;color:var(--text-primary);list-style:none;display:flex;justify-content:space-between;align-items:center;">Why not just ask ChatGPT for pricing?<span style="font-size:20px;color:var(--text-muted);transition:transform 0.2s;">+</span></summary>
+                    <p style="font-size:15px;color:var(--text-secondary);line-height:1.7;margin-top:12px;">ChatGPT gives outdated guesses. APIpulse has live, verified pricing across all 67 models from 10 providers with exact cost calculations based on your actual token usage.</p>
+                </details>
+            </div>
+        </section>
+
         <!-- Final CTA -->
         <section class="final-cta">
             <h2>Stop overpaying for AI APIs</h2>
             <p>Join developers who use APIpulse to make smarter, cheaper decisions about their AI infrastructure.</p>
             <a href="calculator.html" class="btn-primary" style="padding:16px 48px;font-size:18px;">Open Full Calculator — Free</a>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:16px;">Built in public. 4,114+ commits. Open roadmap.</p>
         </section>
 
         <!-- Final conversion CTA -->
