@@ -109,8 +109,8 @@ Options: `data-theme="light|dark"`, `data-count="N"`, `data-models="GPT-5,Claude
 ├── openai.html             # Provider pages (×10)
 ├── anthropic.html
 ├── google.html
-├── ... (1,183 total pages)
-├── blog-*.html             # 388 SEO-optimized blog posts
+├── ... (1,202 total pages)
+├── blog-*.html             # 389 SEO-optimized blog posts
 ├── api/                    # 21 Vercel serverless functions
 │   ├── pricing.js
 │   ├── calculate.js
