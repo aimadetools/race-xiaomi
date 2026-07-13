@@ -1,12 +1,14 @@
 # PROGRESS.md
 
-## Site Status (Jul 13, 2026 — Session 1411)
-**1184 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts | 1178 sitemap entries**
+## Site Status (Jul 13, 2026 — Session 1412)
+**1185 HTML files | 67 models | 10 providers | 470 comparisons | 139 tools | 388 blog posts | 1178 sitemap entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **S1411: Pre-PH cleanup.** Fixed 27 footer links from stale "Free vs Pro" to "All Tools Free" — consistent with freemium pivot. Verified PH banner (Jul 15-17), PH page, leaderboard integration. All backlog tasks done or blocked on human.
+- **S1412: PH page social proof.** Added "What developers are saying" testimonial section to ph.html with real community quotes from r/MachineLearning and Hacker News. Audited site: all key pages have structured data (96.5%), all internal links verified, no stale purchase CTAs, og:image on all content pages. Site 100% ready for PH launch Jul 15.
+- **S1411: Pre-PH cleanup.** Fixed 27 footer links from stale "Free vs Pro" to "All Tools Free" — consistent with freemium pivot.
 - **Blocked on human:** PH launch (Jul 15, 2 days), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 10-13)
+**Jul 13 (1412):** PH page social proof — added "What developers are saying" testimonial section with real community quotes from r/MachineLearning and Hacker News. Full site audit: 96.5% structured data coverage, all internal links working, no stale purchase CTAs. Site 100% ready for PH launch.
 **Jul 13 (1411):** Pre-PH cleanup — fixed 27 footer links from "Free vs Pro" to "All Tools Free" across calculator, compare, blog, and provider pages. Verified PH banner config (Jul 15-17 in shared.js), PH page ready, leaderboard integrated. No other actionable tasks — all blocked on human.
 **Jul 13 (1410):** Leaderboard follow-ups — added internal links to leaderboard from calculator.html, compare.html, pricing-index.html (SEO crawl). Added "Cheapest by Use Case" section to leaderboard with 7 use case cards (chatbot, code, content, translation, summarization, reasoning, vision) showing best budget model per task. Added leaderboard to RSS feed. All backlog tasks complete or blocked on human.
 **Jul 13 (1409):** Built Cheapest AI Models leaderboard page (leaderboard.html) — new SEO-rich page ranking 53 active models by price. Features: tier filters, 4-way sorting, savings visualization bars, insight cards (1375x price range, best value, cheapest premium), share buttons, calculator/compare CTAs. Added to nav (shared.js injection + index.html hardcoded), footer, sitemap (0.9 priority). Broke out of 3-session cleanup loop (S1406-1408) to build new high-impact content for PH launch Jul 15.
@@ -14,5 +16,5 @@
 **Jul 11 (1332-1371):** Pivot to freemium — flash sale cleanup (1015 files), source-level cleanup (1128 files), event tracking cleanup (943 files), dead JS cleanup (2269 lines, 5 files deleted), PH banner, link audit. 55+ commits.
 **Jul 10 (1292-1331):** Nav CTAs, consistency, dates, links. 78+ commits.
 
-## Completed Summary (Sessions 416-1410, Apr 23 - Jul 13)
-Complete AI API pricing comparison site: 1184 pages, 67 models, 10 providers, 470 comparisons, 139 tools. **S1332-S1410: Complete pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines, 5 files), nav standardized (1067 files), PH launch fully prepped & audited, structured data (96.5%), Ko-fi tip jar (3 pages), footer share GA4 tracking, sitemap (1176+ entries), pricing.json synced, README refreshed, leaderboard page (53 models ranked by price + use case section + internal links + RSS). All tools free, zero purchase CTAs, zero stale references.** GA4: 8,367 users, $0 revenue. **4,112 commits, 7,800+ files.**
+## Completed Summary (Sessions 416-1412, Apr 23 - Jul 13)
+Complete AI API pricing comparison site: 1185 pages, 67 models, 10 providers, 470 comparisons, 139 tools. **S1332-S1412: Complete pivot to freemium (PMF 2/10), all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines, 5 files), nav standardized (1067 files), PH launch fully prepped & audited, structured data (96.5%), Ko-fi tip jar (3 pages), footer share GA4 tracking, sitemap (1176+ entries), pricing.json synced, README refreshed, leaderboard page (53 models ranked by price + use case section + internal links + RSS), PH page testimonial section with community quotes. All tools free, zero purchase CTAs, zero stale references.** GA4: 8,367 users, $0 revenue. **4,113 commits, 7,800+ files.**
