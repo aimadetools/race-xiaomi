@@ -221,6 +221,28 @@
         }
         .insight-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
 
+        /* Use case cards */
+        .use-cases-section { margin: 48px 0; }
+        .use-cases-section h2 { font-size: 22px; font-weight: 800; margin-bottom: 16px; text-align: center; }
+        .use-cases-section .subtitle { font-size: 14px; color: var(--text-secondary); text-align: center; margin-bottom: 24px; }
+        .use-cases-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .use-case-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 20px; text-align: center;
+            transition: all 0.2s;
+        }
+        .use-case-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .use-case-icon { font-size: 28px; margin-bottom: 8px; }
+        .use-case-name { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .use-case-model { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
+        .use-case-price { font-size: 18px; font-weight: 800; color: var(--green); }
+        .use-case-price span { font-size: 12px; font-weight: 400; color: var(--text-secondary); }
+        .use-case-link { display: block; margin-top: 12px; font-size: 12px; color: var(--accent); font-weight: 600; text-decoration: none; }
+        .use-case-link:hover { text-decoration: underline; }
+
         /* Deprecation notice */
         .dep-notice {
             background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
@@ -244,6 +266,13 @@
 
         <!-- Insights -->
         <div class="insights" id="insights"></div>
+
+        <!-- Cheapest by Use Case -->
+        <div class="use-cases-section">
+            <h2>Cheapest by Use Case</h2>
+            <p class="subtitle">Best budget model for each common AI task</p>
+            <div class="use-cases-grid" id="useCases"></div>
+        </div>
 
         <!-- Filters -->
         <div class="filters" id="filters"></div>
@@ -334,6 +363,45 @@
                 '<div class="highlight">' + active.filter(function(m){return m.tier==='Premium';}).reduce(function(a,b){return a.output<b.output?a:b;}).name + '</div>' +
                 '<p>The most affordable Premium-tier model, if you need top-tier quality.</p>' +
             '</div>';
+
+        // Cheapest by Use Case — pick best budget model for each task
+        var useCases = [
+            { icon: '💬', name: 'Chatbots', slug: 'chatbot',
+              filter: function(m) { return m.context >= 32000; },
+              sort: function(a,b) { return a.output - b.output; } },
+            { icon: '💻', name: 'Code Generation', slug: 'code',
+              filter: function(m) { return m.context >= 64000; },
+              sort: function(a,b) { return a.output - b.output; } },
+            { icon: '✍️', name: 'Content Writing', slug: 'content',
+              filter: function(m) { return m.tier !== 'Premium'; },
+              sort: function(a,b) { return a.output - b.output; } },
+            { icon: '🌍', name: 'Translation', slug: 'translation',
+              filter: function(m) { return m.tier === 'Budget' || m.tier === 'Mid'; },
+              sort: function(a,b) { return a.output - b.output; } },
+            { icon: '📝', name: 'Summarization', slug: 'summarization',
+              filter: function(m) { return m.context >= 32000; },
+              sort: function(a,b) { return (a.input * 0.5 + a.output * 0.5) - (b.input * 0.5 + b.output * 0.5); } },
+            { icon: '🧩', name: 'Reasoning', slug: 'reasoning',
+              filter: function(m) { return m.tier === 'Mid' || m.tier === 'Premium'; },
+              sort: function(a,b) { return a.output - b.output; } },
+            { icon: '👁️', name: 'Vision / Multimodal', slug: 'vision',
+              filter: function(m) { return m.tier !== 'Budget'; },
+              sort: function(a,b) { return a.output - b.output; } }
+        ];
+        var ucHTML = '';
+        useCases.forEach(function(uc) {
+            var candidates = active.filter(uc.filter).sort(uc.sort);
+            if (candidates.length === 0) return;
+            var best = candidates[0];
+            ucHTML += '<div class="use-case-card">' +
+                '<div class="use-case-icon">' + uc.icon + '</div>' +
+                '<div class="use-case-name">' + uc.name + '</div>' +
+                '<div class="use-case-model">' + best.name + '</div>' +
+                '<div class="use-case-price">$' + best.output.toFixed(2) + ' <span>per 1M output</span></div>' +
+                '<a href="cheapest-ai-model-for-' + uc.slug + '.html" class="use-case-link">See all rankings →</a>' +
+            '</div>';
+        });
+        document.getElementById('useCases').innerHTML = ucHTML;
 
         // Filter buttons
         var tiers = ['All', 'Budget', 'Mid', 'Premium'];
