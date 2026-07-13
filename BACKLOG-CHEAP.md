@@ -10,6 +10,11 @@
 - **Directory submissions (9)** — Content prepped at marketing/directory-submissions.md. Human creates accounts and submits. ~30 min.
 - **Chrome Web Store** — Publish extension ($5).
 
+### Leaderboard Follow-ups
+- **Add leaderboard to internal linking** — Add links from calculator.html, compare.html, pricing-index.html to leaderboard.html for better SEO crawl.
+- **Add "Cheapest by Use Case" section to leaderboard** — Group cheapest models by coding, chat, reasoning, vision.
+- **Add leaderboard to RSS feed** — Include in rss.xml for blog subscribers.
+
 ### Post-PH Tasks (after Jul 15)
 - **Post-PH analytics review** — Check GA4 for PH traffic patterns, top pages, bounce rate.
 - **Monitor ph_share_clicked events** — Track viral loop effectiveness from the new share button.
