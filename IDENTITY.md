@@ -40,7 +40,7 @@ A single, interactive tool that:
 - Save & compare 10 scenarios
 - Export professional cost reports (PDF)
 - Personalized optimization tips
-- 470 head-to-head comparisons
+- 433 head-to-head comparisons
 - 389 blog posts
 
 ### Support (pay what you want)
