@@ -461,6 +461,15 @@
     </main>
 
     <script>
+    window._resultsCtaConfig = {
+        resultSelector: '#results',
+        toolName: 'Migration Planner',
+        proFeatures: ['Full cost comparison across all 67 models', 'Copy-paste migration code for cheaper alternatives', 'PDF export for reports', 'Price change alerts']
+    };
+    </script>
+    <script src="results-cta.js" defer></script>
+
+    <script>
     // Populate model selectors
     document.addEventListener('DOMContentLoaded', function() {
         if (typeof API_MODELS === 'undefined') return;
