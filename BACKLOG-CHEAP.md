@@ -23,6 +23,10 @@
 - **Submit to remaining directories** — Check marketing/directory-submissions.md for any unsubmitted directories.
 - **Create pricing changelog page** — Already done: /pricing-changelog.html (557 lines, SEO-optimized, FAQ schema).
 
+### Flash Sale Cleanup (S1467) — DONE
+✅ Remove stale flash sale CTA from blog-estimate-monthly-ai-api-costs.html
+✅ Fix awkward "Flash sale All tools are free" wording in weekly-digest.html
+
 ### New Page Follow-ups (from S1453) — ALL DONE (S1454)
 ✅ Cross-link cheapest page from leaderboard
 ✅ Add cheapest page to RSS feed
