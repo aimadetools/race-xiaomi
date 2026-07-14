@@ -801,12 +801,14 @@
             const requests = parseInt(document.getElementById('ph-requests').value) || 0;
             const days = parseInt(document.getElementById('ph-days').value) || 30;
 
-            const models = API_MODELS.map(m => {
-                const totalInput = (inputTokens * requests * days) / 1000000;
-                const totalOutput = (outputTokens * requests * days) / 1000000;
-                const cost = (totalInput * m.input) + (totalOutput * m.output);
-                return { ...m, totalCost: cost };
-            }).sort((a, b) => a.totalCost - b.totalCost);
+            const models = API_MODELS
+                .filter(m => !m.note || !m.note.toLowerCase().includes('self-host'))
+                .map(m => {
+                    const totalInput = (inputTokens * requests * days) / 1000000;
+                    const totalOutput = (outputTokens * requests * days) / 1000000;
+                    const cost = (totalInput * m.input) + (totalOutput * m.output);
+                    return { ...m, totalCost: cost };
+                }).sort((a, b) => a.totalCost - b.totalCost);
 
             const top8 = models.slice(0, 8);
             const container = document.getElementById('ph-results');
@@ -820,16 +822,42 @@
                     '</div>';
             }).join('');
 
-            // Savings callout — enhanced for PH conversion
-            const cheapest = models[0];
-            const mostExpensive = models[models.length - 1];
+            // Savings callout — enhanced for PH conversion with visual bar chart
+            // Filter to API-available models only (exclude open-source self-hosted)
+            const apiModels = models.filter(m => !m.note || !m.note.toLowerCase().includes('self-host'));
+            const cheapest = apiModels[0];
+            const mostExpensive = apiModels[apiModels.length - 1];
             const savings = mostExpensive.totalCost - cheapest.totalCost;
             const savingsYearly = savings * 12;
             const savingsEl = document.getElementById('ph-savings');
             if (savingsEl && savings > 0) {
                 const pct = ((savings / mostExpensive.totalCost) * 100).toFixed(0);
                 const shareText = encodeURIComponent('I could save $' + savings.toFixed(0) + '/mo by switching from ' + mostExpensive.name + ' to ' + cheapest.name + ' — that\'s $' + savingsYearly.toFixed(0) + '/year. Find your cheapest AI model: https://getapipulse.com/ph.html');
+                // Visual bar chart data
+                const maxCost = mostExpensive.totalCost;
+                const cheapPct = maxCost > 0 ? (cheapest.totalCost / maxCost * 100) : 0;
+                const expPct = 100;
                 savingsEl.innerHTML = '<div class="savings-hero">' +
+                    '<div style="margin-bottom:20px;">' +
+                        '<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">' +
+                            '<span style="font-size:12px;color:var(--text-muted);min-width:100px;text-align:right;">Cheapest</span>' +
+                            '<div style="flex:1;height:28px;background:var(--bg-card);border-radius:6px;overflow:hidden;position:relative;">' +
+                                '<div style="height:100%;width:' + cheapPct + '%;background:linear-gradient(90deg,#22c55e,#16a34a);border-radius:6px;transition:width 0.5s ease;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;">' +
+                                    '<span style="font-size:12px;font-weight:700;color:white;text-shadow:0 1px 2px rgba(0,0,0,0.3);">$' + cheapest.totalCost.toFixed(0) + '/mo</span>' +
+                                '</div>' +
+                            '</div>' +
+                            '<span style="font-size:13px;font-weight:700;color:var(--green);min-width:80px;">' + cheapest.name + '</span>' +
+                        '</div>' +
+                        '<div style="display:flex;align-items:center;gap:12px;">' +
+                            '<span style="font-size:12px;color:var(--text-muted);min-width:100px;text-align:right;">Most expensive</span>' +
+                            '<div style="flex:1;height:28px;background:var(--bg-card);border-radius:6px;overflow:hidden;position:relative;">' +
+                                '<div style="height:100%;width:' + expPct + '%;background:linear-gradient(90deg,#ef4444,#dc2626);border-radius:6px;transition:width 0.5s ease;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;">' +
+                                    '<span style="font-size:12px;font-weight:700;color:white;text-shadow:0 1px 2px rgba(0,0,0,0.3);">$' + mostExpensive.totalCost.toFixed(0) + '/mo</span>' +
+                                '</div>' +
+                            '</div>' +
+                            '<span style="font-size:13px;font-weight:700;color:#ef4444;min-width:80px;">' + mostExpensive.name + '</span>' +
+                        '</div>' +
+                    '</div>' +
                     '<div class="amount">$' + savings.toFixed(2) + '/mo</div>' +
                     '<div class="label">Switch from <strong>' + mostExpensive.name + '</strong> to <strong>' + cheapest.name + '</strong> and save ' + pct + '%</div>' +
                     '<div class="yearly">That\'s <strong>$' + savingsYearly.toFixed(2) + '/year</strong> back in your budget. <a href="calculator.html" style="color:var(--accent);text-decoration:underline;font-weight:600;">See full breakdown →</a></div>' +
