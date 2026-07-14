@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1206 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,230 commits. PH launch Jul 15 (tomorrow!). Site 100% ready — all automatable tasks complete.**
+**Site Status:** 1206 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,231 commits. PH launch Jul 15 (tomorrow!). Site 100% ready -- all automatable tasks complete.**
 
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
@@ -23,7 +23,7 @@
 - **Submit to remaining directories** — Check marketing/directory-submissions.md for any unsubmitted directories.
 - **Create pricing changelog page** — Already done: /pricing-changelog.html (557 lines, SEO-optimized, FAQ schema).
 
-### Completed Summary (Sessions 416-1467, Apr 5 - Jul 14)
+### Completed Summary (Sessions 416-1468, Apr 5 - Jul 14)
 ✅ Complete site: 1206 pages, 67 models, 10 providers, 433 comparisons, 139 tools. 389 blog posts.
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models, email capture (subscribe form + /api/subscribe).
-✅ **S1332-S1467: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines), nav standardized (1067 files), PH launch fully prepped & audited, structured data (96.5%), Ko-fi tip jar, GA4 tracking, sitemap (1197 entries), Pro CSS cleanup (514 files), GPT-5.6 content + 19 comparison pages, comparison directory (432 entries). Top 10 Cheapest + Most Expensive LLM APIs pages with interactive features, price trend indicators, cross-links, RSS. Flash sale cleanup — all stale purchase CTAs removed from blog posts and weekly digest. All tools free. 4,230 commits, 7,800+ files. Site is DONE.**
+✅ **S1332-S1468: Complete pivot to freemium -- all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines), nav standardized (1067 files), PH launch fully prepped & audited, structured data (96.5%), Ko-fi tip jar, GA4 tracking, sitemap (1197 entries), Pro CSS cleanup (514 files), GPT-5.6 content + 19 comparison pages, comparison directory (432 entries). Top 10 Cheapest + Most Expensive LLM APIs pages with interactive features, price trend indicators, cross-links, RSS. Flash sale cleanup -- all stale purchase CTAs removed. Final pre-launch code cleanup (stale CSS classes/comments). All tools free. 4,231 commits, 7,800+ files. Site is DONE.**
