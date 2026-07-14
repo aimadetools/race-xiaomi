@@ -10,7 +10,7 @@
 //     resultSelector: '.result-container',  // CSS selector for results area
 //     savingsSelector: '.savings-amount',    // CSS selector for savings text (optional)
 //     toolName: 'Savings Calculator',        // Name shown in CTA
-//     freeFeatures: ['Full report', 'Migration code', 'PDF export']  // Features to highlight
+//     proFeatures: ['Full report', 'Migration code', 'PDF export']  // Features to highlight (legacy: freeFeatures also accepted)
 //   };
 
 (function() {
@@ -20,7 +20,8 @@
     var resultSelector = config.resultSelector || null;
     var savingsSelector = config.savingsSelector || null;
     var toolName = config.toolName || 'this tool';
-    var freeFeatures = config.freeFeatures || [
+    // Accept proFeatures (used by all tool pages) or freeFeatures (legacy alias)
+    var freeFeatures = config.proFeatures || config.freeFeatures || [
         'All 67 models across 10 providers',
         'Copy-paste migration code',
         'PDF report export',
