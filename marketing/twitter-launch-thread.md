@@ -12,23 +12,23 @@ Most developers pick an AI API provider and stick with it.
 
 But pricing varies WILDLY:
 
-• GPT-5: $2.50/$10 per 1M tokens
-• Gemini 2.5 Pro: $1.25/$10 per 1M tokens
-• Claude Haiku 4.5: $1.00/$5.00 per 1M tokens
+• GPT-5.6 Sol: $5.00/$30 per 1M tokens
+• Claude Opus 4.8: $5.00/$25 per 1M tokens
+• DeepSeek V4 Flash: $0.14/$0.28 per 1M tokens
 
-Same capabilities. Very different prices.
+Same capabilities tier. Very different prices.
 
 ## Tweet 3 (Key Finding #1)
-Finding 1: Google Gemini is consistently 30-50% cheaper than OpenAI for equivalent tasks.
+Finding 1: DeepSeek and Mistral are consistently 50-70% cheaper than the Big 3.
 
-Gemini 2.5 Pro input tokens cost HALF of GPT-5.
+DeepSeek V4 Pro ($0.435/$0.87) competes with models 10x its price.
 
 If you're processing lots of input (document analysis, summarization), this adds up fast.
 
 ## Tweet 4 (Key Finding #2)
 Finding 2: Budget models handle 90% of use cases.
 
-GPT-4o mini ($0.15/$0.60) and Llama 3.1 8B ($0.18/$0.18) are shockingly capable.
+GPT-5.4 nano ($0.20/$1.25) and Mistral Small 4 ($0.15/$0.60) are shockingly capable.
 
 For chatbots, classification, and simple Q&A — you don't need the expensive models.
 
@@ -37,7 +37,7 @@ Finding 3: Context window size matters less than you think.
 
 Most API calls use <4K tokens. A 1M context window is nice, but you're paying for it.
 
-Unless you're doing document analysis, a 32K-128K window is plenty.
+Unless you're doing document analysis, a 128K-256K window is plenty.
 
 ## Tweet 6 (The Tool)
 I built APIpulse to make these comparisons instant.

@@ -28,17 +28,17 @@ Built it because I was tired of manually checking OpenAI, Anthropic, Google, and
 **Type:** Single tweet with data
 **Content:**
 ```
-AI API pricing cheat sheet (April 2026):
+AI API pricing cheat sheet (July 2026):
 
 Cheapest per 1M tokens:
-• Input: Llama 3.1 8B — $0.18
-• Output: Llama 3.1 8B — $0.18
+• Input: DeepSeek V4 Flash — $0.14
+• Output: DeepSeek V4 Flash — $0.28
 
 Most expensive:
-• Input: Claude 4 Opus — $15.00
-• Output: Claude 4 Opus — $75.00
+• Input: GPT-5.5 Pro — $30.00
+• Output: GPT-5.5 Pro — $180.00
 
-That's an 83x difference in output cost.
+That's a 643x difference in output cost.
 
 Full comparison: https://getapipulse.com/pricing-index.html
 ```
@@ -53,10 +53,10 @@ Hot take: Most developers are overpaying for AI APIs by 2-5x.
 
 Not because they chose wrong. Because they never compared.
 
-GPT-4o: $2.50/$10 per 1M tokens
-Gemini 2.5 Pro: $1.25/$10 per 1M tokens
+DeepSeek V4 Pro: $0.435/$0.87 per 1M tokens
+GPT-5.6 Luna: $1.00/$6.00 per 1M tokens
 
-Same quality. Half the price.
+Similar quality for most tasks. 7x price difference.
 
 I built a free calculator to check: https://getapipulse.com/calculator.html
 ```
@@ -150,19 +150,19 @@ Thread 🧵
 
 Tweet 2:
 Budget tier:
-• GPT-4o mini: $0.15/$0.60 per 1M tokens
+• GPT-5.4 nano: $0.20/$1.25 per 1M tokens
 • Claude Haiku 4.5: $1.00/$5.00 per 1M tokens
-• Gemini 2.0 Flash: $0.10/$0.40 per 1M tokens
+• Gemini 2.5 Flash-Lite: $0.10/$0.40 per 1M tokens
 
-Winner: Google Gemini Flash — 33% cheaper than GPT-4o mini
+Winner: Google Gemini Flash-Lite — 50% cheaper than GPT-5.4 nano
 
 Tweet 3:
 Premium tier:
-• GPT-4o: $2.50/$10 per 1M tokens
-• Claude Sonnet 4: $3.00/$15 per 1M tokens
-• Gemini 2.5 Pro: $1.25/$10 per 1M tokens
+• GPT-5.4: $2.50/$15 per 1M tokens
+• Claude Sonnet 5: $2.00/$10 per 1M tokens
+• Gemini 3.5 Flash: $1.50/$9.00 per 1M tokens
 
-Winner: Google Gemini Pro — 50% cheaper on input tokens
+Winner: Google Gemini 3.5 Flash — 40% cheaper on input tokens
 
 Full breakdown: https://getapipulse.com/blog-openai-vs-anthropic-vs-google.html
 ```
@@ -174,8 +174,8 @@ Full breakdown: https://getapipulse.com/blog-openai-vs-anthropic-vs-google.html
 ```
 Building a chatbot? Here's what it actually costs:
 
-Budget ($5/mo): Llama 3.1 8B — 50 req/day
-Mid ($25/mo): GPT-4o mini — 300 req/day
+Budget ($5/mo): DeepSeek V4 Flash — 500 req/day
+Mid ($25/mo): GPT-5.4 nano — 1000 req/day
 Premium ($100/mo): Hybrid strategy — Flash for simple, Sonnet for complex
 
 Full breakdown with calculator: https://getapipulse.com/blog-cheapest-chatbot.html
@@ -188,11 +188,11 @@ Full breakdown with calculator: https://getapipulse.com/blog-cheapest-chatbot.ht
 ```
 DeepSeek V4 Pro might be the best value in AI APIs right now:
 
-• Input: $0.27 per 1M tokens
-• Output: $0.70 per 1M tokens
-• Context: 128K tokens
+• Input: $0.435 per 1M tokens
+• Output: $0.87 per 1M tokens
+• Context: 1M tokens
 
-That's 10x cheaper than GPT-4o for comparable quality.
+That's 5x cheaper than GPT-5.4 for comparable quality.
 
 Compare: https://getapipulse.com/deepseek.html
 ```
@@ -232,7 +232,7 @@ How much are you spending on AI APIs per month?
 **Type:** Single tweet
 **Content:**
 ```
-Complete LLM pricing reference for April 2026:
+Complete LLM pricing reference for July 2026:
 
 67 models • 10 providers • Real-time comparison
 

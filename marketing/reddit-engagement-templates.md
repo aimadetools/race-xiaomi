@@ -32,7 +32,7 @@ Good point — I have pricing data but haven't added latency/context info yet. T
 It uses published API pricing, so it should be within 5-10% of your actual bill. Real costs depend on your specific usage patterns (batching, caching, prompt efficiency).
 
 ### "Can I self-host this?"
-The calculator is static HTML/JS — you could clone the repo and run it locally. No backend needed for the free features. The Pro features use a simple Stripe checkout.
+The calculator is static HTML/JS — you could clone the repo and run it locally. No backend needed. Everything is free and open.
 
 ---
 
@@ -87,7 +87,7 @@ Appreciate it! Every upvote helps get this in front of more developers.
 Yes — every tool, every feature. Cost calculator, comparison tool, monitoring dashboard, price alerts, weekly reports, PDF exports, saved scenarios, optimization playbook. All 67 models, all 389 blog posts. No signup, no credit card, no catch.
 
 ### "How do you make money?"
-Right now I don't — this is a passion project. Long-term I may add optional affiliate links or a Ko-fi tip jar, but the core tools stay free.
+Right now I don't — this is a passion project. There's a Ko-fi tip jar if people want to support development, but the core tools stay free forever.
 
 ---
 

@@ -26,6 +26,11 @@ Hey HN! I built APIpulse because I kept wasting time manually comparing AI API p
 
 **Why I built this:** The AI API landscape is fragmented — 10+ providers with different pricing structures, tokenizers, and discount schemes. I wanted one tool to compare them all, and I couldn't find one that was both comprehensive and free.
 
+**Key findings from building this:**
+- DeepSeek V4 Flash ($0.14/$0.28 per 1M tokens) is the cheapest production-ready model
+- Budget models like GPT-5.4 nano ($0.20/$1.25) and Mistral Small 4 ($0.15/$0.60) are capable enough for 90% of use cases
+- Prices have dropped ~90% since 2023 — the race to the bottom is real
+
 Would love feedback on what would make this more useful. What models or providers am I missing?
 
 ## Notes

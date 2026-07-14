@@ -1,7 +1,7 @@
 # Reddit Post: r/ChatGPTDev
 
 ## Title
-Built a free tool to compare GPT-5, Claude 4, Gemini pricing — 67 models, 10 providers, instant calculations
+Built a free tool to compare GPT-5.6, Claude Opus 4.8, Gemini 3.5 pricing — 67 models, 10 providers, instant calculations
 
 ## Body
 
@@ -10,16 +10,16 @@ Fellow devs,
 I built APIpulse because I was tired of switching between the OpenAI, Anthropic, and Google pricing pages trying to figure out which API would be cheapest for my project.
 
 **What's included:**
-- Interactive cost calculator with 67 models (GPT-5, GPT-5 mini, GPT-4o, Claude 4 Opus, Claude Sonnet 4, Gemini 2.5 Pro, Mistral, Llama, Cohere, AI21, etc.)
+- Interactive cost calculator with 67 models (GPT-5.6 Sol/Terra/Luna, Claude Opus 4.8, Claude Sonnet 5, Gemini 3.5 Flash, DeepSeek V4, Mistral, Llama 4, Cohere, AI21, etc.)
 - Side-by-side comparison tool — pick any 2 models, see costs broken down
 - Pricing Index page — every model, every price, sortable and filterable
-- 78 comparison blog posts with real-world cost scenarios
+- 389 comparison blog posts with real-world cost scenarios
 
 **Key findings from building this:**
-- GPT-5 ($1.25/$10 per 1M tokens) vs Claude 4 Opus ($15/$75) — GPT-5 is significantly cheaper
-- GPT-4o mini ($0.15/$0.60) is the sweet spot for most chatbot use cases
-- Gemini 2.0 Flash ($0.10/$0.40) is the absolute cheapest for high-volume
-- Llama 3.1 8B via Together.ai ($0.18/$0.18) wins for self-hosted-like pricing
+- DeepSeek V4 Flash ($0.14/$0.28 per 1M tokens) is the cheapest for high-volume workloads
+- GPT-5.4 nano ($0.20/$1.25) is the sweet spot for most chatbot use cases
+- Gemini 2.5 Flash-Lite ($0.10/$0.40) is unbeatable for budget deployments
+- Mistral Small 4 ($0.15/$0.60) punches above its weight for code tasks
 
 Everything runs client-side, no signup needed: https://getapipulse.com
 

@@ -23,8 +23,8 @@ I built APIpulse after getting frustrated comparing pricing across OpenAI, Anthr
 - Total build cost: $10 (domain)
 
 **Key findings from the data:**
-- Google Gemini models are consistently 30-50% cheaper than equivalent OpenAI models
-- Budget models (GPT-4o mini, Llama 3.1 8B) handle 90% of use cases well
+- DeepSeek and Mistral models are consistently 50-70% cheaper than the Big 3
+- Budget models (GPT-5.4 nano, DeepSeek V4 Flash, Mistral Small 4) handle 90% of use cases well
 - Context window size matters less than most people think
 - The "cheapest" model depends entirely on your input/output token ratio
 
@@ -36,7 +36,7 @@ Would appreciate feedback on:
 ## Follow-up Comments (post if thread gains traction)
 
 **If someone asks about accuracy:**
-Pricing data is verified against each provider's official pricing page as of April 2026. I plan to update monthly. If you spot an error, please let me know — accuracy is the #1 priority.
+Pricing data is verified against each provider's official pricing page as of July 2026. I plan to update monthly. If you spot an error, please let me know — accuracy is the #1 priority.
 
 **If someone asks about monetization:**
 All tools are completely free — no Pro tier, no paywall, no catch. There's a Ko-fi tip jar if people want to support the project, but everything works without paying.
@@ -45,4 +45,4 @@ All tools are completely free — no Pro tier, no paywall, no catch. There's a K
 ArtificialAnalysis focuses on benchmarks and inference speed. APIpulse focuses specifically on cost planning and budget optimization — different use cases. Their data is great for performance comparisons; mine is for figuring out what you'll actually pay.
 
 **If someone asks about the blog content:**
-I've written 78 comparison articles covering specific model pairs (GPT-5 vs Claude 4 Opus, Gemini vs GPT-4o, cheapest chatbot options, etc.). Each includes real cost breakdowns for common use cases like chatbots, code generation, and document analysis.
+I've written 389 comparison articles covering specific model pairs (GPT-5.6 vs Claude Opus 4.8, DeepSeek vs Gemini, cheapest chatbot options, etc.). Each includes real cost breakdowns for common use cases like chatbots, code generation, and document analysis.

@@ -1,7 +1,7 @@
 # Reddit Post: r/webdev
 
 ## Title
-I built a free AI API cost calculator — compare GPT-5, Claude 4, Gemini pricing in one place
+I built a free AI API cost calculator — compare GPT-5.6, Claude Opus 4.8, Gemini 3.5 pricing in one place
 
 ## Body
 
@@ -16,7 +16,7 @@ I got tired of manually comparing pricing across OpenAI, Anthropic, Google, and 
 
 The calculator is completely free and runs entirely in the browser — no signup, no API keys, no tracking.
 
-I also wrote 389 blog posts comparing specific models (GPT-4o vs Claude Sonnet 4, Gemini vs GPT-5, cheapest chatbot options, etc.) with real cost breakdowns.
+I also wrote 389 blog posts comparing specific models (GPT-5.6 vs Claude Opus 4.8, Gemini vs DeepSeek, cheapest chatbot options, etc.) with real cost breakdowns.
 
 Would love feedback on:
 1. Are the pricing numbers accurate for your use case?
