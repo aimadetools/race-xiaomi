@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APIpulse — Launch Day Command Center</title>
+  <meta name="description" content="Product Hunt launch day command center for APIpulse. All templates, timelines, and checklists in one place.">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #12121a;
+      --bg3: #1a1a2e;
+      --border: #2a2a3e;
+      --text: #e0e0f0;
+      --text2: #8888aa;
+      --accent: #ff6b35;
+      --accent2: #ffa366;
+      --green: #22c55e;
+      --red: #ef4444;
+      --blue: #3b82f6;
+      --yellow: #eab308;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .header {
+      background: linear-gradient(135deg, var(--accent) 0%, #ff3300 100%);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+    }
+    .header h1 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+    .header .subtitle { opacity: 0.9; font-size: 0.95rem; }
+    .countdown {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0.5rem 0;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown-label { font-size: 0.85rem; opacity: 0.8; }
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    .status-live { background: var(--green); color: #000; }
+    .status-prep { background: var(--yellow); color: #000; }
+    .status-done { background: var(--blue); color: white; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    .quick-link {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .quick-link:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.15);
+    }
+    .quick-link .icon { font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .quick-link .label { font-size: 0.8rem; color: var(--text2); }
+
+    .section {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      overflow: hidden;
+    }
+    .section-header {
+      background: var(--bg3);
+      padding: 1rem 1.25rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .section-header:hover { background: var(--border); }
+    .section-body { padding: 1.25rem; }
+    .section-body.collapsed { display: none; }
+
+    .timeline-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-time {
+      min-width: 100px;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+    .timeline-content { flex: 1; }
+    .timeline-content h4 { margin-bottom: 0.25rem; }
+    .timeline-content p { color: var(--text2); font-size: 0.9rem; }
+
+    .checklist label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0.4rem 0;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .checklist input[type="checkbox"] {
+      margin-top: 0.25rem;
+      accent-color: var(--accent);
+      min-width: 18px;
+      min-height: 18px;
+    }
+    .checklist label.done { text-decoration: line-through; color: var(--text2); }
+
+    .template-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 0.75rem 0;
+      position: relative;
+    }
+    .template-box h4 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .template-box pre {
+      white-space: pre-wrap;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .template-box:hover .copy-btn { opacity: 1; }
+    .copy-btn:active { transform: scale(0.95); }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+    .metric-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .metric-card .value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+    .metric-card .label { font-size: 0.75rem; color: var(--text2); margin-top: 0.25rem; }
+    .metric-input {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--accent);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      width: 100%;
+      padding: 0.3rem;
+      margin-top: 0.5rem;
+    }
+    .metric-input:focus { outline: none; border-color: var(--accent); }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+    .tip {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem;
+    }
+    .tip .num {
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 0.3rem;
+    }
+
+    .comment-response {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+    }
+    .comment-response .q { color: var(--accent2); font-weight: 600; font-size: 0.85rem; }
+    .comment-response .a { color: var(--text2); font-size: 0.85rem; margin-top: 0.25rem; }
+
+    .log-entry {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 0.3rem 0;
+      font-size: 0.85rem;
+    }
+    .log-time { color: var(--text2); min-width: 60px; }
+    .log-text { color: var(--text); }
+
+    #logInput {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      padding: 0.5rem;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    #logInput:focus { outline: none; border-color: var(--accent); }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text2);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 { font-size: 1.3rem; }
+      .countdown { font-size: 1.8rem; }
+      .quick-links { grid-template-columns: repeat(2, 1fr); }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚀 APIpulse — Launch Day Command Center</h1>
+  <div class="subtitle">Product Hunt Launch — Tuesday, July 15, 2026</div>
+  <div class="countdown" id="countdown">--:--:--</div>
+  <div class="countdown-label" id="countdownLabel">Until PH goes live (midnight PT)</div>
+  <div>
+    <span class="status-badge" id="statusBadge">PREP</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Quick Links -->
+  <div class="quick-links">
+    <a class="quick-link" href="https://www.producthunt.com/" target="_blank">
+      <div class="icon">🏆</div>
+      <div class="label">Product Hunt</div>
+    </a>
+    <a class="quick-link" href="https://getapipulse.com" target="_blank">
+      <div class="icon">🌐</div>
+      <div class="label">Your Site</div>
+    </a>
+    <a class="quick-link" href="https://analytics.google.com/analytics/web/#/p" target="_blank">
+      <div class="icon">📊</div>
+      <div class="label">GA4 Analytics</div>
+    </a>
+    <a class="quick-link" href="https://twitter.com/intent/tweet" target="_blank">
+      <div class="icon">🐦</div>
+      <div class="label">New Tweet</div>
+    </a>
+    <a class="quick-link" href="https://news.ycombinator.com/submit" target="_blank">
+      <div class="icon">🔶</div>
+      <div class="label">Submit HN</div>
+    </a>
+    <a class="quick-link" href="https://www.reddit.com/submit" target="_blank">
+      <div class="icon">📌</div>
+      <div class="label">Reddit Post</div>
+    </a>
+  </div>
+
+  <!-- Live Metrics Tracker -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      📊 Live Metrics Tracker <span style="margin-left:auto;font-size:0.8rem;color:var(--text2)">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text2);font-size:0.85rem;margin-bottom:1rem;">Update these manually throughout the day. Check GA4 every 1-2 hours.</p>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <input class="metric-input" type="number" id="upvotes" value="0" min="0">
+          <div class="label">PH Upvotes</div>
+        </div>
+        <div class="metric-card">
+          <input class="metric-input" type="number" id="comments" value="0" min="0">
+          <div class="label">PH Comments</div>
+        </div>
+        <div class="metric-card">
+          <input class="metric-input" type="number" id="visitors" value="0" min="0">
+          <div class="label">Site Visitors</div>
+        </div>
+        <div class="metric-card">
+          <input class="metric-input" type="number" id="calcUsed" value="0" min="0">
+          <div class="label">Calculator Uses</div>
+        </div>
+        <div class="metric-card">
+          <input class="metric-input" type="text" id="phRank" value="--" placeholder="#">
+          <div class="label">PH Rank (#)</div>
+        </div>
+        <div class="metric-card">
+          <input class="metric-input" type="number" id="socialClicks" value="0" min="0">
+          <div class="label">Social Clicks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      ⏱️ Launch Day Timeline (All times PT) <span style="margin-left:auto;font-size:0.8rem;color:var(--text2)">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="timeline-item">
+        <div class="timeline-time">12:01 AM</div>
+        <div class="timeline-content">
+          <h4>PH Goes Live</h4>
+          <p>Auto-banner shows on all pages. Verify by visiting getapipulse.com.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">12:05 AM</div>
+        <div class="timeline-content">
+          <h4>Post Twitter/X Thread</h4>
+          <p>4-tweet thread (templates below). PH weighs early external traffic heavily.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">12:10 AM</div>
+        <div class="timeline-content">
+          <h4>Post LinkedIn</h4>
+          <p>Personal account, founder story angle (template below).</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">12:15 AM</div>
+        <div class="timeline-content">
+          <h4>Post Maker Comment on PH</h4>
+          <p>Introduce yourself, explain why you built this, pin it.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">8-10 AM</div>
+        <div class="timeline-content">
+          <h4>Reddit Posts</h4>
+          <p>r/SaaS + r/ChatGPTDev (templates below). Morning = more visibility.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">Every 1-2h</div>
+        <div class="timeline-content">
+          <h4>Monitor & Respond</h4>
+          <p>Reply to EVERY PH comment within 1 hour. Update metrics above. Share milestones on Twitter.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">If #3+</div>
+        <div class="timeline-content">
+          <h4>Post Show HN</h4>
+          <p>Only if first Show HN gets no traction. Template below.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">End of Day</div>
+        <div class="timeline-content">
+          <h4>Thank You Thread</h4>
+          <p>Post gratitude thread on Twitter. Share final rank + upvote count.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Twitter/X Templates -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      🐦 Twitter/X Thread — Copy & Paste <span style="margin-left:auto;font-size:0.8rem;color:var(--text2)">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="template-box">
+        <h4>Tweet 1 — The Hook</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>We're live on @ProductHunt today! 🚀
+
+APIpulse — Compare AI API pricing across 67 models and 10 providers.
+
+Calculate your exact monthly spend in 30 seconds. 100% free.
+
+[REPLACE WITH PH LINK]</pre>
+      </div>
+      <div class="template-box">
+        <h4>Tweet 2 — The Story</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>Why I built this:
+
+I was spending 2+ hours every month manually comparing OpenAI vs Anthropic vs Google pricing pages. There was no single tool that did it all.
+
+So I built one. It's free, no signup, runs entirely in your browser.</pre>
+      </div>
+      <div class="template-box">
+        <h4>Tweet 3 — The Features</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>What's inside:
+• 67 models across 10 providers
+• Instant cost calculator
+• Side-by-side comparison
+• 389 in-depth blog articles
+• Cost Monitoring Dashboard
+• Price alerts & weekly reports
+• Pricing API for developers
+• Works on mobile, dark/light themes
+
+All free. No signup. No catch.</pre>
+      </div>
+      <div class="template-box">
+        <h4>Tweet 4 — The CTA</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>If you're building with AI APIs, this will save you hours and potentially hundreds of dollars per month.
+
+Would love your feedback: [REPLACE WITH PH LINK]
+
+If you find it useful, an upvote would mean the world. 🙏</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- LinkedIn Template -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      💼 LinkedIn Post — Copy & Paste <span style="margin-left:auto;font-size:0.8rem;color:var(--text2)">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="template-box">
+        <h4>LinkedIn — Founder Story</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>Excited to share something I've been building — APIpulse, now live on Product Hunt!
+
+As a developer, I was frustrated by how hard it is to compare AI API pricing across providers. OpenAI, Anthropic, Google, Mistral — each has different pricing pages, different token counting, different tiers.
+
+So I built a free tool that lets you:
+→ Compare 67 LLM models across 10 providers
+→ Calculate your exact monthly cost in 30 seconds
+→ Find cheaper alternatives you didn't know existed
+
+It's completely free, no signup required, and runs entirely in the browser. No paywall, no credit card, no catch.
+
+Check it out on Product Hunt: [REPLACE WITH PH LINK]
+
+I'd love to hear what you think — what models or features would be most useful for your workflow?
+
+#AI #LLM #API #DeveloperTools #ProductHunt</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reddit Templates -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      📌 Reddit Posts — Copy & Paste <span style="margin-left:auto;font-size:0.8rem;color:var(--text2)">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="template-box">
+        <h4>r/SaaS — Title: I built a free AI API cost calculator — just launched on Product Hunt</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>Hey r/SaaS! I built APIpulse — a free tool that helps developers compare AI API pricing across 67 models and 10 providers.
+
+The problem: Every time I needed to choose between OpenAI, Anthropic, Google, etc., I'd spend an hour+ manually comparing pricing pages. There was no single tool that calculated costs for YOUR specific usage pattern.
+
+The solution: A free, client-side calculator where you enter your token counts and request volume, and instantly see what you'd pay across all 67 models.
+
+Key features:
+- 67 models across 10 providers (OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Meta, xAI, Moonshot, AI21)
+- Instant cost calculations — no signup, no API keys
+- Side-by-side comparison tool
+- Cost Monitoring Dashboard with spending trends and budget alerts
+- 389 blog posts with deep-dive analysis
+- Pricing API for developers
+- Dark/light themes, mobile responsive
+
+It's 100% free. Every tool, every feature. No signup, no credit card, no catch.
+
+Just launched on Product Hunt: [REPLACE WITH PH LINK]
+
+Would love feedback from this community. What would make this more useful for your team?</pre>
+      </div>
+      <div class="template-box">
+        <h4>r/ChatGPTDev — Title: Compare GPT-5, Claude 4, Gemini 3 pricing — free calculator with 67 models</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>I built APIpulse after spending too many hours manually comparing AI API pricing pages.
+
+Enter your token counts and request volume → see exact monthly costs across 67 models from 10 providers. Finds the cheapest option for your specific usage pattern.
+
+Some interesting findings from building this:
+- The price gap between cheapest and most expensive models can be 675x
+- DeepSeek V4 Pro is 75% cheaper than GPT-5 for similar tasks
+- Gemini 3.1 Pro just got renamed and repriced
+- Grok 4.5 had a 10x price increase recently
+
+100% free, no signup, client-side: getapipulse.com
+
+Just launched on Product Hunt: [REPLACE WITH PH LINK]</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- Show HN Template -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      🔶 Hacker News — Show HN (backup) <span style="margin-left:auto;font-size:0.8rem;color:var(--text2)">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="template-box">
+        <h4>Show HN — Only if first post gets no traction</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>Title: Show HN: APIpulse – Compare AI API pricing across 67 models
+
+I built a free tool that compares LLM API pricing across OpenAI, Anthropic, Google, Mistral, and 6 more providers.
+
+Enter your token counts and request volume, get instant cost estimates across all 67 models. No signup, no API keys, runs entirely in the browser.
+
+Key features:
+- 67 models, 10 providers
+- Instant cost calculator
+- Side-by-side comparison
+- Cost Monitoring Dashboard
+- 389 blog posts analyzing pricing trends
+- Free pricing API
+
+I built this because I was tired of manually checking 4+ pricing pages every time I needed to compare costs. The tool finds the cheapest model for your specific usage pattern.
+
+Live: getapipulse.com
+Product Hunt: [REPLACE WITH PH LINK]</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- PH Comment Responses -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      💬 PH Comment Response Templates <span style="margin-left:auto;font-size:0.8rem;color:var(--text2)">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text2);font-size:0.85rem;margin-bottom:1rem;">Reply to EVERY comment within 1 hour. PH rewards fast maker engagement. Click any response to copy.</p>
+
+      <h4 style="color:var(--green);margin:1rem 0 0.5rem;">Positive Feedback</h4>
+      <div class="template-box">
+        <h4>"Great tool! Upvoted!"</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>Thank you so much! Means a lot. If there's a model or feature you'd like to see, let me know — I'm actively building this out.</pre>
+      </div>
+      <div class="template-box">
+        <h4>"This is exactly what I needed"</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>That's great to hear! The whole reason I built this was because I couldn't find a single tool that compared all the major providers. Hope it saves you time.</pre>
+      </div>
+      <div class="template-box">
+        <h4>"Love that it's free and no signup"</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>That was non-negotiable for me. Developers shouldn't have to hand over their email just to compare prices. Everything runs client-side.</pre>
+      </div>
+
+      <h4 style="color:var(--blue);margin:1rem 0 0.5rem;">Technical Questions</h4>
+      <div class="template-box">
+        <h4>"How do you keep pricing data up to date?"</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>I verify monthly against each provider's official pricing page. When I detect changes (like the recent Grok 3 10x increase or DeepSeek's 75% cut), I update immediately and add a note to the pricing changelog. The data lives in pricing-data.js — fully transparent.</pre>
+      </div>
+      <div class="template-box">
+        <h4>"Which providers do you support?"</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>10 providers, 67 models: OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Meta Llama (via Together.ai), xAI (Grok), Moonshot, and AI21. Always evaluating new ones to add.</pre>
+      </div>
+      <div class="template-box">
+        <h4>"Can I embed this on my site?"</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>Yes! There's an embed widget page at getapipulse.com/embed.html. You can add the calculator to your docs or blog with a simple iframe.</pre>
+      </div>
+
+      <h4 style="color:var(--yellow);margin:1rem 0 0.5rem;">Feature Requests</h4>
+      <div class="template-box">
+        <h4>"Add AWS Bedrock / Azure OpenAI"</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>On my radar! Those are popular for enterprise users. I'll prioritize based on demand — drop a comment or email me at hello@getapipulse.com if you need it.</pre>
+      </div>
+      <div class="template-box">
+        <h4>"Add a cost alert / monitoring feature"</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>Already there! Check out the Cost Monitoring Dashboard at getapipulse.com — it tracks spending trends, sets budget alerts, and sends price change notifications. You can also subscribe to alerts for any model's price changes.</pre>
+      </div>
+
+      <h4 style="color:var(--red);margin:1rem 0 0.5rem;">Skeptical / Critical</h4>
+      <div class="template-box">
+        <h4>"How is this different from other comparison sites?"</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>Good question. Most comparison sites focus on benchmarks and quality metrics. APIpulse is specifically about cost — the calculator lets you input YOUR exact usage (tokens, requests, models) and see what you'd actually pay. It's a budget planning tool, not a benchmark site.</pre>
+      </div>
+      <div class="template-box">
+        <h4>"Is everything really free?"</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>Yes — every tool, every feature. Cost calculator, comparison tool, monitoring dashboard, price alerts, weekly reports, PDF exports, saved scenarios, optimization playbook. All 67 models, all 389 blog posts. No signup, no credit card, no catch.</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- PH Algorithm Tips -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      🧠 PH Algorithm Tips <span style="margin-left:auto;font-size:0.8rem;color:var(--text2)">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="tips-grid">
+        <div class="tip"><span class="num">1.</span> <strong>External traffic matters most</strong> — PH weighs visits from outside PH heavily. Share on Twitter, LinkedIn, Reddit immediately.</div>
+        <div class="tip"><span class="num">2.</span> <strong>Maker engagement</strong> — Reply to EVERY comment, quickly. The algorithm rewards active makers.</div>
+        <div class="tip"><span class="num">3.</span> <strong>Consistent upvotes</strong> — Spread throughout the day, not all at once. Natural > burst.</div>
+        <div class="tip"><span class="num">4.</span> <strong>Don't ask for upvotes on PH</strong> — They penalize this. Ask for feedback instead.</div>
+        <div class="tip"><span class="num">5.</span> <strong>Share the PH link</strong> on all social channels simultaneously at launch.</div>
+        <div class="tip"><span class="num">6.</span> <strong>Update your maker comment</strong> with progress updates throughout the day.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity Log -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      📝 Activity Log <span style="margin-left:auto;font-size:0.8rem;color:var(--text2)">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text2);font-size:0.85rem;margin-bottom:0.5rem;">Press Enter to log an action. Saved to localStorage.</p>
+      <input type="text" id="logInput" placeholder="Type an action and press Enter (e.g., 'Posted Twitter thread', 'Replied to 3 PH comments')">
+      <div id="logEntries" style="margin-top:0.75rem;"></div>
+    </div>
+  </div>
+
+  <!-- Direct Messages -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+      💌 DM Template (for developer friends) <span style="margin-left:auto;font-size:0.8rem;color:var(--text2)">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="template-box">
+        <h4>Direct Message — Personal outreach</h4>
+        <button class="copy-btn" onclick="copyTemplate(this)">Copy</button>
+        <pre>Hey! I just launched APIpulse on Product Hunt — it's a free tool that compares AI API pricing across 67 models. Would mean a lot if you could check it out and drop an upvote: [REPLACE WITH PH LINK]
+
+No pressure at all, just trying to get some early traction. Thanks! 🙏</pre>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  APIpulse Launch Command Center — Built for the $100 AI Startup Race<br>
+  getapipulse.com • 67 models • 10 providers • 100% free
+</div>
+
+<script>
+  // Countdown to midnight PT (July 15, 2026)
+  function updateCountdown() {
+    const now = new Date();
+    // PH resets at midnight PT = 7:00 UTC
+    const launch = new Date(Date.UTC(2026, 6, 15, 7, 0, 0)); // July 15, 2026 07:00 UTC = midnight PT
+    const diff = launch - now;
+
+    if (diff <= 0) {
+      const hoursSince = Math.abs(diff) / 3600000;
+      if (hoursSince < 24) {
+        document.getElementById('countdown').textContent = '🚀 LIVE NOW';
+        document.getElementById('countdownLabel').textContent = 'PH is live — go go go!';
+        document.getElementById('statusBadge').textContent = 'LIVE';
+        document.getElementById('statusBadge').className = 'status-badge status-live';
+      } else {
+        document.getElementById('countdown').textContent = '✅ Complete';
+        document.getElementById('countdownLabel').textContent = 'Launch day is over';
+        document.getElementById('statusBadge').textContent = 'DONE';
+        document.getElementById('statusBadge').className = 'status-badge status-done';
+      }
+      return;
+    }
+
+    const hours = Math.floor(diff / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('countdown').textContent =
+      `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Toggle sections
+  function toggleSection(header) {
+    const body = header.nextElementSibling;
+    body.classList.toggle('collapsed');
+    const arrow = header.querySelector('span');
+    arrow.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+  }
+
+  // Copy template
+  function copyTemplate(btn) {
+    const pre = btn.parentElement.querySelector('pre');
+    navigator.clipboard.writeText(pre.textContent).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.style.background = 'var(--green)';
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.style.background = '';
+      }, 2000);
+    });
+  }
+
+  // Activity log
+  const logKey = 'apipulse_launch_log';
+  function loadLog() {
+    const entries = JSON.parse(localStorage.getItem(logKey) || '[]');
+    const container = document.getElementById('logEntries');
+    container.innerHTML = entries.map(e =>
+      `<div class="log-entry"><span class="log-time">${e.time}</span><span class="log-text">${e.text}</span></div>`
+    ).join('');
+  }
+  function addLog(text) {
+    const entries = JSON.parse(localStorage.getItem(logKey) || '[]');
+    const now = new Date();
+    const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+    entries.unshift({ time, text });
+    if (entries.length > 100) entries.pop();
+    localStorage.setItem(logKey, JSON.stringify(entries));
+    loadLog();
+  }
+  document.getElementById('logInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && this.value.trim()) {
+      addLog(this.value.trim());
+      this.value = '';
+    }
+  });
+  loadLog();
+
+  // Save metrics to localStorage
+  const metricIds = ['upvotes', 'comments', 'visitors', 'calcUsed', 'phRank', 'socialClicks'];
+  metricIds.forEach(id => {
+    const el = document.getElementById(id);
+    const saved = localStorage.getItem('metric_' + id);
+    if (saved) el.value = saved;
+    el.addEventListener('input', () => {
+      localStorage.setItem('metric_' + id, el.value);
+    });
+  });
+</script>
+
+</body>
+</html>
