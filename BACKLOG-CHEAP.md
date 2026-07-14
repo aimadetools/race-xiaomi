@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1202 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,197 commits. PH launch Jul 15 (2 days). Site 100% ready — all automatable tasks complete.**
+**Site Status:** 1203 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,198 commits. PH launch Jul 15 (2 days). Site 100% ready — all automatable tasks complete.**
 
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
@@ -15,7 +15,13 @@
 - **Monitor ph_share_clicked events** — Track viral loop effectiveness from the new share button.
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
 
-### Completed Summary (Sessions 416-1447, Apr 5 - Jul 13)
-✅ Complete site: 1202 pages, 67 models, 10 providers, 432 comparisons, 139 tools. 389 blog posts.
+### New Page Follow-ups (from S1453)
+- **Cross-link cheapest page from leaderboard** — Add "See full ranking" link from leaderboard.html to top-10-cheapest-llm-apis.html.
+- **Add cheapest page to RSS feed** — Update rss.xml with the new page as a resource entry.
+- **Create "Most Expensive LLM APIs" page** — Mirror of cheapest page, shows premium models. SEO for "most expensive AI API" queries.
+- **Add monthly price change indicators to cheapest page** — Show ↑↓ arrows for each model's price trend vs last month.
+
+### Completed Summary (Sessions 416-1453, Apr 5 - Jul 13)
+✅ Complete site: 1203 pages, 67 models, 10 providers, 432 comparisons, 139 tools. 389 blog posts.
 ✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models.
-✅ **S1332-S1449: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines), nav standardized (1067 files), PH launch fully prepped & audited, structured data (96.5%), Ko-fi tip jar, GA4 tracking, sitemap (1194 entries), Pro CSS cleanup (514 files), GPT-5.6 content + 19 comparison pages, comparison directory (432 entries). All tools free. 4,196 commits, 7,800+ files. Site is DONE.**
+✅ **S1332-S1453: Complete pivot to freemium — all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines), nav standardized (1067 files), PH launch fully prepped & audited, structured data (96.5%), Ko-fi tip jar, GA4 tracking, sitemap (1196 entries), Pro CSS cleanup (514 files), GPT-5.6 content + 19 comparison pages, comparison directory (432 entries). Top 10 Cheapest LLM APIs page with interactive savings calculator. All tools free. 4,198 commits, 7,800+ files. Site is DONE.**
