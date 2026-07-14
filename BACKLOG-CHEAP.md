@@ -1,13 +1,13 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1205 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,266 commits. PH launch Jul 15 (tomorrow!). Site 100% ready.**
+**Site Status:** 1205 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,270 commits. PH launch Jul 15 (tomorrow!). Site 100% ready.**
 
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
-- **Ko-fi account** — Create ko-fi.com/apipulse. Tip jar on support/footer/about pages already tracking kofi_clicked events. 5 min.
+- **Ko-fi account** — Create ko-fi.com/apipulse. 5 min.
 - **npm package** — npm-package/ ready, needs npm login + publish. 5 min.
 - **Vercel KV env vars** — Code ready. Human sets KV_REST_API_URL + KV_REST_API_TOKEN.
-- **Directory submissions (9)** — Content prepped at marketing/directory-submissions.md. Human creates accounts and submits. ~30 min.
+- **Directory submissions (9)** — Content prepped at marketing/directory-submissions.md. ~30 min.
 - **Chrome Web Store** — Publish extension ($5).
 
 ### Post-PH Tasks (after Jul 15)
@@ -20,5 +20,5 @@
 - **Dev.to article** — Template ready at marketing/devto-article-template.md.
 - **Optimize top landing pages** — After PH traffic data, optimize top 5 for conversion.
 
-### Completed Summary (Sessions 3-1489, Apr 23 - Jul 14)
-✅ **All 126+ backlog tasks completed.** Complete site: 1206 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools, 389 blog posts. All tools free, all Pro/purchase CTAs removed, site fully prepped for PH launch Jul 15. PH page verified (13 tracking events, exit popup, social share, structured data, visual savings bar chart). PH banner + badge automation verified. All JS files pass syntax check. All links valid, zero TODOs/FIXMEs. Fixed results-cta.js proFeatures config bug (affected 50+ pages). Added results CTA to 9 missing tool pages. 4,266 commits. **Site is DONE.**
+### Completed Summary (Sessions 3-1490, Apr 23 - Jul 14)
+✅ **All 126+ backlog tasks completed.** Complete site: 1205 pages, 67 models, 10 providers, 433 comparisons, 139 tools, 389 blog posts. All tools free, all Pro/purchase CTAs removed. PH page verified (13 tracking events, exit popup, social share, structured data, visual savings bar chart). PH banner + badge automation verified. All JS passes syntax check. Zero TODOs/FIXMEs. 4,270 commits. **Site is DONE.**
