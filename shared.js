@@ -384,6 +384,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.trackEvent) window.trackEvent('ph_banner_shown', { source: 'ph_launch', date: now.toISOString().slice(0,10) });
 });
 
+// "Featured on Product Hunt" Badge — persistent social proof after launch (Jul 18+)
+document.addEventListener('DOMContentLoaded', () => {
+    var badgeStart = new Date('2026-07-18T00:00:00-07:00'); // Show after launch banner ends
+    var now = new Date();
+    if (now < badgeStart) return;
+
+    var path = window.location.pathname;
+    if (path.includes('ph.html')) return; // PH page has its own social proof
+    if (localStorage.getItem('apipulse_ph_badge_dismissed')) return;
+
+    var badge = document.createElement('a');
+    badge.href = 'ph.html';
+    badge.title = 'Featured on Product Hunt — Jul 15, 2026';
+    badge.setAttribute('aria-label', 'Featured on Product Hunt');
+    badge.style.cssText = 'position:fixed;bottom:20px;right:20px;z-index:9998;display:inline-flex;align-items:center;gap:8px;background:#ff6154;color:white;text-decoration:none;padding:8px 14px;border-radius:10px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:12px;font-weight:600;box-shadow:0 2px 12px rgba(255,97,84,0.35);transition:all 0.2s;';
+    badge.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="white" style="flex-shrink:0"><path d="M13.604 8.4h-3.403V12h3.403c1.002 0 1.801-.799 1.801-1.8s-.799-1.8-1.801-1.8zM12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm1.604 14.4h-3.403V18H7.801V6h5.803c2.319 0 4.2 1.881 4.2 4.2s-1.881 4.2-4.2 4.2z"/></svg><span>Featured on Product Hunt</span>';
+    badge.onmouseenter = function() { this.style.transform = 'translateY(-2px)'; this.style.boxShadow = '0 6px 20px rgba(255,97,84,0.45)'; };
+    badge.onmouseleave = function() { this.style.transform = ''; this.style.boxShadow = '0 2px 12px rgba(255,97,84,0.35)'; };
+    badge.onclick = function() { if (window.trackEvent) window.trackEvent('ph_badge_clicked', { source: 'ph_social_proof', page: location.pathname }); };
+    document.body.appendChild(badge);
+});
+
 // Claude 4 Deprecation Text Auto-Transition (flips future→past tense on June 15)
 // Runs on ALL pages — replacements are string-match based and harmless on pages without deprecation text
 document.addEventListener('DOMContentLoaded', () => {
