@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1207 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,289 commits. PH launch Jul 15 (tomorrow!). Site 100% ready. All tasks blocked on human.**
+**Site Status:** 1207 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,290 commits. PH launch Jul 15 (tomorrow!). Site 100% ready. All tasks blocked on human.**
 
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15 (tomorrow). Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
