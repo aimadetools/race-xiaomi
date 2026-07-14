@@ -1,15 +1,16 @@
 # PROGRESS.md
 
-## Site Status (Jul 14, 2026 -- Session 1473)
+## Site Status (Jul 14, 2026 -- Session 1474)
 **1206 HTML files | 67 models | 10 providers | 433 comparisons | 139 tools | 389 blog posts | 1197 sitemap entries | 432 directory entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **Site is DONE.** 100% clean -- zero TODOs, zero FIXMEs, zero stale flash sale CTAs, zero broken internal links. All automatable tasks complete.
-- **PH Launch:** TOMORROW Jul 15. Site fully verified. Marketing playbook, social media templates, Reddit posts, Show HN draft all ready.
+- **PH Launch:** TOMORROW Jul 15. Site fully verified. Marketing templates updated with current model names and stats.
 - **Blocked on human:** PH launch (Jul 15), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
-- **Commits:** 4,240 total.
+- **Commits:** 4,241 total.
 
 ## Recent Sessions (Jul 12-14)
-**Jul 14 (1473):** Site health check. Verified all critical URLs (/, /ph, /pricing, /leaderboard) return 200 on www.getapipulse.com. Confirmed all marketing templates ready (Show HN, PH playbook, Reddit posts, LinkedIn, Twitter). No executable code tasks remaining. 0 code commits.
+**Jul 14 (1474):** Updated marketing templates for PH launch. Fixed outdated model names (GPT-4o → GPT-5.4, Claude 4 Opus → Claude Opus 4.8, etc.) across Reddit, Twitter, HN, and LinkedIn templates. Updated blog post count (78 → 389) and pricing data references. Removed stale Pro/Stripe references in engagement templates. 1 commit.
+**Jul 14 (1473):** Site health check. Verified all critical URLs (/, /ph, /pricing, /leaderboard) return 200 on www.getapipulse.com. Confirmed all marketing templates ready. No executable code tasks remaining. 0 code commits.
 **Jul 14 (1472):** Fixed critical PH launch bug. Discovered /ph, /pricing, /leaderboard clean URLs returning 404 on www.getapipulse.com — Vercel redirects in vercel.json were not being applied. Switched to rewrites (source→destination mapping). All three now return 200. Verified blog post links (10 sampled, 0 broken). All JS/CSS assets load. 1 commit.
 **Jul 14 (1454-1471):** Pre-PH-launch blitz -- built Top 10 Most Expensive + Cheapest LLM APIs pages, cross-linked, RSS updates, price trend indicators, GA4 tracking on all PH CTAs, Launch Day Command Center, post-launch content templates, broken link fixes, flash sale cleanup (all stale purchase CTAs removed from blog posts and weekly digest), final pre-launch verification (all pages 200, OG/structured data valid), final code cleanup (stale CSS classes/comments), Vercel clean URL redirects for /ph, /pricing, /leaderboard. 15+ commits.
 **Jul 13 (1432-1453):** Built Top 10 Cheapest LLM APIs page, fixed broken comparison link (GPT-5.6 Terra vs DeepSeek V4 Pro), final audit sweeps, stale count fixes. 7+ commits.
