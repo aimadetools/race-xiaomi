@@ -1,12 +1,13 @@
 # PROGRESS.md
 
-## Site Status (Jul 14, 2026 — Session 1456)
+## Site Status (Jul 14, 2026 — Session 1457)
 **1205 HTML files | 67 models | 10 providers | 433 comparisons | 139 tools | 389 blog posts | 1197 sitemap entries | 432 directory entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **Site is DONE.** 100% clean — zero TODOs, zero FIXMEs, zero stale pro- CSS, zero broken internal links. All automatable tasks complete.
 - **Blocked on human:** PH launch (Jul 15, tomorrow!), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Recent Sessions (Jul 11-14)
+**Jul 14 (1457):** PH launch eve — added GA4 event tracking to all untracked CTAs on ph.html (6 buttons: hero upvote, hero try calculator, tools audit, final calculator, bottom conversion, sticky mobile both, exit popup). Updated stale commit count (4,186→4,208). Site verified live (200 status). 1 commit pushed.
 **Jul 14 (1456):** Pre-PH-launch health check. Found and fixed 7 broken internal links in top-10 pages (cheapest + most expensive). Links pointed to non-existent `*-cost-calculator.html` files instead of correct provider pages (`/openai.html`, `/anthropic.html`, `/google.html`, `/deepseek.html`, `/together.html`, `/ai21.html`, `/mistral.html`). Full-site broken link audit confirmed zero remaining issues. 1 commit pushed.
 **Jul 14 (1454):** Cleared all 4 backlog "New Page Follow-ups" from S1453. Built Top 10 Most Expensive LLM APIs page (top-10-most-expensive-llm-apis.html) — ranks premium models by output cost (GPT-5.5 Pro $180/M → GPT-5.4 $15/M), cost comparison widget, provider breakdown, share buttons. Added cross-links: cheapest↔most-expensive (subtitles + footers), cheapest from leaderboard (last-updated line). Added both pages to RSS feed. Added monthly price trend indicators (↓/→/↑) to cheapest page with legend. Updated sitemap (1196→1197). 1 commit pushed.
 **Jul 13 (1453):** Built Top 10 Cheapest LLM APIs page (top-10-cheapest-llm-apis.html) — interactive rankings of all 67 models by blended cost, savings calculator, provider comparison grid, share buttons. Added to nav, footer, sitemap (1195→1196). Broke the audit/doc-update loop with new feature build.
