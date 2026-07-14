@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1206 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,221 commits. PH launch Jul 15 (tomorrow!). Site 100% ready — all automatable tasks complete.**
+**Site Status:** 1206 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,222 commits. PH launch Jul 15 (tomorrow!). Site 100% ready — all automatable tasks complete.**
 
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
@@ -14,14 +14,14 @@
 - **Post-PH analytics review** — Check GA4 for PH traffic patterns, top pages, bounce rate, conversion events.
 - **Monitor ph_share_clicked events** — Track viral loop effectiveness from the new share button.
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
-- **"Featured on Product Hunt" badge** — Add PH badge to homepage hero + ph.html after launch. Social proof.
-- **Post-PH blog post** — Write "How our PH launch went" blog post. Share metrics, lessons learned. Good for SEO + community.
-- **IndieHackers post** — Write about the $100 AI Startup Race experience. Community loves build-in-public stories.
-- **Dev.to article** — "I built an AI API pricing tool in 12 weeks with $100" — developer audience.
+- **"Featured on Product Hunt" badge** — Floating badge in shared.js shows Jul 18+. ph.html has inline badge. Homepage covered by floating badge.
+- **Post-PH blog post** — Template ready at marketing/post-ph-blog-template.md. Fill in real metrics after launch.
+- **IndieHackers post** — Template ready at marketing/indiehackers-post-template.md. Fill in launch data.
+- **Dev.to article** — Template ready at marketing/devto-article-template.md. Fill in launch data.
 - **Optimize top landing pages** — After PH traffic data, optimize the top 5 landing pages for conversion.
 - **Email capture on high-traffic pages** — Add "Get notified of price drops" email signup to top blog posts.
 - **Submit to remaining directories** — Check marketing/directory-submissions.md for any unsubmitted directories.
-- **Create pricing changelog page** — Track all historical price changes. Good for SEO + returning users.
+- **Create pricing changelog page** — Already done: /pricing-changelog.html (557 lines, SEO-optimized, FAQ schema).
 
 ### New Page Follow-ups (from S1453) — ALL DONE (S1454)
 ✅ Cross-link cheapest page from leaderboard
