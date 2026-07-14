@@ -20,7 +20,7 @@ APIpulse helps developers make smart decisions about AI API costs. Every tool is
 - Presets for startup, scale-up, and enterprise scenarios
 
 **Key features:**
-- 67 models: GPT-5.5, GPT-5, Claude Opus 4.8, Claude Sonnet 4.6, Gemini 3.1 Pro, DeepSeek V4, Mistral Large, Llama 4, Grok 4.5, and more
+- 67 models: GPT-5.6 Sol/Terra/Luna, Claude Opus 4.8, Claude Sonnet 5, Gemini 3.5 Flash, DeepSeek V4 Pro, Mistral Large 3, Llama 4, Grok 4.3, and more
 - Real-time cost calculations based on your token counts and request volume
 - Dark/light theme, fully responsive, accessible
 - No signup required — everything runs in the browser

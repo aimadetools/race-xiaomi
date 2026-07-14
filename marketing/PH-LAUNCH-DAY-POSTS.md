@@ -92,7 +92,7 @@ Just launched on Product Hunt: [PH LINK]
 Would love feedback from this community. What would make this more useful for your team?
 
 ### r/ChatGPTDev
-**Title:** Compare GPT-5, Claude 4, Gemini 3 pricing — free calculator with 67 models
+**Title:** Compare GPT-5.6, Claude Opus 4.8, Gemini 3.5 pricing — free calculator with 67 models
 
 **Body:**
 I built APIpulse after spending too many hours manually comparing AI API pricing pages.
@@ -101,9 +101,9 @@ Enter your token counts and request volume → see exact monthly costs across 67
 
 Some interesting findings from building this:
 - The price gap between cheapest and most expensive models can be 675x
-- DeepSeek V4 Pro is 75% cheaper than GPT-5 for similar tasks
-- Gemini 3.1 Pro just got renamed and repriced
-- Grok 4.5 had a 10x price increase recently
+- DeepSeek V4 Pro is 75% cheaper than GPT-5.6 for similar tasks
+- Gemini 3.5 Flash is Google's latest and cheapest model yet
+- Grok 4.3 is xAI's most capable model
 
 100% free, no signup, client-side: getapipulse.com
 

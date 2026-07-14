@@ -63,7 +63,7 @@ I update monthly. Pricing changes are usually announced with some lead time. The
 ### "This is just a reseller / affiliate thing"
 Nope — no affiliate links, no tracking, no data collection. Just a free tool I built because I needed it myself. Everything is 100% free.
 
-### "GPT-5 isn't even out yet / prices are wrong"
+### "GPT-5.6 pricing looks wrong"
 Some models are listed with their published pricing (which may be subject to change). I note when data is from official sources vs estimates. If you see something wrong, please let me know and I'll fix it.
 
 ---

@@ -34,7 +34,7 @@ APIpulse — a free AI API pricing comparison site that lets you:
 | Time | 12 weeks |
 
 ### What Worked
-1. **SEO-first approach** — 389 blog posts targeting long-tail keywords like "GPT-5 vs Claude Sonnet 5 cost" drive most traffic
+1. **SEO-first approach** — 389 blog posts targeting long-tail keywords like "GPT-5.6 vs Claude Opus 4.8 cost" drive most traffic
 2. **Free tools** — The calculator and comparison tools are the most popular pages
 3. **Comprehensive data** — 67 models across 10 providers is more than any competitor
 4. **Static site** — HTML/CSS/JS, hosted on Vercel, zero server costs

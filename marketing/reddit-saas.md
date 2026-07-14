@@ -9,7 +9,7 @@ Hey r/SaaS,
 
 If you're building with AI APIs, you know the pain: costs add up fast, and it's hard to know if you're getting the best deal.
 
-I was spending ~$200/month on GPT-5 for a side project. After doing a deep comparison, I switched to a mix of Gemini 2.5 Flash and Claude Haiku 4.5 — same quality for my use case, but now I pay ~$80/month. That's a 60% reduction.
+I was spending ~$200/month on GPT-5.6 Sol for a side project. After doing a deep comparison, I switched to a mix of Gemini 3.5 Flash and DeepSeek V4 Flash — same quality for my use case, but now I pay ~$80/month. That's a 60% reduction.
 
 The problem was that comparison took me hours of manual research across 4+ pricing pages. So I built APIpulse to make it instant:
 
