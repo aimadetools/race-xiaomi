@@ -70,8 +70,8 @@ If the site gets significant traffic:
 // pricing-data.js — Single source of truth for all API pricing
 const API_MODELS = [
     {
-        id: 'openai-gpt5',
-        name: 'GPT-5',
+        id: 'openai-gpt56',
+        name: 'GPT-5.6',
         provider: 'OpenAI',
         providerSlug: 'openai',
         tier: 'Premium',
