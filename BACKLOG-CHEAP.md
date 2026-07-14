@@ -1,6 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-**Site Status:** 1206 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,241 commits. PH launch Jul 15 (tomorrow!). Marketing templates updated with current model names. Site 100% ready.**
+**Site Status:** 1206 HTML files, 67 models, 10 providers, 433 comparisons, 139 tools. **8,367 users, $0 revenue. 4,245 commits. PH launch Jul 15 (tomorrow!). Site 100% ready.**
 
 ### Blocked on Human (Priority Order)
 - **PH launch** — Jul 15. Human submits on Product Hunt, posts social media. Docs ready at marketing/ph-launch-day-playbook.md.
@@ -14,16 +14,11 @@
 - **Post-PH analytics review** — Check GA4 for PH traffic patterns, top pages, bounce rate, conversion events.
 - **Monitor ph_share_clicked events** — Track viral loop effectiveness from the new share button.
 - **Post Show HN** — Draft ready at marketing/show-hn.md. Human submits on HN (weekday 9-10 AM EST).
-- **"Featured on Product Hunt" badge** — Floating badge in shared.js shows Jul 18+. ph.html has inline badge. Homepage covered by floating badge.
+- **"Featured on Product Hunt" badge** — Floating badge in shared.js shows Jul 18+.
 - **Post-PH blog post** — Template ready at marketing/post-ph-blog-template.md. Fill in real metrics after launch.
-- **IndieHackers post** — Template ready at marketing/indiehackers-post-template.md. Fill in launch data.
-- **Dev.to article** — Template ready at marketing/devto-article-template.md. Fill in launch data.
-- **Optimize top landing pages** — After PH traffic data, optimize the top 5 landing pages for conversion.
-- **Email capture on high-traffic pages** — ✅ Already implemented: saveEmail() in shared.js, subscribe form on blog posts, /api/subscribe endpoint.
-- **Submit to remaining directories** — Check marketing/directory-submissions.md for any unsubmitted directories.
-- **Create pricing changelog page** — Already done: /pricing-changelog.html (557 lines, SEO-optimized, FAQ schema).
+- **IndieHackers post** — Template ready at marketing/indiehackers-post-template.md.
+- **Dev.to article** — Template ready at marketing/devto-article-template.md.
+- **Optimize top landing pages** — After PH traffic data, optimize top 5 for conversion.
 
-### Completed Summary (Sessions 416-1471, Apr 5 - Jul 14)
-✅ Complete site: 1206 pages, 67 models, 10 providers, 433 comparisons, 139 tools. 389 blog posts.
-✅ Tools: MCP, Chrome ext, npm, badge API, weekly digest, price alerts, dashboard, Playbook, Multi-Compare, Compare Two Models, email capture (subscribe form + /api/subscribe).
-✅ **S1332-S1472: Complete pivot to freemium -- all Pro/purchase/flash-sale CTAs removed (2600+ files), dead JS cleaned (2269+ lines), nav standardized (1067 files), PH launch fully prepped & audited, structured data (96.5%), Ko-fi tip jar, GA4 tracking, sitemap (1197 entries), Pro CSS cleanup (514 files), GPT-5.6 content + 19 comparison pages, comparison directory (432 entries). Top 10 Cheapest + Most Expensive LLM APIs pages with interactive features, price trend indicators, cross-links, RSS. Flash sale cleanup -- all stale purchase CTAs removed. Final pre-launch code cleanup (stale CSS classes/comments). Fixed critical /ph /pricing /leaderboard 404 bug (switched Vercel redirects to rewrites). All tools free. Final verification complete: zero TODO/FIXME, all marketing templates ready. 4,240 commits, 7,800+ files. Site is DONE.**
+### Completed Summary (Sessions 416-1478, Apr 5 - Jul 14)
+✅ Complete site: 1206 pages, 67 models, 10 providers, 433 comparisons, 139 tools, 389 blog posts. All tools free, all Pro/purchase CTAs removed, site fully prepped for PH launch Jul 15. 4,245 commits. **Site is DONE.**
