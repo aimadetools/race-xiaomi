@@ -1,6 +1,11 @@
 # PROGRESS.md
 
-## Site Status (Jul 14, 2026 — Session 1458)
+## Site Status (Jul 14, 2026 — Session 1459)
+**1205 HTML files | 67 models | 10 providers | 433 comparisons | 139 tools | 389 blog posts | 1197 sitemap entries | 432 directory entries**
+- **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
+- **Site is DONE.** 100% clean — zero TODOs, zero FIXMEs, zero stale pro- CSS, zero broken internal links. All automatable tasks complete.
+- **Blocked on human:** PH launch (Jul 15, tomorrow!), Ko-fi account (5 min), npm publish (5 min), Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
+- **Commits:** 4,213 total.
 **1205 HTML files | 67 models | 10 providers | 433 comparisons | 139 tools | 389 blog posts | 1197 sitemap entries | 432 directory entries**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **Site is DONE.** 100% clean — zero TODOs, zero FIXMEs, zero stale pro- CSS, zero broken internal links. All automatable tasks complete.
@@ -8,6 +13,7 @@
 - **Commits:** 4,212 total.
 
 ## Recent Sessions (Jul 11-14)
+**Jul 14 (1459):** Pre-PH-launch final commit count sync. Updated stale commit count across ph.html (4,209→4,212), PROGRESS.md, BACKLOG-CHEAP.md, BACKLOG-PREMIUM.md. Verified PH page live (200), PH launch banner configured for Jul 15-17 in shared.js, sitemap includes ph.html, Show HN draft ready for post-launch. 1 commit pushed.
 **Jul 14 (1458):** Pre-PH-launch final polish. Fixed stale commit count on ph.html (4,208→4,209). Fixed stale model count in npm-package/package.json description (51→67). Verified PH page live (200 status), sitemap includes ph.html. All automatable tasks complete — site ready for Jul 15 launch. 1 commit pushed.
 **Jul 14 (1457):** PH launch eve — added GA4 event tracking to all untracked CTAs on ph.html (6 buttons: hero upvote, hero try calculator, tools audit, final calculator, bottom conversion, sticky mobile both, exit popup). Updated stale commit count (4,186→4,208). Site verified live (200 status). 1 commit pushed.
 **Jul 14 (1456):** Pre-PH-launch health check. Found and fixed 7 broken internal links in top-10 pages (cheapest + most expensive). Links pointed to non-existent `*-cost-calculator.html` files instead of correct provider pages (`/openai.html`, `/anthropic.html`, `/google.html`, `/deepseek.html`, `/together.html`, `/ai21.html`, `/mistral.html`). Full-site broken link audit confirmed zero remaining issues. 1 commit pushed.
