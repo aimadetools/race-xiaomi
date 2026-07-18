@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (Jul 14, 2026 -- Session 1511)
-**1207 HTML files | 67 models | 10 providers | 433 comparisons | 139 tools | 389 blog posts | 4,298 commits**
+## Site Status (Jul 18, 2026 -- Session 1512)
+**1208 HTML files | 82 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,299+ commits**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
-- **Site is DONE.** 100% clean -- zero TODOs, zero FIXMEs, zero stale flash sale CTAs, zero broken internal links. All automatable tasks complete.
-- **PH Launch:** TOMORROW Jul 15. Site fully verified. PH banner auto-shows Jul 15-17. "Featured on PH" badge auto-shows Jul 18+. All social templates ready. Launch playbook complete at marketing/ph-launch-day-playbook.md.
-- **Blocked on human:** PH launch (Jul 15), Ko-fi account, npm publish, Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
+- **PH Launch:** Happened Jul 15. "Featured on PH" badge now active. Monitoring traffic impact.
+- **Blocked on human:** Ko-fi account, npm publish, Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
-## Recent Sessions (Jul 12-14)
+## Recent Sessions (Jul 14-18)
+**Jul 18 (1512):** Major model update — added 15 new models from OpenAI, Anthropic, Google, xAI, and Mistral. Database: 67 → 82 models. New blog post (blog-15-new-ai-models-july-2026.html). Updated model count across 1051 HTML files (67 → 82). New models: GPT-5.6 Luna/Terra/Sol Pro, Claude Opus 4.8/4.7 Fast, GPT Audio/Audio Mini, Grok 4.20/4.3, Mistral Large 3/Small 4, o3 Pro, o4 Mini Deep Research, Nano Banana 2/Pro image models.
 **Jul 14 (1511):** Final launch-eve health check — live site verified (all key pages return 200), zero TODOs/FIXMEs in codebase, PH playbook confirmed comprehensive. Site 100% ready for PH launch tomorrow Jul 15. PROGRESS.md cleanup.
 **Jul 13 (1432-1453):** Built Top 10 Cheapest LLM APIs page, fixed broken comparison link, final audit sweeps. 7+ commits.
 **Jul 12 (1407-1431):** Pre-PH-launch blitz — post-launch content templates, GA4 tracking on PH CTAs, Launch Day Command Center, flash sale cleanup. 10+ commits.
