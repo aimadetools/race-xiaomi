@@ -60,6 +60,12 @@ const API_MODELS = [
     { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K', verified: 'Jul 10, 2026' },
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Jul 10, 2026' },
     { id: 'codestral', name: 'Codestral', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 0.30, output: 0.90, context: '256K', verified: 'Jul 10, 2026' },
+    { id: 'magistral-medium', name: 'Magistral Medium', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 2.00, output: 5.00, context: '256K', verified: 'Jul 2026' },
+    { id: 'magistral-small', name: 'Magistral Small', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '256K', verified: 'Jul 2026' },
+    { id: 'devstral2', name: 'Devstral 2', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.40, output: 2.00, context: '128K', verified: 'Jul 2026' },
+    { id: 'devstral-small2', name: 'Devstral Small 2', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.10, output: 0.30, context: '128K', verified: 'Jul 2026' },
+    { id: 'ministral-3-8b', name: 'Ministral 3 8B', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.15, context: '128K', verified: 'Jul 2026' },
+    { id: 'ministral-3-14b', name: 'Ministral 3 14B', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.20, output: 0.20, context: '128K', verified: 'Jul 2026' },
     // Cohere
     { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '256K', verified: 'Jul 10, 2026' },
     { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jul 10, 2026' },

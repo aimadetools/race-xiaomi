@@ -1,12 +1,22 @@
 # PROGRESS.md
 
-## Site Status (Jul 19, 2026 -- Session 1513)
-**1208 HTML files | 79 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,300+ commits**
+## Site Status (Jul 20, 2026 -- Session 1514)
+**1208 HTML files | 85 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,300+ commits**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **PH Launch:** Happened Jul 15. "Featured on PH" badge now active. Monitoring traffic impact.
 - **Blocked on human:** Ko-fi account, npm publish, Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Maintenance Log
+**Jul 20 (1514):** Mistral model expansion + provider data fix. Added 6 new Mistral models (79→85 total), fixed provider ID mismatch.
+  - Fixed provider ID mismatch: models had "metatogether.ai" but providers list had "together". Unified to "together" (5 Llama models now correctly counted).
+  - Added 6 new Mistral models from official pricing page: Magistral Medium ($2.00/$5.00, 256K), Magistral Small ($0.50/$1.50, 256K), Devstral 2 ($0.40/$2.00, 128K), Devstral Small 2 ($0.10/$0.30, 128K), Ministral 3 8B ($0.15/$0.15, 128K), Ministral 3 14B ($0.20/$0.20, 128K).
+  - Updated mistral.html: full page rewrite with all 10 models, 4 model families (General, Reasoning, Coding, Edge), updated calculator dropdown.
+  - Updated pricing-data.js: added 6 new models to API_MODELS array.
+  - Updated model count across 1052 HTML files (79→85).
+  - Updated api-docs.html, compare.html, blog-ai-api-pricing-complete-guide-2026.html with correct model counts.
+  - Verified against Mistral API pricing page (mistral.ai/pricing/api/).
+  - Affected files: data/pricing.json, pricing-data.js, mistral.html, api-docs.html, compare.html, blog-ai-api-pricing-complete-guide-2026.html, + 1052 files with model count text.
+
 **Jul 19 (1513):** Pricing data integrity fix — removed 3 duplicate models, corrected 1 pricing error. Verified against provider docs (Anthropic, xAI, Google).
   - Removed duplicate Grok 4.3 (xai-grok43, wrong input $1.20; kept xai-grok3 at correct $1.25)
   - Removed duplicate Mistral Large 3 (mistral-large3; kept mistral-large)
