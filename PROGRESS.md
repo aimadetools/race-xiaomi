@@ -1,12 +1,15 @@
 # PROGRESS.md
 
-## Site Status (Jul 20, 2026 -- Session 1514)
-**1208 HTML files | 85 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,300+ commits**
+## Site Status (Jul 20, 2026 -- Session 1515)
+**1208 HTML files | 85 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,301+ commits**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **PH Launch:** Happened Jul 15. "Featured on PH" badge now active. Monitoring traffic impact.
 - **Blocked on human:** Ko-fi account, npm publish, Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Maintenance Log
+**Jul 20 (1515):** Fixed xAI provider page — added 2 missing models (Grok 4.5, Grok 4.20). Page was only showing 2 of 4 models. Updated title, meta, structured data, stats bar, pricing table, model cards (2→4), calculator dropdown, comparison table. All 4 xAI models now properly represented.
+  - Affected file: xai.html (75 insertions, 21 deletions)
+
 **Jul 20 (1514):** Mistral model expansion + provider data fix. Added 6 new Mistral models (79→85 total), fixed provider ID mismatch.
   - Fixed provider ID mismatch: models had "metatogether.ai" but providers list had "together". Unified to "together" (5 Llama models now correctly counted).
   - Added 6 new Mistral models from official pricing page: Magistral Medium ($2.00/$5.00, 256K), Magistral Small ($0.50/$1.50, 256K), Devstral 2 ($0.40/$2.00, 128K), Devstral Small 2 ($0.10/$0.30, 128K), Ministral 3 8B ($0.15/$0.15, 128K), Ministral 3 14B ($0.20/$0.20, 128K).
