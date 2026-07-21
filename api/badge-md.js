@@ -17,7 +17,7 @@ const MODELS = {
   'openai-gpt-oss-120b': { name: 'GPT-oss 120B', provider: 'OpenAI', input: 0.15, output: 0.60, tier: 'Budget' },
   'anthropic-opus48': { name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00, tier: 'Premium' },
   'anthropic-sonnet5': { name: 'Claude Sonnet 5', provider: 'Anthropic', input: 2.00, output: 10.00, tier: 'Mid' },
-  'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 2.00, output: 10.00, tier: 'Mid' },
+  'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tier: 'Mid' },
   'anthropic-haiku': { name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tier: 'Budget' },
   'google-gemini35-flash': { name: 'Gemini 3.5 Flash', provider: 'Google', input: 1.50, output: 9.00, tier: 'Mid' },
   'google-gemini3-pro': { name: 'Gemini 3.1 Pro', provider: 'Google', input: 2.00, output: 12.00, tier: 'Mid' },

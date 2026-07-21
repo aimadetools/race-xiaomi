@@ -1,7 +1,7 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 10, 2026 (S1323: Verified OpenAI (added GPT-5.6 Sol/Terra/Luna), Anthropic, Google. S1296: Verified xAI, AI21, Moonshot + added Grok 4.5. 67 entries, 53 active, 14 deprecated)
-const PRICING_LAST_UPDATED = 'Jul 10, 2026';
+// Last verified: Jul 21, 2026 (S1516: Verified all providers against official pricing pages. Fixed Claude Sonnet 4 pricing $2/$10 → $3/$15. Renamed Claude 4 Opus → Claude Opus 4.1. Marked Opus 4.7 Fast deprecated. Fixed retirement dates.)
+const PRICING_LAST_UPDATED = 'Jul 21, 2026';
 
 const API_MODELS = [
     // OpenAI
@@ -32,11 +32,11 @@ const API_MODELS = [
     { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jul 2026' },
     { id: 'anthropic-opus46', name: 'Claude Opus 4.6', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'Jul 2026', note: 'Legacy model; consider migrating to Opus 4.8' },
     { id: 'anthropic-opus45', name: 'Claude Opus 4.5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '200K', verified: 'Jul 2026', note: 'Legacy model; consider migrating to Opus 4.8' },
-    { id: 'anthropic-opus', name: 'Claude 4 Opus', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-opus48' },
+    { id: 'anthropic-opus', name: 'Claude Opus 4.1', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-08-05', replacement: 'anthropic-opus48', note: 'Anthropic renamed to Claude Opus 4.1; retiring Aug 5, 2026' },
     { id: 'anthropic-sonnet5', name: 'Claude Sonnet 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 2.00, output: 10.00, context: '1M', verified: 'Jul 2026', note: 'Introductory pricing $2/$10 through Aug 31, 2026 (regular $3/$15)' },
     { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', verified: 'Jul 2026', note: 'Legacy model; consider migrating to Sonnet 5' },
     { id: 'anthropic-sonnet45', name: 'Claude Sonnet 4.5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', verified: 'Jul 2026', note: 'Legacy model; consider migrating to Sonnet 5' },
-    { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 2.00, output: 10.00, context: '200K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-sonnet46' },
+    { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', verified: 'Jul 2026', deprecated: true, deprecatedDate: '2026-08-05', replacement: 'anthropic-sonnet46', note: 'Retired except on Bedrock and Google Cloud; $3/$15 per Anthropic pricing page' },
     { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K', verified: 'Jul 2026' },
     { id: 'anthropic-fable5', name: 'Claude Fable 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jul 2026' },
     { id: 'anthropic-mythos5', name: 'Claude Mythos 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jul 2026', note: 'Invitation-only via Project Glasswing — not generally available via standard API' },

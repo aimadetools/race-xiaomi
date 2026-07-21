@@ -15,7 +15,7 @@
     { name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28, provider: 'DeepSeek' },
     { name: 'GPT-5', input: 1.25, output: 10.00, provider: 'OpenAI' },
     { name: 'Gemini 3.1 Pro', input: 2.00, output: 12.00, provider: 'Google' },
-    { name: 'Claude Sonnet 4.6', input: 2.00, output: 10.00, provider: 'Anthropic' },
+    { name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, provider: 'Anthropic' },
     { name: 'Mistral Small 4', input: 0.20, output: 0.60, provider: 'Mistral' },
     { name: 'Llama 4 Scout', input: 0.15, output: 0.60, provider: 'Meta' },
     { name: 'GPT-5.4 mini', input: 0.40, output: 1.60, provider: 'OpenAI' }

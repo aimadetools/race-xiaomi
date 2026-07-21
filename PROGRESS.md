@@ -1,12 +1,22 @@
 # PROGRESS.md
 
-## Site Status (Jul 20, 2026 -- Session 1515)
-**1208 HTML files | 85 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,301+ commits**
+## Site Status (Jul 21, 2026 -- Session 1516)
+**1208 HTML files | 85 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,304+ commits**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **PH Launch:** Happened Jul 15. "Featured on PH" badge now active. Monitoring traffic impact.
 - **Blocked on human:** Ko-fi account, npm publish, Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Maintenance Log
+**Jul 21 (1516):** Anthropic pricing data accuracy fix — verified all 10 providers against official pricing pages. Fixed 3 data errors affecting 75 files.
+  - **Claude Sonnet 4 pricing**: $2/$10 → $3/$15 (was incorrectly set to Sonnet 5 intro pricing). Verified against Anthropic pricing page.
+  - **Claude Sonnet 4.6 pricing**: $2/$10 → $3/$15 (same error propagated to 40+ comparison/tool pages). Verified against Anthropic pricing page.
+  - **Claude Opus 4.1 naming**: "Claude 4 Opus" → "Claude Opus 4.1" (Anthropic's current official name). Updated in pricing-data.js, pricing.json, anthropic.html.
+  - **Retirement dates**: Opus 4.1 "Jun 15" → "Aug 5, 2026"; Sonnet 4 marked "Retired" (per Anthropic docs).
+  - **Opus 4.7 Fast**: marked deprecated (Anthropic removing Jul 24, 2026).
+  - **Verification**: OpenAI (29 models ✓), Google (11 models ✓), Anthropic (14 models — 3 fixed), DeepSeek (4 models ✓), xAI (4 models ✓), Mistral/Together/Cohere/AI21/Moonshot (unchanged).
+  - Reason for 75-file change: Sonnet 4.6 $2/$10 error was hardcoded in 40+ comparison pages, calculators, and tool pages. Central pricing data was correct for most models but Sonnet 4/4.6 had propagated copy-paste errors.
+  - Affected files: pricing-data.js, pricing.json, anthropic.html, + 72 comparison/calculator/tool HTML/JS files (pricing string replacement only).
+
 **Jul 20 (1515):** Fixed xAI provider page — added 2 missing models (Grok 4.5, Grok 4.20). Page was only showing 2 of 4 models. Updated title, meta, structured data, stats bar, pricing table, model cards (2→4), calculator dropdown, comparison table. All 4 xAI models now properly represented.
   - Affected file: xai.html (75 insertions, 21 deletions)
 
