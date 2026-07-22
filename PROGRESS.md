@@ -1,12 +1,23 @@
 # PROGRESS.md
 
-## Site Status (Jul 22, 2026 -- Session 1517)
-**1208 HTML files | 85 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,304+ commits**
+## Site Status (Jul 22, 2026 -- Session 1518)
+**1208 HTML files | 85 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,305+ commits**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **PH Launch:** Happened Jul 15. "Featured on PH" badge now active. Monitoring traffic impact.
 - **Blocked on human:** Ko-fi account, npm publish, Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Maintenance Log
+**Jul 22 (1518):** Model deprecation timeline overhaul — added 16 missing events (Jun-Jul 2026).
+  - **Imminent deprecations added**: o4 Mini Deep Research (Jul 23, TOMORROW), Claude Opus 4.7 Fast (Jul 24, 2 days), Claude Opus 4.1 (Aug 5). "Upcoming Deprecations" section now shows 5 upcoming events instead of 0.
+  - **Past deprecations added**: Gemini 2.0 Flash/Lite (Jun 1), DeepSeek V3.2 (Jul 7), Llama 3.1 70B/8B (Jul 1).
+  - **Launch events added**: Claude Fable 5/Mythos 5 (Jun 1), Gemini 3.1 Pro (Jun 15), GPT-5.6 Luna/Terra/Sol Pro (Jul 18), Claude Opus 4.8/4.7 Fast (Jul 18), Claude Sonnet 5 (Jul 18), o3 Pro (Jul 18).
+  - **Future deprecations added**: GPT-4.1 nano (Oct 23), GPT-5/5 mini (Dec 11).
+  - **FAQ updated**: Reflects current deprecation schedule with 3 imminent dates.
+  - **Model count fix**: CTA section "67-model" → "85-model".
+  - **dateModified**: Updated to 2026-07-22 in structured data.
+  - Reason: Timeline was 5+ weeks stale, "Upcoming Deprecations" showed nothing despite 2 imminent deprecations.
+  - Affected file: model-deprecation-timeline.html (21 insertions, 5 deletions)
+
 **Jul 22 (1517):** OpenAI pricing data fix — o4-mini-deep-research 50% price cut + deprecation.
   - **o4 Mini Deep Research pricing**: $2.00/$8.00 → $1.00/$4.00 (confirmed 50% price cut we missed). Verified against OpenAI pricing page + web search confirmation.
   - **o4 Mini Deep Research deprecation**: marked deprecated (sunset Jul 23, 2026 per OpenAI deprecation schedule). Replacement: gpt-5.5-pro.
