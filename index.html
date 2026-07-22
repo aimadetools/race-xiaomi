@@ -11,12 +11,12 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="APIpulse — Know your AI API costs before you commit">
-    <meta property="og:image" content="https://getapipulse.com/og-image.png">
-    <meta property="og:url" content="https://getapipulse.com/">
-    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:image" content="https://www.getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://www.getapipulse.com/">
+    <meta name="twitter:image" content="https://www.getapipulse.com/og-image.png">
     <meta name="twitter:description" content="Compare LLM API pricing across providers. Calculate monthly spend and optimize costs.">
-    <link rel="canonical" href="https://getapipulse.com/">
-    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="canonical" href="https://www.getapipulse.com/">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://www.getapipulse.com/rss.xml">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <!-- Google Analytics 4 -->
@@ -40,7 +40,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "APIpulse",
-        "url": "https://getapipulse.com",
+        "url": "https://www.getapipulse.com",
         "description": "Compare LLM API pricing across 10 providers and 85 models — OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, and more. Calculate your monthly spend and optimize costs.",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
@@ -436,7 +436,7 @@
         }
     </style>
     <meta name="theme-color" content="#6366f1">
-    <link rel="preconnect" href="https://getapipulse.com">
+    <link rel="preconnect" href="https://www.getapipulse.com">
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -1991,7 +1991,7 @@
                 'Total tokens/month: ' + totalTokens,
                 'Monthly Total: ' + monthlyTotal,
                 '',
-                'https://getapipulse.com'
+                'https://www.getapipulse.com'
             ].join('\n');
 
             navigator.clipboard.writeText(text).then(() => {
@@ -2006,7 +2006,7 @@
             const provider = document.getElementById('provider');
             const model = provider.options[provider.selectedIndex].text;
             const total = document.getElementById('monthly-total').textContent;
-            const url = 'https://getapipulse.com/calculator.html?m=' + provider.value + '&i=' + document.getElementById('input-tokens').value + '&o=' + document.getElementById('output-tokens').value + '&r=' + document.getElementById('requests').value + '&d=' + document.getElementById('days').value;
+            const url = 'https://www.getapipulse.com/calculator.html?m=' + provider.value + '&i=' + document.getElementById('input-tokens').value + '&o=' + document.getElementById('output-tokens').value + '&r=' + document.getElementById('requests').value + '&d=' + document.getElementById('days').value;
             const tweetText = encodeURIComponent('My estimated AI API cost for ' + model + ' is ' + total + '/mo. Calculate yours:');
             document.getElementById('share-x-home').href = 'https://twitter.com/intent/tweet?text=' + tweetText + '&url=' + encodeURIComponent(url);
             document.getElementById('share-linkedin-home').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);

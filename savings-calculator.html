@@ -9,14 +9,14 @@
     <meta property="og:title" content="AI API Savings Calculator — Find Hidden Savings | APIpulse">
     <meta property="og:description" content="Enter your current AI API usage and see exactly how much you could save by switching models. Most users find 40-60% savings.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://getapipulse.com/og-image.png">
-    <meta property="og:url" content="https://getapipulse.com/savings-calculator.html">
+    <meta property="og:image" content="https://www.getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://www.getapipulse.com/savings-calculator.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI API Savings Calculator — Find Hidden Savings | APIpulse">
     <meta name="twitter:description" content="Enter your current AI API usage and see exactly how much you could save. Most users find 40-60% savings.">
-    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
-    <link rel="canonical" href="https://getapipulse.com/savings-calculator.html">
-    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <meta name="twitter:image" content="https://www.getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://www.getapipulse.com/savings-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://www.getapipulse.com/rss.xml">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <!-- Google Analytics 4 -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "APIpulse AI API Savings Calculator",
-        "url": "https://getapipulse.com/savings-calculator.html",
+        "url": "https://www.getapipulse.com/savings-calculator.html",
         "description": "Free tool that shows exactly how much you could save on AI API costs. Compare 85 models and find cheaper alternatives.",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
@@ -562,14 +562,14 @@
                 'Current: ' + selectedModel.name + ' → $' + currentCost.toFixed(2) + '/mo\n' +
                 'Best alternative: ' + topAlts[0].model.name + ' → $' + topAlts[0].cost.toFixed(2) + '/mo\n' +
                 'Savings: $' + monthlySavings.toFixed(2) + '/mo (' + bestPct + '%)\n\n' +
-                'Check your AI API costs → https://getapipulse.com/savings-calculator.html';
+                'Check your AI API costs → https://www.getapipulse.com/savings-calculator.html';
 
             html += '<div style="margin-top:20px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-align:center;">' +
                 '<p style="font-size:13px;color:var(--text-secondary);margin-bottom:10px;">📢 Share your savings with your team</p>' +
                 '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">' +
                 '<button onclick="copySavingsSummary(this)" data-text="' + encodeURIComponent(shareText) + '" style="padding:8px 16px;background:var(--accent);color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;">📋 Copy Summary</button>' +
-                '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent('I just found $' + monthlySavings.toFixed(2) + '/mo in AI API savings by switching from ' + selectedModel.name + ' to ' + topAlts[0].model.name + ' (' + bestPct + '% less)! 🔍') + '&url=' + encodeURIComponent('https://getapipulse.com/savings-calculator.html') + '" target="_blank" rel="noopener" style="padding:8px 16px;background:#1da1f2;color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;">🐦 Tweet</a>' +
-                '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent('https://getapipulse.com/savings-calculator.html') + '" target="_blank" rel="noopener" style="padding:8px 16px;background:#0077b5;color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;">💼 LinkedIn</a>' +
+                '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent('I just found $' + monthlySavings.toFixed(2) + '/mo in AI API savings by switching from ' + selectedModel.name + ' to ' + topAlts[0].model.name + ' (' + bestPct + '% less)! 🔍') + '&url=' + encodeURIComponent('https://www.getapipulse.com/savings-calculator.html') + '" target="_blank" rel="noopener" style="padding:8px 16px;background:#1da1f2;color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;">🐦 Tweet</a>' +
+                '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent('https://www.getapipulse.com/savings-calculator.html') + '" target="_blank" rel="noopener" style="padding:8px 16px;background:#0077b5;color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;">💼 LinkedIn</a>' +
                 '</div>' +
                 '<p id="share-confirm" style="font-size:12px;color:var(--green);margin-top:8px;display:none;">✅ Copied to clipboard!</p>' +
                 '</div>';

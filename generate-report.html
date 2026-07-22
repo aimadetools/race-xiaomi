@@ -7,17 +7,17 @@
     <meta name="description" content="Get a personalized AI API cost report. Enter your model, monthly spend, and usage to see exactly how much you could save. Free instant analysis with 85 models compared.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
-    <link rel="canonical" href="https://getapipulse.com/generate-report.html">
+    <link rel="canonical" href="https://www.getapipulse.com/generate-report.html">
     <!-- Open Graph -->
     <meta property="og:title" content="Generate Your Free API Cost Report — Personalized Savings in 60 Seconds">
     <meta property="og:description" content="Get a personalized AI API cost report. Enter your model, monthly spend, and usage to see exactly how much you could save.">
     <meta name="twitter:description" content="Get a personalized AI API cost report. Enter your model, monthly spend, and usage to see exactly how much you could save.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://getapipulse.com/og-image.png">
-    <meta property="og:url" content="https://getapipulse.com/generate-report.html">
+    <meta property="og:image" content="https://www.getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://www.getapipulse.com/generate-report.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Generate Your Free API Cost Report — Personalized Savings in 60 Seconds">
-    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:image" content="https://www.getapipulse.com/og-image.png">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
     <script>
@@ -610,8 +610,8 @@
 
         // Share links
         const shareText = `I found $${Math.max(0, annualSaving).toFixed(0)}/year in potential API savings with @APIpulse! Compare ${Object.keys(MODELS).length}+ AI models instantly:`;
-        document.getElementById('tweet-btn').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent('https://getapipulse.com/generate-report.html')}`;
-        document.getElementById('linkedin-btn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://getapipulse.com/generate-report.html')}`;
+        document.getElementById('tweet-btn').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent('https://www.getapipulse.com/generate-report.html')}`;
+        document.getElementById('linkedin-btn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://www.getapipulse.com/generate-report.html')}`;
 
         // Show results
         document.getElementById('results').style.display = 'block';
@@ -622,7 +622,7 @@
         const model = document.getElementById('sum-model').textContent;
         const monthly = document.getElementById('sum-monthly').textContent;
         const savings = document.getElementById('sum-savings').textContent;
-        const text = `My APIpulse Cost Report:\nModel: ${model}\nMonthly: ${monthly}\nPotential savings: ${savings}/year\n\nGenerate yours: https://getapipulse.com/generate-report.html`;
+        const text = `My APIpulse Cost Report:\nModel: ${model}\nMonthly: ${monthly}\nPotential savings: ${savings}/year\n\nGenerate yours: https://www.getapipulse.com/generate-report.html`;
         navigator.clipboard.writeText(text).then(() => {
             const btn = event.target;
             btn.textContent = '✅ Copied!';

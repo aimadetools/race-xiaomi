@@ -9,14 +9,14 @@
     <meta property="og:title" content="LLM Pricing API — Free AI API Pricing Data | APIpulse">
     <meta property="og:description" content="Free JSON API for LLM pricing data across 85 models from 10 providers. Use in your tools, dashboards, and cost calculators.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://getapipulse.com/og-image.png">
-    <meta property="og:url" content="https://getapipulse.com/api-docs.html">
+    <meta property="og:image" content="https://www.getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://www.getapipulse.com/api-docs.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="LLM Pricing API — Free AI API Pricing Data | APIpulse">
-    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:image" content="https://www.getapipulse.com/og-image.png">
     <meta name="twitter:description" content="Free JSON API for LLM pricing data across 85 models from 10 providers.">
-    <link rel="canonical" href="https://getapipulse.com/api-docs.html">
-    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="canonical" href="https://www.getapipulse.com/api-docs.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://www.getapipulse.com/rss.xml">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <!-- Google Analytics 4 -->
@@ -37,8 +37,8 @@
         "@type": "WebAPI",
         "name": "APIpulse LLM Pricing API",
         "description": "Free JSON API for LLM pricing data across 85 models from 10 providers.",
-        "url": "https://getapipulse.com/api-docs.html",
-        "documentation": "https://getapipulse.com/api-docs.html",
+        "url": "https://www.getapipulse.com/api-docs.html",
+        "documentation": "https://www.getapipulse.com/api-docs.html",
         "provider": { "@type": "Organization", "name": "APIpulse" }
     }
     </script>
@@ -128,7 +128,7 @@
         }
     </style>
     <meta name="theme-color" content="#6366f1">
-    <link rel="preconnect" href="https://getapipulse.com">
+    <link rel="preconnect" href="https://www.getapipulse.com">
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -286,7 +286,7 @@
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment">// JavaScript</span>
-<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/pricing'</span>);
+<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://www.getapipulse.com/api/pricing'</span>);
 <span class="code-key">const</span> { models, meta } = <span class="code-key">await</span> res.json();
 console.log(meta.count); <span class="code-comment">// 42</span>
 console.log(models[<span class="code-number">0</span>].name); <span class="code-comment">// "GPT-5.5"</span></code>
@@ -296,7 +296,7 @@ console.log(models[<span class="code-number">0</span>].name); <span class="code-
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment"># cURL</span>
-curl <span class="code-string">"https://getapipulse.com/api/pricing?provider=anthropic"</span></code>
+curl <span class="code-string">"https://www.getapipulse.com/api/pricing?provider=anthropic"</span></code>
             </div>
 
             <h3>Get a single model</h3>
@@ -304,7 +304,7 @@ curl <span class="code-string">"https://getapipulse.com/api/pricing?provider=ant
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment"># Python</span>
 <span class="code-key">import</span> requests
-r = requests.get(<span class="code-string">"https://getapipulse.com/api/pricing?model=openai-gpt4o-mini"</span>)
+r = requests.get(<span class="code-string">"https://www.getapipulse.com/api/pricing?model=openai-gpt4o-mini"</span>)
 model = r.json()[<span class="code-string">"model"</span>]
 print(f<span class="code-string">"${model['input']}/1M input, ${model['output']}/1M output"</span>)</code>
             </div>
@@ -313,7 +313,7 @@ print(f<span class="code-string">"${model['input']}/1M input, ${model['output']}
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment">// Get all budget models</span>
-<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/pricing?tier=budget'</span>);
+<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://www.getapipulse.com/api/pricing?tier=budget'</span>);
 <span class="code-key">const</span> { models } = <span class="code-key">await</span> res.json();
 <span class="code-comment">// Returns: GPT-4o mini, GPT-oss, Gemini Flash, DeepSeek V4 Flash, etc.</span></code>
             </div>
@@ -322,7 +322,7 @@ print(f<span class="code-string">"${model['input']}/1M input, ${model['output']}
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment">// Calculate monthly cost for GPT-5 with 10K requests/day</span>
-<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/calculate?model=openai-gpt5&requests=10000'</span>);
+<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://www.getapipulse.com/api/calculate?model=openai-gpt5&requests=10000'</span>);
 <span class="code-key">const</span> data = <span class="code-key">await</span> res.json();
 console.log(data.costs.monthly); <span class="code-comment">// e.g. $4875.00</span></code>
             </div>
@@ -332,7 +332,7 @@ console.log(data.costs.monthly); <span class="code-comment">// e.g. $4875.00</sp
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment"># Python — compare 3 models for your workload</span>
 <span class="code-key">import</span> requests
-r = requests.get(<span class="code-string">"https://getapipulse.com/api/calculate"</span>, params={
+r = requests.get(<span class="code-string">"https://www.getapipulse.com/api/calculate"</span>, params={
     <span class="code-string">"models"</span>: <span class="code-string">"openai-gpt5,anthropic-sonnet46,deepseek-v4-pro"</span>,
     <span class="code-string">"requests"</span>: <span class="code-number">5000</span>,
     <span class="code-string">"input_tokens"</span>: <span class="code-number">3000</span>,
@@ -346,7 +346,7 @@ r = requests.get(<span class="code-string">"https://getapipulse.com/api/calculat
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment">// Find cheapest coding model under $100/mo</span>
-<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/cheapest?use_case=coding&budget=100'</span>);
+<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://www.getapipulse.com/api/cheapest?use_case=coding&budget=100'</span>);
 <span class="code-key">const</span> { recommendations } = <span class="code-key">await</span> res.json();
 console.log(recommendations[<span class="code-number">0</span>].name); <span class="code-comment">// Cheapest coding model</span></code>
             </div>
@@ -355,7 +355,7 @@ console.log(recommendations[<span class="code-number">0</span>].name); <span cla
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment"># Compare GPT-5 vs Claude Sonnet vs DeepSeek for your workload</span>
-curl <span class="code-string">"https://getapipulse.com/api/compare?models=openai-gpt5,anthropic-sonnet46,deepseek-v4-pro&input_tokens=2000&output_tokens=500&requests_per_day=10000"</span>
+curl <span class="code-string">"https://www.getapipulse.com/api/compare?models=openai-gpt5,anthropic-sonnet46,deepseek-v4-pro&input_tokens=2000&output_tokens=500&requests_per_day=10000"</span>
 
 <span class="code-comment">// Response includes per-request, daily, monthly, yearly costs</span>
 <span class="code-comment">// and a summary with cheapest model and savings amount</span></code>
@@ -366,7 +366,7 @@ curl <span class="code-string">"https://getapipulse.com/api/compare?models=opena
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment">// Get top 5 models for coding with high quality</span>
 <span class="code-key">const</span> res = <span class="code-key">await</span> fetch(
-    <span class="code-string">'https://getapipulse.com/api/recommend?use_case=coding&budget=low&quality=4'</span>
+    <span class="code-string">'https://www.getapipulse.com/api/recommend?use_case=coding&budget=low&quality=4'</span>
 );
 <span class="code-key">const</span> { recommendations } = <span class="code-key">await</span> res.json();
 recommendations.forEach(m => {
@@ -380,7 +380,7 @@ recommendations.forEach(m => {
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment">&lt;!-- Embed a pricing table for any providers --&gt;</span>
 &lt;div class="apipulse-widget" data-type="table" data-providers="openai,anthropic,google"&gt;&lt;/div&gt;
-&lt;script src="https://getapipulse.com/widget.js" async&gt;&lt;/script&gt;
+&lt;script src="https://www.getapipulse.com/widget.js" async&gt;&lt;/script&gt;
 
 <span class="code-comment">&lt;!-- Or a compact model badge --&gt;</span>
 &lt;div class="apipulse-widget" data-type="badge" data-model="openai-gpt4o-mini"&gt;&lt;/div&gt;
@@ -395,17 +395,17 @@ recommendations.forEach(m => {
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment">## Markdown — add to any README</span>
-[![GPT-5 Pricing](https://getapipulse.com/api/badge?model=openai-gpt5)](https://getapipulse.com)
-[![Claude Sonnet](https://getapipulse.com/api/badge?model=anthropic-sonnet46)](https://getapipulse.com)
-[![Gemini Flash](https://getapipulse.com/api/badge?model=google-gemini3-flash)](https://getapipulse.com)
+[![GPT-5 Pricing](https://www.getapipulse.com/api/badge?model=openai-gpt5)](https://www.getapipulse.com)
+[![Claude Sonnet](https://www.getapipulse.com/api/badge?model=anthropic-sonnet46)](https://www.getapipulse.com)
+[![Gemini Flash](https://www.getapipulse.com/api/badge?model=google-gemini3-flash)](https://www.getapipulse.com)
 
 <span class="code-comment">## HTML — for docs and blogs</span>
-&lt;a href="https://getapipulse.com"&gt;
-  &lt;img src="https://getapipulse.com/api/badge?model=openai-gpt5" alt="GPT-5 Pricing"&gt;
+&lt;a href="https://www.getapipulse.com"&gt;
+  &lt;img src="https://www.getapipulse.com/api/badge?model=openai-gpt5" alt="GPT-5 Pricing"&gt;
 &lt;/a&gt;
 
 <span class="code-comment">## Get embed code as JSON</span>
-curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
+curl "https://www.getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
 <span class="code-comment">// Returns: { embed: { markdown, html, rst }, badge_url, pricing }</span></code>
             </div>
             <div style="margin:16px 0;padding:16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
@@ -436,8 +436,8 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
     <span class="code-key">"context"</span>: <span class="code-string">"128K"</span>,
     <span class="code-key">"verified"</span>: <span class="code-string">"Jul 2026"</span>
   },
-  <span class="code-key">"source"</span>: <span class="code-string">"https://getapipulse.com"</span>,
-  <span class="code-key">"docs"</span>: <span class="code-string">"https://getapipulse.com/pricing-index.html"</span>
+  <span class="code-key">"source"</span>: <span class="code-string">"https://www.getapipulse.com"</span>,
+  <span class="code-key">"docs"</span>: <span class="code-string">"https://www.getapipulse.com/pricing-index.html"</span>
 }</code>
             </div>
 
@@ -451,8 +451,8 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
     <span class="code-key">"providers"</span>: [<span class="code-string">"OpenAI"</span>, <span class="code-string">"Anthropic"</span>, ...],
     <span class="code-key">"tiers"</span>: [<span class="code-string">"Budget"</span>, <span class="code-string">"Mid"</span>, <span class="code-string">"Premium"</span>],
     <span class="code-key">"lastUpdated"</span>: <span class="code-string">"2026-06-24"</span>,
-    <span class="code-key">"source"</span>: <span class="code-string">"https://getapipulse.com"</span>,
-    <span class="code-key">"docs"</span>: <span class="code-string">"https://getapipulse.com/pricing-index.html"</span>
+    <span class="code-key">"source"</span>: <span class="code-string">"https://www.getapipulse.com"</span>,
+    <span class="code-key">"docs"</span>: <span class="code-string">"https://www.getapipulse.com/pricing-index.html"</span>
   }
 }</code>
             </div>
@@ -649,7 +649,7 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-comment">&lt;!-- Pricing table for OpenAI, Anthropic, Google --&gt;</span>
 &lt;div class="apipulse-widget" data-type="table" data-providers="openai,anthropic,google"&gt;&lt;/div&gt;
-&lt;script src="https://getapipulse.com/widget.js" async&gt;&lt;/script&gt;
+&lt;script src="https://www.getapipulse.com/widget.js" async&gt;&lt;/script&gt;
 
 <span class="code-comment">&lt;!-- Model badge --&gt;</span>
 &lt;div class="apipulse-widget" data-type="badge" data-model="openai-gpt4o-mini"&gt;&lt;/div&gt;
@@ -663,10 +663,10 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
         <!-- Attribution -->
         <div class="section">
             <h2>Attribution</h2>
-            <p>This API is free to use. We appreciate a link back to <a href="https://getapipulse.com">getapipulse.com</a> when possible.</p>
+            <p>This API is free to use. We appreciate a link back to <a href="https://www.getapipulse.com">getapipulse.com</a> when possible.</p>
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                <code>Pricing data provided by <span class="code-string"><a href="https://getapipulse.com" style="color:#86efac;">APIpulse</a></span></code>
+                <code>Pricing data provided by <span class="code-string"><a href="https://www.getapipulse.com" style="color:#86efac;">APIpulse</a></span></code>
             </div>
         </div>
 
@@ -719,7 +719,7 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
     </footer>
 
     <script>
-        const baseUrl = 'https://getapipulse.com/api/pricing';
+        const baseUrl = 'https://www.getapipulse.com/api/pricing';
 
         function updateTryUrl() {
             const provider = document.getElementById('try-provider').value;
@@ -759,7 +759,7 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
             const requests = document.getElementById('calc-requests').value;
             const mode = document.getElementById('calc-mode').value;
             const params = new URLSearchParams({ model, input_tokens: inputTokens, output_tokens: outputTokens, requests, mode });
-            const url = `https://getapipulse.com/api/calculate?${params}`;
+            const url = `https://www.getapipulse.com/api/calculate?${params}`;
             document.getElementById('calc-url').textContent = url;
             const resultEl = document.getElementById('calc-result');
             resultEl.style.display = 'block';
@@ -783,7 +783,7 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
             if (quality) params.set('quality', quality);
             if (budget) params.set('budget', budget);
             if (requests) params.set('requests', requests);
-            const url = `https://getapipulse.com/api/cheapest?${params}`;
+            const url = `https://www.getapipulse.com/api/cheapest?${params}`;
             document.getElementById('cheap-url').textContent = url;
             const resultEl = document.getElementById('cheap-result');
             resultEl.style.display = 'block';
@@ -802,7 +802,7 @@ curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
             const format = document.getElementById('badge-format').value;
             const params = new URLSearchParams({ model });
             if (format) params.set('format', format);
-            const url = `https://getapipulse.com/api/badge?${params}`;
+            const url = `https://www.getapipulse.com/api/badge?${params}`;
             document.getElementById('badge-url').textContent = url;
 
             const previewEl = document.getElementById('badge-preview');

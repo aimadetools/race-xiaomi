@@ -8,15 +8,15 @@
     <meta property="og:title" content="AI API Cost Optimizer — Free Personalized Report">
     <meta property="og:description" content="Enter your current API setup. See exact savings from switching to cheaper models. 85 models compared.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://getapipulse.com/og-image.png">
-    <meta property="og:url" content="https://getapipulse.com/cost-optimizer.html">
+    <meta property="og:image" content="https://www.getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://www.getapipulse.com/cost-optimizer.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI API Cost Optimizer — Free Personalized Report">
-    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:image" content="https://www.getapipulse.com/og-image.png">
     <meta name="twitter:description" content="Enter your current API setup. See exact savings from switching to cheaper models.">
     <meta name="keywords" content="AI API cost optimization, reduce AI costs, LLM cost savings, API spending optimizer">
-    <link rel="canonical" href="https://getapipulse.com/cost-optimizer.html">
-    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="canonical" href="https://www.getapipulse.com/cost-optimizer.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://www.getapipulse.com/rss.xml">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <!-- Google Analytics 4 -->
@@ -45,7 +45,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "AI API Cost Optimizer",
-        "url": "https://getapipulse.com/cost-optimizer.html",
+        "url": "https://www.getapipulse.com/cost-optimizer.html",
         "description": "Get a personalized AI API cost optimization report. Enter your current provider and spend to see exactly how much you can save.",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
@@ -542,8 +542,8 @@
                 <p style="font-size:15px;font-weight:600;margin-bottom:12px;">Found this useful? Share it with your team</p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
                     <button onclick="copyOptimizerShare()" id="copyOptimizerBtn" style="padding:10px 20px;font-size:14px;font-weight:600;background:var(--accent);color:white;border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:6px;">📋 Copy Summary</button>
-                    <a href="https://twitter.com/intent/tweet?text=I+just+found+out+I+can+save+%240%2Fmonth+on+AI+API+costs.+Get+your+free+optimization+report:&url=https://getapipulse.com/cost-optimizer.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;" id="optimizerTweetLink">Share on X</a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://getapipulse.com/cost-optimizer.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;">Share on LinkedIn</a>
+                    <a href="https://twitter.com/intent/tweet?text=I+just+found+out+I+can+save+%240%2Fmonth+on+AI+API+costs.+Get+your+free+optimization+report:&url=https://www.getapipulse.com/cost-optimizer.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;" id="optimizerTweetLink">Share on X</a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.getapipulse.com/cost-optimizer.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;">Share on LinkedIn</a>
                 </div>
                 <p id="optimizerShareConfirm" style="font-size:12px;color:var(--green);margin-top:8px;display:none;">✅ Copied to clipboard!</p>
             </div>
@@ -726,7 +726,7 @@
             var shareText = 'I+just+found+out+I+can+save+%24' + Math.round(monthlySave) + '%2Fmonth+on+AI+API+costs.+Get+your+free+optimization+report:';
             var tweetLink = document.getElementById('optimizerTweetLink');
             if (tweetLink) {
-                tweetLink.href = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=https://getapipulse.com/cost-optimizer.html';
+                tweetLink.href = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=https://www.getapipulse.com/cost-optimizer.html';
             }
 
             // Store share text for copy function
@@ -735,7 +735,7 @@
                 'Best alternative: ' + (best ? best.model.name : 'N/A') + ' → $' + (best ? best.estMonthly.toFixed(2) : 'N/A') + '/mo\n' +
                 'Monthly savings: $' + Math.round(monthlySave).toLocaleString() + ' (' + Math.round(pctSave) + '%)\n' +
                 'Annual savings: $' + Math.round(annualSave).toLocaleString() + '\n\n' +
-                'Optimize your AI costs → https://getapipulse.com/cost-optimizer.html';
+                'Optimize your AI costs → https://www.getapipulse.com/cost-optimizer.html';
 
             // Current vs Recommended
             document.getElementById('current-name').textContent = currentModel.name;
@@ -910,7 +910,7 @@
 
         // Copy optimizer share summary
         window.copyOptimizerShare = function() {
-            var text = window._optimizerShareText || 'Check out the AI API Cost Optimizer: https://getapipulse.com/cost-optimizer.html';
+            var text = window._optimizerShareText || 'Check out the AI API Cost Optimizer: https://www.getapipulse.com/cost-optimizer.html';
             navigator.clipboard.writeText(text).then(function() {
                 var el = document.getElementById('optimizerShareConfirm');
                 if (el) { el.style.display = 'block'; setTimeout(function() { el.style.display = 'none'; }, 3000); }

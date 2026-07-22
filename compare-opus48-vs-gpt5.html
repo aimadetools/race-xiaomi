@@ -9,14 +9,14 @@
     <meta property="og:title" content="Claude Opus 4.8 vs GPT-5 — Premium vs Premium Pricing 2026">
     <meta property="og:description" content="GPT-5 is 60-75% cheaper but Opus 4.8 has 3.7x more context. Compare now.">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://getapipulse.com/og-image.png">
-    <meta property="og:url" content="https://getapipulse.com/compare-opus48-vs-gpt5.html">
+    <meta property="og:image" content="https://www.getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://www.getapipulse.com/compare-opus48-vs-gpt5.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Claude Opus 4.8 vs GPT-5 — Premium vs Premium Pricing 2026">
-    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:image" content="https://www.getapipulse.com/og-image.png">
     <meta name="twitter:description" content="GPT-5 is 60-75% cheaper but Opus 4.8 has 3.7x more context. Compare now.">
-    <link rel="canonical" href="https://getapipulse.com/compare-opus48-vs-gpt5.html">
-    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="canonical" href="https://www.getapipulse.com/compare-opus48-vs-gpt5.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://www.getapipulse.com/rss.xml">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
@@ -37,8 +37,8 @@
         "@type": "Article",
         "headline": "Claude Opus 4.8 vs GPT-5 — Premium vs Premium Pricing 2026",
         "description": "Compare Claude Opus 4.8 and GPT-5 API pricing side by side.",
-        "url": "https://getapipulse.com/compare-opus48-vs-gpt5.html",
-        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://www.getapipulse.com/compare-opus48-vs-gpt5.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://www.getapipulse.com" },
         "datePublished": "2026-06-11",
         "dateModified": "2026-06-11"
     }
@@ -248,7 +248,7 @@
         const PRESETS={chatbot:{input:800,output:400,rpd:2000},coding:{input:3000,output:1500,rpd:100},rag:{input:8000,output:500,rpd:500},content:{input:500,output:2000,rpd:50},heavy:{input:2000,output:1000,rpd:5000}};
         function applyPreset(k){const p=PRESETS[k];document.getElementById('input-tokens').value=p.input;document.getElementById('output-tokens').value=p.output;document.getElementById('requests-day').value=p.rpd;document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');calculate();}
         function calculate(){const it=parseInt(document.getElementById('input-tokens').value)||0,ot=parseInt(document.getElementById('output-tokens').value)||0,rpd=parseInt(document.getElementById('requests-day').value)||0,days=parseInt(document.getElementById('days-month').value)||30,rpm=rpd*days;const aI=(it*rpm/1e6)*MODEL_A.input,aO=(ot*rpm/1e6)*MODEL_A.output,aT=aI+aO,aC=MODEL_A.input*(it/1e6)+MODEL_A.output*(ot/1e6);const bI=(it*rpm/1e6)*MODEL_B.input,bO=(ot*rpm/1e6)*MODEL_B.output,bT=bI+bO,bC=MODEL_B.input*(it/1e6)+MODEL_B.output*(ot/1e6);document.getElementById('total-a').textContent='$'+aT.toFixed(2);document.getElementById('input-cost-a').textContent='$'+aI.toFixed(2);document.getElementById('output-cost-a').textContent='$'+aO.toFixed(2);document.getElementById('cpr-a').textContent='$'+aC.toFixed(6);document.getElementById('rpm-a').textContent=rpm.toLocaleString();document.getElementById('total-b').textContent='$'+bT.toFixed(2);document.getElementById('input-cost-b').textContent='$'+bI.toFixed(2);document.getElementById('output-cost-b').textContent='$'+bO.toFixed(2);document.getElementById('cpr-b').textContent='$'+bC.toFixed(6);document.getElementById('rpm-b').textContent=rpm.toLocaleString();const cA=document.getElementById('card-a'),cB=document.getElementById('card-b'),bA=document.getElementById('winner-badge-a'),bB=document.getElementById('winner-badge-b');cA.classList.remove('winner');cB.classList.remove('winner');bA.style.display='none';bB.style.display='none';if(aT<bT){cA.classList.add('winner');bA.style.display='inline-block';}else if(bT<aT){cB.classList.add('winner');bB.style.display='inline-block';}const bn=document.getElementById('savings-banner');if(aT!==bT){const sv=Math.abs(aT-bT),pct=((sv/Math.max(aT,bT))*100).toFixed(0),w=aT<bT?MODEL_A.name:MODEL_B.name;document.getElementById('savings-amount').textContent='$'+sv.toFixed(2)+'/mo savings with '+w;document.getElementById('savings-detail').textContent=w+' is '+pct+'% cheaper for your usage.';bn.style.display='block';}else{bn.style.display='none';}if(window.trackEvent){window.trackEvent('model_comparison_calculated',{model_a:MODEL_A.name,model_b:MODEL_B.name,monthly_cost_a:aT.toFixed(2),monthly_cost_b:bT.toFixed(2),requests_per_day:rpd});}}
-        document.addEventListener('DOMContentLoaded',()=>{const t=encodeURIComponent('Opus 4.8 vs GPT-5 — GPT-5 is 60-75% cheaper but Opus has 3.7x more context:'),u=encodeURIComponent('https://getapipulse.com/compare-opus48-vs-gpt5.html');document.getElementById('share-x').href='https://twitter.com/intent/tweet?text='+t+'&url='+u;document.getElementById('share-linkedin').href='https://www.linkedin.com/sharing/share-offsite/?url='+u;calculate();});
+        document.addEventListener('DOMContentLoaded',()=>{const t=encodeURIComponent('Opus 4.8 vs GPT-5 — GPT-5 is 60-75% cheaper but Opus has 3.7x more context:'),u=encodeURIComponent('https://www.getapipulse.com/compare-opus48-vs-gpt5.html');document.getElementById('share-x').href='https://twitter.com/intent/tweet?text='+t+'&url='+u;document.getElementById('share-linkedin').href='https://www.linkedin.com/sharing/share-offsite/?url='+u;calculate();});
     </script>
 </body>
 </html>
