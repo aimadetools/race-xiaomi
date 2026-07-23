@@ -1,7 +1,7 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jul 21, 2026 (S1516: Verified all providers against official pricing pages. Fixed Claude Sonnet 4 pricing $2/$10 → $3/$15. Renamed Claude 4 Opus → Claude Opus 4.1. Marked Opus 4.7 Fast deprecated. Fixed retirement dates.)
-const PRICING_LAST_UPDATED = 'Jul 21, 2026';
+// Last verified: Jul 23, 2026 (S1519: Added Gemini 3.6 Flash and 3.5 Flash-Lite. Model count 85→87.)
+const PRICING_LAST_UPDATED = 'Jul 23, 2026';
 
 const API_MODELS = [
     // OpenAI
@@ -41,7 +41,9 @@ const API_MODELS = [
     { id: 'anthropic-fable5', name: 'Claude Fable 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jul 2026' },
     { id: 'anthropic-mythos5', name: 'Claude Mythos 5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 10.00, output: 50.00, context: '1M', verified: 'Jul 2026', note: 'Invitation-only via Project Glasswing — not generally available via standard API' },
     // Google
-    { id: 'google-gemini35-flash', name: 'Gemini 3.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.50, output: 9.00, context: '1M', verified: 'Jul 9, 2026' },
+    { id: 'google-gemini36-flash', name: 'Gemini 3.6 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.50, output: 7.50, context: '1M', verified: 'Jul 23, 2026' },
+    { id: 'google-gemini35-flash', name: 'Gemini 3.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.50, output: 9.00, context: '1M', verified: 'Jul 23, 2026' },
+    { id: 'google-gemini35-flash-lite', name: 'Gemini 3.5 Flash-Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.30, output: 2.50, context: '1M', verified: 'Jul 23, 2026' },
     { id: 'google-gemini31-flash-lite', name: 'Gemini 3.1 Flash-Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.25, output: 1.50, context: '1M', verified: 'Jul 9, 2026' },
     { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 2.00, output: 12.00, context: '1M', verified: 'Jul 9, 2026' },
     { id: 'google-gemini3-flash', name: 'Gemini 3 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.50, output: 3.00, context: '1M', verified: 'Jul 9, 2026' },

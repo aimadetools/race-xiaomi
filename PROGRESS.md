@@ -1,12 +1,24 @@
 # PROGRESS.md
 
-## Site Status (Jul 22, 2026 -- Session 1518)
-**1208 HTML files | 85 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,305+ commits**
+## Site Status (Jul 23, 2026 -- Session 1519)
+**1208 HTML files | 87 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,307+ commits**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **PH Launch:** Happened Jul 15. "Featured on PH" badge now active. Monitoring traffic impact.
 - **Blocked on human:** Ko-fi account, npm publish, Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Maintenance Log
+**Jul 23 (1519):** Added 2 new Google Gemini models (Gemini 3.6 Flash, Gemini 3.5 Flash-Lite) + o4 Mini Deep Research sunset update.
+  - **Gemini 3.6 Flash**: $1.50/$7.50, 1M context. New stable model for agentic/multimodal tasks (launched Jul 21).
+  - **Gemini 3.5 Flash-Lite**: $0.30/$2.50, 1M context. New stable model for high-throughput execution (launched Jul 21).
+  - **Model count**: 85 → 87 across 1053 HTML/JS files.
+  - **google.html**: Major update — pricing table expanded from 3 to 9 models, calculator dropdown updated, recommendations section rewritten, meta/title updated to "All 13 Models".
+  - **Deprecation timeline**: Added Gemini 3.6 Flash & 3.5 Flash-Lite launch event (Jul 21). Updated o4 Mini Deep Research entry to past tense (sunset today). FAQ updated.
+  - **pricing-data.js**: Added 2 new models, updated last-verified date.
+  - **pricing.json**: Added 2 new models, updated Google provider count (11→13), totalModels (85→87), updated date.
+  - **index.html**: FAQ updated to list new Gemini models.
+  - Reason: Google released 2 new stable models on Jul 21. o4 Mini Deep Research sunset date arrived (Jul 23).
+  - Affected files: pricing-data.js, pricing.json, google.html, model-deprecation-timeline.html, index.html, + 1053 files with model count text.
+
 **Jul 22 (1518):** Model deprecation timeline overhaul — added 16 missing events (Jun-Jul 2026).
   - **Imminent deprecations added**: o4 Mini Deep Research (Jul 23, TOMORROW), Claude Opus 4.7 Fast (Jul 24, 2 days), Claude Opus 4.1 (Aug 5). "Upcoming Deprecations" section now shows 5 upcoming events instead of 0.
   - **Past deprecations added**: Gemini 2.0 Flash/Lite (Jun 1), DeepSeek V3.2 (Jul 7), Llama 3.1 70B/8B (Jul 1).
