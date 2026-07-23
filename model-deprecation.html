@@ -217,6 +217,13 @@
             <div id="deprecation-grid" class="deprecation-grid"></div>
         </div>
 
+        <!-- Upcoming Deprecations -->
+        <div class="section">
+            <h2>⏰ Upcoming Deprecations</h2>
+            <p>These models are still active but have confirmed shutdown dates. Plan your migration now to avoid disruption.</p>
+            <div id="upcoming-grid" class="deprecation-grid"></div>
+        </div>
+
         <!-- Migration Tips -->
         <div class="section">
             <h2>Migration Tips</h2>
@@ -299,10 +306,12 @@
         const gridEl = document.getElementById('deprecation-grid');
 
         // Populate model select
+        const todayStr = new Date().toISOString().slice(0, 10);
         API_MODELS.forEach(m => {
             const opt = document.createElement('option');
             opt.value = m.id;
-            opt.textContent = `${m.name} (${m.provider})${m.deprecated ? ' ⚠️ Deprecated' : ''}`;
+            const depLabel = m.deprecated ? ' ⚠️ Deprecated' : (m.deprecatedDate && m.deprecatedDate > todayStr ? ` ⏰ Sunset ${m.deprecatedDate}` : '');
+            opt.textContent = `${m.name} (${m.provider})${depLabel}`;
             select.appendChild(opt);
         });
 
@@ -335,12 +344,22 @@
             } else {
                 // Check if this model replaces a deprecated one
                 const deprecatedParent = API_MODELS.find(m => m.replacement === modelId);
-                resultEl.className = 'checker-result active safe';
+                // Check if this model has an upcoming deprecation date
+                const today = new Date().toISOString().slice(0, 10);
+                const hasUpcoming = model.deprecatedDate && model.deprecatedDate > today;
+                const daysLeft = hasUpcoming ? Math.ceil((new Date(model.deprecatedDate) - new Date()) / 86400000) : 0;
+                const upcomingReplacement = hasUpcoming ? API_MODELS.find(m => m.id === model.replacement) : null;
+
+                resultEl.className = 'checker-result active' + (hasUpcoming ? ' deprecated' : ' safe');
                 resultEl.innerHTML = `
-                    <div class="result-icon">✅</div>
-                    <div class="result-title" style="color:#4ade80;">This model is active</div>
+                    <div class="result-icon">${hasUpcoming ? '⏰' : '✅'}</div>
+                    <div class="result-title" style="color:${hasUpcoming ? '#fbbf24' : '#4ade80'};">${hasUpcoming ? 'Active — but shutting down soon' : 'This model is active'}</div>
                     <div class="result-detail">
-                        <strong>${model.name}</strong> (${model.provider}) is not deprecated.
+                        <strong>${model.name}</strong> (${model.provider})${hasUpcoming ? ` is still active but <strong>shuts down in ${daysLeft} days</strong> (${model.deprecatedDate}).` : ' is not deprecated.'}
+                        ${hasUpcoming && upcomingReplacement ? `
+                            <br><br><strong>Plan your migration to:</strong> <a href="compare.html?models=${model.id},${upcomingReplacement.id}">${upcomingReplacement.name}</a>
+                            <br><strong>Cost change:</strong> $${model.input}/$${model.output} → $${upcomingReplacement.input}/$${upcomingReplacement.output} per 1M tokens
+                        ` : ''}
                         ${deprecatedParent ? `<br><br>This model replaces the deprecated <strong>${deprecatedParent.name}</strong>.` : ''}
                         <br><br><a href="calculator.html?model=${model.id}">Calculate cost →</a>
                     </div>
@@ -350,7 +369,7 @@
             if (window.trackEvent) window.trackEvent('deprecation_check', { model: modelId, deprecated: model.deprecated });
         });
 
-        // Render deprecated models grid
+        // Render deprecated models grid (already shut down)
         const deprecated = API_MODELS.filter(m => m.deprecated);
         gridEl.innerHTML = deprecated.map(m => {
             const replacement = API_MODELS.find(r => r.id === m.replacement);
@@ -383,6 +402,43 @@
                     <div class="dep-actions">
                         <a href="compare.html?models=${m.id},${replacement.id}" class="btn-compare">Compare Models</a>
                         <a href="audit.html" class="btn-migrate">Get Migration Code →</a>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        // Render upcoming deprecations grid (still active, future shutdown date)
+        const upcomingGrid = document.getElementById('upcoming-grid');
+        const today = new Date().toISOString().slice(0, 10);
+        const upcoming = API_MODELS.filter(m => !m.deprecated && m.deprecatedDate && m.deprecatedDate > today);
+        upcomingGrid.innerHTML = upcoming.map(m => {
+            const replacement = API_MODELS.find(r => r.id === m.replacement);
+            const daysLeft = Math.ceil((new Date(m.deprecatedDate) - new Date()) / 86400000);
+            const urgency = daysLeft <= 14 ? '#fbbf24' : daysLeft <= 60 ? '#60a5fa' : '#a78bfa';
+
+            return `
+                <div class="deprecation-card">
+                    <div class="dep-header">
+                        <span class="dep-model">${m.name}</span>
+                        <span class="dep-badge" style="background:rgba(${urgency === '#fbbf24' ? '251,191,36' : urgency === '#60a5fa' ? '96,165,250' : '167,139,250'},0.15);color:${urgency};">Shuts down in ${daysLeft} days</span>
+                    </div>
+                    <div class="dep-provider">${m.provider} · ${m.context} context · Sunset date: ${m.deprecatedDate}</div>
+                    ${replacement ? `
+                    <div class="dep-comparison">
+                        <div class="dep-model-box">
+                            <div class="dep-model-name">${m.name}</div>
+                            <div class="dep-model-price">Input: <strong>$${m.input}</strong>/1M · Output: <strong>$${m.output}</strong>/1M</div>
+                        </div>
+                        <div class="dep-arrow">→</div>
+                        <div class="dep-model-box" style="border:1px solid rgba(34,197,94,0.3);">
+                            <div class="dep-model-name" style="color:#4ade80;">${replacement.name}</div>
+                            <div class="dep-model-price">Input: <strong>$${replacement.input}</strong>/1M · Output: <strong>$${replacement.output}</strong>/1M</div>
+                        </div>
+                    </div>
+                    ` : ''}
+                    <div class="dep-actions">
+                        ${replacement ? `<a href="compare.html?models=${m.id},${replacement.id}" class="btn-compare">Compare with ${replacement.name}</a>` : ''}
+                        <a href="calculator.html?model=${m.id}" class="btn-compare">Calculate Cost</a>
                     </div>
                 </div>
             `;
