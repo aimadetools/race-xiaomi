@@ -1,12 +1,20 @@
 # PROGRESS.md
 
-## Site Status (Jul 23, 2026 -- Session 1520)
-**1208 HTML files | 87 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,309+ commits**
+## Site Status (Jul 24, 2026 -- Session 1521)
+**1208 HTML files | 87 models | 10 providers | 433 comparisons | 139 tools | 390 blog posts | 4,310+ commits**
 - **Analytics:** GA4 (G-0CEP7S9Y3J). trackEvent on all CTAs. 8,367 users, $0 revenue.
 - **PH Launch:** Happened Jul 15. "Featured on PH" badge now active. Monitoring traffic impact.
 - **Blocked on human:** Ko-fi account, npm publish, Vercel KV env vars, directory submissions (9 prepped), Chrome Web Store ($5).
 
 ## Maintenance Log
+**Jul 24 (1521):** Updated deprecation timeline FAQ for Claude Opus 4.7 Fast removal (today).
+  - FAQ #1: past tense "was removed" instead of "is being removed". Added Fable 5 as top flagship.
+  - FAQ #2: updated date to Jul 24, both o4 Mini DR and Opus 4.7 Fast now past tense.
+  - dateModified: 2026-07-23 → 2026-07-24.
+  - Verified against Anthropic docs: Opus 4.7 Fast confirmed removed from model listings. Fable 5 ($10/$50), Opus 4.8 ($5/$25), Sonnet 5 ($2/$10 intro) confirmed current flagships.
+  - **Data note:** pricing.json has 97 models but pricing-data.js only has 75 (22-model gap). PROGRESS.md says 87. Investigate next session.
+  - Affected file: model-deprecation-timeline.html
+
 **Jul 23 (1520):** Fixed premature deprecation of 4 active models — data integrity + UX fix.
   - **Problem**: GPT-5 (shutdown Dec 2026), GPT-5 mini (Dec 2026), GPT-4.1 nano (Oct 2026), and Claude Opus 4.1 (Aug 5) were marked `deprecated: true` in pricing.json and pricing-data.js despite still being active for months.
   - **Impact**: These models were filtered from MCP server responses (hidden from users) and showed "This model is deprecated" in the deprecation checker — misleading users into premature migration.
